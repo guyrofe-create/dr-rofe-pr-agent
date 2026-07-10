@@ -8,27 +8,30 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate and publish content
+      - name: Install Playwright browser
+        run: playwright install chromium --with-deps
+
+      - name: Run PR Agent
         run: python scripts/daily_run.py
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
+          MEDIUM_EMAIL: ${{ secrets.MEDIUM_EMAIL }}
+          MEDIUM_PASSWORD: ${{ secrets.MEDIUM_PASSWORD }}
 
-      - name: Save run log
+      - name: Upload run log
         if: always()
         uses: actions/upload-artifact@v4
         with:
