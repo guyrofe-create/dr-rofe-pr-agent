@@ -28,8 +28,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
-          MEDIUM_EMAIL: ${{ secrets.MEDIUM_EMAIL }}
-          MEDIUM_PASSWORD: ${{ secrets.MEDIUM_PASSWORD }}
+          MEDIUM_SID: ${{ secrets.MEDIUM_SID }}
 
       - name: Upload run log
         if: always()
