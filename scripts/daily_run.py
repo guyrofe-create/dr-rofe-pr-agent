@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 Dr. Guy Rofe - Autonomous PR Agent
-Runs on GitHub Actions (cloud) every Mon/Wed/Fri at 09:00 Israel time.
+Runs on GitHub Actions every Mon/Wed/Fri at 09:00 Israel time.
 No Mac required. Fully autonomous.
 
-Supports TWO publishing methods:
-  Method A - API Token:  set MEDIUM_TOKEN secret
-  Method B - Browser:    set MEDIUM_EMAIL + MEDIUM_PASSWORD secrets (no token needed)
+Auth methods (in priority order):
+  1. MEDIUM_TOKEN  — Medium API token (if available)
+  2. MEDIUM_SID    — Medium session cookie (login once via browser, paste sid value)
 """
 
 from openai import OpenAI
@@ -75,7 +75,6 @@ def publish_via_api(token, title, content):
     )
     resp.raise_for_status()
     user_id = resp.json()["data"]["id"]
-
     resp = requests.post(
         f"https://api.medium.com/v1/users/{user_id}/posts",
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
@@ -96,10 +95,10 @@ def publish_via_api(token, title, content):
         return result["data"].get("url", "published")
     raise Exception(f"API error: {result}")
 
-# ─── Method B: Publish via Browser (no token needed) ─────────────────────────
+# ─── Method B: Publish via Session Cookie (no password needed) ───────────────
 
-def publish_via_browser(email, password, title, content_md):
-    log("Using Method B: Browser automation (Playwright)")
+def publish_via_cookie(sid, title, content_md):
+    log("Using Method B: Session cookie (sid)")
     from playwright.sync_api import sync_playwright
 
     with sync_playwright() as p:
@@ -107,76 +106,64 @@ def publish_via_browser(email, password, title, content_md):
             headless=True,
             args=["--no-sandbox", "--disable-setuid-sandbox"]
         )
-        page = browser.new_page(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
         )
 
-        # Step 1: Login
-        log("Navigating to Medium login...")
-        page.goto("https://medium.com/m/signin", wait_until="networkidle")
+        # Inject the session cookie — no login needed
+        context.add_cookies([{
+            "name": "sid",
+            "value": sid,
+            "domain": ".medium.com",
+            "path": "/",
+            "httpOnly": True,
+            "secure": True,
+        }])
+
+        page = context.new_page()
+
+        # Verify login worked
+        log("Verifying session...")
+        page.goto("https://medium.com/me/stories/drafts", wait_until="networkidle")
         time.sleep(2)
+        if "signin" in page.url or "login" in page.url:
+            raise Exception("Session cookie expired — please refresh MEDIUM_SID secret")
+        log("Session valid. Opening editor...")
 
-        # Click "Sign in with email"
-        try:
-            page.click("text=Sign in with email", timeout=5000)
-            time.sleep(1)
-            page.fill('input[type="email"]', email)
-            page.click("text=Continue")
-            time.sleep(2)
-            # Medium sends a magic link - fallback to Google
-            log("Email magic link sent - trying Google login instead")
-        except:
-            pass
-
-        # Try Google login
-        try:
-            page.goto("https://medium.com/m/signin", wait_until="networkidle")
-            page.click("text=Sign in with Google", timeout=5000)
-            time.sleep(2)
-            # Fill Google email
-            page.fill('input[type="email"]', email)
-            page.keyboard.press("Enter")
-            time.sleep(2)
-            page.fill('input[type="password"]', password)
-            page.keyboard.press("Enter")
-            time.sleep(4)
-            log("Google login attempted")
-        except Exception as e:
-            log(f"Login attempt: {e}")
-
-        # Step 2: Open new story editor
-        log("Opening new story editor...")
+        # Open new story
         page.goto("https://medium.com/new-story", wait_until="networkidle")
         time.sleep(3)
 
-        # Step 3: Type title
+        # Type title
         log("Typing title...")
         title_el = page.locator('h1[data-placeholder="Title"]').first
         title_el.click()
-        title_el.type(title, delay=20)
+        title_el.type(title, delay=30)
+        time.sleep(1)
+        page.keyboard.press("Enter")
         time.sleep(1)
 
-        # Step 4: Type content (simplified - plain text)
-        log("Typing article content...")
-        page.keyboard.press("Enter")
-        # Convert markdown to plain text for editor
-        plain_content = content_md.replace("# ", "").replace("## ", "").replace("**", "")
-        page.keyboard.type(plain_content[:3000], delay=5)
+        # Type content (plain text, stripped of markdown symbols)
+        log("Typing content...")
+        plain = content_md
+        for sym in ["# ", "## ", "### ", "**", "__", "- "]:
+            plain = plain.replace(sym, "")
+        page.keyboard.type(plain[:4000], delay=3)
         time.sleep(2)
 
-        # Step 5: Publish
+        # Publish
         log("Publishing...")
         try:
-            page.click("text=Publish", timeout=5000)
+            page.click("button:has-text('Publish')", timeout=8000)
             time.sleep(2)
-            page.click("text=Publish now", timeout=5000)
-            time.sleep(3)
+            page.click("button:has-text('Publish now')", timeout=5000)
+            time.sleep(4)
         except Exception as e:
-            log(f"Publish click: {e}")
+            log(f"Publish button: {e}")
 
         url = page.url
         browser.close()
-        log(f"Done. Final URL: {url}")
+        log(f"Done. URL: {url}")
         return url
 
 # ─── Main ────────────────────────────────────────────────────────────────────
@@ -185,36 +172,34 @@ def main():
     log("=== Dr. Rofe PR Agent - Starting ===")
     log(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}")
 
-    # Determine publish method
-    medium_token = os.environ.get("MEDIUM_TOKEN")
-    medium_email = os.environ.get("MEDIUM_EMAIL")
-    medium_password = os.environ.get("MEDIUM_PASSWORD")
     openai_key = os.environ.get("OPENAI_API_KEY")
+    medium_token = os.environ.get("MEDIUM_TOKEN")
+    medium_sid = os.environ.get("MEDIUM_SID")
 
     if not openai_key:
         log("ERROR: OPENAI_API_KEY secret is not set")
         exit(1)
 
-    if not medium_token and not (medium_email and medium_password):
-        log("ERROR: Set either MEDIUM_TOKEN or both MEDIUM_EMAIL + MEDIUM_PASSWORD")
+    if not medium_token and not medium_sid:
+        log("ERROR: Set either MEDIUM_TOKEN or MEDIUM_SID in GitHub Secrets")
         exit(1)
 
-    # Pick topic
+    # Pick topic by week+day rotation
     week = datetime.now().isocalendar()[1]
     day = datetime.now().weekday()
     topic = TOPICS[(week * 3 + day) % len(TOPICS)]
     log(f"Topic: {topic}")
 
-    # Generate content
+    # Generate article
     log("Generating article via GPT-4o...")
     title, content = generate_article(topic)
-    log(f"Generated: {len(content)} chars")
+    log(f"Generated {len(content)} chars")
 
     # Publish
     if medium_token:
         url = publish_via_api(medium_token, title, content)
     else:
-        url = publish_via_browser(medium_email, medium_password, title, content)
+        url = publish_via_cookie(medium_sid, title, content)
 
     log(f"Published: {url}")
     log("=== Done ===")
