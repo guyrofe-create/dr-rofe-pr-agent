@@ -13,6 +13,8 @@ stopping at alerts.
 - opens a crisis room for P0/P1 incidents;
 - freezes scheduled publishing when a high-risk event is active;
 - keeps a durable audit trail and exposes command-center metrics in the dashboard;
+- replans an aggressive, evidence-led Google and AI visibility campaign every monitor cycle;
+- maps first-page asset gaps and separates AI citations from explicit brand mentions;
 - continues the existing schema sync, social distribution and content workflows.
 
 ## Safety model
@@ -32,6 +34,7 @@ python scripts/command_center.py complete-task TASK_ID --actor NAME
 python scripts/command_center.py add-fact CRISIS_ROOM_ID "Verified fact" --source-url URL
 python scripts/command_center.py resolve-event EVENT_ID --resolution "resolution notes"
 python scripts/command_center.py set-freeze off --actor NAME
+python scripts/command_center.py plan-growth
 ```
 
 Content freeze cannot be removed while an active crisis room exists.

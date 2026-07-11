@@ -5,6 +5,8 @@ import unittest
 
 from scripts.reputation_core import CommandCenter
 from scripts.reputation_core.risk import score_event
+from scripts.reputation_core.growth import build_serp_asset_gap, plan_growth_campaign
+from scripts.reputation_core.tactics import ranked_tactics
 
 
 class RiskScoringTests(unittest.TestCase):
@@ -67,6 +69,32 @@ class CommandCenterTests(unittest.TestCase):
         with open(self.path, encoding="utf-8") as handle:
             saved = json.load(handle)
         self.assertEqual(saved["metrics"]["open_events"], 2)
+
+
+class GrowthEngineTests(unittest.TestCase):
+    def test_asset_gap_distinguishes_controlled_and_independent(self):
+        gap = build_serp_asset_gap([
+            {"type": "canonical_site", "controlled": True},
+            {"type": "independent_media", "controlled": False},
+        ], target_slots=5)
+        self.assertEqual(gap["slot_gap"], 3)
+        self.assertEqual(gap["controlled_assets"], 1)
+        self.assertEqual(gap["independent_assets"], 1)
+
+    def test_campaign_routes_visibility_gaps_to_multiple_surfaces(self):
+        campaign = plan_growth_campaign({"name": "Example"}, {
+            "serp_assets": [], "canonical_entity_complete": False,
+            "local_rank_weak": True, "ai_citation_gap": True,
+            "ai_mention_gap": True, "independent_authority_gap": True,
+            "eligible_policy_violations": 1,
+        })
+        tactic_ids = {task["tactic"] for task in campaign["tasks"]}
+        self.assertTrue({"entity_home", "brand_serp_asset", "local_prominence", "expert_answer_library", "digital_pr", "policy_removal"}.issubset(tactic_ids))
+        self.assertIn("ai_citation_share", campaign["success_metrics"])
+        self.assertIn("ai_explicit_mention_share", campaign["success_metrics"])
+
+    def test_tactics_exclude_high_risk_when_requested(self):
+        self.assertTrue(all(t["risk"] <= 1 for t in ranked_tactics(max_risk=1)))
 
 
 if __name__ == "__main__":

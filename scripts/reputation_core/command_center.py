@@ -18,6 +18,9 @@ DEFAULT_STATE = {
     "events": [],
     "tasks": [],
     "crisis_rooms": [],
+    "campaigns": [],
+    "serp_assets": [],
+    "visibility_measurements": [],
     "audit_log": [],
     "metrics": {},
 }

@@ -1,0 +1,17 @@
+{
+  "canonical_entity_complete": false,
+  "local_rank_weak": true,
+  "pages_position_4_20": 0,
+  "ai_citation_gap": true,
+  "ai_mention_gap": true,
+  "independent_authority_gap": true,
+  "eligible_policy_violations": 1,
+  "serp_assets": [
+    {"type": "canonical_site", "url": "https://guyrofe.com/", "controlled": true, "status": "active"},
+    {"type": "social_profile", "url": "https://www.facebook.com/drguyrofe", "controlled": true, "status": "active"},
+    {"type": "social_profile", "url": "https://www.instagram.com/guy_rofe_md/", "controlled": true, "status": "active"},
+    {"type": "video_channel", "url": "https://youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg", "controlled": true, "status": "active"},
+    {"type": "professional_profile", "url": "https://www.linkedin.com/in/guyrofe", "controlled": true, "status": "active"},
+    {"type": "knowledge_entity", "url": "https://www.wikidata.org/wiki/Q140470790", "controlled": false, "status": "active"}
+  ]
+}

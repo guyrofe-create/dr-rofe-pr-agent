@@ -14,10 +14,12 @@ import os
 import sys
 from datetime import datetime, timezone
 
-from reputation_core import CommandCenter
+from reputation_core import CommandCenter, plan_growth_campaign
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 STATE_PATH = os.path.join(ROOT, "data", "command_center.json")
+PROFILE_PATH = os.path.join(ROOT, "data", "business_profile.json")
+OBSERVATIONS_PATH = os.path.join(ROOT, "data", "growth_observations.json")
 
 
 def now_iso():
@@ -69,6 +71,10 @@ def main():
     freeze.add_argument("value", choices=["on", "off"])
     freeze.add_argument("--actor", default="operator")
 
+    growth = sub.add_parser("plan-growth")
+    growth.add_argument("--profile", default=PROFILE_PATH)
+    growth.add_argument("--observations", default=OBSERVATIONS_PATH)
+
     args = parser.parse_args()
     center = CommandCenter(STATE_PATH)
 
@@ -84,6 +90,19 @@ def main():
         })
         center.save()
         print(json.dumps({"created": created, "event": event}, ensure_ascii=False, indent=2))
+        return
+    if args.command == "plan-growth":
+        with open(args.profile, encoding="utf-8") as handle:
+            profile = json.load(handle)
+        with open(args.observations, encoding="utf-8") as handle:
+            observations = json.load(handle)
+        campaign = plan_growth_campaign(profile, observations)
+        center.state["campaigns"] = [c for c in center.state["campaigns"] if c.get("id") != campaign["id"]]
+        center.state["campaigns"].append(campaign)
+        center.state["serp_assets"] = observations.get("serp_assets", [])
+        center._audit("growth_campaign_planned", campaign["id"], {"tasks": len(campaign["tasks"])})
+        center.save()
+        print(json.dumps(campaign, ensure_ascii=False, indent=2))
         return
     if args.command == "complete-task":
         task = find(center.state["tasks"], args.task_id)

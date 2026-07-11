@@ -58,6 +58,25 @@ override safety routing.
 - Preserve evidence before reporting or requesting removal.
 - Keep facts, claims and unknowns separated in crisis work.
 
+## Aggressive growth engine
+
+The growth layer pursues high cadence and maximum controllable coverage without
+using tactics that can invalidate the client's durable assets. Every monitor run
+updates observable gaps and replans a campaign across these surfaces:
+
+- branded Google/Bing result coverage with a diversified asset portfolio;
+- local relevance and prominence;
+- canonical entity facts and third-party corroboration;
+- passage-level expert answers for retrieval and citation;
+- original research and digital PR;
+- content refresh opportunities rather than scaled thin pages;
+- valid policy/legal correction and removal paths.
+
+Each tactic declares impact, speed, risk, prerequisites, actions and forbidden
+shortcuts. Campaign measurement deliberately separates traditional ranking,
+local share of voice, AI citation share, explicit brand mentions, sentiment and
+qualified business outcomes. Ranking and citation are outcomes, never promises.
+
 ## Next premium layers
 
 1. Authenticated multi-tenant API, encrypted connector vault and role-based approvals.
