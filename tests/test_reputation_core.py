@@ -82,6 +82,24 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertTrue(mirrors)
         self.assertTrue(all(a["tier"] == "Q" and a["automation"] == "disabled" for a in mirrors))
 
+    def test_drguyrofe_com_is_a_tier_a_knowledge_hub(self):
+        with open("data/asset_registry.json", encoding="utf-8") as handle:
+            registry = json.load(handle)
+        asset = next(a for a in registry["assets"] if a["url"] == "https://www.drguyrofe.com/")
+        self.assertEqual(asset["tier"], "A")
+        self.assertIn("knowledge_hub", asset["uses"])
+        self.assertEqual(asset["automation"], "wix_api_after_site_id")
+
+    def test_secret_manifest_contains_names_not_values(self):
+        with open("config/secrets_manifest.json", encoding="utf-8") as handle:
+            manifest = json.load(handle)
+        serialized = json.dumps(manifest).lower()
+        self.assertNotIn('"password"', serialized)
+        self.assertNotIn('"email"', serialized)
+        wix = next(c for c in manifest["connections"] if c["platform"] == "Wix drguyrofe.com")
+        self.assertIn("WIX_DRGUYROFE_COM_SITE_ID", wix["required"])
+        self.assertEqual(wix["status"], "missing_site_id")
+
     def test_asset_gap_distinguishes_controlled_and_independent(self):
         gap = build_serp_asset_gap([
             {"type": "canonical_site", "controlled": True, "page_one": True},

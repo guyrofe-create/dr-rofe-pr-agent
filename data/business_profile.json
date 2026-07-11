@@ -46,6 +46,7 @@
   "sites": [
     {
       "key": "GUYROFE_COM",
+      "platform": "wordpress",
       "base_url": "https://guyrofe.com",
       "url_secret_env": null,
       "user_env": "WORDPRESS_GUYROFE_COM_USER",
@@ -56,6 +57,7 @@
     },
     {
       "key": "DRGUYROFE_CO_IL",
+      "platform": "wordpress",
       "base_url": "https://www.drguyrofe.co.il",
       "url_secret_env": null,
       "user_env": "WORDPRESS_DRGUYROFE_CO_IL_USER",
@@ -63,6 +65,16 @@
       "canonical_url": "https://guyrofe.com/",
       "schema_page_slug": "schema-markup",
       "llms_page_slug": "llms"
+    },
+    {
+      "key": "DRGUYROFE_COM",
+      "platform": "wix",
+      "base_url": "https://www.drguyrofe.com",
+      "canonical_url": "https://www.drguyrofe.com/",
+      "api_key_env": "WIX_DRGUYROFE_COM_API",
+      "site_id_env": "WIX_DRGUYROFE_COM_SITE_ID",
+      "role": "knowledge_and_podcast_hub",
+      "sync_status": "pending_site_id"
     }
   ]
 }

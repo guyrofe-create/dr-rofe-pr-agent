@@ -16,6 +16,8 @@ stopping at alerts.
 - replans an aggressive, evidence-led Google and AI visibility campaign every monitor cycle;
 - maps first-page asset gaps and separates AI citations from explicit brand mentions;
 - maintains a credential-free A/B/C/Q asset registry and excludes quarantined Web 2.0 mirrors from automation;
+- treats `drguyrofe.com` as the official Wix knowledge-and-podcast hub, with a distinct job from the WordPress sites;
+- declares every supported integration in `config/secrets_manifest.json` without storing credential values;
 - continues the existing schema sync, social distribution and content workflows.
 
 ## Safety model
@@ -36,7 +38,14 @@ python scripts/command_center.py add-fact CRISIS_ROOM_ID "Verified fact" --sourc
 python scripts/command_center.py resolve-event EVENT_ID --resolution "resolution notes"
 python scripts/command_center.py set-freeze off --actor NAME
 python scripts/command_center.py plan-growth
+python scripts/check_secrets.py
 ```
+
+`check_secrets.py` reports missing environment-variable names only. GitHub
+Secrets must contain platform-issued API keys, OAuth tokens, application
+passwords or site identifiers—never personal passwords copied from an asset
+inventory. Wix publishing for `drguyrofe.com` requires both
+`WIX_DRGUYROFE_COM_API` and `WIX_DRGUYROFE_COM_SITE_ID`.
 
 Content freeze cannot be removed while an active crisis room exists.
 
