@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>לוח בקרה - מוניטין ד"ר גיא רופא</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; background:#0f1420; color:#e8ebf2; margin:0; padding:24px; }
+  h1 { font-size:22px; margin-bottom:4px; }
+  .sub { color:#8b93a7; margin-bottom:24px; font-size:14px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin-bottom:28px; }
+  .card { background:#171d2e; border:1px solid #262f45; border-radius:12px; padding:18px; }
+  .card .label { color:#8b93a7; font-size:13px; margin-bottom:6px; }
+  .card .value { font-size:28px; font-weight:700; }
+  .card .value.good { color:#4ade80; }
+  .card .value.bad { color:#f87171; }
+  .card .value.neutral { color:#e8ebf2; }
+  .chart-wrap { background:#171d2e; border:1px solid #262f45; border-radius:12px; padding:18px; margin-bottom:20px; }
+  .chart-wrap h3 { margin-top:0; font-size:15px; color:#c7cede; }
+  canvas { max-height: 320px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { text-align:right; padding:8px; border-bottom:1px solid #262f45; }
+  th { color:#8b93a7; font-weight:600; }
+  .alert-row { color:#f87171; }
+  a { color:#7dd3fc; }
+  #loading { color:#8b93a7; }
+</style>
+</head>
+<body>
+  <h1>לוח בקרה - מוניטין ד"ר גיא רופא</h1>
+  <div class="sub">מתעדכן אוטומטית מכל ריצת ניטור. <span id="lastUpdated"></span></div>
+  <div id="loading">טוען נתונים...</div>
+  <div id="content" style="display:none">
+    <div class="grid" id="summaryCards"></div>
+    <div class="chart-wrap"><h3>דירוג גוגל - "דר גיא רופא" (מיקום, נמוך יותר = טוב יותר)</h3><canvas id="rankChart"></canvas></div>
+    <div class="chart-wrap"><h3>דירוג ומספר ביקורות גוגל ביזנס לאורך זמן</h3><canvas id="reviewsChart"></canvas></div>
+    <div class="chart-wrap">
+      <h3>התרעות אחרונות</h3>
+      <table id="alertsTable"><thead><tr><th>תאריך</th><th>סוג</th><th>פרטים</th></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+
+<script>
+const HISTORY_URL = "https://raw.githubusercontent.com/guyrofe-create/dr-rofe-pr-agent/main/data/reputation_history.json";
+
+fetch(HISTORY_URL, { cache: "no-store" })
+  .then(r => r.json())
+  .then(renderDashboard)
+  .catch(err => {
+    document.getElementById("loading").textContent = "לא ניתן לטעון נתונים עדיין - ריצת הניטור הראשונה עוד לא בוצעה.";
+  });
+
+function renderDashboard(history) {
+  const snapshots = history.snapshots || [];
+  if (!snapshots.length) {
+    document.getElementById("loading").textContent = "אין עדיין נתונים היסטוריים.";
+    return;
+  }
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("content").style.display = "block";
+
+  const latest = snapshots[snapshots.length - 1];
+  document.getElementById("lastUpdated").textContent = "עדכון אחרון: " + new Date(latest.date).toLocaleString("he-IL");
+
+  // Summary cards
+  const cards = document.getElementById("summaryCards");
+  const rankEntry = (latest.rank || []).find(r => r.keyword === "דר גיא רופא");
+  const reviews = latest.reviews || {};
+  const fb = latest.facebook_recommendations || {};
+  const geoMentioned = (latest.geo || []).filter(g => g.mentions_dr_rofe).length;
+  const geoTotal = (latest.geo || []).length;
+
+  cards.innerHTML = `
+    <div class="card">
+      <div class="label">מיקום בגוגל - "דר גיא רופא"</div>
+      <div class="value ${rankEntry && rankEntry.position_top10 ? 'good' : 'bad'}">${rankEntry && rankEntry.position_top10 ? '#' + rankEntry.position_top10 : 'לא בעשירייה'}</div>
+    </div>
+    <div class="card">
+      <div class="label">דירוג גוגל ביזנס</div>
+      <div class="value ${reviews.rating >= 4 ? 'good' : 'bad'}">${reviews.rating ?? '-'}★</div>
+    </div>
+    <div class="card">
+      <div class="label">סה"כ ביקורות גוגל</div>
+      <div class="value neutral">${reviews.total_reviews ?? '-'}</div>
+    </div>
+    <div class="card">
+      <div class="label">המלצות פייסבוק (חיובי/שלילי)</div>
+      <div class="value neutral">${fb.positive ?? '-'} / ${fb.negative ?? '-'}</div>
+    </div>
+    <div class="card">
+      <div class="label">נוכחות ב-AI (GEO)</div>
+      <div class="value ${geoMentioned === geoTotal && geoTotal > 0 ? 'good' : 'neutral'}">${geoMentioned}/${geoTotal}</div>
+    </div>
+  `;
+
+  // Rank chart
+  const labels = snapshots.map(s => new Date(s.date).toLocaleDateString("he-IL"));
+  const rankData = snapshots.map(s => {
+    const e = (s.rank || []).find(r => r.keyword === "דר גיא רופא");
+    return e && e.position_top10 ? e.position_top10 : null;
+  });
+  new Chart(document.getElementById("rankChart"), {
+    type: "line",
+    data: { labels, datasets: [{ label: "מיקום", data: rankData, borderColor: "#7dd3fc", spanGaps: true, tension: 0.3 }] },
+    options: { scales: { y: { reverse: true, title: { display: true, text: "מיקום (הפוך)" } } } }
+  });
+
+  // Reviews chart (dual axis)
+  const ratingData = snapshots.map(s => (s.reviews || {}).rating ?? null);
+  const countData = snapshots.map(s => (s.reviews || {}).total_reviews ?? null);
+  new Chart(document.getElementById("reviewsChart"), {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        { label: "דירוג (★)", data: ratingData, borderColor: "#4ade80", yAxisID: "y", spanGaps: true, tension: 0.3 },
+        { label: "מספר ביקורות", data: countData, borderColor: "#f59e0b", yAxisID: "y1", spanGaps: true, tension: 0.3 },
+      ]
+    },
+    options: {
+      scales: {
+        y: { position: "left", min: 0, max: 5, title: { display: true, text: "דירוג" } },
+        y1: { position: "right", title: { display: true, text: "מס' ביקורות" }, grid: { drawOnChartArea: false } },
+      }
+    }
+  });
+
+  // Alerts table
+  const tbody = document.querySelector("#alertsTable tbody");
+  const allAlerts = [];
+  snapshots.forEach(s => (s.alerts || []).forEach(a => allAlerts.push({ date: s.date, ...a })));
+  allAlerts.reverse().slice(0, 30).forEach(a => {
+    const tr = document.createElement("tr");
+    tr.className = "alert-row";
+    const detail = a.excerpt || (a.from !== undefined ? `${a.from}★ → ${a.to}★` : "");
+    tr.innerHTML = `<td>${new Date(a.date).toLocaleString("he-IL")}</td><td>${a.type}</td><td>${detail}</td>`;
+    tbody.appendChild(tr);
+  });
+  if (!allAlerts.length) {
+    tbody.innerHTML = '<tr><td colspan="3">אין התרעות עד כה 🎉</td></tr>';
+  }
+}
+</script>
+</body>
+</html>
