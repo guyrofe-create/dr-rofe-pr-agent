@@ -4,7 +4,7 @@ Dr. Guy Rofe - Reputation & Visibility Monitor
 Runs daily on GitHub Actions (see .github/workflows/monitor.yml).
 
 Checks, in order:
-  1. Google rank      - target keywords vs guyrofe.com (Google Custom Search API)
+  1. Google rank      - target keywords vs guyrofe.com (SerpApi - live Google Search)
   2. AI/GEO presence   - does ChatGPT already know Dr. Guy Rofe when asked
   3. Token/session health - every configured publisher credential, still valid?
   4. Google Business reviews - rating & review count (Google Places API)
@@ -48,22 +48,33 @@ def env(name):
 # ─── 1. Google rank via Custom Search JSON API ───────────────────────────────
 
 def check_google_rank():
-    api_key = env("GOOGLE_CSE_API_KEY")
-    cx = env("GOOGLE_CSE_CX")
-    if not api_key or not cx:
-        REPORT["rank"].append({"status": "skipped", "reason": "GOOGLE_CSE_API_KEY / GOOGLE_CSE_CX not set"})
+    api_key = env("SERPAPI_KEY")
+    if not api_key:
+        REPORT["rank"].append({"status": "skipped", "reason": "SERPAPI_KEY not set"})
         return
     for kw in KEYWORDS:
         try:
             resp = requests.get(
-                "https://www.googleapis.com/customsearch/v1",
-                params={"key": api_key, "cx": cx, "q": kw, "num": 10},
+                "https://serpapi.com/search.json",
+                params={
+                    "engine": "google",
+                    "q": kw,
+                    "google_domain": "google.co.il",
+                    "gl": "il",
+                    "hl": "iw",
+                    "num": 10,
+                    "api_key": api_key,
+                },
                 timeout=20,
             )
             resp.raise_for_status()
-            items = resp.json().get("items", [])
+            data = resp.json()
+            if "error" in data:
+                REPORT["rank"].append({"keyword": kw, "status": "error", "detail": data["error"]})
+                continue
+            organic = data.get("organic_results", [])
             position = next(
-                (i + 1 for i, it in enumerate(items) if SITE_DOMAIN in it.get("link", "")),
+                (r.get("position", i + 1) for i, r in enumerate(organic) if SITE_DOMAIN in r.get("link", "")),
                 None,
             )
             REPORT["rank"].append({
@@ -256,3 +267,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
