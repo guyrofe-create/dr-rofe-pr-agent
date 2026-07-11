@@ -2,12 +2,12 @@ name: Dr. Rofe Reputation Monitor
 
 on:
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 
 permissions:
   issues: write
-  contents: read
+  contents: write
 
 jobs:
   monitor:
@@ -53,6 +53,16 @@ jobs:
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+
+      - name: Commit reputation history
+        if: always()
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add data/reputation_history.json || true
+          git diff --cached --quiet || git commit -m "Update reputation history $(date +%Y-%m-%d\ %H:%M)"
+          git pull --rebase || true
+          git push || true
 
       - name: Upload monitor report
         if: always()
