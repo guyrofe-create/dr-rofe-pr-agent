@@ -12,12 +12,26 @@ ACCOUNT_ID = os.environ.get("WIX_DRGUYROFE_COM_ACCOUNT_ID", "").strip()
 HEADERS = {"Authorization": API_KEY, "wix-site-id": SITE_ID}
 
 
+def safe_error(response):
+    try:
+        payload = response.json()
+    except ValueError:
+        return "non-JSON response"
+    details = payload.get("details", {}) if isinstance(payload, dict) else {}
+    parts = [
+        str(payload.get("message", "")),
+        str(details.get("applicationError", {}).get("description", "")),
+        str(details.get("validationError", {}).get("fieldViolations", "")),
+    ]
+    return " | ".join(part for part in parts if part)[:500] or "no public error detail"
+
+
 def check(name, method, url, **kwargs):
     response = requests.request(method, url, headers=HEADERS, timeout=20, **kwargs)
     if response.ok:
         print(f"PASS {name}: HTTP {response.status_code}")
         return True
-    print(f"FAIL {name}: HTTP {response.status_code}")
+    print(f"FAIL {name}: HTTP {response.status_code} - {safe_error(response)}")
     return False
 
 
@@ -38,7 +52,8 @@ def main():
         account_ok = response.ok and any(
             site.get("id") == SITE_ID for site in response.json().get("sites", [])
         )
-        print(f"{'PASS' if account_ok else 'FAIL'} account owns target site: HTTP {response.status_code}")
+        detail = "" if account_ok else f" - {safe_error(response)}"
+        print(f"{'PASS' if account_ok else 'FAIL'} account owns target site: HTTP {response.status_code}{detail}")
     else:
         print("FAIL Wix account ID is missing")
 
