@@ -23,6 +23,19 @@ class MetaConnectionTests(unittest.TestCase):
         get.return_value = response
         self.assertEqual(meta.resolve_instagram_business_id(), "178400000000002")
 
+    @patch.dict(os.environ, {
+        "FACEBOOK_PAGE_ID": "123", "FACEBOOK_PAGE_TOKEN": "token"
+    }, clear=True)
+    @patch("scripts.social_publishers.meta.requests.get")
+    def test_discovers_connected_creator_account(self, get):
+        response = Mock()
+        response.json.return_value = {
+            "connected_instagram_account": {"id": "178400000000003", "username": "creator"}
+        }
+        response.raise_for_status.return_value = None
+        get.return_value = response
+        self.assertEqual(meta.resolve_instagram_business_id(), "178400000000003")
+
 
 if __name__ == "__main__":
     unittest.main()

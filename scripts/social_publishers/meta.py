@@ -34,11 +34,22 @@ def resolve_instagram_business_id():
     token = common.env("FACEBOOK_PAGE_TOKEN")
     resp = requests.get(
         f"{GRAPH}/{page_id}",
-        params={"fields": "instagram_business_account{id,username}", "access_token": token},
+        params={
+            "fields": (
+                "instagram_business_account{id,username},"
+                "connected_instagram_account{id,username}"
+            ),
+            "access_token": token,
+        },
         timeout=15,
     )
     resp.raise_for_status()
-    account = resp.json().get("instagram_business_account") or {}
+    payload = resp.json()
+    account = (
+        payload.get("instagram_business_account")
+        or payload.get("connected_instagram_account")
+        or {}
+    )
     if not account.get("id"):
         raise RuntimeError("No Instagram Business account is linked to the Facebook Page")
     return account["id"]
