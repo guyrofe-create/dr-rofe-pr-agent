@@ -98,7 +98,7 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertNotIn('"email"', serialized)
         wix = next(c for c in manifest["connections"] if c["platform"] == "Wix drguyrofe.com")
         self.assertIn("WIX_DRGUYROFE_COM_SITE_ID", wix["required"])
-        self.assertEqual(wix["status"], "missing_site_id")
+        self.assertEqual(wix["status"], "configured")
 
     def test_asset_gap_distinguishes_controlled_and_independent(self):
         gap = build_serp_asset_gap([
