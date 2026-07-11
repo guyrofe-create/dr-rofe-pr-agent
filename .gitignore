@@ -1,0 +1,20 @@
+# Environment variables (contain API keys and passwords — NEVER commit)
+.env
+.env.*
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+.Python
+venv/
+env/
+.venv/
+
+# Logs and run artifacts
+*.log
+run_log.txt
+monitor_report.json
+
+# macOS
+.DS_Store
