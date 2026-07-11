@@ -3,143 +3,543 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>לוח בקרה - מוניטין ד"ר גיא רופא</title>
+<title>PR Intelligence — ד"ר גיא רופא</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <style>
-  body { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; background:#0f1420; color:#e8ebf2; margin:0; padding:24px; }
-  h1 { font-size:22px; margin-bottom:4px; }
-  .sub { color:#8b93a7; margin-bottom:24px; font-size:14px; }
-  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin-bottom:28px; }
-  .card { background:#171d2e; border:1px solid #262f45; border-radius:12px; padding:18px; }
-  .card .label { color:#8b93a7; font-size:13px; margin-bottom:6px; }
-  .card .value { font-size:28px; font-weight:700; }
-  .card .value.good { color:#4ade80; }
-  .card .value.bad { color:#f87171; }
-  .card .value.neutral { color:#e8ebf2; }
-  .chart-wrap { background:#171d2e; border:1px solid #262f45; border-radius:12px; padding:18px; margin-bottom:20px; }
-  .chart-wrap h3 { margin-top:0; font-size:15px; color:#c7cede; }
-  canvas { max-height: 320px; }
-  table { width:100%; border-collapse:collapse; font-size:13px; }
-  th, td { text-align:right; padding:8px; border-bottom:1px solid #262f45; }
-  th { color:#8b93a7; font-weight:600; }
-  .alert-row { color:#f87171; }
-  a { color:#7dd3fc; }
-  #loading { color:#8b93a7; }
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0f1a;--surface:#111827;--border:#1e2d45;--border2:#263352;
+  --text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--green:#10b981;
+  --red:#ef4444;--yellow:#f59e0b;--purple:#8b5cf6;--cyan:#06b6d4;
+}
+body{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* TOP BAR */
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.topbar-title{font-size:16px;font-weight:700;letter-spacing:.3px}
+.topbar-title span{color:var(--accent)}
+.topbar-meta{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:16px}
+.pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ALERT BANNER */
+.banner{background:#1a0a0a;border:1px solid #7f1d1d;border-radius:8px;padding:12px 16px;margin:16px 24px;display:flex;align-items:flex-start;gap:10px;font-size:13px}
+.banner.hidden{display:none}
+.banner-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.banner-body{flex:1}
+.banner-title{font-weight:700;color:var(--red);margin-bottom:4px;font-size:14px}
+.banner-detail{color:#fca5a5;line-height:1.5}
+
+/* MAIN GRID */
+.main{padding:16px 24px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px}
+@media(max-width:900px){.main{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.main{grid-template-columns:1fr}}
+
+/* STAT CARDS */
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:var(--accent)}
+.stat.good::before{background:var(--green)}
+.stat.bad::before{background:var(--red)}
+.stat.warn::before{background:var(--yellow)}
+.stat.info::before{background:var(--purple)}
+.stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.stat-value{font-size:30px;font-weight:800;line-height:1}
+.stat-sub{font-size:11px;color:var(--muted);margin-top:4px}
+.stat-value.green{color:var(--green)}
+.stat-value.red{color:var(--red)}
+.stat-value.yellow{color:var(--yellow)}
+.stat-value.blue{color:var(--accent)}
+.stat-value.purple{color:var(--purple)}
+
+/* SECTION WRAPPER */
+.sections{padding:0 24px 24px;display:flex;flex-direction:column;gap:16px}
+
+/* PANEL */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.panel-head{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.panel-head h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.panel-head .badge{font-size:11px;background:var(--border2);border-radius:20px;padding:2px 10px;color:var(--text)}
+.panel-head .badge.red{background:#450a0a;color:var(--red)}
+.panel-head .badge.green{background:#052e16;color:var(--green)}
+.panel-head .badge.yellow{background:#431407;color:var(--yellow)}
+.panel-body{padding:0}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:right;padding:9px 18px;color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;background:#0d1525;border-bottom:1px solid var(--border)}
+td{text-align:right;padding:10px 18px;border-bottom:1px solid var(--border)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#13202f}
+
+/* KEYWORD RANKS */
+.rank-num{display:inline-block;background:var(--accent);color:#fff;border-radius:4px;padding:1px 8px;font-weight:700;font-size:12px;min-width:28px;text-align:center}
+.rank-num.bad{background:#450a0a;color:var(--red)}
+.rank-num.good{background:#052e16;color:var(--green)}
+.rank-num.top3{background:#1d4ed8;color:#fff}
+
+/* STATUS DOTS */
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:6px;vertical-align:middle}
+.dot.ok{background:var(--green)}
+.dot.err{background:var(--red)}
+.dot.warn{background:var(--yellow)}
+.dot.off{background:var(--muted)}
+
+/* REVIEW CARD */
+.review-item{padding:14px 18px;border-bottom:1px solid var(--border)}
+.review-item:last-child{border-bottom:none}
+.review-item.negative{background:#0d0808}
+.review-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.review-author{font-weight:600;font-size:13px}
+.review-stars{color:var(--yellow);font-size:13px;letter-spacing:1px}
+.review-text{font-size:12px;color:#9ca3af;line-height:1.5;font-style:italic}
+.review-type{font-size:10px;background:#450a0a;color:var(--red);border-radius:3px;padding:1px 6px;font-weight:600}
+
+/* GEO */
+.geo-item{padding:14px 18px;border-bottom:1px solid var(--border)}
+.geo-item:last-child{border-bottom:none}
+.geo-query{font-size:12px;color:var(--muted);margin-bottom:6px}
+.geo-status{font-size:12px;font-weight:600;margin-bottom:6px}
+.geo-status.yes{color:var(--green)}
+.geo-status.no{color:var(--red)}
+.geo-excerpt{font-size:12px;color:#9ca3af;line-height:1.5;border-right:2px solid var(--border2);padding-right:10px;font-style:italic}
+
+/* PLATFORM GRID */
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1px;background:var(--border)}
+.plat-item{background:var(--surface);padding:14px 16px;display:flex;align-items:center;gap:10px}
+.plat-icon{font-size:20px;flex-shrink:0}
+.plat-name{font-size:12px;font-weight:600}
+.plat-detail{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* CHART */
+.chart-wrap{padding:16px 18px}
+canvas{max-height:260px}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+
+/* WEB MENTIONS */
+.mention-item{padding:10px 18px;border-bottom:1px solid var(--border);font-size:12px}
+.mention-item:last-child{border-bottom:none}
+.mention-url{color:var(--accent);word-break:break-all}
+
+/* FOOTER */
+.footer{text-align:center;font-size:11px;color:var(--muted);padding:20px;border-top:1px solid var(--border);margin-top:auto}
+
+.spinner{text-align:center;padding:60px;color:var(--muted)}
 </style>
 </head>
 <body>
-  <h1>לוח בקרה - מוניטין ד"ר גיא רופא</h1>
-  <div class="sub">מתעדכן אוטומטית מכל ריצת ניטור. <span id="lastUpdated"></span></div>
-  <div id="loading">טוען נתונים...</div>
-  <div id="content" style="display:none">
-    <div class="grid" id="summaryCards"></div>
-    <div class="chart-wrap"><h3>דירוג גוגל - "דר גיא רופא" (מיקום, נמוך יותר = טוב יותר)</h3><canvas id="rankChart"></canvas></div>
-    <div class="chart-wrap"><h3>דירוג ומספר ביקורות גוגל ביזנס לאורך זמן</h3><canvas id="reviewsChart"></canvas></div>
-    <div class="chart-wrap">
-      <h3>התרעות אחרונות</h3>
-      <table id="alertsTable"><thead><tr><th>תאריך</th><th>סוג</th><th>פרטים</th></tr></thead><tbody></tbody></table>
+
+<div class="topbar">
+  <div class="topbar-title">PR Intelligence — <span>ד"ר גיא רופא</span></div>
+  <div class="topbar-meta">
+    <span><span class="pulse"></span> מתעדכן כל 2 שעות</span>
+    <span id="lastUpdated">טוען...</span>
+    <a href="https://github.com/guyrofe-create/dr-rofe-pr-agent/actions" target="_blank">GitHub Actions ↗</a>
+  </div>
+</div>
+
+<div id="alertBanner" class="banner hidden">
+  <div class="banner-icon">🚨</div>
+  <div class="banner-body">
+    <div class="banner-title" id="bannerTitle"></div>
+    <div class="banner-detail" id="bannerDetail"></div>
+  </div>
+</div>
+
+<div class="main" id="statsGrid">
+  <div class="spinner" style="grid-column:1/-1">טוען נתונים...</div>
+</div>
+
+<div class="sections" id="sectionsArea" style="display:none">
+
+  <!-- SERP + GEO in two col -->
+  <div class="two-col">
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>🔍 דירוגי גוגל (SERP)</h2>
+        <span class="badge" id="serpBadge">—</span>
+      </div>
+      <div class="panel-body">
+        <table>
+          <thead><tr><th>מילת מפתח</th><th>מיקום</th><th>מגמה</th></tr></thead>
+          <tbody id="serpTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>🤖 נוכחות AI (GEO)</h2>
+        <span class="badge" id="geoBadge">—</span>
+      </div>
+      <div class="panel-body" id="geoList"></div>
+    </div>
+
+  </div>
+
+  <!-- Reviews panel -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>⭐ ביקורות גוגל ביזנס</h2>
+      <span class="badge" id="reviewsBadge">—</span>
+    </div>
+    <div class="panel-body" id="reviewsList"></div>
+  </div>
+
+  <!-- Charts -->
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-head"><h2>📈 מיקום גוגל לאורך זמן</h2></div>
+      <div class="chart-wrap"><canvas id="rankChart"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>⭐ דירוג וביקורות לאורך זמן</h2></div>
+      <div class="chart-wrap"><canvas id="reviewsChart"></canvas></div>
     </div>
   </div>
 
-<script>
-const HISTORY_URL = "https://raw.githubusercontent.com/guyrofe-create/dr-rofe-pr-agent/main/data/reputation_history.json";
+  <!-- Platforms -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>📡 סטטוס פלטפורמות</h2>
+      <span class="badge" id="platBadge">—</span>
+    </div>
+    <div class="plat-grid" id="platGrid"></div>
+  </div>
 
-fetch(HISTORY_URL, { cache: "no-store" })
+  <!-- Web mentions -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>🌐 אזכורי רשת (Web Mentions)</h2>
+      <span class="badge" id="mentionsBadge">—</span>
+    </div>
+    <div class="panel-body" id="mentionsList"></div>
+  </div>
+
+  <!-- Alerts history -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>🚨 היסטוריית התרעות</h2>
+      <span class="badge" id="alertsBadge">—</span>
+    </div>
+    <div class="panel-body">
+      <table>
+        <thead><tr><th>תאריך</th><th>סוג</th><th>מקור</th><th>פרטים</th></tr></thead>
+        <tbody id="alertsTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  PR Intelligence · <a href="https://github.com/guyrofe-create/dr-rofe-pr-agent" target="_blank">guyrofe-create/dr-rofe-pr-agent</a> · 
+  <a href="https://github.com/guyrofe-create/dr-rofe-pr-agent/actions" target="_blank">Workflow runs</a>
+</div>
+
+<script>
+const DATA_URL = "https://raw.githubusercontent.com/guyrofe-create/dr-rofe-pr-agent/main/data/reputation_history.json";
+
+const PLAT_ICONS = {
+  "Facebook":"📘","Twitter/X":"🐦","Tumblr":"📓","Telegram":"✈️",
+  "Blogger":"📝","Pinterest":"📌","Medium":"⬛","Instagram":"📷","YouTube":"▶️"
+};
+
+const ALERT_TYPE_LABELS = {
+  "negative_review":"ביקורת שלילית","rating_drop":"ירידת דירוג",
+  "new_mention":"אזכור חדש","token_expired":"טוקן פג","keyword_drop":"ירידת מיקום"
+};
+
+fetch(DATA_URL, { cache:"no-store" })
   .then(r => r.json())
-  .then(renderDashboard)
-  .catch(err => {
-    document.getElementById("loading").textContent = "לא ניתן לטעון נתונים עדיין - ריצת הניטור הראשונה עוד לא בוצעה.";
+  .then(render)
+  .catch(() => {
+    document.getElementById("statsGrid").innerHTML =
+      '<div class="spinner" style="grid-column:1/-1;color:#ef4444">לא ניתן לטעון נתונים — ריצת הניטור הראשונה עדיין לא הסתיימה.</div>';
   });
 
-function renderDashboard(history) {
-  const snapshots = history.snapshots || [];
-  if (!snapshots.length) {
-    document.getElementById("loading").textContent = "אין עדיין נתונים היסטוריים.";
-    return;
-  }
-  document.getElementById("loading").style.display = "none";
-  document.getElementById("content").style.display = "block";
+function render(data) {
+  const snapshots = data.snapshots || [];
+  if (!snapshots.length) return;
 
   const latest = snapshots[snapshots.length - 1];
-  document.getElementById("lastUpdated").textContent = "עדכון אחרון: " + new Date(latest.date).toLocaleString("he-IL");
+  const prev   = snapshots.length > 1 ? snapshots[snapshots.length - 2] : null;
 
-  // Summary cards
-  const cards = document.getElementById("summaryCards");
-  const rankEntry = (latest.rank || []).find(r => r.keyword === "דר גיא רופא");
-  const reviews = latest.reviews || {};
+  document.getElementById("lastUpdated").textContent =
+    "עדכון: " + new Date(latest.date).toLocaleString("he-IL");
+
+  renderBanner(latest, data);
+  renderStats(latest, prev, snapshots);
+  renderSerp(latest, prev);
+  renderGeo(latest);
+  renderReviews(latest, data);
+  renderPlatforms(latest);
+  renderMentions(data);
+  renderAlerts(snapshots);
+  renderCharts(snapshots);
+
+  document.getElementById("sectionsArea").style.display = "";
+}
+
+/* ---- BANNER ---- */
+function renderBanner(latest, data) {
+  const negReviews = (latest.alerts || []).filter(a => a.type === "negative_review");
   const fb = latest.facebook_recommendations || {};
+  const fbError = fb.status === "error";
+  const issues = [];
+  if (negReviews.length) issues.push(`${negReviews.length} ביקורות שליליות חדשות בגוגל ביזנס`);
+  if (fbError) issues.push("שגיאת הרשאה ב-Facebook API (pages_read_user_content)");
+  if (!issues.length) return;
+  const banner = document.getElementById("alertBanner");
+  banner.classList.remove("hidden");
+  document.getElementById("bannerTitle").textContent = "⚠️ דורש טיפול מיידי";
+  document.getElementById("bannerDetail").innerHTML = issues.map(i => "• " + i).join("<br>");
+}
+
+/* ---- STATS ---- */
+function renderStats(latest, prev, snapshots) {
+  const rankEntry = (latest.rank || []).find(r => r.keyword === "דר גיא רופא");
+  const prevRankEntry = prev ? (prev.rank || []).find(r => r.keyword === "דר גיא רופא") : null;
+  const pos = rankEntry?.position_top10;
+  const prevPos = prevRankEntry?.position_top10;
+
+  const reviews = latest.reviews || {};
   const geoMentioned = (latest.geo || []).filter(g => g.mentions_dr_rofe).length;
   const geoTotal = (latest.geo || []).length;
+  const negCount = (latest.alerts || []).filter(a => a.type === "negative_review").length;
+  const platsOk = (latest.tokens || []).filter(t => t.ok).length;
+  const platsTotal = (latest.tokens || []).length;
 
-  cards.innerHTML = `
-    <div class="card">
-      <div class="label">מיקום בגוגל - "דר גיא רופא"</div>
-      <div class="value ${rankEntry && rankEntry.position_top10 ? 'good' : 'bad'}">${rankEntry && rankEntry.position_top10 ? '#' + rankEntry.position_top10 : 'לא בעשירייה'}</div>
+  const posDisplay = pos ? "#" + pos : "מחוץ ל-10";
+  const posDelta = (pos && prevPos) ? (prevPos - pos) : 0;
+  const posDeltaStr = posDelta > 0 ? `▲${posDelta}` : posDelta < 0 ? `▼${Math.abs(posDelta)}` : "—";
+
+  document.getElementById("statsGrid").innerHTML = `
+    <div class="stat ${pos && pos <= 3 ? 'good' : pos ? '' : 'bad'}">
+      <div class="stat-label">מיקום גוגל — "דר גיא רופא"</div>
+      <div class="stat-value ${pos && pos <= 3 ? 'green' : pos ? 'blue' : 'red'}">${posDisplay}</div>
+      <div class="stat-sub">שינוי: ${posDeltaStr}</div>
     </div>
-    <div class="card">
-      <div class="label">דירוג גוגל ביזנס</div>
-      <div class="value ${reviews.rating >= 4 ? 'good' : 'bad'}">${reviews.rating ?? '-'}★</div>
+    <div class="stat ${reviews.rating >= 4.5 ? 'good' : reviews.rating >= 4 ? '' : 'bad'}">
+      <div class="stat-label">דירוג גוגל ביזנס</div>
+      <div class="stat-value ${reviews.rating >= 4.5 ? 'green' : reviews.rating >= 4 ? 'yellow' : 'red'}">${reviews.rating ?? "—"}★</div>
+      <div class="stat-sub">${reviews.total_reviews ?? "—"} ביקורות סה"כ</div>
     </div>
-    <div class="card">
-      <div class="label">סה"כ ביקורות גוגל</div>
-      <div class="value neutral">${reviews.total_reviews ?? '-'}</div>
+    <div class="stat ${negCount > 0 ? 'bad' : 'good'}">
+      <div class="stat-label">ביקורות שליליות (ריצה אחרונה)</div>
+      <div class="stat-value ${negCount > 0 ? 'red' : 'green'}">${negCount}</div>
+      <div class="stat-sub">${negCount > 0 ? 'דורש טיפול מיידי' : 'הכל תקין'}</div>
     </div>
-    <div class="card">
-      <div class="label">המלצות פייסבוק (חיובי/שלילי)</div>
-      <div class="value neutral">${fb.positive ?? '-'} / ${fb.negative ?? '-'}</div>
+    <div class="stat ${geoMentioned >= geoTotal && geoTotal > 0 ? 'good' : 'warn'}">
+      <div class="stat-label">נוכחות AI (GEO)</div>
+      <div class="stat-value ${geoMentioned >= geoTotal ? 'green' : 'yellow'}">${geoMentioned}/${geoTotal}</div>
+      <div class="stat-sub">שאילתות AI שמזכירות אותו</div>
     </div>
-    <div class="card">
-      <div class="label">נוכחות ב-AI (GEO)</div>
-      <div class="value ${geoMentioned === geoTotal && geoTotal > 0 ? 'good' : 'neutral'}">${geoMentioned}/${geoTotal}</div>
+    <div class="stat ${platsOk === platsTotal ? 'good' : 'warn'}" style="grid-column:span 2">
+      <div class="stat-label">פלטפורמות מחוברות</div>
+      <div class="stat-value ${platsOk === platsTotal ? 'green' : 'yellow'}">${platsOk}<span style="font-size:16px;font-weight:400;color:var(--muted)">/${platsTotal}</span></div>
+      <div class="stat-sub">${platsOk === platsTotal ? 'כל הפלטפורמות פעילות' : `${platsTotal - platsOk} לא מוגדרות`}</div>
+    </div>
+    <div class="stat info" style="grid-column:span 2">
+      <div class="stat-label">תמונת מצב כוללת</div>
+      <div class="stat-value purple">${snapshots.length}</div>
+      <div class="stat-sub">סנאפשוטים נאספו · ניטור פעיל כל 2 שעות</div>
     </div>
   `;
+}
 
-  // Rank chart
-  const labels = snapshots.map(s => new Date(s.date).toLocaleDateString("he-IL"));
-  const rankData = snapshots.map(s => {
-    const e = (s.rank || []).find(r => r.keyword === "דר גיא רופא");
-    return e && e.position_top10 ? e.position_top10 : null;
-  });
+/* ---- SERP ---- */
+function renderSerp(latest, prev) {
+  const rows = latest.rank || [];
+  const prevMap = {};
+  if (prev) (prev.rank || []).forEach(r => prevMap[r.keyword] = r.position_top10);
+
+  const inTop = rows.filter(r => r.position_top10).length;
+  document.getElementById("serpBadge").textContent = `${inTop}/${rows.length} ב-Top 10`;
+  if (inTop > 0) document.getElementById("serpBadge").className = "badge green";
+
+  const tbody = document.getElementById("serpTable");
+  tbody.innerHTML = rows.map(r => {
+    const pos = r.position_top10;
+    const prev = prevMap[r.keyword];
+    const delta = (pos && prev) ? prev - pos : null;
+    const deltaStr = delta === null ? "—" : delta > 0 ? `<span style="color:var(--green)">▲${delta}</span>` : delta < 0 ? `<span style="color:var(--red)">▼${Math.abs(delta)}</span>` : "=";
+    const cls = !pos ? "bad" : pos <= 3 ? "top3" : pos <= 5 ? "good" : "";
+    const posStr = pos ? `#${pos}` : "לא ב-Top 10";
+    return `<tr>
+      <td>${r.keyword}</td>
+      <td><span class="rank-num ${cls}">${posStr}</span></td>
+      <td>${deltaStr}</td>
+    </tr>`;
+  }).join("");
+}
+
+/* ---- GEO ---- */
+function renderGeo(latest) {
+  const items = latest.geo || [];
+  const mentioned = items.filter(g => g.mentions_dr_rofe).length;
+  const badge = document.getElementById("geoBadge");
+  badge.textContent = `${mentioned}/${items.length} מוזכר`;
+  badge.className = mentioned === items.length ? "badge green" : "badge yellow";
+
+  document.getElementById("geoList").innerHTML = items.map(g => `
+    <div class="geo-item">
+      <div class="geo-query">🔎 ${g.prompt}</div>
+      <div class="geo-status ${g.mentions_dr_rofe ? 'yes' : 'no'}">
+        ${g.mentions_dr_rofe ? "✅ מוזכר" : "❌ לא מוזכר"}
+      </div>
+      ${g.excerpt ? `<div class="geo-excerpt">"${g.excerpt.substring(0,200)}..."</div>` : ""}
+    </div>
+  `).join("") || '<div style="padding:16px;color:var(--muted);font-size:13px">אין נתוני GEO</div>';
+}
+
+/* ---- REVIEWS ---- */
+function renderReviews(latest, data) {
+  const rev = latest.reviews || {};
+  const alerts = (latest.alerts || []).filter(a => a.type === "negative_review");
+  const badge = document.getElementById("reviewsBadge");
+  badge.textContent = `${rev.rating ?? "—"}★ · ${rev.total_reviews ?? "—"} ביקורות`;
+  badge.className = rev.rating >= 4.5 ? "badge green" : rev.rating >= 4 ? "badge yellow" : "badge red";
+
+  let html = "";
+  if (alerts.length) {
+    html += `<div style="background:#1a0808;padding:10px 18px;font-size:12px;color:#fca5a5;border-bottom:1px solid #7f1d1d">
+      🚨 <strong>${alerts.length} ביקורות שליליות חדשות בריצה האחרונה</strong>
+    </div>`;
+    alerts.forEach(a => {
+      html += `<div class="review-item negative">
+        <div class="review-header">
+          <span class="review-author">${a.author || "אנונימי"} <span class="review-type">שלילי</span></span>
+          <span class="review-stars">${"★".repeat(a.rating ?? 1)}${"☆".repeat(5-(a.rating??1))}</span>
+        </div>
+        ${a.excerpt ? `<div class="review-text">"${a.excerpt}"</div>` : '<div class="review-text" style="color:var(--muted)">ביקורת ללא טקסט</div>'}
+      </div>`;
+    });
+  }
+  if (rev.latest_review_excerpt && !alerts.some(a => a.excerpt === rev.latest_review_excerpt)) {
+    html += `<div class="review-item">
+      <div class="review-header">
+        <span class="review-author">ביקורת אחרונה</span>
+        <span class="review-stars" style="color:var(--green)">★ ${rev.rating}</span>
+      </div>
+      <div class="review-text">"${rev.latest_review_excerpt}"</div>
+    </div>`;
+  }
+  if (!html) html = '<div style="padding:16px;color:var(--muted);font-size:13px">אין ביקורות חדשות 🎉</div>';
+  document.getElementById("reviewsList").innerHTML = html;
+}
+
+/* ---- PLATFORMS ---- */
+function renderPlatforms(latest) {
+  const tokens = latest.tokens || [];
+  const ok = tokens.filter(t => t.ok).length;
+  const badge = document.getElementById("platBadge");
+  badge.textContent = `${ok}/${tokens.length} פעיל`;
+  badge.className = ok === tokens.length ? "badge green" : "badge yellow";
+
+  document.getElementById("platGrid").innerHTML = tokens.map(t => `
+    <div class="plat-item">
+      <span class="plat-icon">${PLAT_ICONS[t.platform] || "🔗"}</span>
+      <div>
+        <div class="plat-name"><span class="dot ${t.ok ? 'ok' : t.detail === 'not configured' ? 'off' : 'err'}"></span>${t.platform}</div>
+        <div class="plat-detail">${t.detail || (t.ok ? "פעיל" : "לא מוגדר")}</div>
+      </div>
+    </div>
+  `).join("");
+}
+
+/* ---- MENTIONS ---- */
+function renderMentions(data) {
+  const urls = data.seen_urls || [];
+  const badge = document.getElementById("mentionsBadge");
+  badge.textContent = `${urls.length} URLs`;
+  document.getElementById("mentionsList").innerHTML = urls.map(u => `
+    <div class="mention-item">
+      <a class="mention-url" href="${u}" target="_blank">${u}</a>
+    </div>
+  `).join("") || '<div style="padding:16px;color:var(--muted);font-size:13px">אין אזכורים עדיין</div>';
+}
+
+/* ---- ALERTS ---- */
+function renderAlerts(snapshots) {
+  const all = [];
+  snapshots.forEach(s => (s.alerts||[]).forEach(a => all.push({...a, date:s.date})));
+  all.reverse();
+  const badge = document.getElementById("alertsBadge");
+  badge.textContent = `${all.length} סה"כ`;
+  badge.className = all.length ? "badge red" : "badge green";
+
+  const tbody = document.getElementById("alertsTable");
+  if (!all.length) {
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:20px">אין התרעות 🎉</td></tr>';
+    return;
+  }
+  tbody.innerHTML = all.slice(0, 50).map(a => `
+    <tr>
+      <td style="white-space:nowrap">${new Date(a.date).toLocaleString("he-IL")}</td>
+      <td><span style="color:var(--red);font-weight:600;font-size:11px">${ALERT_TYPE_LABELS[a.type] || a.type}</span></td>
+      <td>${a.source || "—"}</td>
+      <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${a.excerpt || (a.author ? a.author : "—")}</td>
+    </tr>
+  `).join("");
+}
+
+/* ---- CHARTS ---- */
+function renderCharts(snapshots) {
+  const labels = snapshots.map(s => new Date(s.date).toLocaleString("he-IL",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}));
+
+  // All keywords for rank chart
+  const keywords = [...new Set(snapshots.flatMap(s => (s.rank||[]).map(r=>r.keyword)))];
+  const COLORS = ["#3b82f6","#10b981","#f59e0b","#8b5cf6","#ef4444","#06b6d4"];
+  const datasets = keywords.map((kw, i) => ({
+    label: kw,
+    data: snapshots.map(s => { const e=(s.rank||[]).find(r=>r.keyword===kw); return e?.position_top10??null; }),
+    borderColor: COLORS[i % COLORS.length],
+    backgroundColor: COLORS[i % COLORS.length] + "22",
+    spanGaps: true,
+    tension: 0.3,
+    pointRadius: 5
+  }));
+
   new Chart(document.getElementById("rankChart"), {
-    type: "line",
-    data: { labels, datasets: [{ label: "מיקום", data: rankData, borderColor: "#7dd3fc", spanGaps: true, tension: 0.3 }] },
-    options: { scales: { y: { reverse: true, title: { display: true, text: "מיקום (הפוך)" } } } }
-  });
-
-  // Reviews chart (dual axis)
-  const ratingData = snapshots.map(s => (s.reviews || {}).rating ?? null);
-  const countData = snapshots.map(s => (s.reviews || {}).total_reviews ?? null);
-  new Chart(document.getElementById("reviewsChart"), {
-    type: "line",
-    data: {
-      labels,
-      datasets: [
-        { label: "דירוג (★)", data: ratingData, borderColor: "#4ade80", yAxisID: "y", spanGaps: true, tension: 0.3 },
-        { label: "מספר ביקורות", data: countData, borderColor: "#f59e0b", yAxisID: "y1", spanGaps: true, tension: 0.3 },
-      ]
-    },
-    options: {
-      scales: {
-        y: { position: "left", min: 0, max: 5, title: { display: true, text: "דירוג" } },
-        y1: { position: "right", title: { display: true, text: "מס' ביקורות" }, grid: { drawOnChartArea: false } },
-      }
+    type:"line",
+    data:{ labels, datasets },
+    options:{
+      responsive:true,
+      scales:{
+        y:{ reverse:true, title:{display:true,text:"מיקום (נמוך=טוב)"}, grid:{color:"#1e2d45"}, ticks:{color:"#64748b"} },
+        x:{ grid:{color:"#1e2d45"}, ticks:{color:"#64748b",maxRotation:45} }
+      },
+      plugins:{legend:{labels:{color:"#e2e8f0",font:{size:11}},position:"bottom"}}
     }
   });
 
-  // Alerts table
-  const tbody = document.querySelector("#alertsTable tbody");
-  const allAlerts = [];
-  snapshots.forEach(s => (s.alerts || []).forEach(a => allAlerts.push({ date: s.date, ...a })));
-  allAlerts.reverse().slice(0, 30).forEach(a => {
-    const tr = document.createElement("tr");
-    tr.className = "alert-row";
-    const detail = a.excerpt || (a.from !== undefined ? `${a.from}★ → ${a.to}★` : "");
-    tr.innerHTML = `<td>${new Date(a.date).toLocaleString("he-IL")}</td><td>${a.type}</td><td>${detail}</td>`;
-    tbody.appendChild(tr);
+  const ratingData = snapshots.map(s => (s.reviews||{}).rating ?? null);
+  const countData  = snapshots.map(s => (s.reviews||{}).total_reviews ?? null);
+  new Chart(document.getElementById("reviewsChart"), {
+    type:"line",
+    data:{
+      labels,
+      datasets:[
+        {label:"דירוג ★",data:ratingData,borderColor:"#10b981",yAxisID:"y",spanGaps:true,tension:.3,pointRadius:5},
+        {label:"סה\"כ ביקורות",data:countData,borderColor:"#f59e0b",yAxisID:"y1",spanGaps:true,tension:.3,pointRadius:5}
+      ]
+    },
+    options:{
+      responsive:true,
+      scales:{
+        y:{position:"right",min:0,max:5,title:{display:true,text:"דירוג"},grid:{color:"#1e2d45"},ticks:{color:"#64748b"}},
+        y1:{position:"left",title:{display:true,text:"מספר ביקורות"},grid:{drawOnChartArea:false},ticks:{color:"#64748b"}},
+        x:{grid:{color:"#1e2d45"},ticks:{color:"#64748b",maxRotation:45}}
+      },
+      plugins:{legend:{labels:{color:"#e2e8f0",font:{size:11}},position:"bottom"}}
+    }
   });
-  if (!allAlerts.length) {
-    tbody.innerHTML = '<tr><td colspan="3">אין התרעות עד כה 🎉</td></tr>';
-  }
 }
 </script>
 </body>
