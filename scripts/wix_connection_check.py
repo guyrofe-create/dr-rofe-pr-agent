@@ -71,6 +71,12 @@ def main():
             "https://www.wixapis.com/v3/posts",
             params={"paging.limit": 1},
         ),
+        check(
+            "blog read permission (namespaced endpoint)",
+            "GET",
+            "https://www.wixapis.com/blog/v3/posts",
+            params={"paging.limit": 1},
+        ),
     ]
     return 0 if all(results) else 1
 
