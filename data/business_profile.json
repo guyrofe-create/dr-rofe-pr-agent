@@ -1,0 +1,68 @@
+{
+  "name": "ד\"ר גיא רופא",
+  "alternateName": ["Dr. Guy Rofe", "Guy Rofe MD"],
+  "honorificPrefix": "ד\"ר",
+  "jobTitle": "מומחה בגינקולוגיה ומיילדות",
+  "description": "ד\"ר גיא רופא הוא מומחה בגינקולוגיה ומיילדות בישראל, מומחה לניתוחים גינקולוגיים זעיר פולשניים (לפרוסקופיה והיסטרוסקופיה), אנדומטריוזיס ופוריות.",
+  "image": "https://guyrofe.com/wp-content/uploads/2024/04/2.png",
+  "medicalSpecialty": ["Obstetrics", "Gynecology"],
+  "telephone": "+972-54-541-3591",
+  "priceRange": "$$",
+  "address": {
+    "streetAddress": "הברזל 11",
+    "addressLocality": "תל אביב-יפו",
+    "addressRegion": "תל אביב",
+    "addressCountry": "IL"
+  },
+  "geo": { "latitude": 32.1076583, "longitude": 34.8368034 },
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJ6UuqIpFLHRURo7WWjhU_UDk",
+  "openingHoursSpecification": [
+    { "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "17:00" }
+  ],
+  "nationality": "Israel",
+  "areaServed": ["Israel", "תל אביב והמרכז"],
+  "knowsLanguage": ["he", "en"],
+  "knowsAbout": [
+    "בריאות האישה","גינקולוגיה","מיילדות","הריון","בדיקות בהריון","מי שפיר",
+    "סיסי שליה","NIPT","צ'יפ גנטי","אולטרסאונד בהריון","פוריות","IVF",
+    "אנדומטריוזיס","שחלות פוליציסטיות","מחזור לא סדיר","דימומים רחמיים","מנופאוזה","לידה","הנקה"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/drguyrofe",
+    "https://www.instagram.com/guy_rofe_md/",
+    "https://www.linkedin.com/in/guyrofe",
+    "https://x.com/GuyRofe",
+    "https://youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
+    "https://www.tiktok.com/@guy_rofe_obgyn",
+    "https://pin.it/5n8l2PoBh",
+    "https://about.me/drguyrofe",
+    "https://drguyrofe.blogspot.com/",
+    "https://medium.com/@guyrofe",
+    "https://www.tumblr.com/blog/drguyrofe",
+    "https://www.wikidata.org/wiki/Q140470790",
+    "https://share.google/sTaxQJMQnwKZhXK5X"
+  ],
+  "wikidata": "Q140470790",
+  "sites": [
+    {
+      "key": "GUYROFE_COM",
+      "base_url": "https://guyrofe.com",
+      "url_secret_env": null,
+      "user_env": "WORDPRESS_GUYROFE_COM_USER",
+      "app_password_env": "WORDPRESS_GUYROFE_COM_API",
+      "canonical_url": "https://guyrofe.com/",
+      "schema_page_slug": "schema-markup",
+      "llms_page_slug": "llms"
+    },
+    {
+      "key": "DRGUYROFE_CO_IL",
+      "base_url": "https://www.drguyrofe.co.il",
+      "url_secret_env": null,
+      "user_env": "WORDPRESS_DRGUYROFE_CO_IL_USER",
+      "app_password_env": "WORDPRESS_DRGUYROFE_CO_IL_API",
+      "canonical_url": "https://guyrofe.com/",
+      "schema_page_slug": "schema-markup",
+      "llms_page_slug": "llms"
+    }
+  ]
+}
