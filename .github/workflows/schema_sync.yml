@@ -1,0 +1,40 @@
+name: Dr. Rofe Schema Sync
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Schema Sync
+        run: python scripts/schema_sync.py
+        env:
+          WORDPRESS_GUYROFE_COM_USER: ${{ secrets.WORDPRESS_GUYROFE_COM_USER }}
+          WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
+          WORDPRESS_DRGUYROFE_CO_IL_USER: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_USER }}
+          WORDPRESS_DRGUYROFE_CO_IL_API: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_API }}
+
+      - name: Upload sync log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schema-sync-log-${{ github.run_id }}
+          path: schema_sync_log.txt
+          retention-days: 30
