@@ -156,6 +156,21 @@ canvas{max-height:260px}
 
 <div class="sections" id="sectionsArea" style="display:none">
 
+  <!-- Active reputation command center -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>🛡️ Reputation Command Center</h2>
+      <span class="badge" id="commandBadge">—</span>
+    </div>
+    <div class="panel-body">
+      <div class="plat-grid" id="commandMetrics"></div>
+      <table>
+        <thead><tr><th>עדיפות</th><th>אירוע</th><th>ציון</th><th>סטטוס</th><th>SLA</th></tr></thead>
+        <tbody id="commandEvents"></tbody>
+      </table>
+    </div>
+  </div>
+
   <!-- SERP + GEO in two col -->
   <div class="two-col">
 
@@ -244,6 +259,7 @@ canvas{max-height:260px}
 
 <script>
 const DATA_URL = "https://raw.githubusercontent.com/guyrofe-create/dr-rofe-pr-agent/main/data/reputation_history.json";
+const COMMAND_URL = "https://raw.githubusercontent.com/guyrofe-create/dr-rofe-pr-agent/main/data/command_center.json";
 
 const PLAT_ICONS = {
   "Facebook":"📘","Twitter/X":"🐦","Tumblr":"📓","Telegram":"✈️",
@@ -255,15 +271,17 @@ const ALERT_TYPE_LABELS = {
   "new_mention":"אזכור חדש","token_expired":"טוקן פג","keyword_drop":"ירידת מיקום"
 };
 
-fetch(DATA_URL, { cache:"no-store" })
-  .then(r => r.json())
-  .then(render)
+Promise.all([
+  fetch(DATA_URL, { cache:"no-store" }).then(r => r.json()),
+  fetch(COMMAND_URL, { cache:"no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
+])
+  .then(([history, command]) => render(history, command))
   .catch(() => {
     document.getElementById("statsGrid").innerHTML =
       '<div class="spinner" style="grid-column:1/-1;color:#ef4444">לא ניתן לטעון נתונים — ריצת הניטור הראשונה עדיין לא הסתיימה.</div>';
   });
 
-function render(data) {
+function render(data, command) {
   const snapshots = data.snapshots || [];
   if (!snapshots.length) return;
 
@@ -282,8 +300,35 @@ function render(data) {
   renderMentions(data);
   renderAlerts(snapshots);
   renderCharts(snapshots);
+  renderCommandCenter(command);
 
   document.getElementById("sectionsArea").style.display = "";
+}
+
+function esc(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"})[c]);
+}
+
+function renderCommandCenter(command) {
+  const metrics = command?.metrics || {};
+  const events = (command?.events || []).filter(e => !["resolved","closed"].includes(e.status));
+  const badge = document.getElementById("commandBadge");
+  const critical = metrics.critical_events || 0;
+  badge.textContent = critical ? `${critical} אירועים קריטיים` : `${events.length} אירועים פתוחים`;
+  badge.className = critical ? "badge red" : events.length ? "badge yellow" : "badge green";
+  document.getElementById("commandMetrics").innerHTML = `
+    <div class="plat-item"><span class="plat-icon">${command?.content_freeze ? "⛔" : "✅"}</span><div><div class="plat-name">פרסום מתוזמן</div><div class="plat-detail">${command?.content_freeze ? "מוקפא עקב סיכון" : "פעיל"}</div></div></div>
+    <div class="plat-item"><span class="plat-icon">🚨</span><div><div class="plat-name">חדרי משבר</div><div class="plat-detail">${metrics.active_crises || 0} פעילים</div></div></div>
+    <div class="plat-item"><span class="plat-icon">📋</span><div><div class="plat-name">משימות</div><div class="plat-detail">${metrics.pending_tasks || 0} ממתינות</div></div></div>
+    <div class="plat-item"><span class="plat-icon">🕐</span><div><div class="plat-name">עדכון אחרון</div><div class="plat-detail">${command?.updated_at ? new Date(command.updated_at).toLocaleString("he-IL") : "טרם הופעל"}</div></div></div>`;
+  document.getElementById("commandEvents").innerHTML = events.length ? events
+    .sort((a,b) => a.priority.localeCompare(b.priority) || b.risk_score-a.risk_score)
+    .slice(0,20).map(e => `<tr>
+      <td><span class="rank-num ${["P0","P1"].includes(e.priority) ? "bad" : e.priority === "P2" ? "" : "good"}">${esc(e.priority)}</span></td>
+      <td><strong>${esc(e.category)}</strong><br><span style="color:var(--muted);font-size:11px">${esc((e.title || e.text || "").slice(0,100))}</span></td>
+      <td>${esc(e.risk_score)}/100</td><td>${esc(e.status)}</td>
+      <td style="white-space:nowrap">${e.sla_due_at ? new Date(e.sla_due_at).toLocaleString("he-IL") : "—"}</td>
+    </tr>`).join("") : '<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:20px">אין אירועים פתוחים</td></tr>';
 }
 
 /* ---- BANNER ---- */

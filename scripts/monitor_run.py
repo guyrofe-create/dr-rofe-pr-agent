@@ -31,9 +31,11 @@ from openai import OpenAI
 
 sys.path.insert(0, os.path.dirname(__file__))
 from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest
+from reputation_core import CommandCenter
 
 SITE_DOMAIN = "guyrofe.com"
 HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "reputation_history.json")
+COMMAND_CENTER_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "command_center.json")
 
 KEYWORDS = [
     "גינקולוג תל אביב",
@@ -471,6 +473,19 @@ def main():
     check_facebook_recommendations()
     check_web_mentions()
 
+    # Convert raw monitor findings into durable, routed reputation events.
+    # This is the active layer: each new risk receives a priority, SLA,
+    # approval policy, playbook tasks and (for P0/P1) a crisis room.
+    command_center = CommandCenter(COMMAND_CENTER_PATH)
+    routed_events = command_center.ingest_monitor_report(REPORT)
+    command_center.save()
+    if routed_events:
+        print(f"Command Center: routed {len(routed_events)} new event(s)")
+        for event in routed_events:
+            print(f"  {event['priority']} score={event['risk_score']} {event['category']} -> {event['id']}")
+    else:
+        print("Command Center: no new events")
+
     # Urgent alert - opened immediately, every run, whenever something's detected
     if REPORT["alerts"]:
         alert_md = format_alert_markdown()
@@ -502,4 +517,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
