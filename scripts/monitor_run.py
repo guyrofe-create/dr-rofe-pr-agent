@@ -38,6 +38,7 @@ HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "reputation
 COMMAND_CENTER_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "command_center.json")
 PROFILE_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "business_profile.json")
 GROWTH_OBSERVATIONS_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "growth_observations.json")
+ASSET_REGISTRY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "asset_registry.json")
 
 KEYWORDS = [
     "גינקולוג תל אביב",
@@ -491,6 +492,19 @@ def main():
 
     # Re-plan the current high-cadence growth campaign from live evidence.
     observations = load_json_file(GROWTH_OBSERVATIONS_PATH, {})
+    registry = load_json_file(ASSET_REGISTRY_PATH, {"assets": []})
+    observations["serp_assets"] = [
+        {
+            "type": asset.get("type"), "url": asset.get("url"),
+            "controlled": asset.get("controlled", False), "status": "active",
+            "page_one": asset.get("page_one", False),
+            "observed_position": asset.get("observed_position"),
+            "tier": asset.get("tier"), "health_status": asset.get("status"),
+            "priority": asset.get("priority", 0),
+        }
+        for asset in registry.get("assets", [])
+        if asset.get("tier") in {"A", "B"} and asset.get("priority", 0) >= 55
+    ]
     ranked = [r for r in REPORT.get("rank", []) if r.get("keyword") != "דר גיא רופא"]
     observations["local_rank_weak"] = any(r.get("status") == "not_in_top10" for r in ranked)
     geo = [g for g in REPORT.get("geo", []) if "mentions_dr_rofe" in g]

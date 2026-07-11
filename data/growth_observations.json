@@ -6,6 +6,7 @@
   "ai_mention_gap": true,
   "independent_authority_gap": true,
   "eligible_policy_violations": 1,
+  "asset_registry": "data/asset_registry.json",
   "serp_assets": [
     {"type": "canonical_site", "url": "https://guyrofe.com/", "controlled": true, "status": "active"},
     {"type": "social_profile", "url": "https://www.facebook.com/drguyrofe", "controlled": true, "status": "active"},

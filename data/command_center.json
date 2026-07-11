@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-11T14:34:38Z",
+  "updated_at": "2026-07-11T14:43:39Z",
   "content_freeze": false,
   "events": [],
   "tasks": [],
@@ -9,23 +9,21 @@
     {
       "id": "cmp_be0dd150145761",
       "brand": "ד\"ר גיא רופא",
-      "created_at": "2026-07-11T14:34:38Z",
+      "created_at": "2026-07-11T14:43:39Z",
       "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
       "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
       "serp_asset_gap": {
         "target_slots": 8,
-        "known_assets": 6,
-        "controlled_assets": 5,
-        "independent_assets": 1,
-        "slot_gap": 2,
+        "eligible_assets": 25,
+        "observed_page_one_assets": 1,
+        "controlled_page_one_assets": 1,
+        "independent_page_one_assets": 0,
+        "slot_gap": 7,
         "missing_asset_types": [
-          "publisher_profile",
-          "podcast_profile",
           "independent_media",
-          "review_profile",
           "association_profile"
         ],
-        "warning": "Independent editorial results cannot be controlled; the goal is to earn accurate, useful coverage."
+        "warning": "Asset existence is not page-one visibility. Slots count only observed page-one results; independent editorial results must be earned."
       },
       "tasks": [
         {
@@ -141,10 +139,10 @@
           "risk": 2
         },
         {
-          "id": "gt_4bd6232270fec3",
+          "id": "gt_22b9a44a78374c",
           "tactic": "brand_serp_asset",
           "priority": "P1",
-          "reason": "brand SERP has an estimated 2-asset gap",
+          "reason": "brand SERP has an estimated 7-asset gap",
           "surface": [
             "google_brand_serp",
             "bing_brand_serp"
@@ -252,43 +250,300 @@
       "type": "canonical_site",
       "url": "https://guyrofe.com/",
       "controlled": true,
-      "status": "active"
+      "status": "active",
+      "page_one": true,
+      "observed_position": 4,
+      "tier": "A",
+      "health_status": "active",
+      "priority": 100
     },
     {
-      "type": "social_profile",
-      "url": "https://www.facebook.com/drguyrofe",
+      "type": "official_site",
+      "url": "https://www.drguyrofe.co.il/",
       "controlled": true,
-      "status": "active"
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "audit_required",
+      "priority": 92
     },
     {
-      "type": "social_profile",
-      "url": "https://www.instagram.com/guy_rofe_md/",
+      "type": "review_profile",
+      "url": "https://share.google/sTaxQJMQnwKZhXK5X",
       "controlled": true,
-      "status": "active"
-    },
-    {
-      "type": "video_channel",
-      "url": "https://youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
-      "controlled": true,
-      "status": "active"
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "active",
+      "priority": 100
     },
     {
       "type": "professional_profile",
       "url": "https://www.linkedin.com/in/guyrofe",
       "controlled": true,
-      "status": "active"
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "active",
+      "priority": 95
+    },
+    {
+      "type": "video_channel",
+      "url": "https://www.youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "active",
+      "priority": 95
+    },
+    {
+      "type": "social_profile",
+      "url": "https://www.facebook.com/drguyrofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "active",
+      "priority": 90
+    },
+    {
+      "type": "social_profile",
+      "url": "https://www.instagram.com/guy_rofe_md/",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "active",
+      "priority": 90
+    },
+    {
+      "type": "podcast_profile",
+      "url": "https://podcasts.apple.com/us/podcast/%D7%A8%D7%A4%D7%95%D7%90%D7%94-%D7%A2%D7%9C-%D7%9B%D7%95%D7%A1-%D7%A7%D7%A4%D7%94/id1787147468",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "active",
+      "priority": 90
+    },
+    {
+      "type": "podcast_profile",
+      "url": "https://open.spotify.com/show/2o8f3yN18UunMRpsEBPTg7",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "active",
+      "priority": 88
     },
     {
       "type": "knowledge_entity",
       "url": "https://www.wikidata.org/wiki/Q140470790",
       "controlled": false,
-      "status": "active"
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "audit_required",
+      "priority": 88
+    },
+    {
+      "type": "publisher_profile",
+      "url": "https://muckrack.com/drguyrofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "audit_required",
+      "priority": 86
+    },
+    {
+      "type": "professional_profile",
+      "url": "https://www.crunchbase.com/person/dr-guy-rofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "audit_required",
+      "priority": 72
+    },
+    {
+      "type": "publisher_profile",
+      "url": "https://medium.com/@guyrofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "content_audit_required",
+      "priority": 82
+    },
+    {
+      "type": "publisher_profile",
+      "url": "https://drguyrofe.blogspot.com/",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "content_audit_required",
+      "priority": 70
+    },
+    {
+      "type": "social_profile",
+      "url": "https://x.com/GuyRofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "active",
+      "priority": 78
+    },
+    {
+      "type": "video_channel",
+      "url": "https://www.tiktok.com/@guy_rofe_obgyn",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "active",
+      "priority": 78
+    },
+    {
+      "type": "document_profile",
+      "url": "https://www.slideshare.net/DrGuyRofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "active",
+      "priority": 75
+    },
+    {
+      "type": "expert_qa_profile",
+      "url": "https://www.quora.com/profile/Dr-Guy-Rofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "content_audit_required",
+      "priority": 74
+    },
+    {
+      "type": "visual_profile",
+      "url": "https://www.pinterest.com/drguyrofe/",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "active",
+      "priority": 65
+    },
+    {
+      "type": "publisher_profile",
+      "url": "https://drguyrofe.tumblr.com/",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "content_audit_required",
+      "priority": 62
+    },
+    {
+      "type": "document_profile",
+      "url": "https://issuu.com/drguyrofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "audit_required",
+      "priority": 62
+    },
+    {
+      "type": "link_hub",
+      "url": "https://linktr.ee/drguyrofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "urgent_content_audit",
+      "priority": 60
+    },
+    {
+      "type": "profile",
+      "url": "https://about.me/drguyrofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "audit_required",
+      "priority": 58
+    },
+    {
+      "type": "curation_profile",
+      "url": "https://flipboard.com/@drguyrofe0",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "factual_audit_required",
+      "priority": 56
+    },
+    {
+      "type": "local_directory",
+      "url": "https://foursquare.com/guyrofe",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "B",
+      "health_status": "nap_audit_required",
+      "priority": 55
     }
   ],
   "visibility_measurements": [],
   "audit_log": [
     {
       "at": "2026-07-11T14:34:38Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_planned",
+      "object_id": "cmp_be0dd150145761",
+      "details": {
+        "tasks": 7
+      }
+    },
+    {
+      "at": "2026-07-11T14:43:17Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_planned",
+      "object_id": "cmp_be0dd150145761",
+      "details": {
+        "tasks": 7
+      }
+    },
+    {
+      "at": "2026-07-11T14:43:39Z",
       "actor": "reputation-agent",
       "action": "growth_campaign_planned",
       "object_id": "cmp_be0dd150145761",

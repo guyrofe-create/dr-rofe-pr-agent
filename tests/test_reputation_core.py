@@ -72,14 +72,24 @@ class CommandCenterTests(unittest.TestCase):
 
 
 class GrowthEngineTests(unittest.TestCase):
+    def test_asset_registry_contains_no_credentials_and_quarantines_mirror_network(self):
+        with open("data/asset_registry.json", encoding="utf-8") as handle:
+            registry = json.load(handle)
+        serialized = json.dumps(registry).lower()
+        self.assertNotIn('"password"', serialized)
+        self.assertNotIn('"email"', serialized)
+        mirrors = [a for a in registry["assets"] if a["type"] == "web2_site"]
+        self.assertTrue(mirrors)
+        self.assertTrue(all(a["tier"] == "Q" and a["automation"] == "disabled" for a in mirrors))
+
     def test_asset_gap_distinguishes_controlled_and_independent(self):
         gap = build_serp_asset_gap([
-            {"type": "canonical_site", "controlled": True},
-            {"type": "independent_media", "controlled": False},
+            {"type": "canonical_site", "controlled": True, "page_one": True},
+            {"type": "independent_media", "controlled": False, "page_one": True},
         ], target_slots=5)
         self.assertEqual(gap["slot_gap"], 3)
-        self.assertEqual(gap["controlled_assets"], 1)
-        self.assertEqual(gap["independent_assets"], 1)
+        self.assertEqual(gap["controlled_page_one_assets"], 1)
+        self.assertEqual(gap["independent_page_one_assets"], 1)
 
     def test_campaign_routes_visibility_gaps_to_multiple_surfaces(self):
         campaign = plan_growth_campaign({"name": "Example"}, {

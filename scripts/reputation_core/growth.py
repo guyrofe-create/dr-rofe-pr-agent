@@ -20,18 +20,20 @@ def _id(prefix, value):
 
 def build_serp_asset_gap(current_assets: list[dict], target_slots: int = 8) -> dict:
     healthy = [a for a in current_assets if a.get("status", "active") == "active"]
+    page_one = [a for a in healthy if a.get("page_one") is True]
     types = {a.get("type") for a in healthy}
     missing = [kind for kind in ASSET_TYPES if kind not in types]
-    controlled = sum(bool(a.get("controlled")) for a in healthy)
-    independent = sum(not bool(a.get("controlled")) for a in healthy)
+    controlled = sum(bool(a.get("controlled")) for a in page_one)
+    independent = sum(not bool(a.get("controlled")) for a in page_one)
     return {
         "target_slots": target_slots,
-        "known_assets": len(healthy),
-        "controlled_assets": controlled,
-        "independent_assets": independent,
-        "slot_gap": max(0, target_slots - len(healthy)),
+        "eligible_assets": len(healthy),
+        "observed_page_one_assets": len(page_one),
+        "controlled_page_one_assets": controlled,
+        "independent_page_one_assets": independent,
+        "slot_gap": max(0, target_slots - len(page_one)),
         "missing_asset_types": missing,
-        "warning": "Independent editorial results cannot be controlled; the goal is to earn accurate, useful coverage.",
+        "warning": "Asset existence is not page-one visibility. Slots count only observed page-one results; independent editorial results must be earned.",
     }
 
 

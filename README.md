@@ -15,6 +15,7 @@ stopping at alerts.
 - keeps a durable audit trail and exposes command-center metrics in the dashboard;
 - replans an aggressive, evidence-led Google and AI visibility campaign every monitor cycle;
 - maps first-page asset gaps and separates AI citations from explicit brand mentions;
+- maintains a credential-free A/B/C/Q asset registry and excludes quarantined Web 2.0 mirrors from automation;
 - continues the existing schema sync, social distribution and content workflows.
 
 ## Safety model

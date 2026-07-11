@@ -20,6 +20,7 @@ ROOT = os.path.join(os.path.dirname(__file__), "..")
 STATE_PATH = os.path.join(ROOT, "data", "command_center.json")
 PROFILE_PATH = os.path.join(ROOT, "data", "business_profile.json")
 OBSERVATIONS_PATH = os.path.join(ROOT, "data", "growth_observations.json")
+ASSET_REGISTRY_PATH = os.path.join(ROOT, "data", "asset_registry.json")
 
 
 def now_iso():
@@ -96,6 +97,20 @@ def main():
             profile = json.load(handle)
         with open(args.observations, encoding="utf-8") as handle:
             observations = json.load(handle)
+        with open(ASSET_REGISTRY_PATH, encoding="utf-8") as handle:
+            registry = json.load(handle)
+        observations["serp_assets"] = [
+            {
+                "type": asset.get("type"), "url": asset.get("url"),
+                "controlled": asset.get("controlled", False), "status": "active",
+                "page_one": asset.get("page_one", False),
+                "observed_position": asset.get("observed_position"),
+                "tier": asset.get("tier"), "health_status": asset.get("status"),
+                "priority": asset.get("priority", 0),
+            }
+            for asset in registry.get("assets", [])
+            if asset.get("tier") in {"A", "B"} and asset.get("priority", 0) >= 55
+        ]
         campaign = plan_growth_campaign(profile, observations)
         center.state["campaigns"] = [c for c in center.state["campaigns"] if c.get("id") != campaign["id"]]
         center.state["campaigns"].append(campaign)

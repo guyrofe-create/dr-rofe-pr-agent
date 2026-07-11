@@ -77,6 +77,19 @@ shortcuts. Campaign measurement deliberately separates traditional ranking,
 local share of voice, AI citation share, explicit brand mentions, sentiment and
 qualified business outcomes. Ranking and citation are outcomes, never promises.
 
+### Asset governance
+
+`data/asset_registry.json` is the single credential-free inventory of owned and
+earned properties. Assets are classified as A (core), B (selective), C (retain
+only with a real purpose) or Q (quarantined). The monitor may plan campaigns from
+A/B assets, but it never treats mere asset existence as page-one visibility.
+Only independently observed page-one positions count toward SERP coverage.
+
+Generic Web 2.0 mirrors, irrelevant profiles and duplicate-content properties
+remain disabled until a separate factual, content and indexation audit proves a
+real user purpose. Credentials must live only in an encrypted secret store and
+must never be copied into the repository or asset registry.
+
 ## Next premium layers
 
 1. Authenticated multi-tenant API, encrypted connector vault and role-based approvals.
