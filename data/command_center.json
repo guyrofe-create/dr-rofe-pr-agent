@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-11T14:43:39Z",
+  "updated_at": "2026-07-11T15:35:56Z",
   "content_freeze": false,
   "events": [],
   "tasks": [],
@@ -9,12 +9,12 @@
     {
       "id": "cmp_be0dd150145761",
       "brand": "ד\"ר גיא רופא",
-      "created_at": "2026-07-11T14:43:39Z",
+      "created_at": "2026-07-11T15:35:56Z",
       "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
       "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
       "serp_asset_gap": {
         "target_slots": 8,
-        "eligible_assets": 25,
+        "eligible_assets": 26,
         "observed_page_one_assets": 1,
         "controlled_page_one_assets": 1,
         "independent_page_one_assets": 0,
@@ -165,34 +165,6 @@
           "risk": 2
         },
         {
-          "id": "gt_97cc8a7ab52575",
-          "tactic": "policy_removal",
-          "priority": "P1",
-          "reason": "1 items may qualify for policy review",
-          "surface": [
-            "reviews",
-            "search_results",
-            "platforms"
-          ],
-          "status": "proposed",
-          "approval_required": "manager",
-          "actions": [
-            "Preserve URL, content, timestamps, identity and supporting evidence",
-            "Map the exact policy or legal basis",
-            "Submit one precise request and track the decision",
-            "Use the permitted appeal or correction path if rejected"
-          ],
-          "forbidden": [
-            "false_claim",
-            "mass_report",
-            "promise_removal",
-            "intimidation"
-          ],
-          "impact": 10,
-          "speed": 3,
-          "risk": 3
-        },
-        {
           "id": "gt_96ece8433bd429",
           "tactic": "original_research",
           "priority": "P2",
@@ -267,6 +239,17 @@
       "tier": "A",
       "health_status": "audit_required",
       "priority": 92
+    },
+    {
+      "type": "official_site",
+      "url": "https://www.drguyrofe.com/",
+      "controlled": true,
+      "status": "active",
+      "page_one": false,
+      "observed_position": null,
+      "tier": "A",
+      "health_status": "canonical_and_factual_audit_required",
+      "priority": 96
     },
     {
       "type": "review_profile",
@@ -549,6 +532,15 @@
       "object_id": "cmp_be0dd150145761",
       "details": {
         "tasks": 7
+      }
+    },
+    {
+      "at": "2026-07-11T15:35:56Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_replanned",
+      "object_id": "cmp_be0dd150145761",
+      "details": {
+        "tasks": 6
       }
     }
   ],
