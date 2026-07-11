@@ -9,10 +9,12 @@ Required secrets:
     INSTAGRAM_BUSINESS_ID  - IG Business Account ID linked to the page (optional,
                              only needed if you also want IG auto-posting)
 """
+import os
 import requests
 from . import common
 
-GRAPH = "https://graph.facebook.com/v19.0"
+GRAPH_VERSION = os.environ.get("META_GRAPH_VERSION", "v25.0")
+GRAPH = f"https://graph.facebook.com/{GRAPH_VERSION}"
 
 
 def facebook_is_configured():
@@ -20,9 +22,26 @@ def facebook_is_configured():
 
 
 def instagram_is_configured():
-    return not common.missing_secrets(
-        "FACEBOOK_PAGE_TOKEN", "INSTAGRAM_BUSINESS_ID"
+    return not common.missing_secrets("FACEBOOK_PAGE_ID", "FACEBOOK_PAGE_TOKEN")
+
+
+def resolve_instagram_business_id():
+    """Return the configured IG ID or discover the account linked to the Page."""
+    configured = common.env("INSTAGRAM_BUSINESS_ID")
+    if configured:
+        return configured
+    page_id = common.env("FACEBOOK_PAGE_ID")
+    token = common.env("FACEBOOK_PAGE_TOKEN")
+    resp = requests.get(
+        f"{GRAPH}/{page_id}",
+        params={"fields": "instagram_business_account{id,username}", "access_token": token},
+        timeout=15,
     )
+    resp.raise_for_status()
+    account = resp.json().get("instagram_business_account") or {}
+    if not account.get("id"):
+        raise RuntimeError("No Instagram Business account is linked to the Facebook Page")
+    return account["id"]
 
 
 def publish_facebook(title, body, url, image_url=None):
@@ -47,7 +66,7 @@ def publish_instagram(title, body, url, image_url):
     if not image_url:
         raise ValueError("Instagram requires image_url (no text-only posts on IG)")
 
-    ig_id = common.env("INSTAGRAM_BUSINESS_ID")
+    ig_id = resolve_instagram_business_id()
     token = common.env("FACEBOOK_PAGE_TOKEN")
     caption = common.shorten_for_social(title, url, max_len=2000)
 
