@@ -31,9 +31,14 @@ from openai import OpenAI
 
 sys.path.insert(0, os.path.dirname(__file__))
 from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest
+from reputation_core import CommandCenter, plan_growth_campaign
 
 SITE_DOMAIN = "guyrofe.com"
 HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "reputation_history.json")
+COMMAND_CENTER_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "command_center.json")
+PROFILE_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "business_profile.json")
+GROWTH_OBSERVATIONS_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "growth_observations.json")
+ASSET_REGISTRY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "asset_registry.json")
 
 KEYWORDS = [
     "גינקולוג תל אביב",
@@ -60,6 +65,14 @@ REPORT = {
 
 def env(name):
     return os.environ.get(name, "").strip() or None
+
+
+def load_json_file(path, default):
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            return json.load(handle)
+    except (OSError, ValueError, TypeError):
+        return default
 
 
 # ─── History (state) helpers ─────────────────────────────────────────────────
@@ -471,6 +484,51 @@ def main():
     check_facebook_recommendations()
     check_web_mentions()
 
+    # Convert raw monitor findings into durable, routed reputation events.
+    # This is the active layer: each new risk receives a priority, SLA,
+    # approval policy, playbook tasks and (for P0/P1) a crisis room.
+    command_center = CommandCenter(COMMAND_CENTER_PATH)
+    routed_events = command_center.ingest_monitor_report(REPORT)
+
+    # Re-plan the current high-cadence growth campaign from live evidence.
+    observations = load_json_file(GROWTH_OBSERVATIONS_PATH, {})
+    registry = load_json_file(ASSET_REGISTRY_PATH, {"assets": []})
+    observations["serp_assets"] = [
+        {
+            "type": asset.get("type"), "url": asset.get("url"),
+            "controlled": asset.get("controlled", False), "status": "active",
+            "page_one": asset.get("page_one", False),
+            "observed_position": asset.get("observed_position"),
+            "tier": asset.get("tier"), "health_status": asset.get("status"),
+            "priority": asset.get("priority", 0),
+        }
+        for asset in registry.get("assets", [])
+        if asset.get("tier") in {"A", "B"} and asset.get("priority", 0) >= 55
+    ]
+    ranked = [r for r in REPORT.get("rank", []) if r.get("keyword") != "דר גיא רופא"]
+    observations["local_rank_weak"] = any(r.get("status") == "not_in_top10" for r in ranked)
+    geo = [g for g in REPORT.get("geo", []) if "mentions_dr_rofe" in g]
+    observations["ai_mention_gap"] = any(not g.get("mentions_dr_rofe") for g in geo) if geo else True
+    observations["eligible_policy_violations"] = sum(
+        1 for alert in REPORT.get("alerts", [])
+        if alert.get("type") == "negative_review" and looks_like_harassment(alert.get("excerpt"))
+    )
+    profile = load_json_file(PROFILE_PATH, {})
+    if profile:
+        campaign = plan_growth_campaign(profile, observations)
+        command_center.state["campaigns"] = [
+            c for c in command_center.state["campaigns"] if c.get("id") != campaign["id"]
+        ] + [campaign]
+        command_center.state["serp_assets"] = observations.get("serp_assets", [])
+        command_center._audit("growth_campaign_replanned", campaign["id"], {"tasks": len(campaign["tasks"])})
+    command_center.save()
+    if routed_events:
+        print(f"Command Center: routed {len(routed_events)} new event(s)")
+        for event in routed_events:
+            print(f"  {event['priority']} score={event['risk_score']} {event['category']} -> {event['id']}")
+    else:
+        print("Command Center: no new events")
+
     # Urgent alert - opened immediately, every run, whenever something's detected
     if REPORT["alerts"]:
         alert_md = format_alert_markdown()
@@ -502,4 +560,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

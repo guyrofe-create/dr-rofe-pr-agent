@@ -10,6 +10,7 @@ with no safe posting API get a ready-to-paste draft file instead.
 """
 import os
 import sys
+import json
 from datetime import datetime
 from openai import OpenAI
 
@@ -37,6 +38,15 @@ TOPICS = [
 ]
 
 LOG_LINES = []
+
+
+def content_is_frozen():
+    path = os.path.join(os.path.dirname(__file__), "..", "data", "command_center.json")
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            return bool(json.load(handle).get("content_freeze"))
+    except (OSError, ValueError, TypeError):
+        return False
 
 
 def log(msg):
@@ -77,6 +87,11 @@ def try_publish(name, is_configured_fn, publish_fn, *args):
 
 def main():
     log("=== Dr. Rofe Social Distribution - Starting ===")
+
+    if content_is_frozen():
+        log("CONTENT FREEZE: social distribution paused by Reputation Command Center")
+        log("=== Done (safely paused) ===")
+        return
 
     openai_key = os.environ.get("OPENAI_API_KEY")
     if not openai_key:
@@ -125,4 +140,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -13,6 +13,7 @@ from openai import OpenAI
 import requests
 import os
 import time
+import json
 from datetime import datetime
 
 TOPICS = [
@@ -34,6 +35,15 @@ TOPICS = [
 
 TAGS = ["גינקולוגיה", "בריאות אשה", "אנדומטריוזיס", "לפרוסקופיה", "דר גיא רופא"]
 LOG_LINES = []
+
+
+def content_is_frozen():
+    path = os.path.join(os.path.dirname(__file__), "..", "data", "command_center.json")
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            return bool(json.load(handle).get("content_freeze"))
+    except (OSError, ValueError, TypeError):
+        return False
 
 def log(msg):
     ts = datetime.now().strftime("%H:%M:%S")
@@ -176,6 +186,11 @@ def main():
     log("=== Dr. Rofe PR Agent - Starting ===")
     log(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}")
 
+    if content_is_frozen():
+        log("CONTENT FREEZE: publication paused by Reputation Command Center")
+        log("=== Done (safely paused) ===")
+        return
+
     openai_key = os.environ.get("OPENAI_API_KEY")
     medium_token = os.environ.get("MEDIUM_TOKEN")
     medium_sid = os.environ.get("MEDIUM_SID")
@@ -213,4 +228,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -170,6 +170,14 @@ def main():
     llms_content = build_llms_txt(profile)
 
     for site in profile["sites"]:
+        if site.get("platform", "wordpress") != "wordpress":
+            api_key = env(site.get("api_key_env", ""))
+            site_id = env(site.get("site_id_env", ""))
+            if api_key and site_id:
+                log(f"[{site['key']}] READY - Wix credentials present; content API sync requires dedicated Wix publisher")
+            else:
+                log(f"[{site['key']}] SKIPPED - missing {site.get('api_key_env')} / {site.get('site_id_env')}")
+            continue
         sync_site(site, schema_json_min, llms_content)
 
     log("=== Done ===")

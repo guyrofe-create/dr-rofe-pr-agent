@@ -30,6 +30,17 @@ jobs:
           WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
           WORDPRESS_DRGUYROFE_CO_IL_USER: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_USER }}
           WORDPRESS_DRGUYROFE_CO_IL_API: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_API }}
+          WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_DRGUYROFE_COM_API }}
+          WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_DRGUYROFE_COM_SITE_ID }}
+          WIX_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_DRGUYROFE_COM_ACCOUNT_ID }}
+
+      - name: Verify Wix read access
+        continue-on-error: true
+        run: python scripts/wix_connection_check.py
+        env:
+          WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_DRGUYROFE_COM_API }}
+          WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_DRGUYROFE_COM_SITE_ID }}
+          WIX_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_DRGUYROFE_COM_ACCOUNT_ID }}
 
       - name: Upload sync log
         if: always()
