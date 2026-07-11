@@ -400,6 +400,20 @@ def format_report_markdown():
     return "\n".join(lines)
 
 
+# Keywords that suggest a review may be harassment/threats rather than a
+# genuine service complaint - Google's review policy prohibits this content,
+# so these get flagged for one-click removal action, not just noted.
+HARASSMENT_KEYWORDS = [
+    "כתב אישום", "הושעה", "רישיון", "תא", "כלא", "מאסר", "מטרידנים",
+    "אונס", "לא להפיל את הסבון", "יאנס", "תואר דוקטור",
+]
+
+
+def looks_like_harassment(text):
+    text = text or ""
+    return any(kw in text for kw in HARASSMENT_KEYWORDS)
+
+
 def format_alert_markdown():
     lines = ["**זוהה שינוי דורש תשומת לב מיידית:**", ""]
     for a in REPORT["alerts"]:
@@ -407,11 +421,25 @@ def format_alert_markdown():
             lines.append(f"### ⚠️ ביקורת שלילית חדשה בגוגל ({a['rating']}★)")
             lines.append(f"מאת: {a.get('author','אנונימי')}")
             lines.append(f"> {a['excerpt']}")
+            if looks_like_harassment(a.get("excerpt")):
+                lines.append("")
+                lines.append("**🚩 התוכן הזה נראה כמו הטרדה/איום, לא ביקורת שירות רגילה - "
+                              "זה מפר את מדיניות הביקורות של גוגל ואפשר לדווח עליו להסרה.**")
+                lines.append("👉 [דווח כתוכן בלתי הולם](https://business.google.com/reviews) "
+                              "(כפתור התלת-נקודה ליד הביקורת הזו → אפשרות סימון כתוכן בלתי הולם)")
+                lines.append("")
+                lines.append("_גוגל לא חושפת API רשמי לדיווח/הסרת ביקורות - הפעולה חייבת "
+                              "להתבצע בלחיצה ידנית דרך הממשק שלהם. זו לא מגבלה של המערכת - "
+                              "זו מדיניות של גוגל עצמה. המערכת עושה את כל מה שלפניה: מזהה, "
+                              "מתריעה מיידית, ומכינה קישור ישיר - נשאר רק הקליק._")
         elif a["type"] == "rating_drop":
             lines.append(f"### ⚠️ ירידה בדירוג גוגל ביזנס: {a['from']}★ → {a['to']}★")
         elif a["type"] == "negative_facebook_recommendation":
             lines.append("### ⚠️ המלצה שלילית חדשה בפייסבוק")
             lines.append(f"> {a['excerpt']}")
+            if looks_like_harassment(a.get("excerpt")):
+                lines.append("👉 [דווח בפייסבוק](https://www.facebook.com/drguyrofe/reviews) "
+                              "(תלת-נקודה ליד ההמלצה → אפשרות דיווח)")
         lines.append("")
     return "\n".join(lines)
 
@@ -474,3 +502,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
