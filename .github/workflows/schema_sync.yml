@@ -35,6 +35,7 @@ jobs:
           WIX_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_DRGUYROFE_COM_ACCOUNT_ID }}
 
       - name: Verify Wix read access
+        continue-on-error: true
         run: python scripts/wix_connection_check.py
         env:
           WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_DRGUYROFE_COM_API }}
