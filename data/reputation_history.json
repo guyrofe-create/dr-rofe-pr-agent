@@ -1128,27 +1128,125 @@
       },
       "alerts": [],
       "errors": []
+    },
+    {
+      "date": "2026-07-12T05:12:22.266410",
+      "rank": [
+        {
+          "keyword": "גינקולוג תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "אנדומטריוזיס תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "לפרוסקופיה גינקולוגית",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "דר גיא רופא",
+          "position_top10": 4,
+          "status": "found"
+        },
+        {
+          "keyword": "כאבי אגן כרוניים גינקולוג",
+          "position_top10": null,
+          "status": "not_in_top10"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא דר גיא רופא, גינקולוג?",
+          "mentions_dr_rofe": true,
+          "excerpt": "ד\"ר גיא רופא הוא רופא גינקולוג ישראלי, שהתפרסם בזכות התמחותו בתחום הבריאות הנשית. הוא עשוי להיות קשור לניתוחים גינקולוגיים, טיפולי פוריות או מחקרים בתחום הרפואה הגינקולוגית. עם זאת, אין לי פרטים עדכני"
+        },
+        {
+          "prompt": "המלץ על גינקולוג מומחה לאנדומטריוזיס בתל אביב",
+          "mentions_dr_rofe": false,
+          "excerpt": "אני מצטער, אבל אין לי כרגע גישה למסד נתונים בזמן אמת או רשימות מעודכנות של רופאים מומחים. עם זאת, כדאי לבדוק באתרים רפואיים ישראליים, פורומים ברשת או קבוצות מדיה חברתית עבור המלצות מעודכנות. כמו כן, מ"
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "אחשלי היקר והאהוב שאר המטרידנים מחכים לך בתא\nלא להפיל את הסבון",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "error",
+        "detail": "HTTP 400: {\"error\":{\"message\":\"(#283) Requires pages_read_user_content permission to manage the object\",\"type\":\"OAuthException\",\"code\":283,\"fbtrace_id\":\"AQXGk8M-Jm_EEwOPyYX_34E\"}}"
+      },
+      "web_mentions": {
+        "status": "ok",
+        "total_results_checked": 7,
+        "new_mentions": []
+      },
+      "alerts": [],
+      "errors": []
     }
   ],
   "seen_review_ids": [
-    "Avi Kalili|1777044743",
+    "Alon Tsevi|1766326026",
     "דורון ל|1781610122",
     "Neta Tzur|1780837292",
-    "Alon Tsevi|1766326026",
-    "Nir|1783548048"
+    "Nir|1783548048",
+    "Avi Kalili|1777044743"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
-    "https://www.mako.co.il/Tagit/%D7%93%22%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90",
-    "https://www.ynet.co.il/news/article/bkcdgsorex",
-    "https://www.facebook.com/HaolamHaboker/videos/%D7%94%D7%9E%D7%AA%D7%9C%D7%95%D7%A0%D7%A0%D7%AA-%D7%A0%D7%92%D7%93-%D7%94%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92-%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%9E%D7%93%D7%91%D7%A8%D7%AA-%D7%9C%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94/611290766774080/",
-    "https://www.facebook.com/the7eye/posts/%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A9%D7%94%D7%95%D7%90%D7%A9%D7%9D-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%91%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%AA-%D7%95%D7%A8%D7%99%D7%A9%D7%99%D7%95%D7%A0%D7%95-%D7%94%D7%95%D7%AA%D7%9C%D7%94-%D7%AA%D7%95%D7%91%D7%A2-140-%D7%90%D7%9C%D7%A3-%D7%A9%D7%A7%D7%9C%D7%99%D7%9D-%D7%9E/1254265550046287/",
-    "https://www.facebook.com/praklitut.gov.il/posts/%EF%B8%8F-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A0%D7%A9%D7%99%D7%9D-%D7%A0%D7%97%D7%A7%D7%A8-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%9B%D7%9C%D7%A4%D7%99-%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%95-%D7%95%D7%91%D7%94%D7%9E%D7%A9%D7%9A-%D7%A0%D7%90%D7%A9%D7%9D-%D7%91%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA/1151999710437194/",
-    "https://www.drguyrofe.com/",
-    "https://www.ynet.co.il/news/article/sjzpvrip11l",
     "https://abortions.co.il/about/",
+    "https://www.ynet.co.il/news/article/bkcdgsorex",
+    "https://www.kan.org.il/content/kan-news/local/975391/",
+    "https://www.drguyrofe.com/",
+    "https://www.facebook.com/the7eye/posts/%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A9%D7%94%D7%95%D7%90%D7%A9%D7%9D-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%91%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%AA-%D7%95%D7%A8%D7%99%D7%A9%D7%99%D7%95%D7%A0%D7%95-%D7%94%D7%95%D7%AA%D7%9C%D7%94-%D7%AA%D7%95%D7%91%D7%A2-140-%D7%90%D7%9C%D7%A3-%D7%A9%D7%A7%D7%9C%D7%99%D7%9D-%D7%9E/1254265550046287/",
+    "https://www.ynet.co.il/news/article/sjzpvrip11l",
     "https://guyrofe.com/",
-    "https://www.kan.org.il/content/kan-news/local/975391/"
+    "https://www.mako.co.il/Tagit/%D7%93%22%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90",
+    "https://www.facebook.com/HaolamHaboker/videos/%D7%94%D7%9E%D7%AA%D7%9C%D7%95%D7%A0%D7%A0%D7%AA-%D7%A0%D7%92%D7%93-%D7%94%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92-%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%9E%D7%93%D7%91%D7%A8%D7%AA-%D7%9C%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94/611290766774080/",
+    "https://www.facebook.com/praklitut.gov.il/posts/%EF%B8%8F-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A0%D7%A9%D7%99%D7%9D-%D7%A0%D7%97%D7%A7%D7%A8-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%9B%D7%9C%D7%A4%D7%99-%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%95-%D7%95%D7%91%D7%94%D7%9E%D7%A9%D7%9A-%D7%A0%D7%90%D7%A9%D7%9D-%D7%91%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA/1151999710437194/"
   ],
   "last_full_digest_date": "2026-07-12"
 }
