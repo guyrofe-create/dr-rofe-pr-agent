@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-12T09:40:29Z",
+  "updated_at": "2026-07-12T11:02:38Z",
   "content_freeze": false,
   "events": [
     {
@@ -18,6 +18,166 @@
       "priority": "P4",
       "approval_required": "auto_or_standard",
       "sla_due_at": "2026-07-14T01:19:52Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://he.wikipedia.org/wiki/%D7%93%D7%A8",
+      "title": "דר",
+      "text": "דר",
+      "category": "web_mention",
+      "id": "evt_3a97709a1717d8d1",
+      "status": "new",
+      "created_at": "2026-07-12T11:02:38Z",
+      "last_seen_at": "2026-07-12T11:02:38Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-14T11:02:38Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://hebrew-academy.org.il/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%95%D7%91%D7%A7%D7%99%D7%A6%D7%95%D7%A8-%D7%93%D7%A8/",
+      "title": "דוקטור ובקיצור ד\"ר",
+      "text": "דוקטור ובקיצור ד\"ר",
+      "category": "web_mention",
+      "id": "evt_c90c8fb3de3fe843",
+      "status": "new",
+      "created_at": "2026-07-12T11:02:38Z",
+      "last_seen_at": "2026-07-12T11:02:38Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-14T11:02:38Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://milog.co.il/%D7%93%D7%A8",
+      "title": "מה זה דר - מילון עברי עברי",
+      "text": "מה זה דר - מילון עברי עברי",
+      "category": "web_mention",
+      "id": "evt_da26f5a2208b761b",
+      "status": "new",
+      "created_at": "2026-07-12T11:02:38Z",
+      "last_seen_at": "2026-07-12T11:02:38Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-14T11:02:38Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://www.facebook.com/AcademyOfTheHebrewLanguage/photos/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%90%D7%A0%D7%97%D7%A0%D7%95-%D7%A8%D7%A7-%D7%A9%D7%90%D7%9C%D7%94%D7%94%D7%90%D7%9D-%D7%9B%D7%95%D7%AA%D7%91%D7%99%D7%9D-%D7%93%D7%A8-%D7%93%D7%A8-%D7%90%D7%95-%D7%91%D7%9B%D7%9C%D7%9C-%D7%93%D7%95%D7%A7-%D7%91%D7%90%D7%95%D7%A4%D7%9F-%D7%9B%D7%9C%D7%9C%D7%99-%D7%A7%D7%99%D7%99%D7%9E%D7%95%D7%AA-%D7%A9%D7%AA%D7%99-%D7%93%D7%A8%D7%9B%D7%99-%D7%A7%D7%99%D7%A6%D7%95/1441472478017526/",
+      "title": "האקדמיה - דוקטור? אנחנו רק שאלה: האם כותבים ד\"ר, דר ...",
+      "text": "האקדמיה - דוקטור? אנחנו רק שאלה: האם כותבים ד\"ר, דר ...",
+      "category": "web_mention",
+      "id": "evt_70a3ffdf21facf6e",
+      "status": "new",
+      "created_at": "2026-07-12T11:02:38Z",
+      "last_seen_at": "2026-07-12T11:02:38Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-14T11:02:38Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://www.materna.co.il/%D7%A9%D7%9E%D7%95%D7%AA-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA/%D7%A4%D7%99%D7%A8%D7%95%D7%A9-%D7%94%D7%A9%D7%9D-%D7%93%D7%A8",
+      "title": "פירוש ומשמעות השם ,דר",
+      "text": "פירוש ומשמעות השם ,דר",
+      "category": "web_mention",
+      "id": "evt_4d6bdf5a04a753e9",
+      "status": "new",
+      "created_at": "2026-07-12T11:02:38Z",
+      "last_seen_at": "2026-07-12T11:02:38Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-14T11:02:38Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://www.naderbutto.co.il/",
+      "title": "רפואת העתיד - Dr. Nader Butto",
+      "text": "רפואת העתיד - Dr. Nader Butto",
+      "category": "web_mention",
+      "id": "evt_029d8cb41a3db0a4",
+      "status": "new",
+      "created_at": "2026-07-12T11:02:38Z",
+      "last_seen_at": "2026-07-12T11:02:38Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-14T11:02:38Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://he.wiktionary.org/wiki/%D7%93%D7%A8",
+      "title": "דר",
+      "text": "דר",
+      "category": "web_mention",
+      "id": "evt_d2b590090a8aacbf",
+      "status": "new",
+      "created_at": "2026-07-12T11:02:38Z",
+      "last_seen_at": "2026-07-12T11:02:38Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-14T11:02:38Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://www.clalitaesthetics.co.il/doctors/%D7%93%D7%A8-%D7%91%D7%99%D7%90%D7%93%D7%A8-%D7%91%D7%9C%D7%90%D7%9C/",
+      "title": "ד\"ר ביאדר בילאל - מומחה בכירורגיה פלסטית",
+      "text": "ד\"ר ביאדר בילאל - מומחה בכירורגיה פלסטית",
+      "category": "web_mention",
+      "id": "evt_93081a79a7a50400",
+      "status": "new",
+      "created_at": "2026-07-12T11:02:38Z",
+      "last_seen_at": "2026-07-12T11:02:38Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-14T11:02:38Z",
       "risk_reasons": [
         "new reputation event"
       ],
@@ -59,6 +219,318 @@
       "approval_required": "auto_or_standard",
       "created_at": "2026-07-12T01:19:52Z",
       "due_at": "2026-07-14T01:19:52Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_3a97709a1717d8d1_1",
+      "event_id": "evt_3a97709a1717d8d1",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_3a97709a1717d8d1_2",
+      "event_id": "evt_3a97709a1717d8d1",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_3a97709a1717d8d1_3",
+      "event_id": "evt_3a97709a1717d8d1",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c90c8fb3de3fe843_1",
+      "event_id": "evt_c90c8fb3de3fe843",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c90c8fb3de3fe843_2",
+      "event_id": "evt_c90c8fb3de3fe843",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c90c8fb3de3fe843_3",
+      "event_id": "evt_c90c8fb3de3fe843",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_da26f5a2208b761b_1",
+      "event_id": "evt_da26f5a2208b761b",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_da26f5a2208b761b_2",
+      "event_id": "evt_da26f5a2208b761b",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_da26f5a2208b761b_3",
+      "event_id": "evt_da26f5a2208b761b",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_70a3ffdf21facf6e_1",
+      "event_id": "evt_70a3ffdf21facf6e",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_70a3ffdf21facf6e_2",
+      "event_id": "evt_70a3ffdf21facf6e",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_70a3ffdf21facf6e_3",
+      "event_id": "evt_70a3ffdf21facf6e",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_4d6bdf5a04a753e9_1",
+      "event_id": "evt_4d6bdf5a04a753e9",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_4d6bdf5a04a753e9_2",
+      "event_id": "evt_4d6bdf5a04a753e9",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_4d6bdf5a04a753e9_3",
+      "event_id": "evt_4d6bdf5a04a753e9",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_029d8cb41a3db0a4_1",
+      "event_id": "evt_029d8cb41a3db0a4",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_029d8cb41a3db0a4_2",
+      "event_id": "evt_029d8cb41a3db0a4",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_029d8cb41a3db0a4_3",
+      "event_id": "evt_029d8cb41a3db0a4",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_d2b590090a8aacbf_1",
+      "event_id": "evt_d2b590090a8aacbf",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_d2b590090a8aacbf_2",
+      "event_id": "evt_d2b590090a8aacbf",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_d2b590090a8aacbf_3",
+      "event_id": "evt_d2b590090a8aacbf",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_93081a79a7a50400_1",
+      "event_id": "evt_93081a79a7a50400",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_93081a79a7a50400_2",
+      "event_id": "evt_93081a79a7a50400",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_93081a79a7a50400_3",
+      "event_id": "evt_93081a79a7a50400",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-12T11:02:38Z",
+      "due_at": "2026-07-14T11:02:38Z",
       "prohibited_actions": [
         "reveal_private_details",
         "fabricate_endorsement"
@@ -280,7 +752,7 @@
     {
       "id": "cmp_6974f5cd540859",
       "brand": "ד\"ר גיא רופא",
-      "created_at": "2026-07-12T09:40:29Z",
+      "created_at": "2026-07-12T11:02:38Z",
       "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
       "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
       "serp_asset_gap": {
@@ -904,12 +1376,101 @@
       "details": {
         "tasks": 6
       }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_3a97709a1717d8d1",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_c90c8fb3de3fe843",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_da26f5a2208b761b",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_70a3ffdf21facf6e",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_4d6bdf5a04a753e9",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_029d8cb41a3db0a4",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_d2b590090a8aacbf",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_93081a79a7a50400",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-12T11:02:38Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_replanned",
+      "object_id": "cmp_6974f5cd540859",
+      "details": {
+        "tasks": 6
+      }
     }
   ],
   "metrics": {
-    "open_events": 1,
+    "open_events": 9,
     "critical_events": 0,
-    "pending_tasks": 3,
+    "pending_tasks": 27,
     "active_crises": 0,
     "content_freeze": false
   }
