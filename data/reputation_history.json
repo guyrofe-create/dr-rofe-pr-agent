@@ -2629,14 +2629,111 @@
       },
       "alerts": [],
       "errors": []
+    },
+    {
+      "date": "2026-07-13T19:07:46.469978",
+      "rank": [
+        {
+          "keyword": "גינקולוג תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "אנדומטריוזיס תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "לפרוסקופיה גינקולוגית",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "דר גיא רופא",
+          "position_top10": 4,
+          "status": "found"
+        },
+        {
+          "keyword": "כאבי אגן כרוניים גינקולוג",
+          "status": "error",
+          "detail": "HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=20)"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא דר גיא רופא, גינקולוג?",
+          "mentions_dr_rofe": true,
+          "excerpt": "ד\"ר גיא רופא הוא רופא גינקולוגי ישראלי, הידוע בתחום רפואת הנשים. הוא עוסק בתחומים כמו פוריות, הריון ולידה, וכן טיפולים גינקולוגיים שונים. אם אתה מעוניין במידע נוסף על ד\"ר גיא רופא, כמו הניסיון המקצועי"
+        },
+        {
+          "prompt": "המלץ על גינקולוג מומחה לאנדומטריוזיס בתל אביב",
+          "mentions_dr_rofe": false,
+          "excerpt": "אני ממליץ לבדוק את המומחים הבאים לאנדומטריוזיס בתל אביב:\n\n1. **פרופ' דניאל זיידמן** - מומחה ברפואת נשים עם ניסיון באנדומטריוזיס. עובד בבית החולים \"שיבא\" תל השומר וגם במרפאות פרטיות בתל אביב.\n\n2. **ד\"ר"
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "אחשלי היקר והאהוב שאר המטרידנים מחכים לך בתא\nלא להפיל את הסבון",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "error",
+        "detail": "HTTP 400: {\"error\":{\"message\":\"(#283) Requires pages_read_user_content permission to manage the object\",\"type\":\"OAuthException\",\"code\":283,\"fbtrace_id\":\"AAdNkZPSrY9YxdbQx9DkQra\"}}"
+      },
+      "web_mentions": {
+        "status": "error",
+        "detail": "HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=20)"
+      },
+      "alerts": [],
+      "errors": []
     }
   ],
   "seen_review_ids": [
     "Avi Kalili|1777044743",
-    "Alon Tsevi|1766326026",
-    "Neta Tzur|1780837292",
     "Nir|1783548048",
-    "דורון ל|1781610122"
+    "דורון ל|1781610122",
+    "Neta Tzur|1780837292",
+    "Alon Tsevi|1766326026"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
