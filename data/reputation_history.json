@@ -2921,14 +2921,111 @@
       },
       "alerts": [],
       "errors": []
+    },
+    {
+      "date": "2026-07-14T01:10:23.245012",
+      "rank": [
+        {
+          "keyword": "גינקולוג תל אביב",
+          "status": "error",
+          "detail": "HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=20)"
+        },
+        {
+          "keyword": "אנדומטריוזיס תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "לפרוסקופיה גינקולוגית",
+          "status": "error",
+          "detail": "HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=20)"
+        },
+        {
+          "keyword": "דר גיא רופא",
+          "status": "error",
+          "detail": "HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=20)"
+        },
+        {
+          "keyword": "כאבי אגן כרוניים גינקולוג",
+          "position_top10": null,
+          "status": "not_in_top10"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא דר גיא רופא, גינקולוג?",
+          "mentions_dr_rofe": true,
+          "excerpt": "לצערי, אין לי מידע ספציפי על ד\"ר גיא רופא או על פעילותו כגינקולוג. אם אתה מחפש מידע על רופא מסוים, אני ממליץ לחפש באתרי מרפאות, בתי חולים או שירותים רפואיים שבהם ייתכן שהוא עובד, או לפנות למקורות מקוו"
+        },
+        {
+          "prompt": "המלץ על גינקולוג מומחה לאנדומטריוזיס בתל אביב",
+          "mentions_dr_rofe": false,
+          "excerpt": "אני מבינה שאת מחפשת גינקולוג מומחה לאנדומטריוזיס בתל אביב. אמנם אין לי גישה למאגרי מידע בזמן אמת, אך אני יכולה להמליץ לך על מספר מומחים מוכרים בתחום בתל אביב:\n\n1. **ד\"ר דב לקסמן** – מומחה ידוע בגינקול"
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "אחשלי היקר והאהוב שאר המטרידנים מחכים לך בתא\nלא להפיל את הסבון",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "error",
+        "detail": "HTTP 400: {\"error\":{\"message\":\"(#283) Requires pages_read_user_content permission to manage the object\",\"type\":\"OAuthException\",\"code\":283,\"fbtrace_id\":\"AKfrvOOLeGUIPJ9HmBatqyl\"}}"
+      },
+      "web_mentions": {
+        "status": "error",
+        "detail": "HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=20)"
+      },
+      "alerts": [],
+      "errors": []
     }
   ],
   "seen_review_ids": [
-    "דורון ל|1781610122",
+    "Nir|1783548048",
     "Alon Tsevi|1766326026",
     "Neta Tzur|1780837292",
     "Avi Kalili|1777044743",
-    "Nir|1783548048"
+    "דורון ל|1781610122"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
@@ -2951,5 +3048,5 @@
     "https://www.ynet.co.il/news/article/sjzpvrip11l",
     "https://hebrew-academy.org.il/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%95%D7%91%D7%A7%D7%99%D7%A6%D7%95%D7%A8-%D7%93%D7%A8/"
   ],
-  "last_full_digest_date": "2026-07-13"
+  "last_full_digest_date": "2026-07-14"
 }
