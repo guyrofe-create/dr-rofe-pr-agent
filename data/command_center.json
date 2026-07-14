@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-14T13:00:44Z",
+  "updated_at": "2026-07-14T15:15:13Z",
   "content_freeze": false,
   "events": [
     {
@@ -178,6 +178,87 @@
       "priority": "P4",
       "approval_required": "auto_or_standard",
       "sla_due_at": "2026-07-14T11:02:38Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://www.youtube.com/watch?v=H6qNDivmEoM",
+      "title": "הגניקולוג שהמשיך לעבוד אחרי שהואשם בעבירות מין - ד״ר גיא רופא ...",
+      "text": "הגניקולוג שהמשיך לעבוד אחרי שהואשם בעבירות מין - ד״ר גיא רופא ...",
+      "category": "web_mention",
+      "id": "evt_79aea221263d8067",
+      "status": "new",
+      "created_at": "2026-07-14T15:15:13Z",
+      "last_seen_at": "2026-07-14T15:15:13Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-16T15:15:13Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://www.instagram.com/p/DOBVjYrjdsH/?hl=he",
+      "title": "הגינקולוג גיא רופא שרשיונו הותלה בעקבות כתב אישום על עבירת מין ...",
+      "text": "הגינקולוג גיא רופא שרשיונו הותלה בעקבות כתב אישום על עבירת מין ...",
+      "category": "crisis_risk",
+      "id": "evt_c77e9dcd24a2532b",
+      "status": "new",
+      "created_at": "2026-07-14T15:15:13Z",
+      "last_seen_at": "2026-07-14T15:15:13Z",
+      "occurrences": 1,
+      "risk_score": 30,
+      "priority": "P3",
+      "approval_required": "standard",
+      "sla_due_at": "2026-07-15T15:15:13Z",
+      "risk_reasons": [
+        "new reputation event",
+        "high-risk terms: כתב אישום"
+      ],
+      "playbook": "standard_response"
+    },
+    {
+      "source": "web",
+      "url": "https://www.ynet.co.il/news/article/bkhe9arof",
+      "title": "עדויות נגד הגינקולוג גיא רופא, שהפך לכוכב רשת: \"היה עירום ...",
+      "text": "עדויות נגד הגינקולוג גיא רופא, שהפך לכוכב רשת: \"היה עירום ...",
+      "category": "web_mention",
+      "id": "evt_1ff9ac20fa74cc09",
+      "status": "new",
+      "created_at": "2026-07-14T15:15:13Z",
+      "last_seen_at": "2026-07-14T15:15:13Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-16T15:15:13Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "web",
+      "url": "https://www.kan.org.il/content/kan-news/local/864582/",
+      "title": "הערעור נדחה: רישיונו של ד\"ר גיא רופא הותלה",
+      "text": "הערעור נדחה: רישיונו של ד\"ר גיא רופא הותלה",
+      "category": "web_mention",
+      "id": "evt_7fce70fc2952adad",
+      "status": "new",
+      "created_at": "2026-07-14T15:15:13Z",
+      "last_seen_at": "2026-07-14T15:15:13Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-16T15:15:13Z",
       "risk_reasons": [
         "new reputation event"
       ],
@@ -531,6 +612,171 @@
       "approval_required": "auto_or_standard",
       "created_at": "2026-07-12T11:02:38Z",
       "due_at": "2026-07-14T11:02:38Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_79aea221263d8067_1",
+      "event_id": "evt_79aea221263d8067",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_79aea221263d8067_2",
+      "event_id": "evt_79aea221263d8067",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_79aea221263d8067_3",
+      "event_id": "evt_79aea221263d8067",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c77e9dcd24a2532b_1",
+      "event_id": "evt_c77e9dcd24a2532b",
+      "title": "Verify context",
+      "status": "pending",
+      "approval_required": "standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-15T15:15:13Z",
+      "prohibited_actions": [
+        "copy_paste_without_context"
+      ]
+    },
+    {
+      "id": "tsk_c77e9dcd24a2532b_2",
+      "event_id": "evt_c77e9dcd24a2532b",
+      "title": "Draft brand-safe response",
+      "status": "pending",
+      "approval_required": "standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-15T15:15:13Z",
+      "prohibited_actions": [
+        "copy_paste_without_context"
+      ]
+    },
+    {
+      "id": "tsk_c77e9dcd24a2532b_3",
+      "event_id": "evt_c77e9dcd24a2532b",
+      "title": "Obtain standard approval",
+      "status": "pending",
+      "approval_required": "standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-15T15:15:13Z",
+      "prohibited_actions": [
+        "copy_paste_without_context"
+      ]
+    },
+    {
+      "id": "tsk_c77e9dcd24a2532b_4",
+      "event_id": "evt_c77e9dcd24a2532b",
+      "title": "Publish and monitor",
+      "status": "pending",
+      "approval_required": "standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-15T15:15:13Z",
+      "prohibited_actions": [
+        "copy_paste_without_context"
+      ]
+    },
+    {
+      "id": "tsk_1ff9ac20fa74cc09_1",
+      "event_id": "evt_1ff9ac20fa74cc09",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_1ff9ac20fa74cc09_2",
+      "event_id": "evt_1ff9ac20fa74cc09",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_1ff9ac20fa74cc09_3",
+      "event_id": "evt_1ff9ac20fa74cc09",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_7fce70fc2952adad_1",
+      "event_id": "evt_7fce70fc2952adad",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_7fce70fc2952adad_2",
+      "event_id": "evt_7fce70fc2952adad",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_7fce70fc2952adad_3",
+      "event_id": "evt_7fce70fc2952adad",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-14T15:15:13Z",
+      "due_at": "2026-07-16T15:15:13Z",
       "prohibited_actions": [
         "reveal_private_details",
         "fabricate_endorsement"
@@ -1172,7 +1418,7 @@
     {
       "id": "cmp_98e6d1a10f5381",
       "brand": "ד\"ר גיא רופא",
-      "created_at": "2026-07-14T13:00:44Z",
+      "created_at": "2026-07-14T15:15:13Z",
       "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
       "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
       "serp_asset_gap": {
@@ -2065,12 +2311,61 @@
       "details": {
         "tasks": 6
       }
+    },
+    {
+      "at": "2026-07-14T15:15:13Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_79aea221263d8067",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-14T15:15:13Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_c77e9dcd24a2532b",
+      "details": {
+        "priority": "P3",
+        "score": 30
+      }
+    },
+    {
+      "at": "2026-07-14T15:15:13Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_1ff9ac20fa74cc09",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-14T15:15:13Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_7fce70fc2952adad",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-14T15:15:13Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_replanned",
+      "object_id": "cmp_98e6d1a10f5381",
+      "details": {
+        "tasks": 6
+      }
     }
   ],
   "metrics": {
-    "open_events": 9,
+    "open_events": 13,
     "critical_events": 0,
-    "pending_tasks": 27,
+    "pending_tasks": 40,
     "active_crises": 0,
     "content_freeze": false
   }
