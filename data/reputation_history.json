@@ -4014,39 +4014,137 @@
       },
       "alerts": [],
       "errors": []
+    },
+    {
+      "date": "2026-07-15T01:07:59.839259",
+      "rank": [
+        {
+          "keyword": "גינקולוג תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "אנדומטריוזיס תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "לפרוסקופיה גינקולוגית",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "דר גיא רופא",
+          "position_top10": 3,
+          "status": "found"
+        },
+        {
+          "keyword": "כאבי אגן כרוניים גינקולוג",
+          "position_top10": null,
+          "status": "not_in_top10"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא דר גיא רופא, גינקולוג?",
+          "mentions_dr_rofe": true,
+          "excerpt": "דר גיא רופא הוא רופא גינקולוג ישראלי. עם זאת, למידע מעודכן כגון השכלה, ניסיון ופרטים נוספים על הקריירה שלו, מומלץ לבדוק במקורות מידע רפואיים, אתרים רשמיים של בתי חולים בהם הוא עובד, או לפנות ישירות לק"
+        },
+        {
+          "prompt": "המלץ על גינקולוג מומחה לאנדומטריוזיס בתל אביב",
+          "mentions_dr_rofe": false,
+          "excerpt": "בוודאי! בתל אביב ובסביבתה ישנם מספר רופאי נשים שמתמחים באנדומטריוזיס. אם כן, הנה כמה מהמומלצים:\n\n1. **ד\"ר דוד גורדון** - מומחה לגינקולוגיה עם ניסיון רחב בטיפול באנדומטריוזיס.\n2. **ד\"ר שמעון קורץ** - י"
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "My dear and beloved brother, the rest of the harassers are waiting for you in the cell. Don't drop the soap.",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "error",
+        "detail": "HTTP 400: {\"error\":{\"message\":\"(#283) Requires pages_read_user_content permission to manage the object\",\"type\":\"OAuthException\",\"code\":283,\"fbtrace_id\":\"Atp-DCWRbtRXbFJbnuAQuyj\"}}"
+      },
+      "web_mentions": {
+        "status": "ok",
+        "total_results_checked": 8,
+        "new_mentions": []
+      },
+      "alerts": [],
+      "errors": []
     }
   ],
   "seen_review_ids": [
+    "Avi Kalili|1777044743",
+    "Alon Tsevi|1766326026",
     "Nir|1783548048",
     "Neta Tzur|1780837292",
-    "Alon Tsevi|1766326026",
-    "Avi Kalili|1777044743",
     "דורון ל|1781610122"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
-    "https://www.drguyrofe.com/",
-    "https://www.kan.org.il/content/kan-news/local/975391/",
-    "https://www.ynet.co.il/news/article/bkhe9arof",
-    "https://www.facebook.com/the7eye/posts/%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A9%D7%94%D7%95%D7%90%D7%A9%D7%9D-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%91%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%AA-%D7%95%D7%A8%D7%99%D7%A9%D7%99%D7%95%D7%A0%D7%95-%D7%94%D7%95%D7%AA%D7%9C%D7%94-%D7%AA%D7%95%D7%91%D7%A2-140-%D7%90%D7%9C%D7%A3-%D7%A9%D7%A7%D7%9C%D7%99%D7%9D-%D7%9E/1254265550046287/",
-    "https://www.youtube.com/watch?v=H6qNDivmEoM",
-    "https://www.ynet.co.il/news/article/sjzpvrip11l",
-    "https://www.instagram.com/p/DOBVjYrjdsH/?hl=he",
-    "https://www.mako.co.il/Tagit/%D7%93%22%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90",
-    "https://www.naderbutto.co.il/",
+    "https://he.wiktionary.org/wiki/%D7%93%D7%A8",
+    "https://www.clalitaesthetics.co.il/doctors/%D7%93%D7%A8-%D7%91%D7%99%D7%90%D7%93%D7%A8-%D7%91%D7%9C%D7%90%D7%9C/",
+    "https://www.facebook.com/AcademyOfTheHebrewLanguage/photos/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%90%D7%A0%D7%97%D7%A0%D7%95-%D7%A8%D7%A7-%D7%A9%D7%90%D7%9C%D7%94%D7%94%D7%90%D7%9D-%D7%9B%D7%95%D7%AA%D7%91%D7%99%D7%9D-%D7%93%D7%A8-%D7%93%D7%A8-%D7%90%D7%95-%D7%91%D7%9B%D7%9C%D7%9C-%D7%93%D7%95%D7%A7-%D7%91%D7%90%D7%95%D7%A4%D7%9F-%D7%9B%D7%9C%D7%9C%D7%99-%D7%A7%D7%99%D7%99%D7%9E%D7%95%D7%AA-%D7%A9%D7%AA%D7%99-%D7%93%D7%A8%D7%9B%D7%99-%D7%A7%D7%99%D7%A6%D7%95/1441472478017526/",
     "https://guyrofe.com/",
+    "https://www.kan.org.il/content/kan-news/local/975391/",
+    "https://www.instagram.com/p/DOBVjYrjdsH/?hl=he",
     "https://www.ynet.co.il/news/article/bkcdgsorex",
-    "https://he.wikipedia.org/wiki/%D7%93%D7%A8",
+    "https://www.facebook.com/HaolamHaboker/videos/%D7%94%D7%9E%D7%AA%D7%9C%D7%95%D7%A0%D7%A0%D7%AA-%D7%A0%D7%92%D7%93-%D7%94%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92-%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%9E%D7%93%D7%91%D7%A8%D7%AA-%D7%9C%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94/611290766774080/",
     "https://hebrew-academy.org.il/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%95%D7%91%D7%A7%D7%99%D7%A6%D7%95%D7%A8-%D7%93%D7%A8/",
     "https://milog.co.il/%D7%93%D7%A8",
-    "https://www.facebook.com/AcademyOfTheHebrewLanguage/photos/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%90%D7%A0%D7%97%D7%A0%D7%95-%D7%A8%D7%A7-%D7%A9%D7%90%D7%9C%D7%94%D7%94%D7%90%D7%9D-%D7%9B%D7%95%D7%AA%D7%91%D7%99%D7%9D-%D7%93%D7%A8-%D7%93%D7%A8-%D7%90%D7%95-%D7%91%D7%9B%D7%9C%D7%9C-%D7%93%D7%95%D7%A7-%D7%91%D7%90%D7%95%D7%A4%D7%9F-%D7%9B%D7%9C%D7%9C%D7%99-%D7%A7%D7%99%D7%99%D7%9E%D7%95%D7%AA-%D7%A9%D7%AA%D7%99-%D7%93%D7%A8%D7%9B%D7%99-%D7%A7%D7%99%D7%A6%D7%95/1441472478017526/",
+    "https://www.naderbutto.co.il/",
     "https://www.facebook.com/praklitut.gov.il/posts/%EF%B8%8F-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A0%D7%A9%D7%99%D7%9D-%D7%A0%D7%97%D7%A7%D7%A8-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%9B%D7%9C%D7%A4%D7%99-%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%95-%D7%95%D7%91%D7%94%D7%9E%D7%A9%D7%9A-%D7%A0%D7%90%D7%A9%D7%9D-%D7%91%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA/1151999710437194/",
-    "https://www.facebook.com/HaolamHaboker/videos/%D7%94%D7%9E%D7%AA%D7%9C%D7%95%D7%A0%D7%A0%D7%AA-%D7%A0%D7%92%D7%93-%D7%94%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92-%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%9E%D7%93%D7%91%D7%A8%D7%AA-%D7%9C%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94/611290766774080/",
-    "https://www.kan.org.il/content/kan-news/local/864582/",
+    "https://www.ynet.co.il/news/article/bkhe9arof",
+    "https://www.drguyrofe.com/",
+    "https://www.youtube.com/watch?v=H6qNDivmEoM",
+    "https://abortions.co.il/about/",
+    "https://www.ynet.co.il/news/article/sjzpvrip11l",
+    "https://www.facebook.com/the7eye/posts/%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A9%D7%94%D7%95%D7%90%D7%A9%D7%9D-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%91%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%AA-%D7%95%D7%A8%D7%99%D7%A9%D7%99%D7%95%D7%A0%D7%95-%D7%94%D7%95%D7%AA%D7%9C%D7%94-%D7%AA%D7%95%D7%91%D7%A2-140-%D7%90%D7%9C%D7%A3-%D7%A9%D7%A7%D7%9C%D7%99%D7%9D-%D7%9E/1254265550046287/",
     "https://www.materna.co.il/%D7%A9%D7%9E%D7%95%D7%AA-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA/%D7%A4%D7%99%D7%A8%D7%95%D7%A9-%D7%94%D7%A9%D7%9D-%D7%93%D7%A8",
-    "https://www.clalitaesthetics.co.il/doctors/%D7%93%D7%A8-%D7%91%D7%99%D7%90%D7%93%D7%A8-%D7%91%D7%9C%D7%90%D7%9C/",
-    "https://he.wiktionary.org/wiki/%D7%93%D7%A8",
-    "https://abortions.co.il/about/"
+    "https://www.mako.co.il/Tagit/%D7%93%22%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90",
+    "https://he.wikipedia.org/wiki/%D7%93%D7%A8",
+    "https://www.kan.org.il/content/kan-news/local/864582/"
   ],
-  "last_full_digest_date": "2026-07-14"
+  "last_full_digest_date": "2026-07-15"
 }
