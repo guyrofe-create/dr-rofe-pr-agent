@@ -4308,14 +4308,111 @@
       },
       "alerts": [],
       "errors": []
+    },
+    {
+      "date": "2026-07-15T09:45:54.397182",
+      "rank": [
+        {
+          "keyword": "גינקולוג תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "אנדומטריוזיס תל אביב",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "לפרוסקופיה גינקולוגית",
+          "position_top10": null,
+          "status": "not_in_top10"
+        },
+        {
+          "keyword": "דר גיא רופא",
+          "position_top10": 4,
+          "status": "found"
+        },
+        {
+          "keyword": "כאבי אגן כרוניים גינקולוג",
+          "position_top10": null,
+          "status": "not_in_top10"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא דר גיא רופא, גינקולוג?",
+          "mentions_dr_rofe": true,
+          "excerpt": "ד\"ר גיא רופא הוא רופא גינקולוג מומחה בתחום רפואת נשים. ייתכן שיש לו התמחות בתחומים ספציפיים כגון פוריות, אולטרסאונד מיילדותי, או תחומים אחרים ברפואת נשים. כדי לקבל מידע מדויק ומעודכן לגבי פעילותו המקצ"
+        },
+        {
+          "prompt": "המלץ על גינקולוג מומחה לאנדומטריוזיס בתל אביב",
+          "mentions_dr_rofe": false,
+          "excerpt": "אני מצטער, אבל אין לי אפשרות להמליץ על רופאים ספציפיים. אני ממליץ לבדוק המלצות באתרים כמו זאפ דוקטורס או לפנות לקופות החולים באזור שלך כדי לקבל רשימה של מומחים בתחום. בהצלחה!"
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "My dear and beloved brother, the rest of the harassers are waiting for you in the cell. Don't drop the soap.",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "error",
+        "detail": "HTTP 400: {\"error\":{\"message\":\"(#283) Requires pages_read_user_content permission to manage the object\",\"type\":\"OAuthException\",\"code\":283,\"fbtrace_id\":\"AzzYxiYR9Ory8BarB7tbESw\"}}"
+      },
+      "web_mentions": {
+        "status": "error",
+        "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%22%D7%93%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90%22+OR+%22%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90%22+%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92&google_domain=google.co.il&gl=il&hl=iw&num=20&api_key=f15cf2904e979eefeab1ab7f2f9f03047c7bcd9786dbc2b197eb81b769e23ee8"
+      },
+      "alerts": [],
+      "errors": []
     }
   ],
   "seen_review_ids": [
+    "Avi Kalili|1777044743",
     "Neta Tzur|1780837292",
-    "Alon Tsevi|1766326026",
     "דורון ל|1781610122",
-    "Nir|1783548048",
-    "Avi Kalili|1777044743"
+    "Alon Tsevi|1766326026",
+    "Nir|1783548048"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
