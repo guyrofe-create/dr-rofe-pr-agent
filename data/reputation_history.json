@@ -11098,14 +11098,111 @@
       },
       "alerts": [],
       "errors": []
+    },
+    {
+      "date": "2026-07-21T22:42:10.401684",
+      "rank": [
+        {
+          "keyword": "גינקולוג תל אביב",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=f15cf2904e979eefeab1ab7f2f9f03047c7bcd9786dbc2b197eb81b769e23ee8"
+        },
+        {
+          "keyword": "אנדומטריוזיס תל אביב",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%90%D7%A0%D7%93%D7%95%D7%9E%D7%98%D7%A8%D7%99%D7%95%D7%96%D7%99%D7%A1+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=f15cf2904e979eefeab1ab7f2f9f03047c7bcd9786dbc2b197eb81b769e23ee8"
+        },
+        {
+          "keyword": "לפרוסקופיה גינקולוגית",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%9C%D7%A4%D7%A8%D7%95%D7%A1%D7%A7%D7%95%D7%A4%D7%99%D7%94+%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%AA&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=f15cf2904e979eefeab1ab7f2f9f03047c7bcd9786dbc2b197eb81b769e23ee8"
+        },
+        {
+          "keyword": "דר גיא רופא",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%93%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=f15cf2904e979eefeab1ab7f2f9f03047c7bcd9786dbc2b197eb81b769e23ee8"
+        },
+        {
+          "keyword": "כאבי אגן כרוניים גינקולוג",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%9B%D7%90%D7%91%D7%99+%D7%90%D7%92%D7%9F+%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%99%D7%9D+%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=f15cf2904e979eefeab1ab7f2f9f03047c7bcd9786dbc2b197eb81b769e23ee8"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא דר גיא רופא, גינקולוג?",
+          "mentions_dr_rofe": true,
+          "excerpt": "ד\"ר גיא רופא הוא רופא גינקולוג ישראלי, מומחה ברפואת נשים ותחומים נלווים. המידע הזמין לגביו עשוי לכלול פרטים על השכלה, התמחות וניסיון מקצועי, אולם חשוב לציין שפרטים ספציפיים יותר כגון מקום עבודה נוכחי "
+        },
+        {
+          "prompt": "המלץ על גינקולוג מומחה לאנדומטריוזיס בתל אביב",
+          "mentions_dr_rofe": false,
+          "excerpt": "אני יכול להמליץ על כמה מומחים לאנדומטריוזיס בתל אביב, אך חשוב לבדוק ולוודא את המידע העדכני ביותר מול מקורות מהימנים. הנה כמה רופאים שאתה יכול לשקול:\n\n1. ד\"ר דניאל זיידמן - מומחה לגינקולוגיה ומיילדות ע"
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "My dear and beloved brother, the rest of the harassers are waiting for you in the cell. Don't drop the soap.",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "error",
+        "detail": "HTTP 400: {\"error\":{\"message\":\"(#283) Requires pages_read_user_content permission to manage the object\",\"type\":\"OAuthException\",\"code\":283,\"fbtrace_id\":\"AlB-u-NC0YQHBkPdIz3Hfhc\"}}"
+      },
+      "web_mentions": {
+        "status": "error",
+        "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%22%D7%93%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90%22+OR+%22%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90%22+%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92&google_domain=google.co.il&gl=il&hl=iw&num=20&api_key=f15cf2904e979eefeab1ab7f2f9f03047c7bcd9786dbc2b197eb81b769e23ee8"
+      },
+      "alerts": [],
+      "errors": []
     }
   ],
   "seen_review_ids": [
     "Nir|1783548048",
     "Neta Tzur|1780837292",
     "דורון ל|1781610122",
-    "Alon Tsevi|1766326026",
-    "Avi Kalili|1777044743"
+    "Avi Kalili|1777044743",
+    "Alon Tsevi|1766326026"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
