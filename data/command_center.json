@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-23T22:43:44Z",
+  "updated_at": "2026-07-24T01:19:20Z",
   "content_freeze": false,
   "events": [
     {
@@ -3262,6 +3262,188 @@
         "qualified_leads",
         "reputation_incidents_resolved"
       ]
+    },
+    {
+      "id": "cmp_e778c6d91c37aa",
+      "brand": "ד\"ר גיא רופא",
+      "created_at": "2026-07-24T01:19:20Z",
+      "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
+      "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
+      "serp_asset_gap": {
+        "target_slots": 8,
+        "eligible_assets": 26,
+        "observed_page_one_assets": 1,
+        "controlled_page_one_assets": 1,
+        "independent_page_one_assets": 0,
+        "slot_gap": 7,
+        "missing_asset_types": [
+          "independent_media",
+          "association_profile"
+        ],
+        "warning": "Asset existence is not page-one visibility. Slots count only observed page-one results; independent editorial results must be earned."
+      },
+      "tasks": [
+        {
+          "id": "gt_9b9507ced8e24d",
+          "tactic": "entity_home",
+          "priority": "P1",
+          "reason": "canonical entity and corroborated facts are incomplete",
+          "surface": [
+            "google",
+            "google_ai",
+            "chatgpt",
+            "perplexity",
+            "bing_copilot"
+          ],
+          "status": "proposed",
+          "approval_required": "standard",
+          "actions": [
+            "Create a dedicated person/organization page with stable URL and authorship",
+            "Connect Person/Organization/LocalBusiness schema with stable @id values",
+            "Link every official profile back to the canonical entity home where allowed",
+            "Validate consistent name, role, location, credentials and sameAs references"
+          ],
+          "forbidden": [
+            "fabricated_credentials",
+            "fake_profiles"
+          ],
+          "impact": 10,
+          "speed": 7,
+          "risk": 1
+        },
+        {
+          "id": "gt_f22aa16c8acc53",
+          "tactic": "expert_answer_library",
+          "priority": "P1",
+          "reason": "AI citation or explicit brand-mention coverage is weak",
+          "surface": [
+            "organic",
+            "google_ai",
+            "chatgpt",
+            "perplexity"
+          ],
+          "status": "proposed",
+          "approval_required": "standard",
+          "actions": [
+            "Map real customer questions and query fan-outs",
+            "Lead sections with a direct answer followed by evidence and nuance",
+            "Use stable headings, definitions, tables and source citations",
+            "Update material facts and notify supported engines after changes"
+          ],
+          "forbidden": [
+            "scaled_thin_pages",
+            "keyword_stuffing"
+          ],
+          "impact": 8,
+          "speed": 7,
+          "risk": 1
+        },
+        {
+          "id": "gt_32e6379f4f0599",
+          "tactic": "digital_pr",
+          "priority": "P1",
+          "reason": "third-party authority and corroboration are insufficient",
+          "surface": [
+            "organic",
+            "brand_serp",
+            "google_ai",
+            "chatgpt",
+            "perplexity"
+          ],
+          "status": "proposed",
+          "approval_required": "manager",
+          "actions": [
+            "Match evidence or expert commentary to journalists' active beats",
+            "Pitch a specific useful angle rather than generic biography",
+            "Respond rapidly with attributable, verifiable commentary",
+            "Track unlinked mentions and request factual corrections or attribution"
+          ],
+          "forbidden": [
+            "paid_dofollow_links",
+            "fake_news_sites",
+            "mass_spam_outreach"
+          ],
+          "impact": 10,
+          "speed": 5,
+          "risk": 2
+        },
+        {
+          "id": "gt_22b9a44a78374c",
+          "tactic": "brand_serp_asset",
+          "priority": "P1",
+          "reason": "brand SERP has an estimated 7-asset gap",
+          "surface": [
+            "google_brand_serp",
+            "bing_brand_serp"
+          ],
+          "status": "proposed",
+          "approval_required": "manager",
+          "actions": [
+            "Select an asset type not already represented on page one",
+            "Publish substantial platform-native content under the verified identity",
+            "Link it naturally from relevant owned properties",
+            "Maintain and update the asset until it earns branded-query relevance"
+          ],
+          "forbidden": [
+            "doorway_sites",
+            "cloned_content",
+            "fake_independence"
+          ],
+          "impact": 9,
+          "speed": 6,
+          "risk": 2
+        },
+        {
+          "id": "gt_96ece8433bd429",
+          "tactic": "original_research",
+          "priority": "P2",
+          "reason": "independent citable evidence is needed",
+          "surface": [
+            "organic",
+            "google_ai",
+            "chatgpt",
+            "perplexity",
+            "digital_pr"
+          ],
+          "status": "proposed",
+          "approval_required": "standard",
+          "actions": [
+            "Define a useful question and transparent methodology",
+            "Publish data, limitations, concise findings and downloadable evidence",
+            "Create citable passages, charts and journalist-ready summaries",
+            "Pitch relevant journalists, associations and expert publishers"
+          ],
+          "forbidden": [
+            "invented_statistics",
+            "hidden_sponsorship"
+          ],
+          "impact": 10,
+          "speed": 4,
+          "risk": 1
+        }
+      ],
+      "available_tactics": [
+        "entity_home",
+        "original_research",
+        "local_prominence",
+        "content_refresh",
+        "expert_answer_library",
+        "digital_pr",
+        "brand_serp_asset",
+        "policy_removal"
+      ],
+      "success_metrics": [
+        "first_page_asset_coverage",
+        "positive_or_neutral_first_page_share",
+        "brand_search_demand",
+        "local_pack_share_of_voice",
+        "organic_nonbrand_share_of_voice",
+        "ai_citation_share",
+        "ai_explicit_mention_share",
+        "ai_sentiment",
+        "qualified_leads",
+        "reputation_incidents_resolved"
+      ]
     }
   ],
   "serp_assets": [
@@ -4877,6 +5059,15 @@
       "actor": "reputation-agent",
       "action": "growth_campaign_replanned",
       "object_id": "cmp_54404c59cd7ce6",
+      "details": {
+        "tasks": 5
+      }
+    },
+    {
+      "at": "2026-07-24T01:19:20Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_replanned",
+      "object_id": "cmp_e778c6d91c37aa",
       "details": {
         "tasks": 5
       }
