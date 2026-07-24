@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-24T04:56:50Z",
+  "updated_at": "2026-07-24T08:03:05Z",
   "content_freeze": false,
   "events": [
     {
@@ -3266,7 +3266,7 @@
     {
       "id": "cmp_e778c6d91c37aa",
       "brand": "ד\"ר גיא רופא",
-      "created_at": "2026-07-24T04:56:50Z",
+      "created_at": "2026-07-24T08:03:05Z",
       "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
       "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
       "serp_asset_gap": {
@@ -5074,6 +5074,15 @@
     },
     {
       "at": "2026-07-24T04:56:50Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_replanned",
+      "object_id": "cmp_e778c6d91c37aa",
+      "details": {
+        "tasks": 5
+      }
+    },
+    {
+      "at": "2026-07-24T08:03:05Z",
       "actor": "reputation-agent",
       "action": "growth_campaign_replanned",
       "object_id": "cmp_e778c6d91c37aa",
