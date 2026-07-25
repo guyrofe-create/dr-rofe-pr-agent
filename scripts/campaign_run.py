@@ -93,14 +93,29 @@ def markdown_to_html(content):
     return "\n".join(blocks)
 
 
-def wordpress_publish(base_url, username, app_password, title, content_html, summary_only=False, canonical_url=None):
-    slug_suffix = "-תקציר" if summary_only else ""
-    slug = stable_slug(title + slug_suffix)
+def wordpress_publish(
+    base_url,
+    username,
+    app_password,
+    title,
+    content_html,
+    summary_only=False,
+    canonical_url=None,
+    idempotency_key=None,
+):
+    slug_suffix = "-summary" if summary_only else ""
+    slug = stable_slug((idempotency_key or title) + slug_suffix)
     auth = (username, app_password)
     endpoint = f"{base_url.rstrip('/')}/wp-json/wp/v2/posts"
+    headers = {
+        "Accept": "application/json",
+        "Cache-Control": "no-cache",
+        "User-Agent": "DrRofeCampaignPublisher/1.0 (+https://guyrofe.com)",
+    }
     response = requests.get(
         endpoint,
-        params={"slug": slug, "status": "publish"},
+        params={"slug": slug, "status": "publish", "_fields": "id,link,slug"},
+        headers=headers,
         timeout=25,
     )
     response.raise_for_status()
@@ -121,7 +136,9 @@ def wordpress_publish(base_url, username, app_password, title, content_html, sum
     }
     if canonical_url:
         payload["excerpt"] = f'לקריאה מלאה במקור: <a href="{canonical_url}">{canonical_url}</a>'
-    response = requests.post(endpoint, auth=auth, json=payload, timeout=30)
+    response = requests.post(
+        endpoint, auth=auth, json=payload, headers=headers, timeout=30
+    )
     response.raise_for_status()
     result = response.json()
     return result.get("link") or f"{base_url.rstrip('/')}/?p={result['id']}"
@@ -194,6 +211,7 @@ def publish_campaign(draft_path):
         os.environ["WORDPRESS_GUYROFE_COM_API"],
         title,
         article_html,
+        idempotency_key=f"dr-rofe-{draft_path.stem}",
     )
     destinations.append(destination("guyrofe.com", "published", url=canonical_url))
     log(f"Canonical article published: {canonical_url}")
@@ -217,6 +235,7 @@ def publish_campaign(draft_path):
                 summary_html,
                 True,
                 canonical_url,
+                f"dr-rofe-{draft_path.stem}",
             )
         )
     else:

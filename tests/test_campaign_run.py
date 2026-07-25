@@ -42,7 +42,12 @@ class CampaignRunTests(unittest.TestCase):
             campaign_run.requests, "get", return_value=get_response
         ) as get, patch.object(campaign_run.requests, "post") as post:
             url = campaign_run.wordpress_publish(
-                "https://guyrofe.com", "user", "password", "כותרת", "<p>תוכן</p>"
+                "https://guyrofe.com",
+                "user",
+                "password",
+                "כותרת",
+                "<p>תוכן</p>",
+                idempotency_key="dr-rofe-2026-07-25-topic-11",
             )
         self.assertEqual(url, "https://guyrofe.com/existing")
         post.assert_not_called()
@@ -50,6 +55,14 @@ class CampaignRunTests(unittest.TestCase):
         self.assertEqual(
             get.call_args.kwargs["params"]["status"],
             "publish",
+        )
+        self.assertEqual(
+            get.call_args.kwargs["params"]["slug"],
+            "dr-rofe-2026-07-25-topic-11",
+        )
+        self.assertEqual(
+            get.call_args.kwargs["headers"]["Accept"],
+            "application/json",
         )
 
     def test_canonical_site_is_required_before_distribution(self):
