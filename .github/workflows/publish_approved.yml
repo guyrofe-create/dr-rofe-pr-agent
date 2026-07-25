@@ -10,9 +10,6 @@ on:
         required: true
         default: true
         type: boolean
-  push:
-    paths:
-      - 'data/campaign_trigger.txt'
 
 permissions:
   contents: write
