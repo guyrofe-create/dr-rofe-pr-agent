@@ -1,0 +1,72 @@
+{
+  "campaigns": [
+    {
+      "draft": "content_drafts/2026-07-25-topic-11.md",
+      "title": "לפני ניתוח גינקולוגי: כך נראה תהליך קבלת החלטות משותף עם המטופלת",
+      "status": "completed",
+      "published_at": "2026-07-25T14:19:52.877717+00:00",
+      "destinations": [
+        {
+          "name": "guyrofe.com",
+          "status": "published",
+          "url": "https://guyrofe.com/dr-rofe-2026-07-25-topic-11/"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "url": "https://www.drguyrofe.co.il/dr-rofe-2026-07-25-topic-11-summary/"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "url": "https://www.facebook.com/641068765766349_122196146792942441"
+        },
+        {
+          "name": "X",
+          "status": "not_configured",
+          "detail": "החיבור אינו מוגדר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "not_configured",
+          "detail": "החיבור אינו מוגדר"
+        },
+        {
+          "name": "Telegram",
+          "status": "not_configured",
+          "detail": "החיבור אינו מוגדר"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_configured",
+          "detail": "החיבור אינו מוגדר"
+        },
+        {
+          "name": "Instagram",
+          "status": "blocked",
+          "detail": "נדרשת תמונה מאושרת"
+        },
+        {
+          "name": "Pinterest",
+          "status": "blocked",
+          "detail": "נדרשת תמונה מאושרת"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "blocked",
+          "detail": "חיבור Wix קיים אך הרשאות הפרסום עדיין חסומות"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "LinkedIn / TikTok / Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        }
+      ]
+    }
+  ]
+}
