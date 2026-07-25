@@ -10,6 +10,9 @@ on:
         required: true
         default: true
         type: boolean
+  push:
+    paths:
+      - 'data/campaign_trigger.txt'
 
 permissions:
   contents: write
@@ -80,7 +83,9 @@ jobs:
           SOCIAL_IMAGE_URL: ${{ secrets.SOCIAL_IMAGE_URL }}
 
       - name: Commit campaign receipt
-        if: success() && steps.approval.outputs.draft_path != ''
+        if: >-
+          success() && steps.approval.outputs.draft_path != '' &&
+          !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
