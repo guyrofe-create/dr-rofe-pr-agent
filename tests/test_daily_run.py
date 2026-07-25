@@ -1,3 +1,4 @@
+import json
 import os
 import tempfile
 import unittest
@@ -49,6 +50,29 @@ class DailyRunTests(unittest.TestCase):
             payload = (Path(directory) / "index.json").read_text(encoding="utf-8")
             self.assertIn('"path":', payload)
             self.assertIn("כותרת", payload)
+
+    def test_publication_record_uses_dashboard_relative_draft_path(self):
+        with tempfile.TemporaryDirectory(dir=daily_run.PROJECT_ROOT) as directory:
+            draft_dir = Path(directory)
+            draft = draft_dir / "approved.md"
+            draft.write_text("# טיוטה מאושרת\n\nתוכן", encoding="utf-8")
+            relative_dir = draft_dir.relative_to(daily_run.PROJECT_ROOT).as_posix()
+
+            with patch.dict(os.environ, {"CONTENT_DRAFT_DIR": relative_dir}):
+                daily_run.record_publication(
+                    draft,
+                    "https://medium.com/@doctor/approved-story",
+                )
+
+            publications = json.loads(
+                (draft_dir / "publications.json").read_text(encoding="utf-8")
+            )
+            publication = publications["publications"][0]
+            self.assertEqual(
+                publication["draft"],
+                f"{relative_dir}/approved.md",
+            )
+            self.assertFalse(Path(publication["draft"]).is_absolute())
 
     def test_navigation_uses_domcontentloaded_and_retries(self):
         page = Mock()

@@ -189,13 +189,21 @@ def load_draft(path):
 
 
 def record_publication(draft_path, url):
+    draft_path = draft_path.resolve()
+    try:
+        draft_value = draft_path.relative_to(PROJECT_ROOT.resolve()).as_posix()
+    except ValueError as exc:
+        raise ValueError(
+            "Published draft must be inside the project directory"
+        ) from exc
+
     published_dir = draft_root() / "published"
     published_dir.mkdir(parents=True, exist_ok=True)
     output = published_dir / f"{draft_path.stem}.json"
     output.write_text(
         json.dumps(
             {
-                "draft": str(draft_path),
+                "draft": draft_value,
                 "published_at": utc_now().isoformat(),
                 "url": url,
             },
@@ -210,7 +218,6 @@ def record_publication(draft_path, url):
         payload = json.loads(index_path.read_text(encoding="utf-8"))
     except (OSError, ValueError, TypeError):
         payload = {"publications": []}
-    draft_value = draft_path.as_posix()
     item = {
         "draft": draft_value,
         "published_at": utc_now().isoformat(),
