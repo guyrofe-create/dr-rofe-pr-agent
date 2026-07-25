@@ -70,6 +70,20 @@ class DailyRunTests(unittest.TestCase):
         self.assertEqual(title, "כותרת")
         self.assertGreaterEqual(word_count, daily_run.MIN_ARTICLE_WORDS)
 
+    def test_generation_retry_expands_the_previous_draft(self):
+        messages = daily_run.generation_messages(
+            "כתוב מאמר",
+            previous_content="# כותרת\n\nטיוטה קצרה",
+            last_error="generated article has 454 words",
+        )
+        self.assertEqual(
+            [message["role"] for message in messages],
+            ["user", "assistant", "user"],
+        )
+        self.assertIn("טיוטה קצרה", messages[1]["content"])
+        self.assertIn("הרחב", messages[2]["content"])
+        self.assertIn("אל תתחיל", messages[2]["content"])
+
     def test_publication_record_uses_dashboard_relative_draft_path(self):
         with tempfile.TemporaryDirectory(dir=daily_run.PROJECT_ROOT) as directory:
             draft_dir = Path(directory)

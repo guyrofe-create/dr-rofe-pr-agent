@@ -113,6 +113,32 @@ def validate_generated_article(content):
     return title, word_count
 
 
+def generation_messages(base_prompt, previous_content=None, last_error=None):
+    messages = [{"role": "user", "content": base_prompt}]
+    if previous_content:
+        messages.extend(
+            [
+                {"role": "assistant", "content": previous_content},
+                {
+                    "role": "user",
+                    "content": (
+                        "הטיוטה הזו לא עברה בקרת איכות: "
+                        f"{last_error}. הרחב ושפר את אותה טיוטה עד 750-850 "
+                        "מילים. שמור על הכותרת, המבנה והמידע הקיים, הוסף "
+                        "הסברים שימושיים שאינם חוזרים על עצמם, ואל תתחיל "
+                        "מאמר חדש. החזר רק את המאמר המורחב."
+                    ),
+                },
+            ]
+        )
+    elif last_error:
+        messages[0]["content"] += (
+            "\n\nהניסיון הקודם נכשל: "
+            f"{last_error}. ודא שהתשובה מלאה ועומדת בכל הדרישות."
+        )
+    return messages
+
+
 def generate_article(topic):
     from openai import OpenAI
 
@@ -134,17 +160,17 @@ def generate_article(topic):
 
 החזר רק את הטיוטה."""
     last_error = None
-    for attempt in range(1, 3):
-        prompt = base_prompt
-        if last_error:
-            prompt += (
-                "\n\nהטיוטה הקודמת לא עברה בקרת איכות: "
-                f"{last_error}. כתוב אותה מחדש ועמוד בכל הדרישות."
-            )
+    previous_content = None
+    max_attempts = 3
+    for attempt in range(1, max_attempts + 1):
         response = client.chat.completions.create(
             model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-4o"),
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=3500,
+            messages=generation_messages(
+                base_prompt,
+                previous_content=previous_content,
+                last_error=last_error,
+            ),
+            max_tokens=4500,
         )
         content = clean_generated_markdown(
             response.choices[0].message.content or ""
@@ -152,13 +178,17 @@ def generate_article(topic):
         if not content:
             last_error = "הוחזרה תשובה ריקה"
             continue
+        previous_content = content
         try:
             title, word_count = validate_generated_article(content)
             log(f"Draft quality passed: {word_count} words")
             return title, content
         except ValueError as exc:
             last_error = str(exc)
-            log(f"Draft quality attempt {attempt}/2 failed: {last_error}")
+            log(
+                f"Draft quality attempt {attempt}/{max_attempts} "
+                f"failed: {last_error}"
+            )
 
     raise RuntimeError(f"OpenAI draft failed quality checks: {last_error}")
 
