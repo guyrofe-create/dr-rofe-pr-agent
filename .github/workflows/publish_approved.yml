@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '*/15 * * * *'
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Check the dashboard connection without publishing
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   contents: write
@@ -35,7 +41,9 @@ jobs:
 
   publish:
     needs: check
-    if: needs.check.outputs.draft_path != ''
+    if: >-
+      needs.check.outputs.draft_path != '' &&
+      !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
