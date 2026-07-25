@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: '0 6 * * 1,3,5'
   workflow_dispatch:
-  push:
-    paths:
-      - 'data/draft_generation_trigger.txt'
 
 permissions:
   contents: write
