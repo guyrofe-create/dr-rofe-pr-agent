@@ -1,1 +1,1 @@
-Execute the already approved dashboard campaign through the production workflow.
+Retry the already approved dashboard campaign after the verified WordPress lookup fix.
