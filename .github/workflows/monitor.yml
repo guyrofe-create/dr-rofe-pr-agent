@@ -63,14 +63,6 @@ jobs:
           FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
           INSTAGRAM_BUSINESS_ID: ${{ secrets.INSTAGRAM_BUSINESS_ID }}
 
-      - name: Verify alternate Meta token
-        continue-on-error: true
-        run: python scripts/meta_connection_check.py
-        env:
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGES_API }}
-          INSTAGRAM_BUSINESS_ID: ${{ secrets.INSTAGRAM_BUSINESS_ID }}
-
       - name: Commit reputation state
         if: always()
         run: |
