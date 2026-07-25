@@ -82,6 +82,23 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertTrue(mirrors)
         self.assertTrue(all(a["tier"] == "Q" and a["automation"] == "disabled" for a in mirrors))
 
+    def test_owner_supplied_assets_are_registered_without_private_sheet_details(self):
+        with open("data/asset_registry.json", encoding="utf-8") as handle:
+            registry = json.load(handle)
+        expected = {
+            "Facebook", "Instagram", "LinkedIn", "X", "YouTube", "TikTok",
+            "Telegram", "Pinterest", "About.me", "Blogger", "Apple Podcasts",
+            "Spotify", "Flipboard", "Medium", "Quora", "SlideShare", "Tumblr",
+            "Google Business Profile",
+        }
+        owner_platforms = {item["platform"] for item in registry["owner_inventory"]}
+        registered_platforms = {item["platform"] for item in registry["assets"]}
+        self.assertEqual(owner_platforms, expected)
+        self.assertTrue(expected.issubset(registered_platforms))
+        serialized_sources = json.dumps(registry["inventory_sources"]).lower()
+        self.assertNotIn("1ilxmejzh-qzac4hixzpqf9hddhzzt8_bkc49gn4ypv0", serialized_sources)
+        self.assertNotIn("docs.google.com", serialized_sources)
+
     def test_drguyrofe_com_is_a_tier_a_knowledge_hub(self):
         with open("data/asset_registry.json", encoding="utf-8") as handle:
             registry = json.load(handle)

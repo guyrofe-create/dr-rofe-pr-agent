@@ -85,6 +85,12 @@ only with a real purpose) or Q (quarantined). The monitor may plan campaigns fro
 A/B assets, but it never treats mere asset existence as page-one visibility.
 Only independently observed page-one positions count toward SERP coverage.
 
+`owner_inventory` preserves the exact profile links confirmed by the owner,
+including unresolved entries such as a Telegram channel without a URL. Canonical
+asset records remain normalized for monitoring and automation. Private connection
+spreadsheets may be named in `inventory_sources`, but their URLs, usernames,
+passwords and tokens are never copied into the repository.
+
 Generic Web 2.0 mirrors, irrelevant profiles and duplicate-content properties
 remain disabled until a separate factual, content and indexation audit proves a
 real user purpose. Credentials must live only in an encrypted secret store and
