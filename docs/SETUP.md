@@ -113,7 +113,7 @@ Podcasts (Apple/Spotify) מסונכרנים אוטומטית מה-RSS של הפ�
 
 ## מה כבר בנוי ורץ ברפו עכשיו
 
-- `scripts/daily_run.py` - מאמר ל-Medium, שני/רביעי/שישי 09:00
+- `scripts/daily_run.py` - יוצר טיוטת מאמר רפואי לבדיקה, שני/רביעי/שישי 09:00; הטיוטה מאושרת ומתפרסמת מתוך דשבורד המוניטין
 - `scripts/social_run.py` - הפצה לרשתות חברתיות, אותם ימים 10:00 (מדלג על כל פלטפורמה לא מוגדרת)
 - `scripts/monitor_run.py` - ניטור יומי (05:00): דירוג גוגל, נוכחות ב-AI, בריאות טוקנים, ביקורות - מדווח כ-GitHub Issue חדש בכל ריצה
 - `.github/workflows/social_publish.yml`, `.github/workflows/monitor.yml` - כבר פעילים ברפו

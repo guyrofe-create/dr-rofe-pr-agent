@@ -54,7 +54,7 @@ Content freeze cannot be removed while an active crisis room exists.
 | Workflow | Schedule | Purpose |
 |---|---|---|
 | Reputation Monitor | Every 2 hours | Detect, route, persist and report reputation events |
-| Content Publisher | Mon/Wed/Fri | Generate and publish long-form content when not frozen |
+| Reviewed Content | Mon/Wed/Fri | Generate a durable medical draft; publish only an explicitly approved draft |
 | Social Distribution | Mon/Wed/Fri | Distribute approved content when not frozen |
 | Schema Sync | Weekly | Keep connected site facts and structured data aligned |
 
@@ -67,3 +67,13 @@ python -m compileall -q scripts tests
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the data model, routing
 rules, governance boundaries and planned premium layers.
+
+### Reviewed Medium publishing
+
+Scheduled runs create a Markdown file under `content_drafts/` and do not publish
+it. The private reputation dashboard displays each pending draft and provides
+one **Approve and publish** action. The approval queue is collected
+automatically by GitHub Actions, and the resulting Medium URL is recorded under
+`content_drafts/published/`. Legacy Medium API tokens are preferred when one
+already exists; the session-cookie route is a fallback and records HTML and
+screenshots when Medium rejects or changes the browser flow.
