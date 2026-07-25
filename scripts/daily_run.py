@@ -33,6 +33,8 @@ TOPICS = [
 ]
 
 TAGS = ["גינקולוגיה", "בריאות אשה", "אנדומטריוזיס"]
+MIN_ARTICLE_WORDS = 650
+MAX_ARTICLE_WORDS = 1000
 LOG_LINES = []
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -76,37 +78,89 @@ def selected_topic(now=None):
     return index, TOPICS[index]
 
 
+def clean_generated_markdown(content):
+    content = (content or "").strip()
+    fenced = re.fullmatch(
+        r"```(?:markdown|md)?\s*\n?(.*?)\n?```\s*",
+        content,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+    if fenced:
+        content = fenced.group(1).strip()
+    return content
+
+
+def validate_generated_article(content):
+    title = next(
+        (
+            line.removeprefix("#").strip()
+            for line in content.splitlines()
+            if re.match(r"^#\s+\S", line)
+        ),
+        "",
+    )
+    if not title:
+        raise ValueError("generated article is missing an H1 title")
+
+    plain_text = re.sub(r"https?://\S+", " ", content)
+    plain_text = re.sub(r"[#*_`>\[\]()]+", " ", plain_text)
+    word_count = len(re.findall(r"\S+", plain_text))
+    if not MIN_ARTICLE_WORDS <= word_count <= MAX_ARTICLE_WORDS:
+        raise ValueError(
+            f"generated article has {word_count} words; "
+            f"expected {MIN_ARTICLE_WORDS}-{MAX_ARTICLE_WORDS}"
+        )
+    return title, word_count
+
+
 def generate_article(topic):
     from openai import OpenAI
 
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    prompt = f"""כתוב טיוטת מאמר רפואי מקצועי בעברית עבור ד"ר גיא רופא, גינקולוג מומחה לאנדומטריוזיס ולפרוסקופיה בתל אביב.
+    base_prompt = f"""כתוב טיוטת מאמר רפואי מקצועי בעברית עבור ד"ר גיא רופא, גינקולוג מומחה לאנדומטריוזיס ולפרוסקופיה בתל אביב.
 
 נושא: {topic}
 
 דרישות:
-- אורך: 700-900 מילים
+- אורך: 750-850 מילים; ספור את המילים לפני ההחזרה
 - שפה: עברית מקצועית אך נגישה לקהל רחב
 - מבנה: כותרת ראשית H1, מבוא, 3-4 סעיפים עם כותרות H2, סיכום
 - CTA בסוף: לייעוץ עם ד"ר גיא רופא: guyrofe.com
 - אין להמציא נתונים, שיעורי הצלחה, תארים או ניסיון אישי
+- אין לייחס לד"ר גיא רופא אמירות, הדגשות או המלצות אישיות שלא סופקו
 - כל טענה רפואית מחייבת בדיקת רופא לפני פרסום
 - פורמט: Markdown
+- אין לעטוף את התשובה בבלוק קוד ואין לכתוב את המילה markdown
 
 החזר רק את הטיוטה."""
-    response = client.chat.completions.create(
-        model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-4o"),
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=2500,
-    )
-    content = (response.choices[0].message.content or "").strip()
-    if not content:
-        raise RuntimeError("OpenAI returned an empty draft")
-    title = next(
-        (line.lstrip("#").strip() for line in content.splitlines() if line.startswith("#")),
-        topic,
-    )
-    return title, content
+    last_error = None
+    for attempt in range(1, 3):
+        prompt = base_prompt
+        if last_error:
+            prompt += (
+                "\n\nהטיוטה הקודמת לא עברה בקרת איכות: "
+                f"{last_error}. כתוב אותה מחדש ועמוד בכל הדרישות."
+            )
+        response = client.chat.completions.create(
+            model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-4o"),
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=3500,
+        )
+        content = clean_generated_markdown(
+            response.choices[0].message.content or ""
+        )
+        if not content:
+            last_error = "הוחזרה תשובה ריקה"
+            continue
+        try:
+            title, word_count = validate_generated_article(content)
+            log(f"Draft quality passed: {word_count} words")
+            return title, content
+        except ValueError as exc:
+            last_error = str(exc)
+            log(f"Draft quality attempt {attempt}/2 failed: {last_error}")
+
+    raise RuntimeError(f"OpenAI draft failed quality checks: {last_error}")
 
 
 def save_draft(topic_index, topic, title, content, now=None):
