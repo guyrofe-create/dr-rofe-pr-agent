@@ -2,12 +2,12 @@
   "draft": "content_drafts/2026-07-25-topic-11.md",
   "title": "לפני ניתוח גינקולוגי: כך נראה תהליך קבלת החלטות משותף עם המטופלת",
   "status": "completed",
-  "published_at": "2026-07-25T14:19:52.877717+00:00",
+  "published_at": "2026-07-25T22:39:30.894264+00:00",
   "destinations": [
     {
       "name": "guyrofe.com",
       "status": "published",
-      "url": "https://guyrofe.com/dr-rofe-2026-07-25-topic-11/"
+      "url": "https://guyrofe.com/dr-rofe-2026-07-25-topic-11-2/"
     },
     {
       "name": "drguyrofe.co.il",
@@ -17,7 +17,7 @@
     {
       "name": "Facebook",
       "status": "published",
-      "url": "https://www.facebook.com/641068765766349_122196146792942441"
+      "url": "https://www.facebook.com/641068765766349_122196195572942441"
     },
     {
       "name": "X",
@@ -41,13 +41,13 @@
     },
     {
       "name": "Instagram",
-      "status": "blocked",
-      "detail": "נדרשת תמונה מאושרת"
+      "status": "failed",
+      "detail": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841475928567459/media"
     },
     {
       "name": "Pinterest",
-      "status": "blocked",
-      "detail": "נדרשת תמונה מאושרת"
+      "status": "not_configured",
+      "detail": "החיבור אינו מוגדר"
     },
     {
       "name": "drguyrofe.com",
