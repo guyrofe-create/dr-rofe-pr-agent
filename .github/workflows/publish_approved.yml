@@ -1,21 +1,99 @@
-name: Publish Dashboard-Approved Content (Paused)
+name: Publish Dashboard-Approved Campaign
 
 on:
+  schedule:
+    - cron: '*/5 * * * *'
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Check the dashboard connection without publishing
+        description: Check the dashboard queue without publishing
         required: true
         default: true
         type: boolean
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: approved-campaign-publishing
+  cancel-in-progress: false
 
 jobs:
-  check:
+  campaign:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: Confirm legacy Medium-only publisher is paused
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check dashboard approval queue
+        id: approval
+        env:
+          APPROVAL_URL: https://dr-rofe-reputation-center.guyrofe.chatgpt.site
         run: |
-          echo "Medium-only publication is paused while the unified campaign publisher is deployed."
+          response="$(curl --fail --silent --show-error \
+            "${APPROVAL_URL}/api/approvals/next")"
+          draft_path="$(jq -r '.draft_path // empty' <<<"${response}")"
+          echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
+          [[ -z "${draft_path}" ]] || echo "Approved campaign ready: ${draft_path}"
+
+      - name: Install dependencies
+        if: >-
+          steps.approval.outputs.draft_path != '' &&
+          !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        run: pip install -r requirements.txt
+
+      - name: Publish approved campaign
+        if: >-
+          steps.approval.outputs.draft_path != '' &&
+          !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        run: python scripts/campaign_run.py
+        env:
+          DRAFT_PATH: ${{ steps.approval.outputs.draft_path }}
+          WORDPRESS_GUYROFE_COM_USER: ${{ secrets.WORDPRESS_GUYROFE_COM_USER }}
+          WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
+          WORDPRESS_DRGUYROFE_CO_IL_USER: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_USER }}
+          WORDPRESS_DRGUYROFE_CO_IL_API: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_API }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+          INSTAGRAM_BUSINESS_ID: ${{ secrets.INSTAGRAM_BUSINESS_ID }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+          TUMBLR_CONSUMER_KEY: ${{ secrets.TUMBLR_CONSUMER_KEY }}
+          TUMBLR_CONSUMER_SECRET: ${{ secrets.TUMBLR_CONSUMER_SECRET }}
+          TUMBLR_OAUTH_TOKEN: ${{ secrets.TUMBLR_OAUTH_TOKEN }}
+          TUMBLR_OAUTH_SECRET: ${{ secrets.TUMBLR_OAUTH_SECRET }}
+          TUMBLR_BLOG_NAME: ${{ secrets.TUMBLR_BLOG_NAME }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          SOCIAL_IMAGE_URL: ${{ secrets.SOCIAL_IMAGE_URL }}
+
+      - name: Commit campaign receipt
+        if: success() && steps.approval.outputs.draft_path != ''
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add content_drafts/campaigns/
+          git diff --cached --quiet || git commit -m "Record approved campaign ${{ github.run_id }}"
+          git pull --rebase
+          git push
+
+      - name: Upload campaign diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: campaign-${{ github.run_id }}
+          path: run_log.txt
+          if-no-files-found: ignore
+          retention-days: 30

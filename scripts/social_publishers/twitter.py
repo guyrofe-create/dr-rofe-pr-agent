@@ -20,7 +20,7 @@ def is_configured():
 
 
 def publish(title, body, url):
-    text = common.shorten_for_social(title, url, max_len=270)
+    text = common.shorten_for_social(title, url, max_len=270, body=body)
     header = common.oauth1_header(
         "POST", TWEETS_URL, {},
         common.env("TWITTER_API_KEY"), common.env("TWITTER_API_SECRET"),

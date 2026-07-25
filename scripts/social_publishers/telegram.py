@@ -15,7 +15,7 @@ def is_configured():
 def publish(title, body, url):
     token = common.env("TELEGRAM_BOT_TOKEN")
     chat_id = common.env("TELEGRAM_CHANNEL_ID")
-    text = common.shorten_for_social(title, url, max_len=1000)
+    text = common.shorten_for_social(title, url, max_len=1000, body=body)
 
     resp = requests.post(
         f"https://api.telegram.org/bot{token}/sendMessage",

@@ -58,7 +58,7 @@ def resolve_instagram_business_id():
 def publish_facebook(title, body, url, image_url=None):
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")
-    message = common.shorten_for_social(title, url, max_len=1800)
+    message = common.shorten_for_social(title, url, max_len=1800, body=body)
 
     payload = {"message": message, "access_token": token}
     if url:
@@ -79,7 +79,7 @@ def publish_instagram(title, body, url, image_url):
 
     ig_id = resolve_instagram_business_id()
     token = common.env("FACEBOOK_PAGE_TOKEN")
-    caption = common.shorten_for_social(title, url, max_len=2000)
+    caption = common.shorten_for_social(title, url, max_len=2000, body=body)
 
     # Step 1: create media container
     resp = requests.post(
