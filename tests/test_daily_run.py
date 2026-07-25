@@ -51,6 +51,25 @@ class DailyRunTests(unittest.TestCase):
             self.assertIn('"path":', payload)
             self.assertIn("כותרת", payload)
 
+    def test_generated_markdown_code_fence_is_removed(self):
+        content = "```markdown\n# כותרת\n\nתוכן\n```"
+        self.assertEqual(
+            daily_run.clean_generated_markdown(content),
+            "# כותרת\n\nתוכן",
+        )
+
+    def test_short_generated_article_fails_quality_gate(self):
+        with self.assertRaisesRegex(ValueError, "words"):
+            daily_run.validate_generated_article("# כותרת\n\nטקסט קצר מדי")
+
+    def test_valid_generated_article_passes_quality_gate(self):
+        content = "# כותרת\n\n" + " ".join(
+            ["מידע"] * daily_run.MIN_ARTICLE_WORDS
+        )
+        title, word_count = daily_run.validate_generated_article(content)
+        self.assertEqual(title, "כותרת")
+        self.assertGreaterEqual(word_count, daily_run.MIN_ARTICLE_WORDS)
+
     def test_publication_record_uses_dashboard_relative_draft_path(self):
         with tempfile.TemporaryDirectory(dir=daily_run.PROJECT_ROOT) as directory:
             draft_dir = Path(directory)
