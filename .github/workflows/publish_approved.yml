@@ -22,10 +22,8 @@ jobs:
         id: approval
         env:
           APPROVAL_URL: https://dr-rofe-reputation-center.guyrofe.chatgpt.site
-          APPROVAL_TOKEN: ${{ secrets.APPROVAL_DASHBOARD_TOKEN }}
         run: |
           response="$(curl --fail --silent --show-error \
-            --header "Authorization: Bearer ${APPROVAL_TOKEN}" \
             "${APPROVAL_URL}/api/approvals/next")"
           draft_path="$(jq -r '.draft_path // empty' <<<"${response}")"
           echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
