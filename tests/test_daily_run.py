@@ -84,6 +84,37 @@ class DailyRunTests(unittest.TestCase):
         self.assertIn("הרחב", messages[2]["content"])
         self.assertIn("אל תתחיל", messages[2]["content"])
 
+    def test_generation_uses_responses_api_with_high_verbosity(self):
+        client = Mock()
+        client.responses.create.return_value.output_text = "# כותרת\n\nתוכן"
+
+        with patch.dict(os.environ, {}, clear=True):
+            content = daily_run.request_generated_article(
+                client,
+                [{"role": "user", "content": "כתוב מאמר"}],
+            )
+
+        self.assertEqual(content, "# כותרת\n\nתוכן")
+        client.responses.create.assert_called_once_with(
+            model="gpt-5.6",
+            input=[{"role": "user", "content": "כתוב מאמר"}],
+            reasoning={"effort": "low"},
+            text={"verbosity": "high"},
+            max_output_tokens=4500,
+        )
+
+    def test_content_model_can_be_overridden(self):
+        client = Mock()
+        client.responses.create.return_value.output_text = "טיוטה"
+
+        with patch.dict(os.environ, {"OPENAI_CONTENT_MODEL": "custom-model"}):
+            daily_run.request_generated_article(client, [])
+
+        self.assertEqual(
+            client.responses.create.call_args.kwargs["model"],
+            "custom-model",
+        )
+
     def test_publication_record_uses_dashboard_relative_draft_path(self):
         with tempfile.TemporaryDirectory(dir=daily_run.PROJECT_ROOT) as directory:
             draft_dir = Path(directory)
