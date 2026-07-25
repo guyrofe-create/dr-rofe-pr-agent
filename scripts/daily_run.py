@@ -163,18 +163,15 @@ def generate_article(topic):
     previous_content = None
     max_attempts = 3
     for attempt in range(1, max_attempts + 1):
-        response = client.chat.completions.create(
-            model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-4o"),
-            messages=generation_messages(
+        content = request_generated_article(
+            client,
+            generation_messages(
                 base_prompt,
                 previous_content=previous_content,
                 last_error=last_error,
             ),
-            max_tokens=4500,
         )
-        content = clean_generated_markdown(
-            response.choices[0].message.content or ""
-        )
+        content = clean_generated_markdown(content)
         if not content:
             last_error = "הוחזרה תשובה ריקה"
             continue
@@ -191,6 +188,17 @@ def generate_article(topic):
             )
 
     raise RuntimeError(f"OpenAI draft failed quality checks: {last_error}")
+
+
+def request_generated_article(client, messages):
+    response = client.responses.create(
+        model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
+        input=messages,
+        reasoning={"effort": "low"},
+        text={"verbosity": "high"},
+        max_output_tokens=4500,
+    )
+    return response.output_text or ""
 
 
 def save_draft(topic_index, topic, title, content, now=None):
