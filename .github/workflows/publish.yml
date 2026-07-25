@@ -5,6 +5,9 @@ on:
     - cron: '0 6 * * 1,3,5'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -20,20 +23,27 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Install Playwright browser
-        run: playwright install chromium --with-deps
-
-      - name: Run PR Agent
+      - name: Generate review draft
         run: python scripts/daily_run.py
         env:
+          RUN_MODE: generate
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
-          MEDIUM_SID: ${{ secrets.MEDIUM_SID }}
+
+      - name: Commit draft or publication record
+        if: always()
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add content_drafts/ || true
+          git diff --cached --quiet || git commit -m "Update reviewed content workflow ${{ github.run_id }}"
+          git pull --rebase || true
+          git push || true
 
       - name: Upload run log
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: run-log-${{ github.run_id }}
-          path: run_log.txt
+          path: |
+            run_log.txt
           retention-days: 30

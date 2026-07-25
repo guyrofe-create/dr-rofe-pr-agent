@@ -1,20 +1,19 @@
 #!/usr/bin/env python3
-"""
-Dr. Guy Rofe - Autonomous PR Agent
-Runs on GitHub Actions every Mon/Wed/Fri at 09:00 Israel time.
-No Mac required. Fully autonomous.
+"""Generate reviewed medical drafts and publish approved drafts to Medium.
 
-Auth methods (in priority order):
-  1. MEDIUM_TOKEN  — Medium API token (if available)
-  2. MEDIUM_SID    — Medium session cookie (login once via browser, paste sid value)
+Scheduled runs generate a durable draft only. Publishing is a separate,
+explicitly approved workflow-dispatch operation.
 """
 
-from openai import OpenAI
-import requests
-import os
-import time
+from datetime import datetime, timezone
+from pathlib import Path
 import json
-from datetime import datetime
+import os
+import re
+import time
+
+import requests
+
 
 TOPICS = [
     "כאבי אגן כרוניים אצל נשים - מתי לפנות לגינקולוג?",
@@ -33,29 +32,55 @@ TOPICS = [
     "מה חשוב לבדוק ולשאול לפני שבוחרים מנתח/ת לניתוח גינקולוגי",
 ]
 
-TAGS = ["גינקולוגיה", "בריאות אשה", "אנדומטריוזיס", "לפרוסקופיה", "דר גיא רופא"]
+TAGS = ["גינקולוגיה", "בריאות אשה", "אנדומטריוזיס"]
 LOG_LINES = []
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+
+def utc_now():
+    return datetime.now(timezone.utc)
 
 
 def content_is_frozen():
-    path = os.path.join(os.path.dirname(__file__), "..", "data", "command_center.json")
+    path = PROJECT_ROOT / "data" / "command_center.json"
     try:
-        with open(path, "r", encoding="utf-8") as handle:
+        with path.open("r", encoding="utf-8") as handle:
             return bool(json.load(handle).get("content_freeze"))
     except (OSError, ValueError, TypeError):
         return False
 
+
 def log(msg):
-    ts = datetime.now().strftime("%H:%M:%S")
+    ts = utc_now().strftime("%H:%M:%S")
     line = f"[{ts}] {msg}"
     print(line)
     LOG_LINES.append(line)
 
-# ─── Content Generation ──────────────────────────────────────────────────────
+
+def write_run_log(path=None):
+    output = Path(path or os.environ.get("RUN_LOG_PATH", "run_log.txt"))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("\n".join(LOG_LINES) + "\n", encoding="utf-8")
+    return output
+
+
+def draft_root():
+    return Path(os.environ.get("CONTENT_DRAFT_DIR", "content_drafts"))
+
+
+def selected_topic(now=None):
+    now = now or utc_now()
+    week = now.isocalendar()[1]
+    day = now.weekday()
+    index = (week * 3 + day) % len(TOPICS)
+    return index, TOPICS[index]
+
 
 def generate_article(topic):
+    from openai import OpenAI
+
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    prompt = f"""כתוב מאמר רפואי מקצועי בעברית עבור דר גיא רופא, גינקולוג מומחה לאנדומטריוזיס ולפרוסקופיה בתל אביב.
+    prompt = f"""כתוב טיוטת מאמר רפואי מקצועי בעברית עבור ד"ר גיא רופא, גינקולוג מומחה לאנדומטריוזיס ולפרוסקופיה בתל אביב.
 
 נושא: {topic}
 
@@ -63,25 +88,150 @@ def generate_article(topic):
 - אורך: 700-900 מילים
 - שפה: עברית מקצועית אך נגישה לקהל רחב
 - מבנה: כותרת ראשית H1, מבוא, 3-4 סעיפים עם כותרות H2, סיכום
-- CTA בסוף: לייעוץ עם דר גיא רופא: guyrofe.com
-- כלול: דר גיא רופא, גינקולוג, אנדומטריוזיס, לפרוסקופיה, תל אביב
+- CTA בסוף: לייעוץ עם ד"ר גיא רופא: guyrofe.com
+- אין להמציא נתונים, שיעורי הצלחה, תארים או ניסיון אישי
+- כל טענה רפואית מחייבת בדיקת רופא לפני פרסום
 - פורמט: Markdown
 
-החזר רק את המאמר."""
+החזר רק את הטיוטה."""
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-4o"),
         messages=[{"role": "user", "content": prompt}],
         max_tokens=2500,
     )
-    content = response.choices[0].message.content
-    lines = content.strip().split("\n")
-    title = lines[0].lstrip("#").strip() if lines else topic
+    content = (response.choices[0].message.content or "").strip()
+    if not content:
+        raise RuntimeError("OpenAI returned an empty draft")
+    title = next(
+        (line.lstrip("#").strip() for line in content.splitlines() if line.startswith("#")),
+        topic,
+    )
     return title, content
 
-# ─── Method A: Publish via API Token ─────────────────────────────────────────
+
+def save_draft(topic_index, topic, title, content, now=None):
+    now = now or utc_now()
+    root = draft_root()
+    root.mkdir(parents=True, exist_ok=True)
+    path = root / f"{now:%Y-%m-%d}-topic-{topic_index:02d}.md"
+    metadata = (
+        "<!--\n"
+        "status: pending_medical_review\n"
+        f"generated_at: {now.isoformat()}\n"
+        f"topic: {topic}\n"
+        "-->\n\n"
+    )
+    body = content if re.search(r"^#\s+", content, flags=re.MULTILINE) else f"# {title}\n\n{content}"
+    path.write_text(metadata + body.rstrip() + "\n", encoding="utf-8")
+    update_draft_index(path, topic, title, content, now)
+    return path
+
+
+def update_draft_index(path, topic, title, content, generated_at):
+    index_path = draft_root() / "index.json"
+    try:
+        payload = json.loads(index_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        payload = {"drafts": []}
+    relative_path = path.as_posix()
+    if not path.is_absolute():
+        relative_path = path.as_posix()
+    excerpt = re.sub(r"[#*_`>-]", "", content)
+    excerpt = " ".join(excerpt.split())[:240]
+    item = {
+        "path": relative_path,
+        "title": title,
+        "topic": topic,
+        "excerpt": excerpt,
+        "generated_at": generated_at.isoformat(),
+    }
+    drafts = [
+        existing
+        for existing in payload.get("drafts", [])
+        if existing.get("path") != relative_path
+    ]
+    drafts.append(item)
+    payload["drafts"] = sorted(
+        drafts, key=lambda value: value.get("generated_at", ""), reverse=True
+    )[:30]
+    index_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
+def resolve_draft_path(value):
+    if not value:
+        raise ValueError("DRAFT_PATH is required in publish mode")
+    root = draft_root().resolve()
+    candidate = Path(value)
+    if not candidate.is_absolute():
+        candidate = (Path.cwd() / candidate).resolve()
+    else:
+        candidate = candidate.resolve()
+    if candidate != root and root not in candidate.parents:
+        raise ValueError("DRAFT_PATH must be inside the content draft directory")
+    if candidate.suffix.lower() != ".md" or not candidate.is_file():
+        raise ValueError(f"Draft does not exist: {candidate}")
+    return candidate
+
+
+def load_draft(path):
+    content = path.read_text(encoding="utf-8")
+    content = re.sub(r"\A<!--.*?-->\s*", "", content, flags=re.DOTALL)
+    title = next(
+        (line.lstrip("#").strip() for line in content.splitlines() if line.startswith("#")),
+        "",
+    )
+    if not title or not content.strip():
+        raise ValueError(f"Draft is missing a Markdown title or body: {path}")
+    return title, content.strip()
+
+
+def record_publication(draft_path, url):
+    published_dir = draft_root() / "published"
+    published_dir.mkdir(parents=True, exist_ok=True)
+    output = published_dir / f"{draft_path.stem}.json"
+    output.write_text(
+        json.dumps(
+            {
+                "draft": str(draft_path),
+                "published_at": utc_now().isoformat(),
+                "url": url,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    index_path = draft_root() / "publications.json"
+    try:
+        payload = json.loads(index_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        payload = {"publications": []}
+    draft_value = draft_path.as_posix()
+    item = {
+        "draft": draft_value,
+        "published_at": utc_now().isoformat(),
+        "url": url,
+    }
+    publications = [
+        existing
+        for existing in payload.get("publications", [])
+        if existing.get("draft") != draft_value
+    ]
+    publications.append(item)
+    payload["publications"] = publications
+    index_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return output
+
 
 def publish_via_api(token, title, content):
-    log("Using Method A: Medium API Token")
+    log("Using Method A: legacy Medium API token")
     resp = requests.get(
         "https://api.medium.com/v1/me",
         headers={"Authorization": f"Bearer {token}"},
@@ -99,132 +249,171 @@ def publish_via_api(token, title, content):
             "tags": TAGS,
             "publishStatus": "public",
             "license": "all-rights-reserved",
-            "notifyFollowers": True,
         },
         timeout=30,
     )
     resp.raise_for_status()
-    result = resp.json()
-    if "data" in result:
-        return result["data"].get("url", "published")
-    raise Exception(f"API error: {result}")
+    url = (resp.json().get("data") or {}).get("url")
+    if not url or not url.startswith("https://medium.com/"):
+        raise RuntimeError("Medium API did not return a published story URL")
+    return url
 
-# ─── Method B: Publish via Session Cookie (no password needed) ───────────────
+
+def goto_with_retry(page, url, attempts=2):
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            # Medium is a long-lived SPA. networkidle never becomes reliable.
+            page.goto(url, wait_until="domcontentloaded", timeout=60_000)
+            page.wait_for_timeout(1_500)
+            return
+        except Exception as exc:
+            last_error = exc
+            log(f"Navigation attempt {attempt}/{attempts} failed: {exc}")
+            if attempt < attempts:
+                page.wait_for_timeout(2_000)
+    raise last_error
+
+
+def save_medium_debug(page):
+    try:
+        Path("medium_debug.html").write_text(page.content(), encoding="utf-8")
+        page.screenshot(path="medium_debug.png", full_page=True)
+        log("Saved medium_debug.html and medium_debug.png")
+    except Exception as exc:
+        log(f"Could not save Medium diagnostics: {exc}")
+
 
 def publish_via_cookie(sid, title, content_md):
-    log("Using Method B: Session cookie (sid)")
+    log("Using Method B: Medium session cookie")
     from playwright.sync_api import sync_playwright
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(
             headless=True,
-            args=["--no-sandbox", "--disable-setuid-sandbox"]
+            args=["--no-sandbox", "--disable-setuid-sandbox"],
         )
         context = browser.new_context(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+            user_agent=(
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/125.0.0.0 Safari/537.36"
+            )
         )
-
-        # Inject the session cookie — no login needed
-        context.add_cookies([{
-            "name": "sid",
-            "value": sid,
-            "domain": ".medium.com",
-            "path": "/",
-            "httpOnly": True,
-            "secure": True,
-        }])
-
+        context.add_cookies(
+            [
+                {
+                    "name": "sid",
+                    "value": sid,
+                    "domain": ".medium.com",
+                    "path": "/",
+                    "httpOnly": True,
+                    "secure": True,
+                }
+            ]
+        )
         page = context.new_page()
+        page.set_default_timeout(30_000)
 
-        # Verify login worked
-        log("Verifying session...")
-        page.goto("https://medium.com/me/stories/drafts", wait_until="networkidle")
-        time.sleep(2)
-        if "signin" in page.url or "login" in page.url:
-            raise Exception("Session cookie expired — please refresh MEDIUM_SID secret")
-        log("Session valid. Opening editor...")
-
-        # Open new story
-        page.goto("https://medium.com/new-story", wait_until="networkidle")
-        time.sleep(3)
-
-        # Type title
-        log("Typing title...")
-        title_el = page.locator('h1[data-placeholder="Title"]').first
-        title_el.click()
-        title_el.type(title, delay=30)
-        time.sleep(1)
-        page.keyboard.press("Enter")
-        time.sleep(1)
-
-        # Type content (plain text, stripped of markdown symbols)
-        log("Typing content...")
-        plain = content_md
-        for sym in ["# ", "## ", "### ", "**", "__", "- "]:
-            plain = plain.replace(sym, "")
-        page.keyboard.type(plain[:4000], delay=3)
-        time.sleep(2)
-
-        # Publish
-        log("Publishing...")
         try:
-            page.click("button:has-text('Publish')", timeout=8000)
-            time.sleep(2)
-            page.click("button:has-text('Publish now')", timeout=5000)
-            time.sleep(4)
-        except Exception as e:
-            log(f"Publish button: {e}")
+            log("Verifying Medium session...")
+            goto_with_retry(page, "https://medium.com/me/stories/drafts")
+            if any(part in page.url.lower() for part in ("signin", "login", "m/signin")):
+                raise RuntimeError("Medium session expired; refresh the MEDIUM_SID secret")
 
-        url = page.url
-        browser.close()
-        log(f"Done. URL: {url}")
-        return url
+            log("Opening Medium editor...")
+            goto_with_retry(page, "https://medium.com/new-story")
 
-# ─── Main ────────────────────────────────────────────────────────────────────
+            title_el = page.locator('h1[data-placeholder="Title"]').first
+            title_el.wait_for(state="visible", timeout=30_000)
+            log("Typing title and approved body...")
+            title_el.click()
+            title_el.fill(title)
+            page.keyboard.press("Enter")
 
-def main():
-    log("=== Dr. Rofe PR Agent - Starting ===")
-    log(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}")
+            plain = content_md
+            for symbol in ("### ", "## ", "# ", "**", "__"):
+                plain = plain.replace(symbol, "")
+            page.keyboard.type(plain, delay=1)
 
-    if content_is_frozen():
-        log("CONTENT FREEZE: publication paused by Reputation Command Center")
-        log("=== Done (safely paused) ===")
-        return
+            log("Publishing approved Medium draft...")
+            first_publish = page.locator("button:has-text('Publish')").first
+            first_publish.wait_for(state="visible", timeout=20_000)
+            first_publish.click()
+            confirm = page.locator("button:has-text('Publish now')").first
+            confirm.wait_for(state="visible", timeout=20_000)
+            editor_url = page.url
+            confirm.click()
+            page.wait_for_timeout(5_000)
 
-    openai_key = os.environ.get("OPENAI_API_KEY")
+            url = page.url
+            if url == editor_url or "new-story" in url or url.endswith("/edit"):
+                raise RuntimeError("Medium did not confirm publication with a story URL")
+            if not url.startswith("https://medium.com/"):
+                raise RuntimeError(f"Unexpected Medium result URL: {url}")
+            log(f"Medium confirmed publication: {url}")
+            return url
+        except Exception:
+            save_medium_debug(page)
+            raise
+        finally:
+            browser.close()
+
+
+def generate_mode():
+    if not os.environ.get("OPENAI_API_KEY"):
+        raise RuntimeError("OPENAI_API_KEY secret is not set")
+    index, topic = selected_topic()
+    log(f"Topic: {topic}")
+    log("Generating medical draft via OpenAI...")
+    title, content = generate_article(topic)
+    path = save_draft(index, topic, title, content)
+    log(f"Draft saved for medical review: {path}")
+    log("No content was published")
+
+
+def publish_mode():
+    path = resolve_draft_path(os.environ.get("DRAFT_PATH"))
+    title, content = load_draft(path)
     medium_token = os.environ.get("MEDIUM_TOKEN")
     medium_sid = os.environ.get("MEDIUM_SID")
-
-    if not openai_key:
-        log("ERROR: OPENAI_API_KEY secret is not set")
-        exit(1)
-
     if not medium_token and not medium_sid:
-        log("ERROR: Set either MEDIUM_TOKEN or MEDIUM_SID in GitHub Secrets")
-        exit(1)
-
-    # Pick topic by week+day rotation
-    week = datetime.now().isocalendar()[1]
-    day = datetime.now().weekday()
-    topic = TOPICS[(week * 3 + day) % len(TOPICS)]
-    log(f"Topic: {topic}")
-
-    # Generate article
-    log("Generating article via GPT-4o...")
-    title, content = generate_article(topic)
-    log(f"Generated {len(content)} chars")
-
-    # Publish
+        raise RuntimeError("Set either MEDIUM_TOKEN or MEDIUM_SID in GitHub Secrets")
+    log(f"Publishing approved draft: {path}")
     if medium_token:
         url = publish_via_api(medium_token, title, content)
     else:
         url = publish_via_cookie(medium_sid, title, content)
+    result_path = record_publication(path, url)
+    log(f"Publication recorded: {result_path}")
 
-    log(f"Published: {url}")
+
+def main():
+    LOG_LINES.clear()
+    log("=== Dr. Rofe Content Workflow - Starting ===")
+    log(f"Date: {utc_now():%Y-%m-%d %H:%M UTC}")
+
+    if content_is_frozen():
+        log("CONTENT FREEZE: generation and publication paused")
+        return
+
+    mode = os.environ.get("RUN_MODE", "generate").strip().lower()
+    if mode == "generate":
+        generate_mode()
+    elif mode == "publish":
+        publish_mode()
+    else:
+        raise ValueError(f"Unsupported RUN_MODE: {mode}")
     log("=== Done ===")
 
-    with open("run_log.txt", "w", encoding="utf-8") as f:
-        f.write("\n".join(LOG_LINES))
 
 if __name__ == "__main__":
-    main()
+    exit_code = 0
+    try:
+        main()
+    except Exception as exc:
+        log(f"ERROR: {type(exc).__name__}: {exc}")
+        exit_code = 1
+    finally:
+        write_run_log()
+    raise SystemExit(exit_code)
