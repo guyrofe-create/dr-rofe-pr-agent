@@ -100,12 +100,16 @@ def wordpress_publish(base_url, username, app_password, title, content_html, sum
     endpoint = f"{base_url.rstrip('/')}/wp-json/wp/v2/posts"
     response = requests.get(
         endpoint,
-        auth=auth,
-        params={"slug": slug, "status": "publish,draft"},
+        params={"slug": slug, "status": "publish"},
         timeout=25,
     )
     response.raise_for_status()
-    existing = response.json()
+    try:
+        existing = response.json()
+    except requests.exceptions.JSONDecodeError as exc:
+        raise RuntimeError(
+            f"{base_url} returned a non-JSON response to the WordPress API lookup"
+        ) from exc
     if existing:
         return existing[0].get("link") or f"{base_url.rstrip('/')}/?p={existing[0]['id']}"
 
