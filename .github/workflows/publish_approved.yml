@@ -1,8 +1,6 @@
-name: Publish Dashboard-Approved Content
+name: Publish Dashboard-Approved Content (Paused)
 
 on:
-  schedule:
-    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -12,78 +10,12 @@ on:
         type: boolean
 
 permissions:
-  contents: write
-
-concurrency:
-  group: approved-medium-publishing
-  cancel-in-progress: false
+  contents: read
 
 jobs:
   check:
     runs-on: ubuntu-latest
-    outputs:
-      draft_path: ${{ steps.approval.outputs.draft_path }}
     steps:
-      - name: Check private dashboard approval queue
-        id: approval
-        env:
-          APPROVAL_URL: https://dr-rofe-reputation-center.guyrofe.chatgpt.site
+      - name: Confirm legacy Medium-only publisher is paused
         run: |
-          response="$(curl --fail --silent --show-error \
-            "${APPROVAL_URL}/api/approvals/next")"
-          draft_path="$(jq -r '.draft_path // empty' <<<"${response}")"
-          echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
-          if [[ -n "${draft_path}" ]]; then
-            echo "Approved draft ready: ${draft_path}"
-          else
-            echo "No approved draft is waiting"
-          fi
-
-  publish:
-    needs: check
-    if: >-
-      needs.check.outputs.draft_path != '' &&
-      !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install Python dependencies
-        run: pip install -r requirements.txt
-
-      - name: Install Playwright browser
-        run: playwright install chromium --with-deps
-
-      - name: Publish approved Medium draft
-        run: python scripts/daily_run.py
-        env:
-          RUN_MODE: publish
-          DRAFT_PATH: ${{ needs.check.outputs.draft_path }}
-          MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
-          MEDIUM_SID: ${{ secrets.MEDIUM_SID }}
-
-      - name: Commit publication record
-        if: success()
-        run: |
-          git config user.name "dr-rofe-pr-agent"
-          git config user.email "actions@github.com"
-          git add content_drafts/
-          git diff --cached --quiet || git commit -m "Record approved Medium publication ${{ github.run_id }}"
-          git pull --rebase
-          git push
-
-      - name: Upload publication diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: approved-publication-${{ github.run_id }}
-          path: |
-            run_log.txt
-            medium_debug.html
-            medium_debug.png
-          retention-days: 30
+          echo "Medium-only publication is paused while the unified campaign publisher is deployed."
