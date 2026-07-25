@@ -38,14 +38,19 @@ class CampaignRunTests(unittest.TestCase):
             {"id": 42, "link": "https://guyrofe.com/existing"}
         ]
         get_response.raise_for_status.return_value = None
-        with patch.object(campaign_run.requests, "get", return_value=get_response), patch.object(
-            campaign_run.requests, "post"
-        ) as post:
+        with patch.object(
+            campaign_run.requests, "get", return_value=get_response
+        ) as get, patch.object(campaign_run.requests, "post") as post:
             url = campaign_run.wordpress_publish(
                 "https://guyrofe.com", "user", "password", "כותרת", "<p>תוכן</p>"
             )
         self.assertEqual(url, "https://guyrofe.com/existing")
         post.assert_not_called()
+        self.assertNotIn("auth", get.call_args.kwargs)
+        self.assertEqual(
+            get.call_args.kwargs["params"]["status"],
+            "publish",
+        )
 
     def test_canonical_site_is_required_before_distribution(self):
         draft = Path(tempfile.mkdtemp()) / "draft.md"
