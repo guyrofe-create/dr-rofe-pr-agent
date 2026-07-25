@@ -12,13 +12,12 @@ def main():
     print(f"{'PASS' if ok else 'FAIL'} Facebook Page access: {detail}")
     if not ok:
         return 1
-    try:
-        ig_id = meta.resolve_instagram_business_id()
-        print(f"PASS Instagram Business link: account ending {ig_id[-4:]}")
-        return 0
-    except Exception as exc:
-        print(f"FAIL Instagram Business link: {str(exc)[:240]}")
-        return 1
+    ig_ok, ig_detail = meta.check_instagram_account_access()
+    print(
+        f"{'PASS' if ig_ok else 'FAIL'} Instagram Business access: "
+        f"{str(ig_detail)[:240]}"
+    )
+    return 0 if ig_ok else 1
 
 
 if __name__ == "__main__":

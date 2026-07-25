@@ -36,6 +36,35 @@ class MetaConnectionTests(unittest.TestCase):
         get.return_value = response
         self.assertEqual(meta.resolve_instagram_business_id(), "178400000000003")
 
+    @patch.dict(os.environ, {
+        "INSTAGRAM_BUSINESS_ID": "178400000000004",
+        "FACEBOOK_PAGE_TOKEN": "token",
+    }, clear=True)
+    @patch("scripts.social_publishers.meta.requests.get")
+    def test_checks_direct_instagram_account_access(self, get):
+        response = Mock(status_code=200)
+        response.json.return_value = {
+            "id": "178400000000004",
+            "username": "guy_rofe_md",
+        }
+        get.return_value = response
+        self.assertEqual(
+            meta.check_instagram_account_access(),
+            (True, "guy_rofe_md"),
+        )
+
+    @patch.dict(os.environ, {
+        "INSTAGRAM_BUSINESS_ID": "178400000000005",
+        "FACEBOOK_PAGE_TOKEN": "token",
+    }, clear=True)
+    @patch("scripts.social_publishers.meta.requests.get")
+    def test_reports_instagram_token_permission_failure(self, get):
+        response = Mock(status_code=403, text="permission denied")
+        get.return_value = response
+        ok, detail = meta.check_instagram_account_access()
+        self.assertFalse(ok)
+        self.assertIn("HTTP 403", detail)
+
 
 if __name__ == "__main__":
     unittest.main()

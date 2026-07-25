@@ -117,3 +117,23 @@ def check_token_health():
         return False, f"HTTP {resp.status_code}: {resp.text[:200]}"
     except Exception as e:
         return False, str(e)
+
+
+def check_instagram_account_access():
+    """Confirm that the configured Page token can read the Instagram account."""
+    try:
+        ig_id = resolve_instagram_business_id()
+        token = common.env("FACEBOOK_PAGE_TOKEN")
+        resp = requests.get(
+            f"{GRAPH}/{ig_id}",
+            params={"fields": "id,username", "access_token": token},
+            timeout=15,
+        )
+        if resp.status_code != 200:
+            return False, f"HTTP {resp.status_code}: {resp.text[:200]}"
+        payload = resp.json()
+        if str(payload.get("id")) != str(ig_id):
+            return False, "Meta returned a different Instagram account"
+        return True, payload.get("username") or f"account ending {ig_id[-4:]}"
+    except Exception as e:
+        return False, str(e)
