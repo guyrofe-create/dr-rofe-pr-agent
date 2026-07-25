@@ -57,9 +57,10 @@ def oauth1_header(method, url, params, consumer_key, consumer_secret,
     return header
 
 
-def shorten_for_social(title, url, max_len=250):
-    """Build a short social caption from an article title + link."""
+def shorten_for_social(title, url, max_len=250, body=None):
+    """Build a platform-length caption from an approved title, body and link."""
     suffix = f"\n\nקריאה מלאה: {url}" if url else ""
     room = max_len - len(suffix)
-    text = title if len(title) <= room else title[: room - 1].rstrip() + "…"
+    text = f"{title}\n\n{body}".strip() if body else title
+    text = text if len(text) <= room else text[: room - 1].rstrip() + "…"
     return text + suffix

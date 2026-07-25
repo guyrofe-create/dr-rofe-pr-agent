@@ -18,7 +18,7 @@ def publish(title, body, url, image_url):
 
     token = common.env("PINTEREST_ACCESS_TOKEN")
     board_id = common.env("PINTEREST_BOARD_ID")
-    description = common.shorten_for_social(title, url, max_len=500)
+    description = common.shorten_for_social(title, url, max_len=500, body=body)
 
     resp = requests.post(
         "https://api.pinterest.com/v5/pins",
