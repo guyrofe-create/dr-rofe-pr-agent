@@ -1,4 +1,5 @@
 name: Facebook Product Publish Test
+# One-time product-path verification; duplicate protection runs before publish.
 
 on:
   push:
