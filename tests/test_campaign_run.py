@@ -10,6 +10,11 @@ from scripts.social_publishers import common
 
 
 class CampaignRunTests(unittest.TestCase):
+    def test_main_requires_explicit_publish_approval(self):
+        with patch.dict(os.environ, {}, clear=True):
+            with self.assertRaisesRegex(RuntimeError, "PUBLISH_APPROVED"):
+                campaign_run.main()
+
     def test_stable_slug_keeps_hebrew_and_is_deterministic(self):
         self.assertEqual(
             campaign_run.stable_slug("לפני ניתוח: החלטה משותפת"),

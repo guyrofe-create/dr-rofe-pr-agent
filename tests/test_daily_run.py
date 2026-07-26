@@ -156,6 +156,22 @@ class DailyRunTests(unittest.TestCase):
             daily_run.write_run_log(output)
             self.assertIn("ERROR: example", output.read_text(encoding="utf-8"))
 
+    def test_generation_topics_do_not_claim_active_personal_practice(self):
+        joined = "\n".join(daily_run.TOPICS)
+        self.assertNotIn("ההכשרה שלי", joined)
+        self.assertNotIn("עם מטופלת", joined)
+        self.assertNotIn("זמינות ישירה לרופא", joined)
+
+    def test_medium_publish_rechecks_publication_policy(self):
+        with tempfile.TemporaryDirectory() as directory:
+            draft = Path(directory) / "approved.md"
+            draft.write_text(
+                "# כותרת\n\nלקביעת תור צרו קשר", encoding="utf-8"
+            )
+            with patch.object(daily_run, "resolve_draft_path", return_value=draft):
+                with self.assertRaisesRegex(ValueError, "publication.*policy"):
+                    daily_run.publish_mode()
+
 
 if __name__ == "__main__":
     unittest.main()
