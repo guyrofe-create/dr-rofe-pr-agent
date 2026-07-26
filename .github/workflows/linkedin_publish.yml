@@ -1,0 +1,36 @@
+name: Publish Approved LinkedIn Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_text:
+        description: 'Exact approved LinkedIn post text'
+        required: true
+        type: string
+      confirm_publish:
+        description: 'I approve publishing this exact text publicly'
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: ${{ inputs.confirm_publish == true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Publish exact approved text
+        run: python scripts/linkedin_publish.py
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_POST_TEXT: ${{ inputs.post_text }}
+          LINKEDIN_CONFIRM_PUBLISH: ${{ inputs.confirm_publish }}
