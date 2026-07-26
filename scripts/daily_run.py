@@ -13,6 +13,7 @@ import re
 import time
 
 import requests
+from publication_policy import CTA_PROMPT, enforce_publication_policy
 
 
 TOPICS = [
@@ -91,6 +92,7 @@ def clean_generated_markdown(content):
 
 
 def validate_generated_article(content):
+    enforce_publication_policy(content)
     title = next(
         (
             line.removeprefix("#").strip()
@@ -151,7 +153,7 @@ def generate_article(topic):
 - אורך: 750-850 מילים; ספור את המילים לפני ההחזרה
 - שפה: עברית מקצועית אך נגישה לקהל רחב
 - מבנה: כותרת ראשית H1, מבוא, 3-4 סעיפים עם כותרות H2, סיכום
-- CTA בסוף: לייעוץ עם ד"ר גיא רופא: guyrofe.com
+- {CTA_PROMPT}
 - אין להמציא נתונים, שיעורי הצלחה, תארים או ניסיון אישי
 - אין לייחס לד"ר גיא רופא אמירות, הדגשות או המלצות אישיות שלא סופקו
 - כל טענה רפואית מחייבת בדיקת רופא לפני פרסום
