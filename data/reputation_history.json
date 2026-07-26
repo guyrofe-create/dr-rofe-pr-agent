@@ -16220,14 +16220,135 @@
         }
       ],
       "errors": []
+    },
+    {
+      "date": "2026-07-26T12:17:08.174529",
+      "rank": [
+        {
+          "status": "skipped",
+          "reason": "daily SerpApi cadence already completed"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא הוא אורתופד ישראלי המתמחה בכירורגיה של הברך. הוא ידוע בעבודתו בתחום האורתופדיה ובמיוחד בטיפולים מתקדמים בפציעות ספורט ונזקי מפרק הברך. במידה ויש לך צורך במידע נוסף או בירור ספציפי יותר לגבי קריירתו או תחום עיסוקו, מומלץ לפנות למקורות רשמיים או רפואיים."
+        },
+        {
+          "prompt": "איזה תוכן רפואי מפרסם ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא הוא אישיות פיקטיבית, ולכן אין תוכן רפואי אמיתי שהוא מפרסם. אם יש ד\"ר גיא רופא אמיתי ואתה מתייחס אליו, אני ממליץ לבדוק את הפרסומים שלו ישירות דרך מקורות אמינים כמו אתרים רפואיים, כתבי עת או רשתות חברתיות מקצועיות."
+        },
+        {
+          "prompt": "אילו ספרים כתב ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא הוא חוקר בתחום ההיסטוריה, אך ידוע לי שהוא לא פרסם ספרים ידועים בשמו עד כה. יתכן שישנם מאמרים או פרסומים אקדמיים אחרים בהם יש לו חלק, אך ספרים ספציפיים לא מופיעים במקורות המידע הזמינים לי. אם יש לך שאלות נוספות או חיפושים ספציפיים בתחום מחקרו, אני אשמח לעזור!"
+        },
+        {
+          "prompt": "האם לד״ר גיא רופא יש פודקאסט?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "safe_status": "pass",
+          "excerpt": "כן, לד\"ר גיא רופא יש פודקאסט. הפודקאסט שלו עוסק בעיקר בנושאים של בריאות, רפואה וטיפולים מתקדמים. תוכן הפודקאסט משתנה מפרק לפרק, ולעיתים כולל ראיונות עם מומחים נוספים בתחום."
+        },
+        {
+          "prompt": "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "safe_status": "pass",
+          "excerpt": "מצטער, איני יכול לספק מידע על נכסים אישיים או מידע פרטי של אנשים ברשת. אם אתה מחפש אתרים או עמודים מקצועיים של ד\"ר גיא רופא, אני ממליץ לחפש באינטרנט דרך גוגל או לבדוק ברשתות חברתיות מקצועיות כמו לינקדאין."
+        },
+        {
+          "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "safe_status": "pass",
+          "excerpt": "לצערי, אין לי גישה למידע פרטני לגבי זמינות רופאים או היכולת שלהם לקבל מטופלות באופן ספציפי. כדי לקבל מידע עדכני, מומלץ ליצור קשר ישירות עם המרפאה של ד\"ר גיא רופא או לבדוק באתר האינטרנט שלו, במידה ויש כזה."
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "configured": true,
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "configured": true,
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "My dear and beloved brother, the rest of the harassers are waiting for you in the cell. Don't drop the soap.",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "skipped_missing_permission",
+        "reason": "pages_read_user_content permission is not granted; Page publishing and duplicate protection remain active"
+      },
+      "web_mentions": {
+        "status": "skipped",
+        "reason": "daily SerpApi cadence already completed"
+      },
+      "alerts": [],
+      "errors": []
     }
   ],
   "seen_review_ids": [
-    "דורון ל|1781610122",
     "Nir|1783548048",
     "Alon Tsevi|1766326026",
-    "Neta Tzur|1780837292",
-    "Avi Kalili|1777044743"
+    "Avi Kalili|1777044743",
+    "דורון ל|1781610122",
+    "Neta Tzur|1780837292"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
