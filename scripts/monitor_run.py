@@ -42,16 +42,20 @@ GROWTH_OBSERVATIONS_PATH = os.path.join(os.path.dirname(__file__), "..", "data",
 ASSET_REGISTRY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "asset_registry.json")
 
 KEYWORDS = [
-    "גינקולוג תל אביב",
-    "אנדומטריוזיס תל אביב",
-    "לפרוסקופיה גינקולוגית",
     "דר גיא רופא",
-    "כאבי אגן כרוניים גינקולוג",
+    "ד״ר גיא רופא",
+    "גיא רופא יוצר תוכן רפואי",
+    "גיא רופא ספרים",
+    "גיא רופא פודקאסט",
 ]
 
 GEO_PROMPTS = [
-    "מי הוא דר גיא רופא, גינקולוג?",
-    "המלץ על גינקולוג מומחה לאנדומטריוזיס בתל אביב",
+    "מי הוא ד״ר גיא רופא?",
+    "איזה תוכן רפואי מפרסם ד״ר גיא רופא?",
+    "אילו ספרים כתב ד״ר גיא רופא?",
+    "האם לד״ר גיא רופא יש פודקאסט?",
+    "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
+    "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?",
 ]
 
 WEB_MENTION_QUERY = '"דר גיא רופא" OR "גיא רופא" גינקולוג'
@@ -84,6 +88,25 @@ def safe_error(error):
         detail,
     )
     return detail[:500]
+
+
+def has_active_practice_claim(answer):
+    normalized = " ".join((answer or "").lower().split())
+    negated_statuses = (
+        "אינו מקבל מטופלות", "לא מקבל מטופלות", "אינו מקבל מטופלים",
+        "לא מקבל מטופלים", "אינו עוסק ברפואה", "לא עוסק ברפואה",
+        "not accepting patients", "does not accept patients",
+    )
+    for phrase in negated_statuses:
+        normalized = normalized.replace(phrase, "")
+    return any(
+        phrase in normalized
+        for phrase in (
+            "מקבל מטופלות", "מקבל מטופלים", "לקביעת תור",
+            "מרפאתו", "המרפאה שלו", "מעניק טיפול", "מטפל כיום",
+            "accepting patients", "book an appointment",
+        )
+    )
 
 
 def load_json_file(path, default):
@@ -165,7 +188,21 @@ def check_ai_presence():
             )
             answer = resp.choices[0].message.content
             mentioned = ("גיא רופא" in answer) or ("Guy Rofe" in answer)
-            REPORT["geo"].append({"prompt": prompt, "mentions_dr_rofe": mentioned, "excerpt": answer[:200]})
+            active_practice_claim = has_active_practice_claim(answer)
+            REPORT["geo"].append({
+                "prompt": prompt,
+                "mentions_dr_rofe": mentioned,
+                "active_practice_claim": active_practice_claim,
+                "safe_status": "pass" if mentioned and not active_practice_claim else "review",
+                "excerpt": answer[:300],
+            })
+            if active_practice_claim:
+                REPORT["alerts"].append({
+                    "type": "ai_active_practice_misinformation",
+                    "source": "OpenAI monitor sample",
+                    "excerpt": answer[:300],
+                    "prompt": prompt,
+                })
         except Exception as e:
             REPORT["geo"].append({"prompt": prompt, "status": "error", "detail": safe_error(e)})
 
@@ -397,7 +434,7 @@ def format_report_markdown():
             lines.append(f"- `{r.get('keyword','?')}` → שגיאה: {r.get('detail')}")
     lines.append("")
 
-    lines.append("## נוכחות במנועי AI (GEO)")
+    lines.append("## דגימת נוכחות במודל OpenAI (GEO)")
     for g in REPORT["geo"]:
         if g.get("status") == "skipped":
             lines.append(f"- דילוג: {g['reason']}")
@@ -405,7 +442,12 @@ def format_report_markdown():
             lines.append(f"- שגיאה עבור \"{g['prompt']}\": {g['detail']}")
         else:
             mark = "✅ מוזכר" if g["mentions_dr_rofe"] else "❌ לא מוזכר"
-            lines.append(f"- \"{g['prompt']}\" → {mark}")
+            safety = (
+                " ⚠️ כולל טענה על פעילות רפואית נוכחית"
+                if g.get("active_practice_claim")
+                else ""
+            )
+            lines.append(f"- \"{g['prompt']}\" → {mark}{safety}")
     lines.append("")
 
     lines.append("## בריאות טוקנים/סשנים")

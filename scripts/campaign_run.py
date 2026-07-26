@@ -348,6 +348,8 @@ def publish_campaign(draft_path):
 
 
 def main():
+    if os.environ.get("PUBLISH_APPROVED", "").strip().lower() != "true":
+        raise RuntimeError("PUBLISH_APPROVED=true is required")
     draft_path = resolve_draft_path(os.environ.get("DRAFT_PATH"))
     log(f"Starting approved campaign: {draft_path}")
     try:
