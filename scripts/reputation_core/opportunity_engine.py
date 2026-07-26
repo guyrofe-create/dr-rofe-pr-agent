@@ -204,8 +204,11 @@ def _approval_bundle(action_type: str) -> list[str]:
         ]
     if action_type == "propose_new_asset":
         return common + [
-            "Distinct audience and intent proof",
-            "Twelve-month ownership and maintenance plan",
+            "Proof 1/5: separate systemic purpose, audience and intent",
+            "Proof 2/5: independently useful reader value and original inventory",
+            "Proof 3/5: twelve-month ownership, cadence and maintenance capacity",
+            "Proof 4/5: realistic authority, discovery and measurement path",
+            "Proof 5/5: duplication, similarity and doorway-pattern review",
         ]
     if action_type in {
         "create_new_content", "refresh_existing_content",
@@ -280,6 +283,21 @@ def build_opportunity(
     ):
         blocked_reasons.append("new-asset safety gate rejected the proposal")
     approval = action.get("approval_required") or defaults["approval"]
+    asset_gate_outcome = (
+        (action.get("asset_gate") or {}).get("outcome")
+        if action_type == "propose_new_asset"
+        else None
+    )
+    if asset_gate_outcome == "evidence_required":
+        authorization_scope = "proof_collection_only"
+    elif asset_gate_outcome == "incubate":
+        authorization_scope = "existing_asset_incubation_only"
+    elif asset_gate_outcome == "build":
+        authorization_scope = "prepare_build_brief_only"
+    elif asset_gate_outcome == "reject":
+        authorization_scope = "no_execution"
+    else:
+        authorization_scope = "prepare_action_only"
     return {
         "id": _id(identity),
         "version": 4,
@@ -303,6 +321,8 @@ def build_opportunity(
         "blocked_reasons": blocked_reasons,
         "preparation_autonomous": True,
         "final_execution_requires_approval": action_type in PUBLIC_ACTION_TYPES,
+        "authorization_scope": authorization_scope,
+        "new_asset_build_authorized": False,
         "approval_required": approval,
         "approval_bundle_requirements": _approval_bundle(action_type),
         "measurement_after_action": [

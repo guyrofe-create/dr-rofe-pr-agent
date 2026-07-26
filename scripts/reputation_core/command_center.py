@@ -22,6 +22,7 @@ DEFAULT_STATE = {
     "serp_assets": [],
     "visibility_measurements": [],
     "opportunities": [],
+    "asset_candidates": [],
     "audit_log": [],
     "metrics": {},
 }
@@ -215,6 +216,11 @@ class CommandCenter:
             "prepared_opportunities": sum(
                 item.get("status") == "prepared_awaiting_approval"
                 for item in self.state["opportunities"]
+            ),
+            "p5_asset_candidates": len(self.state["asset_candidates"]),
+            "p5_build_ready": sum(
+                (item.get("gate") or {}).get("outcome") == "build"
+                for item in self.state["asset_candidates"]
             ),
         }
 

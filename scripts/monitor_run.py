@@ -898,6 +898,31 @@ def format_report_markdown():
         lines.append("- אין פעולה שעברה כעת את ספי הערך, הסיכון והקיבולת")
     lines.append("")
 
+    asset_engine = (
+        (REPORT.get("orchestration") or {}).get("asset_engine", {})
+    )
+    lines.append("## P5 — מועמדים לנכסים חדשים")
+    lines.append(
+        "- תנאי חובה: ייעוד נפרד, ערך לקורא, תחזוקה בת־קיימא, "
+        "מסלול סמכות/התברגות סביר, והיעדר כפילות או doorway"
+    )
+    candidates = asset_engine.get("candidates", [])
+    if candidates:
+        for candidate in candidates:
+            gate = candidate.get("gate") or {}
+            lines.append(
+                f"- `{candidate.get('archetype')}` | "
+                f"{candidate.get('label')} | "
+                f"ציון יצירתי {candidate.get('creative_priority_score')} | "
+                f"הכרעה `{gate.get('outcome')}` | "
+                f"הוכחות חסרות: {', '.join(gate.get('missing_proofs', [])) or 'אין'}"
+            )
+    else:
+        lines.append(
+            f"- אין מועמדים: {asset_engine.get('reason', 'אין פער מדוד')}"
+        )
+    lines.append("")
+
     lines.append("## דגימת נוכחות במודל OpenAI (GEO)")
     for g in REPORT["geo"]:
         if g.get("status") == "skipped":
@@ -1149,6 +1174,7 @@ def main():
         ],
         "cross_domain_risks": REPORT["orchestration"]["cross_domain_risks"],
         "new_asset_proposals": REPORT["orchestration"]["new_asset_proposals"],
+        "asset_engine": REPORT["orchestration"]["asset_engine"],
         "next_best_actions": REPORT["orchestration"]["next_best_actions"][:20],
         "opportunity_engine": REPORT["orchestration"]["opportunity_engine"],
     })
@@ -1158,6 +1184,9 @@ def main():
     command_center.state["opportunities"] = REPORT["orchestration"][
         "opportunity_engine"
     ]["ranked_opportunities"][:100]
+    command_center.state["asset_candidates"] = REPORT["orchestration"][
+        "asset_engine"
+    ]["candidates"][:30]
     command_center._audit(
         "opportunities_replanned",
         REPORT["orchestration"]["opportunity_engine"]["generated_at"],

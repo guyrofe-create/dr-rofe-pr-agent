@@ -171,6 +171,20 @@ canvas{max-height:260px}
     </div>
   </div>
 
+  <!-- P5 controlled creative asset candidates -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>🧭 P5 — מועמדים לנכסים חדשים</h2>
+      <span class="badge" id="assetCandidateBadge">—</span>
+    </div>
+    <div class="panel-body">
+      <table>
+        <thead><tr><th>מועמד</th><th>ייעוד</th><th>הכרעה</th><th>הוכחות</th><th>תכלית</th></tr></thead>
+        <tbody id="assetCandidateTable"></tbody>
+      </table>
+    </div>
+  </div>
+
   <!-- P4 opportunity portfolio -->
   <div class="panel">
     <div class="panel-head">
@@ -316,6 +330,7 @@ function render(data, command) {
   renderCharts(snapshots);
   renderCommandCenter(command);
   renderOpportunities(command);
+  renderAssetCandidates(command);
 
   document.getElementById("sectionsArea").style.display = "";
 }
@@ -373,6 +388,28 @@ function renderOpportunities(command) {
       <td>${item.final_execution_requires_approval ? "נדרש לפני ביצוע" : "—"}</td>
     </tr>`).join("")
     : '<tr><td colspan="5" style="color:var(--muted)">טרם נוצר תיק הזדמנויות P4. הוא ייווצר במחזור הניטור הבא.</td></tr>';
+}
+
+function renderAssetCandidates(command) {
+  const items = (command?.asset_candidates || []).slice(0,20);
+  const ready = items.filter(item => item.gate?.outcome === "build").length;
+  const badge = document.getElementById("assetCandidateBadge");
+  badge.textContent = ready ? `${ready} עברו את כל השערים` : `${items.length} לבדיקה`;
+  badge.className = ready ? "badge green" : items.length ? "badge yellow" : "badge";
+  document.getElementById("assetCandidateTable").innerHTML = items.length
+    ? items.map(item => {
+      const gate = item.gate || {};
+      const proofs = Object.values(gate.proofs || {});
+      const passed = proofs.filter(proof => proof.status === "pass").length;
+      return `<tr>
+        <td><strong>${esc(item.label || item.archetype)}</strong><br><span style="color:var(--muted);font-size:11px">${esc(item.delivery_mode)}</span></td>
+        <td>${esc(item.query || "—")}<br><span style="color:var(--muted);font-size:11px">${esc((item.reader_value_hypothesis || "").slice(0,150))}</span></td>
+        <td>${esc(gate.outcome || "evidence_required")}</td>
+        <td>${passed}/5 עברו<br><span style="color:var(--muted);font-size:11px">${esc((gate.missing_proofs || []).join(", "))}</span></td>
+        <td>${item.standalone ? "אתר עצמאי — סף מחמיר" : item.earned ? "אזכור חיצוני עצמאי" : "נכס/מדור מבוקר"}</td>
+      </tr>`;
+    }).join("")
+    : '<tr><td colspan="5" style="color:var(--muted)">אין כרגע פער מדוד שמצדיק בדיקת נכס חדש.</td></tr>';
 }
 
 /* ---- BANNER ---- */

@@ -56,6 +56,8 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
         "minimum_distinct_purpose_score": 80,
         "minimum_maintenance_health": 0.8,
         "minimum_content_runway_items": 12,
+        "maximum_allowed_content_similarity": 0.65,
+        "require_all_p5_mandatory_proofs": True,
         "maintenance_capacity_units": float(
             spec.get("maintenance_capacity_units", 0)
         ),
@@ -334,6 +336,7 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
             "version": 1, "events": [], "crisis_rooms": [], "audit_log": [],
             "campaigns": [], "visibility_measurements": [],
             "opportunities": [],
+            "asset_candidates": [],
         },
     }
 

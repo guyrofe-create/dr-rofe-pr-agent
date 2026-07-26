@@ -256,6 +256,8 @@
     "minimum_distinct_purpose_score": 80,
     "minimum_maintenance_health": 0.8,
     "minimum_content_runway_items": 12,
+    "maximum_allowed_content_similarity": 0.65,
+    "require_all_p5_mandatory_proofs": true,
     "maintenance_capacity_units": 5,
     "default_asset_maintenance_units": 1,
     "new_asset_maintenance_units": 1,
@@ -268,7 +270,8 @@
       "thin_content",
       "unmaintained_assets",
       "manual_action",
-      "indexing_anomaly"
+      "indexing_anomaly",
+      "cannibalization"
     ]
   }
 }

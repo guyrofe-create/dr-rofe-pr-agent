@@ -12,6 +12,13 @@ from .installation import (
     installation_root,
 )
 from .coverage_safety import evaluate_coverage_safety
+from .creative_asset_engine import (
+    ASSET_ARCHETYPES,
+    MANDATORY_PROOFS,
+    build_creative_asset_portfolio,
+    candidate_to_action,
+    evaluate_creative_asset_candidate,
+)
 from .campaign_wizard import (
     apply_approved_campaign,
     build_campaign_draft,
@@ -70,6 +77,11 @@ __all__ = [
     "data_path",
     "assert_isolated_installation",
     "evaluate_coverage_safety",
+    "ASSET_ARCHETYPES",
+    "MANDATORY_PROOFS",
+    "build_creative_asset_portfolio",
+    "candidate_to_action",
+    "evaluate_creative_asset_candidate",
     "build_installation_files",
     "validate_install_spec",
     "validate_installation_files",

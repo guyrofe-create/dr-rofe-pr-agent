@@ -380,7 +380,7 @@ class GrowthEngineTests(unittest.TestCase):
         ))
         self.assertTrue(all(
             proposal["status"] == "evidence_required"
-            and proposal["asset_gate"]["outcome"] == "incubate"
+            and proposal["asset_gate"]["outcome"] == "evidence_required"
             for proposal in proposals
         ))
 

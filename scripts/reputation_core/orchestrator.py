@@ -12,8 +12,11 @@ from functools import lru_cache
 from pathlib import Path
 from urllib.parse import urlparse
 
-from .asset_safety import evaluate_asset_candidate
 from .coverage_safety import evaluate_coverage_safety
+from .creative_asset_engine import (
+    build_creative_asset_portfolio,
+    candidate_to_action,
+)
 from .installation import config_path
 from .measurement import (
     add_serp_volatility,
@@ -333,85 +336,27 @@ def propose_new_assets(
     control_maps: list[dict],
     content_inventory: list[dict] | None = None,
     creation_history: list[dict] | None = None,
+    evidence_by_archetype: dict | None = None,
 ) -> list[dict]:
-    """Propose creative assets only when they add a distinct, maintainable value."""
+    """Return P5 concepts; proof collection is a proposal, never a build."""
     targets = load_serp_targets()
-    existing_types = {asset.get("type") for asset in assets if asset.get("status") != "quarantined"}
-    weakest_map = min(
+    portfolio = build_creative_asset_portfolio(
+        assets,
         control_maps,
-        key=lambda item: (item["desired_count"], item["controlled_count"]),
-        default=None,
-    )
-    if not weakest_map:
-        return []
-    gap = max(0, targets["objective"]["desired_results_target"] - weakest_map["desired_count"])
-    if not gap:
-        return []
-    inventory_kinds = {item.get("kind") for item in (content_inventory or [])}
-    proposals = []
-    mappings = {
-        "original_research_library": ("research_library", 10, 4),
-        "named_medical_newsroom": ("official_site", 9, 5),
-        "video_explainer_series": ("video_channel", 8, 6),
-        "podcast_season": ("podcast_profile", 7, 5),
-        "public_document_collection": ("document_profile", 7, 7),
-        "newsletter_archive": ("newsletter_archive", 6, 6),
-        "expert_qa_library": ("expert_qa_profile", 8, 7),
-        "independent_editorial_opportunity": ("independent_media", 10, 4),
-    }
-    for candidate in targets.get("asset_creation_portfolio", []):
-        kind = candidate["kind"]
-        mapped_type, impact, speed = mappings[kind]
-        if mapped_type in existing_types or kind in inventory_kinds:
-            continue
-        safety = evaluate_asset_candidate(
-            {
-                "distinct_purpose_score": 0,
-                "content_runway_items": 0,
-                "maintenance_owner": None,
-                "authority_path": None,
-                "measurement_plan": None,
-                "distinct_audience": False,
-                "risk_signals": [],
-            },
-            assets,
-            creation_history or [],
-            client_asset_policy(),
-        )
-        proposals.append({
-            "priority": "P1" if impact >= 9 else "P2",
-            "kind": "create_or_earn_new_asset",
-            "asset_kind": kind,
-            "query": weakest_map["query"],
-            "reason": (
-                f"The weakest observed brand SERP is short of the desired-result "
-                f"target by {gap}; this asset adds a distinct retrieval surface."
-            ),
-            "surface": candidate["surface"],
-            "value": candidate["value"],
-            "minimum_proof": candidate["minimum_proof"],
-            "impact": impact,
-            "speed": speed,
-            "approval_required": "owner",
-            "status": "evidence_required",
-            "asset_gate": {
-                "outcome": safety.outcome,
-                "score": safety.score,
-                "standalone_volume_limit_90d": safety.volume_limit,
-                "reasons": safety.reasons,
-                "required_actions": safety.required_actions,
-            },
-            "kill_criteria": [
-                "No distinct audience or query intent",
-                "No sustainable maintenance owner",
-                "Would duplicate an existing controlled property",
-                "Would present controlled content as independent",
+        content_inventory or [],
+        creation_history or [],
+        {
+            **client_asset_policy(),
+            "desired_results_target": targets["objective"][
+                "desired_results_target"
             ],
-        })
-    return sorted(
-        proposals,
-        key=lambda item: (0 if item["priority"] == "P1" else 1, -item["impact"], -item["speed"]),
+        },
+        evidence_by_archetype=evidence_by_archetype,
     )
+    return [
+        candidate_to_action(candidate)
+        for candidate in portfolio["candidates"]
+    ]
 
 
 def evaluate_new_asset_hypothesis(hypothesis: dict) -> dict:
@@ -468,6 +413,7 @@ def orchestrate_reputation_cycle(
     historical_serp_snapshots: list[dict] | None = None,
     bing_ai_performance: dict | None = None,
     content_freeze: bool = False,
+    asset_candidate_evidence: dict | None = None,
 ) -> dict:
     """Build one evidence-led, maximum-sustainable action cycle."""
     targets = load_serp_targets()
@@ -514,14 +460,33 @@ def orchestrate_reputation_cycle(
     )
     actions = _asset_opportunities(assets, control_maps)
     actions.extend(search_console_opportunities(search_console_rows or [], assets))
-    new_asset_proposals = propose_new_assets(
+    asset_engine = build_creative_asset_portfolio(
         assets,
         control_maps,
-        content_inventory,
-        creation_history,
+        content_inventory or [],
+        creation_history or [],
+        {
+            **client_asset_policy(),
+            "desired_results_target": targets["objective"][
+                "desired_results_target"
+            ],
+        },
+        evidence_by_archetype=asset_candidate_evidence,
+    )
+    new_asset_proposals = [
+        candidate_to_action(candidate)
+        for candidate in asset_engine["candidates"]
+    ]
+    asset_engine["portfolio_safety"] = coverage_safety
+    asset_engine["eligible_for_p4_proposal"] = (
+        coverage_safety["mode"] == "expand"
     )
     if coverage_safety["mode"] != "expand":
         new_asset_proposals = []
+        for candidate in asset_engine["candidates"]:
+            candidate["portfolio_status"] = (
+                "held_by_portfolio_safety"
+            )
         actions.append(_action(
             "P1", "portfolio_remediation", None,
             client_search_queries(include_variants=False)[0],
@@ -597,6 +562,7 @@ def orchestrate_reputation_cycle(
         "cross_domain_risks": risks,
         "coverage_safety": coverage_safety,
         "new_asset_proposals": new_asset_proposals,
+        "asset_engine": asset_engine,
         "next_best_actions": opportunity_engine["ranked_opportunities"],
         "selected_actions": opportunity_engine["selected_for_preparation"],
         "legacy_action_evidence": actions,

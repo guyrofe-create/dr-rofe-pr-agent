@@ -181,6 +181,31 @@ or removal request. Owner-managed and quarantined assets remain blocked.
 The old reviewed content generator is retained for manual use only. The
 two-hour monitor is the automatic trigger for P4 planning and preparation.
 
+## P5 controlled creative asset engine
+
+P5 investigates a new asset only when P3 measures a desired-result gap. It can
+propose six controlled archetypes: an authoritative platform profile, a
+YouTube channel or video series, a knowledge library, a books/apps/research/
+projects page, an exceptional standalone systemic property, or an independent
+guest article/interview/data-led study. Existing asset types are suppressed so
+the engine does not propose a duplicate profile or channel.
+
+No proposal is build-ready until it proves all five conditions:
+
+1. a separate systemic purpose, audience and intent;
+2. independently useful reader value and an original launch inventory;
+3. an accountable owner, cadence and at least 12 months of capacity;
+4. a realistic authority, discovery and measurement path; and
+5. completed duplication, similarity and doorway-pattern review.
+
+A standalone site must additionally prove that it remains valuable without any
+reputation benefit and cannot coherently fit an existing asset. Earned media
+must prove genuine editorial independence. Hard-stop signals reject a
+candidate; incomplete evidence produces an evidence-only work order; viable
+ideas may first be incubated inside an existing asset. Even a `build` outcome
+only authorizes preparation of a brief. Creating an account, site, channel,
+outreach or publication always requires separate item-level owner approval.
+
 ## Automated workflows
 
 | Workflow | Schedule | Purpose |

@@ -224,6 +224,39 @@ allowed during a content freeze, but public execution remains disabled. Every
 action type—including outreach and correction requests—requires exact
 item-level approval and a new approval after any edit.
 
+## P5 controlled creative asset engine
+
+`creative_asset_engine.py` consumes the P3 query-control map, the credential-free
+asset registry, content fingerprints, creation history and the installation's
+asset policy. A measured gap is an investigation trigger, never permission to
+create another result. The engine ranks exactly six extensible archetypes:
+authoritative profile, YouTube/video series, knowledge library, genuine-project
+portfolio page, standalone systemic asset, and independent earned contribution.
+
+Every candidate carries a five-part evidence dossier:
+
+- separate systemic purpose;
+- real reader value;
+- sustainable maintenance;
+- reasonable ranking/discovery path; and
+- no duplication or doorway pattern.
+
+Missing evidence yields `evidence_required`; a viable concept that should be
+tested inside an existing property yields `incubate`; a hard-stop signal yields
+`reject`. `build` is possible only after all five proofs pass and, for controlled
+properties, the existing maintenance and portfolio-capacity gate also passes.
+Standalone properties need proof of value without reputation benefit and proof
+that an existing property cannot serve the same purpose. Independent coverage
+needs verified editorial independence and is not misrepresented as a controlled
+asset.
+
+P5 candidates are converted to P4 opportunities with an explicit authorization
+scope. Evidence collection, existing-asset incubation and build-brief
+preparation are separate scopes. `new_asset_build_authorized` remains false:
+account creation, site/channel creation, outreach and publication require a
+separate exact owner approval. The dashboard and monitor report expose the
+candidate, its five proof states, missing evidence and gate outcome.
+
 ## Next premium layers
 
 1. Approval UI and executor adapters for each P4 action type.
