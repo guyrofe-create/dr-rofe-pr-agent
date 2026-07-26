@@ -107,6 +107,15 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertIn("knowledge_hub", asset["uses"])
         self.assertEqual(asset["automation"], "wix_api_after_site_id")
 
+    def test_owner_managed_channels_and_non_practicing_surfaces_are_not_automated(self):
+        with open("data/asset_registry.json", encoding="utf-8") as handle:
+            registry = json.load(handle)
+        assets = {item["platform"]: item for item in registry["assets"]}
+        self.assertEqual(assets["Instagram"]["automation"], "owner_managed_product_disabled")
+        self.assertEqual(assets["TikTok"]["automation"], "owner_managed_product_disabled")
+        self.assertTrue(assets["Google Business Profile"]["automation"].startswith("paused_"))
+        self.assertTrue(assets["X"]["automation"].startswith("disabled_"))
+
     def test_secret_manifest_contains_names_not_values(self):
         with open("config/secrets_manifest.json", encoding="utf-8") as handle:
             manifest = json.load(handle)

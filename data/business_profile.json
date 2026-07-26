@@ -2,25 +2,12 @@
   "name": "ד\"ר גיא רופא",
   "alternateName": ["Dr. Guy Rofe", "Guy Rofe MD"],
   "honorificPrefix": "ד\"ר",
-  "jobTitle": "מומחה בגינקולוגיה ומיילדות",
-  "description": "ד\"ר גיא רופא הוא מומחה בגינקולוגיה ומיילדות בישראל, מומחה לניתוחים גינקולוגיים זעיר פולשניים (לפרוסקופיה והיסטרוסקופיה), אנדומטריוזיס ופוריות.",
+  "jobTitle": "יוצר תוכן רפואי ומחבר ספרים",
+  "description": "ד\"ר גיא רופא הוא יוצר תוכן רפואי, מחבר ספרים ובעל הכשרה כרופא נשים. בשלב זה הוא אינו עוסק ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+  "practiceStatus": "not_currently_practicing",
   "image": "https://guyrofe.com/wp-content/uploads/2024/04/2.png",
   "medicalSpecialty": ["Obstetrics", "Gynecology"],
-  "telephone": "+972-54-541-3591",
-  "priceRange": "$$",
-  "address": {
-    "streetAddress": "הברזל 11",
-    "addressLocality": "תל אביב-יפו",
-    "addressRegion": "תל אביב",
-    "addressCountry": "IL"
-  },
-  "geo": { "latitude": 32.1076583, "longitude": 34.8368034 },
-  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJ6UuqIpFLHRURo7WWjhU_UDk",
-  "openingHoursSpecification": [
-    { "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "17:00" }
-  ],
   "nationality": "Israel",
-  "areaServed": ["Israel", "תל אביב והמרכז"],
   "knowsLanguage": ["he", "en"],
   "knowsAbout": [
     "בריאות האישה","גינקולוגיה","מיילדות","הריון","בדיקות בהריון","מי שפיר",
@@ -31,7 +18,6 @@
     "https://www.facebook.com/drguyrofe",
     "https://www.instagram.com/guy_rofe_md/",
     "https://www.linkedin.com/in/guyrofe",
-    "https://x.com/GuyRofe",
     "https://youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
     "https://www.tiktok.com/@guy_rofe_obgyn",
     "https://pin.it/5n8l2PoBh",
@@ -39,8 +25,7 @@
     "https://drguyrofe.blogspot.com/",
     "https://medium.com/@guyrofe",
     "https://www.tumblr.com/blog/drguyrofe",
-    "https://www.wikidata.org/wiki/Q140470790",
-    "https://share.google/sTaxQJMQnwKZhXK5X"
+    "https://www.wikidata.org/wiki/Q140470790"
   ],
   "wikidata": "Q140470790",
   "sites": [

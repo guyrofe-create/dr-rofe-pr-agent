@@ -4,10 +4,8 @@ Dr. Guy Rofe - Schema / NAP Sync
 Runs weekly on GitHub Actions (see .github/workflows/schema_sync.yml), plus
 on-demand via workflow_dispatch.
 
-Single source of truth: data/business_profile.json (name, address, phone,
-hours, sameAs, Wikidata, etc). This script builds the Physician/MedicalBusiness
-JSON-LD schema and llms.txt content from that file - pulling in the *current*
-Google rating/review count from data/reputation_history.json - and pushes it
+Single source of truth: data/business_profile.json. This script builds neutral
+Person JSON-LD and llms.txt content from that file and pushes it
 to every connected WordPress site listed in business_profile.json["sites"],
 so every asset stays consistent automatically without manual edits.
 
@@ -55,11 +53,10 @@ def latest_review_stats():
 
 
 def build_schema(profile):
-    rating, review_count = latest_review_stats()
     schema = {
         "@context": "https://schema.org",
-        "@type": ["Physician", "MedicalBusiness"],
-        "@id": profile["sites"][0]["canonical_url"].rstrip("/") + "/#physician",
+        "@type": "Person",
+        "@id": profile["sites"][0]["canonical_url"].rstrip("/") + "/#person",
         "name": profile["name"],
         "alternateName": profile["alternateName"],
         "honorificPrefix": profile["honorificPrefix"],
@@ -67,44 +64,26 @@ def build_schema(profile):
         "url": profile["sites"][0]["canonical_url"],
         "image": profile["image"],
         "description": profile["description"],
-        "medicalSpecialty": profile["medicalSpecialty"],
-        "telephone": profile["telephone"],
-        "priceRange": profile["priceRange"],
-        "address": {"@type": "PostalAddress", **profile["address"]},
-        "geo": {"@type": "GeoCoordinates", **profile["geo"]},
-        "hasMap": profile["hasMap"],
-        "openingHoursSpecification": [
-            {"@type": "OpeningHoursSpecification", **spec}
-            for spec in profile["openingHoursSpecification"]
-        ],
         "nationality": {"@type": "Country", "name": profile["nationality"]},
-        "areaServed": profile["areaServed"],
         "knowsLanguage": profile["knowsLanguage"],
         "knowsAbout": profile["knowsAbout"],
         "sameAs": profile["sameAs"],
     }
-    if rating is not None:
-        schema["aggregateRating"] = {
-            "@type": "AggregateRating",
-            "ratingValue": str(rating),
-            "reviewCount": str(review_count),
-        }
     return schema
 
 
 def build_llms_txt(profile):
-    addr = profile["address"]
-    location = f"{addr['streetAddress']}, {addr['addressLocality']}, ישראל"
     return f"""```plaintext
 # llms.txt
 
 Full name: {profile['name']}
-Specialty: {profile['jobTitle']}
-Location: {location}
+Current role: {profile['jobTitle']}
+Professional background: trained physician in obstetrics and gynecology
+Current practice status: not currently practicing medicine; not accepting patients; no appointments
 Website: [{profile['sites'][0]['canonical_url']}]({profile['sites'][0]['canonical_url']})
 Wikidata: {profile['wikidata']}
 Languages: Hebrew, English
-Services: fertility treatment, gynecology, obstetrics, minimally invasive gynecologic surgery
+Official subjects: public medical education, books, articles, podcast and digital products
 Keywords: {profile['name']}, Guy Rofe, Guy Rofe MD
 ```"""
 
@@ -141,7 +120,7 @@ def sync_site(site, schema_json_min, llms_content):
     base_url = site["base_url"]
     try:
         schema_page_id = wp_find_or_create_page(
-            base_url, auth, site["schema_page_slug"], "Schema Markup — Person/Physician"
+            base_url, auth, site["schema_page_slug"], "Schema Markup — Person / Medical Content Creator"
         )
         wp_update_page(base_url, auth, schema_page_id,
                         f'<script type="application/ld+json">{schema_json_min}</script>')

@@ -338,9 +338,14 @@ def publish_campaign(draft_path):
                 detail="הפצה משנית הושהתה עד להגדרת קישור קנוני תקין",
             ),
             destination(
-                "LinkedIn / TikTok / Quora",
+                "LinkedIn / Quora",
                 "manual_only",
                 detail="אין כרגע חיבור פרסום רשמי בטוח",
+            ),
+            destination(
+                "TikTok",
+                "owner_managed",
+                detail="ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום",
             ),
         ]
     )
