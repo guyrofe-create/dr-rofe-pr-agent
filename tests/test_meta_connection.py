@@ -22,6 +22,22 @@ class MetaConnectionTests(unittest.TestCase):
         clear=True,
     )
     @patch("scripts.social_publishers.meta.requests.get")
+    def test_checks_recent_post_read_access(self, get):
+        response = Mock(status_code=200)
+        response.json.return_value = {"data": [{"id": "123_456"}]}
+        get.return_value = response
+
+        ok, detail = meta.check_recent_posts_access()
+
+        self.assertTrue(ok)
+        self.assertIn("read access confirmed", detail)
+
+    @patch.dict(
+        os.environ,
+        {"FACEBOOK_PAGE_ID": "123", "FACEBOOK_PAGE_TOKEN": "token"},
+        clear=True,
+    )
+    @patch("scripts.social_publishers.meta.requests.get")
     def test_finds_duplicate_by_canonical_url(self, get):
         response = Mock()
         response.raise_for_status.return_value = None
