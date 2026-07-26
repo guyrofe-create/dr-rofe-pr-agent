@@ -37,8 +37,15 @@ jobs:
           response="$(curl --fail --silent --show-error \
             "${APPROVAL_URL}/api/approvals/next")"
           draft_path="$(jq -r '.draft_path // empty' <<<"${response}")"
-          bundle_path="$(jq -r '.bundle_path // empty' <<<"${response}")"
-          approval_record_path="$(jq -r '.approval_record_path // empty' <<<"${response}")"
+          bundle_path="${RUNNER_TEMP}/p7-bundle.json"
+          approval_record_path="${RUNNER_TEMP}/p7-approval.json"
+          if [[ -n "${draft_path}" ]]; then
+            jq -e '.bundle' <<<"${response}" > "${bundle_path}"
+            jq -e '.approval_record' <<<"${response}" > "${approval_record_path}"
+          else
+            bundle_path=""
+            approval_record_path=""
+          fi
           echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
           echo "bundle_path=${bundle_path}" >> "${GITHUB_OUTPUT}"
           echo "approval_record_path=${approval_record_path}" >> "${GITHUB_OUTPUT}"

@@ -27,12 +27,19 @@ jobs:
           RUN_MODE: generate
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
-      - name: Commit draft or publication record
+      - name: Prepare exact P7 bundle, preview and image
+        run: |
+          draft_path="$(jq -r '.drafts[0].path' content_drafts/index.json)"
+          python scripts/prepare_approval_bundle.py "${draft_path}" --generate-image
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Commit draft and immutable approval package
         if: always()
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
-          git add content_drafts/ || true
+          git add content_drafts/ approval_bundles/ || true
           git diff --cached --quiet || git commit -m "Update reviewed content workflow ${{ github.run_id }}"
           git pull --rebase || true
           git push || true

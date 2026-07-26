@@ -28,6 +28,7 @@ import social_image
 
 
 DEFAULT_ROOT = PROJECT_ROOT / "approval_bundles"
+INDEX_NAME = "index.json"
 
 
 def file_sha256(path: Path) -> str:
@@ -168,10 +169,36 @@ def prepare_bundle(
         encoding="utf-8",
     )
     preview_path.write_text(render_preview(bundle), encoding="utf-8")
+    index_path = root / INDEX_NAME
+    try:
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        index = {"version": 7, "bundles": []}
+    entry = {
+        "approval_id": bundle["approval_id"],
+        "draft_path": relative_draft,
+        "bundle_path": json_path.relative_to(PROJECT_ROOT).as_posix(),
+        "preview_path": preview_path.relative_to(PROJECT_ROOT).as_posix(),
+        "created_at": bundle["created_at"],
+        "required_approval_scopes": bundle["required_approval_scopes"],
+    }
+    index["version"] = 7
+    index["bundles"] = [
+        existing
+        for existing in index.get("bundles", [])
+        if existing.get("draft_path") != relative_draft
+    ]
+    index["bundles"].append(entry)
+    index["bundles"].sort(key=lambda item: item.get("created_at", ""), reverse=True)
+    index_path.write_text(
+        json.dumps(index, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     return {
         "approval_id": bundle["approval_id"],
         "bundle_path": str(json_path),
         "preview_path": str(preview_path),
+        "index_path": str(index_path),
         "required_approval_scopes": bundle["required_approval_scopes"],
     }
 
@@ -183,13 +210,34 @@ def main() -> None:
     parser.add_argument("--image-uri")
     parser.add_argument("--image-alt-text")
     parser.add_argument("--image-sha256")
+    parser.add_argument(
+        "--generate-image",
+        action="store_true",
+        help="Generate the review image now; it remains unpublished until approval.",
+    )
     args = parser.parse_args()
+    image_uri = args.image_uri
+    image_alt_text = args.image_alt_text
+    image_sha256 = args.image_sha256
+    if args.generate_image:
+        title, content = load_draft(resolve_draft_path(args.draft_path))
+        image = social_image.generate(title, first_paragraph(content))
+        media_root = Path(args.output_root) / "media"
+        media_root.mkdir(parents=True, exist_ok=True)
+        media_path = media_root / f"{stable_slug(Path(args.draft_path).stem)}.{image.extension}"
+        media_path.write_bytes(image.content)
+        image_uri = media_path.relative_to(PROJECT_ROOT).as_posix()
+        image_alt_text = social_image.alt_text(
+            title,
+            image.visual_description,
+        )
+        image_sha256 = file_sha256(media_path)
     result = prepare_bundle(
         args.draft_path,
         output_root=args.output_root,
-        image_uri=args.image_uri,
-        image_alt_text=args.image_alt_text,
-        image_sha256=args.image_sha256,
+        image_uri=image_uri,
+        image_alt_text=image_alt_text,
+        image_sha256=image_sha256,
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
