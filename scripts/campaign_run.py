@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from daily_run import load_draft, resolve_draft_path
 from social_publishers import blogger, meta, pinterest, telegram, tumblr, twitter
+from publication_policy import enforce_publication_policy
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -198,6 +199,7 @@ def write_campaign_result(draft_path, title, destinations, status="completed"):
 
 def publish_campaign(draft_path):
     title, content = load_draft(draft_path)
+    enforce_publication_policy(content)
     article_html = markdown_to_html(content)
     summary = first_paragraph(content)
     destinations = []
