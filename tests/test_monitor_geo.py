@@ -215,6 +215,23 @@ class MonitorGeoTests(unittest.TestCase):
         ):
             self.assertTrue(monitor_run.serp_checks_due("2026-07-26"))
 
+    def test_serp_quota_backoff_stops_same_day_retry_storm(self):
+        with patch.object(
+            monitor_run,
+            "HISTORY",
+            {"serp_retry_on_date": "2026-07-27"},
+        ):
+            self.assertFalse(monitor_run.serp_checks_due("2026-07-26"))
+            self.assertTrue(monitor_run.serp_checks_due("2026-07-27"))
+
+    def test_activate_serp_backoff_retries_next_calendar_day(self):
+        with patch.object(monitor_run, "HISTORY", {}):
+            monitor_run.activate_serp_backoff("2026-07-26")
+            self.assertEqual(
+                monitor_run.HISTORY["serp_retry_on_date"],
+                "2026-07-27",
+            )
+
     def test_ai_repeated_sampling_runs_only_once_per_day(self):
         with patch.object(
             monitor_run,

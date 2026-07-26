@@ -27,7 +27,7 @@ import sys
 import json
 import requests
 import re
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from openai import OpenAI
 from urllib.parse import urlparse
 
@@ -247,6 +247,8 @@ HISTORY = load_history()
 def serp_checks_due(today=None):
     """Search-rank checks are daily; crisis checks still run every two hours."""
     today = today or date.today().isoformat()
+    if serp_backoff_active(today):
+        return False
     if HISTORY.get("last_serp_check_date") == today:
         return False
     for snapshot in reversed(HISTORY.get("snapshots", [])):
@@ -259,6 +261,23 @@ def serp_checks_due(today=None):
         if statuses and statuses.issubset({"found", "not_in_top10"}):
             return False
     return True
+
+
+def serp_backoff_active(today=None):
+    """Avoid retry storms after SerpApi reports an exhausted/rate-limited quota."""
+    today = today or date.today().isoformat()
+    retry_on = str(HISTORY.get("serp_retry_on_date") or "")
+    return bool(retry_on and today < retry_on)
+
+
+def activate_serp_backoff(today=None):
+    today_value = date.fromisoformat(today or date.today().isoformat())
+    HISTORY["serp_retry_on_date"] = (today_value + timedelta(days=1)).isoformat()
+
+
+def is_serp_quota_error(error):
+    response = getattr(error, "response", None)
+    return getattr(response, "status_code", None) == 429
 
 
 def ai_checks_due(today=None):
@@ -375,6 +394,17 @@ def check_google_rank():
                 },
             })
         except Exception as e:
+            if is_serp_quota_error(e):
+                activate_serp_backoff()
+                REPORT["rank"].append({
+                    "engine": engine,
+                    "keyword": kw,
+                    "device": device,
+                    "status": "quota_limited",
+                    "detail": safe_error(e),
+                    "retry_on": HISTORY["serp_retry_on_date"],
+                })
+                return
             REPORT["rank"].append({
                 "engine": engine, "keyword": kw, "device": device,
                 "status": "error",
@@ -761,7 +791,15 @@ def check_web_mentions():
             "new_mentions": [{"title": r.get("title"), "link": r.get("link")} for r in new_mentions],
         }
     except Exception as e:
-        REPORT["web_mentions"] = {"status": "error", "detail": safe_error(e)}
+        if is_serp_quota_error(e):
+            activate_serp_backoff()
+            REPORT["web_mentions"] = {
+                "status": "quota_limited",
+                "detail": safe_error(e),
+                "retry_on": HISTORY["serp_retry_on_date"],
+            }
+        else:
+            REPORT["web_mentions"] = {"status": "error", "detail": safe_error(e)}
 
 
 def critical_monitor_failures():
@@ -769,11 +807,19 @@ def critical_monitor_failures():
     failures = []
     if env("SERPAPI_KEY"):
         rank_errors = [r for r in REPORT["rank"] if r.get("status") == "error"]
+        quota_limited = [
+            r for r in REPORT["rank"] if r.get("status") == "quota_limited"
+        ]
         if rank_errors:
             failures.append(f"SERP rank: {len(rank_errors)} query errors")
+        elif quota_limited:
+            failures.append("SERP rank: provider quota/rate limit")
         elif REPORT.get("rank") and not rank_measurement_succeeded():
             failures.append("SERP rank: no complete fresh measurement")
-        if (REPORT.get("web_mentions") or {}).get("status") == "error":
+        if (REPORT.get("web_mentions") or {}).get("status") in {
+            "error",
+            "quota_limited",
+        }:
             failures.append("web mentions")
     if env("OPENAI_API_KEY") and any(
         g.get("status") == "error" for g in REPORT["geo"]
@@ -1085,17 +1131,31 @@ def main():
     today_str = date.today().isoformat()
     if serp_checks_due(today_str):
         check_google_rank()
-        check_web_mentions()
+        if serp_backoff_active(today_str):
+            REPORT["web_mentions"] = {
+                "status": "skipped",
+                "reason": "SerpApi retry backoff is active",
+                "retry_on": HISTORY.get("serp_retry_on_date"),
+            }
+        else:
+            check_web_mentions()
         if rank_measurement_succeeded():
             HISTORY["last_serp_check_date"] = today_str
     else:
+        backoff_reason = (
+            "SerpApi retry backoff is active"
+            if serp_backoff_active(today_str)
+            else "daily SerpApi cadence already completed"
+        )
         REPORT["rank"].append({
             "status": "skipped",
-            "reason": "daily SerpApi cadence already completed",
+            "reason": backoff_reason,
+            "retry_on": HISTORY.get("serp_retry_on_date"),
         })
         REPORT["web_mentions"] = {
             "status": "skipped",
-            "reason": "daily SerpApi cadence already completed",
+            "reason": backoff_reason,
+            "retry_on": HISTORY.get("serp_retry_on_date"),
         }
     if ai_checks_due(today_str):
         check_ai_presence()
