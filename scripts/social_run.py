@@ -31,11 +31,8 @@ TOPICS = [
     "גיל המעבר - מה כל אישה צריכה לדעת על גופה",
     "דימומים חריגים - מה הם אומרים על הבריאות שלך?",
     "שאלות שנשים לא שואלות את הגינקולוג - ועוצמה לשאול אותן",
-    # תוכן אמון/סמכות מקצועית - מחזק אמינות באופן כללי, לא ריאקטיבי
-    "מה עומד מאחורי ההכשרה שלי בניתוחים לפרוסקופיים מתקדמים",
-    "איך נראה תהליך קבלת החלטות משותף עם מטופלת לפני ניתוח גינקולוגי",
-    "למה ליווי אישי וזמינות ישירה לרופא משנים את חוויית הטיפול",
-    "מה חשוב לבדוק ולשאול לפני שבוחרים מנתח/ת לניתוח גינקולוגי",
+    "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+    "מה חשוב לשאול רופא או רופאה לפני ניתוח גינקולוגי",
 ]
 
 LOG_LINES = []
@@ -59,8 +56,8 @@ def log(msg):
 
 def generate_social_post(topic):
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    prompt = f"""כתוב פוסט קצר לרשתות חברתיות (עד 120 מילים) בעברית עבור דר גיא רופא,
-גינקולוג מומחה לאנדומטריוזיס ולפרוסקופיה בתל אביב, על הנושא: {topic}
+    prompt = f"""כתוב פוסט קצר לרשתות חברתיות (עד 120 מילים) בעברית עבור ד״ר גיא רופא,
+יוצר תוכן רפואי, על הנושא: {topic}
 
 טון: חם, מקצועי, נגיש. שורה ראשונה = הוק שמושך תשומת לב.
 אל תשתמש בהאשטגים. אל תשתמש בכותרות markdown.
@@ -92,6 +89,10 @@ def try_publish(name, is_configured_fn, publish_fn, *args):
 
 def main():
     log("=== Dr. Rofe Social Distribution - Starting ===")
+
+    if os.environ.get("PUBLISH_APPROVED", "").strip().lower() != "true":
+        log("SAFE STOP: no explicit publication approval")
+        raise SystemExit(1)
 
     if content_is_frozen():
         log("CONTENT FREEZE: social distribution paused by Reputation Command Center")

@@ -26,6 +26,7 @@ import os
 import sys
 import json
 import requests
+import re
 from datetime import datetime, date
 from openai import OpenAI
 
@@ -65,6 +66,24 @@ REPORT = {
 
 def env(name):
     return os.environ.get(name, "").strip() or None
+
+
+def safe_error(error):
+    """Return a diagnostic without leaking credentials in URLs or payloads."""
+    detail = str(error)
+    for name in (
+        "SERPAPI_KEY", "OPENAI_API_KEY", "GOOGLE_PLACES_API_KEY",
+        "FACEBOOK_PAGE_TOKEN", "PINTEREST_ACCESS_TOKEN",
+    ):
+        secret = env(name)
+        if secret:
+            detail = detail.replace(secret, "[REDACTED]")
+    detail = re.sub(
+        r"(?i)(api_key|access_token|key|token)=([^&\\s]+)",
+        r"\1=[REDACTED]",
+        detail,
+    )
+    return detail[:500]
 
 
 def load_json_file(path, default):
@@ -128,7 +147,7 @@ def check_google_rank():
                 "status": "found" if position else "not_in_top10",
             })
         except Exception as e:
-            REPORT["rank"].append({"keyword": kw, "status": "error", "detail": str(e)})
+            REPORT["rank"].append({"keyword": kw, "status": "error", "detail": safe_error(e)})
 
 
 # ─── 2. AI / GEO presence check ──────────────────────────────────────────────
@@ -148,7 +167,7 @@ def check_ai_presence():
             mentioned = ("גיא רופא" in answer) or ("Guy Rofe" in answer)
             REPORT["geo"].append({"prompt": prompt, "mentions_dr_rofe": mentioned, "excerpt": answer[:200]})
         except Exception as e:
-            REPORT["geo"].append({"prompt": prompt, "status": "error", "detail": str(e)})
+            REPORT["geo"].append({"prompt": prompt, "status": "error", "detail": safe_error(e)})
 
 
 # ─── 3. Token / session health ───────────────────────────────────────────────
@@ -167,7 +186,7 @@ def check_token_health():
             ok, detail = fn()
             REPORT["tokens"].append({"platform": name, "ok": ok, "detail": detail})
         except Exception as e:
-            REPORT["tokens"].append({"platform": name, "ok": False, "detail": str(e)})
+            REPORT["tokens"].append({"platform": name, "ok": False, "detail": safe_error(e)})
 
     medium_sid = env("MEDIUM_SID")
     medium_token = env("MEDIUM_TOKEN")
@@ -185,7 +204,7 @@ def check_token_health():
                 "detail": "session expired - refresh MEDIUM_SID" if expired else "session valid",
             })
         except Exception as e:
-            REPORT["tokens"].append({"platform": "Medium", "ok": False, "detail": str(e)})
+            REPORT["tokens"].append({"platform": "Medium", "ok": False, "detail": safe_error(e)})
     else:
         REPORT["tokens"].append({"platform": "Medium", "ok": False, "detail": "not configured"})
 
@@ -255,7 +274,7 @@ def check_reviews():
                     "to": result["rating"],
                 })
     except Exception as e:
-        REPORT["reviews"] = {"status": "error", "detail": str(e)}
+        REPORT["reviews"] = {"status": "error", "detail": safe_error(e)}
 
 
 # ─── 5. Facebook Page recommendations ────────────────────────────────────────
@@ -298,7 +317,7 @@ def check_facebook_recommendations():
                 "excerpt": (item.get("review_text") or "")[:400],
             })
     except Exception as e:
-        REPORT["facebook_recommendations"] = {"status": "error", "detail": str(e)}
+        REPORT["facebook_recommendations"] = {"status": "error", "detail": safe_error(e)}
 
 
 # ─── 6. Web mentions (new pages/articles since last run) ────────────────────
@@ -336,7 +355,29 @@ def check_web_mentions():
             "new_mentions": [{"title": r.get("title"), "link": r.get("link")} for r in new_mentions],
         }
     except Exception as e:
-        REPORT["web_mentions"] = {"status": "error", "detail": str(e)}
+        REPORT["web_mentions"] = {"status": "error", "detail": safe_error(e)}
+
+
+def critical_monitor_failures():
+    """Identify configured checks whose failure makes a green run misleading."""
+    failures = []
+    if env("SERPAPI_KEY"):
+        rank_errors = [r for r in REPORT["rank"] if r.get("status") == "error"]
+        if rank_errors:
+            failures.append(f"Google rank: {len(rank_errors)} query errors")
+        if (REPORT.get("web_mentions") or {}).get("status") == "error":
+            failures.append("web mentions")
+    if env("OPENAI_API_KEY") and any(
+        g.get("status") == "error" for g in REPORT["geo"]
+    ):
+        failures.append("AI/GEO")
+    if env("GOOGLE_PLACES_API_KEY") and (REPORT.get("reviews") or {}).get("status") == "error":
+        failures.append("Google reviews")
+    if env("FACEBOOK_PAGE_TOKEN") and (
+        REPORT.get("facebook_recommendations") or {}
+    ).get("status") == "error":
+        failures.append("Facebook recommendations")
+    return failures
 
 
 # ─── Reporting ────────────────────────────────────────────────────────────────
@@ -555,6 +596,10 @@ def main():
 
     with open("monitor_report.json", "w", encoding="utf-8") as f:
         json.dump(REPORT, f, ensure_ascii=False, indent=2)
+    failures = critical_monitor_failures()
+    if failures:
+        print("MONITOR DEGRADED: " + ", ".join(failures))
+        raise SystemExit(2)
     print("=== Done ===")
 
 
