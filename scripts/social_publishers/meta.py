@@ -104,8 +104,15 @@ def find_recent_facebook_duplicate(message, url=None):
     )
     response.raise_for_status()
     candidate_url = _normalize_url(url)
+    candidate_is_homepage = (
+        bool(candidate_url) and urlsplit(candidate_url).path in ("", "/")
+    )
     for post in response.json().get("data", []):
-        if candidate_url and candidate_url in _extract_urls(post):
+        if (
+            candidate_url
+            and not candidate_is_homepage
+            and candidate_url in _extract_urls(post)
+        ):
             return post
         if (
             _text_similarity(message, post.get("message", ""))
