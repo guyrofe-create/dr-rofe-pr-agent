@@ -77,13 +77,20 @@ def safe_error(error):
     detail = str(error)
     for name in (
         "SERPAPI_KEY", "OPENAI_API_KEY", "GOOGLE_PLACES_API_KEY",
-        "FACEBOOK_PAGE_TOKEN", "PINTEREST_ACCESS_TOKEN",
+        "FACEBOOK_PAGE_TOKEN", "PINTEREST_ACCESS_TOKEN", "MEDIUM_TOKEN",
+        "MEDIUM_SID", "TELEGRAM_BOT_TOKEN", "TWITTER_API_KEY",
+        "TWITTER_API_SECRET", "TWITTER_ACCESS_TOKEN",
+        "TWITTER_ACCESS_SECRET", "TUMBLR_CONSUMER_KEY",
+        "TUMBLR_CONSUMER_SECRET", "TUMBLR_OAUTH_TOKEN",
+        "TUMBLR_OAUTH_SECRET", "GOOGLE_OAUTH_CLIENT_ID",
+        "GOOGLE_OAUTH_CLIENT_SECRET", "GOOGLE_OAUTH_REFRESH_TOKEN",
+        "LINKEDIN_ACCESS_TOKEN",
     ):
         secret = env(name)
         if secret:
             detail = detail.replace(secret, "[REDACTED]")
     detail = re.sub(
-        r"(?i)(api_key|access_token|key|token)=([^&\\s]+)",
+        r"(?i)(api_key|access_token|key|token)=([^&\s]+)",
         r"\1=[REDACTED]",
         detail,
     )
@@ -92,21 +99,55 @@ def safe_error(error):
 
 def has_active_practice_claim(answer):
     normalized = " ".join((answer or "").lower().split())
-    negated_statuses = (
-        "אינו מקבל מטופלות", "לא מקבל מטופלות", "אינו מקבל מטופלים",
-        "לא מקבל מטופלים", "אינו עוסק ברפואה", "לא עוסק ברפואה",
-        "not accepting patients", "does not accept patients",
+    uncertainty_markers = (
+        "אין לי מידע", "אין לי את המידע", "לא ידוע", "לא ברור",
+        "לא ניתן לקבוע", "איני יודע", "אין מידע מעודכן",
+        "i do not know", "i don't know", "it is unclear",
+        "no current information", "cannot confirm",
     )
-    for phrase in negated_statuses:
-        normalized = normalized.replace(phrase, "")
-    return any(
-        phrase in normalized
-        for phrase in (
-            "מקבל מטופלות", "מקבל מטופלים", "לקביעת תור",
-            "מרפאתו", "המרפאה שלו", "מעניק טיפול", "מטפל כיום",
-            "accepting patients", "book an appointment",
+    strong_claims = (
+        "מרפאתו", "המרפאה שלו", "מפעיל מרפאה", "מעניק טיפול",
+        "מטפל כיום", "operates a clinic", "his clinic",
+    )
+    status_claims = (
+        "מקבל מטופלות", "מקבל מטופלים", "לקביעת תור",
+        "לקביעת תורים", "accepting patients", "book an appointment",
+    )
+    for sentence in re.split(r"[.!?\n]+", normalized):
+        if not sentence:
+            continue
+        sentence = re.sub(
+            r"(?:אינו|אינה|אינם|אינן|לא)\s+"
+            r"(?:מקבל(?:ת|ים|ות)?\s+מטופל(?:ים|ות)|"
+            r"עוסק(?:ת)?\s+ברפואה|מטפל(?:ת)?(?:\s+כיום)?|"
+            r"מפעיל(?:ה)?\s+מרפאה)",
+            "",
+            sentence,
         )
+        sentence = re.sub(
+            r"(?:not accepting patients|does not accept patients|"
+            r"not practicing|does not practice|does not operate a clinic)",
+            "",
+            sentence,
+        )
+        if any(marker in sentence for marker in uncertainty_markers):
+            continue
+        if any(claim in sentence for claim in strong_claims):
+            return True
+        if any(claim in sentence for claim in status_claims):
+            return True
+    return False
+
+
+def has_identity_misinformation(answer):
+    """Catch known conflicting identities that must never be marked as safe."""
+    normalized = " ".join((answer or "").lower().split())
+    conflict_markers = (
+        "עצי פרי", "השבחת זנים", "הדרים והאבוקדו",
+        "אסתטיקה רפואית", "בוטוקס", "חומרי מילוי",
+        "ספרות להיסטוריה", "תשושאור",
     )
+    return any(marker in normalized for marker in conflict_markers)
 
 
 def load_json_file(path, default):
@@ -139,6 +180,23 @@ HISTORY = load_history()
 
 
 # ─── 1. Google rank via SerpApi ──────────────────────────────────────────────
+
+def serp_checks_due(today=None):
+    """Search-rank checks are daily; crisis checks still run every two hours."""
+    today = today or date.today().isoformat()
+    if HISTORY.get("last_serp_check_date") == today:
+        return False
+    for snapshot in reversed(HISTORY.get("snapshots", [])):
+        snapshot_date = str(snapshot.get("date", ""))[:10]
+        if snapshot_date != today:
+            break
+        if any(
+            result.get("status") != "skipped"
+            for result in snapshot.get("rank", [])
+        ):
+            return False
+    return True
+
 
 def check_google_rank():
     api_key = env("SERPAPI_KEY")
@@ -189,16 +247,31 @@ def check_ai_presence():
             answer = resp.choices[0].message.content
             mentioned = ("גיא רופא" in answer) or ("Guy Rofe" in answer)
             active_practice_claim = has_active_practice_claim(answer)
+            identity_misinformation = has_identity_misinformation(answer)
             REPORT["geo"].append({
                 "prompt": prompt,
                 "mentions_dr_rofe": mentioned,
                 "active_practice_claim": active_practice_claim,
-                "safe_status": "pass" if mentioned and not active_practice_claim else "review",
+                "identity_misinformation": identity_misinformation,
+                "safe_status": (
+                    "pass"
+                    if mentioned
+                    and not active_practice_claim
+                    and not identity_misinformation
+                    else "review"
+                ),
                 "excerpt": answer[:300],
             })
             if active_practice_claim:
                 REPORT["alerts"].append({
                     "type": "ai_active_practice_misinformation",
+                    "source": "OpenAI monitor sample",
+                    "excerpt": answer[:300],
+                    "prompt": prompt,
+                })
+            if identity_misinformation:
+                REPORT["alerts"].append({
+                    "type": "ai_identity_misinformation",
                     "source": "OpenAI monitor sample",
                     "excerpt": answer[:300],
                     "prompt": prompt,
@@ -211,24 +284,40 @@ def check_ai_presence():
 
 def check_token_health():
     checks = [
-        ("Facebook", meta.check_token_health),
-        ("Twitter/X", twitter.check_token_health),
-        ("Tumblr", tumblr.check_token_health),
-        ("Telegram", telegram.check_token_health),
-        ("Blogger", blogger.check_token_health),
-        ("Pinterest", pinterest.check_token_health),
+        ("Facebook", meta.facebook_is_configured, meta.check_token_health),
+        ("Twitter/X", twitter.is_configured, twitter.check_token_health),
+        ("Tumblr", tumblr.is_configured, tumblr.check_token_health),
+        ("Telegram", telegram.is_configured, telegram.check_token_health),
+        ("Blogger", blogger.is_configured, blogger.check_token_health),
+        ("Pinterest", pinterest.is_configured, pinterest.check_token_health),
     ]
-    for name, fn in checks:
+    for name, configured_fn, fn in checks:
+        configured = configured_fn()
         try:
             ok, detail = fn()
-            REPORT["tokens"].append({"platform": name, "ok": ok, "detail": detail})
+            REPORT["tokens"].append({
+                "platform": name,
+                "configured": configured,
+                "ok": ok,
+                "detail": safe_error(detail),
+            })
         except Exception as e:
-            REPORT["tokens"].append({"platform": name, "ok": False, "detail": safe_error(e)})
+            REPORT["tokens"].append({
+                "platform": name,
+                "configured": configured,
+                "ok": False,
+                "detail": safe_error(e),
+            })
 
     medium_sid = env("MEDIUM_SID")
     medium_token = env("MEDIUM_TOKEN")
     if medium_token:
-        REPORT["tokens"].append({"platform": "Medium", "ok": True, "detail": "using MEDIUM_TOKEN (API)"})
+        REPORT["tokens"].append({
+            "platform": "Medium",
+            "configured": True,
+            "ok": True,
+            "detail": "using MEDIUM_TOKEN (API)",
+        })
     elif medium_sid:
         try:
             resp = requests.get(
@@ -237,13 +326,19 @@ def check_token_health():
             )
             expired = "signin" in resp.url or "login" in resp.url
             REPORT["tokens"].append({
-                "platform": "Medium", "ok": not expired,
+                "platform": "Medium", "configured": True, "ok": not expired,
                 "detail": "session expired - refresh MEDIUM_SID" if expired else "session valid",
             })
         except Exception as e:
-            REPORT["tokens"].append({"platform": "Medium", "ok": False, "detail": safe_error(e)})
+            REPORT["tokens"].append({
+                "platform": "Medium", "configured": True, "ok": False,
+                "detail": safe_error(e),
+            })
     else:
-        REPORT["tokens"].append({"platform": "Medium", "ok": False, "detail": "not configured"})
+        REPORT["tokens"].append({
+            "platform": "Medium", "configured": False, "ok": False,
+            "detail": "not configured",
+        })
 
 
 # ─── 4. Google Business reviews (with per-review crisis detection) ──────────
@@ -324,12 +419,28 @@ def check_facebook_recommendations():
         return
     try:
         resp = requests.get(
-            f"https://graph.facebook.com/v19.0/{page_id}/ratings",
+            f"{meta.GRAPH}/{page_id}/ratings",
             params={"access_token": token, "fields": "review_text,rating,recommendation_type,created_time,reviewer"},
             timeout=20,
         )
         if resp.status_code != 200:
-            REPORT["facebook_recommendations"] = {"status": "error", "detail": f"HTTP {resp.status_code}: {resp.text[:200]}"}
+            try:
+                error = resp.json().get("error", {})
+            except ValueError:
+                error = {}
+            if error.get("code") == 283:
+                REPORT["facebook_recommendations"] = {
+                    "status": "skipped_missing_permission",
+                    "reason": (
+                        "pages_read_user_content permission is not granted; "
+                        "Page publishing and duplicate protection remain active"
+                    ),
+                }
+                return
+            REPORT["facebook_recommendations"] = {
+                "status": "error",
+                "detail": safe_error(f"HTTP {resp.status_code}: {resp.text[:200]}"),
+            }
             return
         data = resp.json().get("data", [])
         seen_ids = set(HISTORY.get("seen_fb_recommendation_ids", []))
@@ -414,6 +525,13 @@ def critical_monitor_failures():
         REPORT.get("facebook_recommendations") or {}
     ).get("status") == "error":
         failures.append("Facebook recommendations")
+    failed_tokens = [
+        token["platform"]
+        for token in REPORT.get("tokens", [])
+        if token.get("configured") and not token.get("ok")
+    ]
+    if failed_tokens:
+        failures.append("publisher credentials: " + ", ".join(failed_tokens))
     return failures
 
 
@@ -447,6 +565,8 @@ def format_report_markdown():
                 if g.get("active_practice_claim")
                 else ""
             )
+            if g.get("identity_misinformation"):
+                safety += " ⚠️ כולל זיהוי שגוי של האדם או תחום עיסוקו"
             lines.append(f"- \"{g['prompt']}\" → {mark}{safety}")
     lines.append("")
 
@@ -474,8 +594,8 @@ def format_report_markdown():
     fb = REPORT["facebook_recommendations"] or {}
     if fb.get("status") == "ok":
         lines.append(f"- חיוביות: {fb['positive']} | שליליות: {fb['negative']} (מתוך {fb['total']} נבדקו)")
-    elif fb.get("status") == "skipped":
-        lines.append(f"- דילוג: {fb['reason']}")
+    elif fb.get("status") in {"skipped", "skipped_missing_permission"}:
+        lines.append(f"- דילוג: {fb.get('reason')}")
     else:
         lines.append(f"- שגיאה: {fb.get('detail')}")
     lines.append("")
@@ -536,6 +656,18 @@ def format_alert_markdown():
             if looks_like_harassment(a.get("excerpt")):
                 lines.append("👉 [דווח בפייסבוק](https://www.facebook.com/drguyrofe/reviews) "
                               "(תלת-נקודה ליד ההמלצה → אפשרות דיווח)")
+        elif a["type"] in {
+            "ai_active_practice_misinformation",
+            "ai_identity_misinformation",
+        }:
+            issue = (
+                "טענה שגויה על פעילות רפואית נוכחית"
+                if a["type"] == "ai_active_practice_misinformation"
+                else "זיהוי שגוי של ד״ר גיא רופא או של תחום עיסוקו"
+            )
+            lines.append(f"### ⚠️ תשובת AI דורשת תיקון: {issue}")
+            lines.append(f"שאלה: {a.get('prompt', 'לא צוינה')}")
+            lines.append(f"> {a.get('excerpt', 'לא התקבל קטע תשובה')}")
         lines.append("")
     return "\n".join(lines)
 
@@ -560,12 +692,24 @@ def open_github_issue(title, body, labels):
 
 def main():
     print("=== Dr. Rofe Monitor - Starting ===")
-    check_google_rank()
+    today_str = date.today().isoformat()
+    if serp_checks_due(today_str):
+        check_google_rank()
+        check_web_mentions()
+        HISTORY["last_serp_check_date"] = today_str
+    else:
+        REPORT["rank"].append({
+            "status": "skipped",
+            "reason": "daily SerpApi cadence already completed",
+        })
+        REPORT["web_mentions"] = {
+            "status": "skipped",
+            "reason": "daily SerpApi cadence already completed",
+        }
     check_ai_presence()
     check_token_health()
     check_reviews()
     check_facebook_recommendations()
-    check_web_mentions()
 
     # Convert raw monitor findings into durable, routed reputation events.
     # This is the active layer: each new risk receives a priority, SLA,
@@ -613,7 +757,10 @@ def main():
         print("Command Center: no new events")
 
     # Urgent alert - opened immediately, every run, whenever something's detected
-    if REPORT["alerts"]:
+    new_alert_events = [
+        event for event in routed_events if event.get("source") != "web"
+    ]
+    if REPORT["alerts"] and new_alert_events:
         alert_md = format_alert_markdown()
         print(alert_md)
         open_github_issue(
@@ -621,9 +768,10 @@ def main():
             alert_md,
             ["reputation-alert"],
         )
+    elif REPORT["alerts"]:
+        print("Alert condition already tracked - not opening a duplicate issue.")
 
     # Full digest - once per calendar day only, to avoid spamming every 2 hours
-    today_str = date.today().isoformat()
     if HISTORY.get("last_full_digest_date") != today_str:
         report_md = format_report_markdown()
         print(report_md)

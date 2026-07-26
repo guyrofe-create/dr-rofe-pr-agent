@@ -7,6 +7,8 @@ Required secrets:
     TUMBLR_OAUTH_SECRET
     TUMBLR_BLOG_NAME     - e.g. "drguyrofe" (from drguyrofe.tumblr.com)
 """
+import html
+
 import requests
 from . import common
 
@@ -23,9 +25,15 @@ def _post_url():
     return f"https://api.tumblr.com/v2/blog/{blog}.tumblr.com/posts"
 
 
-def publish(title, body, url):
+def publish(title, body, url, image_url=None, alt_text=None):
     post_url = _post_url()
     params = {"type": "text", "title": title, "body": body}
+    if image_url:
+        params["body"] = (
+            f'<figure><img src="{html.escape(image_url, quote=True)}" '
+            f'alt="{html.escape(alt_text or title, quote=True)}"></figure>'
+            + params["body"]
+        )
     if url:
         params["body"] += f'\n\n<a href="{url}">קריאה מלאה באתר</a>'
 

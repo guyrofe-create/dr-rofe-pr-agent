@@ -12,16 +12,22 @@ def is_configured():
     return not common.missing_secrets("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHANNEL_ID")
 
 
-def publish(title, body, url):
+def publish(title, body, url, image_url=None, alt_text=None):
     token = common.env("TELEGRAM_BOT_TOKEN")
     chat_id = common.env("TELEGRAM_CHANNEL_ID")
     text = common.shorten_for_social(title, url, max_len=1000, body=body)
 
-    resp = requests.post(
-        f"https://api.telegram.org/bot{token}/sendMessage",
-        data={"chat_id": chat_id, "text": text},
-        timeout=30,
-    )
+    if image_url:
+        endpoint = f"https://api.telegram.org/bot{token}/sendPhoto"
+        payload = {
+            "chat_id": chat_id,
+            "photo": image_url,
+            "caption": text,
+        }
+    else:
+        endpoint = f"https://api.telegram.org/bot{token}/sendMessage"
+        payload = {"chat_id": chat_id, "text": text}
+    resp = requests.post(endpoint, data=payload, timeout=30)
     resp.raise_for_status()
     result = resp.json()["result"]
     return f"https://t.me/{chat_id.lstrip('@')}/{result.get('message_id')}"

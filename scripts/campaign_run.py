@@ -14,7 +14,15 @@ import requests
 sys.path.insert(0, os.path.dirname(__file__))
 
 from daily_run import load_draft, resolve_draft_path
-from social_publishers import blogger, meta, pinterest, telegram, tumblr, twitter
+from social_publishers import (
+    blogger,
+    linkedin,
+    meta,
+    pinterest,
+    telegram,
+    tumblr,
+    twitter,
+)
 from publication_policy import enforce_publication_policy
 import social_image
 
@@ -227,6 +235,7 @@ def publish_campaign(draft_path):
     log(f"Canonical article published: {canonical_url}")
 
     image_url = os.environ.get("SOCIAL_IMAGE_URL", "").strip()
+    generated_image = None
     if configured("OPENAI_API_KEY"):
         try:
             generated_image = social_image.generate(title, summary)
@@ -305,6 +314,19 @@ def publish_campaign(draft_path):
             summary,
             canonical_url,
             image_url,
+            social_image.alt_text(title),
+        )
+    )
+    destinations.append(
+        attempt(
+            "LinkedIn",
+            linkedin.is_configured(),
+            linkedin.publish,
+            title,
+            summary,
+            canonical_url,
+            generated_image.content if generated_image else None,
+            social_image.alt_text(title),
         )
     )
     destinations.append(
@@ -315,6 +337,8 @@ def publish_campaign(draft_path):
             title,
             summary,
             canonical_url,
+            image_url,
+            social_image.alt_text(title),
         )
     )
     destinations.append(
@@ -325,6 +349,8 @@ def publish_campaign(draft_path):
             title,
             summary,
             canonical_url,
+            image_url,
+            social_image.alt_text(title),
         )
     )
     destinations.append(
@@ -335,6 +361,8 @@ def publish_campaign(draft_path):
             title,
             summary,
             canonical_url,
+            image_url,
+            social_image.alt_text(title),
         )
     )
     destinations.append(
@@ -345,6 +373,8 @@ def publish_campaign(draft_path):
             title,
             f"<p>{summary}</p>",
             canonical_url,
+            image_url,
+            social_image.alt_text(title),
         )
     )
 
@@ -364,6 +394,7 @@ def publish_campaign(draft_path):
             summary,
             canonical_url,
             image_url,
+            social_image.alt_text(title),
         )
         if image_url
         else destination("Pinterest", "blocked", detail="נדרשת תמונה מאושרת")
@@ -382,7 +413,7 @@ def publish_campaign(draft_path):
                 detail="הפצה משנית הושהתה עד להגדרת קישור קנוני תקין",
             ),
             destination(
-                "LinkedIn / Quora",
+                "Quora",
                 "manual_only",
                 detail="אין כרגע חיבור פרסום רשמי בטוח",
             ),

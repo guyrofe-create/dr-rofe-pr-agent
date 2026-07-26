@@ -70,6 +70,34 @@ class CommandCenterTests(unittest.TestCase):
             saved = json.load(handle)
         self.assertEqual(saved["metrics"]["open_events"], 2)
 
+    def test_repeated_ai_prompt_updates_one_event_instead_of_spamming(self):
+        first = self.center.ingest_monitor_report({
+            "date": "2026-07-26T10:00:00",
+            "alerts": [{
+                "type": "ai_identity_misinformation",
+                "source": "OpenAI monitor sample",
+                "prompt": "מי הוא ד״ר גיא רופא?",
+                "excerpt": "תשובה שגויה ראשונה",
+            }],
+        })
+        second = self.center.ingest_monitor_report({
+            "date": "2026-07-26T12:00:00",
+            "alerts": [{
+                "type": "ai_identity_misinformation",
+                "source": "OpenAI monitor sample",
+                "prompt": "מי הוא ד״ר גיא רופא?",
+                "excerpt": "תשובה שגויה מעודכנת",
+            }],
+        })
+        self.assertEqual(len(first), 1)
+        self.assertEqual(second, [])
+        self.assertEqual(len(self.center.state["events"]), 1)
+        self.assertEqual(
+            self.center.state["events"][0]["text"],
+            "תשובה שגויה מעודכנת",
+        )
+        self.assertEqual(self.center.state["events"][0]["occurrences"], 2)
+
 
 class GrowthEngineTests(unittest.TestCase):
     def test_asset_registry_contains_no_credentials_and_quarantines_mirror_network(self):

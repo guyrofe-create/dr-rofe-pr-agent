@@ -56,16 +56,41 @@ class CommandCenter:
 
     @staticmethod
     def event_id(event: dict) -> str:
-        identity = "|".join(str(event.get(k, "")) for k in ("source", "external_id", "url", "author", "text", "title"))
+        if event.get("external_id"):
+            identity = f"{event.get('source', '')}|{event['external_id']}"
+        else:
+            identity = "|".join(
+                str(event.get(k, ""))
+                for k in ("source", "url", "author", "text", "title")
+            )
         return "evt_" + hashlib.sha256(identity.encode("utf-8")).hexdigest()[:16]
 
     def ingest(self, raw_event: dict) -> tuple[dict, bool]:
         event = deepcopy(raw_event)
         event["id"] = event.get("id") or self.event_id(event)
         existing = next((item for item in self.state["events"] if item["id"] == event["id"]), None)
+        metadata = event.get("metadata") or {}
+        if (
+            existing is None
+            and str(metadata.get("type", "")).startswith("ai_")
+            and metadata.get("prompt")
+        ):
+            existing = next(
+                (
+                    item
+                    for item in self.state["events"]
+                    if (item.get("metadata") or {}).get("type") == metadata["type"]
+                    and (item.get("metadata") or {}).get("prompt")
+                    == metadata["prompt"]
+                ),
+                None,
+            )
         if existing:
             existing["last_seen_at"] = _iso(_now())
             existing["occurrences"] = existing.get("occurrences", 1) + 1
+            for key in ("text", "metadata", "rating"):
+                if event.get(key) is not None:
+                    existing[key] = event[key]
             self._audit("event_seen_again", existing["id"], {"occurrences": existing["occurrences"]})
             return existing, False
 
@@ -98,10 +123,22 @@ class CommandCenter:
     def ingest_monitor_report(self, report: dict) -> list[dict]:
         created = []
         for alert in report.get("alerts", []):
+            alert_type = alert.get("type", "monitor alert")
+            if alert_type.startswith("ai_"):
+                external_id = f"{alert_type}|{alert.get('prompt', '')}"
+            else:
+                external_id = "|".join(
+                    str(value)
+                    for value in (
+                        alert_type,
+                        alert.get("author", ""),
+                        alert.get("excerpt", ""),
+                    )
+                )
             event, is_new = self.ingest({
                 "source": alert.get("source", "monitor"),
-                "external_id": f"{report.get('date')}|{alert.get('type')}|{alert.get('author', '')}",
-                "title": alert.get("type", "monitor alert"),
+                "external_id": external_id,
+                "title": alert_type,
                 "text": alert.get("excerpt", ""),
                 "rating": alert.get("rating"),
                 "category": alert.get("type"),

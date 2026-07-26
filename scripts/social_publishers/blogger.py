@@ -6,6 +6,8 @@ Required secrets:
     GOOGLE_OAUTH_REFRESH_TOKEN   - obtained once via Google OAuth Playground
     BLOGGER_BLOG_ID              - numeric blog ID (from Blogger dashboard)
 """
+import html
+
 import requests
 from . import common
 
@@ -30,10 +32,16 @@ def _access_token():
     return resp.json()["access_token"]
 
 
-def publish(title, body_html, url=None):
+def publish(title, body_html, url=None, image_url=None, alt_text=None):
     blog_id = common.env("BLOGGER_BLOG_ID")
     token = _access_token()
     content = body_html
+    if image_url:
+        content = (
+            f'<p><img src="{html.escape(image_url, quote=True)}" '
+            f'alt="{html.escape(alt_text or title, quote=True)}"></p>'
+            + content
+        )
     if url:
         content += f'<p><a href="{url}">קריאה מלאה באתר</a></p>'
 

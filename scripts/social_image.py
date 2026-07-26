@@ -14,6 +14,15 @@ class SocialImage:
     extension: str = "png"
 
 
+def alt_text(title):
+    """Natural, accessible attribution without keyword stuffing."""
+    clean_title = " ".join((title or "מידע רפואי כללי").split())
+    clean_title = clean_title.replace("ד\"ר גיא רופא", "ד״ר גיא רופא")
+    if "גיא רופא" in clean_title:
+        return f"{clean_title} — איור מידע כללי"[:300]
+    return f"ד״ר גיא רופא — איור מידע כללי בנושא {clean_title}"[:300]
+
+
 def build_prompt(title, summary):
     """Return a brand-safe prompt that avoids medical or availability claims."""
     context = " ".join((summary or "").split())[:600]
@@ -114,7 +123,7 @@ def upload_to_wordpress(
         json={
             "slug": slug,
             "title": title,
-            "alt_text": f"איור מידע כללי בנושא {title}",
+            "alt_text": alt_text(title),
             "caption": "איור מידע כללי שנוצר באמצעות OpenAI",
         },
         headers=headers,

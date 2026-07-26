@@ -32,8 +32,19 @@ ACTIVE_PRACTICE_CLAIMS = (
     "במרפאה שלי",
     "אני מטפל",
     "אני מנתח",
+    "מקבל כיום מטופלות",
+    "מקבל כיום מטופלים",
+    "מקבל מטופלות",
+    "מקבל מטופלים",
+    "מפעיל מרפאה",
+    "מעניק טיפול",
+    "זמין לקביעת תור",
+    "זמין לקביעת תורים",
     "זמינות ישירה לרופא",
     "ליווי אישי",
+    "currently accepting patients",
+    "operates a clinic",
+    "available for appointments",
 )
 
 
@@ -41,6 +52,23 @@ def enforce_publication_policy(text):
     """Reject solicitation and active-practice claims in every public channel."""
     content = (text or "").strip()
     folded = content.casefold()
+    # Accurate non-practicing disclosures are allowed and must not be mistaken
+    # for the affirmative phrases they negate.
+    folded = re.sub(
+        r"(?:אינו|אינה|אינם|אינן|לא)\s+"
+        r"(?:מקבל(?:ת|ים|ות)?(?:\s+כיום)?\s+מטופל(?:ים|ות)|"
+        r"מפעיל(?:ה)?\s+מרפאה|מעניק(?:ה)?\s+טיפול|"
+        r"זמין(?:ה)?\s+לקביעת\s+תורים?)",
+        "",
+        folded,
+    )
+    folded = re.sub(
+        r"(?:not|is not|does not)\s+"
+        r"(?:currently\s+)?(?:accepting patients|operate a clinic|"
+        r"available for appointments)",
+        "",
+        folded,
+    )
     violations = [
         phrase
         for phrase in (*CONSULTATION_INVITATIONS, *ACTIVE_PRACTICE_CLAIMS)

@@ -103,9 +103,12 @@ def wp_find_or_create_page(base_url, auth, slug, title):
     return resp.json()["id"]
 
 
-def wp_update_page(base_url, auth, page_id, content):
+def wp_update_page(base_url, auth, page_id, content, title=None):
+    payload = {"content": content}
+    if title:
+        payload["title"] = title
     resp = requests.post(f"{base_url}/wp-json/wp/v2/pages/{page_id}", auth=auth,
-                          json={"content": content}, timeout=20)
+                          json=payload, timeout=20)
     resp.raise_for_status()
     return resp.json()
 
@@ -122,14 +125,25 @@ def sync_site(site, schema_json_min, llms_content):
         schema_page_id = wp_find_or_create_page(
             base_url, auth, site["schema_page_slug"], "Schema Markup — Person / Medical Content Creator"
         )
-        wp_update_page(base_url, auth, schema_page_id,
-                        f'<script type="application/ld+json">{schema_json_min}</script>')
+        wp_update_page(
+            base_url,
+            auth,
+            schema_page_id,
+            f'<script type="application/ld+json">{schema_json_min}</script>',
+            title="Schema Markup — Person / Medical Content Creator",
+        )
         log(f"[{site['key']}] schema-markup page updated (id {schema_page_id})")
 
         llms_page_id = wp_find_or_create_page(
             base_url, auth, site["llms_page_slug"], "LLMs.txt — AI Search Optimization"
         )
-        wp_update_page(base_url, auth, llms_page_id, llms_content)
+        wp_update_page(
+            base_url,
+            auth,
+            llms_page_id,
+            llms_content,
+            title="LLMs.txt — AI Search Optimization",
+        )
         log(f"[{site['key']}] llms page updated (id {llms_page_id})")
     except requests.exceptions.HTTPError as e:
         log(f"[{site['key']}] ERROR - {e}")

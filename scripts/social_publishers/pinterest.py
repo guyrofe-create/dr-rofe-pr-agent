@@ -12,7 +12,7 @@ def is_configured():
     return not common.missing_secrets("PINTEREST_ACCESS_TOKEN", "PINTEREST_BOARD_ID")
 
 
-def publish(title, body, url, image_url):
+def publish(title, body, url, image_url, alt_text=None):
     if not image_url:
         raise ValueError("Pinterest requires image_url (pins must have an image)")
 
@@ -27,6 +27,7 @@ def publish(title, body, url, image_url):
             "board_id": board_id,
             "title": title[:100],
             "description": description,
+            "alt_text": (alt_text or title)[:500],
             "link": url,
             "media_source": {"source_type": "image_url", "url": image_url},
         },

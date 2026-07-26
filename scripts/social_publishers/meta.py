@@ -146,7 +146,7 @@ def check_recent_posts_access():
         return False, str(exc)
 
 
-def publish_facebook(title, body, url, image_url=None):
+def publish_facebook(title, body, url, image_url=None, alt_text=None):
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")
     message = common.shorten_for_social(title, url, max_len=1800, body=body)
@@ -168,6 +168,8 @@ def publish_facebook(title, body, url, image_url=None):
             "published": "true",
             "access_token": token,
         }
+        if alt_text:
+            payload["alt_text_custom"] = alt_text
         endpoint = f"{GRAPH}/{page_id}/photos"
     else:
         payload = {"message": message, "access_token": token}

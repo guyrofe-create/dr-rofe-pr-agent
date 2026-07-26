@@ -1,7 +1,8 @@
 import json
 import unittest
+from unittest.mock import Mock, patch
 
-from scripts.schema_sync import build_llms_txt, build_schema
+from scripts.schema_sync import build_llms_txt, build_schema, wp_update_page
 
 
 class NeutralEntitySchemaTests(unittest.TestCase):
@@ -25,6 +26,24 @@ class NeutralEntitySchemaTests(unittest.TestCase):
         self.assertIn("not currently practicing medicine", text)
         self.assertIn("not accepting patients", text)
         self.assertNotIn("Services: fertility treatment", text)
+
+    @patch("scripts.schema_sync.requests.post")
+    def test_existing_page_title_is_updated_with_content(self, post):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {"id": 7}
+        post.return_value = response
+        wp_update_page(
+            "https://example.com",
+            ("user", "password"),
+            7,
+            "<script>schema</script>",
+            title="Schema Markup — Person / Medical Content Creator",
+        )
+        self.assertEqual(
+            post.call_args.kwargs["json"]["title"],
+            "Schema Markup — Person / Medical Content Creator",
+        )
 
 
 if __name__ == "__main__":
