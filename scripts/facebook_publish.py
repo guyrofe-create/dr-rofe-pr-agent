@@ -14,8 +14,11 @@ def main():
     body = os.environ["FACEBOOK_POST_TEXT"].strip()
     url = os.environ.get("FACEBOOK_POST_URL", "").strip()
     enforce_publication_policy(body)
-    result = meta.publish_facebook("", body, url)
-    print(f"PASS Facebook published through product: {result}")
+    try:
+        result = meta.publish_facebook("", body, url)
+        print(f"PASS Facebook published through product: {result}")
+    except meta.DuplicatePostError as exc:
+        print(str(exc))
 
 
 if __name__ == "__main__":
