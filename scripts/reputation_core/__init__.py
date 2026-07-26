@@ -25,6 +25,12 @@ from .measurement import (
     measure_serp_surface,
     summarize_bing_ai_performance,
 )
+from .opportunity_engine import (
+    build_opportunity,
+    build_opportunity_portfolio,
+    score_opportunity,
+    select_opportunities,
+)
 from .onboarding import (
     build_installation_files,
     validate_install_spec,
@@ -77,4 +83,8 @@ __all__ = [
     "add_serp_volatility",
     "measure_ai_surfaces",
     "summarize_bing_ai_performance",
+    "score_opportunity",
+    "build_opportunity",
+    "select_opportunities",
+    "build_opportunity_portfolio",
 ]

@@ -125,6 +125,17 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
             "visual_exclusions": [],
         }),
         "approval_policy": approval,
+        "opportunity_policy": spec.get("opportunity_policy", {
+            "minimum_score": 20,
+            "maximum_selected_per_cycle": 5,
+            "maximum_per_asset": 2,
+            "maximum_risk": 6,
+            "maximum_high_risk_per_cycle": 1,
+            "high_risk_starts_at": 5,
+            "fixed_publication_days_determine_priority": False,
+            "preparation_autonomous": True,
+            "public_execution_requires_item_approval": True,
+        }),
         "ai_evaluation": {
             "monitoring_prompts": monitoring_prompts,
             "prompt_rules": spec.get("ai_prompt_rules", []),
@@ -322,6 +333,7 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
         "data/command_center.json": {
             "version": 1, "events": [], "crisis_rooms": [], "audit_log": [],
             "campaigns": [], "visibility_measurements": [],
+            "opportunities": [],
         },
     }
 

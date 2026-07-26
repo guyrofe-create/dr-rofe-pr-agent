@@ -875,6 +875,29 @@ def format_report_markdown():
     )
     lines.append("")
 
+    opportunities = (
+        (REPORT.get("orchestration") or {})
+        .get("opportunity_engine", {})
+    )
+    lines.append("## P4 — הזדמנויות ופעולות מדורגות")
+    lines.append(
+        "- נוסחה: השפעה צפויה × סמכות הנכס × רלוונטיות לשאילתה "
+        "× שליטה ÷ (זמן + עלות + סיכון)"
+    )
+    selected = opportunities.get("selected_for_preparation", [])
+    if selected:
+        for item in selected:
+            lines.append(
+                f"- ציון {item.get('score')} | "
+                f"`{item.get('action_type')}` | "
+                f"`{item.get('query') or 'ללא שאילתה'}` | "
+                f"{item.get('reason') or 'הזדמנות מבוססת מדידה'} | "
+                "הכנה אוטונומית; ביצוע ציבורי רק לאחר אישור הפריט"
+            )
+    else:
+        lines.append("- אין פעולה שעברה כעת את ספי הערך, הסיכון והקיבולת")
+    lines.append("")
+
     lines.append("## דגימת נוכחות במודל OpenAI (GEO)")
     for g in REPORT["geo"]:
         if g.get("status") == "skipped":
@@ -1111,6 +1134,7 @@ def main():
         search_console_rows=search_console_rows,
         historical_serp_snapshots=historical_serp_snapshots,
         bing_ai_performance=bing_ai_performance,
+        content_freeze=command_center.state.get("content_freeze", False),
     )
     REPORT["bing_ai_performance"] = REPORT["orchestration"][
         "visibility_measurement"
@@ -1126,9 +1150,25 @@ def main():
         "cross_domain_risks": REPORT["orchestration"]["cross_domain_risks"],
         "new_asset_proposals": REPORT["orchestration"]["new_asset_proposals"],
         "next_best_actions": REPORT["orchestration"]["next_best_actions"][:20],
+        "opportunity_engine": REPORT["orchestration"]["opportunity_engine"],
     })
     command_center.state["visibility_measurements"] = (
         command_center.state["visibility_measurements"][-90:]
+    )
+    command_center.state["opportunities"] = REPORT["orchestration"][
+        "opportunity_engine"
+    ]["ranked_opportunities"][:100]
+    command_center._audit(
+        "opportunities_replanned",
+        REPORT["orchestration"]["opportunity_engine"]["generated_at"],
+        {
+            "ranked": len(command_center.state["opportunities"]),
+            "selected": len(
+                REPORT["orchestration"]["opportunity_engine"][
+                    "selected_for_preparation"
+                ]
+            ),
+        },
     )
     observations["serp_assets"] = [
         {

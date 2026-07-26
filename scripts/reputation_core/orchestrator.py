@@ -21,6 +21,7 @@ from .measurement import (
     measure_serp_surface,
     summarize_bing_ai_performance,
 )
+from .opportunity_engine import build_opportunity_portfolio
 from .strategy import client_asset_policy, client_search_queries, load_client_profile
 
 
@@ -466,6 +467,7 @@ def orchestrate_reputation_cycle(
     creation_history: list[dict] | None = None,
     historical_serp_snapshots: list[dict] | None = None,
     bing_ai_performance: dict | None = None,
+    content_freeze: bool = False,
 ) -> dict:
     """Build one evidence-led, maximum-sustainable action cycle."""
     targets = load_serp_targets()
@@ -496,6 +498,16 @@ def orchestrate_reputation_cycle(
     bing_ai = summarize_bing_ai_performance(
         bing_ai_performance or {"rows": []}
     )
+    visibility_measurement = {
+        "version": 3,
+        "serp_surfaces": serp_measurements,
+        "ai_surfaces": ai_surfaces,
+        "bing_ai_performance": bing_ai,
+        "separation_rule": (
+            "engine, surface, interface, collection method, locale, "
+            "device/model and prompt are measured independently"
+        ),
+    }
     risks = detect_cross_domain_risk(content_inventory or [])
     coverage_safety = evaluate_coverage_safety(
         assets, risks, client_asset_policy()
@@ -556,6 +568,21 @@ def orchestrate_reputation_cycle(
         -int((action.get("evidence") or {}).get("impressions", 0)),
         action["kind"],
     ))
+    profile = load_client_profile()
+    query_priorities = {
+        item["query"]: int(item.get("priority", 80))
+        for item in targets.get("queries", [])
+    }
+    opportunity_engine = build_opportunity_portfolio(
+        actions,
+        new_asset_proposals,
+        assets,
+        visibility_measurement,
+        objective,
+        query_priorities,
+        policy=profile.get("opportunity_policy"),
+        content_freeze=content_freeze,
+    )
     return {
         "objective": (
             "Maximize approved desired and controlled page-one results and accurate "
@@ -565,20 +592,14 @@ def orchestrate_reputation_cycle(
         "guardrail": "Maximum sustainable execution without spam, deception, fake independence or medical solicitation.",
         "control_maps": control_maps,
         "ai_visibility": ai,
-        "visibility_measurement": {
-            "version": 3,
-            "serp_surfaces": serp_measurements,
-            "ai_surfaces": ai_surfaces,
-            "bing_ai_performance": bing_ai,
-            "separation_rule": (
-                "engine, surface, interface, collection method, locale, "
-                "device/model and prompt are measured independently"
-            ),
-        },
+        "visibility_measurement": visibility_measurement,
+        "opportunity_engine": opportunity_engine,
         "cross_domain_risks": risks,
         "coverage_safety": coverage_safety,
         "new_asset_proposals": new_asset_proposals,
-        "next_best_actions": actions,
+        "next_best_actions": opportunity_engine["ranked_opportunities"],
+        "selected_actions": opportunity_engine["selected_for_preparation"],
+        "legacy_action_evidence": actions,
         "targets": objective,
         "measurement": {
             "serp": "daily by exact query, country, language and device",

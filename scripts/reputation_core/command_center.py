@@ -21,6 +21,7 @@ DEFAULT_STATE = {
     "campaigns": [],
     "serp_assets": [],
     "visibility_measurements": [],
+    "opportunities": [],
     "audit_log": [],
     "metrics": {},
 }
@@ -203,6 +204,18 @@ class CommandCenter:
             "pending_tasks": sum(t.get("status") == "pending" for t in self.state["tasks"]),
             "active_crises": sum(r.get("status") == "active" for r in self.state["crisis_rooms"]),
             "content_freeze": self.state["content_freeze"],
+            "ranked_opportunities": len(self.state["opportunities"]),
+            "selected_opportunities": sum(
+                item.get("status") in {
+                    "selected_for_preparation",
+                    "prepared_awaiting_approval",
+                }
+                for item in self.state["opportunities"]
+            ),
+            "prepared_opportunities": sum(
+                item.get("status") == "prepared_awaiting_approval"
+                for item in self.state["opportunities"]
+            ),
         }
 
     def public_snapshot(self) -> dict:

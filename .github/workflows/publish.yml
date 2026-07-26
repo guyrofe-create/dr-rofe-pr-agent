@@ -1,8 +1,6 @@
-name: Dr. Rofe Reviewed Draft Generator
+name: Legacy Manual Reviewed Draft Generator
 
 on:
-  schedule:
-    - cron: '0 6 * * 1,3,5'
   workflow_dispatch:
 
 permissions:
@@ -23,7 +21,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate review draft
+      - name: Generate a manually requested review draft
         run: python scripts/daily_run.py
         env:
           RUN_MODE: generate

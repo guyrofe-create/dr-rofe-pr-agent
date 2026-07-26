@@ -56,6 +56,10 @@ jobs:
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
 
+      - name: Prepare highest-ranked P4 actions for review
+        if: always()
+        run: python scripts/prepare_opportunities.py
+
       - name: Verify Meta connections
         continue-on-error: true
         run: python scripts/meta_connection_check.py
@@ -68,7 +72,7 @@ jobs:
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
-          git add data/reputation_history.json data/command_center.json || true
+          git add data/reputation_history.json data/command_center.json opportunity_drafts/ || true
           git diff --cached --quiet || git commit -m "Update reputation state $(date +%Y-%m-%d\ %H:%M)"
           git pull --rebase || true
           git push || true

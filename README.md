@@ -158,12 +158,35 @@ inventory. Wix publishing for `drguyrofe.com` requires both
 
 Content freeze cannot be removed while an active crisis room exists.
 
+## P4 opportunity and action engine
+
+The monitor no longer relies on fixed weekdays to decide what deserves work.
+Every two-hour evidence cycle generates and ranks opportunities using:
+
+`expected impact × asset authority × query relevance × control ÷ (time + cost + risk)`
+
+All seven inputs use a documented 1-10 scale. The portfolio enforces a minimum
+score, per-cycle capacity, per-asset concentration, a risk ceiling and a
+high-risk capacity. It supports strengthening an asset, correcting a fact or
+profile, creating or refreshing content, connecting assets, creating media or
+a page, proposing a new asset, preparing a correction/removal request, and
+earning an external mention.
+
+The highest-ranked eligible items are converted into durable JSON and Markdown
+work orders under `opportunity_drafts/`. Preparation is autonomous and
+idempotent. Every bundle has `public_execution_allowed: false`; the exact item
+must be approved before any public change, publication, outreach, correction
+or removal request. Owner-managed and quarantined assets remain blocked.
+
+The old reviewed content generator is retained for manual use only. The
+two-hour monitor is the automatic trigger for P4 planning and preparation.
+
 ## Automated workflows
 
 | Workflow | Schedule | Purpose |
 |---|---|---|
-| Reputation Monitor | Every 2 hours | Detect, route, persist and report reputation events |
-| Reviewed Content | Mon/Wed/Fri | Generate a durable medical draft; publish only an explicitly approved draft |
+| Reputation Monitor + P4 | Every 2 hours | Detect, measure, rank and prepare the best eligible actions for approval |
+| Legacy Reviewed Content | Manual only | Generate a manually requested durable medical draft |
 | Social Distribution | Mon/Wed/Fri | Distribute approved content when not frozen |
 | Schema Sync | Weekly | Keep connected site facts and structured data aligned |
 

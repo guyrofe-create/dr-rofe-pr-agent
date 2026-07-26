@@ -171,6 +171,20 @@ canvas{max-height:260px}
     </div>
   </div>
 
+  <!-- P4 opportunity portfolio -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>🎯 P4 — הזדמנויות ופעולות</h2>
+      <span class="badge" id="opportunityBadge">—</span>
+    </div>
+    <div class="panel-body">
+      <table>
+        <thead><tr><th>ציון</th><th>פעולה</th><th>שאילתה / נכס</th><th>מצב</th><th>אישור</th></tr></thead>
+        <tbody id="opportunityTable"></tbody>
+      </table>
+    </div>
+  </div>
+
   <!-- SERP + GEO in two col -->
   <div class="two-col">
 
@@ -301,6 +315,7 @@ function render(data, command) {
   renderAlerts(snapshots);
   renderCharts(snapshots);
   renderCommandCenter(command);
+  renderOpportunities(command);
 
   document.getElementById("sectionsArea").style.display = "";
 }
@@ -329,6 +344,35 @@ function renderCommandCenter(command) {
       <td>${esc(e.risk_score)}/100</td><td>${esc(e.status)}</td>
       <td style="white-space:nowrap">${e.sla_due_at ? new Date(e.sla_due_at).toLocaleString("he-IL") : "—"}</td>
     </tr>`).join("") : '<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:20px">אין אירועים פתוחים</td></tr>';
+}
+
+const ACTION_TYPE_LABELS = {
+  "strengthen_existing_asset":"חיזוק נכס קיים",
+  "correct_profile_or_fact":"תיקון פרופיל או עובדה",
+  "create_new_content":"יצירת תוכן חדש",
+  "refresh_existing_content":"רענון תוכן ישן",
+  "connect_assets":"חיבור בין נכסים",
+  "create_media_or_page":"יצירת מדיה או עמוד",
+  "propose_new_asset":"הצעת נכס חדש",
+  "request_correction_or_removal":"בקשת תיקון או הסרה",
+  "earn_external_mention":"הזדמנות לאזכור חיצוני"
+};
+
+function renderOpportunities(command) {
+  const items = (command?.opportunities || []).slice(0,20);
+  const prepared = items.filter(item => item.status === "prepared_awaiting_approval").length;
+  const badge = document.getElementById("opportunityBadge");
+  badge.textContent = prepared ? `${prepared} ממתינות לאישור` : `${items.length} מדורגות`;
+  badge.className = prepared ? "badge yellow" : items.length ? "badge" : "badge green";
+  document.getElementById("opportunityTable").innerHTML = items.length
+    ? items.map(item => `<tr>
+      <td><span class="rank-num ${item.score >= 60 ? "good" : item.score < 20 ? "bad" : ""}">${esc(item.score)}</span></td>
+      <td><strong>${esc(ACTION_TYPE_LABELS[item.action_type] || item.action_type)}</strong><br><span style="color:var(--muted);font-size:11px">${esc((item.reason || "").slice(0,140))}</span></td>
+      <td>${esc(item.query || "—")}<br><span style="color:var(--muted);font-size:11px">${esc(item.asset_url || item.asset_id || "חיצוני / חדש")}</span></td>
+      <td>${esc(item.status)}</td>
+      <td>${item.final_execution_requires_approval ? "נדרש לפני ביצוע" : "—"}</td>
+    </tr>`).join("")
+    : '<tr><td colspan="5" style="color:var(--muted)">טרם נוצר תיק הזדמנויות P4. הוא ייווצר במחזור הניטור הבא.</td></tr>';
 }
 
 /* ---- BANNER ---- */

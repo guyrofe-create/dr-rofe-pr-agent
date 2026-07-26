@@ -197,14 +197,42 @@ the API. Bing AI Performance CSV/JSON exports are normalized by
 `import_bing_ai_performance.py`; the adapter deliberately does not invent or
 scrape an undocumented Bing export API.
 
+## P4 opportunity-ranked execution
+
+P4 turns P3 evidence and the existing action planner into one scored portfolio.
+Each candidate is normalized to one of nine action types and scored on seven
+1-10 factors:
+
+`impact × authority × relevance × control ÷ (time + financial cost + risk)`
+
+The score is a prioritization aid, not a ranking guarantee. Evidence and
+confidence remain visible. Selection applies an installation-specific minimum
+score, total capacity, per-asset concentration, risk ceiling, and high-risk
+capacity. Quarantined assets, owner-managed channels, disabled channels and
+new-asset proposals rejected by the safety gate cannot be selected.
+
+P3 gaps can produce content, media, connection, external-mention,
+fact-correction and lawful correction/removal opportunities. Existing asset
+and content evidence supplies strengthening and refresh actions; the P1 asset
+gate supplies new-asset proposals. The engine deduplicates stable opportunity
+IDs before ranking.
+
+Every selected opportunity is prepared by `prepare_opportunities.py` as an
+immutable JSON bundle plus a human-readable review sheet. Existing bundles are
+never regenerated, so the two-hour monitor is idempotent. Preparation is
+allowed during a content freeze, but public execution remains disabled. Every
+action type—including outreach and correction requests—requires exact
+item-level approval and a new approval after any edit.
+
 ## Next premium layers
 
-1. Encrypted connector vault and role-based approvals for a single installation.
-2. Unified inbox for review, social, news, forum, email and CRM events.
-3. Contextual response drafting with privacy and policy validation.
-4. Review-request journeys without review gating or incentives.
-5. Narrative map and entity knowledge graph for search and AI consistency.
-6. Root-cause analysis that turns recurring complaints into operational tasks.
-7. Authorized consumer-interface AI sampling beyond the implemented API and
+1. Approval UI and executor adapters for each P4 action type.
+2. Encrypted connector vault and role-based approvals for a single installation.
+3. Unified inbox for review, social, news, forum, email and CRM events.
+4. Contextual response drafting with privacy and policy validation.
+5. Review-request journeys without review gating or incentives.
+6. Narrative map and entity knowledge graph for search and AI consistency.
+7. Root-cause analysis that turns recurring complaints into operational tasks.
+8. Authorized consumer-interface AI sampling beyond the implemented API and
    Bing AI Performance import surfaces.
-8. Outcome analytics: response time, resolution, sentiment recovery, leads and revenue.
+9. Outcome analytics: response time, resolution, sentiment recovery, leads and revenue.
