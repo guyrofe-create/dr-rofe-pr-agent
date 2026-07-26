@@ -159,6 +159,13 @@ def attempt(name, is_ready, publisher, *args):
         return destination(name, "not_configured", detail="החיבור אינו מוגדר")
     try:
         return destination(name, "published", url=publisher(*args))
+    except meta.DuplicatePostError as exc:
+        return destination(
+            name,
+            "skipped_duplicate",
+            url=exc.existing_url,
+            detail="נמצא פרסום דומה או קישור זהה בפוסטים האחרונים",
+        )
     except Exception as exc:
         return destination(name, "failed", detail=str(exc)[:300])
 
@@ -298,17 +305,11 @@ def publish_campaign(draft_path):
 
     image_url = os.environ.get("SOCIAL_IMAGE_URL", "").strip()
     destinations.append(
-        attempt(
+        destination(
             "Instagram",
-            bool(image_url) and meta.instagram_is_configured(),
-            meta.publish_instagram,
-            title,
-            summary,
-            canonical_url,
-            image_url,
+            "owner_managed",
+            detail="ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם בו",
         )
-        if image_url
-        else destination("Instagram", "blocked", detail="נדרשת תמונה מאושרת")
     )
     destinations.append(
         attempt(
