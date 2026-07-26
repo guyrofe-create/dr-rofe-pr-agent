@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from daily_run import load_draft, resolve_draft_path
 from social_publishers import blogger, meta, pinterest, telegram, tumblr, twitter
 from publication_policy import enforce_publication_policy
+import social_image
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -225,6 +226,49 @@ def publish_campaign(draft_path):
     destinations.append(destination("guyrofe.com", "published", url=canonical_url))
     log(f"Canonical article published: {canonical_url}")
 
+    image_url = os.environ.get("SOCIAL_IMAGE_URL", "").strip()
+    if configured("OPENAI_API_KEY"):
+        try:
+            generated_image = social_image.generate(title, summary)
+            image_url = social_image.upload_to_wordpress(
+                generated_image,
+                base_url="https://guyrofe.com",
+                username=os.environ["WORDPRESS_GUYROFE_COM_USER"],
+                app_password=os.environ["WORDPRESS_GUYROFE_COM_API"],
+                slug=f"dr-rofe-{draft_path.stem}-social",
+                title=title,
+            )
+            destinations.append(
+                destination(
+                    "OpenAI visual",
+                    "generated",
+                    url=image_url,
+                    detail="תמונה ללא טקסט וללא הזמנה לייעוץ",
+                )
+            )
+            log(f"Approved-campaign visual generated and hosted: {image_url}")
+        except Exception as exc:
+            destinations.append(
+                destination(
+                    "OpenAI visual",
+                    "failed",
+                    detail=f"{type(exc).__name__}: {str(exc)[:240]}",
+                )
+            )
+            log(f"Image generation failed; using configured fallback if present: {exc}")
+    elif image_url:
+        destinations.append(
+            destination("Social visual", "configured_fallback", url=image_url)
+        )
+    else:
+        destinations.append(
+            destination(
+                "OpenAI visual",
+                "not_configured",
+                detail="OPENAI_API_KEY אינו מוגדר",
+            )
+        )
+
     if configured(
         "WORDPRESS_DRGUYROFE_CO_IL_USER", "WORDPRESS_DRGUYROFE_CO_IL_API"
     ):
@@ -260,6 +304,7 @@ def publish_campaign(draft_path):
             title,
             summary,
             canonical_url,
+            image_url,
         )
     )
     destinations.append(
@@ -303,7 +348,6 @@ def publish_campaign(draft_path):
         )
     )
 
-    image_url = os.environ.get("SOCIAL_IMAGE_URL", "").strip()
     destinations.append(
         destination(
             "Instagram",

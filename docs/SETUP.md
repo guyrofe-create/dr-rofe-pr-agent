@@ -58,9 +58,14 @@ Secrets: `GOOGLE_OAUTH_CLIENT_ID`, `GOOGLE_OAUTH_CLIENT_SECRET`, `GOOGLE_OAUTH_R
 
 Secrets: `PINTEREST_ACCESS_TOKEN`, `PINTEREST_BOARD_ID` (גם כאן נדרשת תמונה - ראה למטה)
 
-### תמונה משותפת ל-Instagram + Pinterest (אופציונלי)
-Secret: `SOCIAL_IMAGE_URL` - קישור URL ציבורי לתמונה קבועה (למשל לוגו/תמונת פרופיל
-מהאתר guyrofe.com). בלי זה שני אלה ידלגו אוטומטית מבלי להיכשל.
+### יצירת תמונות באמצעות OpenAI
+בקמפיין שאושר לפרסום, המוצר יוצר תמונה ייעודית באמצעות `gpt-image-2`, מעלה
+אותה לספריית המדיה של `guyrofe.com`, ומשתמש בכתובת הציבורית שלה בפייסבוק
+וב-Pinterest. התמונה אינה כוללת טקסט, אנשים, טיפול, אנטומיה או הזמנה לייעוץ.
+
+היכולת משתמשת ב-Secret הקיים `OPENAI_API_KEY`; אין צורך ב-Secret נוסף.
+`SOCIAL_IMAGE_URL` נשאר גיבוי אופציונלי בלבד אם יצירת התמונה נכשלת.
+Instagram ו-TikTok נשארים בשליטת בעל החשבון והמוצר אינו מפרסם בהם.
 
 ---
 

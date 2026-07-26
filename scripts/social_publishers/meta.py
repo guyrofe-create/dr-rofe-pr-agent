@@ -161,11 +161,21 @@ def publish_facebook(title, body, url, image_url=None):
             )
         )
 
-    payload = {"message": message, "access_token": token}
-    if url:
-        payload["link"] = url
+    if image_url:
+        payload = {
+            "caption": message,
+            "url": image_url,
+            "published": "true",
+            "access_token": token,
+        }
+        endpoint = f"{GRAPH}/{page_id}/photos"
+    else:
+        payload = {"message": message, "access_token": token}
+        if url:
+            payload["link"] = url
+        endpoint = f"{GRAPH}/{page_id}/feed"
 
-    resp = requests.post(f"{GRAPH}/{page_id}/feed", data=payload, timeout=30)
+    resp = requests.post(endpoint, data=payload, timeout=30)
     resp.raise_for_status()
     result = resp.json()
     post_id = result.get("id")
