@@ -1,12 +1,19 @@
 # Reputation Command Center
 
-An active reputation-management system for Dr. Guy Rofe. It continuously turns
-monitor findings into explainable, auditable response workflows rather than
-stopping at alerts.
+A configurable single-client reputation-management product. Each installation
+serves one client and loads that client's identity, search goals, facts,
+channels and approval rules from `config/client_profile.json`. The current
+repository contains the Dr. Guy Rofe pilot profile.
 
 ## What it does now
 
 - monitors search visibility, AI answers, reviews, web mentions and credential health;
+- fails closed when a SERP run is partial or an AI answer is not supported by
+  the approved fact registry;
+- retries a daily SERP measurement after provider errors instead of recording
+  the failed attempt as a completed daily measurement;
+- gates new controlled assets by distinct purpose, content runway, maintenance
+  capacity, portfolio health and a rolling volume budget;
 - normalizes new findings into durable reputation events;
 - assigns a transparent 0-100 risk score and P0-P4 priority;
 - creates an SLA, approval policy and playbook task list;
@@ -52,6 +59,28 @@ python scripts/command_center.py set-freeze off --actor NAME
 python scripts/command_center.py plan-growth
 python scripts/check_secrets.py
 ```
+
+## Single-tenant installation wizard
+
+Every deployment contains exactly one customer profile and one customer data
+set. Create a new isolated installation from a customer-owned specification:
+
+```bash
+python scripts/install_client.py \
+  --spec config/client_install_spec.example.json \
+  --destination /path/to/customer-installation
+```
+
+The wizard creates the profile, approved-fact registry, asset registry, SERP
+targets, campaign plan and a manifest containing required secret **names**.
+Secret values are never written. A deployment can point the same engine at its
+isolated files with `REPUTATION_INSTALLATION_ROOT`.
+
+Coverage expansion is capacity-derived, not based on a universal posting or
+asset quota. The engine automatically stops expansion on duplicate intent,
+cross-domain duplication, cannibalization, thin content, doorway patterns,
+manual actions or indexing anomalies. Public publication still requires the
+customer's explicit approval.
 
 `check_secrets.py` reports missing environment-variable names only. GitHub
 Secrets must contain platform-issued API keys, OAuth tokens, application

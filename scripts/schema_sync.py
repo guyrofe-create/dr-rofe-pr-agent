@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Dr. Guy Rofe - Schema / NAP Sync
+Single-tenant Schema / NAP Sync
 Runs weekly on GitHub Actions (see .github/workflows/schema_sync.yml), plus
 on-demand via workflow_dispatch.
 
@@ -18,10 +18,11 @@ import sys
 import json
 import base64
 import requests
+from reputation_core.installation import data_path
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
-PROFILE_PATH = os.path.join(ROOT, "data", "business_profile.json")
-HISTORY_PATH = os.path.join(ROOT, "data", "reputation_history.json")
+PROFILE_PATH = data_path("business_profile.json")
+HISTORY_PATH = data_path("reputation_history.json")
 
 LOG_LINES = []
 
@@ -53,38 +54,47 @@ def latest_review_stats():
 
 
 def build_schema(profile):
+    canonical = next(
+        (site for site in profile["sites"] if site.get("canonical")),
+        profile["sites"][0],
+    )
+    canonical_url = canonical.get("canonical_url") or canonical["base_url"]
     schema = {
         "@context": "https://schema.org",
         "@type": "Person",
-        "@id": profile["sites"][0]["canonical_url"].rstrip("/") + "/#person",
+        "@id": canonical_url.rstrip("/") + "/#person",
         "name": profile["name"],
-        "alternateName": profile["alternateName"],
-        "honorificPrefix": profile["honorificPrefix"],
         "jobTitle": profile["jobTitle"],
-        "url": profile["sites"][0]["canonical_url"],
-        "image": profile["image"],
-        "description": profile["description"],
-        "nationality": {"@type": "Country", "name": profile["nationality"]},
-        "knowsLanguage": profile["knowsLanguage"],
-        "knowsAbout": profile["knowsAbout"],
-        "sameAs": profile["sameAs"],
+        "url": canonical_url,
     }
+    for key in ("alternateName", "honorificPrefix", "image", "description",
+                "knowsLanguage", "knowsAbout", "sameAs"):
+        if profile.get(key):
+            schema[key] = profile[key]
+    if profile.get("nationality"):
+        schema["nationality"] = {"@type": "Country", "name": profile["nationality"]}
     return schema
 
 
 def build_llms_txt(profile):
+    canonical = next(
+        (site for site in profile["sites"] if site.get("canonical")),
+        profile["sites"][0],
+    )
+    canonical_url = canonical.get("canonical_url") or canonical["base_url"]
+    variants = ", ".join([profile["name"]] + profile.get("alternateName", []))
     return f"""```plaintext
 # llms.txt
 
 Full name: {profile['name']}
 Current role: {profile['jobTitle']}
-Professional background: trained physician in obstetrics and gynecology
-Current practice status: not currently practicing medicine; not accepting patients; no appointments
-Website: [{profile['sites'][0]['canonical_url']}]({profile['sites'][0]['canonical_url']})
-Wikidata: {profile['wikidata']}
-Languages: Hebrew, English
-Official subjects: public medical education, books, articles, podcast and digital products
-Keywords: {profile['name']}, Guy Rofe, Guy Rofe MD
+Description: {profile.get('description', '')}
+Current practice status: {profile.get('practiceStatusText') or profile.get('practiceStatus', '')}
+Website: [{canonical_url}]({canonical_url})
+Wikidata: {profile.get('wikidata', '')}
+Languages: {', '.join(profile.get('knowsLanguage', []))}
+Official subjects: {', '.join(profile.get('knowsAbout', []))}
+Keywords: {variants}
 ```"""
 
 
@@ -152,7 +162,7 @@ def sync_site(site, schema_json_min, llms_content):
 
 
 def main():
-    log("=== Dr. Rofe Schema Sync - Starting ===")
+    log("=== Single-tenant Schema Sync - Starting ===")
     profile = load_json(PROFILE_PATH, None)
     if not profile:
         log("ERROR: data/business_profile.json not found or invalid - aborting")

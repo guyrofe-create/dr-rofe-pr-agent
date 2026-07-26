@@ -17,6 +17,15 @@ HARASSMENT_TERMS = {
 OPERATIONAL_TERMS = {
     "המתנה", "שירות", "יחס", "מחיר", "לא ענו", "תור", "איחור", "זמינות",
 }
+NEGATIVE_REPUTATION_TERMS = {
+    "הושעה", "השעיה", "תלונה", "מתלוננת", "מתלונן", "עבירת מין",
+    "חשד", "נחקר", "פרשה", "אישום", "שלילי", "הונאה", "פגיעה",
+    "suspended", "complaint", "allegation", "accused", "misconduct",
+}
+POSITIVE_TERMS = {
+    "מצוין", "מעולה", "המלצה חיובית", "זכייה", "פרס", "שבח",
+    "excellent", "award", "praised", "positive review",
+}
 
 
 @dataclass(frozen=True)
@@ -48,6 +57,8 @@ def score_event(event: dict) -> RiskDecision:
     crisis = _matches(text, CRISIS_TERMS)
     harassment = _matches(text, HARASSMENT_TERMS)
     operational = _matches(text, OPERATIONAL_TERMS)
+    negative_reputation = _matches(text, NEGATIVE_REPUTATION_TERMS)
+    positive = _matches(text, POSITIVE_TERMS)
 
     if rating is not None:
         if rating <= 1:
@@ -83,6 +94,12 @@ def score_event(event: dict) -> RiskDecision:
     if source in {"news", "broadcast", "legal", "regulator"}:
         score += 15
         reasons.append(f"high-authority source: {source}")
+    if negative_reputation:
+        score += min(30, 14 + 4 * len(negative_reputation))
+        reasons.append(
+            "negative reputation indicators: "
+            + ", ".join(negative_reputation[:4])
+        )
 
     score = max(0, min(100, score))
     if score >= 80:
@@ -94,7 +111,17 @@ def score_event(event: dict) -> RiskDecision:
     elif score >= 15:
         priority, approval, sla, playbook = "P3", "standard", 1440, "standard_response"
     else:
-        priority, approval, sla, playbook = "P4", "auto_or_standard", 2880, "amplify_positive"
+        explicitly_positive = (
+            (rating is not None and rating >= 4) or bool(positive)
+        )
+        if explicitly_positive:
+            priority, approval, sla, playbook = (
+                "P4", "auto_or_standard", 2880, "amplify_positive"
+            )
+        else:
+            priority, approval, sla, playbook = (
+                "P3", "standard", 1440, "verify_neutral_mention"
+            )
 
     metadata = event.get("metadata") or {}
     if str(metadata.get("type", "")).startswith("ai_"):
@@ -105,7 +132,7 @@ def score_event(event: dict) -> RiskDecision:
         category = "harassment"
         playbook = "policy_violation"
         approval = "manager"
-    elif crisis:
+    elif crisis or negative_reputation:
         category = "crisis_risk"
     elif operational and (rating is None or rating <= 3):
         category = "customer_experience"

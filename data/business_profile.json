@@ -5,6 +5,7 @@
   "jobTitle": "יוצר תוכן רפואי ומחבר ספרים",
   "description": "ד\"ר גיא רופא הוא יוצר תוכן רפואי, מחבר ספרים ובעל הכשרה כרופא נשים. בשלב זה הוא אינו עוסק ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
   "practiceStatus": "not_currently_practicing",
+  "practiceStatusText": "not currently practicing medicine; not accepting patients; no appointments",
   "image": "https://guyrofe.com/wp-content/uploads/2024/04/2.png",
   "medicalSpecialty": ["Obstetrics", "Gynecology"],
   "nationality": "Israel",
@@ -31,6 +32,7 @@
   "sites": [
     {
       "key": "GUYROFE_COM",
+      "canonical": true,
       "platform": "wordpress",
       "base_url": "https://guyrofe.com",
       "url_secret_env": null,
@@ -42,6 +44,7 @@
     },
     {
       "key": "DRGUYROFE_CO_IL",
+      "canonical": false,
       "platform": "wordpress",
       "base_url": "https://www.drguyrofe.co.il",
       "url_secret_env": null,
@@ -53,6 +56,7 @@
     },
     {
       "key": "DRGUYROFE_COM",
+      "canonical": false,
       "platform": "wix",
       "base_url": "https://www.drguyrofe.com",
       "canonical_url": "https://www.drguyrofe.com/",

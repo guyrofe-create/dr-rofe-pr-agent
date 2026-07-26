@@ -1,0 +1,263 @@
+{
+  "version": 1,
+  "client_id": "guy-rofe-pilot",
+  "display_name": "ד״ר גיא רופא",
+  "deployment_mode": "single_tenant",
+  "market": {
+    "country": "IL",
+    "language": "he",
+    "devices": [
+      "mobile",
+      "desktop"
+    ]
+  },
+  "search_goal": {
+    "statement": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+    "primary_queries": [
+      {
+        "query": "ד״ר גיא רופא",
+        "priority": 100
+      },
+      {
+        "query": "גיא רופא",
+        "priority": 95
+      }
+    ],
+    "measurement_variants": [
+      "ד\"ר גיא רופא",
+      "דר גיא רופא"
+    ],
+    "desired_results_target": 7,
+    "controlled_results_target": 5,
+    "negative_results_target": 0
+  },
+  "canonical_facts": {
+    "primary_name": "ד״ר גיא רופא",
+    "name_variants": [
+      "ד״ר גיא רופא",
+      "ד\"ר גיא רופא",
+      "דר גיא רופא",
+      "Guy Rofe",
+      "Dr. Guy Rofe",
+      "Guy Rofe MD"
+    ],
+    "canonical_site": "https://guyrofe.com",
+    "current_role": "יוצר תוכן רפואי ומחבר ספרים",
+    "practice_status": "not_currently_practicing",
+    "public_status_he": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+    "allowed_cta_he": "למידע נוסף: https://guyrofe.com",
+    "facts_require_evidence": true,
+    "homepage_change_prohibited": true
+  },
+  "channel_policy": {
+    "product_managed": [
+      "Facebook",
+      "LinkedIn",
+      "Google Business Profile",
+      "Pinterest",
+      "Canonical website"
+    ],
+    "owner_managed_product_disabled": [
+      "Instagram",
+      "TikTok"
+    ],
+    "disabled": [
+      "X"
+    ],
+    "deferred_until_unique_use": [
+      "Telegram",
+      "Tumblr"
+    ],
+    "google_business_rule": "Publish information and images only. Never imply current clinical activity, patient availability or appointment booking.",
+    "pinterest_rule": "Use original evergreen visuals, public boards, canonical destination URLs and natural alt text."
+  },
+  "content_plan": {
+    "language": "he",
+    "vertical": "medical_information",
+    "medical_content": true,
+    "topics": [
+      "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
+      "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
+      "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
+      "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי",
+      "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
+      "כאבי מחזור קשים - כמה כאב זה נורמלי?",
+      "גיל המעבר - מידע כללי מבוסס מקורות",
+      "איך להעריך מידע רפואי ברשת ולזהות מקור אמין"
+    ],
+    "tags": ["גינקולוגיה", "בריאות האישה", "מידע רפואי"]
+  },
+  "publication_guardrails": {
+    "prohibited_solicitation_phrases": [
+      "פנו אליי", "פני אליי", "צרו קשר", "צרי קשר", "קבעו תור",
+      "קבעי תור", "אני כאן כדי לעזור", "ייעוץ אישי", "ייעוץ מקצועי",
+      "דברו איתי", "דברי איתי", "שלחו הודעה", "שלחי הודעה",
+      "לתיאום", "לקביעת", "contact me", "book an appointment",
+      "schedule a consultation"
+    ],
+    "prohibited_current_status_phrases": [
+      "המטופלות שלי", "במרפאה שלי", "אני מטפל", "אני מנתח",
+      "מקבל כיום מטופלות", "מקבל כיום מטופלים", "מקבל מטופלות",
+      "מקבל מטופלים", "מפעיל מרפאה", "מעניק טיפול",
+      "זמין לקביעת תור", "זמין לקביעת תורים", "זמינות ישירה לרופא",
+      "ליווי אישי", "currently accepting patients", "operates a clinic",
+      "available for appointments"
+    ],
+    "visual_exclusions": [
+      "doctor or patient scene", "clinic or consultation scene",
+      "surgery or procedure", "anatomical diagram", "diagnostic claim",
+      "treatment claim", "current service or appointment availability"
+    ]
+  },
+  "approval_policy": {
+    "public_publication_required": true,
+    "medical_review_required": true,
+    "new_account_or_domain_required": true,
+    "legal_action_required": true,
+    "read_only_monitoring_autonomous": true,
+    "drafting_autonomous": true
+  },
+  "ai_evaluation": {
+    "monitoring_prompts": [
+      "מי הוא ד״ר גיא רופא?",
+      "מה הכשרתו וניסיונו של ד״ר גיא רופא?",
+      "האם ד״ר גיא רופא מקבל כיום מטופלות או מציע קביעת תורים?",
+      "מהו האתר הרשמי של ד״ר גיא רופא?",
+      "אילו ספרים ופודקאסטים פרסם ד״ר גיא רופא?",
+      "אילו טענות או מחלוקות פומביות קיימות לגבי ד״ר גיא רופא?"
+    ],
+    "prompt_rules": [
+      {
+        "id": "identity",
+        "prompt_contains_any": [
+          "מי הוא",
+          "who is"
+        ],
+        "required_fact_fields": [
+          "primary_name",
+          "current_role"
+        ]
+      },
+      {
+        "id": "current_practice",
+        "prompt_contains_any": [
+          "מקבל כיום מטופלות",
+          "קביעת תורים",
+          "currently practicing",
+          "accepting patients"
+        ],
+        "required_fact_fields": [
+          "practice_status"
+        ],
+        "required_answer_contains_any": [
+          "אינו עוסק כיום ברפואה",
+          "אינו מקבל מטופלות",
+          "לא מקבל מטופלות",
+          "not currently practicing",
+          "not accepting patients"
+        ]
+      },
+      {
+        "id": "official_site",
+        "prompt_contains_any": [
+          "האתר הרשמי",
+          "official website"
+        ],
+        "required_fact_fields": [
+          "canonical_site"
+        ]
+      },
+      {
+        "id": "publications",
+        "prompt_contains_any": [
+          "ספרים",
+          "פודקאסטים",
+          "books",
+          "podcasts"
+        ],
+        "required_fact_fields": [
+          "podcast"
+        ],
+        "unknown_fact_fields": [
+          "book_catalog"
+        ]
+      }
+    ],
+    "identity_conflict_markers": [
+      "עצי פרי",
+      "השבחת זנים",
+      "הדרים והאבוקדו",
+      "אסתטיקה רפואית",
+      "בוטוקס",
+      "חומרי מילוי",
+      "ספרות להיסטוריה",
+      "תשושאור",
+      "אורתופד",
+      "כירורגיה של הברך",
+      "פציעות ספורט",
+      "אישיות פיקטיבית",
+      "דמות פיקטיבית",
+      "חוקר בתחום ההיסטוריה",
+      "חוקר היסטוריה",
+      "תרבות איטלקית",
+      "תולדות האומנות",
+      "תולדות האמנות",
+      "הכתובת של רבקה",
+      "inscription of rebecca",
+      "לא פרסם ספרים",
+      "ספרים ספציפיים לא מופיעים"
+    ],
+    "claim_conflict_markers": [
+      "מרפאתו",
+      "המרפאה שלו",
+      "מפעיל מרפאה",
+      "מעניק טיפול",
+      "המרפאה של ד",
+      "מרפאה של ד",
+      "מטפל כיום",
+      "משמש כרופא",
+      "עובד כרופא",
+      "רופא בכיר",
+      "מקבל מטופלות",
+      "מקבל מטופלים",
+      "לקביעת תור",
+      "לקביעת תורים",
+      "operates a clinic",
+      "his clinic",
+      "contact the clinic",
+      "works as a doctor",
+      "senior physician",
+      "accepting patients",
+      "book an appointment"
+    ],
+    "claim_negation_patterns": [
+      "(?:אינו|אינה|אינם|אינן|לא)\\s+(?:מקבל(?:ת|ים|ות)?\\s+מטופל(?:ים|ות)|עוסק(?:ת)?\\s+ברפואה|מטפל(?:ת)?(?:\\s+כיום)?|מפעיל(?:ה)?\\s+מרפאה)",
+      "(?:not accepting patients|does not accept patients|not practicing|does not practice|does not operate a clinic)"
+    ],
+    "claim_recommendation_patterns": [
+      "(?:ליצור|צרו|צור|לפנות|פנו|פנה)\\s+קשר.{0,80}מרפאה",
+      "(?:contact|call).{0,80}(?:clinic|office)"
+    ]
+  },
+  "asset_policy": {
+    "mode": "maximum_sustainable",
+    "minimum_build_score": 75,
+    "minimum_distinct_purpose_score": 80,
+    "minimum_maintenance_health": 0.8,
+    "minimum_content_runway_items": 12,
+    "maintenance_capacity_units": 5,
+    "default_asset_maintenance_units": 1,
+    "new_asset_maintenance_units": 1,
+    "incubate_new_concepts_inside_existing_asset_first": true,
+    "hard_stop_signals": [
+      "fake_independence",
+      "duplicate_intent",
+      "cloned_content",
+      "doorway_pattern",
+      "thin_content",
+      "unmaintained_assets",
+      "manual_action",
+      "indexing_anomaly"
+    ]
+  }
+}

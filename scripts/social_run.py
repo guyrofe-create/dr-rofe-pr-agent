@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Dr. Guy Rofe - Social Distribution Layer
+Single-tenant Social Distribution Layer
 Runs on GitHub Actions (see .github/workflows/social_publish.yml).
 
 Generates a short social post from the rotating topic list and pushes it to
@@ -22,23 +22,13 @@ from publication_policy import (
     enforce_channel_policy,
     enforce_publication_policy,
 )
+from reputation_core.strategy import client_content_plan, load_client_profile
 
-SITE_URL = "https://guyrofe.com"
+CLIENT_PROFILE = load_client_profile()
+CLIENT_FACTS = CLIENT_PROFILE["canonical_facts"]
+SITE_URL = CLIENT_FACTS["canonical_site"]
 
-TOPICS = [
-    "כאבי אגן כרוניים אצל נשים - מתי לפנות לגינקולוג?",
-    "לפרוסקופיה גינקולוגית - מדריך מלא למטופלת",
-    "אנדומטריוזיס ופוריות - מה הקשר ומה ניתן לעשות?",
-    "מיומות ברחם - מתי צריך ניתוח ומתי לא?",
-    "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
-    "כאבי מחזור קשים - כמה כאב זה נורמלי?",
-    "ניתוח גינקולוגי מינימלי פולשני - יתרונות, זמן החלמה, סיכונים",
-    "גיל המעבר - מה כל אישה צריכה לדעת על גופה",
-    "דימומים חריגים - מה הם אומרים על הבריאות שלך?",
-    "שאלות שנשים לא שואלות את הגינקולוג - ועוצמה לשאול אותן",
-    "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
-    "מה חשוב לשאול רופא או רופאה לפני ניתוח גינקולוגי",
-]
+TOPICS = client_content_plan().get("topics", [])
 
 LOG_LINES = []
 
@@ -61,8 +51,9 @@ def log(msg):
 
 def generate_social_post(topic):
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    prompt = f"""כתוב פוסט קצר לרשתות חברתיות (עד 120 מילים) בעברית עבור ד״ר גיא רופא,
-יוצר תוכן רפואי, על הנושא: {topic}
+    prompt = f"""כתוב פוסט קצר לרשתות חברתיות (עד 120 מילים) בעברית עבור {CLIENT_FACTS['primary_name']},
+שתפקידו הנוכחי המאושר הוא: {CLIENT_FACTS['current_role']}.
+נושא: {topic}
 
 טון: חם, מקצועי, נגיש. שורה ראשונה = הוק שמושך תשומת לב.
 אל תשתמש בהאשטגים. אל תשתמש בכותרות markdown.
@@ -94,7 +85,7 @@ def try_publish(name, is_configured_fn, publish_fn, *args):
 
 
 def main():
-    log("=== Dr. Rofe Social Distribution - Starting ===")
+    log(f"=== {CLIENT_PROFILE['display_name']} Social Distribution - Starting ===")
 
     if os.environ.get("PUBLISH_APPROVED", "").strip().lower() != "true":
         log("SAFE STOP: no explicit publication approval")
@@ -112,6 +103,8 @@ def main():
 
     week = datetime.now().isocalendar()[1]
     day = datetime.now().weekday()
+    if not TOPICS:
+        raise RuntimeError("installation has no approved content topics")
     topic = TOPICS[(week * 3 + day) % len(TOPICS)]
     log(f"Topic: {topic}")
 
@@ -126,8 +119,7 @@ def main():
     log("Telegram: SKIPPED (deferred until it has a distinct audience purpose)")
     try_publish("Blogger", blogger.is_configured, blogger.publish, title, f"<p>{body}</p>", SITE_URL)
 
-    # Instagram is owner-managed for this pilot. The product never publishes there.
-    log("Instagram: SKIPPED (owner-managed pilot channel)")
+    log("Instagram: SKIPPED when owner-managed by installation policy")
 
     # Pinterest needs an image and remains independently configurable.
     image_url = os.environ.get("SOCIAL_IMAGE_URL")
@@ -145,7 +137,7 @@ def main():
         },
     )
     log(f"Manual draft written: {draft_path} (Quora, LinkedIn, Flipboard, Slideshare, About.me)")
-    log("TikTok: SKIPPED (owner-managed pilot channel)")
+    log("TikTok: SKIPPED when owner-managed by installation policy")
 
     log("=== Done ===")
     with open("run_log.txt", "w", encoding="utf-8") as f:

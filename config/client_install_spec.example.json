@@ -1,0 +1,55 @@
+{
+  "client_id": "example-client",
+  "display_name": "Example Person",
+  "name_variants": ["Example Person Full Name"],
+  "canonical_site": "https://example.com",
+  "current_role": "Author and educator",
+  "public_status": "Current public status approved by the client.",
+  "primary_queries": ["Example Person", "Example Person Full Name"],
+  "measurement_variants": [],
+  "market": {
+    "country": "IL",
+    "language": "he",
+    "devices": ["mobile", "desktop"]
+  },
+  "medical_content": false,
+  "sites": [
+    {
+      "key": "canonical",
+      "url": "https://example.com",
+      "base_url": "https://example.com",
+      "canonical_url": "https://example.com",
+      "canonical": true,
+      "platform": "wordpress",
+      "role": "official_identity_source",
+      "user_env": "WORDPRESS_CANONICAL_USER",
+      "app_password_env": "WORDPRESS_CANONICAL_API"
+    }
+  ],
+  "assets": [
+    {
+      "platform": "Canonical website",
+      "url": "https://example.com",
+      "type": "official_site",
+      "tier": "A",
+      "status": "active",
+      "controlled": true,
+      "automation": "wordpress_api",
+      "priority": 100
+    }
+  ],
+  "product_managed_channels": ["Canonical website"],
+  "owner_managed_channels": [],
+  "disabled_channels": [],
+  "deferred_channels": [],
+  "connections": [
+    {
+      "platform": "Canonical WordPress",
+      "mode": "application_password",
+      "required_secret_names": [
+        "WORDPRESS_CANONICAL_USER",
+        "WORDPRESS_CANONICAL_API"
+      ]
+    }
+  ]
+}

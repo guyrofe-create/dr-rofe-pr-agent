@@ -13,6 +13,7 @@ import re
 import time
 
 import requests
+from reputation_core.strategy import client_content_plan, load_client_profile
 from publication_policy import (
     CTA_PROMPT,
     REPUTATION_KNOWLEDGE_PROMPT,
@@ -20,28 +21,15 @@ from publication_policy import (
 )
 
 
-TOPICS = [
-    "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
-    "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
-    "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
-    "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי",
-    "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
-    "כאבי מחזור קשים - כמה כאב זה נורמלי?",
-    "ניתוח גינקולוגי זעיר פולשני - יתרונות, זמן החלמה וסיכונים",
-    "גיל המעבר - מה כל אישה צריכה לדעת על גופה",
-    "דימומים חריגים - מה הם אומרים על הבריאות שלך?",
-    "שאלות שמותר וחשוב לשאול בפגישה רפואית",
-    "כיצד מעריכים הכשרה וניסיון בניתוחים לפרוסקופיים",
-    "קבלת החלטות משותפת לפני ניתוח גינקולוגי",
-    "למה תקשורת ברורה עם הצוות הרפואי חשובה לחוויית הטיפול",
-    "מה חשוב לבדוק ולשאול לפני שבוחרים מנתח/ת לניתוח גינקולוגי",
-]
-
-TAGS = ["גינקולוגיה", "בריאות אשה", "אנדומטריוזיס"]
+CONTENT_PLAN = client_content_plan()
+TOPICS = CONTENT_PLAN.get("topics", [])
+TAGS = CONTENT_PLAN.get("tags", [])
 MIN_ARTICLE_WORDS = 650
 MAX_ARTICLE_WORDS = 1000
 LOG_LINES = []
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+CLIENT_PROFILE = load_client_profile()
+CLIENT_FACTS = CLIENT_PROFILE["canonical_facts"]
 
 
 def utc_now():
@@ -76,6 +64,8 @@ def draft_root():
 
 
 def selected_topic(now=None):
+    if not TOPICS:
+        raise RuntimeError("installation has no approved content topics")
     now = now or utc_now()
     week = now.isocalendar()[1]
     day = now.weekday()
@@ -116,13 +106,15 @@ def validate_generated_article(content):
             f"generated article has {word_count} words; "
             f"expected {MIN_ARTICLE_WORDS}-{MAX_ARTICLE_WORDS}"
         )
-    if not re.search(r"^#{2,3}\s+מקורות\b", content, flags=re.MULTILINE):
+    if CONTENT_PLAN.get("medical_content") and not re.search(
+        r"^#{2,3}\s+מקורות\b", content, flags=re.MULTILINE
+    ):
         raise ValueError("generated medical article is missing a Sources section")
     source_urls = {
         url.rstrip(".,;)")
         for url in re.findall(r"https?://[^\s>)\]]+", content)
     }
-    if len(source_urls) < 2:
+    if CONTENT_PLAN.get("medical_content") and len(source_urls) < 2:
         raise ValueError(
             "generated medical article needs at least 2 direct source URLs"
         )
@@ -159,7 +151,16 @@ def generate_article(topic):
     from openai import OpenAI
 
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    base_prompt = f"""כתוב טיוטת מאמר רפואי מקצועי בעברית עבור ד"ר גיא רופא, יוצר תוכן רפואי ובעל הכשרה כרופא נשים.
+    content_kind = "מאמר רפואי מקצועי" if CONTENT_PLAN.get("medical_content") else "מאמר מקצועי"
+    medical_rules = (
+        "- כל טענה רפואית מחייבת בדיקת רופא לפני פרסום\n"
+        '- הוסף בסוף סעיף "מקורות" ובו לפחות שני קישורים ישירים למקורות '
+        "רשמיים, מקצועיים או מחקריים שעליהם מבוסס המאמר"
+        if CONTENT_PLAN.get("medical_content")
+        else "- כל טענה מהותית מחייבת מקור סמכותי וביקורת אנושית לפני פרסום"
+    )
+    base_prompt = f"""כתוב טיוטת {content_kind} בשפת {CONTENT_PLAN.get('language', 'he')} עבור {CLIENT_FACTS['primary_name']}.
+התפקיד הנוכחי המאושר: {CLIENT_FACTS['current_role']}.
 
 נושא: {topic}
 
@@ -170,13 +171,11 @@ def generate_article(topic):
 - {CTA_PROMPT}
 - {REPUTATION_KNOWLEDGE_PROMPT}
 - אין להמציא נתונים, שיעורי הצלחה, תארים או ניסיון אישי
-- אין להציג את ד"ר גיא רופא כמי שמקבל כיום מטופלות, מפעיל מרפאה,
-  מעניק טיפול או זמין לקביעת תורים
+- אין להציג את הלקוח באופן שסותר את הסטטוס המאושר:
+  {CLIENT_FACTS['public_status_he']}
 - אין להזמין לייעוץ, ליצירת קשר או לקביעת תור
-- אין לייחס לד"ר גיא רופא אמירות, הדגשות או המלצות אישיות שלא סופקו
-- כל טענה רפואית מחייבת בדיקת רופא לפני פרסום
-- הוסף בסוף סעיף "מקורות" ובו לפחות שני קישורים ישירים למקורות
-  רשמיים, מקצועיים או מחקריים שעליהם מבוסס המאמר
+- אין לייחס ל{CLIENT_FACTS['primary_name']} אמירות, הדגשות או המלצות אישיות שלא סופקו
+{medical_rules}
 - פורמט: Markdown
 - אין לעטוף את התשובה בבלוק קוד ואין לכתוב את המילה markdown
 
@@ -512,7 +511,7 @@ def publish_mode():
 
 def main():
     LOG_LINES.clear()
-    log("=== Dr. Rofe Content Workflow - Starting ===")
+    log(f"=== {CLIENT_PROFILE['display_name']} Content Workflow - Starting ===")
     log(f"Date: {utc_now():%Y-%m-%d %H:%M UTC}")
 
     if content_is_frozen():

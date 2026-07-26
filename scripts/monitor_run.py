@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Dr. Guy Rofe - Reputation & Visibility Monitor
+Single-tenant Reputation & Visibility Monitor
 Runs every 2 hours on GitHub Actions (see .github/workflows/monitor.yml).
 
 Checks, every run:
-  1. Google rank        - target keywords vs guyrofe.com (SerpApi - live Google Search)
-  2. AI/GEO presence     - does ChatGPT already know Dr. Guy Rofe when asked
+  1. Google rank         - configured queries vs controlled properties
+  2. AI/GEO presence     - factual and citation checks for the configured client
   3. Token/session health - every configured publisher credential, still valid?
   4. Google Business reviews - rating, review count, and each individual recent
                                review (Google Places API)
   5. Facebook Page recommendations (positive/negative)
-  6. Web mentions - new pages/articles that mention "דר גיא רופא" since last run
+  6. Web mentions        - configured identity queries
 
 State/history is persisted to data/reputation_history.json (committed back to
 the repo each run) so the monitor can detect *changes* - a new review, a
@@ -35,33 +35,41 @@ sys.path.insert(0, os.path.dirname(__file__))
 from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest
 from reputation_core import (
     CommandCenter,
+    client_search_queries,
     fetch_search_console_rows,
+    load_client_profile,
+    load_fact_registry,
     monitoring_prompts,
     orchestrate_reputation_cycle,
     plan_growth_campaign,
     refresh_google_access_token,
+    data_path,
 )
 from reputation_core.strategy import load_strategy
 from reputation_core.orchestrator import load_serp_targets
+from reputation_core.ai_evaluator import evaluate_ai_answer
 
-SITE_DOMAIN = "guyrofe.com"
-HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "reputation_history.json")
-COMMAND_CENTER_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "command_center.json")
-PROFILE_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "business_profile.json")
-GROWTH_OBSERVATIONS_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "growth_observations.json")
-ASSET_REGISTRY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "asset_registry.json")
+CLIENT_PROFILE = load_client_profile()
+CLIENT_FACTS = CLIENT_PROFILE["canonical_facts"]
+MARKET = CLIENT_PROFILE.get("market", {})
+MARKET_COUNTRY = str(MARKET.get("country", "")).upper() or "US"
+MARKET_LANGUAGE = str(MARKET.get("language", "")).lower() or "en"
+GOOGLE_DOMAIN = "google.co.il" if MARKET_COUNTRY == "IL" else "google.com"
+GOOGLE_LANGUAGE = "iw" if MARKET_LANGUAGE == "he" else MARKET_LANGUAGE
+SITE_DOMAIN = urlparse(CLIENT_FACTS["canonical_site"]).netloc.removeprefix("www.")
+HISTORY_PATH = str(data_path("reputation_history.json"))
+COMMAND_CENTER_PATH = str(data_path("command_center.json"))
+PROFILE_PATH = str(data_path("business_profile.json"))
+GROWTH_OBSERVATIONS_PATH = str(data_path("growth_observations.json"))
+ASSET_REGISTRY_PATH = str(data_path("asset_registry.json"))
 
-KEYWORDS = [
-    "דר גיא רופא",
-    "ד״ר גיא רופא",
-    "גיא רופא יוצר תוכן רפואי",
-    "גיא רופא ספרים",
-    "גיא רופא פודקאסט",
-]
+KEYWORDS = client_search_queries()
 
 GEO_PROMPTS = monitoring_prompts()
 
-WEB_MENTION_QUERY = '"דר גיא רופא" OR "גיא רופא" גינקולוג'
+WEB_MENTION_QUERY = " OR ".join(
+    f'"{query}"' for query in client_search_queries(include_variants=False)
+)
 
 REPORT = {
     "date": datetime.now().isoformat(),
@@ -144,45 +152,24 @@ def has_active_practice_claim(answer):
         "i do not know", "i don't know", "it is unclear",
         "no current information", "cannot confirm",
     )
-    strong_claims = (
-        "מרפאתו", "המרפאה שלו", "מפעיל מרפאה", "מעניק טיפול",
-        "המרפאה של ד", "מרפאה של ד", "מטפל כיום",
-        "משמש כרופא", "עובד כרופא", "רופא בכיר",
-        "operates a clinic", "his clinic", "contact the clinic",
-        "works as a doctor", "senior physician",
+    policy = CLIENT_PROFILE.get("ai_evaluation", {})
+    conflict_claims = tuple(
+        marker.lower() for marker in policy.get("claim_conflict_markers", [])
     )
-    status_claims = (
-        "מקבל מטופלות", "מקבל מטופלים", "לקביעת תור",
-        "לקביעת תורים", "accepting patients", "book an appointment",
+    recommendation_claims = tuple(
+        policy.get("claim_recommendation_patterns", [])
     )
-    recommendation_claims = (
-        r"(?:ליצור|צרו|צור|לפנות|פנו|פנה)\s+קשר.{0,80}מרפאה",
-        r"(?:contact|call).{0,80}(?:clinic|office)",
-    )
+    negation_patterns = tuple(policy.get("claim_negation_patterns", []))
     for sentence in re.split(r"[.!?\n]+", normalized):
         if not sentence:
             continue
-        sentence = re.sub(
-            r"(?:אינו|אינה|אינם|אינן|לא)\s+"
-            r"(?:מקבל(?:ת|ים|ות)?\s+מטופל(?:ים|ות)|"
-            r"עוסק(?:ת)?\s+ברפואה|מטפל(?:ת)?(?:\s+כיום)?|"
-            r"מפעיל(?:ה)?\s+מרפאה)",
-            "",
-            sentence,
-        )
-        sentence = re.sub(
-            r"(?:not accepting patients|does not accept patients|"
-            r"not practicing|does not practice|does not operate a clinic)",
-            "",
-            sentence,
-        )
+        for pattern in negation_patterns:
+            sentence = re.sub(pattern, "", sentence)
         if any(re.search(pattern, sentence) for pattern in recommendation_claims):
             return True
         if any(marker in sentence for marker in uncertainty_markers):
             continue
-        if any(claim in sentence for claim in strong_claims):
-            return True
-        if any(claim in sentence for claim in status_claims):
+        if any(claim in sentence for claim in conflict_claims):
             return True
     return False
 
@@ -190,16 +177,11 @@ def has_active_practice_claim(answer):
 def has_identity_misinformation(answer):
     """Catch known conflicting identities that must never be marked as safe."""
     normalized = " ".join((answer or "").lower().split())
-    conflict_markers = (
-        "עצי פרי", "השבחת זנים", "הדרים והאבוקדו",
-        "אסתטיקה רפואית", "בוטוקס", "חומרי מילוי",
-        "ספרות להיסטוריה", "תשושאור",
-        "אורתופד", "כירורגיה של הברך", "פציעות ספורט",
-        "אישיות פיקטיבית", "דמות פיקטיבית",
-        "חוקר בתחום ההיסטוריה", "חוקר היסטוריה",
-        "תרבות איטלקית", "תולדות האומנות", "תולדות האמנות",
-        "הכתובת של רבקה", "inscription of rebecca",
-        "לא פרסם ספרים", "ספרים ספציפיים לא מופיעים",
+    conflict_markers = tuple(
+        marker.lower()
+        for marker in CLIENT_PROFILE.get("ai_evaluation", {}).get(
+            "identity_conflict_markers", []
+        )
     )
     return any(marker in normalized for marker in conflict_markers)
 
@@ -262,10 +244,10 @@ def serp_checks_due(today=None):
         snapshot_date = str(snapshot.get("date", ""))[:10]
         if snapshot_date != today:
             break
-        if any(
-            result.get("status") != "skipped"
-            for result in snapshot.get("rank", [])
-        ):
+        statuses = {
+            result.get("status") for result in snapshot.get("rank", [])
+        }
+        if statuses and statuses.issubset({"found", "not_in_top10"}):
             return False
     return True
 
@@ -276,13 +258,31 @@ def ai_checks_due(today=None):
     return HISTORY.get("last_ai_check_date") != today
 
 
+def rank_measurement_succeeded() -> bool:
+    """A partial/error rank run must remain retryable and visibly degraded."""
+    measured = [
+        item for item in REPORT.get("rank", [])
+        if item.get("status") != "skipped"
+    ]
+    return bool(measured) and all(
+        item.get("status") in {"found", "not_in_top10"} for item in measured
+    )
+
+
+def ai_measurement_succeeded() -> bool:
+    measured = [
+        item for item in REPORT.get("geo", [])
+        if item.get("status") != "skipped"
+    ]
+    return bool(measured) and all(item.get("status") != "error" for item in measured)
+
+
 def check_google_rank():
     api_key = env("SERPAPI_KEY")
     if not api_key:
         REPORT["rank"].append({"status": "skipped", "reason": "SERPAPI_KEY not set"})
         return
-    configured_queries = [item["query"] for item in load_serp_targets()["queries"]]
-    queries = list(dict.fromkeys(configured_queries + KEYWORDS))
+    queries = KEYWORDS
     devices = [
         item.strip() for item in os.environ.get("SERP_DEVICES", "mobile,desktop").split(",")
         if item.strip() in {"mobile", "desktop", "tablet"}
@@ -293,8 +293,9 @@ def check_google_rank():
             resp = requests.get(
                 "https://serpapi.com/search.json",
                 params={
-                    "engine": "google", "q": kw, "google_domain": "google.co.il",
-                    "gl": "il", "hl": "iw", "num": 10, "device": device,
+                    "engine": "google", "q": kw, "google_domain": GOOGLE_DOMAIN,
+                    "gl": MARKET_COUNTRY.lower(), "hl": GOOGLE_LANGUAGE,
+                    "num": 10, "device": device,
                     "api_key": api_key,
                 },
                 timeout=20,
@@ -313,7 +314,8 @@ def check_google_rank():
                 None,
             )
             REPORT["rank"].append({
-                "keyword": kw, "device": device, "country": "IL", "language": "he",
+                "keyword": kw, "device": device, "country": MARKET_COUNTRY,
+                "language": MARKET_LANGUAGE,
                 "position_top10": position,
                 "status": "found" if position else "not_in_top10",
                 "results": [
@@ -343,6 +345,8 @@ def check_ai_presence():
         return
     client = OpenAI(api_key=openai_key)
     strategy = load_strategy()["ai_monitoring"]
+    fact_registry = load_fact_registry()
+    evaluation_policy = CLIENT_PROFILE.get("ai_evaluation", {})
     configured_samples = os.environ.get("AI_MONITOR_SAMPLES", "").strip()
     sample_count = int(configured_samples or strategy["samples_per_prompt"])
     sample_count = max(1, min(sample_count, 5))
@@ -366,9 +370,7 @@ def check_ai_presence():
                         "search_context_size": "medium",
                         "user_location": {
                             "type": "approximate",
-                            "country": "IL",
-                            "city": "Tel Aviv",
-                            "region": "Tel Aviv",
+                            "country": MARKET_COUNTRY,
                         },
                     }],
                     max_output_tokens=500,
@@ -392,12 +394,27 @@ def check_ai_presence():
                     urlparse(url).netloc.lower().removeprefix("www.")
                     for url in citations
                 }
-                mentioned = ("גיא רופא" in answer) or ("Guy Rofe" in answer)
+                mentioned = any(
+                    variant.lower() in answer.lower()
+                    for variant in CLIENT_FACTS.get(
+                        "name_variants",
+                        [CLIENT_FACTS["primary_name"]],
+                    )
+                )
                 active_practice_claim = has_active_practice_claim(answer)
                 identity_misinformation = has_identity_misinformation(answer)
                 knowledge_gap = (
                     not identity_misinformation
                     and has_ai_knowledge_gap(prompt, answer)
+                )
+                fact_evaluation = evaluate_ai_answer(
+                    prompt,
+                    answer,
+                    fact_registry,
+                    evaluation_policy,
+                    known_conflict=identity_misinformation,
+                    active_practice_claim=active_practice_claim,
+                    knowledge_gap=knowledge_gap,
                 )
                 result = {
                     "engine": "OpenAI",
@@ -411,14 +428,8 @@ def check_ai_presence():
                     "knowledge_gap": knowledge_gap,
                     "official_source_cited": bool(cited_hosts & approved_hosts),
                     "cited_sources": citations,
-                    "safe_status": (
-                        "pass"
-                        if mentioned
-                        and not active_practice_claim
-                        and not identity_misinformation
-                        and not knowledge_gap
-                        else "review"
-                    ),
+                    "fact_evaluation": fact_evaluation,
+                    "safe_status": fact_evaluation["status"],
                     "exact_answer": answer,
                     "excerpt": answer[:300],
                 }
@@ -451,6 +462,25 @@ def check_ai_presence():
                     "samples_total": len(samples),
                     "model": model,
                 })
+        unsafe_samples = [
+            sample for sample in samples
+            if sample.get("fact_evaluation", {}).get("status") in {"fail", "review"}
+        ]
+        if len(unsafe_samples) >= majority and not any(
+            sample.get(field)
+            for sample in unsafe_samples
+            for field, _ in alert_types
+        ):
+            REPORT["alerts"].append({
+                "type": "ai_fact_review_required",
+                "source": "OpenAI fact-grounded monitor",
+                "excerpt": unsafe_samples[0]["excerpt"],
+                "prompt": prompt,
+                "samples_flagged": len(unsafe_samples),
+                "samples_total": len(samples),
+                "model": model,
+                "reasons": unsafe_samples[0]["fact_evaluation"]["reasons"],
+            })
 
 
 # ─── 3. Token / session health ───────────────────────────────────────────────
@@ -652,8 +682,10 @@ def check_web_mentions():
         resp = requests.get(
             "https://serpapi.com/search.json",
             params={
-                "engine": "google", "q": WEB_MENTION_QUERY, "google_domain": "google.co.il",
-                "gl": "il", "hl": "iw", "num": 20, "api_key": api_key,
+                "engine": "google", "q": WEB_MENTION_QUERY,
+                "google_domain": GOOGLE_DOMAIN,
+                "gl": MARKET_COUNTRY.lower(), "hl": GOOGLE_LANGUAGE,
+                "num": 20, "api_key": api_key,
             },
             timeout=20,
         )
@@ -686,6 +718,8 @@ def critical_monitor_failures():
         rank_errors = [r for r in REPORT["rank"] if r.get("status") == "error"]
         if rank_errors:
             failures.append(f"Google rank: {len(rank_errors)} query errors")
+        elif REPORT.get("rank") and not rank_measurement_succeeded():
+            failures.append("Google rank: no complete fresh measurement")
         if (REPORT.get("web_mentions") or {}).get("status") == "error":
             failures.append("web mentions")
     if env("OPENAI_API_KEY") and any(
@@ -829,20 +863,23 @@ def format_alert_markdown():
             lines.append("### ⚠️ המלצה שלילית חדשה בפייסבוק")
             lines.append(f"> {a['excerpt']}")
             if looks_like_harassment(a.get("excerpt")):
-                lines.append("👉 [דווח בפייסבוק](https://www.facebook.com/drguyrofe/reviews) "
+                lines.append("👉 [פתחו את פייסבוק](https://www.facebook.com/) "
                               "(תלת-נקודה ליד ההמלצה → אפשרות דיווח)")
         elif a["type"] in {
             "ai_active_practice_misinformation",
             "ai_identity_misinformation",
             "ai_knowledge_gap",
+            "ai_fact_review_required",
         }:
             issue = {
                 "ai_active_practice_misinformation":
                     "טענה שגויה על פעילות רפואית נוכחית",
                 "ai_identity_misinformation":
-                    "זיהוי שגוי של ד״ר גיא רופא או של תחום עיסוקו",
+                    f"זיהוי שגוי של {CLIENT_PROFILE['display_name']} או של תחום עיסוקו",
                 "ai_knowledge_gap":
                     "חסר מידע מהותי על הזהות או הנכסים הרשמיים",
+                "ai_fact_review_required":
+                    "התשובה אינה נתמכת במלואה במאגר העובדות המאושר",
             }[a["type"]]
             lines.append(f"### ⚠️ תשובת AI דורשת תיקון: {issue}")
             lines.append(f"שאלה: {a.get('prompt', 'לא צוינה')}")
@@ -870,12 +907,13 @@ def open_github_issue(title, body, labels):
 
 
 def main():
-    print("=== Dr. Rofe Monitor - Starting ===")
+    print(f"=== Reputation Monitor: {CLIENT_PROFILE['display_name']} - Starting ===")
     today_str = date.today().isoformat()
     if serp_checks_due(today_str):
         check_google_rank()
         check_web_mentions()
-        HISTORY["last_serp_check_date"] = today_str
+        if rank_measurement_succeeded():
+            HISTORY["last_serp_check_date"] = today_str
     else:
         REPORT["rank"].append({
             "status": "skipped",
@@ -887,7 +925,8 @@ def main():
         }
     if ai_checks_due(today_str):
         check_ai_presence()
-        HISTORY["last_ai_check_date"] = today_str
+        if ai_measurement_succeeded():
+            HISTORY["last_ai_check_date"] = today_str
     else:
         REPORT["geo"].append({
             "status": "skipped",
@@ -949,7 +988,10 @@ def main():
         for asset in registry.get("assets", [])
         if asset.get("tier") in {"A", "B"} and asset.get("priority", 0) >= 55
     ]
-    ranked = [r for r in REPORT.get("rank", []) if r.get("keyword") != "דר גיא רופא"]
+    ranked = [
+        r for r in REPORT.get("rank", [])
+        if r.get("status") in {"found", "not_in_top10"}
+    ]
     observations["local_rank_weak"] = any(r.get("status") == "not_in_top10" for r in ranked)
     geo = [g for g in REPORT.get("geo", []) if "mentions_dr_rofe" in g]
     observations["ai_mention_gap"] = any(not g.get("mentions_dr_rofe") for g in geo) if geo else True

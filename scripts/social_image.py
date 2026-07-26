@@ -6,6 +6,15 @@ from dataclasses import dataclass
 
 import requests
 
+from reputation_core.strategy import load_client_profile
+
+_CLIENT_FACTS = load_client_profile()["canonical_facts"]
+_CLIENT_NAME = _CLIENT_FACTS["primary_name"]
+_CLIENT_SITE = _CLIENT_FACTS["canonical_site"]
+_VISUAL_EXCLUSIONS = load_client_profile().get(
+    "publication_guardrails", {}
+).get("visual_exclusions", [])
+
 
 @dataclass(frozen=True)
 class SocialImage:
@@ -17,18 +26,19 @@ class SocialImage:
 def alt_text(title):
     """Natural, accessible attribution without keyword stuffing."""
     clean_title = " ".join((title or "מידע רפואי כללי").split())
-    clean_title = clean_title.replace("ד\"ר גיא רופא", "ד״ר גיא רופא")
-    if "גיא רופא" in clean_title:
+    name_variants = _CLIENT_FACTS.get("name_variants", [_CLIENT_NAME])
+    if any(variant in clean_title for variant in name_variants):
         return f"{clean_title} — איור מידע כללי"[:300]
-    return f"ד״ר גיא רופא — איור מידע כללי בנושא {clean_title}"[:300]
+    return f"{_CLIENT_NAME} — איור מידע כללי בנושא {clean_title}"[:300]
 
 
 def build_prompt(title, summary):
     """Return a brand-safe prompt that avoids medical or availability claims."""
     context = " ".join((summary or "").split())[:600]
+    exclusions = "\n".join(f"- no {item}" for item in _VISUAL_EXCLUSIONS)
     return f"""
 Create a polished square editorial illustration for an educational Hebrew
-health-information post by Dr. Guy Rofe.
+information post published by {_CLIENT_NAME}.
 
 Post title: {title}
 Post context: {context}
@@ -42,10 +52,7 @@ Visual direction:
 
 Strict exclusions:
 - no text, letters, numbers, typography, logo or watermark
-- no doctor, patient, portrait, face, clinic, consultation or appointment scene
-- no surgery, procedure, organs, anatomical diagram, blood, needle or medication
-- no before-and-after comparison and no diagnostic or treatment claim
-- do not imply that medical services or appointments are currently available
+{exclusions}
 """.strip()
 
 
@@ -84,7 +91,7 @@ def upload_to_wordpress(
     headers = {
         "Accept": "application/json",
         "Cache-Control": "no-cache",
-        "User-Agent": "DrRofeCampaignPublisher/1.0 (+https://guyrofe.com)",
+        "User-Agent": f"ReputationAgentPublisher/1.0 (+{_CLIENT_SITE})",
     }
     lookup = requests.get(
         endpoint,

@@ -5,7 +5,7 @@ Required secrets:
     TUMBLR_CONSUMER_SECRET
     TUMBLR_OAUTH_TOKEN
     TUMBLR_OAUTH_SECRET
-    TUMBLR_BLOG_NAME     - e.g. "drguyrofe" (from drguyrofe.tumblr.com)
+    TUMBLR_BLOG_NAME     - the installation's Tumblr blog identifier
 """
 import html
 

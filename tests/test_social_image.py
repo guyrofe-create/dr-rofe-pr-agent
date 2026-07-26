@@ -19,7 +19,7 @@ class SocialImageTests(unittest.TestCase):
         self.assertIn("no text", prompt)
         self.assertIn("no doctor", prompt)
         self.assertIn("no surgery", prompt)
-        self.assertIn("appointments are currently available", prompt)
+        self.assertIn("current service or appointment availability", prompt)
 
     def test_generate_uses_current_image_model_and_decodes_png(self):
         client = Mock()

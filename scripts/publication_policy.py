@@ -5,52 +5,20 @@ import re
 from reputation_core.strategy import (
     content_generation_prompt,
     ensure_product_channel_allowed,
+    load_client_profile,
     load_strategy,
 )
 
-CONSULTATION_INVITATIONS = (
-    'לייעוץ עם ד"ר גיא רופא',
-    "לייעוץ עם ד״ר גיא רופא",
-    "פנו אליי",
-    "פני אליי",
-    "צרו קשר",
-    "צרי קשר",
-    "קבעו תור",
-    "קבעי תור",
-    "אני כאן כדי לעזור",
-    "אני מזמין",
-    "אני מזמינה",
-    "ייעוץ אישי",
-    "ייעוץ מקצועי",
-    "דברו איתי",
-    "דברי איתי",
-    "שלחו הודעה",
-    "שלחי הודעה",
-    "לתיאום",
-    "לקביעת",
-    "contact me",
-    "book an appointment",
-    "schedule a consultation",
-)
+_CLIENT = load_client_profile()
+_CLIENT_FACTS = _CLIENT["canonical_facts"]
+_CLIENT_NAME = _CLIENT_FACTS["primary_name"]
 
-ACTIVE_PRACTICE_CLAIMS = (
-    "המטופלות שלי",
-    "במרפאה שלי",
-    "אני מטפל",
-    "אני מנתח",
-    "מקבל כיום מטופלות",
-    "מקבל כיום מטופלים",
-    "מקבל מטופלות",
-    "מקבל מטופלים",
-    "מפעיל מרפאה",
-    "מעניק טיפול",
-    "זמין לקביעת תור",
-    "זמין לקביעת תורים",
-    "זמינות ישירה לרופא",
-    "ליווי אישי",
-    "currently accepting patients",
-    "operates a clinic",
-    "available for appointments",
+_GUARDRAILS = _CLIENT.get("publication_guardrails", {})
+CONSULTATION_INVITATIONS = tuple(
+    _GUARDRAILS.get("prohibited_solicitation_phrases", [])
+)
+ACTIVE_PRACTICE_CLAIMS = tuple(
+    _GUARDRAILS.get("prohibited_current_status_phrases", [])
 )
 
 
@@ -81,7 +49,9 @@ def enforce_publication_policy(text):
         if phrase.casefold() in folded
     ]
     # Catch common variants that add punctuation or a pronoun between the words.
-    if re.search(r"(?:קבע|קבעי|קבעו).{0,12}(?:תור|פגישה|ייעוץ)", content):
+    if ACTIVE_PRACTICE_CLAIMS and re.search(
+        r"(?:קבע|קבעי|קבעו).{0,12}(?:תור|פגישה|ייעוץ)", content
+    ):
         violations.append("appointment invitation")
     if violations:
         raise ValueError(
@@ -92,8 +62,8 @@ def enforce_publication_policy(text):
 
 _STRATEGY = load_strategy()
 CTA_PROMPT = (
-    "אין להזמין לייעוץ, לקביעת תור, ליצירת קשר או לפנייה לד״ר גיא רופא. "
-    "אין להציג אותו כרופא מטפל פעיל, כמנתח פעיל או כבעל מרפאה פעילה. "
+    f"אין להזמין לייעוץ, לקביעת תור, ליצירת קשר או לפנייה ל{_CLIENT_NAME}. "
+    "אין להציג את הלקוח כבעל פעילות מקצועית נוכחית הסותרת את מאגר העובדות. "
     "אם מופיעה קריאה לפעולה, היא תהיה רק: "
     f"{_STRATEGY['canonical_facts']['allowed_cta_he']}"
 )

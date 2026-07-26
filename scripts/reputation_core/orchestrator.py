@@ -12,9 +12,13 @@ from functools import lru_cache
 from pathlib import Path
 from urllib.parse import urlparse
 
+from .asset_safety import evaluate_asset_candidate
+from .coverage_safety import evaluate_coverage_safety
+from .installation import config_path
+from .strategy import client_asset_policy, client_search_queries, load_client_profile
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-TARGETS_PATH = PROJECT_ROOT / "config" / "serp_targets.json"
+
+TARGETS_PATH = config_path("serp_targets.json")
 
 RANK_WEIGHTS = {position: 1 / position for position in range(1, 11)}
 ACTIVE_HEALTH = {"active", "active_information_only_policy"}
@@ -29,6 +33,29 @@ def load_serp_targets(path: str | Path | None = None) -> dict:
     target = Path(path) if path else TARGETS_PATH
     with target.open(encoding="utf-8") as handle:
         data = json.load(handle)
+    if path is None:
+        profile = load_client_profile()
+        goal = profile["search_goal"]
+        primary = [
+            {
+                "query": item["query"],
+                "kind": "primary",
+                "priority": item.get("priority", 100),
+            }
+            for item in goal["primary_queries"]
+        ]
+        variants = [
+            {"query": query, "kind": "measurement_variant", "priority": 80}
+            for query in goal.get("measurement_variants", [])
+        ]
+        data["queries"] = primary + variants
+        data["market"] = profile["market"]
+        data["objective"] = {
+            **data.get("objective", {}),
+            "desired_results_target": goal["desired_results_target"],
+            "controlled_results_target": goal["controlled_results_target"],
+            "negative_results_target": goal["negative_results_target"],
+        }
     required = {"objective", "queries", "property_roles", "aggressiveness"}
     missing = sorted(required - data.keys())
     if missing:
@@ -138,7 +165,11 @@ def _ranked_asset(asset: dict, control_maps: list[dict]) -> tuple[int | None, st
 
 def _asset_opportunities(assets: list[dict], control_maps: list[dict]) -> list[dict]:
     actions = []
-    target_query = control_maps[0]["query"] if control_maps else "ד״ר גיא רופא"
+    target_query = (
+        control_maps[0]["query"]
+        if control_maps
+        else client_search_queries(include_variants=False)[0]
+    )
     for asset in sorted(assets, key=lambda a: a.get("priority", 0), reverse=True):
         if not asset.get("controlled") or asset.get("tier") not in {"A", "B"}:
             continue
@@ -221,14 +252,26 @@ def search_console_opportunities(rows: list[dict], assets: list[dict]) -> list[d
 
 
 def evaluate_ai_visibility(snapshots: list[dict], approved_hosts: set[str]) -> dict:
-    valid = [s for s in snapshots if s.get("status") != "error"]
+    valid = [
+        s for s in snapshots
+        if s.get("status") not in {"error", "skipped"}
+        and (s.get("exact_answer") is not None or s.get("fact_evaluation"))
+    ]
     if not valid:
         return {
             "samples": 0, "factual_accuracy_rate": None,
             "official_citation_rate": None, "desired_citation_share": None,
         }
-    accurate = sum(not s.get("factual_errors") and not s.get("identity_misinformation")
-                   and not s.get("active_practice_claim") for s in valid)
+    accurate = sum(
+        (
+            s.get("fact_evaluation", {}).get("status") == "pass"
+            if s.get("fact_evaluation")
+            else not s.get("factual_errors")
+            and not s.get("identity_misinformation")
+            and not s.get("active_practice_claim")
+        )
+        for s in valid
+    )
     official = 0
     desired_citations = total_citations = 0
     for sample in valid:
@@ -282,6 +325,7 @@ def propose_new_assets(
     assets: list[dict],
     control_maps: list[dict],
     content_inventory: list[dict] | None = None,
+    creation_history: list[dict] | None = None,
 ) -> list[dict]:
     """Propose creative assets only when they add a distinct, maintainable value."""
     targets = load_serp_targets()
@@ -313,6 +357,20 @@ def propose_new_assets(
         mapped_type, impact, speed = mappings[kind]
         if mapped_type in existing_types or kind in inventory_kinds:
             continue
+        safety = evaluate_asset_candidate(
+            {
+                "distinct_purpose_score": 0,
+                "content_runway_items": 0,
+                "maintenance_owner": None,
+                "authority_path": None,
+                "measurement_plan": None,
+                "distinct_audience": False,
+                "risk_signals": [],
+            },
+            assets,
+            creation_history or [],
+            client_asset_policy(),
+        )
         proposals.append({
             "priority": "P1" if impact >= 9 else "P2",
             "kind": "create_or_earn_new_asset",
@@ -328,7 +386,14 @@ def propose_new_assets(
             "impact": impact,
             "speed": speed,
             "approval_required": "owner",
-            "status": "proposed",
+            "status": "evidence_required",
+            "asset_gate": {
+                "outcome": safety.outcome,
+                "score": safety.score,
+                "standalone_volume_limit_90d": safety.volume_limit,
+                "reasons": safety.reasons,
+                "required_actions": safety.required_actions,
+            },
             "kill_criteria": [
                 "No distinct audience or query intent",
                 "No sustainable maintenance owner",
@@ -392,6 +457,7 @@ def orchestrate_reputation_cycle(
     ai_snapshots: list[dict] | None = None,
     search_console_rows: list[dict] | None = None,
     content_inventory: list[dict] | None = None,
+    creation_history: list[dict] | None = None,
 ) -> dict:
     """Build one evidence-led, maximum-sustainable action cycle."""
     targets = load_serp_targets()
@@ -402,9 +468,30 @@ def orchestrate_reputation_cycle(
     }
     ai = evaluate_ai_visibility(ai_snapshots or [], approved_hosts)
     risks = detect_cross_domain_risk(content_inventory or [])
+    coverage_safety = evaluate_coverage_safety(
+        assets, risks, client_asset_policy()
+    )
     actions = _asset_opportunities(assets, control_maps)
     actions.extend(search_console_opportunities(search_console_rows or [], assets))
-    new_asset_proposals = propose_new_assets(assets, control_maps, content_inventory)
+    new_asset_proposals = propose_new_assets(
+        assets,
+        control_maps,
+        content_inventory,
+        creation_history,
+    )
+    if coverage_safety["mode"] != "expand":
+        new_asset_proposals = []
+        actions.append(_action(
+            "P1", "portfolio_remediation", None,
+            client_search_queries(include_variants=False)[0],
+            "; ".join(coverage_safety["reasons"]),
+            [
+                "Stop creating standalone assets",
+                "Repair duplication, cannibalization, thin content and index health",
+                "Document maintenance ownership and capacity before reconsidering expansion",
+            ],
+            coverage_safety,
+        ))
     for control_map in control_maps:
         if control_map["negative_count"]:
             actions.append(_action(
@@ -450,6 +537,7 @@ def orchestrate_reputation_cycle(
         "control_maps": control_maps,
         "ai_visibility": ai,
         "cross_domain_risks": risks,
+        "coverage_safety": coverage_safety,
         "new_asset_proposals": new_asset_proposals,
         "next_best_actions": actions,
         "targets": objective,

@@ -315,9 +315,11 @@ class GrowthEngineTests(unittest.TestCase):
     def test_orchestrator_builds_closed_loop_actions_and_ai_metrics(self):
         assets = [
             {"platform": "Main", "url": "https://guyrofe.com/", "controlled": True,
-             "tier": "A", "status": "active", "priority": 100},
+             "tier": "A", "status": "active", "priority": 100,
+             "maintenance_health": 0.95, "maintenance_units": 1},
             {"platform": "News", "url": "https://drguyrofe.co.il/", "controlled": True,
-             "tier": "A", "status": "audit_required", "priority": 92},
+             "tier": "A", "status": "audit_required", "priority": 92,
+             "maintenance_health": 0.9, "maintenance_units": 1},
         ]
         cycle = orchestrate_reputation_cycle(
             assets,
@@ -365,6 +367,21 @@ class GrowthEngineTests(unittest.TestCase):
             proposal["asset_kind"] == "original_research_library"
             for proposal in proposals
         ))
+        self.assertTrue(all(
+            proposal["status"] == "evidence_required"
+            and proposal["asset_gate"]["outcome"] == "incubate"
+            for proposal in proposals
+        ))
+
+    def test_unknown_ai_answer_is_not_counted_as_factually_accurate(self):
+        from scripts.reputation_core.orchestrator import evaluate_ai_visibility
+
+        metrics = evaluate_ai_visibility([{
+            "exact_answer": "תשובה שאינה נתמכת",
+            "fact_evaluation": {"status": "review"},
+            "cited_sources": [],
+        }], set())
+        self.assertEqual(metrics["factual_accuracy_rate"], 0.0)
 
     def test_news_radar_prefers_popular_relevant_sourced_analysis(self):
         candidates = [

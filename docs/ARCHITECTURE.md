@@ -128,9 +128,32 @@ remain disabled until a separate factual, content and indexation audit proves a
 real user purpose. Credentials must live only in an encrypted secret store and
 must never be copied into the repository or asset registry.
 
+## Deployment model
+
+The product is single-tenant by design: each purchased installation operates
+for one client only. `config/client_profile.json` contains that installation's
+queries, desired search outcome, canonical facts, channel ownership, approval
+rules, AI evaluation rules and sustainable asset-volume policy. Product logic
+must not contain a client name, domain or search query.
+
+The asset gate has no universal "safe number" of sites or posts. Capacity is
+computed separately for each installation from independent value, portfolio
+diversity, authority, maintenance capacity and observed index health. Doorway
+patterns, cloned intent, cannibalization, thin content, manual actions and
+indexing anomalies automatically stop expansion. New ideas that are not yet
+proven are incubated as a section or series inside a stronger existing
+property.
+
+`scripts/install_client.py` is the setup wizard. It accepts a customer-owned
+installation specification and creates exactly one client profile, its facts,
+assets, search targets, campaign and secret-name manifest. The generic engine
+contains no customer name, domain, query or content agenda; these live only in
+the isolated installation. `REPUTATION_INSTALLATION_ROOT` selects that
+installation at runtime.
+
 ## Next premium layers
 
-1. Authenticated multi-tenant API, encrypted connector vault and role-based approvals.
+1. Encrypted connector vault and role-based approvals for a single installation.
 2. Unified inbox for review, social, news, forum, email and CRM events.
 3. Contextual response drafting with privacy and policy validation.
 4. Review-request journeys without review gating or incentives.

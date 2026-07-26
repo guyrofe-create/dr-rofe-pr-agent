@@ -194,6 +194,19 @@ class MonitorGeoTests(unittest.TestCase):
             self.assertFalse(monitor_run.serp_checks_due("2026-07-26"))
             self.assertTrue(monitor_run.serp_checks_due("2026-07-27"))
 
+    def test_failed_serp_snapshot_remains_retryable(self):
+        with patch.object(
+            monitor_run,
+            "HISTORY",
+            {
+                "snapshots": [{
+                    "date": "2026-07-26T10:00:00",
+                    "rank": [{"status": "error", "detail": "429"}],
+                }],
+            },
+        ):
+            self.assertTrue(monitor_run.serp_checks_due("2026-07-26"))
+
     def test_ai_repeated_sampling_runs_only_once_per_day(self):
         with patch.object(
             monitor_run,

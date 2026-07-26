@@ -2,7 +2,7 @@
 
 Required secrets:
     TELEGRAM_BOT_TOKEN
-    TELEGRAM_CHANNEL_ID   - e.g. "@drguyrofe" or numeric channel id
+    TELEGRAM_CHANNEL_ID   - installation-owned channel handle or numeric id
 """
 import requests
 from . import common

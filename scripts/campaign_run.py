@@ -8,6 +8,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 
@@ -22,11 +23,24 @@ from social_publishers import (
 )
 from publication_policy import enforce_channel_policy, enforce_publication_policy
 import social_image
+from reputation_core import data_path, load_client_profile
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CAMPAIGN_ROOT = PROJECT_ROOT / "content_drafts" / "campaigns"
 LOG_LINES = []
+CLIENT_PROFILE = load_client_profile()
+
+
+def load_business_profile():
+    return json.loads(data_path("business_profile.json").read_text(encoding="utf-8"))
+
+
+def canonical_site(profile):
+    return next(
+        (site for site in profile["sites"] if site.get("canonical")),
+        profile["sites"][0],
+    )
 
 
 def utc_now():
@@ -117,7 +131,10 @@ def wordpress_publish(
     headers = {
         "Accept": "application/json",
         "Cache-Control": "no-cache",
-        "User-Agent": "DrRofeCampaignPublisher/1.0 (+https://guyrofe.com)",
+        "User-Agent": (
+            f"ReputationAgent/{CLIENT_PROFILE['client_id']} "
+            f"(+{CLIENT_PROFILE['canonical_facts']['canonical_site']})"
+        ),
     }
     response = requests.get(
         endpoint,
@@ -216,19 +233,25 @@ def publish_campaign(draft_path):
     article_html = markdown_to_html(content)
     summary = first_paragraph(content)
     destinations = []
+    business = load_business_profile()
+    primary = canonical_site(business)
+    canonical_base = primary["base_url"].rstrip("/")
+    canonical_name = re.sub(r"^www\.", "", urlparse(canonical_base).netloc)
+    primary_user_env = primary["user_env"]
+    primary_password_env = primary["app_password_env"]
 
-    if not configured("WORDPRESS_GUYROFE_COM_USER", "WORDPRESS_GUYROFE_COM_API"):
+    if not configured(primary_user_env, primary_password_env):
         raise RuntimeError("Canonical WordPress publisher is not configured")
 
     canonical_url = wordpress_publish(
-        "https://guyrofe.com",
-        os.environ["WORDPRESS_GUYROFE_COM_USER"],
-        os.environ["WORDPRESS_GUYROFE_COM_API"],
+        canonical_base,
+        os.environ[primary_user_env],
+        os.environ[primary_password_env],
         title,
         article_html,
-        idempotency_key=f"dr-rofe-{draft_path.stem}",
+        idempotency_key=f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}",
     )
-    destinations.append(destination("guyrofe.com", "published", url=canonical_url))
+    destinations.append(destination(canonical_name, "published", url=canonical_url))
     log(f"Canonical article published: {canonical_url}")
 
     image_url = os.environ.get("SOCIAL_IMAGE_URL", "").strip()
@@ -238,10 +261,10 @@ def publish_campaign(draft_path):
             generated_image = social_image.generate(title, summary)
             image_url = social_image.upload_to_wordpress(
                 generated_image,
-                base_url="https://guyrofe.com",
-                username=os.environ["WORDPRESS_GUYROFE_COM_USER"],
-                app_password=os.environ["WORDPRESS_GUYROFE_COM_API"],
-                slug=f"dr-rofe-{draft_path.stem}-social",
+                base_url=canonical_base,
+                username=os.environ[primary_user_env],
+                app_password=os.environ[primary_password_env],
+                slug=f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}-social",
                 title=title,
             )
             destinations.append(
@@ -275,31 +298,35 @@ def publish_campaign(draft_path):
             )
         )
 
-    if configured(
-        "WORDPRESS_DRGUYROFE_CO_IL_USER", "WORDPRESS_DRGUYROFE_CO_IL_API"
-    ):
+    for site in business["sites"]:
+        if site is primary or site.get("platform", "wordpress") != "wordpress":
+            continue
+        name = re.sub(r"^www\.", "", urlparse(site["base_url"]).netloc)
+        user_env = site["user_env"]
+        password_env = site["app_password_env"]
+        if not configured(user_env, password_env):
+            destinations.append(
+                destination(name, "not_configured", detail="חיבור WordPress חסר")
+            )
+            continue
         summary_html = (
             f"<p>{summary}</p><p><a href=\"{canonical_url}\">"
             "לקריאת המאמר המלא באתר הראשי</a></p>"
         )
         destinations.append(
             attempt(
-                "drguyrofe.co.il",
+                name,
                 True,
                 wordpress_publish,
-                "https://www.drguyrofe.co.il",
-                os.environ["WORDPRESS_DRGUYROFE_CO_IL_USER"],
-                os.environ["WORDPRESS_DRGUYROFE_CO_IL_API"],
+                site["base_url"],
+                os.environ[user_env],
+                os.environ[password_env],
                 title,
                 summary_html,
                 True,
                 canonical_url,
-                f"dr-rofe-{draft_path.stem}",
+                f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}",
             )
-        )
-    else:
-        destinations.append(
-            destination("drguyrofe.co.il", "not_configured", detail="חיבור WordPress חסר")
         )
 
     enforce_channel_policy("Facebook")
@@ -379,13 +406,15 @@ def publish_campaign(draft_path):
         else destination("Pinterest", "blocked", detail="נדרשת תמונה מאושרת")
     )
 
-    destinations.extend(
-        [
-            destination(
-                "drguyrofe.com",
+    for site in business["sites"]:
+        if site.get("platform") == "wix":
+            destinations.append(destination(
+                re.sub(r"^www\.", "", urlparse(site["base_url"]).netloc),
                 "blocked",
                 detail="חיבור Wix קיים אך הרשאות הפרסום עדיין חסומות",
-            ),
+            ))
+    destinations.extend(
+        [
             destination(
                 "Medium",
                 "paused",

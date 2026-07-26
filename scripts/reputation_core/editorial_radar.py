@@ -88,7 +88,7 @@ def build_news_analysis_brief(candidate: dict) -> dict:
             "Human medical review before publication",
         ],
         "distribution": [
-            "Publish the canonical analysis on drguyrofe.co.il",
+            "Publish the canonical analysis on the installation's approved destination",
             "Create distinct native summaries for approved managed platforms",
             "Use an original image or chart with natural alt text when useful",
         ],

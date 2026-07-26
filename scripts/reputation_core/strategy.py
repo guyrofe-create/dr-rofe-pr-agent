@@ -5,10 +5,48 @@ import json
 from functools import lru_cache
 from pathlib import Path
 
+from .installation import config_path, data_path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-STRATEGY_PATH = PROJECT_ROOT / "config" / "reputation_strategy.json"
-FACT_REGISTRY_PATH = PROJECT_ROOT / "data" / "fact_registry.json"
+STRATEGY_PATH = config_path("reputation_strategy.json")
+CLIENT_PROFILE_PATH = config_path("client_profile.json")
+FACT_REGISTRY_PATH = data_path("fact_registry.json")
+
+
+@lru_cache(maxsize=1)
+def load_client_profile(path: str | Path | None = None) -> dict:
+    target = Path(path) if path else CLIENT_PROFILE_PATH
+    with target.open("r", encoding="utf-8") as handle:
+        profile = json.load(handle)
+    validate_client_profile(profile)
+    return profile
+
+
+def validate_client_profile(profile: dict) -> None:
+    required = {
+        "version",
+        "client_id",
+        "display_name",
+        "deployment_mode",
+        "market",
+        "search_goal",
+        "canonical_facts",
+        "channel_policy",
+        "approval_policy",
+        "asset_policy",
+    }
+    missing = sorted(required - profile.keys())
+    if missing:
+        raise ValueError("client profile missing keys: " + ", ".join(missing))
+    if profile["deployment_mode"] != "single_tenant":
+        raise ValueError("this product build supports one client per deployment")
+    queries = profile["search_goal"].get("primary_queries", [])
+    if not queries or any(not item.get("query") for item in queries):
+        raise ValueError("client profile needs at least one primary search query")
+    facts = profile["canonical_facts"]
+    if not facts.get("primary_name") or not facts.get("canonical_site"):
+        raise ValueError("client profile needs a primary name and canonical site")
+    if not profile["approval_policy"].get("public_publication_required"):
+        raise ValueError("public publication must require client approval")
 
 
 @lru_cache(maxsize=1)
@@ -16,6 +54,14 @@ def load_strategy(path: str | Path | None = None) -> dict:
     target = Path(path) if path else STRATEGY_PATH
     with target.open("r", encoding="utf-8") as handle:
         strategy = json.load(handle)
+    if path is None:
+        profile = load_client_profile()
+        strategy["canonical_facts"] = profile["canonical_facts"]
+        strategy["channel_policy"] = profile["channel_policy"]
+        strategy["ai_monitoring"]["prompts"] = (
+            profile.get("ai_evaluation", {}).get("monitoring_prompts", [])
+        )
+        strategy["objective"] = profile["search_goal"]["statement"]
     validate_strategy(strategy)
     return strategy
 
@@ -36,20 +82,28 @@ def validate_strategy(strategy: dict) -> None:
     if missing:
         raise ValueError("reputation strategy missing keys: " + ", ".join(missing))
     facts = strategy["canonical_facts"]
-    if facts.get("practice_status") != "not_currently_practicing":
-        raise ValueError("strategy must preserve the owner non-practicing status")
-    if not facts.get("homepage_change_prohibited"):
-        raise ValueError("strategy must preserve the guyrofe.com homepage")
-    channels = strategy["channel_policy"]
-    disabled = set(channels.get("owner_managed_product_disabled", []))
-    if not {"Instagram", "TikTok"}.issubset(disabled):
-        raise ValueError("Instagram and TikTok must remain owner-managed")
-    if "X" not in set(channels.get("disabled", [])):
-        raise ValueError("X must remain disabled")
+    if not facts.get("primary_name") or not facts.get("canonical_site"):
+        raise ValueError("strategy needs configured client identity facts")
 
 
 def canonical_facts() -> dict:
     return load_strategy()["canonical_facts"]
+
+
+def client_search_queries(include_variants: bool = True) -> list[str]:
+    goal = load_client_profile()["search_goal"]
+    queries = [item["query"] for item in goal["primary_queries"]]
+    if include_variants:
+        queries.extend(goal.get("measurement_variants", []))
+    return list(dict.fromkeys(queries))
+
+
+def client_asset_policy() -> dict:
+    return dict(load_client_profile()["asset_policy"])
+
+
+def client_content_plan() -> dict:
+    return dict(load_client_profile().get("content_plan", {}))
 
 
 @lru_cache(maxsize=1)
@@ -103,7 +157,9 @@ def ensure_product_channel_allowed(channel: str) -> None:
 
 
 def monitoring_prompts() -> list[str]:
-    return list(load_strategy()["ai_monitoring"]["prompts"])
+    profile = load_client_profile()
+    prompts = profile.get("ai_evaluation", {}).get("monitoring_prompts", [])
+    return list(prompts or load_strategy()["ai_monitoring"]["prompts"])
 
 
 def success_metrics() -> list[str]:
