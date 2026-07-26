@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-26T08:01:50Z",
+  "updated_at": "2026-07-26T09:43:39Z",
   "content_freeze": false,
   "events": [
     {
@@ -259,6 +259,33 @@
       "priority": "P4",
       "approval_required": "auto_or_standard",
       "sla_due_at": "2026-07-16T15:15:13Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "OpenAI monitor sample",
+      "external_id": "2026-07-26T09:43:28.598927|ai_active_practice_misinformation|",
+      "title": "ai_active_practice_misinformation",
+      "text": "אין לי מידע מעודכן לגבי מצב המטופלים של ד\"ר גיא רופא נכון להיום. אני ממליץ לפנות ישירות למרפאתו או לבדוק את אתר האינטרנט או עמוד הפייסבוק שלו אם יש כזה, כדי לקבל את המידע המעודכן והמדויק ביותר.",
+      "rating": null,
+      "category": "customer_experience",
+      "metadata": {
+        "type": "ai_active_practice_misinformation",
+        "source": "OpenAI monitor sample",
+        "excerpt": "אין לי מידע מעודכן לגבי מצב המטופלים של ד\"ר גיא רופא נכון להיום. אני ממליץ לפנות ישירות למרפאתו או לבדוק את אתר האינטרנט או עמוד הפייסבוק שלו אם יש כזה, כדי לקבל את המידע המעודכן והמדויק ביותר.",
+        "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?"
+      },
+      "id": "evt_c465f1654e94eebd",
+      "status": "new",
+      "created_at": "2026-07-26T09:43:39Z",
+      "last_seen_at": "2026-07-26T09:43:39Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-28T09:43:39Z",
       "risk_reasons": [
         "new reputation event"
       ],
@@ -777,6 +804,45 @@
       "approval_required": "auto_or_standard",
       "created_at": "2026-07-14T15:15:13Z",
       "due_at": "2026-07-16T15:15:13Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c465f1654e94eebd_1",
+      "event_id": "evt_c465f1654e94eebd",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T09:43:39Z",
+      "due_at": "2026-07-28T09:43:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c465f1654e94eebd_2",
+      "event_id": "evt_c465f1654e94eebd",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T09:43:39Z",
+      "due_at": "2026-07-28T09:43:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c465f1654e94eebd_3",
+      "event_id": "evt_c465f1654e94eebd",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T09:43:39Z",
+      "due_at": "2026-07-28T09:43:39Z",
       "prohibited_actions": [
         "reveal_private_details",
         "fabricate_endorsement"
@@ -3630,12 +3696,12 @@
     {
       "id": "cmp_c31e9e54d7cef9",
       "brand": "ד\"ר גיא רופא",
-      "created_at": "2026-07-26T08:01:50Z",
+      "created_at": "2026-07-26T09:43:39Z",
       "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
       "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
       "serp_asset_gap": {
         "target_slots": 8,
-        "eligible_assets": 27,
+        "eligible_assets": 26,
         "observed_page_one_assets": 1,
         "controlled_page_one_assets": 1,
         "independent_page_one_assets": 0,
@@ -3852,7 +3918,7 @@
       "page_one": false,
       "observed_position": null,
       "tier": "A",
-      "health_status": "active",
+      "health_status": "practice_status_audit_required",
       "priority": 100
     },
     {
@@ -3975,17 +4041,6 @@
       "tier": "B",
       "health_status": "content_audit_required",
       "priority": 70
-    },
-    {
-      "type": "social_profile",
-      "url": "https://x.com/GuyRofe",
-      "controlled": true,
-      "status": "active",
-      "page_one": false,
-      "observed_position": null,
-      "tier": "B",
-      "health_status": "active",
-      "priority": 78
     },
     {
       "type": "video_channel",
@@ -5698,12 +5753,31 @@
       "details": {
         "tasks": 5
       }
+    },
+    {
+      "at": "2026-07-26T09:43:39Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_c465f1654e94eebd",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-26T09:43:39Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_replanned",
+      "object_id": "cmp_c31e9e54d7cef9",
+      "details": {
+        "tasks": 5
+      }
     }
   ],
   "metrics": {
-    "open_events": 13,
+    "open_events": 14,
     "critical_events": 0,
-    "pending_tasks": 40,
+    "pending_tasks": 43,
     "active_crises": 0,
     "content_freeze": false
   }
