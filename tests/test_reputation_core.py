@@ -7,6 +7,11 @@ from scripts.reputation_core import CommandCenter
 from scripts.reputation_core.risk import score_event
 from scripts.reputation_core.growth import build_serp_asset_gap, plan_growth_campaign
 from scripts.reputation_core.tactics import ranked_tactics
+from scripts.reputation_core.strategy import (
+    load_fact_registry,
+    load_strategy,
+    validate_strategy,
+)
 
 
 class RiskScoringTests(unittest.TestCase):
@@ -100,6 +105,31 @@ class CommandCenterTests(unittest.TestCase):
 
 
 class GrowthEngineTests(unittest.TestCase):
+    def test_strategy_is_loadable_and_preserves_owner_invariants(self):
+        strategy = load_strategy()
+        validate_strategy(strategy)
+        self.assertTrue(strategy["canonical_facts"]["homepage_change_prohibited"])
+        self.assertEqual(
+            strategy["canonical_facts"]["practice_status"],
+            "not_currently_practicing",
+        )
+        self.assertIn(
+            "Instagram",
+            strategy["channel_policy"]["owner_managed_product_disabled"],
+        )
+        self.assertIn("X", strategy["channel_policy"]["disabled"])
+        self.assertEqual(strategy["ai_monitoring"]["samples_per_prompt"], 3)
+
+    def test_approved_fact_registry_entries_have_evidence(self):
+        registry = load_fact_registry()
+        approved = [
+            fact for fact in registry["facts"] if fact["status"] == "approved"
+        ]
+        self.assertTrue(approved)
+        self.assertTrue(all(fact.get("evidence") for fact in approved))
+        unknown_fields = {item["field"] for item in registry["unknowns"]}
+        self.assertIn("book_catalog", unknown_fields)
+
     def test_asset_registry_contains_no_credentials_and_quarantines_mirror_network(self):
         with open("data/asset_registry.json", encoding="utf-8") as handle:
             registry = json.load(handle)
@@ -141,7 +171,10 @@ class GrowthEngineTests(unittest.TestCase):
         assets = {item["platform"]: item for item in registry["assets"]}
         self.assertEqual(assets["Instagram"]["automation"], "owner_managed_product_disabled")
         self.assertEqual(assets["TikTok"]["automation"], "owner_managed_product_disabled")
-        self.assertTrue(assets["Google Business Profile"]["automation"].startswith("paused_"))
+        self.assertIn(
+            "information_only",
+            assets["Google Business Profile"]["automation"],
+        )
         self.assertTrue(assets["X"]["automation"].startswith("disabled_"))
 
     def test_secret_manifest_contains_names_not_values(self):
@@ -171,9 +204,22 @@ class GrowthEngineTests(unittest.TestCase):
             "eligible_policy_violations": 1,
         })
         tactic_ids = {task["tactic"] for task in campaign["tasks"]}
-        self.assertTrue({"entity_home", "brand_serp_asset", "local_prominence", "expert_answer_library", "digital_pr", "policy_removal"}.issubset(tactic_ids))
+        self.assertTrue({
+            "verified_fact_registry", "profile_consistency", "entity_home",
+            "brand_serp_asset", "local_prominence", "expert_answer_library",
+            "digital_pr", "policy_removal",
+        }.issubset(tactic_ids))
         self.assertIn("ai_citation_share", campaign["success_metrics"])
         self.assertIn("ai_explicit_mention_share", campaign["success_metrics"])
+
+    def test_ai_misinformation_routes_to_source_first_playbook(self):
+        decision = score_event({
+            "source": "OpenAI monitor sample",
+            "text": "שגיאת זהות",
+            "metadata": {"type": "ai_identity_misinformation"},
+        })
+        self.assertEqual(decision.recommended_playbook, "ai_misinformation_correction")
+        self.assertEqual(decision.approval, "manager")
 
     def test_tactics_exclude_high_risk_when_requested(self):
         self.assertTrue(all(t["risk"] <= 1 for t in ranked_tactics(max_risk=1)))

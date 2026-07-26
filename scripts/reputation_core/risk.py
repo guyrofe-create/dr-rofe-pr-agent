@@ -96,7 +96,12 @@ def score_event(event: dict) -> RiskDecision:
     else:
         priority, approval, sla, playbook = "P4", "auto_or_standard", 2880, "amplify_positive"
 
-    if harassment:
+    metadata = event.get("metadata") or {}
+    if str(metadata.get("type", "")).startswith("ai_"):
+        category = metadata["type"]
+        playbook = "ai_misinformation_correction"
+        approval = "manager"
+    elif harassment:
         category = "harassment"
         playbook = "policy_violation"
         approval = "manager"

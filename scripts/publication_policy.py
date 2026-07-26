@@ -2,6 +2,12 @@
 
 import re
 
+from reputation_core.strategy import (
+    content_generation_prompt,
+    ensure_product_channel_allowed,
+    load_strategy,
+)
+
 CONSULTATION_INVITATIONS = (
     'לייעוץ עם ד"ר גיא רופא',
     "לייעוץ עם ד״ר גיא רופא",
@@ -84,8 +90,18 @@ def enforce_publication_policy(text):
     return content
 
 
+_STRATEGY = load_strategy()
 CTA_PROMPT = (
     "אין להזמין לייעוץ, לקביעת תור, ליצירת קשר או לפנייה לד״ר גיא רופא. "
     "אין להציג אותו כרופא מטפל פעיל, כמנתח פעיל או כבעל מרפאה פעילה. "
-    "אם מופיעה קריאה לפעולה, היא תהיה רק: למידע נוסף: https://guyrofe.com"
+    "אם מופיעה קריאה לפעולה, היא תהיה רק: "
+    f"{_STRATEGY['canonical_facts']['allowed_cta_he']}"
 )
+
+REPUTATION_KNOWLEDGE_PROMPT = content_generation_prompt()
+
+
+def enforce_channel_policy(channel):
+    """Block product publication to owner-managed or disabled channels."""
+    ensure_product_channel_allowed(channel)
+    return channel

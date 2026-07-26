@@ -5,6 +5,7 @@ import hashlib
 from datetime import datetime, timezone
 
 from .tactics import TACTICS, ranked_tactics
+from .strategy import success_metrics
 
 
 ASSET_TYPES = [
@@ -62,7 +63,9 @@ def plan_growth_campaign(profile: dict, observations: dict) -> dict:
         })
 
     if not observations.get("canonical_entity_complete"):
+        add("verified_fact_registry", "verified facts and evidence must precede entity expansion", "P1")
         add("entity_home", "canonical entity and corroborated facts are incomplete", "P1")
+        add("profile_consistency", "official profiles require fact and status reconciliation", "P1")
     if asset_gap["slot_gap"]:
         add("brand_serp_asset", f"brand SERP has an estimated {asset_gap['slot_gap']}-asset gap", "P1")
     if observations.get("local_rank_weak"):
@@ -72,6 +75,8 @@ def plan_growth_campaign(profile: dict, observations: dict) -> dict:
     if observations.get("ai_citation_gap") or observations.get("ai_mention_gap"):
         add("expert_answer_library", "AI citation or explicit brand-mention coverage is weak", "P1")
         add("original_research", "independent citable evidence is needed", "P2")
+    if observations.get("ai_misinformation_open"):
+        add("ai_answer_correction", "persistent AI answer errors require source-first correction", "P1")
     if observations.get("independent_authority_gap"):
         add("digital_pr", "third-party authority and corroboration are insufficient", "P1")
     if observations.get("eligible_policy_violations", 0):
@@ -88,9 +93,5 @@ def plan_growth_campaign(profile: dict, observations: dict) -> dict:
         "serp_asset_gap": asset_gap,
         "tasks": tasks,
         "available_tactics": [t["id"] for t in ranked_tactics(max_risk=3)],
-        "success_metrics": [
-            "first_page_asset_coverage", "positive_or_neutral_first_page_share", "brand_search_demand",
-            "local_pack_share_of_voice", "organic_nonbrand_share_of_voice", "ai_citation_share",
-            "ai_explicit_mention_share", "ai_sentiment", "qualified_leads", "reputation_incidents_resolved",
-        ],
+        "success_metrics": success_metrics(),
     }

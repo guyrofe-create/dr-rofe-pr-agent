@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-26",
+  "policy": "Only approved facts may be used in public biographies, schema, monitoring corrections or generated content. Unknown and disputed items must remain explicitly marked.",
+  "facts": [
+    {
+      "id": "identity_primary_name",
+      "subject": "Dr. Guy Rofe",
+      "field": "primary_name",
+      "value": "ד״ר גיא רופא",
+      "status": "approved",
+      "public": true,
+      "evidence": [
+        {"type": "official_site", "url": "https://guyrofe.com"}
+      ]
+    },
+    {
+      "id": "identity_name_variants",
+      "subject": "Dr. Guy Rofe",
+      "field": "name_variants",
+      "value": [
+        "ד״ר גיא רופא",
+        "ד\"ר גיא רופא",
+        "דר גיא רופא",
+        "Guy Rofe",
+        "Dr. Guy Rofe",
+        "Guy Rofe MD"
+      ],
+      "status": "approved",
+      "public": true,
+      "evidence": [
+        {"type": "owner_approved_identity"}
+      ]
+    },
+    {
+      "id": "identity_canonical_site",
+      "subject": "Dr. Guy Rofe",
+      "field": "canonical_site",
+      "value": "https://guyrofe.com",
+      "status": "approved",
+      "public": true,
+      "evidence": [
+        {"type": "owned_verified_domain", "url": "https://guyrofe.com"}
+      ]
+    },
+    {
+      "id": "identity_current_role",
+      "subject": "Dr. Guy Rofe",
+      "field": "current_role",
+      "value": "יוצר תוכן רפואי ומחבר ספרים",
+      "status": "approved",
+      "public": true,
+      "evidence": [
+        {"type": "owner_approved_profile"},
+        {"type": "official_site", "url": "https://guyrofe.com"}
+      ]
+    },
+    {
+      "id": "identity_practice_status",
+      "subject": "Dr. Guy Rofe",
+      "field": "practice_status",
+      "value": "not_currently_practicing",
+      "display_value": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+      "status": "approved",
+      "public": true,
+      "evidence": [
+        {"type": "owner_directive", "confirmed_at": "2026-07-26"}
+      ]
+    },
+    {
+      "id": "identity_podcast",
+      "subject": "Dr. Guy Rofe",
+      "field": "podcast",
+      "value": "רפואה על כוס קפה",
+      "status": "approved",
+      "public": true,
+      "evidence": [
+        {
+          "type": "apple_podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/id1787147468"
+        },
+        {
+          "type": "spotify",
+          "url": "https://open.spotify.com/show/2o8f3yN18UunMRpsEBPTg7"
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    {
+      "field": "book_catalog",
+      "status": "evidence_required",
+      "rule": "Do not name books until title, publisher or official product evidence is registered."
+    },
+    {
+      "field": "current_clinical_affiliation",
+      "status": "not_applicable",
+      "rule": "Do not infer or publish a current clinical affiliation."
+    }
+  ]
+}

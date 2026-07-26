@@ -15,8 +15,13 @@ from datetime import datetime
 from openai import OpenAI
 
 sys.path.insert(0, os.path.dirname(__file__))
-from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest, manual_draft
-from publication_policy import CTA_PROMPT, enforce_publication_policy
+from social_publishers import meta, blogger, pinterest, manual_draft
+from publication_policy import (
+    CTA_PROMPT,
+    REPUTATION_KNOWLEDGE_PROMPT,
+    enforce_channel_policy,
+    enforce_publication_policy,
+)
 
 SITE_URL = "https://guyrofe.com"
 
@@ -62,6 +67,7 @@ def generate_social_post(topic):
 טון: חם, מקצועי, נגיש. שורה ראשונה = הוק שמושך תשומת לב.
 אל תשתמש בהאשטגים. אל תשתמש בכותרות markdown.
 {CTA_PROMPT}"""
+    prompt += "\n" + REPUTATION_KNOWLEDGE_PROMPT
     resp = client.chat.completions.create(
         model="gpt-4o", messages=[{"role": "user", "content": prompt}], max_tokens=400
     )
@@ -113,10 +119,11 @@ def main():
     log(f"Generated post ({len(body)} chars)")
 
     # Tier 1: real APIs, text-only platforms
+    enforce_channel_policy("Facebook")
     try_publish("Facebook", meta.facebook_is_configured, meta.publish_facebook, title, body, SITE_URL)
-    try_publish("Twitter/X", twitter.is_configured, twitter.publish, title, body, SITE_URL)
-    try_publish("Tumblr", tumblr.is_configured, tumblr.publish, title, body, SITE_URL)
-    try_publish("Telegram", telegram.is_configured, telegram.publish, title, body, SITE_URL)
+    log("Twitter/X: SKIPPED (disabled by product reputation strategy)")
+    log("Tumblr: SKIPPED (deferred until it has a distinct audience purpose)")
+    log("Telegram: SKIPPED (deferred until it has a distinct audience purpose)")
     try_publish("Blogger", blogger.is_configured, blogger.publish, title, f"<p>{body}</p>", SITE_URL)
 
     # Instagram is owner-managed for this pilot. The product never publishes there.

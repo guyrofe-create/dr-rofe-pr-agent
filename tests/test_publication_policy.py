@@ -1,6 +1,6 @@
 import unittest
 
-from scripts.publication_policy import enforce_publication_policy
+from scripts.publication_policy import enforce_channel_policy, enforce_publication_policy
 
 
 class PublicationPolicyTests(unittest.TestCase):
@@ -36,6 +36,16 @@ class PublicationPolicyTests(unittest.TestCase):
     def test_rejects_english_solicitation(self):
         with self.assertRaises(ValueError):
             enforce_publication_policy("Book an appointment today")
+
+    def test_owner_managed_and_disabled_channels_are_blocked(self):
+        for channel in ("Instagram", "TikTok", "X", "Telegram", "Tumblr"):
+            with self.subTest(channel=channel), self.assertRaises(ValueError):
+                enforce_channel_policy(channel)
+
+    def test_product_managed_channels_are_allowed(self):
+        for channel in ("Facebook", "LinkedIn", "Google Business Profile", "Pinterest"):
+            with self.subTest(channel=channel):
+                self.assertEqual(enforce_channel_policy(channel), channel)
 
 
 if __name__ == "__main__":

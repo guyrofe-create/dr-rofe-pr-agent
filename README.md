@@ -14,6 +14,11 @@ stopping at alerts.
 - freezes scheduled publishing when a high-risk event is active;
 - keeps a durable audit trail and exposes command-center metrics in the dashboard;
 - replans an aggressive, evidence-led Google and AI visibility campaign every monitor cycle;
+- loads `config/reputation_strategy.json` as the enforceable source for canonical
+  facts, channel ownership, content evidence rules, AI monitoring and success metrics;
+- samples each approved AI reputation prompt three times per day and opens a
+  correction workflow only when the majority indicates the same problem;
+- requires medical article drafts to include at least two direct authoritative sources;
 - maps first-page asset gaps and separates AI citations from explicit brand mentions;
 - maintains a credential-free A/B/C/Q asset registry and excludes quarantined Web 2.0 mirrors from automation;
 - treats `drguyrofe.com` as the official Wix knowledge-and-podcast hub, with a distinct job from the WordPress sites;
@@ -67,6 +72,8 @@ python -m compileall -q scripts tests
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the data model, routing
 rules, governance boundaries and planned premium layers.
+The Hebrew operator guide and research summary is
+[docs/REPUTATION_STRATEGY_HE.md](docs/REPUTATION_STRATEGY_HE.md).
 
 ### Reviewed Medium publishing
 

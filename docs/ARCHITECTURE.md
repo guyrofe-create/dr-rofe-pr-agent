@@ -4,6 +4,15 @@
 
 `Listen -> Understand -> Score -> Route -> Approve -> Act -> Measure -> Learn`
 
+`config/reputation_strategy.json` is the machine-readable operating doctrine.
+It is loaded and validated at runtime. Content generation, publication-channel
+guards, growth planning, AI prompt selection, repeated sampling and metrics all
+consume it; the strategy is not merely documentation.
+
+`data/fact_registry.json` is the evidence gate for public identity facts.
+Approved facts require evidence records; unknowns remain explicit and cannot be
+silently filled by the content model.
+
 The initial release implements the deterministic center of this loop. Existing
 monitors remain collectors. Their alerts and new mentions are ingested by
 `CommandCenter`, deduplicated, scored, assigned a playbook, persisted and shown
@@ -57,6 +66,10 @@ override safety routing.
 - Never auto-publish legal, medical or crisis claims.
 - Preserve evidence before reporting or requesting removal.
 - Keep facts, claims and unknowns separated in crisis work.
+- Preserve the guyrofe.com homepage; entity work belongs on dedicated pages.
+- Instagram and TikTok remain owner-managed, X remains disabled, and Telegram
+  or Tumblr require a distinct audience purpose before product activation.
+- Medical drafts require human review and at least two direct authoritative sources.
 
 ## Aggressive growth engine
 

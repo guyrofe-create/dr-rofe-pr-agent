@@ -6,6 +6,32 @@ agent can push hard without gambling the client's durable assets.
 """
 
 TACTICS = {
+    "verified_fact_registry": {
+        "surface": ["google", "google_ai", "chatgpt", "perplexity", "bing_copilot", "all_profiles"],
+        "goal": "Keep every identity claim traceable to an approved fact and evidence source",
+        "impact": 10, "speed": 9, "risk": 1,
+        "requires": ["owner_fact_approval", "evidence_links"],
+        "actions": [
+            "Record names, roles, credentials, dates, works, official URLs and current practice status",
+            "Attach a primary or reliable independent evidence source to each material fact",
+            "Mark disputed and unknown claims instead of filling gaps",
+            "Use the registry as the only source for schema, biographies and platform profiles",
+        ],
+        "forbidden": ["unsupported_fact", "silent_fact_override", "fabricated_credential"],
+    },
+    "profile_consistency": {
+        "surface": ["google", "google_ai", "chatgpt", "perplexity", "bing_copilot", "brand_serp"],
+        "goal": "Align identity and current-status facts across official profiles",
+        "impact": 9, "speed": 8, "risk": 1,
+        "requires": ["verified_fact_registry", "profile_access"],
+        "actions": [
+            "Compare name variants, role, biography, image, website and current status",
+            "Correct factual conflicts while preserving platform-native descriptions",
+            "Link to the canonical source where the platform permits it",
+            "Re-audit after material fact changes",
+        ],
+        "forbidden": ["cloned_spam_biography", "false_current_practice_claim"],
+    },
     "entity_home": {
         "surface": ["google", "google_ai", "chatgpt", "perplexity", "bing_copilot"],
         "goal": "Create one canonical, richly evidenced entity home",
@@ -109,6 +135,20 @@ TACTICS = {
             "Use the permitted appeal or correction path if rejected",
         ],
         "forbidden": ["false_claim", "mass_report", "promise_removal", "intimidation"],
+    },
+    "ai_answer_correction": {
+        "surface": ["google_ai", "chatgpt", "perplexity", "bing_copilot"],
+        "goal": "Correct persistent factual errors at the source and verify recovery",
+        "impact": 10, "speed": 5, "risk": 2,
+        "requires": ["preserved_answer", "verified_fact_registry"],
+        "actions": [
+            "Preserve prompt, exact answer, model, date, language, citations and screenshot",
+            "Correct the source used by the engine before publishing a rebuttal",
+            "Publish a short evidence-backed clarification only when a source gap exists",
+            "Request re-indexing and report the error through the engine's official path",
+            "Close only after three consecutive clean re-tests",
+        ],
+        "forbidden": ["mass_generated_rebuttals", "unsupported_correction", "source_attack"],
     },
 }
 

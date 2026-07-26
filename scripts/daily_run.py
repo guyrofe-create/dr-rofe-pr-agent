@@ -13,7 +13,11 @@ import re
 import time
 
 import requests
-from publication_policy import CTA_PROMPT, enforce_publication_policy
+from publication_policy import (
+    CTA_PROMPT,
+    REPUTATION_KNOWLEDGE_PROMPT,
+    enforce_publication_policy,
+)
 
 
 TOPICS = [
@@ -112,6 +116,16 @@ def validate_generated_article(content):
             f"generated article has {word_count} words; "
             f"expected {MIN_ARTICLE_WORDS}-{MAX_ARTICLE_WORDS}"
         )
+    if not re.search(r"^#{2,3}\s+מקורות\b", content, flags=re.MULTILINE):
+        raise ValueError("generated medical article is missing a Sources section")
+    source_urls = {
+        url.rstrip(".,;)")
+        for url in re.findall(r"https?://[^\s>)\]]+", content)
+    }
+    if len(source_urls) < 2:
+        raise ValueError(
+            "generated medical article needs at least 2 direct source URLs"
+        )
     return title, word_count
 
 
@@ -154,12 +168,15 @@ def generate_article(topic):
 - שפה: עברית מקצועית אך נגישה לקהל רחב
 - מבנה: כותרת ראשית H1, מבוא, 3-4 סעיפים עם כותרות H2, סיכום
 - {CTA_PROMPT}
+- {REPUTATION_KNOWLEDGE_PROMPT}
 - אין להמציא נתונים, שיעורי הצלחה, תארים או ניסיון אישי
 - אין להציג את ד"ר גיא רופא כמי שמקבל כיום מטופלות, מפעיל מרפאה,
   מעניק טיפול או זמין לקביעת תורים
 - אין להזמין לייעוץ, ליצירת קשר או לקביעת תור
 - אין לייחס לד"ר גיא רופא אמירות, הדגשות או המלצות אישיות שלא סופקו
 - כל טענה רפואית מחייבת בדיקת רופא לפני פרסום
+- הוסף בסוף סעיף "מקורות" ובו לפחות שני קישורים ישירים למקורות
+  רשמיים, מקצועיים או מחקריים שעליהם מבוסס המאמר
 - פורמט: Markdown
 - אין לעטוף את התשובה בבלוק קוד ואין לכתוב את המילה markdown
 

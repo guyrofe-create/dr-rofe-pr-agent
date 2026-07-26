@@ -65,10 +65,21 @@ class DailyRunTests(unittest.TestCase):
     def test_valid_generated_article_passes_quality_gate(self):
         content = "# כותרת\n\n" + " ".join(
             ["מידע"] * daily_run.MIN_ARTICLE_WORDS
+        ) + (
+            "\n\n## מקורות\n"
+            "- https://www.who.int/example\n"
+            "- https://www.acog.org/example\n"
         )
         title, word_count = daily_run.validate_generated_article(content)
         self.assertEqual(title, "כותרת")
         self.assertGreaterEqual(word_count, daily_run.MIN_ARTICLE_WORDS)
+
+    def test_generated_medical_article_requires_two_direct_sources(self):
+        content = "# כותרת\n\n" + " ".join(
+            ["מידע"] * daily_run.MIN_ARTICLE_WORDS
+        ) + "\n\n## מקורות\n- https://www.who.int/example\n"
+        with self.assertRaisesRegex(ValueError, "at least 2"):
+            daily_run.validate_generated_article(content)
 
     def test_generation_retry_expands_the_previous_draft(self):
         messages = daily_run.generation_messages(

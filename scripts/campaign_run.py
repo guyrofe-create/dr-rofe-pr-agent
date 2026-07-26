@@ -19,11 +19,8 @@ from social_publishers import (
     linkedin,
     meta,
     pinterest,
-    telegram,
-    tumblr,
-    twitter,
 )
-from publication_policy import enforce_publication_policy
+from publication_policy import enforce_channel_policy, enforce_publication_policy
 import social_image
 
 
@@ -305,6 +302,7 @@ def publish_campaign(draft_path):
             destination("drguyrofe.co.il", "not_configured", detail="חיבור WordPress חסר")
         )
 
+    enforce_channel_policy("Facebook")
     destinations.append(
         attempt(
             "Facebook",
@@ -330,39 +328,20 @@ def publish_campaign(draft_path):
         )
     )
     destinations.append(
-        attempt(
-            "X",
-            twitter.is_configured(),
-            twitter.publish,
-            title,
-            summary,
-            canonical_url,
-            image_url,
-            social_image.alt_text(title),
-        )
+        destination("X", "disabled", detail="מושבת במדיניות המוצר")
     )
     destinations.append(
-        attempt(
+        destination(
             "Tumblr",
-            tumblr.is_configured(),
-            tumblr.publish,
-            title,
-            summary,
-            canonical_url,
-            image_url,
-            social_image.alt_text(title),
+            "deferred",
+            detail="לא יופעל ללא קהל או שימוש ייחודי",
         )
     )
     destinations.append(
-        attempt(
+        destination(
             "Telegram",
-            telegram.is_configured(),
-            telegram.publish,
-            title,
-            summary,
-            canonical_url,
-            image_url,
-            social_image.alt_text(title),
+            "deferred",
+            detail="לא יופעל ללא קהל או שימוש ייחודי",
         )
     )
     destinations.append(

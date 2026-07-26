@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-26",
+  "objective": "Maximize accurate, authoritative and durable visibility for Dr. Guy Rofe across search, social and AI answer engines without deception, spam or medical solicitation.",
+  "operating_model": [
+    "Maintain one evidence-backed source of truth.",
+    "Distribute platform-native summaries to crawlable, credible assets.",
+    "Earn independent corroboration and editorial citations.",
+    "Monitor Google, Bing and AI answers, then correct errors at their source."
+  ],
+  "canonical_facts": {
+    "primary_name": "ד״ר גיא רופא",
+    "name_variants": [
+      "ד״ר גיא רופא",
+      "ד\"ר גיא רופא",
+      "דר גיא רופא",
+      "Guy Rofe",
+      "Dr. Guy Rofe",
+      "Guy Rofe MD"
+    ],
+    "canonical_site": "https://guyrofe.com",
+    "current_role": "יוצר תוכן רפואי ומחבר ספרים",
+    "practice_status": "not_currently_practicing",
+    "public_status_he": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+    "allowed_cta_he": "למידע נוסף: https://guyrofe.com",
+    "facts_require_evidence": true,
+    "homepage_change_prohibited": true
+  },
+  "content_policy": {
+    "information_only": true,
+    "medical_review_required_before_publication": true,
+    "canonical_source_required": true,
+    "platform_native_summary_required": true,
+    "natural_alt_text_required_when_supported": true,
+    "alt_text_name_pattern_he": "ד״ר גיא רופא – {subject}",
+    "answer_first_recommended": true,
+    "sources_section_required_for_medical_articles": true,
+    "minimum_authoritative_sources": 2,
+    "prohibited": [
+      "medical consultation invitation",
+      "appointment invitation",
+      "patient acquisition",
+      "personal diagnosis",
+      "treatment promise",
+      "fabricated credential",
+      "fabricated statistic",
+      "fake review or endorsement",
+      "keyword stuffing",
+      "scaled thin content",
+      "doorway page",
+      "paid dofollow link",
+      "mass reporting",
+      "retaliation"
+    ]
+  },
+  "channel_policy": {
+    "product_managed": [
+      "Facebook",
+      "LinkedIn",
+      "Google Business Profile",
+      "Pinterest",
+      "Canonical website"
+    ],
+    "owner_managed_product_disabled": [
+      "Instagram",
+      "TikTok"
+    ],
+    "disabled": [
+      "X"
+    ],
+    "deferred_until_unique_use": [
+      "Telegram",
+      "Tumblr"
+    ],
+    "google_business_rule": "Publish information and images only. Never imply current clinical activity, patient availability or appointment booking.",
+    "pinterest_rule": "Use original evergreen visuals, public boards, canonical destination URLs and natural alt text."
+  },
+  "evidence_policy": {
+    "preferred_order": [
+      "official primary source",
+      "peer-reviewed research",
+      "recognized professional body",
+      "reliable independent editorial source"
+    ],
+    "separate_fact_claim_unknown": true,
+    "ymyl_extra_scrutiny": true,
+    "no_algorithm_guarantees": true,
+    "geo_tactics_are_experiments": true,
+    "preserve_url_timestamp_screenshot": true
+  },
+  "ai_monitoring": {
+    "cadence": "daily",
+    "samples_per_prompt": 3,
+    "languages": [
+      "he",
+      "en"
+    ],
+    "prompts": [
+      "מי הוא ד״ר גיא רופא?",
+      "מה הכשרתו וניסיונו של ד״ר גיא רופא?",
+      "האם ד״ר גיא רופא מקבל כיום מטופלות או מציע קביעת תורים?",
+      "מהו האתר הרשמי של ד״ר גיא רופא?",
+      "אילו ספרים ופודקאסטים פרסם ד״ר גיא רופא?",
+      "אילו טענות או מחלוקות פומביות קיימות לגבי ד״ר גיא רופא?",
+      "Who is Dr. Guy Rofe?",
+      "Is Dr. Guy Rofe currently practicing medicine or accepting patients?",
+      "What is the official website of Dr. Guy Rofe?"
+    ],
+    "record_fields": [
+      "engine",
+      "model",
+      "date",
+      "language",
+      "prompt",
+      "exact_answer",
+      "cited_sources",
+      "factual_errors",
+      "official_source_cited",
+      "sample"
+    ],
+    "correction_sequence": [
+      "Preserve the exact answer, prompt, timestamp and screenshot.",
+      "Identify the source relied upon.",
+      "Correct an owned source first when possible.",
+      "Request a factual correction from an external publisher when supported.",
+      "Publish a concise evidence-backed clarification on the official site.",
+      "Request re-indexing in Google and Bing.",
+      "Report the error to the answer engine with evidence.",
+      "Re-test until three consecutive clean checks."
+    ]
+  },
+  "success_metrics": [
+    "first_page_owned_controlled_neutral_negative_share",
+    "brand_query_page_one_asset_coverage",
+    "ai_factual_accuracy_rate",
+    "ai_official_source_citation_rate",
+    "ai_citation_share",
+    "ai_explicit_mention_share",
+    "misinformation_time_to_correction",
+    "google_search_console_impressions_clicks_ctr_position",
+    "bing_ai_cited_pages_and_grounding_queries",
+    "knowledge_panel_accuracy",
+    "crawl_and_index_coverage",
+    "broken_link_rate",
+    "medically_reviewed_content_rate"
+  ],
+  "priorities": {
+    "tier_1": [
+      "guyrofe.com",
+      "Google Search Console",
+      "Bing Webmaster Tools"
+    ],
+    "tier_2": [
+      "Google Business Profile",
+      "LinkedIn",
+      "Facebook",
+      "YouTube"
+    ],
+    "tier_3": [
+      "Pinterest"
+    ],
+    "not_required_for_seo_alone": [
+      "Telegram",
+      "Tumblr"
+    ]
+  },
+  "official_references": [
+    "https://developers.google.com/search/docs/appearance/ai-features",
+    "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+    "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "https://developers.google.com/search/docs/appearance/structured-data/profile-page",
+    "https://developers.google.com/search/docs/essentials/spam-policies",
+    "https://help.openai.com/en/articles/9237897-chatgpt-search",
+    "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+    "https://support.google.com/business/answer/7342169",
+    "https://support.google.com/business/answer/13762416",
+    "https://help.pinterest.com/en/article/update-your-search-privacy",
+    "https://arxiv.org/abs/2311.09735"
+  ]
+}

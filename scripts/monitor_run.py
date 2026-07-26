@@ -32,7 +32,8 @@ from openai import OpenAI
 
 sys.path.insert(0, os.path.dirname(__file__))
 from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest
-from reputation_core import CommandCenter, plan_growth_campaign
+from reputation_core import CommandCenter, monitoring_prompts, plan_growth_campaign
+from reputation_core.strategy import load_strategy
 
 SITE_DOMAIN = "guyrofe.com"
 HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "reputation_history.json")
@@ -49,14 +50,7 @@ KEYWORDS = [
     "גיא רופא פודקאסט",
 ]
 
-GEO_PROMPTS = [
-    "מי הוא ד״ר גיא רופא?",
-    "איזה תוכן רפואי מפרסם ד״ר גיא רופא?",
-    "אילו ספרים כתב ד״ר גיא רופא?",
-    "האם לד״ר גיא רופא יש פודקאסט?",
-    "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
-    "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?",
-]
+GEO_PROMPTS = monitoring_prompts()
 
 WEB_MENTION_QUERY = '"דר גיא רופא" OR "גיא רופא" גינקולוג'
 
@@ -231,6 +225,12 @@ def serp_checks_due(today=None):
     return True
 
 
+def ai_checks_due(today=None):
+    """AI-answer sampling is daily and uses repeated samples for stability."""
+    today = today or date.today().isoformat()
+    return HISTORY.get("last_ai_check_date") != today
+
+
 def check_google_rank():
     api_key = env("SERPAPI_KEY")
     if not api_key:
@@ -272,58 +272,81 @@ def check_ai_presence():
         REPORT["geo"].append({"status": "skipped", "reason": "OPENAI_API_KEY not set"})
         return
     client = OpenAI(api_key=openai_key)
+    strategy = load_strategy()["ai_monitoring"]
+    configured_samples = os.environ.get("AI_MONITOR_SAMPLES", "").strip()
+    sample_count = int(configured_samples or strategy["samples_per_prompt"])
+    sample_count = max(1, min(sample_count, 5))
+    majority = sample_count // 2 + 1
+    model = os.environ.get("AI_MONITOR_MODEL", "gpt-4o")
     for prompt in GEO_PROMPTS:
-        try:
-            resp = client.chat.completions.create(
-                model="gpt-4o", messages=[{"role": "user", "content": prompt}], max_tokens=300
-            )
-            answer = resp.choices[0].message.content
-            mentioned = ("גיא רופא" in answer) or ("Guy Rofe" in answer)
-            active_practice_claim = has_active_practice_claim(answer)
-            identity_misinformation = has_identity_misinformation(answer)
-            knowledge_gap = (
-                not identity_misinformation
-                and has_ai_knowledge_gap(prompt, answer)
-            )
-            REPORT["geo"].append({
-                "prompt": prompt,
-                "mentions_dr_rofe": mentioned,
-                "active_practice_claim": active_practice_claim,
-                "identity_misinformation": identity_misinformation,
-                "knowledge_gap": knowledge_gap,
-                "safe_status": (
-                    "pass"
-                    if mentioned
-                    and not active_practice_claim
-                    and not identity_misinformation
-                    and not knowledge_gap
-                    else "review"
-                ),
-                "excerpt": answer[:300],
-            })
-            if active_practice_claim:
-                REPORT["alerts"].append({
-                    "type": "ai_active_practice_misinformation",
-                    "source": "OpenAI monitor sample",
-                    "excerpt": answer[:300],
+        samples = []
+        for sample_number in range(1, sample_count + 1):
+            try:
+                resp = client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=300,
+                )
+                answer = resp.choices[0].message.content or ""
+                mentioned = ("גיא רופא" in answer) or ("Guy Rofe" in answer)
+                active_practice_claim = has_active_practice_claim(answer)
+                identity_misinformation = has_identity_misinformation(answer)
+                knowledge_gap = (
+                    not identity_misinformation
+                    and has_ai_knowledge_gap(prompt, answer)
+                )
+                result = {
+                    "engine": "OpenAI",
+                    "model": model,
+                    "language": "he" if re.search(r"[\u0590-\u05FF]", prompt) else "en",
+                    "sample": sample_number,
                     "prompt": prompt,
-                })
-            if identity_misinformation:
-                REPORT["alerts"].append({
-                    "type": "ai_identity_misinformation",
-                    "source": "OpenAI monitor sample",
+                    "mentions_dr_rofe": mentioned,
+                    "active_practice_claim": active_practice_claim,
+                    "identity_misinformation": identity_misinformation,
+                    "knowledge_gap": knowledge_gap,
+                    "official_source_cited": None,
+                    "cited_sources": [],
+                    "safe_status": (
+                        "pass"
+                        if mentioned
+                        and not active_practice_claim
+                        and not identity_misinformation
+                        and not knowledge_gap
+                        else "review"
+                    ),
+                    "exact_answer": answer,
                     "excerpt": answer[:300],
+                }
+                samples.append(result)
+                REPORT["geo"].append(result)
+            except Exception as e:
+                REPORT["geo"].append({
+                    "engine": "OpenAI",
+                    "model": model,
+                    "sample": sample_number,
                     "prompt": prompt,
+                    "status": "error",
+                    "detail": safe_error(e),
                 })
-            if knowledge_gap:
+
+        alert_types = (
+            ("active_practice_claim", "ai_active_practice_misinformation"),
+            ("identity_misinformation", "ai_identity_misinformation"),
+            ("knowledge_gap", "ai_knowledge_gap"),
+        )
+        for field, alert_type in alert_types:
+            flagged = [sample for sample in samples if sample.get(field)]
+            if len(flagged) >= majority:
                 REPORT["alerts"].append({
-                    "type": "ai_knowledge_gap",
-                    "source": "OpenAI monitor sample",
-                    "excerpt": answer[:300],
+                    "type": alert_type,
+                    "source": "OpenAI repeated monitor samples",
+                    "excerpt": flagged[0]["excerpt"],
                     "prompt": prompt,
+                    "samples_flagged": len(flagged),
+                    "samples_total": len(samples),
+                    "model": model,
                 })
-        except Exception as e:
-            REPORT["geo"].append({"prompt": prompt, "status": "error", "detail": safe_error(e)})
 
 
 # ─── 3. Token / session health ───────────────────────────────────────────────
@@ -758,7 +781,14 @@ def main():
             "status": "skipped",
             "reason": "daily SerpApi cadence already completed",
         }
-    check_ai_presence()
+    if ai_checks_due(today_str):
+        check_ai_presence()
+        HISTORY["last_ai_check_date"] = today_str
+    else:
+        REPORT["geo"].append({
+            "status": "skipped",
+            "reason": "daily repeated AI sampling already completed",
+        })
     check_token_health()
     check_reviews()
     check_facebook_recommendations()

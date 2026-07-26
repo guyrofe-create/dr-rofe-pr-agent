@@ -194,6 +194,15 @@ class MonitorGeoTests(unittest.TestCase):
             self.assertFalse(monitor_run.serp_checks_due("2026-07-26"))
             self.assertTrue(monitor_run.serp_checks_due("2026-07-27"))
 
+    def test_ai_repeated_sampling_runs_only_once_per_day(self):
+        with patch.object(
+            monitor_run,
+            "HISTORY",
+            {"last_ai_check_date": "2026-07-26"},
+        ):
+            self.assertFalse(monitor_run.ai_checks_due("2026-07-26"))
+            self.assertTrue(monitor_run.ai_checks_due("2026-07-27"))
+
 
 if __name__ == "__main__":
     unittest.main()

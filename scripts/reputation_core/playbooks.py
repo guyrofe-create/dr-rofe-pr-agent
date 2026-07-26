@@ -33,6 +33,24 @@ PLAYBOOKS = {
         ],
         "prohibited": ["promise_removal", "mass_report", "retaliate"],
     },
+    "ai_misinformation_correction": {
+        "freeze_scheduled_content": False,
+        "steps": [
+            "Preserve the exact prompt, answer, engine, model, timestamp, URL and screenshot",
+            "Classify each statement as verified fact, unsupported claim or unknown",
+            "Identify the cited or likely source and correct an owned source first",
+            "Publish one concise evidence-backed clarification on the canonical site when needed",
+            "Request re-indexing in Google and Bing after the source correction",
+            "Report the exact error to the answer engine with evidence",
+            "Re-test the same prompt until three consecutive checks are clean",
+        ],
+        "prohibited": [
+            "fabricate_evidence",
+            "mass_publish_rebuttals",
+            "keyword_stuffing",
+            "attack_the_source",
+        ],
+    },
     "review_recovery": {
         "freeze_scheduled_content": False,
         "steps": [
