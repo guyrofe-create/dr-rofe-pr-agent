@@ -67,6 +67,34 @@ class MetaConnectionTests(unittest.TestCase):
         clear=True,
     )
     @patch("scripts.social_publishers.meta.requests.get")
+    def test_homepage_link_alone_is_not_a_duplicate(self, get):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {
+            "data": [
+                {
+                    "id": "123_456",
+                    "message": "תוכן שונה לחלוטין בנושא אחר",
+                    "attachments": {
+                        "data": [{"unshimmed_url": "https://guyrofe.com/"}]
+                    },
+                }
+            ]
+        }
+        get.return_value = response
+
+        duplicate = meta.find_recent_facebook_duplicate(
+            "מה חשוב לדעת על כאבי מחזור חזקים", "https://guyrofe.com"
+        )
+
+        self.assertIsNone(duplicate)
+
+    @patch.dict(
+        os.environ,
+        {"FACEBOOK_PAGE_ID": "123", "FACEBOOK_PAGE_TOKEN": "token"},
+        clear=True,
+    )
+    @patch("scripts.social_publishers.meta.requests.get")
     def test_finds_crossposted_duplicate_by_text(self, get):
         response = Mock()
         response.raise_for_status.return_value = None
@@ -103,7 +131,7 @@ class MetaConnectionTests(unittest.TestCase):
                     "id": "123_999",
                     "message": (
                         "כותרת\n\nתוכן\n\n"
-                        "קריאה מלאה: https://guyrofe.com"
+                        "מידע נוסף: https://guyrofe.com/articles/example"
                     ),
                 }
             ]
@@ -111,7 +139,9 @@ class MetaConnectionTests(unittest.TestCase):
         get.return_value = response
 
         with self.assertRaises(meta.DuplicatePostError):
-            meta.publish_facebook("כותרת", "תוכן", "https://guyrofe.com")
+            meta.publish_facebook(
+                "כותרת", "תוכן", "https://guyrofe.com/articles/example"
+            )
 
         post.assert_not_called()
 
