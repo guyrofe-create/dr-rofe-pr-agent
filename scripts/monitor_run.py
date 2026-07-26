@@ -62,6 +62,7 @@ COMMAND_CENTER_PATH = str(data_path("command_center.json"))
 PROFILE_PATH = str(data_path("business_profile.json"))
 GROWTH_OBSERVATIONS_PATH = str(data_path("growth_observations.json"))
 ASSET_REGISTRY_PATH = str(data_path("asset_registry.json"))
+BING_AI_PERFORMANCE_PATH = str(data_path("bing_ai_performance.json"))
 
 KEYWORDS = client_search_queries()
 
@@ -75,7 +76,8 @@ REPORT = {
     "date": datetime.now().isoformat(),
     "rank": [], "geo": [], "tokens": [], "reviews": None,
     "facebook_recommendations": None, "web_mentions": None,
-    "search_console": None, "orchestration": None,
+    "search_console": None, "bing_ai_performance": None,
+    "orchestration": None,
     "alerts": [], "errors": [],
 }
 
@@ -287,24 +289,38 @@ def check_google_rank():
         item.strip() for item in os.environ.get("SERP_DEVICES", "mobile,desktop").split(",")
         if item.strip() in {"mobile", "desktop", "tablet"}
     ]
+    engines = [
+        item.strip().lower()
+        for item in os.environ.get("SERP_ENGINES", "google").split(",")
+        if item.strip().lower() in {"google", "bing"}
+    ]
     for kw in queries:
-      for device in devices:
+      for engine in engines:
+       for device in devices:
         try:
+            params = {
+                "engine": engine, "q": kw, "num": 10,
+                "device": device, "api_key": api_key,
+            }
+            if engine == "google":
+                params.update({
+                    "google_domain": GOOGLE_DOMAIN,
+                    "gl": MARKET_COUNTRY.lower(),
+                    "hl": GOOGLE_LANGUAGE,
+                })
+            else:
+                params["cc"] = MARKET_COUNTRY.lower()
             resp = requests.get(
                 "https://serpapi.com/search.json",
-                params={
-                    "engine": "google", "q": kw, "google_domain": GOOGLE_DOMAIN,
-                    "gl": MARKET_COUNTRY.lower(), "hl": GOOGLE_LANGUAGE,
-                    "num": 10, "device": device,
-                    "api_key": api_key,
-                },
+                params=params,
                 timeout=20,
             )
             resp.raise_for_status()
             data = resp.json()
             if "error" in data:
                 REPORT["rank"].append({
-                    "keyword": kw, "device": device, "status": "error",
+                    "engine": engine, "keyword": kw, "device": device,
+                    "status": "error",
                     "detail": data["error"],
                 })
                 continue
@@ -314,6 +330,10 @@ def check_google_rank():
                 None,
             )
             REPORT["rank"].append({
+                "engine": engine,
+                "surface": "web_search",
+                "interface": "search_data_api",
+                "collection_method": "serpapi",
                 "keyword": kw, "device": device, "country": MARKET_COUNTRY,
                 "language": MARKET_LANGUAGE,
                 "position_top10": position,
@@ -328,10 +348,29 @@ def check_google_rank():
                     }
                     for index, result in enumerate(organic[:10])
                 ],
+                "features": {
+                    "knowledge_panel": bool(data.get("knowledge_graph")),
+                    "images": bool(
+                        data.get("inline_images")
+                        or data.get("images_results")
+                    ),
+                    "video": bool(
+                        data.get("inline_videos")
+                        or data.get("video_results")
+                    ),
+                    "featured_snippet": bool(
+                        data.get("answer_box")
+                        or data.get("featured_snippet")
+                    ),
+                    "people_also_ask": bool(data.get("related_questions")),
+                    "top_stories": bool(data.get("top_stories")),
+                    "local_pack": bool(data.get("local_results")),
+                },
             })
         except Exception as e:
             REPORT["rank"].append({
-                "keyword": kw, "device": device, "status": "error",
+                "engine": engine, "keyword": kw, "device": device,
+                "status": "error",
                 "detail": safe_error(e),
             })
 
@@ -418,7 +457,11 @@ def check_ai_presence():
                 )
                 result = {
                     "engine": "OpenAI",
+                    "surface": "responses_web_search",
+                    "interface": "api",
+                    "collection_method": "openai_responses_api",
                     "model": model,
+                    "country": MARKET_COUNTRY,
                     "language": "he" if re.search(r"[\u0590-\u05FF]", prompt) else "en",
                     "sample": sample_number,
                     "prompt": prompt,
@@ -717,9 +760,9 @@ def critical_monitor_failures():
     if env("SERPAPI_KEY"):
         rank_errors = [r for r in REPORT["rank"] if r.get("status") == "error"]
         if rank_errors:
-            failures.append(f"Google rank: {len(rank_errors)} query errors")
+            failures.append(f"SERP rank: {len(rank_errors)} query errors")
         elif REPORT.get("rank") and not rank_measurement_succeeded():
-            failures.append("Google rank: no complete fresh measurement")
+            failures.append("SERP rank: no complete fresh measurement")
         if (REPORT.get("web_mentions") or {}).get("status") == "error":
             failures.append("web mentions")
     if env("OPENAI_API_KEY") and any(
@@ -747,16 +790,89 @@ def critical_monitor_failures():
 def format_report_markdown():
     lines = [f"# דוח ניטור - {datetime.now().strftime('%Y-%m-%d %H:%M')}", ""]
 
-    lines.append("## דירוג בגוגל")
+    lines.append("## דירוג במנועי חיפוש")
     for r in REPORT["rank"]:
+        engine = (r.get("engine") or "google").title()
         if r.get("status") == "found":
-            lines.append(f"- `{r['keyword']}` → מיקום {r['position_top10']} (עמוד ראשון)")
+            lines.append(
+                f"- {engine} / {r.get('device', 'unknown')} / "
+                f"`{r['keyword']}` → מיקום {r['position_top10']} (עמוד ראשון)"
+            )
         elif r.get("status") == "not_in_top10":
-            lines.append(f"- `{r['keyword']}` → לא בעשירייה הראשונה")
+            lines.append(
+                f"- {engine} / {r.get('device', 'unknown')} / "
+                f"`{r['keyword']}` → לא בעשירייה הראשונה"
+            )
         elif r.get("status") == "skipped":
             lines.append(f"- דילוג: {r['reason']}")
         else:
-            lines.append(f"- `{r.get('keyword','?')}` → שגיאה: {r.get('detail')}")
+            lines.append(
+                f"- {engine} / `{r.get('keyword','?')}` → "
+                f"שגיאה: {r.get('detail')}"
+            )
+    lines.append("")
+
+    visibility = (
+        (REPORT.get("orchestration") or {})
+        .get("visibility_measurement", {})
+    )
+    lines.append("## P3 — מדידת שליטה לפי מנוע ומשטח")
+    serp_surfaces = visibility.get("serp_surfaces", [])
+    if serp_surfaces:
+        for measurement in serp_surfaces:
+            volatility = measurement.get("volatility", {})
+            seven = (volatility.get("7d") or {}).get(
+                "mean_absolute_position_change"
+            )
+            twenty_eight = (volatility.get("28d") or {}).get(
+                "mean_absolute_position_change"
+            )
+            lines.append(
+                "- "
+                f"{str(measurement.get('engine', '?')).title()} / "
+                f"{measurement.get('surface', '?')} / "
+                f"{measurement.get('interface', '?')} / "
+                f"{measurement.get('device', '?')} / "
+                f"`{measurement.get('query', '?')}`: "
+                f"נשלטות {measurement.get('controlled_count_top10', 0)}, "
+                f"רצויות {measurement.get('desired_count_top10', 0)}, "
+                f"שליליות {measurement.get('negative_count_top10', 0)}, "
+                f"משקל שליטה {measurement.get('weighted_controlled_score', 0)}, "
+                f"תנודתיות 7/28 ימים {seven}/{twenty_eight}"
+            )
+    else:
+        lines.append("- אין עדיין דגימת SERP מלאה")
+    ai_surfaces = visibility.get("ai_surfaces", [])
+    if ai_surfaces:
+        for measurement in ai_surfaces:
+            lines.append(
+                "- "
+                f"{measurement.get('engine', '?')} / "
+                f"{measurement.get('surface', '?')} / "
+                f"{measurement.get('interface', '?')} / "
+                f"{measurement.get('model', '?')}: "
+                f"זיהוי {measurement.get('identity_accuracy_rate')}, "
+                f"דיוק עובדתי {measurement.get('factual_accuracy_rate')}, "
+                f"כיסוי נרטיב {measurement.get('desired_narrative_coverage')}, "
+                f"ציטוט מקור מאושר "
+                f"{measurement.get('approved_source_citation_rate')}, "
+                f"מגוון מקורות "
+                f"{measurement.get('source_diversity', {}).get('unique_hosts')}, "
+                f"מידע מזיק/שגוי "
+                f"{measurement.get('harmful_or_incorrect_rate')}, "
+                f"יציבות {measurement.get('cross_sample_stability')}"
+            )
+    else:
+        lines.append("- אין עדיין דגימת AI תקינה")
+    bing = visibility.get("bing_ai_performance", {})
+    lines.append(
+        "- Bing AI Performance: "
+        f"{bing.get('status', 'no_data')}; "
+        f"ציטוטים {bing.get('total_citations', 0)}, "
+        f"דפים {bing.get('unique_cited_pages', 0)}, "
+        f"שאילתות grounding {bing.get('unique_grounding_queries', 0)}; "
+        f"מקור: {bing.get('collection_method', 'authorized_manual_export')}"
+    )
     lines.append("")
 
     lines.append("## דגימת נוכחות במודל OpenAI (GEO)")
@@ -948,27 +1064,65 @@ def main():
     registry = load_json_file(ASSET_REGISTRY_PATH, {"assets": []})
     serp_snapshots = [
         {
+            "engine": item.get("engine", "google"),
+            "surface": item.get("surface", "web_search"),
+            "interface": item.get("interface", "search_data_api"),
+            "collection_method": item.get(
+                "collection_method", "serpapi"
+            ),
             "query": item["keyword"],
             "country": item.get("country", "IL"),
             "language": item.get("language", "he"),
             "device": item.get("device", "unknown"),
             "observed_at": REPORT["date"],
             "results": item.get("results", []),
+            "features": item.get("features", {}),
         }
         for item in REPORT.get("rank", [])
         if item.get("results")
     ]
+    historical_serp_snapshots = [
+        {
+            "engine": item.get("engine", "google"),
+            "surface": item.get("surface", "web_search"),
+            "interface": item.get("interface", "search_data_api"),
+            "collection_method": item.get(
+                "collection_method", "serpapi"
+            ),
+            "query": item.get("keyword"),
+            "country": item.get("country", "IL"),
+            "language": item.get("language", "he"),
+            "device": item.get("device", "unknown"),
+            "observed_at": snapshot.get("date"),
+            "results": item.get("results", []),
+            "features": item.get("features", {}),
+        }
+        for snapshot in HISTORY.get("snapshots", [])
+        for item in snapshot.get("rank", [])
+        if item.get("results")
+    ]
+    bing_ai_performance = load_json_file(
+        BING_AI_PERFORMANCE_PATH, {"rows": []}
+    )
     REPORT["orchestration"] = orchestrate_reputation_cycle(
         registry.get("assets", []),
         serp_snapshots,
         ai_snapshots=REPORT.get("geo", []),
         search_console_rows=search_console_rows,
+        historical_serp_snapshots=historical_serp_snapshots,
+        bing_ai_performance=bing_ai_performance,
     )
+    REPORT["bing_ai_performance"] = REPORT["orchestration"][
+        "visibility_measurement"
+    ]["bing_ai_performance"]
     command_center.state["visibility_measurements"].append({
         "at": REPORT["date"],
         "type": "serp_ai_orchestration",
         "control_maps": REPORT["orchestration"]["control_maps"],
         "ai_visibility": REPORT["orchestration"]["ai_visibility"],
+        "visibility_measurement": REPORT["orchestration"][
+            "visibility_measurement"
+        ],
         "cross_domain_risks": REPORT["orchestration"]["cross_domain_risks"],
         "new_asset_proposals": REPORT["orchestration"]["new_asset_proposals"],
         "next_best_actions": REPORT["orchestration"]["next_best_actions"][:20],

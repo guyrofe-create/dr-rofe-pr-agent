@@ -15,6 +15,12 @@ from urllib.parse import urlparse
 from .asset_safety import evaluate_asset_candidate
 from .coverage_safety import evaluate_coverage_safety
 from .installation import config_path
+from .measurement import (
+    add_serp_volatility,
+    measure_ai_surfaces,
+    measure_serp_surface,
+    summarize_bing_ai_performance,
+)
 from .strategy import client_asset_policy, client_search_queries, load_client_profile
 
 
@@ -458,15 +464,38 @@ def orchestrate_reputation_cycle(
     search_console_rows: list[dict] | None = None,
     content_inventory: list[dict] | None = None,
     creation_history: list[dict] | None = None,
+    historical_serp_snapshots: list[dict] | None = None,
+    bing_ai_performance: dict | None = None,
 ) -> dict:
     """Build one evidence-led, maximum-sustainable action cycle."""
     targets = load_serp_targets()
     control_maps = [build_query_control_map(snapshot, assets) for snapshot in serp_snapshots]
+    serp_measurements = [
+        measure_serp_surface(control_map, snapshot)
+        for control_map, snapshot in zip(control_maps, serp_snapshots)
+    ]
+    historical_serp_measurements = [
+        measure_serp_surface(
+            build_query_control_map(snapshot, assets), snapshot
+        )
+        for snapshot in (historical_serp_snapshots or [])
+    ]
+    serp_measurements = add_serp_volatility(
+        serp_measurements, historical_serp_measurements
+    )
     approved_hosts = {
         _host(asset.get("url")) for asset in assets
         if asset.get("tier") in {"A", "B"} and asset.get("status") != "quarantined"
     }
     ai = evaluate_ai_visibility(ai_snapshots or [], approved_hosts)
+    ai_surfaces = measure_ai_surfaces(
+        ai_snapshots or [],
+        approved_hosts,
+        load_client_profile().get("desired_narratives", []),
+    )
+    bing_ai = summarize_bing_ai_performance(
+        bing_ai_performance or {"rows": []}
+    )
     risks = detect_cross_domain_risk(content_inventory or [])
     coverage_safety = evaluate_coverage_safety(
         assets, risks, client_asset_policy()
@@ -536,6 +565,16 @@ def orchestrate_reputation_cycle(
         "guardrail": "Maximum sustainable execution without spam, deception, fake independence or medical solicitation.",
         "control_maps": control_maps,
         "ai_visibility": ai,
+        "visibility_measurement": {
+            "version": 3,
+            "serp_surfaces": serp_measurements,
+            "ai_surfaces": ai_surfaces,
+            "bing_ai_performance": bing_ai,
+            "separation_rule": (
+                "engine, surface, interface, collection method, locale, "
+                "device/model and prompt are measured independently"
+            ),
+        },
         "cross_domain_risks": risks,
         "coverage_safety": coverage_safety,
         "new_asset_proposals": new_asset_proposals,

@@ -217,6 +217,19 @@ class InstallationWizardTests(unittest.TestCase):
             )
             self.assertEqual(connection["currently_present"], [])
             self.assertFalse({"value", "token", "secret_value"} & set(connection))
+            targets = json.loads(
+                (root / "config/serp_targets.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            self.assertEqual(targets["version"], 3)
+            self.assertEqual(
+                targets["measurement_plan"]["search_engines"],
+                ["google", "bing"],
+            )
+            self.assertTrue(
+                (root / "data/bing_ai_performance.json").exists()
+            )
 
     def test_wizard_refuses_nonempty_destination_without_force(self):
         base_strategy = json.loads(

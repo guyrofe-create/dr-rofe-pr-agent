@@ -174,6 +174,29 @@ publish content. New facts remain excluded until evidence-approved, unverified
 assets remain uncontrolled, and each public item still requires explicit
 approval.
 
+## P3 independent visibility measurement
+
+P3 adds a measurement layer, not a ranking promise. A SERP observation is keyed
+by engine, surface, interface, collection method, query, country, language and
+device. It records controlled and desired results independently, position
+weights, negative exposure, knowledge panel/image/video and other SERP feature
+presence, and 7/28-day volatility. Missing results are treated as position 11
+for movement calculations.
+
+An AI observation is keyed separately by engine, surface, interface,
+collection method, model, country, language and exact prompt. Metrics cover
+identity correctness, fact-registry accuracy, desired narrative coverage,
+approved-source citations, source diversity, harmful or wrong information and
+agreement across repeated samples. Unknown factual accuracy fails closed; it
+is not silently counted as correct.
+
+`monitor_run.py` persists both layers inside the command center. OpenAI API
+sampling remains explicitly labeled as an API surface. Consumer UI samples
+must be collected through an authorized workflow and cannot be blended with
+the API. Bing AI Performance CSV/JSON exports are normalized by
+`import_bing_ai_performance.py`; the adapter deliberately does not invent or
+scrape an undocumented Bing export API.
+
 ## Next premium layers
 
 1. Encrypted connector vault and role-based approvals for a single installation.
@@ -182,5 +205,6 @@ approval.
 4. Review-request journeys without review gating or incentives.
 5. Narrative map and entity knowledge graph for search and AI consistency.
 6. Root-cause analysis that turns recurring complaints into operational tasks.
-7. Broader AI-answer measurement with prompts, citations, geography and model versions.
+7. Authorized consumer-interface AI sampling beyond the implemented API and
+   Bing AI Performance import surfaces.
 8. Outcome analytics: response time, resolution, sentiment recovery, leads and revenue.

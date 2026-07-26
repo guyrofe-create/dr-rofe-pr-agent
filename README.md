@@ -117,6 +117,39 @@ python scripts/open_campaign.py \
 Customer-proposed facts remain pending until evidence and owner approval exist;
 desired narratives never override the approved fact registry.
 
+## P3 real Google and AI measurement
+
+Every monitor cycle now stores a versioned `visibility_measurement` in
+`data/command_center.json`. Search measurements record controlled, desired and
+negative top-ten results; reciprocal-rank weights; SERP feature presence; and
+7/28-day volatility. The key includes engine, surface, interface, collection
+method, query, locale and device, so unlike observations are never averaged.
+
+AI measurements separately report identity accuracy, fact-registry accuracy,
+desired-narrative coverage, approved-source citation rate/share, source
+diversity, harmful-or-incorrect frequency and cross-sample stability. Engine,
+surface, API versus consumer interface, collection method, model, locale and
+prompt are immutable grouping dimensions. An API response is never presented
+as a consumer-interface result.
+
+The scheduled pilot measures Google and Bing web results through SerpApi. This
+uses additional provider queries and can be changed with `SERP_ENGINES`.
+
+Bing Webmaster Tools AI Performance is kept as a separate consumer-UI data
+source. Because no documented public export API is assumed, import only an
+export the customer is authorized to access:
+
+```bash
+python scripts/import_bing_ai_performance.py \
+  --input /path/to/authorized-bing-ai-performance.csv
+```
+
+CSV and JSON are accepted; an example is
+`config/bing_ai_performance.example.csv`. The normalized data is saved under
+the active single-tenant installation as `data/bing_ai_performance.json` and
+the next monitor run reports citations, cited pages and grounding queries.
+No undocumented endpoint or browser scraping is used.
+
 `check_secrets.py` reports missing environment-variable names only. GitHub
 Secrets must contain platform-issued API keys, OAuth tokens, application
 passwords or site identifiers—never personal passwords copied from an asset

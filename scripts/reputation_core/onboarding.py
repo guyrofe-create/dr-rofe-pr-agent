@@ -175,13 +175,48 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
             "platform": site.get("platform", "wordpress"),
         }
     serp_targets = {
-        "version": 1,
+        "version": 3,
         "objective": {
             "desired_results_target": profile["search_goal"]["desired_results_target"],
             "controlled_results_target": profile["search_goal"]["controlled_results_target"],
             "negative_results_target": 0,
             "ai_factual_accuracy_target": 1.0,
             "ai_official_citation_target": 0.8,
+            "ai_identity_accuracy_target": 1.0,
+            "ai_narrative_coverage_target": 0.8,
+            "ai_source_diversity_target": 2,
+            "ai_harmful_or_incorrect_target": 0.0,
+            "ai_cross_sample_stability_target": 0.8,
+        },
+        "measurement_plan": {
+            "search_engines": ["google", "bing"],
+            "serp_surfaces": ["web_search"],
+            "rank_weight": "reciprocal_rank",
+            "volatility_windows_days": [7, 28],
+            "ai_surfaces": [
+                {
+                    "engine": "OpenAI",
+                    "surface": "responses_web_search",
+                    "interface": "api",
+                    "collection_method": "openai_responses_api",
+                },
+                {
+                    "engine": "OpenAI",
+                    "surface": "chatgpt_search",
+                    "interface": "consumer_ui",
+                    "collection_method": "authorized_browser_sample",
+                },
+                {
+                    "engine": "Bing",
+                    "surface": "ai_performance",
+                    "interface": "bing_webmaster_tools_consumer_ui",
+                    "collection_method": "authorized_manual_export",
+                },
+            ],
+            "do_not_blend_dimensions": [
+                "engine", "surface", "interface", "collection_method",
+                "query_or_prompt", "country", "language", "device_or_model",
+            ],
         },
         "queries": [
             {"query": item["query"], "kind": "primary", "priority": item["priority"]}
@@ -275,6 +310,15 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
         "data/business_profile.json": business_profile,
         "data/campaign_plan.json": campaign,
         "data/reputation_history.json": {"version": 1, "snapshots": []},
+        "data/bing_ai_performance.json": {
+            "version": 1,
+            "engine": "Bing",
+            "surface": "ai_performance",
+            "interface": "bing_webmaster_tools_consumer_ui",
+            "collection_method": "authorized_manual_export",
+            "period": {"start": None, "end": None},
+            "rows": [],
+        },
         "data/command_center.json": {
             "version": 1, "events": [], "crisis_rooms": [], "audit_log": [],
             "campaigns": [], "visibility_measurements": [],

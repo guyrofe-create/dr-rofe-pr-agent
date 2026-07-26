@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "engine": "Bing",
+  "surface": "ai_performance",
+  "interface": "bing_webmaster_tools_consumer_ui",
+  "collection_method": "authorized_manual_export",
+  "period": {
+    "start": null,
+    "end": null
+  },
+  "rows": []
+}

@@ -19,6 +19,12 @@ from .campaign_wizard import (
     parse_plain_language_brief,
     validate_campaign_draft,
 )
+from .measurement import (
+    add_serp_volatility,
+    measure_ai_surfaces,
+    measure_serp_surface,
+    summarize_bing_ai_performance,
+)
 from .onboarding import (
     build_installation_files,
     validate_install_spec,
@@ -67,4 +73,8 @@ __all__ = [
     "campaign_approval_id",
     "validate_campaign_draft",
     "apply_approved_campaign",
+    "measure_serp_surface",
+    "add_serp_volatility",
+    "measure_ai_surfaces",
+    "summarize_bing_ai_performance",
 ]

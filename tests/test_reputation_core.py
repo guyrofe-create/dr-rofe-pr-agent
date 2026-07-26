@@ -342,6 +342,17 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertIn("refresh_content", kinds)
         self.assertIn("ai_visibility_correction", kinds)
         self.assertEqual(cycle["ai_visibility"]["factual_accuracy_rate"], 0.0)
+        measurement = cycle["visibility_measurement"]
+        self.assertEqual(measurement["version"], 3)
+        self.assertEqual(
+            measurement["serp_surfaces"][0]["negative_positions"], [4]
+        )
+        self.assertEqual(
+            measurement["ai_surfaces"][0]["factual_accuracy_rate"], 0.0
+        )
+        self.assertEqual(
+            measurement["bing_ai_performance"]["status"], "no_data"
+        )
         self.assertTrue(cycle["new_asset_proposals"])
 
     def test_cross_domain_duplicate_and_cannibalization_are_blocked(self):
