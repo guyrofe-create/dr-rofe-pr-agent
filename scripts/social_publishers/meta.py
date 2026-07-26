@@ -115,6 +115,30 @@ def find_recent_facebook_duplicate(message, url=None):
     return None
 
 
+def check_recent_posts_access():
+    """Confirm the token can read Page posts required by duplicate protection."""
+    page_id = common.env("FACEBOOK_PAGE_ID")
+    token = common.env("FACEBOOK_PAGE_TOKEN")
+    if not page_id or not token:
+        return False, "not configured"
+    try:
+        response = requests.get(
+            f"{GRAPH}/{page_id}/feed",
+            params={
+                "fields": "id,message,created_time,permalink_url",
+                "limit": 1,
+                "access_token": token,
+            },
+            timeout=15,
+        )
+        if response.status_code != 200:
+            return False, f"HTTP {response.status_code}: {response.text[:200]}"
+        count = len(response.json().get("data", []))
+        return True, f"read access confirmed ({count} recent post returned)"
+    except Exception as exc:
+        return False, str(exc)
+
+
 def publish_facebook(title, body, url, image_url=None):
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")
@@ -163,4 +187,3 @@ def check_token_health():
         return False, f"HTTP {resp.status_code}: {resp.text[:200]}"
     except Exception as e:
         return False, str(e)
-
