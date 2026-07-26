@@ -1,4 +1,5 @@
 name: Facebook Connection Check
+# This workflow is read-only and never publishes content.
 
 on:
   workflow_dispatch:
