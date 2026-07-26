@@ -114,6 +114,12 @@
     "medical_review_required": true,
     "new_account_or_domain_required": true,
     "legal_action_required": true,
+    "external_outreach_required": true,
+    "single_exact_approval_bundle_required": true,
+    "signed_material_payload_required": true,
+    "any_material_edit_invalidates_approval": true,
+    "idempotent_execution_required": true,
+    "public_url_and_receipt_required": true,
     "read_only_monitoring_autonomous": true,
     "drafting_autonomous": true
   },

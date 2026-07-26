@@ -86,10 +86,13 @@ def try_publish(name, is_configured_fn, publish_fn, *args):
 
 def main():
     log(f"=== {CLIENT_PROFILE['display_name']} Social Distribution - Starting ===")
-
-    if os.environ.get("PUBLISH_APPROVED", "").strip().lower() != "true":
-        log("SAFE STOP: no explicit publication approval")
-        raise SystemExit(1)
+    log(
+        "SAFE STOP: legacy generate-and-publish is disabled by P7 because content "
+        "generated after approval cannot be treated as approved"
+    )
+    raise SystemExit(
+        "Prepare an exact P7 bundle and publish it through scripts/campaign_run.py"
+    )
 
     if content_is_frozen():
         log("CONTENT FREEZE: social distribution paused by Reputation Command Center")

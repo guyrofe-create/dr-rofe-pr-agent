@@ -269,3 +269,15 @@ candidate, its five proof states, missing evidence and gate outcome.
 8. Authorized consumer-interface AI sampling beyond the implemented API and
    Bing AI Performance import surfaces.
 9. Outcome analytics: response time, resolution, sentiment recovery, leads and revenue.
+# P7 public-execution boundary
+
+Public execution is separated from preparation by an immutable approval
+artifact. `approval_workflow.py` hashes all material fields, requires explicit
+action scopes, verifies the server HMAC and maintains a durable target-level
+execution ledger. `prepare_approval_bundle.py` creates the review package and
+HTML preview; `campaign_run.py` accepts only a matching signed approval record.
+
+The ledger writes `in_progress` before the remote call. Completed entries are
+returned as receipts on repeated runs. Ambiguous entries require reconciliation
+and are never retried automatically. This provides fail-closed at-most-once
+behavior where a provider lacks a native idempotency API.

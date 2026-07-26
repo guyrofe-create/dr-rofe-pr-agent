@@ -226,13 +226,30 @@ Bingbot, OAI-SearchBot and PerplexityBot. Crawler access is recorded as a
 technical prerequisite and never presented as a promise of indexing, ranking
 or AI citation. See [docs/P6_ENTITY_SEO.md](docs/P6_ENTITY_SEO.md).
 
+## P7 signed approval and idempotent publication
+
+Every public action now starts from one immutable approval bundle containing
+the exact per-platform text, target asset, image and alt text, sources,
+objective/query, risk, compliance notes and preview. A material edit changes
+the bundle hash and invalidates its signed approval. A boolean input is not an
+approval.
+
+Publication, domain purchases, account creation, medical content, legal claims
+and external outreach have explicit scopes; every applicable scope must be
+approved. Execution uses a durable per-target idempotency ledger. A completed
+target returns its existing URL and receipt without posting twice. An ambiguous
+remote response stops for reconciliation instead of retrying. No text or image
+is generated after approval and no asset receives implicit fan-out.
+
+See [docs/P7_APPROVAL_AND_PUBLISHING.md](docs/P7_APPROVAL_AND_PUBLISHING.md).
+
 ## Automated workflows
 
 | Workflow | Schedule | Purpose |
 |---|---|---|
 | Reputation Monitor + P4 | Every 2 hours | Detect, measure, rank and prepare the best eligible actions for approval |
 | Legacy Reviewed Content | Manual only | Generate a manually requested durable medical draft |
-| Social Distribution | Mon/Wed/Fri | Distribute approved content when not frozen |
+| Signed P7 Distribution | Manual or approval queue | Verify the exact signed bundle, publish idempotently and record URLs/receipts |
 | Schema + crawler audit | Weekly | Preview entity consistency and crawler access; public sync requires explicit approval |
 
 ## Validation

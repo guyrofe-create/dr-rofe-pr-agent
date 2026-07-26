@@ -46,6 +46,16 @@ from .entity_seo import (
     validate_media_metadata,
 )
 from .platform_content import build_platform_variants, variants_are_distinct
+from .approval_workflow import (
+    ExecutionLedger,
+    ReconciliationRequired,
+    approval_id,
+    approve_bundle,
+    build_bundle,
+    render_preview,
+    validate_bundle,
+    verify_approval,
+)
 from .onboarding import (
     build_installation_files,
     validate_install_spec,
@@ -114,4 +124,12 @@ __all__ = [
     "validate_media_metadata",
     "build_platform_variants",
     "variants_are_distinct",
+    "ExecutionLedger",
+    "ReconciliationRequired",
+    "approval_id",
+    "approve_bundle",
+    "build_bundle",
+    "render_preview",
+    "validate_bundle",
+    "verify_approval",
 ]

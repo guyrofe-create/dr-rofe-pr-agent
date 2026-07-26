@@ -1,4 +1,5 @@
 import json
+import hashlib
 import os
 import tempfile
 import unittest
@@ -10,9 +11,9 @@ from scripts.social_publishers import common
 
 
 class CampaignRunTests(unittest.TestCase):
-    def test_main_requires_explicit_publish_approval(self):
+    def test_main_requires_signed_p7_approval_artifacts(self):
         with patch.dict(os.environ, {}, clear=True):
-            with self.assertRaisesRegex(RuntimeError, "PUBLISH_APPROVED"):
+            with self.assertRaisesRegex(RuntimeError, "APPROVAL_BUNDLE_PATH"):
                 campaign_run.main()
 
     def test_stable_slug_keeps_hebrew_and_is_deterministic(self):
@@ -73,11 +74,16 @@ class CampaignRunTests(unittest.TestCase):
     def test_canonical_site_is_required_before_distribution(self):
         draft = Path(tempfile.mkdtemp()) / "draft.md"
         draft.write_text("# כותרת\n\nתוכן", encoding="utf-8")
+        bundle = {
+            "source_draft": str(draft.resolve()),
+            "source_draft_sha256": hashlib.sha256(draft.read_bytes()).hexdigest(),
+            "targets": [],
+        }
         with patch.object(campaign_run, "load_draft", return_value=("כותרת", "# כותרת\n\nתוכן")), patch.dict(
             os.environ, {}, clear=True
         ):
             with self.assertRaisesRegex(RuntimeError, "Canonical"):
-                campaign_run.publish_campaign(draft)
+                campaign_run.publish_campaign(draft, approved_bundle=bundle)
 
     def test_campaign_result_contains_destination_receipts(self):
         with tempfile.TemporaryDirectory(dir=campaign_run.PROJECT_ROOT) as directory:
@@ -98,6 +104,7 @@ class CampaignRunTests(unittest.TestCase):
                 )
             index = json.loads((result_root / "index.json").read_text(encoding="utf-8"))
             self.assertEqual(index["campaigns"][0]["destinations"][0]["status"], "published")
+            self.assertIn("execution_receipt_ledger", index["campaigns"][0])
 
     def test_social_caption_includes_approved_body_and_link(self):
         caption = common.shorten_for_social(

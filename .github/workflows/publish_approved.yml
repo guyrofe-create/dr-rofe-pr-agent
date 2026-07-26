@@ -37,8 +37,16 @@ jobs:
           response="$(curl --fail --silent --show-error \
             "${APPROVAL_URL}/api/approvals/next")"
           draft_path="$(jq -r '.draft_path // empty' <<<"${response}")"
+          bundle_path="$(jq -r '.bundle_path // empty' <<<"${response}")"
+          approval_record_path="$(jq -r '.approval_record_path // empty' <<<"${response}")"
           echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
-          [[ -z "${draft_path}" ]] || echo "Approved campaign ready: ${draft_path}"
+          echo "bundle_path=${bundle_path}" >> "${GITHUB_OUTPUT}"
+          echo "approval_record_path=${approval_record_path}" >> "${GITHUB_OUTPUT}"
+          if [[ -n "${draft_path}" ]] && { [[ -z "${bundle_path}" ]] || [[ -z "${approval_record_path}" ]]; }; then
+            echo "::error::Dashboard returned a draft without its signed P7 approval artifacts"
+            exit 1
+          fi
+          [[ -z "${draft_path}" ]] || echo "Signed P7 campaign ready: ${draft_path}"
 
       - name: Install dependencies
         if: >-
@@ -52,10 +60,10 @@ jobs:
           !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
         run: python scripts/campaign_run.py
         env:
-          PUBLISH_APPROVED: "true"
           DRAFT_PATH: ${{ steps.approval.outputs.draft_path }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_IMAGE_MODEL: gpt-image-2
+          APPROVAL_BUNDLE_PATH: ${{ steps.approval.outputs.bundle_path }}
+          APPROVAL_RECORD_PATH: ${{ steps.approval.outputs.approval_record_path }}
+          APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
           WORDPRESS_GUYROFE_COM_USER: ${{ secrets.WORDPRESS_GUYROFE_COM_USER }}
           WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
           WORDPRESS_DRGUYROFE_CO_IL_USER: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_USER }}
@@ -81,7 +89,6 @@ jobs:
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
-          SOCIAL_IMAGE_URL: ${{ secrets.SOCIAL_IMAGE_URL }}
 
       - name: Commit campaign receipt
         if: >-
@@ -90,7 +97,7 @@ jobs:
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
-          git add content_drafts/campaigns/
+          git add content_drafts/campaigns/ publication_receipts/
           git diff --cached --quiet || git commit -m "Record approved campaign ${{ github.run_id }}"
           git pull --rebase
           git push

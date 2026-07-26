@@ -3,18 +3,24 @@ name: Dr. Rofe Social Distribution
 on:
   workflow_dispatch:
     inputs:
-      approved:
-        description: 'Explicit owner approval to publish this run'
+      draft_path:
+        description: 'Path to the exact source draft in the signed P7 bundle'
         required: true
-        type: boolean
-        default: false
+        type: string
+      bundle_path:
+        description: 'Path to the immutable P7 bundle'
+        required: true
+        type: string
+      approval_record_path:
+        description: 'Path to its signed explicit approval record'
+        required: true
+        type: string
 
 permissions:
   contents: write
 
 jobs:
   distribute:
-    if: ${{ inputs.approved == true }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -28,11 +34,13 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Social Distribution
-        run: python scripts/social_run.py
+      - name: Verify and publish exact P7 bundle
+        run: python scripts/campaign_run.py
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          PUBLISH_APPROVED: ${{ inputs.approved }}
+          DRAFT_PATH: ${{ inputs.draft_path }}
+          APPROVAL_BUNDLE_PATH: ${{ inputs.bundle_path }}
+          APPROVAL_RECORD_PATH: ${{ inputs.approval_record_path }}
+          APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
           X_PUBLISHING_ENABLED: 'false'
@@ -53,15 +61,15 @@ jobs:
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
-          SOCIAL_IMAGE_URL: ${{ secrets.SOCIAL_IMAGE_URL }}
 
-      - name: Commit manual-draft file (TikTok/Quora/LinkedIn/etc.)
+      - name: Commit signed publication receipts
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
-          git add social_drafts/ || true
-          git diff --cached --quiet || git commit -m "Add social drafts $(date +%Y-%m-%d)"
-          git push || true
+          git add content_drafts/campaigns/ publication_receipts/
+          git diff --cached --quiet || git commit -m "Record signed P7 publication ${{ github.run_id }}"
+          git pull --rebase
+          git push
 
       - name: Upload run log
         if: always()

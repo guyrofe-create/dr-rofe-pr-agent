@@ -3,6 +3,7 @@
 
 import json
 import html
+import hashlib
 import os
 import re
 import sys
@@ -24,6 +25,11 @@ from social_publishers import (
 from publication_policy import enforce_channel_policy, enforce_publication_policy
 import social_image
 from reputation_core import data_path, load_client_profile
+from reputation_core.approval_workflow import (
+    ExecutionLedger,
+    ReconciliationRequired,
+    verify_approval,
+)
 from reputation_core.entity_seo import (
     build_article_schema,
     extract_citation_urls,
@@ -34,6 +40,7 @@ from reputation_core.platform_content import build_platform_variants
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CAMPAIGN_ROOT = PROJECT_ROOT / "content_drafts" / "campaigns"
+EXECUTION_LEDGER_PATH = PROJECT_ROOT / "publication_receipts" / "execution_ledger.json"
 LOG_LINES = []
 CLIENT_PROFILE = load_client_profile()
 
@@ -220,7 +227,13 @@ def attempt(name, is_ready, publisher, *args):
         return destination(name, "failed", detail=str(exc)[:300])
 
 
-def write_campaign_result(draft_path, title, destinations, status="completed"):
+def write_campaign_result(
+    draft_path,
+    title,
+    destinations,
+    status="completed",
+    approval_id_value=None,
+):
     CAMPAIGN_ROOT.mkdir(parents=True, exist_ok=True)
     relative_draft = draft_path.resolve().relative_to(PROJECT_ROOT).as_posix()
     result = {
@@ -229,6 +242,10 @@ def write_campaign_result(draft_path, title, destinations, status="completed"):
         "status": status,
         "published_at": utc_now().isoformat(),
         "destinations": destinations,
+        "approval_id": approval_id_value,
+        "execution_receipt_ledger": (
+            EXECUTION_LEDGER_PATH.relative_to(PROJECT_ROOT).as_posix()
+        ),
     }
     output = CAMPAIGN_ROOT / f"{draft_path.stem}.json"
     output.write_text(
@@ -254,7 +271,54 @@ def write_campaign_result(draft_path, title, destinations, status="completed"):
     return output
 
 
-def publish_campaign(draft_path):
+def _target_map(bundle):
+    return {item["target_id"]: item for item in bundle["targets"]}
+
+
+def _execute_target(ledger, bundle, target, publisher):
+    receipt = ledger.execute(bundle, target, publisher)
+    return destination(
+        target["platform"],
+        "published",
+        url=receipt["url"],
+        detail=f"idempotency_key={receipt['idempotency_key']}",
+    )
+
+
+def _load_verified_approval():
+    bundle_path = os.environ.get("APPROVAL_BUNDLE_PATH", "").strip()
+    record_path = os.environ.get("APPROVAL_RECORD_PATH", "").strip()
+    secret = os.environ.get("APPROVAL_SIGNING_SECRET", "")
+    if not bundle_path or not record_path or not secret:
+        raise RuntimeError(
+            "APPROVAL_BUNDLE_PATH, APPROVAL_RECORD_PATH and "
+            "APPROVAL_SIGNING_SECRET are required"
+        )
+    bundle = json.loads(Path(bundle_path).read_text(encoding="utf-8"))
+    record = json.loads(Path(record_path).read_text(encoding="utf-8"))
+    verify_approval(bundle, record, secret)
+    return bundle, record
+
+
+def _verify_source_draft(draft_path, bundle):
+    expected_path = bundle.get("source_draft")
+    try:
+        actual_path = draft_path.resolve().relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        actual_path = str(draft_path.resolve())
+    if expected_path != actual_path:
+        raise PermissionError("Approved bundle does not match the selected draft path")
+    digest = hashlib.sha256(draft_path.read_bytes()).hexdigest()
+    if digest != bundle.get("source_draft_sha256"):
+        raise PermissionError("Draft changed after approval")
+
+
+def publish_campaign(draft_path, approved_bundle=None, ledger=None):
+    if approved_bundle is None:
+        raise PermissionError("A verified P7 approval bundle is required")
+    _verify_source_draft(draft_path, approved_bundle)
+    targets = _target_map(approved_bundle)
+    ledger = ledger or ExecutionLedger(EXECUTION_LEDGER_PATH)
     title, content = load_draft(draft_path)
     enforce_publication_policy(content)
     article_html = markdown_to_html(content)
@@ -270,30 +334,62 @@ def publish_campaign(draft_path):
     if not configured(primary_user_env, primary_password_env):
         raise RuntimeError("Canonical WordPress publisher is not configured")
 
-    canonical_url = wordpress_publish(
-        canonical_base,
-        os.environ[primary_user_env],
-        os.environ[primary_password_env],
-        title,
-        article_html,
-        idempotency_key=f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}",
-        article_schema_factory=lambda article_url: build_article_schema(
-            business,
-            headline=title,
-            article_url=article_url,
-            description=summary,
-            citations=extract_citation_urls(content),
-        ),
+    canonical_target = targets["canonical_wordpress"]
+    canonical_payload = canonical_target["payload"]
+    if canonical_payload["title"] != title or canonical_payload["markdown"] != content:
+        raise PermissionError("Canonical content differs from the approved payload")
+    canonical_receipt = ledger.execute(
+        approved_bundle,
+        canonical_target,
+        lambda payload, key: {
+            "url": wordpress_publish(
+                canonical_base,
+                os.environ[primary_user_env],
+                os.environ[primary_password_env],
+                payload["title"],
+                markdown_to_html(payload["markdown"]),
+                idempotency_key=payload["slug"],
+                article_schema_factory=lambda article_url: build_article_schema(
+                    business,
+                    headline=payload["title"],
+                    article_url=article_url,
+                    description=summary,
+                    citations=extract_citation_urls(payload["markdown"]),
+                ),
+            )
+        },
     )
-    destinations.append(destination(canonical_name, "published", url=canonical_url))
+    canonical_url = canonical_receipt["url"]
+    if canonical_url.rstrip("/") != canonical_payload["canonical_url"].rstrip("/"):
+        raise ReconciliationRequired(
+            "Canonical provider URL differs from the approved URL; reconcile before distribution"
+        )
+    destinations.append(
+        destination(
+            canonical_name,
+            "published",
+            url=canonical_url,
+            detail=f"idempotency_key={canonical_receipt['idempotency_key']}",
+        )
+    )
     log(f"Canonical article published: {canonical_url}")
-    variants = build_platform_variants(title, content, canonical_url)
 
-    image_url = os.environ.get("SOCIAL_IMAGE_URL", "").strip()
+    media = approved_bundle.get("media") or {}
+    image_url = str(media.get("uri") or "").strip()
     generated_image = None
-    if configured("OPENAI_API_KEY"):
+    if image_url and not image_url.startswith(("http://", "https://")):
+        image_path = Path(image_url)
+        if not image_path.is_absolute():
+            image_path = PROJECT_ROOT / image_path
+        digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
+        if not media.get("sha256") or digest != media["sha256"]:
+            raise PermissionError("Approved image bytes do not match the bundle")
+        generated_image = social_image.SocialImage(
+            image_path.read_bytes(),
+            extension=image_path.suffix.lstrip(".") or "png",
+            visual_description=media.get("visual_description", ""),
+        )
         try:
-            generated_image = social_image.generate(title, summary)
             image_url = social_image.upload_to_wordpress(
                 generated_image,
                 base_url=canonical_base,
@@ -310,85 +406,73 @@ def publish_campaign(draft_path):
                     detail="תמונה ללא טקסט וללא הזמנה לייעוץ",
                 )
             )
-            log(f"Approved-campaign visual generated and hosted: {image_url}")
+            log(f"Pre-approved visual hosted: {image_url}")
         except Exception as exc:
-            destinations.append(
-                destination(
-                    "OpenAI visual",
-                    "failed",
-                    detail=f"{type(exc).__name__}: {str(exc)[:240]}",
-                )
-            )
-            log(f"Image generation failed; using configured fallback if present: {exc}")
+            raise RuntimeError(f"Approved image upload failed: {exc}") from exc
     elif image_url:
         destinations.append(
-            destination("Social visual", "configured_fallback", url=image_url)
+            destination("Approved visual", "approved_remote", url=image_url)
         )
     else:
         destinations.append(
             destination(
-                "OpenAI visual",
+                "Approved visual",
                 "not_configured",
-                detail="OPENAI_API_KEY אינו מוגדר",
+                detail="לא צורפה תמונה לחבילת האישור",
             )
         )
 
+    # Secondary WordPress publication is blocked unless it is part of the exact
+    # approval bundle. P7 deliberately removes implicit fan-out.
     for site in business["sites"]:
         if site is primary or site.get("platform", "wordpress") != "wordpress":
             continue
         name = re.sub(r"^www\.", "", urlparse(site["base_url"]).netloc)
-        user_env = site["user_env"]
-        password_env = site["app_password_env"]
-        if not configured(user_env, password_env):
-            destinations.append(
-                destination(name, "not_configured", detail="חיבור WordPress חסר")
-            )
-            continue
-        summary_html = (
-            f"<p>{summary}</p><p><a href=\"{canonical_url}\">"
-            "לקריאת המאמר המלא באתר הראשי</a></p>"
-        )
         destinations.append(
-            attempt(
-                name,
-                True,
-                wordpress_publish,
-                site["base_url"],
-                os.environ[user_env],
-                os.environ[password_env],
-                title,
-                summary_html,
-                True,
-                canonical_url,
-                f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}",
-            )
+            destination(name, "not_in_approval_bundle", detail="לא אושר בחבילה זו")
         )
 
     enforce_channel_policy("Facebook")
-    destinations.append(
-        attempt(
-            "Facebook",
-            meta.facebook_is_configured(),
-            meta.publish_facebook,
-            title,
-            variants["facebook"],
-            canonical_url,
-            image_url,
-            social_image.alt_text(title),
+    facebook_target = targets["facebook_page"]
+    if meta.facebook_is_configured():
+        destinations.append(
+            _execute_target(
+                ledger,
+                approved_bundle,
+                facebook_target,
+                lambda payload, key: {
+                    "url": meta.publish_facebook(
+                        payload["title"],
+                        payload["text"],
+                        canonical_url,
+                        image_url,
+                        (payload.get("image") or {}).get("alt_text"),
+                    )
+                },
+            )
         )
-    )
-    destinations.append(
-        attempt(
-            "LinkedIn",
-            linkedin.is_configured(),
-            linkedin.publish,
-            title,
-            variants["linkedin"],
-            canonical_url,
-            generated_image.content if generated_image else None,
-            social_image.alt_text(title),
+    else:
+        destinations.append(destination("Facebook", "not_configured"))
+    linkedin_target = targets["linkedin_member"]
+    if linkedin.is_configured():
+        destinations.append(
+            _execute_target(
+                ledger,
+                approved_bundle,
+                linkedin_target,
+                lambda payload, key: {
+                    "url": linkedin.publish(
+                        payload["title"],
+                        payload["text"],
+                        canonical_url,
+                        generated_image.content if generated_image else None,
+                        (payload.get("image") or {}).get("alt_text"),
+                    )
+                },
+            )
         )
-    )
+    else:
+        destinations.append(destination("LinkedIn", "not_configured"))
     destinations.append(
         destination("X", "disabled", detail="מושבת במדיניות המוצר")
     )
@@ -406,18 +490,26 @@ def publish_campaign(draft_path):
             detail="לא יופעל ללא קהל או שימוש ייחודי",
         )
     )
-    destinations.append(
-        attempt(
-            "Blogger",
-            blogger.is_configured(),
-            blogger.publish,
-            title,
-            variants["blogger"],
-            canonical_url,
-            image_url,
-            social_image.alt_text(title),
+    blogger_target = targets["blogger_blog"]
+    if blogger.is_configured():
+        destinations.append(
+            _execute_target(
+                ledger,
+                approved_bundle,
+                blogger_target,
+                lambda payload, key: {
+                    "url": blogger.publish(
+                        payload["title"],
+                        payload["html"],
+                        canonical_url,
+                        image_url,
+                        (payload.get("image") or {}).get("alt_text"),
+                    )
+                },
+            )
         )
-    )
+    else:
+        destinations.append(destination("Blogger", "not_configured"))
 
     destinations.append(
         destination(
@@ -426,20 +518,32 @@ def publish_campaign(draft_path):
             detail="ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם בו",
         )
     )
-    destinations.append(
-        attempt(
-            "Pinterest",
-            bool(image_url) and pinterest.is_configured(),
-            pinterest.publish,
-            variants["pinterest"]["title"],
-            variants["pinterest"]["description"],
-            canonical_url,
-            image_url,
-            social_image.alt_text(title),
+    pinterest_target = targets["pinterest_board"]
+    if image_url and pinterest.is_configured():
+        destinations.append(
+            _execute_target(
+                ledger,
+                approved_bundle,
+                pinterest_target,
+                lambda payload, key: {
+                    "url": pinterest.publish(
+                        payload["title"],
+                        payload["description"],
+                        canonical_url,
+                        image_url,
+                        (payload.get("image") or {}).get("alt_text"),
+                    )
+                },
+            )
         )
-        if image_url
-        else destination("Pinterest", "blocked", detail="נדרשת תמונה מאושרת")
-    )
+    else:
+        destinations.append(
+            destination(
+                "Pinterest",
+                "blocked" if not image_url else "not_configured",
+                detail="נדרשת תמונה מאושרת" if not image_url else None,
+            )
+        )
 
     for site in business["sites"]:
         if site.get("platform") == "wix":
@@ -471,13 +575,22 @@ def publish_campaign(draft_path):
 
 
 def main():
-    if os.environ.get("PUBLISH_APPROVED", "").strip().lower() != "true":
-        raise RuntimeError("PUBLISH_APPROVED=true is required")
-    draft_path = resolve_draft_path(os.environ.get("DRAFT_PATH"))
+    bundle, _record = _load_verified_approval()
+    draft_path = resolve_draft_path(
+        os.environ.get("DRAFT_PATH") or bundle.get("source_draft")
+    )
     log(f"Starting approved campaign: {draft_path}")
     try:
-        title, canonical_url, destinations = publish_campaign(draft_path)
-        write_campaign_result(draft_path, title, destinations)
+        title, canonical_url, destinations = publish_campaign(
+            draft_path,
+            approved_bundle=bundle,
+        )
+        write_campaign_result(
+            draft_path,
+            title,
+            destinations,
+            approval_id_value=bundle["approval_id"],
+        )
         log(f"Campaign completed. Canonical URL: {canonical_url}")
     finally:
         Path("run_log.txt").write_text("\n".join(LOG_LINES) + "\n", encoding="utf-8")

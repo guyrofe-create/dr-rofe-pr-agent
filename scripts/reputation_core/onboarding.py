@@ -47,6 +47,12 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
         "medical_review_required": bool(spec.get("medical_content", False)),
         "new_account_or_domain_required": True,
         "legal_action_required": True,
+        "external_outreach_required": True,
+        "single_exact_approval_bundle_required": True,
+        "signed_material_payload_required": True,
+        "any_material_edit_invalidates_approval": True,
+        "idempotent_execution_required": True,
+        "public_url_and_receipt_required": True,
         "read_only_monitoring_autonomous": True,
         "drafting_autonomous": True,
     }
