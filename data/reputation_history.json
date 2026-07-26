@@ -16645,14 +16645,148 @@
         }
       ],
       "errors": []
+    },
+    {
+      "date": "2026-07-26T12:51:13.625024",
+      "rank": [
+        {
+          "status": "skipped",
+          "reason": "daily SerpApi cadence already completed"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא הוא דוקטור לפיזיקה אשר מתמחה בהוראת המדעים והפיזיקה בפרט. הוא ידוע בעיקר בזכות תרומתו לחינוך והנגשת נושאים מדעיים מורכבים לציבור הרחב. בנוסף לפעילותו האקדמית, ייתכן שיש לו גם תפקידים נוספים הקשורים במחקר או בייעוץ בתחומו המקצועי. עם זאת, המידע על ד\"ר גיא רופא עשוי להיות מוגבל ואין תמונה"
+        },
+        {
+          "prompt": "איזה תוכן רפואי מפרסם ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא ידוע בכתיבת תוכן רפואי בנושאים מגוונים. הוא עשוי לפרסם מאמרים, טיפים ומידע על בריאות כללית, מחלות שונות, טיפול ומניעה, רפואה מונעת, תזונה נכונה, פעילות גופנית ושיטות שונות לשיפור איכות החיים. התוכן שלו עשוי להיות מיועד גם לקהל הרחב וגם לאנשי מקצוע בתחום הרפואה."
+        },
+        {
+          "prompt": "אילו ספרים כתב ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא כתב את הספרים \"צמאה לך נפשי\" ו\"מתחנה לתחנה\"."
+        },
+        {
+          "prompt": "האם לד״ר גיא רופא יש פודקאסט?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "כן, לד\"ר גיא רופא יש פודקאסט בשם \"תוכן גדול\" שבו הוא עוסק בנושאים שונים בתחום האפידמיולוגיה, רפואה ובריאות הציבור. התוכן כולל ראיונות עם מומחים שונים ועדכונים על מחקרים חדשים בתחום."
+        },
+        {
+          "prompt": "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": true,
+          "safe_status": "review",
+          "excerpt": "לצערי, אין לי גישה למידע על נכסים רשמיים של אנשים פרטיים ברשת, כולל ד\"ר גיא רופא. אם מדובר בדמות ציבורית או מומחה שאתה מחפש, ייתכן שניתן למצוא את המידע באתרים מקצועיים או ברשתות חברתיות מקצועיות כגון לינקדIn או אתרים כמו ResearchGate עבור אקדמאים. במידה ואתה מחפש מידע על פעילותו האקדמית או המקצועית,"
+        },
+        {
+          "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "לצערי, אין לי מידע עדכני לגבי זמינות התורים של ד\"ר גיא רופא או האם הוא מקבל מטופלות כעת. אני ממליץ לפנות ישירות למרפאה או למשרדו כדי לבדוק את הסטטוס הנוכחי."
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "configured": true,
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "configured": true,
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "My dear and beloved brother, the rest of the harassers are waiting for you in the cell. Don't drop the soap.",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "skipped_missing_permission",
+        "reason": "pages_read_user_content permission is not granted; Page publishing and duplicate protection remain active"
+      },
+      "web_mentions": {
+        "status": "skipped",
+        "reason": "daily SerpApi cadence already completed"
+      },
+      "alerts": [
+        {
+          "type": "ai_knowledge_gap",
+          "source": "OpenAI monitor sample",
+          "excerpt": "לצערי, אין לי גישה למידע על נכסים רשמיים של אנשים פרטיים ברשת, כולל ד\"ר גיא רופא. אם מדובר בדמות ציבורית או מומחה שאתה מחפש, ייתכן שניתן למצוא את המידע באתרים מקצועיים או ברשתות חברתיות מקצועיות כגון לינקדIn או אתרים כמו ResearchGate עבור אקדמאים. במידה ואתה מחפש מידע על פעילותו האקדמית או המקצועית,",
+          "prompt": "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?"
+        }
+      ],
+      "errors": []
     }
   ],
   "seen_review_ids": [
     "Alon Tsevi|1766326026",
-    "Nir|1783548048",
+    "דורון ל|1781610122",
     "Avi Kalili|1777044743",
     "Neta Tzur|1780837292",
-    "דורון ל|1781610122"
+    "Nir|1783548048"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
