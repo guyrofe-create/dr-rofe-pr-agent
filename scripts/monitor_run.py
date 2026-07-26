@@ -814,7 +814,11 @@ def critical_monitor_failures():
             failures.append(f"SERP rank: {len(rank_errors)} query errors")
         elif quota_limited:
             failures.append("SERP rank: provider quota/rate limit")
-        elif REPORT.get("rank") and not rank_measurement_succeeded():
+        elif (
+            REPORT.get("rank")
+            and not rank_measurement_succeeded()
+            and not serp_backoff_active()
+        ):
             failures.append("SERP rank: no complete fresh measurement")
         if (REPORT.get("web_mentions") or {}).get("status") in {
             "error",

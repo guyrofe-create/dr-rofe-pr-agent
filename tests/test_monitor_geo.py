@@ -224,6 +224,29 @@ class MonitorGeoTests(unittest.TestCase):
             self.assertFalse(monitor_run.serp_checks_due("2026-07-26"))
             self.assertTrue(monitor_run.serp_checks_due("2026-07-27"))
 
+    def test_active_serp_backoff_does_not_repeat_failure_email(self):
+        old_rank = monitor_run.REPORT["rank"]
+        monitor_run.REPORT["rank"] = [{
+            "status": "skipped",
+            "reason": "SerpApi retry backoff is active",
+        }]
+        try:
+            with patch.object(
+                monitor_run,
+                "HISTORY",
+                {"serp_retry_on_date": "2999-01-02"},
+            ), patch.dict(
+                os.environ,
+                {"SERPAPI_KEY": "configured"},
+                clear=True,
+            ):
+                self.assertNotIn(
+                    "SERP rank: no complete fresh measurement",
+                    monitor_run.critical_monitor_failures(),
+                )
+        finally:
+            monitor_run.REPORT["rank"] = old_rank
+
     def test_activate_serp_backoff_retries_next_calendar_day(self):
         with patch.object(monitor_run, "HISTORY", {}):
             monitor_run.activate_serp_backoff("2026-07-26")
