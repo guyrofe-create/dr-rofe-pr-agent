@@ -202,6 +202,68 @@ class MonitorGeoTests(unittest.TestCase):
             self.assertFalse(monitor_run.serp_checks_due("2026-07-26"))
             self.assertTrue(monitor_run.serp_checks_due("2026-07-27"))
 
+    def test_free_serp_plan_uses_two_core_queries_on_regular_day(self):
+        plan = monitor_run.serp_run_plan("2026-07-27")
+        self.assertEqual(plan["mode"], "daily_core")
+        self.assertEqual(
+            plan["queries"],
+            ["ד״ר גיא רופא", "גיא רופא"],
+        )
+        self.assertEqual(plan["engines"], ["google"])
+        self.assertEqual(plan["devices"], ["mobile"])
+        self.assertFalse(plan["web_mentions"])
+
+    def test_free_serp_plan_runs_full_matrix_on_sunday(self):
+        plan = monitor_run.serp_run_plan("2026-08-02")
+        self.assertEqual(plan["mode"], "extended_weekly")
+        self.assertEqual(len(plan["queries"]), 4)
+        self.assertEqual(plan["engines"], ["google", "bing"])
+        self.assertEqual(plan["devices"], ["mobile", "desktop"])
+        self.assertTrue(plan["web_mentions"])
+
+    def test_serp_budget_stops_before_provider_free_limit(self):
+        with patch.object(
+            monitor_run,
+            "HISTORY",
+            {"serp_usage_by_month": {"2026-07": 220}},
+        ):
+            self.assertFalse(monitor_run.serp_budget_available("2026-07-31"))
+            self.assertFalse(monitor_run.serp_checks_due("2026-07-31"))
+            self.assertTrue(monitor_run.serp_budget_available("2026-08-01"))
+
+    def test_serp_result_cache_prevents_duplicate_provider_request(self):
+        cached = {
+            "engine": "google",
+            "keyword": "ד״ר גיא רופא",
+            "device": "mobile",
+            "status": "found",
+            "results": [],
+        }
+        with patch.object(
+            monitor_run,
+            "HISTORY",
+            {
+                "serp_result_cache": {
+                    "2026-07-27": {
+                        monitor_run.serp_cache_key(
+                            "google",
+                            "ד״ר גיא רופא",
+                            "mobile",
+                        ): cached,
+                    },
+                },
+            },
+        ):
+            self.assertEqual(
+                monitor_run.cached_serp_result(
+                    "2026-07-27",
+                    "google",
+                    "ד״ר גיא רופא",
+                    "mobile",
+                ),
+                cached,
+            )
+
     def test_failed_serp_snapshot_remains_retryable(self):
         with patch.object(
             monitor_run,

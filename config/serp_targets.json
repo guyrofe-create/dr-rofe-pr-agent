@@ -28,6 +28,17 @@
     "serp_surfaces": ["web_search"],
     "rank_weight": "reciprocal_rank",
     "volatility_windows_days": [7, 28],
+    "free_serpapi_policy": {
+      "enabled": true,
+      "monthly_request_budget": 220,
+      "daily_engines": ["google"],
+      "daily_devices": ["mobile"],
+      "extended_weekday": 6,
+      "extended_engines": ["google", "bing"],
+      "extended_devices": ["mobile", "desktop"],
+      "web_mentions_cadence": "extended_weekly",
+      "reserve_for_manual_checks": 30
+    },
     "ai_surfaces": [
       {
         "engine": "OpenAI",
@@ -60,12 +71,12 @@
     ]
   },
   "queries": [
-    {"query": "ד״ר גיא רופא", "kind": "exact_brand", "priority": 100},
-    {"query": "ד\"ר גיא רופא", "kind": "exact_brand", "priority": 100},
-    {"query": "דר גיא רופא", "kind": "exact_brand", "priority": 95},
-    {"query": "גיא רופא", "kind": "brand", "priority": 90},
-    {"query": "Guy Rofe", "kind": "english_brand", "priority": 80},
-    {"query": "Dr. Guy Rofe", "kind": "english_brand", "priority": 80}
+    {"query": "ד״ר גיא רופא", "kind": "exact_brand", "priority": 100, "cadence": "daily_core"},
+    {"query": "ד\"ר גיא רופא", "kind": "exact_brand", "priority": 100, "cadence": "extended_weekly"},
+    {"query": "דר גיא רופא", "kind": "exact_brand", "priority": 95, "cadence": "extended_weekly"},
+    {"query": "גיא רופא", "kind": "brand", "priority": 90, "cadence": "daily_core"},
+    {"query": "Guy Rofe", "kind": "english_brand", "priority": 80, "cadence": "extended_weekly"},
+    {"query": "Dr. Guy Rofe", "kind": "english_brand", "priority": 80, "cadence": "extended_weekly"}
   ],
   "property_roles": {
     "guyrofe.com": {

@@ -65,6 +65,7 @@ ASSET_REGISTRY_PATH = str(data_path("asset_registry.json"))
 BING_AI_PERFORMANCE_PATH = str(data_path("bing_ai_performance.json"))
 
 KEYWORDS = client_search_queries()
+SERP_TARGETS = load_serp_targets()
 
 GEO_PROMPTS = monitoring_prompts()
 
@@ -249,6 +250,8 @@ def serp_checks_due(today=None):
     today = today or date.today().isoformat()
     if serp_backoff_active(today):
         return False
+    if not serp_budget_available(today):
+        return False
     if HISTORY.get("last_serp_check_date") == today:
         return False
     for snapshot in reversed(HISTORY.get("snapshots", [])):
@@ -261,6 +264,145 @@ def serp_checks_due(today=None):
         if statuses and statuses.issubset({"found", "not_in_top10"}):
             return False
     return True
+
+
+def free_serpapi_policy():
+    """Return the installation's conservative free-tier measurement policy."""
+    return SERP_TARGETS.get("measurement_plan", {}).get(
+        "free_serpapi_policy",
+        {},
+    )
+
+
+def serp_run_plan(today=None):
+    """Choose a low-cost daily core run or the weekly full measurement."""
+    today_value = date.fromisoformat(today or date.today().isoformat())
+    policy = free_serpapi_policy()
+    configured_queries = SERP_TARGETS.get("queries", [])
+    if not policy.get("enabled", False):
+        return {
+            "mode": "standard_daily",
+            "queries": KEYWORDS,
+            "engines": [
+                item.strip().lower()
+                for item in os.environ.get("SERP_ENGINES", "google").split(",")
+                if item.strip().lower() in {"google", "bing"}
+            ],
+            "devices": [
+                item.strip()
+                for item in os.environ.get(
+                    "SERP_DEVICES",
+                    "mobile,desktop",
+                ).split(",")
+                if item.strip() in {"mobile", "desktop", "tablet"}
+            ],
+            "web_mentions": True,
+        }
+
+    extended_weekday = int(policy.get("extended_weekday", 6))
+    is_extended = today_value.weekday() == extended_weekday
+    if is_extended:
+        queries = [item["query"] for item in configured_queries]
+        engines = policy.get("extended_engines", ["google", "bing"])
+        devices = policy.get("extended_devices", ["mobile", "desktop"])
+    else:
+        queries = [
+            item["query"] for item in configured_queries
+            if item.get("cadence") == "daily_core"
+        ]
+        engines = policy.get("daily_engines", ["google"])
+        devices = policy.get("daily_devices", ["mobile"])
+
+    # A generic single-tenant installation without cadence annotations still
+    # receives a safe daily core derived from its two highest-priority queries.
+    if not queries:
+        ordered = sorted(
+            configured_queries,
+            key=lambda item: item.get("priority", 0),
+            reverse=True,
+        )
+        queries = [item["query"] for item in ordered[:2]] or KEYWORDS[:2]
+
+    return {
+        "mode": "extended_weekly" if is_extended else "daily_core",
+        "queries": list(dict.fromkeys(queries)),
+        "engines": [
+            item for item in engines if item in {"google", "bing"}
+        ],
+        "devices": [
+            item for item in devices
+            if item in {"mobile", "desktop", "tablet"}
+        ],
+        "web_mentions": (
+            is_extended
+            if policy.get("web_mentions_cadence") == "extended_weekly"
+            else True
+        ),
+    }
+
+
+def serp_month_key(today=None):
+    today_value = date.fromisoformat(today or date.today().isoformat())
+    return today_value.strftime("%Y-%m")
+
+
+def serp_requests_used(today=None):
+    return int(
+        HISTORY.get("serp_usage_by_month", {}).get(
+            serp_month_key(today),
+            0,
+        )
+    )
+
+
+def serp_monthly_budget():
+    policy = free_serpapi_policy()
+    if not policy.get("enabled", False):
+        return None
+    return int(policy.get("monthly_request_budget", 220))
+
+
+def serp_budget_available(today=None):
+    budget = serp_monthly_budget()
+    return budget is None or serp_requests_used(today) < budget
+
+
+def record_serp_request(today=None):
+    month = serp_month_key(today)
+    usage = HISTORY.setdefault("serp_usage_by_month", {})
+    usage[month] = int(usage.get(month, 0)) + 1
+    # Retain only the most recent twelve accounting buckets.
+    for old_month in sorted(usage)[:-12]:
+        del usage[old_month]
+
+
+def serp_cache_key(engine, query, device):
+    return "|".join(
+        [engine, query, device, MARKET_COUNTRY, MARKET_LANGUAGE]
+    )
+
+
+def cached_serp_result(today, engine, query, device):
+    return (
+        HISTORY.get("serp_result_cache", {})
+        .get(today, {})
+        .get(serp_cache_key(engine, query, device))
+    )
+
+
+def cache_serp_result(today, result):
+    cache = HISTORY.setdefault("serp_result_cache", {})
+    daily = cache.setdefault(today, {})
+    daily[
+        serp_cache_key(
+            result["engine"],
+            result["keyword"],
+            result["device"],
+        )
+    ] = result
+    # Cache only the current and immediately preceding run dates.
+    for old_date in sorted(cache)[:-2]:
+        del cache[old_date]
 
 
 def serp_backoff_active(today=None):
@@ -305,24 +447,39 @@ def ai_measurement_succeeded() -> bool:
     return bool(measured) and all(item.get("status") != "error" for item in measured)
 
 
-def check_google_rank():
+def check_google_rank(today=None):
     api_key = env("SERPAPI_KEY")
     if not api_key:
         REPORT["rank"].append({"status": "skipped", "reason": "SERPAPI_KEY not set"})
         return
-    queries = KEYWORDS
-    devices = [
-        item.strip() for item in os.environ.get("SERP_DEVICES", "mobile,desktop").split(",")
-        if item.strip() in {"mobile", "desktop", "tablet"}
-    ]
-    engines = [
-        item.strip().lower()
-        for item in os.environ.get("SERP_ENGINES", "google").split(",")
-        if item.strip().lower() in {"google", "bing"}
-    ]
+    today = today or date.today().isoformat()
+    plan = serp_run_plan(today)
+    queries = plan["queries"]
+    devices = plan["devices"]
+    engines = plan["engines"]
+    REPORT["serp_plan"] = {
+        **plan,
+        "monthly_budget": serp_monthly_budget(),
+        "requests_used_before_run": serp_requests_used(today),
+    }
     for kw in queries:
       for engine in engines:
        for device in devices:
+        cached = cached_serp_result(today, engine, kw, device)
+        if cached:
+            REPORT["rank"].append({**cached, "cache_hit": True})
+            continue
+        if not serp_budget_available(today):
+            REPORT["rank"].append({
+                "engine": engine,
+                "keyword": kw,
+                "device": device,
+                "status": "budget_limited",
+                "detail": "Configured monthly SerpApi safety budget reached",
+                "requests_used": serp_requests_used(today),
+                "monthly_budget": serp_monthly_budget(),
+            })
+            return
         try:
             params = {
                 "engine": engine, "q": kw, "num": 10,
@@ -350,12 +507,13 @@ def check_google_rank():
                     "detail": data["error"],
                 })
                 continue
+            record_serp_request(today)
             organic = data.get("organic_results", [])
             position = next(
                 (r.get("position", i + 1) for i, r in enumerate(organic) if SITE_DOMAIN in r.get("link", "")),
                 None,
             )
-            REPORT["rank"].append({
+            result = {
                 "engine": engine,
                 "surface": "web_search",
                 "interface": "search_data_api",
@@ -392,7 +550,9 @@ def check_google_rank():
                     "top_stories": bool(data.get("top_stories")),
                     "local_pack": bool(data.get("local_results")),
                 },
-            })
+            }
+            REPORT["rank"].append(result)
+            cache_serp_result(today, result)
         except Exception as e:
             if is_serp_quota_error(e):
                 activate_serp_backoff()
@@ -756,10 +916,19 @@ def check_facebook_recommendations():
 
 # ─── 6. Web mentions (new pages/articles since last run) ────────────────────
 
-def check_web_mentions():
+def check_web_mentions(today=None):
     api_key = env("SERPAPI_KEY")
     if not api_key:
         REPORT["web_mentions"] = {"status": "skipped", "reason": "SERPAPI_KEY not set"}
+        return
+    today = today or date.today().isoformat()
+    if not serp_budget_available(today):
+        REPORT["web_mentions"] = {
+            "status": "budget_limited",
+            "reason": "Configured monthly SerpApi safety budget reached",
+            "requests_used": serp_requests_used(today),
+            "monthly_budget": serp_monthly_budget(),
+        }
         return
     try:
         resp = requests.get(
@@ -774,6 +943,7 @@ def check_web_mentions():
         )
         resp.raise_for_status()
         data = resp.json()
+        record_serp_request(today)
         organic = data.get("organic_results", [])
         current_urls = {r.get("link") for r in organic if r.get("link")}
         seen_urls = set(HISTORY.get("seen_urls", []))
@@ -810,10 +980,15 @@ def critical_monitor_failures():
         quota_limited = [
             r for r in REPORT["rank"] if r.get("status") == "quota_limited"
         ]
+        budget_limited = [
+            r for r in REPORT["rank"] if r.get("status") == "budget_limited"
+        ]
         if rank_errors:
             failures.append(f"SERP rank: {len(rank_errors)} query errors")
         elif quota_limited:
             failures.append("SERP rank: provider quota/rate limit")
+        elif budget_limited:
+            pass
         elif (
             REPORT.get("rank")
             and not rank_measurement_succeeded()
@@ -1134,23 +1309,30 @@ def main():
     print(f"=== Reputation Monitor: {CLIENT_PROFILE['display_name']} - Starting ===")
     today_str = date.today().isoformat()
     if serp_checks_due(today_str):
-        check_google_rank()
+        run_plan = serp_run_plan(today_str)
+        check_google_rank(today_str)
         if serp_backoff_active(today_str):
             REPORT["web_mentions"] = {
                 "status": "skipped",
                 "reason": "SerpApi retry backoff is active",
                 "retry_on": HISTORY.get("serp_retry_on_date"),
             }
+        elif run_plan["web_mentions"]:
+            check_web_mentions(today_str)
         else:
-            check_web_mentions()
+            REPORT["web_mentions"] = {
+                "status": "skipped",
+                "reason": "web mention discovery runs with the weekly extended scan",
+            }
         if rank_measurement_succeeded():
             HISTORY["last_serp_check_date"] = today_str
     else:
-        backoff_reason = (
-            "SerpApi retry backoff is active"
-            if serp_backoff_active(today_str)
-            else "daily SerpApi cadence already completed"
-        )
+        if serp_backoff_active(today_str):
+            backoff_reason = "SerpApi retry backoff is active"
+        elif not serp_budget_available(today_str):
+            backoff_reason = "configured monthly SerpApi safety budget reached"
+        else:
+            backoff_reason = "daily SerpApi cadence already completed"
         REPORT["rank"].append({
             "status": "skipped",
             "reason": backoff_reason,

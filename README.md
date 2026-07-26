@@ -135,6 +135,14 @@ as a consumer-interface result.
 The scheduled pilot measures Google and Bing web results through SerpApi. This
 uses additional provider queries and can be changed with `SERP_ENGINES`.
 
+The default single-tenant installation uses a conservative SerpApi free-tier
+policy from `config/serp_targets.json`: the two highest-value core queries are
+measured daily on Google mobile, while the full query, engine and device matrix
+plus web-mention discovery runs weekly. Successful provider requests are
+accounted per calendar month, repeated partial runs reuse a persisted daily
+cache, and collection stops at 220 requests to retain 30 of the free plan's 250
+searches for manual checks or accounting drift.
+
 Bing Webmaster Tools AI Performance is kept as a separate consumer-UI data
 source. Because no documented public export API is assumed, import only an
 export the customer is authorized to access:

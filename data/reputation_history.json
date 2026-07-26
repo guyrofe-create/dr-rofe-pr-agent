@@ -246589,5 +246589,8 @@
   ],
   "last_full_digest_date": "2026-07-26",
   "last_ai_check_date": "2026-07-26",
-  "serp_retry_on_date": "2026-07-27"
+  "serp_retry_on_date": "2026-07-27",
+  "serp_usage_by_month": {
+    "2026-07": 220
+  }
 }
