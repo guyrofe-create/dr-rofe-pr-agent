@@ -91,7 +91,7 @@ def find_recent_facebook_duplicate(message, url=None):
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")
     response = requests.get(
-        f"{GRAPH}/{page_id}/feed",
+        f"{GRAPH}/{page_id}/published_posts",
         params={
             "fields": (
                 "id,message,created_time,permalink_url,"
@@ -123,7 +123,7 @@ def check_recent_posts_access():
         return False, "not configured"
     try:
         response = requests.get(
-            f"{GRAPH}/{page_id}/feed",
+            f"{GRAPH}/{page_id}/published_posts",
             params={
                 "fields": "id,message,created_time,permalink_url",
                 "limit": 1,
