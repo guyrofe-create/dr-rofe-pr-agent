@@ -16505,13 +16505,153 @@
         }
       ],
       "errors": []
+    },
+    {
+      "date": "2026-07-26T12:26:25.596346",
+      "rank": [
+        {
+          "status": "skipped",
+          "reason": "daily SerpApi cadence already completed"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא הוא דוקטורנט ישראלי, מרצה וחוקר בתחומים שונים. ככל הידוע לי עד לאוקטובר 2023, הוא עוסק בתחומים כמו מדעי המחשב, ביואינפורמטיקה, או תחומים משיקים אחרים, אך ייתכן וישנם מספר אנשים עם שם זה, וכל אחד מהם מתמקד בתחום אחר. אם יש לך הקשר נוסף או פרטים מדויקים יותר על תחומי העיסוק שלו או הארגון "
+        },
+        {
+          "prompt": "איזה תוכן רפואי מפרסם ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא עשוי לפרסם תוכן רפואי שכולל מידע על מחלות, טיפולים חדשניים, מחקרים רפואיים, עצות בריאותיות ומידע על תזונה ואורח חיים בריא. ייתכן שהוא מפרסם גם עדכונים על טכנולוגיות רפואיות חדשות, המלצות למניעה וטיפול במחלות שונות והסברים על תהליכים רפואיים. כדי לקבל מידע עדכני ומידע על התוכן הספציפי שה"
+        },
+        {
+          "prompt": "אילו ספרים כתב ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": true,
+          "safe_status": "review",
+          "excerpt": "ד\"ר גיא רופא הוא מומחה להיסטוריה של הרנסנס והדפוס והספרים שכתב עוסקים בעיקר בנושאים אלו. נכון לעכשיו, לא קיימת רשימה מדויקת של כל הספרים שכתב, אבל הוא ידוע בעיקר בזכות מאמרים ופרסומים אקדמיים בתחום זה. אם יש לך עניין בספרים ספציפיים או בפרסומים אקדמיים אחרים של המחבר, אני ממליץ לחפש במאגרי מידע אקדמ"
+        },
+        {
+          "prompt": "האם לד״ר גיא רופא יש פודקאסט?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "כן, לד\"ר גיא רופא יש פודקאסט בשם \"לשם שמיים\". הפודקאסט עוסק בנושאים רלוונטיים לתחום עיסוקו של ד\"ר רופא, כמו פילוסופיה של הדת, מחשבת ישראל ועוד."
+        },
+        {
+          "prompt": "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "pass",
+          "excerpt": "נכון לאוקטובר 2023, אין לי אפשרות לגשת לרשימת נכסים רשמיים או פרטיים של אנשים ספציפיים ברשת, כולל ד\"ר גיא רופא. עם זאת, כדי למצוא נכסים מקוונים של אדם מסוים, אפשר לחפש ברשתות החברתיות כמו לינקדאין, פייסבוק, או טוויטר, לבדוק אתרים מקצועיים שקשורים לתחום עיסוקו, או להשתמש במנועי חיפוש כדי למצוא אזכורי"
+        },
+        {
+          "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": true,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "review",
+          "excerpt": "אין לי מידע מעודכן על זמינות תורים או המדיניות הנוכחית של ד״ר גיא רופא. אני ממליץ ליצור קשר ישיר עם המרפאה או לבדוק באתר האינטרנט שלהם כדי לקבל את המידע הכי עדכני בנוגע לתורים וזמינות."
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "configured": true,
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "configured": true,
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "My dear and beloved brother, the rest of the harassers are waiting for you in the cell. Don't drop the soap.",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "skipped_missing_permission",
+        "reason": "pages_read_user_content permission is not granted; Page publishing and duplicate protection remain active"
+      },
+      "web_mentions": {
+        "status": "skipped",
+        "reason": "daily SerpApi cadence already completed"
+      },
+      "alerts": [
+        {
+          "type": "ai_knowledge_gap",
+          "source": "OpenAI monitor sample",
+          "excerpt": "ד\"ר גיא רופא הוא מומחה להיסטוריה של הרנסנס והדפוס והספרים שכתב עוסקים בעיקר בנושאים אלו. נכון לעכשיו, לא קיימת רשימה מדויקת של כל הספרים שכתב, אבל הוא ידוע בעיקר בזכות מאמרים ופרסומים אקדמיים בתחום זה. אם יש לך עניין בספרים ספציפיים או בפרסומים אקדמיים אחרים של המחבר, אני ממליץ לחפש במאגרי מידע אקדמ",
+          "prompt": "אילו ספרים כתב ד״ר גיא רופא?"
+        },
+        {
+          "type": "ai_active_practice_misinformation",
+          "source": "OpenAI monitor sample",
+          "excerpt": "אין לי מידע מעודכן על זמינות תורים או המדיניות הנוכחית של ד״ר גיא רופא. אני ממליץ ליצור קשר ישיר עם המרפאה או לבדוק באתר האינטרנט שלהם כדי לקבל את המידע הכי עדכני בנוגע לתורים וזמינות.",
+          "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?"
+        }
+      ],
+      "errors": []
     }
   ],
   "seen_review_ids": [
     "Alon Tsevi|1766326026",
-    "Neta Tzur|1780837292",
     "Nir|1783548048",
     "Avi Kalili|1777044743",
+    "Neta Tzur|1780837292",
     "דורון ל|1781610122"
   ],
   "seen_fb_recommendation_ids": [],

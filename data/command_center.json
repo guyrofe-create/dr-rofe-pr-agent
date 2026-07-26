@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-26T12:23:39Z",
+  "updated_at": "2026-07-26T12:26:41Z",
   "content_freeze": false,
   "events": [
     {
@@ -268,20 +268,20 @@
       "source": "OpenAI monitor sample",
       "external_id": "2026-07-26T09:43:28.598927|ai_active_practice_misinformation|",
       "title": "ai_active_practice_misinformation",
-      "text": "מצטער, אך אין לי מידע ספציפי על זמינות תורים של רופאים יחידים, כולל ד\"ר גיא רופא. כדי לקבוע תור או לבדוק אם הוא מקבל מטופלות, אני ממליץ ליצור קשר ישירות עם המרפאה שלו או לבדוק באתר האינטרנט של המרפאה או דרך שירותי הקופות השונות.",
+      "text": "אין לי מידע מעודכן על זמינות תורים או המדיניות הנוכחית של ד״ר גיא רופא. אני ממליץ ליצור קשר ישיר עם המרפאה או לבדוק באתר האינטרנט שלהם כדי לקבל את המידע הכי עדכני בנוגע לתורים וזמינות.",
       "rating": null,
       "category": "customer_experience",
       "metadata": {
         "type": "ai_active_practice_misinformation",
         "source": "OpenAI monitor sample",
-        "excerpt": "מצטער, אך אין לי מידע ספציפי על זמינות תורים של רופאים יחידים, כולל ד\"ר גיא רופא. כדי לקבוע תור או לבדוק אם הוא מקבל מטופלות, אני ממליץ ליצור קשר ישירות עם המרפאה שלו או לבדוק באתר האינטרנט של המרפאה או דרך שירותי הקופות השונות.",
+        "excerpt": "אין לי מידע מעודכן על זמינות תורים או המדיניות הנוכחית של ד״ר גיא רופא. אני ממליץ ליצור קשר ישיר עם המרפאה או לבדוק באתר האינטרנט שלהם כדי לקבל את המידע הכי עדכני בנוגע לתורים וזמינות.",
         "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?"
       },
       "id": "evt_c465f1654e94eebd",
       "status": "new",
       "created_at": "2026-07-26T09:43:39Z",
-      "last_seen_at": "2026-07-26T12:23:39Z",
-      "occurrences": 2,
+      "last_seen_at": "2026-07-26T12:26:41Z",
+      "occurrences": 3,
       "risk_score": 5,
       "priority": "P4",
       "approval_required": "auto_or_standard",
@@ -376,20 +376,20 @@
       "source": "OpenAI monitor sample",
       "external_id": "ai_knowledge_gap|אילו ספרים כתב ד״ר גיא רופא?",
       "title": "ai_knowledge_gap",
-      "text": "ד\"ר גיא רופא הוא חוקר ומרצה בנושאי תרבות איטלקית ותולדות האומנות. הוא כתב ספרים ומאמרים המתמקדים בעיקר באזורים אלו. אחד הספרים הידועים שכתב הוא \"הכּתובת של רבקה\" (The Inscription of Rebecca), העוסק בתולדות משפחתו בשואה. ייתכן שהוא כתב ספרים נוספים או פרסומים אקדמיים ומומלץ לבדוק במאגרי מידע אקדמיים ",
+      "text": "ד\"ר גיא רופא הוא מומחה להיסטוריה של הרנסנס והדפוס והספרים שכתב עוסקים בעיקר בנושאים אלו. נכון לעכשיו, לא קיימת רשימה מדויקת של כל הספרים שכתב, אבל הוא ידוע בעיקר בזכות מאמרים ופרסומים אקדמיים בתחום זה. אם יש לך עניין בספרים ספציפיים או בפרסומים אקדמיים אחרים של המחבר, אני ממליץ לחפש במאגרי מידע אקדמ",
       "rating": null,
       "category": "ai_knowledge_gap",
       "metadata": {
         "type": "ai_knowledge_gap",
         "source": "OpenAI monitor sample",
-        "excerpt": "ד\"ר גיא רופא הוא חוקר ומרצה בנושאי תרבות איטלקית ותולדות האומנות. הוא כתב ספרים ומאמרים המתמקדים בעיקר באזורים אלו. אחד הספרים הידועים שכתב הוא \"הכּתובת של רבקה\" (The Inscription of Rebecca), העוסק בתולדות משפחתו בשואה. ייתכן שהוא כתב ספרים נוספים או פרסומים אקדמיים ומומלץ לבדוק במאגרי מידע אקדמיים ",
+        "excerpt": "ד\"ר גיא רופא הוא מומחה להיסטוריה של הרנסנס והדפוס והספרים שכתב עוסקים בעיקר בנושאים אלו. נכון לעכשיו, לא קיימת רשימה מדויקת של כל הספרים שכתב, אבל הוא ידוע בעיקר בזכות מאמרים ופרסומים אקדמיים בתחום זה. אם יש לך עניין בספרים ספציפיים או בפרסומים אקדמיים אחרים של המחבר, אני ממליץ לחפש במאגרי מידע אקדמ",
         "prompt": "אילו ספרים כתב ד״ר גיא רופא?"
       },
       "id": "evt_6593a4a9407a49fa",
       "status": "new",
       "created_at": "2026-07-26T12:23:39Z",
-      "last_seen_at": "2026-07-26T12:23:39Z",
-      "occurrences": 1,
+      "last_seen_at": "2026-07-26T12:26:41Z",
+      "occurrences": 2,
       "risk_score": 5,
       "priority": "P4",
       "approval_required": "auto_or_standard",
@@ -4092,7 +4092,7 @@
     {
       "id": "cmp_c31e9e54d7cef9",
       "brand": "ד\"ר גיא רופא",
-      "created_at": "2026-07-26T12:23:39Z",
+      "created_at": "2026-07-26T12:26:41Z",
       "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
       "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
       "serp_asset_gap": {
@@ -6258,6 +6258,33 @@
     },
     {
       "at": "2026-07-26T12:23:39Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_replanned",
+      "object_id": "cmp_c31e9e54d7cef9",
+      "details": {
+        "tasks": 5
+      }
+    },
+    {
+      "at": "2026-07-26T12:26:41Z",
+      "actor": "reputation-agent",
+      "action": "event_seen_again",
+      "object_id": "evt_6593a4a9407a49fa",
+      "details": {
+        "occurrences": 2
+      }
+    },
+    {
+      "at": "2026-07-26T12:26:41Z",
+      "actor": "reputation-agent",
+      "action": "event_seen_again",
+      "object_id": "evt_c465f1654e94eebd",
+      "details": {
+        "occurrences": 3
+      }
+    },
+    {
+      "at": "2026-07-26T12:26:41Z",
       "actor": "reputation-agent",
       "action": "growth_campaign_replanned",
       "object_id": "cmp_c31e9e54d7cef9",
