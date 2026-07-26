@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-26T12:51:25Z",
+  "updated_at": "2026-07-26T16:42:13Z",
   "content_freeze": false,
   "events": [
     {
@@ -6311,6 +6311,16 @@
       "details": {
         "tasks": 5
       }
+    },
+    {
+      "at": "2026-07-26T16:42:13Z",
+      "actor": "reputation-agent",
+      "action": "p4_opportunities_prepared",
+      "object_id": "opportunity_portfolio",
+      "details": {
+        "prepared": [],
+        "skipped": []
+      }
     }
   ],
   "metrics": {
@@ -6318,6 +6328,11 @@
     "critical_events": 0,
     "pending_tasks": 61,
     "active_crises": 0,
-    "content_freeze": false
+    "content_freeze": false,
+    "ranked_opportunities": 0,
+    "selected_opportunities": 0,
+    "prepared_opportunities": 0,
+    "p5_asset_candidates": 0,
+    "p5_build_ready": 0
   }
 }
