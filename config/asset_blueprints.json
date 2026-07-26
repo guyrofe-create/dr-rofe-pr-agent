@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "principle": "Create useful, transparent, distinct assets that can earn their own demand and citations; never create clones merely to occupy results.",
+  "blueprints": [
+    {
+      "id": "health_news_analysis_desk",
+      "recommended_home": "https://drguyrofe.co.il/",
+      "name_he": "חדשות הבריאות של ד״ר גיא רופא",
+      "format": "daily-or-selective evidence-based analysis desk",
+      "audience": "Hebrew readers who encountered a medical claim in Israeli news",
+      "workflow": [
+        "Detect a high-attention Israeli health story",
+        "Preserve and link to the analyzed news article",
+        "Locate the primary study, official data or professional guidance",
+        "Explain what the headline gets right, what it omits and what remains uncertain",
+        "Add original non-populist analysis, clear numbers and practical context",
+        "Require human medical review before publication"
+      ],
+      "never": ["copy the article", "paraphrase without added value", "sensational headline", "medical solicitation"]
+    },
+    {
+      "id": "books_authority_site",
+      "name_he": "הספרים של ד״ר גיא רופא",
+      "format": "author and books knowledge property",
+      "audience": "readers, parents, journalists, libraries and booksellers",
+      "content": [
+        "A verified page for every book",
+        "Excerpts, chapter maps, corrections and updated source notes",
+        "Author interviews and downloadable press material",
+        "Structured Book and Person data matching visible facts"
+      ],
+      "never": ["thin affiliate pages", "fabricated reviews", "duplicate retailer descriptions"]
+    },
+    {
+      "id": "apps_product_studio",
+      "name_he": "האפליקציות והמוצרים של גיא רופא",
+      "format": "product studio and support property",
+      "audience": "app users, reviewers, journalists and partners",
+      "content": [
+        "A substantial product page for every real application",
+        "Original screenshots, release notes, privacy and support pages",
+        "Methodology and evidence behind health-related product content",
+        "Founder and creator profile with approved factual links"
+      ],
+      "never": ["empty app-directory pages", "fake ratings", "medical outcome promises"]
+    },
+    {
+      "id": "evidence_visual_lab",
+      "name_he": "מעבדת נתונים רפואיים חזותיים",
+      "format": "original charts, explainers and downloadable briefs",
+      "audience": "journalists, educators, readers and AI retrieval systems",
+      "content": [
+        "Original charts derived from cited public datasets",
+        "Plain-language methodology and limitations",
+        "Reusable images with attribution and natural alt text"
+      ],
+      "never": ["invented statistics", "charts without source provenance"]
+    },
+    {
+      "id": "media_fact_room",
+      "name_he": "חדר עובדות ותקשורת",
+      "format": "verified biography, timeline, books, apps, podcast and press resources",
+      "audience": "journalists, editors, fact-checkers and AI retrieval systems",
+      "content": [
+        "Approved fact registry rendered for humans",
+        "Downloadable portraits and captions",
+        "Corrections policy and contact for factual inquiries"
+      ],
+      "never": ["unsupported claims", "presentation as independent media"]
+    }
+  ]
+}

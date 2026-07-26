@@ -6,6 +6,19 @@ agent can push hard without gambling the client's durable assets.
 """
 
 TACTICS = {
+    "new_asset_incubation": {
+        "surface": ["google_brand_serp", "google_ai", "chatgpt", "perplexity", "bing_copilot"],
+        "goal": "Create or earn a new useful retrieval surface when existing assets cannot close the measured gap",
+        "impact": 10, "speed": 4, "risk": 2,
+        "requires": ["measured_serp_gap", "distinct_audience_purpose", "maintenance_owner"],
+        "actions": [
+            "Choose the missing surface: publication, research library, video, podcast, documents, newsletter, Q&A or earned editorial coverage",
+            "Define a distinct audience, query intent, editorial role and success metric",
+            "Create original source-worthy material and connect it naturally to relevant approved assets",
+            "Incubate for at least one review cycle, then expand, reposition or retire from measured outcomes",
+        ],
+        "forbidden": ["doorway_site", "cloned_domain", "fake_independence", "mass_low_value_content"],
+    },
     "verified_fact_registry": {
         "surface": ["google", "google_ai", "chatgpt", "perplexity", "bing_copilot", "all_profiles"],
         "goal": "Keep every identity claim traceable to an approved fact and evidence source",

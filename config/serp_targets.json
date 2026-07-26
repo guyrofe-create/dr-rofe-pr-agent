@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "market": {
+    "country": "IL",
+    "language": "he",
+    "devices": ["mobile", "desktop"]
+  },
+  "search_console_properties": [
+    "sc-domain:guyrofe.com",
+    "sc-domain:drguyrofe.co.il",
+    "sc-domain:drguyrofe.com"
+  ],
+  "objective": {
+    "page_one_size": 10,
+    "desired_results_target": 7,
+    "controlled_results_target": 5,
+    "negative_results_target": 0,
+    "ai_factual_accuracy_target": 1.0,
+    "ai_official_citation_target": 0.75
+  },
+  "queries": [
+    {"query": "ד״ר גיא רופא", "kind": "exact_brand", "priority": 100},
+    {"query": "ד\"ר גיא רופא", "kind": "exact_brand", "priority": 100},
+    {"query": "דר גיא רופא", "kind": "exact_brand", "priority": 95},
+    {"query": "גיא רופא", "kind": "brand", "priority": 90},
+    {"query": "Guy Rofe", "kind": "english_brand", "priority": 80},
+    {"query": "Dr. Guy Rofe", "kind": "english_brand", "priority": 80}
+  ],
+  "property_roles": {
+    "guyrofe.com": {
+      "role": "canonical identity and official source of truth",
+      "allowed_intents": ["identity", "biography", "books", "podcast", "official facts"],
+      "homepage_change_prohibited": true
+    },
+    "drguyrofe.co.il": {
+      "role": "Hebrew evidence-based medical news and explainers",
+      "allowed_intents": ["medical news", "research review", "public health explanation"],
+      "must_be_original": true,
+      "must_not_solicit_care": true
+    },
+    "drguyrofe.com": {
+      "role": "knowledge hub, podcast and long-form expert answers",
+      "allowed_intents": ["knowledge hub", "podcast", "long-form answers"],
+      "status": "deferred_pending_wix_audit"
+    }
+  },
+  "aggressiveness": {
+    "mode": "maximum_sustainable",
+    "daily_measurement": true,
+    "weekly_reprioritization": true,
+    "publish_only_when_material_value_exists": true,
+    "create_new_assets_when_gap_is_evidence_backed": true,
+    "new_asset_requires_distinct_audience_purpose_and_maintenance_owner": true,
+    "max_new_medical_articles_per_property_per_week": 3,
+    "forbidden": [
+      "fake independence",
+      "cloned cross-domain content",
+      "doorway pages",
+      "keyword stuffing",
+      "mass low-value AI content",
+      "fake reviews",
+      "paid dofollow links",
+      "false removal reports"
+    ]
+  },
+  "asset_creation_portfolio": [
+    {
+      "kind": "original_research_library",
+      "surface": ["Google", "Google AI", "ChatGPT", "Perplexity"],
+      "value": "Original surveys, datasets, charts and evidence summaries that others can cite",
+      "minimum_proof": ["original data or methodology", "medical review", "downloadable evidence"]
+    },
+    {
+      "kind": "named_medical_newsroom",
+      "surface": ["Google", "Google News eligibility", "AI answers"],
+      "value": "A distinct evidence-led publication with bylines, corrections and original analysis",
+      "minimum_proof": ["distinct editorial purpose", "human medical review", "original interpretation", "sustainable cadence"]
+    },
+    {
+      "kind": "video_explainer_series",
+      "surface": ["Google video", "YouTube", "AI citations"],
+      "value": "Searchable episodes with transcripts, chapters and source lists",
+      "minimum_proof": ["original recording", "accurate transcript", "canonical episode page"]
+    },
+    {
+      "kind": "podcast_season",
+      "surface": ["Google", "Spotify", "Apple Podcasts", "AI discovery"],
+      "value": "A coherent expert series with transcripts and episode evidence",
+      "minimum_proof": ["unique episodes", "RSS ownership", "transcripts", "sources"]
+    },
+    {
+      "kind": "public_document_collection",
+      "surface": ["Google", "document search", "AI retrieval"],
+      "value": "Substantive sourced guides, slide decks and downloadable briefs",
+      "minimum_proof": ["original document", "accessible text", "canonical landing page"]
+    },
+    {
+      "kind": "newsletter_archive",
+      "surface": ["Google", "brand demand", "return audience"],
+      "value": "An indexable archive of original periodic analysis",
+      "minimum_proof": ["real subscribers or intended audience", "original editions", "public archive"]
+    },
+    {
+      "kind": "expert_qa_library",
+      "surface": ["Google", "AI answers", "long-tail discovery"],
+      "value": "Human-reviewed answers to real recurring questions",
+      "minimum_proof": ["real question demand", "direct answer", "sources", "non-duplicative intent"]
+    },
+    {
+      "kind": "independent_editorial_opportunity",
+      "surface": ["Google", "Google AI", "ChatGPT", "Perplexity"],
+      "value": "Earned coverage, interview or expert contribution on a genuinely independent publisher",
+      "minimum_proof": ["editorial independence", "newsworthy contribution", "accurate attribution"]
+    }
+  ],
+  "new_asset_decision_gate": {
+    "minimum_build_score": 70,
+    "minimum_incubate_score": 50,
+    "criteria": [
+      "distinct audience",
+      "distinct search intent",
+      "original content inventory",
+      "twelve-month maintenance capacity",
+      "brand relevance",
+      "technical ownership and measurement",
+      "realistic authority path"
+    ],
+    "penalties": [
+      "duplicate content",
+      "fake independence",
+      "YMYL review gap",
+      "thin product catalog",
+      "no organic audience beyond reputation manipulation"
+    ],
+    "outcomes": {
+      "build": "Create as a real maintained asset with its own product brief and metrics.",
+      "incubate": "Test as a section, series or landing collection inside an existing property first.",
+      "reject": "Do not build; strengthen an existing asset instead."
+    }
+  }
+}

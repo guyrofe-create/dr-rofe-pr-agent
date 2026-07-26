@@ -14,6 +14,13 @@ stopping at alerts.
 - freezes scheduled publishing when a high-risk event is active;
 - keeps a durable audit trail and exposes command-center metrics in the dashboard;
 - replans an aggressive, evidence-led Google and AI visibility campaign every monitor cycle;
+- records the complete top ten for every approved brand-name variant, locale and device;
+- classifies desired, controlled and negative SERP positions instead of treating
+  asset existence as visibility;
+- ingests 28-day Search Console query/page evidence through the existing shared
+  Google OAuth connection and converts striking-distance pages into work;
+- rejects thin new-property ideas through a distinct-purpose, maintenance and
+  authority decision gate;
 - loads `config/reputation_strategy.json` as the enforceable source for canonical
   facts, channel ownership, content evidence rules, AI monitoring and success metrics;
 - samples each approved AI reputation prompt three times per day and opens a
@@ -74,6 +81,8 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the data model, routing
 rules, governance boundaries and planned premium layers.
 The Hebrew operator guide and research summary is
 [docs/REPUTATION_STRATEGY_HE.md](docs/REPUTATION_STRATEGY_HE.md).
+The premium Google/AI control loop and critical new-asset policy are documented
+in [docs/PREMIUM_SERP_AI_ENGINE_HE.md](docs/PREMIUM_SERP_AI_ENGINE_HE.md).
 
 ### Reviewed Medium publishing
 

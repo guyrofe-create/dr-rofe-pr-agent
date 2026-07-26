@@ -6,6 +6,21 @@ import unittest
 from scripts.reputation_core import CommandCenter
 from scripts.reputation_core.risk import score_event
 from scripts.reputation_core.growth import build_serp_asset_gap, plan_growth_campaign
+from scripts.reputation_core.orchestrator import (
+    build_query_control_map,
+    detect_cross_domain_risk,
+    evaluate_new_asset_hypothesis,
+    orchestrate_reputation_cycle,
+    propose_new_assets,
+)
+from scripts.reputation_core.editorial_radar import (
+    build_news_analysis_brief,
+    rank_news_candidates,
+)
+from scripts.reputation_core.search_console import (
+    fetch_search_console_rows,
+    refresh_google_access_token,
+)
 from scripts.reputation_core.tactics import ranked_tactics
 from scripts.reputation_core.strategy import (
     load_fact_registry,
@@ -102,6 +117,60 @@ class CommandCenterTests(unittest.TestCase):
             "תשובה שגויה מעודכנת",
         )
         self.assertEqual(self.center.state["events"][0]["occurrences"], 2)
+
+
+class SearchConsoleAdapterTests(unittest.TestCase):
+    class Response:
+        def __init__(self, payload, status_code=200):
+            self.payload = payload
+            self.status_code = status_code
+
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                raise RuntimeError(f"HTTP {self.status_code}")
+
+        def json(self):
+            return self.payload
+
+    class Session:
+        def __init__(self):
+            self.calls = []
+
+        def post(self, url, **kwargs):
+            self.calls.append((url, kwargs))
+            if "oauth2.googleapis.com" in url:
+                return SearchConsoleAdapterTests.Response({"access_token": "token"})
+            return SearchConsoleAdapterTests.Response({
+                "rows": [{
+                    "keys": ["ד״ר גיא רופא", "https://guyrofe.com/about/"],
+                    "clicks": 5,
+                    "impressions": 100,
+                    "ctr": 0.05,
+                    "position": 6.2,
+                }]
+            })
+
+    def test_refresh_and_normalize_query_page_rows(self):
+        session = self.Session()
+        token = refresh_google_access_token("id", "secret", "refresh", session=session)
+        rows = fetch_search_console_rows(
+            token, ["sc-domain:guyrofe.com"], session=session
+        )
+        self.assertEqual(token, "token")
+        self.assertEqual(rows[0]["query"], "ד״ר גיא רופא")
+        self.assertEqual(rows[0]["page"], "https://guyrofe.com/about/")
+        self.assertEqual(rows[0]["position"], 6.2)
+        self.assertIn("sc-domain%3Aguyrofe.com", session.calls[1][0])
+
+    def test_inaccessible_property_is_skipped(self):
+        class ForbiddenSession(self.Session):
+            def post(self, url, **kwargs):
+                return SearchConsoleAdapterTests.Response({}, status_code=403)
+
+        rows = fetch_search_console_rows(
+            "token", ["sc-domain:missing.example"], session=ForbiddenSession()
+        )
+        self.assertEqual(rows, [])
 
 
 class GrowthEngineTests(unittest.TestCase):
@@ -223,6 +292,133 @@ class GrowthEngineTests(unittest.TestCase):
 
     def test_tactics_exclude_high_risk_when_requested(self):
         self.assertTrue(all(t["risk"] <= 1 for t in ranked_tactics(max_risk=1)))
+
+    def test_query_control_map_classifies_registered_assets(self):
+        assets = [
+            {"platform": "Main", "url": "https://guyrofe.com/", "controlled": True,
+             "tier": "A", "status": "active"},
+            {"platform": "LinkedIn", "url": "https://www.linkedin.com/in/guyrofe",
+             "controlled": True, "tier": "A", "status": "active"},
+        ]
+        control = build_query_control_map({
+            "query": "ד״ר גיא רופא",
+            "results": [
+                {"position": 1, "link": "https://guyrofe.com/"},
+                {"position": 2, "link": "https://example.com/negative", "sentiment": "negative"},
+                {"position": 3, "link": "https://www.linkedin.com/in/guyrofe"},
+            ],
+        }, assets)
+        self.assertEqual(control["controlled_count"], 2)
+        self.assertEqual(control["negative_count"], 1)
+        self.assertEqual(control["controlled_positions"], [1, 3])
+
+    def test_orchestrator_builds_closed_loop_actions_and_ai_metrics(self):
+        assets = [
+            {"platform": "Main", "url": "https://guyrofe.com/", "controlled": True,
+             "tier": "A", "status": "active", "priority": 100},
+            {"platform": "News", "url": "https://drguyrofe.co.il/", "controlled": True,
+             "tier": "A", "status": "audit_required", "priority": 92},
+        ]
+        cycle = orchestrate_reputation_cycle(
+            assets,
+            [{"query": "ד״ר גיא רופא", "results": [
+                {"position": 1, "link": "https://guyrofe.com/"},
+                {"position": 4, "link": "https://bad.example/story", "sentiment": "negative"},
+            ]}],
+            ai_snapshots=[{
+                "exact_answer": "answer", "factual_errors": ["wrong"],
+                "cited_sources": ["https://bad.example/story"],
+            }],
+            search_console_rows=[{
+                "query": "ד״ר גיא רופא חדשות", "page": "https://drguyrofe.co.il/news",
+                "position": 8.2, "impressions": 150,
+            }],
+        )
+        kinds = {action["kind"] for action in cycle["next_best_actions"]}
+        self.assertIn("displacement_campaign", kinds)
+        self.assertIn("asset_audit", kinds)
+        self.assertIn("refresh_content", kinds)
+        self.assertIn("ai_visibility_correction", kinds)
+        self.assertEqual(cycle["ai_visibility"]["factual_accuracy_rate"], 0.0)
+        self.assertTrue(cycle["new_asset_proposals"])
+
+    def test_cross_domain_duplicate_and_cannibalization_are_blocked(self):
+        risks = detect_cross_domain_risk([
+            {"url": "https://guyrofe.com/a", "fingerprint": "same",
+             "target_query": "topic", "intent": "guide"},
+            {"url": "https://drguyrofe.co.il/a", "fingerprint": "same",
+             "target_query": "topic", "intent": "guide"},
+        ])
+        self.assertEqual(
+            {risk["type"] for risk in risks},
+            {"cross_domain_duplicate", "query_cannibalization"},
+        )
+
+    def test_new_asset_creation_requires_a_measured_gap(self):
+        assets = [{"platform": "Main", "type": "canonical_site",
+                   "url": "https://guyrofe.com", "controlled": True,
+                   "tier": "A", "status": "active"}]
+        proposals = propose_new_assets(assets, [{
+            "query": "ד״ר גיא רופא", "desired_count": 1, "controlled_count": 1,
+        }])
+        self.assertTrue(any(
+            proposal["asset_kind"] == "original_research_library"
+            for proposal in proposals
+        ))
+
+    def test_news_radar_prefers_popular_relevant_sourced_analysis(self):
+        candidates = [
+            {
+                "title": "כותרת בריאותית פופולרית",
+                "url": "https://news.example/story",
+                "primary_source_url": "https://pubmed.example/study",
+                "source_kind": "major_news",
+                "attention_score": 5,
+                "public_health_relevance": 5,
+                "analysis_gap": 5,
+                "sensationalism_risk": 2,
+            },
+            {
+                "title": "רכילות",
+                "url": "https://news.example/gossip",
+                "source_kind": "other",
+                "attention_score": 5,
+                "public_health_relevance": 0,
+                "analysis_gap": 0,
+            },
+        ]
+        ranked = rank_news_candidates(candidates)
+        self.assertEqual(len(ranked), 1)
+        brief = build_news_analysis_brief(ranked[0])
+        self.assertEqual(brief["analyzed_news_url"], "https://news.example/story")
+        self.assertIn("מה חסר או דורש הסתייגות", brief["required_sections"])
+
+    def test_new_asset_gate_can_reject_a_creative_but_thin_idea(self):
+        rejected = evaluate_new_asset_hypothesis({
+            "name": "Daily cloned news domain",
+            "distinct_audience": False,
+            "distinct_search_intent": False,
+            "original_content_inventory": False,
+            "maintenance_capacity_12m": True,
+            "brand_relevance": True,
+            "technical_ownership": True,
+            "realistic_authority_path": False,
+            "duplicate_content_risk": True,
+            "ymyl_review_gap": True,
+            "reputation_only_purpose": True,
+        })
+        self.assertEqual(rejected["decision"], "reject")
+        approved = evaluate_new_asset_hypothesis({
+            "name": "Evidence newsroom",
+            "distinct_audience": True,
+            "distinct_search_intent": True,
+            "original_content_inventory": True,
+            "maintenance_capacity_12m": True,
+            "brand_relevance": True,
+            "technical_ownership": True,
+            "realistic_authority_path": True,
+        })
+        self.assertEqual(approved["decision"], "build")
 
 
 if __name__ == "__main__":

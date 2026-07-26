@@ -68,6 +68,7 @@ def plan_growth_campaign(profile: dict, observations: dict) -> dict:
         add("profile_consistency", "official profiles require fact and status reconciliation", "P1")
     if asset_gap["slot_gap"]:
         add("brand_serp_asset", f"brand SERP has an estimated {asset_gap['slot_gap']}-asset gap", "P1")
+        add("new_asset_incubation", "existing approved assets may not close every measured page-one gap", "P2")
     if observations.get("local_rank_weak"):
         add("local_prominence", "local commercial queries underperform", "P1")
     if observations.get("pages_position_4_20", 0):

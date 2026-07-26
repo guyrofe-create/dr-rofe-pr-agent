@@ -29,11 +29,20 @@ import requests
 import re
 from datetime import datetime, date
 from openai import OpenAI
+from urllib.parse import urlparse
 
 sys.path.insert(0, os.path.dirname(__file__))
 from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest
-from reputation_core import CommandCenter, monitoring_prompts, plan_growth_campaign
+from reputation_core import (
+    CommandCenter,
+    fetch_search_console_rows,
+    monitoring_prompts,
+    orchestrate_reputation_cycle,
+    plan_growth_campaign,
+    refresh_google_access_token,
+)
 from reputation_core.strategy import load_strategy
+from reputation_core.orchestrator import load_serp_targets
 
 SITE_DOMAIN = "guyrofe.com"
 HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "reputation_history.json")
@@ -58,6 +67,7 @@ REPORT = {
     "date": datetime.now().isoformat(),
     "rank": [], "geo": [], "tokens": [], "reviews": None,
     "facebook_recommendations": None, "web_mentions": None,
+    "search_console": None, "orchestration": None,
     "alerts": [], "errors": [],
 }
 
@@ -89,6 +99,41 @@ def safe_error(error):
         detail,
     )
     return detail[:500]
+
+
+def collect_search_console_evidence():
+    """Collect 28-day query/page evidence when shared Google OAuth is present."""
+    names = (
+        "GOOGLE_OAUTH_CLIENT_ID",
+        "GOOGLE_OAUTH_CLIENT_SECRET",
+        "GOOGLE_OAUTH_REFRESH_TOKEN",
+    )
+    credentials = [env(name) for name in names]
+    if not all(credentials):
+        REPORT["search_console"] = {
+            "status": "skipped",
+            "reason": "shared Google OAuth credentials are not configured",
+            "rows": [],
+        }
+        return []
+    try:
+        access_token = refresh_google_access_token(*credentials)
+        properties = load_serp_targets().get("search_console_properties", [])
+        rows = fetch_search_console_rows(access_token, properties)
+        REPORT["search_console"] = {
+            "status": "ok",
+            "properties": properties,
+            "row_count": len(rows),
+            "rows": rows,
+        }
+        return rows
+    except Exception as exc:
+        REPORT["search_console"] = {
+            "status": "error",
+            "error": safe_error(exc),
+            "rows": [],
+        }
+        return []
 
 
 def has_active_practice_claim(answer):
@@ -236,20 +281,31 @@ def check_google_rank():
     if not api_key:
         REPORT["rank"].append({"status": "skipped", "reason": "SERPAPI_KEY not set"})
         return
-    for kw in KEYWORDS:
+    configured_queries = [item["query"] for item in load_serp_targets()["queries"]]
+    queries = list(dict.fromkeys(configured_queries + KEYWORDS))
+    devices = [
+        item.strip() for item in os.environ.get("SERP_DEVICES", "mobile,desktop").split(",")
+        if item.strip() in {"mobile", "desktop", "tablet"}
+    ]
+    for kw in queries:
+      for device in devices:
         try:
             resp = requests.get(
                 "https://serpapi.com/search.json",
                 params={
                     "engine": "google", "q": kw, "google_domain": "google.co.il",
-                    "gl": "il", "hl": "iw", "num": 10, "api_key": api_key,
+                    "gl": "il", "hl": "iw", "num": 10, "device": device,
+                    "api_key": api_key,
                 },
                 timeout=20,
             )
             resp.raise_for_status()
             data = resp.json()
             if "error" in data:
-                REPORT["rank"].append({"keyword": kw, "status": "error", "detail": data["error"]})
+                REPORT["rank"].append({
+                    "keyword": kw, "device": device, "status": "error",
+                    "detail": data["error"],
+                })
                 continue
             organic = data.get("organic_results", [])
             position = next(
@@ -257,11 +313,25 @@ def check_google_rank():
                 None,
             )
             REPORT["rank"].append({
-                "keyword": kw, "position_top10": position,
+                "keyword": kw, "device": device, "country": "IL", "language": "he",
+                "position_top10": position,
                 "status": "found" if position else "not_in_top10",
+                "results": [
+                    {
+                        "position": result.get("position", index + 1),
+                        "title": result.get("title"),
+                        "link": result.get("link"),
+                        "displayed_link": result.get("displayed_link"),
+                        "sentiment": "unknown",
+                    }
+                    for index, result in enumerate(organic[:10])
+                ],
             })
         except Exception as e:
-            REPORT["rank"].append({"keyword": kw, "status": "error", "detail": safe_error(e)})
+            REPORT["rank"].append({
+                "keyword": kw, "device": device, "status": "error",
+                "detail": safe_error(e),
+            })
 
 
 # ─── 2. AI / GEO presence check ──────────────────────────────────────────────
@@ -277,17 +347,51 @@ def check_ai_presence():
     sample_count = int(configured_samples or strategy["samples_per_prompt"])
     sample_count = max(1, min(sample_count, 5))
     majority = sample_count // 2 + 1
-    model = os.environ.get("AI_MONITOR_MODEL", "gpt-4o")
+    model = os.environ.get("AI_MONITOR_MODEL", "gpt-5.6-sol")
+    registry = load_json_file(ASSET_REGISTRY_PATH, {"assets": []})
+    approved_hosts = {
+        urlparse(asset.get("url", "")).netloc.lower().removeprefix("www.")
+        for asset in registry.get("assets", [])
+        if asset.get("tier") in {"A", "B"} and asset.get("status") != "quarantined"
+    }
     for prompt in GEO_PROMPTS:
         samples = []
         for sample_number in range(1, sample_count + 1):
             try:
-                resp = client.chat.completions.create(
+                resp = client.responses.create(
                     model=model,
-                    messages=[{"role": "user", "content": prompt}],
-                    max_tokens=300,
+                    input=prompt,
+                    tools=[{
+                        "type": "web_search",
+                        "search_context_size": "medium",
+                        "user_location": {
+                            "type": "approximate",
+                            "country": "IL",
+                            "city": "Tel Aviv",
+                            "region": "Tel Aviv",
+                        },
+                    }],
+                    max_output_tokens=500,
                 )
-                answer = resp.choices[0].message.content or ""
+                answer = resp.output_text or ""
+                citations = []
+                for output_item in getattr(resp, "output", []) or []:
+                    for part in getattr(output_item, "content", []) or []:
+                        for annotation in getattr(part, "annotations", []) or []:
+                            payload = (
+                                annotation.model_dump()
+                                if hasattr(annotation, "model_dump")
+                                else annotation if isinstance(annotation, dict) else {}
+                            )
+                            url = payload.get("url") or (
+                                payload.get("url_citation") or {}
+                            ).get("url")
+                            if url and url not in citations:
+                                citations.append(url)
+                cited_hosts = {
+                    urlparse(url).netloc.lower().removeprefix("www.")
+                    for url in citations
+                }
                 mentioned = ("גיא רופא" in answer) or ("Guy Rofe" in answer)
                 active_practice_claim = has_active_practice_claim(answer)
                 identity_misinformation = has_identity_misinformation(answer)
@@ -305,8 +409,8 @@ def check_ai_presence():
                     "active_practice_claim": active_practice_claim,
                     "identity_misinformation": identity_misinformation,
                     "knowledge_gap": knowledge_gap,
-                    "official_source_cited": None,
-                    "cited_sources": [],
+                    "official_source_cited": bool(cited_hosts & approved_hosts),
+                    "cited_sources": citations,
                     "safe_status": (
                         "pass"
                         if mentioned
@@ -792,6 +896,7 @@ def main():
     check_token_health()
     check_reviews()
     check_facebook_recommendations()
+    search_console_rows = collect_search_console_evidence()
 
     # Convert raw monitor findings into durable, routed reputation events.
     # This is the active layer: each new risk receives a priority, SLA,
@@ -802,6 +907,36 @@ def main():
     # Re-plan the current high-cadence growth campaign from live evidence.
     observations = load_json_file(GROWTH_OBSERVATIONS_PATH, {})
     registry = load_json_file(ASSET_REGISTRY_PATH, {"assets": []})
+    serp_snapshots = [
+        {
+            "query": item["keyword"],
+            "country": item.get("country", "IL"),
+            "language": item.get("language", "he"),
+            "device": item.get("device", "unknown"),
+            "observed_at": REPORT["date"],
+            "results": item.get("results", []),
+        }
+        for item in REPORT.get("rank", [])
+        if item.get("results")
+    ]
+    REPORT["orchestration"] = orchestrate_reputation_cycle(
+        registry.get("assets", []),
+        serp_snapshots,
+        ai_snapshots=REPORT.get("geo", []),
+        search_console_rows=search_console_rows,
+    )
+    command_center.state["visibility_measurements"].append({
+        "at": REPORT["date"],
+        "type": "serp_ai_orchestration",
+        "control_maps": REPORT["orchestration"]["control_maps"],
+        "ai_visibility": REPORT["orchestration"]["ai_visibility"],
+        "cross_domain_risks": REPORT["orchestration"]["cross_domain_risks"],
+        "new_asset_proposals": REPORT["orchestration"]["new_asset_proposals"],
+        "next_best_actions": REPORT["orchestration"]["next_best_actions"][:20],
+    })
+    command_center.state["visibility_measurements"] = (
+        command_center.state["visibility_measurements"][-90:]
+    )
     observations["serp_assets"] = [
         {
             "type": asset.get("type"), "url": asset.get("url"),

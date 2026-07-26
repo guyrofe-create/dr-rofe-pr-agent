@@ -1,12 +1,19 @@
 {
-  "version": 1,
+  "version": 2,
   "updated_at": "2026-07-26",
-  "objective": "Maximize accurate, authoritative and durable visibility for Dr. Guy Rofe across search, social and AI answer engines without deception, spam or medical solicitation.",
+  "objective": "Maximize the number and prominence of client-approved desired and controlled results on page one of Google, and maximize factual accuracy, explicit entity visibility and approved-source citations in AI answer engines, without deception, spam or medical solicitation.",
+  "control_definition": {
+    "google": "Measure every approved brand query by country, language and device; classify all page-one results; defend desired results; advance the closest approved controlled assets; correct or lawfully challenge inaccurate results; and reallocate effort from measured outcomes.",
+    "ai_engines": "Measure repeated answers, factual accuracy, explicit mention, citations and approved-source share; correct source facts first; improve citable passages and crawl eligibility; and close only after repeated clean tests.",
+    "not_a_guarantee": "The product controls execution, evidence, asset quality and cadence. Search and answer engines control ranking and selection."
+  },
   "operating_model": [
     "Maintain one evidence-backed source of truth.",
     "Distribute platform-native summaries to crawlable, credible assets.",
     "Earn independent corroboration and editorial citations.",
-    "Monitor Google, Bing and AI answers, then correct errors at their source."
+    "Monitor Google, Bing and AI answers, then correct errors at their source.",
+    "Run a closed measurement-action-learning loop for every approved query and asset.",
+    "Assign distinct roles to controlled domains and prevent cross-domain duplication or query cannibalization."
   ],
   "canonical_facts": {
     "primary_name": "ד״ר גיא רופא",

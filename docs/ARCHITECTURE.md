@@ -90,6 +90,25 @@ shortcuts. Campaign measurement deliberately separates traditional ranking,
 local share of voice, AI citation share, explicit brand mentions, sentiment and
 qualified business outcomes. Ranking and citation are outcomes, never promises.
 
+### Query-level SERP and AI orchestrator
+
+`config/serp_targets.json` defines every approved brand query, target market,
+property role and measurable objective. Every daily monitor cycle preserves the
+complete top ten, builds a control map and calculates weighted desired share,
+controlled positions and negative positions. The Search Console adapter uses
+the shared Google OAuth refresh token to add 28-day query/page evidence.
+
+AI samples are measured separately for factual accuracy, approved-source
+citation rate and approved citation share. Asset activation, page refresh,
+defense, displacement and AI correction work is proposed from evidence rather
+than from a fixed publishing calendar.
+
+`config/asset_blueprints.json` and `editorial_radar.py` contain creative
+property and medical-news patterns. They do not authorize construction. The
+new-asset gate may require incubation inside an existing property or reject an
+attractive idea when it would split authority, duplicate intent or create an
+unsustainable YMYL surface.
+
 ### Asset governance
 
 `data/asset_registry.json` is the single credential-free inventory of owned and
