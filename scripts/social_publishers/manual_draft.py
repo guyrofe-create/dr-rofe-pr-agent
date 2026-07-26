@@ -1,5 +1,5 @@
 """Fallback for platforms with no safe automated-posting API:
-TikTok, Quora, LinkedIn (personal profile), Flipboard, Slideshare, About.me.
+Quora, LinkedIn (personal profile), Flipboard, Slideshare, About.me.
 
 These platforms either have no public posting API, or require a company/app-review
 process that isn't worth the ban risk for a personal account. Instead of risky
@@ -12,7 +12,7 @@ Output: appends a dated section to social_drafts/<date>.md in the repo, and
 import os
 from datetime import datetime
 
-PLATFORMS = ["TikTok", "Quora", "LinkedIn", "Flipboard", "Slideshare", "About.me"]
+PLATFORMS = ["Quora", "LinkedIn", "Flipboard", "Slideshare", "About.me"]
 
 
 def build_draft_markdown(title, body, url, platform_notes=None):

@@ -135,10 +135,10 @@ def main():
         platform_notes={
             "Quora": "הדבק כתשובה לשאלה רלוונטית, לא כפוסט חופשי",
             "LinkedIn": "פוסט אישי - הדבק כמו שהוא",
-            "TikTok": "הפוך לתסריט קצר לוידאו 30-60 שניות",
         },
     )
-    log(f"Manual draft written: {draft_path} (TikTok, Quora, LinkedIn, Flipboard, Slideshare, About.me)")
+    log(f"Manual draft written: {draft_path} (Quora, LinkedIn, Flipboard, Slideshare, About.me)")
+    log("TikTok: SKIPPED (owner-managed pilot channel)")
 
     log("=== Done ===")
     with open("run_log.txt", "w", encoding="utf-8") as f:
