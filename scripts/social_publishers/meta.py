@@ -1,20 +1,35 @@
-"""Facebook Page + Instagram Business publisher via the Meta Graph API.
+"""Facebook Page publisher via the Meta Graph API.
 
-Both platforms share one Meta developer app and one Page Access Token,
-because an Instagram Business account must be linked to a Facebook Page.
+Instagram is owner-managed for this pilot and is deliberately blocked here.
+Before every Facebook publication, recent Page posts are checked to prevent
+duplicates, including posts cross-published from Instagram.
 
 Required secrets:
     FACEBOOK_PAGE_ID       - numeric Page ID
     FACEBOOK_PAGE_TOKEN    - long-lived Page Access Token (Graph API)
-    INSTAGRAM_BUSINESS_ID  - IG Business Account ID linked to the page (optional,
-                             only needed if you also want IG auto-posting)
 """
+import re
 import os
+from difflib import SequenceMatcher
+from urllib.parse import urlsplit, urlunsplit
+
 import requests
 from . import common
 
 GRAPH_VERSION = os.environ.get("META_GRAPH_VERSION", "v25.0")
 GRAPH = f"https://graph.facebook.com/{GRAPH_VERSION}"
+INSTAGRAM_MANAGEMENT_MODE = "owner_managed"
+FACEBOOK_DUPLICATE_LOOKBACK_POSTS = 50
+FACEBOOK_DUPLICATE_TEXT_THRESHOLD = 0.78
+
+
+class DuplicatePostError(RuntimeError):
+    """Raised when a materially similar recent Facebook post already exists."""
+
+    def __init__(self, existing_url=None):
+        self.existing_url = existing_url
+        detail = f": {existing_url}" if existing_url else ""
+        super().__init__(f"SKIPPED_DUPLICATE{detail}")
 
 
 def facebook_is_configured():
@@ -22,43 +37,98 @@ def facebook_is_configured():
 
 
 def instagram_is_configured():
-    return not common.missing_secrets("FACEBOOK_PAGE_ID", "FACEBOOK_PAGE_TOKEN")
+    return False
 
 
-def resolve_instagram_business_id():
-    """Return the configured IG ID or discover the account linked to the Page."""
-    configured = common.env("INSTAGRAM_BUSINESS_ID")
-    if configured:
-        return configured
+def _normalize_text(value):
+    value = re.sub(r"https?://\S+", " ", value or "", flags=re.IGNORECASE)
+    value = re.sub(r"[^\w\u0590-\u05FF]+", " ", value.lower(), flags=re.UNICODE)
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def _normalize_url(value):
+    if not value:
+        return ""
+    parsed = urlsplit(value.strip())
+    host = parsed.netloc.lower().removeprefix("www.")
+    path = parsed.path.rstrip("/") or "/"
+    return urlunsplit((parsed.scheme.lower() or "https", host, path, "", ""))
+
+
+def _extract_urls(post):
+    urls = set(re.findall(r"https?://[^\s)>\]]+", post.get("message", "")))
+    for item in (post.get("attachments") or {}).get("data", []):
+        for key in ("unshimmed_url", "url"):
+            if item.get(key):
+                urls.add(item[key])
+        target_url = (item.get("target") or {}).get("url")
+        if target_url:
+            urls.add(target_url)
+    return {_normalize_url(value) for value in urls if value}
+
+
+def _text_similarity(left, right):
+    left_normalized = _normalize_text(left)
+    right_normalized = _normalize_text(right)
+    if not left_normalized or not right_normalized:
+        return 0.0
+    sequence_score = SequenceMatcher(
+        None, left_normalized, right_normalized
+    ).ratio()
+    left_words = set(left_normalized.split())
+    right_words = set(right_normalized.split())
+    union = left_words | right_words
+    word_score = len(left_words & right_words) / len(union) if union else 0.0
+    return max(sequence_score, word_score)
+
+
+def find_recent_facebook_duplicate(message, url=None):
+    """Return a recent matching Page post, or None.
+
+    A matching canonical URL is always a duplicate. Text-only Instagram
+    cross-posts are caught by normalized Hebrew text similarity.
+    """
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")
-    resp = requests.get(
-        f"{GRAPH}/{page_id}",
+    response = requests.get(
+        f"{GRAPH}/{page_id}/feed",
         params={
             "fields": (
-                "instagram_business_account{id,username},"
-                "connected_instagram_account{id,username}"
+                "id,message,created_time,permalink_url,"
+                "attachments{unshimmed_url,url,target}"
             ),
+            "limit": FACEBOOK_DUPLICATE_LOOKBACK_POSTS,
             "access_token": token,
         },
-        timeout=15,
+        timeout=20,
     )
-    resp.raise_for_status()
-    payload = resp.json()
-    account = (
-        payload.get("instagram_business_account")
-        or payload.get("connected_instagram_account")
-        or {}
-    )
-    if not account.get("id"):
-        raise RuntimeError("No Instagram Business account is linked to the Facebook Page")
-    return account["id"]
+    response.raise_for_status()
+    candidate_url = _normalize_url(url)
+    for post in response.json().get("data", []):
+        if candidate_url and candidate_url in _extract_urls(post):
+            return post
+        if (
+            _text_similarity(message, post.get("message", ""))
+            >= FACEBOOK_DUPLICATE_TEXT_THRESHOLD
+        ):
+            return post
+    return None
 
 
 def publish_facebook(title, body, url, image_url=None):
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")
     message = common.shorten_for_social(title, url, max_len=1800, body=body)
+    duplicate = find_recent_facebook_duplicate(message, url)
+    if duplicate:
+        raise DuplicatePostError(
+            duplicate.get("permalink_url")
+            or (
+                f"https://www.facebook.com/{duplicate['id']}"
+                if duplicate.get("id")
+                else None
+            )
+        )
 
     payload = {"message": message, "access_token": token}
     if url:
@@ -72,33 +142,9 @@ def publish_facebook(title, body, url, image_url=None):
 
 
 def publish_instagram(title, body, url, image_url):
-    """IG posting requires an image/video container. `image_url` is required
-    (IG has no pure-text post type)."""
-    if not image_url:
-        raise ValueError("Instagram requires image_url (no text-only posts on IG)")
-
-    ig_id = resolve_instagram_business_id()
-    token = common.env("FACEBOOK_PAGE_TOKEN")
-    caption = common.shorten_for_social(title, url, max_len=2000, body=body)
-
-    # Step 1: create media container
-    resp = requests.post(
-        f"{GRAPH}/{ig_id}/media",
-        data={"image_url": image_url, "caption": caption, "access_token": token},
-        timeout=30,
+    raise RuntimeError(
+        "Instagram publishing is disabled: this pilot account is owner-managed"
     )
-    resp.raise_for_status()
-    creation_id = resp.json()["id"]
-
-    # Step 2: publish container
-    resp = requests.post(
-        f"{GRAPH}/{ig_id}/media_publish",
-        data={"creation_id": creation_id, "access_token": token},
-        timeout=30,
-    )
-    resp.raise_for_status()
-    media_id = resp.json().get("id")
-    return f"https://www.instagram.com/p/{media_id}" if media_id else str(resp.json())
 
 
 def check_token_health():
@@ -118,22 +164,3 @@ def check_token_health():
     except Exception as e:
         return False, str(e)
 
-
-def check_instagram_account_access():
-    """Confirm that the configured Page token can read the Instagram account."""
-    try:
-        ig_id = resolve_instagram_business_id()
-        token = common.env("FACEBOOK_PAGE_TOKEN")
-        resp = requests.get(
-            f"{GRAPH}/{ig_id}",
-            params={"fields": "id,username", "access_token": token},
-            timeout=15,
-        )
-        if resp.status_code != 200:
-            return False, f"HTTP {resp.status_code}: {resp.text[:200]}"
-        payload = resp.json()
-        if str(payload.get("id")) != str(ig_id):
-            return False, "Meta returned a different Instagram account"
-        return True, payload.get("username") or f"account ending {ig_id[-4:]}"
-    except Exception as e:
-        return False, str(e)
