@@ -82,6 +82,9 @@ def try_publish(name, is_configured_fn, publish_fn, *args):
         result_url = publish_fn(*args)
         log(f"{name}: OK -> {result_url}")
         return result_url
+    except meta.DuplicatePostError as e:
+        log(f"{name}: {e}")
+        return None
     except Exception as e:
         log(f"{name}: FAILED -> {e}")
         return None
@@ -115,13 +118,14 @@ def main():
     try_publish("Telegram", telegram.is_configured, telegram.publish, title, body, SITE_URL)
     try_publish("Blogger", blogger.is_configured, blogger.publish, title, f"<p>{body}</p>", SITE_URL)
 
-    # Tier 1b: need an image (skipped automatically if IMAGE_URL not set)
+    # Instagram is owner-managed for this pilot. The product never publishes there.
+    log("Instagram: SKIPPED (owner-managed pilot channel)")
+
+    # Pinterest needs an image and remains independently configurable.
     image_url = os.environ.get("SOCIAL_IMAGE_URL")
     if image_url:
-        try_publish("Instagram", meta.instagram_is_configured, meta.publish_instagram, title, body, SITE_URL, image_url)
         try_publish("Pinterest", pinterest.is_configured, pinterest.publish, title, body, SITE_URL, image_url)
     else:
-        log("Instagram: SKIPPED (no SOCIAL_IMAGE_URL set)")
         log("Pinterest: SKIPPED (no SOCIAL_IMAGE_URL set)")
 
     # Tier 3: no safe posting API - write a ready-to-paste draft file
