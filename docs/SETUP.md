@@ -14,13 +14,13 @@ https://github.com/guyrofe-create/dr-rofe-pr-agent/settings/secrets/actions
 
 ## Tier 1 - פרסום אוטומטי מלא (יש API רשמי)
 
-### Facebook (עמוד עסקי) + Instagram Business
+### Facebook (עמוד עסקי בלבד בפיילוט)
 1. https://developers.facebook.com/apps/creation/ → צור אפליקציה (סוג: Business)
-2. בתוך האפליקציה → Add Product → "Facebook Login for Business" → הרשאות: `pages_manage_posts`, `pages_read_engagement`, `instagram_content_publish`
+2. בתוך האפליקציה → Add Product → "Facebook Login for Business" → הרשאות: `pages_manage_posts`, `pages_read_engagement`
 3. https://developers.facebook.com/tools/explorer/ → בחר את האפליקציה שלך, בחר Page = drguyrofe → Generate Access Token → המר ל-long-lived (Access Token Debugger: https://developers.facebook.com/tools/debug/accesstoken/)
-4. את ה-Instagram Business Account ID תמצא דרך אותו Graph Explorer: קרא ל-`/{page-id}?fields=instagram_business_account`
+4. Instagram מנוהל עצמאית בפיילוט. אין להגדיר למוצר הרשאת פרסום בו.
 
-Secrets: `FACEBOOK_PAGE_ID`, `FACEBOOK_PAGE_TOKEN`, `INSTAGRAM_BUSINESS_ID`
+Secrets: `FACEBOOK_PAGE_ID`, `FACEBOOK_PAGE_TOKEN`
 (אינסטגרם דורש גם תמונה בכל פוסט - ראה `SOCIAL_IMAGE_URL` למטה)
 
 ### Twitter / X
