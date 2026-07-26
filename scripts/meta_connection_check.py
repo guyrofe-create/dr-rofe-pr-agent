@@ -10,8 +10,13 @@ from social_publishers import meta
 def main():
     ok, detail = meta.check_token_health()
     print(f"{'PASS' if ok else 'FAIL'} Facebook Page access: {detail}")
+    read_ok, read_detail = meta.check_recent_posts_access()
+    print(
+        f"{'PASS' if read_ok else 'FAIL'} Facebook recent-post read access: "
+        f"{str(read_detail)[:240]}"
+    )
     print("INFO Instagram publishing: disabled (owner-managed pilot channel)")
-    return 0 if ok else 1
+    return 0 if ok and read_ok else 1
 
 
 if __name__ == "__main__":
