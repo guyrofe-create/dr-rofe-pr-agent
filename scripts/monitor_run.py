@@ -107,7 +107,8 @@ def has_active_practice_claim(answer):
     )
     strong_claims = (
         "מרפאתו", "המרפאה שלו", "מפעיל מרפאה", "מעניק טיפול",
-        "מטפל כיום", "operates a clinic", "his clinic",
+        "המרפאה של ד", "מרפאה של ד", "מטפל כיום",
+        "operates a clinic", "his clinic", "contact the clinic",
     )
     status_claims = (
         "מקבל מטופלות", "מקבל מטופלים", "לקביעת תור",
@@ -146,8 +147,30 @@ def has_identity_misinformation(answer):
         "עצי פרי", "השבחת זנים", "הדרים והאבוקדו",
         "אסתטיקה רפואית", "בוטוקס", "חומרי מילוי",
         "ספרות להיסטוריה", "תשושאור",
+        "אורתופד", "כירורגיה של הברך", "פציעות ספורט",
+        "אישיות פיקטיבית", "דמות פיקטיבית",
+        "חוקר בתחום ההיסטוריה", "חוקר היסטוריה",
+        "לא פרסם ספרים", "ספרים ספציפיים לא מופיעים",
     )
     return any(marker in normalized for marker in conflict_markers)
+
+
+def has_ai_knowledge_gap(prompt, answer):
+    """Identify non-answers about public identity/assets, without treating
+    uncertainty about current patient availability as misinformation."""
+    prompt_normalized = " ".join((prompt or "").lower().split())
+    if any(marker in prompt_normalized for marker in (
+        "מקבל כיום מטופלות", "קביעת תור", "accepting patients",
+    )):
+        return False
+    answer_normalized = " ".join((answer or "").lower().split())
+    gap_markers = (
+        "אין לי מידע", "אין לי גישה", "איני יכול לספק", "לא יכול לספק",
+        "לא ידוע לי", "מומלץ לחפש", "אני ממליץ לחפש",
+        "מומלץ לבדוק", "אני ממליץ לבדוק",
+        "i do not have information", "i cannot provide", "recommended to search",
+    )
+    return any(marker in answer_normalized for marker in gap_markers)
 
 
 def load_json_file(path, default):
@@ -248,16 +271,22 @@ def check_ai_presence():
             mentioned = ("גיא רופא" in answer) or ("Guy Rofe" in answer)
             active_practice_claim = has_active_practice_claim(answer)
             identity_misinformation = has_identity_misinformation(answer)
+            knowledge_gap = (
+                not identity_misinformation
+                and has_ai_knowledge_gap(prompt, answer)
+            )
             REPORT["geo"].append({
                 "prompt": prompt,
                 "mentions_dr_rofe": mentioned,
                 "active_practice_claim": active_practice_claim,
                 "identity_misinformation": identity_misinformation,
+                "knowledge_gap": knowledge_gap,
                 "safe_status": (
                     "pass"
                     if mentioned
                     and not active_practice_claim
                     and not identity_misinformation
+                    and not knowledge_gap
                     else "review"
                 ),
                 "excerpt": answer[:300],
@@ -272,6 +301,13 @@ def check_ai_presence():
             if identity_misinformation:
                 REPORT["alerts"].append({
                     "type": "ai_identity_misinformation",
+                    "source": "OpenAI monitor sample",
+                    "excerpt": answer[:300],
+                    "prompt": prompt,
+                })
+            if knowledge_gap:
+                REPORT["alerts"].append({
+                    "type": "ai_knowledge_gap",
                     "source": "OpenAI monitor sample",
                     "excerpt": answer[:300],
                     "prompt": prompt,
@@ -567,6 +603,8 @@ def format_report_markdown():
             )
             if g.get("identity_misinformation"):
                 safety += " ⚠️ כולל זיהוי שגוי של האדם או תחום עיסוקו"
+            if g.get("knowledge_gap"):
+                safety += " ⚠️ חסר מידע מהותי על הזהות או הנכסים הרשמיים"
             lines.append(f"- \"{g['prompt']}\" → {mark}{safety}")
     lines.append("")
 
@@ -659,12 +697,16 @@ def format_alert_markdown():
         elif a["type"] in {
             "ai_active_practice_misinformation",
             "ai_identity_misinformation",
+            "ai_knowledge_gap",
         }:
-            issue = (
-                "טענה שגויה על פעילות רפואית נוכחית"
-                if a["type"] == "ai_active_practice_misinformation"
-                else "זיהוי שגוי של ד״ר גיא רופא או של תחום עיסוקו"
-            )
+            issue = {
+                "ai_active_practice_misinformation":
+                    "טענה שגויה על פעילות רפואית נוכחית",
+                "ai_identity_misinformation":
+                    "זיהוי שגוי של ד״ר גיא רופא או של תחום עיסוקו",
+                "ai_knowledge_gap":
+                    "חסר מידע מהותי על הזהות או הנכסים הרשמיים",
+            }[a["type"]]
             lines.append(f"### ⚠️ תשובת AI דורשת תיקון: {issue}")
             lines.append(f"שאלה: {a.get('prompt', 'לא צוינה')}")
             lines.append(f"> {a.get('excerpt', 'לא התקבל קטע תשובה')}")

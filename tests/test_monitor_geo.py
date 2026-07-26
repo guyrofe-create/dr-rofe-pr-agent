@@ -53,6 +53,13 @@ class MonitorGeoTests(unittest.TestCase):
             )
         )
 
+    def test_named_clinic_recommendation_is_flagged(self):
+        self.assertTrue(
+            monitor_run.has_active_practice_claim(
+                "אין לי מידע עדכני. מומלץ ליצור קשר עם המרפאה של ד״ר גיא רופא."
+            )
+        )
+
     def test_negated_status_does_not_hide_a_separate_affirmative_claim(self):
         self.assertTrue(
             monitor_run.has_active_practice_claim(
@@ -64,6 +71,42 @@ class MonitorGeoTests(unittest.TestCase):
         self.assertTrue(
             monitor_run.has_identity_misinformation(
                 "ד״ר גיא רופא מומחה לגידול עצי פרי ולהשבחת זנים."
+            )
+        )
+
+    def test_live_wrong_identity_variants_are_flagged(self):
+        wrong_answers = (
+            "ד״ר גיא רופא הוא אורתופד המתמחה בכירורגיה של הברך.",
+            "ד״ר גיא רופא הוא אישיות פיקטיבית.",
+            "ד״ר גיא רופא הוא חוקר בתחום ההיסטוריה.",
+            "למיטב ידיעתי הוא לא פרסם ספרים.",
+        )
+        for answer in wrong_answers:
+            with self.subTest(answer=answer):
+                self.assertTrue(
+                    monitor_run.has_identity_misinformation(answer)
+                )
+
+    def test_correct_podcast_existence_is_not_flagged(self):
+        self.assertFalse(
+            monitor_run.has_identity_misinformation(
+                "לד״ר גיא רופא יש פודקאסט בשם רפואה על כוס קפה."
+            )
+        )
+
+    def test_public_identity_non_answer_is_a_knowledge_gap(self):
+        self.assertTrue(
+            monitor_run.has_ai_knowledge_gap(
+                "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
+                "איני יכול לספק מידע. מומלץ לחפש בגוגל.",
+            )
+        )
+
+    def test_patient_availability_uncertainty_is_not_a_knowledge_gap(self):
+        self.assertFalse(
+            monitor_run.has_ai_knowledge_gap(
+                "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?",
+                "אין לי מידע עדכני לגבי זמינות.",
             )
         )
 
