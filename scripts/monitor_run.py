@@ -108,11 +108,17 @@ def has_active_practice_claim(answer):
     strong_claims = (
         "מרפאתו", "המרפאה שלו", "מפעיל מרפאה", "מעניק טיפול",
         "המרפאה של ד", "מרפאה של ד", "מטפל כיום",
+        "משמש כרופא", "עובד כרופא", "רופא בכיר",
         "operates a clinic", "his clinic", "contact the clinic",
+        "works as a doctor", "senior physician",
     )
     status_claims = (
         "מקבל מטופלות", "מקבל מטופלים", "לקביעת תור",
         "לקביעת תורים", "accepting patients", "book an appointment",
+    )
+    recommendation_claims = (
+        r"(?:ליצור|צרו|צור|לפנות|פנו|פנה)\s+קשר.{0,80}מרפאה",
+        r"(?:contact|call).{0,80}(?:clinic|office)",
     )
     for sentence in re.split(r"[.!?\n]+", normalized):
         if not sentence:
@@ -131,6 +137,8 @@ def has_active_practice_claim(answer):
             "",
             sentence,
         )
+        if any(re.search(pattern, sentence) for pattern in recommendation_claims):
+            return True
         if any(marker in sentence for marker in uncertainty_markers):
             continue
         if any(claim in sentence for claim in strong_claims):
@@ -150,6 +158,8 @@ def has_identity_misinformation(answer):
         "אורתופד", "כירורגיה של הברך", "פציעות ספורט",
         "אישיות פיקטיבית", "דמות פיקטיבית",
         "חוקר בתחום ההיסטוריה", "חוקר היסטוריה",
+        "תרבות איטלקית", "תולדות האומנות", "תולדות האמנות",
+        "הכתובת של רבקה", "inscription of rebecca",
         "לא פרסם ספרים", "ספרים ספציפיים לא מופיעים",
     )
     return any(marker in normalized for marker in conflict_markers)

@@ -38,6 +38,11 @@ class MonitorGeoTests(unittest.TestCase):
                 "ד״ר גיא רופא מקבל מטופלות וניתן לפנות לקביעת תור."
             )
         )
+        self.assertTrue(
+            monitor_run.has_active_practice_claim(
+                "ד״ר גיא רופא משמש כרופא בכיר במרכז רפואי."
+            )
+        )
 
     def test_uncertain_status_is_not_treated_as_affirmative(self):
         self.assertFalse(
@@ -60,6 +65,13 @@ class MonitorGeoTests(unittest.TestCase):
             )
         )
 
+    def test_uncertainty_does_not_hide_same_sentence_clinic_recommendation(self):
+        self.assertTrue(
+            monitor_run.has_active_practice_claim(
+                "אין לי מידע עדכני ולכן מומלץ ליצור קשר עם המרפאה שלו."
+            )
+        )
+
     def test_negated_status_does_not_hide_a_separate_affirmative_claim(self):
         self.assertTrue(
             monitor_run.has_active_practice_claim(
@@ -79,6 +91,8 @@ class MonitorGeoTests(unittest.TestCase):
             "ד״ר גיא רופא הוא אורתופד המתמחה בכירורגיה של הברך.",
             "ד״ר גיא רופא הוא אישיות פיקטיבית.",
             "ד״ר גיא רופא הוא חוקר בתחום ההיסטוריה.",
+            "הוא חוקר ומרצה בנושאי תרבות איטלקית ותולדות האמנות.",
+            "ספרו הידוע הוא הכתובת של רבקה.",
             "למיטב ידיעתי הוא לא פרסם ספרים.",
         )
         for answer in wrong_answers:
