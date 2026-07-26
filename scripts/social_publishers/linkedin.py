@@ -3,6 +3,7 @@ import os
 from urllib.parse import quote
 
 import requests
+from publication_policy import enforce_publication_policy
 
 USERINFO_URL = "https://api.linkedin.com/v2/userinfo"
 PUBLISH_URL = "https://api.linkedin.com/v2/ugcPosts"
@@ -49,6 +50,7 @@ def publish(title, body, url=None):
     text = f"{title}\n\n{body}".strip()
     if url:
         text += f"\n\n{url}"
+    text = enforce_publication_policy(text)
     payload = {
         "author": member["person_urn"],
         "lifecycleState": "PUBLISHED",
