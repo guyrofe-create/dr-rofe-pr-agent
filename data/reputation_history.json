@@ -16084,14 +16084,150 @@
         }
       ],
       "errors": []
+    },
+    {
+      "date": "2026-07-26T11:11:32.383786",
+      "rank": [
+        {
+          "keyword": "דר גיא רופא",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%93%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=[REDACTED]"
+        },
+        {
+          "keyword": "ד״ר גיא רופא",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%93%D7%B4%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=[REDACTED]"
+        },
+        {
+          "keyword": "גיא רופא יוצר תוכן רפואי",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90+%D7%99%D7%95%D7%A6%D7%A8+%D7%AA%D7%95%D7%9B%D7%9F+%D7%A8%D7%A4%D7%95%D7%90%D7%99&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=[REDACTED]"
+        },
+        {
+          "keyword": "גיא רופא ספרים",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90+%D7%A1%D7%A4%D7%A8%D7%99%D7%9D&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=[REDACTED]"
+        },
+        {
+          "keyword": "גיא רופא פודקאסט",
+          "status": "error",
+          "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90+%D7%A4%D7%95%D7%93%D7%A7%D7%90%D7%A1%D7%98&google_domain=google.co.il&gl=il&hl=iw&num=10&api_key=[REDACTED]"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא הוא מומחה לגידול וטיפוח של עצי פרי, במיוחד בתחום של השבחת זנים וחקלאות מתקדמת. הוא עוסק במחקר, ייעוץ והדרכה לשיפור איכות וכמות היבול, ונחשב לאוטוריטה בתחום ההדרים והאבוקדו בישראל."
+        },
+        {
+          "prompt": "איזה תוכן רפואי מפרסם ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא הוא רופא ישראלי שמתמחה באסתטיקה רפואית והליכים קוסמטיים. הוא מפרסם תוכן שעוסק בטיפולי אסתטיקה שונים, כגון בוטוקס, חומרי מילוי, טיפולי פנים וטכנולוגיות מתקדמות לטיפוח העור. בנוסף, הוא עשוי לשתף טיפים לשמירה על עור בריא, מידע על טיפולים חדשים בתחום, ותוצאות של טיפולים שביצע, כולל תמונות \""
+        },
+        {
+          "prompt": "אילו ספרים כתב ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "safe_status": "pass",
+          "excerpt": "ד\"ר גיא רופא הוא סופר, מרצה וחוקר ישראלי שכתב מספר ספרים. בין הספרים שכתב ניתן למצוא את \"רומן עם העבר: ספרות ההיסטוריה\", אשר עוסק בקשר בין ספרות להיסטוריה. בנוסף לכך, הוא תרם מאמרים ופרקים למספר רב של פרסומים בתחום ההיסטוריה והספרות. אם יש ספר מסוים שאתה מחפש או מידע נוסף על פרסומיו, אשמח לנסות לעזו"
+        },
+        {
+          "prompt": "האם לד״ר גיא רופא יש פודקאסט?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "safe_status": "pass",
+          "excerpt": "כן, לד\"ר גיא רופא יש פודקאסט בשם \"תשושאור\". הפודקאסט עוסק בנושאים מגוונים ומביא סיפורים ותכנים מעניינים בתחום."
+        },
+        {
+          "prompt": "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "safe_status": "pass",
+          "excerpt": "נכון לאוקטובר 2023, אין לי גישה למידע עדכני ומפורט על נכסים ספציפיים של ד\"ר גיא רופא או כל אדם פרטי אחר באינטרנט. אני ממליץ לחפש באתרים מקצועיים הקשורים לתחום ההתמחות של ד\"ר גיא רופא, כגון מאמרים מדעיים, פרופילים מקצועיים כמו LinkedIn או עמודים רשמיים ברשתות החברתיות."
+        },
+        {
+          "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": true,
+          "safe_status": "review",
+          "excerpt": "לצערי, אין לי את המידע המעודכן לגבי זמינותו של ד\"ר גיא רופא לקבלת מטופלות או לקביעת תורים. אני ממליץ לבדוק באתר האינטרנט שלו או ליצור קשר ישירות עם המרפאה שלו לקבלת המידע העדכני ביותר."
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "My dear and beloved brother, the rest of the harassers are waiting for you in the cell. Don't drop the soap.",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "error",
+        "detail": "HTTP 400: {\"error\":{\"message\":\"(#283) Requires pages_read_user_content permission to manage the object\",\"type\":\"OAuthException\",\"code\":283,\"fbtrace_id\":\"AGEbN1wyUaG7tXehsPolxQU\"}}"
+      },
+      "web_mentions": {
+        "status": "error",
+        "detail": "429 Client Error: Too Many Requests for url: https://serpapi.com/search.json?engine=google&q=%22%D7%93%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90%22+OR+%22%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90%22+%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92&google_domain=google.co.il&gl=il&hl=iw&num=20&api_key=[REDACTED]"
+      },
+      "alerts": [
+        {
+          "type": "ai_active_practice_misinformation",
+          "source": "OpenAI monitor sample",
+          "excerpt": "לצערי, אין לי את המידע המעודכן לגבי זמינותו של ד\"ר גיא רופא לקבלת מטופלות או לקביעת תורים. אני ממליץ לבדוק באתר האינטרנט שלו או ליצור קשר ישירות עם המרפאה שלו לקבלת המידע העדכני ביותר.",
+          "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?"
+        }
+      ],
+      "errors": []
     }
   ],
   "seen_review_ids": [
-    "Neta Tzur|1780837292",
-    "Alon Tsevi|1766326026",
-    "Avi Kalili|1777044743",
+    "דורון ל|1781610122",
     "Nir|1783548048",
-    "דורון ל|1781610122"
+    "Alon Tsevi|1766326026",
+    "Neta Tzur|1780837292",
+    "Avi Kalili|1777044743"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [
