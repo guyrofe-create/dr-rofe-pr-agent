@@ -12,6 +12,14 @@ with patch.dict(
 
 
 class MonitorGeoTests(unittest.TestCase):
+    def test_normalized_host_skips_unconfigured_asset_urls(self):
+        self.assertEqual(monitor_run.normalized_host(None), "")
+        self.assertEqual(monitor_run.normalized_host(b"https://example.com"), "")
+        self.assertEqual(
+            monitor_run.normalized_host(" https://www.guyrofe.com/profile "),
+            "guyrofe.com",
+        )
+
     def test_geo_prompts_measure_identity_assets_and_current_status(self):
         prompts = "\n".join(monitor_run.GEO_PROMPTS)
         self.assertIn("מי הוא", prompts)

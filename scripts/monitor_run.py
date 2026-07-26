@@ -111,6 +111,13 @@ def safe_error(error):
     return detail[:500]
 
 
+def normalized_host(value):
+    """Return a normalized hostname, or empty text for an unconfigured URL."""
+    if not isinstance(value, str) or not value.strip():
+        return ""
+    return urlparse(value.strip()).netloc.lower().removeprefix("www.")
+
+
 def collect_search_console_evidence():
     """Collect 28-day query/page evidence when shared Google OAuth is present."""
     names = (
@@ -393,9 +400,11 @@ def check_ai_presence():
     model = os.environ.get("AI_MONITOR_MODEL", "gpt-5.6-sol")
     registry = load_json_file(ASSET_REGISTRY_PATH, {"assets": []})
     approved_hosts = {
-        urlparse(asset.get("url", "")).netloc.lower().removeprefix("www.")
+        host
         for asset in registry.get("assets", [])
-        if asset.get("tier") in {"A", "B"} and asset.get("status") != "quarantined"
+        if asset.get("tier") in {"A", "B"}
+        and asset.get("status") != "quarantined"
+        and (host := normalized_host(asset.get("url")))
     }
     for prompt in GEO_PROMPTS:
         samples = []
@@ -430,8 +439,9 @@ def check_ai_presence():
                             if url and url not in citations:
                                 citations.append(url)
                 cited_hosts = {
-                    urlparse(url).netloc.lower().removeprefix("www.")
+                    host
                     for url in citations
+                    if (host := normalized_host(url))
                 }
                 mentioned = any(
                     variant.lower() in answer.lower()
