@@ -38,6 +38,14 @@ from .opportunity_engine import (
     score_opportunity,
     select_opportunities,
 )
+from .entity_seo import (
+    audit_article_markdown,
+    build_article_schema,
+    build_person_schema,
+    build_profile_page_schema,
+    validate_media_metadata,
+)
+from .platform_content import build_platform_variants, variants_are_distinct
 from .onboarding import (
     build_installation_files,
     validate_install_spec,
@@ -99,4 +107,11 @@ __all__ = [
     "build_opportunity",
     "select_opportunities",
     "build_opportunity_portfolio",
+    "audit_article_markdown",
+    "build_article_schema",
+    "build_person_schema",
+    "build_profile_page_schema",
+    "validate_media_metadata",
+    "build_platform_variants",
+    "variants_are_distinct",
 ]

@@ -206,6 +206,26 @@ ideas may first be incubated inside an existing asset. Even a `build` outcome
 only authorizes preparation of a brief. Creating an account, site, channel,
 outreach or publication always requires separate item-level owner approval.
 
+## P6 content and Entity SEO layer
+
+P6 maintains a stable `Person` identity graph, a visible `ProfilePage`, and
+`Article` markup that links each canonical article to the approved author
+profile. Names, biography, image and official `sameAs` links come from the
+single-tenant business profile.
+
+The content gate requires an answer-first opening, clear headings and direct
+sources. Tables and FAQs are conditional rather than decorative. Distribution
+uses fact-bounded, platform-native variants instead of copying one caption
+unchanged. Generated images retain a truthful visual description; the entity
+name appears in alt text only when relevant. Video metadata requires captions
+and a transcript.
+
+The weekly schema workflow is audit-only unless an operator manually supplies
+`publish_approved=true`. It also runs a read-only robots audit for Googlebot,
+Bingbot, OAI-SearchBot and PerplexityBot. Crawler access is recorded as a
+technical prerequisite and never presented as a promise of indexing, ranking
+or AI citation. See [docs/P6_ENTITY_SEO.md](docs/P6_ENTITY_SEO.md).
+
 ## Automated workflows
 
 | Workflow | Schedule | Purpose |
@@ -213,7 +233,7 @@ outreach or publication always requires separate item-level owner approval.
 | Reputation Monitor + P4 | Every 2 hours | Detect, measure, rank and prepare the best eligible actions for approval |
 | Legacy Reviewed Content | Manual only | Generate a manually requested durable medical draft |
 | Social Distribution | Mon/Wed/Fri | Distribute approved content when not frozen |
-| Schema Sync | Weekly | Keep connected site facts and structured data aligned |
+| Schema + crawler audit | Weekly | Preview entity consistency and crawler access; public sync requires explicit approval |
 
 ## Validation
 

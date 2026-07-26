@@ -127,6 +127,23 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
             "visual_exclusions": [],
         }),
         "approval_policy": approval,
+        "entity_seo": {
+            "profile_page_required": True,
+            "article_author_link_required": True,
+            "platform_native_variants_required": True,
+            "direct_answer_first": True,
+            "tables_only_when_useful": True,
+            "faq_only_when_useful": True,
+            "primary_sources_preferred": True,
+            "original_analysis_labeled": True,
+            "image_visual_description_required": True,
+            "entity_name_in_alt_only_when_relevant": True,
+            "video_transcript_required": True,
+            "search_crawlers": [
+                "Googlebot", "Bingbot", "OAI-SearchBot", "PerplexityBot"
+            ],
+            "crawler_access_does_not_guarantee_visibility": True,
+        },
         "opportunity_policy": spec.get("opportunity_policy", {
             "minimum_score": 20,
             "maximum_selected_per_cycle": 5,
@@ -308,6 +325,11 @@ def build_installation_files(spec: dict, base_strategy: dict) -> dict[str, dict]
         "description": spec.get("description", ""),
         "practiceStatus": spec.get("practice_status", "not_applicable"),
         "practiceStatusText": spec.get("practice_status_text", ""),
+        "primaryLanguage": spec["market"].get("language", "en"),
+        "profilePageUrl": (
+            spec.get("profile_page_url")
+            or spec["canonical_site"].rstrip("/") + "/profile/"
+        ),
         "sites": spec["sites"],
         "sameAs": [
             asset["url"] for asset in spec["assets"] if asset.get("url")

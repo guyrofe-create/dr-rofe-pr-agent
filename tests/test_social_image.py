@@ -12,7 +12,16 @@ class SocialImageTests(unittest.TestCase):
     def test_alt_text_is_natural_and_contains_name_once(self):
         text = social_image.alt_text("ד״ר גיא רופא: מדריך חדש")
         self.assertEqual(text.count("גיא רופא"), 1)
-        self.assertIn("איור מידע כללי", text)
+        self.assertIn("איור עריכתי מופשט", text)
+
+    def test_alt_text_does_not_insert_name_when_entity_is_not_relevant(self):
+        text = social_image.alt_text(
+            "הסבר כללי",
+            "איור מופשט כחול של צורות גאומטריות",
+            entity_relevant=False,
+        )
+        self.assertNotIn("גיא רופא", text)
+        self.assertIn("צורות גאומטריות", text)
 
     def test_prompt_excludes_medical_and_availability_claims(self):
         prompt = social_image.build_prompt("כותרת", "תקציר")

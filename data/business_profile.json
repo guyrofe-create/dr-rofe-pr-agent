@@ -29,6 +29,8 @@
     "https://www.wikidata.org/wiki/Q140470790"
   ],
   "wikidata": "Q140470790",
+  "primaryLanguage": "he",
+  "profilePageUrl": "https://guyrofe.com/profile/",
   "sites": [
     {
       "key": "GUYROFE_COM",
@@ -39,6 +41,7 @@
       "user_env": "WORDPRESS_GUYROFE_COM_USER",
       "app_password_env": "WORDPRESS_GUYROFE_COM_API",
       "canonical_url": "https://guyrofe.com/",
+      "profile_page_slug": "profile",
       "schema_page_slug": "schema-markup",
       "llms_page_slug": "llms"
     },
@@ -51,6 +54,7 @@
       "user_env": "WORDPRESS_DRGUYROFE_CO_IL_USER",
       "app_password_env": "WORDPRESS_DRGUYROFE_CO_IL_API",
       "canonical_url": "https://guyrofe.com/",
+      "profile_page_slug": "profile",
       "schema_page_slug": "schema-markup",
       "llms_page_slug": "llms"
     },

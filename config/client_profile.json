@@ -117,6 +117,26 @@
     "read_only_monitoring_autonomous": true,
     "drafting_autonomous": true
   },
+  "entity_seo": {
+    "profile_page_required": true,
+    "article_author_link_required": true,
+    "platform_native_variants_required": true,
+    "direct_answer_first": true,
+    "tables_only_when_useful": true,
+    "faq_only_when_useful": true,
+    "primary_sources_preferred": true,
+    "original_analysis_labeled": true,
+    "image_visual_description_required": true,
+    "entity_name_in_alt_only_when_relevant": true,
+    "video_transcript_required": true,
+    "search_crawlers": [
+      "Googlebot",
+      "Bingbot",
+      "OAI-SearchBot",
+      "PerplexityBot"
+    ],
+    "crawler_access_does_not_guarantee_visibility": true
+  },
   "opportunity_policy": {
     "minimum_score": 20,
     "maximum_selected_per_cycle": 5,

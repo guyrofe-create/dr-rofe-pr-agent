@@ -210,6 +210,16 @@ class InstallationWizardTests(unittest.TestCase):
                 )["client_id"],
                 "client-one",
             )
+            generated_profile = json.loads(
+                (root / "config/client_profile.json").read_text(encoding="utf-8")
+            )
+            self.assertTrue(
+                generated_profile["entity_seo"]["profile_page_required"]
+            )
+            self.assertIn(
+                "OAI-SearchBot",
+                generated_profile["entity_seo"]["search_crawlers"],
+            )
             connection = manifest["connections"][0]
             self.assertEqual(
                 set(connection),

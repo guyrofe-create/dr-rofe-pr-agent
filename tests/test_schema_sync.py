@@ -13,13 +13,17 @@ class NeutralEntitySchemaTests(unittest.TestCase):
     def test_schema_is_person_not_active_medical_business(self):
         schema = build_schema(self.profile)
         serialized = json.dumps(schema, ensure_ascii=False)
-        self.assertEqual(schema["@type"], "Person")
+        graph = schema["@graph"]
+        self.assertEqual(graph[0]["@type"], "ProfilePage")
+        person = next(item for item in graph if item["@type"] == "Person")
+        self.assertEqual(person["mainEntityOfPage"]["@id"], graph[0]["@id"])
+        self.assertEqual(graph[0]["mainEntity"]["@id"], person["@id"])
         self.assertNotIn("MedicalBusiness", serialized)
         self.assertNotIn("Physician", serialized)
-        self.assertNotIn("openingHoursSpecification", schema)
-        self.assertNotIn("address", schema)
-        self.assertNotIn("telephone", schema)
-        self.assertNotIn("aggregateRating", schema)
+        self.assertNotIn("openingHoursSpecification", serialized)
+        self.assertNotIn('"address"', serialized)
+        self.assertNotIn("telephone", serialized)
+        self.assertNotIn("aggregateRating", serialized)
 
     def test_llms_text_states_non_practicing_status(self):
         text = build_llms_txt(self.profile)

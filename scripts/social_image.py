@@ -21,15 +21,30 @@ class SocialImage:
     content: bytes
     media_type: str = "image/png"
     extension: str = "png"
+    visual_description: str = ""
 
 
-def alt_text(title):
-    """Natural, accessible attribution without keyword stuffing."""
+def visual_description(title):
+    clean_title = " ".join((title or "מידע כללי").split())
+    return (
+        "איור עריכתי מופשט בגווני כחול וטורקיז, עם קומפוזיציה מרכזית "
+        f"הממחישה באופן כללי את הנושא: {clean_title}"
+    )[:300]
+
+
+def alt_text(title, description=None, entity_relevant=None):
+    """Describe the known visual; name the entity only when visually relevant."""
     clean_title = " ".join((title or "מידע רפואי כללי").split())
     name_variants = _CLIENT_FACTS.get("name_variants", [_CLIENT_NAME])
-    if any(variant in clean_title for variant in name_variants):
-        return f"{clean_title} — איור מידע כללי"[:300]
-    return f"{_CLIENT_NAME} — איור מידע כללי בנושא {clean_title}"[:300]
+    relevant = (
+        any(variant in clean_title for variant in name_variants)
+        if entity_relevant is None
+        else bool(entity_relevant)
+    )
+    base = " ".join((description or visual_description(clean_title)).split())
+    if relevant and not any(variant in base for variant in name_variants):
+        base = f"{base}; נושא הפרסום: {_CLIENT_NAME}"
+    return base[:300]
 
 
 def build_prompt(title, summary):
@@ -73,7 +88,10 @@ def generate(title, summary, client=None):
     encoded = response.data[0].b64_json
     if not encoded:
         raise RuntimeError("OpenAI image generation returned no image data")
-    return SocialImage(content=base64.b64decode(encoded, validate=True))
+    return SocialImage(
+        content=base64.b64decode(encoded, validate=True),
+        visual_description=visual_description(title),
+    )
 
 
 def upload_to_wordpress(
@@ -130,7 +148,7 @@ def upload_to_wordpress(
         json={
             "slug": slug,
             "title": title,
-            "alt_text": alt_text(title),
+            "alt_text": alt_text(title, image.visual_description),
             "caption": "איור מידע כללי שנוצר באמצעות OpenAI",
         },
         headers=headers,

@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 6 * * 1'
   workflow_dispatch:
+    inputs:
+      publish_approved:
+        description: 'Explicitly approve public ProfilePage/entity sync'
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -26,6 +32,7 @@ jobs:
       - name: Run Schema Sync
         run: python scripts/schema_sync.py
         env:
+          ENTITY_SYNC_APPROVED: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_approved && 'true' || 'false' }}
           WORDPRESS_GUYROFE_COM_USER: ${{ secrets.WORDPRESS_GUYROFE_COM_USER }}
           WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
           WORDPRESS_DRGUYROFE_CO_IL_USER: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_USER }}
@@ -42,10 +49,22 @@ jobs:
           WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_DRGUYROFE_COM_SITE_ID }}
           WIX_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_DRGUYROFE_COM_ACCOUNT_ID }}
 
+      - name: Audit search crawler access
+        continue-on-error: true
+        run: python scripts/crawler_audit.py
+
       - name: Upload sync log
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: schema-sync-log-${{ github.run_id }}
           path: schema_sync_log.txt
+          retention-days: 30
+
+      - name: Upload crawler audit
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: crawler-audit-${{ github.run_id }}
+          path: crawler_audit.json
           retention-days: 30

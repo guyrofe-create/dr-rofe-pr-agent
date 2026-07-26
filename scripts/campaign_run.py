@@ -24,6 +24,12 @@ from social_publishers import (
 from publication_policy import enforce_channel_policy, enforce_publication_policy
 import social_image
 from reputation_core import data_path, load_client_profile
+from reputation_core.entity_seo import (
+    build_article_schema,
+    extract_citation_urls,
+    json_ld_script,
+)
+from reputation_core.platform_content import build_platform_variants
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -123,6 +129,7 @@ def wordpress_publish(
     summary_only=False,
     canonical_url=None,
     idempotency_key=None,
+    article_schema_factory=None,
 ):
     slug_suffix = "-summary" if summary_only else ""
     slug = stable_slug((idempotency_key or title) + slug_suffix)
@@ -150,7 +157,17 @@ def wordpress_publish(
             f"{base_url} returned a non-JSON response to the WordPress API lookup"
         ) from exc
     if existing:
-        return existing[0].get("link") or f"{base_url.rstrip('/')}/?p={existing[0]['id']}"
+        link = existing[0].get("link") or f"{base_url.rstrip('/')}/?p={existing[0]['id']}"
+        if article_schema_factory:
+            schema = article_schema_factory(link)
+            requests.post(
+                f"{endpoint}/{existing[0]['id']}",
+                auth=auth,
+                json={"content": content_html + "\n" + json_ld_script(schema)},
+                headers=headers,
+                timeout=30,
+            ).raise_for_status()
+        return link
 
     payload = {
         "title": title,
@@ -165,7 +182,17 @@ def wordpress_publish(
     )
     response.raise_for_status()
     result = response.json()
-    return result.get("link") or f"{base_url.rstrip('/')}/?p={result['id']}"
+    link = result.get("link") or f"{base_url.rstrip('/')}/?p={result['id']}"
+    if article_schema_factory:
+        schema = article_schema_factory(link)
+        requests.post(
+            f"{endpoint}/{result['id']}",
+            auth=auth,
+            json={"content": content_html + "\n" + json_ld_script(schema)},
+            headers=headers,
+            timeout=30,
+        ).raise_for_status()
+    return link
 
 
 def destination(name, status, url=None, detail=None):
@@ -250,9 +277,17 @@ def publish_campaign(draft_path):
         title,
         article_html,
         idempotency_key=f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}",
+        article_schema_factory=lambda article_url: build_article_schema(
+            business,
+            headline=title,
+            article_url=article_url,
+            description=summary,
+            citations=extract_citation_urls(content),
+        ),
     )
     destinations.append(destination(canonical_name, "published", url=canonical_url))
     log(f"Canonical article published: {canonical_url}")
+    variants = build_platform_variants(title, content, canonical_url)
 
     image_url = os.environ.get("SOCIAL_IMAGE_URL", "").strip()
     generated_image = None
@@ -336,7 +371,7 @@ def publish_campaign(draft_path):
             meta.facebook_is_configured(),
             meta.publish_facebook,
             title,
-            summary,
+            variants["facebook"],
             canonical_url,
             image_url,
             social_image.alt_text(title),
@@ -348,7 +383,7 @@ def publish_campaign(draft_path):
             linkedin.is_configured(),
             linkedin.publish,
             title,
-            summary,
+            variants["linkedin"],
             canonical_url,
             generated_image.content if generated_image else None,
             social_image.alt_text(title),
@@ -377,7 +412,7 @@ def publish_campaign(draft_path):
             blogger.is_configured(),
             blogger.publish,
             title,
-            f"<p>{summary}</p>",
+            variants["blogger"],
             canonical_url,
             image_url,
             social_image.alt_text(title),
@@ -396,8 +431,8 @@ def publish_campaign(draft_path):
             "Pinterest",
             bool(image_url) and pinterest.is_configured(),
             pinterest.publish,
-            title,
-            summary,
+            variants["pinterest"]["title"],
+            variants["pinterest"]["description"],
             canonical_url,
             image_url,
             social_image.alt_text(title),

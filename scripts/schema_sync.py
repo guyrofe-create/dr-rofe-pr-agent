@@ -4,8 +4,8 @@ Single-tenant Schema / NAP Sync
 Runs weekly on GitHub Actions (see .github/workflows/schema_sync.yml), plus
 on-demand via workflow_dispatch.
 
-Single source of truth: data/business_profile.json. This script builds neutral
-Person JSON-LD and llms.txt content from that file and pushes it
+Single source of truth: data/business_profile.json. This script builds a
+ProfilePage/Person graph and llms.txt content from that file and pushes it
 to every connected WordPress site listed in business_profile.json["sites"],
 so every asset stays consistent automatically without manual edits.
 
@@ -19,6 +19,10 @@ import json
 import base64
 import requests
 from reputation_core.installation import data_path
+from reputation_core.entity_seo import (
+    build_profile_page_schema,
+    render_profile_page,
+)
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 PROFILE_PATH = data_path("business_profile.json")
@@ -54,26 +58,7 @@ def latest_review_stats():
 
 
 def build_schema(profile):
-    canonical = next(
-        (site for site in profile["sites"] if site.get("canonical")),
-        profile["sites"][0],
-    )
-    canonical_url = canonical.get("canonical_url") or canonical["base_url"]
-    schema = {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": canonical_url.rstrip("/") + "/#person",
-        "name": profile["name"],
-        "jobTitle": profile["jobTitle"],
-        "url": canonical_url,
-    }
-    for key in ("alternateName", "honorificPrefix", "image", "description",
-                "knowsLanguage", "knowsAbout", "sameAs"):
-        if profile.get(key):
-            schema[key] = profile[key]
-    if profile.get("nationality"):
-        schema["nationality"] = {"@type": "Country", "name": profile["nationality"]}
-    return schema
+    return build_profile_page_schema(profile)
 
 
 def build_llms_txt(profile):
@@ -123,7 +108,7 @@ def wp_update_page(base_url, auth, page_id, content, title=None):
     return resp.json()
 
 
-def sync_site(site, schema_json_min, llms_content):
+def sync_site(site, profile, llms_content):
     user = env(site["user_env"])
     app_password = env(site["app_password_env"])
     if not user or not app_password:
@@ -131,18 +116,24 @@ def sync_site(site, schema_json_min, llms_content):
         return
     auth = (user, app_password)
     base_url = site["base_url"]
+    slug = site.get("profile_page_slug", "profile")
+    page_url = f"{base_url.rstrip('/')}/{slug}/"
+    profile_content = render_profile_page(profile, page_url=page_url)
     try:
         schema_page_id = wp_find_or_create_page(
-            base_url, auth, site["schema_page_slug"], "Schema Markup — Person / Medical Content Creator"
+            base_url,
+            auth,
+            slug,
+            f"{profile['name']} — פרופיל רשמי",
         )
         wp_update_page(
             base_url,
             auth,
             schema_page_id,
-            f'<script type="application/ld+json">{schema_json_min}</script>',
-            title="Schema Markup — Person / Medical Content Creator",
+            profile_content,
+            title=f"{profile['name']} — פרופיל רשמי",
         )
-        log(f"[{site['key']}] schema-markup page updated (id {schema_page_id})")
+        log(f"[{site['key']}] ProfilePage/Person page updated (id {schema_page_id})")
 
         llms_page_id = wp_find_or_create_page(
             base_url, auth, site["llms_page_slug"], "LLMs.txt — AI Search Optimization"
@@ -171,6 +162,13 @@ def main():
     schema = build_schema(profile)
     schema_json_min = json.dumps(schema, ensure_ascii=False, separators=(",", ":"))
     llms_content = build_llms_txt(profile)
+    publish_approved = env("ENTITY_SYNC_APPROVED") == "true"
+    log(f"ProfilePage preview generated ({len(schema_json_min)} bytes)")
+    if not publish_approved:
+        log("AUDIT ONLY - ENTITY_SYNC_APPROVED=true was not supplied; no public pages changed")
+        with open("schema_sync_log.txt", "w", encoding="utf-8") as f:
+            f.write("\n".join(LOG_LINES))
+        return
 
     for site in profile["sites"]:
         if site.get("platform", "wordpress") != "wordpress":
@@ -181,7 +179,7 @@ def main():
             else:
                 log(f"[{site['key']}] SKIPPED - missing {site.get('api_key_env')} / {site.get('site_id_env')}")
             continue
-        sync_site(site, schema_json_min, llms_content)
+        sync_site(site, profile, llms_content)
 
     log("=== Done ===")
     with open("schema_sync_log.txt", "w", encoding="utf-8") as f:
