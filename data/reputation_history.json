@@ -16341,14 +16341,178 @@
       },
       "alerts": [],
       "errors": []
+    },
+    {
+      "date": "2026-07-26T12:23:26.868292",
+      "rank": [
+        {
+          "status": "skipped",
+          "reason": "daily SerpApi cadence already completed"
+        }
+      ],
+      "geo": [
+        {
+          "prompt": "מי הוא ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": true,
+          "knowledge_gap": false,
+          "safe_status": "review",
+          "excerpt": "ד\"ר גיא רופא הוא מומחה לאורתופדיה, המתמחה בפציעות ספורט וניהול כאב. הוא בעל ניסיון רב בתחום האורתופדיה ומשמש כרופא בכיר במרכזים רפואיים מובילים. ד\"ר רופא ידוע גם כמרצה ומדריך סטודנטים ומתמחים ברפואה בתחום האורתופדיה.\n\nעם זאת, ייתכן שישנם מספר אנשים בשם זה בתחומים שונים, ולכן אם יש לך מידע נוסף על הה"
+        },
+        {
+          "prompt": "איזה תוכן רפואי מפרסם ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": true,
+          "safe_status": "review",
+          "excerpt": "אני מצטער, אבל אין לי גישה למידע בזמן אמת על תכנים שד\"ר גיא רופא עשוי לפרסם. אני ממליץ לבדוק את הערוצים ישירות שבהם הוא עשוי לפרסם מידע, כמו אתר אינטרנט, בלוג אישי, ערוצי תקשורת חברתית או פרסומים מקצועיים. אם יש לך מידע נוסף על סוג התוכן או נושא מסוים, אולי אוכל לסייע בדרכים אחרות."
+        },
+        {
+          "prompt": "אילו ספרים כתב ד״ר גיא רופא?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": true,
+          "safe_status": "review",
+          "excerpt": "ד\"ר גיא רופא הוא חוקר ומרצה בנושאי תרבות איטלקית ותולדות האומנות. הוא כתב ספרים ומאמרים המתמקדים בעיקר באזורים אלו. אחד הספרים הידועים שכתב הוא \"הכּתובת של רבקה\" (The Inscription of Rebecca), העוסק בתולדות משפחתו בשואה. ייתכן שהוא כתב ספרים נוספים או פרסומים אקדמיים ומומלץ לבדוק במאגרי מידע אקדמיים "
+        },
+        {
+          "prompt": "האם לד״ר גיא רופא יש פודקאסט?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": true,
+          "safe_status": "review",
+          "excerpt": "נכון לאוקטובר 2023, אין לי מידע מעודכן לגבי פודקאסט מסוים שמנחה ד\"ר גיא רופא. אם הוא השיק פודקאסט חדש לאחרונה, ייתכן שתוכל למצוא מידע על כך בחיפוש מקוון או ברשתות החברתיות."
+        },
+        {
+          "prompt": "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": false,
+          "identity_misinformation": false,
+          "knowledge_gap": true,
+          "safe_status": "review",
+          "excerpt": "נכון לאוקטובר 2023, אין לי גישה למידע שקיים בזמן אמת כמו נכסים רשמיים של אנשים ברשת, כולל ד\"ר גיא רופא. אני ממליץ לחפש מידע זה באתרי אינטרנט רשמיים כמו אוניברסיטאות, מוסדות רפואיים או פרופילים מקצועיים כמו לינקדאין כדי למצוא את המידע המדויק והעדכני ביותר."
+        },
+        {
+          "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?",
+          "mentions_dr_rofe": true,
+          "active_practice_claim": true,
+          "identity_misinformation": false,
+          "knowledge_gap": false,
+          "safe_status": "review",
+          "excerpt": "מצטער, אך אין לי מידע ספציפי על זמינות תורים של רופאים יחידים, כולל ד\"ר גיא רופא. כדי לקבוע תור או לבדוק אם הוא מקבל מטופלות, אני ממליץ ליצור קשר ישירות עם המרפאה שלו או לבדוק באתר האינטרנט של המרפאה או דרך שירותי הקופות השונות."
+        }
+      ],
+      "tokens": [
+        {
+          "platform": "Facebook",
+          "configured": true,
+          "ok": true,
+          "detail": "ד״ר גיא רופא - יוצר תוכן רפואי"
+        },
+        {
+          "platform": "Twitter/X",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Tumblr",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Telegram",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Blogger",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Pinterest",
+          "configured": false,
+          "ok": false,
+          "detail": "not configured"
+        },
+        {
+          "platform": "Medium",
+          "configured": true,
+          "ok": true,
+          "detail": "session valid"
+        }
+      ],
+      "reviews": {
+        "status": "ok",
+        "name": "ד״ר גיא רופא",
+        "rating": 4.5,
+        "total_reviews": 248,
+        "latest_review_excerpt": "My dear and beloved brother, the rest of the harassers are waiting for you in the cell. Don't drop the soap.",
+        "new_review_count": 0
+      },
+      "facebook_recommendations": {
+        "status": "skipped_missing_permission",
+        "reason": "pages_read_user_content permission is not granted; Page publishing and duplicate protection remain active"
+      },
+      "web_mentions": {
+        "status": "skipped",
+        "reason": "daily SerpApi cadence already completed"
+      },
+      "alerts": [
+        {
+          "type": "ai_identity_misinformation",
+          "source": "OpenAI monitor sample",
+          "excerpt": "ד\"ר גיא רופא הוא מומחה לאורתופדיה, המתמחה בפציעות ספורט וניהול כאב. הוא בעל ניסיון רב בתחום האורתופדיה ומשמש כרופא בכיר במרכזים רפואיים מובילים. ד\"ר רופא ידוע גם כמרצה ומדריך סטודנטים ומתמחים ברפואה בתחום האורתופדיה.\n\nעם זאת, ייתכן שישנם מספר אנשים בשם זה בתחומים שונים, ולכן אם יש לך מידע נוסף על הה",
+          "prompt": "מי הוא ד״ר גיא רופא?"
+        },
+        {
+          "type": "ai_knowledge_gap",
+          "source": "OpenAI monitor sample",
+          "excerpt": "אני מצטער, אבל אין לי גישה למידע בזמן אמת על תכנים שד\"ר גיא רופא עשוי לפרסם. אני ממליץ לבדוק את הערוצים ישירות שבהם הוא עשוי לפרסם מידע, כמו אתר אינטרנט, בלוג אישי, ערוצי תקשורת חברתית או פרסומים מקצועיים. אם יש לך מידע נוסף על סוג התוכן או נושא מסוים, אולי אוכל לסייע בדרכים אחרות.",
+          "prompt": "איזה תוכן רפואי מפרסם ד״ר גיא רופא?"
+        },
+        {
+          "type": "ai_knowledge_gap",
+          "source": "OpenAI monitor sample",
+          "excerpt": "ד\"ר גיא רופא הוא חוקר ומרצה בנושאי תרבות איטלקית ותולדות האומנות. הוא כתב ספרים ומאמרים המתמקדים בעיקר באזורים אלו. אחד הספרים הידועים שכתב הוא \"הכּתובת של רבקה\" (The Inscription of Rebecca), העוסק בתולדות משפחתו בשואה. ייתכן שהוא כתב ספרים נוספים או פרסומים אקדמיים ומומלץ לבדוק במאגרי מידע אקדמיים ",
+          "prompt": "אילו ספרים כתב ד״ר גיא רופא?"
+        },
+        {
+          "type": "ai_knowledge_gap",
+          "source": "OpenAI monitor sample",
+          "excerpt": "נכון לאוקטובר 2023, אין לי מידע מעודכן לגבי פודקאסט מסוים שמנחה ד\"ר גיא רופא. אם הוא השיק פודקאסט חדש לאחרונה, ייתכן שתוכל למצוא מידע על כך בחיפוש מקוון או ברשתות החברתיות.",
+          "prompt": "האם לד״ר גיא רופא יש פודקאסט?"
+        },
+        {
+          "type": "ai_knowledge_gap",
+          "source": "OpenAI monitor sample",
+          "excerpt": "נכון לאוקטובר 2023, אין לי גישה למידע שקיים בזמן אמת כמו נכסים רשמיים של אנשים ברשת, כולל ד\"ר גיא רופא. אני ממליץ לחפש מידע זה באתרי אינטרנט רשמיים כמו אוניברסיטאות, מוסדות רפואיים או פרופילים מקצועיים כמו לינקדאין כדי למצוא את המידע המדויק והעדכני ביותר.",
+          "prompt": "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?"
+        },
+        {
+          "type": "ai_active_practice_misinformation",
+          "source": "OpenAI monitor sample",
+          "excerpt": "מצטער, אך אין לי מידע ספציפי על זמינות תורים של רופאים יחידים, כולל ד\"ר גיא רופא. כדי לקבוע תור או לבדוק אם הוא מקבל מטופלות, אני ממליץ ליצור קשר ישירות עם המרפאה שלו או לבדוק באתר האינטרנט של המרפאה או דרך שירותי הקופות השונות.",
+          "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?"
+        }
+      ],
+      "errors": []
     }
   ],
   "seen_review_ids": [
-    "Nir|1783548048",
     "Alon Tsevi|1766326026",
+    "Neta Tzur|1780837292",
+    "Nir|1783548048",
     "Avi Kalili|1777044743",
-    "דורון ל|1781610122",
-    "Neta Tzur|1780837292"
+    "דורון ל|1781610122"
   ],
   "seen_fb_recommendation_ids": [],
   "seen_urls": [

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-26T12:17:19Z",
+  "updated_at": "2026-07-26T12:23:39Z",
   "content_freeze": false,
   "events": [
     {
@@ -268,20 +268,20 @@
       "source": "OpenAI monitor sample",
       "external_id": "2026-07-26T09:43:28.598927|ai_active_practice_misinformation|",
       "title": "ai_active_practice_misinformation",
-      "text": "אין לי מידע מעודכן לגבי מצב המטופלים של ד\"ר גיא רופא נכון להיום. אני ממליץ לפנות ישירות למרפאתו או לבדוק את אתר האינטרנט או עמוד הפייסבוק שלו אם יש כזה, כדי לקבל את המידע המעודכן והמדויק ביותר.",
+      "text": "מצטער, אך אין לי מידע ספציפי על זמינות תורים של רופאים יחידים, כולל ד\"ר גיא רופא. כדי לקבוע תור או לבדוק אם הוא מקבל מטופלות, אני ממליץ ליצור קשר ישירות עם המרפאה שלו או לבדוק באתר האינטרנט של המרפאה או דרך שירותי הקופות השונות.",
       "rating": null,
       "category": "customer_experience",
       "metadata": {
         "type": "ai_active_practice_misinformation",
         "source": "OpenAI monitor sample",
-        "excerpt": "אין לי מידע מעודכן לגבי מצב המטופלים של ד\"ר גיא רופא נכון להיום. אני ממליץ לפנות ישירות למרפאתו או לבדוק את אתר האינטרנט או עמוד הפייסבוק שלו אם יש כזה, כדי לקבל את המידע המעודכן והמדויק ביותר.",
+        "excerpt": "מצטער, אך אין לי מידע ספציפי על זמינות תורים של רופאים יחידים, כולל ד\"ר גיא רופא. כדי לקבוע תור או לבדוק אם הוא מקבל מטופלות, אני ממליץ ליצור קשר ישירות עם המרפאה שלו או לבדוק באתר האינטרנט של המרפאה או דרך שירותי הקופות השונות.",
         "prompt": "האם ד״ר גיא רופא מקבל כיום מטופלות או מזמין לקביעת תור?"
       },
       "id": "evt_c465f1654e94eebd",
       "status": "new",
       "created_at": "2026-07-26T09:43:39Z",
-      "last_seen_at": "2026-07-26T09:43:39Z",
-      "occurrences": 1,
+      "last_seen_at": "2026-07-26T12:23:39Z",
+      "occurrences": 2,
       "risk_score": 5,
       "priority": "P4",
       "approval_required": "auto_or_standard",
@@ -313,6 +313,141 @@
       "priority": "P4",
       "approval_required": "auto_or_standard",
       "sla_due_at": "2026-07-28T11:11:42Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "OpenAI monitor sample",
+      "external_id": "ai_identity_misinformation|מי הוא ד״ר גיא רופא?",
+      "title": "ai_identity_misinformation",
+      "text": "ד\"ר גיא רופא הוא מומחה לאורתופדיה, המתמחה בפציעות ספורט וניהול כאב. הוא בעל ניסיון רב בתחום האורתופדיה ומשמש כרופא בכיר במרכזים רפואיים מובילים. ד\"ר רופא ידוע גם כמרצה ומדריך סטודנטים ומתמחים ברפואה בתחום האורתופדיה.\n\nעם זאת, ייתכן שישנם מספר אנשים בשם זה בתחומים שונים, ולכן אם יש לך מידע נוסף על הה",
+      "rating": null,
+      "category": "ai_identity_misinformation",
+      "metadata": {
+        "type": "ai_identity_misinformation",
+        "source": "OpenAI monitor sample",
+        "excerpt": "ד\"ר גיא רופא הוא מומחה לאורתופדיה, המתמחה בפציעות ספורט וניהול כאב. הוא בעל ניסיון רב בתחום האורתופדיה ומשמש כרופא בכיר במרכזים רפואיים מובילים. ד\"ר רופא ידוע גם כמרצה ומדריך סטודנטים ומתמחים ברפואה בתחום האורתופדיה.\n\nעם זאת, ייתכן שישנם מספר אנשים בשם זה בתחומים שונים, ולכן אם יש לך מידע נוסף על הה",
+        "prompt": "מי הוא ד״ר גיא רופא?"
+      },
+      "id": "evt_c0f3b88a34c50358",
+      "status": "new",
+      "created_at": "2026-07-26T12:23:39Z",
+      "last_seen_at": "2026-07-26T12:23:39Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-28T12:23:39Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "OpenAI monitor sample",
+      "external_id": "ai_knowledge_gap|איזה תוכן רפואי מפרסם ד״ר גיא רופא?",
+      "title": "ai_knowledge_gap",
+      "text": "אני מצטער, אבל אין לי גישה למידע בזמן אמת על תכנים שד\"ר גיא רופא עשוי לפרסם. אני ממליץ לבדוק את הערוצים ישירות שבהם הוא עשוי לפרסם מידע, כמו אתר אינטרנט, בלוג אישי, ערוצי תקשורת חברתית או פרסומים מקצועיים. אם יש לך מידע נוסף על סוג התוכן או נושא מסוים, אולי אוכל לסייע בדרכים אחרות.",
+      "rating": null,
+      "category": "customer_experience",
+      "metadata": {
+        "type": "ai_knowledge_gap",
+        "source": "OpenAI monitor sample",
+        "excerpt": "אני מצטער, אבל אין לי גישה למידע בזמן אמת על תכנים שד\"ר גיא רופא עשוי לפרסם. אני ממליץ לבדוק את הערוצים ישירות שבהם הוא עשוי לפרסם מידע, כמו אתר אינטרנט, בלוג אישי, ערוצי תקשורת חברתית או פרסומים מקצועיים. אם יש לך מידע נוסף על סוג התוכן או נושא מסוים, אולי אוכל לסייע בדרכים אחרות.",
+        "prompt": "איזה תוכן רפואי מפרסם ד״ר גיא רופא?"
+      },
+      "id": "evt_371bbc9794eabe25",
+      "status": "new",
+      "created_at": "2026-07-26T12:23:39Z",
+      "last_seen_at": "2026-07-26T12:23:39Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-28T12:23:39Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "OpenAI monitor sample",
+      "external_id": "ai_knowledge_gap|אילו ספרים כתב ד״ר גיא רופא?",
+      "title": "ai_knowledge_gap",
+      "text": "ד\"ר גיא רופא הוא חוקר ומרצה בנושאי תרבות איטלקית ותולדות האומנות. הוא כתב ספרים ומאמרים המתמקדים בעיקר באזורים אלו. אחד הספרים הידועים שכתב הוא \"הכּתובת של רבקה\" (The Inscription of Rebecca), העוסק בתולדות משפחתו בשואה. ייתכן שהוא כתב ספרים נוספים או פרסומים אקדמיים ומומלץ לבדוק במאגרי מידע אקדמיים ",
+      "rating": null,
+      "category": "ai_knowledge_gap",
+      "metadata": {
+        "type": "ai_knowledge_gap",
+        "source": "OpenAI monitor sample",
+        "excerpt": "ד\"ר גיא רופא הוא חוקר ומרצה בנושאי תרבות איטלקית ותולדות האומנות. הוא כתב ספרים ומאמרים המתמקדים בעיקר באזורים אלו. אחד הספרים הידועים שכתב הוא \"הכּתובת של רבקה\" (The Inscription of Rebecca), העוסק בתולדות משפחתו בשואה. ייתכן שהוא כתב ספרים נוספים או פרסומים אקדמיים ומומלץ לבדוק במאגרי מידע אקדמיים ",
+        "prompt": "אילו ספרים כתב ד״ר גיא רופא?"
+      },
+      "id": "evt_6593a4a9407a49fa",
+      "status": "new",
+      "created_at": "2026-07-26T12:23:39Z",
+      "last_seen_at": "2026-07-26T12:23:39Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-28T12:23:39Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "OpenAI monitor sample",
+      "external_id": "ai_knowledge_gap|האם לד״ר גיא רופא יש פודקאסט?",
+      "title": "ai_knowledge_gap",
+      "text": "נכון לאוקטובר 2023, אין לי מידע מעודכן לגבי פודקאסט מסוים שמנחה ד\"ר גיא רופא. אם הוא השיק פודקאסט חדש לאחרונה, ייתכן שתוכל למצוא מידע על כך בחיפוש מקוון או ברשתות החברתיות.",
+      "rating": null,
+      "category": "ai_knowledge_gap",
+      "metadata": {
+        "type": "ai_knowledge_gap",
+        "source": "OpenAI monitor sample",
+        "excerpt": "נכון לאוקטובר 2023, אין לי מידע מעודכן לגבי פודקאסט מסוים שמנחה ד\"ר גיא רופא. אם הוא השיק פודקאסט חדש לאחרונה, ייתכן שתוכל למצוא מידע על כך בחיפוש מקוון או ברשתות החברתיות.",
+        "prompt": "האם לד״ר גיא רופא יש פודקאסט?"
+      },
+      "id": "evt_273b81aa6c9da63f",
+      "status": "new",
+      "created_at": "2026-07-26T12:23:39Z",
+      "last_seen_at": "2026-07-26T12:23:39Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-28T12:23:39Z",
+      "risk_reasons": [
+        "new reputation event"
+      ],
+      "playbook": "amplify_positive"
+    },
+    {
+      "source": "OpenAI monitor sample",
+      "external_id": "ai_knowledge_gap|מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?",
+      "title": "ai_knowledge_gap",
+      "text": "נכון לאוקטובר 2023, אין לי גישה למידע שקיים בזמן אמת כמו נכסים רשמיים של אנשים ברשת, כולל ד\"ר גיא רופא. אני ממליץ לחפש מידע זה באתרי אינטרנט רשמיים כמו אוניברסיטאות, מוסדות רפואיים או פרופילים מקצועיים כמו לינקדאין כדי למצוא את המידע המדויק והעדכני ביותר.",
+      "rating": null,
+      "category": "ai_knowledge_gap",
+      "metadata": {
+        "type": "ai_knowledge_gap",
+        "source": "OpenAI monitor sample",
+        "excerpt": "נכון לאוקטובר 2023, אין לי גישה למידע שקיים בזמן אמת כמו נכסים רשמיים של אנשים ברשת, כולל ד\"ר גיא רופא. אני ממליץ לחפש מידע זה באתרי אינטרנט רשמיים כמו אוניברסיטאות, מוסדות רפואיים או פרופילים מקצועיים כמו לינקדאין כדי למצוא את המידע המדויק והעדכני ביותר.",
+        "prompt": "מהם הנכסים הרשמיים של ד״ר גיא רופא ברשת?"
+      },
+      "id": "evt_5ae61c7e24169742",
+      "status": "new",
+      "created_at": "2026-07-26T12:23:39Z",
+      "last_seen_at": "2026-07-26T12:23:39Z",
+      "occurrences": 1,
+      "risk_score": 5,
+      "priority": "P4",
+      "approval_required": "auto_or_standard",
+      "sla_due_at": "2026-07-28T12:23:39Z",
       "risk_reasons": [
         "new reputation event"
       ],
@@ -909,6 +1044,201 @@
       "approval_required": "auto_or_standard",
       "created_at": "2026-07-26T11:11:42Z",
       "due_at": "2026-07-28T11:11:42Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c0f3b88a34c50358_1",
+      "event_id": "evt_c0f3b88a34c50358",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c0f3b88a34c50358_2",
+      "event_id": "evt_c0f3b88a34c50358",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_c0f3b88a34c50358_3",
+      "event_id": "evt_c0f3b88a34c50358",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_371bbc9794eabe25_1",
+      "event_id": "evt_371bbc9794eabe25",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_371bbc9794eabe25_2",
+      "event_id": "evt_371bbc9794eabe25",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_371bbc9794eabe25_3",
+      "event_id": "evt_371bbc9794eabe25",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_6593a4a9407a49fa_1",
+      "event_id": "evt_6593a4a9407a49fa",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_6593a4a9407a49fa_2",
+      "event_id": "evt_6593a4a9407a49fa",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_6593a4a9407a49fa_3",
+      "event_id": "evt_6593a4a9407a49fa",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_273b81aa6c9da63f_1",
+      "event_id": "evt_273b81aa6c9da63f",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_273b81aa6c9da63f_2",
+      "event_id": "evt_273b81aa6c9da63f",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_273b81aa6c9da63f_3",
+      "event_id": "evt_273b81aa6c9da63f",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_5ae61c7e24169742_1",
+      "event_id": "evt_5ae61c7e24169742",
+      "title": "Thank the author",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_5ae61c7e24169742_2",
+      "event_id": "evt_5ae61c7e24169742",
+      "title": "Request permission before reuse",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
+      "prohibited_actions": [
+        "reveal_private_details",
+        "fabricate_endorsement"
+      ]
+    },
+    {
+      "id": "tsk_5ae61c7e24169742_3",
+      "event_id": "evt_5ae61c7e24169742",
+      "title": "Add to approved social-proof library",
+      "status": "pending",
+      "approval_required": "auto_or_standard",
+      "created_at": "2026-07-26T12:23:39Z",
+      "due_at": "2026-07-28T12:23:39Z",
       "prohibited_actions": [
         "reveal_private_details",
         "fabricate_endorsement"
@@ -3762,7 +4092,7 @@
     {
       "id": "cmp_c31e9e54d7cef9",
       "brand": "ד\"ר גיא רופא",
-      "created_at": "2026-07-26T12:17:19Z",
+      "created_at": "2026-07-26T12:23:39Z",
       "objective": "Maximize accurate first-page brand coverage and recommendation visibility across search and AI surfaces",
       "guardrail": "No ranking or citation can be guaranteed; optimize controllable eligibility, authority, evidence and demand signals.",
       "serp_asset_gap": {
@@ -5866,12 +6196,80 @@
       "details": {
         "tasks": 5
       }
+    },
+    {
+      "at": "2026-07-26T12:23:39Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_c0f3b88a34c50358",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-26T12:23:39Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_371bbc9794eabe25",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-26T12:23:39Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_6593a4a9407a49fa",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-26T12:23:39Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_273b81aa6c9da63f",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-26T12:23:39Z",
+      "actor": "reputation-agent",
+      "action": "event_ingested",
+      "object_id": "evt_5ae61c7e24169742",
+      "details": {
+        "priority": "P4",
+        "score": 5
+      }
+    },
+    {
+      "at": "2026-07-26T12:23:39Z",
+      "actor": "reputation-agent",
+      "action": "event_seen_again",
+      "object_id": "evt_c465f1654e94eebd",
+      "details": {
+        "occurrences": 2
+      }
+    },
+    {
+      "at": "2026-07-26T12:23:39Z",
+      "actor": "reputation-agent",
+      "action": "growth_campaign_replanned",
+      "object_id": "cmp_c31e9e54d7cef9",
+      "details": {
+        "tasks": 5
+      }
     }
   ],
   "metrics": {
-    "open_events": 15,
+    "open_events": 20,
     "critical_events": 0,
-    "pending_tasks": 46,
+    "pending_tasks": 61,
     "active_crises": 0,
     "content_freeze": false
   }
