@@ -82,6 +82,41 @@ cross-domain duplication, cannibalization, thin content, doorway patterns,
 manual actions or indexing anomalies. Public publication still requires the
 customer's explicit approval.
 
+## P2 campaign-opening wizard
+
+After P1 creates an isolated installation, P2 converts one plain-language
+customer instruction into a complete, reviewable campaign:
+
+```bash
+python scripts/open_campaign.py --brief \
+  'כאשר מחפשים X / X2, אני רוצה שהמשתמש יקבל Y, דרך הנכסים A / B / https://example.org/profile, תוך איסור על Z / Z2.'
+```
+
+The command creates `data/campaign_draft.json` with primary and secondary
+queries, desired facts and narratives, Google and AI targets, resolved and
+unverified assets, approval rules, content limits and installation-specific
+success metrics. It does not publish anything.
+
+The customer reviews the exact draft and supplies its content-bound approval
+ID:
+
+```bash
+python scripts/open_campaign.py --approve campaign-0123456789abcdef
+```
+
+Any edit changes the approval ID and invalidates the old approval. Activation
+updates the isolated installation transactionally, queues ownership and
+baseline checks, and preserves item-level approval for every public
+publication. A structured intake is also supported:
+
+```bash
+python scripts/open_campaign.py \
+  --intake-json config/campaign_intake.example.json
+```
+
+Customer-proposed facts remain pending until evidence and owner approval exist;
+desired narratives never override the approved fact registry.
+
 `check_secrets.py` reports missing environment-variable names only. GitHub
 Secrets must contain platform-issued API keys, OAuth tokens, application
 passwords or site identifiers—never personal passwords copied from an asset
@@ -102,8 +137,8 @@ Content freeze cannot be removed while an active crisis room exists.
 ## Validation
 
 ```bash
-python -m unittest discover -s tests -v
-python -m compileall -q scripts tests
+python3 -m unittest discover -s tests -v
+python3 -m compileall -q scripts tests
 ```
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the data model, routing

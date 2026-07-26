@@ -151,6 +151,29 @@ contains no customer name, domain, query or content agenda; these live only in
 the isolated installation. `REPUTATION_INSTALLATION_ROOT` selects that
 installation at runtime.
 
+## P2 campaign-opening wizard
+
+P2 is a gated translation layer between customer intent and the runtime
+configuration. It accepts either the documented Hebrew sentence contract or a
+structured JSON intake. `scripts/open_campaign.py` then builds an immutable
+review bundle containing:
+
+- primary and secondary queries;
+- approved facts, pending fact proposals and desired narratives;
+- separate Google and AI visibility targets;
+- verified existing assets and assets awaiting ownership verification;
+- customer and installation approval rules;
+- merged content constraints; and
+- measurable, installation-specific success criteria.
+
+The bundle receives a deterministic approval ID derived from every material
+field. A changed bundle cannot be activated using an earlier approval. Exact
+approval projects the campaign into the single-tenant profile, target,
+strategy, fact and asset files as one rollback-capable transaction. It does not
+publish content. New facts remain excluded until evidence-approved, unverified
+assets remain uncontrolled, and each public item still requires explicit
+approval.
+
 ## Next premium layers
 
 1. Encrypted connector vault and role-based approvals for a single installation.

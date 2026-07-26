@@ -12,6 +12,13 @@ from .installation import (
     installation_root,
 )
 from .coverage_safety import evaluate_coverage_safety
+from .campaign_wizard import (
+    apply_approved_campaign,
+    build_campaign_draft,
+    campaign_approval_id,
+    parse_plain_language_brief,
+    validate_campaign_draft,
+)
 from .onboarding import (
     build_installation_files,
     validate_install_spec,
@@ -55,4 +62,9 @@ __all__ = [
     "validate_install_spec",
     "validate_installation_files",
     "write_installation",
+    "parse_plain_language_brief",
+    "build_campaign_draft",
+    "campaign_approval_id",
+    "validate_campaign_draft",
+    "apply_approved_campaign",
 ]

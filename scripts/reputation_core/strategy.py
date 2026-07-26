@@ -93,6 +93,9 @@ def canonical_facts() -> dict:
 def client_search_queries(include_variants: bool = True) -> list[str]:
     goal = load_client_profile()["search_goal"]
     queries = [item["query"] for item in goal["primary_queries"]]
+    queries.extend(
+        item["query"] for item in goal.get("secondary_queries", [])
+    )
     if include_variants:
         queries.extend(goal.get("measurement_variants", []))
     return list(dict.fromkeys(queries))

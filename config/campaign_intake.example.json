@@ -1,0 +1,30 @@
+{
+  "brief": "Optional original customer wording",
+  "primary_queries": [
+    "Example Person"
+  ],
+  "secondary_queries": [
+    "Example Person Full Name"
+  ],
+  "desired_outcome": "Accurate identity, approved facts and authoritative sources.",
+  "desired_narratives": [
+    "The customer is presented accurately through authoritative, maintained sources."
+  ],
+  "requested_assets": [
+    "Canonical website",
+    "LinkedIn",
+    "https://example.org/profile"
+  ],
+  "prohibitions": [
+    "Inventing facts",
+    "Publishing without item-level customer approval"
+  ],
+  "proposed_facts": [
+    {
+      "field": "example_field",
+      "value": "Customer-proposed value",
+      "public": true,
+      "evidence": []
+    }
+  ]
+}
