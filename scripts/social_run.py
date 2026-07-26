@@ -16,6 +16,7 @@ from openai import OpenAI
 
 sys.path.insert(0, os.path.dirname(__file__))
 from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest, manual_draft
+from publication_policy import CTA_PROMPT, enforce_publication_policy
 
 SITE_URL = "https://guyrofe.com"
 
@@ -63,11 +64,12 @@ def generate_social_post(topic):
 
 טון: חם, מקצועי, נגיש. שורה ראשונה = הוק שמושך תשומת לב.
 אל תשתמש בהאשטגים. אל תשתמש בכותרות markdown.
-השורה האחרונה תהיה קריאה לפעולה קצרה לפנייה לייעוץ."""
+{CTA_PROMPT}"""
     resp = client.chat.completions.create(
         model="gpt-4o", messages=[{"role": "user", "content": prompt}], max_tokens=400
     )
     body = resp.choices[0].message.content.strip()
+    body = enforce_publication_policy(body)
     title = topic
     return title, body
 
