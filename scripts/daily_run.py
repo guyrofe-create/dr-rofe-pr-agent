@@ -11,6 +11,7 @@ import json
 import os
 import re
 import time
+from urllib.parse import urlparse
 
 import requests
 from reputation_core.strategy import client_content_plan, load_client_profile
@@ -31,6 +32,34 @@ LOG_LINES = []
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CLIENT_PROFILE = load_client_profile()
 CLIENT_FACTS = CLIENT_PROFILE["canonical_facts"]
+TRUSTED_MEDICAL_SOURCE_DOMAINS = frozenset(
+    {
+        "who.int",
+        "cdc.gov",
+        "nih.gov",
+        "ncbi.nlm.nih.gov",
+        "medlineplus.gov",
+        "fda.gov",
+        "nhs.uk",
+        "nice.org.uk",
+        "gov.il",
+        "health.gov.il",
+        "acog.org",
+        "rcog.org.uk",
+        "figo.org",
+        "asrm.org",
+        "eshre.eu",
+        "menopause.org",
+        "ema.europa.eu",
+        "ecdc.europa.eu",
+        "cochranelibrary.com",
+        "doi.org",
+    }
+)
+OFFICIAL_MEDICAL_SOURCE_DOMAINS = TRUSTED_MEDICAL_SOURCE_DOMAINS - {
+    "doi.org",
+    "cochranelibrary.com",
+}
 
 
 def utc_now():
@@ -117,6 +146,28 @@ def clean_generated_markdown(content):
     return content
 
 
+def _source_domain(url):
+    return (urlparse(url).hostname or "").lower().removeprefix("www.")
+
+
+def _domain_is_allowed(domain, allowed):
+    return any(domain == item or domain.endswith(f".{item}") for item in allowed)
+
+
+def medical_source_urls(content):
+    match = re.search(
+        r"^#{2,3}\s+מקורות\b(?P<section>.*)\Z",
+        content,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+    if not match:
+        return set()
+    return {
+        url.rstrip(".,;)")
+        for url in re.findall(r"https?://[^\s>)\]]+", match.group("section"))
+    }
+
+
 def validate_generated_article(content):
     enforce_publication_policy(content)
     title = next(
@@ -142,14 +193,39 @@ def validate_generated_article(content):
         r"^#{2,3}\s+מקורות\b", content, flags=re.MULTILINE
     ):
         raise ValueError("generated medical article is missing a Sources section")
-    source_urls = {
+    all_urls = {
         url.rstrip(".,;)")
         for url in re.findall(r"https?://[^\s>)\]]+", content)
     }
-    if CONTENT_PLAN.get("medical_content") and len(source_urls) < 2:
-        raise ValueError(
-            "generated medical article needs at least 2 direct source URLs"
+    if CONTENT_PLAN.get("medical_content"):
+        source_urls = medical_source_urls(content)
+        if len(source_urls) < 2:
+            raise ValueError(
+                "generated medical article needs at least 2 direct source URLs"
+            )
+        untrusted = sorted(
+            url
+            for url in all_urls
+            if not _domain_is_allowed(
+                _source_domain(url), TRUSTED_MEDICAL_SOURCE_DOMAINS
+            )
         )
+        if untrusted:
+            raise ValueError(
+                "generated medical article contains a non-approved medical "
+                f"source domain: {untrusted[0]}"
+            )
+        official_count = sum(
+            _domain_is_allowed(
+                _source_domain(url), OFFICIAL_MEDICAL_SOURCE_DOMAINS
+            )
+            for url in source_urls
+        )
+        if official_count < 2:
+            raise ValueError(
+                "generated medical article needs at least 2 official "
+                "institutional medical sources"
+            )
     return title, word_count
 
 
@@ -188,7 +264,14 @@ def generate_article(topic):
     medical_rules = (
         "- כל טענה רפואית מחייבת בדיקת רופא לפני פרסום\n"
         '- הוסף בסוף סעיף "מקורות" ובו לפחות שני קישורים ישירים למקורות '
-        "רשמיים, מקצועיים או מחקריים שעליהם מבוסס המאמר"
+        "רפואיים מוסדיים רשמיים שעליהם מבוסס המאמר\n"
+        "- מקורות מותרים בלבד: WHO, רשויות בריאות ממשלתיות, NIH/NCBI, "
+        "CDC, FDA, NHS/NICE, משרד הבריאות הישראלי, EMA/ECDC, ACOG, "
+        "RCOG, FIGO, ASRM, ESHRE, The Menopause Society, Cochrane "
+        "ומאמרים מדעיים דרך DOI\n"
+        "- אסור להשתמש כבסיס רפואי באתרי חדשות, בלוגים, רשתות חברתיות, "
+        "אתרי מרפאות מסחריות, אתרי תוכן שיווקי או מקור שאינו ברשימה "
+        "המאושרת"
         if CONTENT_PLAN.get("medical_content")
         else "- כל טענה מהותית מחייבת מקור סמכותי וביקורת אנושית לפני פרסום"
     )

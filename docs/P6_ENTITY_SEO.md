@@ -32,8 +32,10 @@ variants cannot introduce new facts.
 
 ## Media
 
-Generated images retain a known visual description. Alt text describes that
-visual and includes the entity name only when the entity is actually relevant.
+AI image generation is disabled. Existing licensed photographs retain their
+creator, source, licence, attribution and known visual description. Alt text
+describes the actual photo and includes the entity name only when the entity is
+actually relevant.
 Video packages fail validation without captions and a transcript.
 
 ## Search crawler audit

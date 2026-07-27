@@ -168,6 +168,29 @@ class DailyRunTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "at least 2"):
             daily_run.validate_generated_article(content)
 
+    def test_generated_medical_article_rejects_unapproved_source_domain(self):
+        content = "# כותרת\n\n" + " ".join(
+            ["מידע"] * daily_run.MIN_ARTICLE_WORDS
+        ) + (
+            "\n\n## מקורות\n"
+            "- https://www.who.int/example\n"
+            "- https://www.acog.org/example\n"
+            "- https://medical-marketing-blog.example/article\n"
+        )
+        with self.assertRaisesRegex(ValueError, "non-approved"):
+            daily_run.validate_generated_article(content)
+
+    def test_generated_medical_article_requires_two_institutional_sources(self):
+        content = "# כותרת\n\n" + " ".join(
+            ["מידע"] * daily_run.MIN_ARTICLE_WORDS
+        ) + (
+            "\n\n## מקורות\n"
+            "- https://doi.org/10.1000/example-one\n"
+            "- https://doi.org/10.1000/example-two\n"
+        )
+        with self.assertRaisesRegex(ValueError, "institutional"):
+            daily_run.validate_generated_article(content)
+
     def test_generation_retry_expands_the_previous_draft(self):
         messages = daily_run.generation_messages(
             "כתוב מאמר",

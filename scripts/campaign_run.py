@@ -399,8 +399,22 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             raise PermissionError("Approved image bytes do not match the bundle")
         generated_image = social_image.SocialImage(
             image_path.read_bytes(),
+            media_type=(
+                "image/png"
+                if image_path.suffix.lower() == ".png"
+                else "image/jpeg"
+            ),
             extension=image_path.suffix.lstrip(".") or "png",
             visual_description=media.get("visual_description", ""),
+            source_page_url=media.get("source_page_url", ""),
+            source_image_url=media.get("source_image_url", ""),
+            creator=media.get("creator", ""),
+            license_name=media.get("license_name", ""),
+            license_url=media.get("license_url", ""),
+            attribution=media.get("attribution", ""),
+            source_type=media.get(
+                "source_type", "wikimedia_commons_licensed_photo"
+            ),
         )
         try:
             image_url = social_image.upload_to_wordpress(
@@ -413,10 +427,13 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             )
             destinations.append(
                 destination(
-                    "OpenAI visual",
-                    "generated",
+                    "Licensed editorial photo",
+                    "hosted",
                     url=image_url,
-                    detail="תמונה ללא טקסט וללא הזמנה לייעוץ",
+                    detail=(
+                        generated_image.attribution
+                        or "Real licensed photo with recorded provenance"
+                    ),
                 )
             )
             log(f"Pre-approved visual hosted: {image_url}")

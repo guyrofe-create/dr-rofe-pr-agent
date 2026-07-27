@@ -30,7 +30,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GENERATED_DRAFT_PATH_FILE: ${{ runner.temp }}/generated-draft-path.txt
 
-      - name: Prepare exact P7 bundle, preview and image
+      - name: Prepare exact P7 bundle, preview and licensed real photo
         run: |
           draft_path="$(cat "${RUNNER_TEMP}/generated-draft-path.txt")"
           if [[ -z "${draft_path}" ]] || [[ ! -f "${draft_path}" ]]; then

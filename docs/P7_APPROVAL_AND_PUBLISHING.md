@@ -1,7 +1,7 @@
 # P7 — approval and publication
 
-P7 is the only public-execution gate. Drafting, research, image generation and
-previewing may be autonomous; publication may not be inferred from a boolean,
+P7 is the only public-execution gate. Drafting, research, licensed-photo
+selection and previewing may be autonomous; publication may not be inferred from a boolean,
 a schedule, an earlier campaign approval or a general account permission.
 
 ## One exact approval package
@@ -10,8 +10,8 @@ Every public action is represented by one immutable JSON bundle and one
 human-readable HTML preview. The package contains:
 
 - the exact payload for every platform and asset;
-- the approved image bytes or URI, their SHA-256 when local, visual description
-  and exact alt text;
+- the approved photo bytes or URI, their SHA-256 when local, visual description,
+  exact alt text, creator, source page, licence and required attribution;
 - sources;
 - the objective and search query served;
 - risk and compliance notes;

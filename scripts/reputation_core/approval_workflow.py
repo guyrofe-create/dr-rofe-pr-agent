@@ -221,6 +221,15 @@ def render_preview(bundle: dict) -> str:
     media_html = (
         f"<p><strong>Image:</strong> {e(str(media.get('uri', 'none')))}</p>"
         f"<p><strong>Alt text:</strong> {e(str(media.get('alt_text', 'none')))}</p>"
+        f"<p><strong>Image source:</strong> "
+        f"<a href=\"{e(str(media.get('source_page_url', '')))}\">"
+        f"{e(str(media.get('source_page_url', 'none')))}</a></p>"
+        f"<p><strong>Creator:</strong> {e(str(media.get('creator', 'none')))}</p>"
+        f"<p><strong>Licence:</strong> "
+        f"<a href=\"{e(str(media.get('license_url', '')))}\">"
+        f"{e(str(media.get('license_name', 'none')))}</a></p>"
+        f"<p><strong>Required attribution:</strong> "
+        f"{e(str(media.get('attribution', 'none')))}</p>"
     )
     return """<!doctype html>
 <html lang="he" dir="rtl"><head><meta charset="utf-8">

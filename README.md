@@ -224,9 +224,11 @@ single-tenant business profile.
 The content gate requires an answer-first opening, clear headings and direct
 sources. Tables and FAQs are conditional rather than decorative. Distribution
 uses fact-bounded, platform-native variants instead of copying one caption
-unchanged. Generated images retain a truthful visual description; the entity
-name appears in alt text only when relevant. Video metadata requires captions
-and a transcript.
+unchanged. Review images are existing photographs selected from Wikimedia
+Commons; image generation is disabled. Each accepted photo retains its source,
+creator, licence, attribution, truthful visual description and alt text. The
+entity name appears in alt text only when relevant. Video metadata requires
+captions and a transcript.
 
 The weekly schema workflow is audit-only unless an operator manually supplies
 `publish_approved=true`. It also runs a read-only robots audit for Googlebot,

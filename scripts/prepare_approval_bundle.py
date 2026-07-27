@@ -36,7 +36,7 @@ def file_sha256(path: Path) -> str:
 
 
 def article_visual_context(content: str) -> str:
-    """Keep enough article substance to make the generated image topic-specific."""
+    """Keep enough article substance to select a topic-specific real photo."""
     without_sources = content.split("\n## מקורות", 1)[0]
     plain = " ".join(
         line.lstrip("#-* ").strip()
@@ -59,6 +59,7 @@ def prepare_bundle(
     image_uri: str | None = None,
     image_alt_text: str | None = None,
     image_sha256: str | None = None,
+    image_metadata: dict | None = None,
 ) -> dict:
     draft = resolve_draft_path(str(draft_path))
     title, content = load_draft(draft)
@@ -70,13 +71,27 @@ def prepare_bundle(
     sources = [{"url": url, "type": "citation"} for url in extract_citation_urls(content)]
     media = None
     if image_uri:
+        image_metadata = image_metadata or {}
         media = {
             "uri": image_uri,
             "sha256": image_sha256,
             "alt_text": image_alt_text or social_image.alt_text(title),
-            "visual_description": social_image.visual_description(title),
+            "visual_description": image_metadata.get(
+                "visual_description", social_image.visual_description(title)
+            ),
+            "source_type": image_metadata.get("source_type", "manual"),
+            "source_page_url": image_metadata.get("source_page_url", ""),
+            "source_image_url": image_metadata.get("source_image_url", ""),
+            "creator": image_metadata.get("creator", ""),
+            "license_name": image_metadata.get("license_name", ""),
+            "license_url": image_metadata.get("license_url", ""),
+            "attribution": image_metadata.get("attribution", ""),
             "must_match_approved_bytes_when_local": True,
         }
+    credit = (media or {}).get("attribution", "").strip()
+
+    def credited_text(value: str) -> str:
+        return f"{value.rstrip()}\n\nקרדיט תמונה: {credit}" if credit else value
 
     primary = canonical_site(business)
     targets = [
@@ -98,7 +113,7 @@ def prepare_bundle(
             "asset": "configured Facebook Page",
             "payload": {
                 "title": title,
-                "text": variants["facebook"],
+                "text": credited_text(variants["facebook"]),
                 "link": canonical_url,
                 "image": media,
             },
@@ -109,7 +124,7 @@ def prepare_bundle(
             "asset": "configured LinkedIn member",
             "payload": {
                 "title": title,
-                "text": variants["linkedin"],
+                "text": credited_text(variants["linkedin"]),
                 "link": canonical_url,
                 "image": media,
             },
@@ -120,7 +135,14 @@ def prepare_bundle(
             "asset": "configured Blogger blog",
             "payload": {
                 "title": title,
-                "html": variants["blogger"],
+                "html": (
+                    variants["blogger"]
+                    + (
+                        f"\n<p><small>קרדיט תמונה: {credit}</small></p>"
+                        if credit
+                        else ""
+                    )
+                ),
                 "link": canonical_url,
                 "image": media,
             },
@@ -131,6 +153,9 @@ def prepare_bundle(
             "asset": "configured public Pinterest board",
             "payload": {
                 **variants["pinterest"],
+                "description": credited_text(variants["pinterest"]["description"])[
+                    :500
+                ],
                 "link": canonical_url,
                 "image": media,
             },
@@ -224,12 +249,13 @@ def main() -> None:
     parser.add_argument(
         "--generate-image",
         action="store_true",
-        help="Generate the review image now; it remains unpublished until approval.",
+        help="Select a licensed real review photo; nothing is published.",
     )
     args = parser.parse_args()
     image_uri = args.image_uri
     image_alt_text = args.image_alt_text
     image_sha256 = args.image_sha256
+    image_metadata = None
     if args.generate_image:
         title, content = load_draft(resolve_draft_path(args.draft_path))
         image = social_image.generate(title, article_visual_context(content))
@@ -243,12 +269,23 @@ def main() -> None:
             image.visual_description,
         )
         image_sha256 = file_sha256(media_path)
+        image_metadata = {
+            "visual_description": image.visual_description,
+            "source_type": image.source_type,
+            "source_page_url": image.source_page_url,
+            "source_image_url": image.source_image_url,
+            "creator": image.creator,
+            "license_name": image.license_name,
+            "license_url": image.license_url,
+            "attribution": image.attribution,
+        }
     result = prepare_bundle(
         args.draft_path,
         output_root=args.output_root,
         image_uri=image_uri,
         image_alt_text=image_alt_text,
         image_sha256=image_sha256,
+        image_metadata=image_metadata,
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
