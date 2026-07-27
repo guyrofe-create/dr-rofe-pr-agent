@@ -285,6 +285,19 @@ def _execute_target(ledger, bundle, target, publisher):
     )
 
 
+def _execute_target_safely(ledger, bundle, target, publisher):
+    """Execute one approved destination without hiding other destination results."""
+    try:
+        return _execute_target(ledger, bundle, target, publisher)
+    except Exception as exc:
+        log(f"{target['platform']} publication failed: {exc}")
+        return destination(
+            target["platform"],
+            "failed",
+            detail=str(exc)[:300],
+        )
+
+
 def _load_verified_approval():
     bundle_path = os.environ.get("APPROVAL_BUNDLE_PATH", "").strip()
     record_path = os.environ.get("APPROVAL_RECORD_PATH", "").strip()
@@ -436,7 +449,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     facebook_target = targets["facebook_page"]
     if meta.facebook_is_configured():
         destinations.append(
-            _execute_target(
+            _execute_target_safely(
                 ledger,
                 approved_bundle,
                 facebook_target,
@@ -456,7 +469,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     linkedin_target = targets["linkedin_member"]
     if linkedin.is_configured():
         destinations.append(
-            _execute_target(
+            _execute_target_safely(
                 ledger,
                 approved_bundle,
                 linkedin_target,
@@ -493,7 +506,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     blogger_target = targets["blogger_blog"]
     if blogger.is_configured():
         destinations.append(
-            _execute_target(
+            _execute_target_safely(
                 ledger,
                 approved_bundle,
                 blogger_target,
@@ -521,7 +534,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     pinterest_target = targets["pinterest_board"]
     if image_url and pinterest.is_configured():
         destinations.append(
-            _execute_target(
+            _execute_target_safely(
                 ledger,
                 approved_bundle,
                 pinterest_target,
@@ -581,17 +594,35 @@ def main():
     )
     log(f"Starting approved campaign: {draft_path}")
     try:
-        title, canonical_url, destinations = publish_campaign(
-            draft_path,
-            approved_bundle=bundle,
+        try:
+            title, canonical_url, destinations = publish_campaign(
+                draft_path,
+                approved_bundle=bundle,
+            )
+        except Exception as exc:
+            title, _content = load_draft(draft_path)
+            write_campaign_result(
+                draft_path,
+                title,
+                [destination("Campaign", "failed", detail=str(exc)[:300])],
+                status="failed",
+                approval_id_value=bundle["approval_id"],
+            )
+            log(f"Campaign failed before distribution completed: {exc}")
+            raise
+        status = (
+            "completed_with_errors"
+            if any(item["status"] == "failed" for item in destinations)
+            else "completed"
         )
         write_campaign_result(
             draft_path,
             title,
             destinations,
+            status=status,
             approval_id_value=bundle["approval_id"],
         )
-        log(f"Campaign completed. Canonical URL: {canonical_url}")
+        log(f"Campaign {status}. Canonical URL: {canonical_url}")
     finally:
         Path("run_log.txt").write_text("\n".join(LOG_LINES) + "\n", encoding="utf-8")
 

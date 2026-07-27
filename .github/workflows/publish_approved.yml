@@ -120,7 +120,7 @@ jobs:
 
       - name: Commit campaign receipt
         if: >-
-          success() && steps.approval.outputs.draft_path != '' &&
+          always() && steps.approval.outputs.draft_path != '' &&
           !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
         run: |
           git config user.name "dr-rofe-pr-agent"
@@ -129,6 +129,26 @@ jobs:
           git diff --cached --quiet || git commit -m "Record approved campaign ${{ github.run_id }}"
           git pull --rebase
           git push
+
+      - name: Report publication results
+        if: >-
+          always() && steps.approval.outputs.draft_path != '' &&
+          !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        env:
+          DRAFT_PATH: ${{ steps.approval.outputs.draft_path }}
+        run: |
+          result_path="content_drafts/campaigns/$(basename "${DRAFT_PATH}" .md).json"
+          if [[ ! -f "${result_path}" ]]; then
+            echo "### הפרסום נכשל לפני שנוצר דוח תוצאות" >> "${GITHUB_STEP_SUMMARY}"
+            exit 0
+          fi
+          {
+            echo "## דוח הפצה"
+            echo
+            echo "| יעד | סטטוס | קישור / פירוט |"
+            echo "|---|---|---|"
+            jq -r '.destinations[] | "| \(.name) | \(.status) | " + (if .url then "[פתיחה ↗](\(.url))" else (.detail // "—") end) + " |"' "${result_path}"
+          } >> "${GITHUB_STEP_SUMMARY}"
 
       - name: Upload campaign diagnostics
         if: always()

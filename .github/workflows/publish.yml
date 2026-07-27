@@ -1,4 +1,5 @@
-name: Legacy Manual Reviewed Draft Generator
+name: Start Full Content Campaign
+run-name: CREATE → REVIEW → APPROVE → PUBLISH
 
 on:
   workflow_dispatch:
@@ -35,14 +36,25 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Commit draft and immutable approval package
-        if: always()
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
-          git add content_drafts/ approval_bundles/ || true
+          git add content_drafts/ approval_bundles/
           git diff --cached --quiet || git commit -m "Update reviewed content workflow ${{ github.run_id }}"
-          git pull --rebase || true
-          git push || true
+          git pull --rebase
+          git push
+
+      - name: Continue in approval dashboard
+        run: |
+          {
+            echo "## הטיוטה וחבילת האישור מוכנות"
+            echo
+            echo "1. [פתח את מרכז האישורים](https://dr-rofe-reputation-center.guyrofe.chatgpt.site)"
+            echo "2. בדוק את הטקסט, התמונה, ה-alt, המקורות ויעדי הפרסום."
+            echo "3. אשר את כל הסעיפים ולחץ **אישור והפצה לכל הערוצים**."
+            echo
+            echo "לאחר האישור ההפצה תתחיל אוטומטית בתוך עד 5 דקות. תוצאות וקישורים יוצגו במרכז האישורים."
+          } >> "${GITHUB_STEP_SUMMARY}"
 
       - name: Upload run log
         if: always()

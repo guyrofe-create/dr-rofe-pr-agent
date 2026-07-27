@@ -116,6 +116,25 @@ class CampaignRunTests(unittest.TestCase):
         self.assertIn("תקציר מאושר", caption)
         self.assertIn("https://guyrofe.com/article", caption)
 
+    def test_destination_failure_is_reported_without_stopping_other_targets(self):
+        target = {
+            "target_id": "facebook_page",
+            "platform": "Facebook",
+            "asset": "page",
+            "payload": {"text": "approved"},
+        }
+        ledger = Mock()
+        ledger.execute.side_effect = TimeoutError("provider unavailable")
+        result = campaign_run._execute_target_safely(
+            ledger,
+            {"approval_id": "apr_test"},
+            target,
+            lambda _payload, _key: {"url": "https://example.com"},
+        )
+        self.assertEqual(result["name"], "Facebook")
+        self.assertEqual(result["status"], "failed")
+        self.assertIn("provider unavailable", result["detail"])
+
 
 if __name__ == "__main__":
     unittest.main()
