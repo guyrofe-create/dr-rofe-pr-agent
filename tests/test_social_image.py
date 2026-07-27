@@ -12,8 +12,8 @@ class SocialImageTests(unittest.TestCase):
     def test_alt_text_is_natural_and_contains_name_once(self):
         text = social_image.alt_text("ד״ר גיא רופא: מדריך חדש")
         self.assertEqual(text.count("גיא רופא"), 1)
-        self.assertIn("איור עריכתי", text)
-        self.assertIn("הקשורים ישירות", text)
+        self.assertIn("צילום עריכתי טבעי", text)
+        self.assertIn("הקשורה ישירות", text)
 
     def test_alt_text_does_not_insert_name_when_entity_is_not_relevant(self):
         text = social_image.alt_text(
@@ -35,7 +35,11 @@ class SocialImageTests(unittest.TestCase):
         self.assertIn("current service or appointment availability", prompt)
         self.assertIn("כאבי מחזור קשים", prompt)
         self.assertIn("סימני האזהרה", prompt)
-        self.assertIn("MUST be unmistakably and specifically related", prompt)
+        self.assertIn("documentary editorial PHOTOGRAPH", prompt)
+        self.assertIn("natural window light", prompt)
+        self.assertIn("no illustration", prompt)
+        self.assertIn("no floating objects", prompt)
+        self.assertIn("no uncanny anatomy", prompt)
 
     def test_generate_uses_current_image_model_and_decodes_png(self):
         client = Mock()
@@ -47,7 +51,7 @@ class SocialImageTests(unittest.TestCase):
             ]
         )
         client.responses.create.return_value = SimpleNamespace(
-            output_text="RELATED: איור של לוח שנה וסמל כאב הקשורים לנושא"
+            output_text="ACCEPT: צילום טבעי של כרית חימום ליד לוח שנה"
         )
         with patch.dict(os.environ, {}, clear=True):
             result = social_image.generate("כותרת", "תקציר", client=client)
@@ -58,6 +62,9 @@ class SocialImageTests(unittest.TestCase):
         )
         self.assertEqual(
             client.images.generate.call_args.kwargs["size"], "1024x1024"
+        )
+        self.assertEqual(
+            client.images.generate.call_args.kwargs["quality"], "high"
         )
         self.assertEqual(client.responses.create.call_count, 1)
 
@@ -82,11 +89,12 @@ class SocialImageTests(unittest.TestCase):
         client.responses.create.side_effect = [
             SimpleNamespace(
                 output_text=(
-                    "UNRELATED: show concrete symbols associated with menstrual pain"
+                    "REJECT: replace the glossy icon collage with one believable "
+                    "documentary scene"
                 )
             ),
             SimpleNamespace(
-                output_text="RELATED: איור של לוח שנה וכרית חימום"
+                output_text="ACCEPT: צילום טבעי של כרית חימום על כורסה"
             ),
         ]
         result = social_image.generate(
@@ -97,7 +105,8 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(result.content, b"related")
         self.assertEqual(client.images.generate.call_count, 2)
         second_prompt = client.images.generate.call_args_list[1].kwargs["prompt"]
-        self.assertIn("show concrete symbols", second_prompt)
+        self.assertIn("substantially different", second_prompt)
+        self.assertIn("glossy icon collage", second_prompt)
 
     @patch("scripts.social_image.requests.post")
     @patch("scripts.social_image.requests.get")
