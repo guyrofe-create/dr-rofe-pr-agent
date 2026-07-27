@@ -12,7 +12,8 @@ class SocialImageTests(unittest.TestCase):
     def test_alt_text_is_natural_and_contains_name_once(self):
         text = social_image.alt_text("ד״ר גיא רופא: מדריך חדש")
         self.assertEqual(text.count("גיא רופא"), 1)
-        self.assertIn("איור עריכתי מופשט", text)
+        self.assertIn("איור עריכתי", text)
+        self.assertIn("הקשורים ישירות", text)
 
     def test_alt_text_does_not_insert_name_when_entity_is_not_relevant(self):
         text = social_image.alt_text(
@@ -24,11 +25,17 @@ class SocialImageTests(unittest.TestCase):
         self.assertIn("צורות גאומטריות", text)
 
     def test_prompt_excludes_medical_and_availability_claims(self):
-        prompt = social_image.build_prompt("כותרת", "תקציר")
+        prompt = social_image.build_prompt(
+            "כאבי מחזור קשים",
+            "המאמר מסביר מתי כאב מחזור מצריך בירור ומהם סימני האזהרה",
+        )
         self.assertIn("no text", prompt)
         self.assertIn("no doctor", prompt)
         self.assertIn("no surgery", prompt)
         self.assertIn("current service or appointment availability", prompt)
+        self.assertIn("כאבי מחזור קשים", prompt)
+        self.assertIn("סימני האזהרה", prompt)
+        self.assertIn("MUST be unmistakably and specifically related", prompt)
 
     def test_generate_uses_current_image_model_and_decodes_png(self):
         client = Mock()
@@ -39,15 +46,58 @@ class SocialImageTests(unittest.TestCase):
                 )
             ]
         )
+        client.responses.create.return_value = SimpleNamespace(
+            output_text="RELATED: איור של לוח שנה וסמל כאב הקשורים לנושא"
+        )
         with patch.dict(os.environ, {}, clear=True):
             result = social_image.generate("כותרת", "תקציר", client=client)
         self.assertEqual(result.content, b"png-bytes")
+        self.assertIn("לוח שנה", result.visual_description)
         self.assertEqual(
             client.images.generate.call_args.kwargs["model"], "gpt-image-2"
         )
         self.assertEqual(
             client.images.generate.call_args.kwargs["size"], "1024x1024"
         )
+        self.assertEqual(client.responses.create.call_count, 1)
+
+    def test_unrelated_image_is_rejected_and_regenerated(self):
+        client = Mock()
+        client.images.generate.side_effect = [
+            SimpleNamespace(
+                data=[
+                    SimpleNamespace(
+                        b64_json=base64.b64encode(b"generic").decode("ascii")
+                    )
+                ]
+            ),
+            SimpleNamespace(
+                data=[
+                    SimpleNamespace(
+                        b64_json=base64.b64encode(b"related").decode("ascii")
+                    )
+                ]
+            ),
+        ]
+        client.responses.create.side_effect = [
+            SimpleNamespace(
+                output_text=(
+                    "UNRELATED: show concrete symbols associated with menstrual pain"
+                )
+            ),
+            SimpleNamespace(
+                output_text="RELATED: איור של לוח שנה וכרית חימום"
+            ),
+        ]
+        result = social_image.generate(
+            "כאבי מחזור קשים",
+            "מתי כאב מחזור מצריך בירור",
+            client=client,
+        )
+        self.assertEqual(result.content, b"related")
+        self.assertEqual(client.images.generate.call_count, 2)
+        second_prompt = client.images.generate.call_args_list[1].kwargs["prompt"]
+        self.assertIn("show concrete symbols", second_prompt)
 
     @patch("scripts.social_image.requests.post")
     @patch("scripts.social_image.requests.get")

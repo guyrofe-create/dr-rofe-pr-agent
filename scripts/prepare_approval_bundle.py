@@ -35,6 +35,17 @@ def file_sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def article_visual_context(content: str) -> str:
+    """Keep enough article substance to make the generated image topic-specific."""
+    without_sources = content.split("\n## מקורות", 1)[0]
+    plain = " ".join(
+        line.lstrip("#-* ").strip()
+        for line in without_sources.splitlines()
+        if line.strip() and not line.lstrip().startswith("http")
+    )
+    return " ".join(plain.split())[:2400]
+
+
 def canonical_url_for(draft_path: Path, business: dict, client_id: str) -> str:
     site = canonical_site(business)
     slug = stable_slug(f"{client_id}-{draft_path.stem}")
@@ -221,7 +232,7 @@ def main() -> None:
     image_sha256 = args.image_sha256
     if args.generate_image:
         title, content = load_draft(resolve_draft_path(args.draft_path))
-        image = social_image.generate(title, first_paragraph(content))
+        image = social_image.generate(title, article_visual_context(content))
         media_root = Path(args.output_root) / "media"
         media_root.mkdir(parents=True, exist_ok=True)
         media_path = media_root / f"{stable_slug(Path(args.draft_path).stem)}.{image.extension}"

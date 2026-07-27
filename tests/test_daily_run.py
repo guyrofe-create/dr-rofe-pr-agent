@@ -26,7 +26,10 @@ class DailyRunTests(unittest.TestCase):
                 )
                 title, content = daily_run.load_draft(path)
 
-            self.assertEqual(path.name, "2026-07-25-topic-03.md")
+            self.assertRegex(
+                path.name,
+                r"^2026-07-25-topic-03-093000-\d{6}\.md$",
+            )
             self.assertEqual(title, "כותרת")
             self.assertIn("תוכן רפואי לבדיקה", content)
             self.assertIn("pending_medical_review", path.read_text(encoding="utf-8"))
@@ -50,6 +53,26 @@ class DailyRunTests(unittest.TestCase):
             payload = (Path(directory) / "index.json").read_text(encoding="utf-8")
             self.assertIn('"path":', payload)
             self.assertIn("כותרת", payload)
+
+    def test_each_github_run_gets_its_own_draft_path(self):
+        with tempfile.TemporaryDirectory() as directory:
+            now = datetime(2026, 7, 25, 9, 30, tzinfo=timezone.utc)
+            with patch.dict(
+                os.environ,
+                {
+                    "CONTENT_DRAFT_DIR": directory,
+                    "GITHUB_RUN_ID": "12345",
+                    "GITHUB_RUN_ATTEMPT": "2",
+                },
+                clear=False,
+            ):
+                path = daily_run.save_draft(
+                    3, "נושא", "כותרת", "# כותרת\n\nתוכן", now=now
+                )
+            self.assertEqual(
+                path.name,
+                "2026-07-25-topic-03-run-12345-attempt-2.md",
+            )
 
     def test_generated_markdown_code_fence_is_removed(self):
         content = "```markdown\n# כותרת\n\nתוכן\n```"

@@ -226,11 +226,28 @@ def request_generated_article(client, messages):
     return response.output_text or ""
 
 
+def draft_run_suffix(now):
+    """Return a collision-resistant suffix for one explicit generation run."""
+    github_run_id = re.sub(r"[^A-Za-z0-9_-]", "", os.environ.get("GITHUB_RUN_ID", ""))
+    github_run_attempt = re.sub(
+        r"[^A-Za-z0-9_-]", "", os.environ.get("GITHUB_RUN_ATTEMPT", "")
+    )
+    if github_run_id:
+        return (
+            f"run-{github_run_id}-attempt-{github_run_attempt}"
+            if github_run_attempt
+            else f"run-{github_run_id}"
+        )
+    return now.strftime("%H%M%S-%f")
+
+
 def save_draft(topic_index, topic, title, content, now=None):
     now = now or utc_now()
     root = draft_root()
     root.mkdir(parents=True, exist_ok=True)
-    path = root / f"{now:%Y-%m-%d}-topic-{topic_index:02d}.md"
+    path = root / (
+        f"{now:%Y-%m-%d}-topic-{topic_index:02d}-{draft_run_suffix(now)}.md"
+    )
     metadata = (
         "<!--\n"
         "status: pending_medical_review\n"
@@ -492,6 +509,11 @@ def generate_mode():
     log("Generating medical draft via OpenAI...")
     title, content = generate_article(topic)
     path = save_draft(index, topic, title, content)
+    generated_path_file = os.environ.get("GENERATED_DRAFT_PATH_FILE")
+    if generated_path_file:
+        output = Path(generated_path_file)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(path.as_posix() + "\n", encoding="utf-8")
     log(f"Draft saved for medical review: {path}")
     log("No content was published")
 
