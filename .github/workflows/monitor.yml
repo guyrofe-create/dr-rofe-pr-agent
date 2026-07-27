@@ -60,6 +60,7 @@ jobs:
         run: python scripts/prepare_opportunities.py
 
       - name: Verify Meta connections
+        if: always()
         continue-on-error: true
         run: python scripts/meta_connection_check.py
         env:

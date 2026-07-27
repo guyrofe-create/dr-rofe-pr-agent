@@ -977,28 +977,20 @@ def critical_monitor_failures():
     failures = []
     if env("SERPAPI_KEY"):
         rank_errors = [r for r in REPORT["rank"] if r.get("status") == "error"]
-        quota_limited = [
-            r for r in REPORT["rank"] if r.get("status") == "quota_limited"
-        ]
-        budget_limited = [
-            r for r in REPORT["rank"] if r.get("status") == "budget_limited"
-        ]
+        expected_unavailable = all(
+            r.get("status") in {"budget_limited", "quota_limited", "skipped"}
+            for r in REPORT["rank"]
+        )
         if rank_errors:
             failures.append(f"SERP rank: {len(rank_errors)} query errors")
-        elif quota_limited:
-            failures.append("SERP rank: provider quota/rate limit")
-        elif budget_limited:
-            pass
         elif (
             REPORT.get("rank")
             and not rank_measurement_succeeded()
             and not serp_backoff_active()
+            and not expected_unavailable
         ):
             failures.append("SERP rank: no complete fresh measurement")
-        if (REPORT.get("web_mentions") or {}).get("status") in {
-            "error",
-            "quota_limited",
-        }:
+        if (REPORT.get("web_mentions") or {}).get("status") == "error":
             failures.append("web mentions")
     if env("OPENAI_API_KEY") and any(
         g.get("status") == "error" for g in REPORT["geo"]
@@ -1018,6 +1010,26 @@ def critical_monitor_failures():
     if failed_tokens:
         failures.append("publisher credentials: " + ", ".join(failed_tokens))
     return failures
+
+
+def monitor_degradations():
+    """Report expected coverage gaps without turning a useful monitor run red."""
+    degradations = []
+    if env("SERPAPI_KEY") and REPORT.get("rank") and not rank_measurement_succeeded():
+        statuses = {r.get("status") for r in REPORT["rank"]}
+        if "quota_limited" in statuses:
+            degradations.append("SERP rank: provider quota/rate limit")
+        elif "budget_limited" in statuses:
+            degradations.append("SERP rank: configured safety budget reached")
+        elif statuses == {"skipped"}:
+            reasons = sorted({
+                r.get("reason", "scheduled skip") for r in REPORT["rank"]
+            })
+            degradations.append("SERP rank: " + "; ".join(reasons))
+    web_status = (REPORT.get("web_mentions") or {}).get("status")
+    if web_status in {"quota_limited", "budget_limited"}:
+        degradations.append(f"web mentions: {web_status}")
+    return degradations
 
 
 # ─── Reporting ────────────────────────────────────────────────────────────────
@@ -1524,9 +1536,12 @@ def main():
 
     with open("monitor_report.json", "w", encoding="utf-8") as f:
         json.dump(REPORT, f, ensure_ascii=False, indent=2)
+    degradations = monitor_degradations()
+    if degradations:
+        print("MONITOR DEGRADED: " + ", ".join(degradations))
     failures = critical_monitor_failures()
     if failures:
-        print("MONITOR DEGRADED: " + ", ".join(failures))
+        print("MONITOR FAILED: " + ", ".join(failures))
         raise SystemExit(2)
     print("=== Done ===")
 

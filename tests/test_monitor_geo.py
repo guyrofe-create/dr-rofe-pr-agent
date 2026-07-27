@@ -174,15 +174,17 @@ class MonitorGeoTests(unittest.TestCase):
             monitor_run.REPORT["tokens"] = old_tokens
         self.assertIn("publisher credentials: Pinterest", failures)
 
-    @patch("scripts.monitor_run.requests.get")
-    def test_missing_facebook_review_permission_is_a_clear_skip(self, get):
+    def test_missing_facebook_review_permission_is_a_clear_skip(self):
         response = Mock()
         response.status_code = 400
         response.json.return_value = {"error": {"code": 283}}
-        get.return_value = response
         old_value = monitor_run.REPORT["facebook_recommendations"]
         try:
-            with patch.dict(
+            with patch.object(
+                monitor_run.requests,
+                "get",
+                return_value=response,
+            ), patch.dict(
                 os.environ,
                 {"FACEBOOK_PAGE_ID": "1", "FACEBOOK_PAGE_TOKEN": "token"},
                 clear=True,
@@ -304,6 +306,49 @@ class MonitorGeoTests(unittest.TestCase):
             ):
                 self.assertNotIn(
                     "SERP rank: no complete fresh measurement",
+                    monitor_run.critical_monitor_failures(),
+                )
+        finally:
+            monitor_run.REPORT["rank"] = old_rank
+
+    def test_serp_safety_budget_is_degraded_but_not_a_failed_run(self):
+        old_rank = monitor_run.REPORT["rank"]
+        monitor_run.REPORT["rank"] = [{
+            "status": "skipped",
+            "reason": "configured monthly SerpApi safety budget reached",
+        }]
+        try:
+            with patch.object(
+                monitor_run,
+                "HISTORY",
+                {},
+            ), patch.dict(
+                os.environ,
+                {"SERPAPI_KEY": "configured"},
+                clear=True,
+            ):
+                self.assertEqual(monitor_run.critical_monitor_failures(), [])
+                self.assertIn(
+                    "SERP rank: configured monthly SerpApi safety budget reached",
+                    monitor_run.monitor_degradations(),
+                )
+        finally:
+            monitor_run.REPORT["rank"] = old_rank
+
+    def test_serp_query_error_still_fails_the_monitor(self):
+        old_rank = monitor_run.REPORT["rank"]
+        monitor_run.REPORT["rank"] = [{
+            "status": "error",
+            "detail": "unexpected provider response",
+        }]
+        try:
+            with patch.dict(
+                os.environ,
+                {"SERPAPI_KEY": "configured"},
+                clear=True,
+            ):
+                self.assertIn(
+                    "SERP rank: 1 query errors",
                     monitor_run.critical_monitor_failures(),
                 )
         finally:

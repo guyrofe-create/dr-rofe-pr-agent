@@ -1,4 +1,8 @@
 name: Publish Dashboard-Approved Campaign
+run-name: >-
+  ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run
+      && 'CHECK ONLY — dashboard-approved campaign'
+      || 'PUBLISH — dashboard-approved campaign' }}
 
 on:
   schedule:
@@ -6,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Check the dashboard queue without publishing
+        description: Check only — do not publish the signed approved campaign
         required: true
-        default: true
+        default: false
         type: boolean
 
 permissions:
@@ -54,6 +58,23 @@ jobs:
             exit 1
           fi
           [[ -z "${draft_path}" ]] || echo "Signed P7 campaign ready: ${draft_path}"
+
+      - name: Report execution mode
+        if: always()
+        env:
+          DRAFT_PATH: ${{ steps.approval.outputs.draft_path }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: |
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            echo "### CHECK ONLY — no publication was attempted" >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "### PUBLISH MODE — signed dashboard approval required" >> "${GITHUB_STEP_SUMMARY}"
+          fi
+          if [[ -n "${DRAFT_PATH}" ]]; then
+            echo "Approved campaign found: \`${DRAFT_PATH}\`" >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "No approved campaign was waiting in the dashboard queue." >> "${GITHUB_STEP_SUMMARY}"
+          fi
 
       - name: Install dependencies
         if: >-
