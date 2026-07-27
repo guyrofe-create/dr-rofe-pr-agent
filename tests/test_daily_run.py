@@ -54,6 +54,70 @@ class DailyRunTests(unittest.TestCase):
             self.assertIn('"path":', payload)
             self.assertIn("כותרת", payload)
 
+    def test_repeated_runs_rotate_to_the_least_recently_used_topic(self):
+        topics = ["נושא א", "נושא ב", "נושא ג"]
+        now = datetime(2026, 7, 27, 9, 30, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "index.json").write_text(
+                json.dumps(
+                    {
+                        "drafts": [
+                            {
+                                "topic": "נושא א",
+                                "generated_at": "2026-07-27T09:00:00+00:00",
+                            },
+                            {
+                                "topic": "נושא ב",
+                                "generated_at": "2026-07-26T09:00:00+00:00",
+                            },
+                        ]
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            with (
+                patch.object(daily_run, "TOPICS", topics),
+                patch.dict(os.environ, {"CONTENT_DRAFT_DIR": directory}),
+            ):
+                _, topic = daily_run.selected_topic(now)
+            self.assertEqual(topic, "נושא ג")
+
+    def test_topic_rotation_reuses_only_the_oldest_after_full_cycle(self):
+        topics = ["נושא א", "נושא ב", "נושא ג"]
+        now = datetime(2026, 7, 27, 9, 30, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "index.json").write_text(
+                json.dumps(
+                    {
+                        "drafts": [
+                            {
+                                "topic": "נושא א",
+                                "generated_at": "2026-07-27T09:00:00+00:00",
+                            },
+                            {
+                                "topic": "נושא ב",
+                                "generated_at": "2026-07-26T09:00:00+00:00",
+                            },
+                            {
+                                "topic": "נושא ג",
+                                "generated_at": "2026-07-25T09:00:00+00:00",
+                            },
+                        ]
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            with (
+                patch.object(daily_run, "TOPICS", topics),
+                patch.dict(os.environ, {"CONTENT_DRAFT_DIR": directory}),
+            ):
+                _, topic = daily_run.selected_topic(now)
+            self.assertEqual(topic, "נושא ג")
+
     def test_each_github_run_gets_its_own_draft_path(self):
         with tempfile.TemporaryDirectory() as directory:
             now = datetime(2026, 7, 25, 9, 30, tzinfo=timezone.utc)

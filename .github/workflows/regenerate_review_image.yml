@@ -1,0 +1,86 @@
+name: Regenerate Dashboard Review Image
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: review-image-regeneration
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Check image regeneration queue
+        id: image
+        env:
+          APPROVAL_URL: https://dr-rofe-reputation-center.guyrofe.chatgpt.site
+          APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
+        run: |
+          response="$(curl --fail --silent --show-error \
+            -H "Authorization: Bearer ${APPROVAL_SIGNING_SECRET}" \
+            "${APPROVAL_URL}/api/images/next")"
+          draft_path="$(jq -r '.draft_path // empty' <<<"${response}")"
+          echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
+          if [[ -n "${draft_path}" ]]; then
+            echo "Image regeneration requested for ${draft_path}"
+          else
+            echo "No image regeneration request is waiting."
+          fi
+
+      - name: Install dependencies
+        if: steps.image.outputs.draft_path != ''
+        run: pip install -r requirements.txt
+
+      - name: Generate and review a replacement image only
+        if: steps.image.outputs.draft_path != ''
+        run: >-
+          python scripts/prepare_approval_bundle.py
+          "${{ steps.image.outputs.draft_path }}"
+          --generate-image
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
+          OPENAI_IMAGE_REVIEW_MODEL: ${{ vars.OPENAI_IMAGE_REVIEW_MODEL || 'gpt-5.6' }}
+
+      - name: Commit the replacement image and exact bundle
+        if: steps.image.outputs.draft_path != ''
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add approval_bundles/
+          git diff --cached --quiet || git commit -m "Regenerate review image ${{ github.run_id }}"
+          git pull --rebase
+          git push
+
+      - name: Update dashboard image status
+        if: always() && steps.image.outputs.draft_path != ''
+        env:
+          APPROVAL_URL: https://dr-rofe-reputation-center.guyrofe.chatgpt.site
+          APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
+          DRAFT_PATH: ${{ steps.image.outputs.draft_path }}
+          RESULT: ${{ job.status }}
+        run: |
+          status="failed"
+          [[ "${RESULT}" == "success" ]] && status="ready"
+          jq -n \
+            --arg draftPath "${DRAFT_PATH}" \
+            --arg status "${status}" \
+            '{draftPath: $draftPath, status: $status}' |
+            curl --fail --silent --show-error \
+              -H "Authorization: Bearer ${APPROVAL_SIGNING_SECRET}" \
+              -H "Content-Type: application/json" \
+              --data-binary @- \
+              "${APPROVAL_URL}/api/images/next"

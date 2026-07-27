@@ -24,8 +24,9 @@ from publication_policy import (
 CONTENT_PLAN = client_content_plan()
 TOPICS = CONTENT_PLAN.get("topics", [])
 TAGS = CONTENT_PLAN.get("tags", [])
-MIN_ARTICLE_WORDS = 650
-MAX_ARTICLE_WORDS = 1000
+MIN_ARTICLE_WORDS = 900
+TARGET_ARTICLE_WORDS = "1100-1400"
+MAX_ARTICLE_WORDS = 1800
 LOG_LINES = []
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CLIENT_PROFILE = load_client_profile()
@@ -69,7 +70,38 @@ def selected_topic(now=None):
     now = now or utc_now()
     week = now.isocalendar()[1]
     day = now.weekday()
-    index = (week * 3 + day) % len(TOPICS)
+    start = (week * 3 + day) % len(TOPICS)
+    index_path = draft_root() / "index.json"
+    try:
+        history = json.loads(index_path.read_text(encoding="utf-8")).get(
+            "drafts", []
+        )
+    except (OSError, ValueError, TypeError):
+        history = []
+
+    last_seen = {}
+    for item in history:
+        topic = item.get("topic")
+        generated_at = item.get("generated_at", "")
+        if topic in TOPICS and generated_at > last_seen.get(topic, ""):
+            last_seen[topic] = generated_at
+
+    ordered_indexes = [
+        (start + offset) % len(TOPICS) for offset in range(len(TOPICS))
+    ]
+    never_used = [
+        index for index in ordered_indexes if TOPICS[index] not in last_seen
+    ]
+    if never_used:
+        index = never_used[0]
+    else:
+        index = min(
+            ordered_indexes,
+            key=lambda candidate: (
+                last_seen[TOPICS[candidate]],
+                ordered_indexes.index(candidate),
+            ),
+        )
     return index, TOPICS[index]
 
 
@@ -131,7 +163,8 @@ def generation_messages(base_prompt, previous_content=None, last_error=None):
                     "role": "user",
                     "content": (
                         "הטיוטה הזו לא עברה בקרת איכות: "
-                        f"{last_error}. הרחב ושפר את אותה טיוטה עד 750-850 "
+                        f"{last_error}. הרחב ושפר את אותה טיוטה עד "
+                        f"{TARGET_ARTICLE_WORDS} "
                         "מילים. שמור על הכותרת, המבנה והמידע הקיים, הוסף "
                         "הסברים שימושיים שאינם חוזרים על עצמם, ואל תתחיל "
                         "מאמר חדש. החזר רק את המאמר המורחב."
@@ -165,9 +198,10 @@ def generate_article(topic):
 נושא: {topic}
 
 דרישות:
-- אורך: 750-850 מילים; ספור את המילים לפני ההחזרה
+- אורך יעד: {TARGET_ARTICLE_WORDS} מילים; לעולם לא פחות
+  מ-{MIN_ARTICLE_WORDS} מילים, ובלי מלל מנופח או חזרות מלאכותיות
 - שפה: עברית מקצועית אך נגישה לקהל רחב
-- מבנה: כותרת ראשית H1, מבוא, 3-4 סעיפים עם כותרות H2, סיכום
+- מבנה: כותרת ראשית H1, מבוא, 4-6 סעיפים עם כותרות H2, סיכום
 - פתח בתשובה ישירה וקצרה לשאלה המרכזית ורק לאחר מכן הרחב
 - השתמש בטבלה רק כאשר היא משפרת השוואה אמיתית; אין להוסיף טבלה לקישוט
 - הוסף FAQ רק אם קיימות שאלות שימושיות שלא נענו היטב בגוף המאמר
