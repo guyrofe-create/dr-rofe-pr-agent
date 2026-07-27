@@ -1,6 +1,21 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-07-27-topic-06-run-30255219272-attempt-1.md",
+      "title": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+      "status": "failed",
+      "published_at": "2026-07-27T11:51:06.583084+00:00",
+      "destinations": [
+        {
+          "name": "Campaign",
+          "status": "failed",
+          "detail": "https://guyrofe.com returned a non-JSON response to the WordPress API lookup"
+        }
+      ],
+      "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-07-27-topic-05.md",
       "title": "כאבי מחזור קשים: כמה כאב נחשב נורמלי?",
       "status": "completed",
