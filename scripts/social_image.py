@@ -2,8 +2,8 @@
 
 The product first looks for a verified Wikimedia Commons photograph with a
 compatible license. If none is suitable, GPT Image creates a text-free
-editorial visual. A local text-free fallback guarantees that a review bundle
-never finishes without an image.
+editorial visual. Generated visuals are reviewed and regenerated when they are
+off-topic, contain text, or introduce misleading medical details.
 """
 
 import base64
@@ -16,17 +16,13 @@ from io import BytesIO
 from urllib.parse import quote
 
 import requests
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image
 
 from reputation_core.strategy import load_client_profile
 
 _CLIENT_FACTS = load_client_profile()["canonical_facts"]
 _CLIENT_NAME = _CLIENT_FACTS["primary_name"]
 _CLIENT_SITE = _CLIENT_FACTS["canonical_site"]
-_VISUAL_EXCLUSIONS = load_client_profile().get(
-    "publication_guardrails", {}
-).get("visual_exclusions", [])
-
 COMMONS_API_URL = "https://commons.wikimedia.org/w/api.php"
 COMMONS_USER_AGENT = (
     f"ReputationAgentPublisher/1.0 ({_CLIENT_SITE}; licensed-photo-selector)"
@@ -59,6 +55,7 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
 PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 10
 MAX_REVIEWED_CANDIDATES = 12
+MAX_GENERATION_ATTEMPTS = 4
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -122,10 +119,7 @@ def alt_text(title, description=None, entity_relevant=None):
     )
     base = " ".join((description or visual_description(clean_title)).split())
     if relevant:
-        base = (
-            f"{base.rstrip(' .')}, מלווה מאמר של {_CLIENT_NAME} "
-            f"בנושא {_topic_without_client(clean_title)}"
-        )
+        base = f"{base.rstrip(' .')}, מלווה מאמר של {_CLIENT_NAME}"
         for variant in sorted(name_variants, key=len, reverse=True):
             if variant != _CLIENT_NAME:
                 base = base.replace(variant, "")
@@ -148,20 +142,22 @@ def _metadata_value(metadata, key):
 
 
 def _search_query_prompt(title, summary):
-    exclusions = ", ".join(str(item) for item in _VISUAL_EXCLUSIONS)
     return (
         "Create five English Wikimedia Commons keyword queries for a real "
         "editorial photograph that directly illustrates this Hebrew medical "
         "article. Each query must contain only 2-4 concrete searchable words, "
         "not a sentence or metaphor. Name visible subjects, objects or places. "
-        "Do not request a doctor, clinic, surgery, text, "
-        "diagram, illustration, infographic, icon, or AI image. Avoid these "
-        f"client exclusions: {exclusions or 'none'}. For articles about evaluating "
+        "Prefer relevant medical equipment, instruments, research objects or an "
+        "empty clinical environment. Do not request identifiable patients, a "
+        "doctor treating a patient, readable text, a diagram, illustration, "
+        "infographic, icon, or AI image. Do not request pregnancy, fetal or newborn "
+        "imagery unless the exact article requires it. For articles about evaluating "
         "online information, prefer an adult comparing information on a laptop or "
         "tablet, consulting reference books, or studying in a library; do not "
         "request screenshots or readable on-screen text. "
         "Return JSON only in this exact form: "
         '{"queries":["query 1","query 2","query 3","query 4","query 5"]}.\n'
+        f"Preferred visible subject: {_topic_visual_brief(title)}\n"
         f"Title: {' '.join((title or '').split())}\n"
         f"Context: {' '.join((summary or '').split())[:2400]}"
     )
@@ -313,9 +309,11 @@ def review_relevance(client, image_bytes, media_type, title, summary):
                             "request. Accept it only if it is clearly relevant to "
                             "the exact article and is a normal believable photo. "
                             "Reject generic wellness imagery, doctors or clinics "
-                            "not required by the article, illustrations, diagrams, "
-                            "screenshots, text-heavy images, or content that could "
-                            "mislead readers. Return exactly one line. If suitable: "
+                            "not required by the article, identifiable people shown "
+                            "as suffering from a condition, illustrations, diagrams, "
+                            "screenshots, text-heavy images, pregnancy or fetal "
+                            "imagery unless the exact article requires it, or content "
+                            "that could mislead readers. Return exactly one line. If suitable: "
                             "ACCEPT: followed by a concrete truthful Hebrew alt-text "
                             "description of only what is visibly present. Otherwise: "
                             "REJECT: followed by a short reason.\n\n"
@@ -453,19 +451,67 @@ def select_licensed_photo(title, summary, client=None):
     )
 
 
-def _image_prompt(title, summary):
-    exclusions = ", ".join(str(item) for item in _VISUAL_EXCLUSIONS)
+def _topic_visual_brief(title):
+    """Choose a concrete, medically relevant, people-free subject."""
+    topic = _topic_without_client(title)
+    if "מיומ" in topic:
+        return (
+            "gynecological ultrasound equipment and a transvaginal ultrasound "
+            "probe in a clean examination room, with no people. Any monitor must "
+            "be dark or show only abstract non-obstetric waveforms: absolutely no "
+            "fetus, pregnancy scan, labels or readable interface"
+        )
+    if "לפרוסקופ" in topic:
+        return (
+            "laparoscopic camera equipment, trocars and minimally invasive "
+            "surgical instruments arranged on a sterile blue drape in an "
+            "operating room, with no people and no graphic body content"
+        )
+    if "אנדומטריוז" in topic or "פוריות" in topic:
+        return (
+            "a modern fertility research laboratory workbench with microscope, "
+            "closed sample dishes and precise laboratory tools, with no people, "
+            "embryos, pregnancy imagery or labels"
+        )
+    if "כאבי אגן" in topic or "אגן כרוני" in topic:
+        return (
+            "a neutral pelvic anatomy teaching model beside a closed notebook and "
+            "a warm compress on a calm medical-education desk, with no people and "
+            "no graphic anatomy"
+        )
+    if "מידע רפואי" in topic or "מקור אמין" in topic or "ברשת" in topic:
+        return (
+            "a laptop, magnifying glass and several medical reference books on a "
+            "research desk, with no people and every screen and page fully blurred "
+            "and unreadable"
+        )
     return (
-        "Create a premium editorial hero image for a Hebrew evidence-based "
-        "medical information article. Use a calm, sophisticated teal, navy and "
-        "warm neutral palette, photographic or high-end editorial collage style, "
-        "with generous negative space. The visual must illustrate the topic "
-        "without making a diagnostic or treatment claim. Do not depict a doctor, "
-        "patient consultation, clinic, surgery, procedure, anatomy, medication, "
-        "logos, faces presented as the author, or readable text. Do not add any "
-        "letters, words, labels, captions, watermarks or typography. The image "
-        "will be published exactly as generated, with no text overlay. Avoid: "
-        f"{exclusions or 'none'}.\n"
+        "topic-relevant medical education equipment and research objects, with "
+        "no people, no graphic content and no implication that the article author "
+        "provides medical services"
+    )
+
+
+def _image_prompt(title, summary, rejection_feedback=""):
+    feedback = (
+        f"\nA previous attempt was rejected for: {rejection_feedback}. Correct it."
+        if rejection_feedback
+        else ""
+    )
+    return (
+        "Create a realistic, premium editorial hero photograph for a Hebrew "
+        "evidence-based medical information article. It must directly and "
+        "unmistakably match the article topic. Use a calm, sophisticated teal, "
+        "navy and warm-neutral palette and natural photographic lighting. "
+        f"Required visible subject: {_topic_visual_brief(title)}. "
+        "Do not depict identifiable people, a doctor treating a patient, a face "
+        "presented as the author, logos, a clinic brand, or a diagnostic or "
+        "treatment claim. Do not add any letters, words, numbers, labels, captions, "
+        "watermarks, interface text or typography anywhere. Do not show pregnancy, "
+        "a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the "
+        "required visible subject explicitly asks for it. The image will be "
+        "published exactly as generated, with no text overlay."
+        f"{feedback}\n"
         f"Article title: {' '.join((title or '').split())}\n"
         f"Article context: {' '.join((summary or '').split())[:1800]}"
     )
@@ -484,9 +530,9 @@ def _response_image_bytes(response):
     raise RuntimeError("Image API returned neither b64_json nor URL")
 
 
-def _generate_editorial_base(client, title, summary):
+def _generate_editorial_base(client, title, summary, rejection_feedback=""):
     model = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2")
-    prompt = _image_prompt(title, summary)
+    prompt = _image_prompt(title, summary, rejection_feedback)
     response = client.images.generate(
         model=model,
         prompt=prompt,
@@ -501,28 +547,56 @@ def _generate_editorial_base(client, title, summary):
     return image, model, prompt
 
 
-def _fallback_editorial_base():
-    width, height = 1600, 1067
-    image = Image.new("RGB", (width, height), "#123b57")
-    draw = ImageDraw.Draw(image, "RGBA")
-    for y in range(height):
-        ratio = y / max(height - 1, 1)
-        color = (
-            int(18 + 28 * ratio),
-            int(59 + 62 * ratio),
-            int(87 + 55 * ratio),
-        )
-        draw.line((0, y, width, y), fill=color)
-    draw.ellipse((-180, 420, 740, 1340), fill=(42, 157, 143, 115))
-    draw.ellipse((980, -280, 1820, 560), fill=(238, 181, 98, 80))
-    draw.rounded_rectangle(
-        (900, 380, 1480, 820),
-        radius=70,
-        fill=(255, 255, 255, 28),
-        outline=(255, 255, 255, 48),
-        width=3,
+def review_generated_visual(client, image, title, summary):
+    """Reject generated visuals that are misleading, off-topic or text-bearing."""
+    encoded = base64.b64encode(_png_bytes(image)).decode("ascii")
+    response = client.responses.create(
+        model=os.environ.get("OPENAI_IMAGE_REVIEW_MODEL", "gpt-5.6"),
+        input=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "input_text",
+                        "text": (
+                            "Act as an extremely strict senior medical photo editor. "
+                            "Review this generated image before publication. Accept "
+                            "only when it clearly illustrates the exact article topic, "
+                            "looks professional and believable, contains absolutely no "
+                            "visible letters, words, numbers, logos, captions, labels, "
+                            "watermarks or readable interface text, contains no "
+                            "identifiable person presented as ill or treated, and has "
+                            "no pregnancy, fetal, newborn or maternity imagery unless "
+                            "the exact topic requires it. Reject generic medical "
+                            "decoration, wrong procedures, misleading screens, malformed "
+                            "equipment or anatomy, and any uncertain case. Return one "
+                            "line only. If suitable: ACCEPT: followed by a precise "
+                            "natural Hebrew description of what is visibly present. "
+                            "Otherwise: REJECT: followed by the concrete defect.\n\n"
+                            f"Title: {title}\n"
+                            f"Context: {' '.join((summary or '').split())[:1800]}"
+                        ),
+                    },
+                    {
+                        "type": "input_image",
+                        "image_url": f"data:image/png;base64,{encoded}",
+                    },
+                ],
+            }
+        ],
+        reasoning={"effort": "medium"},
+        text={"verbosity": "low"},
+        max_output_tokens=220,
     )
-    return image.filter(ImageFilter.GaussianBlur(radius=0.6))
+    verdict = " ".join((response.output_text or "").split())
+    if verdict.upper().startswith("ACCEPT:"):
+        description = verdict.split(":", 1)[1].strip()
+        if len(description) < 12:
+            raise RuntimeError("Generated-image review returned no useful description")
+        return True, description
+    if verdict.upper().startswith("REJECT:"):
+        return False, verdict.split(":", 1)[1].strip()
+    raise RuntimeError(f"Generated-image review returned invalid output: {verdict[:120]}")
 
 
 def _fit_cover(image, size):
@@ -551,7 +625,7 @@ def _png_bytes(image):
 
 
 def generate(title, summary, client=None):
-    """Return licensed-first, text-free variants and never omit the image."""
+    """Return a licensed or generated image only after strict visual review."""
     if client is None:
         try:
             from openai import OpenAI
@@ -594,36 +668,48 @@ def generate(title, summary, client=None):
         except Exception:
             licensed = None
 
-    source_type = "openai_generated_text_free_visual"
-    model = ""
-    prompt = _image_prompt(title, summary)
-    try:
-        if client is None:
-            raise RuntimeError("OpenAI image client unavailable")
-        base, model, prompt = _generate_editorial_base(client, title, summary)
-    except Exception:
-        base = _fallback_editorial_base()
-        source_type = "deterministic_text_free_fallback"
-        model = "local-text-free-template-v1"
+    if client is None:
+        raise RuntimeError(
+            "No reviewed image can be created because the OpenAI image client is unavailable"
+        )
+    feedback = ""
+    failures = []
+    for attempt in range(1, MAX_GENERATION_ATTEMPTS + 1):
+        try:
+            base, model, prompt = _generate_editorial_base(
+                client, title, summary, feedback
+            )
+            accepted, review = review_generated_visual(
+                client, base, title, summary
+            )
+        except Exception as exc:
+            failures.append(f"attempt {attempt}: {type(exc).__name__}")
+            feedback = f"technical or review failure ({type(exc).__name__})"
+            continue
+        if accepted:
+            description = review
+            break
+        feedback = review
+        failures.append(f"attempt {attempt}: {review[:160]}")
+    else:
+        raise RuntimeError(
+            "No generated image passed strict topic, text and medical-safety review. "
+            + " | ".join(failures)
+        )
     variants = {
         "hero": _png_bytes(_fit_cover(base, (1600, 900))),
         "landscape": _png_bytes(_fit_cover(base, (1200, 630))),
         "square": _png_bytes(_fit_cover(base, (1200, 1200))),
         "portrait": _png_bytes(_fit_cover(base, (1080, 1350))),
     }
-    description = visual_description(title)
     return SocialImage(
         content=variants["landscape"],
         media_type="image/png",
         extension="png",
         visual_description=description,
-        creator="OpenAI" if model != "local-text-free-template-v1" else "",
-        attribution=(
-            "Text-free visual created with OpenAI"
-            if source_type == "openai_generated_text_free_visual"
-            else "Deterministic text-free fallback visual"
-        ),
-        source_type=source_type,
+        creator="OpenAI",
+        attribution="Text-free visual created with OpenAI and passed visual review",
+        source_type="openai_generated_text_free_visual",
         generation_model=model,
         generation_prompt=prompt,
         variants=variants,

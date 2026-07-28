@@ -45,7 +45,7 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(len(queries), 3)
         prompt = client.responses.create.call_args.kwargs["input"]
         self.assertIn("real editorial photograph", prompt)
-        self.assertIn("Do not request a doctor", prompt)
+        self.assertIn("a doctor treating a patient", prompt)
         self.assertIn("evaluating online information", prompt)
         self.assertIn("2-4 concrete searchable words", prompt)
 
@@ -162,6 +162,9 @@ class SocialImageTests(unittest.TestCase):
                 )
             ]
         )
+        client.responses.create.return_value = SimpleNamespace(
+            output_text="ACCEPT: צילום של מחשב נייד, זכוכית מגדלת וספרי רפואה"
+        )
 
         result = social_image.generate(
             "איך להעריך מידע רפואי ברשת | ד״ר גיא רופא",
@@ -186,6 +189,7 @@ class SocialImageTests(unittest.TestCase):
         call = client.images.generate.call_args.kwargs
         self.assertEqual(call["model"], "gpt-image-2")
         self.assertIn("Do not add any letters", call["prompt"])
+        self.assertIn("laptop, magnifying glass", call["prompt"])
         select.assert_called_once()
 
     @patch("scripts.social_image.select_licensed_photo")
@@ -218,35 +222,75 @@ class SocialImageTests(unittest.TestCase):
         "scripts.social_image.select_licensed_photo",
         side_effect=social_image.PhotoSelectionError("none"),
     )
-    def test_generate_falls_back_locally_and_never_returns_without_image(self, select):
+    def test_generate_fails_closed_when_image_api_is_unavailable(self, select):
         client = Mock()
         client.images.generate.side_effect = TimeoutError("image API unavailable")
 
-        result = social_image.generate("כותרת", "תקציר", client=client)
-
-        self.assertEqual(result.source_type, "deterministic_text_free_fallback")
-        self.assertGreater(len(result.content), 10_000)
-        self.assertEqual(set(result.variants), {"hero", "landscape", "square", "portrait"})
+        with self.assertRaisesRegex(
+            RuntimeError, "No generated image passed strict"
+        ):
+            social_image.generate("כותרת", "תקציר", client=client)
+        self.assertEqual(
+            client.images.generate.call_count, social_image.MAX_GENERATION_ATTEMPTS
+        )
 
     @patch.dict(os.environ, {}, clear=True)
-    def test_generate_falls_back_when_openai_key_is_missing(self):
-        result = social_image.generate("כותרת", "תקציר")
-
-        self.assertEqual(result.source_type, "deterministic_text_free_fallback")
-        self.assertEqual(set(result.variants), {"hero", "landscape", "square", "portrait"})
+    def test_generate_fails_closed_when_openai_key_is_missing(self):
+        with self.assertRaisesRegex(RuntimeError, "OpenAI image client is unavailable"):
+            social_image.generate("כותרת", "תקציר")
 
     @patch(
         "scripts.social_image.select_licensed_photo",
         side_effect=RuntimeError("unexpected Commons failure"),
     )
-    def test_unexpected_photo_search_failure_still_returns_an_image(self, select):
+    def test_unexpected_photo_search_failure_still_uses_reviewed_generation(self, select):
         client = Mock()
-        client.images.generate.side_effect = TimeoutError("image API unavailable")
-
+        source = BytesIO()
+        Image.new("RGB", (1536, 1024), "#4f7f87").save(source, format="PNG")
+        client.images.generate.return_value = SimpleNamespace(
+            data=[
+                SimpleNamespace(
+                    b64_json=base64.b64encode(source.getvalue()).decode("ascii")
+                )
+            ]
+        )
+        client.responses.create.return_value = SimpleNamespace(
+            output_text="ACCEPT: צילום של ציוד רפואי רלוונטי ללא מלל"
+        )
         result = social_image.generate("כותרת", "תקציר", client=client)
 
-        self.assertEqual(result.source_type, "deterministic_text_free_fallback")
-        self.assertGreater(len(result.content), 10_000)
+        self.assertEqual(result.source_type, "openai_generated_text_free_visual")
+        self.assertGreater(len(result.content), 2_000)
+
+    @patch(
+        "scripts.social_image.select_licensed_photo",
+        side_effect=social_image.PhotoSelectionError("none"),
+    )
+    def test_rejected_generated_image_is_retried_with_feedback(self, select):
+        source = BytesIO()
+        Image.new("RGB", (1536, 1024), "#4f7f87").save(source, format="PNG")
+        client = Mock()
+        client.images.generate.return_value = SimpleNamespace(
+            data=[
+                SimpleNamespace(
+                    b64_json=base64.b64encode(source.getvalue()).decode("ascii")
+                )
+            ]
+        )
+        client.responses.create.side_effect = [
+            SimpleNamespace(output_text="REJECT: visible text on monitor"),
+            SimpleNamespace(output_text="ACCEPT: צילום של ציוד אולטרסאונד ללא מלל"),
+        ]
+
+        result = social_image.generate(
+            "מיומות ברחם | ד״ר גיא רופא", "בירור באמצעות אולטרסאונד", client=client
+        )
+
+        self.assertEqual(client.images.generate.call_count, 2)
+        second_prompt = client.images.generate.call_args.kwargs["prompt"]
+        self.assertIn("visible text on monitor", second_prompt)
+        self.assertIn("absolutely no fetus", second_prompt)
+        self.assertIn("ציוד אולטרסאונד", result.visual_description)
 
     def test_commons_candidate_rejects_ai_or_illustration(self):
         page = {

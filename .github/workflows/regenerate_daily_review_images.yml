@@ -1,0 +1,77 @@
+name: Regenerate Daily Review Images
+
+on:
+  workflow_dispatch:
+    inputs:
+      draft_date:
+        description: Draft date to regenerate (YYYY-MM-DD)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-review-image-regeneration
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Validate requested date
+        run: |
+          if [[ ! "${{ inputs.draft_date }}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::draft_date must use YYYY-MM-DD"
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Regenerate every review image for the date
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
+          DRAFT_DATE: ${{ inputs.draft_date }}
+        run: |
+          shopt -s nullglob
+          drafts=(content_drafts/"${DRAFT_DATE}"-*.md)
+          if (( ${#drafts[@]} == 0 )); then
+            echo "::error::No drafts found for ${DRAFT_DATE}"
+            exit 1
+          fi
+          for draft_path in "${drafts[@]}"; do
+            echo "Regenerating reviewed visual package for ${draft_path}"
+            python scripts/prepare_approval_bundle.py \
+              "${draft_path}" \
+              --generate-image \
+              --result-path "${RUNNER_TEMP}/$(basename "${draft_path}").json"
+          done
+
+      - name: Commit all replacement variants and exact approval bundles
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add approval_bundles/
+          git diff --cached --quiet || \
+            git commit -m "Regenerate review images for ${{ inputs.draft_date }}"
+          git pull --rebase
+          git push
+
+      - name: Show review link
+        run: |
+          {
+            echo "## כל תמונות הטיוטות הוחלפו"
+            echo
+            echo "[פתח את מרכז האישורים](https://dr-rofe-reputation-center.guyrofe.chatgpt.site)"
+            echo
+            echo "כל תמונה עברה בדיקת התאמה לנושא, היעדר מלל, היעדר דימויי הריון שגויים ובטיחות רפואית לפני שנכנסה לחבילת האישור."
+          } >> "${GITHUB_STEP_SUMMARY}"

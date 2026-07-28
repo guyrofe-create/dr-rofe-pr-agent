@@ -104,8 +104,11 @@
       "available for appointments"
     ],
     "visual_exclusions": [
-      "doctor or patient scene", "clinic or consultation scene",
-      "surgery or procedure", "anatomical diagram", "diagnostic claim",
+      "identifiable doctor or patient presented as treating or suffering from a condition",
+      "active clinic consultation implying current medical services",
+      "graphic surgery or exposed body procedure", "misleading anatomical diagram",
+      "pregnancy or fetal imagery unrelated to the exact topic", "readable text in image",
+      "malformed medical equipment", "diagnostic claim",
       "treatment claim", "current service or appointment availability"
     ]
   },
