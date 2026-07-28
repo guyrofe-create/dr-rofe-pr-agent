@@ -55,7 +55,7 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
 PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 10
 MAX_REVIEWED_CANDIDATES = 12
-MAX_GENERATION_ATTEMPTS = 4
+MAX_GENERATION_ATTEMPTS = 3
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -170,6 +170,7 @@ def build_search_queries(client, title, summary):
         reasoning={"effort": "low"},
         text={"verbosity": "low"},
         max_output_tokens=180,
+        timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "90")),
     )
     raw = (response.output_text or "").strip()
     raw = re.sub(r"\A```(?:json)?\s*|\s*```\Z", "", raw, flags=re.IGNORECASE)
@@ -331,6 +332,7 @@ def review_relevance(client, image_bytes, media_type, title, summary):
         reasoning={"effort": "low"},
         text={"verbosity": "low"},
         max_output_tokens=180,
+        timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "90")),
     )
     verdict = " ".join((response.output_text or "").split())
     if verdict.upper().startswith("ACCEPT:"):
@@ -539,6 +541,7 @@ def _generate_editorial_base(client, title, summary, rejection_feedback=""):
         size="1536x1024",
         quality=os.environ.get("OPENAI_IMAGE_QUALITY", "high"),
         output_format="png",
+        timeout=float(os.environ.get("OPENAI_IMAGE_TIMEOUT_SECONDS", "150")),
     )
     content = _response_image_bytes(response)
     image = Image.open(BytesIO(content)).convert("RGB")
@@ -587,6 +590,7 @@ def review_generated_visual(client, image, title, summary):
         reasoning={"effort": "medium"},
         text={"verbosity": "low"},
         max_output_tokens=220,
+        timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "90")),
     )
     verdict = " ".join((response.output_text or "").split())
     if verdict.upper().startswith("ACCEPT:"):

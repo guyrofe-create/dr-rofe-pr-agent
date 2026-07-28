@@ -55,17 +55,15 @@ jobs:
               --generate-image \
               --replace-existing-image-only \
               --result-path "${RUNNER_TEMP}/$(basename "${draft_path}").json"
+            git config user.name "dr-rofe-pr-agent"
+            git config user.email "actions@github.com"
+            git add approval_bundles/
+            if ! git diff --cached --quiet; then
+              git commit -m "Regenerate review image $(basename "${draft_path}")"
+              git pull --rebase
+              git push
+            fi
           done
-
-      - name: Commit all replacement variants and exact approval bundles
-        run: |
-          git config user.name "dr-rofe-pr-agent"
-          git config user.email "actions@github.com"
-          git add approval_bundles/
-          git diff --cached --quiet || \
-            git commit -m "Regenerate review images for ${{ inputs.draft_date }}"
-          git pull --rebase
-          git push
 
       - name: Show review link
         run: |
