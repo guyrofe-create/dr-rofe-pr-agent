@@ -86,10 +86,19 @@ def author_box(context: EntityContext) -> str:
     )
 
 
-def _article_body(markdown: str) -> str:
+def _looks_like_byline(line: str, context: EntityContext) -> bool:
+    stripped = (line or "").strip()
+    begins_with_by = bool(re.match(r"^[\[*_]*מאת(?:\s|\])", stripped))
+    names_client = any(variant in stripped for variant in context.name_variants)
+    return begins_with_by and names_client
+
+
+def _article_body(markdown: str, context: EntityContext) -> str:
     """Return editorial body only, excluding branded furniture and sources."""
     body = re.sub(r"^#\s+.+$", "", markdown or "", count=1, flags=re.MULTILINE)
-    body = re.sub(r"^מאת\s+\[.+?\]\(.+?\)\s*$", "", body, flags=re.MULTILINE)
+    body = "\n".join(
+        line for line in body.splitlines() if not _looks_like_byline(line, context)
+    )
     body = re.split(r"^##\s+על המחבר\s*$", body, maxsplit=1, flags=re.MULTILINE)[0]
     body = re.split(r"^##\s+מקורות\s*$", body, maxsplit=1, flags=re.MULTILINE)[0]
     return body.strip()
@@ -107,14 +116,22 @@ def apply_article_contract(markdown: str, profile: dict) -> str:
     if h1_index is None:
         return text
     lines[h1_index] = "# " + title_with_entity(lines[h1_index], context)
+    first_h2 = next(
+        (index for index, line in enumerate(lines) if re.match(r"^##\s+\S", line)),
+        len(lines),
+    )
+    lines = [
+        line
+        for index, line in enumerate(lines)
+        if index >= first_h2 or not _looks_like_byline(line, context)
+    ]
+    h1_index = next(
+        index for index, line in enumerate(lines) if re.match(r"^#\s+\S", line)
+    )
+    lines[h1_index + 1 : h1_index + 1] = ["", visible_byline(context)]
     text = "\n".join(lines).strip()
 
-    if visible_byline(context) not in text.split("\n## ", 1)[0]:
-        parts = text.splitlines()
-        parts[h1_index + 1 : h1_index + 1] = ["", visible_byline(context)]
-        text = "\n".join(parts).strip()
-
-    if context.canonical_name not in _article_body(text):
+    if context.canonical_name not in _article_body(text, context):
         byline = visible_byline(context)
         text = text.replace(
             byline,
@@ -157,10 +174,15 @@ def audit_article_entity_contract(markdown: str, profile: dict) -> EntityContrac
         "",
     )
     canonical_mentions = (markdown or "").count(context.canonical_name)
-    body_mentions = _article_body(markdown).count(context.canonical_name)
+    body_mentions = _article_body(markdown, context).count(context.canonical_name)
+    byline_lines = [
+        line
+        for line in (markdown or "").splitlines()
+        if _looks_like_byline(line, context)
+    ]
     checks = {
         "canonical_name_once_in_title": title.count(context.canonical_name) == 1,
-        "linked_visible_byline": visible_byline(context) in (markdown or ""),
+        "linked_visible_byline": byline_lines == [visible_byline(context)],
         "author_box": bool(
             re.search(r"^##\s+על המחבר\s*$", markdown or "", re.MULTILINE)
         ),

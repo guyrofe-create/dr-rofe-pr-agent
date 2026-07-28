@@ -126,6 +126,22 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertIn("## על המחבר", contracted)
         self.assertLess(contracted.index("## על המחבר"), contracted.index("## מקורות"))
 
+    def test_article_contract_replaces_model_byline_and_requires_real_body_mention(self):
+        profile = load_client_profile()
+        contracted = apply_article_contract(
+            "# כותרת\n\n"
+            "[מאת ד״ר גיא רופא](https://guyrofe.com)\n\n"
+            "תוכן עובדתי ללא אזכור בגוף.\n\n"
+            "## מקורות\n\nhttps://www.who.int/a",
+            profile,
+        )
+        report = audit_article_entity_contract(contracted, profile)
+
+        self.assertTrue(report.passed, report.errors)
+        self.assertEqual(contracted.count("מאת [ד״ר גיא רופא]"), 1)
+        self.assertNotIn("[מאת ד״ר גיא רופא]", contracted)
+        self.assertIn("מאגר המידע של ד״ר גיא רופא", contracted)
+
     def test_title_and_meta_description_use_name_once(self):
         profile = load_client_profile()
         context = build_entity_context(profile)
