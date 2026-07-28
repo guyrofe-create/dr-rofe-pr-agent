@@ -1,3 +1,4 @@
+import json
 import os
 import unittest
 from types import SimpleNamespace
@@ -42,23 +43,40 @@ class SocialImageTests(unittest.TestCase):
         self.assertIn("real editorial photograph", prompt)
         self.assertIn("Do not request a doctor", prompt)
         self.assertIn("evaluating online information", prompt)
+        self.assertIn("2-4 concrete searchable words", prompt)
+
+    def test_long_planner_phrases_are_compacted_for_commons(self):
+        queries = social_image.expand_search_queries(
+            [
+                "adult comparing health information on laptop and reference books",
+                "adult researching health information on tablet in library",
+            ]
+        )
+        self.assertEqual(queries[0], "adult health laptop books")
+        self.assertEqual(queries[1], "adult health tablet library")
+        self.assertIn(
+            "adult comparing health information on laptop and reference books",
+            queries,
+        )
 
     @patch("scripts.social_image.search_commons", return_value=[])
     def test_generate_reports_search_diagnostics_when_no_photo_is_found(self, search):
+        planned = [
+            "adult comparing health information laptop",
+            "person reading medical reference book",
+            "library health research",
+            "tablet health information research",
+            "adult studying reference sources",
+        ]
+        expected_searches = len(social_image.expand_search_queries(planned))
         client = Mock()
         client.responses.create.return_value = SimpleNamespace(
-            output_text=(
-                '{"queries":["adult comparing health information laptop",'
-                '"person reading medical reference book",'
-                '"library health research",'
-                '"tablet health information research",'
-                '"adult studying reference sources"]}'
-            )
+            output_text=json.dumps({"queries": planned})
         )
 
         with self.assertRaisesRegex(
             social_image.PhotoSelectionError,
-            r"queries=5.*unique_candidates=0.*reviewed=0",
+            rf"queries={expected_searches}.*unique_candidates=0.*reviewed=0",
         ):
             social_image.generate(
                 "איך להעריך מידע רפואי ברשת",
@@ -66,7 +84,7 @@ class SocialImageTests(unittest.TestCase):
                 client=client,
             )
 
-        self.assertEqual(search.call_count, 5)
+        self.assertEqual(search.call_count, expected_searches)
 
     def test_generate_preserves_draft_path_when_search_planner_fails(self):
         client = Mock()
