@@ -108,7 +108,7 @@ class CampaignRunTests(unittest.TestCase):
                     campaign_run.PROJECT_ROOT
                 ).as_posix(),
                 "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-                "source_type": "deterministic_branded_fallback",
+                "source_type": "deterministic_text_free_fallback",
             }
             image, remote = campaign_run._load_approved_local_image(media)
             self.assertEqual(image.content, b"approved-image")

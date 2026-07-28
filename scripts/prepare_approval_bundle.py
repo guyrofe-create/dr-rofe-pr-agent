@@ -100,21 +100,22 @@ def prepare_bundle(
             "must_match_approved_bytes_when_local": True,
         }
         if media["source_type"] in {
-            "openai_generated_branded_visual",
-            "deterministic_branded_fallback",
+            "wikimedia_commons_licensed_photo",
+            "openai_generated_text_free_visual",
+            "deterministic_text_free_fallback",
         }:
             required_roles = {"hero", "landscape", "square", "portrait"}
             missing_roles = required_roles - set(media["variants"])
             if missing_roles:
                 raise ValueError(
-                    "Branded image package is missing variants: "
+                    "Text-free image package is missing variants: "
                     + ", ".join(sorted(missing_roles))
                 )
             if (media["alt_text"] or "").count(
                 client["canonical_facts"]["primary_name"]
             ) != 1:
                 raise ValueError(
-                    "Branded image alt text must name the configured client once"
+                    "Image alt text must name the configured client once"
                 )
     credit = (
         (media or {}).get("attribution", "").strip()

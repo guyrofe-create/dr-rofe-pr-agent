@@ -39,7 +39,7 @@
     "canonical_source_required": true,
     "platform_native_summary_required": true,
     "natural_alt_text_required_when_supported": true,
-    "alt_text_name_pattern_he": "כרטיס מידע של ד״ר גיא רופא בנושא {subject}",
+    "alt_text_name_pattern_he": "תמונה המלווה מאמר של ד״ר גיא רופא בנושא {subject}",
     "answer_first_recommended": true,
     "sources_section_required_for_medical_articles": true,
     "minimum_authoritative_sources": 2,
