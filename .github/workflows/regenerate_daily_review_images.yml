@@ -7,6 +7,10 @@ on:
         description: Draft date to regenerate (YYYY-MM-DD)
         required: true
         type: string
+      topic_numbers:
+        description: Optional comma-separated topic numbers, for example 01,02,03
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -41,6 +45,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
           DRAFT_DATE: ${{ inputs.draft_date }}
+          TOPIC_NUMBERS: ${{ inputs.topic_numbers }}
         run: |
           shopt -s nullglob
           drafts=(content_drafts/"${DRAFT_DATE}"-*.md)
@@ -48,7 +53,21 @@ jobs:
             echo "::error::No drafts found for ${DRAFT_DATE}"
             exit 1
           fi
+          if [[ -n "${TOPIC_NUMBERS}" && ! "${TOPIC_NUMBERS}" =~ ^[0-9]{2}(,[0-9]{2})*$ ]]; then
+            echo "::error::topic_numbers must contain two-digit values separated by commas"
+            exit 1
+          fi
+          selected=0
           for draft_path in "${drafts[@]}"; do
+            draft_name="$(basename "${draft_path}")"
+            if [[ ! "${draft_name}" =~ -topic-([0-9]{2})- ]]; then
+              continue
+            fi
+            topic_number="${BASH_REMATCH[1]}"
+            if [[ -n "${TOPIC_NUMBERS}" && ",${TOPIC_NUMBERS}," != *",${topic_number},"* ]]; then
+              continue
+            fi
+            selected=$((selected + 1))
             echo "Regenerating reviewed visual package for ${draft_path}"
             python scripts/prepare_approval_bundle.py \
               "${draft_path}" \
@@ -64,6 +83,10 @@ jobs:
               git push
             fi
           done
+          if (( selected == 0 )); then
+            echo "::error::No drafts matched topic_numbers=${TOPIC_NUMBERS}"
+            exit 1
+          fi
 
       - name: Show review link
         run: |
