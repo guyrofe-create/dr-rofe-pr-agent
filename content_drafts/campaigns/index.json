@@ -1,6 +1,95 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-07-28-topic-03-run-30347171093-attempt-1.md",
+      "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-07-28T16:25:19.175812+00:00",
+      "destinations": [
+        {
+          "name": "guyrofe.com",
+          "status": "published",
+          "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-03-run-30347171093-attempt-1/",
+          "detail": "idempotency_key=pub_79eee6685a303947a46b57926dbbebad9d09ba33ee34ef1521eed5a2042789db"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/07/guy-rofe-pilot-2026-07-28-topic-03-run-30347171093-attempt-1-hero.png",
+          "detail": "openai_generated_text_free_visual"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "url": "https://www.facebook.com/122196610388942441",
+          "detail": "idempotency_key=pub_494cffe2e02519f493a4ef7d7b54fbed0a6bf5dd4bb9de2ec52240c1c6f34f2e"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7487906037862289409/",
+          "detail": "idempotency_key=pub_79650fd956a5f2d0f55c805428fb55b7e1024f9cef8b3fe818ad3b411dd58c9b"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "url": "https://guyrofe.blogspot.com/2026/07/blog-post_28.html",
+          "detail": "idempotency_key=pub_87558c5591cefe3e20bbcfa7e144484b57d1fb9ed9e55bdd8dce28a70a0fef4b"
+        },
+        {
+          "name": "Instagram",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם בו"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_configured"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "blocked",
+          "detail": "חיבור Wix קיים אך הרשאות הפרסום עדיין חסומות"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_2d676d9186b362769afc704091aee53ecc2edd2e105933bb103908d77b7c7ce5",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-07-27-topic-06-run-30255219272-attempt-1.md",
       "title": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
       "status": "failed",
