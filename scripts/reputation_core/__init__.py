@@ -45,6 +45,15 @@ from .entity_seo import (
     build_profile_page_schema,
     validate_media_metadata,
 )
+from .entity_contract import (
+    EntityContext,
+    EntityContractReport,
+    apply_article_contract,
+    audit_article_entity_contract,
+    build_entity_context,
+    meta_description,
+    title_with_entity,
+)
 from .platform_content import build_platform_variants, variants_are_distinct
 from .approval_workflow import (
     ExecutionLedger,
@@ -122,6 +131,13 @@ __all__ = [
     "build_person_schema",
     "build_profile_page_schema",
     "validate_media_metadata",
+    "EntityContext",
+    "EntityContractReport",
+    "apply_article_contract",
+    "audit_article_entity_contract",
+    "build_entity_context",
+    "meta_description",
+    "title_with_entity",
     "build_platform_variants",
     "variants_are_distinct",
     "ExecutionLedger",

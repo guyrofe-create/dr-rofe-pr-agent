@@ -3,13 +3,24 @@ from __future__ import annotations
 
 import re
 
+from .entity_contract import build_entity_context, title_with_entity
+from .strategy import load_client_profile
+
 
 def _clean(value: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"[#*_>`]", "", value or "")).strip()
 
 
 def _sentences(markdown: str) -> list[str]:
-    plain = _clean(re.sub(r"https?://\S+", "", markdown))
+    body = re.sub(r"^#\s+.+$", "", markdown or "", count=1, flags=re.MULTILINE)
+    body = re.sub(
+        r"^מאת\s+\[.+?\]\(.+?\)\s*$",
+        "",
+        body,
+        flags=re.MULTILINE,
+    )
+    body = re.split(r"^##\s+(?:על המחבר|מקורות)\s*$", body, maxsplit=1, flags=re.MULTILINE)[0]
+    plain = _clean(re.sub(r"https?://\S+", "", body))
     return [
         item.strip()
         for item in re.split(r"(?<=[.!?׃])\s+", plain)
@@ -17,26 +28,35 @@ def _sentences(markdown: str) -> list[str]:
     ]
 
 
-def build_platform_variants(title: str, markdown: str, canonical_url: str) -> dict:
+def build_platform_variants(
+    title: str,
+    markdown: str,
+    canonical_url: str,
+    profile: dict | None = None,
+) -> dict:
     """Deterministic transformations; facts remain bounded to approved content."""
+    context = build_entity_context(profile or load_client_profile())
+    branded_title = title_with_entity(title, context)
+    signature = f"מאת {context.canonical_name}"
     sentences = _sentences(markdown)
     lead = sentences[0] if sentences else _clean(title)
     detail = sentences[1] if len(sentences) > 1 else ""
     bullets = sentences[1:4] or [lead]
     return {
-        "facebook": f"{lead}\n\n{detail}".strip(),
+        "facebook": f"{lead}\n\n{detail}\n\n{signature}".strip(),
         "linkedin": (
-            f"{lead}\n\n" + "\n".join(f"• {item}" for item in bullets)
+            f"{lead}\n\n"
+            + "\n".join(f"• {item}" for item in bullets)
+            + f"\n\n{signature}"
         ),
         "pinterest": {
-            "title": _clean(title)[:100],
-            "description": f"{lead} {detail}".strip()[:500],
+            "title": _clean(branded_title)[:100],
+            "description": f"{lead} {detail} {signature}".strip()[:500],
         },
         "blogger": (
-            f"<h2>{_clean(title)}</h2><p>{lead}</p>"
+            f"<h2>{_clean(branded_title)}</h2><p>{signature}</p><p>{lead}</p>"
             + (f"<p>{detail}</p>" if detail else "")
         ),
-        "google_business": f"{lead}\n\nלמידע נוסף: {canonical_url}"[:1500],
     }
 
 

@@ -44,7 +44,7 @@ jobs:
         if: steps.image.outputs.draft_path != ''
         run: pip install -r requirements.txt
 
-      - name: Select, license and review a replacement real photo only
+      - name: Generate a replacement branded image package with guaranteed fallback
         if: steps.image.outputs.draft_path != ''
         run: >-
           python scripts/prepare_approval_bundle.py
@@ -53,9 +53,9 @@ jobs:
           --result-path "${RUNNER_TEMP}/image-selection-result.json"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_IMAGE_REVIEW_MODEL: ${{ vars.OPENAI_IMAGE_REVIEW_MODEL || 'gpt-5.6' }}
+          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
 
-      - name: Commit the licensed replacement photo and exact bundle
+      - name: Commit the replacement image variants and exact bundle
         if: steps.image.outputs.draft_path != ''
         run: |
           git config user.name "dr-rofe-pr-agent"

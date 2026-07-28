@@ -12,6 +12,14 @@ from scripts.reputation_core.entity_seo import (
     json_ld_script,
     validate_media_metadata,
 )
+from scripts.reputation_core.entity_contract import (
+    apply_article_contract,
+    audit_article_entity_contract,
+    build_entity_context,
+    meta_description,
+    title_with_entity,
+)
+from scripts.reputation_core.strategy import load_client_profile
 from scripts.reputation_core.platform_content import (
     build_platform_variants,
     variants_are_distinct,
@@ -100,6 +108,36 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertIn("•", variants["linkedin"])
         self.assertIsInstance(variants["pinterest"], dict)
         self.assertIn("<h2>", variants["blogger"])
+        for platform in ("facebook", "linkedin"):
+            self.assertEqual(variants[platform].count("ד״ר גיא רופא"), 1)
+        self.assertIn("ד״ר גיא רופא", variants["pinterest"]["title"])
+
+    def test_article_contract_binds_title_byline_author_box_and_profile(self):
+        profile = load_client_profile()
+        contracted = apply_article_contract(
+            "# כותרת נושאית\n\nתשובה ישירה ושימושית לקוראים.\n\n"
+            "## הסבר\n\nפירוט.\n\n## מקורות\n\nhttps://www.who.int/a",
+            profile,
+        )
+        report = audit_article_entity_contract(contracted, profile)
+        self.assertTrue(report.passed, report.errors)
+        self.assertIn("# כותרת נושאית | ד״ר גיא רופא", contracted)
+        self.assertIn("מאת [ד״ר גיא רופא]", contracted)
+        self.assertIn("## על המחבר", contracted)
+        self.assertLess(contracted.index("## על המחבר"), contracted.index("## מקורות"))
+
+    def test_title_and_meta_description_use_name_once(self):
+        profile = load_client_profile()
+        context = build_entity_context(profile)
+        title = title_with_entity("מידע רפואי | ד\"ר גיא רופא", context)
+        self.assertEqual(title, "מידע רפואי | ד״ר גיא רופא")
+        description = meta_description(
+            "# מידע רפואי | ד״ר גיא רופא\n\n"
+            "מאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n"
+            "תשובה ישירה לקוראים.",
+            profile,
+        )
+        self.assertEqual(description.count("ד״ר גיא רופא"), 1)
 
     def test_search_crawlers_are_audited_separately(self):
         robots = """User-agent: *

@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from scripts import daily_run
+from scripts.reputation_core.entity_contract import apply_article_contract
 
 
 class DailyRunTests(unittest.TestCase):
@@ -157,9 +158,21 @@ class DailyRunTests(unittest.TestCase):
             "- https://www.who.int/example\n"
             "- https://www.acog.org/example\n"
         )
+        content = apply_article_contract(content, daily_run.CLIENT_PROFILE)
         title, word_count = daily_run.validate_generated_article(content)
-        self.assertEqual(title, "כותרת")
+        self.assertEqual(title, "כותרת | ד״ר גיא רופא")
         self.assertGreaterEqual(word_count, daily_run.MIN_ARTICLE_WORDS)
+
+    def test_entity_contract_is_required_after_other_quality_checks(self):
+        content = "# כותרת\n\n" + " ".join(
+            ["מידע"] * daily_run.MIN_ARTICLE_WORDS
+        ) + (
+            "\n\n## מקורות\n"
+            "- https://www.who.int/example\n"
+            "- https://www.acog.org/example\n"
+        )
+        with self.assertRaisesRegex(ValueError, "entity contract"):
+            daily_run.validate_generated_article(content)
 
     def test_generated_medical_article_requires_two_direct_sources(self):
         content = "# כותרת\n\n" + " ".join(

@@ -23,6 +23,7 @@ from daily_run import load_draft, resolve_draft_path
 from reputation_core import load_client_profile
 from reputation_core.approval_workflow import build_bundle, render_preview
 from reputation_core.entity_seo import extract_citation_urls
+from reputation_core.entity_contract import audit_article_entity_contract
 from reputation_core.platform_content import build_platform_variants
 import social_image
 
@@ -65,6 +66,12 @@ def prepare_bundle(
     draft = resolve_draft_path(str(draft_path))
     title, content = load_draft(draft)
     client = load_client_profile()
+    entity_report = audit_article_entity_contract(content, client)
+    if not entity_report.passed:
+        raise ValueError(
+            "Draft is not bound to the configured client: "
+            + "; ".join(entity_report.errors)
+        )
     business = load_business_profile()
     canonical_url = canonical_url_for(draft, business, client["client_id"])
     variants = build_platform_variants(title, content, canonical_url)
@@ -87,9 +94,41 @@ def prepare_bundle(
             "license_name": image_metadata.get("license_name", ""),
             "license_url": image_metadata.get("license_url", ""),
             "attribution": image_metadata.get("attribution", ""),
+            "generation_model": image_metadata.get("generation_model", ""),
+            "generation_prompt": image_metadata.get("generation_prompt", ""),
+            "variants": image_metadata.get("variants", {}),
             "must_match_approved_bytes_when_local": True,
         }
-    credit = (media or {}).get("attribution", "").strip()
+        if media["source_type"] in {
+            "openai_generated_branded_visual",
+            "deterministic_branded_fallback",
+        }:
+            required_roles = {"hero", "landscape", "square", "portrait"}
+            missing_roles = required_roles - set(media["variants"])
+            if missing_roles:
+                raise ValueError(
+                    "Branded image package is missing variants: "
+                    + ", ".join(sorted(missing_roles))
+                )
+            if (media["alt_text"] or "").count(
+                client["canonical_facts"]["primary_name"]
+            ) != 1:
+                raise ValueError(
+                    "Branded image alt text must name the configured client once"
+                )
+    credit = (
+        (media or {}).get("attribution", "").strip()
+        if (media or {}).get("license_name")
+        else ""
+    )
+
+    def media_variant(role: str) -> dict | None:
+        if not media:
+            return None
+        variant = (media.get("variants") or {}).get(role)
+        if not variant:
+            return media
+        return {**media, **variant, "role": role}
 
     def credited_text(value: str) -> str:
         return f"{value.rstrip()}\n\nקרדיט תמונה: {credit}" if credit else value
@@ -105,7 +144,7 @@ def prepare_bundle(
                 "markdown": content,
                 "canonical_url": canonical_url,
                 "slug": stable_slug(f"{client['client_id']}-{draft.stem}"),
-                "image": media,
+                "image": media_variant("hero"),
             },
         },
         {
@@ -116,7 +155,7 @@ def prepare_bundle(
                 "title": title,
                 "text": credited_text(variants["facebook"]),
                 "link": canonical_url,
-                "image": media,
+                "image": media_variant("landscape"),
             },
         },
         {
@@ -127,7 +166,7 @@ def prepare_bundle(
                 "title": title,
                 "text": credited_text(variants["linkedin"]),
                 "link": canonical_url,
-                "image": media,
+                "image": media_variant("landscape"),
             },
         },
         {
@@ -145,7 +184,7 @@ def prepare_bundle(
                     )
                 ),
                 "link": canonical_url,
-                "image": media,
+                "image": media_variant("hero"),
             },
         },
         {
@@ -158,7 +197,7 @@ def prepare_bundle(
                     :500
                 ],
                 "link": canonical_url,
-                "image": media,
+                "image": media_variant("portrait"),
             },
         },
     ]
@@ -197,6 +236,11 @@ def prepare_bundle(
             "sources_present": bool(sources),
             "approved_image_required_before_publication": True,
             "approved_image_ready": bool(media),
+            "branded_image_variants_ready": bool(
+                media
+                and {"hero", "landscape", "square", "portrait"}
+                <= set((media.get("variants") or {}))
+            ),
         },
     )
     root = Path(output_root)
@@ -260,7 +304,7 @@ def main() -> None:
     parser.add_argument(
         "--generate-image",
         action="store_true",
-        help="Select a licensed real review photo; nothing is published.",
+        help="Generate the complete branded review-image package; nothing is published.",
     )
     args = parser.parse_args()
     image_uri = args.image_uri
@@ -272,37 +316,51 @@ def main() -> None:
         title, content = load_draft(resolve_draft_path(args.draft_path))
         try:
             image = social_image.generate(title, article_visual_context(content))
-        except social_image.PhotoSelectionError as exc:
-            image_selection_error = str(exc)
-            print(
-                "Licensed photo selection is pending; preserving the draft and "
-                "creating a non-publishable review bundle.",
-                file=sys.stderr,
-            )
-            print(image_selection_error, file=sys.stderr)
-        else:
-            media_root = Path(args.output_root) / "media"
-            media_root.mkdir(parents=True, exist_ok=True)
-            media_path = media_root / (
-                f"{stable_slug(Path(args.draft_path).stem)}.{image.extension}"
-            )
-            media_path.write_bytes(image.content)
-            image_uri = media_path.relative_to(PROJECT_ROOT).as_posix()
-            image_alt_text = social_image.alt_text(
-                title,
-                image.visual_description,
-            )
-            image_sha256 = file_sha256(media_path)
-            image_metadata = {
-                "visual_description": image.visual_description,
-                "source_type": image.source_type,
-                "source_page_url": image.source_page_url,
-                "source_image_url": image.source_image_url,
-                "creator": image.creator,
-                "license_name": image.license_name,
-                "license_url": image.license_url,
-                "attribution": image.attribution,
+        except Exception as exc:
+            raise RuntimeError(
+                "The guaranteed image pipeline failed before producing its "
+                f"deterministic fallback: {type(exc).__name__}: {exc}"
+            ) from exc
+        media_root = Path(args.output_root) / "media"
+        media_root.mkdir(parents=True, exist_ok=True)
+        stem = stable_slug(Path(args.draft_path).stem)
+        saved_variants = {}
+        dimensions = {
+            "hero": (1600, 900),
+            "landscape": (1200, 630),
+            "square": (1200, 1200),
+            "portrait": (1080, 1350),
+        }
+        for role, content_bytes in image.variants.items():
+            variant_path = media_root / f"{stem}-{role}.png"
+            variant_path.write_bytes(content_bytes)
+            saved_variants[role] = {
+                "uri": variant_path.relative_to(PROJECT_ROOT).as_posix(),
+                "sha256": file_sha256(variant_path),
+                "width": dimensions[role][0],
+                "height": dimensions[role][1],
             }
+        media_path = media_root / f"{stem}-landscape.png"
+        image_uri = media_path.relative_to(PROJECT_ROOT).as_posix()
+        image_alt_text = social_image.alt_text(
+            title,
+            image.visual_description,
+            entity_relevant=True,
+        )
+        image_sha256 = file_sha256(media_path)
+        image_metadata = {
+            "visual_description": image.visual_description,
+            "source_type": image.source_type,
+            "source_page_url": image.source_page_url,
+            "source_image_url": image.source_image_url,
+            "creator": image.creator,
+            "license_name": image.license_name,
+            "license_url": image.license_url,
+            "attribution": image.attribution,
+            "generation_model": image.generation_model,
+            "generation_prompt": image.generation_prompt,
+            "variants": saved_variants,
+        }
     result = prepare_bundle(
         args.draft_path,
         output_root=args.output_root,

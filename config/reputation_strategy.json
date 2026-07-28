@@ -39,7 +39,7 @@
     "canonical_source_required": true,
     "platform_native_summary_required": true,
     "natural_alt_text_required_when_supported": true,
-    "alt_text_name_pattern_he": "ד״ר גיא רופא – {subject}",
+    "alt_text_name_pattern_he": "כרטיס מידע של ד״ר גיא רופא בנושא {subject}",
     "answer_first_recommended": true,
     "sources_section_required_for_medical_articles": true,
     "minimum_authoritative_sources": 2,
@@ -64,7 +64,6 @@
     "product_managed": [
       "Facebook",
       "LinkedIn",
-      "Google Business Profile",
       "Pinterest",
       "Canonical website"
     ],
@@ -73,13 +72,14 @@
       "TikTok"
     ],
     "disabled": [
-      "X"
+      "X",
+      "Google Business Profile"
     ],
     "deferred_until_unique_use": [
       "Telegram",
       "Tumblr"
     ],
-    "google_business_rule": "Publish information and images only. Never imply current clinical activity, patient availability or appointment booking.",
+    "google_business_rule": "Disabled unless current eligibility is independently verified for a real-world customer-facing business that does not imply medical practice or patient availability.",
     "pinterest_rule": "Use original evergreen visuals, public boards, canonical destination URLs and natural alt text."
   },
   "evidence_policy": {
