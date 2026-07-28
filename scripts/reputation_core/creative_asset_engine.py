@@ -147,6 +147,29 @@ ASSET_ARCHETYPES = {
         "existing_types": set(),
         "earned": True,
     },
+    "wikipedia_wikidata_workstream": {
+        "label": "Wikipedia/Wikidata eligibility and requested-edit workstream",
+        "legacy_kind": "wikimedia_entity_workstream",
+        "asset_type": "independent_knowledge_graph",
+        "delivery_mode": "independent_requested_edit_workstream",
+        "impact": 10,
+        "authority": 10,
+        "speed": 2,
+        "maintenance_units": 0.25,
+        "surfaces": ["Wikipedia", "Wikidata", "Knowledge Graph", "AI retrieval"],
+        "purpose": (
+            "Audit independent notability and propose neutral, sourced corrections "
+            "through conflict-of-interest-safe Wikimedia processes."
+        ),
+        "reader_value": (
+            "Improve the accuracy and verifiability of an independently governed "
+            "knowledge record without treating it as a controlled marketing asset."
+        ),
+        "minimum_original_items": 2,
+        "existing_types": {"wikipedia_article", "wikidata_item"},
+        "earned": True,
+        "wikimedia": True,
+    },
 }
 
 
@@ -212,6 +235,18 @@ def evaluate_creative_asset_candidate(
             purpose_pass and evidence.get("editorial_independence_verified")
         )
         purpose_missing.append("verified editorial independence")
+    if candidate.get("wikimedia"):
+        purpose_pass = bool(
+            purpose_pass
+            and evidence.get("independent_notability_sources_verified")
+            and evidence.get("conflict_of_interest_disclosure_planned")
+            and evidence.get("requested_edit_route")
+        )
+        purpose_missing.extend([
+            "independent reliable sources establishing notability",
+            "conflict-of-interest disclosure plan",
+            "talk-page or requested-edit route",
+        ])
     value_pass = bool(
         evidence.get("reader_value_verified")
         and evidence.get("reader_value_statement")

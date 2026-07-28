@@ -144,11 +144,12 @@
     "natural_entity_mentions_maximum": 8,
     "video_transcript_required": true,
     "search_crawlers": [
-      "Googlebot",
-      "Bingbot",
-      "OAI-SearchBot",
-      "PerplexityBot"
+      "Googlebot", "Google-Extended", "Bingbot",
+      "OAI-SearchBot", "GPTBot", "ChatGPT-User",
+      "PerplexityBot", "Perplexity-User",
+      "ClaudeBot", "Claude-SearchBot", "Claude-User"
     ],
+    "credentials_must_be_evidence_backed": true,
     "crawler_access_does_not_guarantee_visibility": true
   },
   "opportunity_policy": {

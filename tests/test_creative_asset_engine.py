@@ -62,8 +62,8 @@ class CreativeAssetPortfolioTests(unittest.TestCase):
             "controlled_count": 1,
         }]
 
-    def test_six_requested_asset_archetypes_exist(self):
-        self.assertEqual(len(ASSET_ARCHETYPES), 6)
+    def test_requested_asset_archetypes_include_wikimedia_workstream(self):
+        self.assertEqual(len(ASSET_ARCHETYPES), 7)
         self.assertEqual(
             set(ASSET_ARCHETYPES),
             {
@@ -73,15 +73,37 @@ class CreativeAssetPortfolioTests(unittest.TestCase):
                 "books_apps_research_projects_page",
                 "standalone_system_asset",
                 "earned_article_interview_or_research",
+                "wikipedia_wikidata_workstream",
             },
         )
+
+    def test_wikimedia_workstream_requires_notability_coi_and_requested_edit(self):
+        evidence = full_evidence(
+            item_count=2,
+            editorial_independence_verified=True,
+            independent_notability_sources_verified=True,
+            conflict_of_interest_disclosure_planned=True,
+            requested_edit_route=True,
+        )
+        decision = evaluate_creative_asset_candidate(
+            {
+                **ASSET_ARCHETYPES["wikipedia_wikidata_workstream"],
+                "archetype": "wikipedia_wikidata_workstream",
+                "proof_evidence": evidence,
+                "risk_signals": [],
+            },
+            HEALTHY_ASSETS,
+            [],
+            client_asset_policy(),
+        )
+        self.assertEqual(decision["outcome"], "build")
 
     def test_measured_gap_generates_candidates_but_not_build_permission(self):
         portfolio = build_creative_asset_portfolio(
             HEALTHY_ASSETS, self.gap(), [], [], self.policy()
         )
         self.assertEqual(portfolio["measured_gap"], 5)
-        self.assertEqual(len(portfolio["candidates"]), 6)
+        self.assertEqual(len(portfolio["candidates"]), 7)
         self.assertEqual(
             set(portfolio["mandatory_proofs"]),
             set(MANDATORY_PROOFS),

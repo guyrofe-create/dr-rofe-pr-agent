@@ -5,7 +5,25 @@ from dataclasses import dataclass
 from urllib import robotparser
 
 
-SEARCH_CRAWLERS = ("Googlebot", "Bingbot", "OAI-SearchBot", "PerplexityBot")
+CRAWLER_ROLES = {
+    "Googlebot": "google_search_and_ai_overviews",
+    "Google-Extended": "google_non_search_ai_training_and_grounding",
+    "Bingbot": "bing_search",
+    "OAI-SearchBot": "openai_search",
+    "GPTBot": "openai_model_training",
+    "ChatGPT-User": "openai_user_requested_fetch",
+    "PerplexityBot": "perplexity_search",
+    "Perplexity-User": "perplexity_user_requested_fetch",
+    "ClaudeBot": "anthropic_model_training",
+    "Claude-SearchBot": "anthropic_search",
+    "Claude-User": "anthropic_user_requested_fetch",
+}
+SEARCH_CRAWLERS = tuple(CRAWLER_ROLES)
+VISIBILITY_CRAWLERS = tuple(
+    agent
+    for agent, role in CRAWLER_ROLES.items()
+    if "training" not in role and "non_search_ai" not in role
+)
 
 
 @dataclass(frozen=True)
@@ -13,6 +31,7 @@ class CrawlerCheck:
     user_agent: str
     allowed: bool
     note: str
+    role: str
 
 
 def audit_robots_text(robots_text: str, site_url: str) -> list[CrawlerCheck]:
@@ -29,6 +48,7 @@ def audit_robots_text(robots_text: str, site_url: str) -> list[CrawlerCheck]:
                 if parser.can_fetch(agent, target)
                 else "blocked by robots.txt"
             ),
+            role=CRAWLER_ROLES[agent],
         )
         for agent in SEARCH_CRAWLERS
     ]
@@ -38,11 +58,11 @@ def recommended_robots_block() -> str:
     return "\n".join(
         [
             "# Search visibility crawlers; allowing access does not guarantee inclusion.",
-            "User-agent: OAI-SearchBot",
-            "Allow: /",
-            "",
-            "User-agent: PerplexityBot",
-            "Allow: /",
+            "# Training-only crawlers are intentionally omitted; handle them as a separate policy choice.",
+            *[
+                line
+                for agent in VISIBILITY_CRAWLERS
+                for line in (f"User-agent: {agent}", "Allow: /", "")
+            ],
         ]
-    )
-
+    ).rstrip()

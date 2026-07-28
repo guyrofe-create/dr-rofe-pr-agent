@@ -35,6 +35,24 @@ def profile_page_url(profile: dict) -> str:
     return explicit or canonical_url(profile) + "profile/"
 
 
+def _verified_credentials(profile: dict) -> list[dict]:
+    verified = []
+    for credential in profile.get("hasCredential", []):
+        evidence = credential.get("evidence") or []
+        if not any(
+            isinstance(item, dict)
+            and str(item.get("url", "")).startswith("https://")
+            for item in evidence
+        ):
+            continue
+        verified.append({
+            key: value
+            for key, value in credential.items()
+            if key != "evidence"
+        })
+    return verified
+
+
 def build_person_schema(profile: dict) -> dict:
     person = {
         "@type": "Person",
@@ -55,6 +73,9 @@ def build_person_schema(profile: dict) -> dict:
     ):
         if profile.get(key):
             person[key] = profile[key]
+    credentials = _verified_credentials(profile)
+    if credentials:
+        person["hasCredential"] = credentials
     if profile.get("nationality"):
         person["nationality"] = {
             "@type": "Country",

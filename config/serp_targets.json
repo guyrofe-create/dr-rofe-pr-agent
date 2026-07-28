@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "market": {
     "country": "IL",
     "language": "he",
@@ -57,6 +57,30 @@
         "surface": "ai_performance",
         "interface": "bing_webmaster_tools_consumer_ui",
         "collection_method": "authorized_manual_export"
+      },
+      {
+        "engine": "Google",
+        "surface": "ai_overviews",
+        "interface": "consumer_search_ui",
+        "collection_method": "authorized_browser_sample"
+      },
+      {
+        "engine": "Google",
+        "surface": "gemini",
+        "interface": "consumer_ui",
+        "collection_method": "authorized_browser_sample"
+      },
+      {
+        "engine": "Perplexity",
+        "surface": "answer_engine",
+        "interface": "consumer_ui",
+        "collection_method": "authorized_browser_sample"
+      },
+      {
+        "engine": "Anthropic",
+        "surface": "claude_web_search",
+        "interface": "consumer_ui",
+        "collection_method": "authorized_browser_sample"
       }
     ],
     "do_not_blend_dimensions": [
@@ -139,6 +163,10 @@
     {
       "kind": "earned_article_interview_or_research",
       "value": "A guest article, interview or data-led study under genuine editorial independence"
+    },
+    {
+      "kind": "wikipedia_wikidata_workstream",
+      "value": "An independent-source and conflict-of-interest-safe Wikimedia accuracy workstream; never a controlled marketing asset"
     }
   ],
   "new_asset_decision_gate": {

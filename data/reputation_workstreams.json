@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "entity": {
+    "name": "ד״ר גיא רופא",
+    "canonical_url": "https://guyrofe.com/"
+  },
+  "workstreams": [
+    {
+      "id": "ai-surface-measurement",
+      "status": "active",
+      "surfaces": ["OpenAI", "Google AI Overviews", "Gemini", "Perplexity", "Claude", "Bing AI Performance"],
+      "next_action": "Import evidence-backed consumer samples for surfaces without an authorized API."
+    },
+    {
+      "id": "wikimedia-accuracy",
+      "status": "audit_required",
+      "existing_wikidata_item": "Q140470790",
+      "controlled_asset": false,
+      "next_action": "Audit sourced statements, independent notability and conflict-of-interest-safe requested-edit options."
+    },
+    {
+      "id": "knowledge-panel-ownership",
+      "status": "verification_required",
+      "next_action": "Confirm whether an exact-entity panel exists and record claim ownership and fact accuracy."
+    },
+    {
+      "id": "backlink-monitoring",
+      "status": "connector_required",
+      "auto_disavow": false,
+      "next_action": "Connect an authorized backlink export or provider and establish the first baseline."
+    },
+    {
+      "id": "honest-review-requests",
+      "status": "eligible-recipient-data_required",
+      "review_gating": false,
+      "incentives": false,
+      "next_action": "Provide consented, verified interaction records without rating, NPS or sentiment fields."
+    },
+    {
+      "id": "legal-evidence-chain",
+      "status": "active_gate",
+      "next_action": "Block every legal request until the court record, source, timestamps and document hash pass validation."
+    },
+    {
+      "id": "ai-feedback",
+      "status": "manual_submission_ready",
+      "cost": 0,
+      "next_action": "Generate evidence-complete feedback tasks from failed AI samples; user submits in the relevant app."
+    }
+  ]
+}

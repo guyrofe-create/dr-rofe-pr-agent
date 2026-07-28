@@ -41,6 +41,34 @@ class EntitySeoTests(unittest.TestCase):
         self.assertEqual(person["mainEntityOfPage"]["@id"], page["@id"])
         self.assertTrue(person["sameAs"])
 
+    def test_verified_credentials_are_emitted_when_present(self):
+        profile = {
+            **self.profile,
+            "hasCredential": [{
+                "@type": "Credential",
+                "name": "Verified credential",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Verified authority",
+                },
+                "evidence": [{"url": "https://authority.example/credential"}],
+            }],
+        }
+        person = build_profile_page_schema(profile)["@graph"][1]
+        self.assertEqual(person["hasCredential"][0]["@type"], "Credential")
+        self.assertNotIn("evidence", person["hasCredential"][0])
+
+    def test_unverified_credentials_are_not_emitted(self):
+        profile = {
+            **self.profile,
+            "hasCredential": [{
+                "@type": "Credential",
+                "name": "Unverified credential",
+            }],
+        }
+        person = build_profile_page_schema(profile)["@graph"][1]
+        self.assertNotIn("hasCredential", person)
+
     def test_article_links_author_to_profile_and_citations(self):
         schema = build_article_schema(
             self.profile,

@@ -16,6 +16,21 @@ from scripts.reputation_core.measurement import (
 
 
 class SerpMeasurementTests(unittest.TestCase):
+    def test_ai_measurement_plan_covers_major_answer_surfaces(self):
+        config = json.loads(Path("config/serp_targets.json").read_text(encoding="utf-8"))
+        surfaces = {
+            (item["engine"], item["surface"])
+            for item in config["measurement_plan"]["ai_surfaces"]
+        }
+        self.assertTrue({
+            ("OpenAI", "chatgpt_search"),
+            ("Google", "ai_overviews"),
+            ("Google", "gemini"),
+            ("Perplexity", "answer_engine"),
+            ("Anthropic", "claude_web_search"),
+            ("Bing", "ai_performance"),
+        }.issubset(surfaces))
+
     def sample(self, observed_at, results):
         return {
             "engine": "google",

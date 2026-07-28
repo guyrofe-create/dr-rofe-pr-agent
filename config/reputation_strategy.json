@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updated_at": "2026-07-26",
   "objective": "Maximize the number and prominence of client-approved desired and controlled results on page one of Google, and maximize factual accuracy, explicit entity visibility and approved-source citations in AI answer engines, without deception, spam or medical solicitation.",
   "control_definition": {
@@ -102,6 +102,15 @@
       "he",
       "en"
     ],
+    "surfaces": [
+      {"engine": "OpenAI", "surface": "responses_web_search", "collection_method": "openai_responses_api"},
+      {"engine": "OpenAI", "surface": "chatgpt_search", "collection_method": "authorized_browser_sample"},
+      {"engine": "Google", "surface": "ai_overviews", "collection_method": "authorized_browser_sample"},
+      {"engine": "Google", "surface": "gemini", "collection_method": "authorized_browser_sample"},
+      {"engine": "Perplexity", "surface": "answer_engine", "collection_method": "authorized_browser_sample"},
+      {"engine": "Anthropic", "surface": "claude_web_search", "collection_method": "authorized_browser_sample"},
+      {"engine": "Bing", "surface": "ai_performance", "collection_method": "authorized_manual_export"}
+    ],
     "prompts": [
       "מי הוא ד״ר גיא רופא?",
       "מה הכשרתו וניסיונו של ד״ר גיא רופא?",
@@ -149,8 +158,42 @@
     "knowledge_panel_accuracy",
     "crawl_and_index_coverage",
     "broken_link_rate",
-    "medically_reviewed_content_rate"
-  ],
+      "medically_reviewed_content_rate"
+      ,"backlink_anomaly_count"
+      ,"knowledge_panel_ownership_status"
+      ,"wikidata_statement_accuracy"
+      ,"honest_review_request_coverage"
+      ,"legal_evidence_chain_pass_rate"
+    ],
+  "reputation_controls": {
+    "backlinks": {
+      "monitor_new_and_lost": true,
+      "auto_disavow": false,
+      "manual_evidence_and_explicit_approval_required": true
+    },
+    "reviews": {
+      "request_from_all_eligible_interactions": true,
+      "sentiment_gating_forbidden": true,
+      "incentives_disabled": true,
+      "external_outreach_approval_required": true
+    },
+    "legal_requests": {
+      "court_record_verification_required": true,
+      "document_sha256_required": true,
+      "case_number_and_court_required": true,
+      "explicit_legal_approval_required": true
+    },
+    "knowledge_graph": {
+      "knowledge_panel_claim_tracked": true,
+      "wikipedia_wikidata_independent_governance": true,
+      "connected_editor_coi_disclosure_required": true
+    },
+    "ai_feedback": {
+      "prepare_without_approval": true,
+      "submission_mode": "manual_user_action",
+      "evidence_required": true
+    }
+  },
   "priorities": {
     "tier_1": [
       "guyrofe.com",

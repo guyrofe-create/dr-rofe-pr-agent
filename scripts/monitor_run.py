@@ -44,6 +44,7 @@ from reputation_core import (
     plan_growth_campaign,
     refresh_google_access_token,
     data_path,
+    audit_backlinks,
 )
 from reputation_core.strategy import load_strategy
 from reputation_core.orchestrator import load_serp_targets
@@ -63,6 +64,8 @@ PROFILE_PATH = str(data_path("business_profile.json"))
 GROWTH_OBSERVATIONS_PATH = str(data_path("growth_observations.json"))
 ASSET_REGISTRY_PATH = str(data_path("asset_registry.json"))
 BING_AI_PERFORMANCE_PATH = str(data_path("bing_ai_performance.json"))
+MANUAL_AI_SAMPLES_PATH = str(data_path("manual_ai_samples.json"))
+BACKLINKS_PATH = str(data_path("backlinks.json"))
 
 KEYWORDS = client_search_queries()
 SERP_TARGETS = load_serp_targets()
@@ -77,7 +80,7 @@ REPORT = {
     "date": datetime.now().isoformat(),
     "rank": [], "geo": [], "tokens": [], "reviews": None,
     "facebook_recommendations": None, "web_mentions": None,
-    "search_console": None, "bing_ai_performance": None,
+    "search_console": None, "bing_ai_performance": None, "backlinks": None,
     "orchestration": None,
     "alerts": [], "errors": [],
 }
@@ -1364,6 +1367,20 @@ def main():
             "status": "skipped",
             "reason": "daily repeated AI sampling already completed",
         })
+    manual_ai_samples = load_json_file(
+        MANUAL_AI_SAMPLES_PATH, {"samples": []}
+    ).get("samples", [])
+    REPORT["geo"].extend(manual_ai_samples)
+    backlink_data = load_json_file(
+        BACKLINKS_PATH, {"previous": [], "current": []}
+    )
+    REPORT["backlinks"] = audit_backlinks(
+        backlink_data.get("current", []),
+        backlink_data.get("previous", []),
+        owned_hosts={
+            "guyrofe.com", "drguyrofe.co.il", "drguyrofe.com",
+        },
+    )
     check_token_health()
     check_reviews()
     check_facebook_recommendations()

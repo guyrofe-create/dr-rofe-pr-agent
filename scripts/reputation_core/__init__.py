@@ -54,6 +54,15 @@ from .entity_contract import (
     meta_description,
     title_with_entity,
 )
+from .reputation_controls import (
+    audit_backlinks,
+    build_ai_feedback_task,
+    build_disavow_proposal,
+    build_knowledge_panel_task,
+    build_review_request_campaign,
+    build_wikimedia_workstream,
+    validate_legal_evidence_chain,
+)
 from .platform_content import build_platform_variants, variants_are_distinct
 from .approval_workflow import (
     ExecutionLedger,
@@ -140,6 +149,13 @@ __all__ = [
     "title_with_entity",
     "build_platform_variants",
     "variants_are_distinct",
+    "audit_backlinks",
+    "build_ai_feedback_task",
+    "build_disavow_proposal",
+    "build_knowledge_panel_task",
+    "build_review_request_campaign",
+    "build_wikimedia_workstream",
+    "validate_legal_evidence_chain",
     "ExecutionLedger",
     "ReconciliationRequired",
     "approval_id",

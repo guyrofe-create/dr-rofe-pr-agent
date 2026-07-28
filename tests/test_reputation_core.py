@@ -209,6 +209,16 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertTrue(mirrors)
         self.assertTrue(all(a["tier"] == "Q" and a["automation"] == "disabled" for a in mirrors))
 
+    def test_wikidata_is_registered_as_independent_not_owned_media(self):
+        with open("data/asset_registry.json", encoding="utf-8") as handle:
+            registry = json.load(handle)
+        wikidata = next(
+            item for item in registry["assets"]
+            if item["platform"] == "Wikidata"
+        )
+        self.assertFalse(wikidata["controlled"])
+        self.assertIn("requested_edit_only", wikidata["automation"])
+
     def test_owner_supplied_assets_are_registered_without_private_sheet_details(self):
         with open("data/asset_registry.json", encoding="utf-8") as handle:
             registry = json.load(handle)
