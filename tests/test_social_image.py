@@ -45,7 +45,9 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(len(queries), 3)
         prompt = client.responses.create.call_args.kwargs["input"]
         self.assertIn("real editorial photograph", prompt)
-        self.assertIn("a doctor treating a patient", prompt)
+        self.assertIn("doctor treating a patient", prompt)
+        self.assertIn("exposed body", prompt)
+        self.assertIn("brand, logo", prompt)
         self.assertIn("evaluating online information", prompt)
         self.assertIn("2-4 concrete searchable words", prompt)
 

@@ -148,13 +148,14 @@ def _search_query_prompt(title, summary):
         "article. Each query must contain only 2-4 concrete searchable words, "
         "not a sentence or metaphor. Name visible subjects, objects or places. "
         "Prefer relevant medical equipment, instruments, research objects or an "
-        "empty clinical environment. Do not request identifiable patients, a "
-        "doctor treating a patient, readable text, a diagram, illustration, "
-        "infographic, icon, or AI image. Do not request pregnancy, fetal or newborn "
+        "empty clinical environment. Do not request any person, exposed body, "
+        "body-part close-up, patient, doctor treating a patient, readable text, "
+        "brand, logo, a diagram, illustration, infographic, icon, or AI image. "
+        "Do not request pregnancy, fetal or newborn "
         "imagery unless the exact article requires it. For articles about evaluating "
-        "online information, prefer an adult comparing information on a laptop or "
-        "tablet, consulting reference books, or studying in a library; do not "
-        "request screenshots or readable on-screen text. "
+        "online information, prefer a people-free research desk with a laptop, "
+        "reference books and magnifying glass; do not request screenshots or "
+        "readable on-screen text. "
         "Return JSON only in this exact form: "
         '{"queries":["query 1","query 2","query 3","query 4","query 5"]}.\n'
         f"Preferred visible subject: {_topic_visual_brief(title)}\n"
@@ -309,10 +310,12 @@ def review_relevance(client, image_bytes, media_type, title, summary):
                             "an existing licensed photograph, not a generation "
                             "request. Accept it only if it is clearly relevant to "
                             "the exact article and is a normal believable photo. "
-                            "Reject generic wellness imagery, doctors or clinics "
-                            "not required by the article, identifiable people shown "
-                            "as suffering from a condition, illustrations, diagrams, "
-                            "screenshots, text-heavy images, pregnancy or fetal "
+                            "Reject generic wellness imagery, any person, exposed "
+                            "body or body-part close-up, doctors or clinics not "
+                            "required by the article, illustrations, diagrams, "
+                            "screenshots, and ANY visible letter, word, number, "
+                            "brand name, logo, label, watermark or readable interface "
+                            "text anywhere in the image. Also reject pregnancy or fetal "
                             "imagery unless the exact article requires it, or content "
                             "that could mislead readers. Return exactly one line. If suitable: "
                             "ACCEPT: followed by a concrete truthful Hebrew alt-text "
@@ -350,7 +353,11 @@ def select_licensed_photo(title, summary, client=None):
     if client is None:
         from openai import OpenAI
 
-        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+        client = OpenAI(
+            api_key=os.environ["OPENAI_API_KEY"],
+            timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "90")),
+            max_retries=0,
+        )
 
     try:
         planned_queries = build_search_queries(client, title, summary)
@@ -568,7 +575,8 @@ def review_generated_visual(client, image, title, summary):
                             "looks professional and believable, contains absolutely no "
                             "visible letters, words, numbers, logos, captions, labels, "
                             "watermarks or readable interface text, contains no "
-                            "identifiable person presented as ill or treated, and has "
+                            "person, exposed body or body-part close-up (a non-human "
+                            "teaching model is allowed), and has "
                             "no pregnancy, fetal, newborn or maternity imagery unless "
                             "the exact topic requires it. Reject generic medical "
                             "decoration, wrong procedures, misleading screens, malformed "
@@ -634,7 +642,11 @@ def generate(title, summary, client=None):
         try:
             from openai import OpenAI
 
-            client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+            client = OpenAI(
+                api_key=os.environ["OPENAI_API_KEY"],
+                timeout=float(os.environ.get("OPENAI_IMAGE_TIMEOUT_SECONDS", "150")),
+                max_retries=0,
+            )
         except Exception:
             client = None
 
