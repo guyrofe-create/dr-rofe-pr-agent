@@ -4,6 +4,12 @@ P7 is the only public-execution gate. Drafting, research, licensed-photo
 selection and previewing may be autonomous; publication may not be inferred from a boolean,
 a schedule, an earlier campaign approval or a general account permission.
 
+If automatic licensed-photo selection cannot find a truthful topic-relevant
+image, the draft and review bundle are still preserved with
+`image_status: awaiting_replacement`. The dashboard may request another
+licensed-photo search, but approval and publication remain blocked until the
+exact bundle contains approved media.
+
 ## One exact approval package
 
 Every public action is represented by one immutable JSON bundle and one
@@ -84,6 +90,8 @@ publication.
 ## Fail-closed boundaries
 
 - No image or public text is generated after approval.
+- A bundle marked as requiring an approved image cannot be signed or executed
+  while its media field is empty.
 - Implicit fan-out to an asset not listed in the bundle is blocked.
 - Instagram and TikTok remain owner-managed for the pilot; X remains disabled.
 - A different canonical URL stops distribution and requires reconciliation.

@@ -115,7 +115,7 @@ def build_bundle(
     return bundle
 
 
-def validate_bundle(bundle: dict) -> None:
+def validate_bundle(bundle: dict, *, require_execution_ready: bool = False) -> None:
     expected = approval_id(bundle)
     if not hmac.compare_digest(str(bundle.get("approval_id", "")), expected):
         raise ValueError("Approval bundle has changed or has an invalid approval_id")
@@ -125,6 +125,17 @@ def validate_bundle(bundle: dict) -> None:
     unknown = required - SENSITIVE_APPROVAL_SCOPES
     if unknown:
         raise ValueError(f"Unknown approval scopes: {sorted(unknown)}")
+    if (
+        require_execution_ready
+        and bundle.get("compliance", {}).get(
+            "approved_image_required_before_publication"
+        )
+        and not bundle.get("media")
+    ):
+        raise PermissionError(
+            "The approval bundle is waiting for a licensed image and cannot be "
+            "approved or published yet"
+        )
 
 
 def _approval_claim(record: dict) -> dict:
@@ -146,7 +157,7 @@ def approve_bundle(
     approved_at: str | None = None,
 ) -> dict:
     """Sign an explicit approval for every scope required by the exact bundle."""
-    validate_bundle(bundle)
+    validate_bundle(bundle, require_execution_ready=True)
     if not approved_by.strip():
         raise ValueError("approved_by is required")
     if len(signing_secret) < 24:
@@ -175,7 +186,7 @@ def approve_bundle(
 
 
 def verify_approval(bundle: dict, record: dict, signing_secret: str) -> None:
-    validate_bundle(bundle)
+    validate_bundle(bundle, require_execution_ready=True)
     if record.get("decision") != "approved":
         raise PermissionError("The approval record is not approved")
     if not hmac.compare_digest(

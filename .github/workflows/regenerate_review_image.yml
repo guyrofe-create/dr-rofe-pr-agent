@@ -50,6 +50,7 @@ jobs:
           python scripts/prepare_approval_bundle.py
           "${{ steps.image.outputs.draft_path }}"
           --generate-image
+          --result-path "${RUNNER_TEMP}/image-selection-result.json"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_IMAGE_REVIEW_MODEL: ${{ vars.OPENAI_IMAGE_REVIEW_MODEL || 'gpt-5.6' }}
@@ -71,9 +72,14 @@ jobs:
           APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
           DRAFT_PATH: ${{ steps.image.outputs.draft_path }}
           RESULT: ${{ job.status }}
+          IMAGE_RESULT_PATH: ${{ runner.temp }}/image-selection-result.json
         run: |
           status="failed"
-          [[ "${RESULT}" == "success" ]] && status="ready"
+          image_status="$(jq -r '.image_status // "awaiting_replacement"' \
+            "${IMAGE_RESULT_PATH}" 2>/dev/null || echo "awaiting_replacement")"
+          if [[ "${RESULT}" == "success" && "${image_status}" == "ready" ]]; then
+            status="ready"
+          fi
           jq -n \
             --arg draftPath "${DRAFT_PATH}" \
             --arg status "${status}" \
