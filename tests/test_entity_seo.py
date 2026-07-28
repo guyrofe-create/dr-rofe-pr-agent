@@ -141,6 +141,10 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertEqual(contracted.count("מאת [ד״ר גיא רופא]"), 1)
         self.assertNotIn("[מאת ד״ר גיא רופא]", contracted)
         self.assertIn("מאגר המידע של ד״ר גיא רופא", contracted)
+        self.assertLess(
+            contracted.index("תוכן עובדתי ללא אזכור בגוף."),
+            contracted.index("מאגר המידע של ד״ר גיא רופא"),
+        )
 
     def test_title_and_meta_description_use_name_once(self):
         profile = load_client_profile()

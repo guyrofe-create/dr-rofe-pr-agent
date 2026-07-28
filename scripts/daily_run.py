@@ -172,6 +172,42 @@ def medical_source_urls(content):
     }
 
 
+def inline_medical_citations(content):
+    """Return descriptive, external Markdown citations placed before Sources."""
+    body = re.split(
+        r"^#{2,3}\s+מקורות\b",
+        content or "",
+        maxsplit=1,
+        flags=re.MULTILINE,
+    )[0]
+    citations = []
+    for anchor, url in re.findall(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", body):
+        clean_url = url.rstrip(".,;)")
+        if _source_domain(clean_url) == _source_domain(
+            CLIENT_FACTS["canonical_site"]
+        ):
+            continue
+        clean_anchor = " ".join(re.sub(r"[*_`#]", "", anchor).split())
+        citations.append((clean_anchor, clean_url))
+    return citations
+
+
+def _descriptive_anchor(anchor):
+    generic = {
+        "כאן",
+        "מקור",
+        "למקור",
+        "קישור",
+        "למידע נוסף",
+        "לחצו כאן",
+        "read more",
+        "source",
+        "here",
+    }
+    normalized = " ".join((anchor or "").lower().split())
+    return normalized not in generic and len(normalized) >= 10
+
+
 def validate_generated_article(content):
     enforce_publication_policy(content)
     title = next(
@@ -230,6 +266,24 @@ def validate_generated_article(content):
             raise ValueError(
                 "generated medical article needs at least 2 official "
                 "institutional medical sources"
+            )
+        inline_citations = inline_medical_citations(content)
+        inline_urls = {url for _anchor, url in inline_citations}
+        if len(inline_urls) < 2:
+            raise ValueError(
+                "generated medical article needs at least 2 inline evidence links"
+            )
+        if not inline_urls.issubset(source_urls):
+            raise ValueError(
+                "every inline evidence link must also appear in Sources"
+            )
+        if any(not _descriptive_anchor(anchor) for anchor, _url in inline_citations):
+            raise ValueError(
+                "inline evidence links need descriptive anchor text"
+            )
+        if any(urlparse(url).path in {"", "/"} for url in inline_urls):
+            raise ValueError(
+                "inline evidence links must point to a direct source page"
             )
     entity_report = audit_article_entity_contract(content, CLIENT_PROFILE)
     if not entity_report.passed:
@@ -300,6 +354,12 @@ def generate_article(topic):
 - מיד לאחר הכותרת תופיע שורת מחבר מקושרת לפרופיל הרשמי
 - לפני המקורות תופיע תיבת "על המחבר" עם התפקיד והסטטוס הנוכחיים המאושרים
 - אין לחזור על שם הלקוח באופן מלאכותי בגוף המאמר
+- שלב בגוף המאמר לפחות שני קישורים ישירים למקורות סמכותיים, צמודים לטענה
+  שהם תומכים בה, עם טקסט עוגן תיאורי; אותם URLs יופיעו גם בסעיף המקורות
+- אל תשתמש בעוגנים גנריים כגון "כאן", "מקור" או "למידע נוסף", ואל תקשר
+  לעמוד בית או לדף חיפוש במקום למסמך, להנחיה או למחקר המדויקים
+- לטענות רפואיות העדף לפי הסדר: הנחיה מקצועית רשמית, סקירה שיטתית או מחקר
+  ראשוני, ורשות בריאות; אתר חדשות אינו מקור רפואי גם אם הדומיין חזק
 - פתח בתשובה ישירה וקצרה לשאלה המרכזית ורק לאחר מכן הרחב
 - השתמש בטבלה רק כאשר היא משפרת השוואה אמיתית; אין להוסיף טבלה לקישוט
 - הוסף FAQ רק אם קיימות שאלות שימושיות שלא נענו היטב בגוף המאמר
