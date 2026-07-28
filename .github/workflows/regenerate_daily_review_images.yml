@@ -53,6 +53,7 @@ jobs:
             python scripts/prepare_approval_bundle.py \
               "${draft_path}" \
               --generate-image \
+              --replace-existing-image-only \
               --result-path "${RUNNER_TEMP}/$(basename "${draft_path}").json"
           done
 

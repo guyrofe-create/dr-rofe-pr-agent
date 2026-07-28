@@ -50,6 +50,7 @@ jobs:
           python scripts/prepare_approval_bundle.py
           "${{ steps.image.outputs.draft_path }}"
           --generate-image
+          --replace-existing-image-only
           --result-path "${RUNNER_TEMP}/image-selection-result.json"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

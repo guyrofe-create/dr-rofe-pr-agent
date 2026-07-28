@@ -53,6 +53,34 @@ def canonical_url_for(draft_path: Path, business: dict, client_id: str) -> str:
     return f"{site['base_url'].rstrip('/')}/{slug}/"
 
 
+def existing_bundle_matches_draft(draft: Path, output_root: str | Path) -> bool:
+    """Allow image-only replacement only for exact bytes already bundled for review."""
+    root = Path(output_root)
+    try:
+        index = json.loads((root / INDEX_NAME).read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return False
+    relative_draft = (
+        draft.resolve().relative_to(PROJECT_ROOT).as_posix()
+        if draft.resolve().is_relative_to(PROJECT_ROOT)
+        else str(draft.resolve())
+    )
+    for entry in index.get("bundles", []):
+        if entry.get("draft_path") != relative_draft:
+            continue
+        bundle_path = PROJECT_ROOT / str(entry.get("bundle_path") or "")
+        try:
+            bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError):
+            continue
+        if (
+            bundle.get("source_draft") == relative_draft
+            and bundle.get("source_draft_sha256") == file_sha256(draft)
+        ):
+            return True
+    return False
+
+
 def prepare_bundle(
     draft_path: str | Path,
     *,
@@ -62,12 +90,17 @@ def prepare_bundle(
     image_sha256: str | None = None,
     image_metadata: dict | None = None,
     image_selection_error: str | None = None,
+    replace_existing_image_only: bool = False,
 ) -> dict:
     draft = resolve_draft_path(str(draft_path))
     title, content = load_draft(draft)
     client = load_client_profile()
     entity_report = audit_article_entity_contract(content, client)
-    if not entity_report.passed:
+    exact_existing_bundle = (
+        replace_existing_image_only
+        and existing_bundle_matches_draft(draft, output_root)
+    )
+    if not entity_report.passed and not exact_existing_bundle:
         raise ValueError(
             "Draft is not bound to the configured client: "
             + "; ".join(entity_report.errors)
@@ -307,6 +340,14 @@ def main() -> None:
         action="store_true",
         help="Generate the complete branded review-image package; nothing is published.",
     )
+    parser.add_argument(
+        "--replace-existing-image-only",
+        action="store_true",
+        help=(
+            "Keep exact existing draft bytes while replacing media. Allowed only "
+            "when a prior bundle contains the same draft hash."
+        ),
+    )
     args = parser.parse_args()
     image_uri = args.image_uri
     image_alt_text = args.image_alt_text
@@ -370,6 +411,7 @@ def main() -> None:
         image_sha256=image_sha256,
         image_metadata=image_metadata,
         image_selection_error=image_selection_error,
+        replace_existing_image_only=args.replace_existing_image_only,
     )
     if args.result_path:
         result_path = Path(args.result_path)
