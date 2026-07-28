@@ -13,6 +13,14 @@ from scripts.social_publishers import blogger, meta, pinterest, twitter
 
 
 class SocialImageTests(unittest.TestCase):
+    def test_review_verdict_accepts_common_safe_separators(self):
+        self.assertEqual(
+            social_image._parse_review_verdict(
+                "**ACCEPT** — צילום של ציוד רפואי ללא מלל"
+            ),
+            ("ACCEPT", "צילום של ציוד רפואי ללא מלל"),
+        )
+
     def test_alt_text_is_natural_and_contains_name_once(self):
         text = social_image.alt_text("ד״ר גיא רופא: מדריך חדש")
         self.assertEqual(text.count("גיא רופא"), 1)

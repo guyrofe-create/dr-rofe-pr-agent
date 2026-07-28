@@ -141,6 +141,18 @@ def _metadata_value(metadata, key):
     return _plain(value.get("value") if isinstance(value, dict) else value)
 
 
+def _parse_review_verdict(raw):
+    verdict = " ".join(str(raw or "").split()).strip()
+    match = re.match(
+        r"^\**\s*(ACCEPT|REJECT)\s*\**\s*[:\-–—]\s*(.+)$",
+        verdict,
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        raise RuntimeError(f"Image review returned invalid output: {verdict[:180]}")
+    return match.group(1).upper(), match.group(2).strip()
+
+
 def _search_query_prompt(title, summary):
     return (
         "Create five English Wikimedia Commons keyword queries for a real "
@@ -337,15 +349,13 @@ def review_relevance(client, image_bytes, media_type, title, summary):
         max_output_tokens=180,
         timeout=float(os.environ.get("OPENAI_IMAGE_REVIEW_TIMEOUT_SECONDS", "45")),
     )
-    verdict = " ".join((response.output_text or "").split())
-    if verdict.upper().startswith("ACCEPT:"):
-        description = verdict.split(":", 1)[1].strip()
+    decision, detail = _parse_review_verdict(response.output_text)
+    if decision == "ACCEPT":
+        description = detail
         if len(description) < 12:
             raise RuntimeError("Photo review returned an unusable description")
         return True, description
-    if verdict.upper().startswith("REJECT:"):
-        return False, verdict.split(":", 1)[1].strip()
-    raise RuntimeError(f"Photo review returned an invalid verdict: {verdict[:120]}")
+    return False, detail
 
 
 def select_licensed_photo(title, summary, client=None):
@@ -606,15 +616,13 @@ def review_generated_visual(client, image, title, summary):
         max_output_tokens=220,
         timeout=float(os.environ.get("OPENAI_IMAGE_REVIEW_TIMEOUT_SECONDS", "45")),
     )
-    verdict = " ".join((response.output_text or "").split())
-    if verdict.upper().startswith("ACCEPT:"):
-        description = verdict.split(":", 1)[1].strip()
+    decision, detail = _parse_review_verdict(response.output_text)
+    if decision == "ACCEPT":
+        description = detail
         if len(description) < 12:
             raise RuntimeError("Generated-image review returned no useful description")
         return True, description
-    if verdict.upper().startswith("REJECT:"):
-        return False, verdict.split(":", 1)[1].strip()
-    raise RuntimeError(f"Generated-image review returned invalid output: {verdict[:120]}")
+    return False, detail
 
 
 def _fit_cover(image, size):
@@ -705,7 +713,9 @@ def generate(title, summary, client=None):
                 client, base, title, summary
             )
         except Exception as exc:
-            failures.append(f"attempt {attempt}: {type(exc).__name__}")
+            failures.append(
+                f"attempt {attempt}: {type(exc).__name__}: {str(exc)[:240]}"
+            )
             feedback = f"technical or review failure ({type(exc).__name__})"
             continue
         if accepted:
