@@ -1,0 +1,374 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-07-28T11:58:47Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-07-28-topic-07-run-30338844838-attempt-1.md",
+  "source_draft_sha256": "c170189a450e9886237a81ec768cd66522e74aa638acabfa656a8052ddf659db",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://www.who.int/health-topics/infodemic",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nia.nih.gov/health/healthy-aging/online-health-information-it-reliable",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/health-fraud-scams",
+      "type": "citation"
+    },
+    {
+      "url": "https://medlineplus.gov/evaluatinghealthinformation.html",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+    "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+    "alt_text": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב.",
+    "source_type": "openai_generated_text_free_visual",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "OpenAI",
+    "license_name": "",
+    "license_url": "",
+    "attribution": "Text-free visual created with OpenAI and passed visual review",
+    "generation_model": "gpt-image-2",
+    "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a laptop, magnifying glass and several medical reference books on a research desk, with no people and every screen and page fully blurred and unreadable. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: איך להעריך מידע רפואי ברשת ולזהות מקור אמין\nArticle context: איך להעריך מידע רפואי ברשת ולזהות מקור אמין מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים** התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות. אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי. מבוא: מדוע קשה לזהות מידע רפואי אמין? האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות וטיפולים. לצד היתרון הברור, אותה נגישות מאפשרת גם הפצה מהירה של מידע חלקי, מיושן או מטעה. עיצוב מקצועי, מספר רב של עוקבים או שימוש במונחים מדעיים אינם מוכיחים שהתוכן נכון. גם טענה שמבוססת לכאורה על “מחקר” עלולה להציג באופן סלקטיבי ממצא יחיד, להתעלם ממגבלות המחקר או להסיק מסקנה שאינה נתמכת בתוצאות. ארגון הבריאות העולמי מתאר “אינפודמיה” כמצב שבו עודף מידע — מדויק ושגוי כאחד — מקשה למצוא הנחיות מהימנות ולקבל החלטות בריאותיות מושכלות. לכן הערכת מידע רפואי אינה מסתכמת בשאלה אם הטקסט נשמע הגיוני. נדרשת בדיקה שיטתית של המקור, הראיות וההקשר. עובדה מבוססת:** גופים רשמיים, ובהם ארגון הבריאות העולמי, ה־FDA וה־NIH, ממליצים לבדוק מי עומד מאחורי המידע, מה מקור הטענות, מתי התוכן עודכן ומהי מטרת האתר. ניתוח מעשי:** הקורא אינו חייב להיות חוקר רפואי כדי לבצע סינון ראשוני יעיל. כמה שאלות קבועות יכולות להפחית משמעותית את הסיכון להסתמכות על תוכן בעייתי. 1. מי פרסם את המידע, ומי אחראי לתוכן? הבדיקה הראשונה היא בדיקת זהות. יש לחפש את שם הגוף המפרסם, שם המחבר או העורך, פרטי ההכשרה הרלוונטיים ומדיניות העריכה. באתר של משרד בריאות, ארגון בריאות בינלאומי או מאגר ממשלתי קיימת בדרך כלל אחריות מוסדית ברורה. במאמר מדעי אפשר לבדוק את שמות המחברים, כתב העת, תאריך הפרסום ומזהה DOI. לעומת זאת, ניסוחים כמו “מומחים גילו”, “רופאים מזהירים” או “מחקר חדש מוכיח” ללא שמות, קישור למחקר או פרטים ה",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-hero.png",
+        "sha256": "4f9fc7d8a9ed4d4ac80fac434d7800faf0029f719b6a7db4314d82538b596f39",
+        "width": 1600,
+        "height": 900
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+        "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+        "width": 1200,
+        "height": 630
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-square.png",
+        "sha256": "0c5c87aaf8989429835d3cd7599f9b40f62c0895811ee10e82bfb9d58a681ccc",
+        "width": 1200,
+        "height": 1200
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-portrait.png",
+        "sha256": "a896c88389a0ffa2116d01e6b431a08ce63eb746d4e23031540487e6a199fc79",
+        "width": 1080,
+        "height": 1350
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+        "markdown": "# איך להעריך מידע רפואי ברשת ולזהות מקור אמין\n\n**מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים**\n\nהתשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות. אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי.\n\n## מבוא: מדוע קשה לזהות מידע רפואי אמין?\n\nהאינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות וטיפולים. לצד היתרון הברור, אותה נגישות מאפשרת גם הפצה מהירה של מידע חלקי, מיושן או מטעה. עיצוב מקצועי, מספר רב של עוקבים או שימוש במונחים מדעיים אינם מוכיחים שהתוכן נכון. גם טענה שמבוססת לכאורה על “מחקר” עלולה להציג באופן סלקטיבי ממצא יחיד, להתעלם ממגבלות המחקר או להסיק מסקנה שאינה נתמכת בתוצאות.\n\nארגון הבריאות העולמי מתאר “אינפודמיה” כמצב שבו עודף מידע — מדויק ושגוי כאחד — מקשה למצוא הנחיות מהימנות ולקבל החלטות בריאותיות מושכלות. לכן הערכת מידע רפואי אינה מסתכמת בשאלה אם הטקסט נשמע הגיוני. נדרשת בדיקה שיטתית של המקור, הראיות וההקשר.\n\n**עובדה מבוססת:** גופים רשמיים, ובהם ארגון הבריאות העולמי, ה־FDA וה־NIH, ממליצים לבדוק מי עומד מאחורי המידע, מה מקור הטענות, מתי התוכן עודכן ומהי מטרת האתר.\n\n**ניתוח מעשי:** הקורא אינו חייב להיות חוקר רפואי כדי לבצע סינון ראשוני יעיל. כמה שאלות קבועות יכולות להפחית משמעותית את הסיכון להסתמכות על תוכן בעייתי.\n\n## 1. מי פרסם את המידע, ומי אחראי לתוכן?\n\nהבדיקה הראשונה היא בדיקת זהות. יש לחפש את שם הגוף המפרסם, שם המחבר או העורך, פרטי ההכשרה הרלוונטיים ומדיניות העריכה. באתר של משרד בריאות, ארגון בריאות בינלאומי או מאגר ממשלתי קיימת בדרך כלל אחריות מוסדית ברורה. במאמר מדעי אפשר לבדוק את שמות המחברים, כתב העת, תאריך הפרסום ומזהה DOI.\n\nלעומת זאת, ניסוחים כמו “מומחים גילו”, “רופאים מזהירים” או “מחקר חדש מוכיח” ללא שמות, קישור למחקר או פרטים המאפשרים לאתר אותו הם סימן אזהרה. גם חתימה של אדם בעל תואר אינה מספיקה כשלעצמה. חשוב לברר אם תחום ההכשרה שלו רלוונטי לנושא, ואם התוכן עבר בקרה מקצועית.\n\nכתובת האתר יכולה לספק רמז, אך אינה הוכחה. סיומות ממשלתיות או מוסדיות עשויות להעיד על זהות הגוף, ואילו אתר מסחרי עשוי לפרסם גם מידע מדויק. לכן יש לבדוק את עמוד “אודות”, את מדיניות המימון, את אופן בחירת המקורות ואת ההפרדה בין תוכן מקצועי לפרסומת.\n\nיש לשאול:\n\n- מי כתב או אישר את התוכן?\n- האם הגוף המפרסם מוכר וניתן לאימות?\n- האם מצוין כיצד המידע נבדק?\n- האם יש דרך ברורה לזהות חסות, מימון או קשר מסחרי?\n- האם קיימת הפרדה בין מידע רפואי לבין שיווק של מוצר או שירות?\n\n**עובדה מבוססת:** המכון הלאומי להזדקנות של ה־NIH ממליץ לבדוק מי מנהל את האתר, מהי מטרתו, מה מקור המידע ומתי עודכן.\n\n**ניתוח מעשי:** אנונימיות אינה מוכיחה שתוכן שגוי, אך היא מונעת בדיקה של אחריות ומומחיות. במידע רפואי, זהו חיסרון מהותי.\n\n## 2. אילו ראיות תומכות בטענה?\n\nמידע רפואי אמין אינו נשען רק על ניסוח משכנע. הוא אמור להפנות למקורות שאפשר לפתוח ולבדוק: הנחיות רשמיות, סקירות שיטתיות, ניסויים קליניים או מאמרים מדעיים רלוונטיים. יש להבחין בין סוגי ראיות, משום שלא כל פרסום מדעי מספק אותה רמת ודאות.\n\nסיפור אישי עשוי להיות אמיתי ומשמעותי לאדם שחווה אותו, אך הוא אינו יכול לקבוע אם טיפול יעיל או בטוח באוכלוסייה רחבה. גם מחקר בבעלי חיים או בתאים עשוי להצביע על כיוון מחקרי, אך אינו מוכיח תועלת קלינית בבני אדם. מחקר תצפיתי יכול לזהות קשר בין שני גורמים, אך קשר אינו בהכרח סיבתיות. ניסוי מבוקר ואקראי עשוי לספק ראיות חזקות יותר לשאלת יעילות, אך גם אותו יש לבחון לפי גודל המדגם, משך המעקב, אוכלוסיית המחקר ותוצאותיו.\n\nסקירה שיטתית או הנחיה מקצועית עשויה לשקלל כמה מחקרים, אולם יש לבדוק אם היא עדכנית, כיצד נבחרו המחקרים ומה הייתה איכותם. המונח “מחקרי” אינו חותמת אמינות אוטומטית.\n\n| סימן בתוכן | מה אפשר להסיק | מה עדיין צריך לבדוק |\n|---|---|---|\n| קישור להנחיה רשמית ועדכנית | קיימת תשתית מוסדית לטענה | האם ההנחיה מתאימה לאוכלוסייה ולמצב הנדונים |\n| קישור למאמר בודד | יש מקור שניתן לבדיקה | סוג המחקר, איכותו והאם מחקרים אחרים הגיעו לתוצאה דומה |\n| אזכור “מחקרים רבים” ללא קישורים | אין אפשרות לאמת את הטענה | מהם המחקרים ומה הייתה איכותם |\n| עדות אישית או המלצה של ידוען | מתוארת חוויה אישית | אין בכך הוכחה ליעילות, בטיחות או התאמה לאחרים |\n| הבטחה לתוצאה ודאית | ניסוח שיווקי או מוחלט | האם קיימות ראיות איכותיות, ומהם הסיכונים והמגבלות |\n\n**עובדה מבוססת:** מחקר רפואי כולל שיטות שונות, וכל שיטה עונה על שאלות אחרות ומוגבלת בדרכים שונות.\n\n**ניתוח מעשי:** כאשר מסר ברשת הופך תוצאה ראשונית למסקנה מוחלטת — למשל, מעבר מ“נמצא קשר” ל“הגורם הוכח” — יש לחזור למקור המקורי ולא להסתפק בכותרת.\n\n## 3. האם המידע מאוזן, מעודכן ומוצג בהקשר הנכון?\n\nרפואה אינה עוסקת רק בשאלה אם טיפול “עובד”. יש לשקול גם תופעות לוואי, התוויות נגד, חלופות, איכות הראיות והבדלים בין מטופלים. מקור אמין נוטה להציג אי־ודאות כאשר היא קיימת ואינו מבטיח תוצאה זהה לכולם.\n\nיש לבדוק את תאריך הפרסום ואת מועד העדכון האחרון. מידע ישן אינו בהכרח שגוי, אך בתחומים המתפתחים במהירות — כגון תרופות חדשות, מחלות זיהומיות או הנחיות סקר — המשמעות של העדכניות גדולה במיוחד. בנוסף, המלצה ממדינה אחרת עשויה להתבסס על זמינות תרופות שונה, רגולציה אחרת או מערכת בריאות שונה.\n\nחשוב לבחון גם אם המספרים מוצגים באופן מלא. למשל, עלייה של “פי שניים” עלולה להישמע דרמטית, אך משמעותה תלויה בסיכון ההתחלתי. מעבר מסיכון של אחד לעשרת אלפים לשניים לעשרת אלפים שונה מאוד ממעבר של אחד לעשרה לשניים לעשרה, אף שבשני המקרים מדובר בהכפלה יחסית. מקור איכותי ישתדל להציג, כשהדבר אפשרי, גם את הסיכון המוחלט ולא רק שינוי יחסי.\n\nנורות אזהרה שכיחות כוללות:\n\n- שימוש במילים כמו “תמיד”, “לעולם לא”, “ריפוי מובטח” או “ללא תופעות לוואי”.\n- הצגת טיפול אחד כמתאים לכל אדם ולכל מצב.\n- התעלמות מחסרונות, סיכונים או חלופות.\n- הסתמכות על פחד, דחיפות או תחושת קונספירציה.\n- טענה שכל הממסד מסתיר פתרון פשוט.\n- שימוש במחקר ישן כאילו הוא המילה האחרונה בתחום.\n- הצגת תוצאה מעבדתית כהוכחה ליעילות טיפולית בבני אדם.\n\n**עובדה מבוססת:** החלטות רפואיות תלויות בין היתר באבחנה, בגיל, במחלות רקע, בתרופות אחרות, בהיריון, באלרגיות ובגורמי סיכון אישיים.\n\n**ניתוח מעשי:** גם מידע כללי נכון עלול להיות בלתי מתאים לאדם מסוים. אמינות המקור והתאמה אישית הן שתי שאלות נפרדות.\n\n## 4. מהי מטרת התוכן, והאם קיים ניגוד עניינים?\n\nיש לברר אם מטרת העמוד היא ליידע, לשכנע, לאסוף פרטים או למכור. עצם קיומו של מימון מסחרי אינו מוכיח שהמידע שגוי, אך היעדר גילוי נאות מקשה להעריך אותו. כאשר אותו עמוד מתאר בעיה רפואית, מגביר חשש ומציע מיד מוצר כפתרון יחיד, נדרשת זהירות מיוחדת.\n\nה־FDA מזהיר מפני הונאות בריאות הכוללות הבטחות ל“תרופת פלא”, טענות שלפיהן מוצר אחד מטפל במחלות רבות, והצגת מוצר כטבעי ולכן בטוח. “טבעי” אינו מונח נרדף ליעיל או לנטול סיכון. חומרים טבעיים עלולים לגרום לתופעות לוואי, לאלרגיות או לאינטראקציות עם תרופות.\n\nגם ברשתות חברתיות יש לבדוק אם מדובר בתוכן ממומן, בשיתוף מסחרי או בקישור שותפים. מספר צפיות, תגובות חיוביות או שיתופים רבים מעידים על תפוצה — לא על נכונות רפואית. אלגוריתמים עשויים לקדם תוכן שמעורר תגובה רגשית, גם כאשר הוא חסר הקשר מדעי.\n\n**עובדה מבוססת:** רשויות בריאות מזהירות מפני מוצרים המשווקים באמצעות הבטחות רחבות, עדויות אישיות וטענות שאינן מגובות בראיות מספקות.\n\n**ניתוח מעשי:** כאשר הצלחתו הכלכלית של המפרסם תלויה בכך שהקורא יאמין לטענה, רצוי לדרוש רמת שקיפות וראיות גבוהה יותר, לא נמוכה יותר.\n\n## 5. שיטת בדיקה מעשית לפני שמקבלים החלטה\n\nאפשר לבצע בדיקה ראשונית בכמה שלבים:\n\n1. **מנסחים את הטענה במדויק.** האם נטען שמוצר מפחית תסמין, מונע מחלה, מאבחן מצב או מחליף טיפול? טענה מוגדרת קלה יותר לבדיקה.\n2. **מאתרים את המקור המקורי.** אין להסתפק בצילום מסך, בסרטון קצר או בפרשנות. יש לחפש את ההנחיה, המחקר או הודעת הרשות שעליהם מבוססת הטענה.\n3. **בודקים תאריך וסמכות.** מי פרסם, מתי עודכן, והאם קיימת אחריות מקצועית ברורה?\n4. **מחפשים אימות ממקור בלתי תלוי.** רצוי להשוות מול WHO, משרד הבריאות, NIH, CDC, FDA, NHS או גוף רשמי רלוונטי אחר.\n5. **בודקים מה חסר.** האם הוזכרו סיכונים, מגבלות, אוכלוסיות שלא נבדקו וחלופות אפשריות?\n6. **מפרידים בין מידע להחלטה אישית.** אין להתחיל, להפסיק או לשנות תרופה או טיפול על סמך תוכן מקוון בלבד. שינוי כזה מחייב בדיקה רפואית בהתאם לנסיבות האישיות.\n7. **במצב דחוף פועלים לפי חומרת התסמינים.** חיפוש ברשת אינו תחליף להערכת חירום כאשר קיימים סימנים כגון קושי נשימתי משמעותי, כאב חזה, אובדן הכרה, חולשה פתאומית בצד אחד או תגובה אלרגית חמורה.\n\nאם לא ניתן לאתר את המקור, אם הטענה אינה תואמת מקורות רשמיים, או אם המפרסם מגיב לביקורת באמצעות הפחדה במקום באמצעות ראיות — נכון להתייחס למידע כבלתי מאומת.\n\n## סיכום\n\nהערכת מידע רפואי ברשת מחייבת יותר מקריאה ביקורתית של הכותרת. יש לבדוק מי עומד מאחורי התוכן, אילו ראיות הוצגו, האם המידע עדכני ומאוזן, ומהי מטרת הפרסום. סימנים חיוביים כוללים שקיפות, קישורים למקורות ראשוניים או רשמיים, גילוי מגבלות והימנעות מהבטחות מוחלטות. סימני אזהרה כוללים אנונימיות, לחץ רגשי, טענות מרחיקות לכת, הסתמכות על עדויות אישיות והצעה מסחרית המוצגת כפתרון יחיד.\n\nכאשר קיימת אי־ודאות, עדיף להשאיר את הטענה במעמד של “לא ידוע” או “לא מאומת” ולא להפוך אותה לעובדה. מידע רפואי מקוון יכול לסייע בהבנת מושגים ובהכנת שאלות, אך אינו מחליף אבחון, התאמת טיפול או הערכת סיכון אישית.\n\n*הטיוטה מספקת מידע רפואי כללי בלבד. היא מחייבת ביקורת אנושית ובדיקת רופא לפני פרסום, ואינה מיועדת לאבחון או להנחיה טיפולית אישית.*\n\n## מקורות\n\n1. World Health Organization — Infodemic:  \n   https://www.who.int/health-topics/infodemic\n\n2. National Institute on Aging, NIH — Online Health Information: Is It Reliable?:  \n   https://www.nia.nih.gov/health/healthy-aging/online-health-information-it-reliable\n\n3. U.S. Food and Drug Administration — Health Fraud Scams:  \n   https://www.fda.gov/consumers/health-fraud-scams\n\n4. MedlinePlus, U.S. National Library of Medicine — Evaluating Health Information:  \n   https://medlineplus.gov/evaluatinghealthinformation.html",
+        "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-07-run-30338844838-attempt-1/",
+        "slug": "guy-rofe-pilot-2026-07-28-topic-07-run-30338844838-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-hero.png",
+          "sha256": "4f9fc7d8a9ed4d4ac80fac434d7800faf0029f719b6a7db4314d82538b596f39",
+          "alt_text": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a laptop, magnifying glass and several medical reference books on a research desk, with no people and every screen and page fully blurred and unreadable. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: איך להעריך מידע רפואי ברשת ולזהות מקור אמין\nArticle context: איך להעריך מידע רפואי ברשת ולזהות מקור אמין מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים** התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות. אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי. מבוא: מדוע קשה לזהות מידע רפואי אמין? האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות וטיפולים. לצד היתרון הברור, אותה נגישות מאפשרת גם הפצה מהירה של מידע חלקי, מיושן או מטעה. עיצוב מקצועי, מספר רב של עוקבים או שימוש במונחים מדעיים אינם מוכיחים שהתוכן נכון. גם טענה שמבוססת לכאורה על “מחקר” עלולה להציג באופן סלקטיבי ממצא יחיד, להתעלם ממגבלות המחקר או להסיק מסקנה שאינה נתמכת בתוצאות. ארגון הבריאות העולמי מתאר “אינפודמיה” כמצב שבו עודף מידע — מדויק ושגוי כאחד — מקשה למצוא הנחיות מהימנות ולקבל החלטות בריאותיות מושכלות. לכן הערכת מידע רפואי אינה מסתכמת בשאלה אם הטקסט נשמע הגיוני. נדרשת בדיקה שיטתית של המקור, הראיות וההקשר. עובדה מבוססת:** גופים רשמיים, ובהם ארגון הבריאות העולמי, ה־FDA וה־NIH, ממליצים לבדוק מי עומד מאחורי המידע, מה מקור הטענות, מתי התוכן עודכן ומהי מטרת האתר. ניתוח מעשי:** הקורא אינו חייב להיות חוקר רפואי כדי לבצע סינון ראשוני יעיל. כמה שאלות קבועות יכולות להפחית משמעותית את הסיכון להסתמכות על תוכן בעייתי. 1. מי פרסם את המידע, ומי אחראי לתוכן? הבדיקה הראשונה היא בדיקת זהות. יש לחפש את שם הגוף המפרסם, שם המחבר או העורך, פרטי ההכשרה הרלוונטיים ומדיניות העריכה. באתר של משרד בריאות, ארגון בריאות בינלאומי או מאגר ממשלתי קיימת בדרך כלל אחריות מוסדית ברורה. במאמר מדעי אפשר לבדוק את שמות המחברים, כתב העת, תאריך הפרסום ומזהה DOI. לעומת זאת, ניסוחים כמו “מומחים גילו”, “רופאים מזהירים” או “מחקר חדש מוכיח” ללא שמות, קישור למחקר או פרטים ה",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-hero.png",
+              "sha256": "4f9fc7d8a9ed4d4ac80fac434d7800faf0029f719b6a7db4314d82538b596f39",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+              "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-square.png",
+              "sha256": "0c5c87aaf8989429835d3cd7599f9b40f62c0895811ee10e82bfb9d58a681ccc",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-portrait.png",
+              "sha256": "a896c88389a0ffa2116d01e6b431a08ce63eb746d4e23031540487e6a199fc79",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+        "text": "מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות.\n\nאין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-07-run-30338844838-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+          "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+          "alt_text": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a laptop, magnifying glass and several medical reference books on a research desk, with no people and every screen and page fully blurred and unreadable. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: איך להעריך מידע רפואי ברשת ולזהות מקור אמין\nArticle context: איך להעריך מידע רפואי ברשת ולזהות מקור אמין מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים** התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות. אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי. מבוא: מדוע קשה לזהות מידע רפואי אמין? האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות וטיפולים. לצד היתרון הברור, אותה נגישות מאפשרת גם הפצה מהירה של מידע חלקי, מיושן או מטעה. עיצוב מקצועי, מספר רב של עוקבים או שימוש במונחים מדעיים אינם מוכיחים שהתוכן נכון. גם טענה שמבוססת לכאורה על “מחקר” עלולה להציג באופן סלקטיבי ממצא יחיד, להתעלם ממגבלות המחקר או להסיק מסקנה שאינה נתמכת בתוצאות. ארגון הבריאות העולמי מתאר “אינפודמיה” כמצב שבו עודף מידע — מדויק ושגוי כאחד — מקשה למצוא הנחיות מהימנות ולקבל החלטות בריאותיות מושכלות. לכן הערכת מידע רפואי אינה מסתכמת בשאלה אם הטקסט נשמע הגיוני. נדרשת בדיקה שיטתית של המקור, הראיות וההקשר. עובדה מבוססת:** גופים רשמיים, ובהם ארגון הבריאות העולמי, ה־FDA וה־NIH, ממליצים לבדוק מי עומד מאחורי המידע, מה מקור הטענות, מתי התוכן עודכן ומהי מטרת האתר. ניתוח מעשי:** הקורא אינו חייב להיות חוקר רפואי כדי לבצע סינון ראשוני יעיל. כמה שאלות קבועות יכולות להפחית משמעותית את הסיכון להסתמכות על תוכן בעייתי. 1. מי פרסם את המידע, ומי אחראי לתוכן? הבדיקה הראשונה היא בדיקת זהות. יש לחפש את שם הגוף המפרסם, שם המחבר או העורך, פרטי ההכשרה הרלוונטיים ומדיניות העריכה. באתר של משרד בריאות, ארגון בריאות בינלאומי או מאגר ממשלתי קיימת בדרך כלל אחריות מוסדית ברורה. במאמר מדעי אפשר לבדוק את שמות המחברים, כתב העת, תאריך הפרסום ומזהה DOI. לעומת זאת, ניסוחים כמו “מומחים גילו”, “רופאים מזהירים” או “מחקר חדש מוכיח” ללא שמות, קישור למחקר או פרטים ה",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-hero.png",
+              "sha256": "4f9fc7d8a9ed4d4ac80fac434d7800faf0029f719b6a7db4314d82538b596f39",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+              "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-square.png",
+              "sha256": "0c5c87aaf8989429835d3cd7599f9b40f62c0895811ee10e82bfb9d58a681ccc",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-portrait.png",
+              "sha256": "a896c88389a0ffa2116d01e6b431a08ce63eb746d4e23031540487e6a199fc79",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        }
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+        "text": "מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות.\n\n• אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי.\n• מבוא: מדוע קשה לזהות מידע רפואי אמין?\n• האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות וטיפולים.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-07-run-30338844838-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+          "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+          "alt_text": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a laptop, magnifying glass and several medical reference books on a research desk, with no people and every screen and page fully blurred and unreadable. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: איך להעריך מידע רפואי ברשת ולזהות מקור אמין\nArticle context: איך להעריך מידע רפואי ברשת ולזהות מקור אמין מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים** התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות. אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי. מבוא: מדוע קשה לזהות מידע רפואי אמין? האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות וטיפולים. לצד היתרון הברור, אותה נגישות מאפשרת גם הפצה מהירה של מידע חלקי, מיושן או מטעה. עיצוב מקצועי, מספר רב של עוקבים או שימוש במונחים מדעיים אינם מוכיחים שהתוכן נכון. גם טענה שמבוססת לכאורה על “מחקר” עלולה להציג באופן סלקטיבי ממצא יחיד, להתעלם ממגבלות המחקר או להסיק מסקנה שאינה נתמכת בתוצאות. ארגון הבריאות העולמי מתאר “אינפודמיה” כמצב שבו עודף מידע — מדויק ושגוי כאחד — מקשה למצוא הנחיות מהימנות ולקבל החלטות בריאותיות מושכלות. לכן הערכת מידע רפואי אינה מסתכמת בשאלה אם הטקסט נשמע הגיוני. נדרשת בדיקה שיטתית של המקור, הראיות וההקשר. עובדה מבוססת:** גופים רשמיים, ובהם ארגון הבריאות העולמי, ה־FDA וה־NIH, ממליצים לבדוק מי עומד מאחורי המידע, מה מקור הטענות, מתי התוכן עודכן ומהי מטרת האתר. ניתוח מעשי:** הקורא אינו חייב להיות חוקר רפואי כדי לבצע סינון ראשוני יעיל. כמה שאלות קבועות יכולות להפחית משמעותית את הסיכון להסתמכות על תוכן בעייתי. 1. מי פרסם את המידע, ומי אחראי לתוכן? הבדיקה הראשונה היא בדיקת זהות. יש לחפש את שם הגוף המפרסם, שם המחבר או העורך, פרטי ההכשרה הרלוונטיים ומדיניות העריכה. באתר של משרד בריאות, ארגון בריאות בינלאומי או מאגר ממשלתי קיימת בדרך כלל אחריות מוסדית ברורה. במאמר מדעי אפשר לבדוק את שמות המחברים, כתב העת, תאריך הפרסום ומזהה DOI. לעומת זאת, ניסוחים כמו “מומחים גילו”, “רופאים מזהירים” או “מחקר חדש מוכיח” ללא שמות, קישור למחקר או פרטים ה",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-hero.png",
+              "sha256": "4f9fc7d8a9ed4d4ac80fac434d7800faf0029f719b6a7db4314d82538b596f39",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+              "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-square.png",
+              "sha256": "0c5c87aaf8989429835d3cd7599f9b40f62c0895811ee10e82bfb9d58a681ccc",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-portrait.png",
+              "sha256": "a896c88389a0ffa2116d01e6b431a08ce63eb746d4e23031540487e6a199fc79",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        }
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+        "html": "<h2>איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות.</p><p>אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי.</p>",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-07-run-30338844838-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-hero.png",
+          "sha256": "4f9fc7d8a9ed4d4ac80fac434d7800faf0029f719b6a7db4314d82538b596f39",
+          "alt_text": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a laptop, magnifying glass and several medical reference books on a research desk, with no people and every screen and page fully blurred and unreadable. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: איך להעריך מידע רפואי ברשת ולזהות מקור אמין\nArticle context: איך להעריך מידע רפואי ברשת ולזהות מקור אמין מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים** התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות. אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי. מבוא: מדוע קשה לזהות מידע רפואי אמין? האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות וטיפולים. לצד היתרון הברור, אותה נגישות מאפשרת גם הפצה מהירה של מידע חלקי, מיושן או מטעה. עיצוב מקצועי, מספר רב של עוקבים או שימוש במונחים מדעיים אינם מוכיחים שהתוכן נכון. גם טענה שמבוססת לכאורה על “מחקר” עלולה להציג באופן סלקטיבי ממצא יחיד, להתעלם ממגבלות המחקר או להסיק מסקנה שאינה נתמכת בתוצאות. ארגון הבריאות העולמי מתאר “אינפודמיה” כמצב שבו עודף מידע — מדויק ושגוי כאחד — מקשה למצוא הנחיות מהימנות ולקבל החלטות בריאותיות מושכלות. לכן הערכת מידע רפואי אינה מסתכמת בשאלה אם הטקסט נשמע הגיוני. נדרשת בדיקה שיטתית של המקור, הראיות וההקשר. עובדה מבוססת:** גופים רשמיים, ובהם ארגון הבריאות העולמי, ה־FDA וה־NIH, ממליצים לבדוק מי עומד מאחורי המידע, מה מקור הטענות, מתי התוכן עודכן ומהי מטרת האתר. ניתוח מעשי:** הקורא אינו חייב להיות חוקר רפואי כדי לבצע סינון ראשוני יעיל. כמה שאלות קבועות יכולות להפחית משמעותית את הסיכון להסתמכות על תוכן בעייתי. 1. מי פרסם את המידע, ומי אחראי לתוכן? הבדיקה הראשונה היא בדיקת זהות. יש לחפש את שם הגוף המפרסם, שם המחבר או העורך, פרטי ההכשרה הרלוונטיים ומדיניות העריכה. באתר של משרד בריאות, ארגון בריאות בינלאומי או מאגר ממשלתי קיימת בדרך כלל אחריות מוסדית ברורה. במאמר מדעי אפשר לבדוק את שמות המחברים, כתב העת, תאריך הפרסום ומזהה DOI. לעומת זאת, ניסוחים כמו “מומחים גילו”, “רופאים מזהירים” או “מחקר חדש מוכיח” ללא שמות, קישור למחקר או פרטים ה",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-hero.png",
+              "sha256": "4f9fc7d8a9ed4d4ac80fac434d7800faf0029f719b6a7db4314d82538b596f39",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+              "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-square.png",
+              "sha256": "0c5c87aaf8989429835d3cd7599f9b40f62c0895811ee10e82bfb9d58a681ccc",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-portrait.png",
+              "sha256": "a896c88389a0ffa2116d01e6b431a08ce63eb746d4e23031540487e6a199fc79",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+        "description": "מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות. אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי. מאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-07-run-30338844838-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-portrait.png",
+          "sha256": "a896c88389a0ffa2116d01e6b431a08ce63eb746d4e23031540487e6a199fc79",
+          "alt_text": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שולחן מחקר ללא אנשים, עם מחשב נייד, ספרים רפואיים, זכוכית מגדלת ודגם אנטומי של לב.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a laptop, magnifying glass and several medical reference books on a research desk, with no people and every screen and page fully blurred and unreadable. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: איך להעריך מידע רפואי ברשת ולזהות מקור אמין\nArticle context: איך להעריך מידע רפואי ברשת ולזהות מקור אמין מאת ד״ר גיא רופא — יוצר תוכן רפואי ומחבר ספרים** התשובה הקצרה: מידע רפואי ברשת נחשב אמין יותר כאשר הוא מתפרסם מטעם גוף בריאות מוכר, מציג מחברים ומקורות הניתנים לבדיקה, מעודכן, מבדיל בין עובדות להשערות, מסביר גם מגבלות וסיכונים, ואינו מנסה למכור פתרון באמצעות הבטחות חריגות. אין להסתמך על סימן יחיד: יש לבחון יחד את זהות המקור, איכות הראיות, מועד הפרסום, מטרת התוכן והתאמתו למקרה האישי. מבוא: מדוע קשה לזהות מידע רפואי אמין? האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות וטיפולים. לצד היתרון הברור, אותה נגישות מאפשרת גם הפצה מהירה של מידע חלקי, מיושן או מטעה. עיצוב מקצועי, מספר רב של עוקבים או שימוש במונחים מדעיים אינם מוכיחים שהתוכן נכון. גם טענה שמבוססת לכאורה על “מחקר” עלולה להציג באופן סלקטיבי ממצא יחיד, להתעלם ממגבלות המחקר או להסיק מסקנה שאינה נתמכת בתוצאות. ארגון הבריאות העולמי מתאר “אינפודמיה” כמצב שבו עודף מידע — מדויק ושגוי כאחד — מקשה למצוא הנחיות מהימנות ולקבל החלטות בריאותיות מושכלות. לכן הערכת מידע רפואי אינה מסתכמת בשאלה אם הטקסט נשמע הגיוני. נדרשת בדיקה שיטתית של המקור, הראיות וההקשר. עובדה מבוססת:** גופים רשמיים, ובהם ארגון הבריאות העולמי, ה־FDA וה־NIH, ממליצים לבדוק מי עומד מאחורי המידע, מה מקור הטענות, מתי התוכן עודכן ומהי מטרת האתר. ניתוח מעשי:** הקורא אינו חייב להיות חוקר רפואי כדי לבצע סינון ראשוני יעיל. כמה שאלות קבועות יכולות להפחית משמעותית את הסיכון להסתמכות על תוכן בעייתי. 1. מי פרסם את המידע, ומי אחראי לתוכן? הבדיקה הראשונה היא בדיקת זהות. יש לחפש את שם הגוף המפרסם, שם המחבר או העורך, פרטי ההכשרה הרלוונטיים ומדיניות העריכה. באתר של משרד בריאות, ארגון בריאות בינלאומי או מאגר ממשלתי קיימת בדרך כלל אחריות מוסדית ברורה. במאמר מדעי אפשר לבדוק את שמות המחברים, כתב העת, תאריך הפרסום ומזהה DOI. לעומת זאת, ניסוחים כמו “מומחים גילו”, “רופאים מזהירים” או “מחקר חדש מוכיח” ללא שמות, קישור למחקר או פרטים ה",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-hero.png",
+              "sha256": "4f9fc7d8a9ed4d4ac80fac434d7800faf0029f719b6a7db4314d82538b596f39",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-landscape.png",
+              "sha256": "98f050193037a79b24df7a5ffad0bb6ffa09ea23abf4083ea602dd46aa932cca",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-square.png",
+              "sha256": "0c5c87aaf8989429835d3cd7599f9b40f62c0895811ee10e82bfb9d58a681ccc",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-07-run-30338844838-attempt-1-portrait.png",
+              "sha256": "a896c88389a0ffa2116d01e6b431a08ce63eb746d4e23031540487e6a199fc79",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "role": "portrait"
+        }
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_and_tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_5930d8f545e41fd6b52afad39d1c2b181a7835c4ec0e691fe22f6b9deae13073"
+}

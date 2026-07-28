@@ -2,6 +2,19 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_5930d8f545e41fd6b52afad39d1c2b181a7835c4ec0e691fe22f6b9deae13073",
+      "draft_path": "content_drafts/2026-07-28-topic-07-run-30338844838-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_5930d8f545e41fd6b52afad39d1c2b181a7835c4ec0e691fe22f6b9deae13073.json",
+      "preview_path": "approval_bundles/apr_5930d8f545e41fd6b52afad39d1c2b181a7835c4ec0e691fe22f6b9deae13073.html",
+      "created_at": "2026-07-28T11:58:47Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
       "approval_id": "apr_2d676d9186b362769afc704091aee53ecc2edd2e105933bb103908d77b7c7ce5",
       "draft_path": "content_drafts/2026-07-28-topic-03-run-30347171093-attempt-1.md",
       "bundle_path": "approval_bundles/apr_2d676d9186b362769afc704091aee53ecc2edd2e105933bb103908d77b7c7ce5.json",
@@ -52,19 +65,6 @@
       ],
       "image_status": "ready",
       "image_selection_error": null
-    },
-    {
-      "approval_id": "apr_e6e9074240a713fa86373ea421c10d599a8d460a39eb945f5a133c1a459168ef",
-      "draft_path": "content_drafts/2026-07-28-topic-07-run-30338844838-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_e6e9074240a713fa86373ea421c10d599a8d460a39eb945f5a133c1a459168ef.json",
-      "preview_path": "approval_bundles/apr_e6e9074240a713fa86373ea421c10d599a8d460a39eb945f5a133c1a459168ef.html",
-      "created_at": "2026-07-28T07:35:42Z",
-      "required_approval_scopes": [
-        "medical_content",
-        "public_publication"
-      ],
-      "image_status": "awaiting_replacement",
-      "image_selection_error": "No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=5; unique_candidates=0; downloaded=0; undersized=0; reviewed=0; rejected=0; search=[adult comparing health information on laptop and reference books: 0 licensed candidates | adult researching health information on tablet in library: 0 licensed candidates | adult studying medical reference books at library table: 0 licensed candidates | adult cross-checking online information with encyclopedias: 0 licensed candidates | adult evaluating websites on laptop in public library: 0 licensed candidates]"
     },
     {
       "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
