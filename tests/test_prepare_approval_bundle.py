@@ -1,4 +1,5 @@
 import json
+import os
 import sys
 import tempfile
 import unittest
@@ -83,6 +84,9 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                 prepare_approval_bundle.social_image,
                 "generate",
                 side_effect=RuntimeError("rendering engine unavailable"),
+            ), patch.dict(
+                os.environ,
+                {"PAID_IMAGE_SEARCH_ENABLED": "true"},
             ), patch.object(
                 sys,
                 "argv",
@@ -91,13 +95,13 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                     str(draft),
                     "--output-root",
                     str(output),
-                    "--generate-image",
+                    "--find-licensed-image",
                     "--result-path",
                     str(result_path),
                 ],
             ), self.assertRaisesRegex(
                 RuntimeError,
-                "guaranteed image pipeline failed",
+                "licensed-photo search failed without creating an AI image",
             ):
                 prepare_approval_bundle.main()
 
@@ -131,8 +135,12 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                 visual_description=(
                     "איור מערכתי ללא מלל בנושא מידע רפואי"
                 ),
-                source_type="deterministic_text_free_fallback",
-                generation_model="local-text-free-template-v1",
+                source_type="wikimedia_commons_licensed_photo",
+                source_page_url="https://commons.wikimedia.org/wiki/File:Medical.jpg",
+                creator="Jane Example",
+                license_name="CC BY 4.0",
+                license_url="https://creativecommons.org/licenses/by/4.0/",
+                attribution="Jane Example, CC BY 4.0",
                 variants={
                     "hero": b"hero",
                     "landscape": b"landscape",
@@ -145,6 +153,9 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                 prepare_approval_bundle.social_image,
                 "generate",
                 return_value=image,
+            ), patch.dict(
+                os.environ,
+                {"PAID_IMAGE_SEARCH_ENABLED": "true"},
             ), patch.object(
                 sys,
                 "argv",
@@ -153,7 +164,7 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                     str(draft),
                     "--output-root",
                     str(output),
-                    "--generate-image",
+                    "--find-licensed-image",
                     "--result-path",
                     str(result_path),
                 ],

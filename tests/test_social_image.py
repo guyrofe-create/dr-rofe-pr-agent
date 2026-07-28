@@ -1,4 +1,3 @@
-import base64
 import json
 import os
 import unittest
@@ -157,54 +156,6 @@ class SocialImageTests(unittest.TestCase):
         )
         client.images.generate.assert_not_called()
 
-    @patch(
-        "scripts.social_image.select_licensed_photo",
-        side_effect=social_image.PhotoSelectionError("none"),
-    )
-    def test_generate_uses_gpt_image_and_builds_four_text_free_variants(self, select):
-        source = BytesIO()
-        Image.new("RGB", (1536, 1024), "#4f7f87").save(source, format="PNG")
-        client = Mock()
-        client.images.generate.return_value = SimpleNamespace(
-            data=[
-                SimpleNamespace(
-                    b64_json=base64.b64encode(source.getvalue()).decode("ascii")
-                )
-            ]
-        )
-        client.responses.create.return_value = SimpleNamespace(
-            output_text="ACCEPT: צילום של מחשב נייד, זכוכית מגדלת וספרי רפואה"
-        )
-
-        result = social_image.generate(
-            "איך להעריך מידע רפואי ברשת | ד״ר גיא רופא",
-            "זיהוי מקורות אמינים",
-            client=client,
-        )
-
-        self.assertEqual(result.source_type, "openai_generated_text_free_visual")
-        self.assertEqual(
-            set(result.variants),
-            {"hero", "landscape", "square", "portrait"},
-        )
-        self.assertEqual(Image.open(BytesIO(result.variants["hero"])).size, (1600, 900))
-        self.assertEqual(
-            Image.open(BytesIO(result.variants["landscape"])).size,
-            (1200, 630),
-        )
-        self.assertEqual(
-            Image.open(BytesIO(result.variants["portrait"])).size,
-            (1080, 1350),
-        )
-        call = client.images.generate.call_args.kwargs
-        self.assertEqual(call["model"], "gpt-image-2")
-        self.assertIn("Do not add any letters", call["prompt"])
-        self.assertIn("laptop, magnifying glass", call["prompt"])
-        review_input = client.responses.create.call_args.kwargs["input"]
-        self.assertIn("correct procedure equipment", review_input[0]["content"][0]["text"])
-        self.assertIn("people-free research desk", review_input[0]["content"][0]["text"])
-        select.assert_called_once()
-
     @patch("scripts.social_image.select_licensed_photo")
     def test_generate_prefers_licensed_photo_and_preserves_provenance(self, select):
         source = BytesIO()
@@ -235,75 +186,11 @@ class SocialImageTests(unittest.TestCase):
         "scripts.social_image.select_licensed_photo",
         side_effect=social_image.PhotoSelectionError("none"),
     )
-    def test_generate_fails_closed_when_image_api_is_unavailable(self, select):
+    def test_generate_fails_closed_without_creating_an_ai_image(self, select):
         client = Mock()
-        client.images.generate.side_effect = TimeoutError("image API unavailable")
-
-        with self.assertRaisesRegex(
-            RuntimeError, "No generated image passed strict"
-        ):
+        with self.assertRaisesRegex(social_image.PhotoSelectionError, "none"):
             social_image.generate("כותרת", "תקציר", client=client)
-        self.assertEqual(
-            client.images.generate.call_count, social_image.MAX_GENERATION_ATTEMPTS
-        )
-
-    @patch.dict(os.environ, {}, clear=True)
-    def test_generate_fails_closed_when_openai_key_is_missing(self):
-        with self.assertRaisesRegex(RuntimeError, "OpenAI image client is unavailable"):
-            social_image.generate("כותרת", "תקציר")
-
-    @patch(
-        "scripts.social_image.select_licensed_photo",
-        side_effect=RuntimeError("unexpected Commons failure"),
-    )
-    def test_unexpected_photo_search_failure_still_uses_reviewed_generation(self, select):
-        client = Mock()
-        source = BytesIO()
-        Image.new("RGB", (1536, 1024), "#4f7f87").save(source, format="PNG")
-        client.images.generate.return_value = SimpleNamespace(
-            data=[
-                SimpleNamespace(
-                    b64_json=base64.b64encode(source.getvalue()).decode("ascii")
-                )
-            ]
-        )
-        client.responses.create.return_value = SimpleNamespace(
-            output_text="ACCEPT: צילום של ציוד רפואי רלוונטי ללא מלל"
-        )
-        result = social_image.generate("כותרת", "תקציר", client=client)
-
-        self.assertEqual(result.source_type, "openai_generated_text_free_visual")
-        self.assertGreater(len(result.content), 2_000)
-
-    @patch(
-        "scripts.social_image.select_licensed_photo",
-        side_effect=social_image.PhotoSelectionError("none"),
-    )
-    def test_rejected_generated_image_is_retried_with_feedback(self, select):
-        source = BytesIO()
-        Image.new("RGB", (1536, 1024), "#4f7f87").save(source, format="PNG")
-        client = Mock()
-        client.images.generate.return_value = SimpleNamespace(
-            data=[
-                SimpleNamespace(
-                    b64_json=base64.b64encode(source.getvalue()).decode("ascii")
-                )
-            ]
-        )
-        client.responses.create.side_effect = [
-            SimpleNamespace(output_text="REJECT: visible text on monitor"),
-            SimpleNamespace(output_text="ACCEPT: צילום של ציוד אולטרסאונד ללא מלל"),
-        ]
-
-        result = social_image.generate(
-            "מיומות ברחם | ד״ר גיא רופא", "בירור באמצעות אולטרסאונד", client=client
-        )
-
-        self.assertEqual(client.images.generate.call_count, 2)
-        second_prompt = client.images.generate.call_args.kwargs["prompt"]
-        self.assertIn("visible text on monitor", second_prompt)
-        self.assertIn("absolutely no fetus", second_prompt)
-        self.assertIn("ציוד אולטרסאונד", result.visual_description)
+        self.assertFalse(hasattr(client, "images") and client.images.generate.called)
 
     def test_commons_candidate_rejects_ai_or_illustration(self):
         page = {

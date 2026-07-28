@@ -43,7 +43,6 @@ jobs:
       - name: Regenerate every review image for the date
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
           DRAFT_DATE: ${{ inputs.draft_date }}
           TOPIC_NUMBERS: ${{ inputs.topic_numbers }}
         run: |
@@ -71,7 +70,7 @@ jobs:
             echo "Regenerating reviewed visual package for ${draft_path}"
             python scripts/prepare_approval_bundle.py \
               "${draft_path}" \
-              --generate-image \
+              --find-licensed-image \
               --replace-existing-image-only \
               --result-path "${RUNNER_TEMP}/$(basename "${draft_path}").json"
             git config user.name "dr-rofe-pr-agent"

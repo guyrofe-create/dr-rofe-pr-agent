@@ -134,8 +134,6 @@ def prepare_bundle(
         }
         if media["source_type"] in {
             "wikimedia_commons_licensed_photo",
-            "openai_generated_text_free_visual",
-            "deterministic_text_free_fallback",
         }:
             required_roles = {"hero", "landscape", "square", "portrait"}
             missing_roles = required_roles - set(media["variants"])
@@ -336,9 +334,9 @@ def main() -> None:
         help="Optionally write the machine-readable result JSON to this path.",
     )
     parser.add_argument(
-        "--generate-image",
+        "--find-licensed-image",
         action="store_true",
-        help="Generate the complete branded review-image package; nothing is published.",
+        help="Find and verify a licensed real photograph; nothing is published.",
     )
     parser.add_argument(
         "--replace-existing-image-only",
@@ -354,14 +352,18 @@ def main() -> None:
     image_sha256 = args.image_sha256
     image_metadata = None
     image_selection_error = None
-    if args.generate_image:
+    if args.find_licensed_image:
+        if os.environ.get("PAID_IMAGE_SEARCH_ENABLED", "").lower() != "true":
+            raise RuntimeError(
+                "Paid licensed-photo search is paused pending owner approval"
+            )
         title, content = load_draft(resolve_draft_path(args.draft_path))
         try:
             image = social_image.generate(title, article_visual_context(content))
         except Exception as exc:
             raise RuntimeError(
-                "The guaranteed image pipeline failed before producing its "
-                f"deterministic fallback: {type(exc).__name__}: {exc}"
+                "The licensed-photo search failed without creating an AI image: "
+                f"{type(exc).__name__}: {exc}"
             ) from exc
         media_root = Path(args.output_root) / "media"
         media_root.mkdir(parents=True, exist_ok=True)

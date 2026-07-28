@@ -1,9 +1,8 @@
-"""Create a topic-relevant, licensed-first, text-free visual package.
+"""Create a topic-relevant visual package from licensed real photography.
 
-The product first looks for a verified Wikimedia Commons photograph with a
-compatible license. If none is suitable, GPT Image creates a text-free
-editorial visual. Generated visuals are reviewed and regenerated when they are
-off-topic, contain text, or introduce misleading medical details.
+The product searches Wikimedia Commons for a verified photograph with a
+compatible license, records its provenance, and fails closed when no suitable
+photo is found. This module never generates images with AI.
 """
 
 import base64
@@ -55,7 +54,6 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
 PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 4
 MAX_REVIEWED_CANDIDATES = 2
-MAX_GENERATION_ATTEMPTS = 2
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -511,125 +509,6 @@ def _topic_visual_brief(title):
     )
 
 
-def _image_prompt(title, summary, rejection_feedback=""):
-    feedback = (
-        f"\nA previous attempt was rejected for: {rejection_feedback}. Correct it."
-        if rejection_feedback
-        else ""
-    )
-    return (
-        "Create a realistic, premium editorial hero photograph for a Hebrew "
-        "evidence-based medical information article. It must directly and "
-        "unmistakably match the article topic. Use a calm, sophisticated teal, "
-        "navy and warm-neutral palette and natural photographic lighting. "
-        f"Required visible subject: {_topic_visual_brief(title)}. "
-        "Do not depict identifiable people, a doctor treating a patient, a face "
-        "presented as the author, logos, a clinic brand, or a diagnostic or "
-        "treatment claim. Do not add any letters, words, numbers, labels, captions, "
-        "watermarks, interface text or typography anywhere. Do not show pregnancy, "
-        "a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the "
-        "required visible subject explicitly asks for it. The image will be "
-        "published exactly as generated, with no text overlay."
-        f"{feedback}\n"
-        f"Article title: {' '.join((title or '').split())}\n"
-        f"Article context: {' '.join((summary or '').split())[:1800]}"
-    )
-
-
-def _response_image_bytes(response):
-    item = response.data[0]
-    encoded = getattr(item, "b64_json", None)
-    if encoded:
-        return base64.b64decode(encoded)
-    url = getattr(item, "url", None)
-    if url:
-        download = requests.get(url, timeout=60)
-        download.raise_for_status()
-        return download.content
-    raise RuntimeError("Image API returned neither b64_json nor URL")
-
-
-def _generate_editorial_base(client, title, summary, rejection_feedback=""):
-    model = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2")
-    prompt = _image_prompt(title, summary, rejection_feedback)
-    response = client.images.generate(
-        model=model,
-        prompt=prompt,
-        size="1536x1024",
-        quality=os.environ.get("OPENAI_IMAGE_QUALITY", "high"),
-        output_format="png",
-        timeout=float(os.environ.get("OPENAI_IMAGE_TIMEOUT_SECONDS", "300")),
-    )
-    content = _response_image_bytes(response)
-    image = Image.open(BytesIO(content)).convert("RGB")
-    if min(image.size) < 700:
-        raise RuntimeError("Generated editorial visual is too small")
-    return image, model, prompt
-
-
-def review_generated_visual(client, image, title, summary):
-    """Reject generated visuals that are misleading, off-topic or text-bearing."""
-    encoded = base64.b64encode(_png_bytes(image)).decode("ascii")
-    response = client.responses.create(
-        model=os.environ.get("OPENAI_IMAGE_REVIEW_MODEL", "gpt-5.6"),
-        input=[
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "input_text",
-                        "text": (
-                            "Act as an extremely strict senior medical photo editor. "
-                            "Review this generated image before publication. Accept "
-                            "only when it clearly illustrates the exact article topic, "
-                            "looks professional and believable, contains absolutely no "
-                            "visible letters, words, numbers, logos, captions, labels, "
-                            "watermarks or readable interface text, contains no "
-                            "person, exposed body or body-part close-up (a non-human "
-                            "teaching model is allowed), and has "
-                            "no pregnancy, fetal, newborn or maternity imagery unless "
-                            "the exact topic requires it. Reject generic medical "
-                            "decoration, wrong procedures, misleading screens, malformed "
-                            "equipment or anatomy, and any uncertain case. For an "
-                            "article about a procedure, a clear photograph of the "
-                            "correct procedure equipment or instruments is sufficiently "
-                            "specific; do not require an organ, exposed body, patient or "
-                            "active procedure. For fertility or research topics, the "
-                            "correct laboratory equipment is sufficiently specific. "
-                            "For an article about evaluating medical information, a "
-                            "people-free research desk with a laptop, books and/or a "
-                            "magnifying glass is sufficiently specific even without "
-                            "readable medical labels; do not require text or a medical "
-                            "symbol. "
-                            "Return one "
-                            "line only. If suitable: ACCEPT: followed by a precise "
-                            "natural Hebrew description of what is visibly present. "
-                            "Otherwise: REJECT: followed by the concrete defect.\n\n"
-                            f"Title: {title}\n"
-                            f"Context: {' '.join((summary or '').split())[:1800]}"
-                        ),
-                    },
-                    {
-                        "type": "input_image",
-                        "image_url": f"data:image/png;base64,{encoded}",
-                    },
-                ],
-            }
-        ],
-        reasoning={"effort": "medium"},
-        text={"verbosity": "low"},
-        max_output_tokens=220,
-        timeout=float(os.environ.get("OPENAI_IMAGE_REVIEW_TIMEOUT_SECONDS", "45")),
-    )
-    decision, detail = _parse_review_verdict(response.output_text)
-    if decision == "ACCEPT":
-        description = detail
-        if len(description) < 12:
-            raise RuntimeError("Generated-image review returned no useful description")
-        return True, description
-    return False, detail
-
-
 def _fit_cover(image, size):
     target_width, target_height = size
     ratio = max(target_width / image.width, target_height / image.height)
@@ -656,83 +535,16 @@ def _png_bytes(image):
 
 
 def generate(title, summary, client=None):
-    """Return a licensed or generated image only after strict visual review."""
-    if client is None:
-        try:
-            from openai import OpenAI
-
-            client = OpenAI(
-                api_key=os.environ["OPENAI_API_KEY"],
-                timeout=float(os.environ.get("OPENAI_IMAGE_TIMEOUT_SECONDS", "300")),
-                max_retries=0,
-            )
-        except Exception:
-            client = None
-
-    licensed = None
-    if client is not None:
-        try:
-            licensed = select_licensed_photo(title, summary, client=client)
-        except Exception:
-            licensed = None
-    if licensed is not None:
-        try:
-            base = Image.open(BytesIO(licensed.content)).convert("RGB")
-            if min(base.size) < 700:
-                raise RuntimeError("Selected licensed photo is too small")
-            variants = {
-                "hero": _png_bytes(_fit_cover(base, (1600, 900))),
-                "landscape": _png_bytes(_fit_cover(base, (1200, 630))),
-                "square": _png_bytes(_fit_cover(base, (1200, 1200))),
-                "portrait": _png_bytes(_fit_cover(base, (1080, 1350))),
-            }
-            return SocialImage(
-                content=variants["landscape"],
-                media_type="image/png",
-                extension="png",
-                visual_description=licensed.visual_description,
-                source_page_url=licensed.source_page_url,
-                source_image_url=licensed.source_image_url,
-                creator=licensed.creator,
-                license_name=licensed.license_name,
-                license_url=licensed.license_url,
-                attribution=licensed.attribution,
-                source_type=licensed.source_type,
-                variants=variants,
-            )
-        except Exception:
-            licensed = None
-
-    if client is None:
-        raise RuntimeError(
-            "No reviewed image can be created because the OpenAI image client is unavailable"
-        )
-    feedback = ""
-    failures = []
-    for attempt in range(1, MAX_GENERATION_ATTEMPTS + 1):
-        try:
-            base, model, prompt = _generate_editorial_base(
-                client, title, summary, feedback
-            )
-            accepted, review = review_generated_visual(
-                client, base, title, summary
-            )
-        except Exception as exc:
-            failures.append(
-                f"attempt {attempt}: {type(exc).__name__}: {str(exc)[:240]}"
-            )
-            feedback = f"technical or review failure ({type(exc).__name__})"
-            continue
-        if accepted:
-            description = review
-            break
-        feedback = review
-        failures.append(f"attempt {attempt}: {review[:160]}")
-    else:
-        raise RuntimeError(
-            "No generated image passed strict topic, text and medical-safety review. "
-            + " | ".join(failures)
-        )
+    """Return four crops of one reviewed, licensed real photograph."""
+    licensed = select_licensed_photo(title, summary, client=client)
+    try:
+        base = Image.open(BytesIO(licensed.content)).convert("RGB")
+    except Exception as exc:
+        raise PhotoSelectionError(
+            "The selected licensed photograph could not be decoded"
+        ) from exc
+    if min(base.size) < 700:
+        raise PhotoSelectionError("Selected licensed photograph is too small")
     variants = {
         "hero": _png_bytes(_fit_cover(base, (1600, 900))),
         "landscape": _png_bytes(_fit_cover(base, (1200, 630))),
@@ -743,12 +555,14 @@ def generate(title, summary, client=None):
         content=variants["landscape"],
         media_type="image/png",
         extension="png",
-        visual_description=description,
-        creator="OpenAI",
-        attribution="Text-free visual created with OpenAI and passed visual review",
-        source_type="openai_generated_text_free_visual",
-        generation_model=model,
-        generation_prompt=prompt,
+        visual_description=licensed.visual_description,
+        source_page_url=licensed.source_page_url,
+        source_image_url=licensed.source_image_url,
+        creator=licensed.creator,
+        license_name=licensed.license_name,
+        license_url=licensed.license_url,
+        attribution=licensed.attribution,
+        source_type=licensed.source_type,
         variants=variants,
     )
 

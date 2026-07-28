@@ -1,8 +1,6 @@
 name: Regenerate Dashboard Review Image
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -44,17 +42,16 @@ jobs:
         if: steps.image.outputs.draft_path != ''
         run: pip install -r requirements.txt
 
-      - name: Generate and verify a licensed-first text-free replacement image package
+      - name: Find and verify a licensed real replacement photo
         if: steps.image.outputs.draft_path != ''
         run: >-
           python scripts/prepare_approval_bundle.py
           "${{ steps.image.outputs.draft_path }}"
-          --generate-image
+          --find-licensed-image
           --replace-existing-image-only
           --result-path "${RUNNER_TEMP}/image-selection-result.json"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
 
       - name: Commit the replacement image variants and exact bundle
         if: steps.image.outputs.draft_path != ''

@@ -30,14 +30,14 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GENERATED_DRAFT_PATH_FILE: ${{ runner.temp }}/generated-draft-path.txt
 
-      - name: Prepare licensed-first text-free image package
+      - name: Prepare licensed real-photo package
         run: |
           draft_path="$(cat "${RUNNER_TEMP}/generated-draft-path.txt")"
           if [[ -z "${draft_path}" ]] || [[ ! -f "${draft_path}" ]]; then
             echo "::error::This run did not produce its own review draft"
             exit 1
           fi
-          python scripts/prepare_approval_bundle.py "${draft_path}" --generate-image
+          python scripts/prepare_approval_bundle.py "${draft_path}" --find-licensed-image
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
@@ -59,7 +59,7 @@ jobs:
             echo "2. בדוק את הטקסט, כל גרסאות התמונה ללא מלל, ה-alt, הרישיון והייחוס כאשר נדרש, המקורות ויעדי הפרסום."
             echo "3. אשר את כל הסעיפים ולחץ **אישור והפצה לכל הערוצים**."
             echo
-            echo "המוצר מחפש קודם צילום חינמי רלוונטי עם רישיון מתאים. אם לא נמצא, הוא יוצר תמונת AI ללא מלל ובודק אותה חזותית. תמונה לא רלוונטית, תמונה עם מלל או דימוי רפואי מטעה נפסלים ונוצרים מחדש. אם אין תמונה שעברה בדיקה, ההרצה נעצרת ואינה מעבירה תמונה גרועה לאישור."
+            echo "המוצר מחפש צילום חינמי רלוונטי עם רישיון מתאים. אין יצירת תמונות ב-AI. אם לא נמצא צילום שעבר בדיקת רישיון, התאמה ובטיחות, ההרצה נעצרת ואינה מעבירה תמונה גרועה לאישור."
             echo
             echo "לאחר האישור ההפצה תתחיל אוטומטית בתוך עד 5 דקות. תוצאות וקישורים יוצגו במרכז האישורים."
           } >> "${GITHUB_STEP_SUMMARY}"
