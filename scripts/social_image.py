@@ -53,9 +53,9 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
     "computer-generated",
 )
 PLANNED_SEARCH_QUERIES = 5
-MAX_SEARCH_QUERIES = 6
-MAX_REVIEWED_CANDIDATES = 4
-MAX_GENERATION_ATTEMPTS = 3
+MAX_SEARCH_QUERIES = 4
+MAX_REVIEWED_CANDIDATES = 2
+MAX_GENERATION_ATTEMPTS = 2
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -548,7 +548,7 @@ def _generate_editorial_base(client, title, summary, rejection_feedback=""):
         size="1536x1024",
         quality=os.environ.get("OPENAI_IMAGE_QUALITY", "high"),
         output_format="png",
-        timeout=float(os.environ.get("OPENAI_IMAGE_TIMEOUT_SECONDS", "150")),
+        timeout=float(os.environ.get("OPENAI_IMAGE_TIMEOUT_SECONDS", "300")),
     )
     content = _response_image_bytes(response)
     image = Image.open(BytesIO(content)).convert("RGB")
@@ -650,7 +650,7 @@ def generate(title, summary, client=None):
 
             client = OpenAI(
                 api_key=os.environ["OPENAI_API_KEY"],
-                timeout=float(os.environ.get("OPENAI_IMAGE_TIMEOUT_SECONDS", "150")),
+                timeout=float(os.environ.get("OPENAI_IMAGE_TIMEOUT_SECONDS", "300")),
                 max_retries=0,
             )
         except Exception:
