@@ -41,6 +41,42 @@ class SocialImageTests(unittest.TestCase):
         prompt = client.responses.create.call_args.kwargs["input"]
         self.assertIn("real editorial photograph", prompt)
         self.assertIn("Do not request a doctor", prompt)
+        self.assertIn("evaluating online information", prompt)
+
+    @patch("scripts.social_image.search_commons", return_value=[])
+    def test_generate_reports_search_diagnostics_when_no_photo_is_found(self, search):
+        client = Mock()
+        client.responses.create.return_value = SimpleNamespace(
+            output_text=(
+                '{"queries":["adult comparing health information laptop",'
+                '"person reading medical reference book",'
+                '"library health research",'
+                '"tablet health information research",'
+                '"adult studying reference sources"]}'
+            )
+        )
+
+        with self.assertRaisesRegex(
+            social_image.PhotoSelectionError,
+            r"queries=5.*unique_candidates=0.*reviewed=0",
+        ):
+            social_image.generate(
+                "איך להעריך מידע רפואי ברשת",
+                "זיהוי מקורות אמינים והשוואת מידע",
+                client=client,
+            )
+
+        self.assertEqual(search.call_count, 5)
+
+    def test_generate_preserves_draft_path_when_search_planner_fails(self):
+        client = Mock()
+        client.responses.create.side_effect = TimeoutError("planner unavailable")
+
+        with self.assertRaisesRegex(
+            social_image.PhotoSelectionError,
+            "planner=TimeoutError",
+        ):
+            social_image.generate("כותרת", "תקציר", client=client)
 
     @patch("scripts.social_image.review_relevance")
     @patch("scripts.social_image.requests.get")
@@ -50,7 +86,10 @@ class SocialImageTests(unittest.TestCase):
     ):
         client = Mock()
         client.responses.create.return_value = SimpleNamespace(
-            output_text='{"queries":["real menopause woman photo","second query"]}'
+            output_text=(
+                '{"queries":["real menopause woman photo","second query",'
+                '"third query"]}'
+            )
         )
         candidate = {
             "download_url": "https://upload.wikimedia.org/photo.jpg",

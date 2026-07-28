@@ -53,6 +53,12 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
     "cgi",
     "computer-generated",
 )
+MAX_SEARCH_QUERIES = 5
+MAX_REVIEWED_CANDIDATES = 12
+
+
+class PhotoSelectionError(RuntimeError):
+    """No safe licensed photo was selected; callers may queue manual recovery."""
 
 
 @dataclass(frozen=True)
@@ -105,14 +111,17 @@ def _metadata_value(metadata, key):
 def _search_query_prompt(title, summary):
     exclusions = ", ".join(str(item) for item in _VISUAL_EXCLUSIONS)
     return (
-        "Create three short English Wikimedia Commons search queries for a real "
+        "Create five short English Wikimedia Commons search queries for a real "
         "editorial photograph that directly illustrates this Hebrew medical "
         "article. Each query must name a concrete, photographable subject or "
         "scene, not a metaphor. Do not request a doctor, clinic, surgery, text, "
         "diagram, illustration, infographic, icon, or AI image. Avoid these "
-        f"client exclusions: {exclusions or 'none'}. "
+        f"client exclusions: {exclusions or 'none'}. For articles about evaluating "
+        "online information, prefer an adult comparing information on a laptop or "
+        "tablet, consulting reference books, or studying in a library; do not "
+        "request screenshots or readable on-screen text. "
         "Return JSON only in this exact form: "
-        '{"queries":["query 1","query 2","query 3"]}.\n'
+        '{"queries":["query 1","query 2","query 3","query 4","query 5"]}.\n'
         f"Title: {' '.join((title or '').split())}\n"
         f"Context: {' '.join((summary or '').split())[:2400]}"
     )
@@ -137,9 +146,9 @@ def build_search_queries(client, title, summary):
         item = " ".join(str(query).split()).strip()
         if item and item not in cleaned:
             cleaned.append(item)
-    if len(cleaned) < 2:
+    if len(cleaned) < 3:
         raise RuntimeError("Photo search planner returned too few usable queries")
-    return cleaned[:3]
+    return cleaned[:MAX_SEARCH_QUERIES]
 
 
 def _candidate_from_page(page):
@@ -210,7 +219,7 @@ def search_commons(query, *, request_get=requests.get):
             "generator": "search",
             "gsrsearch": f"{query} filetype:bitmap",
             "gsrnamespace": "6",
-            "gsrlimit": "15",
+            "gsrlimit": "30",
             "prop": "info|imageinfo",
             "inprop": "url",
             "iiprop": "url|mime|size|extmetadata",
@@ -284,32 +293,62 @@ def generate(title, summary, client=None):
 
         client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
-    queries = build_search_queries(client, title, summary)
+    try:
+        queries = build_search_queries(client, title, summary)
+    except Exception as exc:
+        raise PhotoSelectionError(
+            "Licensed photo search planning failed. The draft was preserved and "
+            f"queued for a replacement image. Diagnostics: planner={type(exc).__name__}"
+        ) from exc
     reviewed = 0
+    downloaded = 0
+    undersized = 0
     seen = set()
     rejection_reasons = []
+    query_results = []
+    search_errors = []
     for query in queries:
-        for candidate in search_commons(query):
+        try:
+            candidates = search_commons(query)
+        except requests.RequestException as exc:
+            search_errors.append(f"{query}: {type(exc).__name__}")
+            continue
+        query_results.append(f"{query}: {len(candidates)} licensed candidates")
+        for candidate in candidates:
             source = candidate["source_image_url"]
             if source in seen:
                 continue
             seen.add(source)
-            download = requests.get(
-                candidate["download_url"],
-                headers={"User-Agent": COMMONS_USER_AGENT},
-                timeout=45,
-            )
-            download.raise_for_status()
-            content = download.content
-            if len(content) < 20_000:
+            try:
+                download = requests.get(
+                    candidate["download_url"],
+                    headers={"User-Agent": COMMONS_USER_AGENT},
+                    timeout=45,
+                )
+                download.raise_for_status()
+            except requests.RequestException as exc:
+                search_errors.append(
+                    f"{candidate['source_page_url']}: {type(exc).__name__}"
+                )
                 continue
-            accepted, review = review_relevance(
-                client,
-                content,
-                candidate["media_type"],
-                title,
-                summary,
-            )
+            content = download.content
+            downloaded += 1
+            if len(content) < 20_000:
+                undersized += 1
+                continue
+            try:
+                accepted, review = review_relevance(
+                    client,
+                    content,
+                    candidate["media_type"],
+                    title,
+                    summary,
+                )
+            except Exception as exc:
+                search_errors.append(
+                    f"{candidate['source_page_url']}: review={type(exc).__name__}"
+                )
+                continue
             reviewed += 1
             if accepted:
                 return SocialImage(
@@ -325,15 +364,31 @@ def generate(title, summary, client=None):
                     attribution=candidate["attribution"],
                 )
             rejection_reasons.append(review)
-            if reviewed >= 8:
+            if reviewed >= MAX_REVIEWED_CANDIDATES:
                 break
-        if reviewed >= 8:
+        if reviewed >= MAX_REVIEWED_CANDIDATES:
             break
-    detail = "; ".join(reason for reason in rejection_reasons[-3:] if reason)
-    raise RuntimeError(
+    diagnostics = [
+        f"queries={len(queries)}",
+        f"unique_candidates={len(seen)}",
+        f"downloaded={downloaded}",
+        f"undersized={undersized}",
+        f"reviewed={reviewed}",
+        f"rejected={len(rejection_reasons)}",
+    ]
+    if query_results:
+        diagnostics.append("search=[" + " | ".join(query_results) + "]")
+    if rejection_reasons:
+        diagnostics.append(
+            "review_notes=[" + " | ".join(rejection_reasons[-5:]) + "]"
+        )
+    if search_errors:
+        diagnostics.append("errors=[" + " | ".join(search_errors[-5:]) + "]")
+    raise PhotoSelectionError(
         "No suitably licensed, topic-relevant real photograph was found. "
-        "The workflow stopped instead of using a generic or AI image."
-        + (f" Review notes: {detail}" if detail else "")
+        "The draft was preserved and queued for a replacement image instead of "
+        "using a generic or AI image. Diagnostics: "
+        + "; ".join(diagnostics)
     )
 
 

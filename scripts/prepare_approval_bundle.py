@@ -60,6 +60,7 @@ def prepare_bundle(
     image_alt_text: str | None = None,
     image_sha256: str | None = None,
     image_metadata: dict | None = None,
+    image_selection_error: str | None = None,
 ) -> dict:
     draft = resolve_draft_path(str(draft_path))
     title, content = load_draft(draft)
@@ -194,6 +195,8 @@ def prepare_bundle(
             "instagram_and_tiktok_product_publication": False,
             "x_publication": False,
             "sources_present": bool(sources),
+            "approved_image_required_before_publication": True,
+            "approved_image_ready": bool(media),
         },
     )
     root = Path(output_root)
@@ -217,6 +220,8 @@ def prepare_bundle(
         "preview_path": preview_path.relative_to(PROJECT_ROOT).as_posix(),
         "created_at": bundle["created_at"],
         "required_approval_scopes": bundle["required_approval_scopes"],
+        "image_status": "ready" if media else "awaiting_replacement",
+        "image_selection_error": image_selection_error,
     }
     index["version"] = 7
     index["bundles"] = [
@@ -236,6 +241,8 @@ def prepare_bundle(
         "preview_path": str(preview_path),
         "index_path": str(index_path),
         "required_approval_scopes": bundle["required_approval_scopes"],
+        "image_status": entry["image_status"],
+        "image_selection_error": image_selection_error,
     }
 
 
@@ -247,6 +254,10 @@ def main() -> None:
     parser.add_argument("--image-alt-text")
     parser.add_argument("--image-sha256")
     parser.add_argument(
+        "--result-path",
+        help="Optionally write the machine-readable result JSON to this path.",
+    )
+    parser.add_argument(
         "--generate-image",
         action="store_true",
         help="Select a licensed real review photo; nothing is published.",
@@ -256,29 +267,42 @@ def main() -> None:
     image_alt_text = args.image_alt_text
     image_sha256 = args.image_sha256
     image_metadata = None
+    image_selection_error = None
     if args.generate_image:
         title, content = load_draft(resolve_draft_path(args.draft_path))
-        image = social_image.generate(title, article_visual_context(content))
-        media_root = Path(args.output_root) / "media"
-        media_root.mkdir(parents=True, exist_ok=True)
-        media_path = media_root / f"{stable_slug(Path(args.draft_path).stem)}.{image.extension}"
-        media_path.write_bytes(image.content)
-        image_uri = media_path.relative_to(PROJECT_ROOT).as_posix()
-        image_alt_text = social_image.alt_text(
-            title,
-            image.visual_description,
-        )
-        image_sha256 = file_sha256(media_path)
-        image_metadata = {
-            "visual_description": image.visual_description,
-            "source_type": image.source_type,
-            "source_page_url": image.source_page_url,
-            "source_image_url": image.source_image_url,
-            "creator": image.creator,
-            "license_name": image.license_name,
-            "license_url": image.license_url,
-            "attribution": image.attribution,
-        }
+        try:
+            image = social_image.generate(title, article_visual_context(content))
+        except social_image.PhotoSelectionError as exc:
+            image_selection_error = str(exc)
+            print(
+                "Licensed photo selection is pending; preserving the draft and "
+                "creating a non-publishable review bundle.",
+                file=sys.stderr,
+            )
+            print(image_selection_error, file=sys.stderr)
+        else:
+            media_root = Path(args.output_root) / "media"
+            media_root.mkdir(parents=True, exist_ok=True)
+            media_path = media_root / (
+                f"{stable_slug(Path(args.draft_path).stem)}.{image.extension}"
+            )
+            media_path.write_bytes(image.content)
+            image_uri = media_path.relative_to(PROJECT_ROOT).as_posix()
+            image_alt_text = social_image.alt_text(
+                title,
+                image.visual_description,
+            )
+            image_sha256 = file_sha256(media_path)
+            image_metadata = {
+                "visual_description": image.visual_description,
+                "source_type": image.source_type,
+                "source_page_url": image.source_page_url,
+                "source_image_url": image.source_image_url,
+                "creator": image.creator,
+                "license_name": image.license_name,
+                "license_url": image.license_url,
+                "attribution": image.attribution,
+            }
     result = prepare_bundle(
         args.draft_path,
         output_root=args.output_root,
@@ -286,7 +310,15 @@ def main() -> None:
         image_alt_text=image_alt_text,
         image_sha256=image_sha256,
         image_metadata=image_metadata,
+        image_selection_error=image_selection_error,
     )
+    if args.result_path:
+        result_path = Path(args.result_path)
+        result_path.parent.mkdir(parents=True, exist_ok=True)
+        result_path.write_text(
+            json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
