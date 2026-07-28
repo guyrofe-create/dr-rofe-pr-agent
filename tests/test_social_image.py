@@ -192,6 +192,8 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(call["model"], "gpt-image-2")
         self.assertIn("Do not add any letters", call["prompt"])
         self.assertIn("laptop, magnifying glass", call["prompt"])
+        review_input = client.responses.create.call_args.kwargs["input"]
+        self.assertIn("correct procedure equipment", review_input[0]["content"][0]["text"])
         select.assert_called_once()
 
     @patch("scripts.social_image.select_licensed_photo")
