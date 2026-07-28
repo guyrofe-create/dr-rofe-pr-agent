@@ -2,11 +2,11 @@
   "version": 7,
   "bundles": [
     {
-      "approval_id": "apr_0ec6153a9e4c61b10be511f47576f6bdac0787a5fcade855f5737d8b6894e426",
+      "approval_id": "apr_3557cbf7b9a4fa0bbce940bc076e96ea5093d22626a288649ca1e6b036361245",
       "draft_path": "content_drafts/2026-07-28-topic-02-run-30345611152-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_0ec6153a9e4c61b10be511f47576f6bdac0787a5fcade855f5737d8b6894e426.json",
-      "preview_path": "approval_bundles/apr_0ec6153a9e4c61b10be511f47576f6bdac0787a5fcade855f5737d8b6894e426.html",
-      "created_at": "2026-07-28T11:24:18Z",
+      "bundle_path": "approval_bundles/apr_3557cbf7b9a4fa0bbce940bc076e96ea5093d22626a288649ca1e6b036361245.json",
+      "preview_path": "approval_bundles/apr_3557cbf7b9a4fa0bbce940bc076e96ea5093d22626a288649ca1e6b036361245.html",
+      "created_at": "2026-07-28T11:31:31Z",
       "required_approval_scopes": [
         "medical_content",
         "public_publication"

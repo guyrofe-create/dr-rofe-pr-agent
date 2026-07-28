@@ -1,0 +1,374 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-07-28T11:31:31Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-07-28-topic-02-run-30345611152-attempt-1.md",
+  "source_draft_sha256": "87e448d36d8f84e6abd11f45188edf4e94eb32b1a3cef90ffbe8203b06580d5b",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/news-room/fact-sheets/detail/endometriosis",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.eshre.eu/Guideline/Endometriosis",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/cg156",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+    "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+    "alt_text": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים.",
+    "source_type": "openai_generated_text_free_visual",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "OpenAI",
+    "license_name": "",
+    "license_url": "",
+    "attribution": "Text-free visual created with OpenAI and passed visual review",
+    "generation_model": "gpt-image-2",
+    "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a modern fertility research laboratory workbench with microscope, closed sample dishes and precise laboratory tools, with no people, embryos, pregnancy imagery or labels. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא\nArticle context: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן. מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות. המאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות. אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הנגעים עשויים להופיע, בין השאר, על השחלות, החצוצרות, הצפק ואיברים נוספים באגן. המחלה קשורה לעיתים לכאבי מחזור משמעותיים, כאב אגני, כאב בעת קיום יחסי מין ותסמינים במערכת העיכול או השתן. עם זאת, חומרת הכאב אינה מלמדת בהכרח על מידת הפגיעה בפוריות: ייתכן מצב שבו מחלה נרחבת גורמת לתסמינים מעטים, ולעומתו מחלה מוגבלת גורמת לכאב ניכר. לפי [דף המידע הרשמי של ארגון הבריאות העולמי בנושא אנדומטריוזיס](https://www.who.int/news-room/fact-sheets/detail/endometriosis), המחלה עשויה להיות קשורה לאי־פוריות, אך הביטוי הקליני והשלכותיה אינם אחידים. לכן יש להימנע ממסקנות גורפות ולבחון כל מקרה לפי מכלול הנתונים הרפואיים והפוריותיים. כיצד אנדומטריוזיס עשויה להשפיע על הפוריות? הקשר בין אנדומטריוזיס לפוריות מורכב ואינו מוסבר במנגנון יחיד. אצל חלק מהנשים קיימת השפעה אנטומית ברורה, ואילו אצל אחרות מבנה האגן נראה תקין יחסית אך עדיין קיים קושי להרות. אחד המנגנונים האפשריים הוא היווצרות הידבקויות באגן. הידבקויות הן רצועות של רקמה צלקתית העלולות לשנות את היחסים האנטומיים בין השחלה, החצוצרה והרחם. כאשר החצוצרה אינה יכולה לקלוט את הביצית ביעילות, או כאשר תנועתה מוגבלת, הסיכוי למפגש טבעי בין ביצית לזרע עלול לרדת. נגעים בשחלות עלולים ליצור אנדומטריומות — ציסטות הקשורות לאנדומטריוזיס. אנדומטריומה עשויה להשפיע על רקמת השחלה הסמוכה, ולעיתים היא קשורה לירידה במדדים המשמשים ל",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-hero.png",
+        "sha256": "8a5863eaf0fe44d5a606e8a8da279b899c3e0578167b75d092c3a6a2c697ab31",
+        "width": 1600,
+        "height": 900
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+        "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+        "width": 1200,
+        "height": 630
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-square.png",
+        "sha256": "4b3cd8b8f4770d9358705866080dc47ce06c1a548b2fecab8c341b726ee959db",
+        "width": 1200,
+        "height": 1200
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-portrait.png",
+        "sha256": "24b7205147b681f22853ba6788ca03f69653481a4dbaa9ed697c5057dc5fc8a6",
+        "width": 1080,
+        "height": 1350
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "markdown": "# אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nאנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן. מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות.\n\nהמאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות.\n\nאנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הנגעים עשויים להופיע, בין השאר, על השחלות, החצוצרות, הצפק ואיברים נוספים באגן. המחלה קשורה לעיתים לכאבי מחזור משמעותיים, כאב אגני, כאב בעת קיום יחסי מין ותסמינים במערכת העיכול או השתן. עם זאת, חומרת הכאב אינה מלמדת בהכרח על מידת הפגיעה בפוריות: ייתכן מצב שבו מחלה נרחבת גורמת לתסמינים מעטים, ולעומתו מחלה מוגבלת גורמת לכאב ניכר.\n\nלפי [דף המידע הרשמי של ארגון הבריאות העולמי בנושא אנדומטריוזיס](https://www.who.int/news-room/fact-sheets/detail/endometriosis), המחלה עשויה להיות קשורה לאי־פוריות, אך הביטוי הקליני והשלכותיה אינם אחידים. לכן יש להימנע ממסקנות גורפות ולבחון כל מקרה לפי מכלול הנתונים הרפואיים והפוריותיים.\n\n## כיצד אנדומטריוזיס עשויה להשפיע על הפוריות?\n\nהקשר בין אנדומטריוזיס לפוריות מורכב ואינו מוסבר במנגנון יחיד. אצל חלק מהנשים קיימת השפעה אנטומית ברורה, ואילו אצל אחרות מבנה האגן נראה תקין יחסית אך עדיין קיים קושי להרות.\n\nאחד המנגנונים האפשריים הוא היווצרות הידבקויות באגן. הידבקויות הן רצועות של רקמה צלקתית העלולות לשנות את היחסים האנטומיים בין השחלה, החצוצרה והרחם. כאשר החצוצרה אינה יכולה לקלוט את הביצית ביעילות, או כאשר תנועתה מוגבלת, הסיכוי למפגש טבעי בין ביצית לזרע עלול לרדת.\n\nנגעים בשחלות עלולים ליצור אנדומטריומות — ציסטות הקשורות לאנדומטריוזיס. אנדומטריומה עשויה להשפיע על רקמת השחלה הסמוכה, ולעיתים היא קשורה לירידה במדדים המשמשים להערכת הרזרבה השחלתית. חשוב להדגיש שמדדי רזרבה שחלתית אינם מודדים ישירות את איכות הביציות ואינם יכולים לנבא לבדם אם יושג היריון טבעי.\n\nגם דלקת מקומית כרונית עשויה למלא תפקיד. אנדומטריוזיס קשורה לשינויים בסביבה הביולוגית של האגן, ואלה עשויים להשפיע על תפקוד החצוצרות, על ההפריה או על שלבים מוקדמים של הרבייה. חלק מהמנגנונים עדיין נחקרים, ולכן יש להבחין בין קשר רפואי מוכר לבין הסבר ביולוגי שטרם הוכח במלואו.\n\nלבסוף, כאב בעת קיום יחסי מין, כאב כרוני ועומס רגשי עלולים להפחית את תדירות יחסי המין סביב מועד הביוץ. זוהי השפעה עקיפה אך מעשית, שאינה קשורה בהכרח לפגיעה אנטומית במערכת הרבייה.\n\n## האם דרגת המחלה מנבאת את הסיכוי להיריון?\n\nאנדומטריוזיס מסווגת לעיתים לפי היקף הנגעים, עומקם, נוכחות הידבקויות ומעורבות השחלות או איברים אחרים. עם זאת, הסיווג האנטומי אינו כלי מושלם לניבוי פוריות. דרגת מחלה גבוהה עשויה להיות קשורה לעיוות אנטומי משמעותי יותר, אך אין התאמה מלאה בין הדרגה, עוצמת התסמינים והסיכוי להרות.\n\nלפי [ההנחיה הקלינית של ESHRE לטיפול באנדומטריוזיס](https://www.eshre.eu/Guideline/Endometriosis), הערכת הפוריות והחלטות הטיפול צריכות להביא בחשבון לא רק את היקף המחלה, אלא גם את גיל האישה, העדפותיה, היסטוריה של ניתוחים, מדדי רזרבה שחלתית, גורמי פוריות נוספים ומשך אי־הפוריות.\n\nגיל הוא גורם מרכזי משום שמספר הביציות ואיכותן יורדים עם הזמן גם ללא אנדומטריוזיס. לכן אותה תמונה אנטומית עשויה לקבל משמעות שונה בגילים שונים. בנוסף, אין לייחס כל קושי להרות לאנדומטריוזיס בלבד: חסימה בחצוצרות, הפרעת ביוץ, שינויים בחלל הרחם או גורם זכרי יכולים להתקיים במקביל.\n\nגם משך הניסיונות להרות חשוב. המתנה סבירה אצל אישה צעירה ללא גורמי סיכון נוספים אינה בהכרח מתאימה למי שגילה מתקדם יותר, שעברה ניתוחים שחלתיים, שיש לה אנדומטריומות בשתי השחלות או שקיימת אצלה עדות לגורם פוריות נוסף.\n\n## כיצד מתבצעת הערכת פוריות?\n\nבירור פוריות אינו מיועד רק לאבחון אנדומטריוזיס. מטרתו להעריך את כל הגורמים העשויים להשפיע על הסיכוי להיריון, אצל שני בני הזוג או בהתאם למבנה המשפחתי ולמקור תאי הרבייה.\n\nהבירור עשוי לכלול היסטוריה רפואית וגינקולוגית, משך הניסיונות להרות, סדירות המחזורים, תסמינים אופייניים לאנדומטריוזיס, ניתוחים קודמים והריונות בעבר. בדיקת אולטרסאונד עשויה לזהות אנדומטריומות וממצאים נוספים באגן, אך בדיקה תקינה אינה שוללת בהכרח אנדומטריוזיס שטחית.\n\nבהתאם לנסיבות ניתן לשקול את המרכיבים הבאים:\n\n| מרכיב בהערכה | מה הוא עשוי לברר | מגבלות מרכזיות |\n|---|---|---|\n| הערכת ביוץ ומחזור | האם קיימת סדירות המתאימה לביוץ | מחזור סדיר אינו מבטיח שכל יתר גורמי הפוריות תקינים |\n| אולטרסאונד אגן | מבנה הרחם והשחלות, אנדומטריומות וממצאים נלווים | אינו מזהה בהכרח את כל נגעי האנדומטריוזיס |\n| בדיקת מעבר בחצוצרות | האם לפחות חצוצרה אחת פתוחה | אינה מספקת מידע מלא על תפקוד החצוצרה |\n| מדדי רזרבה שחלתית | תגובה צפויה לגירוי שחלתי ומאגר זקיקים משוער | אינם בדיקה ישירה לאיכות הביציות או לפוריות טבעית |\n| בדיקת זרע | ריכוז, תנועה ומבנה של תאי הזרע | התוצאות עשויות להשתנות ולעיתים נדרשת בדיקה חוזרת |\n\nלפי [ההנחיה של NICE להערכת בעיות פוריות ולטיפול בהן](https://www.nice.org.uk/guidance/cg156), בירור פוריות צריך להיות שיטתי ולהתייחס לגורמים נשיים וזכריים גם יחד. עיקרון זה חשוב במיוחד בנוכחות אנדומטריוזיס, כדי שלא להניח מראש כי המחלה היא ההסבר היחיד לקושי.\n\nאבחון אנדומטריוזיס אינו מחייב תמיד ניתוח. כיום ניתן לעיתים להגיע לחשד קליני מבוסס בעזרת תסמינים, בדיקה והדמיה. ניתוח לפרוסקופי עשוי לספק אבחנה ולטפל בנגעים במקרים מתאימים, אך ההחלטה לבצעו אינה אמורה להתבסס רק על הרצון “לאשר” את המחלה, במיוחד כאשר המטרה המרכזית היא השגת היריון.\n\n## טיפול באנדומטריוזיס כאשר פוריות היא מטרה\n\nבחירת הטיפול תלויה בשאלה המרכזית: האם המטרה היא הקלה בתסמינים, ניסיון להרות כעת, או שימור אפשרויות לעתיד. טיפול המתאים לשליטה בכאב אינו בהכרח טיפול המשפר את הסיכוי להיריון בזמן השימוש בו.\n\nטיפולים הורמונליים, כגון גלולות משולבות או תכשירים פרוגסטיניים, יכולים לסייע בהפחתת כאב ובדיכוי פעילות המחלה. עם זאת, רובם מונעים ביוץ או היריון במהלך נטילתם. לכן אין לראות בדיכוי הורמונלי ממושך טיפול פוריות כשלעצמו. ייתכנו נסיבות שבהן משתמשים בטיפול הורמונלי כחלק מתוכנית רחבה יותר, אך מטרתו והשלכותיו צריכות להיות מוגדרות בבירור.\n\nניתוח עשוי להיות רלוונטי כאשר קיימים כאבים משמעותיים, חשד לפגיעה באיברים, הפרעה אנטומית או שיקולים פוריותיים מסוימים. בחלק מהמקרים טיפול ניתוחי במחלה קלה או בינונית עשוי לשפר את הסיכוי להיריון טבעי. מנגד, ניתוח בשחלה — ובייחוד ניתוח חוזר או דו־צדדי להסרת אנדומטריומות — עלול לפגוע ברקמת שחלה תקינה ולהשפיע על הרזרבה השחלתית.\n\nלכן עצם קיומה של אנדומטריומה אינו מוביל אוטומטית למסקנה שיש להסירה לפני טיפולי פוריות. יש לשקול את גודל הממצא, מאפייניו, נוכחות כאב, חשד אבחנתי, נגישות לזקיקים, ניתוחים קודמים ותפקוד השחלות. ההחלטה היא איזון בין תועלת אפשרית לבין הסיכון לפגיעה ברקמת השחלה.\n\nכאשר היריון טבעי אינו מושג, ניתן לשקול טיפולי פוריות. האפשרויות עשויות לכלול השראת ביוץ או גירוי שחלתי בשילוב הזרעה תוך־רחמית, וכן הפריה חוץ־גופית. הבחירה מושפעת מגיל, מצב החצוצרות, איכות הזרע, משך אי־הפוריות, חומרת המחלה וטיפולים קודמים. הפריה חוץ־גופית יכולה לעקוף חלק מהמכשולים האנטומיים, אך אינה מבטיחה היריון, והתוצאות תלויות במכלול גורמים שאינם קשורים רק לאנדומטריוזיס.\n\n## תכנון היריון ושימור פוריות\n\nאבחנה של אנדומטריוזיס אינה מחייבת בהכרח ניסיון מיידי להרות, וגם אינה מוכיחה שתתרחש בעתיד בעיית פוריות. עם זאת, היא עשויה להצדיק תכנון מודע יותר, במיוחד כאשר קיימים גורמי סיכון נוספים כגון גיל מתקדם יותר, אנדומטריומות דו־צדדיות, ניתוחים שחלתיים קודמים או עדות לירידה ברזרבה השחלתית.\n\nשימור פוריות באמצעות הקפאת ביציות או עוברים עשוי להישקל במקרים נבחרים, אך אינו המלצה גורפת לכל מי שאובחנה עם אנדומטריוזיס. ההליך כרוך בגירוי שחלתי, שאיבת ביציות, עלויות, עומס גופני ורגשי ואי־ודאות לגבי שימוש עתידי ותוצאות. גם ביציות מוקפאות אינן מהוות ערובה ללידת חי.\n\nכאשר מתוכנן ניתוח בשחלה, במיוחד בנוכחות מחלה דו־צדדית או לאחר ניתוח קודם, עשויה לעלות שאלת שימור הפוריות לפני הניתוח. זהו תחום שבו נדרשת הערכה פרטנית, משום שאין בדיקה אחת המסוגלת לחזות בוודאות את קצב התקדמות המחלה או את הפוריות העתידית.\n\nחשוב גם להכיר בממד הנפשי. כאב כרוני, אי־ודאות סביב פוריות וטיפולים ממושכים עלולים לגרום למתח, חרדה או פגיעה בזוגיות ובתפקוד. תמיכה רגשית היא חלק לגיטימי מהטיפול הכולל ואינה מעידה שהתסמינים “פסיכולוגיים”.\n\n## סיכום\n\nאנדומטריוזיס יכולה להשפיע על הפוריות באמצעות הידבקויות, שינוי באנטומיית האגן, מעורבות שחלתית ותהליכים דלקתיים, אך השפעתה שונה מאישה לאישה. האבחנה אינה שוות ערך לאי־פוריות, וחומרת הכאב או דרגת המחלה אינן מנבאות לבדן את הסיכוי להיריון.\n\nהערכת המצב צריכה להתייחס לגיל, למשך הניסיונות להרות, לתפקוד השחלות והחצוצרות, לאיכות הזרע, לניתוחים קודמים ולהעדפות האישיות. טיפול הורמונלי עשוי להקל על תסמינים אך אינו משמש בדרך כלל להשגת היריון בזמן נטילתו; ניתוח עשוי לסייע במצבים מסוימים אך עלול גם לפגוע ברזרבה השחלתית; וטיפולי פוריות יכולים לעקוף חלק מהמכשולים, ללא הבטחת הצלחה.\n\nזהו מידע רפואי כללי בלבד. אין לראות בו אבחון, המלצה טיפולית אישית או תחליף להערכה רפואית. כל טענה רפואית והנוסח המלא מחייבים ביקורת של רופא או רופאה מוסמכים לפני פרסום.\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n## מקורות\n\n1. World Health Organization, **Endometriosis – Fact Sheet**:  \n   https://www.who.int/news-room/fact-sheets/detail/endometriosis\n\n2. European Society of Human Reproduction and Embryology, **ESHRE Guideline: Endometriosis**:  \n   https://www.eshre.eu/Guideline/Endometriosis\n\n3. National Institute for Health and Care Excellence, **Fertility problems: assessment and treatment – Clinical guideline CG156**:  \n   https://www.nice.org.uk/guidance/cg156",
+        "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-02-run-30345611152-attempt-1/",
+        "slug": "guy-rofe-pilot-2026-07-28-topic-02-run-30345611152-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-hero.png",
+          "sha256": "8a5863eaf0fe44d5a606e8a8da279b899c3e0578167b75d092c3a6a2c697ab31",
+          "alt_text": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a modern fertility research laboratory workbench with microscope, closed sample dishes and precise laboratory tools, with no people, embryos, pregnancy imagery or labels. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא\nArticle context: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן. מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות. המאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות. אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הנגעים עשויים להופיע, בין השאר, על השחלות, החצוצרות, הצפק ואיברים נוספים באגן. המחלה קשורה לעיתים לכאבי מחזור משמעותיים, כאב אגני, כאב בעת קיום יחסי מין ותסמינים במערכת העיכול או השתן. עם זאת, חומרת הכאב אינה מלמדת בהכרח על מידת הפגיעה בפוריות: ייתכן מצב שבו מחלה נרחבת גורמת לתסמינים מעטים, ולעומתו מחלה מוגבלת גורמת לכאב ניכר. לפי [דף המידע הרשמי של ארגון הבריאות העולמי בנושא אנדומטריוזיס](https://www.who.int/news-room/fact-sheets/detail/endometriosis), המחלה עשויה להיות קשורה לאי־פוריות, אך הביטוי הקליני והשלכותיה אינם אחידים. לכן יש להימנע ממסקנות גורפות ולבחון כל מקרה לפי מכלול הנתונים הרפואיים והפוריותיים. כיצד אנדומטריוזיס עשויה להשפיע על הפוריות? הקשר בין אנדומטריוזיס לפוריות מורכב ואינו מוסבר במנגנון יחיד. אצל חלק מהנשים קיימת השפעה אנטומית ברורה, ואילו אצל אחרות מבנה האגן נראה תקין יחסית אך עדיין קיים קושי להרות. אחד המנגנונים האפשריים הוא היווצרות הידבקויות באגן. הידבקויות הן רצועות של רקמה צלקתית העלולות לשנות את היחסים האנטומיים בין השחלה, החצוצרה והרחם. כאשר החצוצרה אינה יכולה לקלוט את הביצית ביעילות, או כאשר תנועתה מוגבלת, הסיכוי למפגש טבעי בין ביצית לזרע עלול לרדת. נגעים בשחלות עלולים ליצור אנדומטריומות — ציסטות הקשורות לאנדומטריוזיס. אנדומטריומה עשויה להשפיע על רקמת השחלה הסמוכה, ולעיתים היא קשורה לירידה במדדים המשמשים ל",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-hero.png",
+              "sha256": "8a5863eaf0fe44d5a606e8a8da279b899c3e0578167b75d092c3a6a2c697ab31",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+              "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-square.png",
+              "sha256": "4b3cd8b8f4770d9358705866080dc47ce06c1a548b2fecab8c341b726ee959db",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-portrait.png",
+              "sha256": "24b7205147b681f22853ba6788ca03f69653481a4dbaa9ed697c5057dc5fc8a6",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "text": "אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן.\n\nמידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-02-run-30345611152-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+          "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+          "alt_text": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a modern fertility research laboratory workbench with microscope, closed sample dishes and precise laboratory tools, with no people, embryos, pregnancy imagery or labels. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא\nArticle context: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן. מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות. המאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות. אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הנגעים עשויים להופיע, בין השאר, על השחלות, החצוצרות, הצפק ואיברים נוספים באגן. המחלה קשורה לעיתים לכאבי מחזור משמעותיים, כאב אגני, כאב בעת קיום יחסי מין ותסמינים במערכת העיכול או השתן. עם זאת, חומרת הכאב אינה מלמדת בהכרח על מידת הפגיעה בפוריות: ייתכן מצב שבו מחלה נרחבת גורמת לתסמינים מעטים, ולעומתו מחלה מוגבלת גורמת לכאב ניכר. לפי [דף המידע הרשמי של ארגון הבריאות העולמי בנושא אנדומטריוזיס](https://www.who.int/news-room/fact-sheets/detail/endometriosis), המחלה עשויה להיות קשורה לאי־פוריות, אך הביטוי הקליני והשלכותיה אינם אחידים. לכן יש להימנע ממסקנות גורפות ולבחון כל מקרה לפי מכלול הנתונים הרפואיים והפוריותיים. כיצד אנדומטריוזיס עשויה להשפיע על הפוריות? הקשר בין אנדומטריוזיס לפוריות מורכב ואינו מוסבר במנגנון יחיד. אצל חלק מהנשים קיימת השפעה אנטומית ברורה, ואילו אצל אחרות מבנה האגן נראה תקין יחסית אך עדיין קיים קושי להרות. אחד המנגנונים האפשריים הוא היווצרות הידבקויות באגן. הידבקויות הן רצועות של רקמה צלקתית העלולות לשנות את היחסים האנטומיים בין השחלה, החצוצרה והרחם. כאשר החצוצרה אינה יכולה לקלוט את הביצית ביעילות, או כאשר תנועתה מוגבלת, הסיכוי למפגש טבעי בין ביצית לזרע עלול לרדת. נגעים בשחלות עלולים ליצור אנדומטריומות — ציסטות הקשורות לאנדומטריוזיס. אנדומטריומה עשויה להשפיע על רקמת השחלה הסמוכה, ולעיתים היא קשורה לירידה במדדים המשמשים ל",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-hero.png",
+              "sha256": "8a5863eaf0fe44d5a606e8a8da279b899c3e0578167b75d092c3a6a2c697ab31",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+              "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-square.png",
+              "sha256": "4b3cd8b8f4770d9358705866080dc47ce06c1a548b2fecab8c341b726ee959db",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-portrait.png",
+              "sha256": "24b7205147b681f22853ba6788ca03f69653481a4dbaa9ed697c5057dc5fc8a6",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        }
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "text": "אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן.\n\n• מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות.\n• המאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות.\n• אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-02-run-30345611152-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+          "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+          "alt_text": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a modern fertility research laboratory workbench with microscope, closed sample dishes and precise laboratory tools, with no people, embryos, pregnancy imagery or labels. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא\nArticle context: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן. מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות. המאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות. אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הנגעים עשויים להופיע, בין השאר, על השחלות, החצוצרות, הצפק ואיברים נוספים באגן. המחלה קשורה לעיתים לכאבי מחזור משמעותיים, כאב אגני, כאב בעת קיום יחסי מין ותסמינים במערכת העיכול או השתן. עם זאת, חומרת הכאב אינה מלמדת בהכרח על מידת הפגיעה בפוריות: ייתכן מצב שבו מחלה נרחבת גורמת לתסמינים מעטים, ולעומתו מחלה מוגבלת גורמת לכאב ניכר. לפי [דף המידע הרשמי של ארגון הבריאות העולמי בנושא אנדומטריוזיס](https://www.who.int/news-room/fact-sheets/detail/endometriosis), המחלה עשויה להיות קשורה לאי־פוריות, אך הביטוי הקליני והשלכותיה אינם אחידים. לכן יש להימנע ממסקנות גורפות ולבחון כל מקרה לפי מכלול הנתונים הרפואיים והפוריותיים. כיצד אנדומטריוזיס עשויה להשפיע על הפוריות? הקשר בין אנדומטריוזיס לפוריות מורכב ואינו מוסבר במנגנון יחיד. אצל חלק מהנשים קיימת השפעה אנטומית ברורה, ואילו אצל אחרות מבנה האגן נראה תקין יחסית אך עדיין קיים קושי להרות. אחד המנגנונים האפשריים הוא היווצרות הידבקויות באגן. הידבקויות הן רצועות של רקמה צלקתית העלולות לשנות את היחסים האנטומיים בין השחלה, החצוצרה והרחם. כאשר החצוצרה אינה יכולה לקלוט את הביצית ביעילות, או כאשר תנועתה מוגבלת, הסיכוי למפגש טבעי בין ביצית לזרע עלול לרדת. נגעים בשחלות עלולים ליצור אנדומטריומות — ציסטות הקשורות לאנדומטריוזיס. אנדומטריומה עשויה להשפיע על רקמת השחלה הסמוכה, ולעיתים היא קשורה לירידה במדדים המשמשים ל",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-hero.png",
+              "sha256": "8a5863eaf0fe44d5a606e8a8da279b899c3e0578167b75d092c3a6a2c697ab31",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+              "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-square.png",
+              "sha256": "4b3cd8b8f4770d9358705866080dc47ce06c1a548b2fecab8c341b726ee959db",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-portrait.png",
+              "sha256": "24b7205147b681f22853ba6788ca03f69653481a4dbaa9ed697c5057dc5fc8a6",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        }
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "html": "<h2>אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן.</p><p>מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות.</p>",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-02-run-30345611152-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-hero.png",
+          "sha256": "8a5863eaf0fe44d5a606e8a8da279b899c3e0578167b75d092c3a6a2c697ab31",
+          "alt_text": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a modern fertility research laboratory workbench with microscope, closed sample dishes and precise laboratory tools, with no people, embryos, pregnancy imagery or labels. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא\nArticle context: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן. מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות. המאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות. אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הנגעים עשויים להופיע, בין השאר, על השחלות, החצוצרות, הצפק ואיברים נוספים באגן. המחלה קשורה לעיתים לכאבי מחזור משמעותיים, כאב אגני, כאב בעת קיום יחסי מין ותסמינים במערכת העיכול או השתן. עם זאת, חומרת הכאב אינה מלמדת בהכרח על מידת הפגיעה בפוריות: ייתכן מצב שבו מחלה נרחבת גורמת לתסמינים מעטים, ולעומתו מחלה מוגבלת גורמת לכאב ניכר. לפי [דף המידע הרשמי של ארגון הבריאות העולמי בנושא אנדומטריוזיס](https://www.who.int/news-room/fact-sheets/detail/endometriosis), המחלה עשויה להיות קשורה לאי־פוריות, אך הביטוי הקליני והשלכותיה אינם אחידים. לכן יש להימנע ממסקנות גורפות ולבחון כל מקרה לפי מכלול הנתונים הרפואיים והפוריותיים. כיצד אנדומטריוזיס עשויה להשפיע על הפוריות? הקשר בין אנדומטריוזיס לפוריות מורכב ואינו מוסבר במנגנון יחיד. אצל חלק מהנשים קיימת השפעה אנטומית ברורה, ואילו אצל אחרות מבנה האגן נראה תקין יחסית אך עדיין קיים קושי להרות. אחד המנגנונים האפשריים הוא היווצרות הידבקויות באגן. הידבקויות הן רצועות של רקמה צלקתית העלולות לשנות את היחסים האנטומיים בין השחלה, החצוצרה והרחם. כאשר החצוצרה אינה יכולה לקלוט את הביצית ביעילות, או כאשר תנועתה מוגבלת, הסיכוי למפגש טבעי בין ביצית לזרע עלול לרדת. נגעים בשחלות עלולים ליצור אנדומטריומות — ציסטות הקשורות לאנדומטריוזיס. אנדומטריומה עשויה להשפיע על רקמת השחלה הסמוכה, ולעיתים היא קשורה לירידה במדדים המשמשים ל",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-hero.png",
+              "sha256": "8a5863eaf0fe44d5a606e8a8da279b899c3e0578167b75d092c3a6a2c697ab31",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+              "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-square.png",
+              "sha256": "4b3cd8b8f4770d9358705866080dc47ce06c1a548b2fecab8c341b726ee959db",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-portrait.png",
+              "sha256": "24b7205147b681f22853ba6788ca03f69653481a4dbaa9ed697c5057dc5fc8a6",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "description": "אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן. מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות. מאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-02-run-30345611152-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-portrait.png",
+          "sha256": "24b7205147b681f22853ba6788ca03f69653481a4dbaa9ed697c5057dc5fc8a6",
+          "alt_text": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מעבדת פוריות מקצועית ובה מיקרוסקופ, פיפטות, צלחות פטרי וכלי מעבדה סטריליים.",
+          "source_type": "openai_generated_text_free_visual",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "OpenAI",
+          "license_name": "",
+          "license_url": "",
+          "attribution": "Text-free visual created with OpenAI and passed visual review",
+          "generation_model": "gpt-image-2",
+          "generation_prompt": "Create a realistic, premium editorial hero photograph for a Hebrew evidence-based medical information article. It must directly and unmistakably match the article topic. Use a calm, sophisticated teal, navy and warm-neutral palette and natural photographic lighting. Required visible subject: a modern fertility research laboratory workbench with microscope, closed sample dishes and precise laboratory tools, with no people, embryos, pregnancy imagery or labels. Do not depict identifiable people, a doctor treating a patient, a face presented as the author, logos, a clinic brand, or a diagnostic or treatment claim. Do not add any letters, words, numbers, labels, captions, watermarks, interface text or typography anywhere. Do not show pregnancy, a fetus, an ultrasound fetus, a newborn or maternity symbolism unless the required visible subject explicitly asks for it. The image will be published exactly as generated, with no text overlay.\nArticle title: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא\nArticle context: אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שקולה לאי־פוריות: נשים רבות עם המחלה נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות בהתאם למצבן. מידת ההשפעה משתנה מאוד ותלויה, בין היתר, בגיל, במיקום הנגעים, במצב השחלות והחצוצרות, באיכות הזרע ובמשך הזמן שבו מנסים להרות. המאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות. אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הנגעים עשויים להופיע, בין השאר, על השחלות, החצוצרות, הצפק ואיברים נוספים באגן. המחלה קשורה לעיתים לכאבי מחזור משמעותיים, כאב אגני, כאב בעת קיום יחסי מין ותסמינים במערכת העיכול או השתן. עם זאת, חומרת הכאב אינה מלמדת בהכרח על מידת הפגיעה בפוריות: ייתכן מצב שבו מחלה נרחבת גורמת לתסמינים מעטים, ולעומתו מחלה מוגבלת גורמת לכאב ניכר. לפי [דף המידע הרשמי של ארגון הבריאות העולמי בנושא אנדומטריוזיס](https://www.who.int/news-room/fact-sheets/detail/endometriosis), המחלה עשויה להיות קשורה לאי־פוריות, אך הביטוי הקליני והשלכותיה אינם אחידים. לכן יש להימנע ממסקנות גורפות ולבחון כל מקרה לפי מכלול הנתונים הרפואיים והפוריותיים. כיצד אנדומטריוזיס עשויה להשפיע על הפוריות? הקשר בין אנדומטריוזיס לפוריות מורכב ואינו מוסבר במנגנון יחיד. אצל חלק מהנשים קיימת השפעה אנטומית ברורה, ואילו אצל אחרות מבנה האגן נראה תקין יחסית אך עדיין קיים קושי להרות. אחד המנגנונים האפשריים הוא היווצרות הידבקויות באגן. הידבקויות הן רצועות של רקמה צלקתית העלולות לשנות את היחסים האנטומיים בין השחלה, החצוצרה והרחם. כאשר החצוצרה אינה יכולה לקלוט את הביצית ביעילות, או כאשר תנועתה מוגבלת, הסיכוי למפגש טבעי בין ביצית לזרע עלול לרדת. נגעים בשחלות עלולים ליצור אנדומטריומות — ציסטות הקשורות לאנדומטריוזיס. אנדומטריומה עשויה להשפיע על רקמת השחלה הסמוכה, ולעיתים היא קשורה לירידה במדדים המשמשים ל",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-hero.png",
+              "sha256": "8a5863eaf0fe44d5a606e8a8da279b899c3e0578167b75d092c3a6a2c697ab31",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-landscape.png",
+              "sha256": "2303f785b801d6d16fc472f6092127b3b58f8c0536f0b16f35ba9c432b311c28",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-square.png",
+              "sha256": "4b3cd8b8f4770d9358705866080dc47ce06c1a548b2fecab8c341b726ee959db",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-07-28-topic-02-run-30345611152-attempt-1-portrait.png",
+              "sha256": "24b7205147b681f22853ba6788ca03f69653481a4dbaa9ed697c5057dc5fc8a6",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "role": "portrait"
+        }
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_and_tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_3557cbf7b9a4fa0bbce940bc076e96ea5093d22626a288649ca1e6b036361245"
+}
