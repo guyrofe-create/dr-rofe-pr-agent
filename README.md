@@ -233,10 +233,12 @@ uses fact-bounded, platform-native variants instead of copying one caption
 unchanged. Every article is visibly bound to the client in its title, linked
 byline, author box and natural body mentions.
 
-Review media is generated as one immutable four-format package: a text-free
-hero, landscape social card, square card and portrait Pinterest card. GPT Image
-provides the editorial base when available; software adds exact Hebrew branding
-and falls back to a deterministic branded visual if the model is unavailable.
+Review media is generated as one immutable four-format package: hero,
+landscape, square and portrait. Every variant is text-free. The product first
+selects a relevant Wikimedia Commons photograph with a verified compatible
+license and preserves its attribution. If none passes relevance and license
+checks, GPT Image creates a text-free editorial visual; if that service is
+unavailable, a deterministic text-free local visual is used.
 The approval step fails closed unless every required image and its entity-aware
 alt text are present. Wikimedia remains an optional licensed-photo utility, not
 the critical path. Video metadata requires captions and a transcript.

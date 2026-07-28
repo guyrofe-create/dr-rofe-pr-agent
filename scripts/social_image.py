@@ -1,8 +1,9 @@
-"""Create a topic-relevant editorial visual and exact branded social variants.
+"""Create a topic-relevant, licensed-first, text-free visual package.
 
-GPT Image supplies the text-free editorial base when available. Exact Hebrew
-copy and client identity are rendered deterministically. A local branded
-fallback guarantees that a review bundle never finishes without an image.
+The product first looks for a verified Wikimedia Commons photograph with a
+compatible license. If none is suitable, GPT Image creates a text-free
+editorial visual. A local text-free fallback guarantees that a review bundle
+never finishes without an image.
 """
 
 import base64
@@ -15,7 +16,7 @@ from io import BytesIO
 from urllib.parse import quote
 
 import requests
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter
 
 from reputation_core.strategy import load_client_profile
 
@@ -100,7 +101,7 @@ class SocialImage:
     license_name: str = ""
     license_url: str = ""
     attribution: str = ""
-    source_type: str = "openai_generated_branded_visual"
+    source_type: str = "manual"
     generation_model: str = ""
     generation_prompt: str = ""
     variants: dict[str, bytes] = field(default_factory=dict)
@@ -108,23 +109,29 @@ class SocialImage:
 
 def visual_description(title):
     clean_title = " ".join((title or "מידע כללי").split())
-    return (
-        f"כרטיס מידע ממותג של {_CLIENT_NAME} עם רקע מערכתי "
-        f"הקשור לנושא: {clean_title}"
-    )[:300]
+    return f"איור מערכתי ללא מלל בנושא {_topic_without_client(clean_title)}"[:300]
 
 
 def alt_text(title, description=None, entity_relevant=None):
-    """Describe only what is visible; add the entity name only when relevant."""
+    """Describe the image accurately and add the article-owner context naturally."""
     clean_title = " ".join((title or "מידע רפואי כללי").split())
     name_variants = _CLIENT_FACTS.get("name_variants", [_CLIENT_NAME])
     relevant = bool(entity_relevant) if entity_relevant is not None else (
         any(variant in clean_title for variant in name_variants)
-        or "כרטיס מידע ממותג" in str(description or "")
+        or bool(entity_relevant)
     )
     base = " ".join((description or visual_description(clean_title)).split())
     if relevant:
-        base = f"כרטיס מידע של {_CLIENT_NAME} בנושא {_topic_without_client(clean_title)}"
+        base = (
+            f"{base.rstrip(' .')}, מלווה מאמר של {_CLIENT_NAME} "
+            f"בנושא {_topic_without_client(clean_title)}"
+        )
+        for variant in sorted(name_variants, key=len, reverse=True):
+            if variant != _CLIENT_NAME:
+                base = base.replace(variant, "")
+        while base.count(_CLIENT_NAME) > 1:
+            base = base.replace(_CLIENT_NAME, "", 1)
+        base = " ".join(base.split())
     return base[:300]
 
 
@@ -415,6 +422,7 @@ def select_licensed_photo(title, summary, client=None):
                     license_name=candidate["license_name"],
                     license_url=candidate["license_url"],
                     attribution=candidate["attribution"],
+                    source_type="wikimedia_commons_licensed_photo",
                 )
             rejection_reasons.append(review)
             if reviewed >= MAX_REVIEWED_CANDIDATES:
@@ -455,8 +463,8 @@ def _image_prompt(title, summary):
         "without making a diagnostic or treatment claim. Do not depict a doctor, "
         "patient consultation, clinic, surgery, procedure, anatomy, medication, "
         "logos, faces presented as the author, or readable text. Do not add any "
-        "letters, words, labels, captions, watermarks or typography; exact Hebrew "
-        "branding will be added later by software. Avoid: "
+        "letters, words, labels, captions, watermarks or typography. The image "
+        "will be published exactly as generated, with no text overlay. Avoid: "
         f"{exclusions or 'none'}.\n"
         f"Article title: {' '.join((title or '').split())}\n"
         f"Article context: {' '.join((summary or '').split())[:1800]}"
@@ -517,34 +525,6 @@ def _fallback_editorial_base():
     return image.filter(ImageFilter.GaussianBlur(radius=0.6))
 
 
-def _font(size, bold=False):
-    candidates = [
-        (
-            "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
-            if bold
-            else "/System/Library/Fonts/Supplemental/Arial.ttf"
-        ),
-        (
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-            if bold
-            else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-        ),
-    ]
-    for candidate in candidates:
-        if os.path.exists(candidate):
-            return ImageFont.truetype(candidate, size=size)
-    return ImageFont.load_default()
-
-
-def _display_rtl(value):
-    try:
-        from bidi.algorithm import get_display
-
-        return get_display(value)
-    except ImportError:
-        return value[::-1]
-
-
 def _fit_cover(image, size):
     target_width, target_height = size
     ratio = max(target_width / image.width, target_height / image.height)
@@ -564,85 +544,6 @@ def _topic_without_client(title):
     return value.strip(" |–—-:") or "מידע רפואי מבוסס מקורות"
 
 
-def _wrap_rtl(draw, text, font, max_width, max_lines=3):
-    words = text.split()
-    lines = []
-    current = []
-    for word in words:
-        proposal = " ".join([*current, word])
-        width = draw.textbbox((0, 0), _display_rtl(proposal), font=font)[2]
-        if current and width > max_width:
-            lines.append(" ".join(current))
-            current = [word]
-        else:
-            current.append(word)
-    if current:
-        lines.append(" ".join(current))
-    if len(lines) > max_lines:
-        lines = lines[:max_lines]
-        lines[-1] = lines[-1].rstrip(" .") + "…"
-    return lines
-
-
-def _render_branded_variant(base, size, title):
-    image = _fit_cover(base, size)
-    image = ImageEnhance.Contrast(image).enhance(0.92)
-    overlay = Image.new("RGBA", size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay, "RGBA")
-    width, height = size
-    draw.rectangle((0, 0, width, height), fill=(7, 28, 43, 80))
-    draw.rounded_rectangle(
-        (
-            round(width * 0.07),
-            round(height * 0.10),
-            round(width * 0.93),
-            round(height * 0.90),
-        ),
-        radius=max(24, round(min(size) * 0.035)),
-        fill=(9, 34, 50, 198),
-        outline=(255, 255, 255, 55),
-        width=2,
-    )
-    name_font = _font(max(28, round(width * 0.034)), bold=True)
-    title_font = _font(max(38, round(width * 0.056)), bold=True)
-    small_font = _font(max(21, round(width * 0.021)))
-    right = round(width * 0.86)
-    top = round(height * 0.18)
-    draw.text(
-        (right, top),
-        _display_rtl(_CLIENT_NAME),
-        font=name_font,
-        fill=(122, 225, 211, 255),
-        anchor="ra",
-    )
-    draw.line(
-        (round(width * 0.14), top + round(height * 0.09), right, top + round(height * 0.09)),
-        fill=(122, 225, 211, 180),
-        width=max(2, round(width * 0.003)),
-    )
-    subject = _topic_without_client(title)
-    lines = _wrap_rtl(draw, subject, title_font, round(width * 0.70), max_lines=3)
-    y = top + round(height * 0.17)
-    line_height = round(title_font.size * 1.22)
-    for line in lines:
-        draw.text(
-            (right, y),
-            _display_rtl(line),
-            font=title_font,
-            fill="white",
-            anchor="ra",
-        )
-        y += line_height
-    draw.text(
-        (right, round(height * 0.83)),
-        _display_rtl("מידע רפואי מבוסס מקורות"),
-        font=small_font,
-        fill=(230, 238, 241, 235),
-        anchor="ra",
-    )
-    return Image.alpha_composite(image.convert("RGBA"), overlay).convert("RGB")
-
-
 def _png_bytes(image):
     output = BytesIO()
     image.save(output, format="PNG", optimize=True)
@@ -650,25 +551,65 @@ def _png_bytes(image):
 
 
 def generate(title, summary, client=None):
-    """Generate branded visuals and always return an approval-ready image."""
-    source_type = "openai_generated_branded_visual"
+    """Return licensed-first, text-free variants and never omit the image."""
+    if client is None:
+        try:
+            from openai import OpenAI
+
+            client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+        except Exception:
+            client = None
+
+    licensed = None
+    if client is not None:
+        try:
+            licensed = select_licensed_photo(title, summary, client=client)
+        except Exception:
+            licensed = None
+    if licensed is not None:
+        try:
+            base = Image.open(BytesIO(licensed.content)).convert("RGB")
+            if min(base.size) < 700:
+                raise RuntimeError("Selected licensed photo is too small")
+            variants = {
+                "hero": _png_bytes(_fit_cover(base, (1600, 900))),
+                "landscape": _png_bytes(_fit_cover(base, (1200, 630))),
+                "square": _png_bytes(_fit_cover(base, (1200, 1200))),
+                "portrait": _png_bytes(_fit_cover(base, (1080, 1350))),
+            }
+            return SocialImage(
+                content=variants["landscape"],
+                media_type="image/png",
+                extension="png",
+                visual_description=licensed.visual_description,
+                source_page_url=licensed.source_page_url,
+                source_image_url=licensed.source_image_url,
+                creator=licensed.creator,
+                license_name=licensed.license_name,
+                license_url=licensed.license_url,
+                attribution=licensed.attribution,
+                source_type=licensed.source_type,
+                variants=variants,
+            )
+        except Exception:
+            licensed = None
+
+    source_type = "openai_generated_text_free_visual"
     model = ""
     prompt = _image_prompt(title, summary)
     try:
         if client is None:
-            from openai import OpenAI
-
-            client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+            raise RuntimeError("OpenAI image client unavailable")
         base, model, prompt = _generate_editorial_base(client, title, summary)
     except Exception:
         base = _fallback_editorial_base()
-        source_type = "deterministic_branded_fallback"
-        model = "local-template-v1"
+        source_type = "deterministic_text_free_fallback"
+        model = "local-text-free-template-v1"
     variants = {
         "hero": _png_bytes(_fit_cover(base, (1600, 900))),
-        "landscape": _png_bytes(_render_branded_variant(base, (1200, 630), title)),
-        "square": _png_bytes(_render_branded_variant(base, (1200, 1200), title)),
-        "portrait": _png_bytes(_render_branded_variant(base, (1080, 1350), title)),
+        "landscape": _png_bytes(_fit_cover(base, (1200, 630))),
+        "square": _png_bytes(_fit_cover(base, (1200, 1200))),
+        "portrait": _png_bytes(_fit_cover(base, (1080, 1350))),
     }
     description = visual_description(title)
     return SocialImage(
@@ -676,12 +617,11 @@ def generate(title, summary, client=None):
         media_type="image/png",
         extension="png",
         visual_description=description,
-        creator="OpenAI and Dr. Rofe Reputation Agent",
+        creator="OpenAI" if model != "local-text-free-template-v1" else "",
         attribution=(
-            "Visual created with OpenAI and deterministically branded for "
-            f"{_CLIENT_NAME}"
-            if source_type == "openai_generated_branded_visual"
-            else f"Deterministic branded visual for {_CLIENT_NAME}"
+            "Text-free visual created with OpenAI"
+            if source_type == "openai_generated_text_free_visual"
+            else "Deterministic text-free fallback visual"
         ),
         source_type=source_type,
         generation_model=model,
@@ -739,15 +679,14 @@ def upload_to_wordpress(
         raise RuntimeError("WordPress media upload returned no media URL")
 
     generated = image.source_type in {
-        "openai_generated_branded_visual",
-        "deterministic_branded_fallback",
+        "openai_generated_text_free_visual",
+        "deterministic_text_free_fallback",
     }
     if generated:
         caption = ""
         description = (
-            f"נוצר עבור {_CLIENT_NAME} באמצעות "
-            f"{image.generation_model or 'מנוע המיתוג המקומי'}; "
-            "הטקסט והמיתוג נוספו באופן דטרמיניסטי במוצר."
+            f"תמונה ללא מלל שנוצרה עבור מאמר של {_CLIENT_NAME} באמצעות "
+            f"{image.generation_model or 'מנוע מקומי'}."
         )
     else:
         caption = image.attribution

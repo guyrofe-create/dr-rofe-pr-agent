@@ -129,10 +129,10 @@ class PrepareApprovalBundleTests(unittest.TestCase):
             image = prepare_approval_bundle.social_image.SocialImage(
                 content=b"landscape",
                 visual_description=(
-                    "כרטיס מידע ממותג של ד״ר גיא רופא בנושא מידע רפואי"
+                    "איור מערכתי ללא מלל בנושא מידע רפואי"
                 ),
-                source_type="deterministic_branded_fallback",
-                generation_model="local-template-v1",
+                source_type="deterministic_text_free_fallback",
+                generation_model="local-text-free-template-v1",
                 variants={
                     "hero": b"hero",
                     "landscape": b"landscape",

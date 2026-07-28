@@ -16,7 +16,7 @@ class SocialImageTests(unittest.TestCase):
     def test_alt_text_is_natural_and_contains_name_once(self):
         text = social_image.alt_text("ד״ר גיא רופא: מדריך חדש")
         self.assertEqual(text.count("גיא רופא"), 1)
-        self.assertIn("כרטיס מידע", text)
+        self.assertIn("מלווה מאמר", text)
         self.assertIn("מדריך חדש", text)
 
     def test_alt_text_does_not_insert_name_when_entity_is_not_relevant(self):
@@ -142,9 +142,16 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(result.creator, "Jane Example")
         self.assertEqual(result.license_name, "CC BY-SA 4.0")
         self.assertIn("Wikimedia Commons", result.attribution)
+        self.assertEqual(
+            result.source_type, "wikimedia_commons_licensed_photo"
+        )
         client.images.generate.assert_not_called()
 
-    def test_generate_uses_gpt_image_and_builds_four_exact_variants(self):
+    @patch(
+        "scripts.social_image.select_licensed_photo",
+        side_effect=social_image.PhotoSelectionError("none"),
+    )
+    def test_generate_uses_gpt_image_and_builds_four_text_free_variants(self, select):
         source = BytesIO()
         Image.new("RGB", (1536, 1024), "#4f7f87").save(source, format="PNG")
         client = Mock()
@@ -162,7 +169,7 @@ class SocialImageTests(unittest.TestCase):
             client=client,
         )
 
-        self.assertEqual(result.source_type, "openai_generated_branded_visual")
+        self.assertEqual(result.source_type, "openai_generated_text_free_visual")
         self.assertEqual(
             set(result.variants),
             {"hero", "landscape", "square", "portrait"},
@@ -179,14 +186,45 @@ class SocialImageTests(unittest.TestCase):
         call = client.images.generate.call_args.kwargs
         self.assertEqual(call["model"], "gpt-image-2")
         self.assertIn("Do not add any letters", call["prompt"])
+        select.assert_called_once()
 
-    def test_generate_falls_back_locally_and_never_returns_without_image(self):
+    @patch("scripts.social_image.select_licensed_photo")
+    def test_generate_prefers_licensed_photo_and_preserves_provenance(self, select):
+        source = BytesIO()
+        Image.new("RGB", (1600, 1200), "#64858a").save(source, format="JPEG")
+        select.return_value = social_image.SocialImage(
+            content=source.getvalue(),
+            media_type="image/jpeg",
+            extension="jpg",
+            visual_description="צילום של ספר רפואי פתוח",
+            source_page_url="https://commons.wikimedia.org/wiki/File:Medical.jpg",
+            creator="Jane Example",
+            license_name="CC BY 4.0",
+            license_url="https://creativecommons.org/licenses/by/4.0/",
+            attribution="Jane Example, CC BY 4.0",
+            source_type="wikimedia_commons_licensed_photo",
+        )
+        client = Mock()
+
+        result = social_image.generate("כותרת", "תקציר", client=client)
+
+        self.assertEqual(result.source_type, "wikimedia_commons_licensed_photo")
+        self.assertEqual(result.creator, "Jane Example")
+        self.assertEqual(result.license_name, "CC BY 4.0")
+        self.assertEqual(set(result.variants), {"hero", "landscape", "square", "portrait"})
+        client.images.generate.assert_not_called()
+
+    @patch(
+        "scripts.social_image.select_licensed_photo",
+        side_effect=social_image.PhotoSelectionError("none"),
+    )
+    def test_generate_falls_back_locally_and_never_returns_without_image(self, select):
         client = Mock()
         client.images.generate.side_effect = TimeoutError("image API unavailable")
 
         result = social_image.generate("כותרת", "תקציר", client=client)
 
-        self.assertEqual(result.source_type, "deterministic_branded_fallback")
+        self.assertEqual(result.source_type, "deterministic_text_free_fallback")
         self.assertGreater(len(result.content), 10_000)
         self.assertEqual(set(result.variants), {"hero", "landscape", "square", "portrait"})
 
@@ -194,8 +232,21 @@ class SocialImageTests(unittest.TestCase):
     def test_generate_falls_back_when_openai_key_is_missing(self):
         result = social_image.generate("כותרת", "תקציר")
 
-        self.assertEqual(result.source_type, "deterministic_branded_fallback")
+        self.assertEqual(result.source_type, "deterministic_text_free_fallback")
         self.assertEqual(set(result.variants), {"hero", "landscape", "square", "portrait"})
+
+    @patch(
+        "scripts.social_image.select_licensed_photo",
+        side_effect=RuntimeError("unexpected Commons failure"),
+    )
+    def test_unexpected_photo_search_failure_still_returns_an_image(self, select):
+        client = Mock()
+        client.images.generate.side_effect = TimeoutError("image API unavailable")
+
+        result = social_image.generate("כותרת", "תקציר", client=client)
+
+        self.assertEqual(result.source_type, "deterministic_text_free_fallback")
+        self.assertGreater(len(result.content), 10_000)
 
     def test_commons_candidate_rejects_ai_or_illustration(self):
         page = {
