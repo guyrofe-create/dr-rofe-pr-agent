@@ -336,6 +336,42 @@ def _load_approved_local_image(media):
     image_uri = str((media or {}).get("uri") or "").strip()
     if not image_uri:
         raise PermissionError("Approved target payload has no image")
+    if image_uri.startswith("embedded://"):
+        embedded_path = os.environ.get("APPROVED_MEDIA_PATH", "").strip()
+        if not embedded_path:
+            raise PermissionError("Approved embedded image bytes are unavailable")
+        image_path = Path(embedded_path)
+        image_bytes = image_path.read_bytes()
+        digest = hashlib.sha256(image_bytes).hexdigest()
+        expected_uri = f"embedded://{digest}"
+        if (
+            not media.get("sha256")
+            or digest != media["sha256"]
+            or image_uri != expected_uri
+        ):
+            raise PermissionError(
+                "Approved embedded image bytes do not match the signed payload"
+            )
+        image = social_image.SocialImage(
+            image_bytes,
+            media_type=(
+                "image/png"
+                if image_path.suffix.lower() == ".png"
+                else "image/webp"
+                if image_path.suffix.lower() == ".webp"
+                else "image/jpeg"
+            ),
+            extension=image_path.suffix.lstrip(".") or "jpg",
+            visual_description=media.get("visual_description", ""),
+            source_page_url=media.get("source_page_url", ""),
+            source_image_url=media.get("source_image_url", ""),
+            creator=media.get("creator", ""),
+            license_name=media.get("license_name", ""),
+            license_url=media.get("license_url", ""),
+            attribution=media.get("attribution", ""),
+            source_type=media.get("source_type", "owner_manual_upload"),
+        )
+        return image, ""
     if image_uri.startswith(("http://", "https://")):
         return None, image_uri
     image_path = Path(image_uri)

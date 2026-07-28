@@ -117,6 +117,39 @@ class CampaignRunTests(unittest.TestCase):
             with self.assertRaisesRegex(PermissionError, "bytes"):
                 campaign_run._load_approved_local_image(media)
 
+    def test_embedded_manual_image_requires_exact_signed_bytes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "manual.jpg"
+            path.write_bytes(b"manually-approved-photo")
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            media = {
+                "uri": f"embedded://{digest}",
+                "sha256": digest,
+                "source_type": "owner_manual_upload",
+                "alt_text": "צילום רפואי שאושר ידנית",
+            }
+            with patch.dict(
+                os.environ, {"APPROVED_MEDIA_PATH": str(path)}, clear=False
+            ):
+                image, remote = campaign_run._load_approved_local_image(media)
+            self.assertEqual(image.content, b"manually-approved-photo")
+            self.assertEqual(image.source_type, "owner_manual_upload")
+            self.assertEqual(remote, "")
+
+    def test_embedded_manual_image_rejects_replaced_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "manual.png"
+            path.write_bytes(b"different-photo")
+            media = {
+                "uri": f"embedded://{'0' * 64}",
+                "sha256": "0" * 64,
+            }
+            with patch.dict(
+                os.environ, {"APPROVED_MEDIA_PATH": str(path)}, clear=False
+            ):
+                with self.assertRaisesRegex(PermissionError, "signed payload"):
+                    campaign_run._load_approved_local_image(media)
+
     def test_canonical_site_is_required_before_distribution(self):
         draft = Path(tempfile.mkdtemp()) / "draft.md"
         draft.write_text("# כותרת\n\nתוכן", encoding="utf-8")

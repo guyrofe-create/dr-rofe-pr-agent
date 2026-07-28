@@ -37,15 +37,37 @@ jobs:
         id: approval
         env:
           APPROVAL_URL: https://dr-rofe-reputation-center.guyrofe.chatgpt.site
+          APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
         run: |
-          response="$(curl --fail --silent --show-error \
-            "${APPROVAL_URL}/api/approvals/next")"
-          draft_path="$(jq -r '.draft_path // empty' <<<"${response}")"
+          response_path="${RUNNER_TEMP}/dashboard-approval-response.json"
+          curl --fail --silent --show-error \
+            --header "Authorization: Bearer ${APPROVAL_SIGNING_SECRET}" \
+            "${APPROVAL_URL}/api/approvals/next" > "${response_path}"
+          draft_path="$(jq -r '.draft_path // empty' "${response_path}")"
           bundle_path="${RUNNER_TEMP}/p7-bundle.json"
           approval_record_path="${RUNNER_TEMP}/p7-approval.json"
+          approved_media_path=""
           if [[ -n "${draft_path}" ]]; then
-            jq -e '.bundle' <<<"${response}" > "${bundle_path}"
-            jq -e '.approval_record' <<<"${response}" > "${approval_record_path}"
+            jq -e '.bundle' "${response_path}" > "${bundle_path}"
+            jq -e '.approval_record' "${response_path}" > "${approval_record_path}"
+            if jq -e '.media_payload.base64' "${response_path}" >/dev/null; then
+              content_type="$(jq -r '.media_payload.content_type' "${response_path}")"
+              case "${content_type}" in
+                image/png) extension="png" ;;
+                image/webp) extension="webp" ;;
+                image/jpeg) extension="jpg" ;;
+                *) echo "::error::Unsupported approved image type"; exit 1 ;;
+              esac
+              approved_media_path="${RUNNER_TEMP}/approved-media.${extension}"
+              jq -r '.media_payload.base64' "${response_path}" \
+                | base64 --decode > "${approved_media_path}"
+              expected_sha="$(jq -r '.media_payload.sha256' "${response_path}")"
+              actual_sha="$(sha256sum "${approved_media_path}" | cut -d' ' -f1)"
+              if [[ "${expected_sha}" != "${actual_sha}" ]]; then
+                echo "::error::Dashboard image bytes failed SHA-256 verification"
+                exit 1
+              fi
+            fi
           else
             bundle_path=""
             approval_record_path=""
@@ -53,6 +75,7 @@ jobs:
           echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
           echo "bundle_path=${bundle_path}" >> "${GITHUB_OUTPUT}"
           echo "approval_record_path=${approval_record_path}" >> "${GITHUB_OUTPUT}"
+          echo "approved_media_path=${approved_media_path}" >> "${GITHUB_OUTPUT}"
           if [[ -n "${draft_path}" ]] && { [[ -z "${bundle_path}" ]] || [[ -z "${approval_record_path}" ]]; }; then
             echo "::error::Dashboard returned a draft without its signed P7 approval artifacts"
             exit 1
@@ -91,6 +114,7 @@ jobs:
           DRAFT_PATH: ${{ steps.approval.outputs.draft_path }}
           APPROVAL_BUNDLE_PATH: ${{ steps.approval.outputs.bundle_path }}
           APPROVAL_RECORD_PATH: ${{ steps.approval.outputs.approval_record_path }}
+          APPROVED_MEDIA_PATH: ${{ steps.approval.outputs.approved_media_path }}
           APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
           WORDPRESS_GUYROFE_COM_USER: ${{ secrets.WORDPRESS_GUYROFE_COM_USER }}
           WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
