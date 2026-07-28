@@ -202,6 +202,7 @@ class SocialImageTests(unittest.TestCase):
         self.assertIn("laptop, magnifying glass", call["prompt"])
         review_input = client.responses.create.call_args.kwargs["input"]
         self.assertIn("correct procedure equipment", review_input[0]["content"][0]["text"])
+        self.assertIn("people-free research desk", review_input[0]["content"][0]["text"])
         select.assert_called_once()
 
     @patch("scripts.social_image.select_licensed_photo")
