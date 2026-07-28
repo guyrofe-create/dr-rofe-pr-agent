@@ -53,8 +53,33 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
     "cgi",
     "computer-generated",
 )
-MAX_SEARCH_QUERIES = 5
+PLANNED_SEARCH_QUERIES = 5
+MAX_SEARCH_QUERIES = 10
 MAX_REVIEWED_CANDIDATES = 12
+QUERY_NOISE_WORDS = frozenset(
+    {
+        "and",
+        "at",
+        "comparing",
+        "cross",
+        "cross-checking",
+        "evaluating",
+        "for",
+        "information",
+        "in",
+        "online",
+        "on",
+        "photograph",
+        "public",
+        "reference",
+        "researching",
+        "sources",
+        "studying",
+        "using",
+        "websites",
+        "with",
+    }
+)
 
 
 class PhotoSelectionError(RuntimeError):
@@ -111,10 +136,11 @@ def _metadata_value(metadata, key):
 def _search_query_prompt(title, summary):
     exclusions = ", ".join(str(item) for item in _VISUAL_EXCLUSIONS)
     return (
-        "Create five short English Wikimedia Commons search queries for a real "
+        "Create five English Wikimedia Commons keyword queries for a real "
         "editorial photograph that directly illustrates this Hebrew medical "
-        "article. Each query must name a concrete, photographable subject or "
-        "scene, not a metaphor. Do not request a doctor, clinic, surgery, text, "
+        "article. Each query must contain only 2-4 concrete searchable words, "
+        "not a sentence or metaphor. Name visible subjects, objects or places. "
+        "Do not request a doctor, clinic, surgery, text, "
         "diagram, illustration, infographic, icon, or AI image. Avoid these "
         f"client exclusions: {exclusions or 'none'}. For articles about evaluating "
         "online information, prefer an adult comparing information on a laptop or "
@@ -148,7 +174,26 @@ def build_search_queries(client, title, summary):
             cleaned.append(item)
     if len(cleaned) < 3:
         raise RuntimeError("Photo search planner returned too few usable queries")
-    return cleaned[:MAX_SEARCH_QUERIES]
+    return cleaned[:PLANNED_SEARCH_QUERIES]
+
+
+def expand_search_queries(queries):
+    """Try compact Commons keywords before the planner's more specific phrases."""
+    compact = []
+    original = []
+    for query in queries:
+        normalized = " ".join(str(query).split()).strip()
+        if not normalized:
+            continue
+        tokens = re.findall(r"[A-Za-z0-9-]+", normalized.lower())
+        reduced = [token for token in tokens if token not in QUERY_NOISE_WORDS][:4]
+        shortened = " ".join(reduced)
+        if len(reduced) >= 2 and shortened not in compact:
+            compact.append(shortened)
+        if normalized not in original:
+            original.append(normalized)
+    ordered = compact + [query for query in original if query not in compact]
+    return ordered[:MAX_SEARCH_QUERIES]
 
 
 def _candidate_from_page(page):
@@ -294,12 +339,13 @@ def generate(title, summary, client=None):
         client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
     try:
-        queries = build_search_queries(client, title, summary)
+        planned_queries = build_search_queries(client, title, summary)
     except Exception as exc:
         raise PhotoSelectionError(
             "Licensed photo search planning failed. The draft was preserved and "
             f"queued for a replacement image. Diagnostics: planner={type(exc).__name__}"
         ) from exc
+    queries = expand_search_queries(planned_queries)
     reviewed = 0
     downloaded = 0
     undersized = 0
