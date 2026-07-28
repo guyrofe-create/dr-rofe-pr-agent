@@ -38,12 +38,19 @@ class PublicationPolicyTests(unittest.TestCase):
             enforce_publication_policy("Book an appointment today")
 
     def test_owner_managed_and_disabled_channels_are_blocked(self):
-        for channel in ("Instagram", "TikTok", "X", "Telegram", "Tumblr"):
+        for channel in (
+            "Instagram",
+            "TikTok",
+            "X",
+            "Telegram",
+            "Tumblr",
+            "Google Business Profile",
+        ):
             with self.subTest(channel=channel), self.assertRaises(ValueError):
                 enforce_channel_policy(channel)
 
     def test_product_managed_channels_are_allowed(self):
-        for channel in ("Facebook", "LinkedIn", "Google Business Profile", "Pinterest"):
+        for channel in ("Facebook", "LinkedIn", "Pinterest"):
             with self.subTest(channel=channel):
                 self.assertEqual(enforce_channel_policy(channel), channel)
 

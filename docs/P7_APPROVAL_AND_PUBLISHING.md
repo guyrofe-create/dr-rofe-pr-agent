@@ -1,14 +1,14 @@
 # P7 — approval and publication
 
-P7 is the only public-execution gate. Drafting, research, licensed-photo
-selection and previewing may be autonomous; publication may not be inferred from a boolean,
+P7 is the only public-execution gate. Drafting, research, branded-image
+generation and previewing may be autonomous; publication may not be inferred from a boolean,
 a schedule, an earlier campaign approval or a general account permission.
 
-If automatic licensed-photo selection cannot find a truthful topic-relevant
-image, the draft and review bundle are still preserved with
-`image_status: awaiting_replacement`. The dashboard may request another
-licensed-photo search, but approval and publication remain blocked until the
-exact bundle contains approved media.
+The preparation pipeline must produce a complete topic-relevant package with
+hero, landscape, square and portrait variants. It tries GPT Image first and
+uses a deterministic branded fallback if that service is unavailable.
+Preparation fails closed if the complete package still cannot be produced; an
+image-free bundle is never offered for approval.
 
 ## One exact approval package
 
@@ -16,8 +16,9 @@ Every public action is represented by one immutable JSON bundle and one
 human-readable HTML preview. The package contains:
 
 - the exact payload for every platform and asset;
-- the approved photo bytes or URI, their SHA-256 when local, visual description,
-  exact alt text, creator, source page, licence and required attribution;
+- the approved image bytes or URI, per-variant SHA-256, dimensions, visual
+  description, exact alt text, generation provenance or applicable licence and
+  required attribution;
 - sources;
 - the objective and search query served;
 - risk and compliance notes;

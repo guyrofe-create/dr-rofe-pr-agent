@@ -15,6 +15,10 @@ from urllib.parse import urlparse
 
 import requests
 from reputation_core.strategy import client_content_plan, load_client_profile
+from reputation_core.entity_contract import (
+    apply_article_contract,
+    audit_article_entity_contract,
+)
 from publication_policy import (
     CTA_PROMPT,
     REPUTATION_KNOWLEDGE_PROMPT,
@@ -180,7 +184,6 @@ def validate_generated_article(content):
     )
     if not title:
         raise ValueError("generated article is missing an H1 title")
-
     plain_text = re.sub(r"https?://\S+", " ", content)
     plain_text = re.sub(r"[#*_`>\[\]()]+", " ", plain_text)
     word_count = len(re.findall(r"\S+", plain_text))
@@ -206,6 +209,8 @@ def validate_generated_article(content):
         untrusted = sorted(
             url
             for url in all_urls
+            if _source_domain(url)
+            != _source_domain(CLIENT_FACTS["canonical_site"])
             if not _domain_is_allowed(
                 _source_domain(url), TRUSTED_MEDICAL_SOURCE_DOMAINS
             )
@@ -226,6 +231,12 @@ def validate_generated_article(content):
                 "generated medical article needs at least 2 official "
                 "institutional medical sources"
             )
+    entity_report = audit_article_entity_contract(content, CLIENT_PROFILE)
+    if not entity_report.passed:
+        raise ValueError(
+            "generated article failed entity contract: "
+            + "; ".join(entity_report.errors)
+        )
     return title, word_count
 
 
@@ -285,6 +296,10 @@ def generate_article(topic):
   מ-{MIN_ARTICLE_WORDS} מילים, ובלי מלל מנופח או חזרות מלאכותיות
 - שפה: עברית מקצועית אך נגישה לקהל רחב
 - מבנה: כותרת ראשית H1, מבוא, 4-6 סעיפים עם כותרות H2, סיכום
+- הכותרת תסתיים פעם אחת בלבד ב-"| {CLIENT_FACTS['primary_name']}"
+- מיד לאחר הכותרת תופיע שורת מחבר מקושרת לפרופיל הרשמי
+- לפני המקורות תופיע תיבת "על המחבר" עם התפקיד והסטטוס הנוכחיים המאושרים
+- אין לחזור על שם הלקוח באופן מלאכותי בגוף המאמר
 - פתח בתשובה ישירה וקצרה לשאלה המרכזית ורק לאחר מכן הרחב
 - השתמש בטבלה רק כאשר היא משפרת השוואה אמיתית; אין להוסיף טבלה לקישוט
 - הוסף FAQ רק אם קיימות שאלות שימושיות שלא נענו היטב בגוף המאמר
@@ -313,7 +328,10 @@ def generate_article(topic):
                 last_error=last_error,
             ),
         )
-        content = clean_generated_markdown(content)
+        content = apply_article_contract(
+            clean_generated_markdown(content),
+            CLIENT_PROFILE,
+        )
         if not content:
             last_error = "הוחזרה תשובה ריקה"
             continue

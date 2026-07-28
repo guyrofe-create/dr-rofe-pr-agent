@@ -1,9 +1,9 @@
 {
-  "name": "ד\"ר גיא רופא",
+  "name": "ד״ר גיא רופא",
   "alternateName": ["Dr. Guy Rofe", "Guy Rofe MD"],
-  "honorificPrefix": "ד\"ר",
+  "honorificPrefix": "ד״ר",
   "jobTitle": "יוצר תוכן רפואי ומחבר ספרים",
-  "description": "ד\"ר גיא רופא הוא יוצר תוכן רפואי, מחבר ספרים ובעל הכשרה כרופא נשים. בשלב זה הוא אינו עוסק ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+  "description": "ד״ר גיא רופא הוא יוצר תוכן רפואי, מחבר ספרים ובעל הכשרה כרופא נשים. בשלב זה הוא אינו עוסק ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
   "practiceStatus": "not_currently_practicing",
   "practiceStatusText": "not currently practicing medicine; not accepting patients; no appointments",
   "image": "https://guyrofe.com/wp-content/uploads/2024/04/2.png",

@@ -27,15 +27,32 @@ a real comparison or answer real questions. Original analysis must be
 distinguished from sourced fact.
 
 The distribution layer transforms one approved source into platform-native
-Facebook, LinkedIn, Pinterest, Blogger and Google Business variants. The
-variants cannot introduce new facts.
+Facebook, LinkedIn, Pinterest and Blogger variants. The variants cannot
+introduce new facts. Google Business Profile publishing is disabled unless
+independent eligibility and API access are verified.
+
+Every approved article must visibly bind the content to the configured client:
+the canonical name appears once in the title, the linked byline points to the
+profile, a truthful author box states the current role and non-practising
+status, and the body uses the name naturally rather than through keyword
+stuffing. The same entity contract drives the meta description and
+platform-native signatures.
 
 ## Media
 
-AI image generation is disabled. Existing licensed photographs retain their
-creator, source, licence, attribution and known visual description. Alt text
-describes the actual photo and includes the entity name only when the entity is
-actually relevant.
+Each approval package contains four exact image variants: a text-free article
+hero, a landscape social card, a square card and a portrait Pinterest card.
+GPT Image creates a topic-relevant, text-free editorial base when available.
+The product then renders the exact approved Hebrew title and client name itself,
+so generated lettering cannot corrupt the brand. If the image API is
+unavailable, a deterministic branded renderer produces the complete package;
+the workflow never downgrades to an image-free article.
+
+Alt text describes the actual branded information card, includes the canonical
+client name exactly once and naturally names the article subject. It is written
+for accessibility first and is not a keyword list. Licensed photographs may
+still be selected manually; their creator, source, licence, attribution and
+known visual description are preserved.
 Video packages fail validation without captions and a transcript.
 
 ## Search crawler audit

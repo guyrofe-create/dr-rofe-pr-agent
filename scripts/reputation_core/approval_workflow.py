@@ -133,8 +133,8 @@ def validate_bundle(bundle: dict, *, require_execution_ready: bool = False) -> N
         and not bundle.get("media")
     ):
         raise PermissionError(
-            "The approval bundle is waiting for a licensed image and cannot be "
-            "approved or published yet"
+            "The approval bundle is waiting for an approved image and cannot "
+            "be approved or published yet"
         )
 
 
@@ -229,9 +229,35 @@ def render_preview(bundle: dict) -> str:
         for source in bundle.get("sources", [])
     )
     media = bundle.get("media") or {}
+    image_uri = str(media.get("uri", ""))
+    preview_uri = (
+        "media/" + Path(image_uri).name
+        if image_uri.startswith("approval_bundles/media/")
+        else image_uri
+    )
+    variant_items = "".join(
+        "<li>"
+        f"{e(role)}: {e(str(item.get('uri', '')))} "
+        f"({e(str(item.get('sha256', '')))})"
+        "</li>"
+        for role, item in (media.get("variants") or {}).items()
+    )
     media_html = (
+        (
+            f"<img src=\"{e(preview_uri)}\" alt=\"{e(str(media.get('alt_text', '')))}\" "
+            "style=\"max-width:100%;height:auto;border-radius:12px\">"
+            if preview_uri
+            else ""
+        )
+        +
         f"<p><strong>Image:</strong> {e(str(media.get('uri', 'none')))}</p>"
         f"<p><strong>Alt text:</strong> {e(str(media.get('alt_text', 'none')))}</p>"
+        f"<p><strong>Source type:</strong> "
+        f"{e(str(media.get('source_type', 'none')))}</p>"
+        f"<p><strong>Generation model:</strong> "
+        f"{e(str(media.get('generation_model', 'none')))}</p>"
+        f"<p><strong>Approved variants:</strong></p>"
+        f"<ul>{variant_items or '<li>none</li>'}</ul>"
         f"<p><strong>Image source:</strong> "
         f"<a href=\"{e(str(media.get('source_page_url', '')))}\">"
         f"{e(str(media.get('source_page_url', 'none')))}</a></p>"

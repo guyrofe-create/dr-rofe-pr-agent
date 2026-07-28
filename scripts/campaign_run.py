@@ -35,6 +35,7 @@ from reputation_core.entity_seo import (
     extract_citation_urls,
     json_ld_script,
 )
+from reputation_core.entity_contract import meta_description
 from reputation_core.platform_content import build_platform_variants
 
 
@@ -137,6 +138,7 @@ def wordpress_publish(
     canonical_url=None,
     idempotency_key=None,
     article_schema_factory=None,
+    meta_description=None,
 ):
     slug_suffix = "-summary" if summary_only else ""
     slug = stable_slug((idempotency_key or title) + slug_suffix)
@@ -170,7 +172,10 @@ def wordpress_publish(
             requests.post(
                 f"{endpoint}/{existing[0]['id']}",
                 auth=auth,
-                json={"content": content_html + "\n" + json_ld_script(schema)},
+                json={
+                    "content": content_html + "\n" + json_ld_script(schema),
+                    "excerpt": meta_description or "",
+                },
                 headers=headers,
                 timeout=30,
             ).raise_for_status()
@@ -181,6 +186,7 @@ def wordpress_publish(
         "slug": slug,
         "status": "publish",
         "content": content_html,
+        "excerpt": meta_description or "",
     }
     if canonical_url:
         payload["excerpt"] = f'לקריאה מלאה במקור: <a href="{canonical_url}">{canonical_url}</a>'
@@ -326,6 +332,36 @@ def _verify_source_draft(draft_path, bundle):
         raise PermissionError("Draft changed after approval")
 
 
+def _load_approved_local_image(media):
+    image_uri = str((media or {}).get("uri") or "").strip()
+    if not image_uri:
+        raise PermissionError("Approved target payload has no image")
+    if image_uri.startswith(("http://", "https://")):
+        return None, image_uri
+    image_path = Path(image_uri)
+    if not image_path.is_absolute():
+        image_path = PROJECT_ROOT / image_path
+    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
+    if not media.get("sha256") or digest != media["sha256"]:
+        raise PermissionError("Approved image bytes do not match the target payload")
+    image = social_image.SocialImage(
+        image_path.read_bytes(),
+        media_type="image/png" if image_path.suffix.lower() == ".png" else "image/jpeg",
+        extension=image_path.suffix.lstrip(".") or "png",
+        visual_description=media.get("visual_description", ""),
+        source_page_url=media.get("source_page_url", ""),
+        source_image_url=media.get("source_image_url", ""),
+        creator=media.get("creator", ""),
+        license_name=media.get("license_name", ""),
+        license_url=media.get("license_url", ""),
+        attribution=media.get("attribution", ""),
+        source_type=media.get("source_type", "approved_visual"),
+        generation_model=media.get("generation_model", ""),
+        generation_prompt=media.get("generation_prompt", ""),
+    )
+    return image, ""
+
+
 def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     if approved_bundle is None:
         raise PermissionError("A verified P7 approval bundle is required")
@@ -336,6 +372,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     enforce_publication_policy(content)
     article_html = markdown_to_html(content)
     summary = first_paragraph(content)
+    seo_description = meta_description(content, CLIENT_PROFILE)
     destinations = []
     business = load_business_profile()
     primary = canonical_site(business)
@@ -351,6 +388,35 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     canonical_payload = canonical_target["payload"]
     if canonical_payload["title"] != title or canonical_payload["markdown"] != content:
         raise PermissionError("Canonical content differs from the approved payload")
+    hosted_images = {}
+
+    def approved_target_image(target):
+        media = (target.get("payload") or {}).get("image") or approved_bundle.get("media")
+        image, remote_url = _load_approved_local_image(media)
+        if remote_url:
+            return image, remote_url
+        digest = media["sha256"]
+        if digest not in hosted_images:
+            role = media.get("role", "approved")
+            hosted_images[digest] = social_image.upload_to_wordpress(
+                image,
+                base_url=canonical_base,
+                username=os.environ[primary_user_env],
+                app_password=os.environ[primary_password_env],
+                slug=(
+                    f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}-"
+                    f"{role}"
+                ),
+                title=title,
+            )
+        return image, hosted_images[digest]
+
+    canonical_image, canonical_image_url = approved_target_image(canonical_target)
+    canonical_alt = (canonical_payload.get("image") or {}).get("alt_text", "")
+    hero_html = (
+        f'<figure><img src="{html.escape(canonical_image_url)}" '
+        f'alt="{html.escape(canonical_alt)}" width="1600" height="900"></figure>\n'
+    )
     canonical_receipt = ledger.execute(
         approved_bundle,
         canonical_target,
@@ -360,13 +426,15 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                 os.environ[primary_user_env],
                 os.environ[primary_password_env],
                 payload["title"],
-                markdown_to_html(payload["markdown"]),
+                hero_html + markdown_to_html(payload["markdown"]),
                 idempotency_key=payload["slug"],
+                meta_description=seo_description,
                 article_schema_factory=lambda article_url: build_article_schema(
                     business,
                     headline=payload["title"],
                     article_url=article_url,
-                    description=summary,
+                    description=seo_description,
+                    image_url=canonical_image_url,
                     citations=extract_citation_urls(payload["markdown"]),
                 ),
             )
@@ -386,71 +454,14 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         )
     )
     log(f"Canonical article published: {canonical_url}")
-
-    media = approved_bundle.get("media") or {}
-    image_url = str(media.get("uri") or "").strip()
-    generated_image = None
-    if image_url and not image_url.startswith(("http://", "https://")):
-        image_path = Path(image_url)
-        if not image_path.is_absolute():
-            image_path = PROJECT_ROOT / image_path
-        digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
-        if not media.get("sha256") or digest != media["sha256"]:
-            raise PermissionError("Approved image bytes do not match the bundle")
-        generated_image = social_image.SocialImage(
-            image_path.read_bytes(),
-            media_type=(
-                "image/png"
-                if image_path.suffix.lower() == ".png"
-                else "image/jpeg"
-            ),
-            extension=image_path.suffix.lstrip(".") or "png",
-            visual_description=media.get("visual_description", ""),
-            source_page_url=media.get("source_page_url", ""),
-            source_image_url=media.get("source_image_url", ""),
-            creator=media.get("creator", ""),
-            license_name=media.get("license_name", ""),
-            license_url=media.get("license_url", ""),
-            attribution=media.get("attribution", ""),
-            source_type=media.get(
-                "source_type", "wikimedia_commons_licensed_photo"
-            ),
+    destinations.append(
+        destination(
+            "Canonical editorial hero",
+            "hosted",
+            url=canonical_image_url,
+            detail=canonical_image.source_type if canonical_image else "approved_remote",
         )
-        try:
-            image_url = social_image.upload_to_wordpress(
-                generated_image,
-                base_url=canonical_base,
-                username=os.environ[primary_user_env],
-                app_password=os.environ[primary_password_env],
-                slug=f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}-social",
-                title=title,
-            )
-            destinations.append(
-                destination(
-                    "Licensed editorial photo",
-                    "hosted",
-                    url=image_url,
-                    detail=(
-                        generated_image.attribution
-                        or "Real licensed photo with recorded provenance"
-                    ),
-                )
-            )
-            log(f"Pre-approved visual hosted: {image_url}")
-        except Exception as exc:
-            raise RuntimeError(f"Approved image upload failed: {exc}") from exc
-    elif image_url:
-        destinations.append(
-            destination("Approved visual", "approved_remote", url=image_url)
-        )
-    else:
-        destinations.append(
-            destination(
-                "Approved visual",
-                "not_configured",
-                detail="לא צורפה תמונה לחבילת האישור",
-            )
-        )
+    )
 
     # Secondary WordPress publication is blocked unless it is part of the exact
     # approval bundle. P7 deliberately removes implicit fan-out.
@@ -465,6 +476,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     enforce_channel_policy("Facebook")
     facebook_target = targets["facebook_page"]
     if meta.facebook_is_configured():
+        facebook_image, facebook_image_url = approved_target_image(facebook_target)
         destinations.append(
             _execute_target_safely(
                 ledger,
@@ -475,7 +487,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         payload["title"],
                         payload["text"],
                         canonical_url,
-                        image_url,
+                        facebook_image_url,
                         (payload.get("image") or {}).get("alt_text"),
                     )
                 },
@@ -485,6 +497,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         destinations.append(destination("Facebook", "not_configured"))
     linkedin_target = targets["linkedin_member"]
     if linkedin.is_configured():
+        linkedin_image, linkedin_image_url = approved_target_image(linkedin_target)
         destinations.append(
             _execute_target_safely(
                 ledger,
@@ -495,7 +508,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         payload["title"],
                         payload["text"],
                         canonical_url,
-                        generated_image.content if generated_image else None,
+                        linkedin_image.content if linkedin_image else None,
                         (payload.get("image") or {}).get("alt_text"),
                     )
                 },
@@ -522,6 +535,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     )
     blogger_target = targets["blogger_blog"]
     if blogger.is_configured():
+        blogger_image, blogger_image_url = approved_target_image(blogger_target)
         destinations.append(
             _execute_target_safely(
                 ledger,
@@ -532,7 +546,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         payload["title"],
                         payload["html"],
                         canonical_url,
-                        image_url,
+                        blogger_image_url,
                         (payload.get("image") or {}).get("alt_text"),
                     )
                 },
@@ -549,7 +563,8 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         )
     )
     pinterest_target = targets["pinterest_board"]
-    if image_url and pinterest.is_configured():
+    if pinterest.is_configured():
+        pinterest_image, pinterest_image_url = approved_target_image(pinterest_target)
         destinations.append(
             _execute_target_safely(
                 ledger,
@@ -560,7 +575,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         payload["title"],
                         payload["description"],
                         canonical_url,
-                        image_url,
+                        pinterest_image_url,
                         (payload.get("image") or {}).get("alt_text"),
                     )
                 },
@@ -570,8 +585,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         destinations.append(
             destination(
                 "Pinterest",
-                "blocked" if not image_url else "not_configured",
-                detail="נדרשת תמונה מאושרת" if not image_url else None,
+                "not_configured",
             )
         )
 

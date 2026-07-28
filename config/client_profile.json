@@ -53,7 +53,6 @@
     "product_managed": [
       "Facebook",
       "LinkedIn",
-      "Google Business Profile",
       "Pinterest",
       "Canonical website"
     ],
@@ -62,13 +61,14 @@
       "TikTok"
     ],
     "disabled": [
-      "X"
+      "X",
+      "Google Business Profile"
     ],
     "deferred_until_unique_use": [
       "Telegram",
       "Tumblr"
     ],
-    "google_business_rule": "Publish information and images only. Never imply current clinical activity, patient availability or appointment booking.",
+    "google_business_rule": "Disabled unless current eligibility is independently verified for a real-world customer-facing business that does not imply medical practice or patient availability.",
     "pinterest_rule": "Use original evergreen visuals, public boards, canonical destination URLs and natural alt text."
   },
   "content_plan": {
@@ -134,6 +134,11 @@
     "original_analysis_labeled": true,
     "image_visual_description_required": true,
     "entity_name_in_alt_only_when_relevant": true,
+    "canonical_name_in_title_required": true,
+    "linked_visible_byline_required": true,
+    "author_box_required": true,
+    "natural_entity_mentions_minimum": 3,
+    "natural_entity_mentions_maximum": 8,
     "video_transcript_required": true,
     "search_crawlers": [
       "Googlebot",

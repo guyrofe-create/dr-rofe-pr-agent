@@ -33,6 +33,12 @@ repository contains the Dr. Guy Rofe pilot profile.
 - samples each approved AI reputation prompt three times per day and opens a
   correction workflow only when the majority indicates the same problem;
 - requires medical article drafts to include at least two direct authoritative sources;
+- binds every article and platform variant to the client through a branded title,
+  visible linked byline, truthful author box, natural entity mentions and
+  entity-aware metadata;
+- creates an approved four-format visual package with GPT Image when available
+  and a deterministic branded fallback, so an image failure cannot silently
+  produce an image-free approval package;
 - maps first-page asset gaps and separates AI citations from explicit brand mentions;
 - maintains a credential-free A/B/C/Q asset registry and excludes quarantined Web 2.0 mirrors from automation;
 - treats `drguyrofe.com` as the official Wix knowledge-and-podcast hub, with a distinct job from the WordPress sites;
@@ -224,11 +230,16 @@ single-tenant business profile.
 The content gate requires an answer-first opening, clear headings and direct
 sources. Tables and FAQs are conditional rather than decorative. Distribution
 uses fact-bounded, platform-native variants instead of copying one caption
-unchanged. Review images are existing photographs selected from Wikimedia
-Commons; image generation is disabled. Each accepted photo retains its source,
-creator, licence, attribution, truthful visual description and alt text. The
-entity name appears in alt text only when relevant. Video metadata requires
-captions and a transcript.
+unchanged. Every article is visibly bound to the client in its title, linked
+byline, author box and natural body mentions.
+
+Review media is generated as one immutable four-format package: a text-free
+hero, landscape social card, square card and portrait Pinterest card. GPT Image
+provides the editorial base when available; software adds exact Hebrew branding
+and falls back to a deterministic branded visual if the model is unavailable.
+The approval step fails closed unless every required image and its entity-aware
+alt text are present. Wikimedia remains an optional licensed-photo utility, not
+the critical path. Video metadata requires captions and a transcript.
 
 The weekly schema workflow is audit-only unless an operator manually supplies
 `publish_approved=true`. It also runs a read-only robots audit for Googlebot,

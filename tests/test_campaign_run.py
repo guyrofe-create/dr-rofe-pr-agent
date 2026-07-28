@@ -71,6 +71,52 @@ class CampaignRunTests(unittest.TestCase):
             "application/json",
         )
 
+    def test_wordpress_payload_contains_meta_description(self):
+        get_response = Mock()
+        get_response.json.return_value = []
+        get_response.raise_for_status.return_value = None
+        post_response = Mock()
+        post_response.json.return_value = {
+            "id": 43,
+            "link": "https://guyrofe.com/new",
+        }
+        post_response.raise_for_status.return_value = None
+        with patch.object(
+            campaign_run.requests, "get", return_value=get_response
+        ), patch.object(
+            campaign_run.requests, "post", return_value=post_response
+        ) as post:
+            campaign_run.wordpress_publish(
+                "https://guyrofe.com",
+                "user",
+                "password",
+                "כותרת | ד״ר גיא רופא",
+                "<p>תוכן</p>",
+                meta_description="ד״ר גיא רופא: תיאור מדויק",
+            )
+        self.assertEqual(
+            post.call_args.kwargs["json"]["excerpt"],
+            "ד״ר גיא רופא: תיאור מדויק",
+        )
+
+    def test_local_approved_image_requires_exact_hash(self):
+        with tempfile.TemporaryDirectory(dir=campaign_run.PROJECT_ROOT) as directory:
+            path = Path(directory) / "hero.png"
+            path.write_bytes(b"approved-image")
+            media = {
+                "uri": path.resolve().relative_to(
+                    campaign_run.PROJECT_ROOT
+                ).as_posix(),
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                "source_type": "deterministic_branded_fallback",
+            }
+            image, remote = campaign_run._load_approved_local_image(media)
+            self.assertEqual(image.content, b"approved-image")
+            self.assertEqual(remote, "")
+            media["sha256"] = "0" * 64
+            with self.assertRaisesRegex(PermissionError, "bytes"):
+                campaign_run._load_approved_local_image(media)
+
     def test_canonical_site_is_required_before_distribution(self):
         draft = Path(tempfile.mkdtemp()) / "draft.md"
         draft.write_text("# כותרת\n\nתוכן", encoding="utf-8")

@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 from scripts import prepare_approval_bundle
 from scripts.reputation_core.approval_workflow import approve_bundle
+from scripts.reputation_core.entity_contract import apply_article_contract
 
 
 SECRET = "a-test-signing-secret-with-32-characters"
@@ -19,12 +20,18 @@ class PrepareApprovalBundleTests(unittest.TestCase):
         ) as directory:
             root = Path(directory)
             draft = root / "medical.md"
-            draft.write_text(
+            content = (
                 "# מידע כללי\n\n"
                 "זהו מידע כללי המבוסס על מקור רשמי ואינו תחליף לייעוץ רפואי. "
                 "הטקסט מסביר את הנושא באופן מדויק ונגיש לקוראים.\n\n"
                 "## מקורות\n\n"
-                "[מקור רשמי](https://www.who.int/health-topics/)\n",
+                "[מקור רשמי](https://www.who.int/health-topics/)\n"
+            )
+            draft.write_text(
+                apply_article_contract(
+                    content,
+                    prepare_approval_bundle.load_client_profile(),
+                ),
                 encoding="utf-8",
             )
             output = root / "bundles"
@@ -51,29 +58,93 @@ class PrepareApprovalBundleTests(unittest.TestCase):
             self.assertIn("https://www.who.int/health-topics/", preview)
             self.assertIn("Facebook", preview)
 
-    def test_failed_photo_search_preserves_non_publishable_review_bundle(self):
+    def test_unexpected_image_pipeline_failure_cannot_create_an_imageless_bundle(self):
         with tempfile.TemporaryDirectory(
             dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
         ) as directory:
             root = Path(directory)
             draft = root / "medical.md"
-            draft.write_text(
+            content = (
                 "# הערכת מידע רפואי\n\n"
                 "מידע כללי על בדיקת מקורות רפואיים ברשת ועל השוואת מידע.\n\n"
                 "## מקורות\n\n"
-                "[מקור רשמי](https://www.who.int/health-topics/)\n",
+                "[מקור רשמי](https://www.who.int/health-topics/)\n"
+            )
+            draft.write_text(
+                apply_article_contract(
+                    content,
+                    prepare_approval_bundle.load_client_profile(),
+                ),
                 encoding="utf-8",
             )
             output = root / "bundles"
             result_path = root / "result.json"
-            error = prepare_approval_bundle.social_image.PhotoSelectionError(
-                "No suitable licensed photo; diagnostics: reviewed=0"
+            with patch.object(
+                prepare_approval_bundle.social_image,
+                "generate",
+                side_effect=RuntimeError("rendering engine unavailable"),
+            ), patch.object(
+                sys,
+                "argv",
+                [
+                    "prepare_approval_bundle.py",
+                    str(draft),
+                    "--output-root",
+                    str(output),
+                    "--generate-image",
+                    "--result-path",
+                    str(result_path),
+                ],
+            ), self.assertRaisesRegex(
+                RuntimeError,
+                "guaranteed image pipeline failed",
+            ):
+                prepare_approval_bundle.main()
+
+            self.assertFalse(result_path.exists())
+            self.assertFalse((output / "index.json").exists())
+
+    def test_generation_saves_and_binds_all_approved_image_variants(self):
+        with tempfile.TemporaryDirectory(
+            dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
+        ) as directory:
+            root = Path(directory)
+            draft = root / "medical.md"
+            content = (
+                "# מידע רפואי\n\n"
+                "תשובה ישירה וברורה המבוססת על מקורות מוסדיים.\n\n"
+                "## הסבר\n\nפירוט שימושי.\n\n"
+                "## מקורות\n\n"
+                "[מקור](https://www.who.int/health-topics/)\n"
+            )
+            draft.write_text(
+                apply_article_contract(
+                    content,
+                    prepare_approval_bundle.load_client_profile(),
+                ),
+                encoding="utf-8",
+            )
+            output = root / "bundles"
+            result_path = root / "result.json"
+            image = prepare_approval_bundle.social_image.SocialImage(
+                content=b"landscape",
+                visual_description=(
+                    "כרטיס מידע ממותג של ד״ר גיא רופא בנושא מידע רפואי"
+                ),
+                source_type="deterministic_branded_fallback",
+                generation_model="local-template-v1",
+                variants={
+                    "hero": b"hero",
+                    "landscape": b"landscape",
+                    "square": b"square",
+                    "portrait": b"portrait",
+                },
             )
 
             with patch.object(
                 prepare_approval_bundle.social_image,
                 "generate",
-                side_effect=error,
+                return_value=image,
             ), patch.object(
                 sys,
                 "argv",
@@ -93,25 +164,19 @@ class PrepareApprovalBundleTests(unittest.TestCase):
             bundle = json.loads(
                 Path(result["bundle_path"]).read_text(encoding="utf-8")
             )
-            index = json.loads(
-                Path(result["index_path"]).read_text(encoding="utf-8")
-            )
-            self.assertEqual(result["image_status"], "awaiting_replacement")
-            self.assertIsNone(bundle["media"])
+            self.assertEqual(result["image_status"], "ready")
             self.assertEqual(
-                index["bundles"][0]["image_status"],
-                "awaiting_replacement",
+                set(bundle["media"]["variants"]),
+                {"hero", "landscape", "square", "portrait"},
             )
-            with self.assertRaisesRegex(
-                PermissionError,
-                "waiting for a licensed image",
-            ):
-                approve_bundle(
-                    bundle,
-                    approved_by="owner",
-                    approved_scopes=["public_publication", "medical_content"],
-                    signing_secret=SECRET,
-                )
+            targets = {
+                item["target_id"]: item["payload"]["image"]["role"]
+                for item in bundle["targets"]
+            }
+            self.assertEqual(targets["canonical_wordpress"], "hero")
+            self.assertEqual(targets["facebook_page"], "landscape")
+            self.assertEqual(targets["pinterest_board"], "portrait")
+            self.assertIn("<img", Path(result["preview_path"]).read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":
