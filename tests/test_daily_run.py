@@ -10,6 +10,14 @@ from scripts import daily_run
 from scripts.reputation_core.entity_contract import apply_article_contract
 
 
+INLINE_EVIDENCE = (
+    "לפי [הנחיית ארגון הבריאות העולמי בנושא](https://www.who.int/example), "
+    "יש לבסס מידע על ראיות. גם "
+    "[הנחיות ACOG למידע רפואי](https://www.acog.org/example) "
+    "מדגישות שימוש במקורות מוסדיים.\n\n"
+)
+
+
 class DailyRunTests(unittest.TestCase):
     def setUp(self):
         daily_run.LOG_LINES.clear()
@@ -151,7 +159,7 @@ class DailyRunTests(unittest.TestCase):
             daily_run.validate_generated_article("# כותרת\n\nטקסט קצר מדי")
 
     def test_valid_generated_article_passes_quality_gate(self):
-        content = "# כותרת\n\n" + " ".join(
+        content = "# כותרת\n\n" + INLINE_EVIDENCE + " ".join(
             ["מידע"] * daily_run.MIN_ARTICLE_WORDS
         ) + (
             "\n\n## מקורות\n"
@@ -164,7 +172,7 @@ class DailyRunTests(unittest.TestCase):
         self.assertGreaterEqual(word_count, daily_run.MIN_ARTICLE_WORDS)
 
     def test_entity_contract_is_required_after_other_quality_checks(self):
-        content = "# כותרת\n\n" + " ".join(
+        content = "# כותרת\n\n" + INLINE_EVIDENCE + " ".join(
             ["מידע"] * daily_run.MIN_ARTICLE_WORDS
         ) + (
             "\n\n## מקורות\n"
@@ -181,8 +189,20 @@ class DailyRunTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "at least 2"):
             daily_run.validate_generated_article(content)
 
-    def test_generated_medical_article_rejects_unapproved_source_domain(self):
+    def test_generated_medical_article_requires_inline_evidence_links(self):
         content = "# כותרת\n\n" + " ".join(
+            ["מידע"] * daily_run.MIN_ARTICLE_WORDS
+        ) + (
+            "\n\n## מקורות\n"
+            "- https://www.who.int/example\n"
+            "- https://www.acog.org/example\n"
+        )
+        content = apply_article_contract(content, daily_run.CLIENT_PROFILE)
+        with self.assertRaisesRegex(ValueError, "inline evidence"):
+            daily_run.validate_generated_article(content)
+
+    def test_generated_medical_article_rejects_unapproved_source_domain(self):
+        content = "# כותרת\n\n" + INLINE_EVIDENCE + " ".join(
             ["מידע"] * daily_run.MIN_ARTICLE_WORDS
         ) + (
             "\n\n## מקורות\n"
@@ -194,12 +214,19 @@ class DailyRunTests(unittest.TestCase):
             daily_run.validate_generated_article(content)
 
     def test_generated_medical_article_requires_two_institutional_sources(self):
-        content = "# כותרת\n\n" + " ".join(
+        content = (
+            "# כותרת\n\n"
+            "לפי [מחקר ראשון בנושא](https://doi.org/10.1000/example-one) "
+            "ולפי [מחקר נוסף בנושא](https://doi.org/10.1000/example-two), "
+            "המידע דורש בדיקה.\n\n"
+            + " ".join(
             ["מידע"] * daily_run.MIN_ARTICLE_WORDS
-        ) + (
+            )
+            + (
             "\n\n## מקורות\n"
             "- https://doi.org/10.1000/example-one\n"
             "- https://doi.org/10.1000/example-two\n"
+            )
         )
         with self.assertRaisesRegex(ValueError, "institutional"):
             daily_run.validate_generated_article(content)

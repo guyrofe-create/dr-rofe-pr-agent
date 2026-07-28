@@ -26,6 +26,15 @@ preferred. Tables and FAQs are conditional: they are used only when they make
 a real comparison or answer real questions. Original analysis must be
 distinguished from sourced fact.
 
+For medical content, at least two exact external sources must also be linked
+inside the article body next to the claims they support, using descriptive
+anchor text. The same URLs remain in the Sources section for auditability.
+Direct professional guidance, systematic reviews, primary research and public
+health authorities take precedence. News sites may document a dated news event
+or an interview, but they are not accepted as evidence for a medical claim.
+Homepage links, search-result links and generic anchors such as "click here"
+fail the content gate.
+
 The distribution layer transforms one approved source into platform-native
 Facebook, LinkedIn, Pinterest and Blogger variants. The variants cannot
 introduce new facts. Google Business Profile publishing is disabled unless

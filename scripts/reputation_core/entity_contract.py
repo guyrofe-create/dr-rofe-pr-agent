@@ -133,15 +133,24 @@ def apply_article_contract(markdown: str, profile: dict) -> str:
 
     if context.canonical_name not in _article_body(text, context):
         byline = visible_byline(context)
-        text = text.replace(
-            byline,
-            (
-                f"{byline}\n\n"
-                f"המאמר הוכן עבור מאגר המידע של {context.canonical_name} "
-                "ומציג מידע כללי המבוסס על מקורות."
-            ),
-            1,
+        branded_sentence = (
+            f"המאמר הוכן עבור מאגר המידע של {context.canonical_name} "
+            "ומציג מידע כללי המבוסס על מקורות."
         )
+        parts = text.splitlines()
+        byline_index = parts.index(byline)
+        paragraph_start = byline_index + 1
+        while paragraph_start < len(parts) and not parts[paragraph_start].strip():
+            paragraph_start += 1
+        paragraph_end = paragraph_start
+        while (
+            paragraph_end < len(parts)
+            and parts[paragraph_end].strip()
+            and not parts[paragraph_end].startswith("## ")
+        ):
+            paragraph_end += 1
+        parts[paragraph_end:paragraph_end] = ["", branded_sentence]
+        text = "\n".join(parts).strip()
 
     text = re.sub(
         r"^##\s+על המחבר\s*$.*?(?=^##\s+מקורות\s*$|\Z)",
