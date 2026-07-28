@@ -53,8 +53,8 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
     "computer-generated",
 )
 PLANNED_SEARCH_QUERIES = 5
-MAX_SEARCH_QUERIES = 10
-MAX_REVIEWED_CANDIDATES = 12
+MAX_SEARCH_QUERIES = 6
+MAX_REVIEWED_CANDIDATES = 4
 MAX_GENERATION_ATTEMPTS = 3
 QUERY_NOISE_WORDS = frozenset(
     {
@@ -171,7 +171,7 @@ def build_search_queries(client, title, summary):
         reasoning={"effort": "low"},
         text={"verbosity": "low"},
         max_output_tokens=180,
-        timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "90")),
+        timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "45")),
     )
     raw = (response.output_text or "").strip()
     raw = re.sub(r"\A```(?:json)?\s*|\s*```\Z", "", raw, flags=re.IGNORECASE)
@@ -335,7 +335,7 @@ def review_relevance(client, image_bytes, media_type, title, summary):
         reasoning={"effort": "low"},
         text={"verbosity": "low"},
         max_output_tokens=180,
-        timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "90")),
+        timeout=float(os.environ.get("OPENAI_IMAGE_REVIEW_TIMEOUT_SECONDS", "45")),
     )
     verdict = " ".join((response.output_text or "").split())
     if verdict.upper().startswith("ACCEPT:"):
@@ -355,7 +355,7 @@ def select_licensed_photo(title, summary, client=None):
 
         client = OpenAI(
             api_key=os.environ["OPENAI_API_KEY"],
-            timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "90")),
+            timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "45")),
             max_retries=0,
         )
 
@@ -598,7 +598,7 @@ def review_generated_visual(client, image, title, summary):
         reasoning={"effort": "medium"},
         text={"verbosity": "low"},
         max_output_tokens=220,
-        timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "90")),
+        timeout=float(os.environ.get("OPENAI_IMAGE_REVIEW_TIMEOUT_SECONDS", "45")),
     )
     verdict = " ".join((response.output_text or "").split())
     if verdict.upper().startswith("ACCEPT:"):
