@@ -23,6 +23,7 @@ _CLIENT_FACTS = load_client_profile()["canonical_facts"]
 _CLIENT_NAME = _CLIENT_FACTS["primary_name"]
 _CLIENT_SITE = _CLIENT_FACTS["canonical_site"]
 COMMONS_API_URL = "https://commons.wikimedia.org/w/api.php"
+OPENVERSE_API_URL = "https://api.openverse.org/v1/images/"
 COMMONS_USER_AGENT = (
     f"ReputationAgentPublisher/1.0 ({_CLIENT_SITE}; licensed-photo-selector)"
 )
@@ -203,7 +204,7 @@ def topic_search_queries(title):
         return [
             "gynecological ultrasound equipment",
             "hormone testing laboratory",
-            "medical laboratory test tubes",
+            "laboratory test tubes",
             "ultrasound transducer clinic",
         ]
     if "כאבי אגן" in topic or "אגן כרוני" in topic:
@@ -373,6 +374,92 @@ def search_commons(query, *, request_get=requests.get):
     ]
 
 
+def search_openverse(query, *, request_get=requests.get):
+    """Return commercial-use photographs with normalized provenance metadata."""
+    response = request_get(
+        OPENVERSE_API_URL,
+        params={
+            "q": query,
+            "page_size": 20,
+            "category": "photograph",
+            "license_type": "commercial",
+            "size": "large",
+            "mature": "false",
+        },
+        headers={("User-Agent"): COMMONS_USER_AGENT, "Accept": "application/json"},
+        timeout=30,
+    )
+    response.raise_for_status()
+    candidates = []
+    for item in response.json().get("results", []):
+        license_code = str(item.get("license") or "").lower()
+        if license_code not in {"cc0", "pdm", "by", "by-sa"}:
+            continue
+        extension = str(item.get("filetype") or "").lower()
+        if extension == "jpeg":
+            extension = "jpg"
+        if extension not in {"jpg", "png"}:
+            continue
+        width = int(item.get("width") or 0)
+        height = int(item.get("height") or 0)
+        if min(width, height) < 700:
+            continue
+        image_url = item.get("url")
+        page_url = item.get("foreign_landing_url")
+        license_url = item.get("license_url")
+        if not image_url or not page_url or not license_url:
+            continue
+        creator = " ".join(str(item.get("creator") or "").split())
+        if not creator and license_code not in {"cc0", "pdm"}:
+            continue
+        creator = creator or "נחלת הכלל"
+        version = str(item.get("license_version") or "").strip()
+        license_names = {
+            "cc0": f"CC0 {version}".strip(),
+            "pdm": f"Public Domain Mark {version}".strip(),
+            "by": f"CC BY {version}".strip(),
+            "by-sa": f"CC BY-SA {version}".strip(),
+        }
+        license_name = license_names[license_code]
+        title = _plain(item.get("title") or "Openverse photograph")
+        tags = " ".join(
+            str(tag.get("name") or "")
+            for tag in item.get("tags", [])
+            if isinstance(tag, dict)
+        )
+        probe = f"{title} {tags}".lower()
+        if any(marker in probe for marker in SYNTHETIC_OR_NONPHOTO_MARKERS):
+            continue
+        attribution = _plain(item.get("attribution")) or (
+            f"{title} — {creator}; {license_name}; Openverse"
+        )
+        candidates.append({
+            "download_url": image_url,
+            "source_image_url": image_url,
+            "source_page_url": page_url,
+            "creator": creator,
+            "license_name": license_name,
+            "license_url": license_url,
+            "attribution": attribution,
+            "media_type": f"image/{'jpeg' if extension == 'jpg' else 'png'}",
+            "extension": extension,
+            "description": title,
+            "source_type": "openverse_licensed_photo",
+        })
+    return candidates
+
+
+def interleave_candidates(*groups):
+    """Prevent one provider from consuming the entire review budget."""
+    merged = []
+    max_length = max((len(group) for group in groups), default=0)
+    for index in range(max_length):
+        for group in groups:
+            if index < len(group):
+                merged.append(group[index])
+    return merged
+
+
 def review_relevance(client, image_bytes, media_type, title, summary):
     """Accept only a real-looking photo that directly supports the article."""
     encoded = base64.b64encode(image_bytes).decode("ascii")
@@ -459,11 +546,19 @@ def select_licensed_photo(title, summary, client=None):
     for query in queries:
         reviewed_for_query = 0
         try:
-            candidates = search_commons(query)
+            commons = search_commons(query)
         except requests.RequestException as exc:
+            commons = []
             search_errors.append(f"{query}: {type(exc).__name__}")
-            continue
-        query_results.append(f"{query}: {len(candidates)} licensed candidates")
+        try:
+            openverse = search_openverse(query)
+        except requests.RequestException as exc:
+            openverse = []
+            search_errors.append(f"{query}/openverse: {type(exc).__name__}")
+        candidates = interleave_candidates(commons, openverse)
+        query_results.append(
+            f"{query}: commons={len(commons)}, openverse={len(openverse)}"
+        )
         for candidate in candidates:
             source = candidate["source_image_url"]
             if source in seen:
@@ -513,7 +608,10 @@ def select_licensed_photo(title, summary, client=None):
                     license_name=candidate["license_name"],
                     license_url=candidate["license_url"],
                     attribution=candidate["attribution"],
-                    source_type="wikimedia_commons_licensed_photo",
+                    source_type=candidate.get(
+                        "source_type",
+                        "wikimedia_commons_licensed_photo",
+                    ),
                 )
             rejection_reasons.append(review)
             if (

@@ -72,12 +72,54 @@ class SocialImageTests(unittest.TestCase):
             queries,
         )
 
+    def test_openverse_search_preserves_commercial_license_provenance(self):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {
+            "results": [{
+                "title": "Lab tube",
+                "url": "https://images.example/lab.jpg",
+                "foreign_landing_url": "https://source.example/lab",
+                "creator": None,
+                "license": "cc0",
+                "license_version": "1.0",
+                "license_url": (
+                    "https://creativecommons.org/publicdomain/zero/1.0/"
+                ),
+                "filetype": "jpg",
+                "category": "photograph",
+                "width": 3872,
+                "height": 2592,
+                "tags": [{"name": "laboratory"}],
+                "attribution": "Lab tube is CC0.",
+            }]
+        }
+        request_get = Mock(return_value=response)
+
+        candidates = social_image.search_openverse(
+            "laboratory test tubes",
+            request_get=request_get,
+        )
+
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["license_name"], "CC0 1.0")
+        self.assertEqual(
+            candidates[0]["source_type"],
+            "openverse_licensed_photo",
+        )
+        params = request_get.call_args.kwargs["params"]
+        self.assertEqual(params["license_type"], "commercial")
+        self.assertEqual(params["category"], "photograph")
+
     def test_known_topic_uses_deterministic_queries_without_planner_cost(self):
         client = Mock()
         with patch(
             "scripts.social_image.search_commons",
             return_value=[],
-        ) as search:
+        ) as search, patch(
+            "scripts.social_image.search_openverse",
+            return_value=[],
+        ):
             with self.assertRaises(social_image.PhotoSelectionError):
                 social_image.select_licensed_photo(
                     "תסמונת השחלות הפוליציסטיות",
@@ -88,8 +130,11 @@ class SocialImageTests(unittest.TestCase):
         searched = [call.args[0] for call in search.call_args_list]
         self.assertIn("gynecological ultrasound equipment", searched)
 
+    @patch("scripts.social_image.search_openverse", return_value=[])
     @patch("scripts.social_image.search_commons", return_value=[])
-    def test_generate_reports_search_diagnostics_when_no_photo_is_found(self, search):
+    def test_generate_reports_search_diagnostics_when_no_photo_is_found(
+        self, search, _openverse
+    ):
         planned = [
             "adult comparing health information laptop",
             "person reading medical reference book",
@@ -115,8 +160,11 @@ class SocialImageTests(unittest.TestCase):
 
         self.assertEqual(search.call_count, expected_searches)
 
+    @patch("scripts.social_image.search_openverse", return_value=[])
     @patch("scripts.social_image.search_commons", return_value=[])
-    def test_commons_selector_falls_back_when_planner_fails(self, search):
+    def test_commons_selector_falls_back_when_planner_fails(
+        self, search, _openverse
+    ):
         client = Mock()
         client.responses.create.side_effect = TimeoutError("planner unavailable")
 
@@ -130,9 +178,10 @@ class SocialImageTests(unittest.TestCase):
 
     @patch("scripts.social_image.review_relevance")
     @patch("scripts.social_image.requests.get")
+    @patch("scripts.social_image.search_openverse", return_value=[])
     @patch("scripts.social_image.search_commons")
     def test_commons_selector_can_still_select_a_licensed_photo(
-        self, search, get, review
+        self, search, _openverse, get, review
     ):
         client = Mock()
         client.responses.create.return_value = SimpleNamespace(
@@ -176,11 +225,12 @@ class SocialImageTests(unittest.TestCase):
         client.images.generate.assert_not_called()
 
     @patch("scripts.social_image.requests.get")
+    @patch("scripts.social_image.search_openverse", return_value=[])
     @patch("scripts.social_image.search_commons")
     @patch("scripts.social_image.build_search_queries")
     @patch("scripts.social_image.review_relevance")
     def test_selector_moves_to_next_query_after_two_rejections(
-        self, review, planner, search, get
+        self, review, planner, search, _openverse, get
     ):
         planner.return_value = [
             "first medical query",
