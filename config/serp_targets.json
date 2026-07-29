@@ -129,7 +129,8 @@
   },
   "aggressiveness": {
     "mode": "maximum_sustainable",
-    "daily_measurement": true,
+    "daily_measurement": false,
+    "routine_measurement_cadence": "twice_monthly",
     "weekly_reprioritization": true,
     "publish_only_when_material_value_exists": true,
     "create_new_assets_when_gap_is_evidence_backed": true,
