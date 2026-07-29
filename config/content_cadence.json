@@ -21,6 +21,21 @@
         "wednesday": [],
         "thursday": ["facebook", "linkedin", "pinterest"]
       }
+    },
+    "evergreen_knowledge": {
+      "site_key": "DRGUYROFE_COM",
+      "weekly_target": 1,
+      "weekdays": {
+        "tuesday": []
+      }
+    },
+    "media_archive": {
+      "site_key": "GUYROFE_WIX_MEDIA_ARCHIVE",
+      "weekly_target": 0,
+      "weekdays": {},
+      "trigger": "original_video_or_podcast_transcript_available",
+      "minimum_days_between_publications": 14,
+      "audit_required": true
     }
   },
   "weekly_channel_targets": {
@@ -40,6 +55,8 @@
   "quality_policy": {
     "skip_instead_of_forcing_weak_content": true,
     "duplicate_article_forbidden": true,
+    "near_duplicate_cross_domain_threshold": 0.82,
+    "destination_role_must_match_content_stream": true,
     "identical_cross_platform_copy_forbidden": true,
     "licensed_topic_relevant_photo_required": true,
     "ai_image_generation_forbidden": true,

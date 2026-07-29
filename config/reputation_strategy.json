@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "updated_at": "2026-07-26",
+  "version": 4,
+  "updated_at": "2026-07-29",
   "objective": "Maximize the number and prominence of client-approved desired and controlled results on page one of Google, and maximize factual accuracy, explicit entity visibility and approved-source citations in AI answer engines, without deception, spam or medical solicitation.",
   "control_definition": {
     "google": "Measure every approved brand query by country, language and device; classify all page-one results; defend desired results; advance the closest approved controlled assets; correct or lawfully challenge inaccurate results; and reallocate effort from measured outcomes.",
@@ -43,6 +43,14 @@
     "answer_first_recommended": true,
     "sources_section_required_for_medical_articles": true,
     "minimum_authoritative_sources": 2,
+    "owned_property_routing": {
+      "GUYROFE_COM": "official identity, books, products and verified source-of-truth facts",
+      "DRGUYROFE_CO_IL": "timely Israeli health news analysis grounded in primary medical evidence",
+      "DRGUYROFE_COM": "original evergreen medical guides and long-form expert answers",
+      "GUYROFE_WIX_MEDIA_ARCHIVE": "original podcast or video transcripts with timestamps and sources only"
+    },
+    "same_article_on_multiple_owned_domains_forbidden": true,
+    "secondary_wix_requires_original_media_and_clean_audit": true,
     "prohibited": [
       "medical consultation invitation",
       "appointment invitation",
@@ -197,6 +205,8 @@
   "priorities": {
     "tier_1": [
       "guyrofe.com",
+      "drguyrofe.com",
+      "drguyrofe.co.il",
       "Google Search Console",
       "Bing Webmaster Tools"
     ],
@@ -207,7 +217,8 @@
       "YouTube"
     ],
     "tier_3": [
-      "Pinterest"
+      "Pinterest",
+      "guyrofe.wixsite.com/homepage (media archive only after audit)"
     ],
     "not_required_for_seo_alone": [
       "Telegram",

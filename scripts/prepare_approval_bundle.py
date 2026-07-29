@@ -25,6 +25,11 @@ from reputation_core.approval_workflow import build_bundle, render_preview
 from reputation_core.entity_seo import extract_citation_urls
 from reputation_core.entity_contract import audit_article_entity_contract
 from reputation_core.platform_content import build_platform_variants
+from reputation_core.content_routing import (
+    assert_cross_domain_original,
+    draft_metadata,
+    validate_stream_destination,
+)
 import social_image
 
 
@@ -51,8 +56,8 @@ def publication_site(business: dict, site_key: str | None = None) -> dict:
     if site_key:
         for site in business["sites"]:
             if site.get("key") == site_key:
-                if site.get("platform", "wordpress") != "wordpress":
-                    raise ValueError(f"Publication site is not WordPress: {site_key}")
+                if site.get("platform", "wordpress") not in {"wordpress", "wix"}:
+                    raise ValueError(f"Unsupported publication site: {site_key}")
                 return site
         raise ValueError(f"Unknown publication site key: {site_key}")
     return canonical_site(business)
@@ -66,6 +71,10 @@ def canonical_url_for(
 ) -> str:
     site = publication_site(business, site_key)
     slug = stable_slug(f"{client_id}-{draft_path.stem}")
+    if site.get("platform", "wordpress") == "wix":
+        slug = slug[:100].rstrip("-")
+        route = str(site.get("post_route") or "post").strip("/")
+        return f"{site['base_url'].rstrip('/')}/{route}/{slug}"
     return f"{site['base_url'].rstrip('/')}/{slug}/"
 
 
@@ -125,6 +134,31 @@ def prepare_bundle(
         )
     business = load_business_profile()
     primary = publication_site(business, site_key)
+    metadata = draft_metadata(draft)
+    routing_metadata = {
+        **metadata,
+        "legacy_content_audit_passed": primary.get("audit_status") == "passed",
+    }
+    validate_stream_destination(
+        site_key=primary["key"],
+        stream=metadata.get("content_stream"),
+        metadata=routing_metadata,
+    )
+    cadence = json.loads(
+        (PROJECT_ROOT / "config" / "content_cadence.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    fingerprint = assert_cross_domain_original(
+        content=content,
+        site_key=primary["key"],
+        draft_path=draft,
+        draft_index_path=PROJECT_ROOT / "content_drafts" / "index.json",
+        project_root=PROJECT_ROOT,
+        threshold=float(
+            cadence["quality_policy"]["near_duplicate_cross_domain_threshold"]
+        ),
+    )
     canonical_url = canonical_url_for(
         draft,
         business,
@@ -201,17 +235,26 @@ def prepare_bundle(
     unknown_channels = set(selected_channels) - supported_channels
     if unknown_channels:
         raise ValueError(f"Unsupported scheduled channels: {sorted(unknown_channels)}")
+    primary_platform = primary.get("platform", "wordpress")
+    approved_slug = stable_slug(f"{client['client_id']}-{draft.stem}")
+    if primary_platform == "wix":
+        approved_slug = approved_slug[:100].rstrip("-")
+    canonical_target_id = (
+        "canonical_wix" if primary_platform == "wix" else "canonical_wordpress"
+    )
     target_candidates = {
         "canonical": {
-            "target_id": "canonical_wordpress",
-            "platform": "WordPress",
+            "target_id": canonical_target_id,
+            "platform": "Wix" if primary_platform == "wix" else "WordPress",
             "asset": urlparse(primary["base_url"]).netloc,
             "payload": {
                 "title": title,
                 "markdown": content,
                 "canonical_url": canonical_url,
                 "site_key": primary["key"],
-                "slug": stable_slug(f"{client['client_id']}-{draft.stem}"),
+                "content_stream": metadata.get("content_stream"),
+                "content_fingerprint": fingerprint,
+                "slug": approved_slug,
                 "image": media_variant("hero"),
             },
         },
@@ -323,6 +366,14 @@ def prepare_bundle(
                 media
                 and {"hero", "landscape", "square", "portrait"}
                 <= set((media.get("variants") or {}))
+            ),
+            "destination_role_validated": True,
+            "cross_domain_originality_checked": True,
+            "content_fingerprint": fingerprint,
+            "secondary_wix_audit_passed": (
+                primary.get("audit_status") == "passed"
+                if primary["key"] == "GUYROFE_WIX_MEDIA_ARCHIVE"
+                else None
             ),
         },
     )

@@ -40,8 +40,11 @@ jobs:
           WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_DRGUYROFE_COM_API }}
           WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_DRGUYROFE_COM_SITE_ID }}
           WIX_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_DRGUYROFE_COM_ACCOUNT_ID }}
+          WIX_PRIMARY_DRGUYROFE_COM_API: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_API }}
+          WIX_PRIMARY_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_SITE_ID }}
+          WIX_PRIMARY_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_ACCOUNT_ID }}
 
-      - name: Verify Wix read access
+      - name: Verify supporting Wix media archive read access
         continue-on-error: true
         run: python scripts/wix_connection_check.py
         env:

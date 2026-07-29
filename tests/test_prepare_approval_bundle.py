@@ -15,6 +15,47 @@ SECRET = "a-test-signing-secret-with-32-characters"
 
 
 class PrepareApprovalBundleTests(unittest.TestCase):
+    def test_evergreen_wix_bundle_uses_only_the_primary_wix_site(self):
+        with tempfile.TemporaryDirectory(
+            dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
+        ) as directory:
+            root = Path(directory)
+            draft = root / "evergreen.md"
+            content = apply_article_contract(
+                (
+                    "# מדריך רפואי ירוק עד\n\n"
+                    "מידע רפואי כללי ומקורי המבוסס על מקור מוסדי.\n\n"
+                    "## מקורות\n"
+                    "[מקור רשמי](https://www.who.int/health-topics/)\n"
+                ),
+                prepare_approval_bundle.load_client_profile(),
+            )
+            draft.write_text(
+                '<!--\ncontent_stream: "evergreen_knowledge"\n'
+                'destination_site_key: "DRGUYROFE_COM"\n-->\n\n'
+                + content,
+                encoding="utf-8",
+            )
+            result = prepare_approval_bundle.prepare_bundle(
+                draft,
+                output_root=root / "bundles",
+                image_uri="https://example.com/approved.jpg",
+                image_alt_text="צילום רפואי מאושר",
+                site_key="DRGUYROFE_COM",
+                channel_ids=[],
+            )
+            bundle = json.loads(
+                Path(result["bundle_path"]).read_text(encoding="utf-8")
+            )
+        self.assertEqual(len(bundle["targets"]), 1)
+        target = bundle["targets"][0]
+        self.assertEqual(target["target_id"], "canonical_wix")
+        self.assertEqual(target["payload"]["site_key"], "DRGUYROFE_COM")
+        self.assertIn("/post/", target["payload"]["canonical_url"])
+        self.assertTrue(
+            bundle["compliance"]["cross_domain_originality_checked"]
+        )
+
     def test_scheduled_bundle_targets_drguyrofe_and_only_selected_channels(self):
         with tempfile.TemporaryDirectory(
             dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"

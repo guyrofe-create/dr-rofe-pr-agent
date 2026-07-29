@@ -24,6 +24,7 @@ from social_publishers import (
 )
 from publication_policy import enforce_channel_policy, enforce_publication_policy
 import social_image
+import wix_blog
 from reputation_core import data_path, load_client_profile
 from reputation_core.approval_workflow import (
     ExecutionLedger,
@@ -418,9 +419,16 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     seo_description = meta_description(content, CLIENT_PROFILE)
     destinations = []
     business = load_business_profile()
-    if "canonical_wordpress" not in targets:
-        raise RuntimeError("Canonical WordPress target is missing from approval bundle")
-    canonical_target = targets["canonical_wordpress"]
+    canonical_targets = [
+        targets[target_id]
+        for target_id in ("canonical_wordpress", "canonical_wix")
+        if target_id in targets
+    ]
+    if len(canonical_targets) != 1:
+        raise RuntimeError(
+            "Canonical approval bundle must contain exactly one CMS target"
+        )
+    canonical_target = canonical_targets[0]
     canonical_payload = canonical_target["payload"]
     approved_site_key = canonical_payload.get("site_key")
     primary = (
@@ -428,19 +436,40 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         if approved_site_key
         else canonical_site(business)
     )
-    if not primary or primary.get("platform", "wordpress") != "wordpress":
-        raise RuntimeError("Approved WordPress publication site is not configured")
+    if not primary or primary.get("platform", "wordpress") not in {
+        "wordpress",
+        "wix",
+    }:
+        raise RuntimeError("Approved publication site is not configured")
+    primary_platform = primary.get("platform", "wordpress")
+    expected_target_id = (
+        "canonical_wix" if primary_platform == "wix" else "canonical_wordpress"
+    )
+    if canonical_target["target_id"] != expected_target_id:
+        raise PermissionError("Approved CMS target does not match the configured site")
     canonical_base = primary["base_url"].rstrip("/")
     canonical_name = re.sub(r"^www\.", "", urlparse(canonical_base).netloc)
-    primary_user_env = primary["user_env"]
-    primary_password_env = primary["app_password_env"]
-
-    if not configured(primary_user_env, primary_password_env):
-        raise RuntimeError("Canonical WordPress publisher is not configured")
+    if primary_platform == "wordpress":
+        primary_user_env = primary["user_env"]
+        primary_password_env = primary["app_password_env"]
+        if not configured(primary_user_env, primary_password_env):
+            raise RuntimeError("Canonical WordPress publisher is not configured")
+    else:
+        if not wix_blog.configured(primary):
+            raise RuntimeError("Canonical Wix publisher is not configured")
 
     if canonical_payload["title"] != title or canonical_payload["markdown"] != content:
         raise PermissionError("Canonical content differs from the approved payload")
     hosted_images = {}
+    media_host = (
+        primary
+        if primary_platform == "wordpress"
+        else site_by_key(business, "GUYROFE_COM")
+    )
+    if not media_host or media_host.get("platform", "wordpress") != "wordpress":
+        raise RuntimeError("Approved image hosting site is not configured")
+    media_user_env = media_host["user_env"]
+    media_password_env = media_host["app_password_env"]
 
     def approved_target_image(target):
         media = (target.get("payload") or {}).get("image") or approved_bundle.get("media")
@@ -449,12 +478,16 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             return image, remote_url
         digest = media["sha256"]
         if digest not in hosted_images:
+            if not configured(media_user_env, media_password_env):
+                raise RuntimeError(
+                    "WordPress media host is required for approved local Wix images"
+                )
             role = media.get("role", "approved")
             hosted_images[digest] = social_image.upload_to_wordpress(
                 image,
-                base_url=canonical_base,
-                username=os.environ[primary_user_env],
-                app_password=os.environ[primary_password_env],
+                base_url=media_host["base_url"].rstrip("/"),
+                username=os.environ[media_user_env],
+                app_password=os.environ[media_password_env],
                 slug=(
                     f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}-"
                     f"{role}"
@@ -469,29 +502,45 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         f'<figure><img src="{html.escape(canonical_image_url)}" '
         f'alt="{html.escape(canonical_alt)}" width="1600" height="900"></figure>\n'
     )
-    canonical_receipt = ledger.execute(
-        approved_bundle,
-        canonical_target,
-        lambda payload, key: {
-            "url": wordpress_publish(
-                canonical_base,
-                os.environ[primary_user_env],
-                os.environ[primary_password_env],
-                payload["title"],
-                hero_html + markdown_to_html(payload["markdown"]),
-                idempotency_key=payload["slug"],
-                meta_description=seo_description,
-                article_schema_factory=lambda article_url: build_article_schema(
-                    business,
-                    headline=payload["title"],
-                    article_url=article_url,
-                    description=seo_description,
-                    image_url=canonical_image_url,
-                    citations=extract_citation_urls(payload["markdown"]),
-                ),
-            )
-        },
-    )
+    if primary_platform == "wordpress":
+        canonical_receipt = ledger.execute(
+            approved_bundle,
+            canonical_target,
+            lambda payload, key: {
+                "url": wordpress_publish(
+                    canonical_base,
+                    os.environ[primary_user_env],
+                    os.environ[primary_password_env],
+                    payload["title"],
+                    hero_html + markdown_to_html(payload["markdown"]),
+                    idempotency_key=payload["slug"],
+                    meta_description=seo_description,
+                    article_schema_factory=lambda article_url: build_article_schema(
+                        business,
+                        headline=payload["title"],
+                        article_url=article_url,
+                        description=seo_description,
+                        image_url=canonical_image_url,
+                        citations=extract_citation_urls(payload["markdown"]),
+                    ),
+                )
+            },
+        )
+    else:
+        canonical_receipt = ledger.execute(
+            approved_bundle,
+            canonical_target,
+            lambda payload, key: {
+                "url": wix_blog.publish(
+                    primary,
+                    title=payload["title"],
+                    html=hero_html + markdown_to_html(payload["markdown"]),
+                    excerpt=seo_description,
+                    slug=payload["slug"],
+                    expected_url=payload["canonical_url"],
+                )
+            },
+        )
     canonical_url = canonical_receipt["url"]
     if canonical_url.rstrip("/") != canonical_payload["canonical_url"].rstrip("/"):
         raise ReconciliationRequired(
@@ -515,14 +564,17 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         )
     )
 
-    # Secondary WordPress publication is blocked unless it is part of the exact
-    # approval bundle. P7 deliberately removes implicit fan-out.
+    # Every other owned site remains untouched. There is no implicit echo,
+    # cross-domain fan-out or rephrased duplicate publication.
     for site in business["sites"]:
-        if site is primary or site.get("platform", "wordpress") != "wordpress":
+        if site is primary:
             continue
         name = re.sub(r"^www\.", "", urlparse(site["base_url"]).netloc)
+        detail = "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        if site.get("audit_status") == "required":
+            detail = "חסום לפרסום עד השלמת ביקורת התוכן הישן"
         destinations.append(
-            destination(name, "not_in_approval_bundle", detail="לא אושר בחבילה זו")
+            destination(name, "not_in_approval_bundle", detail=detail)
         )
 
     enforce_channel_policy("Facebook")
@@ -666,13 +718,6 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             )
         )
 
-    for site in business["sites"]:
-        if site.get("platform") == "wix":
-            destinations.append(destination(
-                re.sub(r"^www\.", "", urlparse(site["base_url"]).netloc),
-                "blocked",
-                detail="חיבור Wix קיים אך הרשאות הפרסום עדיין חסומות",
-            ))
     destinations.extend(
         [
             destination(

@@ -99,6 +99,83 @@ class AutonomousContentRunTests(unittest.TestCase):
         metadata = save.call_args.kwargs["metadata"]
         self.assertEqual(metadata["content_stream"], "canonical_depth")
 
+    def test_evergreen_wix_job_has_a_distinct_editorial_context(self):
+        job = {
+            "stream": "evergreen_knowledge",
+            "site_key": "DRGUYROFE_COM",
+            "channels": [],
+            "week": "week-of-2026-07-26",
+            "local_date": "2026-07-28",
+            "weekday": "tuesday",
+            "public_execution_allowed": False,
+        }
+        with tempfile.TemporaryDirectory() as directory, patch.object(
+            autonomous_content_run, "selected_topic", return_value=(2, "נושא")
+        ), patch.object(
+            autonomous_content_run,
+            "generate_article",
+            return_value=("כותרת", "# כותרת\n\nתוכן"),
+        ) as generate, patch.object(
+            autonomous_content_run,
+            "save_draft",
+            return_value=Path(directory) / "draft.md",
+        ):
+            result = autonomous_content_run.generate_job(
+                job,
+                datetime(2026, 7, 28, 6, 0, tzinfo=timezone.utc),
+                Path(directory),
+            )
+        self.assertEqual(result["destination_site_key"], "DRGUYROFE_COM")
+        self.assertEqual(result["content_stream"], "evergreen_knowledge")
+        self.assertIn(
+            "לא תגובה לחדשות",
+            generate.call_args.kwargs["editorial_context"],
+        )
+
+    def test_media_archive_is_event_driven_and_needs_a_real_transcript(self):
+        with tempfile.TemporaryDirectory() as directory:
+            media = Path(directory)
+            (media / "media-transcript-1.json").write_text(
+                json.dumps(
+                    {
+                        "status": "transcript_ready_for_editorial_review",
+                        "destination_site_key": "GUYROFE_WIX_MEDIA_ARCHIVE",
+                        "source_media_url": "https://youtube.com/watch?v=real",
+                        "source_media_type": "youtube",
+                        "working_title": "פרק בדיקה",
+                        "transcript_markdown": "# פרק בדיקה\n\nתמליל מקורי",
+                        "created_at": "2026-07-29T05:00:00Z",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            job = {
+                "stream": "media_archive",
+                "site_key": "GUYROFE_WIX_MEDIA_ARCHIVE",
+                "channels": [],
+                "week": "event-2026-07-29",
+                "local_date": "2026-07-29",
+                "weekday": "event_driven",
+                "public_execution_allowed": False,
+            }
+            with patch.object(
+                autonomous_content_run,
+                "save_draft",
+                return_value=media / "draft.md",
+            ) as save:
+                result = autonomous_content_run.generate_job(
+                    job,
+                    datetime(2026, 7, 29, 6, 0, tzinfo=timezone.utc),
+                    media,
+                    {"generated": []},
+                    media_brief_dir=media,
+                )
+        self.assertEqual(result["source_media_url"], "https://youtube.com/watch?v=real")
+        self.assertEqual(
+            save.call_args.kwargs["metadata"]["content_stream"],
+            "media_archive",
+        )
+
     def test_unbundled_generated_draft_is_retried_without_regeneration(self):
         with tempfile.TemporaryDirectory(
             dir=autonomous_content_run.ROOT

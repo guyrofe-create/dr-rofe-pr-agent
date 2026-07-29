@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "market": {
     "country": "IL",
     "language": "he",
@@ -122,9 +122,20 @@
       "must_not_solicit_care": true
     },
     "drguyrofe.com": {
-      "role": "knowledge hub, podcast and long-form expert answers",
-      "allowed_intents": ["knowledge hub", "podcast", "long-form answers"],
-      "status": "deferred_pending_wix_audit"
+      "role": "evergreen medical knowledge hub and long-form expert answers",
+      "allowed_intents": ["evergreen medical guide", "knowledge hub", "long-form answer"],
+      "must_be_original": true,
+      "must_not_duplicate_other_owned_domains": true,
+      "status": "connected_exact_approval_required"
+    },
+    "guyrofe.wixsite.com/homepage": {
+      "role": "supporting archive for original podcast and video transcripts",
+      "allowed_intents": ["podcast transcript", "video transcript", "media companion"],
+      "requires_original_media": true,
+      "minimum_days_between_publications": 14,
+      "must_be_original": true,
+      "must_not_duplicate_other_owned_domains": true,
+      "status": "read_only_until_legacy_content_audit_passes"
     }
   },
   "aggressiveness": {

@@ -29,8 +29,16 @@ def validate_cadence(cadence: dict) -> None:
     if not cadence.get("approval_required_before_publication"):
         raise ValueError("Autonomous cadence must preserve explicit publication approval")
     streams = cadence.get("streams") or {}
-    if set(streams) != {"canonical_depth", "health_news"}:
-        raise ValueError("Cadence must define canonical_depth and health_news streams")
+    required_streams = {
+        "canonical_depth",
+        "health_news",
+        "evergreen_knowledge",
+        "media_archive",
+    }
+    if set(streams) != required_streams:
+        raise ValueError(
+            "Cadence must define the four distinct owned-property streams"
+        )
     planned_channels: dict[str, int] = {}
     for stream_name, stream in streams.items():
         weekdays = stream.get("weekdays") or {}
@@ -56,6 +64,16 @@ def validate_cadence(cadence: dict) -> None:
         raise ValueError("Cadence must skip weak content instead of filling a quota")
     if int(quality.get("max_news_brief_age_hours", 0)) <= 0:
         raise ValueError("Cadence needs a positive max_news_brief_age_hours")
+    if not quality.get("destination_role_must_match_content_stream"):
+        raise ValueError("Every draft must be routed to its distinct property role")
+    threshold = float(quality.get("near_duplicate_cross_domain_threshold", 0))
+    if threshold < 0.75 or threshold > 0.95:
+        raise ValueError("Cross-domain duplicate threshold must be between 0.75 and 0.95")
+    archive = streams["media_archive"]
+    if archive.get("weekly_target") != 0 or archive.get("weekdays"):
+        raise ValueError("Media archive must remain event-driven, not quota-driven")
+    if int(archive.get("minimum_days_between_publications", 0)) < 14:
+        raise ValueError("Media archive needs at least 14 days between publications")
 
 
 def local_now(now: datetime, cadence: dict) -> datetime:
