@@ -1,0 +1,67 @@
+{
+  "version": 4,
+  "opportunity_id": "opp_3ea3a4b5cd26ed50",
+  "prepared_at": "2026-07-29T01:23:55Z",
+  "status": "awaiting_item_approval",
+  "public_execution_allowed": false,
+  "approval_invalidated_by_any_edit": true,
+  "opportunity": {
+    "id": "opp_3ea3a4b5cd26ed50",
+    "version": 4,
+    "action_type": "refresh_existing_content",
+    "kind": "refresh_content",
+    "source_kind": "refresh_content",
+    "asset_id": "Canonical website",
+    "asset_url": "https://guyrofe.com/",
+    "query": "גיא רופא",
+    "reason": "Search Console shows a striking-distance page at average position 3.8.",
+    "recommended_actions": [
+      "Preserve the ranking URL",
+      "Improve the page for the observed query intent with original evidence",
+      "Add relevant internal links and verify canonical/index status",
+      "Compare 28-day clicks, impressions, CTR and position after the change"
+    ],
+    "evidence": {
+      "page": "https://guyrofe.com/",
+      "position": 3.787974683544304,
+      "impressions": 632.0
+    },
+    "factors": {
+      "expected_impact": 8.0,
+      "asset_authority": 10.0,
+      "query_relevance": 9.5,
+      "control": 10.0,
+      "time_cost": 3.0,
+      "financial_cost": 2.0,
+      "risk": 2.0,
+      "benefit_product": 7600.0,
+      "burden_sum": 7.0,
+      "raw_priority_index": 1085.7143,
+      "opportunity_score": 100.0,
+      "formula": "impact × authority × relevance × control ÷ (time + financial cost + risk)"
+    },
+    "score": 100.0,
+    "confidence": 0.95,
+    "status": "selected_for_preparation",
+    "blocked_reasons": [],
+    "preparation_autonomous": true,
+    "final_execution_requires_approval": true,
+    "authorization_scope": "prepare_action_only",
+    "new_asset_build_authorized": false,
+    "approval_required": "medical_editor",
+    "approval_bundle_requirements": [
+      "Evidence and exact target",
+      "Expected benefit, cost, risk and measurement plan",
+      "Exact proposed change or outreach text",
+      "Rollback or stop condition",
+      "Complete draft and sources",
+      "Medical and publication policy validation"
+    ],
+    "measurement_after_action": [
+      "Re-measure the same engine, surface, query and locale",
+      "Compare against 7-day and 28-day baselines",
+      "Stop or reverse if risk, duplication or cannibalization rises"
+    ],
+    "execution_mode": "autonomous_prepare_then_approval"
+  }
+}
