@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import importlib.util
 import json
 import os
 import smtplib
@@ -12,17 +13,28 @@ from datetime import datetime, timedelta, timezone
 from email.message import EmailMessage
 from pathlib import Path
 
-try:
-    from scripts.reputation_core.ai_usage import load_usage_events
-except ModuleNotFoundError:
-    from reputation_core.ai_usage import load_usage_events
-
-
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TO = "guyrofe@gmail.com"
 CAMPAIGN_INDEX = ROOT / "content_drafts" / "campaigns" / "index.json"
 DRAFT_INDEX = ROOT / "content_drafts" / "index.json"
 BUNDLE_INDEX = ROOT / "approval_bundles" / "index.json"
+
+
+def _load_usage_reader():
+    """Load the standalone ledger without importing optional monitor dependencies."""
+    module_path = ROOT / "scripts" / "reputation_core" / "ai_usage.py"
+    spec = importlib.util.spec_from_file_location(
+        "weekly_report_ai_usage",
+        module_path,
+    )
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Unable to load AI usage ledger: {module_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.load_usage_events
+
+
+load_usage_events = _load_usage_reader()
 
 
 def load_json(path, default):
