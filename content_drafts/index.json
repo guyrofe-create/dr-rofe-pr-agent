@@ -1,6 +1,21 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-07-29-topic-90-run-30467465654-attempt-1.md",
+      "title": "השעה שבה מפסיקים לאכול ותפקוד המוח: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: השעה שבה מפסיקים לאכול עשויה להשפיע גם על תפקוד המוח",
+      "excerpt": "השעה שבה מפסיקים לאכול ותפקוד המוח: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: ייתכן שלתזמון האכילה יש השפעה על תהליכים מטבוליים וצירקדיים הקשורים גם לבריאות המוח, אך עדיין אין ",
+      "generated_at": "2026-07-29T15:46:26.434285+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-07-26",
+      "cadence_local_date": "2026-07-29",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-9caa78a2bc100abc.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/bjtpncesmg"
+    },
+    {
       "path": "content_drafts/2026-07-29-topic-04-run-30466168201-attempt-1.md",
       "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
       "topic": "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
