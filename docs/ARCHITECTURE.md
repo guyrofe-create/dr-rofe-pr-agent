@@ -109,6 +109,12 @@ new-asset gate may require incubation inside an existing property or reject an
 attractive idea when it would split authority, duplicate intent or create an
 unsustainable YMYL surface.
 
+The `health_news_radar.yml` workflow activates only the research-intake part
+of the medical-news pattern for `DRGUYROFE_CO_IL`. It retrieves allowlisted RSS
+metadata, creates one evidence-research brief, and sets
+`public_execution_allowed: false`. Article generation, media selection,
+medical approval and WordPress publication remain separate later phases.
+
 ### Asset governance
 
 `data/asset_registry.json` is the single credential-free inventory of owned and
