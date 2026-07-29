@@ -31,12 +31,19 @@
     "free_serpapi_policy": {
       "enabled": true,
       "monthly_request_budget": 220,
+      "rank_check_days_of_month": [1, 15],
+      "ai_check_days_of_month": [1, 15],
+      "search_console_check_days_of_month": [1, 15],
+      "connection_health_check_days_of_month": [1],
       "daily_engines": ["google"],
       "daily_devices": ["mobile"],
       "extended_weekday": 6,
       "extended_engines": ["google", "bing"],
       "extended_devices": ["mobile", "desktop"],
-      "web_mentions_cadence": "extended_weekly",
+      "web_mentions_enabled": false,
+      "google_reviews_enabled": false,
+      "facebook_recommendations_enabled": false,
+      "backlink_monitoring_enabled": false,
       "reserve_for_manual_checks": 30
     },
     "ai_surfaces": [

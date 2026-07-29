@@ -195,14 +195,23 @@ class MonitorGeoTests(unittest.TestCase):
             monitor_run.REPORT["facebook_recommendations"] = old_value
         self.assertEqual(result["status"], "skipped_missing_permission")
 
-    def test_serp_checks_run_only_once_per_day(self):
+    def test_serp_checks_run_only_on_twice_monthly_dates(self):
         with patch.object(
             monitor_run,
             "HISTORY",
-            {"last_serp_check_date": "2026-07-26"},
+            {"last_serp_check_date": "2026-07-01"},
         ):
-            self.assertFalse(monitor_run.serp_checks_due("2026-07-26"))
-            self.assertTrue(monitor_run.serp_checks_due("2026-07-27"))
+            self.assertFalse(monitor_run.serp_checks_due("2026-07-01"))
+            self.assertFalse(monitor_run.serp_checks_due("2026-07-02"))
+            self.assertTrue(monitor_run.serp_checks_due("2026-07-15"))
+
+    def test_manual_serp_check_can_override_calendar(self):
+        with patch.object(monitor_run, "HISTORY", {}), patch.dict(
+            os.environ,
+            {"FORCE_SERP_CHECK": "true"},
+            clear=True,
+        ):
+            self.assertTrue(monitor_run.serp_checks_due("2026-07-02"))
 
     def test_free_serp_plan_uses_two_core_queries_on_regular_day(self):
         plan = monitor_run.serp_run_plan("2026-07-27")
@@ -221,7 +230,7 @@ class MonitorGeoTests(unittest.TestCase):
         self.assertEqual(len(plan["queries"]), 4)
         self.assertEqual(plan["engines"], ["google", "bing"])
         self.assertEqual(plan["devices"], ["mobile", "desktop"])
-        self.assertTrue(plan["web_mentions"])
+        self.assertFalse(plan["web_mentions"])
 
     def test_serp_budget_stops_before_provider_free_limit(self):
         with patch.object(
@@ -272,21 +281,21 @@ class MonitorGeoTests(unittest.TestCase):
             "HISTORY",
             {
                 "snapshots": [{
-                    "date": "2026-07-26T10:00:00",
+                    "date": "2026-07-15T10:00:00",
                     "rank": [{"status": "error", "detail": "429"}],
                 }],
             },
         ):
-            self.assertTrue(monitor_run.serp_checks_due("2026-07-26"))
+            self.assertTrue(monitor_run.serp_checks_due("2026-07-15"))
 
     def test_serp_quota_backoff_stops_same_day_retry_storm(self):
         with patch.object(
             monitor_run,
             "HISTORY",
-            {"serp_retry_on_date": "2026-07-27"},
+            {"serp_retry_on_date": "2026-07-16"},
         ):
-            self.assertFalse(monitor_run.serp_checks_due("2026-07-26"))
-            self.assertTrue(monitor_run.serp_checks_due("2026-07-27"))
+            self.assertFalse(monitor_run.serp_checks_due("2026-07-15"))
+            self.assertTrue(monitor_run.serp_checks_due("2026-08-01"))
 
     def test_active_serp_backoff_does_not_repeat_failure_email(self):
         old_rank = monitor_run.REPORT["rank"]
@@ -362,14 +371,40 @@ class MonitorGeoTests(unittest.TestCase):
                 "2026-07-27",
             )
 
-    def test_ai_repeated_sampling_runs_only_once_per_day(self):
+    def test_ai_repeated_sampling_runs_twice_monthly(self):
         with patch.object(
             monitor_run,
             "HISTORY",
-            {"last_ai_check_date": "2026-07-26"},
+            {"last_ai_check_date": "2026-07-01"},
         ):
-            self.assertFalse(monitor_run.ai_checks_due("2026-07-26"))
-            self.assertTrue(monitor_run.ai_checks_due("2026-07-27"))
+            self.assertFalse(monitor_run.ai_checks_due("2026-07-01"))
+            self.assertFalse(monitor_run.ai_checks_due("2026-07-02"))
+            self.assertTrue(monitor_run.ai_checks_due("2026-07-15"))
+
+    def test_ai_manual_check_can_override_calendar(self):
+        with patch.object(monitor_run, "HISTORY", {}), patch.dict(
+            os.environ,
+            {"FORCE_AI_CHECK": "true"},
+            clear=True,
+        ):
+            self.assertTrue(monitor_run.ai_checks_due("2026-07-02"))
+
+    def test_search_console_maintenance_runs_twice_monthly(self):
+        with patch.object(monitor_run, "HISTORY", {}):
+            self.assertTrue(monitor_run.scheduled_maintenance_due(
+                "last_search_console_check_date",
+                "search_console_check_days_of_month",
+                "2026-07-01",
+                default_days=[1, 15],
+                force_environment_key="FORCE_SEARCH_CONSOLE_CHECK",
+            ))
+            self.assertFalse(monitor_run.scheduled_maintenance_due(
+                "last_search_console_check_date",
+                "search_console_check_days_of_month",
+                "2026-07-02",
+                default_days=[1, 15],
+                force_environment_key="FORCE_SEARCH_CONSOLE_CHECK",
+            ))
 
 
 if __name__ == "__main__":
