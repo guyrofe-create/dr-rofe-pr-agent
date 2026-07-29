@@ -195,6 +195,27 @@ or removal request. Owner-managed and quarantined assets remain blocked.
 The old reviewed content generator is retained for manual use only. The
 two-hour monitor is the automatic trigger for P4 planning and preparation.
 
+## drguyrofe.co.il Israeli health-news desk
+
+The independent `drguyrofe.co.il` phase-one radar runs once each morning and
+reads metadata from configured official Israeli health-news RSS feeds. It
+filters sponsored markers, rejects links outside each publisher's allowlist,
+ranks recent medically relevant stories, and applies a soft source cooldown so
+one publisher does not dominate when comparable alternatives exist.
+
+The selected item becomes a review-only brief under `opportunity_drafts/`. The
+brief links visibly to the original news report and requires primary-source
+research plus at least two additional authoritative sources. The radar stores
+only feed metadata and a short summary; it does not copy article bodies, call
+OpenAI, generate images, write the final medical article, or publish anything.
+If no candidate passes the quality threshold, it creates no brief.
+
+Run it manually with:
+
+```bash
+python scripts/health_news_radar.py
+```
+
 ## P5 controlled creative asset engine
 
 P5 investigates a new asset only when P3 measures a desired-result gap. It can

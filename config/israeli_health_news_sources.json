@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "destination_site_key": "DRGUYROFE_CO_IL",
+  "destination_url": "https://www.drguyrofe.co.il",
+  "schedule_timezone": "Asia/Jerusalem",
+  "selection": {
+    "max_age_hours": 72,
+    "candidate_limit_per_source": 20,
+    "source_cooldown_days": 5,
+    "source_diversity_penalty": 5,
+    "minimum_opportunity_score": 25
+  },
+  "sources": [
+    {
+      "id": "ynet_health",
+      "name": "ynet בריאות",
+      "feed_url": "https://www.ynet.co.il/Integration/StoryRss1208.xml",
+      "allowed_hosts": ["ynet.co.il", "www.ynet.co.il"],
+      "enabled": true
+    },
+    {
+      "id": "mako_health",
+      "name": "mako בריאות",
+      "feed_url": "https://rcs.mako.co.il/rss/c827a3ef43336410VgnVCM2000002a0c10acRCRD.xml",
+      "allowed_hosts": ["mako.co.il", "www.mako.co.il"],
+      "enabled": true
+    },
+    {
+      "id": "walla_health",
+      "name": "וואלה בריאות",
+      "feed_url": "https://rss.walla.co.il/feed/139?type=main",
+      "allowed_hosts": ["walla.co.il", "www.walla.co.il", "healthy.walla.co.il"],
+      "enabled": true
+    }
+  ],
+  "blocked_markers": [
+    "בשיתוף",
+    "תוכן ממומן",
+    "ממומן",
+    "בחסות",
+    "פרסומת"
+  ]
+}

@@ -1,0 +1,41 @@
+name: Dr. Rofe Israeli Health News Radar
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: drguyrofe-health-news-radar
+  cancel-in-progress: false
+
+jobs:
+  prepare-brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Select one Israeli health-news opportunity
+        run: python scripts/health_news_radar.py
+
+      - name: Commit review-only radar state and brief
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add data/health_news_radar.json
+          find opportunity_drafts -maxdepth 1 -type f -name 'health-news-*.json' -print0 | xargs -0 -r git add
+          git diff --cached --quiet || git commit -m "Prepare drguyrofe.co.il health-news brief $(date +%Y-%m-%d)"
+          git pull --rebase
+          git push
