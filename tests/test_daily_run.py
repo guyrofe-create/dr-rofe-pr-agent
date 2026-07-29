@@ -244,6 +244,23 @@ class DailyRunTests(unittest.TestCase):
         self.assertIn("טיוטה קצרה", messages[1]["content"])
         self.assertIn("הרחב", messages[2]["content"])
         self.assertIn("אל תתחיל", messages[2]["content"])
+        self.assertIn("הסר אותו", messages[2]["content"])
+        self.assertIn("סעיף המקורות", messages[2]["content"])
+
+    def test_inline_sources_are_synchronized_without_model_retry(self):
+        content = (
+            "# כותרת\n\n"
+            "לפי [הנחיית ארגון הבריאות העולמי]"
+            "(https://www.who.int/example), נדרשת בדיקה.\n\n"
+            "## מקורות\n"
+            "- https://www.acog.org/example\n"
+        )
+        synchronized = daily_run.synchronize_inline_sources(content)
+        self.assertIn(
+            "- [הנחיית ארגון הבריאות העולמי](https://www.who.int/example)",
+            synchronized,
+        )
+        self.assertEqual(synchronized.count("https://www.who.int/example"), 2)
 
     def test_generation_uses_responses_api_with_high_verbosity(self):
         client = Mock()

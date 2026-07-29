@@ -209,6 +209,22 @@ def inline_medical_citations(content):
     return citations
 
 
+def synchronize_inline_sources(content):
+    """Copy every inline evidence URL into the final Sources list."""
+    citations = inline_medical_citations(content)
+    if not citations:
+        return content
+    source_urls = medical_source_urls(content)
+    missing = []
+    for anchor, url in citations:
+        if url not in source_urls and url not in {item[1] for item in missing}:
+            missing.append((anchor, url))
+    if not missing:
+        return content
+    addition = "\n".join(f"- [{anchor}]({url})" for anchor, url in missing)
+    return content.rstrip() + "\n" + addition + "\n"
+
+
 def _descriptive_anchor(anchor):
     generic = {
         "כאן",
@@ -352,7 +368,12 @@ def generation_messages(base_prompt, previous_content=None, last_error=None):
                     "role": "user",
                     "content": (
                         "הטיוטה הזו לא עברה בקרת איכות: "
-                        f"{last_error}. הרחב ושפר את אותה טיוטה עד "
+                        f"{last_error}. תקן במפורש את הכשל הזה. אם קיים URL "
+                        "מדומיין שאינו מאושר, הסר אותו ואת הייחוס אליו והחלף "
+                        "אותו רק במקור מוסדי מאושר או DOI ישיר. אל תשאיר "
+                        "קישורים לאתרי כנסים, חדשות או שיווק כמקור רפואי. "
+                        "ודא שכל קישור ראיות שמופיע בגוף מופיע באותו URL גם "
+                        "בסעיף המקורות. לאחר התיקון, הרחב ושפר את אותה טיוטה עד "
                         f"{TARGET_ARTICLE_WORDS} "
                         "מילים. שמור על הכותרת, המבנה והמידע הקיים, הוסף "
                         "הסברים שימושיים שאינם חוזרים על עצמם, ואל תתחיל "
@@ -415,6 +436,8 @@ def generate_article(
   לעמוד בית או לדף חיפוש במקום למסמך, להנחיה או למחקר המדויקים
 - לטענות רפואיות העדף לפי הסדר: הנחיה מקצועית רשמית, סקירה שיטתית או מחקר
   ראשוני, ורשות בריאות; אתר חדשות אינו מקור רפואי גם אם הדומיין חזק
+- אל תצטט עמודי כנס, מאגר תקצירים, אתר חדשות או דף אירוע כמקור רפואי; אם
+  המחקר המקורי אינו זמין ב-DOI או במאגר המוסדי המאושר, אל תבסס עליו טענה
 - פתח בתשובה ישירה וקצרה לשאלה המרכזית ורק לאחר מכן הרחב
 - השתמש בטבלה רק כאשר היא משפרת השוואה אמיתית; אין להוסיף טבלה לקישוט
 - הוסף FAQ רק אם קיימות שאלות שימושיות שלא נענו היטב בגוף המאמר
@@ -449,6 +472,7 @@ def generate_article(
             clean_generated_markdown(content),
             CLIENT_PROFILE,
         )
+        content = synchronize_inline_sources(content)
         if not content:
             last_error = "הוחזרה תשובה ריקה"
             continue
