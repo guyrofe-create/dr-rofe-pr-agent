@@ -175,8 +175,8 @@ def _search_query_prompt(title, summary):
     )
 
 
-def fallback_search_queries(title):
-    """Return safe Commons queries when the optional AI planner is unavailable."""
+def topic_search_queries(title):
+    """Return deterministic Commons queries for recognized medical topics."""
     topic = _topic_without_client(title)
     if "מיומ" in topic:
         return [
@@ -199,7 +199,7 @@ def fallback_search_queries(title):
             "laboratory microscope equipment",
             "clinical laboratory workbench",
         ]
-    if "שחלות פוליציסטיות" in topic or "PCOS" in topic.upper():
+    if "פוליציסט" in topic or "PCOS" in topic.upper():
         return [
             "gynecological ultrasound equipment",
             "hormone testing laboratory",
@@ -227,6 +227,14 @@ def fallback_search_queries(title):
             "meal preparation kitchen",
             "empty dining table",
         ]
+    return []
+
+
+def fallback_search_queries(title):
+    """Return safe Commons queries when the optional AI planner is unavailable."""
+    specific = topic_search_queries(title)
+    if specific:
+        return specific
     return [
         "medical research equipment",
         "clinical research laboratory",
@@ -377,11 +385,17 @@ def review_relevance(client, image_bytes, media_type, title, summary):
                     {
                         "type": "input_text",
                         "text": (
-                            "Act as a strict senior medical photo editor. This is "
-                            "an existing licensed photograph, not a generation "
-                            "request. Accept it only if it is clearly relevant to "
-                            "the exact article and is a normal believable photo. "
-                            "Reject generic wellness imagery, any person, exposed "
+                        "Act as a strict senior medical photo editor. This is "
+                        "an existing licensed photograph, not a generation "
+                        "request. Accept it only if it is clearly relevant to "
+                        "the exact article and is a normal believable photo. "
+                        "When the medical concept cannot itself be photographed, "
+                        "accept a truthful people-free photograph of its central "
+                        "physical subject or examination context—for example an "
+                        "unlabelled meal for meal timing, or unlabelled ultrasound "
+                        "equipment for PCOS. The photo need not depict or prove the "
+                        "disease, mechanism or outcome. "
+                        "Reject generic wellness imagery, any person, exposed "
                             "body or body-part close-up, doctors or clinics not "
                             "required by the article, illustrations, diagrams, "
                             "screenshots, and ANY visible letter, word, number, "
@@ -428,10 +442,12 @@ def select_licensed_photo(title, summary, client=None):
             max_retries=0,
         )
 
-    try:
-        planned_queries = build_search_queries(client, title, summary)
-    except Exception:
-        planned_queries = fallback_search_queries(title)
+    planned_queries = topic_search_queries(title)
+    if not planned_queries:
+        try:
+            planned_queries = build_search_queries(client, title, summary)
+        except Exception:
+            planned_queries = fallback_search_queries(title)
     queries = expand_search_queries(planned_queries)
     reviewed = 0
     downloaded = 0
