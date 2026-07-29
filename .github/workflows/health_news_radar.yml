@@ -2,7 +2,7 @@ name: Dr. Rofe Israeli Health News Radar
 
 on:
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 5 * * 0-4'
   workflow_dispatch:
 
 permissions:

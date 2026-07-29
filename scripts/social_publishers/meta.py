@@ -1,8 +1,9 @@
-"""Facebook Page publisher via the Meta Graph API.
+"""Facebook and Instagram professional-account publishers via Meta Graph API.
 
-Instagram is owner-managed for this pilot and is deliberately blocked here.
 Before every Facebook publication, recent Page posts are checked to prevent
-duplicates, including posts cross-published from Instagram.
+duplicates, including posts cross-published from Instagram. Instagram
+publication requires an exact approved image and is additionally protected by
+the campaign execution ledger.
 
 Required secrets:
     FACEBOOK_PAGE_ID       - numeric Page ID
@@ -10,6 +11,7 @@ Required secrets:
 """
 import re
 import os
+import time
 from difflib import SequenceMatcher
 from urllib.parse import urlsplit, urlunsplit
 
@@ -18,7 +20,7 @@ from . import common
 
 GRAPH_VERSION = os.environ.get("META_GRAPH_VERSION", "v25.0")
 GRAPH = f"https://graph.facebook.com/{GRAPH_VERSION}"
-INSTAGRAM_MANAGEMENT_MODE = "owner_managed"
+INSTAGRAM_MANAGEMENT_MODE = "product_managed_with_explicit_approval"
 FACEBOOK_DUPLICATE_LOOKBACK_POSTS = 50
 FACEBOOK_DUPLICATE_TEXT_THRESHOLD = 0.78
 
@@ -37,7 +39,10 @@ def facebook_is_configured():
 
 
 def instagram_is_configured():
-    return False
+    return not common.missing_secrets(
+        "INSTAGRAM_BUSINESS_ID",
+        "FACEBOOK_PAGE_TOKEN",
+    )
 
 
 def _normalize_text(value):
@@ -213,8 +218,66 @@ def publish_facebook(title, body, url, image_url=None, alt_text=None):
 
 
 def publish_instagram(title, body, url, image_url):
-    raise RuntimeError(
-        "Instagram publishing is disabled: this pilot account is owner-managed"
+    if not image_url:
+        raise ValueError("Instagram requires an approved public image URL")
+    account_id = common.env("INSTAGRAM_BUSINESS_ID")
+    token = common.env("FACEBOOK_PAGE_TOKEN")
+    if not account_id or not token:
+        raise RuntimeError("Instagram professional publishing is not configured")
+    caption = common.shorten_for_social(
+        title,
+        url,
+        max_len=2100,
+        body=body,
+    )
+    container = requests.post(
+        f"{GRAPH}/{account_id}/media",
+        data={
+            "image_url": image_url,
+            "caption": caption,
+            "access_token": token,
+        },
+        timeout=30,
+    )
+    container.raise_for_status()
+    creation_id = str(container.json().get("id") or "")
+    if not creation_id:
+        raise RuntimeError("Instagram did not return a media container ID")
+    for _attempt in range(6):
+        status = requests.get(
+            f"{GRAPH}/{creation_id}",
+            params={"fields": "status_code,status", "access_token": token},
+            timeout=20,
+        )
+        status.raise_for_status()
+        status_code = str(status.json().get("status_code") or "")
+        if status_code == "FINISHED":
+            break
+        if status_code in {"ERROR", "EXPIRED"}:
+            raise RuntimeError(
+                "Instagram media container failed: "
+                f"{status.json().get('status') or status_code}"
+            )
+        time.sleep(2)
+    else:
+        raise RuntimeError("Instagram media container did not become ready")
+    published = requests.post(
+        f"{GRAPH}/{account_id}/media_publish",
+        data={"creation_id": creation_id, "access_token": token},
+        timeout=30,
+    )
+    published.raise_for_status()
+    media_id = str(published.json().get("id") or "")
+    if not media_id:
+        raise RuntimeError("Instagram accepted the container but returned no media ID")
+    details = requests.get(
+        f"{GRAPH}/{media_id}",
+        params={"fields": "permalink", "access_token": token},
+        timeout=20,
+    )
+    details.raise_for_status()
+    return details.json().get("permalink") or (
+        f"https://www.instagram.com/p/{media_id}/"
     )
 
 

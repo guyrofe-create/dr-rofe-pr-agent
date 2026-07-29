@@ -67,8 +67,10 @@ override safety routing.
 - Preserve evidence before reporting or requesting removal.
 - Keep facts, claims and unknowns separated in crisis work.
 - Preserve the guyrofe.com homepage; entity work belongs on dedicated pages.
-- Instagram and TikTok remain owner-managed, X remains disabled, and Telegram
-  or Tumblr require a distinct audience purpose before product activation.
+- Instagram is product-managed only through an exact approved licensed-photo
+  payload and the official professional-account API. TikTok remains
+  owner-managed, X remains disabled, and Telegram or Tumblr require a distinct
+  audience purpose before product activation.
 - Medical drafts require human review and at least two direct authoritative sources.
 
 ## Aggressive growth engine
@@ -113,7 +115,16 @@ The `health_news_radar.yml` workflow activates only the research-intake part
 of the medical-news pattern for `DRGUYROFE_CO_IL`. It retrieves allowlisted RSS
 metadata, creates one evidence-research brief, and sets
 `public_execution_allowed: false`. Article generation, media selection,
-medical approval and WordPress publication remain separate later phases.
+medical approval and WordPress publication remain separate phases. The
+autonomous cadence may perform the generation and media-preparation phases,
+while signed medical and publication approval remains mandatory.
+
+`autonomous_content.yml` consumes the explicit weekly plan in
+`config/content_cadence.json`. It may prepare two site-specific content streams
+and platform-native variants, but it cannot approve or publish them. The
+selected WordPress site key and exact scheduled channels are embedded in the
+immutable approval bundle, preventing implicit fan-out and cross-domain
+duplication.
 
 ### Asset governance
 

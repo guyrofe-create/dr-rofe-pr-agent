@@ -23,8 +23,12 @@ def main():
         )
     else:
         print(f"INFO Linked Instagram professional account: {instagram_detail}")
-    print("INFO Instagram publishing: disabled (owner-managed pilot channel)")
-    return 0 if ok and read_ok else 1
+    configured = meta.instagram_is_configured()
+    print(
+        f"{'PASS' if configured else 'FAIL'} Instagram publishing credentials: "
+        f"{'configured' if configured else 'missing INSTAGRAM_BUSINESS_ID or Page token'}"
+    )
+    return 0 if ok and read_ok and configured and instagram else 1
 
 
 if __name__ == "__main__":

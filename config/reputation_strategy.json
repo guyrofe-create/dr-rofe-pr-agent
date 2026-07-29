@@ -63,12 +63,12 @@
   "channel_policy": {
     "product_managed": [
       "Facebook",
+      "Instagram",
       "LinkedIn",
       "Pinterest",
       "Canonical website"
     ],
     "owner_managed_product_disabled": [
-      "Instagram",
       "TikTok"
     ],
     "disabled": [

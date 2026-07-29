@@ -2,7 +2,7 @@ name: Dr. Rofe Reputation Monitor
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '30 4,16 * * *'
   workflow_dispatch:
 
 permissions:

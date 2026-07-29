@@ -216,6 +216,28 @@ Run it manually with:
 python scripts/health_news_radar.py
 ```
 
+## Autonomous editorial cadence
+
+`config/content_cadence.json` is the single source of truth for preparation
+frequency. On weekdays, the product autonomously creates only drafts and exact
+licensed-photo approval packages:
+
+- `guyrofe.com`: two evidence-led depth articles per week;
+- `drguyrofe.co.il`: up to five evidence-led health-news analyses per week,
+  never more than one per weekday and only when an eligible unused news brief
+  exists;
+- Facebook and LinkedIn: four distinct native variants per week;
+- Pinterest: three image-required variants per week;
+- Instagram: two image-required variants per week through the professional
+  account API when its permission check passes;
+- Blogger: two short, distinct summaries per week rather than article copies.
+
+The monitor runs twice daily. The news radar runs before the weekday content
+cadence. A missing quality story, approved source, licensed photograph or
+platform connection causes that destination to be skipped or held—not replaced
+with weak content. Every public action remains blocked behind the signed P7
+medical and publication approval.
+
 ## P5 controlled creative asset engine
 
 P5 investigates a new asset only when P3 measures a desired-result gap. It can

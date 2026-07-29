@@ -47,8 +47,24 @@ def article_visual_context(content: str) -> str:
     return " ".join(plain.split())[:2400]
 
 
-def canonical_url_for(draft_path: Path, business: dict, client_id: str) -> str:
-    site = canonical_site(business)
+def publication_site(business: dict, site_key: str | None = None) -> dict:
+    if site_key:
+        for site in business["sites"]:
+            if site.get("key") == site_key:
+                if site.get("platform", "wordpress") != "wordpress":
+                    raise ValueError(f"Publication site is not WordPress: {site_key}")
+                return site
+        raise ValueError(f"Unknown publication site key: {site_key}")
+    return canonical_site(business)
+
+
+def canonical_url_for(
+    draft_path: Path,
+    business: dict,
+    client_id: str,
+    site_key: str | None = None,
+) -> str:
+    site = publication_site(business, site_key)
     slug = stable_slug(f"{client_id}-{draft_path.stem}")
     return f"{site['base_url'].rstrip('/')}/{slug}/"
 
@@ -91,6 +107,8 @@ def prepare_bundle(
     image_metadata: dict | None = None,
     image_selection_error: str | None = None,
     replace_existing_image_only: bool = False,
+    site_key: str | None = None,
+    channel_ids: list[str] | None = None,
 ) -> dict:
     draft = resolve_draft_path(str(draft_path))
     title, content = load_draft(draft)
@@ -106,7 +124,13 @@ def prepare_bundle(
             + "; ".join(entity_report.errors)
         )
     business = load_business_profile()
-    canonical_url = canonical_url_for(draft, business, client["client_id"])
+    primary = publication_site(business, site_key)
+    canonical_url = canonical_url_for(
+        draft,
+        business,
+        client["client_id"],
+        primary["key"],
+    )
     variants = build_platform_variants(title, content, canonical_url)
     primary_query = client["search_goal"]["primary_queries"][0]["query"]
     sources = [{"url": url, "type": "citation"} for url in extract_citation_urls(content)]
@@ -165,9 +189,20 @@ def prepare_bundle(
     def credited_text(value: str) -> str:
         return f"{value.rstrip()}\n\nקרדיט תמונה: {credit}" if credit else value
 
-    primary = canonical_site(business)
-    targets = [
-        {
+    default_channels = ["facebook", "linkedin", "blogger", "pinterest"]
+    selected_channels = list(default_channels if channel_ids is None else channel_ids)
+    supported_channels = {
+        "facebook",
+        "linkedin",
+        "instagram",
+        "blogger",
+        "pinterest",
+    }
+    unknown_channels = set(selected_channels) - supported_channels
+    if unknown_channels:
+        raise ValueError(f"Unsupported scheduled channels: {sorted(unknown_channels)}")
+    target_candidates = {
+        "canonical": {
             "target_id": "canonical_wordpress",
             "platform": "WordPress",
             "asset": urlparse(primary["base_url"]).netloc,
@@ -175,11 +210,12 @@ def prepare_bundle(
                 "title": title,
                 "markdown": content,
                 "canonical_url": canonical_url,
+                "site_key": primary["key"],
                 "slug": stable_slug(f"{client['client_id']}-{draft.stem}"),
                 "image": media_variant("hero"),
             },
         },
-        {
+        "facebook": {
             "target_id": "facebook_page",
             "platform": "Facebook",
             "asset": "configured Facebook Page",
@@ -190,7 +226,7 @@ def prepare_bundle(
                 "image": media_variant("landscape"),
             },
         },
-        {
+        "linkedin": {
             "target_id": "linkedin_member",
             "platform": "LinkedIn",
             "asset": "configured LinkedIn member",
@@ -201,7 +237,18 @@ def prepare_bundle(
                 "image": media_variant("landscape"),
             },
         },
-        {
+        "instagram": {
+            "target_id": "instagram_business",
+            "platform": "Instagram",
+            "asset": "configured Instagram professional account",
+            "payload": {
+                "title": title,
+                "text": credited_text(variants["instagram"]),
+                "link": canonical_url,
+                "image": media_variant("square"),
+            },
+        },
+        "blogger": {
             "target_id": "blogger_blog",
             "platform": "Blogger",
             "asset": "configured Blogger blog",
@@ -219,7 +266,7 @@ def prepare_bundle(
                 "image": media_variant("hero"),
             },
         },
-        {
+        "pinterest": {
             "target_id": "pinterest_board",
             "platform": "Pinterest",
             "asset": "configured public Pinterest board",
@@ -232,6 +279,9 @@ def prepare_bundle(
                 "image": media_variant("portrait"),
             },
         },
+    }
+    targets = [target_candidates["canonical"]] + [
+        target_candidates[channel] for channel in selected_channels
     ]
     relative_draft = (
         draft.resolve().relative_to(PROJECT_ROOT).as_posix()
@@ -263,7 +313,8 @@ def prepare_bundle(
             "medical_review_required": medical,
             "no_consultation_invitation": True,
             "no_current_practice_implication": True,
-            "instagram_and_tiktok_product_publication": False,
+            "instagram_product_publication_scheduled": "instagram" in selected_channels,
+            "tiktok_product_publication": False,
             "x_publication": False,
             "sources_present": bool(sources),
             "approved_image_required_before_publication": True,
@@ -329,6 +380,12 @@ def main() -> None:
     parser.add_argument("--image-uri")
     parser.add_argument("--image-alt-text")
     parser.add_argument("--image-sha256")
+    parser.add_argument("--site-key")
+    parser.add_argument(
+        "--channels",
+        default=None,
+        help="Comma-separated scheduled channels; empty means site only.",
+    )
     parser.add_argument(
         "--result-path",
         help="Optionally write the machine-readable result JSON to this path.",
@@ -353,10 +410,6 @@ def main() -> None:
     image_metadata = None
     image_selection_error = None
     if args.find_licensed_image:
-        if os.environ.get("PAID_IMAGE_SEARCH_ENABLED", "").lower() != "true":
-            raise RuntimeError(
-                "Paid licensed-photo search is paused pending owner approval"
-            )
         title, content = load_draft(resolve_draft_path(args.draft_path))
         try:
             image = social_image.generate(title, article_visual_context(content))
@@ -414,6 +467,12 @@ def main() -> None:
         image_metadata=image_metadata,
         image_selection_error=image_selection_error,
         replace_existing_image_only=args.replace_existing_image_only,
+        site_key=args.site_key,
+        channel_ids=(
+            [item.strip() for item in args.channels.split(",") if item.strip()]
+            if args.channels is not None
+            else None
+        ),
     )
     if args.result_path:
         result_path = Path(args.result_path)
