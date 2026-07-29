@@ -146,6 +146,34 @@ def check_recent_posts_access():
         return False, str(exc)
 
 
+def get_linked_instagram_account():
+    """Return the Page-linked Instagram professional account without publishing."""
+    page_id = common.env("FACEBOOK_PAGE_ID")
+    token = common.env("FACEBOOK_PAGE_TOKEN")
+    if not page_id or not token:
+        return None, "not configured"
+    try:
+        response = requests.get(
+            f"{GRAPH}/{page_id}",
+            params={
+                "fields": "instagram_business_account{id,username}",
+                "access_token": token,
+            },
+            timeout=15,
+        )
+        if response.status_code != 200:
+            return None, f"HTTP {response.status_code}: {response.text[:200]}"
+        account = response.json().get("instagram_business_account")
+        if not account:
+            return None, "no Instagram professional account is linked to this Page"
+        return {
+            "id": str(account.get("id") or ""),
+            "username": account.get("username"),
+        }, "linked account found"
+    except Exception as exc:
+        return None, str(exc)
+
+
 def publish_facebook(title, body, url, image_url=None, alt_text=None):
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")

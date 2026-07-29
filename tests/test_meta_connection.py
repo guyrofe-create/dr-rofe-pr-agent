@@ -38,6 +38,28 @@ class MetaConnectionTests(unittest.TestCase):
         clear=True,
     )
     @patch("scripts.social_publishers.meta.requests.get")
+    def test_reads_linked_instagram_professional_account_id(self, get):
+        response = Mock(status_code=200)
+        response.json.return_value = {
+            "instagram_business_account": {
+                "id": "17841400000000000",
+                "username": "guy_rofe_md",
+            }
+        }
+        get.return_value = response
+
+        account, detail = meta.get_linked_instagram_account()
+
+        self.assertEqual(account["id"], "17841400000000000")
+        self.assertEqual(account["username"], "guy_rofe_md")
+        self.assertEqual(detail, "linked account found")
+
+    @patch.dict(
+        os.environ,
+        {"FACEBOOK_PAGE_ID": "123", "FACEBOOK_PAGE_TOKEN": "token"},
+        clear=True,
+    )
+    @patch("scripts.social_publishers.meta.requests.get")
     def test_finds_duplicate_by_canonical_url(self, get):
         response = Mock()
         response.raise_for_status.return_value = None
