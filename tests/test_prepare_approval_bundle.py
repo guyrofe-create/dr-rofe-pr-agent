@@ -15,6 +15,58 @@ SECRET = "a-test-signing-secret-with-32-characters"
 
 
 class PrepareApprovalBundleTests(unittest.TestCase):
+    def test_scheduled_bundle_targets_drguyrofe_and_only_selected_channels(self):
+        with tempfile.TemporaryDirectory(
+            dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
+        ) as directory:
+            root = Path(directory)
+            draft = root / "news.md"
+            content = apply_article_contract(
+                (
+                    "# ניתוח חדשות רפואיות\n\n"
+                    "מידע רפואי כללי המבוסס על מקורות.\n\n"
+                    "## מקורות\n"
+                    "- https://www.who.int/example\n"
+                ),
+                prepare_approval_bundle.load_client_profile(),
+            )
+            draft.write_text(content, encoding="utf-8")
+            result = prepare_approval_bundle.prepare_bundle(
+                draft,
+                output_root=root / "bundles",
+                image_uri="https://example.com/approved.jpg",
+                image_alt_text="צילום מאושר בנושא המאמר",
+                image_metadata={
+                    "variants": {
+                        "square": {
+                            "uri": "https://example.com/approved-square.jpg",
+                            "sha256": "a" * 64,
+                            "width": 1200,
+                            "height": 1200,
+                        }
+                    }
+                },
+                site_key="DRGUYROFE_CO_IL",
+                channel_ids=["facebook", "instagram"],
+            )
+            bundle = json.loads(
+                Path(result["bundle_path"]).read_text(encoding="utf-8")
+            )
+        targets = {item["target_id"]: item for item in bundle["targets"]}
+        self.assertEqual(
+            set(targets),
+            {"canonical_wordpress", "facebook_page", "instagram_business"},
+        )
+        canonical = targets["canonical_wordpress"]["payload"]
+        self.assertEqual(canonical["site_key"], "DRGUYROFE_CO_IL")
+        self.assertTrue(
+            canonical["canonical_url"].startswith("https://www.drguyrofe.co.il/")
+        )
+        self.assertEqual(
+            targets["instagram_business"]["payload"]["image"]["role"],
+            "square",
+        )
+
     def test_prepares_exact_medical_bundle_and_preview_without_publication(self):
         with tempfile.TemporaryDirectory(
             dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"

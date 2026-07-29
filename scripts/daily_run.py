@@ -10,20 +10,37 @@ from pathlib import Path
 import json
 import os
 import re
+import sys
 import time
 from urllib.parse import urlparse
 
 import requests
-from reputation_core.strategy import client_content_plan, load_client_profile
-from reputation_core.entity_contract import (
-    apply_article_contract,
-    audit_article_entity_contract,
-)
-from publication_policy import (
-    CTA_PROMPT,
-    REPUTATION_KNOWLEDGE_PROMPT,
-    enforce_publication_policy,
-)
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+
+try:
+    from scripts.reputation_core.strategy import client_content_plan, load_client_profile
+    from scripts.reputation_core.entity_contract import (
+        apply_article_contract,
+        audit_article_entity_contract,
+    )
+    from scripts.publication_policy import (
+        CTA_PROMPT,
+        REPUTATION_KNOWLEDGE_PROMPT,
+        enforce_publication_policy,
+    )
+except ModuleNotFoundError:
+    from reputation_core.strategy import client_content_plan, load_client_profile
+    from reputation_core.entity_contract import (
+        apply_article_contract,
+        audit_article_entity_contract,
+    )
+    from publication_policy import (
+        CTA_PROMPT,
+        REPUTATION_KNOWLEDGE_PROMPT,
+        enforce_publication_policy,
+    )
 
 
 CONTENT_PLAN = client_content_plan()
@@ -208,7 +225,20 @@ def _descriptive_anchor(anchor):
     return normalized not in generic and len(normalized) >= 10
 
 
-def validate_generated_article(content):
+def validate_generated_article(
+    content,
+    *,
+    allowed_external_urls=None,
+    required_urls=None,
+):
+    allowed_external_urls = {
+        str(url).rstrip(".,;)")
+        for url in (allowed_external_urls or [])
+    }
+    required_urls = {
+        str(url).rstrip(".,;)")
+        for url in (required_urls or [])
+    }
     enforce_publication_policy(content)
     title = next(
         (
@@ -247,6 +277,7 @@ def validate_generated_article(content):
             for url in all_urls
             if _source_domain(url)
             != _source_domain(CLIENT_FACTS["canonical_site"])
+            if url not in allowed_external_urls
             if not _domain_is_allowed(
                 _source_domain(url), TRUSTED_MEDICAL_SOURCE_DOMAINS
             )
@@ -273,6 +304,17 @@ def validate_generated_article(content):
             raise ValueError(
                 "generated medical article needs at least 2 inline evidence links"
             )
+        official_inline_count = sum(
+            _domain_is_allowed(
+                _source_domain(url), OFFICIAL_MEDICAL_SOURCE_DOMAINS
+            )
+            for url in inline_urls
+        )
+        if official_inline_count < 2:
+            raise ValueError(
+                "generated medical article needs at least 2 inline official "
+                "institutional evidence links"
+            )
         if not inline_urls.issubset(source_urls):
             raise ValueError(
                 "every inline evidence link must also appear in Sources"
@@ -284,6 +326,12 @@ def validate_generated_article(content):
         if any(urlparse(url).path in {"", "/"} for url in inline_urls):
             raise ValueError(
                 "inline evidence links must point to a direct source page"
+            )
+        missing_required = sorted(required_urls - all_urls)
+        if missing_required:
+            raise ValueError(
+                "generated article is missing a required editorial URL: "
+                f"{missing_required[0]}"
             )
     entity_report = audit_article_entity_contract(content, CLIENT_PROFILE)
     if not entity_report.passed:
@@ -321,7 +369,14 @@ def generation_messages(base_prompt, previous_content=None, last_error=None):
     return messages
 
 
-def generate_article(topic):
+def generate_article(
+    topic,
+    *,
+    editorial_context=None,
+    allowed_external_urls=None,
+    required_urls=None,
+    use_web_search=False,
+):
     from openai import OpenAI
 
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
@@ -372,6 +427,7 @@ def generate_article(topic):
 - אין להזמין לייעוץ, ליצירת קשר או לקביעת תור
 - אין לייחס ל{CLIENT_FACTS['primary_name']} אמירות, הדגשות או המלצות אישיות שלא סופקו
 {medical_rules}
+{editorial_context or ""}
 - פורמט: Markdown
 - אין לעטוף את התשובה בבלוק קוד ואין לכתוב את המילה markdown
 
@@ -387,6 +443,7 @@ def generate_article(topic):
                 previous_content=previous_content,
                 last_error=last_error,
             ),
+            use_web_search=use_web_search,
         )
         content = apply_article_contract(
             clean_generated_markdown(content),
@@ -397,7 +454,11 @@ def generate_article(topic):
             continue
         previous_content = content
         try:
-            title, word_count = validate_generated_article(content)
+            title, word_count = validate_generated_article(
+                content,
+                allowed_external_urls=allowed_external_urls,
+                required_urls=required_urls,
+            )
             log(f"Draft quality passed: {word_count} words")
             return title, content
         except ValueError as exc:
@@ -410,13 +471,18 @@ def generate_article(topic):
     raise RuntimeError(f"OpenAI draft failed quality checks: {last_error}")
 
 
-def request_generated_article(client, messages):
+def request_generated_article(client, messages, *, use_web_search=False):
+    request = {
+        "model": os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
+        "input": messages,
+        "reasoning": {"effort": "low"},
+        "text": {"verbosity": "high"},
+        "max_output_tokens": 4500,
+    }
+    if use_web_search:
+        request["tools"] = [{"type": "web_search"}]
     response = client.responses.create(
-        model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
-        input=messages,
-        reasoning={"effort": "low"},
-        text={"verbosity": "high"},
-        max_output_tokens=4500,
+        **request,
     )
     return response.output_text or ""
 
@@ -436,27 +502,40 @@ def draft_run_suffix(now):
     return now.strftime("%H%M%S-%f")
 
 
-def save_draft(topic_index, topic, title, content, now=None):
+def save_draft(topic_index, topic, title, content, now=None, metadata=None):
     now = now or utc_now()
     root = draft_root()
     root.mkdir(parents=True, exist_ok=True)
     path = root / (
         f"{now:%Y-%m-%d}-topic-{topic_index:02d}-{draft_run_suffix(now)}.md"
     )
-    metadata = (
+    scheduling = dict(metadata or {})
+    metadata_lines = "".join(
+        f"{key}: {json.dumps(value, ensure_ascii=False)}\n"
+        for key, value in scheduling.items()
+    )
+    metadata_block = (
         "<!--\n"
         "status: pending_medical_review\n"
         f"generated_at: {now.isoformat()}\n"
         f"topic: {topic}\n"
+        f"{metadata_lines}"
         "-->\n\n"
     )
     body = content if re.search(r"^#\s+", content, flags=re.MULTILINE) else f"# {title}\n\n{content}"
-    path.write_text(metadata + body.rstrip() + "\n", encoding="utf-8")
-    update_draft_index(path, topic, title, content, now)
+    path.write_text(metadata_block + body.rstrip() + "\n", encoding="utf-8")
+    update_draft_index(path, topic, title, content, now, metadata=scheduling)
     return path
 
 
-def update_draft_index(path, topic, title, content, generated_at):
+def update_draft_index(
+    path,
+    topic,
+    title,
+    content,
+    generated_at,
+    metadata=None,
+):
     index_path = draft_root() / "index.json"
     try:
         payload = json.loads(index_path.read_text(encoding="utf-8"))
@@ -473,6 +552,7 @@ def update_draft_index(path, topic, title, content, generated_at):
         "topic": topic,
         "excerpt": excerpt,
         "generated_at": generated_at.isoformat(),
+        **dict(metadata or {}),
     }
     drafts = [
         existing

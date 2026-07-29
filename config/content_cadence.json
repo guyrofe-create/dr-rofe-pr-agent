@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "timezone": "Asia/Jerusalem",
+  "approval_required_before_publication": true,
+  "streams": {
+    "canonical_depth": {
+      "site_key": "GUYROFE_COM",
+      "weekly_target": 2,
+      "weekdays": {
+        "sunday": ["facebook", "linkedin", "pinterest"],
+        "wednesday": ["facebook", "linkedin", "blogger", "instagram"]
+      }
+    },
+    "health_news": {
+      "site_key": "DRGUYROFE_CO_IL",
+      "weekly_target": 5,
+      "weekdays": {
+        "sunday": [],
+        "monday": ["facebook", "linkedin", "blogger", "instagram"],
+        "tuesday": ["pinterest"],
+        "wednesday": [],
+        "thursday": ["facebook", "linkedin", "pinterest"]
+      }
+    }
+  },
+  "weekly_channel_targets": {
+    "facebook": 4,
+    "linkedin": 4,
+    "pinterest": 3,
+    "instagram": 2,
+    "blogger": 2
+  },
+  "channel_requirements": {
+    "facebook": {"image_required": false},
+    "linkedin": {"image_required": false},
+    "pinterest": {"image_required": true},
+    "instagram": {"image_required": true},
+    "blogger": {"image_required": false}
+  },
+  "quality_policy": {
+    "skip_instead_of_forcing_weak_content": true,
+    "duplicate_article_forbidden": true,
+    "identical_cross_platform_copy_forbidden": true,
+    "licensed_topic_relevant_photo_required": true,
+    "ai_image_generation_forbidden": true,
+    "max_news_brief_age_hours": 36
+  }
+}

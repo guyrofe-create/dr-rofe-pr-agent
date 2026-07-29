@@ -49,6 +49,11 @@ def build_platform_variants(
             + "\n".join(f"• {item}" for item in bullets)
             + f"\n\n{signature}"
         ),
+        "instagram": (
+            f"נקודה רפואית שכדאי להכיר:\n\n{lead}\n\n"
+            + "\n".join(f"{index}. {item}" for index, item in enumerate(bullets[:3], 1))
+            + f"\n\n{signature}"
+        )[:1900],
         "pinterest": {
             "title": _clean(branded_title)[:100],
             "description": f"{lead} {detail} {signature}".strip()[:500],

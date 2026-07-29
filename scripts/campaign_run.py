@@ -57,6 +57,13 @@ def canonical_site(profile):
     )
 
 
+def site_by_key(profile, site_key):
+    return next(
+        (site for site in profile["sites"] if site.get("key") == site_key),
+        None,
+    )
+
+
 def utc_now():
     return datetime.now(timezone.utc)
 
@@ -411,7 +418,18 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     seo_description = meta_description(content, CLIENT_PROFILE)
     destinations = []
     business = load_business_profile()
-    primary = canonical_site(business)
+    if "canonical_wordpress" not in targets:
+        raise RuntimeError("Canonical WordPress target is missing from approval bundle")
+    canonical_target = targets["canonical_wordpress"]
+    canonical_payload = canonical_target["payload"]
+    approved_site_key = canonical_payload.get("site_key")
+    primary = (
+        site_by_key(business, approved_site_key)
+        if approved_site_key
+        else canonical_site(business)
+    )
+    if not primary or primary.get("platform", "wordpress") != "wordpress":
+        raise RuntimeError("Approved WordPress publication site is not configured")
     canonical_base = primary["base_url"].rstrip("/")
     canonical_name = re.sub(r"^www\.", "", urlparse(canonical_base).netloc)
     primary_user_env = primary["user_env"]
@@ -420,8 +438,6 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     if not configured(primary_user_env, primary_password_env):
         raise RuntimeError("Canonical WordPress publisher is not configured")
 
-    canonical_target = targets["canonical_wordpress"]
-    canonical_payload = canonical_target["payload"]
     if canonical_payload["title"] != title or canonical_payload["markdown"] != content:
         raise PermissionError("Canonical content differs from the approved payload")
     hosted_images = {}
@@ -510,8 +526,10 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         )
 
     enforce_channel_policy("Facebook")
-    facebook_target = targets["facebook_page"]
-    if meta.facebook_is_configured():
+    facebook_target = targets.get("facebook_page")
+    if not facebook_target:
+        destinations.append(destination("Facebook", "not_scheduled"))
+    elif meta.facebook_is_configured():
         facebook_image, facebook_image_url = approved_target_image(facebook_target)
         destinations.append(
             _execute_target_safely(
@@ -531,8 +549,10 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         )
     else:
         destinations.append(destination("Facebook", "not_configured"))
-    linkedin_target = targets["linkedin_member"]
-    if linkedin.is_configured():
+    linkedin_target = targets.get("linkedin_member")
+    if not linkedin_target:
+        destinations.append(destination("LinkedIn", "not_scheduled"))
+    elif linkedin.is_configured():
         linkedin_image, linkedin_image_url = approved_target_image(linkedin_target)
         destinations.append(
             _execute_target_safely(
@@ -569,8 +589,10 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             detail="לא יופעל ללא קהל או שימוש ייחודי",
         )
     )
-    blogger_target = targets["blogger_blog"]
-    if blogger.is_configured():
+    blogger_target = targets.get("blogger_blog")
+    if not blogger_target:
+        destinations.append(destination("Blogger", "not_scheduled"))
+    elif blogger.is_configured():
         blogger_image, blogger_image_url = approved_target_image(blogger_target)
         destinations.append(
             _execute_target_safely(
@@ -591,15 +613,34 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     else:
         destinations.append(destination("Blogger", "not_configured"))
 
-    destinations.append(
-        destination(
-            "Instagram",
-            "owner_managed",
-            detail="ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם בו",
+    instagram_target = targets.get("instagram_business")
+    if not instagram_target:
+        destinations.append(destination("Instagram", "not_scheduled"))
+    elif meta.instagram_is_configured():
+        instagram_image, instagram_image_url = approved_target_image(
+            instagram_target
         )
-    )
-    pinterest_target = targets["pinterest_board"]
-    if pinterest.is_configured():
+        destinations.append(
+            _execute_target_safely(
+                ledger,
+                approved_bundle,
+                instagram_target,
+                lambda payload, key: {
+                    "url": meta.publish_instagram(
+                        payload["title"],
+                        payload["text"],
+                        canonical_url,
+                        instagram_image_url,
+                    )
+                },
+            )
+        )
+    else:
+        destinations.append(destination("Instagram", "not_configured"))
+    pinterest_target = targets.get("pinterest_board")
+    if not pinterest_target:
+        destinations.append(destination("Pinterest", "not_scheduled"))
+    elif pinterest.is_configured():
         pinterest_image, pinterest_image_url = approved_target_image(pinterest_target)
         destinations.append(
             _execute_target_safely(

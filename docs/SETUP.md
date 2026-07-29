@@ -18,9 +18,10 @@ https://github.com/guyrofe-create/dr-rofe-pr-agent/settings/secrets/actions
 1. https://developers.facebook.com/apps/creation/ → צור אפליקציה (סוג: Business)
 2. בתוך האפליקציה → Add Product → "Facebook Login for Business" → הרשאות: `pages_manage_posts`, `pages_read_engagement`
 3. https://developers.facebook.com/tools/explorer/ → בחר את האפליקציה שלך, בחר Page = drguyrofe → Generate Access Token → המר ל-long-lived (Access Token Debugger: https://developers.facebook.com/tools/debug/accesstoken/)
-4. Instagram מנוהל עצמאית בפיילוט. אין להגדיר למוצר הרשאת פרסום בו.
+4. חבר חשבון Instagram מקצועי לעמוד והענק לאפליקציה הרשאות
+   `instagram_basic` ו־`instagram_content_publish`.
 
-Secrets: `FACEBOOK_PAGE_ID`, `FACEBOOK_PAGE_TOKEN`
+Secrets: `FACEBOOK_PAGE_ID`, `FACEBOOK_PAGE_TOKEN`, `INSTAGRAM_BUSINESS_ID`
 (אינסטגרם דורש גם תמונה בכל פוסט - ראה `SOCIAL_IMAGE_URL` למטה)
 
 ### Twitter / X
@@ -66,8 +67,8 @@ Secrets: `PINTEREST_ACCESS_TOKEN`, `PINTEREST_BOARD_ID` (גם כאן נדרשת 
 
 אין במוצר מסלול ליצירת תמונות ב-AI ואין מסלול שממשיך לאישור בלי תמונה.
 `OPENAI_API_KEY` משמש כרגע רק לתכנון שאילתות ולבדיקת התאמת צילום קיים; החיפוש
-האוטומטי מושהה עד לאישור מודל העלות.
-Instagram ו-TikTok נשארים בשליטת בעל החשבון והמוצר אינו מפרסם בהם.
+אינו מייצר תמונות. Instagram מקבל רק חבילת צילום ריבועית שאושרה במפורש.
+TikTok נשאר בשליטת בעל החשבון והמוצר אינו מפרסם בו.
 
 ---
 

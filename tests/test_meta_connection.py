@@ -6,10 +6,57 @@ from scripts.social_publishers import meta
 
 
 class MetaConnectionTests(unittest.TestCase):
-    def test_instagram_is_permanently_disabled_for_pilot(self):
-        self.assertFalse(meta.instagram_is_configured())
-        with self.assertRaisesRegex(RuntimeError, "owner-managed"):
+    def test_instagram_requires_professional_account_credentials(self):
+        with patch.dict(os.environ, {}, clear=True):
+            self.assertFalse(meta.instagram_is_configured())
+        with self.assertRaisesRegex(RuntimeError, "not configured"):
             meta.publish_instagram("title", "body", "https://example.com", "image")
+
+    @patch.dict(
+        os.environ,
+        {
+            "INSTAGRAM_BUSINESS_ID": "17841400000000000",
+            "FACEBOOK_PAGE_TOKEN": "token",
+        },
+        clear=True,
+    )
+    @patch("scripts.social_publishers.meta.time.sleep")
+    @patch("scripts.social_publishers.meta.requests.get")
+    @patch("scripts.social_publishers.meta.requests.post")
+    def test_publishes_approved_instagram_image_via_container(self, post, get, _sleep):
+        create = Mock()
+        create.raise_for_status.return_value = None
+        create.json.return_value = {"id": "container-1"}
+        publish = Mock()
+        publish.raise_for_status.return_value = None
+        publish.json.return_value = {"id": "media-1"}
+        post.side_effect = [create, publish]
+        ready = Mock()
+        ready.raise_for_status.return_value = None
+        ready.json.return_value = {"status_code": "FINISHED"}
+        permalink = Mock()
+        permalink.raise_for_status.return_value = None
+        permalink.json.return_value = {
+            "permalink": "https://www.instagram.com/p/example/"
+        }
+        get.side_effect = [ready, permalink]
+
+        result = meta.publish_instagram(
+            "כותרת",
+            "תקציר ייחודי",
+            "https://guyrofe.com/article",
+            "https://guyrofe.com/image.jpg",
+        )
+
+        self.assertEqual(result, "https://www.instagram.com/p/example/")
+        self.assertEqual(
+            post.call_args_list[0].kwargs["data"]["image_url"],
+            "https://guyrofe.com/image.jpg",
+        )
+        self.assertIn(
+            "https://guyrofe.com/article",
+            post.call_args_list[0].kwargs["data"]["caption"],
+        )
 
     def test_text_similarity_ignores_links_and_punctuation(self):
         left = "כאבי מחזור חזקים — מידע נוסף: https://guyrofe.com"
@@ -53,6 +100,28 @@ class MetaConnectionTests(unittest.TestCase):
         self.assertEqual(account["id"], "17841400000000000")
         self.assertEqual(account["username"], "guy_rofe_md")
         self.assertEqual(detail, "linked account found")
+
+    @patch.dict(
+        os.environ,
+        {
+            "INSTAGRAM_BUSINESS_ID": "17841400000000000",
+            "FACEBOOK_PAGE_TOKEN": "token",
+        },
+        clear=True,
+    )
+    @patch("scripts.social_publishers.meta.requests.get")
+    def test_checks_direct_instagram_professional_account_access(self, get):
+        response = Mock(status_code=200)
+        response.json.return_value = {
+            "id": "17841400000000000",
+            "username": "guy_rofe_md",
+        }
+        get.return_value = response
+
+        ok, detail = meta.check_instagram_access()
+
+        self.assertTrue(ok)
+        self.assertIn("@guy_rofe_md", detail)
 
     @patch.dict(
         os.environ,

@@ -1,0 +1,126 @@
+name: Prepare Autonomous Content Cadence
+
+on:
+  schedule:
+    - cron: '0 6 * * 0-4'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autonomous-content-cadence
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate cadence-due medical drafts
+        id: generate
+        continue-on-error: true
+        run: >-
+          python scripts/autonomous_content_run.py
+          --manifest "${RUNNER_TEMP}/content-cadence-manifest.json"
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_CONTENT_MODEL: gpt-5.6
+
+      - name: Prepare licensed-photo approval bundles
+        id: bundles
+        if: always()
+        continue-on-error: true
+        run: |
+          if [[ ! -f "${RUNNER_TEMP}/content-cadence-manifest.json" ]]; then
+            echo "prepared=0" >> "${GITHUB_OUTPUT}"
+            echo "failures=1" >> "${GITHUB_OUTPUT}"
+            echo "::error::Content cadence manifest was not created"
+            exit 1
+          fi
+          failures=0
+          prepared=0
+          while IFS= read -r job; do
+            draft_path="$(jq -r '.draft_path' <<<"${job}")"
+            site_key="$(jq -r '.site_key' <<<"${job}")"
+            channels="$(jq -r '.channels | join(",")' <<<"${job}")"
+            result_path="${RUNNER_TEMP}/bundle-$((prepared + 1)).json"
+            if python scripts/prepare_approval_bundle.py \
+              "${draft_path}" \
+              --find-licensed-image \
+              --site-key "${site_key}" \
+              --channels "${channels}" \
+              --result-path "${result_path}"; then
+              prepared=$((prepared + 1))
+            else
+              failures=$((failures + 1))
+              echo "::error::Approval bundle preparation failed for ${draft_path}"
+            fi
+          done < <(jq -c '.jobs[]' "${RUNNER_TEMP}/content-cadence-manifest.json")
+          echo "prepared=${prepared}" >> "${GITHUB_OUTPUT}"
+          echo "failures=${failures}" >> "${GITHUB_OUTPUT}"
+          if (( failures > 0 )); then
+            exit 1
+          fi
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Commit drafts and approval packages
+        if: always()
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add data/content_cadence_state.json content_drafts/ approval_bundles/ || true
+          git diff --cached --quiet || git commit -m "Prepare autonomous content cadence $(date +%Y-%m-%d)"
+          git pull --rebase
+          git push
+
+      - name: Report approval status
+        if: always()
+        run: |
+          {
+            echo "## Autonomous content cadence"
+            echo
+            echo "Drafts and exact licensed-photo packages were prepared only."
+            echo "No public publication was authorized or attempted."
+            echo
+            echo "Prepared bundles: ${{ steps.bundles.outputs.prepared || '0' }}"
+            echo "Bundle failures: ${{ steps.bundles.outputs.failures || '0' }}"
+            if [[ -f "${RUNNER_TEMP}/content-cadence-manifest.json" ]]; then
+              echo "Generation errors: $(jq '.errors | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
+              echo "Quality skips: $(jq '.skipped | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
+            fi
+            echo
+            echo "[Open the approval dashboard](https://dr-rofe-reputation-center.guyrofe.chatgpt.site)"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Upload cadence manifest
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: content-cadence-${{ github.run_id }}
+          path: ${{ runner.temp }}/content-cadence-manifest.json
+          retention-days: 30
+
+      - name: Fail visibly after preserving diagnostics
+        if: always()
+        run: |
+          generation_errors=1
+          if [[ -f "${RUNNER_TEMP}/content-cadence-manifest.json" ]]; then
+            generation_errors="$(jq '.errors | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
+          fi
+          bundle_failures="${{ steps.bundles.outputs.failures || '0' }}"
+          if (( generation_errors > 0 || bundle_failures > 0 )); then
+            echo "::error::Autonomous cadence completed with preparation errors"
+            exit 1
+          fi

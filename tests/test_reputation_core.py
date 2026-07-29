@@ -182,10 +182,11 @@ class GrowthEngineTests(unittest.TestCase):
             strategy["canonical_facts"]["practice_status"],
             "not_currently_practicing",
         )
-        self.assertIn(
+        self.assertNotIn(
             "Instagram",
             strategy["channel_policy"]["owner_managed_product_disabled"],
         )
+        self.assertIn("Instagram", strategy["channel_policy"]["product_managed"])
         self.assertIn("X", strategy["channel_policy"]["disabled"])
         self.assertEqual(strategy["ai_monitoring"]["samples_per_prompt"], 3)
 
@@ -244,11 +245,14 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertIn("knowledge_hub", asset["uses"])
         self.assertEqual(asset["automation"], "wix_api_after_site_id")
 
-    def test_owner_managed_channels_and_non_practicing_surfaces_are_not_automated(self):
+    def test_approved_channels_and_non_practicing_surfaces_follow_policy(self):
         with open("data/asset_registry.json", encoding="utf-8") as handle:
             registry = json.load(handle)
         assets = {item["platform"]: item for item in registry["assets"]}
-        self.assertEqual(assets["Instagram"]["automation"], "owner_managed_product_disabled")
+        self.assertEqual(
+            assets["Instagram"]["automation"],
+            "meta_graph_api_after_exact_approval",
+        )
         self.assertEqual(assets["TikTok"]["automation"], "owner_managed_product_disabled")
         self.assertIn(
             "information_only",

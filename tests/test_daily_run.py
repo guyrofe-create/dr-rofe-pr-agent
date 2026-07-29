@@ -264,6 +264,41 @@ class DailyRunTests(unittest.TestCase):
             max_output_tokens=4500,
         )
 
+    def test_news_analysis_uses_web_search_tool(self):
+        client = Mock()
+        client.responses.create.return_value.output_text = "# כותרת\n\nתוכן"
+        daily_run.request_generated_article(
+            client,
+            [{"role": "user", "content": "נתח כתבה"}],
+            use_web_search=True,
+        )
+        self.assertEqual(
+            client.responses.create.call_args.kwargs["tools"],
+            [{"type": "web_search"}],
+        )
+
+    def test_news_url_is_allowed_only_when_explicitly_required(self):
+        news_url = "https://www.ynet.co.il/health/article/example"
+        content = (
+            "# כותרת\n\n"
+            f"לפי [כתבת החדשות הנבדקת]({news_url}), נדרשת בדיקה. "
+            + INLINE_EVIDENCE
+            + " ".join(["מידע"] * daily_run.MIN_ARTICLE_WORDS)
+            + (
+                "\n\n## מקורות\n"
+                f"- {news_url}\n"
+                "- https://www.who.int/example\n"
+                "- https://www.acog.org/example\n"
+            )
+        )
+        content = apply_article_contract(content, daily_run.CLIENT_PROFILE)
+        title, _word_count = daily_run.validate_generated_article(
+            content,
+            allowed_external_urls={news_url},
+            required_urls={news_url},
+        )
+        self.assertIn("ד״ר גיא רופא", title)
+
     def test_content_model_can_be_overridden(self):
         client = Mock()
         client.responses.create.return_value.output_text = "טיוטה"

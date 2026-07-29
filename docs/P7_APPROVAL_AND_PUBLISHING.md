@@ -94,7 +94,9 @@ publication.
 - A bundle marked as requiring an approved image cannot be signed or executed
   while its media field is empty.
 - Implicit fan-out to an asset not listed in the bundle is blocked.
-- Instagram and TikTok remain owner-managed for the pilot; X remains disabled.
+- Instagram may execute only an exact approved licensed-photo payload through
+  the configured professional-account API. TikTok remains owner-managed and X
+  remains disabled.
 - A different canonical URL stops distribution and requires reconciliation.
 - Legacy generate-and-publish social automation is disabled.
 - Preparation and tests never perform a public action.

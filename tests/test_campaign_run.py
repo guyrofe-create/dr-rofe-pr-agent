@@ -11,6 +11,11 @@ from scripts.social_publishers import common
 
 
 class CampaignRunTests(unittest.TestCase):
+    def test_resolves_approved_secondary_wordpress_site(self):
+        business = campaign_run.load_business_profile()
+        site = campaign_run.site_by_key(business, "DRGUYROFE_CO_IL")
+        self.assertEqual(site["base_url"], "https://www.drguyrofe.co.il")
+
     def test_main_requires_signed_p7_approval_artifacts(self):
         with patch.dict(os.environ, {}, clear=True):
             with self.assertRaisesRegex(RuntimeError, "APPROVAL_BUNDLE_PATH"):
