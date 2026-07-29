@@ -35,6 +35,12 @@ class ContentCadenceTests(unittest.TestCase):
         self.assertEqual(
             self.cadence["streams"]["health_news"]["weekly_target"], 5
         )
+        self.assertEqual(
+            self.cadence["streams"]["evergreen_knowledge"]["weekly_target"], 1
+        )
+        self.assertEqual(
+            self.cadence["streams"]["media_archive"]["weekly_target"], 0
+        )
 
     def test_sunday_plans_two_sites_but_social_only_once(self):
         sunday = datetime(2026, 7, 26, 6, 0, tzinfo=timezone.utc)
@@ -65,6 +71,21 @@ class ContentCadenceTests(unittest.TestCase):
         )
         remaining = due_jobs(self.cadence, state, sunday)
         self.assertEqual([job["stream"] for job in remaining], ["health_news"])
+
+    def test_tuesday_adds_only_the_distinct_wix_knowledge_stream(self):
+        tuesday = datetime(2026, 7, 28, 6, 0, tzinfo=timezone.utc)
+        jobs = due_jobs(self.cadence, {"generated": []}, tuesday)
+        self.assertEqual(
+            [(job["stream"], job["site_key"], job["channels"]) for job in jobs],
+            [
+                ("health_news", "DRGUYROFE_CO_IL", ["pinterest"]),
+                ("evergreen_knowledge", "DRGUYROFE_COM", []),
+            ],
+        )
+        self.assertNotIn(
+            "media_archive",
+            [job["stream"] for job in jobs],
+        )
 
     def test_weekend_has_no_article_quota(self):
         friday = datetime(2026, 7, 31, 6, 0, tzinfo=timezone.utc)

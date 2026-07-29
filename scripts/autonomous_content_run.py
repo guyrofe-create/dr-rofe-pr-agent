@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CADENCE = ROOT / "config" / "content_cadence.json"
 DEFAULT_STATE = ROOT / "data" / "content_cadence_state.json"
 DEFAULT_NEWS_BRIEFS = ROOT / "opportunity_drafts"
+DEFAULT_MEDIA_BRIEFS = ROOT / "opportunity_drafts" / "media"
 DEFAULT_APPROVAL_INDEX = ROOT / "approval_bundles" / "index.json"
 
 
@@ -95,6 +96,70 @@ def unused_news_brief(
     return path, {**brief, "_relative_path": relative}
 
 
+def unused_media_brief(
+    brief_dir: Path,
+    state: dict,
+) -> tuple[Path, dict] | None:
+    used = {
+        item.get("source_brief")
+        for item in state.get("generated", [])
+        if item.get("source_brief")
+    }
+    candidates = []
+    for path in brief_dir.glob("media-transcript-*.json"):
+        try:
+            brief = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        relative = (
+            path.resolve().relative_to(ROOT).as_posix()
+            if path.resolve().is_relative_to(ROOT)
+            else str(path.resolve())
+        )
+        if relative in used:
+            continue
+        if (
+            brief.get("status") != "transcript_ready_for_editorial_review"
+            or brief.get("destination_site_key") != "GUYROFE_WIX_MEDIA_ARCHIVE"
+            or not str(brief.get("source_media_url") or "").startswith(
+                ("https://", "http://")
+            )
+            or not str(brief.get("transcript_markdown") or "").strip()
+        ):
+            continue
+        candidates.append((brief.get("created_at", ""), path, brief, relative))
+    if not candidates:
+        return None
+    _created_at, path, brief, relative = max(candidates, key=lambda item: item[0])
+    return path, {**brief, "_relative_path": relative}
+
+
+def media_archive_job(cadence: dict, state: dict, now: datetime) -> dict | None:
+    stream = cadence["streams"]["media_archive"]
+    minimum_days = int(stream["minimum_days_between_publications"])
+    generated = [
+        item for item in state.get("generated", [])
+        if item.get("stream") == "media_archive"
+    ]
+    if generated:
+        latest = max(str(item.get("created_at") or "") for item in generated)
+        try:
+            latest_at = datetime.fromisoformat(latest.replace("Z", "+00:00"))
+        except ValueError:
+            latest_at = now
+        if (now - latest_at).total_seconds() < minimum_days * 86400:
+            return None
+    return {
+        "stream": "media_archive",
+        "site_key": stream["site_key"],
+        "channels": [],
+        "week": f"event-{now.date().isoformat()}",
+        "local_date": now.date().isoformat(),
+        "weekday": "event_driven",
+        "public_execution_allowed": False,
+    }
+
+
 def unbundled_generated_jobs(state: dict, approval_index_path: Path) -> list[dict]:
     """Recover generated drafts whose licensed-photo bundle previously failed."""
     approval_index = _load_json(approval_index_path, {"bundles": []})
@@ -130,6 +195,7 @@ def generate_job(
     news_brief_dir: Path,
     state: dict | None = None,
     max_news_brief_age_hours: int = 36,
+    media_brief_dir: Path = DEFAULT_MEDIA_BRIEFS,
 ) -> dict | None:
     metadata = {
         "content_stream": job["stream"],
@@ -176,6 +242,30 @@ def generate_job(
         )
         metadata["source_brief"] = brief["_relative_path"]
         metadata["analyzed_news_url"] = news_url
+    elif job["stream"] == "evergreen_knowledge":
+        topic_index, topic = selected_topic(now)
+        context = (
+            "\nכללים מיוחדים למרכז הידע drguyrofe.com:\n"
+            "- כתוב מדריך רפואי ירוק-עד ומעמיק, לא תגובה לחדשות.\n"
+            "- ענה על כוונת חיפוש רפואית אחת באופן מלא וברור.\n"
+            "- אל תשכתב ואל תסכם מאמר מאתר אחר שבבעלות הלקוח.\n"
+            "- קשר לאתר הרשמי רק כאשר הקישור מוסיף הקשר אמיתי לקורא.\n"
+        )
+        title, content = generate_article(topic, editorial_context=context)
+    elif job["stream"] == "media_archive":
+        selected = unused_media_brief(media_brief_dir, state or {"generated": []})
+        if not selected:
+            return None
+        _brief_path, brief = selected
+        topic_index = 95
+        topic = brief["working_title"]
+        title = brief["working_title"]
+        content = str(brief["transcript_markdown"]).strip()
+        if not content.startswith("# "):
+            content = f"# {title}\n\n{content}"
+        metadata["source_brief"] = brief["_relative_path"]
+        metadata["source_media_url"] = brief["source_media_url"]
+        metadata["source_media_type"] = brief.get("source_media_type", "media")
     else:
         raise ValueError(f"Unknown content stream: {job['stream']}")
 
@@ -201,6 +291,7 @@ def run(
     cadence_path: Path = DEFAULT_CADENCE,
     state_path: Path = DEFAULT_STATE,
     news_brief_dir: Path = DEFAULT_NEWS_BRIEFS,
+    media_brief_dir: Path = DEFAULT_MEDIA_BRIEFS,
     manifest_path: Path,
     now: datetime | None = None,
 ) -> dict:
@@ -230,7 +321,11 @@ def run(
     manifest["jobs"].extend(
         unbundled_generated_jobs(state, DEFAULT_APPROVAL_INDEX)
     )
-    for job in due_jobs(cadence, state, now):
+    planned_jobs = due_jobs(cadence, state, now)
+    event_job = media_archive_job(cadence, state, now)
+    if event_job and unused_media_brief(media_brief_dir, state):
+        planned_jobs.append(event_job)
+    for job in planned_jobs:
         try:
             result = generate_job(
                 job,
@@ -238,6 +333,7 @@ def run(
                 news_brief_dir,
                 state,
                 cadence["quality_policy"]["max_news_brief_age_hours"],
+                media_brief_dir,
             )
             if result is None:
                 manifest["skipped"].append({
@@ -276,12 +372,14 @@ def main() -> None:
     parser.add_argument("--cadence", type=Path, default=DEFAULT_CADENCE)
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE)
     parser.add_argument("--news-brief-dir", type=Path, default=DEFAULT_NEWS_BRIEFS)
+    parser.add_argument("--media-brief-dir", type=Path, default=DEFAULT_MEDIA_BRIEFS)
     parser.add_argument("--manifest", type=Path, required=True)
     args = parser.parse_args()
     manifest = run(
         cadence_path=args.cadence,
         state_path=args.state,
         news_brief_dir=args.news_brief_dir,
+        media_brief_dir=args.media_brief_dir,
         manifest_path=args.manifest,
     )
     print(json.dumps({

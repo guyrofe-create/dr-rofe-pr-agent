@@ -242,8 +242,19 @@ class GrowthEngineTests(unittest.TestCase):
             registry = json.load(handle)
         asset = next(a for a in registry["assets"] if a["url"] == "https://www.drguyrofe.com/")
         self.assertEqual(asset["tier"], "A")
-        self.assertIn("knowledge_hub", asset["uses"])
-        self.assertEqual(asset["automation"], "wix_api_after_site_id")
+        self.assertIn("evergreen_medical_knowledge", asset["uses"])
+        self.assertEqual(asset["automation"], "wix_blog_api_after_exact_p7_approval")
+
+    def test_secondary_wix_is_a_gated_media_archive_not_a_mirror(self):
+        with open("data/asset_registry.json", encoding="utf-8") as handle:
+            registry = json.load(handle)
+        asset = next(
+            a for a in registry["assets"]
+            if a["url"] == "https://guyrofe.wixsite.com/homepage"
+        )
+        self.assertEqual(asset["tier"], "B")
+        self.assertEqual(asset["status"], "legacy_content_audit_required")
+        self.assertIn("read_only_until_audit", asset["automation"])
 
     def test_approved_channels_and_non_practicing_surfaces_follow_policy(self):
         with open("data/asset_registry.json", encoding="utf-8") as handle:
@@ -266,9 +277,17 @@ class GrowthEngineTests(unittest.TestCase):
         serialized = json.dumps(manifest).lower()
         self.assertNotIn('"password"', serialized)
         self.assertNotIn('"email"', serialized)
-        wix = next(c for c in manifest["connections"] if c["platform"] == "Wix drguyrofe.com")
-        self.assertIn("WIX_DRGUYROFE_COM_SITE_ID", wix["required"])
-        self.assertEqual(wix["status"], "configured")
+        primary = next(
+            c for c in manifest["connections"]
+            if c["platform"] == "Wix primary drguyrofe.com"
+        )
+        secondary = next(
+            c for c in manifest["connections"]
+            if c["platform"] == "Wix supporting media archive"
+        )
+        self.assertIn("WIX_PRIMARY_DRGUYROFE_COM_SITE_ID", primary["required"])
+        self.assertIn("WIX_DRGUYROFE_COM_SITE_ID", secondary["required"])
+        self.assertIn("read_only", secondary["status"])
 
     def test_asset_gap_distinguishes_controlled_and_independent(self):
         gap = build_serp_asset_gap([

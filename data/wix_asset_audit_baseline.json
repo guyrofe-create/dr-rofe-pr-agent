@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "audited_at": "2026-07-29T18:15:58Z",
+  "changes_performed": false,
+  "sites": [
+    {
+      "site_key": "DRGUYROFE_COM",
+      "base_url": "https://www.drguyrofe.com",
+      "total_indexable_urls": 110,
+      "legacy_or_placeholder_url_count": 0,
+      "service_or_booking_url_count": 0,
+      "publication_blockers": [],
+      "audit_passed": true
+    },
+    {
+      "site_key": "GUYROFE_WIX_MEDIA_ARCHIVE",
+      "base_url": "https://guyrofe.wixsite.com/homepage",
+      "total_indexable_urls": 69,
+      "legacy_or_placeholder_url_count": 60,
+      "service_or_booking_url_count": 3,
+      "publication_blockers": [
+        "legacy_or_placeholder_urls",
+        "service_or_booking_claims_require_review"
+      ],
+      "audit_passed": false,
+      "publication_remains_locked": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+name: Wix Content Role Audit
+
+on:
+  schedule:
+    - cron: '20 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Audit primary evergreen knowledge hub
+        run: >-
+          python scripts/wix_content_audit.py
+          --site-key DRGUYROFE_COM
+          --output wix-audits/drguyrofe-com.json
+        env:
+          WIX_PRIMARY_DRGUYROFE_COM_API: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_API }}
+          WIX_PRIMARY_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_SITE_ID }}
+
+      - name: Audit supporting media archive
+        run: >-
+          python scripts/wix_content_audit.py
+          --site-key GUYROFE_WIX_MEDIA_ARCHIVE
+          --output wix-audits/guyrofe-wix-media-archive.json
+        env:
+          WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_DRGUYROFE_COM_API }}
+          WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_DRGUYROFE_COM_SITE_ID }}
+
+      - name: Upload read-only audits
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: wix-content-audits-${{ github.run_id }}
+          path: wix-audits/
+          retention-days: 90

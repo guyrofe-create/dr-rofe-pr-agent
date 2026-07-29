@@ -41,7 +41,11 @@ repository contains the Dr. Guy Rofe pilot profile.
   produce an image-free approval package;
 - maps first-page asset gaps and separates AI citations from explicit brand mentions;
 - maintains a credential-free A/B/C/Q asset registry and excludes quarantined Web 2.0 mirrors from automation;
-- treats `drguyrofe.com` as the official Wix knowledge-and-podcast hub, with a distinct job from the WordPress sites;
+- treats `drguyrofe.com` as a connected Wix evergreen medical-knowledge hub;
+- registers `guyrofe.wixsite.com/homepage` separately as a gated media-transcript
+  archive, never as a content mirror;
+- binds every draft stream to one owned property and blocks exact or near
+  cross-domain duplicates before approval;
 - declares every supported integration in `config/secrets_manifest.json` without storing credential values;
 - continues the existing schema sync, social distribution and content workflows.
 
@@ -167,8 +171,11 @@ No undocumented endpoint or browser scraping is used.
 `check_secrets.py` reports missing environment-variable names only. GitHub
 Secrets must contain platform-issued API keys, OAuth tokens, application
 passwords or site identifiers—never personal passwords copied from an asset
-inventory. Wix publishing for `drguyrofe.com` requires both
-`WIX_DRGUYROFE_COM_API` and `WIX_DRGUYROFE_COM_SITE_ID`.
+inventory. Wix publishing for `drguyrofe.com` requires
+`WIX_PRIMARY_DRGUYROFE_COM_API` and
+`WIX_PRIMARY_DRGUYROFE_COM_SITE_ID`. The older
+`WIX_DRGUYROFE_COM_*` names belong only to the supporting
+`guyrofe.wixsite.com/homepage` site.
 
 Content freeze cannot be removed while an active crisis room exists.
 
@@ -226,6 +233,12 @@ licensed-photo approval packages:
 - `drguyrofe.co.il`: up to five evidence-led health-news analyses per week,
   never more than one per weekday and only when an eligible unused news brief
   exists;
+- `drguyrofe.com`: one original evergreen medical guide per week, never an echo
+  of another owned domain;
+- `guyrofe.wixsite.com/homepage`: no quota. A unique transcript companion can
+  enter review only when a real podcast/video URL and transcript exist, at
+  least 14 days after the previous archive item, and after the legacy-content
+  audit has passed;
 - Facebook and LinkedIn: four distinct native variants per week;
 - Pinterest: three image-required variants per week;
 - Instagram: two image-required variants per week through the professional
@@ -237,6 +250,12 @@ cadence. A missing quality story, approved source, licensed photograph or
 platform connection causes that destination to be skipped or held—not replaced
 with weak content. Every public action remains blocked behind the signed P7
 medical and publication approval.
+
+Wix publication uses the official Blog Draft Posts API, preserves links by
+converting the exact approved HTML to Wix Ricos rich content, checks the
+approved slug for idempotency, and publishes only the single Wix target present
+in the signed bundle. A monthly read-only Wix audit reports legacy,
+placeholder, service and booking URLs; it never modifies the sites.
 
 ## P5 controlled creative asset engine
 
