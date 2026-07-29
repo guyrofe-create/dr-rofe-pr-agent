@@ -53,7 +53,8 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
 )
 PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 4
-MAX_REVIEWED_CANDIDATES = 2
+MAX_REVIEWED_CANDIDATES = 8
+MAX_REVIEWED_PER_QUERY = 2
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -198,6 +199,13 @@ def fallback_search_queries(title):
             "laboratory microscope equipment",
             "clinical laboratory workbench",
         ]
+    if "שחלות פוליציסטיות" in topic or "PCOS" in topic.upper():
+        return [
+            "gynecological ultrasound equipment",
+            "hormone testing laboratory",
+            "medical laboratory test tubes",
+            "ultrasound transducer clinic",
+        ]
     if "כאבי אגן" in topic or "אגן כרוני" in topic:
         return [
             "pelvic anatomy model",
@@ -211,6 +219,13 @@ def fallback_search_queries(title):
             "medical library desk",
             "medical reference books",
             "health research laptop",
+        ]
+    if "אכילה" in topic or "לאכול" in topic or "צום" in topic:
+        return [
+            "healthy meal table",
+            "vegetables dinner table",
+            "meal preparation kitchen",
+            "empty dining table",
         ]
     return [
         "medical research equipment",
@@ -426,6 +441,7 @@ def select_licensed_photo(title, summary, client=None):
     query_results = []
     search_errors = []
     for query in queries:
+        reviewed_for_query = 0
         try:
             candidates = search_commons(query)
         except requests.RequestException as exc:
@@ -468,6 +484,7 @@ def select_licensed_photo(title, summary, client=None):
                 )
                 continue
             reviewed += 1
+            reviewed_for_query += 1
             if accepted:
                 return SocialImage(
                     content=content,
@@ -483,7 +500,10 @@ def select_licensed_photo(title, summary, client=None):
                     source_type="wikimedia_commons_licensed_photo",
                 )
             rejection_reasons.append(review)
-            if reviewed >= MAX_REVIEWED_CANDIDATES:
+            if (
+                reviewed >= MAX_REVIEWED_CANDIDATES
+                or reviewed_for_query >= MAX_REVIEWED_PER_QUERY
+            ):
                 break
         if reviewed >= MAX_REVIEWED_CANDIDATES:
             break
