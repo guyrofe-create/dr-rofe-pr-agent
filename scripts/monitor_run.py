@@ -249,8 +249,19 @@ HISTORY = load_history()
 # ─── 1. Google rank via SerpApi ──────────────────────────────────────────────
 
 def serp_checks_due(today=None):
-    """Search-rank checks are daily; crisis checks still run every two hours."""
+    """Run routine rank checks only on the configured twice-monthly dates."""
     today = today or date.today().isoformat()
+    today_value = date.fromisoformat(today)
+    policy = free_serpapi_policy()
+    scheduled_days = {
+        int(day)
+        for day in policy.get("rank_check_days_of_month", [1, 15])
+    }
+    force_check = os.environ.get("FORCE_SERP_CHECK", "").strip().lower() in {
+        "1", "true", "yes",
+    }
+    if not force_check and today_value.day not in scheduled_days:
+        return False
     if serp_backoff_active(today):
         return False
     if not serp_budget_available(today):
@@ -336,11 +347,7 @@ def serp_run_plan(today=None):
             item for item in devices
             if item in {"mobile", "desktop", "tablet"}
         ],
-        "web_mentions": (
-            is_extended
-            if policy.get("web_mentions_cadence") == "extended_weekly"
-            else True
-        ),
+        "web_mentions": bool(policy.get("web_mentions_enabled", False)),
     }
 
 
@@ -426,9 +433,47 @@ def is_serp_quota_error(error):
 
 
 def ai_checks_due(today=None):
-    """AI-answer sampling is daily and uses repeated samples for stability."""
+    """AI-answer sampling runs twice monthly with repeated stability samples."""
     today = today or date.today().isoformat()
-    return HISTORY.get("last_ai_check_date") != today
+    today_value = date.fromisoformat(today)
+    policy = free_serpapi_policy()
+    scheduled_days = {
+        int(day)
+        for day in policy.get("ai_check_days_of_month", [1, 15])
+    }
+    force_check = os.environ.get("FORCE_AI_CHECK", "").strip().lower() in {
+        "1", "true", "yes",
+    }
+    return (
+        (force_check or today_value.day in scheduled_days)
+        and HISTORY.get("last_ai_check_date") != today
+    )
+
+
+def scheduled_maintenance_due(
+    history_key,
+    policy_key,
+    today=None,
+    *,
+    default_days,
+    force_environment_key,
+):
+    """Return whether a low-frequency external maintenance check is due."""
+    today = today or date.today().isoformat()
+    today_value = date.fromisoformat(today)
+    policy = free_serpapi_policy()
+    scheduled_days = {
+        int(day)
+        for day in policy.get(policy_key, default_days)
+    }
+    force_check = os.environ.get(
+        force_environment_key,
+        "",
+    ).strip().lower() in {"1", "true", "yes"}
+    return (
+        (force_check or today_value.day in scheduled_days)
+        and HISTORY.get(history_key) != today
+    )
 
 
 def rank_measurement_succeeded() -> bool:
@@ -1336,8 +1381,8 @@ def main():
             check_web_mentions(today_str)
         else:
             REPORT["web_mentions"] = {
-                "status": "skipped",
-                "reason": "web mention discovery runs with the weekly extended scan",
+                "status": "disabled",
+                "reason": "web mention monitoring disabled by product policy",
             }
         if rank_measurement_succeeded():
             HISTORY["last_serp_check_date"] = today_str
@@ -1347,7 +1392,7 @@ def main():
         elif not serp_budget_available(today_str):
             backoff_reason = "configured monthly SerpApi safety budget reached"
         else:
-            backoff_reason = "daily SerpApi cadence already completed"
+            backoff_reason = "twice-monthly SerpApi cadence is not due or already completed"
         REPORT["rank"].append({
             "status": "skipped",
             "reason": backoff_reason,
@@ -1365,26 +1410,79 @@ def main():
     else:
         REPORT["geo"].append({
             "status": "skipped",
-            "reason": "daily repeated AI sampling already completed",
+            "reason": "twice-monthly repeated AI sampling is not due or already completed",
         })
     manual_ai_samples = load_json_file(
         MANUAL_AI_SAMPLES_PATH, {"samples": []}
     ).get("samples", [])
     REPORT["geo"].extend(manual_ai_samples)
-    backlink_data = load_json_file(
-        BACKLINKS_PATH, {"previous": [], "current": []}
-    )
-    REPORT["backlinks"] = audit_backlinks(
-        backlink_data.get("current", []),
-        backlink_data.get("previous", []),
-        owned_hosts={
-            "guyrofe.com", "drguyrofe.co.il", "drguyrofe.com",
-        },
-    )
-    check_token_health()
-    check_reviews()
-    check_facebook_recommendations()
-    search_console_rows = collect_search_console_evidence()
+    if free_serpapi_policy().get("backlink_monitoring_enabled", False):
+        backlink_data = load_json_file(
+            BACKLINKS_PATH, {"previous": [], "current": []}
+        )
+        REPORT["backlinks"] = audit_backlinks(
+            backlink_data.get("current", []),
+            backlink_data.get("previous", []),
+            owned_hosts={
+                "guyrofe.com", "drguyrofe.co.il", "drguyrofe.com",
+            },
+        )
+    else:
+        REPORT["backlinks"] = {
+            "status": "disabled",
+            "reason": "disabled until a live backlink data source is connected",
+        }
+    if scheduled_maintenance_due(
+        "last_connection_health_check_date",
+        "connection_health_check_days_of_month",
+        today_str,
+        default_days=[1],
+        force_environment_key="FORCE_CONNECTION_HEALTH_CHECK",
+    ):
+        check_token_health()
+        if all(
+            not item.get("configured") or item.get("ok")
+            for item in REPORT["tokens"]
+        ):
+            HISTORY["last_connection_health_check_date"] = today_str
+    else:
+        REPORT["tokens"].append({
+            "platform": "Publisher connections",
+            "configured": False,
+            "ok": True,
+            "detail": "monthly maintenance check is not due or already completed",
+        })
+    if free_serpapi_policy().get("google_reviews_enabled", False):
+        check_reviews()
+    else:
+        REPORT["reviews"] = {
+            "status": "disabled",
+            "reason": "Google review monitoring disabled; owner receives Google email alerts",
+        }
+    if free_serpapi_policy().get("facebook_recommendations_enabled", False):
+        check_facebook_recommendations()
+    else:
+        REPORT["facebook_recommendations"] = {
+            "status": "disabled",
+            "reason": "recommendation monitoring disabled by product policy",
+        }
+    if scheduled_maintenance_due(
+        "last_search_console_check_date",
+        "search_console_check_days_of_month",
+        today_str,
+        default_days=[1, 15],
+        force_environment_key="FORCE_SEARCH_CONSOLE_CHECK",
+    ):
+        search_console_rows = collect_search_console_evidence()
+        if (REPORT.get("search_console") or {}).get("status") == "ok":
+            HISTORY["last_search_console_check_date"] = today_str
+    else:
+        search_console_rows = []
+        REPORT["search_console"] = {
+            "status": "skipped",
+            "reason": "twice-monthly Search Console check is not due or already completed",
+            "rows": [],
+        }
 
     # Convert raw monitor findings into durable, routed reputation events.
     # This is the active layer: each new risk receives a priority, SLA,
