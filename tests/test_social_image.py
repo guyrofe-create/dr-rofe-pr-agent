@@ -72,6 +72,22 @@ class SocialImageTests(unittest.TestCase):
             queries,
         )
 
+    def test_known_topic_uses_deterministic_queries_without_planner_cost(self):
+        client = Mock()
+        with patch(
+            "scripts.social_image.search_commons",
+            return_value=[],
+        ) as search:
+            with self.assertRaises(social_image.PhotoSelectionError):
+                social_image.select_licensed_photo(
+                    "תסמונת השחלות הפוליציסטיות",
+                    "אבחון וטיפול",
+                    client=client,
+                )
+        client.responses.create.assert_not_called()
+        searched = [call.args[0] for call in search.call_args_list]
+        self.assertIn("gynecological ultrasound equipment", searched)
+
     @patch("scripts.social_image.search_commons", return_value=[])
     def test_generate_reports_search_diagnostics_when_no_photo_is_found(self, search):
         planned = [
