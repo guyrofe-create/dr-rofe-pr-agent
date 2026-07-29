@@ -159,6 +159,53 @@ class SocialImageTests(unittest.TestCase):
         )
         client.images.generate.assert_not_called()
 
+    @patch("scripts.social_image.requests.get")
+    @patch("scripts.social_image.search_commons")
+    @patch("scripts.social_image.build_search_queries")
+    @patch("scripts.social_image.review_relevance")
+    def test_selector_moves_to_next_query_after_two_rejections(
+        self, review, planner, search, get
+    ):
+        planner.return_value = [
+            "first medical query",
+            "second medical query",
+            "third medical query",
+        ]
+        candidate = {
+            "download_url": "https://upload.wikimedia.org/photo.jpg",
+            "source_image_url": "",
+            "source_page_url": "https://commons.wikimedia.org/wiki/File:Photo.jpg",
+            "creator": "Photographer",
+            "license_name": "CC BY 4.0",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
+            "attribution": "Photo",
+            "media_type": "image/jpeg",
+            "extension": "jpg",
+        }
+        search.side_effect = [
+            [
+                {**candidate, "source_image_url": "https://example.com/one.jpg"},
+                {**candidate, "source_image_url": "https://example.com/two.jpg"},
+            ],
+            [{**candidate, "source_image_url": "https://example.com/three.jpg"}],
+        ]
+        get.return_value.content = b"x" * 25_000
+        get.return_value.raise_for_status.return_value = None
+        review.side_effect = [
+            (False, "לא מתאים"),
+            (False, "עדיין לא מתאים"),
+            (True, "צילום רלוונטי ללא מלל"),
+        ]
+
+        selected = social_image.select_licensed_photo(
+            "כותרת רפואית",
+            "תקציר",
+            client=Mock(),
+        )
+
+        self.assertEqual(selected.visual_description, "צילום רלוונטי ללא מלל")
+        self.assertEqual(search.call_count, 2)
+
     @patch("scripts.social_image.select_licensed_photo")
     def test_generate_prefers_licensed_photo_and_preserves_provenance(self, select):
         source = BytesIO()
