@@ -1,0 +1,45 @@
+name: Weekly Reputation Product Email Report
+
+on:
+  schedule:
+    - cron: '0 16 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Build the report artifact without sending email
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Build and send verified weekly report
+        env:
+          WEEKLY_REPORT_TO: guyrofe@gmail.com
+          WEEKLY_REPORT_GMAIL_USERNAME: guyrofe@gmail.com
+          WEEKLY_REPORT_GMAIL_APP_PASSWORD: ${{ secrets.WEEKLY_REPORT_GMAIL_APP_PASSWORD }}
+        run: >-
+          python scripts/weekly_email_report.py
+          --html-output weekly-reputation-report.html
+          ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Upload exact report sent
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: weekly-reputation-report-${{ github.run_id }}
+          path: weekly-reputation-report.html
+          if-no-files-found: warn
+          retention-days: 90

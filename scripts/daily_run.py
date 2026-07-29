@@ -21,6 +21,7 @@ if str(SCRIPT_DIR) not in sys.path:
 
 try:
     from scripts.reputation_core.strategy import client_content_plan, load_client_profile
+    from scripts.reputation_core.ai_usage import record_ai_usage
     from scripts.reputation_core.entity_contract import (
         apply_article_contract,
         audit_article_entity_contract,
@@ -32,6 +33,7 @@ try:
     )
 except ModuleNotFoundError:
     from reputation_core.strategy import client_content_plan, load_client_profile
+    from reputation_core.ai_usage import record_ai_usage
     from reputation_core.entity_contract import (
         apply_article_contract,
         audit_article_entity_contract,
@@ -507,6 +509,11 @@ def request_generated_article(client, messages, *, use_web_search=False):
         request["tools"] = [{"type": "web_search"}]
     response = client.responses.create(
         **request,
+    )
+    record_ai_usage(
+        response,
+        operation="article_generation",
+        model=request["model"],
     )
     return response.output_text or ""
 

@@ -46,6 +46,7 @@ jobs:
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
           git add content_drafts/ approval_bundles/
+          git add data/ai_usage_events/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Update reviewed content workflow ${{ github.run_id }}"
           git pull --rebase
           git push

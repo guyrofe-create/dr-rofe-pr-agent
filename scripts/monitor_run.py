@@ -1,27 +1,5 @@
 #!/usr/bin/env python3
-"""
-Single-tenant Reputation & Visibility Monitor
-Runs every 2 hours on GitHub Actions (see .github/workflows/monitor.yml).
-
-Checks, every run:
-  1. Google rank         - configured queries vs controlled properties
-  2. AI/GEO presence     - factual and citation checks for the configured client
-  3. Token/session health - every configured publisher credential, still valid?
-  4. Google Business reviews - rating, review count, and each individual recent
-                               review (Google Places API)
-  5. Facebook Page recommendations (positive/negative)
-  6. Web mentions        - configured identity queries
-
-State/history is persisted to data/reputation_history.json (committed back to
-the repo each run) so the monitor can detect *changes* - a new review, a
-rating drop, a new web mention - not just point-in-time snapshots.
-
-Two kinds of GitHub Issues are opened:
-  - "reputation-alert" (urgent, opened immediately the moment something bad is
-     detected: new low-rating review, rating drop, new negative FB
-     recommendation) - GitHub emails this to the repo owner right away.
-  - "monitor-report" (the full daily digest, opened once per calendar day).
-"""
+"""Twice-monthly reputation, search and AI-answer measurement."""
 import os
 import sys
 import json
@@ -49,6 +27,7 @@ from reputation_core import (
 from reputation_core.strategy import load_strategy
 from reputation_core.orchestrator import load_serp_targets
 from reputation_core.ai_evaluator import evaluate_ai_answer
+from reputation_core.ai_usage import record_ai_usage
 
 CLIENT_PROFILE = load_client_profile()
 CLIENT_FACTS = CLIENT_PROFILE["canonical_facts"]
@@ -660,6 +639,11 @@ def check_ai_presence():
                         },
                     }],
                     max_output_tokens=500,
+                )
+                record_ai_usage(
+                    resp,
+                    operation="ai_reputation_monitoring",
+                    model=model,
                 )
                 answer = resp.output_text or ""
                 citations = []
