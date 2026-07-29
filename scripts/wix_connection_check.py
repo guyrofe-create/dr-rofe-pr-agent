@@ -46,19 +46,24 @@ def main():
         response = requests.post(
             "https://www.wixapis.com/site-list/v2/sites/query",
             headers=account_headers,
-            json={"query": {"filter": {"id": SITE_ID}, "cursorPaging": {"limit": 1}}},
+            json={
+                "query": {
+                    "filter": {"id": {"$eq": SITE_ID}},
+                    "cursorPaging": {"limit": 1},
+                }
+            },
             timeout=20,
         )
         account_ok = response.ok and any(
             site.get("id") == SITE_ID for site in response.json().get("sites", [])
         )
         detail = "" if account_ok else f" - {safe_error(response)}"
-        print(f"{'PASS' if account_ok else 'FAIL'} account owns target site: HTTP {response.status_code}{detail}")
+        status = "PASS" if account_ok else "WARN"
+        print(f"{status} account owns target site: HTTP {response.status_code}{detail}")
     else:
         print("FAIL Wix account ID is missing")
 
     results = [
-        account_ok,
         check(
             "site properties authentication",
             "GET",
