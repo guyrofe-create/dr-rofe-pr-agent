@@ -81,6 +81,7 @@ jobs:
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
           git add data/content_cadence_state.json content_drafts/ approval_bundles/ || true
+          git add data/ai_usage_events/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Prepare autonomous content cadence $(date +%Y-%m-%d)"
           git pull --rebase
           git push

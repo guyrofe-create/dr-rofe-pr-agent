@@ -18,6 +18,7 @@ import requests
 from PIL import Image
 
 from reputation_core.strategy import load_client_profile
+from reputation_core.ai_usage import record_ai_usage
 
 _CLIENT_FACTS = load_client_profile()["canonical_facts"]
 _CLIENT_NAME = _CLIENT_FACTS["primary_name"]
@@ -245,13 +246,19 @@ def fallback_search_queries(title):
 
 
 def build_search_queries(client, title, summary):
+    model = os.environ.get("OPENAI_IMAGE_QUERY_MODEL", "gpt-5.6")
     response = client.responses.create(
-        model=os.environ.get("OPENAI_IMAGE_QUERY_MODEL", "gpt-5.6"),
+        model=model,
         input=_search_query_prompt(title, summary),
         reasoning={"effort": "low"},
         text={"verbosity": "low"},
         max_output_tokens=180,
         timeout=float(os.environ.get("OPENAI_TEXT_TIMEOUT_SECONDS", "45")),
+    )
+    record_ai_usage(
+        response,
+        operation="licensed_photo_query_planning",
+        model=model,
     )
     raw = (response.output_text or "").strip()
     raw = re.sub(r"\A```(?:json)?\s*|\s*```\Z", "", raw, flags=re.IGNORECASE)
@@ -463,8 +470,9 @@ def interleave_candidates(*groups):
 def review_relevance(client, image_bytes, media_type, title, summary):
     """Accept only a real-looking photo that directly supports the article."""
     encoded = base64.b64encode(image_bytes).decode("ascii")
+    model = os.environ.get("OPENAI_IMAGE_REVIEW_MODEL", "gpt-5.6")
     response = client.responses.create(
-        model=os.environ.get("OPENAI_IMAGE_REVIEW_MODEL", "gpt-5.6"),
+        model=model,
         input=[
             {
                 "role": "user",
@@ -508,6 +516,11 @@ def review_relevance(client, image_bytes, media_type, title, summary):
         text={"verbosity": "low"},
         max_output_tokens=180,
         timeout=float(os.environ.get("OPENAI_IMAGE_REVIEW_TIMEOUT_SECONDS", "45")),
+    )
+    record_ai_usage(
+        response,
+        operation="licensed_photo_relevance_review",
+        model=model,
     )
     decision, detail = _parse_review_verdict(response.output_text)
     if decision == "ACCEPT":

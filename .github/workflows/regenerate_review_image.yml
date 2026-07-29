@@ -59,6 +59,7 @@ jobs:
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
           git add approval_bundles/
+          git add data/ai_usage_events/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Regenerate review image ${{ github.run_id }}"
           git pull --rebase
           git push

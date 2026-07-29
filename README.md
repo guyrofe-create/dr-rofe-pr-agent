@@ -277,11 +277,11 @@ unchanged. Every article is visibly bound to the client in its title, linked
 byline, author box and natural body mentions.
 
 Review media is generated as one immutable four-format package: hero,
-landscape, square and portrait. Every variant is text-free. The product first
-selects a relevant Wikimedia Commons photograph with a verified compatible
-license and preserves its attribution. If none passes relevance and license
-checks, GPT Image creates a text-free editorial visual; if that service is
-unavailable, a deterministic text-free local visual is used.
+landscape, square and portrait. Every variant is text-free. The product searches
+Wikimedia Commons and Openverse for a topic-relevant photograph with a verified
+compatible license, preserves its attribution and uses AI only for relevance
+review. AI image generation is disabled; if no photograph passes, the bundle
+stops for manual image selection.
 The approval step fails closed unless every required image and its entity-aware
 alt text are present. Wikimedia remains an optional licensed-photo utility, not
 the critical path. Video metadata requires captions and a transcript.
@@ -313,10 +313,18 @@ See [docs/P7_APPROVAL_AND_PUBLISHING.md](docs/P7_APPROVAL_AND_PUBLISHING.md).
 
 | Workflow | Schedule | Purpose |
 |---|---|---|
-| Reputation Monitor + P4 | Every 2 hours | Detect, measure, rank and prepare the best eligible actions for approval |
+| Reputation Monitor + P4 | 1st and 15th of each month | Measure Google, AI answers and Search Console; prepare eligible actions |
+| Autonomous Content Cadence | Sunday-Thursday | Prepare cadence-due drafts and licensed-photo bundles; never publish without approval |
 | Legacy Reviewed Content | Manual only | Generate a manually requested durable medical draft |
 | Signed P7 Distribution | Manual or approval queue | Verify the exact signed bundle, publish idempotently and record URLs/receipts |
+| Weekly Email Report | Sunday | Email AI tokens/cost, completed actions, verified publication receipts and live links |
 | Schema + crawler audit | Weekly | Preview entity consistency and crawler access; public sync requires explicit approval |
+
+The weekly report is sent to `guyrofe@gmail.com` through Gmail SMTP. Add a
+Google App Password as the repository secret
+`WEEKLY_REPORT_GMAIL_APP_PASSWORD`; the account password itself must never be
+stored. The report records only usage totals and costs—never prompts or model
+outputs—and lists a publication only when the execution ledger contains a URL.
 
 ## Validation
 
