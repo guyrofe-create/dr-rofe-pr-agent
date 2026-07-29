@@ -103,6 +103,28 @@ class MetaConnectionTests(unittest.TestCase):
 
     @patch.dict(
         os.environ,
+        {
+            "INSTAGRAM_BUSINESS_ID": "17841400000000000",
+            "FACEBOOK_PAGE_TOKEN": "token",
+        },
+        clear=True,
+    )
+    @patch("scripts.social_publishers.meta.requests.get")
+    def test_checks_direct_instagram_professional_account_access(self, get):
+        response = Mock(status_code=200)
+        response.json.return_value = {
+            "id": "17841400000000000",
+            "username": "guy_rofe_md",
+        }
+        get.return_value = response
+
+        ok, detail = meta.check_instagram_access()
+
+        self.assertTrue(ok)
+        self.assertIn("@guy_rofe_md", detail)
+
+    @patch.dict(
+        os.environ,
         {"FACEBOOK_PAGE_ID": "123", "FACEBOOK_PAGE_TOKEN": "token"},
         clear=True,
     )

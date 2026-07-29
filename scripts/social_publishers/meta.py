@@ -179,6 +179,28 @@ def get_linked_instagram_account():
         return None, str(exc)
 
 
+def check_instagram_access():
+    """Confirm the configured professional account is readable by this token."""
+    account_id = common.env("INSTAGRAM_BUSINESS_ID")
+    token = common.env("FACEBOOK_PAGE_TOKEN")
+    if not account_id or not token:
+        return False, "not configured"
+    try:
+        response = requests.get(
+            f"{GRAPH}/{account_id}",
+            params={"fields": "id,username", "access_token": token},
+            timeout=15,
+        )
+        if response.status_code != 200:
+            return False, f"HTTP {response.status_code}: {response.text[:200]}"
+        account = response.json()
+        if str(account.get("id") or "") != account_id:
+            return False, "Graph API returned a different Instagram account ID"
+        return True, f"@{account.get('username') or account_id} id={account_id}"
+    except Exception as exc:
+        return False, str(exc)
+
+
 def publish_facebook(title, body, url, image_url=None, alt_text=None):
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")

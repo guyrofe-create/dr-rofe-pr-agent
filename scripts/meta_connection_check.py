@@ -24,11 +24,12 @@ def main():
     else:
         print(f"INFO Linked Instagram professional account: {instagram_detail}")
     configured = meta.instagram_is_configured()
+    instagram_ok, instagram_access_detail = meta.check_instagram_access()
     print(
-        f"{'PASS' if configured else 'FAIL'} Instagram publishing credentials: "
-        f"{'configured' if configured else 'missing INSTAGRAM_BUSINESS_ID or Page token'}"
+        f"{'PASS' if instagram_ok else 'FAIL'} Instagram professional-account access: "
+        f"{instagram_access_detail}"
     )
-    return 0 if ok and read_ok and configured and instagram else 1
+    return 0 if ok and read_ok and configured and instagram_ok else 1
 
 
 if __name__ == "__main__":
