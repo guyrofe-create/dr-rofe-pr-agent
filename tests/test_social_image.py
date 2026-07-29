@@ -99,15 +99,18 @@ class SocialImageTests(unittest.TestCase):
 
         self.assertEqual(search.call_count, expected_searches)
 
-    def test_commons_selector_reports_planner_failure(self):
+    @patch("scripts.social_image.search_commons", return_value=[])
+    def test_commons_selector_falls_back_when_planner_fails(self, search):
         client = Mock()
         client.responses.create.side_effect = TimeoutError("planner unavailable")
 
         with self.assertRaisesRegex(
             social_image.PhotoSelectionError,
-            "planner=TimeoutError",
+            "No suitably licensed",
         ):
             social_image.select_licensed_photo("כותרת", "תקציר", client=client)
+        searched = [call.args[0] for call in search.call_args_list]
+        self.assertIn("medical research equipment", searched)
 
     @patch("scripts.social_image.review_relevance")
     @patch("scripts.social_image.requests.get")

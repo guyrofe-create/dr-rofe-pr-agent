@@ -99,6 +99,39 @@ class AutonomousContentRunTests(unittest.TestCase):
         metadata = save.call_args.kwargs["metadata"]
         self.assertEqual(metadata["content_stream"], "canonical_depth")
 
+    def test_unbundled_generated_draft_is_retried_without_regeneration(self):
+        with tempfile.TemporaryDirectory(
+            dir=autonomous_content_run.ROOT
+        ) as directory:
+            root = Path(directory)
+            draft = root / "draft.md"
+            draft.write_text("# טיוטה\n", encoding="utf-8")
+            state = {
+                "generated": [{
+                    "stream": "canonical_depth",
+                    "site_key": "GUYROFE_COM",
+                    "channels": ["facebook", "linkedin"],
+                    "draft_path": draft.relative_to(
+                        autonomous_content_run.ROOT
+                    ).as_posix(),
+                }]
+            }
+            approval_index = root / "approval-index.json"
+            approval_index.write_text(
+                json.dumps({"bundles": []}),
+                encoding="utf-8",
+            )
+            jobs = autonomous_content_run.unbundled_generated_jobs(
+                state,
+                approval_index,
+            )
+        self.assertEqual(len(jobs), 1)
+        self.assertEqual(
+            jobs[0]["status"],
+            "existing_draft_ready_for_bundle_retry",
+        )
+        self.assertFalse(jobs[0]["public_execution_allowed"])
+
 
 if __name__ == "__main__":
     unittest.main()

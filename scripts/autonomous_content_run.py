@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CADENCE = ROOT / "config" / "content_cadence.json"
 DEFAULT_STATE = ROOT / "data" / "content_cadence_state.json"
 DEFAULT_NEWS_BRIEFS = ROOT / "opportunity_drafts"
+DEFAULT_APPROVAL_INDEX = ROOT / "approval_bundles" / "index.json"
 
 
 def _load_json(path: Path, default: dict) -> dict:
@@ -92,6 +93,35 @@ def unused_news_brief(
         return None
     _created_at, path, brief, relative = max(candidates, key=lambda item: item[0])
     return path, {**brief, "_relative_path": relative}
+
+
+def unbundled_generated_jobs(state: dict, approval_index_path: Path) -> list[dict]:
+    """Recover generated drafts whose licensed-photo bundle previously failed."""
+    approval_index = _load_json(approval_index_path, {"bundles": []})
+    bundled = {
+        item.get("draft_path")
+        for item in approval_index.get("bundles", [])
+        if item.get("draft_path")
+    }
+    recoveries = []
+    for item in state.get("generated", []):
+        draft_path = item.get("draft_path")
+        if not draft_path or draft_path in bundled:
+            continue
+        path = Path(draft_path)
+        if not path.is_absolute():
+            path = ROOT / path
+        if not path.is_file():
+            continue
+        recoveries.append({
+            **item,
+            "destination_site_key": item["site_key"],
+            "scheduled_channels": item.get("channels", []),
+            "draft_path": draft_path,
+            "status": "existing_draft_ready_for_bundle_retry",
+            "public_execution_allowed": False,
+        })
+    return recoveries
 
 
 def generate_job(
@@ -197,6 +227,9 @@ def run(
             encoding="utf-8",
         )
         return manifest
+    manifest["jobs"].extend(
+        unbundled_generated_jobs(state, DEFAULT_APPROVAL_INDEX)
+    )
     for job in due_jobs(cadence, state, now):
         try:
             result = generate_job(

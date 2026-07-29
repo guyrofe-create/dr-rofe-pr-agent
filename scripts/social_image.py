@@ -174,6 +174,52 @@ def _search_query_prompt(title, summary):
     )
 
 
+def fallback_search_queries(title):
+    """Return safe Commons queries when the optional AI planner is unavailable."""
+    topic = _topic_without_client(title)
+    if "מיומ" in topic:
+        return [
+            "gynecological ultrasound equipment",
+            "transvaginal ultrasound probe",
+            "ultrasound examination room",
+            "medical ultrasound machine",
+        ]
+    if "לפרוסקופ" in topic:
+        return [
+            "laparoscopic surgical instruments",
+            "laparoscope medical equipment",
+            "minimally invasive surgery tools",
+            "operating room instruments",
+        ]
+    if "אנדומטריוז" in topic or "פוריות" in topic:
+        return [
+            "fertility laboratory microscope",
+            "medical research laboratory",
+            "laboratory microscope equipment",
+            "clinical laboratory workbench",
+        ]
+    if "כאבי אגן" in topic or "אגן כרוני" in topic:
+        return [
+            "pelvic anatomy model",
+            "medical anatomy model",
+            "medical education desk",
+            "clinical teaching model",
+        ]
+    if "מידע רפואי" in topic or "מקור אמין" in topic or "ברשת" in topic:
+        return [
+            "medical research books",
+            "medical library desk",
+            "medical reference books",
+            "health research laptop",
+        ]
+    return [
+        "medical research equipment",
+        "clinical research laboratory",
+        "medical education equipment",
+        "laboratory microscope",
+    ]
+
+
 def build_search_queries(client, title, summary):
     response = client.responses.create(
         model=os.environ.get("OPENAI_IMAGE_QUERY_MODEL", "gpt-5.6"),
@@ -369,11 +415,8 @@ def select_licensed_photo(title, summary, client=None):
 
     try:
         planned_queries = build_search_queries(client, title, summary)
-    except Exception as exc:
-        raise PhotoSelectionError(
-            "Licensed photo search planning failed. The draft was preserved and "
-            f"queued for a replacement image. Diagnostics: planner={type(exc).__name__}"
-        ) from exc
+    except Exception:
+        planned_queries = fallback_search_queries(title)
     queries = expand_search_queries(planned_queries)
     reviewed = 0
     downloaded = 0
