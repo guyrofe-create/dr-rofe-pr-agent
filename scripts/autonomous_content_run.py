@@ -118,6 +118,18 @@ def unused_media_brief(
         )
         if relative in used:
             continue
+        platform_urls = brief.get("platform_urls") or {}
+        podcast_links_valid = (
+            brief.get("source_media_type") != "podcast"
+            or (
+                str(platform_urls.get("spotify") or "").startswith(
+                    "https://open.spotify.com/"
+                )
+                and str(platform_urls.get("apple_podcasts") or "").startswith(
+                    "https://podcasts.apple.com/"
+                )
+            )
+        )
         if (
             brief.get("status") != "transcript_ready_for_editorial_review"
             or brief.get("destination_site_key") != "GUYROFE_WIX_MEDIA_ARCHIVE"
@@ -125,6 +137,7 @@ def unused_media_brief(
                 ("https://", "http://")
             )
             or not str(brief.get("transcript_markdown") or "").strip()
+            or not podcast_links_valid
         ):
             continue
         candidates.append((brief.get("created_at", ""), path, brief, relative))
@@ -263,9 +276,25 @@ def generate_job(
         content = str(brief["transcript_markdown"]).strip()
         if not content.startswith("# "):
             content = f"# {title}\n\n{content}"
+        platform_urls = brief.get("platform_urls") or {}
+        original_links = []
+        if platform_urls.get("spotify"):
+            original_links.append(
+                f"- [האזנה ב‑Spotify]({platform_urls['spotify']})"
+            )
+        if platform_urls.get("apple_podcasts"):
+            original_links.append(
+                f"- [האזנה ב‑Apple Podcasts]({platform_urls['apple_podcasts']})"
+            )
+        if original_links:
+            content = (
+                f"{content.rstrip()}\n\n## האזנה לפרק המקורי\n\n"
+                + "\n".join(original_links)
+            )
         metadata["source_brief"] = brief["_relative_path"]
         metadata["source_media_url"] = brief["source_media_url"]
         metadata["source_media_type"] = brief.get("source_media_type", "media")
+        metadata["source_media_urls"] = platform_urls
     else:
         raise ValueError(f"Unknown content stream: {job['stream']}")
 

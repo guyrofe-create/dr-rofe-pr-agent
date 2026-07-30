@@ -140,8 +140,12 @@ class AutonomousContentRunTests(unittest.TestCase):
                     {
                         "status": "transcript_ready_for_editorial_review",
                         "destination_site_key": "GUYROFE_WIX_MEDIA_ARCHIVE",
-                        "source_media_url": "https://youtube.com/watch?v=real",
-                        "source_media_type": "youtube",
+                        "source_media_url": "https://open.spotify.com/episode/real",
+                        "source_media_type": "podcast",
+                        "platform_urls": {
+                            "spotify": "https://open.spotify.com/episode/real",
+                            "apple_podcasts": "https://podcasts.apple.com/il/podcast/show/id1?i=2",
+                        },
                         "working_title": "פרק בדיקה",
                         "transcript_markdown": "# פרק בדיקה\n\nתמליל מקורי",
                         "created_at": "2026-07-29T05:00:00Z",
@@ -170,7 +174,13 @@ class AutonomousContentRunTests(unittest.TestCase):
                     {"generated": []},
                     media_brief_dir=media,
                 )
-        self.assertEqual(result["source_media_url"], "https://youtube.com/watch?v=real")
+        self.assertEqual(
+            result["source_media_url"],
+            "https://open.spotify.com/episode/real",
+        )
+        saved_content = save.call_args.args[3]
+        self.assertIn("האזנה ב‑Spotify", saved_content)
+        self.assertIn("האזנה ב‑Apple Podcasts", saved_content)
         self.assertEqual(
             save.call_args.kwargs["metadata"]["content_stream"],
             "media_archive",
