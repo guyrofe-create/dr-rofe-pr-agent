@@ -238,7 +238,9 @@ licensed-photo approval packages:
 - `guyrofe.wixsite.com/homepage`: no quota. A unique transcript companion can
   enter review only when a real podcast/video URL and transcript exist, at
   least 14 days after the previous archive item, and after the legacy-content
-  audit has passed;
+  audit has passed. `רפואה על כוס קפה` is registered as the official podcast
+  source; podcast briefs require verified transcript text plus episode links
+  for both Spotify and Apple Podcasts;
 - Facebook and LinkedIn: four distinct native variants per week;
 - Pinterest: three image-required variants per week;
 - Instagram: two image-required variants per week through the professional
@@ -344,6 +346,29 @@ Google App Password as the repository secret
 `WEEKLY_REPORT_GMAIL_APP_PASSWORD`; the account password itself must never be
 stored. The report records only usage totals and costs—never prompts or model
 outputs—and lists a publication only when the execution ledger contains a URL.
+
+Every new image-ready P7 bundle also triggers one immediate email to
+`guyrofe@gmail.com`. The message contains the exact approval ID and a link to
+the approval dashboard. Delivery IDs are recorded so the same bundle is not
+emailed twice. The notification workflow is triggered after every workflow
+that creates or replaces an approval bundle, with a daily recovery run.
+
+Create a podcast transcript brief with:
+
+```bash
+python scripts/podcast_episode_intake.py \
+  --title "שם הפרק" \
+  --transcript verified-transcript.md \
+  --spotify-url "https://open.spotify.com/episode/..." \
+  --apple-url "https://podcasts.apple.com/...?...i=..."
+```
+
+This prepares an event-driven archive item; it does not authorize publication.
+
+The connected YouTube OAuth integration is currently read-only. It verifies the
+configured channel and allows an original YouTube URL plus transcript to enter
+the same media-archive review flow. It does not upload videos, edit titles or
+descriptions, replace thumbnails, or publish Community posts.
 
 ## Validation
 

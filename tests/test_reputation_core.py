@@ -253,8 +253,8 @@ class GrowthEngineTests(unittest.TestCase):
             if a["url"] == "https://guyrofe.wixsite.com/homepage"
         )
         self.assertEqual(asset["tier"], "B")
-        self.assertEqual(asset["status"], "legacy_content_audit_required")
-        self.assertIn("read_only_until_audit", asset["automation"])
+        self.assertEqual(asset["status"], "connected_exact_approval_required")
+        self.assertEqual(asset["automation"], "exact_p7_approval")
 
     def test_approved_channels_and_non_practicing_surfaces_follow_policy(self):
         with open("data/asset_registry.json", encoding="utf-8") as handle:
@@ -263,6 +263,11 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertEqual(
             assets["Instagram"]["automation"],
             "meta_graph_api_after_exact_approval",
+        )
+        self.assertEqual(assets["YouTube"]["status"], "connected_read_only")
+        self.assertIn(
+            "transcript_source_only",
+            assets["YouTube"]["automation"],
         )
         self.assertEqual(assets["TikTok"]["automation"], "owner_managed_product_disabled")
         self.assertIn(

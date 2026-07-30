@@ -1,0 +1,66 @@
+name: Email Pending Content Approvals
+
+on:
+  workflow_run:
+    workflows:
+      - Prepare Autonomous Content Cadence
+      - Start Full Content Campaign
+      - Regenerate Daily Review Images
+      - Regenerate Dashboard Review Image
+    types: [completed]
+  schedule:
+    - cron: '15 7 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: List pending notifications without sending email
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: approval-email-notifications
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Email every newly reviewable approval bundle
+        id: notify
+        continue-on-error: true
+        env:
+          WEEKLY_REPORT_TO: guyrofe@gmail.com
+          WEEKLY_REPORT_GMAIL_USERNAME: guyrofe@gmail.com
+          WEEKLY_REPORT_GMAIL_APP_PASSWORD: ${{ secrets.WEEKLY_REPORT_GMAIL_APP_PASSWORD }}
+        run: >-
+          python scripts/approval_email_notification.py
+          ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Record delivered notification IDs
+        if: ${{ always() && !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add data/approval_email_notifications.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Record approval email notifications"
+          git pull --rebase
+          git push
+
+      - name: Fail visibly when an email could not be delivered
+        if: ${{ always() && steps.notify.outcome == 'failure' }}
+        run: |
+          echo "::error::At least one approval email could not be delivered"
+          exit 1

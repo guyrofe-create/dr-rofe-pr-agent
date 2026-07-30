@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "enabled": true,
+  "enabled_at": "2026-07-30T07:45:00Z",
+  "dashboard_url": "https://dr-rofe-reputation-center.guyrofe.chatgpt.site",
+  "recipient": "guyrofe@gmail.com",
+  "sender_username": "guyrofe@gmail.com",
+  "send_only_when_image_ready": true,
+  "delivery": "one_email_per_new_approval_bundle"
+}

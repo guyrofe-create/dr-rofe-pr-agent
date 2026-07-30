@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "shows": [
+    {
+      "key": "REFUA_AL_KOS_CAFE",
+      "title": "רפואה על כוס קפה",
+      "creator": "ד״ר גיא רופא",
+      "spotify_show_url": "https://open.spotify.com/show/2o8f3yN18UunMRpsEBPTg7",
+      "spotify_show_id": "2o8f3yN18UunMRpsEBPTg7",
+      "apple_podcasts_url": "https://podcasts.apple.com/gb/podcast/%D7%A8%D7%A4%D7%95%D7%90%D7%94-%D7%A2%D7%9C-%D7%9B%D7%95%D7%A1-%D7%A7%D7%A4%D7%94/id1787147468",
+      "apple_podcasts_id": "1787147468",
+      "destination_site_key": "GUYROFE_WIX_MEDIA_ARCHIVE",
+      "content_stream": "media_archive",
+      "episode_intake": "explicit_episode_urls_and_verified_transcript",
+      "required_episode_links": [
+        "spotify",
+        "apple_podcasts"
+      ],
+      "publication_requires_exact_p7_approval": true
+    }
+  ]
+}
