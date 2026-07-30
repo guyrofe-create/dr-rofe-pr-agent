@@ -223,7 +223,13 @@ def prepare_bundle(
     def credited_text(value: str) -> str:
         return f"{value.rstrip()}\n\nקרדיט תמונה: {credit}" if credit else value
 
-    default_channels = ["facebook", "linkedin", "blogger", "pinterest"]
+    default_channels = [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "pinterest",
+        "google_business",
+    ]
     selected_channels = list(default_channels if channel_ids is None else channel_ids)
     supported_channels = {
         "facebook",
@@ -231,6 +237,7 @@ def prepare_bundle(
         "instagram",
         "blogger",
         "pinterest",
+        "google_business",
     }
     unknown_channels = set(selected_channels) - supported_channels
     if unknown_channels:
@@ -267,6 +274,7 @@ def prepare_bundle(
                 "text": credited_text(variants["facebook"]),
                 "link": canonical_url,
                 "image": media_variant("landscape"),
+                "disclosure": variants["disclosure"],
             },
         },
         "linkedin": {
@@ -278,6 +286,7 @@ def prepare_bundle(
                 "text": credited_text(variants["linkedin"]),
                 "link": canonical_url,
                 "image": media_variant("landscape"),
+                "disclosure": variants["disclosure"],
             },
         },
         "instagram": {
@@ -289,6 +298,7 @@ def prepare_bundle(
                 "text": credited_text(variants["instagram"]),
                 "link": canonical_url,
                 "image": media_variant("square"),
+                "disclosure": variants["disclosure"],
             },
         },
         "blogger": {
@@ -307,6 +317,7 @@ def prepare_bundle(
                 ),
                 "link": canonical_url,
                 "image": media_variant("hero"),
+                "disclosure": variants["disclosure"],
             },
         },
         "pinterest": {
@@ -320,6 +331,18 @@ def prepare_bundle(
                 ],
                 "link": canonical_url,
                 "image": media_variant("portrait"),
+                "disclosure": variants["disclosure"],
+            },
+        },
+        "google_business": {
+            "target_id": "google_business_profile",
+            "platform": "Google Business Profile",
+            "asset": "configured verified Google Business location",
+            "payload": {
+                **variants["google_business"],
+                "image": media_variant("landscape"),
+                "information_only": True,
+                "booking_or_contact_cta": False,
             },
         },
     }
@@ -357,6 +380,9 @@ def prepare_bundle(
             "no_consultation_invitation": True,
             "no_current_practice_implication": True,
             "instagram_product_publication_scheduled": "instagram" in selected_channels,
+            "google_business_information_only": (
+                "google_business" in selected_channels
+            ),
             "tiktok_product_publication": False,
             "x_publication": False,
             "sources_present": bool(sources),

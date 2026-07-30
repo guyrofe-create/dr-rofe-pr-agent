@@ -126,6 +126,7 @@ def main():
         headers,
         pending_on_403=True,
     )
+    business_ok = business is not None
     if business is not None:
         accounts = business.get("accounts", [])
         print(f"PASS Google Business Profile: accessible_accounts={len(accounts)}")
@@ -135,7 +136,7 @@ def main():
                 f"name={account.get('accountName', '')!r} role={account.get('role', '')}"
             )
 
-    return 0 if blogger_ok and search_console_ok else 1
+    return 0 if blogger_ok and search_console_ok and business_ok else 1
 
 
 if __name__ == "__main__":

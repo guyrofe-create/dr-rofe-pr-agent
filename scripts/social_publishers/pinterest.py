@@ -12,13 +12,15 @@ def is_configured():
     return not common.missing_secrets("PINTEREST_ACCESS_TOKEN", "PINTEREST_BOARD_ID")
 
 
-def publish(title, body, url, image_url, alt_text=None):
+def publish(title, body, url, image_url, alt_text=None, disclosure=None):
     if not image_url:
         raise ValueError("Pinterest requires image_url (pins must have an image)")
 
     token = common.env("PINTEREST_ACCESS_TOKEN")
     board_id = common.env("PINTEREST_BOARD_ID")
-    description = common.shorten_for_social(title, url, max_len=500, body=body)
+    description = common.shorten_for_social(
+        title, url, max_len=500, body=body, footer=disclosure
+    )
 
     resp = requests.post(
         "https://api.pinterest.com/v5/pins",

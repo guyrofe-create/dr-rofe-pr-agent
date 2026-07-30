@@ -152,7 +152,9 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertIn("# כותרת נושאית | ד״ר גיא רופא", contracted)
         self.assertIn("מאת [ד״ר גיא רופא]", contracted)
         self.assertIn("## על המחבר", contracted)
-        self.assertLess(contracted.index("## על המחבר"), contracted.index("## מקורות"))
+        self.assertGreater(
+            contracted.index("## על המחבר"), contracted.index("## מקורות")
+        )
 
     def test_article_contract_replaces_model_byline_and_requires_real_body_mention(self):
         profile = load_client_profile()

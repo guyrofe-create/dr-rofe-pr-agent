@@ -7,7 +7,7 @@
       "site_key": "GUYROFE_COM",
       "weekly_target": 2,
       "weekdays": {
-        "sunday": ["facebook", "linkedin", "pinterest"],
+        "sunday": ["facebook", "linkedin", "pinterest", "google_business"],
         "wednesday": ["facebook", "linkedin", "blogger", "instagram"]
       }
     },
@@ -19,7 +19,7 @@
         "monday": ["facebook", "linkedin", "blogger", "instagram"],
         "tuesday": ["pinterest"],
         "wednesday": [],
-        "thursday": ["facebook", "linkedin", "pinterest"]
+        "thursday": ["facebook", "linkedin", "pinterest", "google_business"]
       }
     },
     "evergreen_knowledge": {
@@ -43,14 +43,16 @@
     "linkedin": 4,
     "pinterest": 3,
     "instagram": 2,
-    "blogger": 2
+    "blogger": 2,
+    "google_business": 2
   },
   "channel_requirements": {
     "facebook": {"image_required": false},
     "linkedin": {"image_required": false},
     "pinterest": {"image_required": true},
     "instagram": {"image_required": true},
-    "blogger": {"image_required": false}
+    "blogger": {"image_required": false},
+    "google_business": {"image_required": true}
   },
   "quality_policy": {
     "skip_instead_of_forcing_weak_content": true,

@@ -55,20 +55,20 @@
       "Instagram",
       "LinkedIn",
       "Pinterest",
+      "Google Business Profile",
       "Canonical website"
     ],
     "owner_managed_product_disabled": [
       "TikTok"
     ],
     "disabled": [
-      "X",
-      "Google Business Profile"
+      "X"
     ],
     "deferred_until_unique_use": [
       "Telegram",
       "Tumblr"
     ],
-    "google_business_rule": "Disabled unless current eligibility is independently verified for a real-world customer-facing business that does not imply medical practice or patient availability.",
+    "google_business_rule": "Publish only exact-approved short informational STANDARD posts with a licensed image and LEARN_MORE link to the canonical article. Never imply current medical practice, patient availability, booking, treatment or consultation.",
     "pinterest_rule": "Use original evergreen visuals, public boards, canonical destination URLs and natural alt text."
   },
   "content_plan": {

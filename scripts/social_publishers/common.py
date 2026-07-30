@@ -57,10 +57,14 @@ def oauth1_header(method, url, params, consumer_key, consumer_secret,
     return header
 
 
-def shorten_for_social(title, url, max_len=250, body=None):
-    """Build a platform-length caption from an approved title, body and link."""
-    suffix = f"\n\nמידע נוסף: {url}" if url else ""
+def shorten_for_social(title, url, max_len=250, body=None, footer=None):
+    """Build a caption with the approved link before a final plain disclosure."""
+    link_suffix = f"\n\nמידע נוסף: {url}" if url else ""
+    footer_suffix = f"\n\n{footer.strip()}" if footer and footer.strip() else ""
+    suffix = link_suffix + footer_suffix
     room = max_len - len(suffix)
+    if room < 2:
+        raise ValueError("Approved link and disclosure exceed platform length")
     text = f"{title}\n\n{body}".strip() if body else title
     text = text if len(text) <= room else text[: room - 1].rstrip() + "…"
     return text + suffix
