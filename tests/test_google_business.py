@@ -48,6 +48,20 @@ class GoogleBusinessPublisherTests(unittest.TestCase):
                 "/tmp/private.jpg",
             )
 
+    def test_payload_rejects_homepage_or_unowned_link(self):
+        for link in (
+            "https://guyrofe.com/",
+            "https://unowned.example/topic/",
+        ):
+            with self.subTest(link=link), self.assertRaisesRegex(
+                ValueError, "topic page|official site"
+            ):
+                google_business._post_payload(
+                    "ד״ר גיא רופא: מידע רפואי כללי.",
+                    link,
+                    "https://guyrofe.com/media/topic.jpg",
+                )
+
     def test_unique_location_is_discovered_safely(self):
         with patch.dict(os.environ, {}, clear=True), patch.object(
             google_business,
