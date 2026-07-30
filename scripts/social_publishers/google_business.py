@@ -26,6 +26,16 @@ TOKEN_URL = "https://oauth2.googleapis.com/token"
 ACCOUNTS_URL = "https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
 MY_BUSINESS_V4 = "https://mybusiness.googleapis.com/v4"
 MAX_SUMMARY_LENGTH = 700
+APPROVED_CONTENT_HOSTS = frozenset(
+    {
+        "guyrofe.com",
+        "www.guyrofe.com",
+        "drguyrofe.co.il",
+        "www.drguyrofe.co.il",
+        "drguyrofe.com",
+        "www.drguyrofe.com",
+    }
+)
 
 
 def is_configured() -> bool:
@@ -154,6 +164,18 @@ def _validate_public_https_url(value: str, field: str) -> str:
     return url
 
 
+def _validate_content_link(value: str) -> str:
+    url = _validate_public_https_url(value, "Google Business link")
+    parsed = urlparse(url)
+    if parsed.hostname not in APPROVED_CONTENT_HOSTS:
+        raise ValueError("Google Business link must use an approved official site")
+    if parsed.path.rstrip("/") == "":
+        raise ValueError(
+            "Google Business link must target the exact topic page, not a homepage"
+        )
+    return url
+
+
 def _post_payload(
     summary: str,
     link: str,
@@ -174,7 +196,7 @@ def _post_payload(
         "topicType": "STANDARD",
         "callToAction": {
             "actionType": "LEARN_MORE",
-            "url": _validate_public_https_url(link, "Google Business link"),
+            "url": _validate_content_link(link),
         },
         "media": [
             {

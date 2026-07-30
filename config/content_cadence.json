@@ -8,7 +8,7 @@
       "weekly_target": 2,
       "weekdays": {
         "sunday": ["facebook", "linkedin", "pinterest", "google_business"],
-        "wednesday": ["facebook", "linkedin", "blogger", "instagram"]
+        "wednesday": ["facebook", "linkedin", "blogger", "instagram", "google_business"]
       }
     },
     "health_news": {
@@ -44,7 +44,7 @@
     "pinterest": 3,
     "instagram": 2,
     "blogger": 2,
-    "google_business": 2
+    "google_business": 3
   },
   "channel_requirements": {
     "facebook": {"image_required": false},
@@ -52,7 +52,16 @@
     "pinterest": {"image_required": true},
     "instagram": {"image_required": true},
     "blogger": {"image_required": false},
-    "google_business": {"image_required": true}
+    "google_business": {
+      "image_required": true,
+      "post_type": "STANDARD",
+      "cta": "LEARN_MORE",
+      "link_policy": "exact_published_topic_page_never_homepage",
+      "weekly_destination_mix": {
+        "guyrofe.com": 2,
+        "drguyrofe.co.il": 1
+      }
+    }
   },
   "quality_policy": {
     "skip_instead_of_forcing_weak_content": true,

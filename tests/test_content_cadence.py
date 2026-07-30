@@ -27,7 +27,7 @@ class ContentCadenceTests(unittest.TestCase):
                 "pinterest": 3,
                 "instagram": 2,
                 "blogger": 2,
-                "google_business": 2,
+                "google_business": 3,
             },
         )
         self.assertEqual(
@@ -41,6 +41,15 @@ class ContentCadenceTests(unittest.TestCase):
         )
         self.assertEqual(
             self.cadence["streams"]["media_archive"]["weekly_target"], 0
+        )
+        google = self.cadence["channel_requirements"]["google_business"]
+        self.assertEqual(
+            google["weekly_destination_mix"],
+            {"guyrofe.com": 2, "drguyrofe.co.il": 1},
+        )
+        self.assertEqual(
+            google["link_policy"],
+            "exact_published_topic_page_never_homepage",
         )
 
     def test_sunday_plans_two_sites_but_social_only_once(self):
