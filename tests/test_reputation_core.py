@@ -287,7 +287,7 @@ class GrowthEngineTests(unittest.TestCase):
         )
         self.assertIn("WIX_PRIMARY_DRGUYROFE_COM_SITE_ID", primary["required"])
         self.assertIn("WIX_DRGUYROFE_COM_SITE_ID", secondary["required"])
-        self.assertIn("read_only", secondary["status"])
+        self.assertIn("exact_approval_required", secondary["status"])
 
     def test_asset_gap_distinguishes_controlled_and_independent(self):
         gap = build_serp_asset_gap([

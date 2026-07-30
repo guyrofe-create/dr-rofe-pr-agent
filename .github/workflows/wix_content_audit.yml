@@ -27,6 +27,7 @@ jobs:
           python scripts/wix_content_audit.py
           --site-key DRGUYROFE_COM
           --output wix-audits/drguyrofe-com.json
+          --require-pass
         env:
           WIX_PRIMARY_DRGUYROFE_COM_API: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_API }}
           WIX_PRIMARY_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_SITE_ID }}
@@ -36,6 +37,7 @@ jobs:
           python scripts/wix_content_audit.py
           --site-key GUYROFE_WIX_MEDIA_ARCHIVE
           --output wix-audits/guyrofe-wix-media-archive.json
+          --require-pass
         env:
           WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_DRGUYROFE_COM_API }}
           WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_DRGUYROFE_COM_SITE_ID }}

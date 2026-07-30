@@ -86,10 +86,16 @@
       "role": "original_media_transcript_archive",
       "allowed_content_streams": ["media_archive"],
       "publication_gate": "legacy_content_audit_then_exact_p7_approval",
-      "audit_status": "required",
+      "audit_status": "passed_2026-07-30",
+      "reviewed_service_metadata": {
+        "https://guyrofe.wixsite.com/homepage/service-page/בדיקה-שגרתית-או-ייעוץ": "ce929d498532fd93864e112a304a241265bc615e0c343c938f71d4280f644f32",
+        "https://guyrofe.wixsite.com/homepage/service-page/ייעוץ-בהריון-או-מעקב-הריון": "67e5441970458922478a20e9a31b4802a33e1ea4a79bda7b8a9855f04ac3c1ad",
+        "https://guyrofe.wixsite.com/homepage/service-page/ייעוץ-בכאב-אגן-כרוני": "b9b9e6b38568e8a4706c974f3dc045a2adef2fea1df1c62f0788146a89b97a9d"
+      },
+      "service_content_reviewed_at": "2026-07-30",
       "minimum_days_between_publications": 14,
       "requires_original_media_url": true,
-      "sync_status": "connected_read_only_until_audit"
+      "sync_status": "connected_exact_p7_approval_required"
     }
   ]
 }
