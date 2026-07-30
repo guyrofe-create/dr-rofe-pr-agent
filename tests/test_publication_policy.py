@@ -43,13 +43,18 @@ class PublicationPolicyTests(unittest.TestCase):
             "X",
             "Telegram",
             "Tumblr",
-            "Google Business Profile",
         ):
             with self.subTest(channel=channel), self.assertRaises(ValueError):
                 enforce_channel_policy(channel)
 
     def test_product_managed_channels_are_allowed(self):
-        for channel in ("Facebook", "Instagram", "LinkedIn", "Pinterest"):
+        for channel in (
+            "Facebook",
+            "Instagram",
+            "LinkedIn",
+            "Pinterest",
+            "Google Business Profile",
+        ):
             with self.subTest(channel=channel):
                 self.assertEqual(enforce_channel_policy(channel), channel)
 

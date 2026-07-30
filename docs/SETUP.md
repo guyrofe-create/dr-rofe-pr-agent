@@ -93,10 +93,22 @@ Secrets: `GOOGLE_PLACES_API_KEY`, `GOOGLE_PLACE_ID`
 אין API רשמי ל"פרסום" תוכן טקסטואלי (רק העלאת וידאו). לא כלול כרגע - בעתיד
 ניטור צפיות/מנויים אפשרי עם מפתח פשוט מ-https://console.cloud.google.com/apis/library/youtube.googleapis.com
 
-### Google Business - מושבת בשלב זה
-גוגל דורשת אישור שותפות מיוחד (Business Profile API) שלא נגיש לעסק בודד -
-לכן רק ניטור ביקורות זמין כרגע. המוצר אינו מפרסם מידע, תמונות או פוסטים
-לפרופיל עד שתאומת בנפרד זכאות הפרופיל והגישה ל-API.
+### Google Business Profile
+הקוד מוכן לפרסום פוסט מידע קצר מסוג `STANDARD`, עם תמונה ציבורית וכפתור
+`LEARN_MORE` לעמוד הקנוני. כל הטקסט, התמונה והקישור נכללים בחבילת P7
+המדויקת; אין עריכת שעות, שירותים, זמינות, פרטי מרפאה או קביעת תורים.
+
+1. יש להגיש ל-Google בקשת Basic API Access עבור פרויקט
+   `reputation-agent-503515` (מספר `236033131361`).
+2. לאחר האישור יש לוודא שהמכסה של My Business Account Management API
+   גדולה מאפס וש-Google My Business API מופעל.
+3. ה-OAuth חייב לכלול `https://www.googleapis.com/auth/business.manage`.
+4. אם לחשבון יש מיקום נגיש יחיד, המוצר יגלה אותו בבטחה. אם יש יותר מאחד,
+   יש להגדיר את שני ה-Secrets:
+   `GOOGLE_BUSINESS_ACCOUNT_ID`, `GOOGLE_BUSINESS_LOCATION_ID`.
+
+המכסה בפרויקט היא כרגע אפס, ולכן הבדיקה והפרסום ייכשלו באופן גלוי עד
+ש-Google תאשר את הגישה. אין להשתמש בסיסמה או באוטומציית דפדפן כתחליף ל-API.
 
 ---
 

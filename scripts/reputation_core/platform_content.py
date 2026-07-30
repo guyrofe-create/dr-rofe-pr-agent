@@ -35,14 +35,41 @@ def build_platform_variants(
     profile: dict | None = None,
 ) -> dict:
     """Deterministic transformations; facts remain bounded to approved content."""
-    context = build_entity_context(profile or load_client_profile())
+    profile_data = profile or load_client_profile()
+    context = build_entity_context(profile_data)
     branded_title = title_with_entity(title, context)
     signature = f"מאת {context.canonical_name}"
     sentences = _sentences(markdown)
     lead = sentences[0] if sentences else _clean(title)
     detail = sentences[1] if len(sentences) > 1 else ""
     bullets = sentences[1:4] or [lead]
+    source_text = f"{title} {markdown}"
+    configured_terms = profile_data.get("content_plan", {}).get("tags", [])
+    topic_terms = [
+        term
+        for term in configured_terms
+        if term.casefold() in source_text.casefold()
+    ][:3]
+    google_business_parts = [
+        f"{branded_title}.",
+        lead,
+        detail,
+        f"מאת {context.canonical_name} — מידע רפואי כללי המבוסס על מקורות.",
+    ]
+    google_business_body = "\n\n".join(
+        part for part in google_business_parts if part
+    )
+    # Keep the material current-status disclosure readable but visually neutral:
+    # one unformatted final sentence, never a headline and never hidden.
+    disclosure = context.public_status.strip()
+    body_limit = max(0, 700 - len(disclosure) - 2)
+    google_business_summary = (
+        google_business_body[:body_limit].rstrip()
+        + "\n\n"
+        + disclosure
+    ).strip()
     return {
+        "disclosure": disclosure,
         "facebook": f"{lead}\n\n{detail}\n\n{signature}".strip(),
         "linkedin": (
             f"{lead}\n\n"
@@ -62,6 +89,18 @@ def build_platform_variants(
             f"<h2>{_clean(branded_title)}</h2><p>{signature}</p><p>{lead}</p>"
             + (f"<p>{detail}</p>" if detail else "")
         ),
+        "google_business": {
+            "summary": google_business_summary,
+            "keywords": list(
+                dict.fromkeys(
+                    [context.canonical_name, _clean(title), *topic_terms]
+                )
+            ),
+            "language_code": "he",
+            "topic_type": "STANDARD",
+            "call_to_action": "LEARN_MORE",
+            "link": canonical_url,
+        },
     }
 
 

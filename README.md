@@ -246,6 +246,11 @@ licensed-photo approval packages:
 - Instagram: two image-required variants per week through the professional
   account API when its permission check passes;
 - Blogger: two short, distinct summaries per week rather than article copies.
+- Google Business Profile: two short information-only STANDARD posts per week.
+  Each exact P7 payload contains a natural entity/topic phrase, one approved
+  landscape photo and a `LEARN_MORE` link to the canonical article. Publication
+  remains blocked until Google grants Business Profile API access and the
+  account/location can be resolved unambiguously.
 
 The monitor runs twice daily. The news radar runs before the weekday content
 cadence. A missing quality story, approved source, licensed photograph or

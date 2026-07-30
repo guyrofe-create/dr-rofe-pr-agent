@@ -36,9 +36,10 @@ Homepage links, search-result links and generic anchors such as "click here"
 fail the content gate.
 
 The distribution layer transforms one approved source into platform-native
-Facebook, LinkedIn, Pinterest and Blogger variants. The variants cannot
-introduce new facts. Google Business Profile publishing is disabled unless
-independent eligibility and API access are verified.
+Facebook, LinkedIn, Pinterest, Blogger and Google Business Profile variants.
+The variants cannot introduce new facts. The Google Business variant is a
+short information-only STANDARD post with one approved image and a LEARN_MORE
+canonical link; execution remains blocked until Google grants API access.
 
 Every approved article must visibly bind the content to the configured client:
 the canonical name appears once in the title, the linked byline points to the

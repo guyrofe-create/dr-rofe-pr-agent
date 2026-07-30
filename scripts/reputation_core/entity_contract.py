@@ -158,17 +158,9 @@ def apply_article_contract(markdown: str, profile: dict) -> str:
         text,
         flags=re.MULTILINE | re.DOTALL,
     ).strip()
-    sources = re.search(r"^##\s+מקורות\s*$", text, re.MULTILINE)
-    if sources:
-        text = (
-            text[: sources.start()].rstrip()
-            + "\n\n"
-            + author_box(context)
-            + "\n\n"
-            + text[sources.start() :].lstrip()
-        )
-    else:
-        text = text.rstrip() + "\n\n" + author_box(context)
+    # Keep the truthful current-status note as the final readable section,
+    # after the article and its source links.
+    text = text.rstrip() + "\n\n" + author_box(context)
     return text.strip()
 
 

@@ -83,11 +83,20 @@ def _upload_image(owner_urn, image_bytes):
     return value["asset"]
 
 
-def publish(title, body, url=None, image_bytes=None, alt_text=None):
+def publish(
+    title,
+    body,
+    url=None,
+    image_bytes=None,
+    alt_text=None,
+    disclosure=None,
+):
     member = current_member()
     text = f"{title}\n\n{body}".strip()
     if url:
         text += f"\n\n{url}"
+    if disclosure:
+        text += f"\n\n{disclosure.strip()}"
     text = enforce_publication_policy(text)
     share_content = {
         "shareCommentary": {"text": text},

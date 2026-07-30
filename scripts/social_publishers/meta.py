@@ -201,10 +201,14 @@ def check_instagram_access():
         return False, str(exc)
 
 
-def publish_facebook(title, body, url, image_url=None, alt_text=None):
+def publish_facebook(
+    title, body, url, image_url=None, alt_text=None, disclosure=None
+):
     page_id = common.env("FACEBOOK_PAGE_ID")
     token = common.env("FACEBOOK_PAGE_TOKEN")
-    message = common.shorten_for_social(title, url, max_len=1800, body=body)
+    message = common.shorten_for_social(
+        title, url, max_len=1800, body=body, footer=disclosure
+    )
     duplicate = find_recent_facebook_duplicate(message, url)
     if duplicate:
         raise DuplicatePostError(
@@ -239,7 +243,7 @@ def publish_facebook(title, body, url, image_url=None, alt_text=None):
     return f"https://www.facebook.com/{post_id}" if post_id else str(result)
 
 
-def publish_instagram(title, body, url, image_url):
+def publish_instagram(title, body, url, image_url, disclosure=None):
     if not image_url:
         raise ValueError("Instagram requires an approved public image URL")
     account_id = common.env("INSTAGRAM_BUSINESS_ID")
@@ -251,6 +255,7 @@ def publish_instagram(title, body, url, image_url):
         url,
         max_len=2100,
         body=body,
+        footer=disclosure,
     )
     container = requests.post(
         f"{GRAPH}/{account_id}/media",

@@ -32,7 +32,14 @@ def _access_token():
     return resp.json()["access_token"]
 
 
-def publish(title, body_html, url=None, image_url=None, alt_text=None):
+def publish(
+    title,
+    body_html,
+    url=None,
+    image_url=None,
+    alt_text=None,
+    disclosure=None,
+):
     blog_id = common.env("BLOGGER_BLOG_ID")
     token = _access_token()
     content = body_html
@@ -44,6 +51,12 @@ def publish(title, body_html, url=None, image_url=None, alt_text=None):
         )
     if url:
         content += f'<p><a href="{url}">קריאה מלאה באתר</a></p>'
+    if disclosure:
+        content += (
+            '<p><small>'
+            + html.escape(disclosure.strip())
+            + "</small></p>"
+        )
 
     resp = requests.post(
         f"https://www.googleapis.com/blogger/v3/blogs/{blog_id}/posts/",

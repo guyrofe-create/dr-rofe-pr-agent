@@ -430,9 +430,15 @@ class SocialImageTests(unittest.TestCase):
             "https://guyrofe.com/article",
             "https://guyrofe.com/image.png",
             "ד״ר גיא רופא — איור מידע כללי",
+            "ד״ר גיא רופא אינו מקבל כיום מטופלות.",
         )
         content = post.call_args.kwargs["json"]["content"]
         self.assertIn('alt="ד״ר גיא רופא — איור מידע כללי"', content)
+        self.assertLess(
+            content.index("https://guyrofe.com/article"),
+            content.index("<small>"),
+        )
+        self.assertTrue(content.endswith("</small></p>"))
 
     def test_x_publish_is_blocked_even_when_credentials_exist(self):
         with patch.dict(

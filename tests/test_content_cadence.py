@@ -27,6 +27,7 @@ class ContentCadenceTests(unittest.TestCase):
                 "pinterest": 3,
                 "instagram": 2,
                 "blogger": 2,
+                "google_business": 2,
             },
         )
         self.assertEqual(
@@ -55,7 +56,8 @@ class ContentCadenceTests(unittest.TestCase):
         canonical = jobs[0]
         news = jobs[1]
         self.assertEqual(
-            canonical["channels"], ["facebook", "linkedin", "pinterest"]
+            canonical["channels"],
+            ["facebook", "linkedin", "pinterest", "google_business"],
         )
         self.assertEqual(news["channels"], [])
         self.assertFalse(canonical["public_execution_allowed"])

@@ -43,6 +43,20 @@ class CampaignRunTests(unittest.TestCase):
         self.assertIn("<h2>סעיף</h2>", rendered)
         self.assertIn('href="https://example.com"', rendered)
 
+    def test_author_disclosure_is_last_and_secondary_but_readable(self):
+        rendered = campaign_run.markdown_to_html(
+            "# כותרת\n\n## מקורות\n\n"
+            "[מקור](https://example.com)\n\n"
+            "## על המחבר\n\n"
+            "ד״ר גיא רופא אינו עוסק כיום ברפואה."
+        )
+        self.assertGreater(
+            rendered.index("author-disclosure"),
+            rendered.index('href="https://example.com"'),
+        )
+        self.assertIn("font-size:0.9em", rendered)
+        self.assertTrue(rendered.endswith("</section>"))
+
     def test_wordpress_publish_is_idempotent(self):
         get_response = Mock()
         get_response.json.return_value = [
@@ -199,6 +213,21 @@ class CampaignRunTests(unittest.TestCase):
         )
         self.assertIn("תקציר מאושר", caption)
         self.assertIn("https://guyrofe.com/article", caption)
+
+    def test_social_disclosure_is_plain_final_text_after_link(self):
+        disclosure = "ד״ר גיא רופא אינו מקבל כיום מטופלות."
+        caption = common.shorten_for_social(
+            "כותרת",
+            "https://guyrofe.com/article",
+            max_len=240,
+            body="תקציר מאושר",
+            footer=disclosure,
+        )
+        self.assertLess(
+            caption.index("https://guyrofe.com/article"),
+            caption.index(disclosure),
+        )
+        self.assertTrue(caption.endswith(disclosure))
 
     def test_destination_failure_is_reported_without_stopping_other_targets(self):
         target = {

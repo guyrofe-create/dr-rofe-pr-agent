@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from daily_run import load_draft, resolve_draft_path
 from social_publishers import (
     blogger,
+    google_business,
     linkedin,
     meta,
     pinterest,
@@ -111,6 +112,7 @@ def render_inline(value):
 def markdown_to_html(content):
     blocks = []
     paragraph = []
+    author_section_open = False
 
     def flush_paragraph():
         if paragraph:
@@ -126,13 +128,29 @@ def markdown_to_html(content):
             continue
         elif stripped.startswith("## "):
             flush_paragraph()
-            blocks.append(f"<h2>{render_inline(stripped[3:])}</h2>")
+            if author_section_open:
+                blocks.append("</section>")
+                author_section_open = False
+            heading = stripped[3:]
+            if heading == "על המחבר":
+                blocks.append(
+                    '<section class="author-disclosure" '
+                    'style="font-size:0.9em;color:#59636e">'
+                )
+                blocks.append(
+                    f'<h2 style="font-size:1em">{render_inline(heading)}</h2>'
+                )
+                author_section_open = True
+            else:
+                blocks.append(f"<h2>{render_inline(heading)}</h2>")
         elif stripped.startswith("### "):
             flush_paragraph()
             blocks.append(f"<h3>{render_inline(stripped[4:])}</h3>")
         else:
             paragraph.append(stripped)
     flush_paragraph()
+    if author_section_open:
+        blocks.append("</section>")
     return "\n".join(blocks)
 
 
@@ -595,6 +613,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         canonical_url,
                         facebook_image_url,
                         (payload.get("image") or {}).get("alt_text"),
+                        payload.get("disclosure"),
                     )
                 },
             )
@@ -618,6 +637,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         canonical_url,
                         linkedin_image.content if linkedin_image else None,
                         (payload.get("image") or {}).get("alt_text"),
+                        payload.get("disclosure"),
                     )
                 },
             )
@@ -658,6 +678,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         canonical_url,
                         blogger_image_url,
                         (payload.get("image") or {}).get("alt_text"),
+                        payload.get("disclosure"),
                     )
                 },
             )
@@ -683,6 +704,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         payload["text"],
                         canonical_url,
                         instagram_image_url,
+                        payload.get("disclosure"),
                     )
                 },
             )
@@ -706,6 +728,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         canonical_url,
                         pinterest_image_url,
                         (payload.get("image") or {}).get("alt_text"),
+                        payload.get("disclosure"),
                     )
                 },
             )
@@ -717,6 +740,48 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                 "not_configured",
             )
         )
+
+    google_business_target = targets.get("google_business_profile")
+    if not google_business_target:
+        destinations.append(
+            destination("Google Business Profile", "not_scheduled")
+        )
+    else:
+        enforce_channel_policy("Google Business Profile")
+        google_payload = google_business_target["payload"]
+        if google_payload.get("topic_type") != "STANDARD":
+            raise PermissionError(
+                "Google Business is limited to approved STANDARD information posts"
+            )
+        if google_payload.get("call_to_action") != "LEARN_MORE":
+            raise PermissionError(
+                "Google Business is limited to the LEARN_MORE action"
+            )
+        if google_payload.get("link", "").rstrip("/") != canonical_url.rstrip("/"):
+            raise PermissionError(
+                "Google Business link differs from the approved canonical URL"
+            )
+        if google_business.is_configured():
+            _google_image, google_image_url = approved_target_image(
+                google_business_target
+            )
+            destinations.append(
+                _execute_target_safely(
+                    ledger,
+                    approved_bundle,
+                    google_business_target,
+                    lambda payload, key: google_business.publish(
+                        payload["summary"],
+                        payload["link"],
+                        google_image_url,
+                        language_code=payload.get("language_code", "he"),
+                    ),
+                )
+            )
+        else:
+            destinations.append(
+                destination("Google Business Profile", "not_configured")
+            )
 
     destinations.extend(
         [

@@ -15,6 +15,55 @@ SECRET = "a-test-signing-secret-with-32-characters"
 
 
 class PrepareApprovalBundleTests(unittest.TestCase):
+    def test_google_business_target_is_exact_short_information_payload(self):
+        with tempfile.TemporaryDirectory(
+            dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
+        ) as directory:
+            root = Path(directory)
+            draft = root / "google-business.md"
+            content = apply_article_contract(
+                (
+                    "# אנדומטריוזיס ופוריות\n\n"
+                    "מידע רפואי כללי על הקשר בין אנדומטריוזיס ופוריות.\n\n"
+                    "## מקורות\n"
+                    "[מקור רשמי](https://www.who.int/health-topics/)\n"
+                ),
+                prepare_approval_bundle.load_client_profile(),
+            )
+            draft.write_text(content, encoding="utf-8")
+            result = prepare_approval_bundle.prepare_bundle(
+                draft,
+                output_root=root / "bundles",
+                image_uri="https://example.com/approved.jpg",
+                image_alt_text="צילום מאושר בנושא אנדומטריוזיס",
+                image_metadata={
+                    "variants": {
+                        "landscape": {
+                            "uri": "https://example.com/approved-landscape.jpg",
+                            "sha256": "a" * 64,
+                            "width": 1200,
+                            "height": 630,
+                        }
+                    }
+                },
+                channel_ids=["google_business"],
+            )
+            bundle = json.loads(
+                Path(result["bundle_path"]).read_text(encoding="utf-8")
+            )
+        targets = {item["target_id"]: item for item in bundle["targets"]}
+        self.assertEqual(
+            set(targets), {"canonical_wordpress", "google_business_profile"}
+        )
+        payload = targets["google_business_profile"]["payload"]
+        self.assertEqual(payload["topic_type"], "STANDARD")
+        self.assertEqual(payload["call_to_action"], "LEARN_MORE")
+        self.assertTrue(payload["information_only"])
+        self.assertFalse(payload["booking_or_contact_cta"])
+        self.assertEqual(payload["image"]["role"], "landscape")
+        self.assertIn("ד״ר גיא רופא", payload["summary"])
+        self.assertLessEqual(len(payload["summary"]), 700)
+
     def test_evergreen_wix_bundle_uses_only_the_primary_wix_site(self):
         with tempfile.TemporaryDirectory(
             dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
