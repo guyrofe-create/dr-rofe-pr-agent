@@ -288,6 +288,13 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertIn("WIX_PRIMARY_DRGUYROFE_COM_SITE_ID", primary["required"])
         self.assertIn("WIX_DRGUYROFE_COM_SITE_ID", secondary["required"])
         self.assertIn("exact_approval_required", secondary["status"])
+        with open("data/business_profile.json", encoding="utf-8") as handle:
+            profile = json.load(handle)
+        secondary_site = next(
+            site for site in profile["sites"]
+            if site["key"] == "GUYROFE_WIX_MEDIA_ARCHIVE"
+        )
+        self.assertEqual(secondary_site["audit_status"], "passed")
 
     def test_asset_gap_distinguishes_controlled_and_independent(self):
         gap = build_serp_asset_gap([
