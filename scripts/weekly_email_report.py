@@ -46,8 +46,7 @@ def load_json(path, default):
 
 def parse_time(value):
     try:
-        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
-        return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
     except (TypeError, ValueError):
         return None
 
@@ -55,34 +54,6 @@ def parse_time(value):
 def in_window(value, start, end):
     parsed = parse_time(value)
     return bool(parsed and start <= parsed < end)
-
-
-def latest_asset_rank_measurement(history):
-    candidates = []
-    for snapshot in history.get("snapshots", []):
-        measurement = (
-            (snapshot.get("orchestration") or {})
-            .get("visibility_measurement", {})
-            .get("asset_rank_changes")
-        )
-        if measurement and measurement.get("assets"):
-            candidates.append((
-                parse_time(
-                    measurement.get("current_observed_at")
-                    or snapshot.get("date")
-                ),
-                measurement,
-            ))
-    dated = [item for item in candidates if item[0]]
-    if not dated:
-        return {
-            "status": "not_measured",
-            "assets": [],
-            "asset_count": 0,
-            "changed_count": 0,
-        }
-    observed_at, measurement = max(dated, key=lambda item: item[0])
-    return {**measurement, "observed_at": observed_at}
 
 
 def collect_report(start, end, *, root=ROOT, usage_dir=None):
@@ -103,13 +74,6 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
         start,
         end,
         usage_dir=usage_dir or root / "data" / "ai_usage_events",
-    )
-    asset_rank = latest_asset_rank_measurement(
-        load_json(root / "data" / "reputation_history.json", {"snapshots": []})
-    )
-    asset_rank["in_report_window"] = bool(
-        asset_rank.get("observed_at")
-        and start <= asset_rank["observed_at"] < end
     )
     weekly_campaigns = [
         item
@@ -160,7 +124,6 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
         "campaigns": weekly_campaigns,
         "publications": publications,
         "failures": failures,
-        "asset_rank": asset_rank,
         "ai": {
             "events": len(usage),
             "input_tokens": sum(item.get("input_tokens", 0) for item in usage),
@@ -186,42 +149,10 @@ def _number(value):
     return f"{int(value):,}"
 
 
-def _rank_position(value):
-    return str(value) if value is not None else "מחוץ לעשירייה"
-
-
-def _rank_change(value):
-    return {
-        "baseline": "מדידת בסיס",
-        "improved": "עלה",
-        "declined": "ירד",
-        "unchanged": "ללא שינוי",
-        "entered_top10": "נכנס לעשירייה הראשונה",
-        "left_top10": "יצא מהעשירייה הראשונה",
-        "unchanged_not_in_top10": "ללא שינוי — מחוץ לעשירייה",
-    }.get(value, value or "לא ידוע")
-
-
 def render_html(report):
     start = report["start"].date().isoformat()
     end = (report["end"] - timedelta(seconds=1)).date().isoformat()
     ai = report["ai"]
-    asset_rank = report.get("asset_rank", {})
-    asset_rank_rows = "".join(
-        "<tr>"
-        f"<td>{html.escape(item.get('platform') or item.get('asset_id') or 'נכס')}</td>"
-        f"<td><a href=\"{html.escape(item.get('url') or '', quote=True)}\">פתיחת הנכס</a></td>"
-        f"<td>{html.escape(_rank_position(item.get('previous_position_top10')))}</td>"
-        f"<td>{html.escape(_rank_position(item.get('current_position_top10')))}</td>"
-        f"<td>{html.escape(_rank_change(item.get('change')))}</td>"
-        "</tr>"
-        for item in asset_rank.get("assets", [])
-    ) or '<tr><td colspan="5">לא קיימת עדיין מדידת נכסים מלאה.</td></tr>'
-    rank_freshness = (
-        "המדידה בוצעה בתקופת הדוח."
-        if asset_rank.get("in_report_window")
-        else "מוצגת המדידה המלאה האחרונה; השבוע לא הגיע מועד בדיקה חדש."
-    )
     publication_rows = "".join(
         "<tr>"
         f"<td>{html.escape(item['campaign_title'])}</td>"
@@ -291,12 +222,6 @@ def render_html(report):
 <thead><tr><th>תוכן</th><th>יעד</th><th>קישור</th></tr></thead>
 <tbody>{publication_rows}</tbody>
 </table>
-<h2>שינוי מיקום ב-Google לפי נכס</h2>
-<p>{rank_freshness}</p>
-<table style="border-collapse:collapse;width:100%" border="1" cellpadding="7">
-<thead><tr><th>נכס</th><th>קישור</th><th>מיקום קודם</th><th>מיקום נוכחי</th><th>שינוי</th></tr></thead>
-<tbody>{asset_rank_rows}</tbody>
-</table>
 <h2>כשלים או חסימות</h2><ul>{failure_rows}</ul>
 <p style="color:#667085">הדוח כולל רק פרסום שקיבל קבלה וקישור במערכת.</p>
 </body></html>"""
@@ -325,18 +250,6 @@ def render_text(report):
     )
     if not report["publications"]:
         lines.append("- לא נרשמו פרסומים מאומתים השבוע.")
-    lines.append("")
-    lines.append("שינוי מיקום ב-Google לפי נכס:")
-    asset_rank = report.get("asset_rank", {})
-    lines.extend(
-        f"- {item.get('platform') or item.get('asset_id')}: "
-        f"{_rank_position(item.get('previous_position_top10'))} → "
-        f"{_rank_position(item.get('current_position_top10'))}; "
-        f"{_rank_change(item.get('change'))}; {item.get('url')}"
-        for item in asset_rank.get("assets", [])
-    )
-    if not asset_rank.get("assets"):
-        lines.append("- לא קיימת עדיין מדידת נכסים מלאה.")
     lines.append("")
     lines.append("כשלים:")
     lines.extend(

@@ -17,27 +17,6 @@ class WeeklyEmailReportTests(unittest.TestCase):
             (root / "approval_bundles").mkdir()
             usage_dir = root / "data" / "ai_usage_events"
             usage_dir.mkdir(parents=True)
-            (root / "data" / "reputation_history.json").write_text(
-                json.dumps({"snapshots": [{
-                    "date": "2026-07-28T06:00:00Z",
-                    "orchestration": {"visibility_measurement": {
-                        "asset_rank_changes": {
-                            "status": "compared",
-                            "current_observed_at": "2026-07-28T06:00:00Z",
-                            "asset_count": 1,
-                            "changed_count": 1,
-                            "assets": [{
-                                "platform": "LinkedIn",
-                                "url": "https://linkedin.example/profile",
-                                "previous_position_top10": 5,
-                                "current_position_top10": 3,
-                                "change": "improved",
-                            }],
-                        },
-                    }},
-                }]}),
-                encoding="utf-8",
-            )
             (root / "content_drafts" / "index.json").write_text(
                 json.dumps({"drafts": [{
                     "title": "טיוטה רפואית",
@@ -95,15 +74,8 @@ class WeeklyEmailReportTests(unittest.TestCase):
         self.assertEqual(len(report["publications"]), 1)
         self.assertEqual(len(report["failures"]), 1)
         self.assertEqual(report["ai"]["estimated_cost_usd"], 0.03)
-        self.assertTrue(report["asset_rank"]["in_report_window"])
-        rendered_html = render_html(report)
-        rendered_text = render_text(report)
-        self.assertIn("https://linkedin.example/post", rendered_html)
-        self.assertIn("שינוי מיקום ב-Google לפי נכס", rendered_html)
-        self.assertIn("5", rendered_html)
-        self.assertIn("3", rendered_html)
-        self.assertIn("עלה", rendered_text)
-        self.assertIn("Pinterest", rendered_text)
+        self.assertIn("https://linkedin.example/post", render_html(report))
+        self.assertIn("Pinterest", render_text(report))
 
 
 if __name__ == "__main__":
