@@ -95,33 +95,71 @@ def build_message(item: dict, *, recipient: str, sender: str) -> EmailMessage:
     approval_id = item["approval_id"]
     title = str(item["title"])
     url = item["approval_url"]
+    image_ready = item.get("image_status") == "ready"
+    image_problem = str(item.get("image_selection_error") or "").strip()
     message = EmailMessage()
-    message["Subject"] = f"נדרש אישור פרסום: {title}"
+    message["Subject"] = (
+        f"נדרש אישור פרסום: {title}"
+        if image_ready
+        else f"נדרשת החלטה על תמונה: {title}"
+    )
     message["From"] = sender
     message["To"] = recipient
     message["Message-ID"] = f"<{approval_id}@dr-rofe-reputation-agent>"
     message["X-Approval-ID"] = approval_id
+    if image_ready:
+        lead = "נוצר תוכן חדש שממתין לאישור פרסום."
+        action = "פתיחת מסך האישור"
+        problem_line = ""
+    else:
+        lead = (
+            "התוכן הוכן ונשמר, אך הסוכן לא הצליח לבחור לבדו צילום "
+            "מורשה ורלוונטי. התוכן לא בוטל ולא סומן ככשל."
+        )
+        action = "פתיחת מסך ההחלטה ומתן פתרון לתמונה"
+        problem_line = (
+            f"בעיה: {image_problem}"
+            if image_problem
+            else "בעיה: נדרשת בחירת תמונה."
+        )
     message.set_content(
-        "\n".join([
-            "נוצר תוכן חדש שממתין לאישור פרסום.",
-            f"כותרת: {title}",
-            f"יעד: {item['asset']}",
-            f"מזהה אישור: {approval_id}",
-            "",
-            f"פתיחת מסך האישור: {url}",
-            "",
-            "לא יתבצע פרסום ללא אישור P7 מפורש לתוכן המדויק.",
-        ])
+        "\n".join(
+            line
+            for line in [
+                lead,
+                f"כותרת: {title}",
+                f"יעד: {item['asset']}",
+                problem_line,
+                f"מזהה אישור: {approval_id}",
+                "",
+                f"{action}: {url}",
+                "",
+                "לא יתבצע פרסום ללא אישור P7 מפורש לתוכן המדויק.",
+            ]
+            if line or line == ""
+        )
+    )
+    heading = "תוכן חדש ממתין לאישור" if image_ready else "נדרשת החלטה על תמונה"
+    problem_html = (
+        ""
+        if image_ready
+        else (
+            "<p>התוכן הוכן ונשמר, אך הסוכן לא הצליח לבחור לבדו צילום "
+            "מורשה ורלוונטי. התוכן לא בוטל ולא סומן ככשל.</p>"
+            f"<p><strong>הבעיה:</strong> "
+            f"{html.escape(image_problem or 'נדרשת בחירת תמונה.')}</p>"
+        )
     )
     message.add_alternative(
         f"""<!doctype html>
 <html lang="he" dir="rtl"><body style="font-family:Arial,sans-serif;line-height:1.6">
-<h1>תוכן חדש ממתין לאישור</h1>
+<h1>{heading}</h1>
 <p><strong>{html.escape(title)}</strong></p>
 <p>יעד: {html.escape(str(item['asset']))}</p>
+{problem_html}
 <p><a href="{html.escape(url, quote=True)}"
 style="display:inline-block;background:#155eef;color:white;padding:12px 20px;
-text-decoration:none;border-radius:6px">פתיחת מסך האישור</a></p>
+text-decoration:none;border-radius:6px">{html.escape(action)}</a></p>
 <p style="color:#667085">מזהה: {html.escape(approval_id)}<br>
 לא יתבצע פרסום ללא אישור P7 מפורש לתוכן המדויק.</p>
 </body></html>""",

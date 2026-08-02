@@ -5,6 +5,6 @@
   "dashboard_url": "https://dr-rofe-reputation-center.guyrofe.chatgpt.site",
   "recipient": "guyrofe@gmail.com",
   "sender_username": "guyrofe@gmail.com",
-  "send_only_when_image_ready": true,
-  "delivery": "one_email_per_new_approval_bundle"
+  "send_only_when_image_ready": false,
+  "delivery": "one_email_per_new_bundle_or_owner_image_decision"
 }

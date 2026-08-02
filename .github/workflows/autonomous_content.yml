@@ -50,6 +50,8 @@ jobs:
           fi
           failures=0
           prepared=0
+          image_ready=0
+          owner_actions=0
           while IFS= read -r job; do
             draft_path="$(jq -r '.draft_path' <<<"${job}")"
             site_key="$(jq -r '.site_key' <<<"${job}")"
@@ -62,12 +64,21 @@ jobs:
               --channels "${channels}" \
               --result-path "${result_path}"; then
               prepared=$((prepared + 1))
+              image_status="$(jq -r '.image_status // "awaiting_replacement"' "${result_path}")"
+              if [[ "${image_status}" == "ready" ]]; then
+                image_ready=$((image_ready + 1))
+              else
+                owner_actions=$((owner_actions + 1))
+                echo "::notice::Owner image decision requested for ${draft_path}"
+              fi
             else
               failures=$((failures + 1))
               echo "::error::Approval bundle preparation failed for ${draft_path}"
             fi
           done < <(jq -c '.jobs[]' "${RUNNER_TEMP}/content-cadence-manifest.json")
           echo "prepared=${prepared}" >> "${GITHUB_OUTPUT}"
+          echo "image_ready=${image_ready}" >> "${GITHUB_OUTPUT}"
+          echo "owner_actions=${owner_actions}" >> "${GITHUB_OUTPUT}"
           echo "failures=${failures}" >> "${GITHUB_OUTPUT}"
           if (( failures > 0 )); then
             exit 1
@@ -92,10 +103,12 @@ jobs:
           {
             echo "## Autonomous content cadence"
             echo
-            echo "Drafts and exact licensed-photo packages were prepared only."
+            echo "Drafts and review packages were prepared only."
             echo "No public publication was authorized or attempted."
             echo
             echo "Prepared bundles: ${{ steps.bundles.outputs.prepared || '0' }}"
+            echo "Image-ready bundles: ${{ steps.bundles.outputs.image_ready || '0' }}"
+            echo "Owner image decisions requested: ${{ steps.bundles.outputs.owner_actions || '0' }}"
             echo "Bundle failures: ${{ steps.bundles.outputs.failures || '0' }}"
             if [[ -f "${RUNNER_TEMP}/content-cadence-manifest.json" ]]; then
               echo "Generation errors: $(jq '.errors | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"

@@ -309,7 +309,10 @@ landscape, square and portrait. Every variant is text-free. The product searches
 Wikimedia Commons and Openverse for a topic-relevant photograph with a verified
 compatible license, preserves its attribution and uses AI only for relevance
 review. AI image generation is disabled; if no photograph passes, the bundle
-stops for manual image selection.
+remains in the approval pipeline as an owner-decision item. The owner receives
+an immediate email containing the exact selection problem and a direct link to
+the dashboard. This expected handoff does not fail the content workflow; real
+generation, integrity and delivery failures still fail visibly.
 The approval step fails closed unless every required image and its entity-aware
 alt text are present. Wikimedia remains an optional licensed-photo utility, not
 the critical path. Video metadata requires captions and a transcript.
@@ -354,11 +357,13 @@ Google App Password as the repository secret
 stored. The report records only usage totals and costs—never prompts or model
 outputs—and lists a publication only when the execution ledger contains a URL.
 
-Every new image-ready P7 bundle also triggers one immediate email to
-`guyrofe@gmail.com`. The message contains the exact approval ID and a link to
-the approval dashboard. Delivery IDs are recorded so the same bundle is not
-emailed twice. The notification workflow is triggered after every workflow
-that creates or replaces an approval bundle, with a daily recovery run.
+Every new P7 bundle triggers one immediate email to `guyrofe@gmail.com`. An
+image-ready bundle requests publication review. When automatic photo selection
+cannot decide safely, the message instead includes the exact problem and a
+direct dashboard link for the owner's decision. Delivery IDs are recorded so
+the same bundle is not emailed twice. The notification workflow is triggered
+after every workflow that creates or replaces an approval bundle, with a daily
+recovery run.
 
 Create a podcast transcript brief with:
 

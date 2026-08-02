@@ -4,10 +4,32 @@ import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 
-from scripts.approval_email_notification import notify
+from scripts.approval_email_notification import build_message, notify
 
 
 class ApprovalEmailNotificationTests(unittest.TestCase):
+    def test_owner_decision_email_contains_problem_and_direct_link(self):
+        message = build_message(
+            {
+                "approval_id": "apr_waiting",
+                "title": "כאבי מחזור",
+                "asset": "drguyrofe.co.il",
+                "approval_url": "https://approval.example?approval_id=apr_waiting",
+                "image_status": "awaiting_replacement",
+                "image_selection_error": "לא נמצא צילום מורשה מתאים",
+            },
+            recipient="owner@example.com",
+            sender="sender@example.com",
+        )
+        plain = message.get_body(preferencelist=("plain",)).get_content()
+        self.assertEqual(message["Subject"], "נדרשת החלטה על תמונה: כאבי מחזור")
+        self.assertIn("לא נמצא צילום מורשה מתאים", plain)
+        self.assertIn("התוכן לא בוטל ולא סומן ככשל", plain)
+        self.assertIn(
+            "https://approval.example?approval_id=apr_waiting",
+            plain,
+        )
+
     def test_sends_once_with_direct_approval_link(self):
         sent = []
         with tempfile.TemporaryDirectory() as directory:
@@ -79,4 +101,3 @@ class ApprovalEmailNotificationTests(unittest.TestCase):
             "https://approval.example?approval_id=apr_new",
             sent[0].get_body(preferencelist=("plain",)).get_content(),
         )
-

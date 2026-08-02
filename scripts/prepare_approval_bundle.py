@@ -490,51 +490,59 @@ def main() -> None:
         title, content = load_draft(resolve_draft_path(args.draft_path))
         try:
             image = social_image.generate(title, article_visual_context(content))
+        except social_image.PhotoSelectionError as exc:
+            # A valid draft must not disappear from the approval pipeline merely
+            # because the automatic reviewer could not choose a photograph. An
+            # imageless bundle remains non-publishable, but is visible to the
+            # owner as an explicit decision item.
+            image_selection_error = f"{type(exc).__name__}: {exc}"
+            image = None
         except Exception as exc:
             raise RuntimeError(
                 "The licensed-photo search failed without creating an AI image: "
                 f"{type(exc).__name__}: {exc}"
             ) from exc
-        media_root = Path(args.output_root) / "media"
-        media_root.mkdir(parents=True, exist_ok=True)
-        stem = stable_slug(Path(args.draft_path).stem)
-        saved_variants = {}
-        dimensions = {
-            "hero": (1600, 900),
-            "landscape": (1200, 630),
-            "square": (1200, 1200),
-            "portrait": (1080, 1350),
-        }
-        for role, content_bytes in image.variants.items():
-            variant_path = media_root / f"{stem}-{role}.png"
-            variant_path.write_bytes(content_bytes)
-            saved_variants[role] = {
-                "uri": variant_path.relative_to(PROJECT_ROOT).as_posix(),
-                "sha256": file_sha256(variant_path),
-                "width": dimensions[role][0],
-                "height": dimensions[role][1],
+        if image is not None:
+            media_root = Path(args.output_root) / "media"
+            media_root.mkdir(parents=True, exist_ok=True)
+            stem = stable_slug(Path(args.draft_path).stem)
+            saved_variants = {}
+            dimensions = {
+                "hero": (1600, 900),
+                "landscape": (1200, 630),
+                "square": (1200, 1200),
+                "portrait": (1080, 1350),
             }
-        media_path = media_root / f"{stem}-landscape.png"
-        image_uri = media_path.relative_to(PROJECT_ROOT).as_posix()
-        image_alt_text = social_image.alt_text(
-            title,
-            image.visual_description,
-            entity_relevant=True,
-        )
-        image_sha256 = file_sha256(media_path)
-        image_metadata = {
-            "visual_description": image.visual_description,
-            "source_type": image.source_type,
-            "source_page_url": image.source_page_url,
-            "source_image_url": image.source_image_url,
-            "creator": image.creator,
-            "license_name": image.license_name,
-            "license_url": image.license_url,
-            "attribution": image.attribution,
-            "generation_model": image.generation_model,
-            "generation_prompt": image.generation_prompt,
-            "variants": saved_variants,
-        }
+            for role, content_bytes in image.variants.items():
+                variant_path = media_root / f"{stem}-{role}.png"
+                variant_path.write_bytes(content_bytes)
+                saved_variants[role] = {
+                    "uri": variant_path.relative_to(PROJECT_ROOT).as_posix(),
+                    "sha256": file_sha256(variant_path),
+                    "width": dimensions[role][0],
+                    "height": dimensions[role][1],
+                }
+            media_path = media_root / f"{stem}-landscape.png"
+            image_uri = media_path.relative_to(PROJECT_ROOT).as_posix()
+            image_alt_text = social_image.alt_text(
+                title,
+                image.visual_description,
+                entity_relevant=True,
+            )
+            image_sha256 = file_sha256(media_path)
+            image_metadata = {
+                "visual_description": image.visual_description,
+                "source_type": image.source_type,
+                "source_page_url": image.source_page_url,
+                "source_image_url": image.source_image_url,
+                "creator": image.creator,
+                "license_name": image.license_name,
+                "license_url": image.license_url,
+                "attribution": image.attribution,
+                "generation_model": image.generation_model,
+                "generation_prompt": image.generation_prompt,
+                "variants": saved_variants,
+            }
     result = prepare_bundle(
         args.draft_path,
         output_root=args.output_root,

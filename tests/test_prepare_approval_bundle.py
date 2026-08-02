@@ -250,6 +250,59 @@ class PrepareApprovalBundleTests(unittest.TestCase):
             self.assertFalse(result_path.exists())
             self.assertFalse((output / "index.json").exists())
 
+    def test_photo_selection_indecision_creates_owner_decision_bundle(self):
+        with tempfile.TemporaryDirectory(
+            dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
+        ) as directory:
+            root = Path(directory)
+            draft = root / "medical.md"
+            content = (
+                "# מידע רפואי\n\n"
+                "תשובה ישירה וברורה המבוססת על מקורות מוסדיים.\n\n"
+                "## הסבר\n\nפירוט שימושי.\n\n"
+                "## מקורות\n\n"
+                "[מקור](https://www.who.int/health-topics/)\n"
+            )
+            draft.write_text(
+                apply_article_contract(
+                    content,
+                    prepare_approval_bundle.load_client_profile(),
+                ),
+                encoding="utf-8",
+            )
+            output = root / "bundles"
+            result_path = root / "result.json"
+            with patch.object(
+                prepare_approval_bundle.social_image,
+                "generate",
+                side_effect=prepare_approval_bundle.social_image.PhotoSelectionError(
+                    "no suitable licensed photograph"
+                ),
+            ), patch.object(
+                sys,
+                "argv",
+                [
+                    "prepare_approval_bundle.py",
+                    str(draft),
+                    "--output-root",
+                    str(output),
+                    "--find-licensed-image",
+                    "--result-path",
+                    str(result_path),
+                ],
+            ):
+                prepare_approval_bundle.main()
+
+            result = json.loads(result_path.read_text(encoding="utf-8"))
+            bundle = json.loads(
+                Path(result["bundle_path"]).read_text(encoding="utf-8")
+            )
+            index = json.loads((output / "index.json").read_text(encoding="utf-8"))
+            self.assertEqual(result["image_status"], "awaiting_replacement")
+            self.assertIn("no suitable licensed photograph", result["image_selection_error"])
+            self.assertIsNone(bundle["media"])
+            self.assertEqual(index["bundles"][0]["image_status"], "awaiting_replacement")
+
     def test_generation_saves_and_binds_all_approved_image_variants(self):
         with tempfile.TemporaryDirectory(
             dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
