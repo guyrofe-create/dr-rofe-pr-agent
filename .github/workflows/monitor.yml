@@ -66,9 +66,11 @@ jobs:
           git config user.email "actions@github.com"
           git add data/reputation_history.json data/command_center.json opportunity_drafts/ || true
           git add data/ai_usage_events/ 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "Update reputation state $(date +%Y-%m-%d\ %H:%M)"
-          git pull --rebase || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Update reputation state $(date +%Y-%m-%d\ %H:%M)"
+            git pull --rebase
+            git push
+          fi
 
       - name: Upload monitor report
         if: always()

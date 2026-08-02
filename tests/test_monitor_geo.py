@@ -213,23 +213,20 @@ class MonitorGeoTests(unittest.TestCase):
         ):
             self.assertTrue(monitor_run.serp_checks_due("2026-07-02"))
 
-    def test_free_serp_plan_uses_two_core_queries_on_regular_day(self):
+    def test_every_scheduled_serp_run_uses_full_google_inventory(self):
         plan = monitor_run.serp_run_plan("2026-07-27")
-        self.assertEqual(plan["mode"], "daily_core")
-        self.assertEqual(
-            plan["queries"],
-            ["ד״ר גיא רופא", "גיא רופא"],
-        )
+        self.assertEqual(plan["mode"], "twice_monthly_asset_inventory")
+        self.assertEqual(len(plan["queries"]), 4)
         self.assertEqual(plan["engines"], ["google"])
         self.assertEqual(plan["devices"], ["mobile"])
         self.assertFalse(plan["web_mentions"])
 
-    def test_free_serp_plan_runs_full_matrix_on_sunday(self):
+    def test_sunday_does_not_change_the_twice_monthly_inventory(self):
         plan = monitor_run.serp_run_plan("2026-08-02")
-        self.assertEqual(plan["mode"], "extended_weekly")
+        self.assertEqual(plan["mode"], "twice_monthly_asset_inventory")
         self.assertEqual(len(plan["queries"]), 4)
-        self.assertEqual(plan["engines"], ["google", "bing"])
-        self.assertEqual(plan["devices"], ["mobile", "desktop"])
+        self.assertEqual(plan["engines"], ["google"])
+        self.assertEqual(plan["devices"], ["mobile"])
         self.assertFalse(plan["web_mentions"])
 
     def test_serp_budget_stops_before_provider_free_limit(self):
@@ -320,7 +317,7 @@ class MonitorGeoTests(unittest.TestCase):
         finally:
             monitor_run.REPORT["rank"] = old_rank
 
-    def test_serp_safety_budget_is_degraded_but_not_a_failed_run(self):
+    def test_serp_safety_budget_marks_scheduled_measurement_failed(self):
         old_rank = monitor_run.REPORT["rank"]
         monitor_run.REPORT["rank"] = [{
             "status": "skipped",
@@ -336,13 +333,53 @@ class MonitorGeoTests(unittest.TestCase):
                 {"SERPAPI_KEY": "configured"},
                 clear=True,
             ):
-                self.assertEqual(monitor_run.critical_monitor_failures(), [])
+                self.assertIn(
+                    "SERP rank: scheduled measurement unavailable",
+                    monitor_run.critical_monitor_failures(),
+                )
                 self.assertIn(
                     "SERP rank: configured monthly SerpApi safety budget reached",
                     monitor_run.monitor_degradations(),
                 )
         finally:
             monitor_run.REPORT["rank"] = old_rank
+
+    def test_history_snapshot_keeps_rank_comparison_without_full_report(self):
+        compact = monitor_run.compact_history_snapshot({
+            "date": "2026-08-01T04:30:00Z",
+            "rank": [{"status": "found", "results": [{"position": 1}]}],
+            "reviews": {"status": "ok", "rating": 5},
+            "geo": [{"large": "payload"}],
+            "orchestration": {
+                "asset_engine": {"large": "payload"},
+                "visibility_measurement": {
+                    "asset_rank_changes": {
+                        "status": "compared",
+                        "assets": [{"platform": "Main", "change": "improved"}],
+                    },
+                },
+            },
+        })
+        self.assertEqual(compact["rank"][0]["status"], "found")
+        self.assertNotIn("geo", compact)
+        self.assertNotIn("asset_engine", compact["orchestration"])
+        self.assertEqual(
+            compact["orchestration"]["visibility_measurement"]
+            ["asset_rank_changes"]["assets"][0]["change"],
+            "improved",
+        )
+
+    def test_command_center_measurement_drops_duplicate_action_portfolios(self):
+        compact = monitor_run.compact_visibility_measurement({
+            "at": "2026-08-01T04:30:00Z",
+            "type": "serp_ai_orchestration",
+            "visibility_measurement": {"version": 4},
+            "asset_engine": {"large": "payload"},
+            "opportunity_engine": {"large": "payload"},
+        })
+        self.assertEqual(compact["visibility_measurement"]["version"], 4)
+        self.assertNotIn("asset_engine", compact)
+        self.assertNotIn("opportunity_engine", compact)
 
     def test_serp_query_error_still_fails_the_monitor(self):
         old_rank = monitor_run.REPORT["rank"]

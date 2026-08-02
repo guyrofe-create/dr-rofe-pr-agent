@@ -10,6 +10,8 @@ from scripts.reputation_core.orchestrator import (
     build_query_control_map,
     detect_cross_domain_risk,
     evaluate_new_asset_hypothesis,
+    match_asset,
+    measure_asset_rank_changes,
     orchestrate_reputation_cycle,
     propose_new_assets,
 )
@@ -357,6 +359,63 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertEqual(control["negative_count"], 1)
         self.assertEqual(control["controlled_positions"], [1, 3])
 
+    def test_asset_match_does_not_confuse_another_social_profile(self):
+        assets = [{
+            "platform": "LinkedIn",
+            "url": "https://www.linkedin.com/in/guyrofe",
+        }]
+        self.assertIsNone(
+            match_asset("https://www.linkedin.com/in/someone-else", assets)
+        )
+
+    def test_every_asset_gets_a_google_rank_change_row(self):
+        assets = [
+            {"platform": "Main", "url": "https://example.com/", "tier": "A"},
+            {"platform": "LinkedIn", "url": "https://linkedin.com/in/person", "tier": "A"},
+            {"platform": "Instagram", "url": "https://instagram.com/person", "tier": "A"},
+            {"platform": "Podcast", "url": "https://podcasts.example/show", "tier": "B"},
+        ]
+        previous = build_query_control_map({
+            "engine": "google",
+            "query": "brand",
+            "device": "mobile",
+            "observed_at": "2026-07-01T04:30:00Z",
+            "results": [
+                {"position": 5, "link": "https://example.com/"},
+                {"position": 2, "link": "https://linkedin.com/in/person"},
+            ],
+        }, assets)
+        current = build_query_control_map({
+            "engine": "google",
+            "query": "brand",
+            "device": "mobile",
+            "observed_at": "2026-07-15T04:30:00Z",
+            "results": [
+                {"position": 2, "link": "https://example.com/"},
+                {"position": 4, "link": "https://linkedin.com/in/person"},
+                {"position": 7, "link": "https://instagram.com/person"},
+            ],
+        }, assets)
+        report = measure_asset_rank_changes(assets, [current], [previous])
+        rows = {item["platform"]: item for item in report["assets"]}
+        self.assertEqual(report["status"], "compared")
+        self.assertEqual(report["asset_count"], 4)
+        self.assertEqual(rows["Main"]["change"], "improved")
+        self.assertEqual(rows["Main"]["delta"], 3)
+        self.assertEqual(rows["LinkedIn"]["change"], "declined")
+        self.assertEqual(rows["LinkedIn"]["delta"], -2)
+        self.assertEqual(rows["Instagram"]["change"], "entered_top10")
+        self.assertEqual(rows["Podcast"]["change"], "unchanged_not_in_top10")
+
+    def test_incomplete_google_run_does_not_report_false_changes(self):
+        report = measure_asset_rank_changes(
+            [{"platform": "Main", "url": "https://example.com/"}],
+            [{"engine": "google", "results": []}],
+            complete=False,
+        )
+        self.assertEqual(report["status"], "not_measured")
+        self.assertEqual(report["assets"], [])
+
     def test_orchestrator_builds_closed_loop_actions_and_ai_metrics(self):
         assets = [
             {"platform": "Main", "url": "https://guyrofe.com/", "controlled": True,
@@ -388,7 +447,10 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertIn("ai_visibility_correction", kinds)
         self.assertEqual(cycle["ai_visibility"]["factual_accuracy_rate"], 0.0)
         measurement = cycle["visibility_measurement"]
-        self.assertEqual(measurement["version"], 3)
+        self.assertEqual(measurement["version"], 4)
+        self.assertEqual(
+            measurement["asset_rank_changes"]["status"], "baseline"
+        )
         self.assertEqual(
             measurement["serp_surfaces"][0]["negative_positions"], [4]
         )

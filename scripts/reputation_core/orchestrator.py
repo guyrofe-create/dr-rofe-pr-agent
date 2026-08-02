@@ -86,7 +86,9 @@ def _asset_id(asset: dict) -> str:
 
 def match_asset(url: str, assets: list[dict]) -> dict | None:
     """Match a result to the most specific registered asset URL/host."""
+    parsed_result = urlparse(url if "://" in url else f"https://{url}")
     result_host = _host(url)
+    result_path = parsed_result.path.rstrip("/") or "/"
     if not result_host:
         return None
     candidates = []
@@ -94,8 +96,14 @@ def match_asset(url: str, assets: list[dict]) -> dict | None:
         asset_url = asset.get("url")
         if not asset_url or _host(asset_url) != result_host:
             continue
-        path = urlparse(asset_url).path.rstrip("/")
-        candidates.append((len(path), asset))
+        asset_path = urlparse(asset_url).path.rstrip("/") or "/"
+        if (
+            asset_path != "/"
+            and result_path != asset_path
+            and not result_path.startswith(asset_path + "/")
+        ):
+            continue
+        candidates.append((len(asset_path), asset))
     return max(candidates, default=(0, None), key=lambda item: item[0])[1]
 
 
@@ -113,6 +121,7 @@ def classify_result(result: dict, assets: list[dict]) -> dict:
         **result,
         "url": result.get("link") or result.get("url"),
         "asset_id": _asset_id(asset) if asset else None,
+        "asset_url": asset.get("url") if asset else None,
         "asset_type": asset.get("type") if asset else None,
         "controlled": controlled,
         "desired": desired,
@@ -132,6 +141,10 @@ def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
     weighted_total = sum(RANK_WEIGHTS.get(r["position"], 0) for r in results) or 1
     weighted_desired = sum(RANK_WEIGHTS.get(r["position"], 0) for r in desired)
     return {
+        "engine": snapshot.get("engine", "google"),
+        "surface": snapshot.get("surface", "web_search"),
+        "interface": snapshot.get("interface", "unknown"),
+        "collection_method": snapshot.get("collection_method", "unknown"),
         "query": snapshot.get("query"),
         "country": snapshot.get("country", "IL"),
         "language": snapshot.get("language", "he"),
@@ -145,6 +158,138 @@ def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
         "weighted_desired_share": round(weighted_desired / weighted_total, 4),
         "controlled_positions": [r["position"] for r in controlled],
         "negative_positions": [r["position"] for r in negative],
+    }
+
+
+def _latest_control_map_batch(control_maps: list[dict]) -> list[dict]:
+    dated = [item for item in control_maps if item.get("observed_at")]
+    if not dated:
+        return control_maps
+    latest = max(str(item["observed_at"]) for item in dated)
+    return [
+        item for item in dated if str(item.get("observed_at")) == latest
+    ]
+
+
+def _best_asset_position(asset: dict, control_maps: list[dict]) -> dict:
+    matches = []
+    asset_id = _asset_id(asset)
+    asset_url = asset.get("url")
+    for control_map in control_maps:
+        if str(control_map.get("engine", "google")).lower() != "google":
+            continue
+        for result in control_map.get("results", []):
+            if (
+                result.get("asset_id") == asset_id
+                and result.get("asset_url") == asset_url
+            ):
+                matches.append({
+                    "position": int(result["position"]),
+                    "query": control_map.get("query"),
+                    "device": control_map.get("device"),
+                    "observed_at": control_map.get("observed_at"),
+                })
+    return min(matches, key=lambda item: item["position"]) if matches else {
+        "position": None,
+        "query": None,
+        "device": None,
+        "observed_at": None,
+    }
+
+
+def measure_asset_rank_changes(
+    assets: list[dict],
+    current_control_maps: list[dict],
+    historical_control_maps: list[dict] | None = None,
+    *,
+    complete: bool = True,
+) -> dict:
+    """Compare every registered asset's best Google top-10 position by run."""
+    current_google = [
+        item for item in current_control_maps
+        if str(item.get("engine", "google")).lower() == "google"
+    ]
+    if not complete or not current_google:
+        return {
+            "status": "not_measured",
+            "reason": (
+                "current Google measurement is incomplete"
+                if current_google else "no current Google measurement"
+            ),
+            "assets": [],
+        }
+
+    previous_batch = _latest_control_map_batch([
+        item for item in (historical_control_maps or [])
+        if str(item.get("engine", "google")).lower() == "google"
+    ])
+    current_observed_at = max((
+        str(item.get("observed_at"))
+        for item in current_google if item.get("observed_at")
+    ), default=None)
+    previous_observed_at = max((
+        str(item.get("observed_at"))
+        for item in previous_batch if item.get("observed_at")
+    ), default=None)
+    rows = []
+    seen = set()
+    for asset in assets:
+        if not asset.get("url") or asset.get("status") == "quarantined":
+            continue
+        key = (_asset_id(asset), asset.get("url"))
+        if key in seen:
+            continue
+        seen.add(key)
+        current = _best_asset_position(asset, current_google)
+        previous = _best_asset_position(asset, previous_batch)
+        current_position = current["position"]
+        previous_position = previous["position"]
+        if not previous_batch:
+            change = "baseline"
+            changed = None
+            delta = None
+        elif previous_position is None and current_position is None:
+            change = "unchanged_not_in_top10"
+            changed = False
+            delta = None
+        elif previous_position is None:
+            change = "entered_top10"
+            changed = True
+            delta = None
+        elif current_position is None:
+            change = "left_top10"
+            changed = True
+            delta = None
+        else:
+            delta = previous_position - current_position
+            change = (
+                "improved" if delta > 0
+                else "declined" if delta < 0
+                else "unchanged"
+            )
+            changed = delta != 0
+        rows.append({
+            "asset_id": _asset_id(asset),
+            "platform": asset.get("platform") or _asset_id(asset),
+            "url": asset.get("url"),
+            "tier": asset.get("tier"),
+            "previous_position_top10": previous_position,
+            "current_position_top10": current_position,
+            "previous_query": previous.get("query"),
+            "current_query": current.get("query"),
+            "previous_device": previous.get("device"),
+            "current_device": current.get("device"),
+            "change": change,
+            "changed": changed,
+            "delta": delta,
+        })
+    return {
+        "status": "baseline" if not previous_batch else "compared",
+        "current_observed_at": current_observed_at,
+        "previous_observed_at": previous_observed_at,
+        "asset_count": len(rows),
+        "changed_count": sum(item["changed"] is True for item in rows),
+        "assets": rows,
     }
 
 
@@ -414,6 +559,7 @@ def orchestrate_reputation_cycle(
     bing_ai_performance: dict | None = None,
     content_freeze: bool = False,
     asset_candidate_evidence: dict | None = None,
+    asset_rank_measurement_complete: bool = True,
 ) -> dict:
     """Build one evidence-led, maximum-sustainable action cycle."""
     targets = load_serp_targets()
@@ -426,6 +572,10 @@ def orchestrate_reputation_cycle(
         measure_serp_surface(
             build_query_control_map(snapshot, assets), snapshot
         )
+        for snapshot in (historical_serp_snapshots or [])
+    ]
+    historical_control_maps = [
+        build_query_control_map(snapshot, assets)
         for snapshot in (historical_serp_snapshots or [])
     ]
     serp_measurements = add_serp_volatility(
@@ -445,8 +595,14 @@ def orchestrate_reputation_cycle(
         bing_ai_performance or {"rows": []}
     )
     visibility_measurement = {
-        "version": 3,
+        "version": 4,
         "serp_surfaces": serp_measurements,
+        "asset_rank_changes": measure_asset_rank_changes(
+            assets,
+            control_maps,
+            historical_control_maps,
+            complete=asset_rank_measurement_complete,
+        ),
         "ai_surfaces": ai_surfaces,
         "bing_ai_performance": bing_ai,
         "separation_rule": (
@@ -568,9 +724,9 @@ def orchestrate_reputation_cycle(
         "legacy_action_evidence": actions,
         "targets": objective,
         "measurement": {
-            "serp": "daily by exact query, country, language and device",
-            "search_console": "weekly 28-day and prior-period comparison by query and page",
-            "ai": "daily repeated samples; preserve exact answer and citations",
+            "serp": "twice monthly by exact query, country, language and device",
+            "search_console": "twice monthly with 28-day evidence by query and page",
+            "ai": "twice-monthly repeated samples; preserve exact answer and citations",
             "reprioritization": "weekly and immediately after a material negative result",
         },
     }

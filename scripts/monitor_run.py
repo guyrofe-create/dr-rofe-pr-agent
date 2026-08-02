@@ -214,10 +214,35 @@ def load_history():
         return {"snapshots": [], "seen_review_ids": [], "seen_urls": [], "last_full_digest_date": None}
 
 
+def compact_history_snapshot(snapshot):
+    """Keep durable comparison evidence without retaining the full report graph."""
+    asset_rank = (
+        (snapshot.get("orchestration") or {})
+        .get("visibility_measurement", {})
+        .get("asset_rank_changes")
+    )
+    compact = {
+        "date": snapshot.get("date"),
+        "rank": snapshot.get("rank", []),
+        "reviews": snapshot.get("reviews"),
+    }
+    if asset_rank:
+        compact["orchestration"] = {
+            "visibility_measurement": {
+                "asset_rank_changes": asset_rank,
+            },
+        }
+    return compact
+
+
 def save_history(history):
     os.makedirs(os.path.dirname(HISTORY_PATH), exist_ok=True)
-    # cap history to the most recent 200 snapshots so the file doesn't grow forever
-    history["snapshots"] = history.get("snapshots", [])[-200:]
+    # Two years of twice-monthly compact evidence is enough for comparison and
+    # keeps the tracked state far below GitHub's 100 MB file limit.
+    history["snapshots"] = [
+        compact_history_snapshot(snapshot)
+        for snapshot in history.get("snapshots", [])[-48:]
+    ]
     with open(HISTORY_PATH, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
@@ -268,8 +293,7 @@ def free_serpapi_policy():
 
 
 def serp_run_plan(today=None):
-    """Choose a low-cost daily core run or the weekly full measurement."""
-    today_value = date.fromisoformat(today or date.today().isoformat())
+    """Measure the complete Google asset inventory on every scheduled run."""
     policy = free_serpapi_policy()
     configured_queries = SERP_TARGETS.get("queries", [])
     if not policy.get("enabled", False):
@@ -292,40 +316,15 @@ def serp_run_plan(today=None):
             "web_mentions": True,
         }
 
-    extended_weekday = int(policy.get("extended_weekday", 6))
-    is_extended = today_value.weekday() == extended_weekday
-    if is_extended:
-        queries = [item["query"] for item in configured_queries]
-        engines = policy.get("extended_engines", ["google", "bing"])
-        devices = policy.get("extended_devices", ["mobile", "desktop"])
-    else:
-        queries = [
-            item["query"] for item in configured_queries
-            if item.get("cadence") == "daily_core"
-        ]
-        engines = policy.get("daily_engines", ["google"])
-        devices = policy.get("daily_devices", ["mobile"])
-
-    # A generic single-tenant installation without cadence annotations still
-    # receives a safe daily core derived from its two highest-priority queries.
+    queries = [item["query"] for item in configured_queries]
     if not queries:
-        ordered = sorted(
-            configured_queries,
-            key=lambda item: item.get("priority", 0),
-            reverse=True,
-        )
-        queries = [item["query"] for item in ordered[:2]] or KEYWORDS[:2]
+        queries = KEYWORDS
 
     return {
-        "mode": "extended_weekly" if is_extended else "daily_core",
+        "mode": "twice_monthly_asset_inventory",
         "queries": list(dict.fromkeys(queries)),
-        "engines": [
-            item for item in engines if item in {"google", "bing"}
-        ],
-        "devices": [
-            item for item in devices
-            if item in {"mobile", "desktop", "tablet"}
-        ],
+        "engines": ["google"],
+        "devices": ["mobile"],
         "web_mentions": bool(policy.get("web_mentions_enabled", False)),
     }
 
@@ -1015,6 +1014,13 @@ def critical_monitor_failures():
         )
         if rank_errors:
             failures.append(f"SERP rank: {len(rank_errors)} query errors")
+        elif any(
+            result.get("status") in {"quota_limited", "budget_limited"}
+            or "budget" in str(result.get("reason", "")).lower()
+            or "quota" in str(result.get("reason", "")).lower()
+            for result in REPORT["rank"]
+        ):
+            failures.append("SERP rank: scheduled measurement unavailable")
         elif (
             REPORT.get("rank")
             and not rank_measurement_succeeded()
@@ -1064,6 +1070,18 @@ def monitor_degradations():
     return degradations
 
 
+def compact_visibility_measurement(entry):
+    """Retain measurement history without duplicating full action portfolios."""
+    return {
+        key: entry[key]
+        for key in (
+            "at", "type", "control_maps", "ai_visibility",
+            "visibility_measurement", "cross_domain_risks",
+        )
+        if key in entry
+    }
+
+
 # ─── Reporting ────────────────────────────────────────────────────────────────
 
 def format_report_markdown():
@@ -1095,6 +1113,32 @@ def format_report_markdown():
         (REPORT.get("orchestration") or {})
         .get("visibility_measurement", {})
     )
+    asset_rank = visibility.get("asset_rank_changes", {})
+    lines.append("## שינוי מיקום ב-Google לפי נכס")
+    if asset_rank.get("assets"):
+        labels = {
+            "baseline": "מדידת בסיס",
+            "improved": "עלה",
+            "declined": "ירד",
+            "unchanged": "ללא שינוי",
+            "entered_top10": "נכנס לעשירייה הראשונה",
+            "left_top10": "יצא מהעשירייה הראשונה",
+            "unchanged_not_in_top10": "ללא שינוי — מחוץ לעשירייה הראשונה",
+        }
+        for item in asset_rank["assets"]:
+            previous = item.get("previous_position_top10") or "מחוץ לעשירייה"
+            current = item.get("current_position_top10") or "מחוץ לעשירייה"
+            lines.append(
+                f"- [{item.get('platform')}]({item.get('url')}): "
+                f"{previous} → {current}; "
+                f"{labels.get(item.get('change'), item.get('change', 'לא ידוע'))}"
+            )
+    else:
+        lines.append(
+            "- לא הושלמה מדידת Google מלאה בריצה זו; לא דווח שינוי שווא."
+        )
+    lines.append("")
+
     lines.append("## P3 — מדידת שליטה לפי מנוע ומשטח")
     serp_surfaces = visibility.get("serp_surfaces", [])
     if serp_surfaces:
@@ -1527,11 +1571,16 @@ def main():
         historical_serp_snapshots=historical_serp_snapshots,
         bing_ai_performance=bing_ai_performance,
         content_freeze=command_center.state.get("content_freeze", False),
+        asset_rank_measurement_complete=rank_measurement_succeeded(),
     )
     REPORT["bing_ai_performance"] = REPORT["orchestration"][
         "visibility_measurement"
     ]["bing_ai_performance"]
-    command_center.state["visibility_measurements"].append({
+    command_center.state["visibility_measurements"] = [
+        compact_visibility_measurement(item)
+        for item in command_center.state["visibility_measurements"][-47:]
+    ]
+    command_center.state["visibility_measurements"].append(compact_visibility_measurement({
         "at": REPORT["date"],
         "type": "serp_ai_orchestration",
         "control_maps": REPORT["orchestration"]["control_maps"],
@@ -1544,7 +1593,7 @@ def main():
         "asset_engine": REPORT["orchestration"]["asset_engine"],
         "next_best_actions": REPORT["orchestration"]["next_best_actions"][:20],
         "opportunity_engine": REPORT["orchestration"]["opportunity_engine"],
-    })
+    }))
     command_center.state["visibility_measurements"] = (
         command_center.state["visibility_measurements"][-90:]
     )
