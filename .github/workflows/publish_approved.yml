@@ -44,6 +44,7 @@ jobs:
             --header "Authorization: Bearer ${APPROVAL_SIGNING_SECRET}" \
             "${APPROVAL_URL}/api/approvals/next" > "${response_path}"
           draft_path="$(jq -r '.draft_path // empty' "${response_path}")"
+          approval_id="$(jq -r '.bundle.approval_id // empty' "${response_path}")"
           bundle_path="${RUNNER_TEMP}/p7-bundle.json"
           approval_record_path="${RUNNER_TEMP}/p7-approval.json"
           approved_media_path=""
@@ -73,6 +74,7 @@ jobs:
             approval_record_path=""
           fi
           echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
+          echo "approval_id=${approval_id}" >> "${GITHUB_OUTPUT}"
           echo "bundle_path=${bundle_path}" >> "${GITHUB_OUTPUT}"
           echo "approval_record_path=${approval_record_path}" >> "${GITHUB_OUTPUT}"
           echo "approved_media_path=${approved_media_path}" >> "${GITHUB_OUTPUT}"
@@ -151,7 +153,24 @@ jobs:
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
 
-      - name: Commit campaign receipt
+      - name: Email publication result with verified links
+        if: >-
+          always() && steps.approval.outputs.draft_path != '' &&
+          !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        env:
+          PUBLICATION_EMAIL_TO: guyrofe@gmail.com
+          PUBLICATION_EMAIL_GMAIL_USERNAME: guyrofe@gmail.com
+          PUBLICATION_EMAIL_GMAIL_APP_PASSWORD: ${{ secrets.WEEKLY_REPORT_GMAIL_APP_PASSWORD }}
+          DRAFT_PATH: ${{ steps.approval.outputs.draft_path }}
+          APPROVAL_ID: ${{ steps.approval.outputs.approval_id }}
+        run: |
+          result_path="content_drafts/campaigns/$(basename "${DRAFT_PATH}" .md).json"
+          python scripts/publication_email_notification.py \
+            --result "${result_path}" \
+            --draft-path "${DRAFT_PATH}" \
+            --approval-id "${APPROVAL_ID}"
+
+      - name: Commit campaign receipt and email delivery record
         if: >-
           always() && steps.approval.outputs.draft_path != '' &&
           !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
@@ -159,6 +178,7 @@ jobs:
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
           git add content_drafts/campaigns/ publication_receipts/
+          git add data/publication_email_notifications.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Record approved campaign ${{ github.run_id }}"
           git pull --rebase
           git push
