@@ -2,6 +2,58 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_78ac2138cdea08592d534323fe39c14645eb7625436aad52f6771b6bab1e58c1",
+      "draft_path": "content_drafts/2026-07-30-topic-90-run-30526629816-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_78ac2138cdea08592d534323fe39c14645eb7625436aad52f6771b6bab1e58c1.json",
+      "preview_path": "approval_bundles/apr_78ac2138cdea08592d534323fe39c14645eb7625436aad52f6771b6bab1e58c1.html",
+      "created_at": "2026-08-02T15:20:00Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "awaiting_replacement",
+      "image_selection_error": "לא נמצא צילום מורשה ורלוונטי לעייפות ולאיכות שינה לאחר בדיקת 8 מועמדים."
+    },
+    {
+      "approval_id": "apr_6b6dcbf05a7afba0764fd1d68ad7b5c3def28daceb15a98ae30285d4689f2604",
+      "draft_path": "content_drafts/2026-07-29-topic-04-run-30466168201-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_6b6dcbf05a7afba0764fd1d68ad7b5c3def28daceb15a98ae30285d4689f2604.json",
+      "preview_path": "approval_bundles/apr_6b6dcbf05a7afba0764fd1d68ad7b5c3def28daceb15a98ae30285d4689f2604.html",
+      "created_at": "2026-08-02T15:20:00Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "awaiting_replacement",
+      "image_selection_error": "לא נמצא צילום מורשה ורלוונטי ל-PCOS לאחר בדיקת 5 מועמדים."
+    },
+    {
+      "approval_id": "apr_1d91d9d949a71d1ae075ba24eb88dc8fdaa72abca33408b5516c4809ea4ef5bc",
+      "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_1d91d9d949a71d1ae075ba24eb88dc8fdaa72abca33408b5516c4809ea4ef5bc.json",
+      "preview_path": "approval_bundles/apr_1d91d9d949a71d1ae075ba24eb88dc8fdaa72abca33408b5516c4809ea4ef5bc.html",
+      "created_at": "2026-08-02T15:20:00Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "awaiting_replacement",
+      "image_selection_error": "לא נמצא צילום מורשה ורלוונטי לכאבי מחזור לאחר בדיקת 8 מועמדים."
+    },
+    {
+      "approval_id": "apr_11fcc16b25cc96002a5f57ed586a53553498f73d70ddd1f0e646afba6b58e437",
+      "draft_path": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_11fcc16b25cc96002a5f57ed586a53553498f73d70ddd1f0e646afba6b58e437.json",
+      "preview_path": "approval_bundles/apr_11fcc16b25cc96002a5f57ed586a53553498f73d70ddd1f0e646afba6b58e437.html",
+      "created_at": "2026-08-02T15:20:00Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "awaiting_replacement",
+      "image_selection_error": "לא נמצא צילום מורשה ורלוונטי לצריכת סוכר בגיל הרך ודמנציה לאחר בדיקת 3 מועמדים."
+    },
+    {
       "approval_id": "apr_7ca886cef4b0d208fc288a459b4b2915666f5ce6bd6839a62d02f97a2a303264",
       "draft_path": "content_drafts/2026-07-29-topic-90-run-30467465654-attempt-1.md",
       "bundle_path": "approval_bundles/apr_7ca886cef4b0d208fc288a459b4b2915666f5ce6bd6839a62d02f97a2a303264.json",
