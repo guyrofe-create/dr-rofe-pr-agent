@@ -724,9 +724,9 @@ def orchestrate_reputation_cycle(
         "legacy_action_evidence": actions,
         "targets": objective,
         "measurement": {
-            "serp": "twice monthly by exact query, country, language and device",
-            "search_console": "twice monthly with 28-day evidence by query and page",
-            "ai": "twice-monthly repeated samples; preserve exact answer and citations",
+            "serp": "daily by exact query, country, language and device",
+            "search_console": "weekly 28-day and prior-period comparison by query and page",
+            "ai": "daily repeated samples; preserve exact answer and citations",
             "reprioritization": "weekly and immediately after a material negative result",
         },
     }
