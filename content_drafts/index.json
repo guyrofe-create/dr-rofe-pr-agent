@@ -1,6 +1,39 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
+      "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+      "topic": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
+      "excerpt": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא](https://guyrofe.com) התשובה הקצרה: כאב מחזור קל עד בינוני, שנמשך בדרך כלל יום עד שלושה ימים ומשתפר בעזרת מנוחה או טיפול",
+      "generated_at": "2026-08-02T08:23:03.025313+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "pinterest",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-02",
+      "cadence_local_date": "2026-08-02",
+      "public_execution_allowed": false
+    },
+    {
+      "path": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
+      "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: מחקר מצא קשר מדאיג ומפתיע בין צריכת סוכר לפני גיל שנתיים לדמנציה",
+      "excerpt": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מחקר תצפיתי המבוסס על “ניסוי טבעי” מצא כי אנשים שנחשפו להגבלת סוכר בתקופת ההיריון ובשנתיים הראשונו",
+      "generated_at": "2026-08-02T08:23:03.025313+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-02",
+      "cadence_local_date": "2026-08-02",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-d2f730250b87e608.json",
+      "analyzed_news_url": "https://healthy.walla.co.il/item/3857349"
+    },
+    {
       "path": "content_drafts/2026-07-30-topic-90-run-30526629816-attempt-1.md",
       "title": "קמים עייפים למרות שישנתם 8 שעות? מה באמת עומד מאחורי הכותרת | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: קמים עייפים למרות שישנתם 8 שעות? זו הסיבה",
