@@ -1095,6 +1095,32 @@ def format_report_markdown():
         (REPORT.get("orchestration") or {})
         .get("visibility_measurement", {})
     )
+    asset_rank = visibility.get("asset_rank_changes", {})
+    lines.append("## שינוי מיקום ב-Google לפי נכס")
+    if asset_rank.get("assets"):
+        labels = {
+            "baseline": "מדידת בסיס",
+            "improved": "עלה",
+            "declined": "ירד",
+            "unchanged": "ללא שינוי",
+            "entered_top10": "נכנס לעשירייה הראשונה",
+            "left_top10": "יצא מהעשירייה הראשונה",
+            "unchanged_not_in_top10": "ללא שינוי — מחוץ לעשירייה הראשונה",
+        }
+        for item in asset_rank["assets"]:
+            previous = item.get("previous_position_top10") or "מחוץ לעשירייה"
+            current = item.get("current_position_top10") or "מחוץ לעשירייה"
+            lines.append(
+                f"- [{item.get('platform')}]({item.get('url')}): "
+                f"{previous} → {current}; "
+                f"{labels.get(item.get('change'), item.get('change', 'לא ידוע'))}"
+            )
+    else:
+        lines.append(
+            "- לא הושלמה מדידת Google מלאה בריצה זו; לא דווח שינוי שווא."
+        )
+    lines.append("")
+
     lines.append("## P3 — מדידת שליטה לפי מנוע ומשטח")
     serp_surfaces = visibility.get("serp_surfaces", [])
     if serp_surfaces:
@@ -1527,6 +1553,7 @@ def main():
         historical_serp_snapshots=historical_serp_snapshots,
         bing_ai_performance=bing_ai_performance,
         content_freeze=command_center.state.get("content_freeze", False),
+        asset_rank_measurement_complete=rank_measurement_succeeded(),
     )
     REPORT["bing_ai_performance"] = REPORT["orchestration"][
         "visibility_measurement"
