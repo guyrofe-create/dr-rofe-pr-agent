@@ -1,6 +1,26 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+      "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: משמרות לילה משבשות לנו את הגוף - ומעלות סיכון למחלות הבאות",
+      "excerpt": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: עבודה קבועה או ממושכת בלילה עלולה לשבש את השעון הביולוגי, לקצר את השינה ולפגוע באיכותה. מחקרים מצ",
+      "generated_at": "2026-08-03T09:42:52.563796+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "instagram"
+      ],
+      "cadence_week": "week-of-2026-08-02",
+      "cadence_local_date": "2026-08-03",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-16953d925c21af74.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/b1kxgusngg"
+    },
+    {
       "path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
       "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
       "topic": "כאבי מחזור קשים - כמה כאב זה נורמלי?",

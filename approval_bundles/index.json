@@ -2,6 +2,19 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_013bee857d91a81e86526b76f39f003b32cf4532e865ec514bbb8549019484d6",
+      "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_013bee857d91a81e86526b76f39f003b32cf4532e865ec514bbb8549019484d6.json",
+      "preview_path": "approval_bundles/apr_013bee857d91a81e86526b76f39f003b32cf4532e865ec514bbb8549019484d6.html",
+      "created_at": "2026-08-03T09:49:27Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "awaiting_replacement",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=4; downloaded=4; undersized=0; reviewed=4; rejected=4; search=[empty hospital night: commons=5, openverse=0 | sleep laboratory equipment: commons=1, openverse=0 | actigraphy sleep monitor: commons=1, openverse=0 | night shift workstation: commons=0, openverse=0]; review_notes=[התמונה מציגה אנשים וטקס דתי שאינם קשורים לעבודת לילה או לשעון הביולוגי. | איור היסטורי עמוס באנשים ובטקסט, ללא קשר למשמרות לילה. | מעבדה גנרית שאינה ממחישה עבודת לילה, ובתמונה נראים כיתובים ומספרים רבים. | מופיעה אישה וכן טקסט וסמלים גלויים על הציוד והבגדים.]"
+    },
+    {
       "approval_id": "apr_1d91d9d949a71d1ae075ba24eb88dc8fdaa72abca33408b5516c4809ea4ef5bc",
       "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
       "bundle_path": "approval_bundles/apr_1d91d9d949a71d1ae075ba24eb88dc8fdaa72abca33408b5516c4809ea4ef5bc.json",
