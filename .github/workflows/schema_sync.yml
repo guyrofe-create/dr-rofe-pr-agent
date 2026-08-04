@@ -40,6 +40,7 @@ jobs:
           WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_DRGUYROFE_COM_API }}
           WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_DRGUYROFE_COM_SITE_ID }}
           WIX_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_DRGUYROFE_COM_ACCOUNT_ID }}
+          WIX_DRGUYROFE_COM_MEMBER_ID: ${{ secrets.WIX_DRGUYROFE_COM_MEMBER_ID }}
           WIX_PRIMARY_DRGUYROFE_COM_API: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_API }}
           WIX_PRIMARY_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_SITE_ID }}
           WIX_PRIMARY_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_ACCOUNT_ID }}
@@ -51,6 +52,7 @@ jobs:
           WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_DRGUYROFE_COM_API }}
           WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_DRGUYROFE_COM_SITE_ID }}
           WIX_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_DRGUYROFE_COM_ACCOUNT_ID }}
+          WIX_DRGUYROFE_COM_MEMBER_ID: ${{ secrets.WIX_DRGUYROFE_COM_MEMBER_ID }}
 
       - name: Verify primary drguyrofe.com Wix read access
         continue-on-error: true
@@ -59,6 +61,7 @@ jobs:
           WIX_DRGUYROFE_COM_API: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_API }}
           WIX_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_SITE_ID }}
           WIX_DRGUYROFE_COM_ACCOUNT_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_ACCOUNT_ID }}
+          WIX_DRGUYROFE_COM_MEMBER_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_MEMBER_ID }}
 
       - name: Audit search crawler access
         continue-on-error: true

@@ -6,8 +6,44 @@ from urllib.parse import quote
 
 import requests
 
+try:
+    from reputation_core.approval_workflow import DefinitiveProviderRejection
+except ModuleNotFoundError:  # Imported as scripts.wix_blog in unit tests.
+    from .reputation_core.approval_workflow import DefinitiveProviderRejection
+
 
 API_ROOT = "https://www.wixapis.com"
+
+
+class WixAPIError(DefinitiveProviderRejection):
+    """A conclusive Wix 4xx response with non-sensitive provider detail."""
+
+
+def _error_detail(response) -> str:
+    try:
+        payload = response.json()
+    except (TypeError, ValueError):
+        payload = {}
+    details = payload.get("details") if isinstance(payload, dict) else {}
+    details = details if isinstance(details, dict) else {}
+    validation = details.get("validationError") or {}
+    application = details.get("applicationError") or {}
+    violations = validation.get("fieldViolations") or []
+    parts = [
+        payload.get("message") if isinstance(payload, dict) else None,
+        application.get("description") if isinstance(application, dict) else None,
+        str(violations) if violations else None,
+    ]
+    return " | ".join(str(part) for part in parts if part)[:500] or "no provider detail"
+
+
+def _raise_for_status(response, action: str) -> None:
+    if response.status_code < 400:
+        return
+    detail = f"Wix {action} failed: HTTP {response.status_code}: {_error_detail(response)}"
+    if response.status_code in {400, 401, 403, 404, 422}:
+        raise WixAPIError(detail)
+    response.raise_for_status()
 
 
 def configured(site: dict) -> bool:
@@ -43,8 +79,47 @@ def _existing_post(site: dict, slug: str, *, session=requests):
     )
     if response.status_code == 404:
         return None
-    response.raise_for_status()
+    _raise_for_status(response, "published-post lookup")
     return (response.json() or {}).get("post")
+
+
+def reconcile(site: dict, *, slug: str, expected_url: str, session=requests):
+    """Return a receipt if the approved slug exists, otherwise confirm absence."""
+    if expected_url.rstrip("/") != public_post_url(site, slug).rstrip("/"):
+        raise PermissionError("Approved Wix URL does not match the configured site route")
+    if not _existing_post(site, slug, session=session):
+        return None
+    return {"url": expected_url}
+
+
+def _member_id(site: dict, *, session=requests) -> str:
+    env_name = str(site.get("member_id_env") or "").strip()
+    configured_id = os.environ.get(env_name, "").strip() if env_name else ""
+    if configured_id:
+        return configured_id
+    response = session.get(
+        f"{API_ROOT}/v3/posts",
+        headers=_headers(site),
+        params={"paging.limit": 100},
+        timeout=25,
+    )
+    _raise_for_status(response, "blog-author discovery")
+    member_ids = {
+        str(post.get("memberId") or "").strip()
+        for post in (response.json() or {}).get("posts", [])
+        if str(post.get("memberId") or "").strip()
+    }
+    if len(member_ids) == 1:
+        return next(iter(member_ids))
+    if not member_ids:
+        raise WixAPIError(
+            "Wix create-draft readiness failed: no blog owner memberId was found; "
+            f"configure {env_name or 'a site member_id_env'}"
+        )
+    raise WixAPIError(
+        "Wix create-draft readiness failed: multiple blog owner memberIds were found; "
+        f"configure the exact author in {env_name or 'a site member_id_env'}"
+    )
 
 
 def _to_ricos(site: dict, html: str, *, session=requests) -> dict:
@@ -57,7 +132,7 @@ def _to_ricos(site: dict, html: str, *, session=requests) -> dict:
         },
         timeout=30,
     )
-    response.raise_for_status()
+    _raise_for_status(response, "Ricos conversion")
     document = (response.json() or {}).get("document")
     if not document or not document.get("nodes"):
         raise RuntimeError("Wix returned no Ricos document for the approved article")
@@ -80,6 +155,7 @@ def publish(
     existing = _existing_post(site, slug, session=session)
     if existing:
         return expected_url
+    member_id = _member_id(site, session=session)
     document = _to_ricos(site, html, session=session)
     response = session.post(
         f"{API_ROOT}/blog/v3/draft-posts",
@@ -87,6 +163,7 @@ def publish(
         json={
             "draftPost": {
                 "title": title,
+                "memberId": member_id,
                 "excerpt": excerpt[:500],
                 "seoSlug": slug,
                 "language": "he",
@@ -97,7 +174,7 @@ def publish(
         },
         timeout=40,
     )
-    response.raise_for_status()
+    _raise_for_status(response, "draft creation")
     created = (response.json() or {}).get("draftPost") or {}
     if not created.get("id"):
         raise RuntimeError("Wix accepted no identifiable draft/post receipt")

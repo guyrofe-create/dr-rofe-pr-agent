@@ -19,10 +19,9 @@ import requests
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from publication_policy import enforce_publication_policy
-from . import common
+from . import common, google_oauth
 
 
-TOKEN_URL = "https://oauth2.googleapis.com/token"
 ACCOUNTS_URL = "https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
 MY_BUSINESS_V4 = "https://mybusiness.googleapis.com/v4"
 MAX_SUMMARY_LENGTH = 700
@@ -47,23 +46,7 @@ def is_configured() -> bool:
 
 
 def _access_token() -> str:
-    if not is_configured():
-        raise RuntimeError("Google OAuth credentials are not configured")
-    response = requests.post(
-        TOKEN_URL,
-        data={
-            "client_id": common.env("GOOGLE_OAUTH_CLIENT_ID"),
-            "client_secret": common.env("GOOGLE_OAUTH_CLIENT_SECRET"),
-            "refresh_token": common.env("GOOGLE_OAUTH_REFRESH_TOKEN"),
-            "grant_type": "refresh_token",
-        },
-        timeout=20,
-    )
-    response.raise_for_status()
-    token = str(response.json().get("access_token") or "").strip()
-    if not token:
-        raise RuntimeError("Google OAuth refresh returned no access token")
-    return token
+    return google_oauth.refresh_access_token(session=requests)
 
 
 def _headers(token: str) -> dict[str, str]:
@@ -253,8 +236,9 @@ def publish(
     image_url: str,
     *,
     language_code: str = "he",
+    access_token: str | None = None,
 ) -> dict:
-    token = _access_token()
+    token = access_token or _access_token()
     account, location, _metadata = resolve_location(token)
     payload = _post_payload(
         summary,

@@ -9,9 +9,7 @@ Required secrets:
 import html
 
 import requests
-from . import common
-
-TOKEN_URL = "https://oauth2.googleapis.com/token"
+from . import common, google_oauth
 
 
 def is_configured():
@@ -22,14 +20,7 @@ def is_configured():
 
 
 def _access_token():
-    resp = requests.post(TOKEN_URL, data={
-        "client_id": common.env("GOOGLE_OAUTH_CLIENT_ID"),
-        "client_secret": common.env("GOOGLE_OAUTH_CLIENT_SECRET"),
-        "refresh_token": common.env("GOOGLE_OAUTH_REFRESH_TOKEN"),
-        "grant_type": "refresh_token",
-    }, timeout=20)
-    resp.raise_for_status()
-    return resp.json()["access_token"]
+    return google_oauth.refresh_access_token(session=requests)
 
 
 def publish(
@@ -39,9 +30,10 @@ def publish(
     image_url=None,
     alt_text=None,
     disclosure=None,
+    access_token=None,
 ):
     blog_id = common.env("BLOGGER_BLOG_ID")
-    token = _access_token()
+    token = access_token or _access_token()
     content = body_html
     if image_url:
         content = (

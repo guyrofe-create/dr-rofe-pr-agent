@@ -5,6 +5,8 @@ import sys
 
 import requests
 
+from social_publishers import google_oauth
+
 
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 
@@ -47,23 +49,10 @@ def main():
         print(f"FAIL Google OAuth: {exc}")
         return 1
 
-    token_response = requests.post(
-        TOKEN_URL,
-        data={
-            "client_id": client_id,
-            "client_secret": client_secret,
-            "refresh_token": refresh_token,
-            "grant_type": "refresh_token",
-        },
-        timeout=20,
-    )
-    if not token_response.ok:
-        print(f"FAIL Google token refresh: {error_summary(token_response)}")
-        return 1
-
-    access_token = token_response.json().get("access_token")
-    if not access_token:
-        print("FAIL Google token refresh: access token missing")
+    try:
+        access_token = google_oauth.refresh_access_token(session=requests)
+    except google_oauth.GoogleOAuthError as exc:
+        print(f"FAIL Google token refresh: {exc}")
         return 1
     print("PASS Google OAuth token refresh")
     headers = {"Authorization": f"Bearer {access_token}"}

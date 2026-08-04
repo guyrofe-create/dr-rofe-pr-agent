@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 
 from scripts.reputation_core.approval_workflow import (
+    DefinitiveProviderRejection,
     ExecutionLedger,
     ReconciliationRequired,
     approve_bundle,
@@ -135,6 +136,72 @@ class ApprovalWorkflowTests(unittest.TestCase):
                     bundle["targets"][0],
                     lambda _payload, _key: {"url": "must-not-run"},
                 )
+
+    def test_definitive_provider_rejection_is_safe_to_retry(self):
+        bundle = sample_bundle()
+        with tempfile.TemporaryDirectory() as directory:
+            ledger = ExecutionLedger(Path(directory) / "ledger.json")
+
+            with self.assertRaises(DefinitiveProviderRejection):
+                ledger.execute(
+                    bundle,
+                    bundle["targets"][0],
+                    lambda _payload, _key: (_ for _ in ()).throw(
+                        DefinitiveProviderRejection("HTTP 400: missing memberId")
+                    ),
+                )
+
+            receipt = ledger.execute(
+                bundle,
+                bundle["targets"][0],
+                lambda _payload, _key: {"url": "https://example.com/retried"},
+            )
+            self.assertEqual(receipt["status"], "published")
+            self.assertEqual(receipt["url"], "https://example.com/retried")
+
+    def test_ambiguous_failure_can_retry_after_provider_confirms_absence(self):
+        bundle = sample_bundle()
+        with tempfile.TemporaryDirectory() as directory:
+            ledger = ExecutionLedger(Path(directory) / "ledger.json")
+            with self.assertRaises(TimeoutError):
+                ledger.execute(
+                    bundle,
+                    bundle["targets"][0],
+                    lambda _payload, _key: (_ for _ in ()).throw(
+                        TimeoutError("response lost")
+                    ),
+                )
+            receipt = ledger.execute(
+                bundle,
+                bundle["targets"][0],
+                lambda _payload, _key: {"url": "https://example.com/retried"},
+                reconciler=lambda _payload, _key: None,
+            )
+            self.assertEqual(receipt["url"], "https://example.com/retried")
+
+    def test_ambiguous_failure_uses_existing_provider_receipt_without_repost(self):
+        bundle = sample_bundle()
+        with tempfile.TemporaryDirectory() as directory:
+            ledger = ExecutionLedger(Path(directory) / "ledger.json")
+            with self.assertRaises(TimeoutError):
+                ledger.execute(
+                    bundle,
+                    bundle["targets"][0],
+                    lambda _payload, _key: (_ for _ in ()).throw(
+                        TimeoutError("response lost")
+                    ),
+                )
+            calls = []
+            receipt = ledger.execute(
+                bundle,
+                bundle["targets"][0],
+                lambda _payload, _key: calls.append("must-not-run"),
+                reconciler=lambda _payload, _key: {
+                    "url": "https://example.com/already-published"
+                },
+            )
+            self.assertEqual(calls, [])
+            self.assertEqual(receipt["url"], "https://example.com/already-published")
 
 
 if __name__ == "__main__":
