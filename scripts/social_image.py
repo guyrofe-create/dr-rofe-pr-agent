@@ -12,6 +12,7 @@ import os
 import re
 from dataclasses import dataclass, field
 from io import BytesIO
+from pathlib import Path
 from urllib.parse import quote
 
 import requests
@@ -25,6 +26,11 @@ _CLIENT_NAME = _CLIENT_FACTS["primary_name"]
 _CLIENT_SITE = _CLIENT_FACTS["canonical_site"]
 COMMONS_API_URL = "https://commons.wikimedia.org/w/api.php"
 OPENVERSE_API_URL = "https://api.openverse.org/v1/images/"
+DEFAULT_IMAGE_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "assets"
+    / "default-reputation-image.png"
+)
 COMMONS_USER_AGENT = (
     f"ReputationAgentPublisher/1.0 ({_CLIENT_SITE}; licensed-photo-selector)"
 )
@@ -711,6 +717,22 @@ def _fit_cover(image, size):
     return resized.crop((left, top, left + target_width, top + target_height))
 
 
+def _fit_contain(image, size, background=(255, 255, 255)):
+    """Fit the complete branded default inside a platform canvas without cropping."""
+    target_width, target_height = size
+    foreground = image.convert("RGBA")
+    ratio = min(target_width / foreground.width, target_height / foreground.height)
+    resized = foreground.resize(
+        (round(foreground.width * ratio), round(foreground.height * ratio)),
+        Image.Resampling.LANCZOS,
+    )
+    canvas = Image.new("RGBA", size, (*background, 255))
+    left = (target_width - resized.width) // 2
+    top = (target_height - resized.height) // 2
+    canvas.alpha_composite(resized, (left, top))
+    return canvas.convert("RGB")
+
+
 def _topic_without_client(title):
     value = " ".join((title or "מידע רפואי מבוסס מקורות").lstrip("#").split())
     for variant in sorted(_CLIENT_FACTS.get("name_variants", []), key=len, reverse=True):
@@ -724,9 +746,40 @@ def _png_bytes(image):
     return output.getvalue()
 
 
+def default_branded_image(path=DEFAULT_IMAGE_PATH):
+    """Return the owner-provided logo package used only when no other image exists."""
+    try:
+        base = Image.open(path)
+        base.load()
+    except Exception as exc:
+        raise PhotoSelectionError(
+            f"The default reputation image could not be loaded: {path}"
+        ) from exc
+    variants = {
+        "hero": _png_bytes(_fit_contain(base, (1600, 900))),
+        "landscape": _png_bytes(_fit_contain(base, (1200, 630))),
+        "square": _png_bytes(_fit_contain(base, (1200, 1200))),
+        "portrait": _png_bytes(_fit_contain(base, (1080, 1350))),
+    }
+    return SocialImage(
+        content=variants["landscape"],
+        media_type="image/png",
+        extension="png",
+        visual_description="הלוגו של ד״ר גיא רופא על רקע לבן",
+        creator=_CLIENT_NAME,
+        license_name="Owner-provided brand asset",
+        attribution="",
+        source_type="owner_provided_default",
+        variants=variants,
+    )
+
+
 def generate(title, summary, client=None):
-    """Return four crops of one reviewed, licensed real photograph."""
-    licensed = select_licensed_photo(title, summary, client=client)
+    """Return four image variants, falling back to the owner-provided logo."""
+    try:
+        licensed = select_licensed_photo(title, summary, client=client)
+    except PhotoSelectionError:
+        return default_branded_image()
     try:
         base = Image.open(BytesIO(licensed.content)).convert("RGB")
     except Exception as exc:
@@ -809,7 +862,10 @@ def upload_to_wordpress(
         "openai_generated_text_free_visual",
         "deterministic_text_free_fallback",
     }
-    if generated:
+    if image.source_type == "owner_provided_default":
+        caption = ""
+        description = f"תמונת ברירת־מחדל ממותגת שסופקה על ידי {_CLIENT_NAME}."
+    elif generated:
         caption = ""
         description = (
             f"תמונה ללא מלל שנוצרה עבור מאמר של {_CLIENT_NAME} באמצעות "

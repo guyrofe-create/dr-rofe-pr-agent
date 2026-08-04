@@ -302,10 +302,20 @@ class SocialImageTests(unittest.TestCase):
         "scripts.social_image.select_licensed_photo",
         side_effect=social_image.PhotoSelectionError("none"),
     )
-    def test_generate_fails_closed_without_creating_an_ai_image(self, select):
+    def test_generate_uses_owner_default_without_creating_an_ai_image(self, select):
         client = Mock()
-        with self.assertRaisesRegex(social_image.PhotoSelectionError, "none"):
-            social_image.generate("כותרת", "תקציר", client=client)
+        result = social_image.generate("כותרת", "תקציר", client=client)
+
+        self.assertEqual(result.source_type, "owner_provided_default")
+        self.assertEqual(
+            set(result.variants),
+            {"hero", "landscape", "square", "portrait"},
+        )
+        self.assertEqual(Image.open(BytesIO(result.variants["hero"])).size, (1600, 900))
+        self.assertEqual(
+            Image.open(BytesIO(result.variants["portrait"])).size,
+            (1080, 1350),
+        )
         self.assertFalse(hasattr(client, "images") and client.images.generate.called)
 
     def test_commons_candidate_rejects_ai_or_illustration(self):

@@ -36,9 +36,9 @@ repository contains the Dr. Guy Rofe pilot profile.
 - binds every article and platform variant to the client through a branded title,
   visible linked byline, truthful author box, natural entity mentions and
   entity-aware metadata;
-- creates an approved four-format visual package with GPT Image when available
-  and a deterministic branded fallback, so an image failure cannot silently
-  produce an image-free approval package;
+- creates an approved four-format visual package from a reviewed licensed photo
+  when available and uses `assets/default-reputation-image.png`, the owner's
+  branded default, whenever no other image is available;
 - maps first-page asset gaps and separates AI citations from explicit brand mentions;
 - maintains a credential-free A/B/C/Q asset registry and excludes quarantined Web 2.0 mirrors from automation;
 - treats `drguyrofe.com` as a connected Wix evergreen medical-knowledge hub;
