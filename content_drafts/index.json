@@ -1,6 +1,36 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
+      "title": "בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: פיתוח ישראלי מעורר תקווה: בדיקת דם פשוטה וזולה שמזהה סרטן",
+      "excerpt": "בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מדובר בפיתוח מחקרי מבטיח לזיהוי חתימות מתילציה ב־DNA חופשי בדם של חולי סרטן ריאה, ללא צורך בר",
+      "generated_at": "2026-08-04T08:35:41.937086+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "pinterest"
+      ],
+      "cadence_week": "week-of-2026-08-02",
+      "cadence_local_date": "2026-08-04",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-d98a2696435ca046.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/bkhyuppsfl"
+    },
+    {
+      "path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
+      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
+      "excerpt": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) לפרוסקופיה גינקולוגית היא הליך ניתוחי זעיר־פולשני המאפשר לבחון את איברי האגן, לאבחן מצבים רפואיים ולעיתים גם לטפל בהם באמצעות מצלמה ומ",
+      "generated_at": "2026-08-04T08:35:41.937086+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-02",
+      "cadence_local_date": "2026-08-04",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
       "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: משמרות לילה משבשות לנו את הגוף - ומעלות סיכון למחלות הבאות",

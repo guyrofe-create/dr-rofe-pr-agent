@@ -2,6 +2,32 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_ff3ab15050073d4346f315a2a8d4ed4a91a418507ffa7103109b21b9d23cf09d",
+      "draft_path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_ff3ab15050073d4346f315a2a8d4ed4a91a418507ffa7103109b21b9d23cf09d.json",
+      "preview_path": "approval_bundles/apr_ff3ab15050073d4346f315a2a8d4ed4a91a418507ffa7103109b21b9d23cf09d.html",
+      "created_at": "2026-08-04T08:44:07Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "awaiting_replacement",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=5; downloaded=5; undersized=0; reviewed=5; rejected=5; search=[laparoscopic surgical instruments: commons=6, openverse=0 | laparoscope medical equipment: commons=0, openverse=0 | minimally invasive surgery tools: commons=1, openverse=0 | operating room instruments: commons=16, openverse=1]; review_notes=[על גבי המכשירים נראים שמות מותג וכיתובים באנגלית. | נראים בתמונה שמות מותג, תוויות וכיתוב על הציוד. | תרשים עם טקסט ונתונים, ואינו קשור ללפרוסקופיה גינקולוגית. | בתמונה מופיעה אשת צוות רפואי, בניגוד לדרישה שלא להציג אנשים. | נראים אנשי צוות רפואי וכיתוב גלוי על ציוד ואריזות.]"
+    },
+    {
+      "approval_id": "apr_771f8558e5be4e85da558ad9fab695e1522e1c18e1f0148424716ce4682c532d",
+      "draft_path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_771f8558e5be4e85da558ad9fab695e1522e1c18e1f0148424716ce4682c532d.json",
+      "preview_path": "approval_bundles/apr_771f8558e5be4e85da558ad9fab695e1522e1c18e1f0148424716ce4682c532d.html",
+      "created_at": "2026-08-04T08:43:39Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "awaiting_replacement",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=4; downloaded=4; undersized=0; reviewed=4; rejected=4; search=[blood sample tubes: commons=20, openverse=1 | dna microarray slide: commons=0, openverse=0 | fluorescence microarray scanner: commons=0, openverse=0 | laboratory centrifuge: commons=23, openverse=1]; review_notes=[על המבחנה מופיע טקסט קריא. | נראים כיתוב, מספרים וסימון מותג על המבחנה. | על הצנטריפוגה נראים כיתוב, מספרים ותוויות. | תצלום של מכונות תעשייתיות ישנות שאינן קשורות לבדיקת דם או למחקר בסרטן ריאה.]"
+    },
+    {
       "approval_id": "apr_013bee857d91a81e86526b76f39f003b32cf4532e865ec514bbb8549019484d6",
       "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
       "bundle_path": "approval_bundles/apr_013bee857d91a81e86526b76f39f003b32cf4532e865ec514bbb8549019484d6.json",
