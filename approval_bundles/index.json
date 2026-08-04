@@ -2,69 +2,69 @@
   "version": 7,
   "bundles": [
     {
-      "approval_id": "apr_ff3ab15050073d4346f315a2a8d4ed4a91a418507ffa7103109b21b9d23cf09d",
-      "draft_path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_ff3ab15050073d4346f315a2a8d4ed4a91a418507ffa7103109b21b9d23cf09d.json",
-      "preview_path": "approval_bundles/apr_ff3ab15050073d4346f315a2a8d4ed4a91a418507ffa7103109b21b9d23cf09d.html",
-      "created_at": "2026-08-04T08:44:07Z",
-      "required_approval_scopes": [
-        "medical_content",
-        "public_publication"
-      ],
-      "image_status": "awaiting_replacement",
-      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=5; downloaded=5; undersized=0; reviewed=5; rejected=5; search=[laparoscopic surgical instruments: commons=6, openverse=0 | laparoscope medical equipment: commons=0, openverse=0 | minimally invasive surgery tools: commons=1, openverse=0 | operating room instruments: commons=16, openverse=1]; review_notes=[על גבי המכשירים נראים שמות מותג וכיתובים באנגלית. | נראים בתמונה שמות מותג, תוויות וכיתוב על הציוד. | תרשים עם טקסט ונתונים, ואינו קשור ללפרוסקופיה גינקולוגית. | בתמונה מופיעה אשת צוות רפואי, בניגוד לדרישה שלא להציג אנשים. | נראים אנשי צוות רפואי וכיתוב גלוי על ציוד ואריזות.]"
-    },
-    {
-      "approval_id": "apr_771f8558e5be4e85da558ad9fab695e1522e1c18e1f0148424716ce4682c532d",
-      "draft_path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_771f8558e5be4e85da558ad9fab695e1522e1c18e1f0148424716ce4682c532d.json",
-      "preview_path": "approval_bundles/apr_771f8558e5be4e85da558ad9fab695e1522e1c18e1f0148424716ce4682c532d.html",
-      "created_at": "2026-08-04T08:43:39Z",
-      "required_approval_scopes": [
-        "medical_content",
-        "public_publication"
-      ],
-      "image_status": "awaiting_replacement",
-      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=4; downloaded=4; undersized=0; reviewed=4; rejected=4; search=[blood sample tubes: commons=20, openverse=1 | dna microarray slide: commons=0, openverse=0 | fluorescence microarray scanner: commons=0, openverse=0 | laboratory centrifuge: commons=23, openverse=1]; review_notes=[על המבחנה מופיע טקסט קריא. | נראים כיתוב, מספרים וסימון מותג על המבחנה. | על הצנטריפוגה נראים כיתוב, מספרים ותוויות. | תצלום של מכונות תעשייתיות ישנות שאינן קשורות לבדיקת דם או למחקר בסרטן ריאה.]"
-    },
-    {
-      "approval_id": "apr_013bee857d91a81e86526b76f39f003b32cf4532e865ec514bbb8549019484d6",
-      "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_013bee857d91a81e86526b76f39f003b32cf4532e865ec514bbb8549019484d6.json",
-      "preview_path": "approval_bundles/apr_013bee857d91a81e86526b76f39f003b32cf4532e865ec514bbb8549019484d6.html",
-      "created_at": "2026-08-03T09:49:27Z",
-      "required_approval_scopes": [
-        "medical_content",
-        "public_publication"
-      ],
-      "image_status": "awaiting_replacement",
-      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=4; downloaded=4; undersized=0; reviewed=4; rejected=4; search=[empty hospital night: commons=5, openverse=0 | sleep laboratory equipment: commons=1, openverse=0 | actigraphy sleep monitor: commons=1, openverse=0 | night shift workstation: commons=0, openverse=0]; review_notes=[התמונה מציגה אנשים וטקס דתי שאינם קשורים לעבודת לילה או לשעון הביולוגי. | איור היסטורי עמוס באנשים ובטקסט, ללא קשר למשמרות לילה. | מעבדה גנרית שאינה ממחישה עבודת לילה, ובתמונה נראים כיתובים ומספרים רבים. | מופיעה אישה וכן טקסט וסמלים גלויים על הציוד והבגדים.]"
-    },
-    {
-      "approval_id": "apr_1d91d9d949a71d1ae075ba24eb88dc8fdaa72abca33408b5516c4809ea4ef5bc",
-      "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_1d91d9d949a71d1ae075ba24eb88dc8fdaa72abca33408b5516c4809ea4ef5bc.json",
-      "preview_path": "approval_bundles/apr_1d91d9d949a71d1ae075ba24eb88dc8fdaa72abca33408b5516c4809ea4ef5bc.html",
-      "created_at": "2026-08-02T15:20:00Z",
-      "required_approval_scopes": [
-        "medical_content",
-        "public_publication"
-      ],
-      "image_status": "awaiting_replacement",
-      "image_selection_error": "לא נמצא צילום מורשה ורלוונטי לכאבי מחזור לאחר בדיקת 8 מועמדים."
-    },
-    {
-      "approval_id": "apr_11fcc16b25cc96002a5f57ed586a53553498f73d70ddd1f0e646afba6b58e437",
+      "approval_id": "apr_68abcf22b0d724964bd267f0c39e2e786cfc402e4c749d822a2563b111c67f35",
       "draft_path": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_11fcc16b25cc96002a5f57ed586a53553498f73d70ddd1f0e646afba6b58e437.json",
-      "preview_path": "approval_bundles/apr_11fcc16b25cc96002a5f57ed586a53553498f73d70ddd1f0e646afba6b58e437.html",
-      "created_at": "2026-08-02T15:20:00Z",
+      "bundle_path": "approval_bundles/apr_68abcf22b0d724964bd267f0c39e2e786cfc402e4c749d822a2563b111c67f35.json",
+      "preview_path": "approval_bundles/apr_68abcf22b0d724964bd267f0c39e2e786cfc402e4c749d822a2563b111c67f35.html",
+      "created_at": "2026-08-04T12:40:42Z",
       "required_approval_scopes": [
         "medical_content",
         "public_publication"
       ],
-      "image_status": "awaiting_replacement",
-      "image_selection_error": "לא נמצא צילום מורשה ורלוונטי לצריכת סוכר בגיל הרך ודמנציה לאחר בדיקת 3 מועמדים."
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
+      "approval_id": "apr_ea5b14a5f5ca8b0e3c7fe484c0df2648ec60af9a7e2433f6e8d588562b6c3f5a",
+      "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_ea5b14a5f5ca8b0e3c7fe484c0df2648ec60af9a7e2433f6e8d588562b6c3f5a.json",
+      "preview_path": "approval_bundles/apr_ea5b14a5f5ca8b0e3c7fe484c0df2648ec60af9a7e2433f6e8d588562b6c3f5a.html",
+      "created_at": "2026-08-04T12:40:24Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
+      "approval_id": "apr_6996b25a3dd6c465824f7a16d3f527269f7161e44482638a0ace2904141d3fac",
+      "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_6996b25a3dd6c465824f7a16d3f527269f7161e44482638a0ace2904141d3fac.json",
+      "preview_path": "approval_bundles/apr_6996b25a3dd6c465824f7a16d3f527269f7161e44482638a0ace2904141d3fac.html",
+      "created_at": "2026-08-04T12:40:05Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
+      "approval_id": "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4",
+      "draft_path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4.json",
+      "preview_path": "approval_bundles/apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4.html",
+      "created_at": "2026-08-04T12:39:24Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
+      "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
+      "draft_path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa.json",
+      "preview_path": "approval_bundles/apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa.html",
+      "created_at": "2026-08-04T12:39:05Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
     }
   ]
 }

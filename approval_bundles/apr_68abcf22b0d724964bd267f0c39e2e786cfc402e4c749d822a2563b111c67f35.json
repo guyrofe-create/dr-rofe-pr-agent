@@ -1,0 +1,458 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-04T12:40:42Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
+  "source_draft_sha256": "70435440c828024a41185a12e90842f9046980689d594d7863c678c28ba8672b",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://healthy.walla.co.il/item/3857349",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1212/WNL.0000000000218313",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1126/science.adn5421",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/foods-and-drinks-to-avoid-or-limit.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/publications/i/item/9789241549028",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+    "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+    "alt_text": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_model_of_human_brain,_Wellcome_L0010008.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anatomical_model_of_human_brain%2C_Wellcome_L0010008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0",
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+        "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+        "width": 1600,
+        "height": 900
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+        "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+        "width": 1200,
+        "height": 630
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-square.png",
+        "sha256": "390a4a404cb273725041ac60268ea8aaa24464c298dec1b6e2068dc7d76194ef",
+        "width": 1200,
+        "height": 1200
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-portrait.png",
+        "sha256": "83deda89b8c70f684faa8b10853af9a04e9e2e9162d645b750ee261869725b8a",
+        "width": 1080,
+        "height": 1350
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+        "markdown": "# צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** מחקר תצפיתי המבוסס על “ניסוי טבעי” מצא כי אנשים שנחשפו להגבלת סוכר בתקופת ההיריון ובשנתיים הראשונות לחייהם היו בסיכון יחסי נמוך יותר לאבחנת דמנציה עשרות שנים לאחר מכן. זהו ממצא מסקרן, אך הוא אינו מוכיח שסוכר בגיל הרך גורם לדמנציה, ואינו מאפשר לקבוע שהימנעות מסוכר לבדה תמנע את המחלה.\n\nהמאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות.\n\nהכותרת ב[כתבת וואלה בריאות על הקשר בין צריכת סוכר לפני גיל שנתיים לדמנציה](https://healthy.walla.co.il/item/3857349) נשענת על מחקר שפורסם בכתב העת *Neurology*. הכתבה היא נקודת המוצא לדיון, אך אינה משמשת מקור רפואי למסקנות המאמר. לצורך בחינת הטענות יש לפנות למחקר המקורי, למחקרים מדעיים משלימים ולהנחיות רשמיות של רשויות בריאות.\n\nהרעיון שלפיו תזונה בתקופת ההיריון והינקות עשויה להיות קשורה לבריאות המוח בגיל מבוגר ראוי לתשומת לב. עם זאת, בין כותרת חדשותית לבין מסקנה מדעית קיימים פערים חשובים: המחקר העריך חשיפה לסוכר לפי תאריך הלידה והמצב ההיסטורי בבריטניה, ולא מדד את צריכת הסוכר האישית של כל אם או ילד; הוא זיהה קשר סטטיסטי ולא הוכיח סיבתיות; והוא בוודאי אינו מצדיק חרדה בעקבות טעימה מתוקה או חשיפה מזדמנת למזון המכיל סוכר.\n\n## מה בדיוק מצא המחקר?\n\nב[מחקר על הגבלת סוכר מהתקופה העוברית ועד גיל שנתיים והסיכון לדמנציה](https://doi.org/10.1212/WNL.0000000000218313) נכללו 64,737 משתתפים ממאגר UK Biobank, שנולדו בבריטניה בתקופה שסביב סיום קיצוב הסוכר. בתחילת המעקב גילם הממוצע היה כ־55 שנים, והחוקרים הסתמכו על רשומות רפואיות כדי לזהות אבחנות דמנציה במהלך מעקב שנמשך עד כ־15 שנים.\n\nהמשתתפים סווגו לפי משך החשיפה המשוער לקיצוב: חשיפה בתקופת ההיריון בלבד או גם לאחר הלידה, עד גיל שנה או שנתיים. קבוצת ההשוואה כללה אנשים שנולדו לאחר ביטול ההגבלות.\n\nבקבוצה שנחשפה לקיצוב במהלך ההיריון ועד גיל שנה אובחנו 388 מקרי דמנציה מתוך 15,025 משתתפים. בקבוצה שנחשפה עד גיל שנתיים אובחנו 456 מקרים מתוך 15,256 משתתפים. בקרב 23,774 משתתפים שנולדו לאחר סיום הקיצוב אובחנו 504 מקרים.\n\nלאחר התאמות סטטיסטיות לגורמים אפשריים, ובהם גיל, מין, סוכרת ויתר לחץ דם, חשיפה לקיצוב עד גיל שנה הייתה קשורה לסיכון יחסי נמוך בכ־21% לדמנציה, וחשיפה עד גיל שנתיים הייתה קשורה לסיכון יחסי נמוך בכ־23%. בקרב מי שנחשפו לקיצוב אובחנה דמנציה, בממוצע, כ־2.6 שנים מאוחר יותר.\n\nחשוב לדייק בפרשנות המספרים. ירידה של 23% בסיכון היחסי אינה אומרת ש־23 מכל 100 ילדים יימנעו מדמנציה. זהו יחס בין שיעורי ההיארעות בקבוצות במסגרת מודל סטטיסטי. הסיכון האישי תלוי בגיל, בגנטיקה, בבריאות כלי הדם, בעישון, בפעילות גופנית, במחלות רקע ובגורמים רבים נוספים.\n\n## מדוע סיום קיצוב הסוכר נחשב “ניסוי טבעי”?\n\nניסוי קליני אקראי שהיה בוחן את השפעת צריכת הסוכר בראשית החיים על דמנציה היה מחייב להקצות נשים הרות ותינוקות לתפריטים שונים ולעקוב אחריהם במשך עשרות שנים. מחקר כזה אינו מעשי, וקיימות בו גם בעיות אתיות ברורות. לכן החוקרים ניצלו אירוע היסטורי שהתרחש ללא קשר להחלטותיהם של המשתתפים.\n\nבבריטניה הוגבלה אספקת הסוכר במהלך מלחמת העולם השנייה ובשנים שלאחריה. קיצוב הסוכר הסתיים בספטמבר 1953, ולאחר מכן עלתה זמינותו במהירות. אנשים שנולדו זמן קצר לפני סיום הקיצוב ואחריו חיו באותה מדינה ובתקופה דומה, אך נחשפו לכאורה לסביבות תזונתיות שונות במהלך ההיריון והינקות.\n\nגישה זו עדיפה במובנים מסוימים על מחקר הנשען על זיכרון של מבוגרים בנוגע למה שאכלו כתינוקות. כמעט איש אינו יכול לדווח באופן אמין על צריכת הסוכר שלו בשנתיים הראשונות לחייו, וגם דיווחי הורים הנאספים בדיעבד חשופים לטעויות. הקיצוב מספק אפוא מדד חיצוני ומתועד לחשיפה משוערת.\n\nעם זאת, “ניסוי טבעי” אינו ניסוי אקראי מבוקר. תאריך הלידה לא הקצה לכל משתתף כמות מדויקת של סוכר. בתקופה זו השתנו גם המצב הכלכלי, זמינותם של מזונות אחרים, תנאי המגורים, שירותי הבריאות והרגלי התזונה. אף שמודלים סטטיסטיים יכולים להתחשב בחלק מההבדלים, הם אינם יכולים לשלול כל גורם מתערב.\n\n## מה המחקר אינו יכול להוכיח?\n\nהמגבלה המרכזית היא שהחוקרים לא ידעו כמה סוכר צרכה כל אם בהיריון או כמה סוכר קיבל כל תינוק. המונח “חשיפה לקיצוב” מתאר סביבה ציבורית ותזונתית, ולא צריכה אישית שנמדדה באמצעות יומן מזון או בדיקה ביולוגית.\n\nגם במהלך הקיצוב התקיימו הבדלים בין משפחות. חלקן יכלו להשיג סוכר ממקורות נוספים, ואחרות צרכו פחות מהכמות המותרת. ייתכנו גם הבדלים בהנקה, במועד הצגת מזון משלים, בהכנסה, בהשכלה ובזמינות מזון. באופן דומה, לא כל משפחה הגדילה את צריכת הסוכר מיד עם ביטול ההגבלות.\n\nמגבלה נוספת היא השימוש ברשומות רפואיות. לא כל אדם עם ירידה קוגניטיבית מקבל אבחנה רשמית, וחלק מהמקרים עלולים שלא להופיע במאגר. “דמנציה” היא גם קטגוריה רחבה הכוללת מחלת אלצהיימר, דמנציה וסקולרית, דמנציה מעורבת ומצבים נוספים. אין להסיק מהמחקר שלחשיפה מוקדמת לסוכר יש בהכרח אותה משמעות בכל סוגי הדמנציה.\n\nגם משתתפי UK Biobank אינם מייצגים באופן מושלם את כלל האוכלוסייה. אנשים המצטרפים למאגר מחקר גדול עשויים להיות בריאים יותר או מודעים יותר לבריאותם בהשוואה למי שאינם משתתפים. בנוסף, המחקר עוסק באוכלוסייה בריטית שנולדה בתחילת שנות ה־50, ולכן לא ברור באיזו מידה אפשר להשליך ממנו ישירות על ילדים הגדלים כיום בסביבה תזונתית וחברתית שונה.\n\nהניסוח המדויק הוא אפוא שהגבלת סוכר משוערת בראשית החיים **הייתה קשורה** לפחות אבחנות דמנציה ולהופעה מאוחרת יותר שלה. אי אפשר לקבוע מהמחקר שסוכר היה הגורם הישיר להבדל, או שהפחתת סוכר אצל ילד מסוים תמנע דמנציה בעתיד.\n\n## האם קיים הסבר ביולוגי אפשרי?\n\nקיימים כמה מנגנונים אפשריים, אך הם עדיין אינם מהווים הוכחה לסיבתיות. צריכה גבוהה ומתמשכת של סוכרים מוספים עשויה לתרום לעודף משקל, לעמידות לאינסולין, לסוכרת מסוג 2 ולפגיעה בבריאות הלב וכלי הדם. מצבים כגון סוכרת, יתר לחץ דם ושבץ קשורים גם לסיכון מוגבר לירידה קוגניטיבית ולדמנציה.\n\nבהקשר זה, [מחקר על קיצוב סוכר באלף הימים הראשונים וסיכון למחלות כרוניות](https://doi.org/10.1126/science.adn5421) מצא כי חשיפה לקיצוב הייתה קשורה לסיכון נמוך יותר לסוכרת מסוג 2 וליתר לחץ דם, וכן להופעה מאוחרת יותר של מחלות אלה. המחקר אינו מוכיח לבדו מנגנון ישיר, אך הוא תומך באפשרות שהקשר לבריאות המוח עובר בחלקו דרך הבריאות המטבולית וכלי הדם.\n\nהתקופה שמתחילת ההיריון ועד גיל שנתיים מכונה לעיתים “אלף הימים הראשונים”. בתקופה זו מתרחשת התפתחות מהירה של המוח, המערכת המטבולית ומנגנוני ויסות התיאבון. הסביבה התזונתית עשויה להשפיע גם על העדפות טעם ועל הרגלים הנמשכים בהמשך החיים.\n\nעם זאת, לא הוכח מסלול שבו סוכר שנצרך בגיל שנה יוצר שינוי מוחי מסוים שמוביל ישירות לדמנציה כעבור עשרות שנים. ייתכן שההשפעה עקיפה ומצטברת, וייתכן שהקיצוב ייצג דפוס תזונתי רחב יותר ולא רק כמות נמוכה יותר של סוכר.\n\nיש להבחין גם בין סוכרים מוספים או חופשיים לבין סוכרים המצויים באופן טבעי במזון מלא. המחקר לא השווה בין פירות, חלב אם, מוצרי חלב, מיצים, ממתקים ומשקאות ממותקים. לכן אין בסיס להציג פרי שלם או סוכר טבעי בחלב כשקולים לממתק או למשקה ממותק.\n\n## מה המשמעות המעשית להורים?\n\nהמחקר אינו סיבה להיבהל, אך הוא מתיישב עם המלצות תזונתיות שכבר קיימות. לפי [הנחיות ה־CDC לגבי מזונות ומשקאות שיש להימנע מהם או להגבילם אצל תינוקות ופעוטות](https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/foods-and-drinks-to-avoid-or-limit.html), ילדים מתחת לגיל שנתיים אינם זקוקים לסוכרים מוספים. מזון משלים אמור להיות צפוף ברכיבים תזונתיים, משום שלתינוקות ולפעוטות יש צרכים תזונתיים גבוהים ביחס לכמות המזון הקטנה שהם אוכלים.\n\nגם [הנחיית ארגון הבריאות העולמי בנושא צריכת סוכרים חופשיים](https://www.who.int/publications/i/item/9789241549028) ממליצה להפחית את צריכתם, בעיקר לצמצום הסיכון לעששת ולעלייה לא בריאה במשקל. ההנחיה אינה טוענת שהימנעות מסוכר בינקות מונעת דמנציה.\n\nצעדים מעשיים וסבירים כוללים:\n\n- להעדיף מים על פני משקאות ממותקים או מים בטעמים;\n- להגיש פרי שלם במקום מיץ;\n- לבחור יוגורט טבעי במקום יוגורט ממותק;\n- לא להוסיף סוכר לדייסות ולמזון משלים;\n- לבדוק ברשימת הרכיבים אם נוספו סוכר, סירופים או תרכיזי מיץ;\n- להגביל עוגיות, חטיפים, דגני בוקר ממותקים וקינוחים לפעוטות;\n- לא להשתמש בממתקים באופן קבוע כפרס או ככלי להרגעה;\n- להציע מגוון טעמים ומרקמים המתאימים לגיל.\n\nאין מקום לאשמה הורית. חשיפה מזדמנת למזון מתוק אינה שקולה לדפוס קבוע של צריכה גבוהה, והמחקר אינו מאפשר לחזות את עתידו הבריאותי של ילד יחיד. המטרה היא סביבת אכילה מאוזנת לאורך זמן, לא שאיפה לשלמות ולא איסור גורף על כל מזון המכיל סוכר טבעי.\n\n## סיכום: ממצא חשוב, לא פסק דין\n\nהמחקר מצא קשר בין חשיפה לקיצוב סוכר בתקופת ההיריון והינקות לבין סיכון יחסי נמוך יותר לדמנציה והופעה מאוחרת יותר שלה. תכנון המחקר יצירתי, המדגם גדול, והממצאים מתיישבים עם מחקרים נוספים על בריאות מטבולית וכלי דם.\n\nמנגד, צריכת הסוכר האישית לא נמדדה, המשתתפים לא הוקצו באקראי, וקיימים גורמים היסטוריים, חברתיים ותזונתיים שעשויים להסביר חלק מהתוצאות. לכן אין בסיס לקביעה שסוכר לפני גיל שנתיים “גורם לדמנציה”.\n\nהמסר המעשי מתון יותר: כדאי לצמצם סוכרים מוספים בתזונת תינוקות ופעוטות בהתאם להנחיות הקיימות, בעיקר לטובת איכות התזונה, בריאות השיניים, משקל תקין ובריאות מטבולית. האפשרות שלהרגלים אלה תהיה גם תרומה לבריאות המוח עשרות שנים לאחר מכן מעניינת וראויה למחקר נוסף, אך עדיין אינה מסקנה סופית.\n\n> **הבהרה רפואית:** המאמר מספק מידע כללי בלבד, אינו מהווה ייעוץ רפואי או תזונתי אישי, ומחייב ביקורת אנושית ובדיקת רופא או רופאה מוסמכים לפני פרסום.\n\n## מקורות\n\n### מחקרים והנחיות רפואיות\n\n1. [Association of Sugar Restriction in Utero Through Age 2 Years on Dementia Risk Later in Life](https://doi.org/10.1212/WNL.0000000000218313)\n\n2. [Exposure to Sugar Rationing in the First 1000 Days of Life Protected Against Chronic Disease](https://doi.org/10.1126/science.adn5421)\n\n3. [CDC — Foods and Drinks to Avoid or Limit for Infants and Young Children](https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/foods-and-drinks-to-avoid-or-limit.html)\n\n4. [WHO — Guideline: Sugars Intake for Adults and Children](https://www.who.int/publications/i/item/9789241549028)\n\n### כתבת החדשות שנבדקה — אינה מקור רפואי\n\n5. [וואלה בריאות — מחקר מצא קשר מדאיג ומפתיע בין צריכת סוכר לפני גיל שנתיים לדמנציה](https://healthy.walla.co.il/item/3857349)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "b7afdc3e3d6748f7c27c72cdb7850f34ffd13b63ecf66346d257d326770e2b09",
+        "slug": "guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+          "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+          "alt_text": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_model_of_human_brain,_Wellcome_L0010008.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anatomical_model_of_human_brain%2C_Wellcome_L0010008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+              "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+              "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-square.png",
+              "sha256": "390a4a404cb273725041ac60268ea8aaa24464c298dec1b6e2068dc7d76194ef",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-portrait.png",
+              "sha256": "83deda89b8c70f684faa8b10853af9a04e9e2e9162d645b750ee261869725b8a",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: מחקר תצפיתי המבוסס על “ניסוי טבעי” מצא כי אנשים שנחשפו להגבלת סוכר בתקופת ההיריון ובשנתיים הראשונות לחייהם היו בסיכון יחסי נמוך יותר לאבחנת דמנציה עשרות שנים לאחר מכן.\n\nזהו ממצא מסקרן, אך הוא אינו מוכיח שסוכר בגיל הרך גורם לדמנציה, ואינו מאפשר לקבוע שהימנעות מסוכר לבדה תמנע את המחלה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+          "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+          "alt_text": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_model_of_human_brain,_Wellcome_L0010008.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anatomical_model_of_human_brain%2C_Wellcome_L0010008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+              "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+              "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-square.png",
+              "sha256": "390a4a404cb273725041ac60268ea8aaa24464c298dec1b6e2068dc7d76194ef",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-portrait.png",
+              "sha256": "83deda89b8c70f684faa8b10853af9a04e9e2e9162d645b750ee261869725b8a",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: מחקר תצפיתי המבוסס על “ניסוי טבעי” מצא כי אנשים שנחשפו להגבלת סוכר בתקופת ההיריון ובשנתיים הראשונות לחייהם היו בסיכון יחסי נמוך יותר לאבחנת דמנציה עשרות שנים לאחר מכן.\n\n• זהו ממצא מסקרן, אך הוא אינו מוכיח שסוכר בגיל הרך גורם לדמנציה, ואינו מאפשר לקבוע שהימנעות מסוכר לבדה תמנע את המחלה.\n• המאמר הוכן עבור מאגר המידע של ד״ר גיא רופא ומציג מידע כללי המבוסס על מקורות.\n• הכותרת ב[כתבת וואלה בריאות על הקשר בין צריכת סוכר לפני גיל שנתיים לדמנציה]( נשענת על מחקר שפורסם בכתב העת Neurology.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+          "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+          "alt_text": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_model_of_human_brain,_Wellcome_L0010008.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anatomical_model_of_human_brain%2C_Wellcome_L0010008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+              "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+              "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-square.png",
+              "sha256": "390a4a404cb273725041ac60268ea8aaa24464c298dec1b6e2068dc7d76194ef",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-portrait.png",
+              "sha256": "83deda89b8c70f684faa8b10853af9a04e9e2e9162d645b750ee261869725b8a",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+        "html": "<h2>צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה: מחקר תצפיתי המבוסס על “ניסוי טבעי” מצא כי אנשים שנחשפו להגבלת סוכר בתקופת ההיריון ובשנתיים הראשונות לחייהם היו בסיכון יחסי נמוך יותר לאבחנת דמנציה עשרות שנים לאחר מכן.</p><p>זהו ממצא מסקרן, אך הוא אינו מוכיח שסוכר בגיל הרך גורם לדמנציה, ואינו מאפשר לקבוע שהימנעות מסוכר לבדה תמנע את המחלה.</p>\n<p><small>קרדיט תמונה: Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+          "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+          "alt_text": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_model_of_human_brain,_Wellcome_L0010008.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anatomical_model_of_human_brain%2C_Wellcome_L0010008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+              "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+              "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-square.png",
+              "sha256": "390a4a404cb273725041ac60268ea8aaa24464c298dec1b6e2068dc7d76194ef",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-portrait.png",
+              "sha256": "83deda89b8c70f684faa8b10853af9a04e9e2e9162d645b750ee261869725b8a",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+        "description": "התשובה הקצרה: מחקר תצפיתי המבוסס על “ניסוי טבעי” מצא כי אנשים שנחשפו להגבלת סוכר בתקופת ההיריון ובשנתיים הראשונות לחייהם היו בסיכון יחסי נמוך יותר לאבחנת דמנציה עשרות שנים לאחר מכן. זהו ממצא מסקרן, אך הוא אינו מוכיח שסוכר בגיל הרך גורם לדמנציה, ואינו מאפשר לקבוע שהימנעות מסוכר לבדה תמנע את המחלה. מאת ד״ר גיא רופא\n\nקרדיט תמונה: Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeim",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-portrait.png",
+          "sha256": "83deda89b8c70f684faa8b10853af9a04e9e2e9162d645b750ee261869725b8a",
+          "alt_text": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_model_of_human_brain,_Wellcome_L0010008.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anatomical_model_of_human_brain%2C_Wellcome_L0010008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+              "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+              "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-square.png",
+              "sha256": "390a4a404cb273725041ac60268ea8aaa24464c298dec1b6e2068dc7d76194ef",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-portrait.png",
+              "sha256": "83deda89b8c70f684faa8b10853af9a04e9e2e9162d645b750ee261869725b8a",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "role": "portrait"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא.\n\nהתשובה הקצרה: מחקר תצפיתי המבוסס על “ניסוי טבעי” מצא כי אנשים שנחשפו להגבלת סוכר בתקופת ההיריון ובשנתיים הראשונות לחייהם היו בסיכון יחסי נמוך יותר לאבחנת דמנציה עשרות שנים לאחר מכן.\n\nזהו ממצא מסקרן, אך הוא אינו מוכיח שסוכר בגיל הרך גורם לדמנציה, ואינו מאפשר לקבוע שהימנעות מסוכר לבדה תמנע את המחלה.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+          "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+          "alt_text": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של מוח אנושי המוצג על רקע בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_model_of_human_brain,_Wellcome_L0010008.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anatomical_model_of_human_brain%2C_Wellcome_L0010008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical model of human brain, Wellcome L0010008.jpg — https://wellcomeimages.org/indexplus/obf_images/74/77/316725679eddbafa13093cd78230.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0010008.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/dkj7qpsd CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-hero.png",
+              "sha256": "5202499e729e7043d67adb374401a549dc8ec077f97d861701c9ef5eb1eb3a90",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-landscape.png",
+              "sha256": "9fc6e7e0e6e3a0b00716711cb0b04877903cec23cfb1ce734fbd861428f47b6b",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-square.png",
+              "sha256": "390a4a404cb273725041ac60268ea8aaa24464c298dec1b6e2068dc7d76194ef",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-90-run-30739661340-attempt-1-portrait.png",
+              "sha256": "83deda89b8c70f684faa8b10853af9a04e9e2e9162d645b750ee261869725b8a",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "b7afdc3e3d6748f7c27c72cdb7850f34ffd13b63ecf66346d257d326770e2b09",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_68abcf22b0d724964bd267f0c39e2e786cfc402e4c749d822a2563b111c67f35"
+}
