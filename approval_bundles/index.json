@@ -2,11 +2,11 @@
   "version": 7,
   "bundles": [
     {
-      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
-      "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56.json",
-      "preview_path": "approval_bundles/apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56.html",
-      "created_at": "2026-08-04T12:46:21Z",
+      "approval_id": "apr_3a2334eaa8c9c1574e40e88bf9b76eadcb360857ab5dc9b328d2b7e7e74ab0c8",
+      "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_3a2334eaa8c9c1574e40e88bf9b76eadcb360857ab5dc9b328d2b7e7e74ab0c8.json",
+      "preview_path": "approval_bundles/apr_3a2334eaa8c9c1574e40e88bf9b76eadcb360857ab5dc9b328d2b7e7e74ab0c8.html",
+      "created_at": "2026-08-04T12:48:43Z",
       "required_approval_scopes": [
         "medical_content",
         "public_publication"
@@ -15,11 +15,11 @@
       "image_selection_error": null
     },
     {
-      "approval_id": "apr_332f63dbff00c7504b565977e788d904ac5cf35a6dded938e810b8a5d9647ee5",
-      "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_332f63dbff00c7504b565977e788d904ac5cf35a6dded938e810b8a5d9647ee5.json",
-      "preview_path": "approval_bundles/apr_332f63dbff00c7504b565977e788d904ac5cf35a6dded938e810b8a5d9647ee5.html",
-      "created_at": "2026-08-04T12:45:56Z",
+      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56.json",
+      "preview_path": "approval_bundles/apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56.html",
+      "created_at": "2026-08-04T12:46:21Z",
       "required_approval_scopes": [
         "medical_content",
         "public_publication"
