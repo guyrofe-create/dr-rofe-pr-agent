@@ -1,0 +1,67 @@
+name: Regenerate Pending Review Images Once
+
+on:
+  push:
+    branches:
+      - agent/default-reputation-image
+    paths:
+      - .github/workflows/regenerate_pending_review_images_once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Regenerate every pending image
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          mapfile -t drafts < <(
+            jq -r '.bundles[] | select(.image_status == "awaiting_replacement") | .draft_path' \
+              approval_bundles/index.json
+          )
+          if (( ${#drafts[@]} == 0 )); then
+            echo "No approval bundle is waiting for a replacement image."
+            exit 0
+          fi
+          for draft_path in "${drafts[@]}"; do
+            echo "Regenerating ${draft_path}"
+            python scripts/prepare_approval_bundle.py \
+              "${draft_path}" \
+              --find-licensed-image \
+              --replace-existing-image-only \
+              --result-path "${RUNNER_TEMP}/$(basename "${draft_path}").json"
+          done
+
+      - name: Commit regenerated approval bundles
+        run: |
+          git config user.name "dr-rofe-pr-agent"
+          git config user.email "actions@github.com"
+          git add approval_bundles/
+          git add data/ai_usage_events/ 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Regenerate all pending review images"
+            git push
+          fi
+
+      - name: Show review link
+        run: |
+          {
+            echo "## התמונות הממתינות נוצרו מחדש"
+            echo
+            echo "[פתח את מרכז האישורים](https://dr-rofe-reputation-center.guyrofe.chatgpt.site)"
+            echo
+            echo "המקור והרישיון נבדקו; בחירת התמונה בוצעה לפי התאמתה לנושא הפוסט בלבד."
+          } >> "${GITHUB_STEP_SUMMARY}"
