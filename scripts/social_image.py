@@ -183,7 +183,7 @@ def topic_search_queries(title):
     topic = _topic_without_client(title)
     if "כאבי מחזור" in topic or "דיסמנוריאה" in topic:
         return [
-            "dysmenorrhea",
+            "experiencing menstrual pain",
             "menstrual pain",
             "period pain",
             "menstrual cramps",

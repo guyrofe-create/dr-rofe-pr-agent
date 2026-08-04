@@ -35,7 +35,10 @@ jobs:
               approval_bundles/index.json
             jq -r '.bundles[].bundle_path' approval_bundles/index.json |
               while read -r bundle_path; do
-                jq -r 'select(.media.source_type == "owner_provided_default") | .source_draft' \
+                jq -r 'select(
+                  .media.source_type == "owner_provided_default" or
+                  (.media.source_page_url | contains("Menstrual_blood_in_sink"))
+                ) | .source_draft' \
                   "${bundle_path}"
               done
           } | sort -u)

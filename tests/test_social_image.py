@@ -154,7 +154,7 @@ class SocialImageTests(unittest.TestCase):
 
     def test_failed_topics_have_direct_deterministic_queries(self):
         self.assertIn(
-            "menstrual pain",
+            "experiencing menstrual pain",
             social_image.topic_search_queries("כאבי מחזור קשים"),
         )
         self.assertIn(
