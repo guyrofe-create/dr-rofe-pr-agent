@@ -12,6 +12,7 @@ import os
 import re
 from dataclasses import dataclass, field
 from io import BytesIO
+from pathlib import Path
 from urllib.parse import quote
 
 import requests
@@ -25,6 +26,11 @@ _CLIENT_NAME = _CLIENT_FACTS["primary_name"]
 _CLIENT_SITE = _CLIENT_FACTS["canonical_site"]
 COMMONS_API_URL = "https://commons.wikimedia.org/w/api.php"
 OPENVERSE_API_URL = "https://api.openverse.org/v1/images/"
+DEFAULT_IMAGE_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "assets"
+    / "default-reputation-image.png"
+)
 COMMONS_USER_AGENT = (
     f"ReputationAgentPublisher/1.0 ({_CLIENT_SITE}; licensed-photo-selector)"
 )
@@ -160,15 +166,10 @@ def _search_query_prompt(title, summary):
         "editorial photograph that directly illustrates this Hebrew medical "
         "article. Each query must contain only 2-4 concrete searchable words, "
         "not a sentence or metaphor. Name visible subjects, objects or places. "
-        "Prefer relevant medical equipment, instruments, research objects or an "
-        "empty clinical environment. Do not request any person, exposed body, "
-        "body-part close-up, patient, doctor treating a patient, readable text, "
-        "brand, logo, a diagram, illustration, infographic, icon, or AI image. "
-        "Do not request pregnancy, fetal or newborn "
-        "imagery unless the exact article requires it. For articles about evaluating "
-        "online information, prefer a people-free research desk with a laptop, "
-        "reference books and magnifying glass; do not request screenshots or "
-        "readable on-screen text. "
+        "Optimize only for direct topical relevance. People, clinical settings, "
+        "equipment, body parts, visible text, labels and brands are all acceptable "
+        "when they genuinely illustrate the article. The source and reusable "
+        "license are verified separately by the product. "
         "Return JSON only in this exact form: "
         '{"queries":["query 1","query 2","query 3","query 4","query 5"]}.\n'
         f"Preferred visible subject: {_topic_visual_brief(title)}\n"
@@ -180,6 +181,20 @@ def _search_query_prompt(title, summary):
 def topic_search_queries(title):
     """Return deterministic Commons queries for recognized medical topics."""
     topic = _topic_without_client(title)
+    if "כאבי מחזור" in topic or "דיסמנוריאה" in topic:
+        return [
+            "experiencing menstrual pain",
+            "menstrual pain",
+            "period pain",
+            "menstrual cramps",
+        ]
+    if "משמרות לילה" in topic or "עבודת לילה" in topic:
+        return [
+            "night duty hospital",
+            "hospital at night",
+            "night shift work",
+            "night shift worker",
+        ]
     if "מיומ" in topic:
         return [
             "gynecological ultrasound equipment",
@@ -468,7 +483,7 @@ def interleave_candidates(*groups):
 
 
 def review_relevance(client, image_bytes, media_type, title, summary):
-    """Accept only a real-looking photo that directly supports the article."""
+    """Accept a licensed photograph based only on direct topical relevance."""
     encoded = base64.b64encode(image_bytes).decode("ascii")
     model = os.environ.get("OPENAI_IMAGE_REVIEW_MODEL", "gpt-5.6")
     response = client.responses.create(
@@ -480,24 +495,14 @@ def review_relevance(client, image_bytes, media_type, title, summary):
                     {
                         "type": "input_text",
                         "text": (
-                        "Act as a strict senior medical photo editor. This is "
-                        "an existing licensed photograph, not a generation "
-                        "request. Accept it only if it is clearly relevant to "
-                        "the exact article and is a normal believable photo. "
-                        "When the medical concept cannot itself be photographed, "
-                        "accept a truthful people-free photograph of its central "
-                        "physical subject or examination context—for example an "
-                        "unlabelled meal for meal timing, or unlabelled ultrasound "
-                        "equipment for PCOS. The photo need not depict or prove the "
-                        "disease, mechanism or outcome. "
-                        "Reject generic wellness imagery, any person, exposed "
-                            "body or body-part close-up, doctors or clinics not "
-                            "required by the article, illustrations, diagrams, "
-                            "screenshots, and ANY visible letter, word, number, "
-                            "brand name, logo, label, watermark or readable interface "
-                            "text anywhere in the image. Also reject pregnancy or fetal "
-                            "imagery unless the exact article requires it, or content "
-                            "that could mislead readers. Return exactly one line. If suitable: "
+                        "This photograph has already passed the product's approved-source "
+                        "and reusable-license checks. Judge it only by whether the visible "
+                        "content directly and truthfully illustrates the exact article. "
+                        "Do not reject it because it contains people, a patient, a clinician, "
+                        "a body part, a clinical setting, visible text, numbers, labels, "
+                        "branding or a watermark. Reject it only when it is not topically "
+                        "relevant or would materially misrepresent the article's subject. "
+                        "Return exactly one line. If suitable: "
                             "ACCEPT: followed by a concrete truthful Hebrew alt-text "
                             "description of only what is visibly present. Otherwise: "
                             "REJECT: followed by a short reason.\n\n"
@@ -711,6 +716,22 @@ def _fit_cover(image, size):
     return resized.crop((left, top, left + target_width, top + target_height))
 
 
+def _fit_contain(image, size, background=(255, 255, 255)):
+    """Fit the complete branded default inside a platform canvas without cropping."""
+    target_width, target_height = size
+    foreground = image.convert("RGBA")
+    ratio = min(target_width / foreground.width, target_height / foreground.height)
+    resized = foreground.resize(
+        (round(foreground.width * ratio), round(foreground.height * ratio)),
+        Image.Resampling.LANCZOS,
+    )
+    canvas = Image.new("RGBA", size, (*background, 255))
+    left = (target_width - resized.width) // 2
+    top = (target_height - resized.height) // 2
+    canvas.alpha_composite(resized, (left, top))
+    return canvas.convert("RGB")
+
+
 def _topic_without_client(title):
     value = " ".join((title or "מידע רפואי מבוסס מקורות").lstrip("#").split())
     for variant in sorted(_CLIENT_FACTS.get("name_variants", []), key=len, reverse=True):
@@ -724,9 +745,40 @@ def _png_bytes(image):
     return output.getvalue()
 
 
+def default_branded_image(path=DEFAULT_IMAGE_PATH):
+    """Return the owner-provided logo package used only when no other image exists."""
+    try:
+        base = Image.open(path)
+        base.load()
+    except Exception as exc:
+        raise PhotoSelectionError(
+            f"The default reputation image could not be loaded: {path}"
+        ) from exc
+    variants = {
+        "hero": _png_bytes(_fit_contain(base, (1600, 900))),
+        "landscape": _png_bytes(_fit_contain(base, (1200, 630))),
+        "square": _png_bytes(_fit_contain(base, (1200, 1200))),
+        "portrait": _png_bytes(_fit_contain(base, (1080, 1350))),
+    }
+    return SocialImage(
+        content=variants["landscape"],
+        media_type="image/png",
+        extension="png",
+        visual_description="הלוגו של ד״ר גיא רופא על רקע לבן",
+        creator=_CLIENT_NAME,
+        license_name="Owner-provided brand asset",
+        attribution="",
+        source_type="owner_provided_default",
+        variants=variants,
+    )
+
+
 def generate(title, summary, client=None):
-    """Return four crops of one reviewed, licensed real photograph."""
-    licensed = select_licensed_photo(title, summary, client=client)
+    """Return four image variants, falling back to the owner-provided logo."""
+    try:
+        licensed = select_licensed_photo(title, summary, client=client)
+    except PhotoSelectionError:
+        return default_branded_image()
     try:
         base = Image.open(BytesIO(licensed.content)).convert("RGB")
     except Exception as exc:
@@ -809,7 +861,10 @@ def upload_to_wordpress(
         "openai_generated_text_free_visual",
         "deterministic_text_free_fallback",
     }
-    if generated:
+    if image.source_type == "owner_provided_default":
+        caption = ""
+        description = f"תמונת ברירת־מחדל ממותגת שסופקה על ידי {_CLIENT_NAME}."
+    elif generated:
         caption = ""
         description = (
             f"תמונה ללא מלל שנוצרה עבור מאמר של {_CLIENT_NAME} באמצעות "

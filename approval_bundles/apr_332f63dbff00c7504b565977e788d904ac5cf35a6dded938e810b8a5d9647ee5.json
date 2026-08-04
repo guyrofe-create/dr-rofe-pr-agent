@@ -1,0 +1,454 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-04T12:45:56Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
+  "source_draft_sha256": "b00e3aa326d0396eed8f36608b2050ac01dd9fdc43a98dc3a30f47a9274ca661",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/12/dysmenorrhea-and-endometriosis-in-the-adolescent",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng73/chapter/Recommendations",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1002/14651858.CD001751.pub3",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+    "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+    "alt_text": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Menstrual_blood_in_sink_2.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Menstrual_blood_in_sink_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Jamin Mahmood of Vulvani",
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+        "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+        "width": 1600,
+        "height": 900
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+        "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+        "width": 1200,
+        "height": 630
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-square.png",
+        "sha256": "5f21cf19d4387ca4416c2ed883f20792e62c4eed81a059330577fa30088be32f",
+        "width": 1200,
+        "height": 1200
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-portrait.png",
+        "sha256": "1df8323751814b5bf79d250ec76b978803ac06c77bc20f29ef69ef931c63508f",
+        "width": 1080,
+        "height": 1350
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+        "markdown": "# כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\nמאת: [ד״ר גיא רופא](https://guyrofe.com)\n\n**התשובה הקצרה:** כאב מחזור קל עד בינוני, שנמשך בדרך כלל יום עד שלושה ימים ומשתפר בעזרת מנוחה או טיפול מקובל, עשוי להיחשב שכיח. לעומת זאת, כאב שמשבית מפעילות, גורם להיעדרות קבועה מהלימודים או מהעבודה, מחמיר עם הזמן, אינו מגיב לטיפול או מלווה בתסמינים חריגים — אינו מצב שכדאי לקבל כ“נורמלי” ללא בירור רפואי.\n\n**מבוא**\n\nכאבי מחזור, הנקראים ברפואה דיסמנוריאה, הם תופעה נפוצה. עם זאת, עצם השכיחות אינה הופכת כל עוצמת כאב לתקינה. במשך שנים נשים ונערות רבות שמעו שכאב הוא “חלק מהמחזור”, ולעיתים למדו להתעלם גם מכאב משמעותי. גישה זו עלולה לעכב זיהוי של מצבים רפואיים כגון אנדומטריוזיס, אדנומיוזיס, שרירנים, זיהום באגן או בעיה אחרת הדורשת הערכה.\n\nאין בדיקה יחידה שקובעת כמה כאב הוא נורמלי. ההבחנה נשענת על שילוב בין עוצמת הכאב, משכו, השפעתו על התפקוד, התסמינים הנלווים, דפוס ההופעה והתגובה לטיפול. כאב הוא חוויה אישית, ולכן אין צורך “להוכיח” שהוא חמור באמצעות סף מספרי מסוים כדי להצדיק בירור.\n\n## מדוע המחזור עלול לכאוב?\n\nבמהלך הווסת רירית הרחם מתפרקת ונפלטת. חומרים בשם פרוסטגלנדינים משתתפים ביצירת התכווצויות של שריר הרחם, המסייעות בפליטת הרירית. רמות גבוהות יותר של פרוסטגלנדינים עשויות להיות קשורות להתכווצויות חזקות יותר, לכאב ולעיתים גם לבחילה, שלשול, כאב ראש או תחושת חולשה.\n\nכאבי מחזור נחלקים באופן כללי לשני סוגים:\n\n**דיסמנוריאה ראשונית** היא כאב מחזור שאינו נובע ממחלה מזוהה באגן. היא מתחילה לעיתים קרובות בגיל ההתבגרות, לאחר שהמחזורים נעשים ביוציים. הכאב מופיע בדרך כלל זמן קצר לפני תחילת הדימום או עם תחילתו, מגיע לשיא במהלך היממה הראשונה ונחלש בתוך יומיים עד שלושה.\n\n**דיסמנוריאה משנית** היא כאב הנובע ממצב רפואי אחר. בין הגורמים האפשריים נמצאים אנדומטריוזיס, אדנומיוזיס, שרירנים ברחם, היצרות של צוואר הרחם, דלקת או זיהום באגן, ולעיתים בעיה הקשורה להתקן תוך־רחמי. בדיסמנוריאה משנית הכאב עשוי להתחיל לפני הדימום, להימשך אחריו, להופיע גם בין מחזורים או להחמיר בהדרגה.\n\nההבחנה אינה מתבססת על עוצמת הכאב בלבד. גם דיסמנוריאה ראשונית עלולה להיות קשה, ואילו מצב רפואי משני עשוי בתחילתו לגרום לכאב מתון בלבד.\n\n## מה עשוי להיחשב כאב מחזור שכיח — ומה כבר דורש בירור?\n\nכאב עשוי להתאים לדפוס שכיח כאשר הוא מופיע סביב תחילת הווסת, נמשך זמן מוגבל, אינו מחמיר ממחזור למחזור, ואפשר להמשיך ברוב הפעילות היומיומית בעזרת אמצעים פשוטים. גם במקרה כזה אין חובה לסבול, וניתן לדון באפשרויות להקלה עם איש או אשת מקצוע רפואיים.\n\nמנגד, מומלץ לא להתייחס לכאב כאל “רגיל” כאשר מתקיים אחד או יותר מהמצבים הבאים:\n\n- הכאב מונע יציאה מהמיטה או ביצוע פעולות בסיסיות.\n- יש היעדרות חוזרת מהלימודים, מהעבודה או מפעילות חברתית.\n- הכאב אינו משתפר במידה מספקת לאחר טיפול מקובל שנלקח באופן מתאים.\n- עוצמת הכאב עולה עם הזמן או שהכאב החל לראשונה לאחר שנים של מחזורים לא כואבים.\n- הכאב מתחיל ימים רבים לפני הדימום או נמשך לאחר סיומו.\n- מופיע כאב גם בין הווסתות, בעת מתן שתן או פעולת מעיים, או בזמן יחסי מין.\n- הדימום כבד מאוד, ממושך או מלווה בקרישי דם גדולים.\n- קיימים קושי להרות, עייפות משמעותית, סחרחורת או תסמינים העלולים להתאים לאנמיה.\n- קיימת היסטוריה משפחתית של אנדומטריוזיס.\n\nלפי [הנחיית ACOG בנושא דיסמנוריאה ואנדומטריוזיס בגיל ההתבגרות](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/12/dysmenorrhea-and-endometriosis-in-the-adolescent), כאשר אין שיפור קליני לאחר טיפול אמפירי מתאים במשך כמה חודשים, יש לבחון גורמים משניים לכאב ולהעריך את ההיענות לטיפול. ההנחיה מתייחסת למתבגרות, אך העיקרון שלפיו כאב מתמשך שאינו מגיב לטיפול מצדיק הערכה נוספת רלוונטי להבנת הנושא גם מעבר לגיל ההתבגרות.\n\nסולם כאב של 0 עד 10 יכול לסייע במעקב, אך אינו חזות הכול. כאב המדורג “6” אצל אישה אחת אינו בהכרח שקול לאותו דירוג אצל אחרת. השאלה התפקודית — מה הכאב מונע ממני לעשות — מספקת לעיתים מידע שימושי יותר מהמספר לבדו.\n\n## אילו מצבים רפואיים עלולים להסתתר מאחורי כאב קשה?\n\nאחד המצבים המרכזיים שיש לשקול הוא **אנדומטריוזיס**, שבו רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. המחלה עשויה להתבטא בכאבי מחזור קשים, כאב אגני כרוני, כאב ביחסי מין, כאב ביציאות או במתן שתן סביב הווסת ולעיתים בקושי להרות. לא כל מי שסובלת מאנדומטריוזיס תחווה את כל התסמינים, ואין בהכרח התאמה בין עוצמת הכאב להיקף המחלה.\n\nבהתאם ל[המלצות NICE לאבחון ולטיפול באנדומטריוזיס](https://www.nice.org.uk/guidance/ng73/chapter/Recommendations), יש לחשוד באנדומטריוזיס בין היתר כאשר קיימים כאבי מחזור המשפיעים על הפעילות היומיומית ועל איכות החיים, כאב אגני כרוני או תסמינים מחזוריים במערכת העיכול או השתן. ההנחיה גם מדגישה שבדיקת אולטרסאונד תקינה אינה שוללת בהכרח אנדומטריוזיס.\n\n**אדנומיוזיס** מתרחש כאשר רקמה הדומה לרירית הרחם נמצאת בתוך שריר הרחם. הוא עשוי לגרום לכאב, לתחושת לחץ באגן ולדימום כבד או ממושך. **שרירנים** הם גידולים שפירים של שריר הרחם, שחלקם עלולים לגרום לדימום מוגבר, כאב או לחץ.\n\nמצבים אפשריים נוספים כוללים זיהום באגן, ציסטה שחלתית, הפרעות במערכת העיכול או השתן, ולעיתים נדירות יותר מצב חריף כמו תסביב שחלה. לא כל כאב אגני שמופיע בזמן הווסת מקורו ברחם, ולכן אבחון עצמי על סמך תסמין יחיד אינו מספיק.\n\n## איך מתבצע הבירור?\n\nהבירור מתחיל בדרך כלל בשיחה רפואית מפורטת. חשוב לתאר מתי הכאב מתחיל ביחס לדימום, כמה זמן הוא נמשך, האם הוא מופיע גם בזמנים אחרים, ומהי השפעתו על שינה, לימודים, עבודה, פעילות גופנית ויחסים. מידע על כמות הדימום, סדירות המחזורים, תסמיני עיכול או שתן, תרופות והיסטוריה משפחתית יכול לסייע.\n\nיומן מחזור ותסמינים עשוי לשפר את הדיוק. ניתן לתעד במשך כמה מחזורים:\n\n- תאריכי הדימום ומשכו.\n- עוצמת הכאב ומיקומו.\n- מספר ימי ההיעדרות או הירידה בתפקוד.\n- כמות משככי הכאבים ומועד נטילתם.\n- דימום חריג ותסמינים נלווים.\n- כאב ביחסי מין, ביציאות או במתן שתן.\n\nבהתאם לגיל, לתסמינים ולנסיבות, הבירור עשוי לכלול בדיקה גופנית או גינקולוגית, בדיקת היריון, בדיקות דם ואולטרסאונד. במקרים מסוימים נדרשות בדיקות נוספות. בדיקת הדמיה תקינה אינה מבטלת תלונה משמעותית, ובפרט אינה שוללת את כל צורות האנדומטריוזיס.\n\nמטרת הבירור אינה רק למצוא אבחנה, אלא גם להעריך את חומרת הפגיעה בתפקוד ולשלול מצבים המחייבים טיפול מהיר.\n\n## מה אפשר לעשות להקלה, ומתי נדרשת עזרה דחופה?\n\nאמצעים לא תרופתיים כגון כרית חימום, מקלחת חמה, תנועה מתונה ושינה מספקת עשויים להקל אצל חלק מהנשים. הטיפול התרופתי המקובל בדיסמנוריאה ראשונית כולל לעיתים קרובות נוגדי דלקת שאינם סטרואידיים, הפועלים על מסלול הפרוסטגלנדינים. [סקירת Cochrane על נוגדי דלקת לכאבי מחזור](https://doi.org/10.1002/14651858.CD001751.pub3) מצאה שהם יעילים יותר מפלצבו בהקלה על דיסמנוריאה ראשונית, לצד סיכון מוגבר לתופעות לוואי.\n\nתרופות אלה אינן מתאימות לכל אחת. מחלת כליות, כיב או דימום במערכת העיכול, רגישות לתרופה, שימוש במדללי דם, מצבים רפואיים מסוימים והיריון אפשרי עשויים לשנות את בחירת הטיפול. יש להשתמש בתרופות רק לפי העלון והנחיה רפואית או רוקחית מתאימה, ולא לשלב תכשירים מאותה משפחה ללא הנחיה.\n\nאפשרויות הורמונליות עשויות להפחית כאב ודימום בחלק מהמקרים. בחירתן תלויה בגיל, במחלות רקע, בגורמי סיכון, בתוכניות להיריון ובהעדפות אישיות. כאשר קיים גורם משני, הטיפול מותאם לאבחנה ואינו מסתכם בהכרח במשכך כאבים.\n\nיש לפנות להערכה דחופה כאשר מופיעים כאב פתאומי וחזק במיוחד, עילפון, חולשה קיצונית, חום, הקאות שאינן פוסקות, דימום כבד מאוד, הפרשה חריגה, כאב חד בצד אחד או כאב עם חשד להיריון. שילוב של כאב אגני ודימום בזמן היריון אפשרי מחייב לשלול היריון מחוץ לרחם ומצבים דחופים אחרים.\n\n## סיכום\n\nכאב מחזור שכיח אינו בהכרח כאב שצריך להשלים עמו. כאב מוגבל בזמן שאינו פוגע משמעותית בתפקוד ומשתפר בטיפול מקובל עשוי להתאים לדיסמנוריאה ראשונית. לעומת זאת, כאב משבית, מחמיר, ממושך, חדש או עמיד לטיפול — ובמיוחד כאב המלווה בדימום חריג, בתסמינים בין הווסתות או בכאב ביחסי מין, ביציאות או במתן שתן — מצדיק בירור רפואי.\n\nהמדד החשוב אינו רק ציון הכאב, אלא ההשפעה שלו על החיים. תיעוד עקבי של התסמינים יכול לסייע להבחין בין דפוס שכיח לבין מצב הדורש הערכה ממוקדת. המידע במאמר הוא כללי, אינו מהווה אבחון או הוראה טיפולית, וכל טענה או המלצה רפואית בו מחייבת ביקורת של רופא או רופאה לפני פרסום או יישום.\n\n> **על המחבר**  \n> ד״ר גיא רופא הוא יוצר תוכן רפואי ומחבר ספרים. על פי הסטטוס הנוכחי המאושר, הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. American College of Obstetricians and Gynecologists (ACOG), *Dysmenorrhea and Endometriosis in the Adolescent*:  \n   https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/12/dysmenorrhea-and-endometriosis-in-the-adolescent\n\n2. National Institute for Health and Care Excellence (NICE), *Endometriosis: diagnosis and management — Recommendations*:  \n   https://www.nice.org.uk/guidance/ng73/chapter/Recommendations\n\n3. Cochrane Database of Systematic Reviews, *Nonsteroidal anti-inflammatory drugs for dysmenorrhoea*:  \n   https://doi.org/10.1002/14651858.CD001751.pub3\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "fd4fe03de79426998a921a3a3c1799224938ce0d6b2241a4c73f735cd5e517e8",
+        "slug": "guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+          "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+          "alt_text": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Menstrual_blood_in_sink_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Menstrual_blood_in_sink_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jamin Mahmood of Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+              "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+              "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-square.png",
+              "sha256": "5f21cf19d4387ca4416c2ed883f20792e62c4eed81a059330577fa30088be32f",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-portrait.png",
+              "sha256": "1df8323751814b5bf79d250ec76b978803ac06c77bc20f29ef69ef931c63508f",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא]( התשובה הקצרה: כאב מחזור קל עד בינוני, שנמשך בדרך כלל יום עד שלושה ימים ומשתפר בעזרת מנוחה או טיפול מקובל, עשוי להיחשב שכיח.\n\nלעומת זאת, כאב שמשבית מפעילות, גורם להיעדרות קבועה מהלימודים או מהעבודה, מחמיר עם הזמן, אינו מגיב לטיפול או מלווה בתסמינים חריגים — אינו מצב שכדאי לקבל כ“נורמלי” ללא בירור רפואי.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+          "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+          "alt_text": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Menstrual_blood_in_sink_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Menstrual_blood_in_sink_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jamin Mahmood of Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+              "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+              "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-square.png",
+              "sha256": "5f21cf19d4387ca4416c2ed883f20792e62c4eed81a059330577fa30088be32f",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-portrait.png",
+              "sha256": "1df8323751814b5bf79d250ec76b978803ac06c77bc20f29ef69ef931c63508f",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא]( התשובה הקצרה: כאב מחזור קל עד בינוני, שנמשך בדרך כלל יום עד שלושה ימים ומשתפר בעזרת מנוחה או טיפול מקובל, עשוי להיחשב שכיח.\n\n• לעומת זאת, כאב שמשבית מפעילות, גורם להיעדרות קבועה מהלימודים או מהעבודה, מחמיר עם הזמן, אינו מגיב לטיפול או מלווה בתסמינים חריגים — אינו מצב שכדאי לקבל כ“נורמלי” ללא בירור רפואי.\n• מבוא כאבי מחזור, הנקראים ברפואה דיסמנוריאה, הם תופעה נפוצה.\n• עם זאת, עצם השכיחות אינה הופכת כל עוצמת כאב לתקינה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+          "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+          "alt_text": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Menstrual_blood_in_sink_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Menstrual_blood_in_sink_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jamin Mahmood of Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+              "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+              "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-square.png",
+              "sha256": "5f21cf19d4387ca4416c2ed883f20792e62c4eed81a059330577fa30088be32f",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-portrait.png",
+              "sha256": "1df8323751814b5bf79d250ec76b978803ac06c77bc20f29ef69ef931c63508f",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+        "html": "<h2>כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>מאת: [ד״ר גיא רופא]( התשובה הקצרה: כאב מחזור קל עד בינוני, שנמשך בדרך כלל יום עד שלושה ימים ומשתפר בעזרת מנוחה או טיפול מקובל, עשוי להיחשב שכיח.</p><p>לעומת זאת, כאב שמשבית מפעילות, גורם להיעדרות קבועה מהלימודים או מהעבודה, מחמיר עם הזמן, אינו מגיב לטיפול או מלווה בתסמינים חריגים — אינו מצב שכדאי לקבל כ“נורמלי” ללא בירור רפואי.</p>\n<p><small>קרדיט תמונה: Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons</small></p>",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+          "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+          "alt_text": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Menstrual_blood_in_sink_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Menstrual_blood_in_sink_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jamin Mahmood of Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+              "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+              "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-square.png",
+              "sha256": "5f21cf19d4387ca4416c2ed883f20792e62c4eed81a059330577fa30088be32f",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-portrait.png",
+              "sha256": "1df8323751814b5bf79d250ec76b978803ac06c77bc20f29ef69ef931c63508f",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+        "description": "מאת: [ד״ר גיא רופא]( התשובה הקצרה: כאב מחזור קל עד בינוני, שנמשך בדרך כלל יום עד שלושה ימים ומשתפר בעזרת מנוחה או טיפול מקובל, עשוי להיחשב שכיח. לעומת זאת, כאב שמשבית מפעילות, גורם להיעדרות קבועה מהלימודים או מהעבודה, מחמיר עם הזמן, אינו מגיב לטיפול או מלווה בתסמינים חריגים — אינו מצב שכדאי לקבל כ“נורמלי” ללא בירור רפואי. מאת ד״ר גיא רופא\n\nקרדיט תמונה: Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-portrait.png",
+          "sha256": "1df8323751814b5bf79d250ec76b978803ac06c77bc20f29ef69ef931c63508f",
+          "alt_text": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Menstrual_blood_in_sink_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Menstrual_blood_in_sink_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jamin Mahmood of Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+              "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+              "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-square.png",
+              "sha256": "5f21cf19d4387ca4416c2ed883f20792e62c4eed81a059330577fa30088be32f",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-portrait.png",
+              "sha256": "1df8323751814b5bf79d250ec76b978803ac06c77bc20f29ef69ef931c63508f",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "role": "portrait"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא.\n\nמאת: [ד״ר גיא רופא]( התשובה הקצרה: כאב מחזור קל עד בינוני, שנמשך בדרך כלל יום עד שלושה ימים ומשתפר בעזרת מנוחה או טיפול מקובל, עשוי להיחשב שכיח.\n\nלעומת זאת, כאב שמשבית מפעילות, גורם להיעדרות קבועה מהלימודים או מהעבודה, מחמיר עם הזמן, אינו מגיב לטיפול או מלווה בתסמינים חריגים — אינו מצב שכדאי לקבל כ“נורמלי” ללא בירור רפואי.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+          "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+          "alt_text": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "נוזל אדום מדולל סביב פתח ניקוז בכיור לבן.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Menstrual_blood_in_sink_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Menstrual_blood_in_sink_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jamin Mahmood of Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Menstrual blood in sink 2.jpg — Jamin Mahmood of Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-hero.png",
+              "sha256": "d2778bb95aa1226a007346fa7f2511870c98db08944a43b6e3bc154fc3525a88",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-landscape.png",
+              "sha256": "12f585d692ce41ce4e317c30cdd19aad1b1fd87de7dd8b1f18201ca792c94429",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-square.png",
+              "sha256": "5f21cf19d4387ca4416c2ed883f20792e62c4eed81a059330577fa30088be32f",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-02-topic-05-run-30739661340-attempt-1-portrait.png",
+              "sha256": "1df8323751814b5bf79d250ec76b978803ac06c77bc20f29ef69ef931c63508f",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "fd4fe03de79426998a921a3a3c1799224938ce0d6b2241a4c73f735cd5e517e8",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_332f63dbff00c7504b565977e788d904ac5cf35a6dded938e810b8a5d9647ee5"
+}

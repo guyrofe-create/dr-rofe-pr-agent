@@ -52,11 +52,33 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(len(queries), 3)
         prompt = client.responses.create.call_args.kwargs["input"]
         self.assertIn("real editorial photograph", prompt)
-        self.assertIn("doctor treating a patient", prompt)
-        self.assertIn("exposed body", prompt)
-        self.assertIn("brand, logo", prompt)
-        self.assertIn("evaluating online information", prompt)
+        self.assertIn("only for direct topical relevance", prompt)
+        self.assertIn("visible text, labels and brands are all acceptable", prompt)
         self.assertIn("2-4 concrete searchable words", prompt)
+
+    def test_relevance_review_uses_topic_only_policy(self):
+        client = Mock()
+        client.responses.create.return_value = SimpleNamespace(
+            output_text="ACCEPT: צילום רלוונטי של רופאה ליד מכשיר רפואי"
+        )
+
+        accepted, description = social_image.review_relevance(
+            client,
+            b"photo-bytes",
+            "image/jpeg",
+            "בדיקה רפואית",
+            "מידע על הבדיקה",
+        )
+
+        self.assertTrue(accepted)
+        self.assertIn("רופאה", description)
+        prompt = client.responses.create.call_args.kwargs["input"][0]["content"][0][
+            "text"
+        ]
+        self.assertIn("Judge it only", prompt)
+        self.assertIn("Do not reject it because it contains people", prompt)
+        self.assertNotIn("Reject generic wellness imagery", prompt)
+        self.assertNotIn("ANY visible letter", prompt)
 
     def test_long_planner_phrases_are_compacted_for_commons(self):
         queries = social_image.expand_search_queries(
@@ -129,6 +151,16 @@ class SocialImageTests(unittest.TestCase):
         client.responses.create.assert_not_called()
         searched = [call.args[0] for call in search.call_args_list]
         self.assertIn("gynecological ultrasound equipment", searched)
+
+    def test_failed_topics_have_direct_deterministic_queries(self):
+        self.assertIn(
+            "experiencing menstrual pain",
+            social_image.topic_search_queries("כאבי מחזור קשים"),
+        )
+        self.assertIn(
+            "night duty hospital",
+            social_image.topic_search_queries("משמרות לילה משבשות את הגוף"),
+        )
 
     @patch("scripts.social_image.search_openverse", return_value=[])
     @patch("scripts.social_image.search_commons", return_value=[])
@@ -302,10 +334,20 @@ class SocialImageTests(unittest.TestCase):
         "scripts.social_image.select_licensed_photo",
         side_effect=social_image.PhotoSelectionError("none"),
     )
-    def test_generate_fails_closed_without_creating_an_ai_image(self, select):
+    def test_generate_uses_owner_default_without_creating_an_ai_image(self, select):
         client = Mock()
-        with self.assertRaisesRegex(social_image.PhotoSelectionError, "none"):
-            social_image.generate("כותרת", "תקציר", client=client)
+        result = social_image.generate("כותרת", "תקציר", client=client)
+
+        self.assertEqual(result.source_type, "owner_provided_default")
+        self.assertEqual(
+            set(result.variants),
+            {"hero", "landscape", "square", "portrait"},
+        )
+        self.assertEqual(Image.open(BytesIO(result.variants["hero"])).size, (1600, 900))
+        self.assertEqual(
+            Image.open(BytesIO(result.variants["portrait"])).size,
+            (1080, 1350),
+        )
         self.assertFalse(hasattr(client, "images") and client.images.generate.called)
 
     def test_commons_candidate_rejects_ai_or_illustration(self):

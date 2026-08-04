@@ -1,0 +1,459 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-04T12:40:05Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+  "source_draft_sha256": "96714b86927f630cd40a5df6679e6dd5e4871120accda74160a6383957570c8e",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/b1kxgusngg",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/niosh/work-hour-training-for-nurses/longhours/mod2/17.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6153510/",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.3389/fpubh.2025.1668848",
+      "type": "citation"
+    },
+    {
+      "url": "https://publications.iarc.who.int/593",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+    "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+    "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+        "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+        "width": 1600,
+        "height": 900
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+        "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+        "width": 1200,
+        "height": 630
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-square.png",
+        "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+        "width": 1200,
+        "height": 1200
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-portrait.png",
+        "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+        "width": 1080,
+        "height": 1350
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
+        "markdown": "# משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** עבודה קבועה או ממושכת בלילה עלולה לשבש את השעון הביולוגי, לקצר את השינה ולפגוע באיכותה. מחקרים מצאו קשר בין עבודת לילה לבין סיכון מוגבר למחלות לב וכלי דם, הפרעות מטבוליות ובהן סוכרת מסוג 2, פגיעה קוגניטיבית, דמנציה וסוגים מסוימים של סרטן. עם זאת, מרבית הראיות הן תצפיתיות: הן מצביעות על קשר סטטיסטי, אך אינן מוכיחות שמשמרות הלילה לבדן גרמו למחלות אלה.\n\n[כתבת הבריאות שנבדקת במאמר זה, העוסקת בהשפעות האפשריות של משמרות לילה](https://www.ynet.co.il/health/article/b1kxgusngg), מרכזת טענות בנוגע לדמנציה, מחלות לב, הפרעות מטבוליות וסרטן. היא משמשת כאן נקודת מוצא לניתוח הכותרת בלבד — לא מקור רפואי ולא בסיס ראייתי. כדי להבין מה באמת ידוע, יש לבדוק את המחקרים המקוריים ואת המסמכים של רשויות הבריאות, להבחין בין סיכון יחסי למוחלט ובעיקר להפריד בין מתאם לבין סיבתיות.\n\nהכותרת שלפיה משמרות לילה “משבשות לנו את הגוף” נשמעת דרמטית, אך מאחוריה עומד מנגנון ביולוגי מוכר. גוף האדם מותאם במידה רבה לפעילות בשעות האור ולשינה בחשכה. כאשר אדם נדרש לעבוד, לאכול ולהיחשף לאור בלילה — ואז לנסות לישון ביום — נוצר פער בין לוח הזמנים החיצוני לבין המערכות הפנימיות המווסתות שינה, ערנות, הפרשת הורמונים, טמפרטורת גוף, לחץ דם וחילוף חומרים.\n\nעם זאת, סיכון אינו גזר דין. לא כל עובד לילה יפתח מחלה, ולא כל משמרת יוצרת נזק ארוך טווח. התדירות, מספר שנות החשיפה, רצף המשמרות, משך ההתאוששות, גיל העובד, מצבו הבריאותי והרגלי חייו משפיעים כולם על התמונה.\n\n## מה משמרת לילה עושה לשעון הביולוגי?\n\nהמערכת הצירקדית היא מערך של שעונים ביולוגיים הפועלים במחזור הקרוב ל־24 שעות. השעון המרכזי נמצא במוח ומקבל דרך העיניים מידע על אור וחושך. בהתאם לכך הוא מסנכרן ערנות ושינה, הפרשת מלטונין וקורטיזול, ויסות חום הגוף, תיאבון, לחץ דם ותגובה לגלוקוז.\n\nאצל עובד לילה פועלים לעיתים שני כוחות מנוגדים. מצד אחד, ככל שחולפות שעות הערות מצטבר צורך פיזיולוגי בשינה. מצד אחר, השעון הצירקדי ממשיך בדרך כלל לעודד שינה בלילה וערנות במהלך היום. לאחר המשמרת העובד עשוי להירדם במהירות בשל העייפות, אך להתעורר מוקדם מהמתוכנן כאשר אור היום והמקצב הפנימי מתחילים לקדם ערות.\n\n[ההסבר הרשמי של CDC/NIOSH על חוסר הסנכרון בין לחץ השינה למקצב הצירקדי](https://www.cdc.gov/niosh/work-hour-training-for-nurses/longhours/mod2/17.html) מפרט מדוע השינה לאחר משמרת לילה עלולה להיות קצרה ומקוטעת ומדוע הישנוניות נוטה להחמיר בשעות הלילה המאוחרות ולפנות בוקר.\n\nהשיבוש אינו מסתכם במספר שעות השינה. גם מי שמצליח להשלים שעות שינה ביום עלול לישון בתזמון שאינו תואם במלואו את השעון הביולוגי. לכך מצטרפים רעש ואור בזמן השינה, אכילה בשעות בלתי שגרתיות, שימוש בקפאין, עומס בעבודה ומעבר תכוף בין משמרות יום ולילה.\n\nבטווח המיידי עלולות להופיע עייפות, האטה בזמן התגובה, ירידה בריכוז, פגיעה בזיכרון העבודה ויותר טעויות. לכך יש משמעות בטיחותית ברורה בעבודה עם כלי רכב, ציוד כבד, תרופות או החלטות מורכבות. תחושת הסתגלות לעייפות אינה מבטיחה שהביצועים אכן חזרו לרמתם הרגילה.\n\n## דמנציה ופגיעה קוגניטיבית: מה באמת נמצא?\n\nאחת הטענות המדאיגות בדיון היא האפשרות לעלייה בסיכון לדמנציה. מחקר שוודי שפורסם בשנת 2018 בחן שתי קבוצות אוכלוסייה מתוך מרשם התאומים השוודי. בקבוצה אחת נכללו 13,283 משתתפים שמסרו מידע על עבודה במשמרות, ובקבוצה נוספת נכללו יותר מ־41 אלף משתתפים שנשאלו על עבודת לילה.\n\nבמהלך המעקב נמצאו קשרים בין עבודה במשמרות לבין שכיחות גבוהה יותר של דמנציה. בקבוצה הראשונה, עבודה במשמרות נקשרה ליחס סיכון של 1.36. הנתון אינו אומר ש־36% מהעובדים חלו בדמנציה, אלא שהסיכון היחסי בקבוצה החשופה היה גבוה ב־36% מזה שבקבוצת ההשוואה, לאחר ההתאמות הסטטיסטיות שביצעו החוקרים. בקבוצה השנייה נמצא קשר מתון יותר.\n\nאפשר לעיין ב[מחקר המלא במאגר NCBI על עבודה במשמרות והופעת דמנציה](https://pmc.ncbi.nlm.nih.gov/articles/PMC6153510/). החוקרים עצמם הדגישו כי הממצאים דורשים אישור במחקרים נוספים.\n\nלמחקר היו מגבלות חשובות. המשתתפים לא הוקצו באקראי לעבודה במשמרות; חלק מנתוני החשיפה התבססו על דיווח עצמי; וההגדרות של “עבודת משמרות” ושל “עבודת לילה” לא היו זהות בין הקבוצות. החוקרים התאימו את החישובים למשתנים כגון גיל, מין, השכלה, סוכרת ומחלות לב וכלי דם, אך מחקר תצפיתי אינו יכול לנטרל לחלוטין את השפעתם של עישון, פעילות גופנית, תזונה, מצב נפשי, סוג העיסוק או הפרעות שינה.\n\nלכן הניסוח המדויק הוא שעבודה במשמרות **נקשרה** לעלייה בסיכון לדמנציה — לא שהיא הוכחה כגורם ישיר. מחסור כרוני בשינה, הפרעה בעיבוד הזיכרון, דלקת ושינויים בכלי הדם הם מנגנונים אפשריים, אך הסבר ביולוגי סביר אינו שווה להוכחת סיבתיות.\n\n## מחלות לב וסוכרת: כיצד מפרשים את המספרים?\n\nהראיות בנוגע לבריאות הלב נרחבות יחסית. סקירה שיטתית ומטה־אנליזה שפורסמה בספטמבר 2025 איגדה 23 מחקרי עוקבה ובהם כ־3.34 מיליון משתתפים. עבודת לילה נקשרה לעלייה יחסית של 13% בשכיחות אירועים קרדיווסקולריים ולעלייה יחסית של 27% בתמותה קרדיווסקולרית.\n\nנמצא גם קשר תלוי־משך: כל חמש שנות חשיפה נוספות לעבודת לילה נקשרו לעלייה יחסית של כ־7% בשכיחות אירועים קרדיווסקולריים ושל כ־5% בתמותה קרדיווסקולרית. הנתונים, טווחי הביטחון והמגבלות מופיעים ב[סקירה השיטתית על עבודת לילה ומחלות לב וכלי דם](https://doi.org/10.3389/fpubh.2025.1668848).\n\nגם כאן מדובר במחקרים תצפיתיים. הגדרת עבודת לילה השתנתה בין המחקרים, וכך גם המקצועות, דפוסי המשמרות ומספר שנות המעקב. אף שהחוקרים ביצעו התאמות לגורמים שונים, לא ניתן לקבוע שכל העלייה בסיכון נגרמה ישירות מעבודה בלילה.\n\nיש להבחין גם בין סיכון יחסי לסיכון מוחלט. עלייה יחסית של 13% אינה פירושה של־13 מתוך כל 100 עובדי לילה תהיה מחלת לב. המשמעות המוחלטת תלויה בסיכון הבסיסי של האדם. אצל אדם צעיר ובריא התוספת המוחלטת עשויה להיות קטנה; אצל מי שסובל מיתר לחץ דם, סוכרת, עישון, השמנה או רמות שומנים חריגות, עבודת הלילה עשויה להצטרף למכלול של גורמי סיכון קיימים.\n\nמנגנונים אפשריים כוללים שינויים בקורטיזול ובפעילות מערכת העצבים הסימפתטית, פגיעה בירידה הלילית התקינה של לחץ הדם, דלקת ושינוי בהרגלי האכילה והפעילות. עבודת לילה נקשרה גם לתנגודת לאינסולין ולסוכרת מסוג 2. אכילה בשעות שבהן הגוף ערוך פחות לטיפול בגלוקוז, לצד מחסור בשינה, עשויה להשפיע על רגישות לאינסולין, תחושת הרעב, בחירת המזון ומשקל הגוף. עם זאת, סוכרת נובעת משילוב בין נטייה גנטית, משקל, תזונה, פעילות גופנית וגורמים רפואיים נוספים — ולא מחשיפה יחידה.\n\n## סרטן: מה פירוש הסיווג “כנראה מסרטן”?\n\nהסוכנות הבינלאומית לחקר הסרטן של ארגון הבריאות העולמי, IARC, סיווגה עבודת לילה בקבוצה 2A — “כנראה מסרטנת לבני אדם”. ההערכה התבססה על ראיות מוגבלות בבני אדם, ראיות מספקות בבעלי חיים וראיות מנגנוניות חזקות הנוגעות לשיבוש המקצב הצירקדי.\n\nחשוב להבחין בין **זיהוי סכנה** לבין **הערכת הסיכון האישי**. סיווג בקבוצה 2A פירושו שקיימות ראיות לכך שהחשיפה מסוגלת לתרום להתפתחות סרטן בתנאים מסוימים. הסיווג אינו אומר שכל מי שעובד בלילה יחלה בסרטן, אינו קובע את גודל הסיכון האישי ואינו משווה בין עוצמת הסיכון של חומרים או חשיפות שונות באותה קבוצה.\n\nהעדויות האפידמיולוגיות עסקו בעיקר בסרטן השד, הערמונית, המעי הגס והחלחולת, אך התוצאות אינן אחידות. המחקרים השתמשו בהגדרות שונות של משמרת לילה, תדירות המשמרות, רצף העבודה ומספר שנות החשיפה. [הערכת IARC המוסדית המלאה בנושא עבודת לילה](https://publications.iarc.who.int/593) נועדה להעריך את חוזק הראיות לסכנה מסרטנת, ולא לנבא את הסיכון של עובד יחיד.\n\nמבחינה מעשית, יש מקום לצמצם חשיפה מיותרת ולתכנן עבודה כך שתאפשר התאוששות. אין בסיס להציג את עצם העבודה בלילה כאבחנה או להסיק שכל עובד חייב להפסיקה באופן מיידי.\n\n## מה אפשר לעשות כאשר אי אפשר להימנע ממשמרות?\n\nמערכות בריאות, תחבורה, תעשייה, ביטחון ושירותי חירום אינן יכולות לפעול ללא עבודת לילה. הפחתת הסיכון צריכה אפוא לשלב הרגלים אישיים עם תכנון ארגוני אחראי.\n\nצעדים שימושיים עשויים לכלול:\n\n- להגן ככל האפשר על חלון שינה קבוע ומספק לאחר המשמרת.\n- להחשיך את חדר השינה באמצעות וילונות אטומים או כיסוי עיניים.\n- לצמצם רעש, התראות טלפון והפרעות סביבתיות.\n- להימנע מקפאין בשעות הסמוכות לשינה המתוכננת.\n- לא להסתמך על אלכוהול לצורך הירדמות, משום שהוא עלול לפגוע ברציפות השינה.\n- לתכנן ארוחות מאוזנות ולהימנע ככל האפשר מארוחות כבדות באמצע הלילה.\n- לשלב פעילות גופנית סדירה בהתאם למצב הבריאותי, בלי להצמיד אימון מעורר לזמן השינה.\n- להשתמש בתנומה מתוכננת רק כאשר תנאי העבודה וכללי הבטיחות מאפשרים זאת.\n- להימנע מנהיגה כאשר מופיעים קושי להשאיר את העיניים פקוחות, סטייה מהנתיב או חוסר זיכרון של חלקים מהדרך.\n- ברמה הארגונית, לצמצם רצפים ממושכים של משמרות לילה ומשמרות ארוכות ללא התאוששות מספקת.\n\nאין לראות במלטונין, בתרופות שינה או בחומרים מעוררים פתרון אוטומטי. השפעתם תלויה בתזמון, במצב הבריאותי ובתרופות אחרות. עייפות קיצונית, הירדמות בלתי רצונית, נחירות חזקות, הפסקות נשימה, נדודי שינה ממושכים או פגיעה ניכרת בתפקוד מצדיקים הערכה רפואית במסגרת המתאימה.\n\n## סיכום\n\nמשמרות לילה אכן עלולות לשבש את פעילות הגוף. ההשפעה המרכזית נובעת מאי־התאמה בין זמני העבודה והשינה לבין השעון הביולוגי, ולעיתים גם ממחסור בשינה, חשיפה לאור בלילה, אכילה בשעות לא רגילות וזמן התאוששות מוגבל.\n\nמחקרים מצביעים על קשרים עם מחלות לב וכלי דם, הפרעות מטבוליות, דמנציה וסוגים מסוימים של סרטן. עם זאת, עוצמת הראיות אינה זהה בכל התחומים, ורוב הממצאים אינם מוכיחים סיבתיות. נכון אפוא להתייחס לעבודת לילה כאל גורם סיכון אפשרי ומצטבר — לא כאל גורם יחיד, אבחנה או גזר דין.\n\nהמשמעות אינה שיש להיבהל ממשמרת בודדת, אלא שיש לתת את הדעת לחשיפה ממושכת, לישנוניות, לאיכות השינה ולגורמי סיכון רפואיים נוספים. לצד שיפור סביבת השינה והרגלי החיים, האחריות מוטלת גם על ארגונים לתכנן לוחות עבודה שמאפשרים מנוחה, הפסקות והתאוששות.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.  \n> סטטוס נוכחי מאושר: ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> מאמר זה מספק מידע רפואי כללי בלבד. הוא אינו תחליף לאבחון, טיפול או ייעוץ רפואי, וכל הטענות הרפואיות בו מחייבות ביקורת אנושית ורפואית לפני פרסום.\n\n## מקורות\n\n### כתבת החדשות הנבדקת — הקשר מערכתי בלבד\n\n- ynet, **“משמרות לילה משבשות לנו את הגוף — ומעלות סיכון למחלות הבאות”**:  \n  https://www.ynet.co.il/health/article/b1kxgusngg  \n  כתבה זו היא מושא הניתוח ואינה משמשת כמקור רפואי או ראייתי.\n\n### מקורות רפואיים ומדעיים\n\n1. CDC/NIOSH, **Desynchronization of Homeostatic and Circadian Processes**:  \n   https://www.cdc.gov/niosh/work-hour-training-for-nurses/longhours/mod2/17.html\n\n2. Bokenberger K, et al., **Shift work and risk of incident dementia: a study of two population-based cohorts**, European Journal of Epidemiology, 2018:  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC6153510/\n\n3. Xi J, et al., **Association between night shift work and cardiovascular disease: a systematic review and dose-response meta-analysis**, Frontiers in Public Health, 2025:  \n   https://doi.org/10.3389/fpubh.2025.1668848\n\n4. International Agency for Research on Cancer, **IARC Monographs, Volume 124: Night Shift Work**:  \n   https://publications.iarc.who.int/593\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "5b66c6b86382a4a745fdb93bcf30c812743838ef4409c17842f1935075bd8c73",
+        "slug": "guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+          "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: עבודה קבועה או ממושכת בלילה עלולה לשבש את השעון הביולוגי, לקצר את השינה ולפגוע באיכותה.\n\nמחקרים מצאו קשר בין עבודת לילה לבין סיכון מוגבר למחלות לב וכלי דם, הפרעות מטבוליות ובהן סוכרת מסוג 2, פגיעה קוגניטיבית, דמנציה וסוגים מסוימים של סרטן.\n\nמאת ד״ר גיא רופא",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: עבודה קבועה או ממושכת בלילה עלולה לשבש את השעון הביולוגי, לקצר את השינה ולפגוע באיכותה.\n\n• מחקרים מצאו קשר בין עבודת לילה לבין סיכון מוגבר למחלות לב וכלי דם, הפרעות מטבוליות ובהן סוכרת מסוג 2, פגיעה קוגניטיבית, דמנציה וסוגים מסוימים של סרטן.\n• עם זאת, מרבית הראיות הן תצפיתיות: הן מצביעות על קשר סטטיסטי, אך אינן מוכיחות שמשמרות הלילה לבדן גרמו למחלות אלה.\n• [כתבת הבריאות שנבדקת במאמר זה, העוסקת בהשפעות האפשריות של משמרות לילה]( מרכזת טענות בנוגע לדמנציה, מחלות לב, הפרעות מטבוליות וסרטן.\n\nמאת ד״ר גיא רופא",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
+        "html": "<h2>משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה: עבודה קבועה או ממושכת בלילה עלולה לשבש את השעון הביולוגי, לקצר את השינה ולפגוע באיכותה.</p><p>מחקרים מצאו קשר בין עבודת לילה לבין סיכון מוגבר למחלות לב וכלי דם, הפרעות מטבוליות ובהן סוכרת מסוג 2, פגיעה קוגניטיבית, דמנציה וסוגים מסוימים של סרטן.</p>",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+          "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
+        "description": "התשובה הקצרה: עבודה קבועה או ממושכת בלילה עלולה לשבש את השעון הביולוגי, לקצר את השינה ולפגוע באיכותה. מחקרים מצאו קשר בין עבודת לילה לבין סיכון מוגבר למחלות לב וכלי דם, הפרעות מטבוליות ובהן סוכרת מסוג 2, פגיעה קוגניטיבית, דמנציה וסוגים מסוימים של סרטן. מאת ד״ר גיא רופא",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-portrait.png",
+          "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "role": "portrait"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא.\n\nהתשובה הקצרה: עבודה קבועה או ממושכת בלילה עלולה לשבש את השעון הביולוגי, לקצר את השינה ולפגוע באיכותה.\n\nמחקרים מצאו קשר בין עבודת לילה לבין סיכון מוגבר למחלות לב וכלי דם, הפרעות מטבוליות ובהן סוכרת מסוג 2, פגיעה קוגניטיבית, דמנציה וסוגים מסוימים של סרטן.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-03-topic-90-run-30802565966-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "5b66c6b86382a4a745fdb93bcf30c812743838ef4409c17842f1935075bd8c73",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_6996b25a3dd6c465824f7a16d3f527269f7161e44482638a0ace2904141d3fac"
+}
