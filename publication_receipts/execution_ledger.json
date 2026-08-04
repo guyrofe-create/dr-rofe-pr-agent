@@ -270,6 +270,48 @@
       "status": "reconciliation_required",
       "started_at": "2026-08-04T16:59:38Z",
       "updated_at": "2026-08-04T16:59:39Z"
+    },
+    "pub_72bddaff60e0122de873d03d056d3f4c072f4bd956d61f3b72f61ed84a6b0d37": {
+      "version": 7,
+      "idempotency_key": "pub_72bddaff60e0122de873d03d056d3f4c072f4bd956d61f3b72f61ed84a6b0d37",
+      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "e0c5e44db29d2be7e278e2177f78012130c89b3e0e1b022b462b1f0d79c8ec8a",
+      "status": "published",
+      "started_at": "2026-08-04T18:46:08Z",
+      "published_at": "2026-08-04T18:46:15Z",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+      "provider_receipt": null
+    },
+    "pub_0efe5c810be64c4c4ad99639e397ef126ecef978e6cbbf475714abe0e2d4854a": {
+      "version": 7,
+      "idempotency_key": "pub_0efe5c810be64c4c4ad99639e397ef126ecef978e6cbbf475714abe0e2d4854a",
+      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "dcabf7dd050cc64b95d34b3a44bd9081e7fe7d1467fa2abe81d02e6e1fb25c87",
+      "status": "published",
+      "started_at": "2026-08-04T18:46:23Z",
+      "published_at": "2026-08-04T18:46:34Z",
+      "url": "https://www.facebook.com/122197727090942441",
+      "provider_receipt": null
+    },
+    "pub_db84387ec5d2603078639f06e05fdbc4a1f96d55a8f097b3c011181042df1806": {
+      "version": 7,
+      "idempotency_key": "pub_db84387ec5d2603078639f06e05fdbc4a1f96d55a8f097b3c011181042df1806",
+      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "0c6796d5bd026a4cff30c596d07379b9fd36c2b73cbdc2da457b133f1702ba90",
+      "status": "published",
+      "started_at": "2026-08-04T18:46:34Z",
+      "published_at": "2026-08-04T18:46:37Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7490478316504793088/",
+      "provider_receipt": null
     }
   }
 }
