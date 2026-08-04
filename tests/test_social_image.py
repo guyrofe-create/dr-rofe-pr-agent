@@ -52,11 +52,33 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(len(queries), 3)
         prompt = client.responses.create.call_args.kwargs["input"]
         self.assertIn("real editorial photograph", prompt)
-        self.assertIn("doctor treating a patient", prompt)
-        self.assertIn("exposed body", prompt)
-        self.assertIn("brand, logo", prompt)
-        self.assertIn("evaluating online information", prompt)
+        self.assertIn("only for direct topical relevance", prompt)
+        self.assertIn("visible text, labels and brands are all acceptable", prompt)
         self.assertIn("2-4 concrete searchable words", prompt)
+
+    def test_relevance_review_uses_topic_only_policy(self):
+        client = Mock()
+        client.responses.create.return_value = SimpleNamespace(
+            output_text="ACCEPT: צילום רלוונטי של רופאה ליד מכשיר רפואי"
+        )
+
+        accepted, description = social_image.review_relevance(
+            client,
+            b"photo-bytes",
+            "image/jpeg",
+            "בדיקה רפואית",
+            "מידע על הבדיקה",
+        )
+
+        self.assertTrue(accepted)
+        self.assertIn("רופאה", description)
+        prompt = client.responses.create.call_args.kwargs["input"][0]["content"][0][
+            "text"
+        ]
+        self.assertIn("Judge it only", prompt)
+        self.assertIn("Do not reject it because it contains people", prompt)
+        self.assertNotIn("Reject generic wellness imagery", prompt)
+        self.assertNotIn("ANY visible letter", prompt)
 
     def test_long_planner_phrases_are_compacted_for_commons(self):
         queries = social_image.expand_search_queries(
