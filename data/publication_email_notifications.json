@@ -22,6 +22,14 @@
         "https://www.facebook.com/122197700126942441",
         "https://www.linkedin.com/feed/update/urn:li:share:7490420767814488064/"
       ]
+    },
+    "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa:1eecfb94d6b3e427e1643f36e19b0c4333ae1e60794ec7411f3852c45aa846d5": {
+      "sent_at": "2026-08-04T16:59:41.115310+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
+      "state": "failed",
+      "subject": "הפרסום נכשל: לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }

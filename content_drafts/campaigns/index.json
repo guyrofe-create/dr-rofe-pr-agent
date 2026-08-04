@@ -1,6 +1,21 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
+      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "status": "failed",
+      "published_at": "2026-08-04T16:59:39.176816+00:00",
+      "destinations": [
+        {
+          "name": "Campaign",
+          "status": "failed",
+          "detail": "400 Client Error: Bad Request for url: https://www.wixapis.com/blog/v3/draft-posts"
+        }
+      ],
+      "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
       "title": "בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא",
       "status": "completed_with_errors",
