@@ -90,7 +90,6 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                 output_root=root / "bundles",
                 image_uri="https://example.com/approved.jpg",
                 image_alt_text="צילום רפואי מאושר",
-                site_key="DRGUYROFE_COM",
                 channel_ids=[],
             )
             bundle = json.loads(

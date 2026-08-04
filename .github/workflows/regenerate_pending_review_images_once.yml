@@ -6,6 +6,7 @@ on:
       - agent/default-reputation-image
     paths:
       - .github/workflows/regenerate_pending_review_images_once.yml
+      - scripts/prepare_approval_bundle.py
 
 permissions:
   contents: write

@@ -178,8 +178,11 @@ def prepare_bundle(
             + "; ".join(entity_report.errors)
         )
     business = load_business_profile()
-    primary = publication_site(business, site_key)
     metadata = draft_metadata(draft)
+    primary = publication_site(
+        business,
+        site_key or metadata.get("destination_site_key"),
+    )
     routing_metadata = {
         **metadata,
         "legacy_content_audit_passed": primary.get("audit_status") == "passed",
