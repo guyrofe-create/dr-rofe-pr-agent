@@ -5,10 +5,13 @@ import sys
 
 import requests
 
+import wix_blog
+
 
 API_KEY = os.environ.get("WIX_DRGUYROFE_COM_API", "").strip()
 SITE_ID = os.environ.get("WIX_DRGUYROFE_COM_SITE_ID", "").strip()
 ACCOUNT_ID = os.environ.get("WIX_DRGUYROFE_COM_ACCOUNT_ID", "").strip()
+MEMBER_ID = os.environ.get("WIX_DRGUYROFE_COM_MEMBER_ID", "").strip()
 HEADERS = {"Authorization": API_KEY, "wix-site-id": SITE_ID}
 
 
@@ -83,6 +86,20 @@ def main():
             params={"paging.limit": 1},
         ),
     ]
+    site = {
+        "key": "WIX_CONNECTION_CHECK",
+        "api_key_env": "WIX_DRGUYROFE_COM_API",
+        "site_id_env": "WIX_DRGUYROFE_COM_SITE_ID",
+        "member_id_env": "WIX_DRGUYROFE_COM_MEMBER_ID",
+    }
+    try:
+        member_id = wix_blog._member_id(site)
+        source = "configured" if MEMBER_ID else "uniquely discovered from existing posts"
+        print(f"PASS blog author readiness: memberId={member_id} ({source})")
+        results.append(True)
+    except Exception as exc:
+        print(f"FAIL blog author readiness: {exc}")
+        results.append(False)
     return 0 if all(results) else 1
 
 

@@ -295,6 +295,10 @@ class ReconciliationRequired(RuntimeError):
     """An earlier external call may have succeeded; do not retry automatically."""
 
 
+class DefinitiveProviderRejection(RuntimeError):
+    """The provider explicitly rejected a request before accepting the action."""
+
+
 class ExecutionLedger:
     """Atomic, fail-closed idempotency ledger for externally visible actions."""
 
@@ -325,6 +329,7 @@ class ExecutionLedger:
         bundle: dict,
         target: dict,
         publisher: Callable[[dict, str], dict],
+        reconciler: Callable[[dict, str], dict | None] | None = None,
     ) -> dict:
         key = self.key(bundle["approval_id"], target["target_id"])
         state = self._load()
@@ -335,12 +340,42 @@ class ExecutionLedger:
             "in_progress",
             "reconciliation_required",
         }:
-            existing["status"] = "reconciliation_required"
-            existing["updated_at"] = utc_now()
-            self._save(state)
-            raise ReconciliationRequired(
-                f"Target {target['target_id']} may already be published; reconcile first"
-            )
+            if reconciler is not None:
+                try:
+                    reconciled = reconciler(target["payload"], key)
+                except Exception:
+                    existing["status"] = "reconciliation_required"
+                    existing["updated_at"] = utc_now()
+                    self._save(state)
+                    raise
+                if reconciled is None:
+                    existing["status"] = "failed"
+                    existing["safe_to_retry"] = True
+                    existing["detail"] = "Provider lookup verified that the target is absent"
+                    existing["updated_at"] = utc_now()
+                    self._save(state)
+                elif isinstance(reconciled, dict) and reconciled.get("url"):
+                    existing.update(
+                        {
+                            "status": "published",
+                            "published_at": utc_now(),
+                            "url": reconciled["url"],
+                            "provider_receipt": reconciled.get("provider_receipt"),
+                        }
+                    )
+                    self._save(state)
+                    return existing
+                else:
+                    raise ReconciliationRequired(
+                        "Reconciler returned no conclusive provider result"
+                    )
+            else:
+                existing["status"] = "reconciliation_required"
+                existing["updated_at"] = utc_now()
+                self._save(state)
+                raise ReconciliationRequired(
+                    f"Target {target['target_id']} may already be published; reconcile first"
+                )
         request_hash = sha256(target["payload"])
         entry = {
             "version": 7,
@@ -357,6 +392,16 @@ class ExecutionLedger:
         self._save(state)
         try:
             result = publisher(target["payload"], key)
+        except DefinitiveProviderRejection as exc:
+            # A structured 4xx validation/auth rejection is a conclusive provider
+            # response. The remote action was not accepted, so a corrected request
+            # may safely reuse the same exact approval/idempotency key.
+            entry["status"] = "failed"
+            entry["safe_to_retry"] = True
+            entry["detail"] = str(exc)[:500]
+            entry["updated_at"] = utc_now()
+            self._save(state)
+            raise
         except Exception:
             # The remote side may have accepted the request before disconnecting.
             entry["status"] = "reconciliation_required"

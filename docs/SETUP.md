@@ -47,10 +47,31 @@ Secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHANNEL_ID` (לדוגמה `@drguyrofe`)
 1. https://console.cloud.google.com/projectcreate → צור פרויקט
 2. https://console.cloud.google.com/apis/library/blogger.googleapis.com → הפעל "Blogger API v3" (ודא שהפרויקט החדש נבחר למעלה)
 3. https://console.cloud.google.com/apis/credentials → Create Credentials → OAuth client ID → Application type: Desktop app → קבל Client ID + Secret
-4. https://developers.google.com/oauthplayground/ → לחץ על גלגל השיניים ⚙️ למעלה מימין → "Use your own OAuth credentials" → הזן את ה-Client ID/Secret → משמאל הדבק Scope: `https://www.googleapis.com/auth/blogger` → Authorize APIs → Exchange authorization code for tokens → העתק Refresh token
+4. https://developers.google.com/oauthplayground/ → לחץ על גלגל השיניים ⚙️ למעלה מימין → "Use your own OAuth credentials" → הזן את ה-Client ID/Secret → בקש יחד את ה־scopes `https://www.googleapis.com/auth/blogger`, `https://www.googleapis.com/auth/business.manage`, `https://www.googleapis.com/auth/webmasters.readonly` ו־`https://www.googleapis.com/auth/analytics.readonly` → Authorize APIs → Exchange authorization code for tokens → העתק Refresh token
 5. https://www.blogger.com/ → היכנס לבלוג → Settings → תחת "Blog tools" תמצא את ה-Blog ID בכתובת ה-URL של לוח הבקרה
 
 Secrets: `GOOGLE_OAUTH_CLIENT_ID`, `GOOGLE_OAUTH_CLIENT_SECRET`, `GOOGLE_OAUTH_REFRESH_TOKEN`, `BLOGGER_BLOG_ID`
+
+ה־refresh token משותף ל־Blogger ול־Google Business Profile. לפני פרסום יש
+להריץ את `Google Connection Check`. תוצאת `invalid_grant` פירושה שהטוקן
+בוטל, פג או אינו תואם עוד ל־OAuth client; במקרה כזה יש לבצע שוב את שלבים
+3–4, לבקש את כל ה־scopes הדרושים באותו consent ולהחליף את
+`GOOGLE_OAUTH_REFRESH_TOKEN` ב־GitHub Secrets. אם מסך ההסכמה במצב Testing,
+Google עשויה להנפיק refresh token שמוגבל לשבעה ימים; לחיבור מתמשך יש להעביר
+את אפליקציית OAuth למצב Production.
+
+### Wix Blog (drguyrofe.com)
+
+יצירת Draft Post דרך API key דורשת `memberId` של מחבר הפוסט. המוצר משתמש
+ב־`WIX_PRIMARY_DRGUYROFE_COM_MEMBER_ID` כאשר הוא מוגדר. אם אינו מוגדר,
+הוא רשאי להסיק את המחבר רק כאשר לכל הפוסטים הקיימים שנקראו מהאתר יש
+`memberId` יחיד; אפס מחברים או מספר מחברים חוסמים פרסום ודורשים הגדרה
+מפורשת. בדיקת החיבור מדווחת את ה־memberId שנמצא ואינה יוצרת פוסט.
+
+Secrets: `WIX_PRIMARY_DRGUYROFE_COM_API`,
+`WIX_PRIMARY_DRGUYROFE_COM_SITE_ID`,
+`WIX_PRIMARY_DRGUYROFE_COM_ACCOUNT_ID`, ובאתר עם יותר ממחבר אחד גם
+`WIX_PRIMARY_DRGUYROFE_COM_MEMBER_ID`.
 
 ### Pinterest
 1. https://developers.pinterest.com/apps/ → צור אפליקציה → הרשאות `pins:write`, `boards:read`
@@ -107,8 +128,9 @@ Secrets: `GOOGLE_PLACES_API_KEY`, `GOOGLE_PLACE_ID`
    יש להגדיר את שני ה-Secrets:
    `GOOGLE_BUSINESS_ACCOUNT_ID`, `GOOGLE_BUSINESS_LOCATION_ID`.
 
-המכסה בפרויקט היא כרגע אפס, ולכן הבדיקה והפרסום ייכשלו באופן גלוי עד
-ש-Google תאשר את הגישה. אין להשתמש בסיסמה או באוטומציית דפדפן כתחליף ל-API.
+יש להריץ את `Google Connection Check` אחרי החלפת הטוקן ולוודא שהחיבור
+מחזיר בפועל את Blogger ואת חשבון Google Business Profile. אין להשתמש
+בסיסמה או באוטומציית דפדפן כתחליף ל-API.
 
 ---
 

@@ -19,6 +19,7 @@ from daily_run import load_draft, resolve_draft_path
 from social_publishers import (
     blogger,
     google_business,
+    google_oauth,
     linkedin,
     meta,
     pinterest,
@@ -46,6 +47,14 @@ CAMPAIGN_ROOT = PROJECT_ROOT / "content_drafts" / "campaigns"
 EXECUTION_LEDGER_PATH = PROJECT_ROOT / "publication_receipts" / "execution_ledger.json"
 LOG_LINES = []
 CLIENT_PROFILE = load_client_profile()
+
+
+class CampaignTargetError(RuntimeError):
+    """A named campaign destination failed before downstream distribution."""
+
+    def __init__(self, destination_name, detail):
+        super().__init__(detail)
+        self.destination_name = destination_name
 
 
 def load_business_profile():
@@ -520,45 +529,53 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         f'<figure><img src="{html.escape(canonical_image_url)}" '
         f'alt="{html.escape(canonical_alt)}" width="1600" height="900"></figure>\n'
     )
-    if primary_platform == "wordpress":
-        canonical_receipt = ledger.execute(
-            approved_bundle,
-            canonical_target,
-            lambda payload, key: {
-                "url": wordpress_publish(
-                    canonical_base,
-                    os.environ[primary_user_env],
-                    os.environ[primary_password_env],
-                    payload["title"],
-                    hero_html + markdown_to_html(payload["markdown"]),
-                    idempotency_key=payload["slug"],
-                    meta_description=seo_description,
-                    article_schema_factory=lambda article_url: build_article_schema(
-                        business,
-                        headline=payload["title"],
-                        article_url=article_url,
-                        description=seo_description,
-                        image_url=canonical_image_url,
-                        citations=extract_citation_urls(payload["markdown"]),
-                    ),
-                )
-            },
-        )
-    else:
-        canonical_receipt = ledger.execute(
-            approved_bundle,
-            canonical_target,
-            lambda payload, key: {
-                "url": wix_blog.publish(
+    try:
+        if primary_platform == "wordpress":
+            canonical_receipt = ledger.execute(
+                approved_bundle,
+                canonical_target,
+                lambda payload, key: {
+                    "url": wordpress_publish(
+                        canonical_base,
+                        os.environ[primary_user_env],
+                        os.environ[primary_password_env],
+                        payload["title"],
+                        hero_html + markdown_to_html(payload["markdown"]),
+                        idempotency_key=payload["slug"],
+                        meta_description=seo_description,
+                        article_schema_factory=lambda article_url: build_article_schema(
+                            business,
+                            headline=payload["title"],
+                            article_url=article_url,
+                            description=seo_description,
+                            image_url=canonical_image_url,
+                            citations=extract_citation_urls(payload["markdown"]),
+                        ),
+                    )
+                },
+            )
+        else:
+            canonical_receipt = ledger.execute(
+                approved_bundle,
+                canonical_target,
+                lambda payload, key: {
+                    "url": wix_blog.publish(
+                        primary,
+                        title=payload["title"],
+                        html=hero_html + markdown_to_html(payload["markdown"]),
+                        excerpt=seo_description,
+                        slug=payload["slug"],
+                        expected_url=payload["canonical_url"],
+                    )
+                },
+                reconciler=lambda payload, key: wix_blog.reconcile(
                     primary,
-                    title=payload["title"],
-                    html=hero_html + markdown_to_html(payload["markdown"]),
-                    excerpt=seo_description,
                     slug=payload["slug"],
                     expected_url=payload["canonical_url"],
-                )
-            },
-        )
+                ),
+            )
+    except Exception as exc:
+        raise CampaignTargetError(canonical_name, str(exc)) from exc
     canonical_url = canonical_receipt["url"]
     if canonical_url.rstrip("/") != canonical_payload["canonical_url"].rstrip("/"):
         raise ReconciliationRequired(
@@ -572,6 +589,17 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             detail=f"idempotency_key={canonical_receipt['idempotency_key']}",
         )
     )
+
+    google_token = None
+    google_token_error = None
+    if (
+        targets.get("blogger_blog") or targets.get("google_business_profile")
+    ) and (blogger.is_configured() or google_business.is_configured()):
+        try:
+            google_token = google_oauth.refresh_access_token()
+        except google_oauth.GoogleOAuthError as exc:
+            google_token_error = str(exc)
+            log(google_token_error)
     log(f"Canonical article published: {canonical_url}")
     destinations.append(
         destination(
@@ -664,6 +692,10 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     blogger_target = targets.get("blogger_blog")
     if not blogger_target:
         destinations.append(destination("Blogger", "not_scheduled"))
+    elif google_token_error:
+        destinations.append(
+            destination("Blogger", "failed", detail=google_token_error)
+        )
     elif blogger.is_configured():
         blogger_image, blogger_image_url = approved_target_image(blogger_target)
         destinations.append(
@@ -679,6 +711,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         blogger_image_url,
                         (payload.get("image") or {}).get("alt_text"),
                         payload.get("disclosure"),
+                        access_token=google_token,
                     )
                 },
             )
@@ -746,6 +779,14 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         destinations.append(
             destination("Google Business Profile", "not_scheduled")
         )
+    elif google_token_error:
+        destinations.append(
+            destination(
+                "Google Business Profile",
+                "failed",
+                detail=google_token_error,
+            )
+        )
     else:
         enforce_channel_policy("Google Business Profile")
         google_payload = google_business_target["payload"]
@@ -775,6 +816,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         payload["link"],
                         google_image_url,
                         language_code=payload.get("language_code", "he"),
+                        access_token=google_token,
                     ),
                 )
             )
@@ -819,10 +861,15 @@ def main():
             )
         except Exception as exc:
             title, _content = load_draft(draft_path)
+            destination_name = (
+                exc.destination_name
+                if isinstance(exc, CampaignTargetError)
+                else "Campaign"
+            )
             write_campaign_result(
                 draft_path,
                 title,
-                [destination("Campaign", "failed", detail=str(exc)[:300])],
+                [destination(destination_name, "failed", detail=str(exc)[:300])],
                 status="failed",
                 approval_id_value=bundle["approval_id"],
             )
