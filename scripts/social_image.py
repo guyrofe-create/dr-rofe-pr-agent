@@ -181,6 +181,20 @@ def _search_query_prompt(title, summary):
 def topic_search_queries(title):
     """Return deterministic Commons queries for recognized medical topics."""
     topic = _topic_without_client(title)
+    if "כאבי מחזור" in topic or "דיסמנוריאה" in topic:
+        return [
+            "dysmenorrhea",
+            "menstrual pain",
+            "period pain",
+            "menstrual cramps",
+        ]
+    if "משמרות לילה" in topic or "עבודת לילה" in topic:
+        return [
+            "night duty hospital",
+            "hospital at night",
+            "night shift work",
+            "night shift worker",
+        ]
     if "מיומ" in topic:
         return [
             "gynecological ultrasound equipment",

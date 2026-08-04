@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/regenerate_pending_review_images_once.yml
       - scripts/prepare_approval_bundle.py
+      - scripts/social_image.py
 
 permissions:
   contents: write
@@ -29,10 +30,15 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          mapfile -t drafts < <(
+          mapfile -t drafts < <({
             jq -r '.bundles[] | select(.image_status == "awaiting_replacement") | .draft_path' \
               approval_bundles/index.json
-          )
+            jq -r '.bundles[].bundle_path' approval_bundles/index.json |
+              while read -r bundle_path; do
+                jq -r 'select(.media.source_type == "owner_provided_default") | .source_draft' \
+                  "${bundle_path}"
+              done
+          } | sort -u)
           if (( ${#drafts[@]} == 0 )); then
             echo "No approval bundle is waiting for a replacement image."
             exit 0

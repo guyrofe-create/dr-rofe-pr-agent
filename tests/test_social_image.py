@@ -152,6 +152,16 @@ class SocialImageTests(unittest.TestCase):
         searched = [call.args[0] for call in search.call_args_list]
         self.assertIn("gynecological ultrasound equipment", searched)
 
+    def test_failed_topics_have_direct_deterministic_queries(self):
+        self.assertIn(
+            "menstrual pain",
+            social_image.topic_search_queries("כאבי מחזור קשים"),
+        )
+        self.assertIn(
+            "night duty hospital",
+            social_image.topic_search_queries("משמרות לילה משבשות את הגוף"),
+        )
+
     @patch("scripts.social_image.search_openverse", return_value=[])
     @patch("scripts.social_image.search_commons", return_value=[])
     def test_generate_reports_search_diagnostics_when_no_photo_is_found(
