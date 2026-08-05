@@ -2,7 +2,7 @@
   "draft": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
   "title": "בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא",
   "status": "completed_with_errors",
-  "published_at": "2026-08-04T14:57:56.857929+00:00",
+  "published_at": "2026-08-05T07:10:31.943536+00:00",
   "destinations": [
     {
       "name": "drguyrofe.co.il",
@@ -61,7 +61,7 @@
     {
       "name": "Blogger",
       "status": "failed",
-      "detail": "400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token"
+      "detail": "Target blogger_blog may already be published; reconcile first"
     },
     {
       "name": "Instagram",
@@ -74,7 +74,7 @@
     {
       "name": "Google Business Profile",
       "status": "failed",
-      "detail": "400 Client Error: Bad Request for url: https://oauth2.googleapis.com/token"
+      "detail": "Target google_business_profile may already be published; reconcile first"
     },
     {
       "name": "Medium",
