@@ -1,13 +1,96 @@
 {
   "draft": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
   "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
-  "status": "failed",
-  "published_at": "2026-08-04T16:59:39.176816+00:00",
+  "status": "completed_with_errors",
+  "published_at": "2026-08-05T07:06:19.704751+00:00",
   "destinations": [
     {
-      "name": "Campaign",
+      "name": "drguyrofe.com",
+      "status": "published",
+      "url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
+      "detail": "idempotency_key=pub_2d30ded31ba9a28b51f2c4b58b74417da6e96c2985499cead75bf2d4cb7c43eb"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "url": "https://www.facebook.com/122197805228942441",
+      "detail": "idempotency_key=pub_8bbf920f32637827c3fa472fb48ddad2f095f28af961d4208b77b7c39e1d020d"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7490664465114271744/",
+      "detail": "idempotency_key=pub_d0028137e19c5321cbbc23dca35b008bbeb34787c8bde7d30abdcfa3dec0cd2c"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post.html",
+      "detail": "idempotency_key=pub_1e8a79dcc516c35f3829827db930522615b10de97ec66c46223c5fe73dc867c2"
+    },
+    {
+      "name": "Instagram",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_configured"
+    },
+    {
+      "name": "Google Business Profile",
       "status": "failed",
-      "detail": "400 Client Error: Bad Request for url: https://www.wixapis.com/blog/v3/draft-posts"
+      "detail": "429 Client Error: Too Many Requests for url: https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
     }
   ],
   "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
