@@ -714,6 +714,11 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         access_token=google_token,
                     )
                 },
+                reconciler=lambda payload, key: blogger.reconcile(
+                    payload["title"],
+                    canonical_url,
+                    access_token=google_token,
+                ),
             )
         )
     else:

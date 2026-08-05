@@ -482,6 +482,60 @@ class SocialImageTests(unittest.TestCase):
         )
         self.assertTrue(content.endswith("</small></p>"))
 
+    @patch.dict(os.environ, {"BLOGGER_BLOG_ID": "blog"}, clear=True)
+    @patch("scripts.social_publishers.blogger.requests.get")
+    def test_blogger_reconcile_requires_exact_title_and_canonical_link(self, get):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {
+            "items": [
+                {
+                    "id": "wrong",
+                    "title": "כותרת דומה",
+                    "content": '<a href="https://guyrofe.com/article">קישור</a>',
+                    "url": "https://example.blogspot.com/wrong",
+                },
+                {
+                    "id": "right",
+                    "title": "כותרת",
+                    "content": '<a href="https://guyrofe.com/article">קישור</a>',
+                    "url": "https://example.blogspot.com/right",
+                    "published": "2026-08-05T00:00:00Z",
+                },
+            ]
+        }
+        get.return_value = response
+
+        receipt = blogger.reconcile(
+            "כותרת", "https://guyrofe.com/article", access_token="token"
+        )
+
+        self.assertEqual(receipt["url"], "https://example.blogspot.com/right")
+        self.assertEqual(receipt["provider_receipt"]["id"], "right")
+        self.assertEqual(get.call_args.kwargs["params"]["q"], "כותרת")
+
+    @patch.dict(os.environ, {"BLOGGER_BLOG_ID": "blog"}, clear=True)
+    @patch("scripts.social_publishers.blogger.requests.get")
+    def test_blogger_reconcile_returns_none_without_exact_canonical_link(self, get):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {
+            "items": [
+                {
+                    "title": "כותרת",
+                    "content": '<a href="https://guyrofe.com/other">קישור</a>',
+                    "url": "https://example.blogspot.com/other",
+                }
+            ]
+        }
+        get.return_value = response
+
+        self.assertIsNone(
+            blogger.reconcile(
+                "כותרת", "https://guyrofe.com/article", access_token="token"
+            )
+        )
+
     def test_x_publish_is_blocked_even_when_credentials_exist(self):
         with patch.dict(
             os.environ,
