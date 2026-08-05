@@ -41,6 +41,12 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies for an approved retry
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          inputs.retry_approval_id != ''
+        run: pip install -r requirements.txt
+
       - name: Check dashboard approval queue
         id: approval
         env:
@@ -159,7 +165,8 @@ jobs:
       - name: Install dependencies
         if: >-
           steps.approval.outputs.draft_path != '' &&
-          !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+          !(github.event_name == 'workflow_dispatch' && inputs.dry_run) &&
+          !(github.event_name == 'workflow_dispatch' && inputs.retry_approval_id != '')
         run: pip install -r requirements.txt
 
       - name: Publish approved campaign
