@@ -1,0 +1,451 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-05T08:42:24Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
+  "source_draft_sha256": "7f6941d2ebc20833368c7f84d58986c3775006bdfcb638f152e7d4717d74bf39",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/news-room/fact-sheets/detail/endometriosis",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.eshre.eu/-/media/sitecore-files/Guidelines/Endometriosis/ESHRE-GUIDELINE-ENDOMETRIOSIS-2022_1.pdf",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng73",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+    "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+    "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+        "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+        "width": 1600,
+        "height": 900
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+        "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+        "width": 1200,
+        "height": 630
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-square.png",
+        "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+        "width": 1200,
+        "height": 1200
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-portrait.png",
+        "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+        "width": 1080,
+        "height": 1350
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "markdown": "# אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שוות־ערך לאי־פוריות. נשים רבות עם אנדומטריוזיס נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות. מידת ההשפעה משתנה בהתאם לגיל, למיקום המחלה, להיקפה, למצב החצוצרות והשחלות, לרזרבה השחלתית ולגורמים נוספים אצל שני בני הזוג.\n\nאנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הנגעים עשויים להופיע, בין השאר, בצפק האגן, בשחלות, סביב החצוצרות ולעיתים באיברים נוספים. המחלה קשורה לתהליך דלקתי ועלולה לגרום לכאבים, להידבקויות, לציסטות שחלתיות המכונות אנדומטריומות ולהפרעה אנטומית או תפקודית במערכת הרבייה.\n\nלפי [דף המידע הרשמי של ארגון הבריאות העולמי על אנדומטריוזיס](https://www.who.int/news-room/fact-sheets/detail/endometriosis), המחלה עשויה להתבטא בכאבי מחזור משמעותיים, כאב אגני כרוני, כאב בעת קיום יחסי מין וקושי להרות. עם זאת, עוצמת הכאב אינה משקפת בהכרח את היקף המחלה או את מידת הפגיעה בפוריות: מחלה נרחבת יכולה להופיע עם מעט תסמינים, ואילו נגעים מצומצמים עלולים להיות מלווים בכאב משמעותי.\n\n## כיצד אנדומטריוזיס עשויה להשפיע על הפוריות?\n\nהקשר בין אנדומטריוזיס לפוריות הוא רב־גורמי. אין מנגנון יחיד המסביר את כל המקרים, ולא כל מנגנון קיים אצל כל אישה.\n\nראשית, אנדומטריוזיס עלולה לשנות את האנטומיה של האגן. הידבקויות סביב השחלות והחצוצרות עשויות להגביל את תנועת החצוצרה או להפריע למפגש בין הביצית לזרע. במקרים שבהם קיימת חסימה או פגיעה משמעותית בחצוצרות, הסיכוי להפריה טבעית עלול לרדת.\n\nשנית, הסביבה הדלקתית באגן עשויה להשפיע על תהליכים הקשורים לביוץ, לתנועת הזרע, להפריה ולהתפתחות העוברית המוקדמת. מנגנונים אלה עדיין נחקרים, ולא תמיד ניתן לקבוע מהי תרומתו של כל אחד מהם אצל מטופלת מסוימת.\n\nשלישית, אנדומטריומות בשחלות עשויות להיות קשורות לפגיעה ברקמת השחלה וברזרבה השחלתית. גם ניתוח להסרת אנדומטריומה עלול, בחלק מהמקרים, להסיר או לפגוע שלא במכוון ברקמת שחלה תקינה. לכן עצם קיומה של ציסטה אינו מוביל אוטומטית להחלטה לנתח, במיוחד כאשר המטרה המרכזית היא שימור פוריות או התחלת טיפולי הפריה חוץ־גופית.\n\nלבסוף, ייתכן קשר בין אנדומטריוזיס לבין תהליכים המשפיעים על קליטת העובר ברחם, אולם המשמעות הקלינית של חלק מהממצאים אינה חד־משמעית. לפי [ההנחיה המקצועית של ESHRE בנושא אנדומטריוזיס](https://www.eshre.eu/-/media/sitecore-files/Guidelines/Endometriosis/ESHRE-GUIDELINE-ENDOMETRIOSIS-2022_1.pdf), תכנון הטיפול צריך להתבסס על התמונה המלאה ולא על מנגנון ביולוגי משוער או על בדיקה יחידה.\n\n## אבחון המחלה במסגרת בירור פוריות\n\nחשד לאנדומטריוזיס עשוי לעלות בעקבות כאבי מחזור קשים, כאב בעת קיום יחסי מין, כאב אגני מתמשך, כאב ביציאות או במתן שתן סביב הווסת, אנדומטריומה שנצפתה בהדמיה או קושי להרות. עם זאת, היעדר כאב אינו שולל את המחלה.\n\nהבירור מתחיל בדרך כלל בשיחה רפואית מפורטת ובבדיקה גינקולוגית בהתאם לצורך ולהסכמה. אולטרסאונד וגינלי המבוצע בידי איש מקצוע מיומן יכול לזהות אנדומטריומות וסימנים מסוימים של אנדומטריוזיס עמוקה. במצבים נבחרים ניתן להיעזר ב־MRI לצורך מיפוי נרחב יותר, בעיקר כאשר קיים חשד למעורבות עמוקה של איברי האגן.\n\nבדיקת הדמיה תקינה אינה שוללת אנדומטריוזיס שטחית. בעבר ניתוח לפרוסקופי נחשב במקרים רבים לאמצעי ההכרחי לאבחון, אך הגישה העדכנית אינה מחייבת ניתוח אבחנתי לכל אישה. [הנחיית NICE לאבחון ולטיפול באנדומטריוזיס](https://www.nice.org.uk/guidance/ng73) מדגישה שאין לשלול את המחלה רק משום שהבדיקה הגופנית או האולטרסאונד תקינים, ושיש להתאים את המשך הבירור לתסמינים ולנסיבות הקליניות.\n\nכאשר קיים קושי להרות, הבירור אינו צריך להתמקד באנדומטריוזיס בלבד. הערכה מקובלת עשויה לכלול בדיקת ביוץ, הערכת חלל הרחם והחצוצרות, בדיקות הקשורות לרזרבה השחלתית ובדיקת זרע. חשוב לזכור שבדיקות רזרבה שחלתית, כגון AMH או ספירת זקיקים באולטרסאונד, מסייעות בעיקר בהערכת התגובה הצפויה לגירוי שחלתי; הן אינן מנבאות לבדן אם יתרחש היריון טבעי.\n\n## האם חומרת האנדומטריוזיס קובעת את הסיכוי להרות?\n\nנהוג לתאר אנדומטריוזיס לפי שלבים המבוססים על ממצאים אנטומיים וניתוחיים, אך דרגת המחלה אינה מדד מושלם לפוריות. אצל אישה עם מחלה הנראית מצומצמת עלולה להיות ירידה בפוריות, ואילו אישה עם מחלה נרחבת עשויה להרות ללא טיפול.\n\nהערכת הסיכוי להיריון צריכה לכלול גורמים נוספים, ובראשם גיל האישה. הירידה הקשורה לגיל בכמות הביציות ובאיכותן משפיעה על פוריות גם ללא אנדומטריוזיס, ולכן למשך הזמן שבו מנסים להרות יש משמעות. גורמים חשובים נוספים הם משך אי־הפוריות, היסטוריה של הריונות קודמים, מצב החצוצרות, הימצאות אנדומטריומות, ניתוחים קודמים בשחלות, הרזרבה השחלתית ואיכות הזרע.\n\nלאחר ניתוח לאנדומטריוזיס ניתן לעיתים להשתמש במדדים קליניים המשלבים גיל, משך אי־הפוריות, היסטוריה של הריונות וממצאים ניתוחיים כדי להעריך את הסיכוי להיריון ללא טיפולי הפריה חוץ־גופית. גם מדדים אלה מספקים הערכה סטטיסטית בלבד ואינם יכולים לחזות בוודאות את התוצאה האישית.\n\nחשוב להפריד בין שלושה מושגים: חומרת הכאב, היקף המחלה האנטומי ופוטנציאל הפוריות. קיימת חפיפה מסוימת ביניהם, אך אין מדובר באותו דבר. החלטה טיפולית המבוססת רק על עוצמת הכאב או רק על דירוג המחלה עלולה להחמיץ משתנים מרכזיים אחרים.\n\n## אפשרויות טיפול כאשר יש רצון להרות\n\nבחירת הדרך תלויה בגיל, במשך הניסיונות להרות, במצב השחלות והחצוצרות, בתסמינים, בממצאי ההדמיה, בטיפולים קודמים ובגורמים נוספים לפוריות. האפשרויות עשויות לכלול ניסיון טבעי במשך פרק זמן מוגדר, ניתוח, הזרעה תוך־רחמית או הפריה חוץ־גופית.\n\nטיפולים הורמונליים יכולים להפחית כאב ולדכא זמנית את פעילות המחלה, אך בזמן השימוש בהם הם בדרך כלל מונעים ביוץ או היריון. לכן הם אינם טיפול להשגת היריון טבעי. לאחר הפסקתם אין ודאות לשיפור בפוריות מעבר להשפעתם על תסמיני המחלה.\n\nניתוח לפרוסקופי עשוי להסיר נגעים, לשחרר הידבקויות ולשפר את האנטומיה של האגן. במצבים מסוימים הוא עשוי לשפר את הסיכוי להיריון ללא טיפולי פוריות, אך לניתוח יש גם סיכונים. כאשר קיימת אנדומטריומה, יש לאזן בין תועלת אפשרית — למשל טיפול בכאב, בירור ממצא חשוד או שיפור הגישה לזקיקים — לבין הסיכון לפגיעה ברזרבה השחלתית. ניתוחים חוזרים בשחלות דורשים זהירות מיוחדת.\n\nהזרעה תוך־רחמית, לעיתים בשילוב גירוי שחלתי, עשויה להישקל כאשר החצוצרות פתוחות, איכות הזרע מאפשרת זאת והמחלה אינה גורמת להפרעה אנטומית משמעותית. הפריה חוץ־גופית עוקפת חלק מן השלבים שבהם אנדומטריוזיס עלולה להפריע, ובפרט את הצורך במפגש טבעי בין הביצית לזרע בתוך החצוצרה.\n\nאין הכרח להסיר כל אנדומטריומה לפני הפריה חוץ־גופית. ההנחיות המקצועיות אינן תומכות בניתוח שגרתי של אנדומטריומה רק כדי לשפר את תוצאות טיפולי הפוריות, משום שלא הוכחה תועלת עקבית המצדיקה את הסיכון האפשרי לרקמת השחלה. ההחלטה עשויה להשתנות כאשר יש כאב משמעותי, חשד שאינו מתאים לממצא שפיר, קושי טכני בגישה לשחלה או שיקולים קליניים אחרים.\n\n## תכנון פוריות ושימור פוריות\n\nשימור פוריות עשוי לעלות לדיון אצל נשים עם אנדומטריוזיס, בעיקר כאשר קיימת מעורבות שחלתית נרחבת, אנדומטריומות דו־צדדיות, צורך אפשרי בניתוח שחלתי או דחייה ממושכת של ההיריון. האפשרות המקובלת היא הקפאת ביציות, ולעיתים הקפאת עוברים בהתאם לנסיבות ולהעדפות.\n\nעם זאת, שימור פוריות אינו נדרש לכל אישה עם אנדומטריוזיס ואינו מבטיח לידת ילד בעתיד. התועלת האפשרית תלויה במיוחד בגיל בזמן ההקפאה, במספר הביציות שניתן לאסוף וברזרבה השחלתית. גם כאן יש להבחין בין מידע כללי לבין המלצה אישית: עצם האבחנה אינה מספיקה כדי לקבוע אם, מתי וכמה מחזורי טיפול לבצע.\n\nתכנון מוקדם עשוי לסייע בקבלת החלטות כאשר צפוי ניתוח בשחלה. במקרים מתאימים ניתן להעריך את הרזרבה השחלתית לפני הניתוח ולבחון כיצד הניתוח, דחייתו או טיפול פוריות קודם לו עשויים להשפיע על האפשרויות העתידיות. זוהי החלטה מורכבת שאין לה תשובה אחידה.\n\n## סיכום\n\nאנדומטריוזיס עלולה להפחית פוריות באמצעות שינוי האנטומיה של האגן, דלקת, פגיעה בתפקוד החצוצרות ומעורבות שחלתית. למרות זאת, האבחנה אינה מעידה בהכרח על אי־פוריות, וחומרת הכאב או שלב המחלה אינם מנבאים לבדם את הסיכוי להיריון.\n\nהערכת הפוריות צריכה להתייחס לגיל, למשך הניסיונות, למצב החצוצרות והשחלות, לרזרבה השחלתית, לאיכות הזרע ולניתוחים קודמים. האפשרויות כוללות ניסיון טבעי, ניתוח, הזרעה והפריה חוץ־גופית, אך אין מסלול אחד המתאים לכולן. במיוחד כשמדובר בניתוח אנדומטריומה או בשימור פוריות, יש לשקול את התועלת האפשרית מול הסיכון לרקמת השחלה.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד. הוא אינו מיועד לאבחון, לטיפול או לקבלת החלטה אישית, וכל טענה רפואית ונוסח סופי מחייבים בדיקה אנושית ורפואית לפני פרסום.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** הוא יוצר תוכן רפואי ומחבר ספרים. זהו תפקידו הנוכחי המאושר. ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n## מקורות\n\n1. European Society of Human Reproduction and Embryology ‏(ESHRE), *Guideline: Endometriosis, 2022*:  \n   https://www.eshre.eu/-/media/sitecore-files/Guidelines/Endometriosis/ESHRE-GUIDELINE-ENDOMETRIOSIS-2022_1.pdf\n\n2. National Institute for Health and Care Excellence ‏(NICE), *Endometriosis: diagnosis and management – NG73*:  \n   https://www.nice.org.uk/guidance/ng73\n\n3. World Health Organization, *Endometriosis – Fact Sheet*:  \n   https://www.who.int/news-room/fact-sheets/detail/endometriosis\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "ff78340670caf9c2404e0662b39343d525a5472ea14e3f483e51b975c0eaf244",
+        "slug": "guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+          "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שוות־ערך לאי־פוריות.\n\nנשים רבות עם אנדומטריוזיס נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שוות־ערך לאי־פוריות.\n\n• נשים רבות עם אנדומטריוזיס נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות.\n• מידת ההשפעה משתנה בהתאם לגיל, למיקום המחלה, להיקפה, למצב החצוצרות והשחלות, לרזרבה השחלתית ולגורמים נוספים אצל שני בני הזוג.\n• אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "html": "<h2>אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה: אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שוות־ערך לאי־פוריות.</p><p>נשים רבות עם אנדומטריוזיס נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות.</p>",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+          "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "instagram_business",
+      "platform": "Instagram",
+      "asset": "configured Instagram professional account",
+      "payload": {
+        "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "text": "נקודה רפואית שכדאי להכיר:\n\nהתשובה הקצרה: אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שוות־ערך לאי־פוריות.\n\n1. נשים רבות עם אנדומטריוזיס נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות.\n2. מידת ההשפעה משתנה בהתאם לגיל, למיקום המחלה, להיקפה, למצב החצוצרות והשחלות, לרזרבה השחלתית ולגורמים נוספים אצל שני בני הזוג.\n3. אנדומטריוזיס היא מחלה כרונית שבה רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-square.png",
+          "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 1200,
+          "role": "square"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא.\n\nהתשובה הקצרה: אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שוות־ערך לאי־פוריות.\n\nנשים רבות עם אנדומטריוזיס נכנסות להיריון באופן טבעי, ואחרות נעזרות בטיפולי פוריות.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-square.png",
+              "sha256": "b8b4a9b04e7936c0d2bfbd4338950973e7316ff72ad49619547e287833af6367",
+              "width": 1200,
+              "height": 1200
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-05-topic-02-run-30989560897-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": true,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "ff78340670caf9c2404e0662b39343d525a5472ea14e3f483e51b975c0eaf244",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5"
+}

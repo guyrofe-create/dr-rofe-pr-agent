@@ -1,6 +1,40 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
+      "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+      "topic": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
+      "excerpt": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שוות־ערך לאי־פוריות. נשים רבות עם אנדומטריוזיס נכנסות להיריון באופן",
+      "generated_at": "2026-08-05T08:34:28.050169+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "instagram",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-02",
+      "cadence_local_date": "2026-08-05",
+      "public_execution_allowed": false
+    },
+    {
+      "path": "content_drafts/2026-08-05-topic-90-run-30989560897-attempt-1.md",
+      "title": "כך מסייעים כלבי טיפול לחולי שבץ להתאמץ יותר בשיקום: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: כך מסייעים כלבי טיפול לחולי שבץ להתאמץ יותר בשיקום",
+      "excerpt": "כך מסייעים כלבי טיפול לחולי שבץ להתאמץ יותר בשיקום: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: שילוב כלב טיפול במשימות שיקום עשוי לעודד חלק מהמטופלים לנוע, לעמוד ולהשתתף באופן פ",
+      "generated_at": "2026-08-05T08:34:28.050169+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-02",
+      "cadence_local_date": "2026-08-05",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-c675286d65af1154.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/rjdjgbllmg"
+    },
+    {
       "path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
       "title": "בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: פיתוח ישראלי מעורר תקווה: בדיקת דם פשוטה וזולה שמזהה סרטן",
