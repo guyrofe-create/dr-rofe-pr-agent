@@ -114,6 +114,14 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7490779624206041089/",
         "https://guyrofe.blogspot.com/2026/08/blog-post_618.html"
       ]
+    },
+    "apr_2e966747adddf5ec161f2574b4369207c01610995c977dd20901df9eaacd0d73:7f6d3bdaef6eb0328f2a0deb78e83a7e4b2cd1a37c1bcfc7a658d878c763ee8a": {
+      "sent_at": "2026-08-05T16:23:20.360330+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_2e966747adddf5ec161f2574b4369207c01610995c977dd20901df9eaacd0d73",
+      "state": "failed",
+      "subject": "הפרסום נכשל: כך מסייעים כלבי טיפול לחולי שבץ להתאמץ יותר בשיקום: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }
