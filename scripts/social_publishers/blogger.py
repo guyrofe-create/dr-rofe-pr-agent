@@ -60,6 +60,41 @@ def publish(
     return resp.json().get("url", "published")
 
 
+def reconcile(title, canonical_url, *, access_token=None):
+    """Return a verified existing post, or ``None`` when it is absent.
+
+    Blogger's search is intentionally treated only as a candidate lookup.  A
+    result is conclusive only when both the title and the approved canonical
+    link match exactly, preventing an unrelated fuzzy search hit from being
+    recorded as the publication receipt.
+    """
+    blog_id = common.env("BLOGGER_BLOG_ID")
+    token = access_token or _access_token()
+    resp = requests.get(
+        f"https://www.googleapis.com/blogger/v3/blogs/{blog_id}/posts/search",
+        headers={"Authorization": f"Bearer {token}"},
+        params={"q": title, "fetchBodies": True, "orderBy": "published"},
+        timeout=30,
+    )
+    resp.raise_for_status()
+    for post in resp.json().get("items") or []:
+        if post.get("title") != title:
+            continue
+        if canonical_url not in str(post.get("content") or ""):
+            continue
+        url = str(post.get("url") or "").strip()
+        if url:
+            return {
+                "url": url,
+                "provider_receipt": {
+                    "id": post.get("id"),
+                    "published": post.get("published"),
+                    "updated": post.get("updated"),
+                },
+            }
+    return None
+
+
 def check_token_health():
     if not is_configured():
         return False, "not configured"
