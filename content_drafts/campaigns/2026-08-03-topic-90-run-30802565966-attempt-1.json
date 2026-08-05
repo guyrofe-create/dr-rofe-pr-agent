@@ -2,7 +2,7 @@
   "draft": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
   "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
   "status": "completed_with_errors",
-  "published_at": "2026-08-04T18:46:37.510974+00:00",
+  "published_at": "2026-08-05T07:07:54.284071+00:00",
   "destinations": [
     {
       "name": "drguyrofe.co.il",
@@ -60,8 +60,9 @@
     },
     {
       "name": "Blogger",
-      "status": "failed",
-      "detail": "Google OAuth token refresh failed (HTTP 400): invalid_grant: Token has been expired or revoked."
+      "status": "published",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post_05.html",
+      "detail": "idempotency_key=pub_0b5e258b59b0304f524f6294cd916dbbd42600734d025be8c0df09b73ff83166"
     },
     {
       "name": "Instagram",
@@ -74,7 +75,7 @@
     {
       "name": "Google Business Profile",
       "status": "failed",
-      "detail": "Google OAuth token refresh failed (HTTP 400): invalid_grant: Token has been expired or revoked."
+      "detail": "429 Client Error: Too Many Requests for url: https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
     },
     {
       "name": "Medium",

@@ -368,6 +368,32 @@
       "status": "reconciliation_required",
       "started_at": "2026-08-05T07:06:19Z",
       "updated_at": "2026-08-05T07:06:19Z"
+    },
+    "pub_0b5e258b59b0304f524f6294cd916dbbd42600734d025be8c0df09b73ff83166": {
+      "version": 7,
+      "idempotency_key": "pub_0b5e258b59b0304f524f6294cd916dbbd42600734d025be8c0df09b73ff83166",
+      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "request_sha256": "877f17baeeaaad22915f9f5abf6d7d35422b6e14633dad6d48c2acd99c33878a",
+      "status": "published",
+      "started_at": "2026-08-05T07:07:52Z",
+      "published_at": "2026-08-05T07:07:54Z",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post_05.html",
+      "provider_receipt": null
+    },
+    "pub_a2eef432d1686eb5bd59c93de6d69cdc0a7c0e9ab2ce0f261ee3d6285e7f7294": {
+      "version": 7,
+      "idempotency_key": "pub_a2eef432d1686eb5bd59c93de6d69cdc0a7c0e9ab2ce0f261ee3d6285e7f7294",
+      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "494b859bbd4f6e0f66f7fd876d7daa3521159b8cd864d829aaae63d9db5a5e04",
+      "status": "reconciliation_required",
+      "started_at": "2026-08-05T07:07:54Z",
+      "updated_at": "2026-08-05T07:07:54Z"
     }
   }
 }

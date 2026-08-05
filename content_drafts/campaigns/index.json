@@ -1,6 +1,104 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+      "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
+      "status": "completed_with_errors",
+      "published_at": "2026-08-05T07:07:54.284071+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+          "detail": "idempotency_key=pub_72bddaff60e0122de873d03d056d3f4c072f4bd956d61f3b72f61ed84a6b0d37"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "url": "https://www.facebook.com/122197727090942441",
+          "detail": "idempotency_key=pub_0efe5c810be64c4c4ad99639e397ef126ecef978e6cbbf475714abe0e2d4854a"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7490478316504793088/",
+          "detail": "idempotency_key=pub_db84387ec5d2603078639f06e05fdbc4a1f96d55a8f097b3c011181042df1806"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "url": "https://guyrofe.blogspot.com/2026/08/blog-post_05.html",
+          "detail": "idempotency_key=pub_0b5e258b59b0304f524f6294cd916dbbd42600734d025be8c0df09b73ff83166"
+        },
+        {
+          "name": "Instagram",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_configured"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "failed",
+          "detail": "429 Client Error: Too Many Requests for url: https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
       "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
       "status": "completed_with_errors",
@@ -96,103 +194,6 @@
         }
       ],
       "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
-      "title": "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא",
-      "status": "completed_with_errors",
-      "published_at": "2026-08-04T18:46:37.510974+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.co.il",
-          "status": "published",
-          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
-          "detail": "idempotency_key=pub_72bddaff60e0122de873d03d056d3f4c072f4bd956d61f3b72f61ed84a6b0d37"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1-hero.png",
-          "detail": "wikimedia_commons_licensed_photo"
-        },
-        {
-          "name": "guyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "published",
-          "url": "https://www.facebook.com/122197727090942441",
-          "detail": "idempotency_key=pub_0efe5c810be64c4c4ad99639e397ef126ecef978e6cbbf475714abe0e2d4854a"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "published",
-          "url": "https://www.linkedin.com/feed/update/urn:li:share:7490478316504793088/",
-          "detail": "idempotency_key=pub_db84387ec5d2603078639f06e05fdbc4a1f96d55a8f097b3c011181042df1806"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "failed",
-          "detail": "Google OAuth token refresh failed (HTTP 400): invalid_grant: Token has been expired or revoked."
-        },
-        {
-          "name": "Instagram",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_configured"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "failed",
-          "detail": "Google OAuth token refresh failed (HTTP 400): invalid_grant: Token has been expired or revoked."
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     },
     {
