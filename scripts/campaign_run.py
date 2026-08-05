@@ -316,8 +316,10 @@ def _target_map(bundle):
     return {item["target_id"]: item for item in bundle["targets"]}
 
 
-def _execute_target(ledger, bundle, target, publisher):
-    receipt = ledger.execute(bundle, target, publisher)
+def _execute_target(ledger, bundle, target, publisher, reconciler=None):
+    receipt = ledger.execute(
+        bundle, target, publisher, reconciler=reconciler
+    )
     return destination(
         target["platform"],
         "published",
@@ -326,10 +328,14 @@ def _execute_target(ledger, bundle, target, publisher):
     )
 
 
-def _execute_target_safely(ledger, bundle, target, publisher):
+def _execute_target_safely(
+    ledger, bundle, target, publisher, reconciler=None
+):
     """Execute one approved destination without hiding other destination results."""
     try:
-        return _execute_target(ledger, bundle, target, publisher)
+        return _execute_target(
+            ledger, bundle, target, publisher, reconciler=reconciler
+        )
     except Exception as exc:
         log(f"{target['platform']} publication failed: {exc}")
         return destination(

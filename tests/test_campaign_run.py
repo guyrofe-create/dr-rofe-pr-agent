@@ -248,6 +248,37 @@ class CampaignRunTests(unittest.TestCase):
         self.assertEqual(result["status"], "failed")
         self.assertIn("provider unavailable", result["detail"])
 
+    def test_destination_reconciler_is_forwarded_to_execution_ledger(self):
+        target = {
+            "target_id": "blogger_blog",
+            "platform": "Blogger",
+            "asset": "blog",
+            "payload": {"title": "approved"},
+        }
+        ledger = Mock()
+        ledger.execute.return_value = {
+            "url": "https://example.blogspot.com/post",
+            "idempotency_key": "pub_test",
+        }
+        publisher = Mock()
+        reconciler = Mock()
+
+        result = campaign_run._execute_target_safely(
+            ledger,
+            {"approval_id": "apr_test"},
+            target,
+            publisher,
+            reconciler=reconciler,
+        )
+
+        self.assertEqual(result["status"], "published")
+        ledger.execute.assert_called_once_with(
+            {"approval_id": "apr_test"},
+            target,
+            publisher,
+            reconciler=reconciler,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
