@@ -1,0 +1,99 @@
+{
+  "draft": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
+  "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-08-05T14:43:58.640355+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+      "detail": "idempotency_key=pub_6c7df0c0f8366bf9f56ff75d66ff2691e66f786606134d022efe5207311d5c9e"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "url": "https://www.facebook.com/122197862894942441",
+      "detail": "idempotency_key=pub_2e9a3311a625ce4b954d680d9367c306b4c7741217bd3cc7513521cbf3babc0b"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7490779624206041089/",
+      "detail": "idempotency_key=pub_fa21136db2e36efec6849ba7214de6e102de9b301bc8699dc5944b3f2a4ad877"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post_618.html",
+      "detail": "idempotency_key=pub_9d20bbf0022a658567b8703f7ed165628146276f45f0cd216a4763f68911cc81"
+    },
+    {
+      "name": "Instagram",
+      "status": "failed",
+      "detail": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841475928567459/media"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "failed",
+      "detail": "429 Client Error: Too Many Requests for url: https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

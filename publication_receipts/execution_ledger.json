@@ -396,6 +396,86 @@
       "status": "reconciliation_required",
       "started_at": "2026-08-05T07:07:54Z",
       "updated_at": "2026-08-05T07:07:54Z"
+    },
+    "pub_6c7df0c0f8366bf9f56ff75d66ff2691e66f786606134d022efe5207311d5c9e": {
+      "version": 7,
+      "idempotency_key": "pub_6c7df0c0f8366bf9f56ff75d66ff2691e66f786606134d022efe5207311d5c9e",
+      "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "request_sha256": "74c3ca744e8664d438a3e781604b799d4b5870083795707f8194184c803d7a61",
+      "status": "published",
+      "started_at": "2026-08-05T14:43:35Z",
+      "published_at": "2026-08-05T14:43:40Z",
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+      "provider_receipt": null
+    },
+    "pub_2e9a3311a625ce4b954d680d9367c306b4c7741217bd3cc7513521cbf3babc0b": {
+      "version": 7,
+      "idempotency_key": "pub_2e9a3311a625ce4b954d680d9367c306b4c7741217bd3cc7513521cbf3babc0b",
+      "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "be10c2d997662d4a0a33fc02ff8004018ec3aee0db3ab01d37823def37639a62",
+      "status": "published",
+      "started_at": "2026-08-05T14:43:43Z",
+      "published_at": "2026-08-05T14:43:51Z",
+      "url": "https://www.facebook.com/122197862894942441",
+      "provider_receipt": null
+    },
+    "pub_fa21136db2e36efec6849ba7214de6e102de9b301bc8699dc5944b3f2a4ad877": {
+      "version": 7,
+      "idempotency_key": "pub_fa21136db2e36efec6849ba7214de6e102de9b301bc8699dc5944b3f2a4ad877",
+      "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "5598d01d6fab9c73050d61756bd808f3a3f6a089499e512a6caa33e6dc40050b",
+      "status": "published",
+      "started_at": "2026-08-05T14:43:51Z",
+      "published_at": "2026-08-05T14:43:54Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7490779624206041089/",
+      "provider_receipt": null
+    },
+    "pub_9d20bbf0022a658567b8703f7ed165628146276f45f0cd216a4763f68911cc81": {
+      "version": 7,
+      "idempotency_key": "pub_9d20bbf0022a658567b8703f7ed165628146276f45f0cd216a4763f68911cc81",
+      "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "request_sha256": "aaa84ab97d385fdd7f439c82c60ed451e5f3e91378060fcf73df51ee26135a24",
+      "status": "published",
+      "started_at": "2026-08-05T14:43:54Z",
+      "published_at": "2026-08-05T14:43:55Z",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post_618.html",
+      "provider_receipt": null
+    },
+    "pub_8148577e36cc0986c45dd377dc110ebbdf1e152379c1436857a63f3f6ddfd6bf": {
+      "version": 7,
+      "idempotency_key": "pub_8148577e36cc0986c45dd377dc110ebbdf1e152379c1436857a63f3f6ddfd6bf",
+      "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
+      "target_id": "instagram_business",
+      "platform": "Instagram",
+      "asset": "configured Instagram professional account",
+      "request_sha256": "15f1bb41e67d709988bb8f77afbb58609dd11783970096646e356c8f4c572fbb",
+      "status": "reconciliation_required",
+      "started_at": "2026-08-05T14:43:58Z",
+      "updated_at": "2026-08-05T14:43:58Z"
+    },
+    "pub_cc68a7b8780af5b000121587cd23c5eecd0a86b67414d6d85362ccc2a798e0d2": {
+      "version": 7,
+      "idempotency_key": "pub_cc68a7b8780af5b000121587cd23c5eecd0a86b67414d6d85362ccc2a798e0d2",
+      "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "a75c31830e13ffd09283f4b6342890a17eab79c4fc18e9bd0f64b026d40a6696",
+      "status": "reconciliation_required",
+      "started_at": "2026-08-05T14:43:58Z",
+      "updated_at": "2026-08-05T14:43:58Z"
     }
   }
 }
