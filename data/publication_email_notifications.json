@@ -80,6 +80,14 @@
         "https://www.facebook.com/122197700126942441",
         "https://www.linkedin.com/feed/update/urn:li:share:7490420767814488064/"
       ]
+    },
+    "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4:f05c6912ba09baffbaa99f78b2dead6125f6643d95beaa68bab188deb1970526": {
+      "sent_at": "2026-08-05T07:18:06.412177+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4",
+      "state": "failed",
+      "subject": "הפרסום נכשל: בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }
