@@ -243,9 +243,11 @@
       "platform": "Blogger",
       "asset": "configured Blogger blog",
       "request_sha256": "e7d7e400d649025717f57a1957e02263a36556a75501355029b5aa4c3e604157",
-      "status": "reconciliation_required",
-      "started_at": "2026-08-04T14:57:56Z",
-      "updated_at": "2026-08-05T07:10:31Z"
+      "status": "published",
+      "started_at": "2026-08-05T07:20:54Z",
+      "published_at": "2026-08-05T07:20:54Z",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post_309.html",
+      "provider_receipt": null
     },
     "pub_740eded1619a6d8b75a794f311d778d8c79c2d05e9d148ea6b69281fc4ea9a26": {
       "version": 7,
@@ -257,7 +259,7 @@
       "request_sha256": "3b035390f0d96b4d997ffa1c05d52640a9c31f577facb465211d6078955c9db9",
       "status": "reconciliation_required",
       "started_at": "2026-08-04T14:57:56Z",
-      "updated_at": "2026-08-05T07:10:31Z"
+      "updated_at": "2026-08-05T07:20:54Z"
     },
     "pub_2d30ded31ba9a28b51f2c4b58b74417da6e96c2985499cead75bf2d4cb7c43eb": {
       "version": 7,

@@ -88,6 +88,19 @@
       "state": "failed",
       "subject": "הפרסום נכשל: בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא",
       "urls": []
+    },
+    "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4:de80ac5f882f3118d75c7cf8c2c3a90622defa422a40771281500f4d5b79182f": {
+      "sent_at": "2026-08-05T07:20:56.498216+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4",
+      "state": "partial",
+      "subject": "הפרסום הושלם עם תקלות: בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-04-topic-90-run-30892576802-attempt-1/",
+        "https://www.facebook.com/122197700126942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7490420767814488064/",
+        "https://guyrofe.blogspot.com/2026/08/blog-post_309.html"
+      ]
     }
   }
 }
