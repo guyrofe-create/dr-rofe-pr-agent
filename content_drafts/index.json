@@ -1,6 +1,26 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה",
+      "excerpt": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מחקר עוקבה שוודי גדול מצא כי בקרב אנשים עם סוכרת מסוג 1, אבחון לפני גיל 10 היה קשור ל",
+      "generated_at": "2026-08-06T08:34:28.670708+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "pinterest",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-02",
+      "cadence_local_date": "2026-08-06",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-5ca879eaeecc5aa0.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/syxehf118fe"
+    },
+    {
       "path": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
       "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
       "topic": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",

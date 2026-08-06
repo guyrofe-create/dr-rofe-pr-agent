@@ -1,0 +1,444 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-06T08:43:14Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md",
+  "source_draft_sha256": "cad1e9b3776131fac34cdb647b60933ddc8e05cc0f3e0807775ce4c1b891f122",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/syxehf118fe",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1111/dom.71123",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-1-diabetes",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1212/WNL.0000000000012243",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/diabetes/diabetes-complications/effects-of-diabetes-brain.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/managing-diabetes",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.niddk.nih.gov/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+    "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+    "alt_text": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Glucose_test.JPG",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Glucose_test.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Erik1980",
+    "license_name": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "attribution": "Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-hero.png",
+        "sha256": "bad8ff0f1c9338907bf8f76ac8bdb88d62c68e8283ca936ff172773d4403f8d5",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+        "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-square.jpg",
+        "sha256": "f0a40928c06de9a8766fcebea454e363052475c70b56c581e8a4e7717d932b45",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-portrait.png",
+        "sha256": "52609ab86ec5a6cf6ff496016a4028552ff02e4641e2ab236bfb4b6fb065883b",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
+        "markdown": "# מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** מחקר עוקבה שוודי גדול מצא כי בקרב אנשים עם סוכרת מסוג 1, אבחון לפני גיל 10 היה קשור לסיכון יחסי גבוה יותר לדמנציה בהמשך החיים בהשוואה לאבחון בגילים 18–30. עם זאת, מדובר בקשר סטטיסטי ולא בהוכחה שאבחון מוקדם גורם לדמנציה. הסיכון המוחלט נותר נמוך יחסית, וגיל 10 אינו “קו גורל” ביולוגי אלא נקודת חלוקה שנבחרה לצורך ניתוח הנתונים.\n\nהכותרת שנדונה ב[כתבת ynet על גיל אבחון סוכרת מסוג 1 והסיכון לדמנציה](https://www.ynet.co.il/health/article/syxehf118fe) מעוררת דאגה מובנת, במיוחד בקרב הורים לילדים עם סוכרת מסוג 1. עם זאת, כתבת החדשות אינה משמשת מקור רפואי למאמר זה. כדי להבין מה באמת ידוע, יש לבחון את המחקר המדעי המקורי, להבדיל בין סיכון יחסי לסיכון מוחלט, ולברר אילו הסברים אפשריים עדיין אינם מוכחים.\n\n## על איזה מחקר מבוססת הכותרת?\n\nהכותרת מבוססת על [המחקר השוודי המקורי על גיל הופעת סוכרת מסוג 1 והסיכון לדמנציה](https://doi.org/10.1111/dom.71123), שפורסם בשנת 2026 בכתב העת *Diabetes, Obesity and Metabolism*. זהו מחקר עוקבה ארצי המבוסס על נתוני מרשם הסוכרת הלאומי של שוודיה ועל רישומי בריאות ואוכלוסייה נוספים.\n\nבמחקר נכללו 43,440 אנשים עם סוכרת מסוג 1. לצורך הניתוח חולקו המשתתפים לשלוש קבוצות לפי גיל הופעת המחלה:\n\n- 11,776 משתתפים שאובחנו לפני גיל 10;\n- 15,846 שאובחנו בגילים 10–17;\n- 15,818 שאובחנו בגילים 18–30.\n\nהקבוצה שאובחנה בגילים 18–30 שימשה קבוצת הייחוס. החוקרים עקבו אחר אבחנות של דמנציה מכל הסוגים, לרבות מחלת אלצהיימר, דמנציה וסקולרית ודמנציות שאינן משתייכות לשתי הקבוצות האלה.\n\nמשך המעקב החציוני, שנמדד מגיל הופעת הסוכרת, היה 29.3 שנים. במהלך המעקב תועדה דמנציה אצל 530 משתתפים — כ־1.2% מכלל קבוצת המחקר. ניתוח שהתחשב בגיל לאורך זמן ובגורמים נוספים מצא כי הופעת סוכרת לפני גיל 10 הייתה קשורה לעלייה של 37% בסיכון היחסי לדמנציה מכל סוג, בהשוואה להופעת המחלה בגילים 18–30. יחס הסיכון היה 1.37, עם רווח סמך של 95% שנע בין 1.08 ל־1.73.\n\nלעומת זאת, בקרב מי שאובחנו בגילים 10–17 לא נמצאה עלייה מובהקת סטטיסטית לעומת קבוצת הייחוס: יחס הסיכון היה 1.04, ורווח הסמך כלל את האפשרות שלא קיים הבדל אמיתי בין הקבוצות.\n\n## מה הנתונים באמת אומרים — ומה הם אינם אומרים?\n\nהממצא המרכזי הוא **קשר בין הופעה מוקדמת מאוד של סוכרת מסוג 1 לבין סיכון יחסי מוגבר לדמנציה בהמשך החיים**. אין פירוש הדבר ש־37% מהילדים המאובחנים יפתחו דמנציה. עלייה של 37% מתייחסת להבדל יחסי בין קבוצות, ולא לשיעור האנשים שיפתחו את המחלה בפועל.\n\nהמחקר דיווח כי עד גיל 75 הסיכון המצטבר לדמנציה הוערך בכ־7% בקרב מי שאובחנו לפני גיל 10, לעומת כ־5% בקרב מי שאובחנו בגילים 18–30. זהו הבדל בעל חשיבות מחקרית, אך הוא גם מראה שרובם הגדול של האנשים בשתי הקבוצות לא אובחנו בדמנציה עד גיל זה.\n\nחשוב להבחין בין שני מדדים:\n\n- **סיכון יחסי** מתאר עד כמה אירוע שכיח יותר בקבוצה אחת בהשוואה לאחרת. זהו המקור לניסוח של עלייה של 37%.\n- **סיכון מוחלט** מתאר את ההסתברות בפועל לאירוע. לפי ההערכה המצטברת במחקר, הפער עד גיל 75 היה כשתי נקודות אחוז.\n\nגם גיל 10 אינו נקודת סף רפואית מוכחת. החוקרים חילקו את המשתתפים לקטגוריות גיל כדי לאפשר השוואה סטטיסטית. אין ראיה לכך שהסיכון משתנה בבת אחת ביום ההולדת העשירי. סביר יותר שגיל האבחון משקף רצף: ככל שהמחלה מתחילה מוקדם יותר, משך החיים עמה ארוך יותר.\n\nהקשר הבולט ביותר נמצא לדמנציה וסקולרית. בהשוואה לאבחון בגילים 18–30, אבחון לפני גיל 10 נקשר לעלייה של כ־65% בסיכון היחסי לדמנציה וסקולרית. לעומת זאת, לא נמצא במחקר קשר מובהק למחלת אלצהיימר. גם כאן נדרשת זהירות, משום שאבחון תת־הסוג של דמנציה מתוך רישומים רפואיים אינו תמיד מדויק, ובמציאות עשויה להתקיים חפיפה בין תהליכים וסקולריים לבין תהליכים ניווניים.\n\n## מדוע אבחון מוקדם עשוי להיות קשור לבריאות המוח?\n\nסוכרת מסוג 1 היא מחלה אוטואימונית שבה מערכת החיסון הורסת את תאי הבטא בלבלב המייצרים אינסולין. לפי [ההסבר הרשמי של NIDDK על סוכרת מסוג 1](https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-1-diabetes), מרבית האנשים עם המחלה זקוקים לאינסולין מדי יום, וניהול ממושך של רמות הגלוקוז חיוני לצמצום הסיכון לסיבוכים.\n\nהמחקר הנוכחי אינו מוכיח מנגנון ביולוגי מסוים. עם זאת, אפשר להציע כמה הסברים סבירים, שיש לראות בהם **פרשנות מחקרית** ולא עובדה שהוכחה במחקר:\n\n1. **משך חשיפה ארוך יותר:** ילד שאובחן לפני גיל 10 עשוי לחיות עם הסוכרת עשרות שנים יותר מאדם שאובחן בבגרות הצעירה. חשיפה מצטברת להיפרגליקמיה ולגורמי סיכון נלווים עשויה להשפיע לאורך זמן על כלי הדם.\n\n2. **פגיעה וסקולרית מצטברת:** סוכרת עלולה לפגוע בכלי דם גדולים וקטנים. פגיעה באספקת הדם למוח, אירועים מוחיים ושינויים בכלי דם קטנים הם מסלולים אפשריים להתפתחות דמנציה וסקולרית. העובדה שהקשר החזק ביותר במחקר נמצא לדמנציה וסקולרית תומכת באפשרות הזאת, אך אינה מוכיחה אותה.\n\n3. **עומס גליקמי לאורך החיים:** HbA1c משקף בקירוב את רמות הגלוקוז הממוצעות בחודשים האחרונים. כאשר רמות גבוהות נמשכות במשך שנים, הן עלולות לתרום לפגיעה בכלי דם, בכליות, בלב ובעצבים. המוח עשוי להיות מושפע בעקיפין ובמישרין מתהליכים אלה.\n\n4. **אירועים גליקמיים חמורים:** [מחקר על היפוגליקמיה, היפרגליקמיה חמורה ודמנציה בסוכרת מסוג 1](https://doi.org/10.1212/WNL.0000000000012243) מצא קשר בין אירועים חמורים שחייבו טיפול דחוף או אשפוז לבין סיכון מוגבר לדמנציה אצל מבוגרים. אין להסיק מכך שכל חריגה יומיומית ברמת הסוכר גורמת לדמנציה; המחקר עסק באירועים חמורים ומתועדים.\n\n5. **גורמי סיכון משותפים:** לחץ דם גבוה, מחלות לב וכלי דם, מחלת כליות ושבץ עשויים להשפיע הן על מצבם של אנשים עם סוכרת והן על הסיכון לירידה קוגניטיבית.\n\n## מדוע אי אפשר להסיק שהסוכרת המוקדמת גורמת לדמנציה?\n\nמחקר עוקבה תצפיתי יכול לזהות קשרים חשובים, אך אינו יכול להוכיח לבדו סיבתיות. החוקרים לא הקצו לילדים גיל אבחון מסוים, כמובן, אלא בחנו בדיעבד את תוצאותיהם של אנשים שהמחלה הופיעה אצלם בגילים שונים.\n\nבין הקבוצות עשויים להיות הבדלים נוספים: רקע גנטי, תקופת הטיפול שבה אובחנו, גישה לטכנולוגיות רפואיות, השכלה, מצב חברתי־כלכלי, פעילות גופנית, עישון, מחלות נלוות ודפוסי איזון גליקמי. התאמות סטטיסטיות מצמצמות חלק מההשפעות האלה, אך אינן יכולות לבטל כל גורם מערפל שאינו ידוע או שלא נמדד.\n\nלמחקר מגבלות חשובות נוספות:\n\n- אבחנות הדמנציה זוהו באמצעות קודים במרשמי בריאות, ולא באמצעות הערכה קוגניטיבית אחידה לכל המשתתפים.\n- ייתכן שחלק ממקרי הדמנציה לא אובחנו או לא תועדו.\n- אנשים שאובחנו בילדות לפני עשרות שנים קיבלו טיפול בתקופה שונה מאוד מזו של ילדים המאובחנים כיום.\n- נתוני העבר אינם משקפים במלואם את ההשפעה האפשרית של ניטור גלוקוז רציף, משאבות אינסולין ומערכות אוטומטיות למתן אינסולין.\n- אוכלוסיית המחקר הייתה שוודית, ולכן לא ברור אם גודל הקשר זהה באוכלוסיות אחרות.\n- דמנציה מתפתחת בדרך כלל בגיל מבוגר, ואילו חלק ניכר מהעוקבה עדיין לא הגיע לגילים שבהם שכיחותה עולה באופן חד.\n\nקיימת גם אפשרות להטיית הישרדות: אנשים עם סיבוכים קשים עלולים למות לפני הגיל שבו דמנציה מאובחנת בדרך כלל. מצב זה עלול להשפיע על הערכת הקשרים במחקר.\n\nלפיכך, הניסוח המדויק הוא שגיל הופעה צעיר מאוד **נקשר** לסיכון מוגבר — לא שהוא הוכח כגורם ישיר לדמנציה.\n\n## מה המשמעות המעשית עבור ילדים ומבוגרים עם סוכרת מסוג 1?\n\nהמחקר אינו מצדיק בדיקות שגרתיות לדמנציה בילדים ואינו מלמד שדמנציה היא תוצאה צפויה של סוכרת מסוג 1. המסר המעשי הוא שיש חשיבות לניהול בטוח ורציף של המחלה ולשמירה על בריאות כלי הדם לאורך החיים.\n\nלפי [המידע הרשמי של CDC על סוכרת ובריאות המוח](https://www.cdc.gov/diabetes/diabetes-complications/effects-of-diabetes-brain.html), סוכרת עשויה להשפיע על כלי הדם במוח ולהיות קשורה לשבץ, לקשיי זיכרון ולירידה קוגניטיבית. מכאן נובעת חשיבותם של כמה תחומים הניתנים למעקב:\n\n- שמירה על יעד HbA1c אישי ובטוח שנקבע במסגרת טיפול רפואי;\n- צמצום היפוגליקמיה והיפרגליקמיה חמורות;\n- ניטור ואיזון של לחץ הדם;\n- בדיקת שומנים בדם וטיפול בהם לפי הצורך;\n- הימנעות מעישון;\n- פעילות גופנית ותזונה המתאימות למצב הבריאותי;\n- זיהוי וטיפול במחלות לב, כליות וכלי דם;\n- מעקב אחר שינויים קוגניטיביים בבגרות, במיוחד אם הם מקשים על ניהול האינסולין.\n\n[הנחיות NIDDK לניהול סוכרת ולהפחתת סיבוכים](https://www.niddk.nih.gov/health-information/diabetes/overview/managing-diabetes) מדגישות ניהול משולב של גלוקוז, לחץ דם, כולסטרול ועישון. עם זאת, אין כיום בסיס לקבוע כי טיפול מסוים, מכשיר מסוים או יעד גליקמי יחיד הוכחו כמונעי דמנציה דווקא אצל אנשים עם סוכרת מסוג 1.\n\n## סיכום\n\nהכותרת משקפת ממצא מחקרי אמיתי, אך יש לקרוא אותה בהקשר הנכון. במחקר שוודי שכלל 43,440 אנשים עם סוכרת מסוג 1, אבחון לפני גיל 10 נקשר לעלייה של 37% בסיכון היחסי לדמנציה מכל סוג לעומת אבחון בגילים 18–30. הסיכון המצטבר עד גיל 75 הוערך בכ־7% לעומת כ־5%, והקשר הבולט ביותר נמצא לדמנציה וסקולרית.\n\nהמחקר אינו מוכיח שאבחון מוקדם גורם לדמנציה, אינו מציג את גיל 10 כגבול ביולוגי ואינו מאפשר לחזות את עתידו של אדם מסוים. הממצא עשוי לשקף בעיקר חשיפה ממושכת יותר לסוכרת ולגורמי סיכון וסקולריים. המשמעות המעשית היא לא חרדה, אלא תשומת לב ארוכת טווח לניהול גלוקוז בטוח, ללחץ הדם, לשומנים, לעישון ולבריאות הלב וכלי הדם.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון או לטיפול פרטני, וכל הטענות הרפואיות בו מחייבות ביקורת של רופא מוסמך לפני פרסום.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** הוא יוצר תוכן רפואי ומחבר ספרים. ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n### המחקר ומקורות רפואיים\n\n1. Jancev M, et al. *Age of Type 1 Diabetes Onset and Dementia Risk: A Swedish Nationwide, Register-Based Cohort Study*. Diabetes, Obesity and Metabolism. 2026.  \n   https://doi.org/10.1111/dom.71123\n\n2. Whitmer RA, et al. *Association of Type 1 Diabetes and Hypoglycemic and Hyperglycemic Events and Risk of Dementia*. Neurology. 2021.  \n   https://doi.org/10.1212/WNL.0000000000012243\n\n3. National Institute of Diabetes and Digestive and Kidney Diseases. *Type 1 Diabetes*.  \n   https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-1-diabetes\n\n4. Centers for Disease Control and Prevention. *Your Brain and Diabetes*.  \n   https://www.cdc.gov/diabetes/diabetes-complications/effects-of-diabetes-brain.html\n\n5. National Institute of Diabetes and Digestive and Kidney Diseases. *Managing Diabetes*.  \n   https://www.niddk.nih.gov/\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)\n- [כתבת ynet על גיל אבחון סוכרת מסוג 1 והסיכון לדמנציה](https://www.ynet.co.il/health/article/syxehf118fe)\n- [הנחיות NIDDK לניהול סוכרת ולהפחתת סיבוכים](https://www.niddk.nih.gov/health-information/diabetes/overview/managing-diabetes)",
+        "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1/",
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "5814e117e29bcbff53ca5e0da4e81037126c442e9e49bb95993f817cadb9e1d9",
+        "slug": "guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-hero.png",
+          "sha256": "bad8ff0f1c9338907bf8f76ac8bdb88d62c68e8283ca936ff172773d4403f8d5",
+          "alt_text": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Glucose_test.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Glucose_test.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Erik1980",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "attribution": "Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-hero.png",
+              "sha256": "bad8ff0f1c9338907bf8f76ac8bdb88d62c68e8283ca936ff172773d4403f8d5",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+              "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-square.jpg",
+              "sha256": "f0a40928c06de9a8766fcebea454e363052475c70b56c581e8a4e7717d932b45",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-portrait.png",
+              "sha256": "52609ab86ec5a6cf6ff496016a4028552ff02e4641e2ab236bfb4b6fb065883b",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: מחקר עוקבה שוודי גדול מצא כי בקרב אנשים עם סוכרת מסוג 1, אבחון לפני גיל 10 היה קשור לסיכון יחסי גבוה יותר לדמנציה בהמשך החיים בהשוואה לאבחון בגילים 18–30.\n\nעם זאת, מדובר בקשר סטטיסטי ולא בהוכחה שאבחון מוקדם גורם לדמנציה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+          "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+          "alt_text": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Glucose_test.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Glucose_test.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Erik1980",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "attribution": "Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-hero.png",
+              "sha256": "bad8ff0f1c9338907bf8f76ac8bdb88d62c68e8283ca936ff172773d4403f8d5",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+              "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-square.jpg",
+              "sha256": "f0a40928c06de9a8766fcebea454e363052475c70b56c581e8a4e7717d932b45",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-portrait.png",
+              "sha256": "52609ab86ec5a6cf6ff496016a4028552ff02e4641e2ab236bfb4b6fb065883b",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: מחקר עוקבה שוודי גדול מצא כי בקרב אנשים עם סוכרת מסוג 1, אבחון לפני גיל 10 היה קשור לסיכון יחסי גבוה יותר לדמנציה בהמשך החיים בהשוואה לאבחון בגילים 18–30.\n\n• עם זאת, מדובר בקשר סטטיסטי ולא בהוכחה שאבחון מוקדם גורם לדמנציה.\n• הסיכון המוחלט נותר נמוך יחסית, וגיל 10 אינו “קו גורל” ביולוגי אלא נקודת חלוקה שנבחרה לצורך ניתוח הנתונים.\n• הכותרת שנדונה ב[כתבת ynet על גיל אבחון סוכרת מסוג 1 והסיכון לדמנציה]( מעוררת דאגה מובנת, במיוחד בקרב הורים לילדים עם סוכרת מסוג 1.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+          "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+          "alt_text": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Glucose_test.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Glucose_test.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Erik1980",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "attribution": "Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-hero.png",
+              "sha256": "bad8ff0f1c9338907bf8f76ac8bdb88d62c68e8283ca936ff172773d4403f8d5",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+              "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-square.jpg",
+              "sha256": "f0a40928c06de9a8766fcebea454e363052475c70b56c581e8a4e7717d932b45",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-portrait.png",
+              "sha256": "52609ab86ec5a6cf6ff496016a4028552ff02e4641e2ab236bfb4b6fb065883b",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
+        "description": "התשובה הקצרה: מחקר עוקבה שוודי גדול מצא כי בקרב אנשים עם סוכרת מסוג 1, אבחון לפני גיל 10 היה קשור לסיכון יחסי גבוה יותר לדמנציה בהמשך החיים בהשוואה לאבחון בגילים 18–30. עם זאת, מדובר בקשר סטטיסטי ולא בהוכחה שאבחון מוקדם גורם לדמנציה. מאת ד״ר גיא רופא\n\nקרדיט תמונה: Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-portrait.png",
+          "sha256": "52609ab86ec5a6cf6ff496016a4028552ff02e4641e2ab236bfb4b6fb065883b",
+          "alt_text": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Glucose_test.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Glucose_test.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Erik1980",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "attribution": "Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-hero.png",
+              "sha256": "bad8ff0f1c9338907bf8f76ac8bdb88d62c68e8283ca936ff172773d4403f8d5",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+              "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-square.jpg",
+              "sha256": "f0a40928c06de9a8766fcebea454e363052475c70b56c581e8a4e7717d932b45",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-portrait.png",
+              "sha256": "52609ab86ec5a6cf6ff496016a4028552ff02e4641e2ab236bfb4b6fb065883b",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "media_type": "image/png",
+          "role": "portrait"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא.\n\nהתשובה הקצרה: מחקר עוקבה שוודי גדול מצא כי בקרב אנשים עם סוכרת מסוג 1, אבחון לפני גיל 10 היה קשור לסיכון יחסי גבוה יותר לדמנציה בהמשך החיים בהשוואה לאבחון בגילים 18–30.\n\nעם זאת, מדובר בקשר סטטיסטי ולא בהוכחה שאבחון מוקדם גורם לדמנציה.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+          "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+          "alt_text": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מד סוכר בדם עם מקלון בדיקה הנוגע בטיפת דם על קצה אצבע.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Glucose_test.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Glucose_test.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Erik1980",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "attribution": "Glucose test.JPG — Erik1980; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-hero.png",
+              "sha256": "bad8ff0f1c9338907bf8f76ac8bdb88d62c68e8283ca936ff172773d4403f8d5",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-landscape.png",
+              "sha256": "2a1f2f645bda5ca86f0738a050c0a1afb30eb32ea68fe94129209523068c0422",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-square.jpg",
+              "sha256": "f0a40928c06de9a8766fcebea454e363052475c70b56c581e8a4e7717d932b45",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-06-topic-90-run-31085434851-attempt-1-portrait.png",
+              "sha256": "52609ab86ec5a6cf6ff496016a4028552ff02e4641e2ab236bfb4b6fb065883b",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "5814e117e29bcbff53ca5e0da4e81037126c442e9e49bb95993f817cadb9e1d9",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_6570c00b535d80c1faca92d45d006185d4a96eb87d663f8d4d6189d5e6ea0738"
+}
