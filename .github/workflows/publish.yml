@@ -40,6 +40,8 @@ jobs:
           python scripts/prepare_approval_bundle.py "${draft_path}" --find-licensed-image
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
 
       - name: Commit draft and immutable approval package
         run: |

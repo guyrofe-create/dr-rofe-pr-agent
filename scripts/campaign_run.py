@@ -252,6 +252,11 @@ def destination(name, status, url=None, detail=None):
     return item
 
 
+def exception_detail(exc, limit=300):
+    """Keep the exception class so values such as KeyError(0) stay actionable."""
+    return f"{type(exc).__name__}: {exc}"[:limit]
+
+
 def attempt(name, is_ready, publisher, *args):
     if not is_ready:
         return destination(name, "not_configured", detail="החיבור אינו מוגדר")
@@ -265,7 +270,7 @@ def attempt(name, is_ready, publisher, *args):
             detail="נמצא פרסום דומה או קישור זהה בפוסטים האחרונים",
         )
     except Exception as exc:
-        return destination(name, "failed", detail=str(exc)[:300])
+        return destination(name, "failed", detail=exception_detail(exc))
 
 
 def write_campaign_result(
@@ -341,7 +346,7 @@ def _execute_target_safely(
         return destination(
             target["platform"],
             "failed",
-            detail=str(exc)[:300],
+            detail=exception_detail(exc),
         )
 
 
@@ -529,7 +534,10 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             )
         return image, hosted_images[digest]
 
-    canonical_image, canonical_image_url = approved_target_image(canonical_target)
+    try:
+        canonical_image, canonical_image_url = approved_target_image(canonical_target)
+    except Exception as exc:
+        raise CampaignTargetError(canonical_name, exception_detail(exc)) from exc
     canonical_alt = (canonical_payload.get("image") or {}).get("alt_text", "")
     hero_html = (
         f'<figure><img src="{html.escape(canonical_image_url)}" '
@@ -880,7 +888,7 @@ def main():
             write_campaign_result(
                 draft_path,
                 title,
-                [destination(destination_name, "failed", detail=str(exc)[:300])],
+                [destination(destination_name, "failed", detail=exception_detail(exc))],
                 status="failed",
                 approval_id_value=bundle["approval_id"],
             )

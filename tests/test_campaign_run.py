@@ -247,6 +247,10 @@ class CampaignRunTests(unittest.TestCase):
         self.assertEqual(result["name"], "Facebook")
         self.assertEqual(result["status"], "failed")
         self.assertIn("provider unavailable", result["detail"])
+        self.assertIn("TimeoutError", result["detail"])
+
+    def test_exception_detail_does_not_hide_keyerror_zero(self):
+        self.assertEqual(campaign_run.exception_detail(KeyError(0)), "KeyError: 0")
 
     def test_destination_reconciler_is_forwarded_to_execution_ledger(self):
         target = {

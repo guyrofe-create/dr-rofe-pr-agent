@@ -133,6 +133,43 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(params["license_type"], "commercial")
         self.assertEqual(params["category"], "photograph")
 
+    @patch.dict(os.environ, {"PEXELS_API_KEY": "pexels-key"}, clear=True)
+    def test_pexels_search_preserves_source_and_license(self):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {"photos": [{
+            "width": 2400,
+            "height": 1600,
+            "url": "https://www.pexels.com/photo/123/",
+            "photographer": "Jane Example",
+            "alt": "Therapy dog in a rehabilitation room",
+            "src": {"large2x": "https://images.pexels.com/photos/123.jpeg"},
+        }]}
+        candidates = social_image.search_pexels(
+            "therapy dog rehabilitation", request_get=Mock(return_value=response)
+        )
+        self.assertEqual(candidates[0]["source_type"], "pexels_free_photo")
+        self.assertEqual(candidates[0]["license_name"], "Pexels License")
+        self.assertIn("Jane Example", candidates[0]["attribution"])
+
+    @patch.dict(os.environ, {"PIXABAY_API_KEY": "pixabay-key"}, clear=True)
+    def test_pixabay_search_preserves_source_and_license(self):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {"hits": [{
+            "imageWidth": 2400,
+            "imageHeight": 1600,
+            "largeImageURL": "https://pixabay.com/get/dog.jpg",
+            "pageURL": "https://pixabay.com/photos/dog-123/",
+            "user": "John Example",
+            "tags": "therapy dog, rehabilitation",
+        }]}
+        candidates = social_image.search_pixabay(
+            "therapy dog rehabilitation", request_get=Mock(return_value=response)
+        )
+        self.assertEqual(candidates[0]["source_type"], "pixabay_free_photo")
+        self.assertIn("Pixabay Content License", candidates[0]["license_name"])
+
     def test_known_topic_uses_deterministic_queries_without_planner_cost(self):
         client = Mock()
         with patch(
@@ -161,6 +198,10 @@ class SocialImageTests(unittest.TestCase):
             "night duty hospital",
             social_image.topic_search_queries("משמרות לילה משבשות את הגוף"),
         )
+        self.assertIn(
+            "therapy dog rehabilitation",
+            social_image.topic_search_queries("כלבי טיפול בשיקום לאחר שבץ"),
+        )
 
     @patch("scripts.social_image.search_openverse", return_value=[])
     @patch("scripts.social_image.search_commons", return_value=[])
@@ -174,7 +215,11 @@ class SocialImageTests(unittest.TestCase):
             "tablet health information research",
             "adult studying reference sources",
         ]
-        expected_searches = len(social_image.expand_search_queries(planned))
+        expected_searches = len(
+            social_image.expand_search_queries(
+                social_image.topic_search_queries("איך להעריך מידע רפואי ברשת")
+            )
+        )
         client = Mock()
         client.responses.create.return_value = SimpleNamespace(
             output_text=json.dumps({"queries": planned})
@@ -391,6 +436,57 @@ class SocialImageTests(unittest.TestCase):
         )
         self.assertEqual(url, "https://guyrofe.com/image.png")
         post.assert_not_called()
+
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_lookup_object_returns_actionable_error(self, get):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {
+            "code": "rest_forbidden",
+            "message": "Authentication required",
+        }
+        get.return_value = response
+        with self.assertRaisesRegex(RuntimeError, "rest_forbidden.*Authentication"):
+            social_image.upload_to_wordpress(
+                social_image.SocialImage(b"image"),
+                base_url="https://example.com",
+                username="user",
+                app_password="password",
+                slug="approved-social",
+                title="כותרת",
+            )
+
+    def test_generated_instagram_square_is_jpeg(self):
+        source = BytesIO()
+        Image.new("RGB", (1600, 1200), "#64858a").save(source, format="JPEG")
+        licensed = social_image.SocialImage(
+            content=source.getvalue(),
+            visual_description="צילום רפואי רלוונטי",
+            source_type="pexels_free_photo",
+        )
+        with patch("scripts.social_image.select_licensed_photo", return_value=licensed):
+            result = social_image.generate("כותרת", "תקציר", client=Mock())
+        self.assertEqual(Image.open(BytesIO(result.variants["square"])).format, "JPEG")
+
+    @patch.dict(
+        os.environ,
+        {"INSTAGRAM_BUSINESS_ID": "ig", "FACEBOOK_PAGE_TOKEN": "token"},
+        clear=True,
+    )
+    @patch("scripts.social_publishers.meta.requests.post")
+    def test_instagram_error_preserves_meta_fields(self, post):
+        response = Mock(ok=False, status_code=400)
+        response.json.return_value = {"error": {
+            "message": "Only photo or video can be accepted",
+            "code": 9004,
+            "error_subcode": 2207052,
+            "fbtrace_id": "trace-test",
+        }}
+        post.return_value = response
+        with self.assertRaisesRegex(RuntimeError, "code=9004.*error_subcode=2207052"):
+            meta.publish_instagram(
+                "כותרת", "מידע", "https://example.com/post", "https://example.com/image.jpg"
+            )
 
     @patch.dict(
         os.environ,

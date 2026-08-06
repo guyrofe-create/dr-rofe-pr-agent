@@ -26,6 +26,8 @@ _CLIENT_NAME = _CLIENT_FACTS["primary_name"]
 _CLIENT_SITE = _CLIENT_FACTS["canonical_site"]
 COMMONS_API_URL = "https://commons.wikimedia.org/w/api.php"
 OPENVERSE_API_URL = "https://api.openverse.org/v1/images/"
+PEXELS_API_URL = "https://api.pexels.com/v1/search"
+PIXABAY_API_URL = "https://pixabay.com/api/"
 DEFAULT_IMAGE_PATH = (
     Path(__file__).resolve().parents[1]
     / "assets"
@@ -60,9 +62,9 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
     "computer-generated",
 )
 PLANNED_SEARCH_QUERIES = 5
-MAX_SEARCH_QUERIES = 4
-MAX_REVIEWED_CANDIDATES = 8
-MAX_REVIEWED_PER_QUERY = 2
+MAX_SEARCH_QUERIES = 8
+MAX_REVIEWED_CANDIDATES = 24
+MAX_REVIEWED_PER_QUERY = 3
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -215,6 +217,28 @@ def topic_search_queries(title):
             "medical research laboratory",
             "laboratory microscope equipment",
             "clinical laboratory workbench",
+        ]
+    if "כלב" in topic and ("שבץ" in topic or "שיקום" in topic):
+        return [
+            "therapy dog rehabilitation",
+            "therapy dog hospital",
+            "stroke rehabilitation therapy",
+            "physical rehabilitation dog",
+            "assistance dog therapy",
+        ]
+    if "שבץ" in topic or "שיקום" in topic:
+        return [
+            "stroke rehabilitation therapy",
+            "physical rehabilitation clinic",
+            "rehabilitation walking exercise",
+            "occupational therapy rehabilitation",
+        ]
+    if "סרטן" in topic and ("דם" in topic or "בדיק" in topic):
+        return [
+            "blood test laboratory",
+            "laboratory blood sample",
+            "cancer research blood test",
+            "clinical laboratory technician",
         ]
     if "פוליציסט" in topic or "PCOS" in topic.upper():
         return [
@@ -471,6 +495,90 @@ def search_openverse(query, *, request_get=requests.get):
     return candidates
 
 
+def search_pexels(query, *, request_get=requests.get):
+    """Return Pexels photographs when the optional API key is configured."""
+    api_key = os.environ.get("PEXELS_API_KEY", "").strip()
+    if not api_key:
+        return []
+    response = request_get(
+        PEXELS_API_URL,
+        params={"query": query, "per_page": 20, "orientation": "landscape"},
+        headers={"Authorization": api_key, "User-Agent": COMMONS_USER_AGENT},
+        timeout=30,
+    )
+    response.raise_for_status()
+    candidates = []
+    for item in response.json().get("photos", []):
+        width = int(item.get("width") or 0)
+        height = int(item.get("height") or 0)
+        image_url = (item.get("src") or {}).get("large2x") or (
+            item.get("src") or {}
+        ).get("original")
+        page_url = item.get("url")
+        creator = " ".join(str(item.get("photographer") or "").split())
+        if min(width, height) < 700 or not image_url or not page_url or not creator:
+            continue
+        candidates.append({
+            "download_url": image_url,
+            "source_image_url": image_url,
+            "source_page_url": page_url,
+            "creator": creator,
+            "license_name": "Pexels License",
+            "license_url": "https://www.pexels.com/legal-pages/license/",
+            "attribution": f"Photo by {creator} on Pexels — {page_url}",
+            "media_type": "image/jpeg",
+            "extension": "jpg",
+            "description": str(item.get("alt") or "Pexels photograph"),
+            "source_type": "pexels_free_photo",
+        })
+    return candidates
+
+
+def search_pixabay(query, *, request_get=requests.get):
+    """Return Pixabay photos and download them instead of permanent hotlinking."""
+    api_key = os.environ.get("PIXABAY_API_KEY", "").strip()
+    if not api_key:
+        return []
+    response = request_get(
+        PIXABAY_API_URL,
+        params={
+            "key": api_key,
+            "q": query,
+            "image_type": "photo",
+            "safesearch": "true",
+            "per_page": 20,
+            "min_width": 700,
+            "min_height": 700,
+        },
+        headers={"User-Agent": COMMONS_USER_AGENT},
+        timeout=30,
+    )
+    response.raise_for_status()
+    candidates = []
+    for item in response.json().get("hits", []):
+        width = int(item.get("imageWidth") or 0)
+        height = int(item.get("imageHeight") or 0)
+        image_url = item.get("largeImageURL")
+        page_url = item.get("pageURL")
+        creator = " ".join(str(item.get("user") or "").split())
+        if min(width, height) < 700 or not image_url or not page_url or not creator:
+            continue
+        candidates.append({
+            "download_url": image_url,
+            "source_image_url": image_url,
+            "source_page_url": page_url,
+            "creator": creator,
+            "license_name": "Pixabay Content License",
+            "license_url": "https://pixabay.com/service/license-summary/",
+            "attribution": f"Image by {creator} on Pixabay — {page_url}",
+            "media_type": "image/jpeg",
+            "extension": "jpg",
+            "description": str(item.get("tags") or "Pixabay photograph"),
+            "source_type": "pixabay_free_photo",
+        })
+    return candidates
+
+
 def interleave_candidates(*groups):
     """Prevent one provider from consuming the entire review budget."""
     merged = []
@@ -573,9 +681,20 @@ def select_licensed_photo(title, summary, client=None):
         except requests.RequestException as exc:
             openverse = []
             search_errors.append(f"{query}/openverse: {type(exc).__name__}")
-        candidates = interleave_candidates(commons, openverse)
+        try:
+            pexels = search_pexels(query)
+        except requests.RequestException as exc:
+            pexels = []
+            search_errors.append(f"{query}/pexels: {type(exc).__name__}")
+        try:
+            pixabay = search_pixabay(query)
+        except requests.RequestException as exc:
+            pixabay = []
+            search_errors.append(f"{query}/pixabay: {type(exc).__name__}")
+        candidates = interleave_candidates(commons, openverse, pexels, pixabay)
         query_results.append(
-            f"{query}: commons={len(commons)}, openverse={len(openverse)}"
+            f"{query}: commons={len(commons)}, openverse={len(openverse)}, "
+            f"pexels={len(pexels)}, pixabay={len(pixabay)}"
         )
         for candidate in candidates:
             source = candidate["source_image_url"]
@@ -745,6 +864,14 @@ def _png_bytes(image):
     return output.getvalue()
 
 
+def _jpeg_bytes(image):
+    output = BytesIO()
+    image.convert("RGB").save(
+        output, format="JPEG", quality=92, optimize=True, progressive=True
+    )
+    return output.getvalue()
+
+
 def default_branded_image(path=DEFAULT_IMAGE_PATH):
     """Return the owner-provided logo package used only when no other image exists."""
     try:
@@ -757,7 +884,7 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
     variants = {
         "hero": _png_bytes(_fit_contain(base, (1600, 900))),
         "landscape": _png_bytes(_fit_contain(base, (1200, 630))),
-        "square": _png_bytes(_fit_contain(base, (1200, 1200))),
+        "square": _jpeg_bytes(_fit_contain(base, (1200, 1200))),
         "portrait": _png_bytes(_fit_contain(base, (1080, 1350))),
     }
     return SocialImage(
@@ -774,7 +901,7 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
 
 
 def generate(title, summary, client=None):
-    """Return four image variants, falling back to the owner-provided logo."""
+    """Return four image variants after exhaustive search, else owner logo."""
     try:
         licensed = select_licensed_photo(title, summary, client=client)
     except PhotoSelectionError:
@@ -790,7 +917,9 @@ def generate(title, summary, client=None):
     variants = {
         "hero": _png_bytes(_fit_cover(base, (1600, 900))),
         "landscape": _png_bytes(_fit_cover(base, (1200, 630))),
-        "square": _png_bytes(_fit_cover(base, (1200, 1200))),
+        # Instagram image publishing accepts JPEG; keep this approved variant
+        # byte-exact through hosting instead of converting it after approval.
+        "square": _jpeg_bytes(_fit_cover(base, (1200, 1200))),
         "portrait": _png_bytes(_fit_cover(base, (1080, 1350))),
     }
     return SocialImage(
@@ -834,8 +963,22 @@ def upload_to_wordpress(
     )
     lookup.raise_for_status()
     existing = lookup.json()
+    if not isinstance(existing, list):
+        if isinstance(existing, dict):
+            code = existing.get("code") or "unexpected_object"
+            message = existing.get("message") or "no message"
+            raise RuntimeError(
+                "WordPress media lookup returned an object instead of a list: "
+                f"{code}: {message}"
+            )
+        raise RuntimeError(
+            "WordPress media lookup returned an unexpected JSON response"
+        )
     if existing:
-        return existing[0]["source_url"]
+        source_url = existing[0].get("source_url")
+        if not source_url:
+            raise RuntimeError("WordPress existing media item returned no media URL")
+        return source_url
 
     response = requests.post(
         endpoint,

@@ -35,6 +35,8 @@ jobs:
           --manifest "${RUNNER_TEMP}/content-cadence-manifest.json"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           OPENAI_CONTENT_MODEL: gpt-5.6
 
       - name: Prepare licensed-photo approval bundles
@@ -85,6 +87,8 @@ jobs:
           fi
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
 
       - name: Commit drafts and approval packages
         if: always()
