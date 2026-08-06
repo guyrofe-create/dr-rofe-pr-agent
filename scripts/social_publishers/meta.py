@@ -34,6 +34,23 @@ class DuplicatePostError(RuntimeError):
         super().__init__(f"SKIPPED_DUPLICATE{detail}")
 
 
+def _raise_graph_error(response, operation):
+    """Preserve Meta's actionable error fields without leaking access tokens."""
+    if response.ok:
+        return
+    try:
+        error = (response.json() or {}).get("error") or {}
+    except (ValueError, TypeError):
+        error = {}
+    fields = []
+    for key in ("message", "type", "code", "error_subcode", "error_user_title", "error_user_msg", "fbtrace_id"):
+        value = error.get(key) if isinstance(error, dict) else None
+        if value not in (None, ""):
+            fields.append(f"{key}={value}")
+    detail = "; ".join(fields) or f"HTTP {response.status_code}"
+    raise RuntimeError(f"Meta {operation} failed: {detail}")
+
+
 def facebook_is_configured():
     return not common.missing_secrets("FACEBOOK_PAGE_ID", "FACEBOOK_PAGE_TOKEN")
 
@@ -266,7 +283,7 @@ def publish_instagram(title, body, url, image_url, disclosure=None):
         },
         timeout=30,
     )
-    container.raise_for_status()
+    _raise_graph_error(container, "Instagram media container creation")
     creation_id = str(container.json().get("id") or "")
     if not creation_id:
         raise RuntimeError("Instagram did not return a media container ID")
@@ -276,7 +293,7 @@ def publish_instagram(title, body, url, image_url, disclosure=None):
             params={"fields": "status_code,status", "access_token": token},
             timeout=20,
         )
-        status.raise_for_status()
+        _raise_graph_error(status, "Instagram media container status")
         status_code = str(status.json().get("status_code") or "")
         if status_code == "FINISHED":
             break
@@ -293,7 +310,7 @@ def publish_instagram(title, body, url, image_url, disclosure=None):
         data={"creation_id": creation_id, "access_token": token},
         timeout=30,
     )
-    published.raise_for_status()
+    _raise_graph_error(published, "Instagram media publish")
     media_id = str(published.json().get("id") or "")
     if not media_id:
         raise RuntimeError("Instagram accepted the container but returned no media ID")

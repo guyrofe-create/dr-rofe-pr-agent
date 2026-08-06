@@ -43,6 +43,8 @@ jobs:
       - name: Regenerate every review image for the date
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           DRAFT_DATE: ${{ inputs.draft_date }}
           TOPIC_NUMBERS: ${{ inputs.topic_numbers }}
         run: |

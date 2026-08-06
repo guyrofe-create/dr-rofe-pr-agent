@@ -65,13 +65,18 @@ def save_image_package(image, *, draft_path: str, output_root: str, title: str):
     }
     saved_variants = {}
     for role, content_bytes in image.variants.items():
-        variant_path = media_root / f"{stem}-{role}.png"
+        # The exact Instagram square is approved and persisted as JPEG because
+        # Meta's single-image publishing path does not accept the PNG package.
+        extension = "jpg" if role == "square" else "png"
+        media_type = "image/jpeg" if role == "square" else "image/png"
+        variant_path = media_root / f"{stem}-{role}.{extension}"
         variant_path.write_bytes(content_bytes)
         saved_variants[role] = {
             "uri": variant_path.relative_to(PROJECT_ROOT).as_posix(),
             "sha256": file_sha256(variant_path),
             "width": dimensions[role][0],
             "height": dimensions[role][1],
+            "media_type": media_type,
         }
     media_path = media_root / f"{stem}-landscape.png"
     image_uri = media_path.relative_to(PROJECT_ROOT).as_posix()
