@@ -1,0 +1,96 @@
+{
+  "draft": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md",
+  "title": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-08-06T10:03:17.606439+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1/",
+      "detail": "idempotency_key=pub_23b1358648d7866a36da650548d3078d198f673567dd7e1c6c12ff2ac358b2e6"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "url": "https://www.facebook.com/122198006234942441",
+      "detail": "idempotency_key=pub_88f56b41e5d1115c651064a40fe552a47a5f9dc88d84a6102c983163c2fbc32e"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7491071391874875392/",
+      "detail": "idempotency_key=pub_1efb8badf17261b94b6675f8b00b3d1d3d650f4024200af0f57e5be0a4faddd9"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Instagram",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_configured"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "failed",
+      "detail": "HTTPError: 429 Client Error: Too Many Requests for url: https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_6570c00b535d80c1faca92d45d006185d4a96eb87d663f8d4d6189d5e6ea0738",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
