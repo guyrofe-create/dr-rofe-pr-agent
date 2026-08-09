@@ -1,0 +1,428 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-09T06:59:03Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-09-topic-06-run-31299936904-attempt-1.md",
+  "source_draft_sha256": "0a842e91e0aa0a8fa887ec42dedac8833373c4ab203363091e0fb04db72c77a9",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/news-room/fact-sheets/detail/menopause",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng23/chapter/Recommendations",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/hormone-therapy-for-menopause",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+    "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+    "alt_text": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Wax_model_of_the_female_generative_organs,_by_an_anonymous_c_Wellcome_V0007826EL.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Wax_model_of_the_female_generative_organs%2C_by_an_anonymous_c_Wellcome_V0007826EL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0",
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-hero.png",
+        "sha256": "bd38b63a03788fe66a7d224b27bede5bce7ee1451cf2c5d52e9fb98b0d40bc47",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+        "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-square.jpg",
+        "sha256": "c5d5d42d61a69a3e4487b0a79d34aa325ce77e321ee9a89560ba8c1e3072ef1f",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-portrait.png",
+        "sha256": "4b7384750ad1f154a4a0548ba621102e7227c42d532afe8800eddabfb1871cac",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
+        "markdown": "# גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\nמאת: [ד״ר גיא רופא – הפרופיל הרשמי](https://guyrofe.com)\n\nגיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת. הוא אינו מחלה, אך השינויים ההורמונליים הנלווים אליו עלולים לגרום לתסמינים המשפיעים על השינה, מצב הרוח, התפקוד המיני, בריאות העצם ואיכות החיים. קיימות דרכים הורמונליות ולא־הורמונליות להקלת התסמינים, והבחירה ביניהן צריכה להתבסס על חומרת התסמינים, ההיסטוריה הרפואית, גורמי הסיכון והעדפות האישה.\n\nהמידע שלהלן הוא מידע רפואי כללי המבוסס על מקורות מקצועיים ורשמיים. הוא אינו מיועד לאבחון אישי או להחלפת הערכה רפואית. כל טענה רפואית והנחיה מעשית בטיוטה מחייבות ביקורת של רופא או רופאה לפני פרסום.\n\n## מהו גיל המעבר ומהם שלביו?\n\nהמונח \"גיל המעבר\" משמש לעיתים לתיאור תקופה ממושכת, אך מבחינה רפואית מקובל להבחין בין כמה שלבים:\n\n- **טרום־מנופאוזה או תקופת המעבר למנופאוזה:** השנים שבהן פעילות השחלות מתחילה להשתנות. המחזורים עשויים להפוך לבלתי סדירים, ותסמינים כגון גלי חום, הזעות לילה או הפרעות שינה עשויים להופיע.\n- **מנופאוזה:** נקודת הזמן שנקבעת בדיעבד לאחר 12 חודשים רצופים ללא וסת, כאשר אין סיבה רפואית אחרת להפסקת הדימום.\n- **לאחר המנופאוזה:** התקופה שמתחילה לאחר שהמנופאוזה נקבעה.\n\nלפי [דף המידע הרשמי של ארגון הבריאות העולמי על מנופאוזה](https://www.who.int/news-room/fact-sheets/detail/menopause), מנופאוזה טבעית מתרחשת לרוב בין גיל 45 לגיל 55, אך העיתוי משתנה בין נשים. הפסקת פעילות השחלות יכולה להתרחש גם מוקדם יותר, באופן טבעי או בעקבות ניתוח, טיפול תרופתי, כימותרפיה או הקרנות.\n\nכאשר הווסת נפסקת לפני גיל 45 נהוג להתייחס לכך כמנופאוזה מוקדמת. ירידה בתפקוד השחלות לפני גיל 40 מחייבת בירור רפואי מתאים, משום שעשויות להיות לה השלכות שונות מאלו של מנופאוזה המתרחשת בטווח הגילים המקובל. במצבים כאלה חשוב להבחין בין מנופאוזה טבעית, אי־ספיקה שחלתית מוקדמת וסיבות אחרות לאי־סדירות או להפסקת הווסת.\n\nגם בתקופת המעבר עדיין ייתכן ביוץ, ולכן היריון אפשרי כל עוד המנופאוזה לא נקבעה. טיפול הורמונלי בתסמיני גיל המעבר אינו אמצעי מניעה.\n\n## אילו תסמינים עשויים להופיע?\n\nהתסמינים שונים מאוד מאישה לאישה. יש נשים שכמעט אינן חוות הפרעה, ואחרות מתמודדות עם תסמינים משמעותיים במשך שנים. השינוי במחזור החודשי הוא לעיתים הסימן הראשון: המחזורים עשויים להתקצר, להתארך, להיעלם לחודשים אחדים או להיות מלווים בדימום שונה מהרגיל.\n\nתסמינים שכיחים נוספים כוללים:\n\n- גלי חום והזעות לילה;\n- קושי בהירדמות או יקיצות מרובות;\n- עייפות, ירידה בריכוז ותחושת \"ערפול\";\n- שינויים במצב הרוח, עצבנות או חרדה;\n- כאבי מפרקים ושרירים;\n- יובש, צריבה או כאב בנרתיק;\n- כאב בעת קיום יחסי מין;\n- ירידה בחשק המיני;\n- תכיפות או דחיפות במתן שתן ולעיתים זיהומים חוזרים בדרכי השתן.\n\nהשינויים ברקמות הנרתיק, הפות ודרכי השתן מכונים לעיתים \"תסמונת גניטואורינרית של המנופאוזה\". בניגוד לגלי חום, שעשויים להיחלש עם הזמן, תסמינים מקומיים אלה עלולים להימשך ואף להחמיר ללא טיפול.\n\nלא כל תסמין שמופיע באמצע החיים נובע בהכרח מגיל המעבר. הפרעות בבלוטת התריס, אנמיה, היריון, תופעות לוואי של תרופות, הפרעות שינה, דיכאון ומצבים רפואיים נוספים עשויים ליצור תמונה דומה. בנוסף, דימום כבד מאוד, דימום לאחר קיום יחסי מין או כל דימום שמופיע לאחר שכבר חלפו 12 חודשים ללא וסת אינם נחשבים תסמין שיש לייחס אוטומטית לגיל המעבר ומחייבים בירור רפואי.\n\n## כיצד מאבחנים מנופאוזה ומתי נדרשות בדיקות?\n\nברוב הנשים מעל גיל 45, האבחנה נשענת על גיל, דפוס הווסת והתסמינים. לפי [המלצות NICE לאבחון ולטיפול במנופאוזה](https://www.nice.org.uk/guidance/ng23/chapter/Recommendations), בדרך כלל אין צורך בבדיקות מעבדה שגרתיות כדי לזהות תקופת מעבר או מנופאוזה אצל אישה בת 45 ומעלה עם תסמינים אופייניים.\n\nרמות ההורמונים משתנות במידה ניכרת בתקופת המעבר. משום כך, מדידה חד־פעמית של FSH או אסטרדיול עלולה שלא לשקף היטב את פעילות השחלות ואינה תמיד מספקת תשובה חד־משמעית. בדיקות עשויות להישקל כאשר התסמינים מופיעים בגיל צעיר יותר, כאשר התמונה אינה ברורה, או כאשר יש חשד למצב רפואי אחר. השימוש באמצעי מניעה הורמונליים או בטיפולים הורמונליים אחרים יכול אף הוא להקשות על פירוש המחזור ותוצאות המעבדה.\n\nהערכה רפואית עשויה לכלול את אופי התסמינים, מועד הווסת האחרונה, דפוסי דימום, תרופות קבועות, אמצעי מניעה, מחלות רקע והיסטוריה אישית או משפחתית. אין בדיקת דם יחידה שמעריכה לבדה את כל ההשלכות של גיל המעבר.\n\nחשוב במיוחד לבדוק דימום חריג. דימום לאחר מנופאוזה אינו מוכיח שקיימת מחלה חמורה, אך יש לברר אותו ולא להניח שמדובר בשינוי הורמונלי רגיל. גם כאב בחזה, קוצר נשימה פתאומי, חולשה נוירולוגית חדשה או כאב ראש חריג אינם תסמינים שיש להסביר אוטומטית באמצעות מנופאוזה.\n\n## טיפול הורמונלי: תועלת, התאמה וסיכונים\n\nטיפול הורמונלי למנופאוזה הוא אחד הטיפולים היעילים ביותר לגלי חום ולהזעות לילה, והוא עשוי לסייע גם לתסמינים נוספים. עם זאת, אין טיפול אחיד המתאים לכל אישה. יש להביא בחשבון את סוג התסמינים, גיל האישה, הזמן שחלף מאז המנופאוזה, נוכחות הרחם, דרך המתן, מינון הטיפול וגורמי סיכון אישיים.\n\nההשוואה הבאה מסכמת את ההבדלים העיקריים:\n\n| סוג הטיפול | שימוש מרכזי | נקודות חשובות |\n|---|---|---|\n| אסטרוגן מערכתי | גלי חום, הזעות לילה ולעיתים תסמינים נרתיקיים | באישה עם רחם נדרש בדרך כלל גם פרוגסטוגן להגנת רירית הרחם |\n| אסטרוגן עם פרוגסטוגן | טיפול מערכתי באישה עם רחם | סוג החומר, המינון ודרך המתן משפיעים על פרופיל התועלת והסיכון |\n| אסטרוגן נרתיקי במינון נמוך | יובש, צריבה, כאב ותסמינים מקומיים בדרכי השתן והמין | פועל בעיקר מקומית ואינו מיועד כשלעצמו לטיפול בגלי חום |\n| טיפול לא־הורמונלי | תסמינים ואזומוטוריים או מקומיים כאשר הורמונים אינם רצויים או מתאימים | הבחירה תלויה בתסמין, במחלות הרקע ובתופעות הלוואי האפשריות |\n\nכאשר הרחם קיים, אסטרוגן מערכתי לבדו עלול לעודד את רירית הרחם ולהעלות את הסיכון להיפרפלזיה ולסרטן רירית הרחם. לכן מקובל לצרף פרוגסטוגן, אלא אם קיימת סיבה רפואית אחרת. לאחר כריתת רחם ניתן לעיתים להשתמש באסטרוגן ללא פרוגסטוגן.\n\nלפי [המידע המקצועי של ACOG על טיפול הורמונלי במנופאוזה](https://www.acog.org/womens-health/faqs/hormone-therapy-for-menopause), לטיפול עשויים להיות יתרונות לצד סיכונים, ובהם סיכונים הקשורים לקרישי דם, שבץ מוחי וסוגים מסוימים של סרטן, בהתאם לסוג הטיפול ולמאפייני המטופלת. היסטוריה של סרטן רגיש להורמונים, אירועי קרישה, שבץ, מחלת כבד או דימום בלתי מוסבר עשויה להשפיע על ההתאמה לטיפול ומחייבת הערכה פרטנית.\n\nדרך המתן חשובה: טיפול פומי, מדבקה או ג'ל אינם זהים בהשפעתם. גם המונח \"טבעי\" אינו מעיד בהכרח על בטיחות או יעילות. תכשירים הורמונליים מורכבים שאינם מוצרים מאושרים עלולים להיות בעלי שונות במינון ובאיכות, ולכן אין לראות בהם חלופה שוות־ערך אוטומטית לתכשירים מפוקחים.\n\n## טיפול לא־הורמונלי, אורח חיים ובריאות לטווח ארוך\n\nכאשר טיפול הורמונלי אינו מתאים או אינו רצוי, ניתן לשקול אפשרויות לא־הורמונליות. תרופות מסוימות ממשפחות נוגדי הדיכאון, וכן תרופות נוספות, עשויות להפחית גלי חום בחלק מהנשים. הבחירה אינה נעשית רק לפי עצם קיומם של התסמינים: יש להביא בחשבון אינטראקציות עם תרופות אחרות, מחלות רקע ותופעות לוואי אפשריות.\n\nלתסמינים נרתיקיים קלים ניתן להשתמש בחומרי לחות נרתיקיים באופן קבוע ובחומרי סיכה בעת פעילות מינית. אלה אינם זהים: חומר לחות נועד לשימוש שגרתי, ואילו חומר סיכה מפחית חיכוך בזמן יחסי מין. כאשר התסמינים נמשכים, ניתן לשקול טיפולים מקומיים נוספים בהתאם להערכה רפואית.\n\nפעילות גופנית, שינה סדירה, הפסקת עישון, תזונה מאוזנת והפחתת צריכת אלכוהול עשויות לתרום לבריאות הכללית. לבוש בשכבות, אוורור החדר וזיהוי גורמים אישיים המעוררים גלי חום יכולים להקל אצל חלק מהנשים. עם זאת, צעדי אורח חיים אינם תחליף לבירור כאשר קיימים תסמינים חריגים, ואינם מבטיחים העלמה של תסמינים הורמונליים.\n\nלאחר המנופאוזה יש חשיבות לבריאות העצם ולבריאות הלב וכלי הדם. הירידה באסטרוגן קשורה להאצה באובדן מסת עצם, אך הצורך בבדיקת צפיפות עצם תלוי בגיל ובגורמי סיכון כגון שבר קודם, משקל גוף נמוך, עישון, שימוש ממושך בסטרואידים או מחלות מסוימות. בדומה לכך, לחץ דם, שומנים בדם, סוכרת, פעילות גופנית ועישון חשובים להערכת הסיכון הקרדיווסקולרי הכולל.\n\nאין תוסף תזונה יחיד שהוכח כפתרון כולל לגיל המעבר. תוספים וצמחי מרפא עלולים לגרום לתופעות לוואי או לאינטראקציות, והפיקוח עליהם אינו תמיד זהה לזה החל על תרופות. הטענה שמוצר הוא \"צמחי\" אינה מוכיחה שהוא בטוח לכל אישה.\n\n## סיכום\n\nגיל המעבר הוא תהליך טבעי, אך השפעתו אינה אחידה. האבחנה נעשית לרוב על סמך הגיל, השינויים במחזור והתסמינים, ללא צורך בבדיקות הורמונליות שגרתיות בנשים מעל גיל 45 עם תמונה אופיינית. קיימים טיפולים הורמונליים ולא־הורמונליים, לצד אמצעים מקומיים והרגלי חיים התומכים בבריאות הכללית.\n\nהעיקרון המרכזי הוא התאמה אישית: יש להבדיל בין תסמין אופייני לבין סימן המחייב בירור, ולשקול את התועלת הצפויה מול גורמי הסיכון והעדפות האישה. דימום לאחר מנופאוזה, דימום חריג או הופעת תסמינים בלתי מוסברים אינם אמורים להיות מיוחסים אוטומטית לשינויים הורמונליים.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** הוא יוצר תוכן רפואי ומחבר ספרים. בהתאם לסטטוס הנוכחי המאושר, הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים. המאמר מספק מידע כללי בלבד ומחייב ביקורת רפואית אנושית לפני פרסום.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. World Health Organization, **Menopause – Fact sheet**:  \n   https://www.who.int/news-room/fact-sheets/detail/menopause\n\n2. National Institute for Health and Care Excellence, **Menopause: identification and management – Recommendations (NG23)**:  \n   https://www.nice.org.uk/guidance/ng23/chapter/Recommendations\n\n3. American College of Obstetricians and Gynecologists, **Hormone Therapy for Menopause**:  \n   https://www.acog.org/womens-health/faqs/hormone-therapy-for-menopause\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "b7b1cd28dac31e6c30cd67c21c496d1b1cb235d363b4e163df2b1abc3a3241ab",
+        "slug": "guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-hero.png",
+          "sha256": "bd38b63a03788fe66a7d224b27bede5bce7ee1451cf2c5d52e9fb98b0d40bc47",
+          "alt_text": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Wax_model_of_the_female_generative_organs,_by_an_anonymous_c_Wellcome_V0007826EL.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Wax_model_of_the_female_generative_organs%2C_by_an_anonymous_c_Wellcome_V0007826EL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-hero.png",
+              "sha256": "bd38b63a03788fe66a7d224b27bede5bce7ee1451cf2c5d52e9fb98b0d40bc47",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+              "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-square.jpg",
+              "sha256": "c5d5d42d61a69a3e4487b0a79d34aa325ce77e321ee9a89560ba8c1e3072ef1f",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-portrait.png",
+              "sha256": "4b7384750ad1f154a4a0548ba621102e7227c42d532afe8800eddabfb1871cac",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא – הפרופיל הרשמי]( גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת.\n\nהוא אינו מחלה, אך השינויים ההורמונליים הנלווים אליו עלולים לגרום לתסמינים המשפיעים על השינה, מצב הרוח, התפקוד המיני, בריאות העצם ואיכות החיים.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+          "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+          "alt_text": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Wax_model_of_the_female_generative_organs,_by_an_anonymous_c_Wellcome_V0007826EL.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Wax_model_of_the_female_generative_organs%2C_by_an_anonymous_c_Wellcome_V0007826EL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-hero.png",
+              "sha256": "bd38b63a03788fe66a7d224b27bede5bce7ee1451cf2c5d52e9fb98b0d40bc47",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+              "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-square.jpg",
+              "sha256": "c5d5d42d61a69a3e4487b0a79d34aa325ce77e321ee9a89560ba8c1e3072ef1f",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-portrait.png",
+              "sha256": "4b7384750ad1f154a4a0548ba621102e7227c42d532afe8800eddabfb1871cac",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא – הפרופיל הרשמי]( גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת.\n\n• הוא אינו מחלה, אך השינויים ההורמונליים הנלווים אליו עלולים לגרום לתסמינים המשפיעים על השינה, מצב הרוח, התפקוד המיני, בריאות העצם ואיכות החיים.\n• קיימות דרכים הורמונליות ולא־הורמונליות להקלת התסמינים, והבחירה ביניהן צריכה להתבסס על חומרת התסמינים, ההיסטוריה הרפואית, גורמי הסיכון והעדפות האישה.\n• המידע שלהלן הוא מידע רפואי כללי המבוסס על מקורות מקצועיים ורשמיים.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+          "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+          "alt_text": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Wax_model_of_the_female_generative_organs,_by_an_anonymous_c_Wellcome_V0007826EL.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Wax_model_of_the_female_generative_organs%2C_by_an_anonymous_c_Wellcome_V0007826EL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-hero.png",
+              "sha256": "bd38b63a03788fe66a7d224b27bede5bce7ee1451cf2c5d52e9fb98b0d40bc47",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+              "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-square.jpg",
+              "sha256": "c5d5d42d61a69a3e4487b0a79d34aa325ce77e321ee9a89560ba8c1e3072ef1f",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-portrait.png",
+              "sha256": "4b7384750ad1f154a4a0548ba621102e7227c42d532afe8800eddabfb1871cac",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
+        "description": "מאת: [ד״ר גיא רופא – הפרופיל הרשמי]( גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת. הוא אינו מחלה, אך השינויים ההורמונליים הנלווים אליו עלולים לגרום לתסמינים המשפיעים על השינה, מצב הרוח, התפקוד המיני, בריאות העצם ואיכות החיים. מאת ד״ר גיא רופא\n\nקרדיט תמונה: Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-portrait.png",
+          "sha256": "4b7384750ad1f154a4a0548ba621102e7227c42d532afe8800eddabfb1871cac",
+          "alt_text": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Wax_model_of_the_female_generative_organs,_by_an_anonymous_c_Wellcome_V0007826EL.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Wax_model_of_the_female_generative_organs%2C_by_an_anonymous_c_Wellcome_V0007826EL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-hero.png",
+              "sha256": "bd38b63a03788fe66a7d224b27bede5bce7ee1451cf2c5d52e9fb98b0d40bc47",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+              "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-square.jpg",
+              "sha256": "c5d5d42d61a69a3e4487b0a79d34aa325ce77e321ee9a89560ba8c1e3072ef1f",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-portrait.png",
+              "sha256": "4b7384750ad1f154a4a0548ba621102e7227c42d532afe8800eddabfb1871cac",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "media_type": "image/png",
+          "role": "portrait"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא.\n\nמאת: [ד״ר גיא רופא – הפרופיל הרשמי]( גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת.\n\nהוא אינו מחלה, אך השינויים ההורמונליים הנלווים אליו עלולים לגרום לתסמינים המשפיעים על השינה, מצב הרוח, התפקוד המיני, בריאות העצם ואיכות החיים.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+          "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+          "alt_text": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "איור אנטומי היסטורי של איברי הבטן והאגן הנשיים, ובהם הרחם והשחלות, עם כלי דם וסימוני מספרים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Wax_model_of_the_female_generative_organs,_by_an_anonymous_c_Wellcome_V0007826EL.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Wax_model_of_the_female_generative_organs%2C_by_an_anonymous_c_Wellcome_V0007826EL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Wax model of the female generative organs, by an anonymous c Wellcome V0007826EL.jpg — https://wellcomeimages.org/indexplus/obf_images/72/ab/30268e55a0b42a03d82fc34b90a6.jpg Gallery: https://wellcomeimages.org/indexplus/image/V0007826EL.html Wellcome Collection gallery (2018-04-06): https://wellcomecollection.org/works/b4ve2kn8 CC-BY-4.0; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-hero.png",
+              "sha256": "bd38b63a03788fe66a7d224b27bede5bce7ee1451cf2c5d52e9fb98b0d40bc47",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-landscape.png",
+              "sha256": "7424dfebccc83d632c108056a779e30cb820f4b1cbc7c11de7903c80491788bb",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-square.jpg",
+              "sha256": "c5d5d42d61a69a3e4487b0a79d34aa325ce77e321ee9a89560ba8c1e3072ef1f",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-09-topic-06-run-31299936904-attempt-1-portrait.png",
+              "sha256": "4b7384750ad1f154a4a0548ba621102e7227c42d532afe8800eddabfb1871cac",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "b7b1cd28dac31e6c30cd67c21c496d1b1cb235d363b4e163df2b1abc3a3241ab",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_26e2a8b98b3a64f5dfacc4ed18e51db85ce65b807d40f164f988967d3cead8f1"
+}
