@@ -957,6 +957,7 @@ def upload_to_wordpress(
     }
     lookup = requests.get(
         endpoint,
+        auth=auth,
         params={"slug": slug, "_fields": "id,source_url,slug"},
         headers=headers,
         timeout=25,

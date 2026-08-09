@@ -435,6 +435,17 @@ class SocialImageTests(unittest.TestCase):
             title="כותרת",
         )
         self.assertEqual(url, "https://guyrofe.com/image.png")
+        get.assert_called_once_with(
+            "https://guyrofe.com/wp-json/wp/v2/media",
+            auth=("user", "password"),
+            params={"slug": "approved-social", "_fields": "id,source_url,slug"},
+            headers={
+                "Accept": "application/json",
+                "Cache-Control": "no-cache",
+                "User-Agent": "ReputationAgentPublisher/1.0 (+https://guyrofe.com)",
+            },
+            timeout=25,
+        )
         post.assert_not_called()
 
     @patch("scripts.social_image.requests.get")
