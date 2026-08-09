@@ -1,0 +1,100 @@
+{
+  "draft": "content_drafts/2026-08-09-topic-06-run-31299936904-attempt-1.md",
+  "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-08-09T07:58:55.859794+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+      "detail": "idempotency_key=pub_f7ac8ad88c0ad8443234a8f2fc732756680bf9a8a88ed75847d3da405cbea5ec"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122198476160942441",
+      "detail": "idempotency_key=pub_7fad5c2c490186ce06a9c39a7aae89fe9c59e7fc647bef9ed1320cc3f865547e"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7492127258321510400/",
+      "detail": "idempotency_key=pub_53f60a230826e5d8e1a7f0dd22791584d5205d14cf16fbe6e6195d56db4c7170"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Instagram",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_configured"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "failed",
+      "target_id": "google_business_profile",
+      "detail": "HTTPError: 429 Client Error: Too Many Requests for url: https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_26e2a8b98b3a64f5dfacc4ed18e51db85ce65b807d40f164f988967d3cead8f1",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
