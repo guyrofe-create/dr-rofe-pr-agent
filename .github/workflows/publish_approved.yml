@@ -14,6 +14,14 @@ on:
         required: true
         default: false
         type: boolean
+      approval_id:
+        description: Exact immutable approval bundle ID explicitly approved by the customer
+        required: false
+        type: string
+      approved_by:
+        description: Required audit identity when approval_id is supplied
+        required: false
+        type: string
       retry_approval_id:
         description: Optional exact approval ID to retry after a failed or partial campaign
         required: false
@@ -41,10 +49,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies for an approved retry
+      - name: Install dependencies for an exact approved campaign
         if: >-
           github.event_name == 'workflow_dispatch' &&
-          inputs.retry_approval_id != ''
+          (inputs.approval_id != '' || inputs.retry_approval_id != '')
         run: pip install -r requirements.txt
 
       - name: Check dashboard approval queue
@@ -52,6 +60,8 @@ jobs:
         env:
           APPROVAL_URL: https://dr-rofe-reputation-center.guyrofe.chatgpt.site
           APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
+          EXACT_APPROVAL_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.approval_id || '' }}
+          EXACT_APPROVED_BY: ${{ github.event_name == 'workflow_dispatch' && inputs.approved_by || '' }}
           RETRY_APPROVAL_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.retry_approval_id || '' }}
           RETRY_APPROVED_BY: ${{ github.event_name == 'workflow_dispatch' && inputs.retry_approved_by || '' }}
         run: |
@@ -59,7 +69,38 @@ jobs:
           bundle_path="${RUNNER_TEMP}/p7-bundle.json"
           approval_record_path="${RUNNER_TEMP}/p7-approval.json"
           approved_media_path=""
-          if [[ -n "${RETRY_APPROVAL_ID}" ]]; then
+          if [[ -n "${EXACT_APPROVAL_ID}" && -n "${RETRY_APPROVAL_ID}" ]]; then
+            echo "::error::Use approval_id or retry_approval_id, not both"
+            exit 1
+          fi
+          if [[ -n "${EXACT_APPROVAL_ID}" ]]; then
+            if [[ -z "${EXACT_APPROVED_BY}" ]]; then
+              echo "::error::approved_by is required for an exact customer-approved campaign"
+              exit 1
+            fi
+            repository_bundle="approval_bundles/${EXACT_APPROVAL_ID}.json"
+            if [[ ! -f "${repository_bundle}" ]]; then
+              echo "::error::Unknown exact approval ID"
+              exit 1
+            fi
+            cp "${repository_bundle}" "${bundle_path}"
+            approval_id="$(jq -r '.approval_id // empty' "${bundle_path}")"
+            draft_path="$(jq -r '.source_draft // empty' "${bundle_path}")"
+            if [[ "${approval_id}" != "${EXACT_APPROVAL_ID}" ]] || [[ -z "${draft_path}" ]]; then
+              echo "::error::Exact approval bundle identity is invalid"
+              exit 1
+            fi
+            scope_args=()
+            while IFS= read -r scope; do
+              scope_args+=(--scope "${scope}")
+            done < <(jq -r '.required_approval_scopes[]' "${bundle_path}")
+            python scripts/approve_bundle.py \
+              "${bundle_path}" \
+              --approved-by "${EXACT_APPROVED_BY}" \
+              "${scope_args[@]}" \
+              --output "${approval_record_path}"
+            echo "Signed exact P7 approval ready: ${draft_path} (${approval_id})"
+          elif [[ -n "${RETRY_APPROVAL_ID}" ]]; then
             if [[ -z "${RETRY_APPROVED_BY}" ]]; then
               echo "::error::retry_approved_by is required for an approved retry"
               exit 1
@@ -95,6 +136,10 @@ jobs:
               --output "${approval_record_path}"
             echo "Signed P7 retry ready: ${draft_path} (${approval_id})"
           else
+            if [[ -n "${EXACT_APPROVED_BY}" ]]; then
+              echo "::error::approval_id is required when approved_by is supplied"
+              exit 1
+            fi
             if [[ -n "${RETRY_APPROVED_BY}" ]]; then
               echo "::error::retry_approval_id is required when retry_approved_by is supplied"
               exit 1
@@ -105,7 +150,7 @@ jobs:
             draft_path="$(jq -r '.draft_path // empty' "${response_path}")"
             approval_id="$(jq -r '.bundle.approval_id // empty' "${response_path}")"
           fi
-          if [[ -n "${draft_path}" ]] && [[ -z "${RETRY_APPROVAL_ID}" ]]; then
+          if [[ -n "${draft_path}" ]] && [[ -z "${EXACT_APPROVAL_ID}" ]] && [[ -z "${RETRY_APPROVAL_ID}" ]]; then
             jq -e '.bundle' "${response_path}" > "${bundle_path}"
             jq -e '.approval_record' "${response_path}" > "${approval_record_path}"
             if jq -e '.media_payload.base64' "${response_path}" >/dev/null; then
@@ -146,6 +191,7 @@ jobs:
         env:
           DRAFT_PATH: ${{ steps.approval.outputs.draft_path }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+          EXACT_APPROVAL_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.approval_id || '' }}
           RETRY_APPROVAL_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.retry_approval_id || '' }}
         run: |
           if [[ "${DRY_RUN}" == "true" ]]; then
@@ -157,6 +203,8 @@ jobs:
             echo "Approved campaign found: \`${DRAFT_PATH}\`" >> "${GITHUB_STEP_SUMMARY}"
             if [[ -n "${RETRY_APPROVAL_ID}" ]]; then
               echo "Retrying exact approval: \`${RETRY_APPROVAL_ID}\`" >> "${GITHUB_STEP_SUMMARY}"
+            elif [[ -n "${EXACT_APPROVAL_ID}" ]]; then
+              echo "Publishing exact customer approval: \`${EXACT_APPROVAL_ID}\`" >> "${GITHUB_STEP_SUMMARY}"
             fi
           else
             echo "No approved campaign was waiting in the dashboard queue." >> "${GITHUB_STEP_SUMMARY}"
@@ -166,7 +214,8 @@ jobs:
         if: >-
           steps.approval.outputs.draft_path != '' &&
           !(github.event_name == 'workflow_dispatch' && inputs.dry_run) &&
-          !(github.event_name == 'workflow_dispatch' && inputs.retry_approval_id != '')
+          !(github.event_name == 'workflow_dispatch' &&
+            (inputs.approval_id != '' || inputs.retry_approval_id != ''))
         run: pip install -r requirements.txt
 
       - name: Publish approved campaign
