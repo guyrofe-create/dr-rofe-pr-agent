@@ -1,0 +1,45 @@
+{
+  "asset_blueprint": "health_news_analysis_desk",
+  "editorial_type": "original_evidence_based_health_news_analysis",
+  "destination_site_key": "DRGUYROFE_CO_IL",
+  "destination_url": "https://www.drguyrofe.co.il",
+  "destination_role": "Hebrew evidence-based medical news and explainers",
+  "working_title": "מה עומד מאחורי הכותרת: יש לכם קופסאות פלסטיק במטבח? זה מה שקרה למשתתפי מחקר שהחליפו אותן",
+  "analyzed_news_url": "https://healthy.walla.co.il/item/3859343",
+  "analyzed_news_source": "וואלה בריאות",
+  "analyzed_news_published_at": "2026-08-09T08:14:00+00:00",
+  "primary_source_url": null,
+  "requires_primary_source_research": true,
+  "minimum_additional_authoritative_sources": 2,
+  "required_sections": [
+    "הכותרת שעלתה היום",
+    "מה פורסם ומה נטען",
+    "הנתונים או המחקר שעליהם נשענת הכתבה",
+    "מה נכון בכותרת",
+    "מה חסר או דורש הסתייגות",
+    "המשמעות המעשית לציבור",
+    "מגבלות ואי־ודאות",
+    "מקורות"
+  ],
+  "editorial_requirements": [
+    "Link visibly to the analyzed news article",
+    "Use at least two direct authoritative sources in addition to the news link",
+    "Add original analysis and do not reproduce the article",
+    "State uncertainty and distinguish association from causation",
+    "Use a descriptive, non-sensational headline",
+    "Information only; no consultation, treatment or appointment invitation",
+    "Human medical review before publication"
+  ],
+  "distribution": [
+    "Publish the canonical analysis on the installation's approved destination",
+    "Create distinct native summaries for approved managed platforms",
+    "Use an original image or chart with natural alt text when useful"
+  ],
+  "opportunity_score": 37,
+  "public_execution_allowed": false,
+  "status": "draft_brief_requires_editorial_review",
+  "id": "cf1417c346b1fe27",
+  "created_at": "2026-08-09T05:43:37.100394+00:00",
+  "source_metadata_only": true,
+  "article_body_copied": false
+}
