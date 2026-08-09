@@ -146,6 +146,14 @@
         "https://www.facebook.com/122198476160942441",
         "https://www.linkedin.com/feed/update/urn:li:share:7492127258321510400/"
       ]
+    },
+    "apr_36c0ab57ac5d556c980a23840215136f8b997d7051b87a2047520870eb5d3c73:99989a13760a411e1037040dcaea7b851a350e3b13edf03b5d3e5fef2b66dc53": {
+      "sent_at": "2026-08-09T08:00:23.199009+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_36c0ab57ac5d556c980a23840215136f8b997d7051b87a2047520870eb5d3c73",
+      "state": "failed",
+      "subject": "הפרסום נכשל: יש לכם קופסאות פלסטיק במטבח? זה מה שבאמת קרה למשתתפי המחקר שהחליפו אותן | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "draft": "content_drafts/2026-08-09-topic-90-run-31299936904-attempt-1.md",
+  "title": "יש לכם קופסאות פלסטיק במטבח? זה מה שבאמת קרה למשתתפי המחקר שהחליפו אותן | ד״ר גיא רופא",
+  "status": "failed",
+  "published_at": "2026-08-09T08:00:22.307089+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "failed",
+      "detail": "CampaignTargetError: HTTPError: 403 Client Error: Forbidden for url: https://www.drguyrofe.co.il/wp-json/wp/v2/media?slug=guy-rofe-pilot-2026-08-09-topic-90-run-31299936904-attempt-1-hero&_fields=id%2Csource_url%2Cslug"
+    }
+  ],
+  "approval_id": "apr_36c0ab57ac5d556c980a23840215136f8b997d7051b87a2047520870eb5d3c73",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
