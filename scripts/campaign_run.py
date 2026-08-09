@@ -243,8 +243,10 @@ def wordpress_publish(
     return link
 
 
-def destination(name, status, url=None, detail=None):
+def destination(name, status, url=None, detail=None, target_id=None):
     item = {"name": name, "status": status}
+    if target_id:
+        item["target_id"] = target_id
     if url:
         item["url"] = url
     if detail:
@@ -330,6 +332,7 @@ def _execute_target(ledger, bundle, target, publisher, reconciler=None):
         "published",
         url=receipt["url"],
         detail=f"idempotency_key={receipt['idempotency_key']}",
+        target_id=target["target_id"],
     )
 
 
@@ -347,6 +350,7 @@ def _execute_target_safely(
             target["platform"],
             "failed",
             detail=exception_detail(exc),
+            target_id=target["target_id"],
         )
 
 
@@ -601,6 +605,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             "published",
             url=canonical_url,
             detail=f"idempotency_key={canonical_receipt['idempotency_key']}",
+            target_id=canonical_target["target_id"],
         )
     )
 

@@ -18,6 +18,7 @@ DEFAULT_TO = "guyrofe@gmail.com"
 CAMPAIGN_INDEX = ROOT / "content_drafts" / "campaigns" / "index.json"
 DRAFT_INDEX = ROOT / "content_drafts" / "index.json"
 BUNDLE_INDEX = ROOT / "approval_bundles" / "index.json"
+HISTORY_PATH = ROOT / "data" / "reputation_history.json"
 
 
 def _load_usage_reader():
@@ -54,6 +55,19 @@ def parse_time(value):
 def in_window(value, start, end):
     parsed = parse_time(value)
     return bool(parsed and start <= parsed < end)
+
+
+def latest_asset_rank_measurement(root):
+    history = load_json(Path(root) / "data" / "reputation_history.json", {"snapshots": []})
+    for snapshot in reversed(history.get("snapshots", [])):
+        measurement = (
+            (snapshot.get("orchestration") or {})
+            .get("visibility_measurement", {})
+            .get("asset_rank_changes", {})
+        )
+        if measurement.get("assets"):
+            return measurement
+    return {"status": "not_measured", "assets": []}
 
 
 def collect_report(start, end, *, root=ROOT, usage_dir=None):
@@ -124,6 +138,7 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
         "campaigns": weekly_campaigns,
         "publications": publications,
         "failures": failures,
+        "asset_rank": latest_asset_rank_measurement(root),
         "ai": {
             "events": len(usage),
             "input_tokens": sum(item.get("input_tokens", 0) for item in usage),
@@ -180,6 +195,17 @@ def render_html(report):
         f"<li>{html.escape(item.get('approval_id') or 'חבילת אישור')}</li>"
         for item in report["bundles"]
     ) or "<li>לא הוכנו חבילות אישור השבוע.</li>"
+    rank = report.get("asset_rank", {})
+    rank_rows = "".join(
+        "<tr>"
+        f"<td>{html.escape(item.get('platform') or item.get('asset_id') or 'נכס')}</td>"
+        f"<td><a href=\"{html.escape(item.get('url') or '', quote=True)}\">{html.escape(item.get('url') or '')}</a></td>"
+        f"<td>{item.get('current_result_page') or 'לא נמצא'}</td>"
+        f"<td>{item.get('current_position') or 'לא נמצא'}</td>"
+        f"<td>{html.escape(item.get('change') or 'לא ידוע')}</td>"
+        "</tr>"
+        for item in rank.get("assets", [])
+    ) or '<tr><td colspan="5">אין מדידת Google מלאה ועדכנית.</td></tr>'
     coverage_note = (
         "<p><strong>הערת כיסוי:</strong> העלות מבוססת על אירועי שימוש "
         "שנרשמו בפועל. קריאות שקדמו להפעלת המונה אינן נכללות.</p>"
@@ -223,6 +249,12 @@ def render_html(report):
 <tbody>{publication_rows}</tbody>
 </table>
 <h2>כשלים או חסימות</h2><ul>{failure_rows}</ul>
+<h2>מיקום כל נכס ב-Google</h2>
+<p>מועד מדידה: {html.escape(rank.get('current_observed_at') or 'לא נמדד')}</p>
+<table style="border-collapse:collapse;width:100%" border="1" cellpadding="7">
+<thead><tr><th>נכס</th><th>כתובת</th><th>עמוד</th><th>מיקום מוחלט</th><th>שינוי</th></tr></thead>
+<tbody>{rank_rows}</tbody>
+</table>
 <p style="color:#667085">הדוח כולל רק פרסום שקיבל קבלה וקישור במערכת.</p>
 </body></html>"""
 
@@ -259,6 +291,18 @@ def render_text(report):
     )
     if not report["failures"]:
         lines.append("- לא נרשמו כשלים המחייבים טיפול.")
+    lines.extend(["", "מיקום כל נכס ב-Google:"])
+    rank = report.get("asset_rank", {})
+    lines.append(f"מועד מדידה: {rank.get('current_observed_at') or 'לא נמדד'}")
+    for item in rank.get("assets", []):
+        lines.append(
+            f"- {item.get('platform') or item.get('asset_id')}: "
+            f"עמוד {item.get('current_result_page') or 'לא נמצא'}, "
+            f"מיקום {item.get('current_position') or 'לא נמצא'}, "
+            f"שינוי {item.get('change') or 'לא ידוע'} — {item.get('url') or ''}"
+        )
+    if not rank.get("assets"):
+        lines.append("- אין מדידת Google מלאה ועדכנית.")
     return "\n".join(lines) + "\n"
 
 

@@ -404,8 +404,22 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertEqual(rows["Main"]["delta"], 3)
         self.assertEqual(rows["LinkedIn"]["change"], "declined")
         self.assertEqual(rows["LinkedIn"]["delta"], -2)
-        self.assertEqual(rows["Instagram"]["change"], "entered_top10")
-        self.assertEqual(rows["Podcast"]["change"], "unchanged_not_in_top10")
+        self.assertEqual(rows["Instagram"]["change"], "entered_measured_results")
+        self.assertEqual(rows["Podcast"]["change"], "unchanged_not_found")
+        self.assertEqual(rows["Instagram"]["current_result_page"], 1)
+
+    def test_asset_rank_records_page_and_absolute_position_beyond_top_ten(self):
+        assets = [{"platform": "Profile", "url": "https://example.com/profile", "tier": "A"}]
+        current = build_query_control_map({
+            "engine": "google", "query": "brand", "observed_at": "2026-08-01T00:00:00Z",
+            "results": [{"position": 27, "link": "https://example.com/profile"}],
+        }, assets)
+        report = measure_asset_rank_changes(assets, [current])
+        row = report["assets"][0]
+        self.assertEqual(row["current_position"], 27)
+        self.assertEqual(row["current_result_page"], 3)
+        self.assertEqual(row["current_page_position"], 7)
+        self.assertIsNone(row["current_position_top10"])
 
     def test_incomplete_google_run_does_not_report_false_changes(self):
         report = measure_asset_rank_changes(

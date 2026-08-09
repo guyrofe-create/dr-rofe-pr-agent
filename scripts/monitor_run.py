@@ -254,7 +254,7 @@ def serp_checks_due(today=None):
         statuses = {
             result.get("status") for result in snapshot.get("rank", [])
         }
-        if statuses and statuses.issubset({"found", "not_in_top10"}):
+        if statuses and statuses.issubset({"found", "not_in_measured_results"}):
             return False
     return True
 
@@ -462,7 +462,7 @@ def rank_measurement_succeeded() -> bool:
         if item.get("status") != "skipped"
     ]
     return bool(measured) and all(
-        item.get("status") in {"found", "not_in_top10"} for item in measured
+        item.get("status") in {"found", "not_in_measured_results"} for item in measured
     )
 
 
@@ -481,6 +481,7 @@ def check_google_rank(today=None):
         return
     today = today or date.today().isoformat()
     plan = serp_run_plan(today)
+    result_depth = max(10, min(int(free_serpapi_policy().get("results_per_query", 100)), 100))
     queries = plan["queries"]
     devices = plan["devices"]
     engines = plan["engines"]
@@ -509,7 +510,7 @@ def check_google_rank(today=None):
             return
         try:
             params = {
-                "engine": engine, "q": kw, "num": 10,
+                "engine": engine, "q": kw, "num": result_depth,
                 "device": device, "api_key": api_key,
             }
             if engine == "google":
@@ -547,8 +548,12 @@ def check_google_rank(today=None):
                 "collection_method": "serpapi",
                 "keyword": kw, "device": device, "country": MARKET_COUNTRY,
                 "language": MARKET_LANGUAGE,
-                "position_top10": position,
-                "status": "found" if position else "not_in_top10",
+                "position": position,
+                "position_top10": position if position and position <= 10 else None,
+                "result_page": ((position - 1) // 10 + 1) if position else None,
+                "page_position": ((position - 1) % 10 + 1) if position else None,
+                "result_depth": result_depth,
+                "status": "found" if position else "not_in_measured_results",
                 "results": [
                     {
                         "position": result.get("position", index + 1),
@@ -557,7 +562,7 @@ def check_google_rank(today=None):
                         "displayed_link": result.get("displayed_link"),
                         "sentiment": "unknown",
                     }
-                    for index, result in enumerate(organic[:10])
+                    for index, result in enumerate(organic[:result_depth])
                 ],
                 "features": {
                     "knowledge_panel": bool(data.get("knowledge_graph")),
@@ -1075,12 +1080,13 @@ def format_report_markdown():
         if r.get("status") == "found":
             lines.append(
                 f"- {engine} / {r.get('device', 'unknown')} / "
-                f"`{r['keyword']}` → מיקום {r['position_top10']} (עמוד ראשון)"
+                f"`{r['keyword']}` → מיקום {r['position']}, "
+                f"עמוד {r['result_page']}, מקום {r['page_position']} בעמוד"
             )
-        elif r.get("status") == "not_in_top10":
+        elif r.get("status") == "not_in_measured_results":
             lines.append(
                 f"- {engine} / {r.get('device', 'unknown')} / "
-                f"`{r['keyword']}` → לא בעשירייה הראשונה"
+                f"`{r['keyword']}` → לא נמצא ב-{r.get('result_depth', 100)} התוצאות שנמדדו"
             )
         elif r.get("status") == "skipped":
             lines.append(f"- דילוג: {r['reason']}")
@@ -1106,13 +1112,19 @@ def format_report_markdown():
             "entered_top10": "נכנס לעשירייה הראשונה",
             "left_top10": "יצא מהעשירייה הראשונה",
             "unchanged_not_in_top10": "ללא שינוי — מחוץ לעשירייה הראשונה",
+            "entered_measured_results": "נכנס לטווח התוצאות שנמדד",
+            "left_measured_results": "יצא מטווח התוצאות שנמדד",
+            "unchanged_not_found": "ללא שינוי — לא נמצא בטווח שנמדד",
         }
         for item in asset_rank["assets"]:
-            previous = item.get("previous_position_top10") or "מחוץ לעשירייה"
-            current = item.get("current_position_top10") or "מחוץ לעשירייה"
+            previous = item.get("previous_position") or "לא נמצא"
+            current = item.get("current_position") or "לא נמצא"
+            previous_page = item.get("previous_result_page") or "-"
+            current_page = item.get("current_result_page") or "-"
             lines.append(
                 f"- [{item.get('platform')}]({item.get('url')}): "
-                f"{previous} → {current}; "
+                f"מיקום {previous} (עמוד {previous_page}) → "
+                f"מיקום {current} (עמוד {current_page}); "
                 f"{labels.get(item.get('change'), item.get('change', 'לא ידוע'))}"
             )
     else:

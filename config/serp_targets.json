@@ -31,6 +31,7 @@
     "free_serpapi_policy": {
       "enabled": true,
       "monthly_request_budget": 220,
+      "results_per_query": 100,
       "rank_check_days_of_month": [1, 15],
       "ai_check_days_of_month": [1, 15],
       "search_console_check_days_of_month": [1, 15],

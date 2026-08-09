@@ -17,6 +17,16 @@ class WeeklyEmailReportTests(unittest.TestCase):
             (root / "approval_bundles").mkdir()
             usage_dir = root / "data" / "ai_usage_events"
             usage_dir.mkdir(parents=True)
+            (root / "data" / "reputation_history.json").write_text(
+                json.dumps({"snapshots": [{"orchestration": {"visibility_measurement": {
+                    "asset_rank_changes": {
+                        "status": "compared", "current_observed_at": "2026-07-15T04:30:00Z",
+                        "assets": [{"platform": "LinkedIn", "url": "https://linkedin.example/profile",
+                                    "current_position": 23, "current_result_page": 3,
+                                    "change": "improved"}],
+                    }
+                }}}]}), encoding="utf-8",
+            )
             (root / "content_drafts" / "index.json").write_text(
                 json.dumps({"drafts": [{
                     "title": "טיוטה רפואית",
@@ -76,6 +86,8 @@ class WeeklyEmailReportTests(unittest.TestCase):
         self.assertEqual(report["ai"]["estimated_cost_usd"], 0.03)
         self.assertIn("https://linkedin.example/post", render_html(report))
         self.assertIn("Pinterest", render_text(report))
+        self.assertIn("מיקום 23", render_text(report))
+        self.assertIn("עמוד</th><th>מיקום מוחלט", render_html(report))
 
 
 if __name__ == "__main__":

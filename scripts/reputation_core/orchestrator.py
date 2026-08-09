@@ -130,11 +130,11 @@ def classify_result(result: dict, assets: list[dict]) -> dict:
 
 
 def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
-    results = [
+    rank_results = [
         classify_result({**result, "position": result.get("position", index)}, assets)
         for index, result in enumerate(snapshot.get("results", []), start=1)
-        if int(result.get("position", index)) <= 10
     ]
+    results = [result for result in rank_results if int(result["position"]) <= 10]
     desired = [r for r in results if r["desired"]]
     controlled = [r for r in desired if r["controlled"]]
     negative = [r for r in results if r["sentiment"] in {"negative", "harmful"}]
@@ -151,6 +151,7 @@ def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
         "device": snapshot.get("device", "unknown"),
         "observed_at": snapshot.get("observed_at"),
         "results": results,
+        "rank_results": rank_results,
         "desired_count": len(desired),
         "controlled_count": len(controlled),
         "negative_count": len(negative),
@@ -178,7 +179,7 @@ def _best_asset_position(asset: dict, control_maps: list[dict]) -> dict:
     for control_map in control_maps:
         if str(control_map.get("engine", "google")).lower() != "google":
             continue
-        for result in control_map.get("results", []):
+        for result in control_map.get("rank_results", control_map.get("results", [])):
             if (
                 result.get("asset_id") == asset_id
                 and result.get("asset_url") == asset_url
@@ -204,7 +205,7 @@ def measure_asset_rank_changes(
     *,
     complete: bool = True,
 ) -> dict:
-    """Compare every registered asset's best Google top-10 position by run."""
+    """Compare every registered asset's best measured Google position by run."""
     current_google = [
         item for item in current_control_maps
         if str(item.get("engine", "google")).lower() == "google"
@@ -249,15 +250,15 @@ def measure_asset_rank_changes(
             changed = None
             delta = None
         elif previous_position is None and current_position is None:
-            change = "unchanged_not_in_top10"
+            change = "unchanged_not_found"
             changed = False
             delta = None
         elif previous_position is None:
-            change = "entered_top10"
+            change = "entered_measured_results"
             changed = True
             delta = None
         elif current_position is None:
-            change = "left_top10"
+            change = "left_measured_results"
             changed = True
             delta = None
         else:
@@ -273,8 +274,14 @@ def measure_asset_rank_changes(
             "platform": asset.get("platform") or _asset_id(asset),
             "url": asset.get("url"),
             "tier": asset.get("tier"),
-            "previous_position_top10": previous_position,
-            "current_position_top10": current_position,
+            "previous_position_top10": previous_position if previous_position and previous_position <= 10 else None,
+            "current_position_top10": current_position if current_position and current_position <= 10 else None,
+            "previous_position": previous_position,
+            "current_position": current_position,
+            "previous_result_page": ((previous_position - 1) // 10 + 1) if previous_position else None,
+            "current_result_page": ((current_position - 1) // 10 + 1) if current_position else None,
+            "previous_page_position": ((previous_position - 1) % 10 + 1) if previous_position else None,
+            "current_page_position": ((current_position - 1) % 10 + 1) if current_position else None,
             "previous_query": previous.get("query"),
             "current_query": current.get("query"),
             "previous_device": previous.get("device"),

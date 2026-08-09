@@ -40,6 +40,7 @@ jobs:
           if [[ "${{ github.event_name }}" == "workflow_run" ]]; then hours=6; fi
           email_arg=""
           if [[ "${SEND_DAILY_EMAIL}" == "true" ]]; then email_arg="--send-email"; fi
+          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then email_arg="--send-email-on-problem"; fi
           python scripts/publication_watchdog.py --hours "${hours}" --output publication_watchdog_report.json ${email_arg}
           echo '## Publication watchdog' >> "${GITHUB_STEP_SUMMARY}"
           echo '```json' >> "${GITHUB_STEP_SUMMARY}"

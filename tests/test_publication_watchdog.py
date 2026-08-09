@@ -1,5 +1,10 @@
 import unittest
+import json
+import tempfile
+from datetime import datetime, timezone
+from pathlib import Path
 from unittest.mock import Mock
+from unittest.mock import patch
 
 from scripts import publication_watchdog
 
@@ -40,6 +45,99 @@ class PublicationWatchdogTests(unittest.TestCase):
             "https://linkedin.com/post", "LinkedIn", request_get=Mock(return_value=response)
         )
         self.assertEqual(result["state"], "inconclusive_login_or_rate_limit")
+
+    def test_live_url_requires_the_approved_title_to_verify_content(self):
+        response = Mock(
+            status_code=200,
+            url="https://example.com/post",
+            text="<h1>Approved medical title</h1>",
+        )
+        result = publication_watchdog.verify_url(
+            response.url, "Blogger", expected_title="Approved medical title",
+            request_get=Mock(return_value=response),
+        )
+        self.assertEqual(result["state"], "verified_content")
+
+    def test_live_url_without_content_is_not_counted_as_verified(self):
+        response = Mock(status_code=200, url="https://example.com/post", text="login")
+        result = publication_watchdog.verify_url(
+            response.url, "Facebook", expected_title="Approved title",
+            request_get=Mock(return_value=response),
+        )
+        self.assertEqual(result["state"], "live_url_content_unconfirmed")
+
+    def test_matches_receipt_to_explicit_approved_target(self):
+        bundle = {"targets": [{"target_id": "linkedin_member", "platform": "LinkedIn"}]}
+        self.assertEqual(
+            publication_watchdog.match_destination_target(
+                {"name": "LinkedIn", "target_id": "linkedin_member"}, bundle
+            ),
+            "linkedin_member",
+        )
+
+    def test_report_fails_when_approved_target_was_not_published(self):
+        now = datetime(2026, 8, 9, 10, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            campaigns = root / "content_drafts" / "campaigns"
+            bundles = root / "approval_bundles"
+            campaigns.mkdir(parents=True)
+            bundles.mkdir()
+            (bundles / "apr_test.json").write_text(json.dumps({
+                "targets": [
+                    {"target_id": "facebook_page", "platform": "Facebook"},
+                    {"target_id": "linkedin_member", "platform": "LinkedIn"},
+                ]
+            }), encoding="utf-8")
+            (campaigns / "cmp_test.json").write_text(json.dumps({
+                "approval_id": "apr_test",
+                "title": "Approved title",
+                "status": "partial",
+                "published_at": now.isoformat(),
+                "destinations": [
+                    {"name": "Facebook", "target_id": "facebook_page",
+                     "status": "published", "url": "https://example.com/post"},
+                    {"name": "LinkedIn", "target_id": "linkedin_member",
+                     "status": "skipped_not_configured"},
+                ],
+            }), encoding="utf-8")
+            with patch.object(publication_watchdog, "PROJECT_ROOT", root), \
+                 patch.object(publication_watchdog, "CAMPAIGN_ROOT", campaigns), \
+                 patch.object(publication_watchdog, "BUNDLE_ROOT", bundles), \
+                 patch.object(publication_watchdog, "DRAFT_INDEX", root / "missing-drafts.json"), \
+                 patch.object(publication_watchdog, "BUNDLE_INDEX", root / "missing-bundles.json"):
+                response = Mock(status_code=200, url="https://example.com/post", text="Approved title")
+                report = publication_watchdog.build_report(
+                    30, now=now, request_get=Mock(return_value=response)
+                )
+        self.assertEqual(report["control_status"], "failure")
+        self.assertEqual(report["totals"]["intended_targets"], 2)
+        self.assertEqual(report["totals"]["content_verified"], 1)
+        self.assertEqual(report["totals"]["unfulfilled_intended_targets"], 1)
+
+    def test_report_fails_when_signed_approval_bundle_is_missing(self):
+        now = datetime(2026, 8, 9, 10, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            campaigns = root / "content_drafts" / "campaigns"
+            bundles = root / "approval_bundles"
+            campaigns.mkdir(parents=True)
+            bundles.mkdir()
+            (campaigns / "cmp_test.json").write_text(json.dumps({
+                "approval_id": "apr_missing",
+                "title": "Approved title",
+                "status": "published",
+                "published_at": now.isoformat(),
+                "destinations": [],
+            }), encoding="utf-8")
+            with patch.object(publication_watchdog, "PROJECT_ROOT", root), \
+                 patch.object(publication_watchdog, "CAMPAIGN_ROOT", campaigns), \
+                 patch.object(publication_watchdog, "BUNDLE_ROOT", bundles), \
+                 patch.object(publication_watchdog, "DRAFT_INDEX", root / "missing-drafts.json"), \
+                 patch.object(publication_watchdog, "BUNDLE_INDEX", root / "missing-bundles.json"):
+                report = publication_watchdog.build_report(30, now=now)
+        self.assertEqual(report["control_status"], "failure")
+        self.assertEqual(report["totals"]["missing_approval_bundles"], 1)
 
 
 if __name__ == "__main__":
