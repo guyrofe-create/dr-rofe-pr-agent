@@ -1,6 +1,26 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md",
+      "title": "בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: בלי לשים לב: תנוחת הגוף שינתה החלטות של משתתפי מחקר",
+      "excerpt": "בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: במחקר ניסויי חדש, שינוי עקיף של סביבת העבודה הוביל את המשתתפים לתנוחות גוף שונות, ונמצא הבדל בהתנהגו",
+      "generated_at": "2026-08-10T07:39:29.557044+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "instagram"
+      ],
+      "cadence_week": "week-of-2026-08-09",
+      "cadence_local_date": "2026-08-10",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-500d6b117ac57862.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/rjkemi1ufe"
+    },
+    {
       "path": "content_drafts/2026-08-09-topic-06-run-31299936904-attempt-1.md",
       "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
       "topic": "גיל המעבר - מידע כללי מבוסס מקורות",

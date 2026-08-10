@@ -2,6 +2,19 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123",
+      "draft_path": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123.json",
+      "preview_path": "approval_bundles/apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123.html",
+      "created_at": "2026-08-10T07:42:32Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
       "approval_id": "apr_36c0ab57ac5d556c980a23840215136f8b997d7051b87a2047520870eb5d3c73",
       "draft_path": "content_drafts/2026-08-09-topic-90-run-31299936904-attempt-1.md",
       "bundle_path": "approval_bundles/apr_36c0ab57ac5d556c980a23840215136f8b997d7051b87a2047520870eb5d3c73.json",
