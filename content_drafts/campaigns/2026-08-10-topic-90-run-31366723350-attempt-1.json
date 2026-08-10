@@ -1,0 +1,103 @@
+{
+  "draft": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md",
+  "title": "בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר? | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-08-10T08:18:25.381740+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1/",
+      "detail": "idempotency_key=pub_e44e77b17a1e73d59fe8af685dc2e00b6c8cbfc5928f291f6420fabe343a7c1f"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122198678054942441",
+      "detail": "idempotency_key=pub_aa7ea4749de8916963e23cc48a56a9fe8b22867ae9074fcc707b8a4dc1697849"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7492494507427446784/",
+      "detail": "idempotency_key=pub_da99f7b18d119737ceee454fa9341e1794d6a86184d2dc236c78c6df673d9ac2"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post_10.html",
+      "detail": "idempotency_key=pub_ef9aeeb7300892100a839481332c42b7452ea829ca25f1c397c17f148508f125"
+    },
+    {
+      "name": "Instagram",
+      "status": "failed",
+      "target_id": "instagram_business",
+      "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=ADwP0N8esk-Ase1rFZLMTIC"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
