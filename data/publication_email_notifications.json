@@ -177,6 +177,16 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7492494507427446784/",
         "https://guyrofe.blogspot.com/2026/08/blog-post_10.html"
       ]
+    },
+    "apr_4e84dc445127abe31bd23fbef97df42ed0e3708430227bc333ac84955779167d:34bd1c5e1022c9cf7b32c7a6d419ab9b3caa2a6e10375253613cf52f1c182edd": {
+      "sent_at": "2026-08-11T07:50:54.665803+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_4e84dc445127abe31bd23fbef97df42ed0e3708430227bc333ac84955779167d",
+      "state": "success",
+      "subject": "אישור פרסום: מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-11-topic-90-run-31467572739-attempt-1/"
+      ]
     }
   }
 }
