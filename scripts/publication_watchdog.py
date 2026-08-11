@@ -11,6 +11,7 @@ import argparse
 import html
 import json
 import os
+import re
 import smtplib
 from datetime import datetime, timedelta, timezone
 from email.message import EmailMessage
@@ -44,11 +45,41 @@ def classify_failure(destination):
             "reason": "Google Business Profile API access/quota is unavailable (the project currently has a zero request quota).",
             "action": "Wait for Google's Basic API Access decision; do not submit a duplicate request before their review window ends.",
         }
-    if name == "Instagram" and ("400" in probe or "media container" in probe):
+    if name == "Instagram" and (
+        "does not have permission" in probe
+        or "oauth" in probe
+        or "code=10" in probe
+    ):
+        return {
+            "category": "instagram_permission_required",
+            "reason": "Meta rejected the Instagram request because the connected app or token lacks the required permission.",
+            "action": "Repair the Instagram professional-account permission or token before an explicitly approved retry; changing the image will not fix this error.",
+        }
+    if name == "Instagram" and (
+        "media container" in probe
+        or "unsupported image" in probe
+        or "image format" in probe
+        or "aspect ratio" in probe
+    ):
         return {
             "category": "instagram_media_rejected",
             "reason": "Meta rejected the Instagram media container.",
             "action": "Use the approved JPEG square variant and retain Meta's structured error fields on the next attempt.",
+        }
+    if "invalid_grant" in probe and name in {"Blogger", "Google Business Profile"}:
+        return {
+            "category": "google_oauth_reauthorization_required",
+            "reason": "Google rejected the stored OAuth refresh token because it expired or was revoked.",
+            "action": "Reconnect Google once and replace the refresh token; repeated publication retries cannot repair an invalid grant.",
+        }
+    if any(marker in probe for marker in (
+        "connecttimeout", "connectionerror", "readtimeout", "timed out",
+        "temporary failure in name resolution", "max retries exceeded",
+    )):
+        return {
+            "category": "transient_provider_connectivity",
+            "reason": detail or "The provider could not be reached within the allowed time.",
+            "action": "Probe the provider, reconcile the exact approved destination, and retry only through the existing approval-gated retry path.",
         }
     if name == "Campaign" and detail.strip() in {"0", "KeyError: 0"}:
         return {
@@ -113,15 +144,21 @@ def expected_target_ids(bundle):
     }
 
 
+def normalized_destination_name(value):
+    name = str(value or "").casefold().strip()
+    name = re.sub(r"^https?://", "", name).split("/", 1)[0]
+    return re.sub(r"^www\.", "", name)
+
+
 def match_destination_target(destination, bundle):
     explicit = destination.get("target_id")
     if explicit:
         return explicit
-    name = str(destination.get("name") or "").casefold()
+    name = normalized_destination_name(destination.get("name"))
     matches = []
     for target in (bundle or {}).get("targets", []):
-        platform = str(target.get("platform") or "").casefold()
-        asset = str(target.get("asset") or "").casefold()
+        platform = normalized_destination_name(target.get("platform"))
+        asset = normalized_destination_name(target.get("asset"))
         if name in {platform, asset} or (asset and asset in name):
             matches.append(target.get("target_id"))
     return matches[0] if len(set(matches)) == 1 else None
@@ -320,12 +357,17 @@ def send_email(report):
         smtp.send_message(message)
 
 
+def report_has_problem(report):
+    return report.get("control_status") == "failure"
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--hours", type=int, default=30)
     parser.add_argument("--output", default="publication_watchdog_report.json")
     parser.add_argument("--send-email", action="store_true")
     parser.add_argument("--send-email-on-problem", action="store_true")
+    parser.add_argument("--fail-on-problem", action="store_true")
     args = parser.parse_args()
     report = build_report(args.hours)
     Path(args.output).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -334,6 +376,8 @@ def main():
         args.send_email_on_problem and report["control_status"] != "healthy"
     ):
         send_email(report)
+    if args.fail_on_problem and report_has_problem(report):
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

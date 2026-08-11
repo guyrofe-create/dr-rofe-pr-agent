@@ -5,6 +5,7 @@ from io import BytesIO
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
+import requests
 from PIL import Image
 
 from scripts import social_image
@@ -466,6 +467,33 @@ class SocialImageTests(unittest.TestCase):
                 slug="approved-social",
                 title="כותרת",
             )
+
+    @patch("scripts.social_image.time.sleep")
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_lookup_retries_transient_connect_timeout(
+        self, get, post, sleep
+    ):
+        response = Mock(status_code=200)
+        response.raise_for_status.return_value = None
+        response.json.return_value = [
+            {"id": 7, "source_url": "https://guyrofe.com/image.png"}
+        ]
+        get.side_effect = [requests.ConnectTimeout("temporary timeout"), response]
+
+        url = social_image.upload_to_wordpress(
+            social_image.SocialImage(b"image"),
+            base_url="https://guyrofe.com",
+            username="user",
+            app_password="password",
+            slug="approved-social",
+            title="כותרת",
+        )
+
+        self.assertEqual(url, "https://guyrofe.com/image.png")
+        self.assertEqual(get.call_count, 2)
+        sleep.assert_called_once_with(1)
+        post.assert_not_called()
 
     def test_generated_instagram_square_is_jpeg(self):
         source = BytesIO()

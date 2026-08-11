@@ -19,6 +19,12 @@ permissions:
 
 jobs:
   verify:
+    # Scheduled publisher checks are intentionally frequent, but most runs are
+    # empty queue checks. Only inspect an immediate workflow_run when the
+    # publisher itself failed; the daily run still audits partial receipts.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'failure'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -41,12 +47,15 @@ jobs:
           email_arg=""
           if [[ "${SEND_DAILY_EMAIL}" == "true" ]]; then email_arg="--send-email"; fi
           if [[ "${{ github.event_name }}" == "workflow_run" ]]; then email_arg="--send-email-on-problem"; fi
-          python scripts/publication_watchdog.py --hours "${hours}" --output publication_watchdog_report.json ${email_arg}
+          watchdog_status=0
+          python scripts/publication_watchdog.py --hours "${hours}" --output publication_watchdog_report.json --fail-on-problem ${email_arg} || watchdog_status=$?
           echo '## Publication watchdog' >> "${GITHUB_STEP_SUMMARY}"
           echo '```json' >> "${GITHUB_STEP_SUMMARY}"
           jq '.totals' publication_watchdog_report.json >> "${GITHUB_STEP_SUMMARY}"
           echo '```' >> "${GITHUB_STEP_SUMMARY}"
+          exit "${watchdog_status}"
       - uses: actions/upload-artifact@v6
+        if: always()
         with:
           name: publication-watchdog-${{ github.run_id }}
           path: publication_watchdog_report.json

@@ -10,6 +10,7 @@ import html
 import json
 import os
 import re
+import time
 from dataclasses import dataclass, field
 from io import BytesIO
 from pathlib import Path
@@ -65,6 +66,7 @@ PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 8
 MAX_REVIEWED_CANDIDATES = 24
 MAX_REVIEWED_PER_QUERY = 3
+TRANSIENT_WORDPRESS_HTTP = {408, 429, 500, 502, 503, 504}
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -955,13 +957,29 @@ def upload_to_wordpress(
         "Cache-Control": "no-cache",
         "User-Agent": f"ReputationAgentPublisher/1.0 (+{_CLIENT_SITE})",
     }
-    lookup = requests.get(
-        endpoint,
-        auth=auth,
-        params={"slug": slug, "_fields": "id,source_url,slug"},
-        headers=headers,
-        timeout=25,
-    )
+    lookup_args = {
+        "auth": auth,
+        "params": {"slug": slug, "_fields": "id,source_url,slug"},
+        "headers": headers,
+        "timeout": 25,
+    }
+    lookup = None
+    for attempt in range(3):
+        try:
+            lookup = requests.get(endpoint, **lookup_args)
+            if (
+                lookup.status_code in TRANSIENT_WORDPRESS_HTTP
+                and attempt < 2
+            ):
+                time.sleep(2 ** attempt)
+                continue
+            break
+        except (requests.ConnectionError, requests.Timeout):
+            if attempt == 2:
+                raise
+            time.sleep(2 ** attempt)
+    if lookup is None:  # Defensive; the loop either returns a response or raises.
+        raise RuntimeError("WordPress media lookup produced no response")
     lookup.raise_for_status()
     existing = lookup.json()
     if not isinstance(existing, list):
