@@ -1,6 +1,21 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-08-11-topic-04-run-31467572739-attempt-1.md",
+      "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
+      "status": "failed",
+      "published_at": "2026-08-11T08:47:33.679856+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.com",
+          "status": "failed",
+          "detail": "CampaignTargetError: ConnectTimeout: HTTPSConnectionPool(host='guyrofe.com', port=443): Max retries exceeded with url: /wp-json/wp/v2/media?slug=guy-rofe-pilot-2026-08-11-topic-04-run-31467572739-attempt-1-hero&_fields=id%2Csource_url%2Cslug (Caused by ConnectTimeoutError(<HTTPSConnection(host='guyr"
+        }
+      ],
+      "approval_id": "apr_af65d37aca60ea5f510fcf51a85748ff737a8433cac947ca990737bb77634044",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-11-topic-90-run-31467572739-attempt-1.md",
       "title": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון | ד״ר גיא רופא",
       "status": "completed",
