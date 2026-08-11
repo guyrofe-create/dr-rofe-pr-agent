@@ -1,6 +1,36 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-11-topic-90-run-31467572739-attempt-1.md",
+      "title": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: מה קורה למי שמתעורר עם שבץ מוחי? מחקר חדש משנה את התמונה",
+      "excerpt": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com/%D7%90%D7%95%D7%93%D7%95%D7%AA/) התשוב",
+      "generated_at": "2026-08-11T07:05:59.974072+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "pinterest"
+      ],
+      "cadence_week": "week-of-2026-08-09",
+      "cadence_local_date": "2026-08-11",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-f764bc355a2471b4.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/s1nslbouzg"
+    },
+    {
+      "path": "content_drafts/2026-08-11-topic-04-run-31467572739-attempt-1.md",
+      "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
+      "topic": "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
+      "excerpt": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) תסמונת השחלות הפוליציסטיות, המוכרת גם בראשי התיבות PCOS, היא הפרעה הורמונלית ומטבולית שכיחה. היא עשויה להתבטא בביוץ לא סדיר, ",
+      "generated_at": "2026-08-11T07:05:59.974072+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-09",
+      "cadence_local_date": "2026-08-11",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md",
       "title": "בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר? | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: בלי לשים לב: תנוחת הגוף שינתה החלטות של משתתפי מחקר",
