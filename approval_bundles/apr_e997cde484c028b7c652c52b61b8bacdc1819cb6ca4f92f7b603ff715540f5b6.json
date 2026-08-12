@@ -1,0 +1,485 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-12T07:30:25Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-12-topic-07-run-31573715687-attempt-1.md",
+  "source_draft_sha256": "80accef5e8c8bf2edbd184170d9c2c877115e21cf29be5737298a026e787a314",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://medlineplus.gov/webeval/webeval.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/news-room/spotlight/let-s-flatten-the-infodemic-curve",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+    "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+    "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+        "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+        "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-square.jpg",
+        "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-portrait.png",
+        "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+        "markdown": "# איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\nמאת: [ד״ר גיא רופא](https://guyrofe.com)\n\n**התשובה הקצרה:** מידע רפואי ברשת ראוי לאמון כאשר ברור מי פרסם אותו, מי כתב ובדק אותו, על אילו ראיות הוא מבוסס, מתי עודכן, ומה מטרת הפרסום. אין להסתמך על סימן יחיד, כמו עיצוב מקצועי, תואר הכותב או מספר העוקבים. יש לבחון יחד את זהות הגוף המפרסם, איכות המקורות, מידת העדכניות, האיזון בניסוח וההתאמה למצב הרפואי האישי.\n\n## מבוא\n\nהאינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות, טיפולים ומניעה. זמינות זו יכולה לסייע בהבנת מונחים רפואיים ובהכנה לשיחה עם איש מקצוע, אך היא גם יוצרת קושי: תוכן מבוסס־ראיות מופיע לצד פרסומות, עדויות אישיות, מידע מיושן וטענות חסרות בסיס.\n\nמידע שגוי אינו חייב להיראות מפוקפק. לעיתים הוא כתוב היטב, כולל מונחים מקצועיים, תרשימים וציטוטים חלקיים ממחקרים. גם מידע נכון באופן כללי עלול להיות מטעה כאשר הוא מוצג ללא הקשר, מתעלם ממגבלות המחקר או מתורגם להמלצה אישית שאינה מוצדקת.\n\nלפי [הנחיות הספרייה הלאומית לרפואה של ארצות הברית להערכת מידע רפואי באינטרנט](https://medlineplus.gov/webeval/webeval.html), יש לברר מי מפעיל את האתר, מהי מטרתו, מי מממן אותו, מה מקור המידע וכיצד נשמרת פרטיות המשתמש. ארגון הבריאות העולמי מדגיש כי עודף מידע, לרבות מידע כוזב או מטעה, עלול להקשות על הציבור לזהות הנחיות מהימנות ולקבל החלטות בריאותיות מושכלות, כפי שמוסבר בעמוד הרשמי בנושא [התמודדות עם אינפודמיה ומידע מטעה](https://www.who.int/news-room/spotlight/let-s-flatten-the-infodemic-curve).\n\nהערכת מקור איננה תחליף לאבחון או לייעוץ רפואי. מטרתה היא לצמצם את הסיכון להסתמכות על תוכן לא אמין ולשפר את איכות השאלות שמעלים בפני גורם רפואי מוסמך.\n\n## 1. מי עומד מאחורי המידע?\n\nהבדיקה הראשונה היא בדיקת זהות: מי אחראי לפרסום? באתר אמין אמורים להופיע שם הגוף המפרסם, פרטי המערכת או המחבר, מדיניות עריכה ולעיתים גם שמות הבודקים המקצועיים. יש הבדל מהותי בין הנחיה של רשות בריאות, מסמך של איגוד מקצועי, מאמר מדעי שעבר ביקורת עמיתים, כתבה עיתונאית ופוסט אישי.\n\nכאשר מופיע שם של מחבר, יש לבדוק אם מצוינת הכשרתו הרלוונטית לנושא. תואר מקצועי כשלעצמו אינו מבטיח שכל טענה נכונה, אך היעדר מוחלט של מחבר או גוף אחראי צריך לעורר זהירות. חשוב גם להבחין בין כתיבה, בדיקה רפואית וחסות מסחרית: אלה תפקידים שונים, ולא תמיד האדם החתום על הטקסט הוא מי שבחן את נכונותו המדעית.\n\nסיומת כתובת האתר עשויה לספק רמז, אך אינה חותמת איכות. אתרים ממשלתיים ומוסדיים נוטים להיות שקופים יותר לגבי אחריותם, אולם גם בהם חשוב להגיע למסמך המדויק ולא להסתפק בשם המוסד. מנגד, כתובת בעלת מראה רשמי יכולה להשתייך לגוף פרטי. יש לבדוק את עמוד ה\"על אודות\", את פרטי הבעלות ואת מדיניות המימון.\n\nכדאי לשאול:\n\n- האם ניתן לזהות בבירור את הגוף המפרסם?\n- האם שמו של המחבר מופיע לצד הכשרה רלוונטית?\n- האם התוכן עבר בדיקה מקצועית או מערכתית?\n- האם מפורטים מקורות המימון וניגודי העניינים?\n- האם קיימת דרך להבין כיצד מתוקנות טעויות?\n\nשקיפות אינה מבטיחה שהמידע נכון, אך היעדרה מקשה מאוד לבחון את אמינותו.\n\n## 2. האם הטענה מבוססת על ראיות מתאימות?\n\nלא כל קישור או אזכור של \"מחקר\" הם בסיס מדעי מספק. מקור אמין צריך לאפשר לקורא להגיע למסמך שעליו נשענת הטענה: הנחיה מקצועית, סקירה שיטתית, מחקר מקורי או מסמך רשמי של רשות בריאות. הפניה עמומה ל\"מחקרים מוכיחים\" ללא שמות, קישורים או פרטים היא סימן אזהרה.\n\nגם כאשר מוצג מחקר אמיתי, יש לברר מה הוא מסוגל להראות. מחקר תצפיתי עשוי לזהות קשר בין שני משתנים, אך בדרך כלל אינו מוכיח שאחד מהם גרם לאחר. מחקר קטן או קצר עשוי להיות ראשוני בלבד. מחקר בבעלי חיים או בתאים אינו מוכיח שטיפול יעיל ובטוח בבני אדם. תקציר מחקר אינו תמיד מספק את המידע הדרוש להערכת שיטות המחקר, מגבלותיו ותוצאותיו המלאות.\n\nסדר עדיפות מעשי לבחינת טענה רפואית הוא:\n\n1. הנחיה קלינית רשמית ועדכנית של גוף מקצועי או רשות בריאות;\n2. סקירה שיטתית או מטא־אנליזה איכותית;\n3. מחקר ראשוני שעבר ביקורת עמיתים;\n4. חומר הסבר רשמי לציבור המבוסס על המקורות הללו.\n\nאין פירוש הדבר שכל הנחיה היא אמת מוחלטת או שכל מחקר יחיד חסר ערך. המשמעות היא שככל שהטענה משמעותית יותר — למשל המלצה להתחיל טיפול, להפסיק תרופה או להימנע מבדיקה — כך נדרשת ראיה חזקה יותר.\n\nיש לבדוק גם אם המקור המצוטט אכן תומך במשפט שלצדו. לעיתים מחקר שבחן שיפור במדד מעבדה מוצג כהוכחה למניעת מחלה, או שממצא בקבוצה מסוימת מוחל על כלל האוכלוסייה. זהו מעבר פרשני שאינו בהכרח מוצדק.\n\n## 3. עדכניות, הקשר ואיזון: שלושה מבחני איכות מרכזיים\n\nמידע רפואי משתנה. הנחיות מתעדכנות בעקבות מחקרים חדשים, שינויי בטיחות, תרופות חדשות ושיטות אבחון מתקדמות. לכן יש לחפש תאריך פרסום ותאריך עדכון. תאריך ישן אינו הופך תוכן לשגוי באופן אוטומטי, אך הוא מחייב לבדוק אם פורסם מאז מידע חדש.\n\nגם להקשר יש חשיבות. המלצה עשויה להיות נכונה רק לבני גיל מסוים, בתקופת היריון, לאנשים עם מחלת רקע מוגדרת או למטופלים הנוטלים תרופות מסוימות. תוכן איכותי מציין למי הוא מיועד, באילו נסיבות הוא חל ומהם החריגים. ניסוח גורף כמו \"מתאים לכולם\" אינו סביר ברוב התחומים הרפואיים.\n\nאיזון ניכר בדרך שבה מוצגים תועלת, סיכון ואי־ודאות. מקור אמין אינו מסתפק בהבטחה שטיפול \"עובד\", אלא מתייחס לשאלות כגון:\n\n- מהו סוג התועלת שנמדד?\n- בהשוואה למה נבדק הטיפול?\n- אילו תופעות לוואי או סיכונים ידועים?\n- מי לא נכלל במחקר?\n- האם קיימות חלופות?\n- עד כמה המסקנה ודאית?\n\nחשוב במיוחד להבחין בין סיכון יחסי לסיכון מוחלט. לדוגמה, טענה שלפיה התערבות \"מפחיתה סיכון ב־50%\" אינה מספקת בלי לדעת מה היה הסיכון מלכתחילה. ירידה משני מקרים למקרה אחד היא הפחתה יחסית של 50%, אך ההפחתה המוחלטת היא מקרה אחד בלבד. הצגה של מספר יחסי ללא נתוני בסיס עלולה ליצור רושם מוגזם.\n\nכאשר אין ודאות, ניסוח אחראי יאמר זאת במפורש. ביטויים כמו \"ייתכן\", \"הראיות מוגבלות\" או \"נדרש מחקר נוסף\" אינם חולשה; לעיתים הם מעידים על דיוק מדעי.\n\n## 4. סימני אזהרה לתוכן רפואי מטעה\n\nאין מבחן יחיד שמזהה כל מידע שגוי, אך שילוב של כמה סימנים צריך להגביר חשד.\n\n**הבטחות מוחלטות:** ניסוחים כגון \"ריפוי מובטח\", \"ללא כל סיכון\", \"עובד אצל כולם\" או \"פתרון סופי\" אינם מתיישבים בדרך כלל עם המורכבות הרפואית.\n\n**הצגת עדויות אישיות כראיה:** חוויה של אדם יכולה להיות אמיתית מבחינתו, אך אינה מוכיחה שהמוצר גרם לשיפור. החלמה טבעית, טיפול נוסף, שינוי באורח החיים ואפקט פלצבו עשויים להשפיע על התוצאה.\n\n**יצירת אויב מדומיין:** טענות שלפיהן \"הרופאים מסתירים\", \"המדע לא רוצה שתדעו\" או \"כל הרשויות משקרות\" מנסות לעיתים להחליף ראיות בתחושת קונספירציה. ביקורת על מוסדות היא לגיטימית, אך היא צריכה להיתמך במסמכים ובנתונים הניתנים לבדיקה.\n\n**לחץ לפעול מיד:** ספירה לאחור, מלאי \"כמעט אחרון\" או איום שאי־רכישה מיידית תגרום נזק הם כלים שיווקיים, לא טיעונים רפואיים.\n\n**ערבוב בין מידע למכירה:** עצם קיומו של מימון מסחרי אינו מוכיח שהמידע שגוי, אך יש לדרוש גילוי ברור. כאשר האתר מציג בעיה רפואית ומיד מוכר את \"הפתרון היחיד\", הסיכון להטיה עולה.\n\n**שימוש במונחים מדעיים ללא משמעות ברורה:** מילים כמו \"ניקוי רעלים\", \"איזון\", \"חיזוק המערכת\" או \"הפעלה תאית\" דורשות הגדרה מדידה. יש לשאול איזה חומר, מדד או מנגנון נבדק ובאיזה מחקר.\n\n**המלצה להפסיק טיפול מוכר:** אין להפסיק תרופה, לשנות מינון או לדחות טיפול על בסיס תוכן מקוון בלבד. שינוי כזה עלול לגרום להחמרה, לתסמיני גמילה או לאינטראקציות בלתי צפויות.\n\n## 5. שיטת בדיקה מעשית לפני שמסתמכים על מידע\n\nאפשר לבצע הערכה ראשונית באמצעות תהליך קצר ומסודר.\n\n**ראשית, לנסח את הטענה במדויק.** במקום \"הטיפול טבעי ובריא\", יש לשאול: האם נטען שהוא מפחית תסמין, מרפא מחלה, מונע סיבוך או משנה תוצאת בדיקה? טענה מוגדרת קלה יותר לבדיקה.\n\n**שנית, לפתוח את ההפניות המקוריות.** אין להסתפק ברשימת מקורות מרשימה. יש לוודא שהקישור מוביל למסמך מלא, להנחיה מדויקת או למאמר באמצעות DOI או מאגר מוסדי, ולא לעמוד חדשות, לתקציר כנס או לדף שיווקי.\n\n**שלישית, להשוות למקור עצמאי.** אם הטענה נוגעת לתרופה, חיסון, בדיקה או טיפול, כדאי להשוות אותה להנחיה של רשות בריאות או גוף מקצועי רלוונטי. הסכמה בין כמה מקורות מוסדיים עצמאיים מחזקת את הביטחון, אף שאינה פוטרת מקריאה ביקורתית.\n\n**רביעית, לבדוק את תאריך העדכון ואת האוכלוסייה.** חשוב לוודא שהמידע מתייחס לאותה קבוצת גיל, אבחנה, דרגת חומרה ונסיבות רפואיות.\n\n**חמישית, לחפש את החלקים הפחות נוחים.** מקור איכותי יפרט מגבלות, תופעות לוואי ואי־ודאות. אם הטקסט כולל רק יתרונות, יש לבחון אם מטרתו בעיקר שכנוע.\n\n**שישית, להפריד בין עובדה לפרשנות.** תוצאה שנמדדה במחקר היא עובדה מדווחת במסגרת המחקר; הקביעה שזו האפשרות \"הטובה ביותר\" היא פרשנות המחייבת השוואה לחלופות, התייחסות לסיכונים ושקלול העדפות אישיות.\n\nבמצבים דחופים אין להשתמש בבדיקת מידע מקוונת במקום הערכה רפואית. כאב חזה חדש, קוצר נשימה משמעותי, סימנים אפשריים לשבץ, תגובה אלרגית קשה, דימום ניכר, אובדן הכרה או החמרה מהירה מחייבים פנייה לשירותי החירום המתאימים.\n\n## סיכום\n\nהערכת מידע רפואי ברשת היא תהליך של הצלבה, לא מבחן של רושם ראשוני. יש לזהות מי אחראי לתוכן, לבחון את הכשרתו ואת מטרת הפרסום, להגיע לראיות המקוריות, לבדוק עדכניות ולהעריך אם הסיכונים והמגבלות מוצגים לצד התועלת.\n\nמקור אמין בדרך כלל מאפשר לבדוק את טענותיו, מפריד בין עובדות לפרשנות, מכיר באי־ודאות ונמנע מהבטחות גורפות. לעומתו, תוכן שמסתמך על עדויות אישיות, מפעיל לחץ, מסתיר אינטרס מסחרי או ממליץ על שינוי טיפול ללא בסיס מתאים מחייב זהירות מיוחדת.\n\nהמידע במאמר זה הוא מידע רפואי כללי בלבד. הוא אינו מהווה אבחון, המלצה טיפולית או תחליף לבדיקה ולהתאמה מקצועית למצבו של אדם מסוים. לפני פרסום יש להעביר כל טענה רפואית לביקורת אנושית של רופא או איש מקצוע מוסמך בתחום הרלוונטי.\n\n> **על המחבר**  \n> ד״ר גיא רופא הוא יוצר תוכן רפואי ומחבר ספרים. בהתאם לסטטוס הנוכחי המאושר, הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. U.S. National Library of Medicine, MedlinePlus — [Evaluating Internet Health Information: A Tutorial from the National Library of Medicine](https://medlineplus.gov/webeval/webeval.html)  \n   https://medlineplus.gov/webeval/webeval.html\n\n2. World Health Organization — [Let’s flatten the infodemic curve](https://www.who.int/news-room/spotlight/let-s-flatten-the-infodemic-curve)  \n   https://www.who.int/news-room/spotlight/let-s-flatten-the-infodemic-curve\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "b8d3841fafea95dba7eb07f9de1e9e2eff10770d1161bd86c239326686bcdf94",
+        "slug": "guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+          "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-square.jpg",
+              "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא]( התשובה הקצרה: מידע רפואי ברשת ראוי לאמון כאשר ברור מי פרסם אותו, מי כתב ובדק אותו, על אילו ראיות הוא מבוסס, מתי עודכן, ומה מטרת הפרסום.\n\nאין להסתמך על סימן יחיד, כמו עיצוב מקצועי, תואר הכותב או מספר העוקבים.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-square.jpg",
+              "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא]( התשובה הקצרה: מידע רפואי ברשת ראוי לאמון כאשר ברור מי פרסם אותו, מי כתב ובדק אותו, על אילו ראיות הוא מבוסס, מתי עודכן, ומה מטרת הפרסום.\n\n• אין להסתמך על סימן יחיד, כמו עיצוב מקצועי, תואר הכותב או מספר העוקבים.\n• יש לבחון יחד את זהות הגוף המפרסם, איכות המקורות, מידת העדכניות, האיזון בניסוח וההתאמה למצב הרפואי האישי.\n• מבוא האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות, טיפולים ומניעה.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-square.jpg",
+              "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+        "html": "<h2>איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>מאת: [ד״ר גיא רופא]( התשובה הקצרה: מידע רפואי ברשת ראוי לאמון כאשר ברור מי פרסם אותו, מי כתב ובדק אותו, על אילו ראיות הוא מבוסס, מתי עודכן, ומה מטרת הפרסום.</p><p>אין להסתמך על סימן יחיד, כמו עיצוב מקצועי, תואר הכותב או מספר העוקבים.</p>",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+          "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-square.jpg",
+              "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "instagram_business",
+      "platform": "Instagram",
+      "asset": "configured Instagram professional account",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+        "text": "נקודה רפואית שכדאי להכיר:\n\nמאת: [ד״ר גיא רופא]( התשובה הקצרה: מידע רפואי ברשת ראוי לאמון כאשר ברור מי פרסם אותו, מי כתב ובדק אותו, על אילו ראיות הוא מבוסס, מתי עודכן, ומה מטרת הפרסום.\n\n1. אין להסתמך על סימן יחיד, כמו עיצוב מקצועי, תואר הכותב או מספר העוקבים.\n2. יש לבחון יחד את זהות הגוף המפרסם, איכות המקורות, מידת העדכניות, האיזון בניסוח וההתאמה למצב הרפואי האישי.\n3. מבוא האינטרנט מאפשר גישה מהירה למידע על תסמינים, בדיקות, תרופות, טיפולים ומניעה.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-square.jpg",
+          "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-square.jpg",
+              "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 1200,
+          "media_type": "image/jpeg",
+          "role": "square"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא.\n\nמאת: [ד״ר גיא רופא]( התשובה הקצרה: מידע רפואי ברשת ראוי לאמון כאשר ברור מי פרסם אותו, מי כתב ובדק אותו, על אילו ראיות הוא מבוסס, מתי עודכן, ומה מטרת הפרסום.\n\nאין להסתמך על סימן יחיד, כמו עיצוב מקצועי, תואר הכותב או מספר העוקבים.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+          "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-square.jpg",
+              "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-12-topic-07-run-31573715687-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": true,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "b8d3841fafea95dba7eb07f9de1e9e2eff10770d1161bd86c239326686bcdf94",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_e997cde484c028b7c652c52b61b8bacdc1819cb6ca4f92f7b603ff715540f5b6"
+}

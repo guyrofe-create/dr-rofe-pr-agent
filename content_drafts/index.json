@@ -1,6 +1,40 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-12-topic-07-run-31573715687-attempt-1.md",
+      "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+      "topic": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+      "excerpt": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא](https://guyrofe.com) התשובה הקצרה: מידע רפואי ברשת ראוי לאמון כאשר ברור מי פרסם אותו, מי כתב ובדק אותו, על אילו ",
+      "generated_at": "2026-08-12T07:23:03.466376+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "instagram",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-09",
+      "cadence_local_date": "2026-08-12",
+      "public_execution_allowed": false
+    },
+    {
+      "path": "content_drafts/2026-08-12-topic-90-run-31573715687-attempt-1.md",
+      "title": "לא רק מה שאמא אוכלת: מה באמת מצא המחקר על תזונת האב ומבנה הגוף של התינוק? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: לא רק מה שאמא אוכלת: מחקר מצא קשר בין תזונת האב למבנה הגוף של התינוק",
+      "excerpt": "לא רק מה שאמא אוכלת: מה באמת מצא המחקר על תזונת האב ומבנה הגוף של התינוק? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא](https://guyrofe.com) התשובה הקצרה: מחקר קטן מצא קשר סטטיסטי בין שיעור גבוה יותר של",
+      "generated_at": "2026-08-12T07:23:03.466376+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-09",
+      "cadence_local_date": "2026-08-12",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-3f33a77fbc265435.json",
+      "analyzed_news_url": "https://healthy.walla.co.il/item/3859636"
+    },
+    {
       "path": "content_drafts/2026-08-11-topic-90-run-31467572739-attempt-1.md",
       "title": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: מה קורה למי שמתעורר עם שבץ מוחי? מחקר חדש משנה את התמונה",
