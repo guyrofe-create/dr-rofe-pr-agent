@@ -208,6 +208,16 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7493228918792056832/",
         "https://guyrofe.blogspot.com/2026/08/blog-post_12.html"
       ]
+    },
+    "apr_3ba423a6794821edac5b003ddafd3d6e1de3c958ddbeca3d9a65342c01f51e3f:ff4724afac7a2d94f71b56b60ec76bebfd5030f51280848885140c5fffa736a8": {
+      "sent_at": "2026-08-12T10:15:12.871787+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_3ba423a6794821edac5b003ddafd3d6e1de3c958ddbeca3d9a65342c01f51e3f",
+      "state": "success",
+      "subject": "אישור פרסום: לא רק מה שאמא אוכלת: מה באמת מצא המחקר על תזונת האב ומבנה הגוף של התינוק? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-12-topic-90-run-31573715687-attempt-1/"
+      ]
     }
   }
 }

@@ -760,6 +760,20 @@
       "status": "reconciliation_required",
       "started_at": "2026-08-12T08:56:37Z",
       "updated_at": "2026-08-12T08:56:37Z"
+    },
+    "pub_a948d73a475a42d954ed7cbb310be42e9df4d5e8e765b5464cb8a9b6d495e880": {
+      "version": 7,
+      "idempotency_key": "pub_a948d73a475a42d954ed7cbb310be42e9df4d5e8e765b5464cb8a9b6d495e880",
+      "approval_id": "apr_3ba423a6794821edac5b003ddafd3d6e1de3c958ddbeca3d9a65342c01f51e3f",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "836e583e24881580401558ba0e31e235c5552a5009e41e010c6f175870767625",
+      "status": "published",
+      "started_at": "2026-08-12T10:15:05Z",
+      "published_at": "2026-08-12T10:15:11Z",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-12-topic-90-run-31573715687-attempt-1/",
+      "provider_receipt": null
     }
   }
 }
