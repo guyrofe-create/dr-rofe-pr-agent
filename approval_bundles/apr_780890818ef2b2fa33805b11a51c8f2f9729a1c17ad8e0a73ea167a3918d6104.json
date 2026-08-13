@@ -1,0 +1,435 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-13T07:28:19Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-13-topic-90-run-31677663608-attempt-1.md",
+  "source_draft_sha256": "6ae1473354a0354d6f3cb8b5cf365c907ae094acde15abfc290b381d7549106f",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/rj2tznqlzg",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.jacc.2026.05.050",
+      "type": "citation"
+    },
+    {
+      "url": "https://iris.who.int/bitstream/handle/10665/44583/9789241501491_eng.pdf?sequence=1",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/QS212/chapter/quality-statement-1-recording-bmi-and-waist-to-height-ratio-in-adults",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+    "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+    "alt_text": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:USMC-101005-M-3215R-001.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/USMC-101005-M-3215R-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−",
+    "license_name": "Public domain",
+    "license_url": "",
+    "attribution": "USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−; Public domain; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-hero.png",
+        "sha256": "f8f5916901f3f0984c26948d838eb3b4f73849a5421dfba7a6c573c33e37bc88",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+        "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-square.jpg",
+        "sha256": "e29c458574bd7fa37d3a4410c4728c44663d53ee41ed0e00a1d60fa509d0406b",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-portrait.png",
+        "sha256": "8b1542f596072537422539a8a8b8c28a1f59edd41ff558e8e9fb1b8456d3950a",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
+        "markdown": "# מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** המחקר אינו מבטל את מדד ה־BMI ואינו מוכיח שהוא חסר ערך. הוא מחזק מסר מוכר אך חשוב: BMI לבדו עלול להחמיץ השמנה בטנית וסיכון קרדיו־מטבולי, ולכן במקרים רבים נכון לשלב אותו עם מדדים כמו היקף מותניים או היחס בין היקף המותניים לגובה. מאחר שמדובר במחקר תצפיתי, הוא מצביע על קשרים סטטיסטיים אך אינו מוכיח שפיזור השומן הוא שגרם למחלות שנצפו.\n\nהכותרת “[מחקר ענק מטיל ספק במה שחשבנו על BMI](https://www.ynet.co.il/health/article/rj2tznqlzg)” מתייחסת למחקר רחב שפורסם בכתב העת *Journal of the American College of Cardiology*. לפי הדיווח, המחקר איחד נתונים מ־15 מחקרי עוקבה פרוספקטיביים, כלל 259,388 נשים וגברים ללא מחלת לב כלילית בתחילת המעקב, ובחן אותם לאורך חציון של כ־20 שנה.\n\nהנתונים אכן מעוררים עניין: אנשים שסווגו כבעלי משקל תקין או עודף משקל לפי BMI, אך היו בעלי מדדים גבוהים של שומן בטני, נמצאו בסיכון מוגבר לחלק גדול מהתוצאות הקרדיווסקולריות שנבדקו. עם זאת, כדי להבין את משמעות המחקר צריך להבחין בין כותרת תקשורתית, ממצאים סטטיסטיים והחלטה רפואית הנוגעת לאדם מסוים.\n\n## מה BMI מודד — ומה הוא אינו מסוגל למדוד?\n\nBMI, או מדד מסת הגוף, מחושב באמצעות חלוקת המשקל בקילוגרמים בריבוע הגובה במטרים. זהו כלי פשוט, זול ונוח המאפשר לסווג מבוגרים לקטגוריות מקובלות של תת־משקל, משקל תקין, עודף משקל והשמנה.\n\nיתרונו הגדול של BMI הוא גם מגבלתו: הוא מצמצם את מבנה הגוף למספר אחד. המדד אינו מבדיל בין מסת שומן למסת שריר, אינו מצביע על מיקום השומן ואינו מודד ישירות שומן ויסצרלי — שומן הנמצא בתוך חלל הבטן וסביב איברים פנימיים. שני אנשים בעלי BMI זהה עשויים להיות שונים מאוד בהרכב הגוף, בכושר הגופני, בפיזור השומן ובפרופיל המטבולי שלהם.\n\nלמשל, אדם בעל מסת שריר גבוהה עשוי לקבל ערך BMI המסווג אותו כבעל עודף משקל אף ששיעור השומן בגופו נמוך. בכיוון ההפוך, אדם עם BMI בטווח התקין עלול להיות בעל מסת שריר נמוכה והצטברות משמעותית של שומן באזור הבטן. גם גיל, מין, מוצא אתני ושינויים במסת השריר עשויים להשפיע על פירוש התוצאה.\n\nלכן BMI אינו בדיקה אבחנתית ואינו הערכת סיכון מלאה. הוא כלי סינון ראשוני שיש לפרש לצד מדדים קליניים נוספים. [הנחיות NICE לזיהוי ולהערכת עודף משקל, השמנה והשמנה מרכזית](https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity) ממליצות לשלב, במבוגרים מתאימים, BMI עם יחס מותניים לגובה כדי להעריך השמנה מרכזית וסיכון בריאותי הקשור למשקל.\n\n## מה בדק המחקר הגדול?\n\nהמחקר המקורי, הזמין באמצעות [ה־DOI של המאמר ב־JACC](https://doi.org/10.1016/j.jacc.2026.05.050), לא שאל רק אם BMI קשור למחלות לב וכלי דם. החוקרים התמקדו במצבים שבהם BMI ומדדי השומן הבטני אינם מספרים אותו סיפור.\n\nלפי הנתונים שדווחו, החוקרים בחנו שלושה מדדים עיקריים:\n\n- BMI;\n- היקף מותניים;\n- היחס בין היקף המותניים להיקף הירכיים.\n\nהמשתתפים חולקו לקבוצות לפי קטגוריית ה־BMI ולפי נוכחות או היעדר של השמנה בטנית. כך ניתן היה להשוות, לדוגמה, בין אנשים בעלי BMI תקין והיקף מותניים נמוך לבין אנשים בעלי BMI תקין אך היקף מותניים גבוה.\n\nבמחקר נבדקו תשעה תוצאים, ובהם אוטם שריר הלב, שבץ מוחי, אי־ספיקת לב, פרפור פרוזדורים, מחלת לב כלילית, תמותה קרדיווסקולרית ותמותה מכל סיבה. רוחב המדגם ומשך המעקב הם נקודות חוזק משמעותיות: מספר גדול של משתתפים ומעקב ממושך מאפשרים לזהות קשרים שאינם תמיד נראים במחקרים קטנים וקצרים.\n\nעוד נמצא כי חוסר ההתאמה בין המדדים לא היה נדיר. לפי הדיווח, בקרב אנשים שסווגו כבעלי משקל תקין על פי BMI היו משתתפים עם היקף מותניים או יחס מותניים לירכיים גבוהים. מנגד, גם בקרב מי שסווגו כבעלי השמנה לפי BMI נמצאו אנשים שמדדי השומן הבטני שלהם היו נמוכים יחסית.\n\nהמשמעות היא שקטגוריית ה־BMI אינה חופפת בהכרח למידת ההשמנה המרכזית — וזו למעשה השאלה המרכזית שהמחקר ביקש לבחון.\n\n## מה הנתונים באמת מראים?\n\nהממצא המרכזי היה שבקרב אנשים בעלי BMI תקין או עודף משקל, היקף מותניים גבוה או יחס מותניים לירכיים גבוה נקשרו לסיכון מוגבר למרבית התוצאות שנבדקו. בדיווח על המחקר תוארה עלייה יחסית בסיכון בטווח של כ־15% עד 50%, בהתאם למדד, לקבוצה ולתוצאה שנבחנו.\n\nזהו ממצא חשוב משום שהוא מדגים כיצד הסתמכות בלעדית על BMI עלולה ליצור תחושת ביטחון שגויה. אדם הנמצא בטווח המוגדר “משקל תקין” אינו בהכרח בעל סיכון קרדיו־מטבולי נמוך, במיוחד כאשר קיימים שומן בטני, לחץ דם גבוה, הפרעה ברמות הסוכר, שומנים בלתי תקינים בדם, עישון או היסטוריה משפחתית.\n\nבכיוון ההפוך, חלק מהמשתתפים שסווגו כבעלי השמנה לפי BMI אך היו בעלי היקף מותניים נמוך הציגו בחלק מהתוצאים סיכון דומה לזה של בעלי BMI והיקף מותניים נמוכים. אין לפרש ממצא זה כהוכחה לכך שהשמנה לפי BMI “אינה מסוכנת”. ייתכן שהוא משקף הבדלים בהרכב הגוף, במסת השריר, בכושר, בפיזור השומן או בגורמים שלא נמדדו במלואם.\n\nנמצאו גם הבדלים בין נשים לגברים בחלק מהניתוחים שהתבססו על יחס מותניים לירכיים. הבדלים כאלה מחייבים זהירות נוספת: מדד שעוזר להבחין בין רמות סיכון בקבוצה אחת אינו בהכרח פועל באותו אופן בכל מין, גיל או אוכלוסייה.\n\n**עובדה מחקרית:** נמצאו קשרים בין מדדי השמנה בטנית לבין תחלואה ותמותה.\n\n**ניתוח סביר:** שילוב מדדים עשוי לשפר את זיהוי הסיכון בהשוואה לשימוש ב־BMI בלבד.\n\n**מה שלא הוכח:** שהקטנת היקף המותניים כשלעצמה, ללא קשר לשינויים אחרים, היא הסיבה הישירה להפחתת אירועים קרדיווסקולריים.\n\n## מדוע שומן בטני עשוי להיות משמעותי?\n\nשומן באזור הבטן אינו רק עניין אסתטי. היקף מותניים מוגבר עשוי לשקף הצטברות של שומן ויסצרלי, הנמצא סביב איברים פנימיים. רקמת שומן זו פעילה מבחינה מטבולית וקשורה, בין השאר, לעמידות לאינסולין, הפרעה בפרופיל השומנים, תהליכים דלקתיים ועלייה בסיכון לסוכרת מסוג 2 ולמחלות לב וכלי דם.\n\nעם זאת, היקף מותניים אינו מדידה ישירה של השומן הוויסצרלי. הוא מדד עקיף ופשוט, המושפע גם ממבנה הגוף, מטכניקת המדידה ומשונות בין אוכלוסיות. בדיקות הדמיה מסוגלות להעריך שומן ויסצרלי בצורה ישירה יותר, אך אינן מתאימות ככלי סינון שגרתי לרוב האוכלוסייה בשל עלות, זמינות ולעיתים חשיפה לקרינה.\n\nמסיבה זו יש ערך מעשי ליחס מותניים לגובה. הוא מחושב על ידי חלוקת היקף המותניים בגובה, כאשר שני הנתונים נמדדים באותן יחידות. NICE ממליץ לעודד מבוגרים עם BMI נמוך מ־35 למדוד יחס זה, ובאופן כללי לשאוף לכך שהיקף המותניים יהיה קטן ממחצית הגובה. לפי ההנחיה, יחס של 0.5 עד 0.59 מצביע על השמנה מרכזית מוגברת ועל סיכון בריאותי מוגבר, ויחס של 0.6 ומעלה מצביע על רמה גבוהה יותר של השמנה מרכזית וסיכון.\n\nגם [המסמך הרשמי של ארגון הבריאות העולמי בנושא היקף מותניים ויחס מותניים לירכיים](https://iris.who.int/bitstream/handle/10665/44583/9789241501491_eng.pdf?sequence=1) מדגיש כי מדדי השמנה בטנית עשויים להוסיף מידע להערכת הסיכון מעבר ל־BMI, תוך התחשבות בהבדלים בין אוכלוסיות ובמגבלות של ערכי סף אחידים.\n\n## המגבלות: קשר אינו סיבתיות\n\nלמרות היקפו המרשים, זהו מחקר תצפיתי. החוקרים לא הקצו אנשים באופן אקראי לקבוצות שונות של פיזור שומן, אלא ניתחו מאפיינים ותוצאות לאורך זמן. לכן המחקר יכול להראות שאנשים עם השמנה בטנית חוו יותר אירועים רפואיים, אך אינו יכול להוכיח שההשמנה הבטנית לבדה גרמה להם.\n\nייתכן שחלק מהקשר מוסבר על ידי גורמים נלווים, כגון תזונה, פעילות גופנית, עישון, איכות השינה, מצב חברתי־כלכלי, מסת שריר, תרופות או נטייה גנטית. לפי הדיווח, לא היה בידי החוקרים מידע מלא על פעילות גופנית, תזונה והנטייה הגנטית להשמנה.\n\nמגבלה נוספת היא שמדדי היקף המותניים ויחס המותניים לירכיים נמדדו פעם אחת בלבד. לאורך מעקב של כשני עשורים משקל הגוף, מסת השריר ופיזור השומן עשויים להשתנות במידה ניכרת. מדידה יחידה בתחילת הדרך אינה מתארת בהכרח את החשיפה לאורך כל תקופת המעקב.\n\nגם הצגת עלייה יחסית בסיכון דורשת זהירות. עלייה של 50% בסיכון יחסי עשויה להישמע דרמטית, אך משמעותה המעשית תלויה בסיכון הבסיסי ובמספר האירועים המוחלט. בלי לבחון את שיעורי האירועים המוחלטים, רווחי הסמך וההתאמות הסטטיסטיות בכל ניתוח, אין להסיק מסקנה אישית מהכותרת בלבד.\n\n## המשמעות המעשית: לא לזרוק את ה־BMI, אלא להרחיב את התמונה\n\nהמסקנה המעשית אינה שיש לבחור בין BMI לבין היקף מותניים. שני המדדים מתארים היבטים שונים של הגוף, ושילובם עשוי לספק תמונה שימושית יותר.\n\nBMI נשאר כלי נגיש להערכת משקל ביחס לגובה ולמעקב אחר שינויים לאורך זמן. מדידת מותניים או יחס מותניים לגובה יכולה להוסיף מידע על השמנה מרכזית, בעיקר כאשר BMI נמוך מ־35 או כאשר קיים פער אפשרי בין המשקל להרכב הגוף.\n\nהערכת סיכון רפואית אינה מסתיימת במדידות אלה. יש להתייחס גם ללחץ הדם, רמות גלוקוז או HbA1c, פרופיל השומנים, עישון, פעילות גופנית, גיל, היסטוריה משפחתית ומחלות רקע. אצל מבוגרים יותר חשוב לשקול גם אובדן מסת שריר, ואצל אנשים שריריים במיוחד יש לפרש BMI בזהירות.\n\n## סיכום\n\nהמחקר הגדול אינו מפריך את BMI, אלא מחדד את גבולותיו. BMI הוא מדד אוכלוסייתי שימושי וכלי סינון ראשוני, אך הוא אינו מודד את הרכב הגוף או את פיזור השומן. המחקר מצא כי מדדי השמנה בטנית עשויים לזהות סיכון קרדיווסקולרי מוגבר גם אצל אנשים שה־BMI שלהם תקין או נמצא בטווח של עודף משקל.\n\nהמסר המדויק פחות דרמטי מהכותרת, אך חשוב יותר: אין מספר יחיד שמסכם את בריאותו של אדם. שילוב BMI עם היקף מותניים או יחס מותניים לגובה, יחד עם גורמי סיכון קליניים ומטבוליים, עשוי לאפשר הערכה רחבה ומדויקת יותר. עם זאת, המחקר תצפיתי, אינו מוכיח סיבתיות ואינו מאפשר להסיק ממנו לבדו מסקנות טיפוליות אישיות.\n\n> **הבהרה רפואית:** תוכן זה נועד למידע כללי בלבד, אינו מהווה אבחון או המלצה רפואית אישית, ומחייב ביקורת של רופא מוסמך לפני פרסום או שימוש רפואי.\n\n> **על המחבר**  \n> [ד״ר גיא רופא](https://guyrofe.com/) הוא יוצר תוכן רפואי ומחבר ספרים. ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n## מקורות\n\n1. [המחקר המקורי ב־Journal of the American College of Cardiology — DOI: 10.1016/j.jacc.2026.05.050](https://doi.org/10.1016/j.jacc.2026.05.050)\n2. [NICE: זיהוי והערכת עודף משקל, השמנה והשמנה מרכזית](https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity)\n3. [NICE: תקן איכות לתיעוד BMI ויחס מותניים לגובה במבוגרים](https://www.nice.org.uk/guidance/QS212/chapter/quality-statement-1-recording-bmi-and-waist-to-height-ratio-in-adults)\n4. [ארגון הבריאות העולמי: היקף מותניים ויחס מותניים לירכיים — דוח התייעצות מקצועית](https://iris.who.int/bitstream/handle/10665/44583/9789241501491_eng.pdf?sequence=1)\n5. [כתבת החדשות הנבדקת ב־ynet: “מחקר ענק מטיל ספק במה שחשבנו על BMI”](https://www.ynet.co.il/health/article/rj2tznqlzg)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1/",
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "ef3e3ca40a21e7c3785844f3e88d7578e350cd854f67c58d525661d273a7cec5",
+        "slug": "guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-hero.png",
+          "sha256": "f8f5916901f3f0984c26948d838eb3b4f73849a5421dfba7a6c573c33e37bc88",
+          "alt_text": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:USMC-101005-M-3215R-001.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/USMC-101005-M-3215R-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−",
+          "license_name": "Public domain",
+          "license_url": "",
+          "attribution": "USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−; Public domain; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-hero.png",
+              "sha256": "f8f5916901f3f0984c26948d838eb3b4f73849a5421dfba7a6c573c33e37bc88",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+              "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-square.jpg",
+              "sha256": "e29c458574bd7fa37d3a4410c4728c44663d53ee41ed0e00a1d60fa509d0406b",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-portrait.png",
+              "sha256": "8b1542f596072537422539a8a8b8c28a1f59edd41ff558e8e9fb1b8456d3950a",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: המחקר אינו מבטל את מדד ה־BMI ואינו מוכיח שהוא חסר ערך.\n\nהוא מחזק מסר מוכר אך חשוב: BMI לבדו עלול להחמיץ השמנה בטנית וסיכון קרדיו־מטבולי, ולכן במקרים רבים נכון לשלב אותו עם מדדים כמו היקף מותניים או היחס בין היקף המותניים לגובה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−; Public domain; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+          "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+          "alt_text": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:USMC-101005-M-3215R-001.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/USMC-101005-M-3215R-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−",
+          "license_name": "Public domain",
+          "license_url": "",
+          "attribution": "USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−; Public domain; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-hero.png",
+              "sha256": "f8f5916901f3f0984c26948d838eb3b4f73849a5421dfba7a6c573c33e37bc88",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+              "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-square.jpg",
+              "sha256": "e29c458574bd7fa37d3a4410c4728c44663d53ee41ed0e00a1d60fa509d0406b",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-portrait.png",
+              "sha256": "8b1542f596072537422539a8a8b8c28a1f59edd41ff558e8e9fb1b8456d3950a",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: המחקר אינו מבטל את מדד ה־BMI ואינו מוכיח שהוא חסר ערך.\n\n• הוא מחזק מסר מוכר אך חשוב: BMI לבדו עלול להחמיץ השמנה בטנית וסיכון קרדיו־מטבולי, ולכן במקרים רבים נכון לשלב אותו עם מדדים כמו היקף מותניים או היחס בין היקף המותניים לגובה.\n• מאחר שמדובר במחקר תצפיתי, הוא מצביע על קשרים סטטיסטיים אך אינו מוכיח שפיזור השומן הוא שגרם למחלות שנצפו.\n• הכותרת “[מחקר ענק מטיל ספק במה שחשבנו על BMI]( מתייחסת למחקר רחב שפורסם בכתב העת Journal of the American College of Cardiology.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−; Public domain; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+          "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+          "alt_text": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:USMC-101005-M-3215R-001.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/USMC-101005-M-3215R-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−",
+          "license_name": "Public domain",
+          "license_url": "",
+          "attribution": "USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−; Public domain; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-hero.png",
+              "sha256": "f8f5916901f3f0984c26948d838eb3b4f73849a5421dfba7a6c573c33e37bc88",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+              "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-square.jpg",
+              "sha256": "e29c458574bd7fa37d3a4410c4728c44663d53ee41ed0e00a1d60fa509d0406b",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-portrait.png",
+              "sha256": "8b1542f596072537422539a8a8b8c28a1f59edd41ff558e8e9fb1b8456d3950a",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
+        "description": "התשובה הקצרה: המחקר אינו מבטל את מדד ה־BMI ואינו מוכיח שהוא חסר ערך. הוא מחזק מסר מוכר אך חשוב: BMI לבדו עלול להחמיץ השמנה בטנית וסיכון קרדיו־מטבולי, ולכן במקרים רבים נכון לשלב אותו עם מדדים כמו היקף מותניים או היחס בין היקף המותניים לגובה. מאת ד״ר גיא רופא\n\nקרדיט תמונה: USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is stil",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-portrait.png",
+          "sha256": "8b1542f596072537422539a8a8b8c28a1f59edd41ff558e8e9fb1b8456d3950a",
+          "alt_text": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:USMC-101005-M-3215R-001.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/USMC-101005-M-3215R-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−",
+          "license_name": "Public domain",
+          "license_url": "",
+          "attribution": "USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−; Public domain; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-hero.png",
+              "sha256": "f8f5916901f3f0984c26948d838eb3b4f73849a5421dfba7a6c573c33e37bc88",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+              "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-square.jpg",
+              "sha256": "e29c458574bd7fa37d3a4410c4728c44663d53ee41ed0e00a1d60fa509d0406b",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-portrait.png",
+              "sha256": "8b1542f596072537422539a8a8b8c28a1f59edd41ff558e8e9fb1b8456d3950a",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "media_type": "image/png",
+          "role": "portrait"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא.\n\nהתשובה הקצרה: המחקר אינו מבטל את מדד ה־BMI ואינו מוכיח שהוא חסר ערך.\n\nהוא מחזק מסר מוכר אך חשוב: BMI לבדו עלול להחמיץ השמנה בטנית וסיכון קרדיו־מטבולי, ולכן במקרים רבים נכון לשלב אותו עם מדדים כמו היקף מותניים או היחס בין היקף המותניים לגובה.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+          "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+          "alt_text": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה מסייעת לגבר שרירי לאחוז במכשיר מדידה ידני.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:USMC-101005-M-3215R-001.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/USMC-101005-M-3215R-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−",
+          "license_name": "Public domain",
+          "license_url": "",
+          "attribution": "USMC-101005-M-3215R-001.jpg — This image was released by the United States Marine Corps with the ID 101005-M-3215R-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−; Public domain; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-hero.png",
+              "sha256": "f8f5916901f3f0984c26948d838eb3b4f73849a5421dfba7a6c573c33e37bc88",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-landscape.png",
+              "sha256": "dbf7d93d217ce950f73697ef8bc4dc2d905ee94e79904e8255be2680e345fb24",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-square.jpg",
+              "sha256": "e29c458574bd7fa37d3a4410c4728c44663d53ee41ed0e00a1d60fa509d0406b",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-13-topic-90-run-31677663608-attempt-1-portrait.png",
+              "sha256": "8b1542f596072537422539a8a8b8c28a1f59edd41ff558e8e9fb1b8456d3950a",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "ef3e3ca40a21e7c3785844f3e88d7578e350cd854f67c58d525661d273a7cec5",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_780890818ef2b2fa33805b11a51c8f2f9729a1c17ad8e0a73ea167a3918d6104"
+}
