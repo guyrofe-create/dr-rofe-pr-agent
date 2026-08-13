@@ -1,0 +1,100 @@
+{
+  "draft": "content_drafts/2026-08-13-topic-90-run-31677663608-attempt-1.md",
+  "title": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-08-13T07:50:34.977174+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1/",
+      "detail": "idempotency_key=pub_45e1735c6f8de927add468d96c1e6228ac1e27b6a6428b0178a3a69269050e13"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122199143306942441",
+      "detail": "idempotency_key=pub_fcf490f6b3da53d250b0d60cc1f8b5a1b8bf0c95cf07f927e690f64db5b5f321"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7493574708882395138/",
+      "detail": "idempotency_key=pub_9e66491b0aa7bb6ac13575e72b16fb6a24e97ef499a86943779e4bfc1024f557"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Instagram",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_configured"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "failed",
+      "target_id": "google_business_profile",
+      "detail": "HTTPError: 429 Client Error: Too Many Requests for url: https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_780890818ef2b2fa33805b11a51c8f2f9729a1c17ad8e0a73ea167a3918d6104",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
