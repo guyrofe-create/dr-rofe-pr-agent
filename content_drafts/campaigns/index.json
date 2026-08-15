@@ -4,7 +4,7 @@
       "draft": "content_drafts/2026-08-13-topic-90-run-31677663608-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
       "status": "completed_with_errors",
-      "published_at": "2026-08-15T07:29:53.970401+00:00",
+      "published_at": "2026-08-15T07:32:09.915216+00:00",
       "destinations": [
         {
           "name": "drguyrofe.co.il",
@@ -79,7 +79,7 @@
           "name": "Google Business Profile",
           "status": "failed",
           "target_id": "google_business_profile",
-          "detail": "RuntimeError: Multiple Google Business locations are accessible; configure exact GOOGLE_BUSINESS_ACCOUNT_ID and GOOGLE_BUSINESS_LOCATION_ID. Found: accounts/110345401117888665629/locations/14660388169330285243, accounts/110345401117888665629/locations/14140768355740435987"
+          "detail": "HTTPError: 403 Client Error: Forbidden for url: https://mybusiness.googleapis.com/v4/accounts/110345401117888665629/locations/14140768355740435987/localPosts?pageSize=100"
         },
         {
           "name": "Medium",
