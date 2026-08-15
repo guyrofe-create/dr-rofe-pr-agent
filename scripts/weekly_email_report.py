@@ -164,6 +164,47 @@ def _number(value):
     return f"{int(value):,}"
 
 
+def _rank_position_label(item):
+    position = item.get("current_position")
+    if position:
+        return str(position)
+    depth = item.get("current_result_depth")
+    return f"מעל {depth}" if depth else "לא נמדד"
+
+
+def _previous_rank_position_label(item):
+    position = item.get("previous_position")
+    if position:
+        return str(position)
+    depth = item.get("previous_result_depth")
+    return f"מעל {depth}" if depth else "מדידת בסיס"
+
+
+def _rank_page_label(item):
+    page = item.get("current_result_page")
+    if page:
+        return str(page)
+    depth = item.get("current_result_depth")
+    return f"מעל {max(1, (int(depth) + 9) // 10)}" if depth else "לא נמדד"
+
+
+def _rank_change_label(item):
+    labels = {
+        "baseline": "מדידת בסיס",
+        "improved": "עלה",
+        "declined": "ירד",
+        "unchanged": "ללא שינוי",
+        "entered_measured_results": "נכנס לטווח המדידה",
+        "left_measured_results": "יצא מטווח המדידה",
+        "unchanged_not_found": "עדיין מעבר לטווח המדידה",
+    }
+    label = labels.get(item.get("change"), item.get("change") or "לא ידוע")
+    delta = item.get("delta")
+    if delta:
+        return f"{label} {abs(int(delta))} מקומות"
+    return label
+
+
 def render_html(report):
     start = report["start"].date().isoformat()
     end = (report["end"] - timedelta(seconds=1)).date().isoformat()
@@ -200,12 +241,13 @@ def render_html(report):
         "<tr>"
         f"<td>{html.escape(item.get('platform') or item.get('asset_id') or 'נכס')}</td>"
         f"<td><a href=\"{html.escape(item.get('url') or '', quote=True)}\">{html.escape(item.get('url') or '')}</a></td>"
-        f"<td>{item.get('current_result_page') or 'לא נמצא'}</td>"
-        f"<td>{item.get('current_position') or 'לא נמצא'}</td>"
-        f"<td>{html.escape(item.get('change') or 'לא ידוע')}</td>"
+        f"<td>{html.escape(_rank_page_label(item))}</td>"
+        f"<td>{html.escape(_previous_rank_position_label(item))}</td>"
+        f"<td>{html.escape(_rank_position_label(item))}</td>"
+        f"<td>{html.escape(_rank_change_label(item))}</td>"
         "</tr>"
         for item in rank.get("assets", [])
-    ) or '<tr><td colspan="5">אין מדידת Google מלאה ועדכנית.</td></tr>'
+    ) or '<tr><td colspan="6">אין מדידת Google מלאה ועדכנית.</td></tr>'
     coverage_note = (
         "<p><strong>הערת כיסוי:</strong> העלות מבוססת על אירועי שימוש "
         "שנרשמו בפועל. קריאות שקדמו להפעלת המונה אינן נכללות.</p>"
@@ -252,7 +294,7 @@ def render_html(report):
 <h2>מיקום כל נכס ב-Google</h2>
 <p>מועד מדידה: {html.escape(rank.get('current_observed_at') or 'לא נמדד')}</p>
 <table style="border-collapse:collapse;width:100%" border="1" cellpadding="7">
-<thead><tr><th>נכס</th><th>כתובת</th><th>עמוד</th><th>מיקום מוחלט</th><th>שינוי</th></tr></thead>
+<thead><tr><th>נכס</th><th>כתובת</th><th>עמוד</th><th>מיקום קודם</th><th>מיקום נוכחי</th><th>שינוי</th></tr></thead>
 <tbody>{rank_rows}</tbody>
 </table>
 <p style="color:#667085">הדוח כולל רק פרסום שקיבל קבלה וקישור במערכת.</p>
@@ -297,9 +339,10 @@ def render_text(report):
     for item in rank.get("assets", []):
         lines.append(
             f"- {item.get('platform') or item.get('asset_id')}: "
-            f"עמוד {item.get('current_result_page') or 'לא נמצא'}, "
-            f"מיקום {item.get('current_position') or 'לא נמצא'}, "
-            f"שינוי {item.get('change') or 'לא ידוע'} — {item.get('url') or ''}"
+            f"עמוד {_rank_page_label(item)}, "
+            f"מיקום קודם {_previous_rank_position_label(item)}, "
+            f"מיקום נוכחי {_rank_position_label(item)}, "
+            f"שינוי {_rank_change_label(item)} — {item.get('url') or ''}"
         )
     if not rank.get("assets"):
         lines.append("- אין מדידת Google מלאה ועדכנית.")

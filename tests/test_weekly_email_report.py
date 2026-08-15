@@ -86,8 +86,44 @@ class WeeklyEmailReportTests(unittest.TestCase):
         self.assertEqual(report["ai"]["estimated_cost_usd"], 0.03)
         self.assertIn("https://linkedin.example/post", render_html(report))
         self.assertIn("Pinterest", render_text(report))
-        self.assertIn("מיקום 23", render_text(report))
-        self.assertIn("עמוד</th><th>מיקום מוחלט", render_html(report))
+        self.assertIn("מיקום נוכחי 23", render_text(report))
+        self.assertIn("מיקום קודם</th><th>מיקום נוכחי", render_html(report))
+
+    def test_rank_report_shows_absolute_movement_and_measured_boundary(self):
+        report = {
+            "start": datetime(2026, 8, 8, tzinfo=timezone.utc),
+            "end": datetime(2026, 8, 15, tzinfo=timezone.utc),
+            "drafts": [], "bundles": [], "campaigns": [],
+            "publications": [], "failures": [],
+            "ai": {
+                "events": 0, "input_tokens": 0, "cached_input_tokens": 0,
+                "cache_write_tokens": 0, "output_tokens": 0,
+                "web_search_calls": 0, "estimated_cost_usd": 0,
+                "unknown_cost_events": 0, "operations": {}, "models": {},
+            },
+            "asset_rank": {
+                "current_observed_at": "2026-08-15T06:00:00Z",
+                "assets": [
+                    {
+                        "platform": "LinkedIn", "url": "https://linkedin.example/profile",
+                        "previous_position": 47, "previous_result_depth": 1000,
+                        "current_position": 32, "current_result_page": 4,
+                        "current_result_depth": 1000, "change": "improved", "delta": 15,
+                    },
+                    {
+                        "platform": "Podcast", "url": "https://podcast.example/show",
+                        "previous_position": None, "previous_result_depth": 1000,
+                        "current_position": None, "current_result_page": None,
+                        "current_result_depth": 1000, "change": "unchanged_not_found",
+                        "delta": None,
+                    },
+                ],
+            },
+        }
+        text = render_text(report)
+        self.assertIn("מיקום קודם 47, מיקום נוכחי 32, שינוי עלה 15 מקומות", text)
+        self.assertIn("מיקום נוכחי מעל 1000", text)
+        self.assertNotIn("מיקום נוכחי לא נמצא", text)
 
 
 if __name__ == "__main__":
