@@ -842,6 +842,13 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         language_code=payload.get("language_code", "he"),
                         access_token=google_token,
                     ),
+                    reconciler=lambda payload, key: google_business.reconcile(
+                        payload["summary"],
+                        payload["link"],
+                        google_image_url,
+                        language_code=payload.get("language_code", "he"),
+                        access_token=google_token,
+                    ),
                 )
             )
         else:

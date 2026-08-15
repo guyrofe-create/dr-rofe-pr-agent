@@ -95,6 +95,52 @@ class GoogleBusinessPublisherTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "Multiple"):
                 google_business.resolve_location("token")
 
+    @patch("scripts.social_publishers.google_business._existing_post")
+    @patch("scripts.social_publishers.google_business.resolve_location")
+    def test_reconcile_returns_none_when_exact_post_is_absent(
+        self, resolve_location, existing_post
+    ):
+        resolve_location.return_value = (
+            "accounts/12",
+            "accounts/12/locations/34",
+            {"locationName": "ד״ר גיא רופא"},
+        )
+        existing_post.return_value = None
+
+        result = google_business.reconcile(
+            "ד״ר גיא רופא: מידע רפואי כללי.",
+            "https://guyrofe.com/topic/",
+            "https://guyrofe.com/media/topic.jpg",
+            access_token="token",
+        )
+
+        self.assertIsNone(result)
+
+    @patch("scripts.social_publishers.google_business._existing_post")
+    @patch("scripts.social_publishers.google_business.resolve_location")
+    def test_reconcile_returns_receipt_for_exact_existing_post(
+        self, resolve_location, existing_post
+    ):
+        resolve_location.return_value = (
+            "accounts/12",
+            "accounts/12/locations/34",
+            {"locationName": "ד״ר גיא רופא"},
+        )
+        existing_post.return_value = {
+            "name": "accounts/12/locations/34/localPosts/78",
+            "state": "LIVE",
+            "searchUrl": "https://posts.gle/example",
+        }
+
+        result = google_business.reconcile(
+            "ד״ר גיא רופא: מידע רפואי כללי.",
+            "https://guyrofe.com/topic/",
+            "https://guyrofe.com/media/topic.jpg",
+            access_token="token",
+        )
+
+        self.assertEqual(result["url"], "https://posts.gle/example")
+
     @patch("scripts.social_publishers.google_business.time.sleep")
     @patch("scripts.social_publishers.google_business.requests.get")
     @patch("scripts.social_publishers.google_business.requests.post")

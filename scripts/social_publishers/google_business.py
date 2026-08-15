@@ -274,6 +274,29 @@ def publish(
     return _receipt(post, account=account, location=location)
 
 
+def reconcile(
+    summary: str,
+    link: str,
+    image_url: str,
+    *,
+    language_code: str = "he",
+    access_token: str | None = None,
+) -> dict | None:
+    """Return the matching live post, or prove that the approved post is absent."""
+    token = access_token or _access_token()
+    account, location, _metadata = resolve_location(token)
+    payload = _post_payload(
+        summary,
+        link,
+        image_url,
+        language_code=language_code,
+    )
+    existing = _existing_post(token, location, payload)
+    if existing is None:
+        return None
+    return _receipt(existing, account=account, location=location)
+
+
 def check_connection() -> dict:
     token = _access_token()
     account, location, metadata = resolve_location(token)
