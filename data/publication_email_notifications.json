@@ -254,6 +254,18 @@
         "https://www.facebook.com/122199143306942441",
         "https://www.linkedin.com/feed/update/urn:li:share:7493574708882395138/"
       ]
+    },
+    "apr_780890818ef2b2fa33805b11a51c8f2f9729a1c17ad8e0a73ea167a3918d6104:717eac19f7d0a0849ffba5b7630b34560d782fe9ff807afa2d28089417c48971": {
+      "sent_at": "2026-08-15T07:26:31.055968+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_780890818ef2b2fa33805b11a51c8f2f9729a1c17ad8e0a73ea167a3918d6104",
+      "state": "partial",
+      "subject": "הפרסום הושלם עם תקלות: מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1/",
+        "https://www.facebook.com/122199143306942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7493574708882395138/"
+      ]
     }
   }
 }

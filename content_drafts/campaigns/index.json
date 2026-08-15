@@ -4,7 +4,7 @@
       "draft": "content_drafts/2026-08-13-topic-90-run-31677663608-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
       "status": "completed_with_errors",
-      "published_at": "2026-08-15T07:23:06.175696+00:00",
+      "published_at": "2026-08-15T07:26:29.334400+00:00",
       "destinations": [
         {
           "name": "drguyrofe.co.il",
@@ -79,7 +79,7 @@
           "name": "Google Business Profile",
           "status": "failed",
           "target_id": "google_business_profile",
-          "detail": "HTTPError: 404 Client Error: Not Found for url: https://mybusiness.googleapis.com/v4/accounts/110345401117888665629/locations?pageSize=100"
+          "detail": "HTTPError: 403 Client Error: Forbidden for url: https://mybusinessbusinessinformation.googleapis.com/v1/accounts/110345401117888665629/locations?pageSize=100&readMask=name%2Ctitle%2CstoreCode"
         },
         {
           "name": "Medium",
