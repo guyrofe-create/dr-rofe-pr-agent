@@ -7,6 +7,25 @@ from scripts.reputation_core.platform_content import build_platform_variants
 
 
 class GoogleBusinessPublisherTests(unittest.TestCase):
+    @patch("scripts.social_publishers.google_business.requests.get")
+    def test_locations_use_business_information_api(self, get):
+        response = Mock()
+        response.json.return_value = {"locations": []}
+        response.raise_for_status.return_value = None
+        get.return_value = response
+
+        google_business.list_locations("token", "accounts/12")
+
+        self.assertEqual(
+            get.call_args.args[0],
+            "https://mybusinessbusinessinformation.googleapis.com/v1/"
+            "accounts/12/locations",
+        )
+        self.assertEqual(
+            get.call_args.kwargs["params"]["readMask"],
+            "name,title,storeCode",
+        )
+
     def test_variant_places_current_status_as_plain_final_sentence(self):
         variant = build_platform_variants(
             "אנדומטריוזיס ופוריות",

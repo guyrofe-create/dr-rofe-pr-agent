@@ -23,6 +23,9 @@ from . import common, google_oauth
 
 
 ACCOUNTS_URL = "https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
+BUSINESS_INFORMATION_V1 = (
+    "https://mybusinessbusinessinformation.googleapis.com/v1"
+)
 MY_BUSINESS_V4 = "https://mybusiness.googleapis.com/v4"
 MAX_SUMMARY_LENGTH = 700
 APPROVED_CONTENT_HOSTS = frozenset(
@@ -92,9 +95,9 @@ def list_accounts(token: str) -> list[dict]:
 
 def list_locations(token: str, account_name: str) -> list[dict]:
     response = requests.get(
-        f"{MY_BUSINESS_V4}/{account_name}/locations",
+        f"{BUSINESS_INFORMATION_V1}/{account_name}/locations",
         headers=_headers(token),
-        params={"pageSize": 100},
+        params={"pageSize": 100, "readMask": "name,title,storeCode"},
         timeout=30,
     )
     response.raise_for_status()
