@@ -275,6 +275,27 @@ class MonitorGeoTests(unittest.TestCase):
                 cached,
             )
 
+    def test_serp_pagination_normalizes_absolute_positions(self):
+        self.assertEqual(
+            monitor_run._absolute_organic_results(
+                [{"position": 1, "link": "https://example.com/deep"}],
+                100,
+            )[0]["position"],
+            101,
+        )
+        self.assertEqual(
+            monitor_run._next_serp_start(
+                {
+                    "serpapi_pagination": {
+                        "next": "https://serpapi.com/search.json?q=brand&start=200",
+                    },
+                },
+                100,
+                100,
+            ),
+            200,
+        )
+
     def test_failed_serp_snapshot_remains_retryable(self):
         with patch.object(
             monitor_run,

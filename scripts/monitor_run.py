@@ -7,7 +7,7 @@ import requests
 import re
 from datetime import datetime, date, timedelta
 from openai import OpenAI
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 sys.path.insert(0, os.path.dirname(__file__))
 from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest
@@ -466,6 +466,33 @@ def rank_measurement_succeeded() -> bool:
     )
 
 
+def _next_serp_start(data, current_start, organic_count):
+    """Return the provider's next result offset without risking a loop."""
+    next_url = (data.get("serpapi_pagination") or {}).get("next")
+    if not next_url:
+        return None
+    try:
+        values = parse_qs(urlparse(next_url).query).get("start", [])
+        next_start = int(values[0]) if values else current_start + organic_count
+    except (TypeError, ValueError):
+        next_start = current_start + organic_count
+    return next_start if next_start > current_start else None
+
+
+def _absolute_organic_results(organic, start):
+    """Normalize page-relative provider positions to absolute Google positions."""
+    rows = []
+    for index, item in enumerate(organic, start=1):
+        raw_position = int(item.get("position") or index)
+        absolute_position = (
+            raw_position
+            if start == 0 or raw_position > start
+            else start + raw_position
+        )
+        rows.append({**item, "position": absolute_position})
+    return rows
+
+
 def ai_measurement_succeeded() -> bool:
     measured = [
         item for item in REPORT.get("geo", [])
@@ -481,7 +508,11 @@ def check_google_rank(today=None):
         return
     today = today or date.today().isoformat()
     plan = serp_run_plan(today)
-    result_depth = max(10, min(int(free_serpapi_policy().get("results_per_query", 100)), 100))
+    request_depth = max(10, min(int(free_serpapi_policy().get("results_per_query", 100)), 100))
+    maximum_rank_position = max(
+        request_depth,
+        int(free_serpapi_policy().get("maximum_rank_position", request_depth)),
+    )
     queries = plan["queries"]
     devices = plan["devices"]
     engines = plan["engines"]
@@ -509,34 +540,81 @@ def check_google_rank(today=None):
             })
             return
         try:
-            params = {
-                "engine": engine, "q": kw, "num": result_depth,
-                "device": device, "api_key": api_key,
-            }
-            if engine == "google":
-                params.update({
-                    "google_domain": GOOGLE_DOMAIN,
-                    "gl": MARKET_COUNTRY.lower(),
-                    "hl": GOOGLE_LANGUAGE,
-                })
+            organic = []
+            first_page_data = {}
+            start = 0
+            search_exhausted = False
+            while start < maximum_rank_position:
+                if not serp_budget_available(today):
+                    REPORT["rank"].append({
+                        "engine": engine,
+                        "keyword": kw,
+                        "device": device,
+                        "status": "budget_limited",
+                        "detail": "Configured monthly SerpApi safety budget reached during pagination",
+                        "result_depth": max((r["position"] for r in organic), default=0),
+                        "requests_used": serp_requests_used(today),
+                        "monthly_budget": serp_monthly_budget(),
+                    })
+                    return
+                params = {
+                    "engine": engine, "q": kw, "num": request_depth,
+                    "device": device, "api_key": api_key,
+                }
+                if start:
+                    params["start"] = start
+                if engine == "google":
+                    params.update({
+                        "google_domain": GOOGLE_DOMAIN,
+                        "gl": MARKET_COUNTRY.lower(),
+                        "hl": GOOGLE_LANGUAGE,
+                    })
+                else:
+                    params["cc"] = MARKET_COUNTRY.lower()
+                resp = requests.get(
+                    "https://serpapi.com/search.json",
+                    params=params,
+                    timeout=20,
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                if "error" in data:
+                    REPORT["rank"].append({
+                        "engine": engine, "keyword": kw, "device": device,
+                        "status": "error",
+                        "detail": data["error"],
+                    })
+                    break
+                record_serp_request(today)
+                if not first_page_data:
+                    first_page_data = data
+                page_organic = _absolute_organic_results(
+                    data.get("organic_results", []),
+                    start,
+                )
+                organic.extend(
+                    item for item in page_organic
+                    if item["position"] <= maximum_rank_position
+                )
+                next_start = _next_serp_start(data, start, len(page_organic))
+                if next_start is None or not page_organic:
+                    search_exhausted = True
+                    break
+                start = next_start
             else:
-                params["cc"] = MARKET_COUNTRY.lower()
-            resp = requests.get(
-                "https://serpapi.com/search.json",
-                params=params,
-                timeout=20,
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            if "error" in data:
-                REPORT["rank"].append({
-                    "engine": engine, "keyword": kw, "device": device,
-                    "status": "error",
-                    "detail": data["error"],
-                })
+                search_exhausted = False
+
+            if (
+                REPORT["rank"]
+                and REPORT["rank"][-1].get("status") == "error"
+                and REPORT["rank"][-1].get("keyword") == kw
+            ):
                 continue
-            record_serp_request(today)
-            organic = data.get("organic_results", [])
+            organic = sorted(
+                {item["position"]: item for item in organic}.values(),
+                key=lambda item: item["position"],
+            )
+            result_depth = max((item["position"] for item in organic), default=0)
             position = next(
                 (r.get("position", i + 1) for i, r in enumerate(organic) if SITE_DOMAIN in r.get("link", "")),
                 None,
@@ -553,6 +631,8 @@ def check_google_rank(today=None):
                 "result_page": ((position - 1) // 10 + 1) if position else None,
                 "page_position": ((position - 1) % 10 + 1) if position else None,
                 "result_depth": result_depth,
+                "maximum_rank_position": maximum_rank_position,
+                "search_exhausted": search_exhausted,
                 "status": "found" if position else "not_in_measured_results",
                 "results": [
                     {
@@ -562,25 +642,25 @@ def check_google_rank(today=None):
                         "displayed_link": result.get("displayed_link"),
                         "sentiment": "unknown",
                     }
-                    for index, result in enumerate(organic[:result_depth])
+                    for index, result in enumerate(organic)
                 ],
                 "features": {
-                    "knowledge_panel": bool(data.get("knowledge_graph")),
+                    "knowledge_panel": bool(first_page_data.get("knowledge_graph")),
                     "images": bool(
-                        data.get("inline_images")
-                        or data.get("images_results")
+                        first_page_data.get("inline_images")
+                        or first_page_data.get("images_results")
                     ),
                     "video": bool(
-                        data.get("inline_videos")
-                        or data.get("video_results")
+                        first_page_data.get("inline_videos")
+                        or first_page_data.get("video_results")
                     ),
                     "featured_snippet": bool(
-                        data.get("answer_box")
-                        or data.get("featured_snippet")
+                        first_page_data.get("answer_box")
+                        or first_page_data.get("featured_snippet")
                     ),
-                    "people_also_ask": bool(data.get("related_questions")),
-                    "top_stories": bool(data.get("top_stories")),
-                    "local_pack": bool(data.get("local_results")),
+                    "people_also_ask": bool(first_page_data.get("related_questions")),
+                    "top_stories": bool(first_page_data.get("top_stories")),
+                    "local_pack": bool(first_page_data.get("local_results")),
                 },
             }
             REPORT["rank"].append(result)
@@ -1117,15 +1197,24 @@ def format_report_markdown():
             "unchanged_not_found": "ללא שינוי — לא נמצא בטווח שנמדד",
         }
         for item in asset_rank["assets"]:
-            previous = item.get("previous_position") or "לא נמצא"
-            current = item.get("current_position") or "לא נמצא"
+            previous = item.get("previous_position")
+            if not previous:
+                previous_depth = item.get("previous_result_depth")
+                previous = f"מעל {previous_depth}" if previous_depth else "מדידת בסיס"
+            current = item.get("current_position")
+            if not current:
+                current_depth = item.get("current_result_depth")
+                current = f"מעל {current_depth}" if current_depth else "לא נמדד"
             previous_page = item.get("previous_result_page") or "-"
             current_page = item.get("current_result_page") or "-"
+            delta = item.get("delta")
+            delta_label = f" {abs(delta)} מקומות" if delta else ""
             lines.append(
                 f"- [{item.get('platform')}]({item.get('url')}): "
                 f"מיקום {previous} (עמוד {previous_page}) → "
                 f"מיקום {current} (עמוד {current_page}); "
                 f"{labels.get(item.get('change'), item.get('change', 'לא ידוע'))}"
+                f"{delta_label}"
             )
     else:
         lines.append(
@@ -1528,6 +1617,8 @@ def main():
             "language": item.get("language", "he"),
             "device": item.get("device", "unknown"),
             "observed_at": REPORT["date"],
+            "result_depth": item.get("result_depth"),
+            "search_exhausted": item.get("search_exhausted"),
             "results": item.get("results", []),
             "features": item.get("features", {}),
         }
@@ -1547,6 +1638,8 @@ def main():
             "language": item.get("language", "he"),
             "device": item.get("device", "unknown"),
             "observed_at": snapshot.get("date"),
+            "result_depth": item.get("result_depth"),
+            "search_exhausted": item.get("search_exhausted"),
             "results": item.get("results", []),
             "features": item.get("features", {}),
         }

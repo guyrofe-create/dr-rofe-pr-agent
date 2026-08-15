@@ -150,6 +150,8 @@ def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
         "language": snapshot.get("language", "he"),
         "device": snapshot.get("device", "unknown"),
         "observed_at": snapshot.get("observed_at"),
+        "result_depth": snapshot.get("result_depth"),
+        "search_exhausted": snapshot.get("search_exhausted"),
         "results": results,
         "rank_results": rank_results,
         "desired_count": len(desired),
@@ -228,6 +230,12 @@ def measure_asset_rank_changes(
         str(item.get("observed_at"))
         for item in current_google if item.get("observed_at")
     ), default=None)
+    current_result_depth = max((
+        int(item.get("result_depth") or 0) for item in current_google
+    ), default=0)
+    previous_result_depth = max((
+        int(item.get("result_depth") or 0) for item in previous_batch
+    ), default=0)
     previous_observed_at = max((
         str(item.get("observed_at"))
         for item in previous_batch if item.get("observed_at")
@@ -282,6 +290,8 @@ def measure_asset_rank_changes(
             "current_result_page": ((current_position - 1) // 10 + 1) if current_position else None,
             "previous_page_position": ((previous_position - 1) % 10 + 1) if previous_position else None,
             "current_page_position": ((current_position - 1) % 10 + 1) if current_position else None,
+            "current_result_depth": current_result_depth,
+            "previous_result_depth": previous_result_depth,
             "previous_query": previous.get("query"),
             "current_query": current.get("query"),
             "previous_device": previous.get("device"),
