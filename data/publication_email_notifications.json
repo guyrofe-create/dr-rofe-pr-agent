@@ -311,6 +311,16 @@
       "state": "failed",
       "subject": "הפרסום נכשל: מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
       "urls": []
+    },
+    "apr_09c5edfacf78989bd2c03505dc6c55c1f8e76322b411ddb471cba6d7a7f7d06b:79aa329fdf68ed36e65f8594b5a3b56858f6c6648930b6bdead318e8e9fc1aa9": {
+      "sent_at": "2026-08-16T10:41:09.224775+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_09c5edfacf78989bd2c03505dc6c55c1f8e76322b411ddb471cba6d7a7f7d06b",
+      "state": "success",
+      "subject": "אישור פרסום: מה עומד מאחורי הכותרת: לוקחים תרופה לכולסטרול? זו תופעת הלוואי שמצא מחקר חדש | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-16-topic-90-run-31931866214-attempt-1/"
+      ]
     }
   }
 }

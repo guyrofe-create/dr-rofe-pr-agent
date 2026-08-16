@@ -1,0 +1,92 @@
+{
+  "draft": "content_drafts/2026-08-16-topic-90-run-31931866214-attempt-1.md",
+  "title": "מה עומד מאחורי הכותרת: לוקחים תרופה לכולסטרול? זו תופעת הלוואי שמצא מחקר חדש | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-08-16T10:41:07.176533+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-16-topic-90-run-31931866214-attempt-1/",
+      "detail": "idempotency_key=pub_55093e09b31d45f1a701f8f85854039484f7b543674043b106ec851d303d0ef5"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-16-topic-90-run-31931866214-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Instagram",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_09c5edfacf78989bd2c03505dc6c55c1f8e76322b411ddb471cba6d7a7f7d06b",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
