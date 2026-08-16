@@ -1,0 +1,428 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-16T06:45:40Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-16-topic-03-run-31931866214-attempt-1.md",
+  "source_draft_sha256": "4119cc9e0b75d18092c18505e2a7805513200e3d37253991da8039659e11a022",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/uterine-fibroids",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng88",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1002/14651858.CD003287.pub2",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+    "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+    "alt_text": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Hopital_Laquintini-4993_10.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hopital_Laquintini-4993_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Max MBAKOP",
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-hero.png",
+        "sha256": "2ef615e316725c46155efa027557c562756d3b0ed72262b2316de459810e9db0",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+        "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-square.jpg",
+        "sha256": "9127d7b1d7675d94766d83c895b07e4d57e0e96d3b7fdfa8386a71b882729dfa",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-portrait.png",
+        "sha256": "b1216eec5e6b83121f1027f8718c1bbe91aa850c50400c6337092d5069a54f92",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+        "markdown": "# מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\nמאת: [ד״ר גיא רופא](https://guyrofe.com)\n\nמיומות ברחם הן גידולים שפירים המתפתחים מרקמת השריר של הרחם. במקרים רבים הן אינן גורמות לתסמינים ואינן מחייבות טיפול, אך כאשר מופיעים דימום וסתי כבד, כאב, לחץ באגן, אנמיה או קושי הקשור לפוריות — ניתן לבצע בירור מסודר ולהתאים טיפול לפי התסמינים, מיקום המיומות, גודלן, גיל המטופלת ותוכניותיה להיריון.\n\nהמידע במאמר הוא כללי בלבד ואינו מחליף אבחון רפואי. תסמינים דומים עלולים להיגרם ממצבים אחרים, ולכן החלטות על בירור או טיפול צריכות להתקבל לאחר הערכה רפואית פרטנית. כל טענה רפואית בטיוטה זו מחייבת בדיקה מקצועית ואנושית לפני פרסום.\n\n## מהן מיומות ומתי הן עלולות לגרום לתסמינים?\n\nמיומות, המכונות גם שרירנים או פיברואידים, הן גידולים לא־סרטניים שמקורם בתאי השריר והרקמה התומכת של הרחם. הן עשויות להופיע כמיומה יחידה או כמספר מיומות, וגודלן יכול להשתנות במידה ניכרת. עצם קיומה של מיומה אינו מעיד בהכרח על מחלה המחייבת התערבות.\n\nמקובל לתאר מיומות לפי מיקומן ביחס לדופן הרחם:\n\n- **מיומות תת־ריריות** בולטות לכיוון חלל הרחם ועלולות להיות קשורות במיוחד לדימום וסתי כבד ולעיתים להפרעה בפוריות.\n- **מיומות תוך־דופניות** נמצאות בתוך שריר הרחם ועשויות להשפיע על גודל הרחם, על דפוס הדימום או על תחושת לחץ.\n- **מיומות תת־סרוזיות** בולטות כלפי החלק החיצוני של הרחם ועלולות לגרום ללחץ באגן, בשלפוחית השתן או במעי.\n- **מיומות על גבעול** מחוברות לרחם באמצעות בסיס צר יחסית, בתוך חלל הרחם או מחוצה לו.\n\nלפי [המידע הרשמי של ACOG על מיומות ברחם](https://www.acog.org/womens-health/faqs/uterine-fibroids), תסמינים אפשריים כוללים שינויים בדימום הווסתי, כאב או לחץ באגן, הגדלה של הבטן, צורך תכוף במתן שתן, עצירות וכאב בעת קיום יחסי מין. עם זאת, נשים רבות אינן חוות תסמינים כלל.\n\nהתסמין השכיח שמוביל לבירור הוא דימום וסתי כבד או ממושך. אובדן דם מתמשך עלול לגרום לחסר ברזל ולאנמיה, המתבטאים לעיתים בעייפות, חולשה, סחרחורת, דופק מהיר, קוצר נשימה במאמץ או כאבי ראש. מיומות גדולות או מיומות שמיקומן יוצר לחץ על איברים סמוכים עשויות לגרום גם לכובד באגן, לתחושת מלאות או לשינויים בהרגלי השתן והיציאות.\n\nחשוב להדגיש כי דימום חריג, כאב אגני או קושי להרות אינם מוכיחים שקיימות מיומות. יש לשלול, בהתאם למקרה, גורמים אחרים כגון הפרעות הורמונליות, פוליפים ברחם, אדנומיוזיס, היריון, הפרעת קרישה, זיהום או שינויים ברירית הרחם.\n\n## כיצד מתבצע הבירור?\n\nהבירור מתחיל בדרך כלל בשיחה רפואית מפורטת. בין היתר נבדקים דפוס הווסת, משך הדימום וכמותו, הופעת דימום בין הווסתות, כאבים, תחושת לחץ, תסמיני אנמיה, הריונות קודמים, תרופות קבועות ותוכניות עתידיות להיריון. גם השפעת התסמינים על איכות החיים חשובה: לא רק גודל המיומה קובע, אלא המידה שבה היא מפריעה לתפקוד היומיומי.\n\nבדיקה גינקולוגית עשויה לזהות רחם מוגדל או בעל מתאר לא סדיר, אך אין די בה כדי לקבוע בוודאות את מספר המיומות, גודלן ומיקומן. בדיקת ההדמיה הראשונית המקובלת היא לרוב אולטרסאונד של האגן, בגישה נרתיקית, בטנית או בשילוב ביניהן. הבדיקה מאפשרת להעריך את הרחם, רירית הרחם, המיומות והשחלות.\n\nבמצבים מסוימים עשויים להידרש אמצעי בירור נוספים:\n\n- **ספירת דם ובדיקות ברזל** — כאשר קיים דימום כבד או חשד לאנמיה.\n- **בדיקת היריון** — בהתאם לגיל, לתסמינים ולנסיבות.\n- **היסטרוסקופיה אבחנתית** — החדרת מכשיר אופטי דק לחלל הרחם, בעיקר כאשר עולה חשד למיומה תת־רירית או לפתולוגיה אחרת בחלל הרחם.\n- **סונוהיסטרוגרפיה** — אולטרסאונד לאחר החדרת נוזל לחלל הרחם, המסייע לעיתים בהדגמת ממצאים בחלל.\n- **MRI של האגן** — אינו נחוץ לכל מטופלת, אך עשוי להועיל במיפוי מורכב, לפני פעולות מסוימות או כאשר ממצאי האולטרסאונד אינם חד־משמעיים.\n- **דגימת רירית הרחם** — נשקלת לפי גיל המטופלת, אופי הדימום וגורמי סיכון, ולא משום שכל מיומה מחייבת ביופסיה.\n\n[הנחיית NICE בנושא דימום וסתי כבד](https://www.nice.org.uk/guidance/ng88) מדגישה את הצורך להתאים את הבירור לתסמינים ולחשד הקליני, ולהביא בחשבון את העדפות המטופלת, נוכחות כאב או לחץ, גודל המיומות ומיקומן. כלומר, אין מסלול בדיקות אחיד המתאים לכל אישה.\n\nדימום משמעותי מאוד, חולשה קיצונית, התעלפות, קוצר נשימה במנוחה, כאב חריף ופתאומי, חום או חשד להיריון מחייבים הערכה רפואית דחופה, משום שלא ניתן לייחס תסמינים אלה אוטומטית למיומה מוכרת.\n\n## מתי אפשר להסתפק במעקב?\n\nלא כל מיומה מחייבת טיפול פעיל. כאשר המיומות אינן גורמות לתסמינים, או כשהתסמינים קלים ואינם פוגעים באיכות החיים, ניתן לעיתים לבחור במעקב. מטרת המעקב היא לוודא שאין שינוי קליני משמעותי ולהעריך מחדש את הצורך בטיפול אם מופיעים דימום, כאב, לחץ או תסמינים אחרים.\n\nההחלטה על תדירות המעקב אינה נקבעת רק לפי מספר סנטימטרים. היא עשויה להיות מושפעת מגיל המטופלת, מאופי התסמינים, מממצאי ההדמיה, מקצב השינוי שנצפה ומקרבה לגיל המעבר. במקרים רבים מיומות נוטות להצטמצם לאחר גיל המעבר עקב הירידה ברמות ההורמונים, אך דימום חדש לאחר הפסקת הווסת מחייב בירור בפני עצמו ואין להניח שמקורו במיומה.\n\nמעקב אינו פירושו התעלמות. רצוי לעקוב אחר דפוס הדימום, סימני אנמיה, כאב ושינוי בלחץ האגני. כאשר קיימת אנמיה, יש לברר את חומרתה ואת הסיבה לה ולטפל בחסר ברזל לפי הצורך. טיפול באנמיה עשוי להידרש גם אם מתוכננת בהמשך התערבות במיומות.\n\n## טיפול תרופתי והקלה על התסמינים\n\nטיפול תרופתי מיועד בדרך כלל לשליטה בתסמינים, ובעיקר בדימום ובכאב. הוא אינו מתאים לכל אחת, ולא כל תרופה מקטינה את המיומות עצמן. בחירת הטיפול תלויה בחומרת הדימום, בצורך באמצעי מניעה, במחלות רקע, בסיכון לקרישי דם, בתוכניות להיריון ובהעדפות המטופלת.\n\nאפשרויות אפשריות כוללות:\n\n- **תרופות נוגדות דלקת שאינן סטרואידליות** עשויות להפחית כאבי וסת, ולעיתים גם את הדימום. הן אינן מתאימות לכל מטופלת, למשל במצבים מסוימים של מחלת כליות, כיב קיבה או רגישות לתרופה.\n- **חומצה טרנקסמית** היא תרופה שאינה הורמונלית ונלקחת בימי הדימום כדי להפחית את אובדן הדם. יש לבחון התאמה אישית, במיוחד בנוכחות גורמי סיכון לקרישיות.\n- **אמצעי מניעה הורמונליים משולבים או פרוגסטיניים** עשויים להסדיר או להפחית דימום. השפעתם על נפח המיומות אינה בהכרח משמעותית.\n- **התקן תוך־רחמי המשחרר לבונורגסטרל** עשוי להפחית דימום אצל מטופלות מתאימות, אך התאמתו תלויה בין השאר במבנה חלל הרחם ובמידת העיוות הנגרמת ממיומה.\n- **תרופות הפועלות על ציר GnRH** עשויות להפחית זמנית את הדימום ואת נפח המיומות. השימוש בהן מוגבל או מותאם בשל תופעות לוואי אפשריות, ובהן תסמינים דמויי גיל המעבר והשפעה על צפיפות העצם. לעיתים הן ניתנות לתקופה מוגדרת או כהכנה להתערבות אחרת.\n- **תוספי ברזל** מיועדים לטיפול בחסר ברזל או באנמיה, אך אינם מטפלים בגורם לדימום עצמו.\n\nלפי [סקירת Cochrane על טיפולים תרופתיים להפחתת דימום הקשור למיומות](https://doi.org/10.1002/14651858.CD003287.pub2), איכות הראיות ויעילות הטיפולים משתנות בין התרופות ובין התוצאות שנבדקו. לכן אין לראות ברשימת התרופות דירוג אחיד או המלצה פרטנית. יש לשקול לכל טיפול תועלת צפויה, סיכונים, התוויות נגד והשפעה על פוריות.\n\n## אילו טיפולים ניתוחיים וזעיר־פולשניים קיימים?\n\nהתערבות נשקלת כאשר התסמינים משמעותיים, הטיפול התרופתי אינו מספק, קיימת אנמיה מתמשכת, יש לחץ ניכר על איברים סמוכים, חלל הרחם מעוות או עולה שאלה הקשורה לפוריות. סוג הפעולה נקבע לפי מאפייני המיומות ומטרות הטיפול.\n\n| אפשרות טיפול | מאפיין מרכזי | שיקולים עיקריים |\n|---|---|---|\n| כריתת מיומה בהיסטרוסקופיה | הסרת מיומה הבולטת לחלל הרחם דרך צוואר הרחם | מתאימה בעיקר למיומות תת־ריריות נגישות; אין חתך בטני |\n| מיומקטומיה לפרוסקופית או פתוחה | הסרת המיומות תוך שימור הרחם | עשויה להתאים למי שמעוניינת לשמר את הרחם; ייתכנו הידבקויות או הישנות מיומות |\n| אמבוליזציה של עורקי הרחם | חסימת אספקת הדם למיומות כדי להביא להתכווצותן | נדרשת בחינה מיוחדת כאשר קיים רצון להיריון עתידי |\n| טיפולים ממוקדי אנרגיה | הרס ממוקד של רקמת המיומה בחום או באמצעים אחרים | הזמינות וההתאמה תלויות בסוג המערכת, במיקום ובמאפייני המטופלת |\n| כריתת רחם | הסרת הרחם | טיפול סופי במיומות, אך מבטל אפשרות להיריון עתידי ודורש דיון בהשלכות הניתוח |\n\n**מיומקטומיה** משמרת את הרחם, אך אינה מבטיחה שמיומות חדשות לא יתפתחו בעתיד. הגישה יכולה להיות היסטרוסקופית, לפרוסקופית, רובוטית או פתוחה, בהתאם למספר המיומות, גודלן ומיקומן. כאשר פוריות עתידית חשובה, יש לבחון לא רק את עצם קיום המיומות אלא גם את השפעתן האפשרית על חלל הרחם ואת הסיכונים הנלווים להתערבות.\n\n**אמבוליזציה של עורקי הרחם** מבוצעת באמצעות צנתור וחסימה מבוקרת של כלי הדם המזינים את המיומות. הפעולה עשויה להפחית דימום ותסמיני לחץ, אך אינה מתאימה אוטומטית לכל מטופלת. שאלות הנוגעות לפוריות ולהיריון לאחר הפעולה מחייבות דיון פרטני, משום שהראיות והמשמעויות עשויות להיות שונות מאלה של מיומקטומיה.\n\n**כריתת רחם** היא האפשרות היחידה המונעת הישנות של מיומות ברחם, משום שהרחם מוסר. עם זאת, מדובר בניתוח משמעותי שאינו מתאים למי שמעוניינת לשמר אפשרות להיריון. הסרת הרחם אינה מחייבת בהכרח הסרת שחלות; אלה החלטות נפרדות התלויות בנסיבות הרפואיות.\n\n## התאמת הטיפול לפוריות, לגיל ולהעדפות המטופלת\n\nאין טיפול יחיד שהוא הטוב ביותר לכל מי שיש לה מיומות. ההחלטה צריכה להתבסס על שילוב בין חומרת התסמינים, מאפייני המיומות, מצב רפואי כללי, סיכונים, רצון לשמר את הרחם ותכנון משפחה.\n\nכאשר עולה קושי להרות, אין לייחס אותו מיד למיומות. יש צורך בבירור פוריות רחב לפי הנסיבות, משום שגורמים נוספים יכולים להשפיע. מיומות המעוותות את חלל הרחם עשויות להיות בעלות משמעות שונה ממיומות חיצוניות שאינן משפיעות על החלל. גם במקרה זה, עצם גילוי המיומה אינו מוכיח שהסרתה תשפר את הסיכוי להיריון.\n\nאצל מטופלת הקרובה לגיל המעבר עם תסמינים נסבלים אפשר לעיתים לשקול טיפול שמרני או זמני. לעומת זאת, דימום כבד, אנמיה, כאב מתמשך או פגיעה ניכרת באיכות החיים עשויים להצדיק טיפול פעיל גם כאשר המיומות אינן גדולות במיוחד. מטרת קבלת ההחלטות המשותפת היא להתאים את ההתערבות לבעיה שמבקשים לפתור, ולא לטפל בממצא הדמייתי בלבד.\n\n## סיכום\n\nמיומות ברחם הן גידולים שפירים ושכיחים, אך הביטוי הקליני שלהן מגוון מאוד. חלקן מתגלות במקרה ואינן מחייבות טיפול, ואחרות גורמות לדימום כבד, לאנמיה, לכאב, ללחץ באגן או לשאלות הקשורות לפוריות.\n\nהבירור כולל בדרך כלל הערכת תסמינים, בדיקה רפואית, אולטרסאונד ובדיקות נוספות לפי הצורך. אפשרויות הטיפול נעות בין מעקב וטיפול תרופתי לבין פעולות זעיר־פולשניות, מיומקטומיה וכריתת רחם. הבחירה אינה נקבעת לפי גודל המיומה בלבד, אלא לפי מיקומה, חומרת התסמינים, השפעתה על חלל הרחם, מצב הבריאות הכללי ותוכניות להיריון.\n\n### על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים. ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים. מאמר זה נועד למסירת מידע רפואי כללי בלבד ומחייב ביקורת אנושית ומקצועית לפני פרסום.\n\n## מקורות\n\n1. American College of Obstetricians and Gynecologists (ACOG), **Uterine Fibroids**:  \n   https://www.acog.org/womens-health/faqs/uterine-fibroids\n\n2. National Institute for Health and Care Excellence (NICE), **Heavy menstrual bleeding: assessment and management — Guideline NG88**:  \n   https://www.nice.org.uk/guidance/ng88\n\n3. Cochrane Database of Systematic Reviews, **Non-surgical interventions for uterine fibroids**:  \n   https://doi.org/10.1002/14651858.CD003287.pub2\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/",
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "430d1b34dc261659fd1838796aac433158e1e2caec9e995203eccd696cd47d57",
+        "slug": "guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-hero.png",
+          "sha256": "2ef615e316725c46155efa027557c562756d3b0ed72262b2316de459810e9db0",
+          "alt_text": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Hopital_Laquintini-4993_10.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hopital_Laquintini-4993_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Max MBAKOP",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-hero.png",
+              "sha256": "2ef615e316725c46155efa027557c562756d3b0ed72262b2316de459810e9db0",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+              "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-square.jpg",
+              "sha256": "9127d7b1d7675d94766d83c895b07e4d57e0e96d3b7fdfa8386a71b882729dfa",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-portrait.png",
+              "sha256": "b1216eec5e6b83121f1027f8718c1bbe91aa850c50400c6337092d5069a54f92",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא]( מיומות ברחם הן גידולים שפירים המתפתחים מרקמת השריר של הרחם.\n\nבמקרים רבים הן אינן גורמות לתסמינים ואינן מחייבות טיפול, אך כאשר מופיעים דימום וסתי כבד, כאב, לחץ באגן, אנמיה או קושי הקשור לפוריות — ניתן לבצע בירור מסודר ולהתאים טיפול לפי התסמינים, מיקום המיומות, גודלן, גיל המטופלת ותוכניותיה להיריון.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+          "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+          "alt_text": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Hopital_Laquintini-4993_10.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hopital_Laquintini-4993_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Max MBAKOP",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-hero.png",
+              "sha256": "2ef615e316725c46155efa027557c562756d3b0ed72262b2316de459810e9db0",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+              "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-square.jpg",
+              "sha256": "9127d7b1d7675d94766d83c895b07e4d57e0e96d3b7fdfa8386a71b882729dfa",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-portrait.png",
+              "sha256": "b1216eec5e6b83121f1027f8718c1bbe91aa850c50400c6337092d5069a54f92",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא]( מיומות ברחם הן גידולים שפירים המתפתחים מרקמת השריר של הרחם.\n\n• במקרים רבים הן אינן גורמות לתסמינים ואינן מחייבות טיפול, אך כאשר מופיעים דימום וסתי כבד, כאב, לחץ באגן, אנמיה או קושי הקשור לפוריות — ניתן לבצע בירור מסודר ולהתאים טיפול לפי התסמינים, מיקום המיומות, גודלן, גיל המטופלת ותוכניותיה להיריון.\n• המידע במאמר הוא כללי בלבד ואינו מחליף אבחון רפואי.\n• תסמינים דומים עלולים להיגרם ממצבים אחרים, ולכן החלטות על בירור או טיפול צריכות להתקבל לאחר הערכה רפואית פרטנית.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+          "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+          "alt_text": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Hopital_Laquintini-4993_10.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hopital_Laquintini-4993_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Max MBAKOP",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-hero.png",
+              "sha256": "2ef615e316725c46155efa027557c562756d3b0ed72262b2316de459810e9db0",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+              "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-square.jpg",
+              "sha256": "9127d7b1d7675d94766d83c895b07e4d57e0e96d3b7fdfa8386a71b882729dfa",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-portrait.png",
+              "sha256": "b1216eec5e6b83121f1027f8718c1bbe91aa850c50400c6337092d5069a54f92",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+        "description": "מאת: [ד״ר גיא רופא]( מיומות ברחם הן גידולים שפירים המתפתחים מרקמת השריר של הרחם. במקרים רבים הן אינן גורמות לתסמינים ואינן מחייבות טיפול, אך כאשר מופיעים דימום וסתי כבד, כאב, לחץ באגן, אנמיה או קושי הקשור לפוריות — ניתן לבצע בירור מסודר ולהתאים טיפול לפי התסמינים, מיקום המיומות, גודלן, גיל המטופלת ותוכניותיה להיריון. מאת ד״ר גיא רופא\n\nקרדיט תמונה: Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-portrait.png",
+          "sha256": "b1216eec5e6b83121f1027f8718c1bbe91aa850c50400c6337092d5069a54f92",
+          "alt_text": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Hopital_Laquintini-4993_10.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hopital_Laquintini-4993_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Max MBAKOP",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-hero.png",
+              "sha256": "2ef615e316725c46155efa027557c562756d3b0ed72262b2316de459810e9db0",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+              "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-square.jpg",
+              "sha256": "9127d7b1d7675d94766d83c895b07e4d57e0e96d3b7fdfa8386a71b882729dfa",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-portrait.png",
+              "sha256": "b1216eec5e6b83121f1027f8718c1bbe91aa850c50400c6337092d5069a54f92",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "media_type": "image/png",
+          "role": "portrait"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא.\n\nמאת: [ד״ר גיא רופא]( מיומות ברחם הן גידולים שפירים המתפתחים מרקמת השריר של הרחם.\n\nבמקרים רבים הן אינן גורמות לתסמינים ואינן מחייבות טיפול, אך כאשר מופיעים דימום וסתי כבד, כאב, לחץ באגן, אנמיה או קושי הקשור לפוריות — ניתן לבצע בירור מסודר ולהתאים טיפול לפי התסמינים, מיקום המיומות, גודלן, גיל המטופלת ותוכניותיה להיריון.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+          "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+          "alt_text": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מטופלת בכיסא גלגלים לצד צוות רפואי בחדר בדיקות שבו מיטה ומכשיר אולטרסאונד פעיל.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Hopital_Laquintini-4993_10.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hopital_Laquintini-4993_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Max MBAKOP",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Hopital Laquintini-4993 10.jpg — Max MBAKOP; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-hero.png",
+              "sha256": "2ef615e316725c46155efa027557c562756d3b0ed72262b2316de459810e9db0",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-landscape.png",
+              "sha256": "fcf959f3125d917c96ed7551405fee5cc468281c385fefd4b7d6ac2c1e4513a5",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-square.jpg",
+              "sha256": "9127d7b1d7675d94766d83c895b07e4d57e0e96d3b7fdfa8386a71b882729dfa",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-16-topic-03-run-31931866214-attempt-1-portrait.png",
+              "sha256": "b1216eec5e6b83121f1027f8718c1bbe91aa850c50400c6337092d5069a54f92",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "430d1b34dc261659fd1838796aac433158e1e2caec9e995203eccd696cd47d57",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_f73dc7f63a1cf52239765245464d64e8d04b3ed19aaf95506321eb9c1213dd49"
+}
