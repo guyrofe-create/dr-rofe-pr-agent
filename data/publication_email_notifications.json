@@ -303,6 +303,14 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7493574708882395138/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIqukoDt4tX9Sg"
       ]
+    },
+    "apr_f73dc7f63a1cf52239765245464d64e8d04b3ed19aaf95506321eb9c1213dd49:62a41a1f08962cc06dadd214aaf771edcf71bb06f024c83be0fc97d0c854902c": {
+      "sent_at": "2026-08-16T10:08:44.297604+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_f73dc7f63a1cf52239765245464d64e8d04b3ed19aaf95506321eb9c1213dd49",
+      "state": "failed",
+      "subject": "הפרסום נכשל: מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }

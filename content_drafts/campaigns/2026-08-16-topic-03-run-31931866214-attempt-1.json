@@ -1,0 +1,15 @@
+{
+  "draft": "content_drafts/2026-08-16-topic-03-run-31931866214-attempt-1.md",
+  "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+  "status": "failed",
+  "published_at": "2026-08-16T10:08:43.119349+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "failed",
+      "detail": "CampaignTargetError: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    }
+  ],
+  "approval_id": "apr_f73dc7f63a1cf52239765245464d64e8d04b3ed19aaf95506321eb9c1213dd49",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
