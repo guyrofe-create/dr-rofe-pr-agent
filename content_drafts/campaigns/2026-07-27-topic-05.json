@@ -1,87 +1,13 @@
 {
   "draft": "content_drafts/2026-07-27-topic-05.md",
   "title": "כאבי מחזור קשים: כמה כאב נחשב נורמלי?",
-  "status": "completed",
-  "published_at": "2026-07-27T08:23:07.836819+00:00",
+  "status": "failed",
+  "published_at": "2026-08-17T14:52:07.118227+00:00",
   "destinations": [
     {
-      "name": "guyrofe.com",
-      "status": "published",
-      "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-05/",
-      "detail": "idempotency_key=pub_68381a233efaa23b0976d8adef96fdb8679cd21011594909807923813799c01a"
-    },
-    {
-      "name": "OpenAI visual",
-      "status": "generated",
-      "url": "https://guyrofe.com/wp-content/uploads/2026/07/guy-rofe-pilot-2026-07-27-topic-05-social.png",
-      "detail": "תמונה ללא טקסט וללא הזמנה לייעוץ"
-    },
-    {
-      "name": "drguyrofe.co.il",
-      "status": "not_in_approval_bundle",
-      "detail": "לא אושר בחבילה זו"
-    },
-    {
-      "name": "Facebook",
-      "status": "published",
-      "url": "https://www.facebook.com/122196403652942441",
-      "detail": "idempotency_key=pub_2bc7423cbdce376dc29be4935112d6f5b0ac8ad5475fb1fe0cafa8545aa5a364"
-    },
-    {
-      "name": "LinkedIn",
-      "status": "published",
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7487422300682838016/",
-      "detail": "idempotency_key=pub_a915bc44e4b16536c4ed745670ed24c5384f770720de7fd45b1da20fcf43cf9d"
-    },
-    {
-      "name": "X",
-      "status": "disabled",
-      "detail": "מושבת במדיניות המוצר"
-    },
-    {
-      "name": "Tumblr",
-      "status": "deferred",
-      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-    },
-    {
-      "name": "Telegram",
-      "status": "deferred",
-      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-    },
-    {
-      "name": "Blogger",
-      "status": "published",
-      "url": "https://guyrofe.blogspot.com/2026/07/blog-post_27.html",
-      "detail": "idempotency_key=pub_146ada0dc58bc6e1239a432e613b5ecf29c18d7c524525dc6d96b2e842423d51"
-    },
-    {
-      "name": "Instagram",
-      "status": "owner_managed",
-      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם בו"
-    },
-    {
-      "name": "Pinterest",
-      "status": "not_configured"
-    },
-    {
-      "name": "drguyrofe.com",
-      "status": "blocked",
-      "detail": "חיבור Wix קיים אך הרשאות הפרסום עדיין חסומות"
-    },
-    {
-      "name": "Medium",
-      "status": "paused",
-      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-    },
-    {
-      "name": "Quora",
-      "status": "manual_only",
-      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-    },
-    {
-      "name": "TikTok",
-      "status": "owner_managed",
-      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+      "name": "Campaign",
+      "status": "failed",
+      "detail": "PermissionError: Draft changed after approval"
     }
   ],
   "approval_id": "apr_638c1776dc48e99f9b8f6fbcf2561186fedcbfdee94226cc8dc01184d7e40e02",

@@ -334,6 +334,14 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7495055016840503296/",
         "https://guyrofe.blogspot.com/2026/08/blog-post_17.html"
       ]
+    },
+    "apr_638c1776dc48e99f9b8f6fbcf2561186fedcbfdee94226cc8dc01184d7e40e02:011edd4d1c2477571d72e8b97dccf0507c280f32c9029ad17fc1bb0db4913fa7": {
+      "sent_at": "2026-08-17T14:52:08.337391+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_638c1776dc48e99f9b8f6fbcf2561186fedcbfdee94226cc8dc01184d7e40e02",
+      "state": "failed",
+      "subject": "הפרסום נכשל: כאבי מחזור קשים: כמה כאב נחשב נורמלי?",
+      "urls": []
     }
   }
 }
