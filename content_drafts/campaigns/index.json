@@ -1,6 +1,109 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-08-17-topic-90-run-32003423255-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: מחקר חדש גילה — זה המאפיין הגופני שקובע סיכון להתקף לב | ד״ר גיא רופא",
+      "status": "completed_with_errors",
+      "published_at": "2026-08-17T09:52:54.843726+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-17-topic-90-run-32003423255-attempt-1/",
+          "detail": "idempotency_key=pub_2513a7fbb32500ff5fe405fc520cc456f5fe56ed08a989011a1f84d92aa08d8d"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-17-topic-90-run-32003423255-attempt-1-hero.png",
+          "detail": "owner_provided_default"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122199791750942441",
+          "detail": "idempotency_key=pub_da5e9010dcc5220bd99793296e66c2a17048f6db2c3a4ce571085f9bd0fb62f0"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7495055016840503296/",
+          "detail": "idempotency_key=pub_1ef5059174f62a5151aaec6acdc082415ac09400ed6aebd124bd4807fc3e33d4"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "target_id": "blogger_blog",
+          "url": "https://guyrofe.blogspot.com/2026/08/blog-post_17.html",
+          "detail": "idempotency_key=pub_58ac5c37c49e9f7a999ce858515fd05af1ba0ab691008fd6c1cffe0134f2df06"
+        },
+        {
+          "name": "Instagram",
+          "status": "failed",
+          "target_id": "instagram_business",
+          "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=AKd21JMDuRzrCa-SlNqs6cN"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_03153077864bbff1cf0e7ee06ad3ecf79d6cc3ab05a3ada7ec78bf0c338a4ae3",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-16-topic-90-run-31931866214-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: לוקחים תרופה לכולסטרול? זו תופעת הלוואי שמצא מחקר חדש | ד״ר גיא רופא",
       "status": "completed",
