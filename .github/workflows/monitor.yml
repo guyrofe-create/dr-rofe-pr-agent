@@ -70,16 +70,13 @@ jobs:
           git pull --rebase || true
           git push || true
 
-      - name: Email the exact twice-monthly asset rank report
+      - name: Build the exact twice-monthly asset rank report
         if: always()
-        env:
-          WEEKLY_REPORT_TO: guyrofe@gmail.com
-          WEEKLY_REPORT_GMAIL_USERNAME: guyrofe@gmail.com
-          WEEKLY_REPORT_GMAIL_APP_PASSWORD: ${{ secrets.WEEKLY_REPORT_GMAIL_APP_PASSWORD }}
         run: >-
           python scripts/weekly_email_report.py
           --days 16
           --html-output asset-rank-report.html
+          --dry-run
 
       - name: Upload monitor report
         if: always()
@@ -89,7 +86,7 @@ jobs:
           path: monitor_report.json
           retention-days: 90
 
-      - name: Upload asset rank email report
+      - name: Upload asset rank report
         if: always()
         uses: actions/upload-artifact@v7
         with:

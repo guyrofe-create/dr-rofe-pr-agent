@@ -1,15 +1,9 @@
-name: Publication Watchdog (temporary)
+name: Publication Watchdog
 
 on:
   schedule:
     - cron: '30 17 * * *'
   workflow_dispatch:
-    inputs:
-      send_email:
-        description: Send the watchdog report by email
-        required: true
-        default: true
-        type: boolean
   workflow_run:
     workflows: ["Publish Dashboard-Approved Campaign"]
     types: [completed]
@@ -19,6 +13,11 @@ permissions:
 
 jobs:
   verify:
+    # Successful five-minute queue polls contain no new incident. The daily
+    # audit and failed publisher runs remain visible in Actions and artifacts.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'failure'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -30,23 +29,16 @@ jobs:
           python-version: '3.11'
       - run: pip install requests
       - name: Verify recent publication receipts
-        env:
-          PUBLICATION_EMAIL_TO: guyrofe@gmail.com
-          PUBLICATION_EMAIL_GMAIL_USERNAME: guyrofe@gmail.com
-          PUBLICATION_EMAIL_GMAIL_APP_PASSWORD: ${{ secrets.WEEKLY_REPORT_GMAIL_APP_PASSWORD }}
-          SEND_DAILY_EMAIL: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.send_email) }}
         run: |
           hours=30
           if [[ "${{ github.event_name }}" == "workflow_run" ]]; then hours=6; fi
-          email_arg=""
-          if [[ "${SEND_DAILY_EMAIL}" == "true" ]]; then email_arg="--send-email"; fi
-          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then email_arg="--send-email-on-problem"; fi
-          python scripts/publication_watchdog.py --hours "${hours}" --output publication_watchdog_report.json ${email_arg}
+          python scripts/publication_watchdog.py --hours "${hours}" --output publication_watchdog_report.json
           echo '## Publication watchdog' >> "${GITHUB_STEP_SUMMARY}"
           echo '```json' >> "${GITHUB_STEP_SUMMARY}"
           jq '.totals' publication_watchdog_report.json >> "${GITHUB_STEP_SUMMARY}"
           echo '```' >> "${GITHUB_STEP_SUMMARY}"
       - uses: actions/upload-artifact@v6
+        if: always()
         with:
           name: publication-watchdog-${{ github.run_id }}
           path: publication_watchdog_report.json

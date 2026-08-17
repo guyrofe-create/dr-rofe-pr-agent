@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Email one idempotent approval notice for every newly reviewable P7 bundle."""
+"""Email one daily digest for newly reviewable P7 approval bundles."""
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import os
@@ -168,6 +169,78 @@ text-decoration:none;border-radius:6px">{html.escape(action)}</a></p>
     return message
 
 
+def build_digest_message(
+    items: list[dict], *, recipient: str, sender: str
+) -> EmailMessage:
+    """Build one message containing every pending decision in this run."""
+    if not items:
+        raise ValueError("At least one pending approval is required")
+    if len(items) == 1:
+        return build_message(items[0], recipient=recipient, sender=sender)
+
+    approval_ids = [str(item["approval_id"]) for item in items]
+    digest_id = hashlib.sha256("\n".join(approval_ids).encode()).hexdigest()[:24]
+    image_decisions = sum(
+        item.get("image_status") != "ready" for item in items
+    )
+    message = EmailMessage()
+    message["Subject"] = f"מרכז המוניטין: {len(items)} החלטות ממתינות"
+    message["From"] = sender
+    message["To"] = recipient
+    message["Message-ID"] = (
+        f"<approval-digest-{digest_id}@dr-rofe-reputation-agent>"
+    )
+    message["X-Approval-Count"] = str(len(items))
+
+    plain = [
+        f"רוכזו עבורך {len(items)} החלטות שממתינות במרכז המוניטין.",
+    ]
+    if image_decisions:
+        plain.append(f"מתוכן {image_decisions} דורשות החלטה על תמונה.")
+    plain.append("")
+    html_items = []
+    for position, item in enumerate(items, 1):
+        image_ready = item.get("image_status") == "ready"
+        action = "אישור פרסום" if image_ready else "החלטה על תמונה"
+        problem = str(item.get("image_selection_error") or "").strip()
+        plain.extend([
+            f"{position}. {item['title']}",
+            f"   נדרש: {action}",
+            f"   יעד: {item['asset']}",
+        ])
+        if problem:
+            plain.append(f"   בעיה: {problem}")
+        plain.extend([
+            f"   מזהה: {item['approval_id']}",
+            f"   פתיחה: {item['approval_url']}",
+            "",
+        ])
+        problem_html = (
+            f"<p><strong>בעיה:</strong> {html.escape(problem)}</p>"
+            if problem else ""
+        )
+        html_items.append(
+            f"<li style='margin-bottom:24px'><strong>{html.escape(str(item['title']))}</strong>"
+            f"<br>נדרש: {html.escape(action)}"
+            f"<br>יעד: {html.escape(str(item['asset']))}{problem_html}"
+            f"<a href='{html.escape(str(item['approval_url']), quote=True)}'>פתיחת ההחלטה</a>"
+            f"<br><small>מזהה: {html.escape(str(item['approval_id']))}</small></li>"
+        )
+    plain.append("לא יתבצע פרסום ללא אישור P7 מפורש לתוכן המדויק.")
+    message.set_content("\n".join(plain))
+    message.add_alternative(
+        "<!doctype html><html lang='he' dir='rtl'><body "
+        "style='font-family:Arial,sans-serif;line-height:1.6'>"
+        f"<h1>{len(items)} החלטות ממתינות</h1>"
+        f"<p>מתוכן {image_decisions} דורשות החלטה על תמונה.</p>"
+        f"<ol>{''.join(html_items)}</ol>"
+        "<p style='color:#667085'>לא יתבצע פרסום ללא אישור P7 מפורש "
+        "לתוכן המדויק.</p></body></html>",
+        subtype="html",
+    )
+    return message
+
+
 def _smtp_send(message: EmailMessage, *, username: str, app_password: str) -> None:
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=30) as smtp:
         smtp.login(username, app_password)
@@ -210,15 +283,19 @@ def notify(
     if pending and (not username or not recipient or not app_password):
         raise RuntimeError("Gmail approval-notification credentials are incomplete")
     sent_at = (now or datetime.now(timezone.utc)).isoformat()
-    for item in pending:
-        message = build_message(item, recipient=recipient, sender=username)
+    if pending:
+        message = build_digest_message(
+            pending, recipient=recipient, sender=username
+        )
         send_func(message, username=username, app_password=app_password)
+    for item in pending:
         ledger.setdefault("notifications", {})[item["approval_id"]] = {
             "sent_at": sent_at,
             "recipient": recipient,
             "approval_url": item["approval_url"],
             "bundle_path": item.get("bundle_path"),
         }
+    if pending:
         ledger_path.parent.mkdir(parents=True, exist_ok=True)
         ledger_path.write_text(
             json.dumps(ledger, ensure_ascii=False, indent=2) + "\n",
