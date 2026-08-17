@@ -1,13 +1,6 @@
 name: Email Pending Content Approvals
 
 on:
-  workflow_run:
-    workflows:
-      - Prepare Autonomous Content Cadence
-      - Start Full Content Campaign
-      - Regenerate Daily Review Images
-      - Regenerate Dashboard Review Image
-    types: [completed]
   schedule:
     - cron: '15 7 * * *'
   workflow_dispatch:
@@ -38,7 +31,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Email every newly reviewable approval bundle
+      - name: Email one digest of newly reviewable approval bundles
         id: notify
         continue-on-error: true
         env:

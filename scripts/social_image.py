@@ -10,6 +10,7 @@ import html
 import json
 import os
 import re
+import time
 from dataclasses import dataclass, field
 from io import BytesIO
 from pathlib import Path
@@ -65,6 +66,7 @@ PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 8
 MAX_REVIEWED_CANDIDATES = 24
 MAX_REVIEWED_PER_QUERY = 3
+TRANSIENT_WORDPRESS_HTTP = {408, 429, 500, 502, 503, 504}
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -955,15 +957,42 @@ def upload_to_wordpress(
         "Cache-Control": "no-cache",
         "User-Agent": f"ReputationAgentPublisher/1.0 (+{_CLIENT_SITE})",
     }
-    lookup = requests.get(
-        endpoint,
-        auth=auth,
-        params={"slug": slug, "_fields": "id,source_url,slug"},
-        headers=headers,
-        timeout=25,
-    )
-    lookup.raise_for_status()
-    existing = lookup.json()
+    lookup_args = {
+        "auth": auth,
+        "params": {"slug": slug, "_fields": "id,source_url,slug"},
+        "headers": headers,
+        "timeout": 25,
+    }
+    lookup = None
+    existing = None
+    last_decode_error = None
+    for attempt in range(3):
+        try:
+            lookup = requests.get(endpoint, **lookup_args)
+            if lookup.status_code in TRANSIENT_WORDPRESS_HTTP and attempt < 2:
+                time.sleep(2 ** attempt)
+                continue
+            lookup.raise_for_status()
+            try:
+                existing = lookup.json()
+                break
+            except ValueError as exc:
+                last_decode_error = exc
+                if attempt < 2:
+                    time.sleep(2 ** attempt)
+                    continue
+        except (requests.ConnectionError, requests.Timeout):
+            if attempt == 2:
+                raise
+            time.sleep(2 ** attempt)
+    if existing is None:
+        content_type = ""
+        if lookup is not None:
+            content_type = str(lookup.headers.get("Content-Type") or "")
+        detail = f" (Content-Type: {content_type})" if content_type else ""
+        raise RuntimeError(
+            "WordPress media lookup returned a non-JSON response" + detail
+        ) from last_decode_error
     if not isinstance(existing, list):
         if isinstance(existing, dict):
             code = existing.get("code") or "unexpected_object"

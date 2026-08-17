@@ -6,5 +6,5 @@
   "recipient": "guyrofe@gmail.com",
   "sender_username": "guyrofe@gmail.com",
   "send_only_when_image_ready": false,
-  "delivery": "one_email_per_new_bundle_or_owner_image_decision"
+  "delivery": "one_daily_digest_for_all_new_bundles_and_owner_image_decisions"
 }

@@ -32,6 +32,45 @@ class PublicationWatchdogTests(unittest.TestCase):
         })
         self.assertEqual(diagnosis["category"], "reconciliation_required")
 
+    def test_classifies_instagram_permission_without_image_advice(self):
+        diagnosis = publication_watchdog.classify_failure({
+            "name": "Instagram",
+            "detail": "OAuthException: Application does not have permission; code=10",
+        })
+        self.assertEqual(diagnosis["category"], "instagram_permission_required")
+        self.assertIn("changing the image will not fix", diagnosis["action"])
+
+    def test_classifies_google_invalid_grant_as_reauthorization(self):
+        diagnosis = publication_watchdog.classify_failure({
+            "name": "Blogger",
+            "detail": "OAuth token refresh failed: invalid_grant: expired",
+        })
+        self.assertEqual(
+            diagnosis["category"], "google_oauth_reauthorization_required"
+        )
+
+    def test_classifies_provider_timeout_as_transient(self):
+        diagnosis = publication_watchdog.classify_failure({
+            "name": "drguyrofe.com",
+            "detail": "ConnectTimeout: Max retries exceeded",
+        })
+        self.assertEqual(
+            diagnosis["category"], "transient_provider_connectivity"
+        )
+
+    def test_matches_www_asset_to_receipt_destination(self):
+        bundle = {"targets": [{
+            "target_id": "canonical_wix",
+            "platform": "Wix",
+            "asset": "www.drguyrofe.com",
+        }]}
+        self.assertEqual(
+            publication_watchdog.match_destination_target(
+                {"name": "drguyrofe.com", "status": "failed"}, bundle
+            ),
+            "canonical_wix",
+        )
+
     def test_live_url_verification_detects_missing_publication(self):
         response = Mock(status_code=404, url="https://example.com/missing")
         result = publication_watchdog.verify_url(

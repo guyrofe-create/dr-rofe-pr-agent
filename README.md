@@ -357,13 +357,15 @@ Google App Password as the repository secret
 stored. The report records only usage totals and costs—never prompts or model
 outputs—and lists a publication only when the execution ledger contains a URL.
 
-Every new P7 bundle triggers one immediate email to `guyrofe@gmail.com`. An
-image-ready bundle requests publication review. When automatic photo selection
-cannot decide safely, the message instead includes the exact problem and a
-direct dashboard link for the owner's decision. Delivery IDs are recorded so
-the same bundle is not emailed twice. The notification workflow is triggered
-after every workflow that creates or replaces an approval bundle, with a daily
-recovery run.
+Once a day, all new P7 bundles are combined into one email to
+`guyrofe@gmail.com`. Image-ready bundles request publication review; bundles
+where automatic photo selection could not decide safely include the exact
+problem and a direct dashboard link. Delivery IDs are recorded per bundle so
+the same decision is not emailed twice. Publication results remain one message
+per approved campaign, and the weekly product report consolidates activity and
+verified links. The publication watchdog writes an Actions summary and JSON
+artifact but does not send email; this prevents repeated alerts for the same
+receipt.
 
 Create a podcast transcript brief with:
 
