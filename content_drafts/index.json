@@ -1,6 +1,36 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-18-topic-90-run-32107966329-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות",
+      "excerpt": "מה עומד מאחורי הכותרת: הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מחקר אוסטרלי מצא כי ילדים שנולדו לאחר סיוע רפואי להשגת היריון השתמשו בחלק מתקופות ה",
+      "generated_at": "2026-08-18T06:41:17.129367+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "pinterest"
+      ],
+      "cadence_week": "week-of-2026-08-16",
+      "cadence_local_date": "2026-08-18",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-f625310a96958dde.json",
+      "analyzed_news_url": "https://healthy.walla.co.il/item/3860734"
+    },
+    {
+      "path": "content_drafts/2026-08-18-topic-00-run-32107966329-attempt-1.md",
+      "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+      "topic": "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
+      "excerpt": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא](https://guyrofe.com) כאבי אגן הנמשכים חודשים, חוזרים בתדירות גבוהה או פוגעים בתפקוד היומיומי מ",
+      "generated_at": "2026-08-18T06:41:17.129367+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-16",
+      "cadence_local_date": "2026-08-18",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-08-17-topic-90-run-32003423255-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: מחקר חדש גילה — זה המאפיין הגופני שקובע סיכון להתקף לב | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: מחקר חדש גילה: זה המאפיין הגופני שקובע סיכון להתקף לב",
