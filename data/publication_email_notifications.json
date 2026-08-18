@@ -342,6 +342,16 @@
       "state": "failed",
       "subject": "הפרסום נכשל: כאבי מחזור קשים: כמה כאב נחשב נורמלי?",
       "urls": []
+    },
+    "apr_c058d542e9dcfc6b57bc9b319121360cd5961eaa301472c1c6005bc491199b45:69bf9244d84652d95719cdee1842cd18cb354279c64fa8bb391b1e9a9a3c026c": {
+      "sent_at": "2026-08-18T09:46:28.606684+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_c058d542e9dcfc6b57bc9b319121360cd5961eaa301472c1c6005bc491199b45",
+      "state": "success",
+      "subject": "אישור פרסום: מה עומד מאחורי הכותרת: הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-18-topic-90-run-32107966329-attempt-1/"
+      ]
     }
   }
 }
