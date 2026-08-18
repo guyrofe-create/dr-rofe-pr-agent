@@ -933,6 +933,20 @@
       "published_at": "2026-08-18T09:46:27Z",
       "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-18-topic-90-run-32107966329-attempt-1/",
       "provider_receipt": null
+    },
+    "pub_552ad8de500b5659925fb11667d79aba8585cbe088b82749394f6fd6641b1e66": {
+      "version": 7,
+      "idempotency_key": "pub_552ad8de500b5659925fb11667d79aba8585cbe088b82749394f6fd6641b1e66",
+      "approval_id": "apr_5fc942eede32bc3c12569bcc6236d10303f7789506d36285451f419ba4ef2075",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "48bbf8dc582930e6a76c051221d5e1762f922e470d9ffabe26dcbfdfc12f8f95",
+      "status": "published",
+      "started_at": "2026-08-18T10:14:01Z",
+      "published_at": "2026-08-18T10:14:04Z",
+      "url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-18-topic-00-run-32107966329-attempt-1",
+      "provider_receipt": null
     }
   }
 }
