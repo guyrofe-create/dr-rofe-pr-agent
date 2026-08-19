@@ -1,0 +1,106 @@
+{
+  "draft": "content_drafts/2026-08-19-topic-05-run-32224474606-attempt-1.md",
+  "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-08-19T10:38:17.812606+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-19-topic-05-run-32224474606-attempt-1/",
+      "detail": "idempotency_key=pub_be430966a49db1736a5693bb2849904dc622fa1da8433d292396d0b20c7cbf13"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-19-topic-05-run-32224474606-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122200141526942441",
+      "detail": "idempotency_key=pub_fc29f4c062fd263640d799331943df6f6c0ba0eec4f5a56ed97d1cdd4f5af871"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7495791208737284096/",
+      "detail": "idempotency_key=pub_acc987744edf2ffcc969369bc7d6a16966291ddf88631dd08a18e9eae6d3956e"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post_19.html",
+      "detail": "idempotency_key=pub_de3f7264761cb34df197decafdf4b92b19ec7bc9ca25a280d57a893bed4c1784"
+    },
+    {
+      "name": "Instagram",
+      "status": "failed",
+      "target_id": "instagram_business",
+      "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=A4mBxNL-fgFbxFWOL2IG0Eo"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENrW8qTD5_mVugE",
+      "detail": "idempotency_key=pub_c9d60f3a6821fc5acd95782b97faa976d2ebfe89261621f8e733a69b1ef1525f"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_17f3c6ff7d25df56c1834dd26ba54a700d3290a1968cd421ca51aad42c62321a",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
