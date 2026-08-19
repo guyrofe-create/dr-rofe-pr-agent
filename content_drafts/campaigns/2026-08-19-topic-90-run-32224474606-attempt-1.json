@@ -1,0 +1,92 @@
+{
+  "draft": "content_drafts/2026-08-19-topic-90-run-32224474606-attempt-1.md",
+  "title": "כוויית שמש קשה אחת מותירה נזק לשנים? מה באמת התגלה במחקר | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-08-19T11:02:38.721497+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-19-topic-90-run-32224474606-attempt-1/",
+      "detail": "idempotency_key=pub_55a535bfcd323961f0aa337a82f954d354cb78ae124b63133f3a33f77f694e52"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-19-topic-90-run-32224474606-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Instagram",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_dcc610a70bef34fff806d5fc236d587041c621516a5e972fac972f1c2be3d7cf",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
