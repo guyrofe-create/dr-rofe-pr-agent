@@ -1,6 +1,40 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-19-topic-05-run-32224474606-attempt-1.md",
+      "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+      "topic": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
+      "excerpt": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא – הפרופיל הרשמי](https://guyrofe.com) התשובה הקצרה: כאב קל עד בינוני בתחילת הווסת, שנמשך זמן מוגבל ומשתפר בעזרת מנוחה או",
+      "generated_at": "2026-08-19T06:41:48.321975+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "instagram",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-16",
+      "cadence_local_date": "2026-08-19",
+      "public_execution_allowed": false
+    },
+    {
+      "path": "content_drafts/2026-08-19-topic-90-run-32224474606-attempt-1.md",
+      "title": "כוויית שמש קשה אחת מותירה נזק לשנים? מה באמת התגלה במחקר | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: כוויית שמש קשה אחת מותירה נזק לשנים: הממצא המדאיג שהתגלה במחקר",
+      "excerpt": "כוויית שמש קשה אחת מותירה נזק לשנים? מה באמת התגלה במחקר | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא – הפרופיל הרשמי](https://guyrofe.com) התשובה הקצרה: המחקר שבבסיס הכותרת מצא קשר סטטיסטי בין היסטוריה",
+      "generated_at": "2026-08-19T06:41:48.321975+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-16",
+      "cadence_local_date": "2026-08-19",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-ed94f613000bc1da.json",
+      "analyzed_news_url": "https://healthy.walla.co.il/item/3861486"
+    },
+    {
       "path": "content_drafts/2026-08-18-topic-90-run-32107966329-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות",
