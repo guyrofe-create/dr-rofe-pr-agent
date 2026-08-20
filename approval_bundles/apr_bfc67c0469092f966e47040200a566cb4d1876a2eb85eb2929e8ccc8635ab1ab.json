@@ -1,0 +1,423 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-20T06:49:30Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-20-topic-90-run-32340734702-attempt-1.md",
+  "source_draft_sha256": "ad26263c615918c815123050a0952407cd237d9cbe80431e9ea0baa56dac34e4",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/hkcnmykwgx",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/heart-defects/about/hypoplastic-left-heart-syndrome.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+    "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+    "alt_text": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Ptrump16",
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Obstetric Ultrasound Polaroid Photograph 1985.jpg — Ptrump16; CC BY-SA 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-hero.png",
+        "sha256": "179be2ec7fd09af7f7beebe3c74b6ee814e4e6d96bc161af5dcdfc94c75d0c57",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+        "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-square.jpg",
+        "sha256": "d81802737dc8ec295f73946474c216d33864a0623b85f611ddfcac0fdf577589",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-portrait.png",
+        "sha256": "7103663f5886019a6a881edbf718ad1ad77fe9157d3aee040125093c8be92e8c",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+        "markdown": "# פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** מאחורי הכותרת עומדים שלושה נושאים שונים שיש להפריד ביניהם: אבחון של מום לב מולד קשה המכונה תסמונת הלב השמאלי ההיפופלסטי — HLHS; מחלוקת עובדתית ומשפטית בין פונדקאית לבין ההורים המיועדים; ושאלה אתית עקרונית בדבר הסמכות לקבל החלטות רפואיות במהלך היריון פונדקאות. האבחנה חמורה ומחייבת בדרך כלל טיפול מורכב לאחר הלידה, אך היא אינה מוכיחה איזו החלטה התקבלה, מי ביקש לקבל אותה או מה היה נכון לעשות במקרה הפרטני.\n\nהדיווח שהוביל לדיון פורסם במסגרת [כתבת ynet על הפונדקאית שסירבה להפסיק את ההיריון לאחר גילוי מום בלב העובר](https://www.ynet.co.il/health/article/hkcnmykwgx). לפי הכתבה, הפונדקאית טענה כי לאחר אבחון העובר ביקשו ממנה ההורים המיועדים להפסיק את ההיריון, ואילו ההורים הכחישו טענה זו. בהמשך התפתח גם הליך משפטי הנוגע לטיפול בתינוק ולהחלטות שיתקבלו לאחר לידתו.\n\nחשוב להדגיש: כתבת ynet היא נקודת המוצא לניתוח הכותרת והטענות הציבוריות, אך אינה משמשת כאן מקור רפואי. את המידע על HLHS, אפשרויות הטיפול והעקרונות האתיים יש לבסס על מסמכים רפואיים ומקצועיים מוסדיים.\n\n## מה ידוע על המקרה — ומה עדיין שנוי במחלוקת?\n\nעל פי הכתבה, פונדקאית שנשאה היריון עבור זוג הורים מיועדים קיבלה בסביבות אמצע ההיריון אבחנה של HLHS אצל העובר. לאחר מכן התעוררה מחלוקת חריפה בין הצדדים. הפונדקאית טענה כי התבקשה להפסיק את ההיריון, אך ההורים המיועדים הכחישו זאת. עוד דווח כי היא עברה לטקסס, וכי ההליך התגלגל לבית המשפט על רקע החשש שהובע ביחס לטיפול שיינתן לתינוק לאחר הלידה.\n\nיש להבחין בין ארבע שכבות מידע:\n\n- **עובדה רפואית מדווחת:** העובר אובחן עם תסמונת הלב השמאלי ההיפופלסטי.\n- **טענה של הפונדקאית:** ההורים המיועדים ביקשו ממנה להפסיק את ההיריון.\n- **גרסה נגדית:** ההורים הכחישו שביקשו זאת.\n- **התפתחות משפטית:** רשויות ובתי משפט נדרשו לשאלות הנוגעות להורות ולטיפול בתינוק.\n\nכל עוד אין בפני הקורא את מלוא המסמכים הרפואיים, החוזיים והמשפטיים, אין בסיס לקבוע איזו גרסה עובדתית נכונה. גם התערבותו של בית משפט אינה מוכיחה בהכרח כל פרט שסופר בתקשורת; צו משפטי עשוי להינתן לשם הסדרת מצב דחוף או מניעת סיכון, בלי להכריע בכל הטענות ההיסטוריות שבין הצדדים.\n\nזהו הבדל מהותי בין דיווח חדשותי לבין ניתוח רפואי. הכותרת מציגה סיפור חד וברור לכאורה, אך המציאות כוללת אבחנה רפואית מורכבת, גרסאות סותרות ומערכת יחסים חוזית ורגשית שהתערערה.\n\n## מהי תסמונת הלב השמאלי ההיפופלסטי?\n\nHLHS היא מום לב מולד קריטי שבו מבנים מרכזיים בצדו השמאלי של הלב אינם מתפתחים במידה המאפשרת זרימת דם תקינה לגוף. החדר השמאלי עשוי להיות קטן מאוד, וגם המסתם המיטרלי, המסתם האאורטלי ואבי העורקים העולה עלולים להיות צרים, חסומים או בלתי מפותחים.\n\nלפי [דף המידע הרשמי של ה־CDC על תסמונת הלב השמאלי ההיפופלסטי](https://www.cdc.gov/heart-defects/about/hypoplastic-left-heart-syndrome.html), הצד השמאלי של הלב אינו מסוגל להזרים כראוי דם עשיר בחמצן אל הגוף. במהלך החיים העובריים קיימים מעברים המאפשרים לדם לעקוף חלקים מסוימים בלב ובריאות. לאחר הלידה המעברים הללו מתחילים להיסגר, ולכן תינוק עם HLHS עלול לפתח במהירות קשיי נשימה, דופק מהיר או חלש, כיחלון וסימנים של פגיעה בזרימת הדם לאיברים.\n\nמשמעות הדבר היא שהלידה אינה סוף תהליך האבחון אלא תחילתו של שלב רפואי דחוף. מיד לאחר הלידה עשוי להינתן טיפול תרופתי שנועד לשמור על מעבר דם חיוני פתוח עד לייצוב התינוק ולביצוע ההתערבות המתאימה.\n\nמסלול הטיפול המקובל עשוי לכלול שלושה ניתוחים בשלבים:\n\n1. **ניתוח נורווד**, המתבצע בדרך כלל בשבועות הראשונים לחיים. מטרתו ליצור מסלול חדש שיאפשר לחדר הימני להזרים דם גם אל הגוף.\n2. **ניתוח גלן דו־כיווני**, המתבצע בדרך כלל במהלך החודשים הראשונים לחיים ומחבר את הווריד הנבוב העליון לעורקי הריאה.\n3. **ניתוח פונטן**, המתבצע מאוחר יותר ומפנה גם חלק נוסף מהדם הוורידי ישירות אל הריאות.\n\nהניתוחים אינם הופכים את הלב ללב בעל מבנה רגיל ואינם נחשבים לריפוי מלא. הם מארגנים מחדש את מחזור הדם כך שהחדר הימני ישמש כחדר השואב המרכזי. התינוק עשוי להזדקק לתרופות, לתמיכה תזונתית, לאשפוזים ולמעקב קרדיולוגי ממושך. בחלק מהמקרים נשקלת השתלת לב, אך אפשרות זו תלויה במצב הקליני ובזמינות איבר מתאים.\n\nלכן גם שני ניסוחים שכיחים עלולים להטעות. האמירה “אפשר לנתח” אינה משקפת את מלוא מורכבות המסלול, ואילו האמירה “אין מה לעשות” מתעלמת מקיומן של אפשרויות טיפול מבוססות. התיאור המדויק יותר הוא שמדובר במצב מסכן חיים, שלגביו קיימים טיפולים משמעותיים אך מורכבים, שאינם מבטיחים תוצאה אחידה.\n\n## מה ניתן ללמוד מאבחון במהלך ההיריון?\n\nHLHS עשויה להתגלות בבדיקת אולטרסאונד במהלך ההיריון. כאשר עולה חשד, ניתן לבצע אקו לב עוברי — בדיקת אולטרסאונד ממוקדת ומפורטת של מבנה הלב ותפקודו. ה־CDC מציין כי אקו לב עוברי עשוי לאשר את האבחנה ולהדגים את אופן פעולתו של הלב.\n\nאבחון טרום־לידתי מאפשר לתכנן את הלידה במרכז רפואי שבו זמינים טיפול נמרץ ביילודים, קרדיולוגיית ילדים וכירורגיית לב. הוא גם מאפשר ליידע את ההורים ואת האישה ההרה מראש על הטיפול הצפוי לאחר הלידה. עם זאת, האבחון אינו מבטל את אי־הוודאות.\n\nבתוך הקטגוריה HLHS קיימת שונות אנטומית וקלינית. התחזית עשויה להיות מושפעת מתפקוד החדר הימני, ממצב המסתמים, ממידת החסימה בזרימת הדם, מנוכחות מומים נוספים ומממצאים כרומוזומליים או גנטיים. גם מצבו של התינוק בזמן הלידה והתגובה לטיפול הראשוני עשויים להשפיע על המשך הדרך.\n\nכאשר מתגלה מום מבני, עשויה להישקל הערכה גנטית. יש להסביר למשפחה את ההבדל בין בדיקות סקר, שמעריכות הסתברות למצב מסוים, לבין בדיקות אבחנתיות, שעשויות לזהות שינויים כרומוזומליים או גנטיים מוגדרים. גם בדיקה אבחנתית תקינה אינה יכולה לחזות במדויק הישרדות, איכות חיים, התפתחות או תגובה לכל אחד משלבי הניתוח.\n\nלפיכך, ייעוץ מאוזן אינו אמור להתבסס על מספר בודד או על תרחיש אחד. יש להציג בנפרד את הסיכונים המיידיים, מסלול הניתוחים, האפשרות לסיבוכים, הצורך במעקב לכל החיים והתחומים שבהם אין דרך לספק תחזית אישית ודאית.\n\n## מי מוסמך להחליט במהלך היריון פונדקאות?\n\nהסכם פונדקאות עשוי להסדיר ציפיות ביחס לבדיקות, למעקב ההיריון, למומים עובריים ולהפסקת היריון. עם זאת, סעיף חוזי אינו מבטל את הצורך בהסכמה רפואית של האישה שבגופה מבוצעת הפעולה.\n\nלפי [חוות הדעת של ועדת האתיקה של ASRM בנושא נשאיות היריון](https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/), הפונדקאית היא שמספקת את ההסכמה לטיפול הרפואי הניתן לה לאורך התהליך. עליה לקבל מידע מלא, לקבל ייעוץ עצמאי ולהיות חופשייה מלחץ בלתי ראוי מצד ההורים המיועדים, סוכנות התיווך או גורמים מקצועיים אחרים.\n\nהעיקרון המעשי הוא שהחלטה הנוגעת להפסקת היריון היא פעולה רפואית בגופה של הפונדקאית. להורים המיועדים עשוי להיות אינטרס עמוק ומשמעותי בתוצאה, במיוחד משום שהם צפויים לשאת באחריות ההורית לאחר הלידה, אך אינטרס זה אינו זהה להסכמה רפואית לביצוע פעולה בגופה של אישה אחרת.\n\nאין בכך כדי להמעיט בקושי של ההורים המיועדים. אבחון של מום לב קריטי עלול להציב אותם בפני האפשרות של מסלול ניתוחי ממושך, סיבוכים, מגבלות תפקודיות ואי־ודאות בנוגע לעתיד הילד. דווקא משום שהשלכות ההחלטה כבדות, יש לברר לפני תחילת הפונדקאות אם קיימים פערים ערכיים בין הצדדים.\n\nהיערכות אחראית כוללת ייעוץ משפטי נפרד, הסבר רפואי שאינו תלוי בסוכנות הפונדקאות, תיעוד של תרחישים אפשריים ושיחה מפורשת על גבולות ההסכמה. חוזה מפורט עשוי לצמצם אי־הבנות, אך אינו יכול להבטיח מראש כיצד ירגיש כל צד לאחר קבלת אבחנה ממשית.\n\nלאחר הלידה משתנה המסגרת. טיפול בתינוק אינו פעולה בגופה של הפונדקאית, ואז מתעוררות שאלות נפרדות: מי מוכר כהורה או כאפוטרופוס, מי רשאי להסכים לניתוח ומה רשאי הצוות הרפואי לעשות כאשר הוא סבור שטיפול חיוני נדחה. התשובות תלויות בדין המקומי, ולכן אין להשליך באופן אוטומטי ממקרה בטקסס על הדין בישראל.\n\n## מדוע הכותרת עלולה ליצור רושם מטעה?\n\nהכותרת ממקמת במרכז אישה שסירבה להפסיק היריון לאחר גילוי מום. באופן טבעי, היא עלולה לעורר רושם של מאבק בין הצלת חיים לבין החלטה שרירותית. אלא שהמידע הקיים אינו מאפשר מסקנה פשוטה כזו.\n\nראשית, עצם הבקשה להפסקת ההיריון שנויה במחלוקת. שנית, אבחנת HLHS אינה מתארת תוצאה אחת ודאית, אלא טווח של מצבים ומסלול טיפולי מורכב. שלישית, החלטה על המשך היריון שונה משפטית ואתית מהחלטה על טיפול בילד שכבר נולד. רביעית, תיאור ציבורי של הצדדים כ“בעד הילד” או “נגד הטיפול” עלול להתעלם מגרסאותיהם ומהמידע הרפואי שהיה בידיהם בזמן אמת.\n\nהעובדות הרפואיות אינן מוכיחות שהמשך ההיריון היה האפשרות הנכונה בכל מקרה דומה, ואינן מוכיחות שהפסקת היריון היא מסקנה הכרחית לאחר אבחון HLHS. ההחלטה בפועל תלויה בפרטי הממצא, בגיל ההיריון, במומים נוספים, בדין החל ובהעדפותיה של האישה ההרה לאחר קבלת מידע מלא.\n\nהלקח המעשי אינו שיש תשובה אחידה, אלא שנדרשים אבחון מדויק, ייעוץ רב־תחומי והפרדה ברורה בין עובדה, תחזית, טענה משפטית ועמדה ערכית.\n\n## סיכום\n\nהמקרה שמאחורי הכותרת מפגיש בין רפואת העובר, קרדיולוגיית ילדים, הסכמה מדעת, פונדקאות, הורות וטובת הילד. מבחינה רפואית, HLHS היא תסמונת קשה ומסכנת חיים, המחייבת בדרך כלל טיפול מיד לאחר הלידה ומסלול ניתוחי רב־שלבי. הטיפול עשוי לאפשר הישרדות והתפתחות, אך אינו ריפוי מלא ואינו מבטל את הסיכון לסיבוכים ולצורך במעקב ארוך טווח.\n\nמבחינה עובדתית, יש להציג את הבקשה הנטענת להפסקת ההיריון כטענה מוכחשת, ולא כעובדה מוכחת. מבחינה אתית, הסכם פונדקאות אינו שולל מהאישה הנושאת את ההיריון את הסמכות להסכים לטיפול בגופה או לסרב לו. לאחר הלידה נפתחת מערכת נפרדת של החלטות הנוגעות לטובת התינוק ולזהות הגורמים המוסמכים לפעול בשמו.\n\nהדרך האחראית לקרוא כותרת מסוג זה היא להימנע ממסקנה סנסציונית: להבין תחילה מהי האבחנה, לברר מה ידוע ומה שנוי במחלוקת, ורק לאחר מכן לדון במשמעות הרפואית, המשפטית והאנושית.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** הוא יוצר תוכן רפואי ומחבר ספרים. ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים או שירותים רפואיים.  \n> המאמר מיועד למידע כללי בלבד, אינו מהווה ייעוץ רפואי ואינו מחליף הערכה פרטנית. כל טענה רפואית בטיוטה מחייבת ביקורת אנושית ובדיקת רופא לפני פרסום.\n\n## מקורות\n\n### מקור הכתבה שנותחה\n\n1. [ynet — פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר](https://www.ynet.co.il/health/article/hkcnmykwgx) — מקור לדיווח החדשותי ולטענות הצדדים בלבד; אינו משמש מקור רפואי.\n\n### מקורות רפואיים ומקצועיים\n\n2. [CDC — Hypoplastic Left Heart Syndrome: מאפייני התסמונת, אבחון וטיפול](https://www.cdc.gov/heart-defects/about/hypoplastic-left-heart-syndrome.html)\n\n3. [ASRM — Consideration of the Gestational Carrier: an Ethics Committee Opinion](https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1/",
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "c7d291e5f7bff057a0429ef8f730c1410f127af9abfe36902a6cbbd309d008a1",
+        "slug": "guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-hero.png",
+          "sha256": "179be2ec7fd09af7f7beebe3c74b6ee814e4e6d96bc161af5dcdfc94c75d0c57",
+          "alt_text": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ptrump16",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Obstetric Ultrasound Polaroid Photograph 1985.jpg — Ptrump16; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-hero.png",
+              "sha256": "179be2ec7fd09af7f7beebe3c74b6ee814e4e6d96bc161af5dcdfc94c75d0c57",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+              "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-square.jpg",
+              "sha256": "d81802737dc8ec295f73946474c216d33864a0623b85f611ddfcac0fdf577589",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-portrait.png",
+              "sha256": "7103663f5886019a6a881edbf718ad1ad77fe9157d3aee040125093c8be92e8c",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: מאחורי הכותרת עומדים שלושה נושאים שונים שיש להפריד ביניהם: אבחון של מום לב מולד קשה המכונה תסמונת הלב השמאלי ההיפופלסטי — HLHS; מחלוקת עובדתית ומשפטית בין פונדקאית לבין ההורים המיועדים; ושאלה אתית עקרונית בדבר הסמכות לקבל החלטות רפואיות במהלך היריון פונדקאות.\n\nהאבחנה חמורה ומחייבת בדרך כלל טיפול מורכב לאחר הלידה, אך היא אינה מוכיחה איזו החלטה התקבלה, מי ביקש לקבל אותה או מה היה נכון לעשות במקרה הפרטני.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Obstetric Ultrasound Polaroid Photograph 1985.jpg — Ptrump16; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+          "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+          "alt_text": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ptrump16",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Obstetric Ultrasound Polaroid Photograph 1985.jpg — Ptrump16; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-hero.png",
+              "sha256": "179be2ec7fd09af7f7beebe3c74b6ee814e4e6d96bc161af5dcdfc94c75d0c57",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+              "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-square.jpg",
+              "sha256": "d81802737dc8ec295f73946474c216d33864a0623b85f611ddfcac0fdf577589",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-portrait.png",
+              "sha256": "7103663f5886019a6a881edbf718ad1ad77fe9157d3aee040125093c8be92e8c",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: מאחורי הכותרת עומדים שלושה נושאים שונים שיש להפריד ביניהם: אבחון של מום לב מולד קשה המכונה תסמונת הלב השמאלי ההיפופלסטי — HLHS; מחלוקת עובדתית ומשפטית בין פונדקאית לבין ההורים המיועדים; ושאלה אתית עקרונית בדבר הסמכות לקבל החלטות רפואיות במהלך היריון פונדקאות.\n\n• האבחנה חמורה ומחייבת בדרך כלל טיפול מורכב לאחר הלידה, אך היא אינה מוכיחה איזו החלטה התקבלה, מי ביקש לקבל אותה או מה היה נכון לעשות במקרה הפרטני.\n• הדיווח שהוביל לדיון פורסם במסגרת [כתבת ynet על הפונדקאית שסירבה להפסיק את ההיריון לאחר גילוי מום בלב העובר]( לפי הכתבה, הפונדקאית טענה כי לאחר אבחון העובר ביקשו ממנה ההורים המיועדים להפסיק את ההיריון, ואילו ההורים הכחישו טענה זו.\n• בהמשך התפתח גם הליך משפטי הנוגע לטיפול בתינוק ולהחלטות שיתקבלו לאחר לידתו.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Obstetric Ultrasound Polaroid Photograph 1985.jpg — Ptrump16; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+          "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+          "alt_text": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ptrump16",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Obstetric Ultrasound Polaroid Photograph 1985.jpg — Ptrump16; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-hero.png",
+              "sha256": "179be2ec7fd09af7f7beebe3c74b6ee814e4e6d96bc161af5dcdfc94c75d0c57",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+              "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-square.jpg",
+              "sha256": "d81802737dc8ec295f73946474c216d33864a0623b85f611ddfcac0fdf577589",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-portrait.png",
+              "sha256": "7103663f5886019a6a881edbf718ad1ad77fe9157d3aee040125093c8be92e8c",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "pinterest_board",
+      "platform": "Pinterest",
+      "asset": "configured public Pinterest board",
+      "payload": {
+        "title": "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רו",
+        "description": "התשובה הקצרה: מאחורי הכותרת עומדים שלושה נושאים שונים שיש להפריד ביניהם: אבחון של מום לב מולד קשה המכונה תסמונת הלב השמאלי ההיפופלסטי — HLHS; מחלוקת עובדתית ומשפטית בין פונדקאית לבין ההורים המיועדים; ושאלה אתית עקרונית בדבר הסמכות לקבל החלטות רפואיות במהלך היריון פונדקאות. האבחנה חמורה ומחייבת בדרך כלל טיפול מורכב לאחר הלידה, אך היא אינה מוכיחה איזו החלטה התקבלה, מי ביקש לקבל אותה או מה היה נכון לעשות במקרה הפרטני. מאת ד״ר גיא רופא\n\nקרדיט תמונה: Obstetric Ultrasound Polaroid Photograph 1985.jpg ",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-portrait.png",
+          "sha256": "7103663f5886019a6a881edbf718ad1ad77fe9157d3aee040125093c8be92e8c",
+          "alt_text": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ptrump16",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Obstetric Ultrasound Polaroid Photograph 1985.jpg — Ptrump16; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-hero.png",
+              "sha256": "179be2ec7fd09af7f7beebe3c74b6ee814e4e6d96bc161af5dcdfc94c75d0c57",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+              "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-square.jpg",
+              "sha256": "d81802737dc8ec295f73946474c216d33864a0623b85f611ddfcac0fdf577589",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-portrait.png",
+              "sha256": "7103663f5886019a6a881edbf718ad1ad77fe9157d3aee040125093c8be92e8c",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1080,
+          "height": 1350,
+          "media_type": "image/png",
+          "role": "portrait"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא.\n\nהתשובה הקצרה: מאחורי הכותרת עומדים שלושה נושאים שונים שיש להפריד ביניהם: אבחון של מום לב מולד קשה המכונה תסמונת הלב השמאלי ההיפופלסטי — HLHS; מחלוקת עובדתית ומשפטית בין פונדקאית לבין ההורים המיועדים; ושאלה אתית עקרונית בדבר הסמכות לקבל החלטות רפואיות במהלך היריון פונדקאות.\n\nהאבחנה חמורה ומחייבת בדרך כלל טיפול מורכב לאחר הלידה, אך היא אינה מוכיחה איזו החלטה התקבלה, מי ביקש לקבל אותה או מה היה נכון לעשות במקרה הפרטני.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+          "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+          "alt_text": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות אולטרסאונד מטושטשות של עובר זו לצד זו על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Obstetric_Ultrasound_Polaroid_Photograph_1985.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ptrump16",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Obstetric Ultrasound Polaroid Photograph 1985.jpg — Ptrump16; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-hero.png",
+              "sha256": "179be2ec7fd09af7f7beebe3c74b6ee814e4e6d96bc161af5dcdfc94c75d0c57",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-landscape.png",
+              "sha256": "0357165e9b6095255ab9dc19a2f423bec981e478267e1b99b933b49a8898dedc",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-square.jpg",
+              "sha256": "d81802737dc8ec295f73946474c216d33864a0623b85f611ddfcac0fdf577589",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-20-topic-90-run-32340734702-attempt-1-portrait.png",
+              "sha256": "7103663f5886019a6a881edbf718ad1ad77fe9157d3aee040125093c8be92e8c",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "c7d291e5f7bff057a0429ef8f730c1410f127af9abfe36902a6cbbd309d008a1",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab"
+}
