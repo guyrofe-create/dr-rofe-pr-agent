@@ -1,0 +1,101 @@
+{
+  "draft": "content_drafts/2026-08-20-topic-90-run-32340734702-attempt-1.md",
+  "title": "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-08-20T08:52:34.447725+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1/",
+      "detail": "idempotency_key=pub_862f4c95b86556e0cc6d1d480dda7246d86ab9c80db104ab0ebe5032d6b93cc8"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122200301990942441",
+      "detail": "idempotency_key=pub_0b85f62951aebfd7fc15eba60c8a39c45bdc3b44f906b7bdb3033173310d2025"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7496127010797150209/",
+      "detail": "idempotency_key=pub_24843082bc1203db3f86a90df8d93a9f2d6f29c057b3b1649372e5595cbc6b71"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Instagram",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_configured"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPK46NuK0Pe2cQ",
+      "detail": "idempotency_key=pub_ccff640387d61316a6c4de270057ac2cf0a3532ab2e7b190bd02e1f5bea404d5"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

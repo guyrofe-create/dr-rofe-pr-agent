@@ -386,6 +386,19 @@
       "urls": [
         "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-19-topic-90-run-32224474606-attempt-1/"
       ]
+    },
+    "apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab:c5a04c66027efe308c03661e420893b42f184ec5c6a826b544e454804073c5f4": {
+      "sent_at": "2026-08-20T08:52:35.534581+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab",
+      "state": "success",
+      "subject": "אישור פרסום: פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1/",
+        "https://www.facebook.com/122200301990942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7496127010797150209/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPK46NuK0Pe2cQ"
+      ]
     }
   }
 }
