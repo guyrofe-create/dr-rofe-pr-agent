@@ -1,6 +1,39 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-23-topic-01-run-32623454483-attempt-1.md",
+      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
+      "excerpt": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא](https://guyrofe.com) לפרוסקופיה גינקולוגית היא הליך ניתוחי זעיר־פולשני המאפשר לבדוק את איברי האגן ולעיתים גם לטפל ",
+      "generated_at": "2026-08-23T06:38:46.024764+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "pinterest",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-23",
+      "cadence_local_date": "2026-08-23",
+      "public_execution_allowed": false
+    },
+    {
+      "path": "content_drafts/2026-08-23-topic-90-run-32623454483-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: אפשר למנוע עד 45% מהסיכון לדמנציה — הדברים שחשוב לשנות עוד היום | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: אפשר למנוע עד 45% מהסיכון לדמנציה: הדברים שחשוב לשנות עוד היום",
+      "excerpt": "מה עומד מאחורי הכותרת: אפשר למנוע עד 45% מהסיכון לדמנציה — הדברים שחשוב לשנות עוד היום | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: הנתון של 45% אינו אומר שכל אדם יכול להפחית את הסיכון האישי שלו לדמנציה בשיע",
+      "generated_at": "2026-08-23T06:38:46.024764+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-23",
+      "cadence_local_date": "2026-08-23",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-4d9149e585242da7.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/hyauqwvdml"
+    },
+    {
       "path": "content_drafts/2026-08-20-topic-90-run-32340734702-attempt-1.md",
       "title": "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר",
