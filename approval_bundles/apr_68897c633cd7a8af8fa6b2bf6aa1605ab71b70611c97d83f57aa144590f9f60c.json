@@ -1,0 +1,432 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-24T06:58:23Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-24-topic-90-run-32699319798-attempt-1.md",
+  "source_draft_sha256": "657a33e287e09d136f6c2f4f1b6c49ac8346bfcbd1580cdaaec46472edad64b9",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://healthy.walla.co.il/item/3862686",
+      "type": "citation"
+    },
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26037632/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35268027/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31935866/",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.hnm.2026.200363",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+    "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+    "alt_text": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:GlassOfJuice_and_carrots.JPG",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/GlassOfJuice_and_carrots.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Salix",
+    "license_name": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "attribution": "GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+        "sha256": "62ff0baefd2bdc1c93371ac93e65985bf144399f1e199a63646c97dc71704315",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+        "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-square.jpg",
+        "sha256": "ebceecfc40f0aef0b549be2186a7e35a0ea5678d495cfe8d4e8f2e07f4453a17",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-portrait.png",
+        "sha256": "bcdac22d1bae6573e0768bf041fa1a5d8cfd813cffa248b57e01eaf6c1fc3e44",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
+        "markdown": "# מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\nמאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com)\n\n**התשובה הקצרה:** המשקאות האלה יכולים להשתלב בתזונה מאוזנת ולספק רכיבים תזונתיים פעילים, אך אין משקה יחיד ש“מנקה”, מתקן או מרפא איבר מסוים. הראיות מבוססות יחסית בכל הנוגע לתפקידו של ויטמין A בראייה, ומחקרים מצביעים על השפעה אפשרית של סלק ורימון על מדדים של כלי הדם ולחץ הדם. לעומת זאת, הטענה שתה ג'ינג'ר “משפר את הריאות” אינה נתמכת כיום בראיות קליניות מספקות. גם כאשר נמצא שינוי במדד ביולוגי, אין פירוש הדבר שהוכחה מניעה של מחלה או תועלת רפואית ארוכת טווח.\n\n## מה בעצם נטען בכותרת — והאם קיים מחקר אחד שמוכיח זאת?\n\n[כתבת הבריאות שבחנה את ההבטחות המיוחסות למיצי גזר, סלק, ג'ינג'ר ורימון](https://healthy.walla.co.il/item/3862686) פורסמה על רקע אינפוגרפיקה שהופצה ברשתות החברתיות. באותה תמונה הוצמד לכל איבר משקה שאמור כביכול להועיל לו: גזר לעיניים, סלק למוח, ג'ינג'ר לריאות ורימון ללב, לצד מי לימון לכבד ומי קוקוס לכליות.\n\nחשוב להבהיר: מאחורי הרשימה הזאת **לא עומד מחקר קליני יחיד** שבדק את כל המשקאות או הוכיח שכל אחד מהם מטפל באיבר מסוים. מדובר בחיבור פופולרי בין רכיב תזונתי, מנגנון ביולוגי אפשרי ומספר מחקרים נפרדים — חלקם קטנים, קצרי טווח או בעלי תוצאות לא עקביות.\n\nזו הבחנה מרכזית בקריאת חדשות רפואיות. העובדה שבמזון מסוים קיים חומר המשתתף בתהליך פיזיולוגי אינה מוכיחה כי שתייתו משפרת תפקוד שכבר תקין. באופן דומה, שינוי זמני בזרימת הדם או בלחץ הדם אינו מוכיח מניעת שבץ, דמנציה או התקף לב.\n\nלכן יש להפריד בין שלוש רמות שונות של ראיות:\n\n1. **מנגנון ביולוגי:** הסבר סביר כיצד רכיב מסוים עשוי לפעול בגוף.\n2. **שינוי במדד ביניים:** למשל לחץ דם, זרימת דם או ביצוע במבחן קוגניטיבי.\n3. **תוצאה קלינית:** מניעה או טיפול במחלה, הפחתת אשפוזים או שיפור משמעותי ומתמשך בתפקוד.\n\nרוב הטענות הנוגעות למשקאות האלה נמצאות ברמה הראשונה או השנייה, ולא בשלישית.\n\n## מיץ גזר והעיניים: רכיב חיוני אינו “שדרוג ראייה”\n\nהקשר בין גזר לבריאות העין מבוסס על עובדה ביולוגית מוכרת. גזר מכיל בטא־קרוטן, קרוטנואיד שהגוף מסוגל להמיר לוויטמין A. ויטמין זה נחוץ, בין היתר, ליצירת רודופסין — חלבון רגיש לאור ברשתית — ולתפקוד תקין של הקרנית ולחמית העין.\n\nעל פי [דף המידע המקצועי של NIH על ויטמין A וקרוטנואידים](https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/), מחסור בוויטמין A עלול לפגוע ביכולת לראות בתנאי תאורה חלשה ובמצבים חמורים לגרום לפגיעה עינית משמעותית. זהו הבסיס המדעי מאחורי הקשר המוכר בין גזר לראייה.\n\nאבל מכאן לא נובע שמיץ גזר ישפר חדות ראייה אצל אדם המקבל מספיק ויטמין A. הוא אינו מתקן קוצר ראייה, רוחק ראייה, אסטיגמציה או מחלות עיניים, ואינו מחליף משקפיים או בדיקה רפואית. התועלת הברורה ביותר צפויה כאשר קיים מחסור תזונתי — מצב שאינו זהה לראייה לא תקינה מסיבות אחרות.\n\nיש גם הבדל בין גזר שלם למיץ. כאשר אוכלים את הירק השלם מקבלים את הסיבים שבמבנהו, והאכילה בדרך כלל איטית ומשביעה יותר. בכוס מיץ אפשר לרכז כמה גזרים ולצרוך אותם במהירות. לכן, עבור רוב האנשים, אין צורך לשתות מיץ גזר כדי לקבל בטא־קרוטן; אפשר לקבלו מגזר ומירקות כתומים או ירוקים כחלק מתזונה מגוונת.\n\n## מיץ סלק והמוח: מנגנון מבטיח, תוצאות לא עקביות\n\nסלק עשיר יחסית בניטראט תזונתי. בגוף, ניטראט יכול לעבור המרה לניטריט ובהמשך לחנקן חד־חמצני, מולקולה המעורבת בהרחבת כלי דם ובוויסות זרימת הדם. מכאן נולדה ההשערה שמיץ סלק עשוי להשפיע גם על אספקת הדם למוח ועל ביצועים קוגניטיביים.\n\nב[ניסוי אקראי מבוקר בקרב 40 מבוגרים בריאים](https://pubmed.ncbi.nlm.nih.gov/26037632/) ניתנו 450 מיליליטר של מיץ סלק המכיל ניטראט או משקה ביקורת. החוקרים מצאו שינוי בתגובת זרימת הדם באזור הקורטקס הפרה־פרונטלי ושיפור אפשרי באחד ממדדי הביצוע הקוגניטיבי. זהו ממצא מסקרן, אך מדובר במחקר קטן שבדק השפעה לאחר מנה בודדת ומספר מבחנים.\n\nמנגד, [ניסוי אקראי שנמשך 13 שבועות בקרב מבוגרים בני 60–75 עם עודף משקל או השמנה](https://pubmed.ncbi.nlm.nih.gov/35268027/) לא מצא שמיץ סלק עשיר בניטראט שיפר את התפקוד הקוגניטיבי או את זרימת הדם במוח. גם סקירות מאוחרות יותר תיארו את הראיות הקוגניטיביות כמוגבלות ולא אחידות.\n\nמכאן שהמנגנון הביולוגי סביר, אך הכינוי “משקה למוח” מרחיק לכת. לא הוכח שמיץ סלק מונע דמנציה, משפר זיכרון באופן עקבי או מטפל בירידה קוגניטיבית. תוצאות סותרות בין מחקרים עשויות לנבוע מהבדלים בגיל המשתתפים, מצבם הבריאותי, מינון הניטראט, משך ההתערבות וסוג המבחנים.\n\nלסלק עשויה להיות גם השפעה על לחץ הדם. משום כך, אנשים הנוטלים תרופות המשפיעות על לחץ הדם או הסובלים ממצב רפואי המחייב התאמה תזונתית צריכים להימנע מייחוס אוטומטי של “טבעי” ל“מתאים לכולם”.\n\n## ג'ינג'ר והריאות: בין הקלה נעימה לטענה טיפולית\n\nג'ינג'ר משמש בתרבויות שונות כחליטה ביתית בזמן הצטננות, שיעול או כאב גרון. טעמו החריף והמשקה החם עשויים ליצור תחושת הקלה, וחלק מרכיביו הראו פעילות אנטי־דלקתית בניסויי מעבדה. אלא שממצאי מעבדה אינם שקולים להוכחה של טיפול יעיל בבני אדם.\n\n[סקירה שיטתית של 109 ניסויים אקראיים בג'ינג'ר](https://pubmed.ncbi.nlm.nih.gov/31935866/) מצאה ראיות עקביות יותר בתחומים כגון בחילות והקאות, בעוד שהראיות לשימושים רפואיים אחרים היו שנויות במחלוקת. רק חלק מהמחקרים שנכללו הוגדרו כבעלי איכות ראיות גבוהה, והחוקרים ציינו בעיות כמו מדגמים קטנים ושיטות מדידה לא אחידות.\n\nנכון להיום, אין בסיס קליני מספק לטענה שתה ג'ינג'ר “מנקה את הריאות”, משפר את תפקודן או מטפל בזיהום נשימתי. משקה חם יכול לסייע זמנית בתחושת היובש או אי־הנוחות בגרון, אך זו הקלה סימפטומטית אפשרית — לא טיפול במחלת ריאות.\n\nגם הביטוי “אנטי־דלקתי” דורש זהירות. מזונות רבים מכילים תרכובות המשפיעות על מסלולים דלקתיים בתנאי מעבדה, אך לא כל השפעה כזאת מתורגמת לתועלת קלינית במינון שנצרך בחליטה ביתית. אין להשתמש בתה ג'ינג'ר כתחליף לבירור רפואי כאשר קיימים קוצר נשימה, כאב בחזה, חום ממושך, שיעול חריג או החמרה בתסמינים.\n\n## מיץ רימון והלב: סימן אפשרי במדדי לחץ הדם, לא הוכחה למניעת התקף לב\n\nמבין המשקאות בכותרת, לרימון יש בסיס מחקרי רחב יחסית בנוגע לגורמי סיכון קרדיו־מטבוליים. הרימון מכיל פוליפנולים, ונבדקה האפשרות שרכיבים אלה משפיעים על תפקוד כלי הדם, עקה חמצונית ולחץ הדם.\n\n[סקירה שיטתית ומטא־אנליזה של מחקרים קליניים שפורסמה ב־2026](https://doi.org/10.1016/j.hnm.2026.200363) וכללה 33 מחקרים מצאה ירידה ממוצעת קטנה בלחץ הדם הסיסטולי והדיאסטולי בעקבות צריכת מוצרי רימון. הממצא מחזק את האפשרות להשפעה פיזיולוגית מדידה, אך דורש פרשנות זהירה: המחקרים השתמשו במוצרים, מינונים ומשכי טיפול שונים, ולא כולם בחנו מיץ רימון רגיל.\n\nחשוב מכך, הורדה ממוצעת של לחץ הדם במסגרת מחקרים אינה מוכיחה שמיץ רימון מונע התקפי לב או שבץ, מפחית תמותה או יכול להחליף תרופות. לחץ הדם הוא גורם סיכון חשוב, אבל הוא עדיין מדד ביניים. כדי להוכיח מניעת מחלה נדרשים מחקרים גדולים וארוכי טווח הבודקים תוצאות קליניות בפועל.\n\nמיץ רימון מכיל גם סוכרים טבעיים וקלוריות, ולעיתים מוצרים מסחריים כוללים תוספת סוכר. לכן יש לבדוק את התווית, את גודל המנה ואת התאמת המשקה לתפריט הכולל. כאשר המטרה היא ליהנות מהרימון כחלק מתזונה בריאה, אכילת גרגירי הפרי מספקת גם סיבים ומעודדת צריכה מתונה יותר.\n\n## מה המשמעות המעשית: מזון אינו מרשם לאיבר\n\nהבעיה העיקרית אינה במיצים עצמם אלא בדרך שבה הם משווקים. תזונה אינה פועלת לפי נוסחה של “משקה אחד לכל איבר”. בריאות המוח, העיניים, הלב והריאות מושפעת מדפוס התזונה הכולל, פעילות גופנית, שינה, עישון, לחץ דם, רמות שומנים וסוכר, מחלות רקע, גיל וגנטיקה.\n\nכאשר בוחרים לשתות מיץ, כדאי לזכור:\n\n- מיץ אינו שקול תמיד לפרי או לירק השלם, בעיקר מבחינת תכולת הסיבים והשובע.\n- הכמות חשובה: כוס גדולה עשויה לרכז כמה פירות או ירקות.\n- “ללא תוספת סוכר” אינו אומר שהמשקה אינו מכיל סוכרים טבעיים.\n- מיץ אינו תחליף לתרופה, לאבחון או לטיפול רפואי מוכח.\n- אנשים עם סוכרת, מחלת כליות, לחץ דם נמוך, מגבלות תזונתיות או טיפול תרופתי קבוע צריכים לבדוק התאמה פרטנית עם איש מקצוע רפואי מוסמך.\n\n## סיכום\n\nמיץ גזר יכול לספק בטא־קרוטן הדרוש לייצור ויטמין A, אך אינו משפר בהכרח ראייה תקינה. מיץ סלק מכיל ניטראט שעשוי להשפיע על כלי הדם, אולם המחקרים על תפקוד המוח אינם עקביים. תה ג'ינג'ר עשוי להיות משקה נעים בזמן הצטננות, אך אין ראיות טובות לכך שהוא מנקה או מרפא את הריאות. מיץ רימון מציג את האות המחקרי המשכנע יותר ביחס לירידה מתונה בלחץ הדם, אך לא הוכח כדרך למניעת התקף לב ואינו מחליף טיפול.\n\nהמסקנה אינה שצריך להימנע מכל המשקאות האלה, אלא שיש להתייחס אליהם כמזון — לא כטיפול ממוקד באיבר. העובדות המחקריות תומכות בחלק מהמנגנונים ובכמה שינויים במדדי ביניים; ההבטחות הרחבות שמופיעות ברשת חורגות בדרך כלל ממה שהמחקרים הוכיחו.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** הוא יוצר תוכן רפואי ומחבר ספרים. הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים. המאמר נועד למסירת מידע כללי בלבד, אינו מהווה ייעוץ רפואי ומחייב ביקורת רפואית אנושית לפני פרסום.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. NIH Office of Dietary Supplements — [Vitamin A and Carotenoids: Health Professional Fact Sheet](https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/)\n2. Wightman EL, et al. — [Dietary nitrate modulates cerebral blood flow parameters and cognitive performance in humans](https://pubmed.ncbi.nlm.nih.gov/26037632/)\n3. Ocampo DB, et al. — [Incremental Doses of Nitrate-Rich Beetroot Juice Do Not Modify Cognitive Function and Cerebral Blood Flow](https://pubmed.ncbi.nlm.nih.gov/35268027/)\n4. Anh NH, et al. — [Ginger on Human Health: A Comprehensive Systematic Review of 109 Randomized Controlled Trials](https://pubmed.ncbi.nlm.nih.gov/31935866/)\n5. Sanei M, et al. — [Effects of pomegranate on blood pressure and endothelial function: A systematic review and meta-analysis of clinical trials](https://doi.org/10.1016/j.hnm.2026.200363)\n6. כתבת החדשות הנבדקת — [מיץ גזר, סלק, ג'ינג'ר ורימון: האם הם בכלל תורמים לבריאות?](https://healthy.walla.co.il/item/3862686)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1/",
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "668d4f9a4e75730e2624229837f836bf61d84c85179d5873d940ddd33be453d8",
+        "slug": "guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+          "sha256": "62ff0baefd2bdc1c93371ac93e65985bf144399f1e199a63646c97dc71704315",
+          "alt_text": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:GlassOfJuice_and_carrots.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/GlassOfJuice_and_carrots.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Salix",
+          "license_name": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "attribution": "GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+              "sha256": "62ff0baefd2bdc1c93371ac93e65985bf144399f1e199a63646c97dc71704315",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+              "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-square.jpg",
+              "sha256": "ebceecfc40f0aef0b549be2186a7e35a0ea5678d495cfe8d4e8f2e07f4453a17",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-portrait.png",
+              "sha256": "bcdac22d1bae6573e0768bf041fa1a5d8cfd813cffa248b57e01eaf6c1fc3e44",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא — הפרופיל הרשמי]( התשובה הקצרה: המשקאות האלה יכולים להשתלב בתזונה מאוזנת ולספק רכיבים תזונתיים פעילים, אך אין משקה יחיד ש“מנקה”, מתקן או מרפא איבר מסוים.\n\nהראיות מבוססות יחסית בכל הנוגע לתפקידו של ויטמין A בראייה, ומחקרים מצביעים על השפעה אפשרית של סלק ורימון על מדדים של כלי הדם ולחץ הדם.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+          "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+          "alt_text": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:GlassOfJuice_and_carrots.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/GlassOfJuice_and_carrots.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Salix",
+          "license_name": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "attribution": "GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+              "sha256": "62ff0baefd2bdc1c93371ac93e65985bf144399f1e199a63646c97dc71704315",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+              "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-square.jpg",
+              "sha256": "ebceecfc40f0aef0b549be2186a7e35a0ea5678d495cfe8d4e8f2e07f4453a17",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-portrait.png",
+              "sha256": "bcdac22d1bae6573e0768bf041fa1a5d8cfd813cffa248b57e01eaf6c1fc3e44",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
+        "text": "מאת: [ד״ר גיא רופא — הפרופיל הרשמי]( התשובה הקצרה: המשקאות האלה יכולים להשתלב בתזונה מאוזנת ולספק רכיבים תזונתיים פעילים, אך אין משקה יחיד ש“מנקה”, מתקן או מרפא איבר מסוים.\n\n• הראיות מבוססות יחסית בכל הנוגע לתפקידו של ויטמין A בראייה, ומחקרים מצביעים על השפעה אפשרית של סלק ורימון על מדדים של כלי הדם ולחץ הדם.\n• לעומת זאת, הטענה שתה ג'ינג'ר “משפר את הריאות” אינה נתמכת כיום בראיות קליניות מספקות.\n• גם כאשר נמצא שינוי במדד ביולוגי, אין פירוש הדבר שהוכחה מניעה של מחלה או תועלת רפואית ארוכת טווח.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+          "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+          "alt_text": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:GlassOfJuice_and_carrots.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/GlassOfJuice_and_carrots.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Salix",
+          "license_name": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "attribution": "GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+              "sha256": "62ff0baefd2bdc1c93371ac93e65985bf144399f1e199a63646c97dc71704315",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+              "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-square.jpg",
+              "sha256": "ebceecfc40f0aef0b549be2186a7e35a0ea5678d495cfe8d4e8f2e07f4453a17",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-portrait.png",
+              "sha256": "bcdac22d1bae6573e0768bf041fa1a5d8cfd813cffa248b57e01eaf6c1fc3e44",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
+        "html": "<h2>מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>מאת: [ד״ר גיא רופא — הפרופיל הרשמי]( התשובה הקצרה: המשקאות האלה יכולים להשתלב בתזונה מאוזנת ולספק רכיבים תזונתיים פעילים, אך אין משקה יחיד ש“מנקה”, מתקן או מרפא איבר מסוים.</p><p>הראיות מבוססות יחסית בכל הנוגע לתפקידו של ויטמין A בראייה, ומחקרים מצביעים על השפעה אפשרית של סלק ורימון על מדדים של כלי הדם ולחץ הדם.</p>\n<p><small>קרדיט תמונה: GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+          "sha256": "62ff0baefd2bdc1c93371ac93e65985bf144399f1e199a63646c97dc71704315",
+          "alt_text": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:GlassOfJuice_and_carrots.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/GlassOfJuice_and_carrots.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Salix",
+          "license_name": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "attribution": "GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+              "sha256": "62ff0baefd2bdc1c93371ac93e65985bf144399f1e199a63646c97dc71704315",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+              "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-square.jpg",
+              "sha256": "ebceecfc40f0aef0b549be2186a7e35a0ea5678d495cfe8d4e8f2e07f4453a17",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-portrait.png",
+              "sha256": "bcdac22d1bae6573e0768bf041fa1a5d8cfd813cffa248b57e01eaf6c1fc3e44",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "instagram_business",
+      "platform": "Instagram",
+      "asset": "configured Instagram professional account",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
+        "text": "נקודה רפואית שכדאי להכיר:\n\nמאת: [ד״ר גיא רופא — הפרופיל הרשמי]( התשובה הקצרה: המשקאות האלה יכולים להשתלב בתזונה מאוזנת ולספק רכיבים תזונתיים פעילים, אך אין משקה יחיד ש“מנקה”, מתקן או מרפא איבר מסוים.\n\n1. הראיות מבוססות יחסית בכל הנוגע לתפקידו של ויטמין A בראייה, ומחקרים מצביעים על השפעה אפשרית של סלק ורימון על מדדים של כלי הדם ולחץ הדם.\n2. לעומת זאת, הטענה שתה ג'ינג'ר “משפר את הריאות” אינה נתמכת כיום בראיות קליניות מספקות.\n3. גם כאשר נמצא שינוי במדד ביולוגי, אין פירוש הדבר שהוכחה מניעה של מחלה או תועלת רפואית ארוכת טווח.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-square.jpg",
+          "sha256": "ebceecfc40f0aef0b549be2186a7e35a0ea5678d495cfe8d4e8f2e07f4453a17",
+          "alt_text": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "כוס מיץ גזר כתום לצד כמה גזרים טריים על משטח בהיר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:GlassOfJuice_and_carrots.JPG",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/GlassOfJuice_and_carrots.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Salix",
+          "license_name": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "attribution": "GlassOfJuice and carrots.JPG — Salix; CC BY 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+              "sha256": "62ff0baefd2bdc1c93371ac93e65985bf144399f1e199a63646c97dc71704315",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-landscape.png",
+              "sha256": "656d82a47db2c25391a8737ac3dc822335ba0e21a006f977b13e643b33408b75",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-square.jpg",
+              "sha256": "ebceecfc40f0aef0b549be2186a7e35a0ea5678d495cfe8d4e8f2e07f4453a17",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-24-topic-90-run-32699319798-attempt-1-portrait.png",
+              "sha256": "bcdac22d1bae6573e0768bf041fa1a5d8cfd813cffa248b57e01eaf6c1fc3e44",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 1200,
+          "media_type": "image/jpeg",
+          "role": "square"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": true,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "668d4f9a4e75730e2624229837f836bf61d84c85179d5873d940ddd33be453d8",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_68897c633cd7a8af8fa6b2bf6aa1605ab71b70611c97d83f57aa144590f9f60c"
+}

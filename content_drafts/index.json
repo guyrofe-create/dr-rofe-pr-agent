@@ -1,6 +1,26 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-24-topic-90-run-32699319798-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון: האם הם בכלל תורמים לבריאות?",
+      "excerpt": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com) התשובה הקצרה: המשקאות האלה יכולים להש",
+      "generated_at": "2026-08-24T06:56:06.049563+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "instagram"
+      ],
+      "cadence_week": "week-of-2026-08-23",
+      "cadence_local_date": "2026-08-24",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-37e93741b80f3285.json",
+      "analyzed_news_url": "https://healthy.walla.co.il/item/3862686"
+    },
+    {
       "path": "content_drafts/2026-08-23-topic-01-run-32623454483-attempt-1.md",
       "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
       "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
