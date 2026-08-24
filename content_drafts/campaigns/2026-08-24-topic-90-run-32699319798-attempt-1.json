@@ -1,0 +1,103 @@
+{
+  "draft": "content_drafts/2026-08-24-topic-90-run-32699319798-attempt-1.md",
+  "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-08-24T10:02:24.485157+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1/",
+      "detail": "idempotency_key=pub_898b858d72722b143a88ce092c92a9e5426f8bf5353e825a866619cdfec013cb"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122200926482942441",
+      "detail": "idempotency_key=pub_a9c9eb3487818e6d6a6a54c1b9ee3ac6a5408ab4acc4f9c0b3b93a1d911b0950"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7497594123907072000/",
+      "detail": "idempotency_key=pub_466edd0e9e7646646a28853f5ab0734fa01addbee6e37f6316c6890049fba5ff"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/08/blog-post_24.html",
+      "detail": "idempotency_key=pub_77673e4322f522ed8f613f5f4994f4842d5208ac1ceade3cd9b43545199fb1d6"
+    },
+    {
+      "name": "Instagram",
+      "status": "failed",
+      "target_id": "instagram_business",
+      "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=AihVF-9LN7_KU9jRh_gc6ar"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_68897c633cd7a8af8fa6b2bf6aa1605ab71b70611c97d83f57aa144590f9f60c",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
