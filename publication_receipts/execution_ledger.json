@@ -1258,6 +1258,20 @@
       "status": "reconciliation_required",
       "started_at": "2026-08-24T10:02:24Z",
       "updated_at": "2026-08-24T10:02:24Z"
+    },
+    "pub_e49836e24f4f0586855a76df2b13a9dba02db2312590b9d6569cab0d00112fac": {
+      "version": 7,
+      "idempotency_key": "pub_e49836e24f4f0586855a76df2b13a9dba02db2312590b9d6569cab0d00112fac",
+      "approval_id": "apr_4f0d86fb7b1fd68c2026f689d01932a11a4145996132bb025387e2cc1ce66f40",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "d0ad6d3de15067aea9c1e3c0adb40f9c297bf56850b3e8632b2f812a106ec8f2",
+      "status": "published",
+      "started_at": "2026-08-25T08:08:01Z",
+      "published_at": "2026-08-25T08:08:03Z",
+      "url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-25-topic-02-run-32818216514-attempt-1",
+      "provider_receipt": null
     }
   }
 }
