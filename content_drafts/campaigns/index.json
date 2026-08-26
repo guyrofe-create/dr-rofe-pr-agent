@@ -1,6 +1,98 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: \"שלא תצטרכו ניתוח מוח — אף אחד לא רוצה להיות נוירוכירורג בישראל\" | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-08-26T08:55:40.203309+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-26-topic-90-run-32939634105-attempt-1/",
+          "detail": "idempotency_key=pub_c614c245bb351f77855d7ccfb91c1a90396f59abdcd7f28bfb5f84c66589e13c"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-26-topic-90-run-32939634105-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Instagram",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_59f3732a9a3fd382ccfba6e30b29cdf0737c6a39dea15f6fdb4eadf55e1c8be2",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-25-topic-02-run-32818216514-attempt-1.md",
       "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ומהן אפשרויות הבירור והטיפול? | ד״ר גיא רופא",
       "status": "completed",
