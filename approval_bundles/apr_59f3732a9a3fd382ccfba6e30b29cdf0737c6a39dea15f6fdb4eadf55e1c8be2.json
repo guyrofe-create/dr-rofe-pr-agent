@@ -1,0 +1,188 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-26T06:51:22Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
+  "source_draft_sha256": "c91f5aa258ffac17cb4f56f95cb085d6a628da8cf8179d0ac4c516db03c3ac6a",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/rjyzvwjpge",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.gov.il/BlobFolder/reports/intern-survey-2024/he/subjects_medical_health_professions_Intern-Survey-2024.pdf",
+      "type": "citation"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30850399/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39620065/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.gov.il/BlobFolder/reports/report-outlining-reform-internship--medicine-may2025/he/subjects_medical_health_professions_report-outlining-reform-internship--medicine-may2025.pdf",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/publications-detail-redirect/9789241511131",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-landscape.png",
+    "sha256": "f7dc4d87359aa1dc9beec5ecab555c7697d8bbe4dcf4c04b49a25652c3495c6b",
+    "alt_text": "חתך אנטומי אורכי של ראש אדם, המציג את המוח, הגולגולת, חללי האף, הפה והצוואר, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "חתך אנטומי אורכי של ראש אדם, המציג את המוח, הגולגולת, חללי האף, הפה והצוואר.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:4167134294_d0cf029385_bT%C3%AAteCoupe.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/4167134294_d0cf029385_bT%C3%AAteCoupe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Otis Historical Archives of “National Museum of Health & Medicine” (OTIS Archive 1)",
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "attribution": "4167134294 d0cf029385 bTêteCoupe.jpg — Otis Historical Archives of “National Museum of Health & Medicine” (OTIS Archive 1); CC BY 2.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-hero.png",
+        "sha256": "e67f3200a7433e34908a65841ef2fa4398ab10e039b1b268cd60150199190c55",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-landscape.png",
+        "sha256": "f7dc4d87359aa1dc9beec5ecab555c7697d8bbe4dcf4c04b49a25652c3495c6b",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-square.jpg",
+        "sha256": "9c082ef70663c6c1a2f8d9a7544d03d2d5dc858de9d27db6c6d6cb545db172a3",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-portrait.png",
+        "sha256": "d36c8a2df8ffd3b3078a02aa4394abb30ac0ac8b055ccacdf6dbb8dd17f223b2",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: \"שלא תצטרכו ניתוח מוח — אף אחד לא רוצה להיות נוירוכירורג בישראל\" | ד״ר גיא רופא",
+        "markdown": "# מה עומד מאחורי הכותרת: \"שלא תצטרכו ניתוח מוח — אף אחד לא רוצה להיות נוירוכירורג בישראל\" | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\nמאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com)\n\n**התשובה הקצרה:** הכותרת מצביעה על מספר נמוך מאוד של סטאז'רים שסימנו נוירוכירורגיה כהתמחות המועדפת עליהם, אך היא אינה מוכיחה שאיש אינו רוצה לעסוק בתחום — ובוודאי אינה מוכיחה שכבר קיים מחסור ארצי בנוירוכירורגים. זהו אות אזהרה אפשרי לתכנון כוח האדם הרפואי, לא אבחנה מלאה של מצב המערכת.\n\n## מה נטען בכתבה — ומהו מקור הנתונים?\n\n[כתבת ynet על העדפות ההתמחות של הסטאז'רים בשנת 2025](https://www.ynet.co.il/health/article/rjyzvwjpge), שפורסמה ב־25 באוגוסט 2026, מבוססת על סקר משוב של משרד הבריאות בקרב 1,831 סטאז'רים וסטאז'ריות שהשלימו את תקופת הסטאז' במהלך שנת 2025. לפי הפרסום, 61% מהמשיבים היו בוגרי מוסדות לימוד בחו\"ל ו־30.7% בוגרי לימודי רפואה בישראל; היתר לא ציינו היכן למדו.\n\nמטרתו המרכזית של הסקר רחבה יותר מהכותרת שניתנה לכתבה. הוא בחן את שביעות רצונם של הסטאז'רים מהסבבים במחלקות הליבה — רפואה פנימית, כירורגיה, רפואת ילדים ורפואה דחופה — וכן שאל אותם מהו מסלול ההתמחות המועדף עליהם. על פי הנתונים שפורסמו, רפואה פנימית, רפואת ילדים ורפואת משפחה עמדו בראש רשימת ההעדפות, ואילו כמה מקצועות קטנים או ממוקדים, ובהם נוירוכירורגיה, הופיעו בחלק התחתון שלה.\n\nהממצא אינו חסר תקדים. גם ב[סקר הסטאז'רים הרשמי של משרד הבריאות לשנת 2024](https://www.gov.il/BlobFolder/reports/intern-survey-2024/he/subjects_medical_health_professions_Intern-Survey-2024.pdf) נוירוכירורגיה נבחרה כמסלול המועדף בידי שמונה משיבים בלבד. עם זאת, מן הנתון הזה לבדו אי אפשר להסיק מהו מספר המועמדים בפועל להתמחות, כמה תקנים נפתחים מדי שנה, כמה רופאים מתחילים ומסיימים את המסלול או מהו היחס בין היצע המומחים לצורכי האוכלוסייה.\n\nחשוב גם לדייק במונחים: סטאז' הוא שלב ההכשרה המעשית הכללית שלפני קבלת רישיון קבוע לעסוק ברפואה, ואילו התמחות היא מסלול הכשרה מקצועי נפרד שנבחר לאחר מכן. העדפה שנמסרה בסקר אינה שקולה להרשמה להתמחות, לקבלה לתקן או להתחייבות לקריירה מסוימת.\n\n## מדוע \"אף אחד לא רוצה\" היא מסקנה מרחיקת לכת?\n\nכותרת חדשותית נועדה למשוך תשומת לב, ולעיתים היא הופכת נתון קטן ומורכב לאמירה מוחלטת. במקרה הנוכחי יש כמה סיבות שלא לפרש את הממצא כפשוטו.\n\nראשית, הסקר מציג **העדפה ראשונה בנקודת זמן מסוימת**. רופאים צעירים עשויים לשנות את בחירתם לאחר סבב אלקטיבי, עבודה במחלקה, היכרות עם מדריכים או חשיפה מעשית לתחום. חלקם מתלבטים בין כמה מקצועות, ואחרים אינם משיבים לשאלת ההעדפה. לכן, דירוג נמוך אינו בהכרח עדות להיעדר מוחלט של מועמדים.\n\nשנית, נוירוכירורגיה היא התמחות קטנה יחסית. לא נכון להשוות את מספר המעוניינים בה ישירות לרפואה פנימית, ילדים או משפחה — מקצועות המעסיקים מספר גדול בהרבה של רופאים, פועלים בבתי חולים ובקהילה ומציעים פריסה רחבה של מסלולים ותפקידים. אפילו מספר מועמדים קטן עשוי להספיק אם מספר התקנים קטן בהתאם; לחלופין, אותו מספר עלול להיות בלתי מספיק אם צפויות פרישות רבות או הרחבת פעילות.\n\nשלישית, הסקר אינו מחקר שנועד למדוד מחסור בכוח אדם. לצורך קביעה כזאת דרושים נתונים נוספים: מספר המומחים הפעילים לפי גיל ואזור, היקפי משרה, זמני המתנה, עומס תורנויות, מספר הניתוחים, תפוסת המחלקות, שיעורי פרישה, תקני התמחות פנויים וקצב סיום ההכשרה. ללא נתונים אלה, אפשר לזהות סימן שדורש בדיקה — אך לא לקבוע שיש משבר לאומי.\n\nלבסוף, הסקר הוא תצפיתי ותיאורי. הוא אינו מסוגל להראות שהחשיפה לסטאז', תנאי העבודה או גורם מסוים אחר **גרמו** להעדפה הנמוכה. לכל היותר הוא מציג קשר אפשרי בין חוויית ההכשרה, מאפייני המקצוע והבחירות שעליהן דיווחו המשיבים.\n\n## מה עשוי להשפיע על בחירת התמחות?\n\nהבחירה בהתמחות רפואית אינה מבוססת על משתנה יחיד. היא מושפעת מעניין מקצועי, ניסיון קליני, מודלים לחיקוי, איכות ההדרכה, סיכויי קבלה לתקן, מקום מגורים, משך ההכשרה, אפשרויות התעסוקה, שכר, עומס, תורנויות והיכולת לשלב בין עבודה לחיים האישיים.\n\n[סקירה שיטתית ומטה־אנליזה על הגורמים המשפיעים על בחירת התמחות](https://pubmed.ncbi.nlm.nih.gov/30850399/) כללה 75 מחקרים ומצאה כי עניין אקדמי, תחושת התאמה וכשירות, אורח חיים בר־שליטה, קשר עם מטופלים, מורים ומנטורים, הזדמנויות קריירה, שעות עבודה ומשך ההכשרה נמנו עם הגורמים הבולטים. השונות בין המחקרים הייתה גבוהה, ולכן אין להעתיק את משקלם של הגורמים ממדינה אחת לאחרת באופן אוטומטי.\n\nנוירוכירורגיה משלבת טיפול במחלות ובפגיעות של המוח, עמוד השדרה ומערכת העצבים, לעיתים במצבי חירום ותחת אחריות כבדה. המסלול דורש הכשרה ממושכת, מיומנויות כירורגיות מורכבות ויכולת להתמודד עם תוצאות שאינן תמיד צפויות. מאפיינים אלה עשויים למשוך רופאים המחפשים אתגר מקצועי וטכנולוגי יוצא דופן, אך גם להרתיע מי שמעדיפים מסלול בעל שעות צפויות יותר.\n\nלצד זאת, אין לייחס את ההעדפה הנמוכה רק ל\"קושי\" הטבוע במקצוע. לאיכות החשיפה במהלך הלימודים והסטאז' עשויה להיות חשיבות רבה. [סקירה שיטתית על גורמים לימודיים המשפיעים על בחירת התמחות](https://pubmed.ncbi.nlm.nih.gov/39620065/) זיהתה ניסיון קליני מעשי, מודלים מקצועיים לחיקוי והשתלבות בצוות כגורמים שחזרו במחקרים רבים. הוראה באיכות נמוכה, חשיפה מצומצמת או סביבת עבודה שאינה תומכת עלולות לפעול בכיוון ההפוך.\n\nגם נתוני משרד הבריאות מחייבים תשומת לב להקשר הזה. בדוח הרשמי על [הרפורמה במתכונת הסטאז' ממאי 2025](https://www.gov.il/BlobFolder/reports/report-outlining-reform-internship--medicine-may2025/he/subjects_medical_health_professions_report-outlining-reform-internship--medicine-may2025.pdf) תוארו בין השאר חשיפה נמוכה לניתוחים בחלק מהסבבים הכירורגיים, ריבוי סטאז'רים בחלק מהמחלקות ושונות באיכות הליווי והחניכה. אין בכך הוכחה שהבעיות הללו גורמות לירידה בביקוש לנוירוכירורגיה, אך הן מצביעות על מנגנון אפשרי שראוי לבדיקה שיטתית.\n\n## האם העדפה נמוכה היום עלולה להפוך למחסור בעתיד?\n\nכן, אך לא בהכרח. העדפות של רופאים בתחילת דרכם הן אחד המשתנים שיכולים להשפיע על כוח האדם העתידי, אולם בינן לבין זמינותם של מומחים לציבור קיימת שרשרת ארוכה של שלבים.\n\nתחילה יש לבדוק כמה מהמביעים עניין מגישים מועמדות בפועל. לאחר מכן יש לבחון כמה תקני התמחות מוצעים, האם הם מאוישים, כמה מתמחים פורשים במהלך המסלול וכמה מומחים נשארים בישראל ובמערכת הציבורית לאחר סיום ההכשרה. גם פריסה גיאוגרפית חשובה: מספר ארצי סביר של מומחים אינו מבטיח זמינות שווה במרכז ובפריפריה.\n\nמסמך [אסטרטגיית כוח האדם בבריאות של ארגון הבריאות העולמי](https://www.who.int/publications-detail-redirect/9789241511131) מדגיש כי תכנון כוח אדם צריך לחבר בין צורכי האוכלוסייה, מדיניות ההכשרה, שוק העבודה, פיזור אנשי המקצוע ונתונים עדכניים. במילים אחרות, אין די בספירת סטאז'רים המעוניינים במקצוע מסוים. נדרש מודל תחזית המביא בחשבון גם גידול והזדקנות של האוכלוסייה, שינויים בטכנולוגיה, מגמות תחלואה, יציאה לגמלאות והיקף השירותים הצפוי.\n\nבנוירוכירורגיה יש חשיבות מיוחדת גם לריכוז פעילות. לא כל בית חולים נדרש להציע כל סוג של ניתוח מוח, וחלק מהפרוצדורות המורכבות מבוצעות מטבען במרכזים ייעודיים. לכן, השאלה אינה רק \"כמה נוירוכירורגים יש\", אלא האם קיימים צוותים זמינים, מיומנים ומפוזרים באופן שמאפשר מענה בטוח ובזמן סביר.\n\n## מה נכון לעשות במקום להסתפק בכותרת?\n\nהתגובה הנכונה לנתון אינה בהלה, אלא בדיקה מתמשכת ותכנון מוקדם. ראשית, ראוי לפרסם מדי שנה נתונים מלאים המאפשרים לעקוב אחר מגמות ולא רק אחר תמונת מצב חד־שנתית. ירידה עקבית במשך כמה שנים משמעותית יותר מתוצאה נקודתית.\n\nשנית, כדאי להשוות בין העדפות הסטאז'רים לבין מספר המועמדויות והתקנים שאוישו בפועל. אם קיימים די מועמדים לכל התקנים, ייתכן שהכותרת חריפה יותר מהבעיה. אם תקנים נותרים פנויים, מתמחים פורשים או מחלקות מתקשות לאייש תורנויות — מדובר כבר באות משמעותי יותר.\n\nשלישית, יש לבחון את איכות ההכשרה והחשיפה. סבבים מובנים, חניכה אישית, משוב, סימולציות והיכרות אמיתית עם עבודת הצוות יכולים לסייע לרופאים לקבל החלטה המבוססת על ניסיון ולא על דימוי חיצוני של המקצוע. המטרה אינה לשכנע כל סטאז'ר לבחור בנוירוכירורגיה, אלא לאפשר למועמדים המתאימים להיחשף אליה בתנאים מקצועיים והוגנים.\n\nלבסוף, תכנון לאומי צריך להתייחס גם לתנאי עבודה, שחיקה, איזון בין תורנויות להכשרה, אפשרויות מחקר וקידום, ופיזור בין מרכז לפריפריה. אלה מרכיבים מערכתיים; אין זה סביר להטיל את האחריות למחסור עתידי רק על העדפותיהם האישיות של רופאים צעירים.\n\n## סיכום\n\nהכותרת \"אף אחד לא רוצה להיות נוירוכירורג בישראל\" נשענת על ממצא אמיתי אך מצומצם: נוירוכירורגיה נמצאת בתחתית דירוג ההעדפות של סטאז'רים, ומספר קטן בלבד מציין אותה כבחירה ראשונה. זהו נתון שראוי להתייחס אליו, במיוחד אם הוא חוזר לאורך כמה שנים.\n\nעם זאת, הסקר אינו מוכיח שאין מועמדים להתמחות, אינו מודד ישירות מחסור במומחים ואינו מאפשר לקבוע שהציבור יתקשה לקבל ניתוחי מוח. כדי להגיע למסקנה כזאת נדרשים נתונים על תקנים, איוש, פרישות, היקפי פעילות, זמני המתנה ופיזור גיאוגרפי.\n\nהמשמעות המעשית היא שיש לראות בסקר מערכת התרעה מוקדמת: לא סיבה לפאניקה, אך בהחלט הזדמנות לבחון את איכות החשיפה למקצועות הכירורגיים, את תנאי ההכשרה ואת תכנון כוח האדם לטווח ארוך. ההבחנה בין העדפה, גיוס ומחסור בפועל היא המפתח לקריאה אחראית של הנתונים.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.  \n> סטטוס נוכחי מאושר: אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> המאמר נועד למסירת מידע כללי בלבד ואינו מהווה ייעוץ רפואי, הנחיה קלינית או תחליף לבדיקה מקצועית. כל טענה רפואית והטיוטה בכללותה מחייבות ביקורת אנושית ובדיקת רופא לפני פרסום.\n\n## מקורות\n\n1. משרד הבריאות, **סקר משוב הסטאז'רים לשנת 2024**:  \n   https://www.gov.il/BlobFolder/reports/intern-survey-2024/he/subjects_medical_health_professions_Intern-Survey-2024.pdf\n\n2. משרד הבריאות, **דוח מתווה הרפורמה במתכונת הסטאז' — מאי 2025**:  \n   https://www.gov.il/BlobFolder/reports/report-outlining-reform-internship--medicine-may2025/he/subjects_medical_health_professions_report-outlining-reform-internship--medicine-may2025.pdf\n\n3. Yang Y et al., **Factors influencing subspecialty choice among medical students: a systematic review and meta-analysis**, PubMed:  \n   https://pubmed.ncbi.nlm.nih.gov/30850399/\n\n4. Schoon B, Kötter T, **Intracurricular Factors Influencing Medical Students' Specialty Choice: A Systematic Review**, PubMed:  \n   https://pubmed.ncbi.nlm.nih.gov/39620065/\n\n5. ארגון הבריאות העולמי, **Global Strategy on Human Resources for Health: Workforce 2030**:  \n   https://www.who.int/publications-detail-redirect/9789241511131\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)\n- [כתבת ynet על העדפות ההתמחות של הסטאז'רים בשנת 2025](https://www.ynet.co.il/health/article/rjyzvwjpge)",
+        "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-26-topic-90-run-32939634105-attempt-1/",
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "595b33f6b14dbf01636559288979d1bc74215313829d3d3e1a8a19ac9855d092",
+        "slug": "guy-rofe-pilot-2026-08-26-topic-90-run-32939634105-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-hero.png",
+          "sha256": "e67f3200a7433e34908a65841ef2fa4398ab10e039b1b268cd60150199190c55",
+          "alt_text": "חתך אנטומי אורכי של ראש אדם, המציג את המוח, הגולגולת, חללי האף, הפה והצוואר, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חתך אנטומי אורכי של ראש אדם, המציג את המוח, הגולגולת, חללי האף, הפה והצוואר.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:4167134294_d0cf029385_bT%C3%AAteCoupe.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/4167134294_d0cf029385_bT%C3%AAteCoupe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Otis Historical Archives of “National Museum of Health & Medicine” (OTIS Archive 1)",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "attribution": "4167134294 d0cf029385 bTêteCoupe.jpg — Otis Historical Archives of “National Museum of Health & Medicine” (OTIS Archive 1); CC BY 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-hero.png",
+              "sha256": "e67f3200a7433e34908a65841ef2fa4398ab10e039b1b268cd60150199190c55",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-landscape.png",
+              "sha256": "f7dc4d87359aa1dc9beec5ecab555c7697d8bbe4dcf4c04b49a25652c3495c6b",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-square.jpg",
+              "sha256": "9c082ef70663c6c1a2f8d9a7544d03d2d5dc858de9d27db6c6d6cb545db172a3",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-26-topic-90-run-32939634105-attempt-1-portrait.png",
+              "sha256": "d36c8a2df8ffd3b3078a02aa4394abb30ac0ac8b055ccacdf6dbb8dd17f223b2",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "595b33f6b14dbf01636559288979d1bc74215313829d3d3e1a8a19ac9855d092",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_59f3732a9a3fd382ccfba6e30b29cdf0737c6a39dea15f6fdb4eadf55e1c8be2"
+}

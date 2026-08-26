@@ -1,0 +1,485 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-26T06:51:09Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-26-topic-06-run-32939634105-attempt-1.md",
+  "source_draft_sha256": "62d432e6c9e1c7bba9bdcc8fbf04ee3fe0a57b86a52cbfcce57baba8cbec4488",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/news-room/fact-sheets/detail/menopause",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng23/chapter/Recommendations",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/hormone-therapy-for-menopause",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+    "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+    "alt_text": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_Venus._Wax_figure_of_reclining_woman,_Florence._Wellcome_L0058207.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anatomical_Venus._Wax_figure_of_reclining_woman%2C_Florence._Wellcome_L0058207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html",
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+        "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+        "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-square.jpg",
+        "sha256": "ba30bf7470c80b7449cc05de61f6692928bab0cc9723705bfe8789f9a9ab6ad0",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-portrait.png",
+        "sha256": "5656031fc55b4cfc0ebecda21360edced6a68628de13d889244462e7c2da0657",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+        "markdown": "# גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nגיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת. הוא אינו מחלה, אך השינויים ההורמונליים המתלווים אליו עלולים לגרום לתסמינים גופניים ורגשיים המשפיעים על השינה, התפקוד היומיומי, הבריאות המינית ואיכות החיים. קיימות דרכים הורמונליות ולא־הורמונליות להקל על התסמינים, אולם בחירת הטיפול צריכה להתבסס על מצב רפואי אישי, חומרת התסמינים, גורמי סיכון והעדפות המטופלת.\n\nלפי [דף המידע של ארגון הבריאות העולמי בנושא גיל המעבר](https://www.who.int/news-room/fact-sheets/detail/menopause), גיל המעבר הטבעי מתרחש לרוב בין גיל 45 לגיל 55. עם זאת, מועד הופעתו, משך תקופת המעבר ועוצמת התסמינים משתנים במידה ניכרת בין נשים.\n\n## מהו גיל המעבר ומה קורה בגוף?\n\nהמונח \"גיל המעבר\" משמש לעיתים לתיאור תקופה של כמה שנים, אך מבחינה רפואית נהוג להבחין בין שלושה שלבים עיקריים:\n\n- **טרום גיל המעבר או תקופת המעבר למנופאוזה (Perimenopause):** שלב שבו פעילות השחלות נעשית פחות סדירה. רמות האסטרוגן והפרוגסטרון עשויות להשתנות, המחזורים עלולים להתקצר או להתארך, ולעיתים מתחילים תסמינים כגון גלי חום והפרעות שינה.\n- **מנופאוזה (Menopause):** נקודת זמן המוגדרת בדיעבד לאחר 12 חודשים רצופים ללא וסת, כאשר אין סיבה רפואית או פיזיולוגית אחרת להפסקתה.\n- **לאחר גיל המעבר (Postmenopause):** התקופה המתחילה לאחר שהמנופאוזה אושרה ונמשכת בהמשך החיים.\n\nהירידה בפעילות השחלות מובילה להפחתת ייצור האסטרוגן. מאחר שקולטנים לאסטרוגן קיימים ברקמות רבות, השינוי עשוי להשפיע לא רק על המחזור, אלא גם על ויסות חום הגוף, הנרתיק ודרכי השתן, העצמות, השינה ומערכות נוספות.\n\nגיל המעבר עשוי להופיע גם בעקבות כריתה ניתוחית של שתי השחלות או כתוצאה מטיפולים רפואיים מסוימים. במצבים אלה השינוי ההורמונלי עלול להיות חד יותר. כאשר הפסקת הווסת מתרחשת לפני גיל 40, ייתכן שמדובר באי־ספיקה שחלתית מוקדמת, מצב המחייב בירור רפואי נפרד ואינו זהה לחלוטין למנופאוזה המתרחשת בגיל המקובל.\n\nחשוב לזכור כי כל עוד לא חלפו 12 חודשים ללא וסת, היריון עדיין עשוי להיות אפשרי. טיפול הורמונלי בתסמיני גיל המעבר אינו משמש אמצעי מניעה.\n\n## מהם התסמינים האפשריים?\n\nהתסמינים שונים מאישה לאישה. יש נשים שחוות שינויים קלים בלבד, ואילו אחרות מתמודדות עם תסמינים ממושכים או משמעותיים. התסמינים יכולים להתחיל עוד לפני הפסקת הווסת ולהימשך גם לאחריה.\n\nבין התופעות הנפוצות:\n\n- **שינויים במחזור:** דימום בתדירות משתנה, מחזורים לא סדירים או שינוי בכמות הדימום.\n- **גלי חום והזעות לילה:** תחושת חום פתאומית, לעיתים עם הסמקה, דופק מורגש והזעה. הזעות לילה עלולות לקטוע את השינה.\n- **הפרעות שינה:** קושי להירדם, יקיצות תכופות או שינה שאינה מרעננת. לעיתים הבעיה קשורה לגלי חום, אך לא תמיד.\n- **שינויים רגשיים וקוגניטיביים:** עצבנות, תנודות במצב הרוח, תחושת חרדה, קושי בריכוז או תחושת \"ערפול מחשבתי\". תסמינים אלה עשויים להיות מושפעים גם מחוסר שינה, מעומס ומנסיבות חיים.\n- **שינויים בנרתיק ובדרכי השתן:** יובש, צריבה, גרד, כאב בעת קיום יחסי מין, תכיפות או דחיפות במתן שתן ולעיתים נטייה לדלקות חוזרות בדרכי השתן. מכלול זה מכונה התסמונת הגניטואורינרית של גיל המעבר.\n- **שינויים בתפקוד המיני:** ירידה בחשק, אי־נוחות או כאב. לא כל שינוי בתפקוד המיני נובע מהורמונים בלבד; גם מצב בריאותי, תרופות, יחסים, מתח ושינה עשויים להשפיע.\n- **כאבי מפרקים או שרירים, כאבי ראש ודפיקות לב:** תופעות שעשויות להופיע בתקופה זו, אך מחייבות בחינה של גורמים אפשריים נוספים.\n\nלא נכון להניח שכל תסמין חדש סביב גיל המעבר נובע בהכרח משינוי הורמונלי. לדוגמה, דפיקות לב, עייפות, הפרעות מצב רוח או שינויים במשקל יכולים להיות קשורים גם להפרעות בבלוטת התריס, לאנמיה, לתרופות, לדום נשימה בשינה או למצבים רפואיים אחרים.\n\n## כיצד מאבחנים, ומתי נדרש בירור?\n\nאצל נשים בריאות בנות 45 ומעלה, כאשר קיימים תסמינים אופייניים ושינויים במחזור, האבחנה היא בדרך כלל קלינית. על פי [המלצות NICE לאבחון ולטיפול בגיל המעבר](https://www.nice.org.uk/guidance/ng23/chapter/Recommendations), ברוב המקרים אין צורך בבדיקות הורמונליות שגרתיות כדי לזהות מנופאוזה בקבוצת גיל זו.\n\nרמת ההורמון FSH יכולה להשתנות במידה רבה בתקופת המעבר, ולכן בדיקה בודדת אינה תמיד משקפת את המצב. בנסיבות מסוימות — למשל הופעת תסמינים בגיל צעיר, תמונה שאינה ברורה, הפסקת וסת מסיבה לא מוסברת או שימוש בטיפולים המשפיעים על המחזור — ייתכן צורך בבירור מותאם.\n\nיש להעריך דימום חריג ולא לייחס אותו אוטומטית לגיל המעבר. בדיקה רפואית נדרשת במיוחד כאשר מופיעים:\n\n- דימום לאחר שכבר חלפו 12 חודשים ללא וסת;\n- דימום כבד מאוד, ממושך או תכוף;\n- דימום לאחר קיום יחסי מין;\n- כאב אגן חדש או מתמשך;\n- תסמינים המופיעים לפני גיל 40;\n- גוש בשד, הפרשה דמית מהפטמה או שינוי חדש במבנה השד;\n- כאב בחזה, קוצר נשימה, חולשה פתאומית או תסמין נוירולוגי חד.\n\nהבירור עשוי לכלול תשאול, בדיקה גופנית ובדיקות נוספות בהתאם לתסמינים ולגורמי הסיכון. אין רשימת בדיקות אחידה המתאימה לכל אישה.\n\n## טיפול הורמונלי: תועלת, התאמה וסיכונים\n\nטיפול הורמונלי לגיל המעבר הוא אחת האפשרויות היעילות ביותר להקלה על גלי חום והזעות לילה. הוא יכול לסייע גם לתסמינים נוספים, ובמהלך השימוש עשויה להיות לו השפעה מגינה מפני אובדן עצם. עם זאת, הוא אינו מתאים לכל אישה, והחלטה על התחלתו דורשת הערכה אישית.\n\nאצל אישה עם רחם, אסטרוגן מערכתי ניתן בדרך כלל יחד עם פרוגסטוגן כדי להפחית את הסיכון לעיבוי־יתר ולסרטן של רירית הרחם. לאחר כריתת רחם מלאה ניתן לעיתים להשתמש באסטרוגן ללא פרוגסטוגן, בהתאם למצב הרפואי.\n\nהטיפול קיים בצורות שונות, ובהן טבליות, מדבקות, ג'ל או תכשירים אחרים. דרך המתן עשויה להיות רלוונטית כאשר קיימים גורמי סיכון מסוימים. הבחירה כוללת גם את סוג ההורמון, המינון ומשטר הטיפול, ואין תכשיר יחיד המתאים לכולן.\n\nלפי [המידע של ACOG על טיפול הורמונלי בגיל המעבר](https://www.acog.org/womens-health/faqs/hormone-therapy-for-menopause), הסיכונים והתועלות משתנים בהתאם לגיל, לזמן שחלף מתחילת המנופאוזה, לסוג הטיפול, לדרך המתן ולהיסטוריה הרפואית. בין הנושאים הנשקלים נמצאים סיכון לקרישי דם, שבץ, מחלות לב, סרטן שד ומחלות של רירית הרחם.\n\nהיסטוריה של סרטן רגיש להורמונים, קרישי דם, שבץ, התקף לב, מחלת כבד או דימום נרתיקי בלתי מוסבר עשויה להשפיע על ההתאמה לטיפול. אין להתחיל, להפסיק או לשנות טיפול הורמונלי על סמך מידע כללי בלבד.\n\nכאשר התסמינים ממוקדים בנרתיק ובדרכי השתן, ניתן לשקול טיפול מקומי באסטרוגן במינון נמוך. הספיגה המערכתית בטיפול מקומי נמוכה בדרך כלל מזו של טיפול מערכתי, אך גם התאמתו תלויה ברקע הרפואי, ובייחוד כאשר קיימת היסטוריה של מחלה רגישה להורמונים.\n\n## אפשרויות לא־הורמונליות ואורח חיים\n\nנשים שאינן מעוניינות בטיפול הורמונלי, אינן מתאימות לו או מעדיפות לשלב גישות נוספות יכולות להיעזר באפשרויות לא־הורמונליות. קיימות תרופות מרשם שעשויות להפחית גלי חום, אך הן שונות זו מזו ביעילותן ובתופעות הלוואי שלהן. בחירת תרופה תלויה, בין היתר, במחלות רקע, בתרופות אחרות ובתסמינים הנלווים.\n\nטיפול קוגניטיבי־התנהגותי עשוי לסייע בהתמודדות עם ההשפעה של גלי חום, קשיי שינה ותסמיני מצב רוח. הוא אינו מבטל בהכרח את השינוי ההורמונלי, אך יכול לשפר דרכי התמודדות ותפקוד.\n\nצעדים מעשיים עשויים לכלול:\n\n- לבוש בשכבות ושמירה על חדר שינה קריר;\n- זיהוי גורמים אישיים המחמירים גלי חום, כגון אלכוהול, משקאות חמים או מזון חריף;\n- פעילות גופנית סדירה המשלבת פעילות אירובית, חיזוק שרירים ותרגילי שיווי משקל;\n- הימנעות מעישון והגבלת צריכת אלכוהול;\n- הקפדה על שעות שינה סדירות והפחתת קפאין בשעות המאוחרות;\n- תזונה מגוונת הכוללת מקורות מתאימים לחלבון, סידן וויטמין D;\n- שימוש בחומרי סיכה בעת קיום יחסי מין ובתכשירי לחות נרתיקיים לטיפול ביובש.\n\nתוספי תזונה ותכשירים צמחיים אינם בהכרח נטולי סיכון. ריכוז החומר הפעיל עשוי להשתנות, הראיות ליעילות אינן אחידות, וייתכנו תופעות לוואי או תגובות בין־תרופתיות. המונח \"טבעי\" אינו מעיד כשלעצמו על בטיחות.\n\n## בריאות לטווח ארוך לאחר גיל המעבר\n\nהירידה באסטרוגן קשורה להאצה באובדן מסת עצם, ולכן לאחר גיל המעבר עולה החשיבות של בריאות העצם. הערכת סיכון לאוסטאופורוזיס מתבססת על מכלול נתונים, ובהם גיל, משקל גוף, שברים קודמים, היסטוריה משפחתית, עישון, שימוש ממושך בסטרואידים ומחלות רקע. בדיקת צפיפות עצם אינה נדרשת אוטומטית לכל אישה מיד עם הפסקת הווסת, אלא לפי גיל וגורמי סיכון.\n\nגם הסיכון למחלות לב וכלי דם עולה עם הגיל. מניעה כוללת מעקב אחר לחץ דם, שומנים בדם וסוכרת, לצד פעילות גופנית, תזונה מתאימה והימנעות מעישון. טיפול הורמונלי אינו מיועד בדרך כלל להתחלה למטרה הבלעדית של מניעת מחלת לב או דמנציה.\n\nיש להמשיך בבדיקות סקר לפי גיל, היסטוריה רפואית והנחיות בריאות תקפות, לרבות בדיקות לסרטן השד ולסרטן צוואר הרחם כאשר הן רלוונטיות. גיל המעבר אינו מבטל את הצורך במעקב בריאותי שגרתי.\n\n## סיכום\n\nגיל המעבר הוא תהליך טבעי, אך השפעתו אינה אחידה. האבחנה מבוססת בדרך כלל על גיל, שינויים במחזור ותסמינים אופייניים, ולא תמיד נדרשות בדיקות הורמונליות. גלי חום, הפרעות שינה, שינויים במצב הרוח ותסמינים בנרתיק ובדרכי השתן הם שכיחים, אך יש לשלול סיבות אחרות כאשר התמונה חריגה.\n\nטיפול הורמונלי עשוי להיות יעיל מאוד, בעיקר נגד גלי חום, אך התאמתו מחייבת בחינה אישית של תועלת וסיכון. קיימות גם אפשרויות לא־הורמונליות ושינויים מעשיים באורח החיים. דימום לאחר מנופאוזה, תסמינים בגיל צעיר או תופעות חדשות וחריגות מחייבים בירור ולא הנחה שמדובר ב\"גיל המעבר בלבד\".\n\nהמידע במאמר הוא מידע רפואי כללי, אינו אבחנה או המלצה אישית, ומחייב בדיקה וביקורת של רופא מוסמך לפני פרסום או שימוש לצורך החלטה רפואית.\n\n> **על המחבר**  \n> ד״ר גיא רופא הוא יוצר תוכן רפואי ומחבר ספרים. בהתאם לסטטוס הציבורי המאושר, הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n## מקורות\n\n1. World Health Organization, **Menopause – Fact Sheet**:  \n   https://www.who.int/news-room/fact-sheets/detail/menopause\n\n2. National Institute for Health and Care Excellence, **Menopause: identification and management – Recommendations (NG23)**:  \n   https://www.nice.org.uk/guidance/ng23/chapter/Recommendations\n\n3. American College of Obstetricians and Gynecologists, **Hormone Therapy for Menopause**:  \n   https://www.acog.org/womens-health/faqs/hormone-therapy-for-menopause\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "6a0fbf0bf21ed56f781a8e191ee4710bc448d1b0b3d87324c5a3f5dcbb86793b",
+        "slug": "guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+          "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+          "alt_text": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_Venus._Wax_figure_of_reclining_woman,_Florence._Wellcome_L0058207.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anatomical_Venus._Wax_figure_of_reclining_woman%2C_Florence._Wellcome_L0058207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+              "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+              "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-square.jpg",
+              "sha256": "ba30bf7470c80b7449cc05de61f6692928bab0cc9723705bfe8789f9a9ab6ad0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-portrait.png",
+              "sha256": "5656031fc55b4cfc0ebecda21360edced6a68628de13d889244462e7c2da0657",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+        "text": "גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת.\n\nהוא אינו מחלה, אך השינויים ההורמונליים המתלווים אליו עלולים לגרום לתסמינים גופניים ורגשיים המשפיעים על השינה, התפקוד היומיומי, הבריאות המינית ואיכות החיים.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+          "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+          "alt_text": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_Venus._Wax_figure_of_reclining_woman,_Florence._Wellcome_L0058207.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anatomical_Venus._Wax_figure_of_reclining_woman%2C_Florence._Wellcome_L0058207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+              "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+              "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-square.jpg",
+              "sha256": "ba30bf7470c80b7449cc05de61f6692928bab0cc9723705bfe8789f9a9ab6ad0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-portrait.png",
+              "sha256": "5656031fc55b4cfc0ebecda21360edced6a68628de13d889244462e7c2da0657",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+        "text": "גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת.\n\n• הוא אינו מחלה, אך השינויים ההורמונליים המתלווים אליו עלולים לגרום לתסמינים גופניים ורגשיים המשפיעים על השינה, התפקוד היומיומי, הבריאות המינית ואיכות החיים.\n• קיימות דרכים הורמונליות ולא־הורמונליות להקל על התסמינים, אולם בחירת הטיפול צריכה להתבסס על מצב רפואי אישי, חומרת התסמינים, גורמי סיכון והעדפות המטופלת.\n• לפי [דף המידע של ארגון הבריאות העולמי בנושא גיל המעבר]( גיל המעבר הטבעי מתרחש לרוב בין גיל 45 לגיל 55.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+          "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+          "alt_text": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_Venus._Wax_figure_of_reclining_woman,_Florence._Wellcome_L0058207.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anatomical_Venus._Wax_figure_of_reclining_woman%2C_Florence._Wellcome_L0058207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+              "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+              "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-square.jpg",
+              "sha256": "ba30bf7470c80b7449cc05de61f6692928bab0cc9723705bfe8789f9a9ab6ad0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-portrait.png",
+              "sha256": "5656031fc55b4cfc0ebecda21360edced6a68628de13d889244462e7c2da0657",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+        "html": "<h2>גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת.</p><p>הוא אינו מחלה, אך השינויים ההורמונליים המתלווים אליו עלולים לגרום לתסמינים גופניים ורגשיים המשפיעים על השינה, התפקוד היומיומי, הבריאות המינית ואיכות החיים.</p>\n<p><small>קרדיט תמונה: Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons</small></p>",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+          "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+          "alt_text": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_Venus._Wax_figure_of_reclining_woman,_Florence._Wellcome_L0058207.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anatomical_Venus._Wax_figure_of_reclining_woman%2C_Florence._Wellcome_L0058207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+              "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+              "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-square.jpg",
+              "sha256": "ba30bf7470c80b7449cc05de61f6692928bab0cc9723705bfe8789f9a9ab6ad0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-portrait.png",
+              "sha256": "5656031fc55b4cfc0ebecda21360edced6a68628de13d889244462e7c2da0657",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "instagram_business",
+      "platform": "Instagram",
+      "asset": "configured Instagram professional account",
+      "payload": {
+        "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+        "text": "נקודה רפואית שכדאי להכיר:\n\nגיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת.\n\n1. הוא אינו מחלה, אך השינויים ההורמונליים המתלווים אליו עלולים לגרום לתסמינים גופניים ורגשיים המשפיעים על השינה, התפקוד היומיומי, הבריאות המינית ואיכות החיים.\n2. קיימות דרכים הורמונליות ולא־הורמונליות להקל על התסמינים, אולם בחירת הטיפול צריכה להתבסס על מצב רפואי אישי, חומרת התסמינים, גורמי סיכון והעדפות המטופלת.\n3. לפי [דף המידע של ארגון הבריאות העולמי בנושא גיל המעבר]( גיל המעבר הטבעי מתרחש לרוב בין גיל 45 לגיל 55.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-square.jpg",
+          "sha256": "ba30bf7470c80b7449cc05de61f6692928bab0cc9723705bfe8789f9a9ab6ad0",
+          "alt_text": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_Venus._Wax_figure_of_reclining_woman,_Florence._Wellcome_L0058207.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anatomical_Venus._Wax_figure_of_reclining_woman%2C_Florence._Wellcome_L0058207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+              "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+              "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-square.jpg",
+              "sha256": "ba30bf7470c80b7449cc05de61f6692928bab0cc9723705bfe8789f9a9ab6ad0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-portrait.png",
+              "sha256": "5656031fc55b4cfc0ebecda21360edced6a68628de13d889244462e7c2da0657",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 1200,
+          "media_type": "image/jpeg",
+          "role": "square"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא.\n\nגיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת.\n\nהוא אינו מחלה, אך השינויים ההורמונליים המתלווים אליו עלולים לגרום לתסמינים גופניים ורגשיים המשפיעים על השינה, התפקוד היומיומי, הבריאות המינית ואיכות החיים.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+          "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+          "alt_text": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "דגם אנטומי של גוף אישה עם חלל בטן פתוח ואיברים פנימיים, לצד חלקי אנטומיה נשלפים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anatomical_Venus._Wax_figure_of_reclining_woman,_Florence._Wellcome_L0058207.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anatomical_Venus._Wax_figure_of_reclining_woman%2C_Florence._Wellcome_L0058207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Anatomical Venus. Wax figure of reclining woman, Florence. Wellcome L0058207.jpg — https://wellcomeimages.org/indexplus/obf_images/e5/c3/3ff11f05f3a72fde47fe59fb9b84.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0058207.html; CC BY 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-hero.png",
+              "sha256": "96eee5a458e850297d64482b911757b47afd576859bfe0e931bb8eb42926da4b",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-landscape.png",
+              "sha256": "8ddf9fbc75a207b2538bbc65af54263ac8664de2e8a0feab79842544b4983176",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-square.jpg",
+              "sha256": "ba30bf7470c80b7449cc05de61f6692928bab0cc9723705bfe8789f9a9ab6ad0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-26-topic-06-run-32939634105-attempt-1-portrait.png",
+              "sha256": "5656031fc55b4cfc0ebecda21360edced6a68628de13d889244462e7c2da0657",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": true,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "6a0fbf0bf21ed56f781a8e191ee4710bc448d1b0b3d87324c5a3f5dcbb86793b",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_c0a412ba1d9fa5e46d12790aa705dff64ed351355dbd7161527c10d9dfe7ac36"
+}

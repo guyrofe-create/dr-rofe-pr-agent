@@ -2,6 +2,36 @@
   "version": 1,
   "generated": [
     {
+      "stream": "canonical_depth",
+      "site_key": "GUYROFE_COM",
+      "channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "instagram",
+        "google_business"
+      ],
+      "week": "week-of-2026-08-23",
+      "local_date": "2026-08-26",
+      "weekday": "wednesday",
+      "public_execution_allowed": false,
+      "source_brief": null,
+      "draft_path": "content_drafts/2026-08-26-topic-06-run-32939634105-attempt-1.md",
+      "created_at": "2026-08-26T06:46:54.595853+00:00"
+    },
+    {
+      "stream": "health_news",
+      "site_key": "DRGUYROFE_CO_IL",
+      "channels": [],
+      "week": "week-of-2026-08-23",
+      "local_date": "2026-08-26",
+      "weekday": "wednesday",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-732929e4ee53f5f6.json",
+      "draft_path": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
+      "created_at": "2026-08-26T06:46:54.595853+00:00"
+    },
+    {
       "stream": "evergreen_knowledge",
       "site_key": "DRGUYROFE_COM",
       "channels": [],
