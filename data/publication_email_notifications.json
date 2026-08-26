@@ -455,6 +455,20 @@
       "urls": [
         "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-26-topic-90-run-32939634105-attempt-1/"
       ]
+    },
+    "apr_5631de005f6d1a50472454f5dfb9c468198c8a80f0a64e62db9625f0703fcb57:e3df642ee33a5e9c2c805d45cdb7cd1fde1b498b41d340a23a1670027021dd7c": {
+      "sent_at": "2026-08-26T09:50:17.991559+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_5631de005f6d1a50472454f5dfb9c468198c8a80f0a64e62db9625f0703fcb57",
+      "state": "partial",
+      "subject": "הפרסום הושלם עם תקלות: גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+        "https://www.facebook.com/122201224730942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7498315857849384962/",
+        "https://guyrofe.blogspot.com/2026/08/blog-post_26.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENLVmMyejIT1ZA"
+      ]
     }
   }
 }

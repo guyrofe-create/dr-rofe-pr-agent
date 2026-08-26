@@ -1,6 +1,112 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-08-26-topic-06-run-32939634105-attempt-1.md",
+      "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+      "status": "completed_with_errors",
+      "published_at": "2026-08-26T09:50:16.261606+00:00",
+      "destinations": [
+        {
+          "name": "guyrofe.com",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+          "detail": "idempotency_key=pub_f0e354806457052dcbaec85197b841216bdc8b69a5adb2c3e2eb9512b1e29f96"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1-approved.jpg",
+          "detail": "owner_manual_upload"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122201224730942441",
+          "detail": "idempotency_key=pub_b10d92aed9f772d9242d8acd57b8b278aa4f737fbccc9c68c9deb1d4e161b8e4"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7498315857849384962/",
+          "detail": "idempotency_key=pub_036b7d61309247c1e22125a01f41d2bc86878978d8cb0467105b24152aa1ba36"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "target_id": "blogger_blog",
+          "url": "https://guyrofe.blogspot.com/2026/08/blog-post_26.html",
+          "detail": "idempotency_key=pub_89e8bd4cc4ab0e1a2167d0a22285392f47ca22948e346d12446ce6e07fed1b6d"
+        },
+        {
+          "name": "Instagram",
+          "status": "failed",
+          "target_id": "instagram_business",
+          "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=APPLJwaoDu530H6rviCgNPx"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENLVmMyejIT1ZA",
+          "detail": "idempotency_key=pub_363a4565e46e94491739da319fa4d6f774ea957b695e0a275c6a4e9d27818a60"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_5631de005f6d1a50472454f5dfb9c468198c8a80f0a64e62db9625f0703fcb57",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: \"שלא תצטרכו ניתוח מוח — אף אחד לא רוצה להיות נוירוכירורג בישראל\" | ד״ר גיא רופא",
       "status": "completed",
