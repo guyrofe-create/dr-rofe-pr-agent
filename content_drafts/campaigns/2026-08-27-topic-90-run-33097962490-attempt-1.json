@@ -1,0 +1,101 @@
+{
+  "draft": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md",
+  "title": "בדיקת דם העלתה חשד לסרטן ובצילום התגלה גוש בריאה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-08-27T22:57:13.117077+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-27-topic-90-run-33097962490-attempt-1/",
+      "detail": "idempotency_key=pub_e0ad6a8e18ad2e310245265016220548eed2c2435d1f19a7036bda0bdc37ac8d"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-27-topic-90-run-33097962490-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122201466152942441",
+      "detail": "idempotency_key=pub_ced6942eebc61c5eece1f83504487eaad7b5f9c9ab817214501d754381a8bf65"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7498876276792008704/",
+      "detail": "idempotency_key=pub_51f5b39694c4b2f47951899a8488c61ca62917817236b346eae05a461d338a39"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Instagram",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_configured"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJqRgMGB-Orq4gE",
+      "detail": "idempotency_key=pub_7e5bf3cb4a106edb34dbe7b3f66b2b560b9105eb702ead3bbcd50dfd31620f7c"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

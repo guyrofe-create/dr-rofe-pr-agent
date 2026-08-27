@@ -1375,6 +1375,69 @@
         "account": "accounts/110345401117888665629",
         "location": "accounts/110345401117888665629/locations/14140768355740435987"
       }
+    },
+    "pub_e0ad6a8e18ad2e310245265016220548eed2c2435d1f19a7036bda0bdc37ac8d": {
+      "version": 7,
+      "idempotency_key": "pub_e0ad6a8e18ad2e310245265016220548eed2c2435d1f19a7036bda0bdc37ac8d",
+      "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "568cb911ac6b9559be6ce4f63f4238150cb68a441e9a4ec728c498dace4736e4",
+      "status": "published",
+      "started_at": "2026-08-27T22:56:33Z",
+      "published_at": "2026-08-27T22:56:40Z",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-27-topic-90-run-33097962490-attempt-1/",
+      "provider_receipt": null
+    },
+    "pub_ced6942eebc61c5eece1f83504487eaad7b5f9c9ab817214501d754381a8bf65": {
+      "version": 7,
+      "idempotency_key": "pub_ced6942eebc61c5eece1f83504487eaad7b5f9c9ab817214501d754381a8bf65",
+      "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "be8aea6288d9b7dda6731d1ccd73fe7af1fc16d59b95f00c84817a5662b1cdad",
+      "status": "published",
+      "started_at": "2026-08-27T22:56:45Z",
+      "published_at": "2026-08-27T22:57:04Z",
+      "url": "https://www.facebook.com/122201466152942441",
+      "provider_receipt": null
+    },
+    "pub_51f5b39694c4b2f47951899a8488c61ca62917817236b346eae05a461d338a39": {
+      "version": 7,
+      "idempotency_key": "pub_51f5b39694c4b2f47951899a8488c61ca62917817236b346eae05a461d338a39",
+      "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "658f9f60c86cbcc5bed65a1a3970c7ae6e7bf9608dfcea601d51da82e9f8f205",
+      "status": "published",
+      "started_at": "2026-08-27T22:57:04Z",
+      "published_at": "2026-08-27T22:57:08Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7498876276792008704/",
+      "provider_receipt": null
+    },
+    "pub_7e5bf3cb4a106edb34dbe7b3f66b2b560b9105eb702ead3bbcd50dfd31620f7c": {
+      "version": 7,
+      "idempotency_key": "pub_7e5bf3cb4a106edb34dbe7b3f66b2b560b9105eb702ead3bbcd50dfd31620f7c",
+      "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "ce5af531afd5f2a7b91ec20effba23df97e68ccb2a0bce1e3d37519970e1b58a",
+      "status": "published",
+      "started_at": "2026-08-27T22:57:08Z",
+      "published_at": "2026-08-27T22:57:13Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJqRgMGB-Orq4gE",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/521993595903083764",
+        "state": "PROCESSING",
+        "createTime": "2026-08-27T22:57:13.083720Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJqRgMGB-Orq4gE",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }
