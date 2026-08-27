@@ -1,6 +1,26 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md",
+      "title": "בדיקת דם העלתה חשד לסרטן ובצילום התגלה גוש בריאה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: \"לא האמנתי\": בדיקת דם חדשנית העלתה חשד לסרטן - ובצילום התגלה גוש בריאה",
+      "excerpt": "בדיקת דם העלתה חשד לסרטן ובצילום התגלה גוש בריאה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בדיקת הדם המתוארת בכותרת לא אבחנה סרטן ולא “ראתה” גוש בריאה. היא זיהתה בדם אות מולקו",
+      "generated_at": "2026-08-27T17:21:32.810696+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "pinterest",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-23",
+      "cadence_local_date": "2026-08-27",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-0a240126219ec563.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/h1c11ef6dgl"
+    },
+    {
       "path": "content_drafts/2026-08-26-topic-06-run-32939634105-attempt-1.md",
       "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
       "topic": "גיל המעבר - מידע כללי מבוסס מקורות",
@@ -495,21 +515,6 @@
       "cadence_week": "week-of-2026-08-02",
       "cadence_local_date": "2026-08-02",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
-      "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: מחקר מצא קשר מדאיג ומפתיע בין צריכת סוכר לפני גיל שנתיים לדמנציה",
-      "excerpt": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מחקר תצפיתי המבוסס על “ניסוי טבעי” מצא כי אנשים שנחשפו להגבלת סוכר בתקופת ההיריון ובשנתיים הראשונו",
-      "generated_at": "2026-08-02T08:23:03.025313+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-08-02",
-      "cadence_local_date": "2026-08-02",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-d2f730250b87e608.json",
-      "analyzed_news_url": "https://healthy.walla.co.il/item/3857349"
     }
   ]
 }

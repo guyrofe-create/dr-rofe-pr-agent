@@ -2,6 +2,19 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+      "draft_path": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60.json",
+      "preview_path": "approval_bundles/apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60.html",
+      "created_at": "2026-08-27T17:26:45Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: Selected licensed photograph is too small"
+    },
+    {
       "approval_id": "apr_59f3732a9a3fd382ccfba6e30b29cdf0737c6a39dea15f6fdb4eadf55e1c8be2",
       "draft_path": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
       "bundle_path": "approval_bundles/apr_59f3732a9a3fd382ccfba6e30b29cdf0737c6a39dea15f6fdb4eadf55e1c8be2.json",
