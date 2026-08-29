@@ -50,7 +50,9 @@ jobs:
           approval_path="${RUNNER_TEMP}/legacy-seo-approval.json"
           test -f "${bundle_path}"
           test "$(jq -r '.approval_id' "${bundle_path}")" = "${APPROVAL_ID}"
-          test "$(jq -r '.action_type' "${bundle_path}")" = "legacy_wordpress_seo_remediation"
+          action_type="$(jq -r '.action_type' "${bundle_path}")"
+          test "${action_type}" = "legacy_wordpress_seo_remediation" \
+            -o "${action_type}" = "legacy_wix_seo_remediation"
           scope_args=()
           while IFS= read -r scope; do
             scope_args+=(--scope "${scope}")
@@ -62,16 +64,22 @@ jobs:
             --output "${approval_path}"
           echo "bundle_path=${bundle_path}" >> "${GITHUB_ENV}"
           echo "approval_path=${approval_path}" >> "${GITHUB_ENV}"
+          echo "action_type=${action_type}" >> "${GITHUB_ENV}"
 
-      - name: Apply exact WordPress changes
+      - name: Apply exact provider changes
         if: ${{ !inputs.dry_run }}
         env:
           APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
           WORDPRESS_DRGUYROFE_CO_IL_USER: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_USER }}
           WORDPRESS_DRGUYROFE_CO_IL_API: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_API }}
-        run: >-
-          python scripts/apply_legacy_seo_remediation.py
-          "${bundle_path}" "${approval_path}"
+          WIX_PRIMARY_DRGUYROFE_COM_API: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_API }}
+          WIX_PRIMARY_DRGUYROFE_COM_SITE_ID: ${{ secrets.WIX_PRIMARY_DRGUYROFE_COM_SITE_ID }}
+        run: |
+          if [[ "${action_type}" = "legacy_wix_seo_remediation" ]]; then
+            python scripts/apply_wix_legacy_seo_remediation.py "${bundle_path}" "${approval_path}"
+          else
+            python scripts/apply_legacy_seo_remediation.py "${bundle_path}" "${approval_path}"
+          fi
 
       - name: Commit remediation receipts
         if: ${{ always() && !inputs.dry_run }}

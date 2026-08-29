@@ -15,9 +15,10 @@ SITE = {
 
 
 class Response:
-    def __init__(self, payload=None, status_code=200):
+    def __init__(self, payload=None, status_code=200, headers=None):
         self.payload = payload or {}
         self.status_code = status_code
+        self.headers = headers or {}
 
     def raise_for_status(self):
         if self.status_code >= 400:
@@ -128,6 +129,55 @@ class WixBlogTests(unittest.TestCase):
                     expected_url="https://other.example/post/approved-slug",
                     session=Session(),
                 )
+
+    def test_update_published_changes_exact_fields_and_verifies_redirect(self):
+        class UpdateSession:
+            def __init__(self):
+                self.slug_calls = 0
+                self.patch_payload = None
+
+            def get(self, url, **kwargs):
+                if "/slugs/" in url:
+                    self.slug_calls += 1
+                    if self.slug_calls == 1:
+                        return Response({"post": {"id": "post-1", "title": "ישן"}})
+                    if self.slug_calls == 2:
+                        return Response(status_code=404)
+                    return Response({"post": {"id": "post-1", "title": "חדש"}})
+                return Response(status_code=301, headers={
+                    "Location": "https://www.drguyrofe.com/post/new-slug"
+                })
+
+            def patch(self, url, **kwargs):
+                self.patch_payload = kwargs["json"]
+                return Response({"draftPost": {"id": "post-1"}})
+
+            def post(self, url, **kwargs):
+                return Response({"post": {"id": "post-1"}})
+
+        with patch.dict(os.environ, {"WIX_API": "key", "WIX_SITE": "site"}):
+            session = UpdateSession()
+            result = wix_blog.update_published(
+                SITE,
+                old_slug="old-slug",
+                expected_current_title="ישן",
+                title="חדש",
+                excerpt="תקציר מלא.",
+                slug="new-slug",
+                old_url="https://www.drguyrofe.com/post/old-slug",
+                expected_url="https://www.drguyrofe.com/post/new-slug",
+                session=session,
+            )
+        self.assertEqual(result["url"], "https://www.drguyrofe.com/post/new-slug")
+        self.assertEqual(
+            session.patch_payload["draftPost"],
+            {
+                "id": "post-1",
+                "title": "חדש",
+                "excerpt": "תקציר מלא.",
+                "seoSlug": "new-slug",
+            },
+        )
 
 
 if __name__ == "__main__":

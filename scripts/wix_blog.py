@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import os
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 
 import requests
 
@@ -179,3 +179,61 @@ def publish(
     if not created.get("id"):
         raise RuntimeError("Wix accepted no identifiable draft/post receipt")
     return expected_url
+
+
+def update_published(
+    site: dict,
+    *,
+    old_slug: str,
+    expected_current_title: str,
+    title: str,
+    excerpt: str,
+    slug: str,
+    old_url: str,
+    expected_url: str,
+    session=requests,
+) -> dict:
+    """Update one exact published Wix post and verify its legacy redirect."""
+    if expected_url.rstrip("/") != public_post_url(site, slug).rstrip("/"):
+        raise PermissionError("Approved Wix URL does not match the configured site route")
+    post = _existing_post(site, old_slug, session=session)
+    if not post:
+        post = _existing_post(site, slug, session=session)
+    if not post or post.get("title") not in {expected_current_title, title}:
+        raise PermissionError("Exact approved Wix post was not found")
+    collision = _existing_post(site, slug, session=session)
+    if collision and collision.get("id") != post.get("id"):
+        raise PermissionError("Approved Wix slug collides with another post")
+    post_id = str(post.get("id") or "").strip()
+    if not post_id:
+        raise RuntimeError("Wix returned no post ID for the approved legacy post")
+    updated = session.patch(
+        f"{API_ROOT}/blog/v3/draft-posts/{post_id}",
+        headers=_headers(site),
+        json={
+            "draftPost": {
+                "id": post_id,
+                "title": title,
+                "excerpt": excerpt[:500],
+                "seoSlug": slug,
+            },
+        },
+        timeout=30,
+    )
+    _raise_for_status(updated, "draft update")
+    published = session.post(
+        f"{API_ROOT}/blog/v3/draft-posts/{post_id}/publish",
+        headers=_headers(site),
+        timeout=40,
+    )
+    _raise_for_status(published, "draft publication")
+    verified = _existing_post(site, slug, session=session)
+    if not verified or verified.get("title") != title:
+        raise RuntimeError("Wix did not return the exact updated public post")
+    redirect = session.get(old_url, allow_redirects=False, timeout=30)
+    location = urljoin(old_url, redirect.headers.get("Location", ""))
+    if redirect.status_code not in {301, 302, 307, 308} or (
+        location.rstrip("/") != expected_url.rstrip("/")
+    ):
+        raise RuntimeError("Old Wix URL did not redirect to the approved clean URL")
+    return {"url": expected_url, "old_url": old_url, "redirect": location}
