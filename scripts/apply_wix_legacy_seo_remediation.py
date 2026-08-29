@@ -31,6 +31,21 @@ def apply_target(target: dict) -> dict:
     )
 
 
+def reconcile_target(target: dict):
+    payload = target["payload"]
+    site = site_by_key(load_business_profile(), payload["site_key"])
+    return wix_blog.reconcile_published_update(
+        site,
+        old_slug=payload["old_slug"],
+        expected_current_title=payload["expected_current_title"],
+        title=payload["new_title"],
+        excerpt=payload["meta_description"],
+        slug=payload["new_slug"],
+        old_url=payload["old_url"],
+        expected_url=payload["expected_new_url"],
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("bundle_path", type=Path)
@@ -52,6 +67,9 @@ def main() -> None:
             bundle,
             target,
             lambda _payload, _key, exact_target=target: apply_target(exact_target),
+            reconciler=lambda _payload, _key, exact_target=target: (
+                reconcile_target(exact_target)
+            ),
         ))
     print(json.dumps({"updated": len(results), "results": results}, ensure_ascii=False))
 

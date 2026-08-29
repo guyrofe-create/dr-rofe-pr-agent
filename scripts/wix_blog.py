@@ -1,8 +1,10 @@
 """Exact-approval Wix Blog publisher using the official Wix REST APIs."""
 from __future__ import annotations
 
+import html as html_lib
 import os
-from urllib.parse import quote, urljoin
+import re
+from urllib.parse import quote, unquote, urljoin, urlparse
 
 import requests
 
@@ -69,6 +71,39 @@ def _headers(site: dict) -> dict:
 def public_post_url(site: dict, slug: str) -> str:
     route = str(site.get("post_route") or "post").strip("/")
     return f"{site['base_url'].rstrip('/')}/{route}/{slug}"
+
+
+def _urls_equivalent(first: str, second: str) -> bool:
+    def normalize(value: str) -> str:
+        parsed = urlparse(unquote(value or ""))
+        return (
+            parsed.netloc.lower().removeprefix("www."),
+            re.sub(r"/+", "/", parsed.path).rstrip("/"),
+        )
+    return normalize(first) == normalize(second)
+
+
+def _legacy_resolution(old_url: str, expected_url: str, *, session=requests) -> dict:
+    response = session.get(old_url, allow_redirects=False, timeout=30)
+    location = urljoin(old_url, response.headers.get("Location", ""))
+    if response.status_code in {301, 302, 307, 308} and _urls_equivalent(
+        location, expected_url
+    ):
+        return {"mode": "redirect", "target": location}
+    if response.status_code == 200:
+        match = re.search(
+            r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)',
+            response.text,
+            re.I,
+        ) or re.search(
+            r'<link[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']canonical["\']',
+            response.text,
+            re.I,
+        )
+        canonical = html_lib.unescape(match.group(1)).strip() if match else ""
+        if _urls_equivalent(canonical, expected_url):
+            return {"mode": "canonical_alias", "target": canonical}
+    raise RuntimeError("Old Wix URL did not resolve to the approved clean URL")
 
 
 def _existing_post(site: dict, slug: str, *, session=requests):
@@ -230,10 +265,30 @@ def update_published(
     verified = _existing_post(site, slug, session=session)
     if not verified or verified.get("title") != title:
         raise RuntimeError("Wix did not return the exact updated public post")
-    redirect = session.get(old_url, allow_redirects=False, timeout=30)
-    location = urljoin(old_url, redirect.headers.get("Location", ""))
-    if redirect.status_code not in {301, 302, 307, 308} or (
-        location.rstrip("/") != expected_url.rstrip("/")
-    ):
-        raise RuntimeError("Old Wix URL did not redirect to the approved clean URL")
-    return {"url": expected_url, "old_url": old_url, "redirect": location}
+    resolution = _legacy_resolution(old_url, expected_url, session=session)
+    return {"url": expected_url, "old_url": old_url, "legacy": resolution}
+
+
+def reconcile_published_update(
+    site: dict,
+    *,
+    old_slug: str,
+    expected_current_title: str,
+    title: str,
+    excerpt: str,
+    slug: str,
+    old_url: str,
+    expected_url: str,
+    session=requests,
+):
+    """Read-only reconciliation for a possibly accepted Wix update."""
+    current = _existing_post(site, slug, session=session)
+    if current:
+        if current.get("title") != title or current.get("excerpt") != excerpt[:500]:
+            raise RuntimeError("Wix clean slug exists with unexpected approved fields")
+        resolution = _legacy_resolution(old_url, expected_url, session=session)
+        return {"url": expected_url, "old_url": old_url, "legacy": resolution}
+    legacy = _existing_post(site, old_slug, session=session)
+    if legacy and legacy.get("title") == expected_current_title:
+        return None
+    raise RuntimeError("Wix remediation state is ambiguous and requires review")
