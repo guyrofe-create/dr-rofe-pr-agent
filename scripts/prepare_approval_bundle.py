@@ -17,6 +17,7 @@ from campaign_run import (
     canonical_site,
     first_paragraph,
     load_business_profile,
+    public_slug,
     stable_slug,
 )
 from daily_run import load_draft, resolve_draft_path
@@ -114,13 +115,12 @@ def publication_site(business: dict, site_key: str | None = None) -> dict:
 
 
 def canonical_url_for(
-    draft_path: Path,
+    title: str,
     business: dict,
-    client_id: str,
     site_key: str | None = None,
 ) -> str:
     site = publication_site(business, site_key)
-    slug = stable_slug(f"{client_id}-{draft_path.stem}")
+    slug = public_slug(title)
     if site.get("platform", "wordpress") == "wix":
         slug = slug[:100].rstrip("-")
         route = str(site.get("post_route") or "post").strip("/")
@@ -213,9 +213,8 @@ def prepare_bundle(
         ),
     )
     canonical_url = canonical_url_for(
-        draft,
+        title,
         business,
-        client["client_id"],
         primary["key"],
     )
     variants = build_platform_variants(title, content, canonical_url)
@@ -297,7 +296,11 @@ def prepare_bundle(
     if unknown_channels:
         raise ValueError(f"Unsupported scheduled channels: {sorted(unknown_channels)}")
     primary_platform = primary.get("platform", "wordpress")
-    approved_slug = stable_slug(f"{client['client_id']}-{draft.stem}")
+    # Public URLs describe the approved article. Internal filenames contain
+    # scheduler/run identifiers and must never leak into a canonical URL.
+    # Reusing the same exact title intentionally reuses the same canonical
+    # slug, preventing duplicate public articles for repeated drafts.
+    approved_slug = public_slug(title)
     if primary_platform == "wix":
         approved_slug = approved_slug[:100].rstrip("-")
     canonical_target_id = (

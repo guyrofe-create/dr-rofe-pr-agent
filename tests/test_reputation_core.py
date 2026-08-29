@@ -264,7 +264,11 @@ class GrowthEngineTests(unittest.TestCase):
         assets = {item["platform"]: item for item in registry["assets"]}
         self.assertEqual(
             assets["Instagram"]["automation"],
-            "meta_graph_api_after_exact_approval",
+            "disabled_pending_platform_resolution",
+        )
+        self.assertEqual(
+            assets["Instagram"]["status"],
+            "disabled_pending_platform_resolution",
         )
         self.assertEqual(assets["YouTube"]["status"], "connected_read_only")
         self.assertIn(
@@ -420,6 +424,28 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertEqual(row["current_result_page"], 3)
         self.assertEqual(row["current_page_position"], 7)
         self.assertIsNone(row["current_position_top10"])
+
+    def test_quarantined_asset_is_still_tracked_but_not_optimized(self):
+        assets = [{
+            "platform": "Legacy mirror",
+            "url": "https://legacy.example/profile",
+            "tier": "Q",
+            "status": "quarantined",
+            "controlled": True,
+        }]
+        current = build_query_control_map({
+            "engine": "google",
+            "query": "brand",
+            "observed_at": "2026-08-15T00:00:00Z",
+            "results": [{
+                "position": 8,
+                "link": "https://legacy.example/profile",
+            }],
+        }, assets)
+        report = measure_asset_rank_changes(assets, [current])
+        self.assertEqual(report["asset_count"], 1)
+        self.assertEqual(report["found_count"], 1)
+        self.assertFalse(report["assets"][0]["optimization_allowed"])
 
     def test_incomplete_google_run_does_not_report_false_changes(self):
         report = measure_asset_rank_changes(

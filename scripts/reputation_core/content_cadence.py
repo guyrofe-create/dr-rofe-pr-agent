@@ -52,7 +52,13 @@ def validate_cadence(cadence: dict) -> None:
                 raise ValueError("A channel cannot appear twice in one scheduled job")
             for channel in channels:
                 planned_channels[channel] = planned_channels.get(channel, 0) + 1
-    if planned_channels != cadence.get("weekly_channel_targets"):
+    expected_channels = cadence.get("weekly_channel_targets") or {}
+    normalized_planned = {
+        channel: planned_channels.get(channel, 0)
+        for channel in expected_channels
+    }
+    unexpected_channels = set(planned_channels) - set(expected_channels)
+    if normalized_planned != expected_channels or unexpected_channels:
         raise ValueError(
             "Scheduled channel counts do not match weekly_channel_targets: "
             f"{planned_channels}"

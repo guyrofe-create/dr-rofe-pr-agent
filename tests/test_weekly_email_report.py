@@ -8,6 +8,32 @@ from scripts.weekly_email_report import collect_report, render_html, render_text
 
 
 class WeeklyEmailReportTests(unittest.TestCase):
+    def test_lists_every_registered_asset_before_first_google_baseline(self):
+        start = datetime(2026, 8, 22, tzinfo=timezone.utc)
+        end = datetime(2026, 8, 29, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "data" / "ai_usage_events").mkdir(parents=True)
+            (root / "content_drafts" / "campaigns").mkdir(parents=True)
+            (root / "approval_bundles").mkdir()
+            (root / "data" / "asset_registry.json").write_text(
+                json.dumps({"assets": [
+                    {"platform": "Main", "url": "https://example.com/"},
+                    {"platform": "Legacy", "url": "https://legacy.example/",
+                     "status": "quarantined"},
+                    {"platform": "Missing URL", "url": None},
+                ]}),
+                encoding="utf-8",
+            )
+            report = collect_report(start, end, root=root)
+        self.assertEqual(report["asset_rank"]["asset_count"], 2)
+        self.assertEqual(
+            report["asset_rank"]["outcome_summary"]["tracked_assets"],
+            2,
+        )
+        self.assertIn("Main", render_text(report))
+        self.assertIn("Legacy", render_text(report))
+
     def test_collects_verified_publications_actions_and_ai_cost(self):
         start = datetime(2026, 7, 22, tzinfo=timezone.utc)
         end = datetime(2026, 7, 29, tzinfo=timezone.utc)
@@ -20,8 +46,11 @@ class WeeklyEmailReportTests(unittest.TestCase):
             (root / "data" / "reputation_history.json").write_text(
                 json.dumps({"snapshots": [{"orchestration": {"visibility_measurement": {
                     "asset_rank_changes": {
-                        "status": "compared", "current_observed_at": "2026-07-15T04:30:00Z",
+                        "status": "compared",
+                        "previous_observed_at": "2026-07-01T04:30:00Z",
+                        "current_observed_at": "2026-07-15T04:30:00Z",
                         "assets": [{"platform": "LinkedIn", "url": "https://linkedin.example/profile",
+                                    "previous_position": 31,
                                     "current_position": 23, "current_result_page": 3,
                                     "change": "improved"}],
                     }
@@ -60,6 +89,16 @@ class WeeklyEmailReportTests(unittest.TestCase):
                 }]}),
                 encoding="utf-8",
             )
+            (root / "publication_receipts").mkdir()
+            (root / "publication_receipts" / "execution_ledger.json").write_text(
+                json.dumps({"executions": {"pub_1": {
+                    "platform": "LinkedIn",
+                    "status": "published",
+                    "published_at": "2026-07-10T12:00:00Z",
+                    "url": "https://linkedin.example/post/1",
+                }}}),
+                encoding="utf-8",
+            )
             (usage_dir / "event.json").write_text(
                 json.dumps({
                     "occurred_at": "2026-07-28T08:00:00Z",
@@ -87,6 +126,8 @@ class WeeklyEmailReportTests(unittest.TestCase):
         self.assertIn("https://linkedin.example/post", render_html(report))
         self.assertIn("Pinterest", render_text(report))
         self.assertIn("מיקום נוכחי 23", render_text(report))
+        self.assertIn("פרסומים בין המדידות 1", render_text(report))
+        self.assertIn("נמדד שיפור לאחר פרסום", render_text(report))
         self.assertIn("מיקום קודם</th><th>מיקום נוכחי", render_html(report))
 
     def test_rank_report_shows_absolute_movement_and_measured_boundary(self):

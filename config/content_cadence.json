@@ -8,7 +8,7 @@
       "weekly_target": 2,
       "weekdays": {
         "sunday": ["facebook", "linkedin", "pinterest", "google_business"],
-        "wednesday": ["facebook", "linkedin", "blogger", "instagram", "google_business"]
+        "wednesday": ["facebook", "linkedin", "blogger", "google_business"]
       }
     },
     "health_news": {
@@ -16,7 +16,7 @@
       "weekly_target": 5,
       "weekdays": {
         "sunday": [],
-        "monday": ["facebook", "linkedin", "blogger", "instagram"],
+        "monday": ["facebook", "linkedin", "blogger"],
         "tuesday": ["pinterest"],
         "wednesday": [],
         "thursday": ["facebook", "linkedin", "pinterest", "google_business"]
@@ -42,7 +42,7 @@
     "facebook": 4,
     "linkedin": 4,
     "pinterest": 3,
-    "instagram": 2,
+    "instagram": 0,
     "blogger": 2,
     "google_business": 3
   },

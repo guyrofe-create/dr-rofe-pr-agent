@@ -12,6 +12,7 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from email.message import EmailMessage
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TO = "guyrofe@gmail.com"
@@ -57,6 +58,111 @@ def in_window(value, start, end):
     return bool(parsed and start <= parsed < end)
 
 
+def _normalized_host(value):
+    try:
+        return urlparse(value or "").netloc.lower().removeprefix("www.")
+    except (TypeError, ValueError):
+        return ""
+
+
+def _execution_matches_asset(execution, asset):
+    publication_url = execution.get("url") or ""
+    asset_url = asset.get("url") or ""
+    publication_host = _normalized_host(publication_url)
+    asset_host = _normalized_host(asset_url)
+    if publication_host and publication_host == asset_host:
+        asset_path = urlparse(asset_url).path.rstrip("/") or "/"
+        publication_path = urlparse(publication_url).path.rstrip("/") or "/"
+        if asset_path == "/" or publication_path == asset_path:
+            return True
+        if publication_path.startswith(asset_path + "/"):
+            return True
+    platform = str(execution.get("platform") or "").casefold()
+    asset_platform = str(asset.get("platform") or "").casefold()
+    return bool(platform and platform == asset_platform)
+
+
+def _outcome_assessment(asset):
+    publications = int(asset.get("publications_since_previous") or 0)
+    change = asset.get("change")
+    if not asset.get("previous_measurement_available"):
+        return "baseline"
+    if not publications:
+        return "no_recent_publication"
+    if change in {"improved", "entered_measured_results"}:
+        return "improved_after_publication"
+    if change in {"declined", "left_measured_results"}:
+        return "declined_after_publication"
+    if change == "unchanged_not_found":
+        return "still_not_found_after_publication"
+    return "no_improvement_after_publication"
+
+
+def _utc_time(value):
+    parsed = parse_time(value)
+    if not parsed:
+        return None
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def _annotate_publication_outcomes(measurement, root):
+    previous = _utc_time(measurement.get("previous_observed_at"))
+    current = _utc_time(measurement.get("current_observed_at"))
+    ledger = load_json(
+        Path(root) / "publication_receipts" / "execution_ledger.json",
+        {"executions": {}},
+    )
+    published = [
+        execution
+        for execution in ledger.get("executions", {}).values()
+        if execution.get("status") == "published" and execution.get("url")
+    ]
+    for asset in measurement.get("assets", []):
+        matching = []
+        if previous and current:
+            for execution in published:
+                observed = _utc_time(execution.get("published_at"))
+                if (
+                    observed
+                    and previous < observed <= current
+                    and _execution_matches_asset(execution, asset)
+                ):
+                    matching.append(execution)
+        asset["previous_measurement_available"] = bool(previous)
+        asset["publications_since_previous"] = len(matching)
+        asset["latest_publication_at"] = max(
+            (item.get("published_at") for item in matching),
+            default=None,
+        )
+        asset["outcome_assessment"] = _outcome_assessment(asset)
+    measurement["outcome_summary"] = {
+        "tracked_assets": len(measurement.get("assets", [])),
+        "found_assets": sum(
+            item.get("current_position") is not None
+            for item in measurement.get("assets", [])
+        ),
+        "improved_assets": sum(
+            item.get("change") in {"improved", "entered_measured_results"}
+            for item in measurement.get("assets", [])
+        ),
+        "declined_assets": sum(
+            item.get("change") in {"declined", "left_measured_results"}
+            for item in measurement.get("assets", [])
+        ),
+        "assets_published_between_measurements": sum(
+            bool(item.get("publications_since_previous"))
+            for item in measurement.get("assets", [])
+        ),
+        "publication_placements_between_measurements": sum(
+            int(item.get("publications_since_previous") or 0)
+            for item in measurement.get("assets", [])
+        ),
+    }
+    return measurement
+
+
 def latest_asset_rank_measurement(root):
     history = load_json(Path(root) / "data" / "reputation_history.json", {"snapshots": []})
     for snapshot in reversed(history.get("snapshots", [])):
@@ -66,8 +172,50 @@ def latest_asset_rank_measurement(root):
             .get("asset_rank_changes", {})
         )
         if measurement.get("assets"):
-            return measurement
-    return {"status": "not_measured", "assets": []}
+            return _annotate_publication_outcomes(measurement, root)
+    registry = load_json(
+        Path(root) / "data" / "asset_registry.json",
+        {"assets": []},
+    )
+    rows = []
+    seen = set()
+    for asset in registry.get("assets", []):
+        if not asset.get("url"):
+            continue
+        key = (
+            str(asset.get("platform") or "").casefold(),
+            str(asset.get("url") or "").rstrip("/"),
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append({
+            "asset_id": asset.get("id") or asset.get("platform"),
+            "platform": asset.get("platform"),
+            "url": asset.get("url"),
+            "tier": asset.get("tier"),
+            "asset_status": asset.get("status"),
+            "optimization_allowed": asset.get("status") != "quarantined",
+            "previous_position": None,
+            "current_position": None,
+            "previous_result_depth": None,
+            "current_result_depth": None,
+            "previous_result_page": None,
+            "current_result_page": None,
+            "previous_query": None,
+            "current_query": None,
+            "change": "baseline",
+            "changed": None,
+            "delta": None,
+        })
+    return _annotate_publication_outcomes({
+        "status": "not_measured",
+        "reason": "awaiting the first complete Google baseline measurement",
+        "current_observed_at": None,
+        "previous_observed_at": None,
+        "asset_count": len(rows),
+        "assets": rows,
+    }, root)
 
 
 def collect_report(start, end, *, root=ROOT, usage_dir=None):
@@ -205,6 +353,21 @@ def _rank_change_label(item):
     return label
 
 
+def _rank_outcome_label(item):
+    labels = {
+        "baseline": "מדידת בסיס",
+        "no_recent_publication": "לא היה פרסום בנכס בין המדידות",
+        "improved_after_publication": "נמדד שיפור לאחר פרסום (לא הוכחת סיבתיות)",
+        "declined_after_publication": "נמדדה ירידה לאחר פרסום",
+        "still_not_found_after_publication": "פורסם, אך עדיין מעבר לטווח המדידה",
+        "no_improvement_after_publication": "פורסם, אך טרם נמדד שיפור",
+    }
+    return labels.get(
+        item.get("outcome_assessment"),
+        item.get("outcome_assessment") or "לא ידוע",
+    )
+
+
 def render_html(report):
     start = report["start"].date().isoformat()
     end = (report["end"] - timedelta(seconds=1)).date().isoformat()
@@ -237,17 +400,21 @@ def render_html(report):
         for item in report["bundles"]
     ) or "<li>לא הוכנו חבילות אישור השבוע.</li>"
     rank = report.get("asset_rank", {})
+    outcome_summary = rank.get("outcome_summary", {})
     rank_rows = "".join(
         "<tr>"
         f"<td>{html.escape(item.get('platform') or item.get('asset_id') or 'נכס')}</td>"
         f"<td><a href=\"{html.escape(item.get('url') or '', quote=True)}\">{html.escape(item.get('url') or '')}</a></td>"
+        f"<td>{html.escape(item.get('current_query') or 'לא נמדד')}</td>"
         f"<td>{html.escape(_rank_page_label(item))}</td>"
         f"<td>{html.escape(_previous_rank_position_label(item))}</td>"
         f"<td>{html.escape(_rank_position_label(item))}</td>"
         f"<td>{html.escape(_rank_change_label(item))}</td>"
+        f"<td>{int(item.get('publications_since_previous') or 0)}</td>"
+        f"<td>{html.escape(_rank_outcome_label(item))}</td>"
         "</tr>"
         for item in rank.get("assets", [])
-    ) or '<tr><td colspan="6">אין מדידת Google מלאה ועדכנית.</td></tr>'
+    ) or '<tr><td colspan="9">אין מדידת Google מלאה ועדכנית.</td></tr>'
     coverage_note = (
         "<p><strong>הערת כיסוי:</strong> העלות מבוססת על אירועי שימוש "
         "שנרשמו בפועל. קריאות שקדמו להפעלת המונה אינן נכללות.</p>"
@@ -293,8 +460,12 @@ def render_html(report):
 <h2>כשלים או חסימות</h2><ul>{failure_rows}</ul>
 <h2>מיקום כל נכס ב-Google</h2>
 <p>מועד מדידה: {html.escape(rank.get('current_observed_at') or 'לא נמדד')}</p>
+<p>נכסים במעקב: {int(outcome_summary.get('tracked_assets') or 0)};
+נמצאו בטווח: {int(outcome_summary.get('found_assets') or 0)};
+השתפרו: {int(outcome_summary.get('improved_assets') or 0)};
+ירדו: {int(outcome_summary.get('declined_assets') or 0)}.</p>
 <table style="border-collapse:collapse;width:100%" border="1" cellpadding="7">
-<thead><tr><th>נכס</th><th>כתובת</th><th>עמוד</th><th>מיקום קודם</th><th>מיקום נוכחי</th><th>שינוי</th></tr></thead>
+<thead><tr><th>נכס</th><th>כתובת</th><th>שאילתת Google</th><th>עמוד</th><th>מיקום קודם</th><th>מיקום נוכחי</th><th>שינוי</th><th>פרסומים בין המדידות</th><th>הערכת תוצאה</th></tr></thead>
 <tbody>{rank_rows}</tbody>
 </table>
 <p style="color:#667085">הדוח כולל רק פרסום שקיבל קבלה וקישור במערכת.</p>
@@ -336,13 +507,24 @@ def render_text(report):
     lines.extend(["", "מיקום כל נכס ב-Google:"])
     rank = report.get("asset_rank", {})
     lines.append(f"מועד מדידה: {rank.get('current_observed_at') or 'לא נמדד'}")
+    summary = rank.get("outcome_summary", {})
+    if summary:
+        lines.append(
+            f"נכסים במעקב: {summary.get('tracked_assets', 0)}; "
+            f"נמצאו בטווח: {summary.get('found_assets', 0)}; "
+            f"השתפרו: {summary.get('improved_assets', 0)}; "
+            f"ירדו: {summary.get('declined_assets', 0)}"
+        )
     for item in rank.get("assets", []):
         lines.append(
             f"- {item.get('platform') or item.get('asset_id')}: "
+            f"שאילתה {item.get('current_query') or 'לא נמדד'}, "
             f"עמוד {_rank_page_label(item)}, "
             f"מיקום קודם {_previous_rank_position_label(item)}, "
             f"מיקום נוכחי {_rank_position_label(item)}, "
-            f"שינוי {_rank_change_label(item)} — {item.get('url') or ''}"
+            f"שינוי {_rank_change_label(item)}, "
+            f"פרסומים בין המדידות {int(item.get('publications_since_previous') or 0)}, "
+            f"הערכת תוצאה {_rank_outcome_label(item)} — {item.get('url') or ''}"
         )
     if not rank.get("assets"):
         lines.append("- אין מדידת Google מלאה ועדכנית.")

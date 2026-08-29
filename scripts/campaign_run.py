@@ -94,6 +94,17 @@ def stable_slug(title):
     return re.sub(r"-+", "-", value).strip("-").lower()[:180]
 
 
+def public_slug(title):
+    """Build a readable public slug without internal run/file identifiers."""
+    value = re.sub(
+        r"\s*[|｜]\s*(?:ד[\"״]ר\s+גיא\s+רופא|dr\.?\s+guy\s+rofe)\s*$",
+        "",
+        title or "",
+        flags=re.IGNORECASE,
+    ).strip()
+    return stable_slug(value or title)
+
+
 def first_paragraph(content):
     body = re.sub(r"^#.*$", "", content, count=1, flags=re.MULTILINE).strip()
     paragraph = next(

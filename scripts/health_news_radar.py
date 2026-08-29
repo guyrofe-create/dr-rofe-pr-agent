@@ -33,6 +33,11 @@ HEALTH_TERMS = {
     "טיפול", "תרופה", "חיסון", "סרטן", "לב", "מוח", "סוכרת", "תזונה", "שינה",
     "הריון", "לידה", "פוריות", "נשים", "גינקולוג", "וירוס", "חיידק", "בדיקה",
 }
+CLIENT_FOCUS_TERMS = {
+    "נשים", "אישה", "גינקולוג", "גינקולוגיה", "רחם", "שחלות", "פוריות",
+    "הריון", "היריון", "לידה", "עובר", "אנדומטריוזיס", "מיומות", "מחזור",
+    "גיל המעבר", "מנופאוזה", "אגן", "פונדקאות", "טיפולי פוריות",
+}
 ANALYSIS_GAP_TERMS = {
     "מחקר חדש", "מחקר מצא", "לראשונה", "פריצת דרך", "מפתיע", "עשוי", "עלול",
     "סיכון", "קשר בין", "יעיל", "מונע", "גורם ל", "אחוז",
@@ -123,6 +128,7 @@ def enrich_candidate(
     searchable = f"{candidate['title']} {candidate.get('summary', '')}".lower()
     prohibited = any(marker.lower() in searchable for marker in blocked_markers)
     relevance = _term_score(searchable, HEALTH_TERMS, divisor=2)
+    client_topic_relevance = _term_score(searchable, CLIENT_FOCUS_TERMS)
     analysis_gap = _term_score(searchable, ANALYSIS_GAP_TERMS)
     sensationalism = _term_score(searchable, SENSATIONAL_TERMS)
     feed_position = int(candidate.get("feed_position", 99))
@@ -133,6 +139,7 @@ def enrich_candidate(
         "attention_score": attention,
         "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
         "public_health_relevance": relevance,
+        "client_topic_relevance": client_topic_relevance,
         "analysis_gap": analysis_gap,
         "sensationalism_risk": sensationalism,
         "source_diversity_penalty": diversity_penalty if candidate["source_id"] in recent_sources else 0,
@@ -210,6 +217,8 @@ def run(
         item for item in candidates
         if (now - datetime.fromisoformat(item["published_at"])).total_seconds() / 3600 <= max_age
         and item["url"] not in previously_selected_urls
+        and item.get("client_topic_relevance", 0)
+        >= int(selection_config.get("minimum_client_topic_relevance", 0))
     ]
     ranked = rank_news_candidates(candidates, limit=10, now=now)
     ranked = [

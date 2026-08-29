@@ -27,6 +27,18 @@ class CampaignRunTests(unittest.TestCase):
             "לפני-ניתוח-החלטה-משותפת",
         )
 
+    def test_public_slug_removes_brand_suffix_and_internal_run_identifiers(self):
+        self.assertEqual(
+            campaign_run.public_slug(
+                "כאבי אגן כרוניים | ד״ר גיא רופא"
+            ),
+            "כאבי-אגן-כרוניים",
+        )
+        self.assertEqual(
+            campaign_run.public_slug("מדריך רפואי | Dr. Guy Rofe"),
+            "מדריך-רפואי",
+        )
+
     def test_first_paragraph_excludes_heading(self):
         content = "# כותרת\n\nפסקת פתיחה חשובה.\n\n## סעיף\n\nהמשך"
         self.assertEqual(

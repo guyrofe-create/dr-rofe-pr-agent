@@ -148,6 +148,11 @@ class PrepareApprovalBundleTests(unittest.TestCase):
         )
         canonical = targets["canonical_wordpress"]["payload"]
         self.assertEqual(canonical["site_key"], "DRGUYROFE_CO_IL")
+        self.assertEqual(canonical["slug"], "ניתוח-חדשות-רפואיות")
+        self.assertTrue(
+            canonical["canonical_url"].endswith("/ניתוח-חדשות-רפואיות/")
+        )
+        self.assertNotIn("run-", canonical["canonical_url"])
         self.assertTrue(
             canonical["canonical_url"].startswith("https://www.drguyrofe.co.il/")
         )

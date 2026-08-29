@@ -48,6 +48,20 @@ class HealthNewsRadarTests(unittest.TestCase):
         enriched = enrich_candidate(candidate, ["תוכן ממומן"], set())
         self.assertTrue(enriched["prohibited"])
 
+    def test_client_topic_relevance_prioritizes_womens_health(self):
+        focused = enrich_candidate({
+            "title": "מחקר חדש על אנדומטריוזיס ופוריות",
+            "summary": "מידע רפואי לנשים",
+            "source_id": "test_health",
+        }, [], set())
+        generic = enrich_candidate({
+            "title": "מחקר חדש על דמנציה",
+            "summary": "מידע רפואי כללי",
+            "source_id": "test_health",
+        }, [], set())
+        self.assertGreater(focused["client_topic_relevance"], 0)
+        self.assertEqual(generic["client_topic_relevance"], 0)
+
     def test_soft_source_cooldown_breaks_a_close_score_tie(self):
         common = {
             "published_at": NOW.isoformat(),

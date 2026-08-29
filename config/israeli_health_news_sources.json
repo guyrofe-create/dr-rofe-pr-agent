@@ -8,7 +8,8 @@
     "candidate_limit_per_source": 20,
     "source_cooldown_days": 5,
     "source_diversity_penalty": 5,
-    "minimum_opportunity_score": 25
+    "minimum_opportunity_score": 25,
+    "minimum_client_topic_relevance": 1
   },
   "sources": [
     {

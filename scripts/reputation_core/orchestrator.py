@@ -243,7 +243,10 @@ def measure_asset_rank_changes(
     rows = []
     seen = set()
     for asset in assets:
-        if not asset.get("url") or asset.get("status") == "quarantined":
+        # Quarantined URLs still matter when they appear in Google. They are
+        # excluded from optimization/publication elsewhere, but omitting them
+        # from measurement would hide a potentially harmful result.
+        if not asset.get("url"):
             continue
         key = (_asset_id(asset), asset.get("url"))
         if key in seen:
@@ -282,6 +285,9 @@ def measure_asset_rank_changes(
             "platform": asset.get("platform") or _asset_id(asset),
             "url": asset.get("url"),
             "tier": asset.get("tier"),
+            "asset_status": asset.get("status"),
+            "controlled": bool(asset.get("controlled")),
+            "optimization_allowed": asset.get("status") != "quarantined",
             "previous_position_top10": previous_position if previous_position and previous_position <= 10 else None,
             "current_position_top10": current_position if current_position and current_position <= 10 else None,
             "previous_position": previous_position,
@@ -306,6 +312,16 @@ def measure_asset_rank_changes(
         "previous_observed_at": previous_observed_at,
         "asset_count": len(rows),
         "changed_count": sum(item["changed"] is True for item in rows),
+        "improved_count": sum(
+            item["change"] in {"improved", "entered_measured_results"}
+            for item in rows
+        ),
+        "declined_count": sum(
+            item["change"] in {"declined", "left_measured_results"}
+            for item in rows
+        ),
+        "found_count": sum(item["current_position"] is not None for item in rows),
+        "not_found_count": sum(item["current_position"] is None for item in rows),
         "assets": rows,
     }
 
