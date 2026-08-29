@@ -64,6 +64,13 @@ from .reputation_controls import (
     validate_legal_evidence_chain,
 )
 from .platform_content import build_platform_variants, variants_are_distinct
+from .publication_seo import (
+    audit_published_html,
+    build_search_target,
+    render_related_links_html,
+    select_related_publications,
+    unbranded_title,
+)
 from .approval_workflow import (
     ExecutionLedger,
     ReconciliationRequired,
@@ -148,6 +155,11 @@ __all__ = [
     "meta_description",
     "title_with_entity",
     "build_platform_variants",
+    "build_search_target",
+    "audit_published_html",
+    "render_related_links_html",
+    "select_related_publications",
+    "unbranded_title",
     "variants_are_distinct",
     "audit_backlinks",
     "build_ai_feedback_task",

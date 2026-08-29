@@ -69,6 +69,14 @@ class CampaignRunTests(unittest.TestCase):
         self.assertIn("font-size:0.9em", rendered)
         self.assertTrue(rendered.endswith("</section>"))
 
+    def test_signed_related_links_render_before_final_author_disclosure(self):
+        rendered = campaign_run.article_html_with_related_links(
+            "# כותרת\n\nתוכן.\n\n## על המחבר\n\nד״ר גיא רופא.",
+            [{"title": "מאמר קשור", "url": "https://guyrofe.com/related/"}],
+        )
+        self.assertLess(rendered.index("להמשך קריאה"), rendered.index("על המחבר"))
+        self.assertIn('href="https://guyrofe.com/related/"', rendered)
+
     def test_wordpress_publish_is_idempotent(self):
         get_response = Mock()
         get_response.json.return_value = [

@@ -148,6 +148,13 @@ class PrepareApprovalBundleTests(unittest.TestCase):
         )
         canonical = targets["canonical_wordpress"]["payload"]
         self.assertEqual(canonical["site_key"], "DRGUYROFE_CO_IL")
+        self.assertEqual(canonical["cms_title"], "ניתוח חדשות רפואיות")
+        self.assertEqual(
+            canonical["search_target"]["primary_query"],
+            "ניתוח חדשות רפואיות",
+        )
+        self.assertLessEqual(len(canonical["meta_description"]), 170)
+        self.assertIn("internal_links", canonical)
         self.assertEqual(canonical["slug"], "ניתוח-חדשות-רפואיות")
         self.assertTrue(
             canonical["canonical_url"].endswith("/ניתוח-חדשות-רפואיות/")

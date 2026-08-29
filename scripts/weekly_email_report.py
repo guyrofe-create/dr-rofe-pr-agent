@@ -7,6 +7,7 @@ import html
 import importlib.util
 import json
 import os
+import re
 import smtplib
 from collections import Counter
 from datetime import datetime, timedelta, timezone
@@ -218,6 +219,159 @@ def latest_asset_rank_measurement(root):
     }, root)
 
 
+def _aggregate_search_console_pages(rows):
+    pages = {}
+    for row in rows or []:
+        page = row.get("page")
+        if not page:
+            continue
+        item = pages.setdefault(page, {
+            "page": page,
+            "property": row.get("property"),
+            "clicks": 0.0,
+            "impressions": 0.0,
+            "position_weight": 0.0,
+            "position_samples": [],
+            "queries": [],
+        })
+        clicks = float(row.get("clicks") or 0)
+        impressions = float(row.get("impressions") or 0)
+        position = float(row.get("position") or 0)
+        item["clicks"] += clicks
+        item["impressions"] += impressions
+        item["position_weight"] += position * max(impressions, 1)
+        item["position_samples"].append((position, max(impressions, 1)))
+        item["queries"].append({
+            "query": row.get("query") or "",
+            "clicks": clicks,
+            "impressions": impressions,
+            "ctr": float(row.get("ctr") or 0),
+            "position": position,
+        })
+    for item in pages.values():
+        denominator = sum(weight for _, weight in item.pop("position_samples"))
+        item["position"] = (
+            item.pop("position_weight") / denominator if denominator else None
+        )
+        item["ctr"] = (
+            item["clicks"] / item["impressions"]
+            if item["impressions"]
+            else 0.0
+        )
+        item["queries"].sort(
+            key=lambda query: (-query["impressions"], -query["clicks"], query["query"])
+        )
+        item["queries"] = item["queries"][:3]
+    return pages
+
+
+def latest_search_console_performance(root):
+    """Return article-level query, click, CTR and position comparisons."""
+    history = load_json(Path(root) / "data" / "reputation_history.json", {"snapshots": []})
+    measurements_by_period = {}
+    for snapshot in history.get("snapshots", []):
+        measurement = snapshot.get("search_console") or {}
+        rows = measurement.get("rows") or []
+        if measurement.get("status") != "ok" or not rows:
+            continue
+        period = rows[0].get("period") or {}
+        key = (period.get("start"), period.get("end"))
+        measurements_by_period[key] = measurement
+    measurements = list(measurements_by_period.values())
+    if not measurements:
+        return {"status": "not_measured", "pages": [], "page_count": 0}
+    current = measurements[-1]
+    previous = measurements[-2] if len(measurements) > 1 else {"rows": []}
+    current_pages = _aggregate_search_console_pages(current.get("rows"))
+    previous_pages = _aggregate_search_console_pages(previous.get("rows"))
+    pages = []
+    for page in sorted(set(current_pages) | set(previous_pages)):
+        now = current_pages.get(page, {"page": page, "clicks": 0, "impressions": 0,
+                                       "ctr": 0, "position": None, "queries": []})
+        before = previous_pages.get(page, {})
+        row = dict(now)
+        row.update({
+            "previous_clicks": before.get("clicks", 0),
+            "previous_impressions": before.get("impressions", 0),
+            "previous_ctr": before.get("ctr", 0),
+            "previous_position": before.get("position"),
+            "click_change": now.get("clicks", 0) - before.get("clicks", 0),
+            "impression_change": (
+                now.get("impressions", 0) - before.get("impressions", 0)
+            ),
+            "position_change": (
+                before.get("position") - now.get("position")
+                if before.get("position") is not None
+                and now.get("position") is not None
+                else None
+            ),
+        })
+        pages.append(row)
+    pages.sort(key=lambda item: (-item["impressions"], -item["clicks"], item["page"]))
+    issues = []
+    for item in pages:
+        if re.search(r"(?:pilot|run-\d+|attempt-\d+)", item["page"], re.I):
+            issues.append({
+                "kind": "internal_slug",
+                "page": item["page"],
+                "detail": "כתובת פנימית נחשפה בפרסום; נדרש מיפוי 301 מדויק",
+            })
+        if item["page"].startswith("http://"):
+            issues.append({
+                "kind": "legacy_http",
+                "page": item["page"],
+                "detail": "גרסת HTTP עדיין מקבלת חשיפות; יש לאחד הפניה וקנוניקל",
+            })
+        if (
+            item["impressions"] >= 20
+            and item.get("position") is not None
+            and item["position"] <= 20
+            and item["ctr"] < 0.03
+        ):
+            issues.append({
+                "kind": "low_ctr",
+                "page": item["page"],
+                "detail": (
+                    f"CTR {item['ctr'] * 100:.1f}% במיקום {item['position']:.1f}; "
+                    "נדרש ניסוי כותרת ותיאור"
+                ),
+            })
+        if item.get("position_change") is not None and item["position_change"] <= -3:
+            issues.append({
+                "kind": "position_decline",
+                "page": item["page"],
+                "detail": f"ירידה של {abs(item['position_change']):.1f} מקומות",
+            })
+    query_pages = {}
+    for row in current.get("rows") or []:
+        impressions = float(row.get("impressions") or 0)
+        if impressions < 3 or not row.get("query") or not row.get("page"):
+            continue
+        pages_for_query = query_pages.setdefault(row["query"], {})
+        pages_for_query[row["page"]] = (
+            pages_for_query.get(row["page"], 0) + impressions
+        )
+    for query, matching_pages in query_pages.items():
+        if len(matching_pages) > 1 and sum(matching_pages.values()) >= 20:
+            issues.append({
+                "kind": "query_cannibalization",
+                "query": query,
+                "pages": sorted(matching_pages),
+                "detail": f"אותה שאילתה מופיעה עבור {len(matching_pages)} עמודים",
+            })
+    current_period = (current.get("rows") or [{}])[0].get("period") or {}
+    previous_period = (previous.get("rows") or [{}])[0].get("period") or {}
+    return {
+        "status": "compared" if previous.get("rows") else "baseline",
+        "period": current_period,
+        "previous_period": previous_period,
+        "row_count": len(current.get("rows") or []),
+        "page_count": len(pages),
+        "pages": pages,
+        "issues": issues,
+    }
+
+
 def collect_report(start, end, *, root=ROOT, usage_dir=None):
     root = Path(root)
     campaigns = load_json(
@@ -248,6 +402,9 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
         for destination in campaign.get("destinations", []):
             row = {
                 "campaign_title": campaign.get("title") or "ללא כותרת",
+                "primary_query": (
+                    campaign.get("search_target") or {}
+                ).get("primary_query"),
                 "name": destination.get("name") or "יעד לא ידוע",
                 "status": destination.get("status") or "unknown",
                 "url": destination.get("url"),
@@ -256,7 +413,7 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
             if row["status"] == "published" and row["url"]:
                 publications.append(row)
             elif row["status"] in {
-                "failed", "blocked", "reconciliation_required",
+                "failed", "blocked", "reconciliation_required", "seo_warning",
             }:
                 failures.append(row)
 
@@ -287,6 +444,7 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
         "publications": publications,
         "failures": failures,
         "asset_rank": latest_asset_rank_measurement(root),
+        "search_console": latest_search_console_performance(root),
         "ai": {
             "events": len(usage),
             "input_tokens": sum(item.get("input_tokens", 0) for item in usage),
@@ -310,6 +468,15 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
 
 def _number(value):
     return f"{int(value):,}"
+
+
+def _signed_number(value):
+    value = float(value or 0)
+    return f"{value:+.0f}"
+
+
+def _position(value):
+    return "לא נמדד" if value is None else f"{float(value):.1f}"
 
 
 def _rank_position_label(item):
@@ -375,11 +542,12 @@ def render_html(report):
     publication_rows = "".join(
         "<tr>"
         f"<td>{html.escape(item['campaign_title'])}</td>"
+        f"<td>{html.escape(item.get('primary_query') or 'לא הוגדרה')}</td>"
         f"<td>{html.escape(item['name'])}</td>"
         f"<td><a href=\"{html.escape(item['url'], quote=True)}\">פתיחת הפרסום</a></td>"
         "</tr>"
         for item in report["publications"]
-    ) or '<tr><td colspan="3">לא נרשמו פרסומים מאומתים השבוע.</td></tr>'
+    ) or '<tr><td colspan="4">לא נרשמו פרסומים מאומתים השבוע.</td></tr>'
     failure_rows = "".join(
         "<li>"
         f"{html.escape(item['campaign_title'])} — "
@@ -415,6 +583,29 @@ def render_html(report):
         "</tr>"
         for item in rank.get("assets", [])
     ) or '<tr><td colspan="9">אין מדידת Google מלאה ועדכנית.</td></tr>'
+    search_console = report.get("search_console", {})
+    search_console_rows = "".join(
+        "<tr>"
+        f'<td><a href="{html.escape(item["page"], quote=True)}">'
+        f'{html.escape(item["page"])}</a></td>'
+        f"<td>{html.escape('; '.join(query['query'] for query in item.get('queries', [])) or 'אין שאילתה')}</td>"
+        f"<td>{_number(item.get('clicks', 0))} ({_signed_number(item.get('click_change'))})</td>"
+        f"<td>{_number(item.get('impressions', 0))} ({_signed_number(item.get('impression_change'))})</td>"
+        f"<td>{float(item.get('ctr') or 0) * 100:.1f}%</td>"
+        f"<td>{_position(item.get('previous_position'))}</td>"
+        f"<td>{_position(item.get('position'))}</td>"
+        f"<td>{_signed_number(item.get('position_change'))}</td>"
+        "</tr>"
+        for item in search_console.get("pages", [])
+    ) or '<tr><td colspan="8">אין כרגע מדידת Search Console זמינה.</td></tr>'
+    seo_issue_items = "".join(
+        "<li>"
+        f"{html.escape(item.get('kind') or 'issue')}: "
+        f"{html.escape(item.get('detail') or '')} "
+        f"{html.escape(item.get('page') or item.get('query') or '')}"
+        "</li>"
+        for item in search_console.get("issues", [])
+    ) or "<li>לא זוהו חריגות SEO לפי המדידה האחרונה.</li>"
     coverage_note = (
         "<p><strong>הערת כיסוי:</strong> העלות מבוססת על אירועי שימוש "
         "שנרשמו בפועל. קריאות שקדמו להפעלת המונה אינן נכללות.</p>"
@@ -454,7 +645,7 @@ def render_html(report):
 <h3>חבילות אישור שהוכנו</h3><ul>{bundle_items}</ul>
 <h2>פרסומים וקישורים</h2>
 <table style="border-collapse:collapse;width:100%" border="1" cellpadding="7">
-<thead><tr><th>תוכן</th><th>יעד</th><th>קישור</th></tr></thead>
+<thead><tr><th>תוכן</th><th>שאילתת יעד</th><th>יעד</th><th>קישור</th></tr></thead>
 <tbody>{publication_rows}</tbody>
 </table>
 <h2>כשלים או חסימות</h2><ul>{failure_rows}</ul>
@@ -468,6 +659,14 @@ def render_html(report):
 <thead><tr><th>נכס</th><th>כתובת</th><th>שאילתת Google</th><th>עמוד</th><th>מיקום קודם</th><th>מיקום נוכחי</th><th>שינוי</th><th>פרסומים בין המדידות</th><th>הערכת תוצאה</th></tr></thead>
 <tbody>{rank_rows}</tbody>
 </table>
+<h2>ביצועי כל עמוד ב-Google Search Console</h2>
+<p>תקופה נוכחית: {html.escape(str(search_console.get('period') or 'לא נמדד'))};
+עמודים בדוח: {int(search_console.get('page_count') or 0)}. שינוי חיובי במיקום פירושו עלייה.</p>
+<table style="border-collapse:collapse;width:100%" border="1" cellpadding="7">
+<thead><tr><th>עמוד</th><th>שאילתות מובילות</th><th>הקלקות ושינוי</th><th>חשיפות ושינוי</th><th>CTR</th><th>מיקום קודם</th><th>מיקום נוכחי</th><th>שינוי במיקום</th></tr></thead>
+<tbody>{search_console_rows}</tbody>
+</table>
+<h3>חריגות הדורשות טיפול</h3><ul>{seo_issue_items}</ul>
 <p style="color:#667085">הדוח כולל רק פרסום שקיבל קבלה וקישור במערכת.</p>
 </body></html>"""
 
@@ -490,7 +689,9 @@ def render_text(report):
         "פרסומים:",
     ]
     lines.extend(
-        f"- {item['campaign_title']} — {item['name']}: {item['url']}"
+        f"- {item['campaign_title']} — שאילתת יעד "
+        f"{item.get('primary_query') or 'לא הוגדרה'} — "
+        f"{item['name']}: {item['url']}"
         for item in report["publications"]
     )
     if not report["publications"]:
@@ -528,6 +729,39 @@ def render_text(report):
         )
     if not rank.get("assets"):
         lines.append("- אין מדידת Google מלאה ועדכנית.")
+    search_console = report.get("search_console", {})
+    lines.extend([
+        "",
+        "ביצועי כל עמוד ב-Google Search Console:",
+        f"תקופה: {search_console.get('period') or 'לא נמדד'}; "
+        f"עמודים: {int(search_console.get('page_count') or 0)}",
+    ])
+    for item in search_console.get("pages", []):
+        queries = "; ".join(
+            query.get("query") or "" for query in item.get("queries", [])
+        ) or "אין שאילתה"
+        lines.append(
+            f"- {item['page']} — שאילתות: {queries}; "
+            f"הקלקות {_number(item.get('clicks', 0))} "
+            f"({_signed_number(item.get('click_change'))}); "
+            f"חשיפות {_number(item.get('impressions', 0))} "
+            f"({_signed_number(item.get('impression_change'))}); "
+            f"CTR {float(item.get('ctr') or 0) * 100:.1f}%; "
+            f"מיקום קודם {_position(item.get('previous_position'))}; "
+            f"מיקום נוכחי {_position(item.get('position'))}; "
+            f"שינוי {_signed_number(item.get('position_change'))}"
+        )
+    if not search_console.get("pages"):
+        lines.append("- אין מדידת Search Console זמינה.")
+    lines.append("")
+    lines.append("חריגות SEO הדורשות טיפול:")
+    for item in search_console.get("issues", []):
+        lines.append(
+            f"- {item.get('kind')}: {item.get('detail')} — "
+            f"{item.get('page') or item.get('query') or ''}"
+        )
+    if not search_console.get("issues"):
+        lines.append("- לא זוהו חריגות לפי המדידה האחרונה.")
     return "\n".join(lines) + "\n"
 
 

@@ -24,8 +24,16 @@ from daily_run import load_draft, resolve_draft_path
 from reputation_core import load_client_profile
 from reputation_core.approval_workflow import build_bundle, render_preview
 from reputation_core.entity_seo import extract_citation_urls
-from reputation_core.entity_contract import audit_article_entity_contract
+from reputation_core.entity_contract import (
+    audit_article_entity_contract,
+    meta_description,
+)
 from reputation_core.platform_content import build_platform_variants
+from reputation_core.publication_seo import (
+    build_search_target,
+    select_related_publications,
+    unbranded_title,
+)
 from reputation_core.content_routing import (
     assert_cross_domain_original,
     draft_metadata,
@@ -217,6 +225,23 @@ def prepare_bundle(
         business,
         primary["key"],
     )
+    try:
+        campaign_history = json.loads(
+            (PROJECT_ROOT / "content_drafts" / "campaigns" / "index.json")
+            .read_text(encoding="utf-8")
+        ).get("campaigns", [])
+    except (OSError, ValueError, TypeError):
+        campaign_history = []
+    search_target = build_search_target(
+        title,
+        metadata=metadata,
+        canonical_name=client["canonical_facts"]["primary_name"],
+    )
+    related_links = select_related_publications(
+        title,
+        canonical_url,
+        campaign_history,
+    )
     variants = build_platform_variants(title, content, canonical_url)
     primary_query = client["search_goal"]["primary_queries"][0]["query"]
     sources = [{"url": url, "type": "citation"} for url in extract_citation_urls(content)]
@@ -313,8 +338,12 @@ def prepare_bundle(
             "asset": urlparse(primary["base_url"]).netloc,
             "payload": {
                 "title": title,
+                "cms_title": unbranded_title(title),
                 "markdown": content,
                 "canonical_url": canonical_url,
+                "meta_description": meta_description(content, client),
+                "search_target": search_target,
+                "internal_links": related_links,
                 "site_key": primary["key"],
                 "content_stream": metadata.get("content_stream"),
                 "content_fingerprint": fingerprint,

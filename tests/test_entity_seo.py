@@ -24,6 +24,13 @@ from scripts.reputation_core.platform_content import (
     build_platform_variants,
     variants_are_distinct,
 )
+from scripts.reputation_core.publication_seo import (
+    audit_published_html,
+    build_search_target,
+    render_related_links_html,
+    select_related_publications,
+    unbranded_title,
+)
 
 
 class EntitySeoTests(unittest.TestCase):
@@ -188,6 +195,70 @@ https://pubmed.ncbi.nlm.nih.gov/1/
             profile,
         )
         self.assertEqual(description.count("ד״ר גיא רופא"), 1)
+
+    def test_meta_description_ends_cleanly_instead_of_mid_sentence(self):
+        profile = load_client_profile()
+        description = meta_description(
+            "# כותרת | ד״ר גיא רופא\n\n"
+            "מאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n"
+            "זהו משפט ראשון קצר וברור. זהו משפט שני ארוך מאוד שנועד "
+            "להמחיש שתיאור התוצאה אינו אמור להיחתך באמצע מילה או משפט.",
+            profile,
+            max_length=65,
+        )
+        self.assertTrue(description.endswith("."), description)
+        self.assertLessEqual(len(description), 65)
+
+    def test_publication_seo_builds_one_brand_suffix_and_topic_query_map(self):
+        title = "גיל המעבר: תסמינים וטיפול | ד״ר גיא רופא"
+        self.assertEqual(
+            unbranded_title(title), "גיל המעבר: תסמינים וטיפול"
+        )
+        target = build_search_target(
+            title,
+            metadata={"content_stream": "canonical_depth"},
+        )
+        self.assertEqual(target["primary_query"], "גיל המעבר: תסמינים וטיפול")
+        self.assertEqual(target["entity_queries"], ["ד״ר גיא רופא", "גיא רופא"])
+        self.assertIn("ד״ר גיא רופא", target["secondary_queries"][0])
+
+    def test_related_publications_are_same_host_relevant_and_crawlable(self):
+        campaigns = [{
+            "title": "גיל המעבר ותסמינים | ד״ר גיא רופא",
+            "destinations": [{
+                "status": "published",
+                "url": "https://guyrofe.com/menopause-symptoms/",
+            }],
+        }, {
+            "title": "כאבי אגן כרוניים | ד״ר גיא רופא",
+            "destinations": [{
+                "status": "published",
+                "url": "https://other.example/pelvic-pain/",
+            }],
+        }]
+        links = select_related_publications(
+            "טיפול בתסמיני גיל המעבר | ד״ר גיא רופא",
+            "https://guyrofe.com/menopause-treatment/",
+            campaigns,
+        )
+        self.assertEqual(len(links), 1)
+        rendered = render_related_links_html(links)
+        self.assertIn('<a href="https://guyrofe.com/menopause-symptoms/">', rendered)
+
+    def test_served_page_audit_detects_duplicate_brand_and_internal_slug(self):
+        document = """<html><head>
+        <title>גיל המעבר | ד״ר גיא רופא - ד״ר גיא רופא</title>
+        <meta name="description" content="תיאור מלא וברור.">
+        <link rel="canonical" href="https://guyrofe.com/pilot-run-12/">
+        </head><body><script>https://guyrofe.com/#person</script></body></html>"""
+        report = audit_published_html(
+            document,
+            expected_url="https://guyrofe.com/pilot-run-12/",
+            canonical_name="ד״ר גיא רופא",
+        )
+        self.assertFalse(report["passed"])
+        self.assertFalse(report["checks"]["brand_once_in_title"])
+        self.assertFalse(report["checks"]["no_internal_run_slug"])
 
     def test_search_crawlers_are_audited_separately(self):
         robots = """User-agent: *

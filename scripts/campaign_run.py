@@ -40,6 +40,11 @@ from reputation_core.entity_seo import (
 )
 from reputation_core.entity_contract import meta_description
 from reputation_core.platform_content import build_platform_variants
+from reputation_core.publication_seo import (
+    audit_published_html,
+    render_related_links_html,
+    unbranded_title,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -174,6 +179,18 @@ def markdown_to_html(content):
     return "\n".join(blocks)
 
 
+def article_html_with_related_links(content, links=None):
+    """Place signed contextual links before the final author disclosure."""
+    rendered = markdown_to_html(content)
+    related = render_related_links_html(links)
+    if not related:
+        return rendered
+    marker = '<section class="author-disclosure"'
+    if marker in rendered:
+        return rendered.replace(marker, related + "\n" + marker, 1)
+    return rendered + "\n" + related
+
+
 def wordpress_publish(
     base_url,
     username,
@@ -292,6 +309,8 @@ def write_campaign_result(
     destinations,
     status="completed",
     approval_id_value=None,
+    search_target=None,
+    canonical_url=None,
 ):
     CAMPAIGN_ROOT.mkdir(parents=True, exist_ok=True)
     relative_draft = draft_path.resolve().relative_to(PROJECT_ROOT).as_posix()
@@ -302,6 +321,8 @@ def write_campaign_result(
         "published_at": utc_now().isoformat(),
         "destinations": destinations,
         "approval_id": approval_id_value,
+        "search_target": search_target or {},
+        "canonical_url": canonical_url,
         "execution_receipt_ledger": (
             EXECUTION_LEDGER_PATH.relative_to(PROJECT_ROOT).as_posix()
         ),
@@ -467,7 +488,6 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     ledger = ledger or ExecutionLedger(EXECUTION_LEDGER_PATH)
     title, content = load_draft(draft_path)
     enforce_publication_policy(content)
-    article_html = markdown_to_html(content)
     summary = first_paragraph(content)
     seo_description = meta_description(content, CLIENT_PROFILE)
     destinations = []
@@ -483,6 +503,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         )
     canonical_target = canonical_targets[0]
     canonical_payload = canonical_target["payload"]
+    seo_description = canonical_payload.get("meta_description") or seo_description
     approved_site_key = canonical_payload.get("site_key")
     primary = (
         site_by_key(business, approved_site_key)
@@ -568,13 +589,16 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         canonical_base,
                         os.environ[primary_user_env],
                         os.environ[primary_password_env],
-                        payload["title"],
-                        hero_html + markdown_to_html(payload["markdown"]),
+                        payload.get("cms_title") or unbranded_title(payload["title"]),
+                        hero_html + article_html_with_related_links(
+                            payload["markdown"], payload.get("internal_links")
+                        ),
                         idempotency_key=payload["slug"],
                         meta_description=seo_description,
                         article_schema_factory=lambda article_url: build_article_schema(
                             business,
-                            headline=payload["title"],
+                            headline=payload.get("cms_title")
+                            or unbranded_title(payload["title"]),
                             article_url=article_url,
                             description=seo_description,
                             image_url=canonical_image_url,
@@ -590,8 +614,11 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                 lambda payload, key: {
                     "url": wix_blog.publish(
                         primary,
-                        title=payload["title"],
-                        html=hero_html + markdown_to_html(payload["markdown"]),
+                        title=payload.get("cms_title")
+                        or unbranded_title(payload["title"]),
+                        html=hero_html + article_html_with_related_links(
+                            payload["markdown"], payload.get("internal_links")
+                        ),
                         excerpt=seo_description,
                         slug=payload["slug"],
                         expected_url=payload["canonical_url"],
@@ -619,6 +646,36 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             target_id=canonical_target["target_id"],
         )
     )
+    try:
+        served = requests.get(
+            canonical_url,
+            headers={"User-Agent": "ReputationAgent-SEO-Verification/1.0"},
+            timeout=30,
+        )
+        served.raise_for_status()
+        seo_audit = audit_published_html(
+            served.text,
+            expected_url=canonical_url,
+            canonical_name=CLIENT_PROFILE["canonical_facts"]["primary_name"],
+            expected_internal_links=canonical_payload.get("internal_links"),
+        )
+        destinations.append(destination(
+            "Canonical SEO verification",
+            "verified" if seo_audit["passed"] else "seo_warning",
+            url=canonical_url,
+            detail=(
+                "title, canonical, description, entity schema and internal links verified"
+                if seo_audit["passed"]
+                else "failed checks: " + ", ".join(seo_audit["errors"])
+            ),
+        ))
+    except Exception as exc:
+        destinations.append(destination(
+            "Canonical SEO verification",
+            "verification_unavailable",
+            url=canonical_url,
+            detail=exception_detail(exc),
+        ))
 
     google_token = None
     google_token_error = None
@@ -914,6 +971,11 @@ def main():
                 [destination(destination_name, "failed", detail=exception_detail(exc))],
                 status="failed",
                 approval_id_value=bundle["approval_id"],
+                search_target=(
+                    (_target_map(bundle).get("canonical_wordpress") or
+                     _target_map(bundle).get("canonical_wix") or {})
+                    .get("payload", {}).get("search_target")
+                ),
             )
             log(f"Campaign failed before distribution completed: {exc}")
             raise
@@ -928,6 +990,12 @@ def main():
             destinations,
             status=status,
             approval_id_value=bundle["approval_id"],
+            search_target=(
+                (_target_map(bundle).get("canonical_wordpress") or
+                 _target_map(bundle).get("canonical_wix") or {})
+                .get("payload", {}).get("search_target")
+            ),
+            canonical_url=canonical_url,
         )
         log(f"Campaign {status}. Canonical URL: {canonical_url}")
     finally:
