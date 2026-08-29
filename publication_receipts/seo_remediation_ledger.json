@@ -504,6 +504,18 @@
       "published_at": "2026-08-29T15:12:59Z",
       "url": "https://www.drguyrofe.co.il/%d7%a6%d7%a8%d7%99%d7%9b%d7%aa-%d7%a1%d7%95%d7%9b%d7%a8-%d7%9c%d7%a4%d7%a0%d7%99-%d7%92%d7%99%d7%9c-%d7%a9%d7%a0%d7%aa%d7%99%d7%99%d7%9d-%d7%95%d7%93%d7%9e%d7%a0%d7%a6%d7%99%d7%94/",
       "provider_receipt": null
+    },
+    "pub_ca1aa7772bcf00f8f81f48b62f50ec4e50a282d3277f850e80b642f6bf20bf70": {
+      "version": 7,
+      "idempotency_key": "pub_ca1aa7772bcf00f8f81f48b62f50ec4e50a282d3277f850e80b642f6bf20bf70",
+      "approval_id": "apr_c0c049fd5ec11c9fc247b4d34e499425ebce60b8d8366f26489712dcd5cebaac",
+      "target_id": "legacy_wix_0dee2d9251c9fbff",
+      "platform": "Wix SEO remediation",
+      "asset": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-25-topic-02-run-32818216514-attempt-1",
+      "request_sha256": "5f52917c747b5954d9bfc512581c3926172ac4e2a35ffd73685c189c2c07565e",
+      "status": "reconciliation_required",
+      "started_at": "2026-08-29T15:23:52Z",
+      "updated_at": "2026-08-29T15:23:55Z"
     }
   }
 }
