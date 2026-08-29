@@ -8,6 +8,7 @@ import json
 import os
 import sys
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 
@@ -16,6 +17,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from campaign_run import load_business_profile, site_by_key
 from reputation_core.approval_workflow import ExecutionLedger, verify_approval
+from reputation_core.publication_seo import urls_equivalent
 
 
 def apply_target(target: dict, *, session=requests) -> dict:
@@ -35,11 +37,29 @@ def apply_target(target: dict, *, session=requests) -> dict:
     )
     response.raise_for_status()
     posts = response.json()
+    if not posts:
+        recovered = session.get(
+            endpoint,
+            auth=auth,
+            params={
+                "search": payload["new_title"],
+                "status": "publish",
+                "context": "edit",
+                "per_page": 20,
+            },
+            timeout=30,
+        )
+        recovered.raise_for_status()
+        posts = [
+            item for item in recovered.json()
+            if html.unescape((item.get("title") or {}).get("raw") or "").strip()
+            in {payload["expected_current_title"], payload["new_title"]}
+        ]
     if len(posts) != 1:
         raise RuntimeError("Exact legacy post was not found uniquely")
     post = posts[0]
     current_title = html.unescape((post.get("title") or {}).get("raw") or "").strip()
-    if current_title != payload["expected_current_title"]:
+    if current_title not in {payload["expected_current_title"], payload["new_title"]}:
         raise PermissionError("Current title differs from the approved legacy payload")
     collision = session.get(
         endpoint,
@@ -63,12 +83,12 @@ def apply_target(target: dict, *, session=requests) -> dict:
     updated.raise_for_status()
     result = updated.json()
     link = result.get("link") or ""
-    if link.rstrip("/") != payload["expected_new_url"].rstrip("/"):
+    if not urls_equivalent(link, payload["expected_new_url"]):
         raise RuntimeError("Provider returned a URL different from the approved clean URL")
     redirect = session.get(payload["old_url"], allow_redirects=False, timeout=30)
-    location = redirect.headers.get("Location", "")
+    location = urljoin(payload["old_url"], redirect.headers.get("Location", ""))
     if redirect.status_code not in {301, 302, 307, 308} or (
-        location.rstrip("/") != payload["expected_new_url"].rstrip("/")
+        not urls_equivalent(location, payload["expected_new_url"])
     ):
         raise RuntimeError("Old URL did not redirect to the approved clean URL")
     return {"url": link, "old_url": payload["old_url"], "redirect": location}

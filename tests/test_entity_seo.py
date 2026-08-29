@@ -30,6 +30,8 @@ from scripts.reputation_core.publication_seo import (
     render_related_links_html,
     select_related_publications,
     unbranded_title,
+    urls_equivalent,
+    wordpress_public_slug,
 )
 
 
@@ -221,6 +223,32 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertEqual(target["primary_query"], "גיל המעבר: תסמינים וטיפול")
         self.assertEqual(target["entity_queries"], ["ד״ר גיא רופא", "גיא רופא"])
         self.assertIn("ד״ר גיא רופא", target["secondary_queries"][0])
+
+    def test_wordpress_slug_stays_below_encoded_provider_limit(self):
+        title = (
+            "בדיקת דם העלתה חשד לסרטן ובצילום התגלה ממצא אחר לחלוטין "
+            "שדורש בירור רפואי נוסף ומעקב מסודר"
+        )
+        slug = wordpress_public_slug(title)
+        from urllib.parse import quote
+
+        self.assertLessEqual(len(quote(slug, safe="-")), 180)
+        self.assertFalse(slug.endswith("-"))
+        self.assertTrue(title.startswith(slug.replace("-", " ")))
+        self.assertEqual(
+            wordpress_public_slug("מיץ גזר, ג'ינג'ר ורימון", encoded_limit=80),
+            "מיץ-גזר-גינגר",
+        )
+
+    def test_url_equivalence_accepts_unicode_and_percent_encoded_paths(self):
+        self.assertTrue(urls_equivalent(
+            "https://www.drguyrofe.co.il/%D7%9B%D7%95%D7%AA%D7%A8%D7%AA/",
+            "https://drguyrofe.co.il/כותרת",
+        ))
+        self.assertFalse(urls_equivalent(
+            "https://drguyrofe.co.il/כותרת-א/",
+            "https://drguyrofe.co.il/כותרת-ב/",
+        ))
 
     def test_related_publications_are_same_host_relevant_and_crawlable(self):
         campaigns = [{

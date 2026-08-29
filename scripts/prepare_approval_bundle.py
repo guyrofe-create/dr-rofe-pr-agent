@@ -33,6 +33,7 @@ from reputation_core.publication_seo import (
     build_search_target,
     select_related_publications,
     unbranded_title,
+    wordpress_public_slug,
 )
 from reputation_core.content_routing import (
     assert_cross_domain_original,
@@ -133,6 +134,7 @@ def canonical_url_for(
         slug = slug[:100].rstrip("-")
         route = str(site.get("post_route") or "post").strip("/")
         return f"{site['base_url'].rstrip('/')}/{route}/{slug}"
+    slug = wordpress_public_slug(title)
     return f"{site['base_url'].rstrip('/')}/{slug}/"
 
 
@@ -325,7 +327,11 @@ def prepare_bundle(
     # scheduler/run identifiers and must never leak into a canonical URL.
     # Reusing the same exact title intentionally reuses the same canonical
     # slug, preventing duplicate public articles for repeated drafts.
-    approved_slug = public_slug(title)
+    approved_slug = (
+        public_slug(title)
+        if primary_platform == "wix"
+        else wordpress_public_slug(title)
+    )
     if primary_platform == "wix":
         approved_slug = approved_slug[:100].rstrip("-")
     canonical_target_id = (
