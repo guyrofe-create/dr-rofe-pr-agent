@@ -88,7 +88,7 @@ def author_box(context: EntityContext) -> str:
 
 def _looks_like_byline(line: str, context: EntityContext) -> bool:
     stripped = (line or "").strip()
-    begins_with_by = bool(re.match(r"^[\[*_]*מאת(?:\s|\])", stripped))
+    begins_with_by = bool(re.match(r"^[\[*_]*מאת(?:\s|:|\])", stripped))
     names_client = any(variant in stripped for variant in context.name_variants)
     return begins_with_by and names_client
 
@@ -214,28 +214,53 @@ def audit_article_entity_contract(markdown: str, profile: dict) -> EntityContrac
 
 def meta_description(markdown: str, profile: dict, *, max_length: int = 170) -> str:
     context = build_entity_context(profile)
-    body = re.sub(r"^#\s+.+$", "", markdown or "", count=1, flags=re.MULTILINE)
-    body = re.sub(r"^מאת\s+\[.+?\]\(.+?\)\s*$", "", body, flags=re.MULTILINE)
+    body = _article_body(markdown, context)
     first = next(
         (
-            re.sub(r"[*_`>\[\]#]", "", block).strip()
+            re.sub(r"[*_`>#]", "", re.sub(
+                r"\[([^\]]+)\]\([^)]+\)", r"\1", block
+            )).strip()
             for block in re.split(r"\n\s*\n", body)
-            if block.strip() and not block.lstrip().startswith("#")
+            if (
+                block.strip()
+                and not block.lstrip().startswith("#")
+                and not _looks_like_byline(block, context)
+                and "הפרופיל הרשמי" not in block
+            )
         ),
         "",
     )
-    description = " ".join(f"{context.canonical_name}: {first}".split()).strip()
+    first = re.sub(r"^התשובה הקצרה\s*:\s*", "", first).strip()
+    first = re.sub(r"^מאת\s*:\s*", "", first).strip()
+    first = first.replace(context.canonical_name, "").strip(" —–-:,")
+    prefix = f"{context.canonical_name}: "
+    description = " ".join(f"{prefix}{first}".split()).strip()
     if len(description) <= max_length:
-        return description
-    sentences = re.split(r"(?<=[.!?])\s+", description)
+        return description.rstrip("… ")
+    sentences = re.split(r"(?<=[.!?])\s+", first)
     complete = []
     for sentence in sentences:
-        candidate = " ".join([*complete, sentence]).strip()
-        if len(candidate) > max_length:
+        candidate_body = " ".join([*complete, sentence]).strip()
+        if len(prefix + candidate_body) > max_length:
             break
         complete.append(sentence)
     if complete:
-        return " ".join(complete).rstrip()
-    shortened = description[:max_length].rsplit(" ", 1)[0]
-    shortened = shortened[: max_length - 1]
-    return shortened.rstrip(" ,:;–—-") + "…"
+        return (prefix + " ".join(complete)).rstrip("… ")
+
+    for sentence in sentences[1:]:
+        sentence = re.sub(
+            r"^(?:עם זאת|לכן|לעומת זאת)\s*,?\s*", "", sentence.strip()
+        )
+        if sentence and len(prefix + sentence) <= max_length:
+            return (prefix + sentence).rstrip("… ")
+
+    available = max_length - len(prefix) - 1
+    shortened = first[:available]
+    boundaries = [shortened.rfind(mark) for mark in (";", ":", "—", "–", ",")]
+    boundary = max(boundaries)
+    if boundary >= 55:
+        shortened = shortened[:boundary]
+    else:
+        shortened = shortened.rsplit(" ", 1)[0]
+    shortened = shortened.rstrip(" ,:;–—-…")
+    return f"{prefix}{shortened}."

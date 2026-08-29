@@ -211,6 +211,39 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertTrue(description.endswith("."), description)
         self.assertLessEqual(len(description), 65)
 
+    def test_meta_description_skips_legacy_byline_and_never_uses_ellipsis(self):
+        profile = load_client_profile()
+        description = meta_description(
+            "# כותרת | ד״ר גיא רופא\n\n"
+            "מאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com)\n\n"
+            "**התשובה הקצרה:** מחקר רחב מצא קשר אפשרי בין המשתנים, "
+            "אך הוא אינו מוכיח סיבתיות ולכן נדרש פירוש זהיר של התוצאות "
+            "לפני קבלת החלטה רפואית אישית.",
+            profile,
+            max_length=100,
+        )
+        self.assertNotIn("מאת", description)
+        self.assertNotIn("http", description)
+        self.assertNotIn("…", description)
+        self.assertTrue(description.endswith("."), description)
+        self.assertEqual(description.count("ד״ר גיא רופא"), 1)
+        self.assertLessEqual(len(description), 100)
+
+    def test_meta_description_prefers_later_complete_sentence_to_broken_fragment(self):
+        profile = load_client_profile()
+        description = meta_description(
+            "# כותרת | ד״ר גיא רופא\n\n"
+            "זהו משפט ראשון ארוך מאוד הכולל פרטים רבים על אוכלוסיית המחקר "
+            "ועל כל המשתנים שנבדקו לאורך שנים רבות ולכן אינו מתאים לתיאור קצר. "
+            "הממצא מעניין, אך אינו מוכיח סיבתיות.",
+            profile,
+            max_length=70,
+        )
+        self.assertEqual(
+            description,
+            "ד״ר גיא רופא: הממצא מעניין, אך אינו מוכיח סיבתיות.",
+        )
+
     def test_publication_seo_builds_one_brand_suffix_and_topic_query_map(self):
         title = "גיל המעבר: תסמינים וטיפול | ד״ר גיא רופא"
         self.assertEqual(
