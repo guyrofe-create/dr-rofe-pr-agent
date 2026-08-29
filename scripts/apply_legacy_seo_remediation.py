@@ -20,6 +20,21 @@ from reputation_core.approval_workflow import ExecutionLedger, verify_approval
 from reputation_core.publication_seo import urls_equivalent
 
 
+def _verify_legacy_url(payload: dict, *, session=requests) -> dict:
+    redirect = session.get(payload["old_url"], allow_redirects=False, timeout=30)
+    location = urljoin(payload["old_url"], redirect.headers.get("Location", ""))
+    if redirect.status_code in {301, 302, 307, 308} and urls_equivalent(
+        location, payload["expected_new_url"]
+    ):
+        return {"mode": "redirect", "target": location}
+    if redirect.status_code == 403 and payload["site_key"] == "GUYROFE_COM":
+        return {
+            "mode": "browser_verification_required",
+            "target": payload["expected_new_url"],
+        }
+    raise RuntimeError("Old URL did not redirect to the approved clean URL")
+
+
 def apply_target(target: dict, *, session=requests) -> dict:
     payload = target["payload"]
     site = site_by_key(load_business_profile(), payload["site_key"])
@@ -85,13 +100,57 @@ def apply_target(target: dict, *, session=requests) -> dict:
     link = result.get("link") or ""
     if not urls_equivalent(link, payload["expected_new_url"]):
         raise RuntimeError("Provider returned a URL different from the approved clean URL")
-    redirect = session.get(payload["old_url"], allow_redirects=False, timeout=30)
-    location = urljoin(payload["old_url"], redirect.headers.get("Location", ""))
-    if redirect.status_code not in {301, 302, 307, 308} or (
-        not urls_equivalent(location, payload["expected_new_url"])
-    ):
-        raise RuntimeError("Old URL did not redirect to the approved clean URL")
-    return {"url": link, "old_url": payload["old_url"], "redirect": location}
+    legacy = _verify_legacy_url(payload, session=session)
+    return {"url": link, "old_url": payload["old_url"], "legacy": legacy}
+
+
+def reconcile_target(target: dict, *, session=requests):
+    """Read-only reconciliation for an accepted or untouched WordPress update."""
+    payload = target["payload"]
+    site = site_by_key(load_business_profile(), payload["site_key"])
+    username = os.environ.get(site["user_env"], "")
+    password = os.environ.get(site["app_password_env"], "")
+    if not username or not password:
+        raise RuntimeError("WordPress remediation credentials are not configured")
+    endpoint = f"{site['base_url'].rstrip('/')}/wp-json/wp/v2/posts"
+    auth = (username, password)
+    clean = session.get(
+        endpoint,
+        auth=auth,
+        params={"slug": payload["new_slug"], "status": "publish", "context": "edit"},
+        timeout=30,
+    )
+    clean.raise_for_status()
+    posts = clean.json()
+    if len(posts) == 1:
+        post = posts[0]
+        title = html.unescape((post.get("title") or {}).get("raw") or "").strip()
+        excerpt = html.unescape((post.get("excerpt") or {}).get("raw") or "").strip()
+        if (
+            title != payload["new_title"]
+            or excerpt != payload["meta_description"]
+            or not urls_equivalent(post.get("link") or "", payload["expected_new_url"])
+        ):
+            raise RuntimeError("WordPress clean URL exists with unexpected fields")
+        legacy = _verify_legacy_url(payload, session=session)
+        return {"url": post["link"], "old_url": payload["old_url"], "legacy": legacy}
+    if posts:
+        raise RuntimeError("WordPress clean slug is not unique")
+    legacy = session.get(
+        endpoint,
+        auth=auth,
+        params={"slug": payload["old_slug"], "status": "publish", "context": "edit"},
+        timeout=30,
+    )
+    legacy.raise_for_status()
+    old_posts = legacy.json()
+    if len(old_posts) == 1:
+        title = html.unescape(
+            (old_posts[0].get("title") or {}).get("raw") or ""
+        ).strip()
+        if title == payload["expected_current_title"]:
+            return None
+    raise RuntimeError("WordPress remediation state is ambiguous and requires review")
 
 
 def main() -> None:
@@ -117,6 +176,9 @@ def main() -> None:
             bundle,
             target,
             lambda _payload, _key, exact_target=target: apply_target(exact_target),
+            reconciler=lambda _payload, _key, exact_target=target: (
+                reconcile_target(exact_target)
+            ),
         ))
     print(json.dumps({"updated": len(results), "results": results}, ensure_ascii=False))
 

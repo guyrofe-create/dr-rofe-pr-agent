@@ -12,6 +12,28 @@ from scripts import (
 
 
 class LegacySeoRemediationTests(unittest.TestCase):
+    def test_main_site_waf_requires_independent_browser_verification(self):
+        response = Mock(status_code=403, headers={})
+        session = Mock()
+        session.get.return_value = response
+        result = apply_legacy_seo_remediation._verify_legacy_url({
+            "site_key": "GUYROFE_COM",
+            "old_url": "https://guyrofe.com/pilot-old/",
+            "expected_new_url": "https://guyrofe.com/clean/",
+        }, session=session)
+        self.assertEqual(result["mode"], "browser_verification_required")
+
+    def test_secondary_site_does_not_treat_403_as_redirect_proof(self):
+        response = Mock(status_code=403, headers={})
+        session = Mock()
+        session.get.return_value = response
+        with self.assertRaisesRegex(RuntimeError, "did not redirect"):
+            apply_legacy_seo_remediation._verify_legacy_url({
+                "site_key": "DRGUYROFE_CO_IL",
+                "old_url": "https://www.drguyrofe.co.il/pilot-old/",
+                "expected_new_url": "https://www.drguyrofe.co.il/clean/",
+            }, session=session)
+
     def test_primary_bundle_targets_six_selected_winners_only(self):
         bundle = prepare_primary_legacy_seo_remediation.build_primary_bundle()
         self.assertEqual(len(bundle["targets"]), 6)
