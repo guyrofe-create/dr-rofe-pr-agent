@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '30 4 1,15 * *'
   workflow_dispatch:
+    inputs:
+      force_search_console:
+        description: Collect a fresh 28-day query/page snapshot now
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   issues: write
@@ -54,6 +60,7 @@ jobs:
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          FORCE_SEARCH_CONSOLE_CHECK: ${{ inputs.force_search_console || 'false' }}
 
       - name: Prepare highest-ranked P4 actions for review
         if: always()
