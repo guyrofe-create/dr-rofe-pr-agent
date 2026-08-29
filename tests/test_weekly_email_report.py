@@ -166,6 +166,43 @@ class WeeklyEmailReportTests(unittest.TestCase):
         self.assertIn("מיקום נוכחי מעל 1000", text)
         self.assertNotIn("מיקום נוכחי לא נמצא", text)
 
+    def test_search_console_report_compares_every_page_and_top_queries(self):
+        start = datetime(2026, 8, 22, tzinfo=timezone.utc)
+        end = datetime(2026, 8, 29, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "data" / "ai_usage_events").mkdir(parents=True)
+            (root / "content_drafts" / "campaigns").mkdir(parents=True)
+            (root / "approval_bundles").mkdir()
+            snapshots = []
+            for period, clicks, impressions, position in [
+                ({"start": "2026-07-01", "end": "2026-07-28"}, 2, 100, 12),
+                ({"start": "2026-07-15", "end": "2026-08-11"}, 5, 140, 8),
+            ]:
+                snapshots.append({"search_console": {
+                    "status": "ok",
+                    "rows": [{
+                        "property": "sc-domain:guyrofe.com",
+                        "query": "גיל המעבר תסמינים",
+                        "page": "https://guyrofe.com/menopause/",
+                        "clicks": clicks,
+                        "impressions": impressions,
+                        "ctr": clicks / impressions,
+                        "position": position,
+                        "period": period,
+                    }],
+                }})
+            (root / "data" / "reputation_history.json").write_text(
+                json.dumps({"snapshots": snapshots}), encoding="utf-8"
+            )
+            report = collect_report(start, end, root=root)
+        self.assertEqual(report["search_console"]["page_count"], 1)
+        page = report["search_console"]["pages"][0]
+        self.assertEqual(page["position_change"], 4)
+        self.assertEqual(page["click_change"], 3)
+        self.assertIn("גיל המעבר תסמינים", render_text(report))
+        self.assertIn("ביצועי כל עמוד", render_html(report))
+
 
 if __name__ == "__main__":
     unittest.main()

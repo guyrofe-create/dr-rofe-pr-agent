@@ -1,0 +1,86 @@
+name: Apply Approved Legacy SEO Remediation
+run-name: >-
+  ${{ inputs.dry_run && 'CHECK ONLY — legacy SEO remediation'
+      || 'APPLY — approved legacy SEO remediation' }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      approval_id:
+        description: Exact committed P7 remediation bundle ID
+        required: true
+        type: string
+      approved_by:
+        description: Audit identity for the explicit approval
+        required: true
+        type: string
+      dry_run:
+        description: Verify and sign only; do not update WordPress
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: legacy-seo-remediation
+  cancel-in-progress: false
+
+jobs:
+  remediate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - run: pip install -r requirements.txt
+
+      - name: Validate and sign the exact P7 bundle
+        env:
+          APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
+          APPROVAL_ID: ${{ inputs.approval_id }}
+          APPROVED_BY: ${{ inputs.approved_by }}
+        run: |
+          bundle_path="approval_bundles/${APPROVAL_ID}.json"
+          approval_path="${RUNNER_TEMP}/legacy-seo-approval.json"
+          test -f "${bundle_path}"
+          test "$(jq -r '.approval_id' "${bundle_path}")" = "${APPROVAL_ID}"
+          test "$(jq -r '.action_type' "${bundle_path}")" = "legacy_wordpress_seo_remediation"
+          scope_args=()
+          while IFS= read -r scope; do
+            scope_args+=(--scope "${scope}")
+          done < <(jq -r '.required_approval_scopes[]' "${bundle_path}")
+          python scripts/approve_bundle.py \
+            "${bundle_path}" \
+            --approved-by "${APPROVED_BY}" \
+            "${scope_args[@]}" \
+            --output "${approval_path}"
+          echo "bundle_path=${bundle_path}" >> "${GITHUB_ENV}"
+          echo "approval_path=${approval_path}" >> "${GITHUB_ENV}"
+
+      - name: Apply exact WordPress changes
+        if: ${{ !inputs.dry_run }}
+        env:
+          APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
+          WORDPRESS_DRGUYROFE_CO_IL_USER: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_USER }}
+          WORDPRESS_DRGUYROFE_CO_IL_API: ${{ secrets.WORDPRESS_DRGUYROFE_CO_IL_API }}
+        run: >-
+          python scripts/apply_legacy_seo_remediation.py
+          "${bundle_path}" "${approval_path}"
+
+      - name: Commit remediation receipts
+        if: ${{ !inputs.dry_run }}
+        run: |
+          if git diff --quiet -- publication_receipts/seo_remediation_ledger.json; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add publication_receipts/seo_remediation_ledger.json
+          git commit -m "Record approved legacy SEO remediation receipts"
+          git push

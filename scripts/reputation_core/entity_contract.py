@@ -212,7 +212,7 @@ def audit_article_entity_contract(markdown: str, profile: dict) -> EntityContrac
     )
 
 
-def meta_description(markdown: str, profile: dict, *, max_length: int = 300) -> str:
+def meta_description(markdown: str, profile: dict, *, max_length: int = 170) -> str:
     context = build_entity_context(profile)
     body = re.sub(r"^#\s+.+$", "", markdown or "", count=1, flags=re.MULTILINE)
     body = re.sub(r"^מאת\s+\[.+?\]\(.+?\)\s*$", "", body, flags=re.MULTILINE)
@@ -224,5 +224,18 @@ def meta_description(markdown: str, profile: dict, *, max_length: int = 300) -> 
         ),
         "",
     )
-    description = f"{context.canonical_name}: {first}".strip()
-    return " ".join(description.split())[:max_length].rstrip()
+    description = " ".join(f"{context.canonical_name}: {first}".split()).strip()
+    if len(description) <= max_length:
+        return description
+    sentences = re.split(r"(?<=[.!?])\s+", description)
+    complete = []
+    for sentence in sentences:
+        candidate = " ".join([*complete, sentence]).strip()
+        if len(candidate) > max_length:
+            break
+        complete.append(sentence)
+    if complete:
+        return " ".join(complete).rstrip()
+    shortened = description[:max_length].rsplit(" ", 1)[0]
+    shortened = shortened[: max_length - 1]
+    return shortened.rstrip(" ,:;–—-") + "…"
