@@ -6,11 +6,23 @@ from urllib.parse import quote
 from scripts import (
     apply_legacy_seo_remediation,
     prepare_legacy_seo_remediation,
+    prepare_primary_legacy_seo_remediation,
     prepare_wix_legacy_seo_remediation,
 )
 
 
 class LegacySeoRemediationTests(unittest.TestCase):
+    def test_primary_bundle_targets_six_selected_winners_only(self):
+        bundle = prepare_primary_legacy_seo_remediation.build_primary_bundle()
+        self.assertEqual(len(bundle["targets"]), 6)
+        for target in bundle["targets"]:
+            payload = target["payload"]
+            self.assertEqual(payload["site_key"], "GUYROFE_COM")
+            self.assertIn("pilot", payload["old_slug"])
+            self.assertNotIn("pilot", payload["new_slug"])
+            self.assertTrue(payload["selection_reason"])
+            self.assertNotIn("ד״ר גיא רופא", payload["new_title"])
+
     def test_wix_bundle_targets_only_three_exact_custom_domain_posts(self):
         bundle = prepare_wix_legacy_seo_remediation.build_wix_bundle()
         self.assertEqual(bundle["action_type"], "legacy_wix_seo_remediation")
