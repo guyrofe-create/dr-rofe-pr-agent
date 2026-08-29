@@ -513,9 +513,40 @@
       "platform": "Wix SEO remediation",
       "asset": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-25-topic-02-run-32818216514-attempt-1",
       "request_sha256": "5f52917c747b5954d9bfc512581c3926172ac4e2a35ffd73685c189c2c07565e",
-      "status": "reconciliation_required",
+      "status": "published",
       "started_at": "2026-08-29T15:23:52Z",
-      "updated_at": "2026-08-29T15:23:55Z"
+      "updated_at": "2026-08-29T15:23:55Z",
+      "published_at": "2026-08-29T15:27:42Z",
+      "url": "https://www.drguyrofe.com/post/אנדומטריוזיס-ופוריות-מה-ידוע-על-הקשר-ומהן-אפשרויות-הבירור-והטיפול",
+      "provider_receipt": null
+    },
+    "pub_8f897228c7239d9d3dd425bc00435af9697205e4a8de6eb84432c763f99cee40": {
+      "version": 7,
+      "idempotency_key": "pub_8f897228c7239d9d3dd425bc00435af9697205e4a8de6eb84432c763f99cee40",
+      "approval_id": "apr_c0c049fd5ec11c9fc247b4d34e499425ebce60b8d8366f26489712dcd5cebaac",
+      "target_id": "legacy_wix_5b76ab366e31841f",
+      "platform": "Wix SEO remediation",
+      "asset": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-18-topic-00-run-32107966329-attempt-1",
+      "request_sha256": "7825af8e862d6ce81ebb0abf09b04f51881f0f3a4175b6be3bf07cb012f4e8aa",
+      "status": "published",
+      "started_at": "2026-08-29T15:27:42Z",
+      "published_at": "2026-08-29T15:27:45Z",
+      "url": "https://www.drguyrofe.com/post/כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי-ומתי-לפנות-לבדיקה-רפואית",
+      "provider_receipt": null
+    },
+    "pub_cac8ec9561d53b4df09dd4bb9c3765aeafaf77bf64af7ad046299ebd65527ead": {
+      "version": 7,
+      "idempotency_key": "pub_cac8ec9561d53b4df09dd4bb9c3765aeafaf77bf64af7ad046299ebd65527ead",
+      "approval_id": "apr_c0c049fd5ec11c9fc247b4d34e499425ebce60b8d8366f26489712dcd5cebaac",
+      "target_id": "legacy_wix_f16dfd7e9fd07ca7",
+      "platform": "Wix SEO remediation",
+      "asset": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
+      "request_sha256": "59725e33b797fc1397dc0c73997463110eb7cff91b1e99aade66048195369b38",
+      "status": "published",
+      "started_at": "2026-08-29T15:27:45Z",
+      "published_at": "2026-08-29T15:27:48Z",
+      "url": "https://www.drguyrofe.com/post/לפרוסקופיה-גינקולוגית-מידע-כללי-על-ההליך",
+      "provider_receipt": null
     }
   }
 }
