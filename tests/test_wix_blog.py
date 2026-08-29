@@ -179,6 +179,54 @@ class WixBlogTests(unittest.TestCase):
             },
         )
 
+    def test_update_accepts_wix_canonical_alias_for_old_slug(self):
+        class AliasSession:
+            def __init__(self):
+                self.slug_calls = 0
+
+            def get(self, url, **kwargs):
+                if "/slugs/" in url:
+                    self.slug_calls += 1
+                    if self.slug_calls == 1:
+                        return Response({"post": {"id": "post-1", "title": "ישן"}})
+                    if self.slug_calls == 2:
+                        return Response(status_code=404)
+                    return Response({"post": {"id": "post-1", "title": "חדש"}})
+                return Response(payload={}, status_code=200, headers={})
+
+            def patch(self, url, **kwargs):
+                return Response({"draftPost": {"id": "post-1"}})
+
+            def post(self, url, **kwargs):
+                return Response({"post": {"id": "post-1"}})
+
+        session = AliasSession()
+        original_get = session.get
+
+        def get_with_html(url, **kwargs):
+            response = original_get(url, **kwargs)
+            if "/slugs/" not in url:
+                response.text = (
+                    '<link rel="canonical" '
+                    'href="https://www.drguyrofe.com/post/new-slug">'
+                )
+            return response
+
+        session.get = get_with_html
+        with patch.dict(os.environ, {"WIX_API": "key", "WIX_SITE": "site"}):
+            result = wix_blog.update_published(
+                SITE,
+                old_slug="old-slug",
+                expected_current_title="ישן",
+                title="חדש",
+                excerpt="תקציר מלא.",
+                slug="new-slug",
+                old_url="https://www.drguyrofe.com/post/old-slug",
+                expected_url="https://www.drguyrofe.com/post/new-slug",
+                session=session,
+            )
+        self.assertEqual(result["legacy"]["mode"], "canonical_alias")
+
 
 if __name__ == "__main__":
     unittest.main()
