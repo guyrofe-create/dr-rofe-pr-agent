@@ -3,10 +3,27 @@ import unittest
 from unittest.mock import Mock, patch
 from urllib.parse import quote
 
-from scripts import apply_legacy_seo_remediation, prepare_legacy_seo_remediation
+from scripts import (
+    apply_legacy_seo_remediation,
+    prepare_legacy_seo_remediation,
+    prepare_wix_legacy_seo_remediation,
+)
 
 
 class LegacySeoRemediationTests(unittest.TestCase):
+    def test_wix_bundle_targets_only_three_exact_custom_domain_posts(self):
+        bundle = prepare_wix_legacy_seo_remediation.build_wix_bundle()
+        self.assertEqual(bundle["action_type"], "legacy_wix_seo_remediation")
+        self.assertEqual(len(bundle["targets"]), 3)
+        for target in bundle["targets"]:
+            payload = target["payload"]
+            self.assertEqual(payload["site_key"], "DRGUYROFE_COM")
+            self.assertIn("pilot", payload["old_slug"])
+            self.assertNotIn("pilot", payload["new_slug"])
+            self.assertLessEqual(len(payload["new_slug"]), 100)
+            self.assertNotIn("ד״ר גיא רופא", payload["new_title"])
+            self.assertTrue(payload["meta_description"].endswith((".", "?", "!")))
+
     def test_bundle_only_targets_unique_secondary_wordpress_news(self):
         bundle, excluded = prepare_legacy_seo_remediation.build_legacy_bundle()
         self.assertEqual(bundle["action_type"], "legacy_wordpress_seo_remediation")

@@ -1,0 +1,108 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-29T15:22:08Z",
+  "action_type": "legacy_wix_seo_remediation",
+  "source_draft": null,
+  "source_draft_sha256": null,
+  "objective": "Correct exact legacy Wix titles, URLs and descriptions.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-25-topic-02-run-32818216514-attempt-1",
+      "type": "existing_publication"
+    },
+    {
+      "url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-18-topic-00-run-32107966329-attempt-1",
+      "type": "existing_publication"
+    },
+    {
+      "url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
+      "type": "existing_publication"
+    }
+  ],
+  "media": null,
+  "targets": [
+    {
+      "target_id": "legacy_wix_0dee2d9251c9fbff",
+      "platform": "Wix SEO remediation",
+      "asset": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-25-topic-02-run-32818216514-attempt-1",
+      "payload": {
+        "site_key": "DRGUYROFE_COM",
+        "old_url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-25-topic-02-run-32818216514-attempt-1",
+        "old_slug": "guy-rofe-pilot-2026-08-25-topic-02-run-32818216514-attempt-1",
+        "expected_current_title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ומהן אפשרויות הבירור והטיפול? | ד״ר גיא רופא",
+        "new_title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ומהן אפשרויות הבירור והטיפול?",
+        "new_slug": "אנדומטריוזיס-ופוריות-מה-ידוע-על-הקשר-ומהן-אפשרויות-הבירור-והטיפול",
+        "expected_new_url": "https://www.drguyrofe.com/post/אנדומטריוזיס-ופוריות-מה-ידוע-על-הקשר-ומהן-אפשרויות-הבירור-והטיפול",
+        "meta_description": "ד״ר גיא רופא: אנדומטריוזיס עלולה להקשות על השגת היריון, אך האבחנה אינה מעידה בהכרח על אי־פוריות.",
+        "changes": [
+          "remove_duplicate_brand_suffix_from_cms_title",
+          "replace_internal_pilot_slug_with_readable_topic_slug",
+          "replace_excerpt_with_complete_description"
+        ]
+      }
+    },
+    {
+      "target_id": "legacy_wix_5b76ab366e31841f",
+      "platform": "Wix SEO remediation",
+      "asset": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-18-topic-00-run-32107966329-attempt-1",
+      "payload": {
+        "site_key": "DRGUYROFE_COM",
+        "old_url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-18-topic-00-run-32107966329-attempt-1",
+        "old_slug": "guy-rofe-pilot-2026-08-18-topic-00-run-32107966329-attempt-1",
+        "expected_current_title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+        "new_title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית",
+        "new_slug": "כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי-ומתי-לפנות-לבדיקה-רפואית",
+        "expected_new_url": "https://www.drguyrofe.com/post/כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי-ומתי-לפנות-לבדיקה-רפואית",
+        "meta_description": "ד״ר גיא רופא: כאבי אגן הנמשכים חודשים, חוזרים בתדירות גבוהה או פוגעים בתפקוד היומיומי מצדיקים בדיקה רפואית.",
+        "changes": [
+          "remove_duplicate_brand_suffix_from_cms_title",
+          "replace_internal_pilot_slug_with_readable_topic_slug",
+          "replace_excerpt_with_complete_description"
+        ]
+      }
+    },
+    {
+      "target_id": "legacy_wix_f16dfd7e9fd07ca7",
+      "platform": "Wix SEO remediation",
+      "asset": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
+      "payload": {
+        "site_key": "DRGUYROFE_COM",
+        "old_url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
+        "old_slug": "guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
+        "expected_current_title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+        "new_title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך",
+        "new_slug": "לפרוסקופיה-גינקולוגית-מידע-כללי-על-ההליך",
+        "expected_new_url": "https://www.drguyrofe.com/post/לפרוסקופיה-גינקולוגית-מידע-כללי-על-ההליך",
+        "meta_description": "ד״ר גיא רופא: ההליך מתבצע בדרך כלל בהרדמה כללית, והיקפו משתנה מבדיקה אבחנתית קצרה ועד לניתוח מורכב.",
+        "changes": [
+          "remove_duplicate_brand_suffix_from_cms_title",
+          "replace_internal_pilot_slug_with_readable_topic_slug",
+          "replace_excerpt_with_complete_description"
+        ]
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Every target is an exact existing Wix post.",
+      "The provider update is followed by publication and redirect verification."
+    ]
+  },
+  "compliance": {
+    "exact_existing_post_required": true,
+    "abort_on_slug_collision": true,
+    "article_body_change_prohibited": true,
+    "redirect_verification_required": true
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_c0c049fd5ec11c9fc247b4d34e499425ebce60b8d8366f26489712dcd5cebaac"
+}
