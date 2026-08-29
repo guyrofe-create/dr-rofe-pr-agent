@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "search_console_period": {
+    "start": "2026-07-30",
+    "end": "2026-08-26"
+  },
+  "selected": [
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+      "draft": "content_drafts/2026-08-09-topic-06-run-31299936904-attempt-1.md",
+      "reason": "Search Console winner for menopause intent; 23 impressions across relevant queries."
+    },
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-23-topic-01-run-32623454483-attempt-1/",
+      "draft": "content_drafts/2026-08-23-topic-01-run-32623454483-attempt-1.md",
+      "meta_description": "ד״ר גיא רופא: לפרוסקופיה גינקולוגית היא הליך זעיר־פולשני לבירור או לטיפול במצבים כגון אנדומטריוזיס, ציסטות שחלתיות, היריון חוץ־רחמי וכאבי אגן.",
+      "reason": "Unique primary-site laparoscopy guide."
+    },
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-05/",
+      "draft": "content_drafts/2026-07-27-topic-05.md",
+      "reason": "Search Console winner for severe-period-pain intent; observed at positions 1 and 9 for exact long-tail questions."
+    },
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+      "draft": "content_drafts/2026-08-12-topic-07-run-31573715687-attempt-1.md",
+      "reason": "Unique source-evaluation guide; one brand-query click at position 2."
+    },
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+      "draft": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
+      "reason": "Distinct fertility-intent guide with 15 Search Console impressions."
+    },
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-03-run-30347171093-attempt-1/",
+      "draft": "content_drafts/2026-07-28-topic-03-run-30347171093-attempt-1.md",
+      "reason": "Unique primary-site fibroids guide."
+    }
+  ],
+  "deferred_duplicates": [
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+      "canonical_winner": "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+      "reason": "Needs a site-level canonical or redirect; Yoast REST API is read-only."
+    },
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-19-topic-05-run-32224474606-attempt-1/",
+      "canonical_winner": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-05/",
+      "reason": "Needs a site-level canonical or redirect; preserve existing social links."
+    },
+    {
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+      "canonical_winner": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-05/",
+      "reason": "Needs a site-level canonical or redirect; preserve existing social links."
+    }
+  ]
+}
