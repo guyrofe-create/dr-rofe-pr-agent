@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import html
 import re
-from urllib.parse import urlparse
+from urllib.parse import quote, unquote, urlparse
 
 
 _BRAND_SUFFIX = re.compile(
@@ -24,6 +24,41 @@ def unbranded_title(title: str) -> str:
     while _BRAND_SUFFIX.search(clean):
         clean = _BRAND_SUFFIX.sub("", clean).strip(" |｜–—-")
     return clean
+
+
+def wordpress_public_slug(title: str, *, encoded_limit: int = 180) -> str:
+    """Build a readable slug that WordPress will not truncate at 200 bytes."""
+    normalized_title = unbranded_title(title)
+    for apostrophe in ("'", "’", "׳"):
+        normalized_title = normalized_title.replace(apostrophe, "")
+    base = re.sub(
+        r"[^\w\u0590-\u05FF-]+", "-", normalized_title, flags=re.UNICODE
+    )
+    base = re.sub(r"-+", "-", base).strip("-").lower()
+    selected = []
+    for word in base.split("-"):
+        candidate = "-".join([*selected, word])
+        if len(quote(candidate, safe="-")) > encoded_limit:
+            break
+        selected.append(word)
+    if selected:
+        return "-".join(selected)
+    result = ""
+    for character in base:
+        candidate = result + character
+        if len(quote(candidate, safe="-")) > encoded_limit:
+            break
+        result = candidate
+    return result.strip("-")
+
+
+def urls_equivalent(first: str, second: str) -> bool:
+    def normalized(value: str) -> str:
+        parsed = urlparse(unquote(value or ""))
+        host = parsed.netloc.lower().removeprefix("www.")
+        path = re.sub(r"/+", "/", parsed.path).rstrip("/") or "/"
+        return f"{parsed.scheme.lower()}://{host}{path}"
+    return normalized(first) == normalized(second)
 
 
 def _trim_words(value: str, limit: int) -> str:

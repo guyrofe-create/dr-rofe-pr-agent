@@ -15,7 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from daily_run import load_draft
 from reputation_core.approval_workflow import build_bundle, render_preview
 from reputation_core.entity_contract import meta_description
-from reputation_core.publication_seo import unbranded_title
+from reputation_core.publication_seo import unbranded_title, wordpress_public_slug
 from reputation_core.strategy import load_client_profile
 from campaign_run import public_slug
 
@@ -67,7 +67,7 @@ def build_legacy_bundle() -> tuple[dict, list[dict]]:
                 })
                 continue
             new_title = unbranded_title(draft_title)
-            new_slug = public_slug(draft_title)
+            new_slug = wordpress_public_slug(draft_title)
             if new_slug in new_slugs:
                 excluded.append({
                     "url": old_url,

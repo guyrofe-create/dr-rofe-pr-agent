@@ -70,6 +70,8 @@ from .publication_seo import (
     render_related_links_html,
     select_related_publications,
     unbranded_title,
+    urls_equivalent,
+    wordpress_public_slug,
 )
 from .approval_workflow import (
     ExecutionLedger,
@@ -160,6 +162,8 @@ __all__ = [
     "render_related_links_html",
     "select_related_publications",
     "unbranded_title",
+    "urls_equivalent",
+    "wordpress_public_slug",
     "variants_are_distinct",
     "audit_backlinks",
     "build_ai_feedback_task",

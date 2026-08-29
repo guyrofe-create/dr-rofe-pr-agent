@@ -1,6 +1,7 @@
 import os
 import unittest
 from unittest.mock import Mock, patch
+from urllib.parse import quote
 
 from scripts import apply_legacy_seo_remediation, prepare_legacy_seo_remediation
 
@@ -17,6 +18,7 @@ class LegacySeoRemediationTests(unittest.TestCase):
             self.assertNotIn("pilot", payload["new_slug"])
             self.assertNotIn("ד״ר גיא רופא", payload["new_title"])
             self.assertLessEqual(len(payload["meta_description"]), 170)
+            self.assertLessEqual(len(quote(payload["new_slug"], safe="-")), 180)
         self.assertTrue(any(
             item["reason"] == "manual_consolidation_required"
             for item in excluded
@@ -65,6 +67,55 @@ class LegacySeoRemediationTests(unittest.TestCase):
         update_payload = session.post.call_args.kwargs["json"]
         self.assertEqual(set(update_payload), {"title", "slug", "excerpt"})
         self.assertEqual(update_payload["slug"], "כותרת")
+
+    def test_apply_recovers_an_already_partially_updated_post(self):
+        payload = {
+            "site_key": "DRGUYROFE_CO_IL",
+            "old_url": "https://www.drguyrofe.co.il/pilot-old/",
+            "old_slug": "pilot-old",
+            "expected_current_title": "כותרת ארוכה | ד״ר גיא רופא",
+            "new_title": "כותרת ארוכה",
+            "new_slug": "כותרת-ארוכה",
+            "expected_new_url": "https://www.drguyrofe.co.il/כותרת-ארוכה/",
+            "meta_description": "ד״ר גיא רופא: תיאור שלם.",
+        }
+        missing_old = Mock()
+        missing_old.json.return_value = []
+        missing_old.raise_for_status.return_value = None
+        recovered = Mock()
+        recovered.json.return_value = [{
+            "id": 42,
+            "title": {"raw": "כותרת ארוכה"},
+        }]
+        recovered.raise_for_status.return_value = None
+        no_collision = Mock()
+        no_collision.json.return_value = []
+        no_collision.raise_for_status.return_value = None
+        update = Mock()
+        update.json.return_value = {
+            "link": "https://www.drguyrofe.co.il/%D7%9B%D7%95%D7%AA%D7%A8%D7%AA-%D7%90%D7%A8%D7%95%D7%9B%D7%94/",
+        }
+        update.raise_for_status.return_value = None
+        redirect = Mock(status_code=301, headers={
+            "Location": "/%D7%9B%D7%95%D7%AA%D7%A8%D7%AA-%D7%90%D7%A8%D7%95%D7%9B%D7%94/",
+        })
+        session = Mock()
+        session.get.side_effect = [
+            missing_old, recovered, no_collision, redirect
+        ]
+        session.post.return_value = update
+        with patch.dict(os.environ, {
+            "WORDPRESS_DRGUYROFE_CO_IL_USER": "user",
+            "WORDPRESS_DRGUYROFE_CO_IL_API": "password",
+        }, clear=False):
+            result = apply_legacy_seo_remediation.apply_target(
+                {"payload": payload}, session=session
+            )
+        self.assertEqual(result["old_url"], payload["old_url"])
+        self.assertEqual(
+            session.post.call_args.kwargs["json"]["slug"],
+            payload["new_slug"],
+        )
 
 
 if __name__ == "__main__":

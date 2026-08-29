@@ -74,9 +74,9 @@ jobs:
           "${bundle_path}" "${approval_path}"
 
       - name: Commit remediation receipts
-        if: ${{ !inputs.dry_run }}
+        if: ${{ always() && !inputs.dry_run }}
         run: |
-          if git diff --quiet -- publication_receipts/seo_remediation_ledger.json; then
+          if [[ -z "$(git status --porcelain -- publication_receipts/seo_remediation_ledger.json)" ]]; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
