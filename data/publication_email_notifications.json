@@ -508,6 +508,14 @@
       "urls": [
         "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%94%d7%9e%d7%97%d7%a7%d7%a8-%d7%a9%d7%92%d7%99%d7%9c%d7%94/"
       ]
+    },
+    "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123:259cf2a549ebf07be6bd46e5bcba89fcbcfe7d7b117a42cbad08ce162ea8424a": {
+      "sent_at": "2026-08-30T19:50:16.976992+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123",
+      "state": "failed",
+      "subject": "הפרסום נכשל: תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }
