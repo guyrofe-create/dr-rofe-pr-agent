@@ -3,13 +3,96 @@
     {
       "draft": "content_drafts/2026-08-30-topic-90-run-33308645627-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד | ד״ר גיא רופא",
-      "status": "failed",
-      "published_at": "2026-08-30T18:48:22.910661+00:00",
+      "status": "completed",
+      "published_at": "2026-08-30T19:48:39.329919+00:00",
       "destinations": [
         {
-          "name": "Campaign",
-          "status": "failed",
-          "detail": "ReconciliationRequired: Canonical provider URL differs from the approved URL; reconcile before distribution"
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%94%d7%9e%d7%97%d7%a7%d7%a8-%d7%a9%d7%92%d7%99%d7%9c%d7%94/",
+          "detail": "idempotency_key=pub_d6862a862fbcb8b137388b6becd6651f9dcb09a9bfae1312be455813d76b2f58"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%94%d7%9e%d7%97%d7%a7%d7%a8-%d7%a9%d7%92%d7%99%d7%9c%d7%94/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-30-topic-90-run-33308645627-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Instagram",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
         }
       ],
       "approval_id": "apr_fae8dfb3e1fe19d2b581ebb5add33abd1ed4c147d6585fe8cfccd2957841ea8e",
@@ -25,7 +108,7 @@
         ],
         "intent": "news_analysis"
       },
-      "canonical_url": null,
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%94%d7%9e%d7%97%d7%a7%d7%a8-%d7%a9%d7%92%d7%99%d7%9c%d7%94/",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     },
     {

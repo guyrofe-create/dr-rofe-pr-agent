@@ -498,6 +498,16 @@
       "state": "failed",
       "subject": "הפרסום נכשל: מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד | ד״ר גיא רופא",
       "urls": []
+    },
+    "apr_fae8dfb3e1fe19d2b581ebb5add33abd1ed4c147d6585fe8cfccd2957841ea8e:e32f61e5cb6dceca256cb92426f74129331120a4aee959d4dda8078b8c728271": {
+      "sent_at": "2026-08-30T19:48:40.054224+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_fae8dfb3e1fe19d2b581ebb5add33abd1ed4c147d6585fe8cfccd2957841ea8e",
+      "state": "success",
+      "subject": "אישור פרסום: מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%94%d7%9e%d7%97%d7%a7%d7%a8-%d7%a9%d7%92%d7%99%d7%9c%d7%94/"
+      ]
     }
   }
 }
