@@ -520,6 +520,37 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(get.call_count, 3)
         self.assertEqual(sleep.call_count, 2)
 
+    @patch("scripts.social_image.time.sleep")
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_lookup_recovers_from_authenticated_waf_with_public_read(
+        self, get, post, sleep
+    ):
+        waf = Mock(status_code=200, headers={"Content-Type": "text/html"})
+        waf.raise_for_status.return_value = None
+        waf.json.side_effect = ValueError("not JSON")
+        public = Mock(status_code=200, headers={"Content-Type": "application/json"})
+        public.raise_for_status.return_value = None
+        public.json.return_value = [
+            {"id": 7, "source_url": "https://guyrofe.com/image.png"}
+        ]
+        get.side_effect = [waf, public]
+
+        url = social_image.upload_to_wordpress(
+            social_image.SocialImage(b"image"),
+            base_url="https://guyrofe.com",
+            username="user",
+            app_password="password",
+            slug="approved-social",
+            title="כותרת",
+        )
+
+        self.assertEqual(url, "https://guyrofe.com/image.png")
+        self.assertIn("auth", get.call_args_list[0].kwargs)
+        self.assertNotIn("auth", get.call_args_list[1].kwargs)
+        sleep.assert_called_once_with(1)
+        post.assert_not_called()
+
     def test_generated_instagram_square_is_jpeg(self):
         source = BytesIO()
         Image.new("RGB", (1600, 1200), "#64858a").save(source, format="JPEG")
