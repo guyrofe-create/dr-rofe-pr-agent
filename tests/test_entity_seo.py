@@ -321,6 +321,19 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertFalse(report["checks"]["brand_once_in_title"])
         self.assertFalse(report["checks"]["no_internal_run_slug"])
 
+    def test_served_page_audit_accepts_encoded_canonical_equivalence(self):
+        document = """<html><head>
+        <title>שחלות פוליציסטיות | ד״ר גיא רופא</title>
+        <meta name="description" content="תיאור מלא וברור.">
+        <link rel="canonical" href="https://guyrofe.com/תסמונת-השחלות/">
+        </head><body><script>https://guyrofe.com/#person</script></body></html>"""
+        report = audit_published_html(
+            document,
+            expected_url="https://guyrofe.com/%D7%AA%D7%A1%D7%9E%D7%95%D7%A0%D7%AA-%D7%94%D7%A9%D7%97%D7%9C%D7%95%D7%AA/",
+            canonical_name="ד״ר גיא רופא",
+        )
+        self.assertTrue(report["checks"]["canonical_matches"])
+
     def test_search_crawlers_are_audited_separately(self):
         robots = """User-agent: *
 Allow: /

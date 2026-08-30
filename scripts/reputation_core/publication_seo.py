@@ -205,7 +205,7 @@ def audit_published_html(
     checks = {
         "title_present": bool(title),
         "brand_once_in_title": normalized_title.count(canonical_name) == 1,
-        "canonical_matches": canonical.rstrip("/") == expected_url.rstrip("/"),
+        "canonical_matches": urls_equivalent(canonical, expected_url),
         "description_present": bool(description),
         "description_not_truncated": not description.endswith((" ו", " ש", " ה", ":")),
         "no_internal_run_slug": not re.search(
