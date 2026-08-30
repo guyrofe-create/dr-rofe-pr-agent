@@ -1,6 +1,34 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-08-30-topic-90-run-33308645627-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד | ד״ר גיא רופא",
+      "status": "failed",
+      "published_at": "2026-08-30T18:48:22.910661+00:00",
+      "destinations": [
+        {
+          "name": "Campaign",
+          "status": "failed",
+          "detail": "ReconciliationRequired: Canonical provider URL differs from the approved URL; reconcile before distribution"
+        }
+      ],
+      "approval_id": "apr_fae8dfb3e1fe19d2b581ebb5add33abd1ed4c147d6585fe8cfccd2957841ea8e",
+      "search_target": {
+        "primary_query": "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד",
+        "secondary_queries": [
+          "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": null,
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md",
       "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
       "status": "failed",
