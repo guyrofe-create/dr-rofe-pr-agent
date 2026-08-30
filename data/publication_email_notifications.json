@@ -482,6 +482,14 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7498876276792008704/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJqRgMGB-Orq4gE"
       ]
+    },
+    "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123:73d25e242194018b48f8ed271e2e6b83704e5411713b422ec8809b418b2f058a": {
+      "sent_at": "2026-08-30T15:32:52.827521+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123",
+      "state": "failed",
+      "subject": "הפרסום נכשל: תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }

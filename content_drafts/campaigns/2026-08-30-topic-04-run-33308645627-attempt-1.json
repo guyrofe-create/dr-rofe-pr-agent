@@ -1,0 +1,29 @@
+{
+  "draft": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md",
+  "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
+  "status": "failed",
+  "published_at": "2026-08-30T15:32:50.981959+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "failed",
+      "detail": "CampaignTargetError: RuntimeError: WordPress media lookup returned a non-JSON response (Content-Type: text/html)"
+    }
+  ],
+  "approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123",
+  "search_target": {
+    "primary_query": "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
+    "secondary_queries": [
+      "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול",
+      "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול ד״ר גיא רופא",
+      "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": null,
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
