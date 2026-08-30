@@ -161,7 +161,7 @@ def match_destination_target(destination, bundle):
     for target in (bundle or {}).get("targets", []):
         platform = normalized_destination_name(target.get("platform"))
         asset = normalized_destination_name(target.get("asset"))
-        if name in {platform, asset} or (asset and asset in name):
+        if name in {platform, asset}:
             matches.append(target.get("target_id"))
     return matches[0] if len(set(matches)) == 1 else None
 

@@ -24,7 +24,7 @@ class ContentCadenceTests(unittest.TestCase):
             {
                 "facebook": 4,
                 "linkedin": 4,
-                "pinterest": 3,
+                "pinterest": 0,
                 "instagram": 0,
                 "blogger": 2,
                 "google_business": 3,
@@ -66,7 +66,7 @@ class ContentCadenceTests(unittest.TestCase):
         news = jobs[1]
         self.assertEqual(
             canonical["channels"],
-            ["facebook", "linkedin", "pinterest", "google_business"],
+            ["facebook", "linkedin", "google_business"],
         )
         self.assertEqual(news["channels"], [])
         self.assertFalse(canonical["public_execution_allowed"])
@@ -89,7 +89,7 @@ class ContentCadenceTests(unittest.TestCase):
         self.assertEqual(
             [(job["stream"], job["site_key"], job["channels"]) for job in jobs],
             [
-                ("health_news", "DRGUYROFE_CO_IL", ["pinterest"]),
+                ("health_news", "DRGUYROFE_CO_IL", []),
                 ("evergreen_knowledge", "DRGUYROFE_COM", []),
             ],
         )

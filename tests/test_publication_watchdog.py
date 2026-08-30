@@ -71,6 +71,19 @@ class PublicationWatchdogTests(unittest.TestCase):
             "canonical_wix",
         )
 
+    def test_does_not_match_a_different_host_by_substring(self):
+        bundle = {"targets": [{
+            "target_id": "canonical_wordpress",
+            "platform": "WordPress",
+            "asset": "guyrofe.com",
+        }]}
+        self.assertIsNone(
+            publication_watchdog.match_destination_target(
+                {"name": "drguyrofe.com", "status": "not_in_approval_bundle"},
+                bundle,
+            )
+        )
+
     def test_live_url_verification_detects_missing_publication(self):
         response = Mock(status_code=404, url="https://example.com/missing")
         result = publication_watchdog.verify_url(
