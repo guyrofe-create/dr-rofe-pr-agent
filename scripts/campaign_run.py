@@ -44,6 +44,7 @@ from reputation_core.publication_seo import (
     audit_published_html,
     render_related_links_html,
     unbranded_title,
+    urls_equivalent,
 )
 
 
@@ -285,6 +286,14 @@ def destination(name, status, url=None, detail=None, target_id=None):
 def exception_detail(exc, limit=300):
     """Keep the exception class so values such as KeyError(0) stay actionable."""
     return f"{type(exc).__name__}: {exc}"[:limit]
+
+
+def validate_canonical_provider_url(provider_url, approved_url):
+    """Accept encoding-only URL differences while rejecting a changed destination."""
+    if not urls_equivalent(provider_url, approved_url):
+        raise ReconciliationRequired(
+            "Canonical provider URL differs from the approved URL; reconcile before distribution"
+        )
 
 
 def attempt(name, is_ready, publisher, *args):
@@ -633,10 +642,9 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     except Exception as exc:
         raise CampaignTargetError(canonical_name, str(exc)) from exc
     canonical_url = canonical_receipt["url"]
-    if canonical_url.rstrip("/") != canonical_payload["canonical_url"].rstrip("/"):
-        raise ReconciliationRequired(
-            "Canonical provider URL differs from the approved URL; reconcile before distribution"
-        )
+    validate_canonical_provider_url(
+        canonical_url, canonical_payload["canonical_url"]
+    )
     destinations.append(
         destination(
             canonical_name,

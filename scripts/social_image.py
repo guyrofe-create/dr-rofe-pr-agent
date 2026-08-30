@@ -979,6 +979,16 @@ def upload_to_wordpress(
             except ValueError as exc:
                 last_decode_error = exc
                 if attempt < 2:
+                    # Some WordPress WAF rules return an HTML challenge only
+                    # when Basic Auth is attached to a safe public GET. Media
+                    # metadata for published attachments is public, so repeat
+                    # the read without credentials. A second non-JSON response
+                    # remains inconclusive and still fails closed.
+                    lookup_args = {
+                        key: value
+                        for key, value in lookup_args.items()
+                        if key != "auth"
+                    }
                     time.sleep(2 ** attempt)
                     continue
         except (requests.ConnectionError, requests.Timeout):

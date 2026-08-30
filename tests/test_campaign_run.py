@@ -110,6 +110,19 @@ class CampaignRunTests(unittest.TestCase):
             "application/json",
         )
 
+    def test_canonical_provider_url_accepts_percent_encoded_hebrew(self):
+        campaign_run.validate_canonical_provider_url(
+            "https://www.drguyrofe.co.il/%D7%9E%D7%94-%D7%A2%D7%95%D7%9E%D7%93/",
+            "https://drguyrofe.co.il/מה-עומד",
+        )
+        with self.assertRaisesRegex(
+            campaign_run.ReconciliationRequired, "provider URL differs"
+        ):
+            campaign_run.validate_canonical_provider_url(
+                "https://drguyrofe.co.il/מאמר-א/",
+                "https://drguyrofe.co.il/מאמר-ב/",
+            )
+
     def test_wordpress_payload_contains_meta_description(self):
         get_response = Mock()
         get_response.json.return_value = []
