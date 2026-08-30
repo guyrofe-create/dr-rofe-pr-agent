@@ -1494,6 +1494,27 @@
       "published_at": "2026-08-30T19:50:15Z",
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7499916416624812033/",
       "provider_receipt": null
+    },
+    "pub_b3f61de9f4a90d8dff5ce33b1d8b65350f4c694ad0ce472f55983534c95f7e41": {
+      "version": 7,
+      "idempotency_key": "pub_b3f61de9f4a90d8dff5ce33b1d8b65350f4c694ad0ce472f55983534c95f7e41",
+      "approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "82ea610005fe1de8233b575eb1980af5b1a8349d09ea4a255d583dfb9475dbf2",
+      "status": "published",
+      "started_at": "2026-08-30T19:55:16Z",
+      "published_at": "2026-08-30T19:55:18Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOvWlaPj7MCPiwE",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/5821719165556088911",
+        "state": "PROCESSING",
+        "createTime": "2026-08-30T19:55:18.421408Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOvWlaPj7MCPiwE",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }

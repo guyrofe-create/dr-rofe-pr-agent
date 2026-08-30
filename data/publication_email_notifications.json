@@ -516,6 +516,19 @@
       "state": "failed",
       "subject": "הפרסום נכשל: תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
       "urls": []
+    },
+    "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123:06c99413898db587e1a700bfff1a0680b082c9e2d44d77ade2d2a83c43f76d4d": {
+      "sent_at": "2026-08-30T19:55:19.565607+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123",
+      "state": "success",
+      "subject": "אישור פרסום: תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a9%d7%97%d7%9c%d7%95%d7%aa-%d7%94%d7%a4%d7%95%d7%9c%d7%99%d7%a6%d7%99%d7%a1%d7%98%d7%99%d7%95%d7%aa/",
+        "https://www.facebook.com/122201897090942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7499916416624812033/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOvWlaPj7MCPiwE"
+      ]
     }
   }
 }
