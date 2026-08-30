@@ -296,6 +296,14 @@ def validate_canonical_provider_url(provider_url, approved_url):
         )
 
 
+def validate_google_business_link(approved_link, canonical_url):
+    """Allow harmless URL encoding/host normalization, but no destination change."""
+    if not urls_equivalent(approved_link, canonical_url):
+        raise PermissionError(
+            "Google Business link differs from the approved canonical URL"
+        )
+
+
 def attempt(name, is_ready, publisher, *args):
     if not is_ready:
         return destination(name, "not_configured", detail="החיבור אינו מוגדר")
@@ -898,10 +906,9 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             raise PermissionError(
                 "Google Business is limited to the LEARN_MORE action"
             )
-        if google_payload.get("link", "").rstrip("/") != canonical_url.rstrip("/"):
-            raise PermissionError(
-                "Google Business link differs from the approved canonical URL"
-            )
+        validate_google_business_link(
+            google_payload.get("link", ""), canonical_url
+        )
         if google_business.is_configured():
             _google_image, google_image_url = approved_target_image(
                 google_business_target
