@@ -8,6 +8,29 @@ from scripts.weekly_email_report import collect_report, render_html, render_text
 
 
 class WeeklyEmailReportTests(unittest.TestCase):
+    def test_owner_managed_instagram_is_excluded_from_activity_and_failures(self):
+        start = datetime(2026, 8, 22, tzinfo=timezone.utc)
+        end = datetime(2026, 8, 29, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "data" / "ai_usage_events").mkdir(parents=True)
+            (root / "content_drafts" / "campaigns").mkdir(parents=True)
+            (root / "approval_bundles").mkdir()
+            (root / "content_drafts" / "campaigns" / "index.json").write_text(
+                json.dumps({"campaigns": [{
+                    "title": "מאמר",
+                    "published_at": "2026-08-25T12:00:00Z",
+                    "destinations": [
+                        {"name": "Instagram", "status": "failed", "detail": "code 10"},
+                        {"name": "Facebook", "status": "published", "url": "https://facebook.example/post"},
+                    ],
+                }]}),
+                encoding="utf-8",
+            )
+            report = collect_report(start, end, root=root)
+        self.assertEqual([item["name"] for item in report["publications"]], ["Facebook"])
+        self.assertEqual(report["failures"], [])
+
     def test_lists_every_registered_asset_before_first_google_baseline(self):
         start = datetime(2026, 8, 22, tzinfo=timezone.utc)
         end = datetime(2026, 8, 29, tzinfo=timezone.utc)

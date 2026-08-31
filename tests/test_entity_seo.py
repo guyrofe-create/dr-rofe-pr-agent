@@ -282,6 +282,14 @@ https://pubmed.ncbi.nlm.nih.gov/1/
             "https://drguyrofe.co.il/כותרת-א/",
             "https://drguyrofe.co.il/כותרת-ב/",
         ))
+        self.assertFalse(urls_equivalent(
+            "https://guyrofe.com/?p=1",
+            "https://guyrofe.com/?p=2",
+        ))
+        self.assertTrue(urls_equivalent(
+            "https://guyrofe.com/page/?b=2&a=1",
+            "https://www.guyrofe.com/page?a=1&b=2",
+        ))
 
     def test_related_publications_are_same_host_relevant_and_crawlable(self):
         campaigns = [{

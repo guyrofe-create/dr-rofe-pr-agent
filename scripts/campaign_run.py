@@ -827,31 +827,14 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     else:
         destinations.append(destination("Blogger", "not_configured"))
 
-    instagram_target = targets.get("instagram_business")
-    if not instagram_target:
-        destinations.append(destination("Instagram", "not_scheduled"))
-    elif meta.instagram_is_configured():
-        instagram_image, instagram_image_url = approved_target_image(
-            instagram_target
-        )
+    if targets.get("instagram_business"):
         destinations.append(
-            _execute_target_safely(
-                ledger,
-                approved_bundle,
-                instagram_target,
-                lambda payload, key: {
-                    "url": meta.publish_instagram(
-                        payload["title"],
-                        payload["text"],
-                        canonical_url,
-                        instagram_image_url,
-                        payload.get("disclosure"),
-                    )
-                },
+            destination(
+                "Instagram",
+                "owner_managed",
+                detail="Instagram is managed independently by the owner",
             )
         )
-    else:
-        destinations.append(destination("Instagram", "not_configured"))
     pinterest_target = targets.get("pinterest_board")
     if not pinterest_target:
         destinations.append(destination("Pinterest", "not_scheduled"))

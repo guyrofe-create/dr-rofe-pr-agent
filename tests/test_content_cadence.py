@@ -25,7 +25,6 @@ class ContentCadenceTests(unittest.TestCase):
                 "facebook": 4,
                 "linkedin": 4,
                 "pinterest": 0,
-                "instagram": 0,
                 "blogger": 2,
                 "google_business": 3,
             },

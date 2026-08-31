@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import html
 import re
-from urllib.parse import quote, unquote, urlparse
+from urllib.parse import parse_qsl, quote, unquote, urlencode, urlparse
 
 
 _BRAND_SUFFIX = re.compile(
@@ -54,10 +54,12 @@ def wordpress_public_slug(title: str, *, encoded_limit: int = 180) -> str:
 
 def urls_equivalent(first: str, second: str) -> bool:
     def normalized(value: str) -> str:
-        parsed = urlparse(unquote(value or ""))
+        parsed = urlparse(value or "")
         host = parsed.netloc.lower().removeprefix("www.")
-        path = re.sub(r"/+", "/", parsed.path).rstrip("/") or "/"
-        return f"{parsed.scheme.lower()}://{host}{path}"
+        path = re.sub(r"/+", "/", unquote(parsed.path)).rstrip("/") or "/"
+        query = urlencode(sorted(parse_qsl(parsed.query, keep_blank_values=True)))
+        suffix = f"?{query}" if query else ""
+        return f"{parsed.scheme.lower()}://{host}{path}{suffix}"
     return normalized(first) == normalized(second)
 
 

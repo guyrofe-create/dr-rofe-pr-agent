@@ -75,8 +75,8 @@ def save_image_package(image, *, draft_path: str, output_root: str, title: str):
     }
     saved_variants = {}
     for role, content_bytes in image.variants.items():
-        # The exact Instagram square is approved and persisted as JPEG because
-        # Meta's single-image publishing path does not accept the PNG package.
+        # Persist an exact square JPEG for any approved destination that needs
+        # square media; Instagram itself is owner-managed outside the product.
         extension = "jpg" if role == "square" else "png"
         media_type = "image/jpeg" if role == "square" else "image/png"
         variant_path = media_root / f"{stem}-{role}.{extension}"
@@ -307,14 +307,12 @@ def prepare_bundle(
         "facebook",
         "linkedin",
         "blogger",
-        "pinterest",
         "google_business",
     ]
     selected_channels = list(default_channels if channel_ids is None else channel_ids)
     supported_channels = {
         "facebook",
         "linkedin",
-        "instagram",
         "blogger",
         "pinterest",
         "google_business",
@@ -378,18 +376,6 @@ def prepare_bundle(
                 "text": credited_text(variants["linkedin"]),
                 "link": canonical_url,
                 "image": media_variant("landscape"),
-                "disclosure": variants["disclosure"],
-            },
-        },
-        "instagram": {
-            "target_id": "instagram_business",
-            "platform": "Instagram",
-            "asset": "configured Instagram professional account",
-            "payload": {
-                "title": title,
-                "text": credited_text(variants["instagram"]),
-                "link": canonical_url,
-                "image": media_variant("square"),
                 "disclosure": variants["disclosure"],
             },
         },
@@ -471,7 +457,7 @@ def prepare_bundle(
             "medical_review_required": medical,
             "no_consultation_invitation": True,
             "no_current_practice_implication": True,
-            "instagram_product_publication_scheduled": "instagram" in selected_channels,
+            "instagram_product_publication_scheduled": False,
             "google_business_information_only": (
                 "google_business" in selected_channels
             ),

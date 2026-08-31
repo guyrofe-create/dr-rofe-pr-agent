@@ -184,11 +184,11 @@ class GrowthEngineTests(unittest.TestCase):
             strategy["canonical_facts"]["practice_status"],
             "not_currently_practicing",
         )
-        self.assertNotIn(
+        self.assertIn(
             "Instagram",
             strategy["channel_policy"]["owner_managed_product_disabled"],
         )
-        self.assertIn("Instagram", strategy["channel_policy"]["product_managed"])
+        self.assertNotIn("Instagram", strategy["channel_policy"]["product_managed"])
         self.assertIn("X", strategy["channel_policy"]["disabled"])
         self.assertEqual(strategy["ai_monitoring"]["samples_per_prompt"], 3)
 
@@ -264,12 +264,13 @@ class GrowthEngineTests(unittest.TestCase):
         assets = {item["platform"]: item for item in registry["assets"]}
         self.assertEqual(
             assets["Instagram"]["automation"],
-            "disabled_pending_platform_resolution",
+            "owner_managed_product_disabled",
         )
         self.assertEqual(
             assets["Instagram"]["status"],
-            "disabled_pending_platform_resolution",
+            "owner_managed_product_disabled",
         )
+        self.assertEqual(assets["Pinterest"]["status"], "paused_missing_credentials")
         self.assertEqual(assets["YouTube"]["status"], "connected_read_only")
         self.assertIn(
             "transcript_source_only",

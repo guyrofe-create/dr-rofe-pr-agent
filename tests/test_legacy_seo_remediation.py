@@ -12,6 +12,47 @@ from scripts import (
 
 
 class LegacySeoRemediationTests(unittest.TestCase):
+    def test_reconcile_uses_exact_title_search_when_unicode_slug_hits_waf(self):
+        payload = {
+            "site_key": "GUYROFE_COM",
+            "old_url": "https://guyrofe.com/pilot-old/",
+            "old_slug": "pilot-old",
+            "expected_current_title": "כותרת | ד״ר גיא רופא",
+            "new_title": "כותרת",
+            "new_slug": "כותרת",
+            "expected_new_url": "https://guyrofe.com/כותרת/",
+            "meta_description": "ד״ר גיא רופא: תיאור שלם.",
+        }
+        waf = Mock(status_code=200)
+        waf.raise_for_status.return_value = None
+        waf.json.side_effect = ValueError("HTML challenge")
+        recovered = Mock()
+        recovered.raise_for_status.return_value = None
+        recovered.json.return_value = [{
+            "id": 42,
+            "title": {"raw": "כותרת"},
+            "excerpt": {"raw": "ד״ר גיא רופא: תיאור שלם."},
+            "link": "https://guyrofe.com/%D7%9B%D7%95%D7%AA%D7%A8%D7%AA/",
+        }]
+        legacy = Mock(status_code=403, headers={})
+        session = Mock()
+        session.get.side_effect = [waf, recovered, legacy]
+        with patch.dict(os.environ, {
+            "WORDPRESS_GUYROFE_COM_USER": "user",
+            "WORDPRESS_GUYROFE_COM_API": "password",
+        }, clear=False):
+            result = apply_legacy_seo_remediation.reconcile_target(
+                {"payload": payload}, session=session
+            )
+        self.assertTrue(apply_legacy_seo_remediation.urls_equivalent(
+            result["url"], payload["expected_new_url"]
+        ))
+        self.assertEqual(
+            session.get.call_args_list[1].kwargs["params"]["search"],
+            payload["new_title"],
+        )
+        self.assertEqual(result["legacy"]["mode"], "browser_verification_required")
+
     def test_main_site_waf_requires_independent_browser_verification(self):
         response = Mock(status_code=403, headers={})
         session = Mock()

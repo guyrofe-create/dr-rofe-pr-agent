@@ -40,6 +40,31 @@ class PublicationWatchdogTests(unittest.TestCase):
         self.assertEqual(diagnosis["category"], "instagram_permission_required")
         self.assertIn("changing the image will not fix", diagnosis["action"])
 
+    def test_owner_managed_instagram_is_excluded_from_watchdog_failures(self):
+        now = datetime(2026, 8, 30, 12, 0, tzinfo=timezone.utc)
+        campaign = {
+            "title": "מאמר",
+            "published_at": "2026-08-30T10:00:00+00:00",
+            "destinations": [{
+                "name": "Instagram",
+                "status": "failed",
+                "detail": "OAuthException code=10",
+            }],
+        }
+        with patch.object(
+            publication_watchdog,
+            "load_recent_campaigns",
+            return_value=[(publication_watchdog.CAMPAIGN_ROOT / "old.json", campaign)],
+        ), patch.object(publication_watchdog, "audit_pipeline", return_value={
+            "recent_drafts": 0,
+            "recent_approval_bundles": 0,
+            "awaiting_explicit_approval": 0,
+            "stalled_drafts_without_bundle": [],
+        }):
+            report = publication_watchdog.build_report(now=now)
+        self.assertEqual(report["totals"]["failures"], 0)
+        self.assertEqual(report["control_status"], "healthy")
+
     def test_classifies_google_invalid_grant_as_reauthorization(self):
         diagnosis = publication_watchdog.classify_failure({
             "name": "Blogger",
