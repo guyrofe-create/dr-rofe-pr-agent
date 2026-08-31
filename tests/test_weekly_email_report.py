@@ -44,6 +44,8 @@ class WeeklyEmailReportTests(unittest.TestCase):
                     {"platform": "Main", "url": "https://example.com/"},
                     {"platform": "Legacy", "url": "https://legacy.example/",
                      "status": "quarantined"},
+                    {"platform": "Instagram", "url": "https://instagram.example/",
+                     "status": "owner_managed_product_disabled"},
                     {"platform": "Missing URL", "url": None},
                 ]}),
                 encoding="utf-8",
@@ -56,6 +58,7 @@ class WeeklyEmailReportTests(unittest.TestCase):
         )
         self.assertIn("Main", render_text(report))
         self.assertIn("Legacy", render_text(report))
+        self.assertNotIn("Instagram", render_text(report))
 
     def test_collects_verified_publications_actions_and_ai_cost(self):
         start = datetime(2026, 7, 22, tzinfo=timezone.utc)
