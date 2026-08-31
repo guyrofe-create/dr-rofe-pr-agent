@@ -1,6 +1,25 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-08-31-topic-90-run-33393591514-attempt-1.md",
+      "title": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן?",
+      "excerpt": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בעקבות איתור Listeria monocytogenes בגבינת קממבר מסוימת ששווקה בידי מחלבות גד, פורסמה קריאה להחזרת המוצ",
+      "generated_at": "2026-08-31T12:48:44.815817+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-08-30",
+      "cadence_local_date": "2026-08-31",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-84a5ee525314e8c6.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/s1ui8t11ugx"
+    },
+    {
       "path": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md",
       "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
       "topic": "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
@@ -497,19 +516,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-d98a2696435ca046.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/bkhyuppsfl"
-    },
-    {
-      "path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
-      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
-      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
-      "excerpt": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) לפרוסקופיה גינקולוגית היא הליך ניתוחי זעיר־פולשני המאפשר לבחון את איברי האגן, לאבחן מצבים רפואיים ולעיתים גם לטפל בהם באמצעות מצלמה ומ",
-      "generated_at": "2026-08-04T08:35:41.937086+00:00",
-      "content_stream": "evergreen_knowledge",
-      "destination_site_key": "DRGUYROFE_COM",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-08-02",
-      "cadence_local_date": "2026-08-04",
-      "public_execution_allowed": false
     }
   ]
 }

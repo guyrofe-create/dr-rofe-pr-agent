@@ -1,0 +1,387 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-08-31T12:50:43Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-08-31-topic-90-run-33393591514-attempt-1.md",
+  "source_draft_sha256": "e2286696181326df03676695ba1e4986e18293c6c4c75527c91d5ff19c252035",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/s1ui8t11ugx",
+      "type": "citation"
+    },
+    {
+      "url": "https://wwwnc.cdc.gov/eid/article/24/6/17-1051_article",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/listeria/risk-factors",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/listeria/hcp/clinical-overview/index.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/listeria/prevention/index.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/food-safety/foods/pregnant-women.html",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-landscape.png",
+    "sha256": "66a46909d8d03aaf56cb756ccd1fd53b4eb84cec6e0c0be606952478cde9788e",
+    "alt_text": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Bons_Mayennais_fromage_2.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Bons_Mayennais_fromage_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Jmalo",
+    "license_name": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attribution": "Bons Mayennais fromage 2.jpg — Jmalo; CC BY-SA 3.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-hero.png",
+        "sha256": "22478550a4664fa5c0829170849c50b45787dc228e383393c625bb44c9a31df8",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-landscape.png",
+        "sha256": "66a46909d8d03aaf56cb756ccd1fd53b4eb84cec6e0c0be606952478cde9788e",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-square.jpg",
+        "sha256": "f7a698ee7394634b14e3add6a4409bff4dfe14f02e2f5f9c9f384661b3f6ceb0",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-portrait.png",
+        "sha256": "0b1ec2111d333c1112a6aa209b8e556a140fa23b2364aee419e98db5e2ab95bb",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא",
+        "cms_title": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן?",
+        "markdown": "# חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** בעקבות איתור *Listeria monocytogenes* בגבינת קממבר מסוימת ששווקה בידי מחלבות גד, פורסמה קריאה להחזרת המוצר. אין לצרוך אריזה התואמת לפרטי ההחזרה, גם אם הגבינה נראית ומריחה כרגיל. מרבית האנשים הבריאים לא יפתחו מחלה קשה, אך ליסטריה עלולה לסכן במיוחד נשים הרות ועוברים, יילודים, בני 65 ומעלה ואנשים שמערכת החיסון שלהם מוחלשת.\n\nהאירוע אינו מוכיח שכל גבינות הקממבר או כל מוצרי החברה מזוהמים. מדובר בהודעה הנוגעת למוצר ולאצווה מוגדרים. עם זאת, הוא ממחיש מדוע זיהום בליסטריה מחייב תגובה מהירה: החיידק מסוגל לשרוד ואף להתרבות בטמפרטורת המקרר, ומחלה פולשנית עלולה להופיע גם לאחר תקופת דגירה ממושכת.\n\n## מה בדיוק נטען בפרסום — ומה ידוע בפועל?\n\nלפי [כתבת החדשות על גילוי ליסטריה בקממבר ששווקה בידי מחלבות גד](https://www.ynet.co.il/health/article/s1ui8t11ugx), הקריאה להחזרה נוגעת למוצר הבא:\n\n- **שם המוצר:** קממבר — גבינה בשלה עם עובש לבן, 33% שומן  \n- **תכולה:** 130 גרם  \n- **תאריך תפוגה:** 7 בספטמבר 2026  \n- **מספר אצווה:** BFBN  \n- **ברקוד:** 7290019635208  \n- **יבואן:** מחלבות גד  \n- **יצרן:** יצרן צרפתי ששמו מופיע בהודעת ההחזרה  \n\nעל פי הדיווח, בבדיקה שביצע היצרן הצרפתי נמצא במוצר החיידק *Listeria monocytogenes*, והיבואן החל באיסוף המוצר מדרכי השיווק בתיאום עם שירות המזון במשרד הבריאות. המשמעות המעשית ברורה: מי שמחזיק באריזה המתאימה לפרטים האלה אינו צריך לנסות להעריך את בטיחותה על פי הטעם, הריח, המרקם או מראה העובש. יש להימנע מצריכתה.\n\nחשוב להפריד בין כמה קביעות שונות. הממצא המעבדתי הוא עדות לזיהום במוצר שנבדק; קריאת ההחזרה היא צעד מניעתי שנועד לצמצם חשיפה; אך עצם ההימצאות של מוצר בבית אינה מעידה שהאדם נדבק, ואכילת המוצר אינה מובילה בהכרח למחלה. מידת הסיכון תלויה, בין היתר, בכמות החיידקים במזון, בכמות שנאכלה, במאפייני האדם ובמצבו החיסוני.\n\nכמו כן, אין בנתונים שפורסמו בסיס לקביעה שכל מוצרי המותג, כל גבינות הקממבר או כל הגבינות הרכות מסוכנים. ההודעה מתייחסת לאצווה ולתאריך תפוגה מסוימים. הרחבת האזהרה מעבר לפרטי ההחזרה, ללא נתונים מתאימים, תהיה מסקנה שאינה נתמכת במידע הקיים.\n\n## מהי ליסטריה, ומדוע מקרר אינו פותר את הבעיה?\n\n*Listeria monocytogenes* הוא חיידק סביבתי שיכול להימצא בקרקע, במים, בצמחייה, בבעלי חיים ובסביבות לעיבוד מזון. בני אדם נדבקים בדרך כלל לאחר אכילת מזון מזוהם. החיידק נקשר במיוחד למזונות מצוננים ומוכנים לאכילה, ובהם סוגים מסוימים של גבינות רכות, מוצרי בשר מעובדים, דגים מעושנים ומוצרים שנשמרים בקירור לאורך זמן.\n\nאחת התכונות החשובות של ליסטריה היא יכולתה לשרוד ואף להתרבות בטמפרטורות קירור. המקרר מאט את התרבותם של חיידקים רבים, אך אינו מבטיח השמדה של ליסטריה. לכן אחסון מוצר שנכלל בקריאת החזרה במקרר או במקפיא אינו הופך אותו לבטוח.\n\nגבינות רכות ומבשילות, כגון קממבר וברי, מכילות בדרך כלל יותר לחות מגבינות קשות. תנאי הלחות, המבנה ומשך האחסון עשויים לאפשר לחיידק לשרוד או להתרבות אם התרחש זיהום. פסטור החלב מפחית מאוד את הסיכון משום שהוא משמיד את החיידק בחומר הגלם, אך הוא אינו מונע לחלוטין זיהום אפשרי לאחר הפסטור — למשל במהלך הייצור, ההבשלה, האריזה או הטיפול במוצר.\n\nניתוח התפרצויות שפורסם בכתב העת של ה־CDC מצא שהתפרצויות ליסטריוזיס נקשרו גם לגבינות רכות שיוצרו מחלב מפוסטר. החוקרים הדגישו שפסטור הוא אמצעי הגנה חשוב, אך תנאי תברואה לקויים או זיהום לאחר הפסטור עדיין עלולים לסכן את המוצר. ניתן לעיין ב[מחקר ה־CDC על התפרצויות ליסטריוזיס הקשורות לגבינות רכות](https://wwwnc.cdc.gov/eid/article/24/6/17-1051_article).\n\nמכאן נגזרת נקודה חשובה: ההמלצה שלא לצרוך מוצר שנכלל בריקול תקפה גם אם על האריזה מצוין שהגבינה יוצרה מחלב מפוסטר. אין לשטוף את הגבינה, להסיר ממנה שכבה חיצונית או לטעום חתיכה קטנה. פעולות כאלה אינן מבטיחות סילוק של הזיהום ועלולות לזהם ידיים, סכינים, מדפים ומשטחי עבודה.\n\n## למי ליסטריה מסוכנת במיוחד?\n\nאצל אדם צעיר ובריא, חשיפה לליסטריה אינה גורמת תמיד למחלה. אם מופיעה מחלת מעיים, היא עשויה להתבטא בשלשול, בחילה, חום וכאבי שרירים ולחלוף ללא סיבוכים. הסיכון המרכזי הוא ליסטריוזיס פולשנית — מצב שבו החיידק חודר מעבר למערכת העיכול אל הדם, מערכת העצבים או השליה.\n\nעל פי [הנחיות ה־CDC בנוגע לאוכלוסיות המצויות בסיכון מוגבר לליסטריה](https://www.cdc.gov/listeria/risk-factors), הקבוצות המרכזיות הן:\n\n### נשים הרות ועוברים\n\nהשינויים במערכת החיסון במהלך ההיריון מגבירים את הרגישות לזיהום. אצל האישה ההרה עצמה המחלה עשויה להיות קלה, דמוית שפעת, ולעיתים כמעט ללא תסמינים. למרות זאת, החיידק עלול לעבור דרך השליה ולהוביל להפלה, למות עובר ברחם, ללידה מוקדמת או לזיהום קשה ביילוד.\n\nלכן גם תסמינים שנראים לא דרמטיים — במיוחד חום, צמרמורת, כאבי שרירים או חולשה לאחר חשיפה ידועה — ראויים להתייחסות רפואית בהיריון. אין להתחיל אנטיביוטיקה באופן עצמאי ואין להסתמך על בדיקות ביתיות. ההחלטה אם יש צורך בבירור או בטיפול תלויה בפרטי החשיפה, בתסמינים, בשלב ההיריון ובשיקול דעת רפואי.\n\n### יילודים\n\nיילודים עלולים להידבק במהלך ההיריון, הלידה או בסמוך לה. מערכת החיסון שלהם עדיין אינה בשלה, ולכן הזיהום עלול להתבטא באלח דם, בדלקת ריאות או בדלקת קרום המוח. החשש לפגיעה ביילוד הוא אחת הסיבות המרכזיות להחמרה בהמלצות התזונתיות לנשים הרות.\n\n### בני 65 ומעלה\n\nעם העלייה בגיל פוחתת לעיתים יעילות התגובה החיסונית, ומחלות רקע נפוצות יותר. בקרב מבוגרים ליסטריוזיס פולשנית עלולה לגרום לזיהום בדם, לדלקת קרום המוח או לפגיעה מוחית. חום, בלבול חדש, ישנוניות חריגה, כאב ראש משמעותי או נוקשות בעורף מצריכים הערכה דחופה.\n\n### אנשים עם מערכת חיסון מוחלשת\n\nהקבוצה כוללת, בין השאר, אנשים המקבלים כימותרפיה, תרופות מדכאות חיסון או סטרואידים במינון משמעותי; מושתלי איברים; אנשים עם מחלות ממאירות מסוימות; ומטופלים עם מחלות כרוניות או ליקויים חיסוניים המשפיעים על יכולת הגוף להתמודד עם זיהומים. רמת הסיכון אינה זהה אצל כולם, ולכן ההחלטות לאחר חשיפה צריכות להתקבל לפי המצב הרפואי האישי.\n\n## אכלתי מהגבינה — מה עושים עכשיו?\n\nראשית, יש לבדוק אם האריזה אכן תואמת **גם לתאריך התפוגה וגם למספר האצווה** שבהודעת ההחזרה. אם היא מתאימה, אין להמשיך לאכול ממנה ואין להגיש אותה לאחרים.\n\nמי שאכל מהמוצר ומרגיש היטב אינו צריך להניח שנדבק. לפי [הסקירה הקלינית של ה־CDC בנושא ליסטריוזיס](https://www.cdc.gov/listeria/hcp/clinical-overview/index.html), אנשים ללא תסמינים אינם נדרשים בדרך כלל לבדיקות או לטיפול רק משום שאכלו מזון שנכלל בריקול. עם זאת, בקבוצות הסיכון — ובמיוחד במהלך היריון או במצב של דיכוי חיסוני — נכון לקבל הוראה רפואית אישית אם קיימת חשיפה מאומתת או חשש משמעותי.\n\nהתסמינים האפשריים כוללים:\n\n- חום וצמרמורת  \n- כאבי שרירים ועייפות חריגה  \n- בחילה, הקאה או שלשול  \n- כאב ראש חזק  \n- נוקשות בעורף  \n- בלבול או שינוי במצב ההכרה  \n- הפרעה בשיווי המשקל  \n- פרכוסים במקרים חמורים  \n\nתקופת הדגירה אינה אחידה. מחלת מעיים עשויה להופיע בתוך זמן קצר יחסית, ואילו מחלה פולשנית עלולה להתפתח ימים ואף שבועות לאחר החשיפה. לכן חשוב לציין בפני איש המקצוע הרפואי את שם המוצר ואת מועד האכילה, גם אם חלף זמן.\n\nחום או תסמינים דמויי שפעת באישה הרה לאחר חשיפה, וכן חום, בלבול, נוקשות בעורף או הידרדרות כללית אצל קשיש או אדם מדוכא חיסון, מצדיקים הערכה רפואית ללא דיחוי. אין להמתין להופעת כל התסמינים יחד.\n\n## כיצד מטפלים במוצר ובמטבח?\n\nיש לסלק את המוצר בהתאם להוראות הריקול, באופן שלא יאפשר לבני הבית או לבעלי חיים לאכול אותו. אם הגבינה נגעה במדף, בקופסה, בסכין או בקרש חיתוך, מומלץ לנקות היטב את האזור ואת הכלים במים חמים ובחומר ניקוי מתאים, ולאחר מכן לשטוף ידיים בסבון.\n\nאין די בהקפאה: ליסטריה עשויה לשרוד בטמפרטורות נמוכות. בישול בחום מתאים יכול להשמיד את החיידק, אך כאשר רשות מוסמכת או היצרן הורו שלא לצרוך מוצר מסוים, אין לנסות “להציל” אותו באמצעות אפייה או חימום. ההנחיה הבטוחה היא להוציאו משימוש.\n\nמעבר לאירוע הנוכחי, ניתן לצמצם סיכון באמצעות הפרדה בין מזון גולמי למזון מוכן לאכילה, שטיפת ידיים וכלי עבודה, שמירת המקרר בטמפרטורה מתאימה, הקפדה על תאריכי תפוגה והימנעות מחלב וממוצרי חלב לא מפוסטרים. ה־CDC מפרט [המלצות למניעת זיהום בליסטריה ולבחירת מזונות בטוחים יותר](https://www.cdc.gov/listeria/prevention/index.html), בדגש על נשים הרות, מבוגרים ואנשים עם מערכת חיסון מוחלשת.\n\n## סיכום\n\nקריאת ההחזרה אינה סיבה לבהלה, אך היא מחייבת פעולה ברורה: לזהות את המוצר לפי האצווה ותאריך התפוגה, לא לצרוך אותו ולנקות משטחים שבאו עמו במגע. הכותרת מתייחסת לאצווה מוגדרת ואינה מעידה על זיהום של כלל מוצרי החברה או של כל גבינות הקממבר.\n\nלרוב האנשים הבריאים הסיכון למחלה קשה נמוך יחסית. לעומת זאת, נשים הרות, יילודים, בני 65 ומעלה ואנשים עם מערכת חיסון מוחלשת חשופים יותר לסיבוכים. בקבוצות אלה חשוב במיוחד לעקוב אחר תסמינים ולדווח על החשיפה בעת קבלת הערכה רפואית.\n\nהמידע במאמר הוא מידע רפואי כללי, אינו מחליף אבחון או הנחיה רפואית אישית, ומחייב ביקורת אנושית ורפואית לפני פרסום.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.  \n> סטטוס נוכחי מאושר: אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. CDC — [People at Increased Risk for Listeria Infection](https://www.cdc.gov/listeria/risk-factors)  \n2. CDC — [Clinical Overview of Listeriosis](https://www.cdc.gov/listeria/hcp/clinical-overview/index.html)  \n3. CDC — [Preventing Listeria Infection](https://www.cdc.gov/listeria/prevention/index.html)  \n4. CDC, *Emerging Infectious Diseases* — [Listeriosis Outbreaks Associated with Soft Cheeses, United States, 1998–2014](https://wwwnc.cdc.gov/eid/article/24/6/17-1051_article)  \n5. CDC — [Safer Food Choices for Pregnant Women](https://www.cdc.gov/food-safety/foods/pregnant-women.html)  \n6. כתבת החדשות הנבדקת — [חיידק ליסטריה בקממבר של גד: מה חשוב לדעת ולמי הוא מסוכן?](https://www.ynet.co.il/health/article/s1ui8t11ugx)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/חיידק-ליסטריה-בקממבר-של-גד-מה-חשוב/",
+        "meta_description": "ד״ר גיא רופא: בעקבות איתור Listeria monocytogenes בגבינת קממבר מסוימת ששווקה בידי מחלבות גד, פורסמה קריאה להחזרת המוצר.",
+        "search_target": {
+          "primary_query": "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן?",
+          "secondary_queries": [
+            "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן?",
+            "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן? ד״ר גיא רופא",
+            "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן? גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [],
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "664c87b7601b8f8265abbb5ae7d06f7c5c5e8baba7f11794e4a061c9b8edadf8",
+        "slug": "חיידק-ליסטריה-בקממבר-של-גד-מה-חשוב",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-hero.png",
+          "sha256": "22478550a4664fa5c0829170849c50b45787dc228e383393c625bb44c9a31df8",
+          "alt_text": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bons_Mayennais_fromage_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Bons_Mayennais_fromage_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jmalo",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Bons Mayennais fromage 2.jpg — Jmalo; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-hero.png",
+              "sha256": "22478550a4664fa5c0829170849c50b45787dc228e383393c625bb44c9a31df8",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-landscape.png",
+              "sha256": "66a46909d8d03aaf56cb756ccd1fd53b4eb84cec6e0c0be606952478cde9788e",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-square.jpg",
+              "sha256": "f7a698ee7394634b14e3add6a4409bff4dfe14f02e2f5f9c9f384661b3f6ceb0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-portrait.png",
+              "sha256": "0b1ec2111d333c1112a6aa209b8e556a140fa23b2364aee419e98db5e2ab95bb",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: בעקבות איתור Listeria monocytogenes בגבינת קממבר מסוימת ששווקה בידי מחלבות גד, פורסמה קריאה להחזרת המוצר.\n\nאין לצרוך אריזה התואמת לפרטי ההחזרה, גם אם הגבינה נראית ומריחה כרגיל.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Bons Mayennais fromage 2.jpg — Jmalo; CC BY-SA 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/חיידק-ליסטריה-בקממבר-של-גד-מה-חשוב/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-landscape.png",
+          "sha256": "66a46909d8d03aaf56cb756ccd1fd53b4eb84cec6e0c0be606952478cde9788e",
+          "alt_text": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bons_Mayennais_fromage_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Bons_Mayennais_fromage_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jmalo",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Bons Mayennais fromage 2.jpg — Jmalo; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-hero.png",
+              "sha256": "22478550a4664fa5c0829170849c50b45787dc228e383393c625bb44c9a31df8",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-landscape.png",
+              "sha256": "66a46909d8d03aaf56cb756ccd1fd53b4eb84cec6e0c0be606952478cde9788e",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-square.jpg",
+              "sha256": "f7a698ee7394634b14e3add6a4409bff4dfe14f02e2f5f9c9f384661b3f6ceb0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-portrait.png",
+              "sha256": "0b1ec2111d333c1112a6aa209b8e556a140fa23b2364aee419e98db5e2ab95bb",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: בעקבות איתור Listeria monocytogenes בגבינת קממבר מסוימת ששווקה בידי מחלבות גד, פורסמה קריאה להחזרת המוצר.\n\n• אין לצרוך אריזה התואמת לפרטי ההחזרה, גם אם הגבינה נראית ומריחה כרגיל.\n• מרבית האנשים הבריאים לא יפתחו מחלה קשה, אך ליסטריה עלולה לסכן במיוחד נשים הרות ועוברים, יילודים, בני 65 ומעלה ואנשים שמערכת החיסון שלהם מוחלשת.\n• האירוע אינו מוכיח שכל גבינות הקממבר או כל מוצרי החברה מזוהמים.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Bons Mayennais fromage 2.jpg — Jmalo; CC BY-SA 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/חיידק-ליסטריה-בקממבר-של-גד-מה-חשוב/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-landscape.png",
+          "sha256": "66a46909d8d03aaf56cb756ccd1fd53b4eb84cec6e0c0be606952478cde9788e",
+          "alt_text": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bons_Mayennais_fromage_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Bons_Mayennais_fromage_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jmalo",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Bons Mayennais fromage 2.jpg — Jmalo; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-hero.png",
+              "sha256": "22478550a4664fa5c0829170849c50b45787dc228e383393c625bb44c9a31df8",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-landscape.png",
+              "sha256": "66a46909d8d03aaf56cb756ccd1fd53b4eb84cec6e0c0be606952478cde9788e",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-square.jpg",
+              "sha256": "f7a698ee7394634b14e3add6a4409bff4dfe14f02e2f5f9c9f384661b3f6ceb0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-portrait.png",
+              "sha256": "0b1ec2111d333c1112a6aa209b8e556a140fa23b2364aee419e98db5e2ab95bb",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא",
+        "html": "<h2>חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה: בעקבות איתור Listeria monocytogenes בגבינת קממבר מסוימת ששווקה בידי מחלבות גד, פורסמה קריאה להחזרת המוצר.</p><p>אין לצרוך אריזה התואמת לפרטי ההחזרה, גם אם הגבינה נראית ומריחה כרגיל.</p>\n<p><small>קרדיט תמונה: Bons Mayennais fromage 2.jpg — Jmalo; CC BY-SA 3.0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/חיידק-ליסטריה-בקממבר-של-גד-מה-חשוב/",
+        "image": {
+          "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-hero.png",
+          "sha256": "22478550a4664fa5c0829170849c50b45787dc228e383393c625bb44c9a31df8",
+          "alt_text": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "גלגל גבינת קממבר עטוף בנייר לבן, סכין ואריזת קממבר אדומה על מפה משובצת.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Bons_Mayennais_fromage_2.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Bons_Mayennais_fromage_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jmalo",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Bons Mayennais fromage 2.jpg — Jmalo; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-hero.png",
+              "sha256": "22478550a4664fa5c0829170849c50b45787dc228e383393c625bb44c9a31df8",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-landscape.png",
+              "sha256": "66a46909d8d03aaf56cb756ccd1fd53b4eb84cec6e0c0be606952478cde9788e",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-square.jpg",
+              "sha256": "f7a698ee7394634b14e3add6a4409bff4dfe14f02e2f5f9c9f384661b3f6ceb0",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-08-31-topic-90-run-33393591514-attempt-1-portrait.png",
+              "sha256": "0b1ec2111d333c1112a6aa209b8e556a140fa23b2364aee419e98db5e2ab95bb",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "664c87b7601b8f8265abbb5ae7d06f7c5c5e8baba7f11794e4a061c9b8edadf8",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_afccf5f1aad29e2b1a4f8095528f96ba8df16892f0fb6a79c62beb614b5e4485"
+}
