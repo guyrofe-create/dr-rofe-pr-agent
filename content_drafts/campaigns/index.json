@@ -1,6 +1,123 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-08-31-topic-90-run-33393591514-attempt-1.md",
+      "title": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-08-31T18:10:56.095373+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%97%d7%99%d7%99%d7%93%d7%a7-%d7%9c%d7%99%d7%a1%d7%98%d7%a8%d7%99%d7%94-%d7%91%d7%a7%d7%9e%d7%9e%d7%91%d7%a8-%d7%a9%d7%9c-%d7%92%d7%93-%d7%9e%d7%94-%d7%97%d7%a9%d7%95%d7%91/",
+          "detail": "idempotency_key=pub_1898e401af91fbcc4de0f6ad20513760f9cc84dd0e011bad54c27c18000a7c6a"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%97%d7%99%d7%99%d7%93%d7%a7-%d7%9c%d7%99%d7%a1%d7%98%d7%a8%d7%99%d7%94-%d7%91%d7%a7%d7%9e%d7%9e%d7%91%d7%a8-%d7%a9%d7%9c-%d7%92%d7%93-%d7%9e%d7%94-%d7%97%d7%a9%d7%95%d7%91/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-31-topic-90-run-33393591514-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122202039320942441",
+          "detail": "idempotency_key=pub_fd012630f953cb668ae08d5cc8353ba15b126cb968763ba88e0b85ccaf2a2ed1"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7500253802017591296/",
+          "detail": "idempotency_key=pub_167254017f83e1bfa4c4ef84022f29458e3b9fe2343682f9db445eabd210e911"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "target_id": "blogger_blog",
+          "url": "https://guyrofe.blogspot.com/2026/08/blog-post_31.html",
+          "detail": "idempotency_key=pub_ce8c168c6297152784323fdb3b1f651994f532db6a13461e69aa44d168826ae8"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_afccf5f1aad29e2b1a4f8095528f96ba8df16892f0fb6a79c62beb614b5e4485",
+      "search_target": {
+        "primary_query": "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן?",
+        "secondary_queries": [
+          "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן?",
+          "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן? ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן? גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%97%d7%99%d7%99%d7%93%d7%a7-%d7%9c%d7%99%d7%a1%d7%98%d7%a8%d7%99%d7%94-%d7%91%d7%a7%d7%9e%d7%9e%d7%91%d7%a8-%d7%a9%d7%9c-%d7%92%d7%93-%d7%9e%d7%94-%d7%97%d7%a9%d7%95%d7%91/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md",
       "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
       "status": "completed",

@@ -529,6 +529,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7499916416624812033/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOvWlaPj7MCPiwE"
       ]
+    },
+    "apr_afccf5f1aad29e2b1a4f8095528f96ba8df16892f0fb6a79c62beb614b5e4485:50c83a14f1baa822875c20b706641e5dcad1311cad888f8acf63914802350e8f": {
+      "sent_at": "2026-08-31T18:10:58.312388+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_afccf5f1aad29e2b1a4f8095528f96ba8df16892f0fb6a79c62beb614b5e4485",
+      "state": "success",
+      "subject": "אישור פרסום: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%97%d7%99%d7%99%d7%93%d7%a7-%d7%9c%d7%99%d7%a1%d7%98%d7%a8%d7%99%d7%94-%d7%91%d7%a7%d7%9e%d7%9e%d7%91%d7%a8-%d7%a9%d7%9c-%d7%92%d7%93-%d7%9e%d7%94-%d7%97%d7%a9%d7%95%d7%91/",
+        "https://www.facebook.com/122202039320942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7500253802017591296/",
+        "https://guyrofe.blogspot.com/2026/08/blog-post_31.html"
+      ]
     }
   }
 }
