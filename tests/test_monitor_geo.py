@@ -22,8 +22,8 @@ class MonitorGeoTests(unittest.TestCase):
                 monitor_run.save_history(history)
             with open(path, encoding="utf-8") as handle:
                 saved = json.load(handle)
-        self.assertEqual(len(saved["snapshots"]), 60)
-        self.assertEqual(saved["snapshots"][0]["date"], "20")
+        self.assertEqual(len(saved["snapshots"]), 24)
+        self.assertEqual(saved["snapshots"][0]["date"], "56")
 
     def test_normalized_host_skips_unconfigured_asset_urls(self):
         self.assertEqual(monitor_run.normalized_host(None), "")

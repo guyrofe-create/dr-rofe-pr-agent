@@ -182,7 +182,10 @@ def latest_asset_rank_measurement(root):
     rows = []
     seen = set()
     for asset in registry.get("assets", []):
-        if not asset.get("url"):
+        if (
+            not asset.get("url")
+            or asset.get("status") == "owner_managed_product_disabled"
+        ):
             continue
         key = (
             str(asset.get("platform") or "").casefold(),

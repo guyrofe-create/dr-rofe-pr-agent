@@ -377,7 +377,8 @@ class GrowthEngineTests(unittest.TestCase):
         assets = [
             {"platform": "Main", "url": "https://example.com/", "tier": "A"},
             {"platform": "LinkedIn", "url": "https://linkedin.com/in/person", "tier": "A"},
-            {"platform": "Instagram", "url": "https://instagram.com/person", "tier": "A"},
+            {"platform": "Instagram", "url": "https://instagram.com/person", "tier": "A",
+             "status": "owner_managed_product_disabled"},
             {"platform": "Podcast", "url": "https://podcasts.example/show", "tier": "B"},
         ]
         previous = build_query_control_map({
@@ -404,14 +405,13 @@ class GrowthEngineTests(unittest.TestCase):
         report = measure_asset_rank_changes(assets, [current], [previous])
         rows = {item["platform"]: item for item in report["assets"]}
         self.assertEqual(report["status"], "compared")
-        self.assertEqual(report["asset_count"], 4)
+        self.assertEqual(report["asset_count"], 3)
         self.assertEqual(rows["Main"]["change"], "improved")
         self.assertEqual(rows["Main"]["delta"], 3)
         self.assertEqual(rows["LinkedIn"]["change"], "declined")
         self.assertEqual(rows["LinkedIn"]["delta"], -2)
-        self.assertEqual(rows["Instagram"]["change"], "entered_measured_results")
         self.assertEqual(rows["Podcast"]["change"], "unchanged_not_found")
-        self.assertEqual(rows["Instagram"]["current_result_page"], 1)
+        self.assertNotIn("Instagram", rows)
 
     def test_asset_rank_records_page_and_absolute_position_beyond_top_ten(self):
         assets = [{"platform": "Profile", "url": "https://example.com/profile", "tier": "A"}]

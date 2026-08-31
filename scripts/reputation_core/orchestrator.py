@@ -246,7 +246,12 @@ def measure_asset_rank_changes(
         # Quarantined URLs still matter when they appear in Google. They are
         # excluded from optimization/publication elsewhere, but omitting them
         # from measurement would hide a potentially harmful result.
-        if not asset.get("url"):
+        # Owner-managed channels are explicitly outside the product and must
+        # not appear in its rank/activity reports.
+        if (
+            not asset.get("url")
+            or asset.get("status") == "owner_managed_product_disabled"
+        ):
             continue
         key = (_asset_id(asset), asset.get("url"))
         if key in seen:

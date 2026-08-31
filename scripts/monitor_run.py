@@ -219,9 +219,9 @@ def save_history(history):
     # A snapshot contains full SERP and Search Console evidence. Keeping 200
     # snapshots pushed the state file beyond GitHub's 100 MB hard limit and
     # silently prevented fresh measurements from reaching the weekly report.
-    # Sixty snapshots preserve ample comparison history at the current cadence
+    # Twenty-four snapshots preserve a full year at the current cadence
     # while keeping the repository state safely below that limit.
-    history["snapshots"] = history.get("snapshots", [])[-60:]
+    history["snapshots"] = history.get("snapshots", [])[-24:]
     with open(HISTORY_PATH, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
