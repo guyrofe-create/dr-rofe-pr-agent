@@ -21,6 +21,7 @@ CAMPAIGN_INDEX = ROOT / "content_drafts" / "campaigns" / "index.json"
 DRAFT_INDEX = ROOT / "content_drafts" / "index.json"
 BUNDLE_INDEX = ROOT / "approval_bundles" / "index.json"
 HISTORY_PATH = ROOT / "data" / "reputation_history.json"
+OWNER_MANAGED_CHANNELS = {"instagram"}
 
 
 def _load_usage_reader():
@@ -400,6 +401,8 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
     failures = []
     for campaign in weekly_campaigns:
         for destination in campaign.get("destinations", []):
+            if str(destination.get("name") or "").casefold() in OWNER_MANAGED_CHANNELS:
+                continue
             row = {
                 "campaign_title": campaign.get("title") or "ללא כותרת",
                 "primary_query": (

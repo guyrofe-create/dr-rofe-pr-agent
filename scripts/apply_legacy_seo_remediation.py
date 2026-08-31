@@ -120,8 +120,44 @@ def reconcile_target(target: dict, *, session=requests):
         params={"slug": payload["new_slug"], "status": "publish", "context": "edit"},
         timeout=30,
     )
-    clean.raise_for_status()
-    posts = clean.json()
+    posts = None
+    if clean.status_code != 403:
+        clean.raise_for_status()
+        try:
+            posts = clean.json()
+        except ValueError:
+            if payload["site_key"] != "GUYROFE_COM":
+                raise
+    elif payload["site_key"] != "GUYROFE_COM":
+        clean.raise_for_status()
+
+    # The primary site's WAF may return an HTML challenge for a Unicode slug
+    # query from GitHub Actions. Fall back to the authenticated title search,
+    # then accept only the one post whose exact fields and URL match the signed
+    # payload. This remains a read-only reconciliation path.
+    if posts is None or len(posts) != 1:
+        recovered = session.get(
+            endpoint,
+            auth=auth,
+            params={
+                "search": payload["new_title"],
+                "status": "publish",
+                "context": "edit",
+                "per_page": 20,
+            },
+            timeout=30,
+        )
+        recovered.raise_for_status()
+        posts = [
+            item for item in recovered.json()
+            if (
+                html.unescape((item.get("title") or {}).get("raw") or "").strip()
+                == payload["new_title"]
+                and urls_equivalent(
+                    item.get("link") or "", payload["expected_new_url"]
+                )
+            )
+        ]
     if len(posts) == 1:
         post = posts[0]
         title = html.unescape((post.get("title") or {}).get("raw") or "").strip()

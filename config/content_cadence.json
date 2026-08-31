@@ -42,7 +42,6 @@
     "facebook": 4,
     "linkedin": 4,
     "pinterest": 0,
-    "instagram": 0,
     "blogger": 2,
     "google_business": 3
   },
@@ -53,7 +52,6 @@
       "image_required": true,
       "automation_status": "paused_missing_credentials"
     },
-    "instagram": {"image_required": true},
     "blogger": {"image_required": false},
     "google_business": {
       "image_required": true,

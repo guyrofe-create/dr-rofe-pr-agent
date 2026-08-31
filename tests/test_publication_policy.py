@@ -39,6 +39,7 @@ class PublicationPolicyTests(unittest.TestCase):
 
     def test_owner_managed_and_disabled_channels_are_blocked(self):
         for channel in (
+            "Instagram",
             "TikTok",
             "X",
             "Telegram",
@@ -50,7 +51,6 @@ class PublicationPolicyTests(unittest.TestCase):
     def test_product_managed_channels_are_allowed(self):
         for channel in (
             "Facebook",
-            "Instagram",
             "LinkedIn",
             "Pinterest",
             "Google Business Profile",

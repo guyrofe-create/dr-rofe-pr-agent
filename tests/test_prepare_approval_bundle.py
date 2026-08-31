@@ -136,7 +136,7 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                     }
                 },
                 site_key="DRGUYROFE_CO_IL",
-                channel_ids=["facebook", "instagram"],
+                channel_ids=["facebook"],
             )
             bundle = json.loads(
                 Path(result["bundle_path"]).read_text(encoding="utf-8")
@@ -144,7 +144,7 @@ class PrepareApprovalBundleTests(unittest.TestCase):
         targets = {item["target_id"]: item for item in bundle["targets"]}
         self.assertEqual(
             set(targets),
-            {"canonical_wordpress", "facebook_page", "instagram_business"},
+            {"canonical_wordpress", "facebook_page"},
         )
         canonical = targets["canonical_wordpress"]["payload"]
         self.assertEqual(canonical["site_key"], "DRGUYROFE_CO_IL")
@@ -163,10 +163,7 @@ class PrepareApprovalBundleTests(unittest.TestCase):
         self.assertTrue(
             canonical["canonical_url"].startswith("https://www.drguyrofe.co.il/")
         )
-        self.assertEqual(
-            targets["instagram_business"]["payload"]["image"]["role"],
-            "square",
-        )
+        self.assertFalse(bundle["compliance"]["instagram_product_publication_scheduled"])
 
     def test_prepares_exact_medical_bundle_and_preview_without_publication(self):
         with tempfile.TemporaryDirectory(
@@ -422,6 +419,8 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                     "--output-root",
                     str(output),
                     "--find-licensed-image",
+                    "--channels",
+                    "facebook,pinterest",
                     "--result-path",
                     str(result_path),
                 ],

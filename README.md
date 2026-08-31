@@ -242,9 +242,10 @@ licensed-photo approval packages:
   source; podcast briefs require verified transcript text plus episode links
   for both Spotify and Apple Podcasts;
 - Facebook and LinkedIn: four distinct native variants per week;
-- Pinterest: three image-required variants per week;
-- Instagram: two image-required variants per week through the professional
-  account API when its permission check passes;
+- Pinterest: paused until `PINTEREST_ACCESS_TOKEN` and `PINTEREST_BOARD_ID`
+  are configured and pass the read-only API health check;
+- Instagram: owner-managed outside this product. The product does not draft,
+  publish, retry, or report Instagram publication failures;
 - Blogger: two short, distinct summaries per week rather than article copies.
 - Google Business Profile: three short information-only STANDARD posts per week:
   two links to exact topic pages on `guyrofe.com` and one to an exact original

@@ -216,8 +216,12 @@ def load_history():
 
 def save_history(history):
     os.makedirs(os.path.dirname(HISTORY_PATH), exist_ok=True)
-    # cap history to the most recent 200 snapshots so the file doesn't grow forever
-    history["snapshots"] = history.get("snapshots", [])[-200:]
+    # A snapshot contains full SERP and Search Console evidence. Keeping 200
+    # snapshots pushed the state file beyond GitHub's 100 MB hard limit and
+    # silently prevented fresh measurements from reaching the weekly report.
+    # Sixty snapshots preserve ample comparison history at the current cadence
+    # while keeping the repository state safely below that limit.
+    history["snapshots"] = history.get("snapshots", [])[-60:]
     with open(HISTORY_PATH, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
@@ -1677,8 +1681,10 @@ def main():
         "next_best_actions": REPORT["orchestration"]["next_best_actions"][:20],
         "opportunity_engine": REPORT["orchestration"]["opportunity_engine"],
     })
+    # These entries embed the complete control maps. Retain the latest year of
+    # twice-monthly measurements instead of duplicating tens of megabytes.
     command_center.state["visibility_measurements"] = (
-        command_center.state["visibility_measurements"][-90:]
+        command_center.state["visibility_measurements"][-24:]
     )
     command_center.state["opportunities"] = REPORT["orchestration"][
         "opportunity_engine"

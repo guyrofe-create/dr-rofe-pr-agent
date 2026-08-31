@@ -1,6 +1,8 @@
 import unittest
 import sys
 import os
+import json
+import tempfile
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
@@ -12,6 +14,17 @@ with patch.dict(
 
 
 class MonitorGeoTests(unittest.TestCase):
+    def test_history_retention_keeps_state_below_unbounded_growth(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "history.json")
+            history = {"snapshots": [{"date": str(i)} for i in range(80)]}
+            with patch.object(monitor_run, "HISTORY_PATH", path):
+                monitor_run.save_history(history)
+            with open(path, encoding="utf-8") as handle:
+                saved = json.load(handle)
+        self.assertEqual(len(saved["snapshots"]), 60)
+        self.assertEqual(saved["snapshots"][0]["date"], "20")
+
     def test_normalized_host_skips_unconfigured_asset_urls(self):
         self.assertEqual(monitor_run.normalized_host(None), "")
         self.assertEqual(monitor_run.normalized_host(b"https://example.com"), "")

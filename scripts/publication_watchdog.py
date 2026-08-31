@@ -27,6 +27,7 @@ DRAFT_INDEX = PROJECT_ROOT / "content_drafts" / "index.json"
 BUNDLE_INDEX = BUNDLE_ROOT / "index.json"
 SUCCESS_STATUSES = {"published", "skipped_duplicate"}
 INCONCLUSIVE_HTTP = {401, 403, 429}
+OWNER_MANAGED_DESTINATIONS = {"instagram"}
 
 
 def parse_time(value):
@@ -143,6 +144,8 @@ def expected_target_ids(bundle):
         target.get("target_id")
         for target in (bundle or {}).get("targets", [])
         if target.get("target_id")
+        and str(target.get("platform") or "").casefold()
+        not in OWNER_MANAGED_DESTINATIONS
     }
 
 
@@ -244,6 +247,11 @@ def build_report(hours=30, *, now=None, request_get=requests.get):
         }
         totals["campaigns"] += 1
         for destination in campaign.get("destinations", []):
+            if (
+                str(destination.get("name") or "").casefold()
+                in OWNER_MANAGED_DESTINATIONS
+            ):
+                continue
             current = dict(destination)
             target_id = match_destination_target(current, bundle)
             if target_id:
