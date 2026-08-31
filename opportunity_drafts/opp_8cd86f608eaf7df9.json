@@ -1,0 +1,62 @@
+{
+  "version": 4,
+  "opportunity_id": "opp_8cd86f608eaf7df9",
+  "prepared_at": "2026-08-31T06:17:15Z",
+  "status": "awaiting_item_approval",
+  "public_execution_allowed": false,
+  "approval_invalidated_by_any_edit": true,
+  "opportunity": {
+    "id": "opp_8cd86f608eaf7df9",
+    "version": 4,
+    "action_type": "correct_profile_or_fact",
+    "kind": "asset_audit",
+    "source_kind": "asset_audit",
+    "asset_id": "DrGuyRofe.com knowledge hub",
+    "asset_url": "https://www.drguyrofe.com/",
+    "query": "ד״ר גיא רופא",
+    "reason": "A high-priority controlled asset cannot be pushed safely before its factual, canonical and content audit.",
+    "recommended_actions": [
+      "Audit visible facts, title, biography, current status, canonical and indexability",
+      "Remove or noindex thin, duplicate or solicitation content",
+      "Assign a distinct query intent and editorial role"
+    ],
+    "evidence": {
+      "health_status": "connected_exact_approval_required"
+    },
+    "factors": {
+      "expected_impact": 9.0,
+      "asset_authority": 9.6,
+      "query_relevance": 10.0,
+      "control": 10.0,
+      "time_cost": 3.0,
+      "financial_cost": 2.0,
+      "risk": 3.0,
+      "benefit_product": 8640.0,
+      "burden_sum": 8.0,
+      "raw_priority_index": 1080.0,
+      "opportunity_score": 100.0,
+      "formula": "impact × authority × relevance × control ÷ (time + financial cost + risk)"
+    },
+    "score": 100.0,
+    "confidence": 0.85,
+    "status": "selected_for_preparation",
+    "blocked_reasons": [],
+    "preparation_autonomous": true,
+    "final_execution_requires_approval": true,
+    "authorization_scope": "prepare_action_only",
+    "new_asset_build_authorized": false,
+    "approval_required": "standard",
+    "approval_bundle_requirements": [
+      "Evidence and exact target",
+      "Expected benefit, cost, risk and measurement plan",
+      "Exact proposed change or outreach text",
+      "Rollback or stop condition"
+    ],
+    "measurement_after_action": [
+      "Re-measure the same engine, surface, query and locale",
+      "Compare against 7-day and 28-day baselines",
+      "Stop or reverse if risk, duplication or cannibalization rises"
+    ],
+    "execution_mode": "autonomous_prepare_then_approval"
+  }
+}
