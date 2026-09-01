@@ -1,0 +1,29 @@
+{
+  "draft": "content_drafts/2026-09-01-topic-90-run-33501045144-attempt-1.md",
+  "title": "חיים יותר אבל גם חולים וסובלים יותר? מה באמת עומד מאחורי הכותרת על העידן שנכנסנו אליו | ד״ר גיא רופא",
+  "status": "failed",
+  "published_at": "2026-09-01T19:38:16.535910+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "failed",
+      "detail": "CampaignTargetError: HTTPError: 403 Client Error: Forbidden for url: https://www.drguyrofe.co.il/wp-json/wp/v2/media?slug=guy-rofe-pilot-2026-09-01-topic-90-run-33501045144-attempt-1-hero&_fields=id%2Csource_url%2Cslug"
+    }
+  ],
+  "approval_id": "apr_39ea46787f3e6297def030144d391139ff1e2edc7a71240f22f922846a700f77",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: חיים יותר אבל גם חולים וסובלים יותר? העידן הקשה שנכנסנו אליו",
+    "secondary_queries": [
+      "חיים יותר אבל גם חולים וסובלים יותר? מה באמת עומד מאחורי הכותרת על העידן שנכנסנו אליו",
+      "מה עומד מאחורי הכותרת: חיים יותר אבל גם חולים וסובלים יותר? העידן הקשה שנכנסנו אליו ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: חיים יותר אבל גם חולים וסובלים יותר? העידן הקשה שנכנסנו אליו גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": null,
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

@@ -542,6 +542,14 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7500253802017591296/",
         "https://guyrofe.blogspot.com/2026/08/blog-post_31.html"
       ]
+    },
+    "apr_39ea46787f3e6297def030144d391139ff1e2edc7a71240f22f922846a700f77:3e33828d4310c1315fc87bcc44e77d8bb7cf04ea467aadd314da16f99debe4f8": {
+      "sent_at": "2026-09-01T19:38:20.423182+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_39ea46787f3e6297def030144d391139ff1e2edc7a71240f22f922846a700f77",
+      "state": "failed",
+      "subject": "הפרסום נכשל: חיים יותר אבל גם חולים וסובלים יותר? מה באמת עומד מאחורי הכותרת על העידן שנכנסנו אליו | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }
