@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "occurred_at": "2026-09-01T11:17:26.151857Z",
+  "operation": "licensed_photo_relevance_review",
+  "model": "gpt-5.6",
+  "input_tokens": 4087,
+  "cached_input_tokens": 0,
+  "cache_write_tokens": 4084,
+  "output_tokens": 106,
+  "reasoning_tokens": 70,
+  "web_search_calls": 0,
+  "estimated_cost_usd": 0.02872
+}

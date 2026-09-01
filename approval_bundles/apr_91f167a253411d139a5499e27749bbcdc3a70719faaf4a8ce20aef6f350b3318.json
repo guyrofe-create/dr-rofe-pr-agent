@@ -1,0 +1,191 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-01T11:18:24Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-01-topic-07-run-33501045144-attempt-1.md",
+  "source_draft_sha256": "d5742e3c392abdc5314c2cc73801adb7ec3acf6523192392e30bc0a7556703a8",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://medlineplus.gov/evaluatinghealthinformation.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/health-fraud-scams-waste-money-and-can-lead-delays-getting-proper-diagnosis-and-treatment",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/news-room/questions-and-answers/item/infodemic",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-landscape.png",
+    "sha256": "ed3c0e599aede9565570a305aee0d2cf10f876ac8de35aa3ef2566e271f67b9a",
+    "alt_text": "שלושה אנשים מעיינים בחוברות של מנהל המזון והתרופות האמריקאי לצד מחשב נייד ודפי מידע, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "שלושה אנשים מעיינים בחוברות של מנהל המזון והתרופות האמריקאי לצד מחשב נייד ודפי מידע.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:2015_FDA_Science_Writers_Symposium_-_0988_(21545150306).jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/2015_FDA_Science_Writers_Symposium_-_0988_%2821545150306%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "The U.S. Food and Drug Administration",
+    "license_name": "Public domain",
+    "license_url": "",
+    "attribution": "2015 FDA Science Writers Symposium - 0988 (21545150306).jpg — The U.S. Food and Drug Administration; Public domain; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-hero.png",
+        "sha256": "5ced0ec15c4db40e92f7825f7317a89aff144b99c2213112e1a6f5534509cee0",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-landscape.png",
+        "sha256": "ed3c0e599aede9565570a305aee0d2cf10f876ac8de35aa3ef2566e271f67b9a",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-square.jpg",
+        "sha256": "d5e1c2e79c2318c97a9e1d0ce78c98fd8a76fffaecbf63b9a310db3536202521",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-portrait.png",
+        "sha256": "755c8080867d20b6b1f6947b36453f5120161a823b45c52d6ca00d75a143b2f8",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "payload": {
+        "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+        "cms_title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+        "markdown": "# איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nהתשובה הקצרה: מידע רפואי מקוון ראוי לאמון כאשר ברור מי פרסם אותו, על אילו ראיות הוא מבוסס, מתי עודכן, מה מטרתו ומהן מגבלותיו. אין להסתמך על מראה מקצועי, על מספר השיתופים או על תוארו של אדם יחיד בלבד. יש לבדוק את הטענה מול הנחיות רשמיות, מחקרים מדעיים ומקורות בריאות מוסדיים — ובמקרה של החלטה הנוגעת לאבחון או לטיפול, לקבל הערכה רפואית אישית.\n\nהאינטרנט מאפשר גישה מהירה למידע שעשוי לסייע בהבנת תסמינים, מחלות, בדיקות וטיפולים. לצד היתרונות, אותה נגישות מאפשרת גם הפצה של מידע חלקי, מיושן, שיווקי או שגוי. הקושי אינו מסתכם בזיהוי “חדשות כזב” בוטות: לעיתים התוכן כולל עובדות נכונות, אך מציג אותן ללא הקשר, מגזים בחשיבותו של מחקר יחיד או מטשטש את ההבדל בין קשר סטטיסטי לבין סיבתיות.\n\nהמטרה בקריאה ביקורתית אינה לפסול כל מידע ברשת, אלא להעריך את מידת האמינות שלו באופן שיטתי. מדריך זה מציע דרך מעשית לעשות זאת.\n\n## 1. מתחילים בזהות המפרסם, המחבר ומטרת הפרסום\n\nהשאלה הראשונה אינה “האם הטענה נשמעת הגיונית?”, אלא “מי עומד מאחוריה?”. יש להבחין בין כמה גורמים שונים:\n\n- **המפרסם:** רשות בריאות, גוף מקצועי, מוסד אקדמי, חברה מסחרית, עמותה או אדם פרטי.\n- **המחבר:** האדם שכתב את התוכן והכשרתו הרלוונטית לנושא.\n- **העורך או הבודק המקצועי:** אם מצוין כי התוכן עבר ביקורת רפואית, יש לבדוק מי ביצע אותה ומתי.\n- **המממן:** גוף שמימן את המחקר, האתר או הפקת התוכן.\n- **המטרה:** מתן מידע, קידום מוצר, גיוס לקוחות, השפעה על עמדה ציבורית או שיתוף חוויה אישית.\n\nמקור מוסדי אינו חסין מטעויות, ומומחיותו של מחבר אינה מבטיחה שכל טענה נכונה. עם זאת, שקיפות בנוגע לזהות הכותבים, תהליך הבדיקה, מקורות המימון ומדיניות התיקונים היא סימן חיובי. לעומת זאת, טקסט ללא שם מחבר, ללא תאריך וללא הפניות לראיות מחייב זהירות מיוחדת.\n\nמומלץ לבדוק גם אם קיימת התאמה בין תחום המומחיות לבין הנושא. תואר רפואי או מדעי בתחום אחד אינו מקנה בהכרח מומחיות בכל תחומי הבריאות. בנוסף, עדות אישית של איש מקצוע אינה שקולה להנחיה מקצועית או למחקר מבוקר.\n\nלפי [המדריך של MedlinePlus להערכת מידע בריאותי](https://medlineplus.gov/evaluatinghealthinformation.html), שירות של הספרייה הלאומית לרפואה בארצות הברית, רצוי לברר מי מפעיל את האתר, מהי מטרתו, כיצד נבחר התוכן, האם הוא עדכני ומהי מדיניות הפרטיות שלו. אלו אינן בדיקות טכניות בלבד: הן מסייעות להבין אם הקורא מקבל מידע, פרסום או שילוב ביניהם.\n\n## 2. בודקים את הראיות — לא רק את הביטחון שבו הטענה מנוסחת\n\nניסוח נחרץ אינו ראיה. ביטויים כגון “הוכח מדעית”, “רופאים לא רוצים שתדעו” או “הפתרון הטבעי היחיד” יכולים להישמע משכנעים גם כאשר אין מאחוריהם בסיס מחקרי מספק.\n\nכדי להעריך טענה רפואית, יש לבדוק לאיזה סוג ראיה היא מפנה:\n\n| סוג המקור | מה ניתן ללמוד ממנו | מגבלות מרכזיות |\n|---|---|---|\n| הנחיה מקצועית רשמית | המלצה המבוססת בדרך כלל על שקלול מחקרים, תועלת, נזק ואיכות הראיות | עשויה להתעדכן עם הצטברות ידע חדש; יש לבדוק תאריך ואוכלוסיית יעד |\n| סקירה שיטתית | סיכום מובנה של כמה מחקרים לפי שיטה מוגדרת | איכות המסקנה תלויה באיכות המחקרים שנכללו |\n| ניסוי קליני מבוקר | הערכה ישירה יחסית של יעילות ובטיחות התערבות | תוצאותיו עשויות שלא להתאים לכל מטופל או לכל מצב רפואי |\n| מחקר תצפיתי | זיהוי קשרים ודפוסים באוכלוסייה | לרוב אינו מוכיח שהגורם שנבדק הוא שגרם לתוצאה |\n| מחקר מעבדה או בבעלי חיים | בחינת מנגנון ביולוגי אפשרי | אינו מוכיח יעילות או בטיחות בבני אדם |\n| עדות אישית | תיאור חוויה של אדם מסוים | אינה מאפשרת לדעת מה גרם לשינוי או אם הוא יחזור אצל אחרים |\n\nאין פירוש הדבר שמחקר יחיד חסר ערך. הוא עשוי להיות חשוב, אך יש לפרש אותו ביחס למכלול הידע. כדאי לשאול: כמה משתתפים נכללו? האם הייתה קבוצת ביקורת? האם התוצאה הייתה משמעותית מבחינה קלינית, ולא רק סטטיסטית? האם המחקר פורסם במאמר מלא? האם מחקרים נוספים הגיעו למסקנות דומות?\n\nיש להיזהר במיוחד מהסקת סיבתיות מתוך מתאם. לדוגמה, אם מחקר מצא שאנשים בעלי הרגל מסוים חולים פחות, אין בכך לבדו הוכחה שההרגל הוא שגרם להפחתת הסיכון. ייתכן שקיימים הבדלים אחרים בין הקבוצות, כגון גיל, מצב כלכלי, תזונה, נגישות לטיפול או מצב בריאותי קודם.\n\n## 3. מזהים סימני אזהרה להטעיה, הגזמה ושיווק סמוי\n\nמידע בעייתי אינו תמיד שקר מוחלט. לעיתים הוא בנוי מגרעין עובדתי שאליו מצורפת מסקנה רחבה מדי. סימני האזהרה הבאים אינם מוכיחים לבדם שהתוכן שגוי, אך הצטברות של כמה מהם מצדיקה חשד:\n\n- הבטחה לריפוי מהיר, מלא או “מובטח”.\n- טענה שמוצר אחד מטפל במגוון גדול של מחלות שאינן קשורות זו לזו.\n- שימוש בעדויות מטופלים במקום בנתונים מסודרים.\n- יצירת תחושת דחיפות: “רק היום”, “לפני שימחקו את המידע” או “אסור לחכות”.\n- הצגת כל הממסד הרפואי כמי שמסתיר פתרון פשוט.\n- היעדר מידע על תופעות לוואי, מגבלות, התוויות נגד או חוסר ודאות.\n- מעבר ישיר מטענה רפואית לרכישת תוסף, בדיקה או תוכנית טיפול.\n- הפניה למחקר בלי קישור למאמר המלא, או אזכור מעורפל של “מחקרים רבים”.\n- שימוש במונחים מדעיים מרשימים שאינם מוסברים ואינם מחוברים למסקנה.\n- הסתמכות על כך שמוצר הוא “טבעי” כאילו הדבר מוכיח שהוא בטוח.\n\nמינהל המזון והתרופות האמריקאי מזהיר כי הונאות בריאות עלולות לא רק לגרום להוצאה כספית מיותרת, אלא גם להביא לעיכוב באבחון ובטיפול מתאימים. [הנחיית ה־FDA לזיהוי הונאות בריאות](https://www.fda.gov/consumers/consumer-updates/health-fraud-scams-waste-money-and-can-lead-delays-getting-proper-diagnosis-and-treatment) מציינת בין סימני האזהרה הבטחות לתוצאות מהירות, טענות לריפוי מגוון מחלות והצגת מוצר כ“תרופת פלא”.\n\nחשוב גם להבחין בין תוכן מערכתי לבין פרסום. הביטוי “תוכן בשיתוף” אינו הופך מידע לשגוי, אך הוא מלמד שקיים אינטרס מסחרי שיש להביא בחשבון. גילוי נאות ברור עדיף על שיווק סמוי, אך אינו מחליף ראיות.\n\n## 4. מאמתים את הטענה מול מקורות עצמאיים ועדכניים\n\nלאחר קריאת הטענה, מומלץ לא לחפש רק ניסוח המאשר אותה. חיפוש המבוסס על המסקנה הרצויה עלול להוביל להטיית אישוש — נטייה להעדיף מידע התומך במה שכבר חשבנו.\n\nדרך בדיקה יעילה כוללת כמה שלבים:\n\n1. **מנסחים את הטענה במדויק.** במקום “האם הטיפול טוב?”, שואלים: לאיזו מחלה, באיזו אוכלוסייה, מול איזו חלופה ובאיזו תוצאה?\n2. **מחפשים הנחיה רשמית או סקירה שיטתית.** מסמכים כאלה מספקים הקשר רחב יותר ממחקר בודד.\n3. **בודקים אם המקורות עצמאיים זה מזה.** עשרה אתרים המצטטים אותו פוסט אינם עשרה אישורים נפרדים.\n4. **משווים בין תאריך הפרסום לתאריך העדכון.** ברפואה, מידע שהיה סביר בעבר עלול להשתנות עם ראיות חדשות.\n5. **קוראים מעבר לכותרת.** כותרת עשויה להדגיש תוצאה חריגה, בעוד גוף המחקר מתאר השפעה קטנה או אי־ודאות.\n6. **מחפשים הסתייגויות.** מקור אמין נוטה לציין למי המידע אינו מתאים ומה עדיין אינו ידוע.\n\nארגון הבריאות העולמי מתאר “אינפודמיה” כשפע של מידע — מדויק ושגוי כאחד — המקשה למצוא הנחיות אמינות בזמן הנדרש. [דף השאלות והתשובות של WHO בנושא אינפודמיה](https://www.who.int/news-room/questions-and-answers/item/infodemic) מדגיש את חשיבותם של מקורות מהימנים ושל התמודדות שיטתית עם מידע מטעה.\n\nהיבט זה חשוב במיוחד ברשתות חברתיות. מספר צפיות, תגובות או שיתופים מודד תפוצה ומעורבות, לא נכונות רפואית. גם סימון אימות של חשבון מעיד בדרך כלל על זהות או על סטטוס בפלטפורמה, ולא על כך שכל פרסום עבר ביקורת מדעית.\n\n## 5. מתרגמים מידע כללי להחלטה רפואית בזהירות\n\nגם מידע מדויק ברמת האוכלוסייה אינו בהכרח המלצה מתאימה לאדם מסוים. החלטות רפואיות תלויות, בין היתר, בגיל, בהיסטוריה הרפואית, בתרופות נוספות, בהיריון, באלרגיות, בתפקודי כליה וכבד, בחומרת התסמינים ובהעדפות המטופל.\n\nלכן יש להפריד בין שלוש רמות:\n\n- **עובדה מבוססת:** ממצא הנתמך במקור מתאים, בהקשר מוגדר.\n- **פרשנות:** הסבר אפשרי למשמעות הממצא או ליישומו.\n- **עניין שאינו ידוע:** שאלה שאין לגביה די ראיות, או שהמידע הקיים אינו מאפשר תשובה אישית.\n\nאין להפסיק תרופה, לשנות מינון, לדחות בדיקה או להתחיל תוסף רק על סמך תוכן מקוון. גם לתוספי תזונה ולמוצרים ללא מרשם עשויות להיות תופעות לוואי ואינטראקציות עם תרופות. כאשר מידע ברשת סותר הנחיה רפואית שניתנה לאדם מסוים, יש לברר את הסתירה עם גורם רפואי מוסמך המכיר את הנתונים הקליניים.\n\nמצבים דחופים אינם מתאימים לבירור ממושך ברשת. הופעה של תסמין חמור, חדש או מחמיר מחייבת פנייה למסגרת רפואית מתאימה בהתאם לדחיפות, ולא הסתמכות על רשימות תסמינים או על כלי אבחון מקוון.\n\n## סיכום\n\nהערכת מידע רפואי ברשת דורשת יותר מבדיקה אם האתר נראה מקצועי. יש לזהות את המפרסם והמחבר, לברר את מטרת הפרסום, לבחון את סוג הראיות, לחפש מגבלות וניגודי עניינים, להשוות למקורות מוסדיים עצמאיים ולוודא שהמידע עדכני ורלוונטי לאוכלוסייה המדוברת.\n\nמקור אמין אינו חייב להציע תשובה מוחלטת. לעיתים דווקא הצגה ברורה של אי־ודאות, סיכונים ומגבלות היא סימן לאיכות. מנגד, הבטחות גורפות, ניסוח קונספירטיבי, עדויות אישיות ושיווק בלחץ הם סיבות לעצור ולבדוק.\n\nהכלל המעשי הוא פשוט: ככל שהטענה דרמטית יותר וככל שההחלטה עשויה להשפיע יותר על הבריאות, כך נדרשות ראיות חזקות יותר ואימות קפדני יותר. מידע מקוון יכול לתמוך בהבנה ובהכנה לשיחה רפואית, אך אינו מחליף אבחון, התאמת טיפול או שיקול דעת קליני אישי.\n\n> **על המחבר**  \n> ד״ר גיא רופא הוא יוצר תוכן רפואי ומחבר ספרים. הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. U.S. National Library of Medicine, MedlinePlus — [Evaluating Health Information](https://medlineplus.gov/evaluatinghealthinformation.html)  \n   https://medlineplus.gov/evaluatinghealthinformation.html\n\n2. U.S. Food and Drug Administration — [Health Fraud Scams Can Waste Money and Delay Proper Diagnosis and Treatment](https://www.fda.gov/consumers/consumer-updates/health-fraud-scams-waste-money-and-can-lead-delays-getting-proper-diagnosis-and-treatment)  \n   https://www.fda.gov/consumers/consumer-updates/health-fraud-scams-waste-money-and-can-lead-delays-getting-proper-diagnosis-and-treatment\n\n3. World Health Organization — [Infodemic: Questions and Answers](https://www.who.int/news-room/questions-and-answers/item/infodemic)  \n   https://www.who.int/news-room/questions-and-answers/item/infodemic\n\n*המידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון או לטיפול ואינו תחליף להערכה רפואית אישית. כל טענה רפואית בטיוטה מחייבת בדיקה אנושית מקצועית לפני פרסום.*\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.com/post/איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין",
+        "meta_description": "ד״ר גיא רופא: מידע רפואי מקוון ראוי לאמון כאשר ברור מי פרסם אותו, על אילו ראיות הוא מבוסס, מתי עודכן, מה מטרתו ומהן מגבלותיו.",
+        "search_target": {
+          "primary_query": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+          "secondary_queries": [
+            "איך להעריך מידע רפואי ברשת ולזהות מקור אמין ד״ר גיא רופא",
+            "איך להעריך מידע רפואי ברשת ולזהות מקור אמין גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "informational_question"
+        },
+        "internal_links": [],
+        "site_key": "DRGUYROFE_COM",
+        "content_stream": "evergreen_knowledge",
+        "content_fingerprint": "23421acc18fbe2011128f678085b7a556d7ad975fe005a6920908be530006216",
+        "slug": "איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-hero.png",
+          "sha256": "5ced0ec15c4db40e92f7825f7317a89aff144b99c2213112e1a6f5534509cee0",
+          "alt_text": "שלושה אנשים מעיינים בחוברות של מנהל המזון והתרופות האמריקאי לצד מחשב נייד ודפי מידע, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שלושה אנשים מעיינים בחוברות של מנהל המזון והתרופות האמריקאי לצד מחשב נייד ודפי מידע.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:2015_FDA_Science_Writers_Symposium_-_0988_(21545150306).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/2015_FDA_Science_Writers_Symposium_-_0988_%2821545150306%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "The U.S. Food and Drug Administration",
+          "license_name": "Public domain",
+          "license_url": "",
+          "attribution": "2015 FDA Science Writers Symposium - 0988 (21545150306).jpg — The U.S. Food and Drug Administration; Public domain; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-hero.png",
+              "sha256": "5ced0ec15c4db40e92f7825f7317a89aff144b99c2213112e1a6f5534509cee0",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-landscape.png",
+              "sha256": "ed3c0e599aede9565570a305aee0d2cf10f876ac8de35aa3ef2566e271f67b9a",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-square.jpg",
+              "sha256": "d5e1c2e79c2318c97a9e1d0ce78c98fd8a76fffaecbf63b9a310db3536202521",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-01-topic-07-run-33501045144-attempt-1-portrait.png",
+              "sha256": "755c8080867d20b6b1f6947b36453f5120161a823b45c52d6ca00d75a143b2f8",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "23421acc18fbe2011128f678085b7a556d7ad975fe005a6920908be530006216",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318"
+}
