@@ -1571,6 +1571,20 @@
       "published_at": "2026-08-31T18:10:56Z",
       "url": "https://guyrofe.blogspot.com/2026/08/blog-post_31.html",
       "provider_receipt": null
+    },
+    "pub_bacdcb681d1c4ed5153f138047285378790bf011ec4b05e4ee75b74a227e5f83": {
+      "version": 7,
+      "idempotency_key": "pub_bacdcb681d1c4ed5153f138047285378790bf011ec4b05e4ee75b74a227e5f83",
+      "approval_id": "apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "7507743746c44eca2a8309bea69721d37dde19183a69ecc4a98a80adab1c397e",
+      "status": "published",
+      "started_at": "2026-09-01T22:04:37Z",
+      "published_at": "2026-09-01T22:04:39Z",
+      "url": "https://www.drguyrofe.com/post/איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין",
+      "provider_receipt": null
     }
   }
 }

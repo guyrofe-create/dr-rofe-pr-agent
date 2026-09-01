@@ -1,0 +1,107 @@
+{
+  "draft": "content_drafts/2026-09-01-topic-07-run-33501045144-attempt-1.md",
+  "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-09-01T22:04:41.514587+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wix",
+      "url": "https://www.drguyrofe.com/post/איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין",
+      "detail": "idempotency_key=pub_bacdcb681d1c4ed5153f138047285378790bf011ec4b05e4ee75b74a227e5f83"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://www.drguyrofe.com/post/איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין",
+      "detail": "failed checks: canonical_person_linked"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-01-topic-07-run-33501045144-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318",
+  "search_target": {
+    "primary_query": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+    "secondary_queries": [
+      "איך להעריך מידע רפואי ברשת ולזהות מקור אמין ד״ר גיא רופא",
+      "איך להעריך מידע רפואי ברשת ולזהות מקור אמין גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational_question"
+  },
+  "canonical_url": "https://www.drguyrofe.com/post/איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
