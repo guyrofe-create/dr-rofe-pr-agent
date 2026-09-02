@@ -1585,6 +1585,83 @@
       "published_at": "2026-09-01T22:04:39Z",
       "url": "https://www.drguyrofe.com/post/איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין",
       "provider_receipt": null
+    },
+    "pub_a5cbaeca8574378718530993a08acb6612fcd9f7ff4a7f762d3d8c7c3064d153": {
+      "version": 7,
+      "idempotency_key": "pub_a5cbaeca8574378718530993a08acb6612fcd9f7ff4a7f762d3d8c7c3064d153",
+      "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "request_sha256": "e8f4725c181405de1d792f2f3c0bcd323790cc3815841f586a5aafd165987415",
+      "status": "published",
+      "started_at": "2026-09-02T17:20:50Z",
+      "published_at": "2026-09-02T17:20:56Z",
+      "url": "https://guyrofe.com/%d7%9e%d7%99%d7%95%d7%9e%d7%95%d7%aa-%d7%91%d7%a8%d7%97%d7%9d-%d7%90%d7%a4%d7%a9%d7%a8%d7%95%d7%99%d7%95%d7%aa-%d7%91%d7%99%d7%a8%d7%95%d7%a8-%d7%95%d7%98%d7%99%d7%a4%d7%95%d7%9c/",
+      "provider_receipt": null
+    },
+    "pub_14e101c749b9b3f9aa5537a0c45011a24d692608d823df13f859e4775154b922": {
+      "version": 7,
+      "idempotency_key": "pub_14e101c749b9b3f9aa5537a0c45011a24d692608d823df13f859e4775154b922",
+      "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "f1fa135268b319c294b2936dadb383555a699fca7c2e3ae1b35b304aac3866a2",
+      "status": "published",
+      "started_at": "2026-09-02T17:21:00Z",
+      "published_at": "2026-09-02T17:21:10Z",
+      "url": "https://www.facebook.com/122202337226942441",
+      "provider_receipt": null
+    },
+    "pub_27b0dc34e473468600053372c41cbbb31db711aecdf2f7eb6852f170aa7f6b70": {
+      "version": 7,
+      "idempotency_key": "pub_27b0dc34e473468600053372c41cbbb31db711aecdf2f7eb6852f170aa7f6b70",
+      "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "1e7394428daf380e31405ef760cc062ad618da94e12d44feecf078ea3b7bc6dd",
+      "status": "published",
+      "started_at": "2026-09-02T17:21:10Z",
+      "published_at": "2026-09-02T17:21:13Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7500966071269703680/",
+      "provider_receipt": null
+    },
+    "pub_7b1f1614cd598c02d13df6a43c9b524ba41c7a50f0b6f2f8f958350c2a10d001": {
+      "version": 7,
+      "idempotency_key": "pub_7b1f1614cd598c02d13df6a43c9b524ba41c7a50f0b6f2f8f958350c2a10d001",
+      "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "request_sha256": "a59afdb4f04f4b67c61502e2ef66f91537aeb5133b1f85114183c6b4cd4db854",
+      "status": "published",
+      "started_at": "2026-09-02T17:21:13Z",
+      "published_at": "2026-09-02T17:21:13Z",
+      "url": "https://guyrofe.blogspot.com/2026/09/blog-post.html",
+      "provider_receipt": null
+    },
+    "pub_5659a72e50988009950258a4e79a0ea4dc9c366826b25562591cf2853beb83c7": {
+      "version": 7,
+      "idempotency_key": "pub_5659a72e50988009950258a4e79a0ea4dc9c366826b25562591cf2853beb83c7",
+      "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "e7a7a7c700a06c528ee26c03e89cce2e11df31c42239351af460a98b1adc844f",
+      "status": "published",
+      "started_at": "2026-09-02T17:21:13Z",
+      "published_at": "2026-09-02T17:21:16Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPD514KZqpmZSQ",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/4586782988063597789",
+        "state": "PROCESSING",
+        "createTime": "2026-09-02T17:21:16.210300Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPD514KZqpmZSQ",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }
