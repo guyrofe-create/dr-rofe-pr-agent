@@ -1,0 +1,209 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-02T10:50:42Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md",
+  "source_draft_sha256": "a2ce91d2668bc8d31d59ee37077b6d61ba20b1e049ce8183d373548e5df34d88",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://healthy.walla.co.il/item/3864977",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.btl.gov.il/benefits/Pages/%D7%9E%D7%A2%D7%A0%D7%A7%20%D7%90%D7%A9%D7%A4%D7%95%D7%96.aspx",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng235/chapter/Recommendations",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/QS105/chapter/Quality-statement-2-One-to-one-care",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003766.pub6/pdf/CDSR/CD003766/CD003766_abstract.pdf",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng4/chapter/recommendations",
+      "type": "citation"
+    },
+    {
+      "url": "https://me.health.gov.il/parenting/family-planning/labor/where-to/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-landscape.png",
+    "sha256": "decca86ceccd0fea9c54b7018472666006bf7143880debb52bf8597fb18162e1",
+    "alt_text": "מכשיר דופלר עוברי לבן מדגם BabyDoppler Sonoline B ולצדו מתמר מחובר בכבל, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "מכשיר דופלר עוברי לבן מדגם BabyDoppler Sonoline B ולצדו מתמר מחובר בכבל.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Sonoline_B_by_Baby_Doppler_.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Sonoline_B_by_Baby_Doppler_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Cognito100",
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Sonoline B by Baby Doppler .jpg — Cognito100; CC BY-SA 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-hero.png",
+        "sha256": "35b1e7c3eb46af7f4d9c27760339c41579dd94339e056ed8508657f48b4f874a",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-landscape.png",
+        "sha256": "decca86ceccd0fea9c54b7018472666006bf7143880debb52bf8597fb18162e1",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-square.jpg",
+        "sha256": "b09715566825c4b0febaa8d776f3d0eeb441f69a56e2920f25c1c195ec3a8b96",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-portrait.png",
+        "sha256": "d7adaa2f5ba94f36653c6f5bd665a22bca373ccb00a5bce9244d3d37e500bbfe",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא",
+        "cms_title": "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר?",
+        "markdown": "# כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** בית חולים בישראל מקבל מהביטוח הלאומי מענק אשפוז קבוע עבור לידה, שגובהו 18,357 ש\"ח נכון ל־1 ביולי 2026. אולם התשלום אינו שווה בהכרח לרווח נקי, ואין כיום הוכחה שהמענק עצמו גורם לפגיעה ביולדות. השאלה החשובה היא האם הרצון לקלוט יותר לידות מלווה בתוספת מספקת של מיילדות, צוותים ותשתיות — או שהעומס גדל מהר יותר מכוח האדם.\n\n[כתבת וואלה בריאות על התשלום לבתי החולים והעומס המוטל על המיילדות](https://healthy.walla.co.il/item/3864977), שעודכנה ב־2 בספטמבר 2026, הציגה טענה מטרידה: בתי החולים מקבלים תשלום משמעותי עבור כל לידה ומתחרים על היולדות, בעוד שבחלק מחדרי הלידה מיילדות נדרשות לטפל בכמה נשים במקביל. הכתבה מבוססת בין היתר על עדויות מיילדות ועל נתונים שהתקבלו, לפי הנטען, בבקשות חופש מידע.\n\nחשוב להתייחס ברצינות לעדויות מן השטח, אך גם להפריד בין ארבע שאלות שונות: מהו התשלום שמקבל בית החולים, האם לידה אכן רווחית עבורו, מה ידוע על היקף כוח האדם בפועל, ומה מלמד המחקר הרפואי על ליווי רציף במהלך הלידה.\n\n## מהו התשלום לבית החולים — ומה הוא אינו אומר?\n\nלפי [המידע הרשמי של הביטוח הלאומי על מימון אשפוז היולדת](https://www.btl.gov.il/benefits/Pages/%D7%9E%D7%A2%D7%A0%D7%A7%20%D7%90%D7%A9%D7%A4%D7%95%D7%96.aspx), סכום מענק האשפוז הוא 18,357 ש\"ח החל מ־1 ביולי 2026. התשלום מועבר לבית החולים ונועד לממן את הוצאות האשפוז הקשורות ללידה. לכן, הכותרת המעגלת את הסכום ל\"כ־20 אלף שקל\" משקפת בקירוב את גובה המענק, אך לא את הרווח של המוסד הרפואי.\n\nמענק אשפוז הוא הכנסה, לא שורת רווח. כנגדו עומדות הוצאות על כוח אדם, חדרי לידה, חדרי ניתוח, הרדמה, בדיקות, תרופות, ציוד, ניקיון, אבטחה, אשפוז האם והיילוד וזמינות של צוותים למצבי חירום. עלותה של לידה רגילה וקצרה אינה זהה לעלותה של לידה מורכבת הכוללת זירוז ממושך, ניתוח קיסרי, דימום, טיפול נמרץ או אשפוז ארוך.\n\nמכאן שאין די בגובה המענק כדי לקבוע שכל לידה מניבה לבית החולים רווח של כ־18 אלף ש\"ח. כדי לבסס טענה כזו נדרשים נתוני עלות מלאים, לרבות חלוקת הוצאות קבועות ומשתנות, מורכבות המקרים והכנסות נוספות. נתונים כאלה אינם מוצגים בכתבה.\n\nעם זאת, **מבחינה מערכתית**, תשלום אחיד עבור כל אשפוז לידה עשוי ליצור תמריץ למוסדות להתחרות על מספר היולדות. זהו ניתוח כלכלי סביר, אך לא הוכחה לכך שבית חולים מסוים קולט יולדות מעבר ליכולת הטיפול שלו, ולא הוכחה לכך שהחלטה רפואית כלשהי התקבלה משיקול כספי.\n\n## מה באמת עולה מנתוני התקינה שפורסמו?\n\nלפי הכתבה, נתוני חופש מידע משישה בתי חולים הצביעו בשנת 2025 על פערים בין מספר תקני המיילדות הרשום לבין מספר המיילדות הפעילות בפועל. בחלק מהמוסדות תוארו פערים של כ־20% ואף יותר. בין ההסברים שניתנו: תקנים שאינם מאוישים, הפסקות עבודה זמניות ושימוש בחלק מהתקנים להעסקת עובדות ועובדים שאינם מיילדות.\n\nאלה נתונים בעלי חשיבות ציבורית, אך יש להם מגבלות. ראשית, מדובר במדגם של שישה בתי חולים ולא בתמונת מצב ארצית מלאה. שנית, מספר התקנים השנתי אינו מלמד לבדו כמה מיילדות נכחו בכל משמרת, כמה יולדות היו בטיפולן ומה הייתה מורכבות המקרים. שלישית, לא פורסם לצד הכתבה מאגר הנתונים המלא באופן המאפשר ניתוח עצמאי, השוואת הגדרות ובדיקת איכות המידע.\n\nההבחנה בין \"תקן מאושר\" לבין \"מיילדת זמינה בחדר הלידה\" חשובה במיוחד. מיילדת יכולה להיות מועסקת בבית החולים אך לעבוד בתחום אחר של מערך היולדות, להיות בחופשה או לעסוק במשימות שאינן טיפול ישיר בלידה פעילה. מנגד, עובדות סיעוד וכוח עזר שאינן מיילדות עשויות לבצע משימות חיוניות, אך אינן יכולות להחליף מיילדת מוסמכת בהערכת התקדמות הלידה, במעקב אחר האם והעובר ובניהול אירוע מיילדותי דחוף.\n\nלכן, הנתונים שפורסמו מצביעים על **אות אזהרה המצדיק שקיפות ובדיקה רחבה**, אך אינם מאפשרים לחשב יחס ארצי מדויק של מיילדות ליולדות או לקבוע לבדם שנגרם נזק רפואי.\n\n## מדוע ליווי רציף בלידה נחשב רכיב טיפולי?\n\nהמיילדת אינה נוכחת רק ברגע יציאת התינוק. עבודתה כוללת הערכת מצב האם, מעקב אחר התקדמות הלידה ואחר מצבו של העובר, זיהוי דימום או שינוי קליני, מתן תרופות בהתאם להוראות, תמיכה בהתמודדות עם כאב, הסבר על פעולות רפואיות ותיאום עם רופאות ורופאים, צוות ההרדמה וצוות היילודים.\n\nהנחיות NICE קובעות כי שירותי לידה צריכים לתמוך במודל המאפשר טיפול של מיילדת אחת באישה אחת במהלך לידה מבוססת, ולהשתמש במודלים לתכנון כוח האדם וביחסי יולדות־מיילדות כדי לזהות מחסור או עודף. ההנחיה מוסיפה שאין להשאיר אישה בלידה מבוססת לבדה, למעט לפרקי זמן קצרים או לפי בקשתה. ראו את [המלצות NICE לטיפול במהלך הלידה ולליווי אחת־על־אחת](https://www.nice.org.uk/guidance/ng235/chapter/Recommendations).\n\nגם [תקן האיכות של NICE בנושא טיפול אישי במהלך הלידה](https://www.nice.org.uk/guidance/QS105/chapter/Quality-statement-2-One-to-one-care) מגדיר יעד של טיפול ותמיכה אחת־על־אחת בידי מיילדת ייעודית בלידה מבוססת. אין פירוש הדבר שאותה מיילדת חייבת להישאר לאורך כל הלידה או שלא יתקיימו חילופי משמרות. המשמעות היא שבזמן נתון אמורה להיות מיילדת שאחריותה הישירה ממוקדת ביולדת אחת.\n\nסקירת Cochrane בנושא תמיכה רציפה בלידה מצאה כי ליווי רציף עשוי להיות קשור לעלייה בסיכוי ללידה נרתיקית ספונטנית, למשך לידה קצר יותר ולירידה מסוימת בניתוחים קיסריים, בלידות מכשירניות ובשימוש במשככי כאב. כן נמצא שיפור בחוויית הלידה המדווחת. הממצאים מפורטים ב[סקירה השיטתית של Cochrane על תמיכה רציפה בנשים במהלך הלידה](https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003766.pub6/pdf/CDSR/CD003766/CD003766_abstract.pdf).\n\nעם זאת, יש להיזהר מהרחבת המסקנות. \"תמיכה רציפה\" במחקרים אינה תמיד זהה לטיפול בלעדי של מיילדת בית חולים אחת. בחלק מהמחקרים התמיכה ניתנה בידי דולה, אחות, מיילדת או אדם אחר בעל תפקיד תומך. לכן הסקירה מחזקת את החשיבות של נוכחות רציפה ותמיכה אישית, אך אינה מספקת אומדן ישיר של הנזק הנגרם בכל מצב שבו מיילדת אחראית זמנית ליותר מיולדת אחת.\n\n## קשר אינו בהכרח סיבתיות\n\nהכותרת יוצרת שרשרת סיבתית אפשרית: בית החולים מקבל כסף עבור כל לידה, ולכן הוא מנסה למשוך יותר יולדות; מספר היולדות גדל ללא תוספת כוח אדם; ולבסוף היולדות מקבלות טיפול פחות טוב. כל אחד מהשלבים אפשרי, אך הנתונים המוצגים אינם מוכיחים את השרשרת בשלמותה.\n\nכדי לקבוע סיבתיות היה צורך לבחון, לאורך זמן ובמספר גדול של בתי חולים, את מספר הלידות, מספר המיילדות בכל משמרת, מורכבות המקרים, שיעורי התערבויות, אירועים חריגים, זמני תגובה, תחלופת צוות, שחיקה וחוויית המטופלות. נוסף על כך, היה צורך לבדוק אם שינויים בתשלום או בקמפיינים לגיוס יולדות קדמו לשינויים בעומס ובתוצאות הרפואיות.\n\nגם אם נמצא קשר בין עומס לבין תוצאה מסוימת, יש להביא בחשבון גורמים נוספים. בתי חולים מרכזיים עשויים לקלוט יותר הריונות בסיכון, לידות מוקדמות ומקרים מורכבים. לכן שיעור גבוה יותר של ניתוחים קיסריים או התערבויות אינו בהכרח עדות לאיכות טיפול ירודה; לעיתים הוא משקף אוכלוסיית מטופלות מורכבת יותר.\n\nמנגד, היעדר הוכחה סיבתית אינו סיבה להתעלם מעומס. תכנון כוח אדם בטוח אינו אמור להמתין להתרחשות נזק. [הנחיות NICE לתכנון בטוח של תקינת מיילדות](https://www.nice.org.uk/guidance/ng4/chapter/recommendations) ממליצות להעריך את התקינה באופן תקופתי, להתחשב בתנודות בביקוש, בחופשות ובהיעדרויות, ולתעד מצבים שבהם לא ניתן להעניק טיפול רציף של אחת־על־אחת.\n\n## מה המשמעות המעשית עבור נשים לפני לידה?\n\nהמסר המעשי אינו לבחור בית חולים לפי גובה המענק או להסיק שמחלקה משופצת מעידה בהכרח על מחסור בכוח אדם. עדיף לבחון מראש שאלות הנוגעות לטיפול עצמו: מהו היחס המקובל בין מיילדת ליולדות בלידה פעילה, כיצד המחלקה מתגברת משמרת עמוסה, אילו שירותים זמינים מסביב לשעון ומהי מדיניות הליווי, הניטור והמעבר לניתוח במקרה הצורך.\n\nגם משרד הבריאות ממליץ להביא בחשבון את זמינות הצוות ואת השאלה בכמה יולדות מטפלת מיילדת באותו הזמן. ראו את [הנחיות משרד הבריאות לבחירת מקום הלידה](https://me.health.gov.il/parenting/family-planning/labor/where-to/).\n\nחשוב גם להבין שיחס מספרי אינו מתאר את כל איכות הטיפול. לידה אחת עשויה לדרוש מעט התערבות במשך שעות, ואחרת עלולה להפוך בתוך דקות למצב חירום. איכות ובטיחות תלויות במספר אנשי הצוות, בניסיונם, בתמהיל המקצועי, בזמינות תגבור וביכולת להעביר במהירות יולדת לטיפול רפואי מתקדם.\n\n## סיכום\n\nהסכום שבכותרת מבוסס בקירוב על מענק אשפוז רשמי של 18,357 ש\"ח ללידה, נכון ל־1 ביולי 2026. הוא אינו מוכיח כי זהו הרווח הנקי של בית החולים. הנתונים שפורסמו על פערים בתקינת מיילדות מעלים שאלה ציבורית חשובה, אך המדגם המצומצם והיעדר נתוני משמרות ותוצאות מלאים אינם מאפשרים לקבוע שהמענק הכספי גורם ישירות לפגיעה ביולדות.\n\nלעומת זאת, הראיות וההנחיות המקצועיות תומכות בחשיבותו של ליווי רציף ואישי במהלך לידה מבוססת. הדיון הנכון אינו אם כסף \"מזהם\" בהכרח את הטיפול, אלא אם מנגנון המימון מלווה במדידה שקופה של עומסים, בתקינה המותאמת למורכבות וביכולת לספק לכל יולדת השגחה, הסבר ותמיכה בזמן הנדרש.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים. ד״ר רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים. התוכן במאמר הוא מידע כללי בלבד, אינו תחליף לייעוץ רפואי פרטני ומחייב בדיקה רפואית וביקורת אנושית מקצועית לפני פרסום.\n\n## מקורות\n\n1. [הביטוח הלאומי — מימון הוצאות אשפוז היולדת וסכום מענק האשפוז](https://www.btl.gov.il/benefits/Pages/%D7%9E%D7%A2%D7%A0%D7%A7%20%D7%90%D7%A9%D7%A4%D7%95%D7%96.aspx)\n2. [NICE — המלצות לטיפול במהלך הלידה ולליווי אחת־על־אחת](https://www.nice.org.uk/guidance/ng235/chapter/Recommendations)\n3. [NICE — תקן איכות לטיפול אחת־על־אחת במהלך לידה מבוססת](https://www.nice.org.uk/guidance/QS105/chapter/Quality-statement-2-One-to-one-care)\n4. [NICE — הנחיות לתכנון בטוח של תקינת מיילדות](https://www.nice.org.uk/guidance/ng4/chapter/recommendations)\n5. [Cochrane — סקירה שיטתית בנושא תמיכה רציפה בנשים במהלך הלידה](https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003766.pub6/pdf/CDSR/CD003766/CD003766_abstract.pdf)\n6. [משרד הבריאות — בחירת מקום הלידה והשאלות שמומלץ לבדוק](https://me.health.gov.il/parenting/family-planning/labor/where-to/)\n7. [וואלה בריאות — הכתבה שנבדקה; אינה משמשת מקור רפואי](https://healthy.walla.co.il/item/3864977)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/כל-לידה-שווה-לבית-החולים-כ־20-אלף-שקל/",
+        "meta_description": "ד״ר גיא רופא: בית חולים בישראל מקבל מהביטוח הלאומי מענק אשפוז קבוע עבור לידה, שגובהו 18,357 ש\"ח נכון ל־1 ביולי 2026.",
+        "search_target": {
+          "primary_query": "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את",
+          "secondary_queries": [
+            "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר?",
+            "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את ד״ר גיא רופא",
+            "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון",
+            "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-11-topic-90-run-31467572739-attempt-1/"
+          }
+        ],
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "1c172e6b396d5cdeacfbefa6390d1bdeb24f024c44e9f9b754b671ce9325f528",
+        "slug": "כל-לידה-שווה-לבית-החולים-כ־20-אלף-שקל",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-hero.png",
+          "sha256": "35b1e7c3eb46af7f4d9c27760339c41579dd94339e056ed8508657f48b4f874a",
+          "alt_text": "מכשיר דופלר עוברי לבן מדגם BabyDoppler Sonoline B ולצדו מתמר מחובר בכבל, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מכשיר דופלר עוברי לבן מדגם BabyDoppler Sonoline B ולצדו מתמר מחובר בכבל.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Sonoline_B_by_Baby_Doppler_.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Sonoline_B_by_Baby_Doppler_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Cognito100",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Sonoline B by Baby Doppler .jpg — Cognito100; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-hero.png",
+              "sha256": "35b1e7c3eb46af7f4d9c27760339c41579dd94339e056ed8508657f48b4f874a",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-landscape.png",
+              "sha256": "decca86ceccd0fea9c54b7018472666006bf7143880debb52bf8597fb18162e1",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-square.jpg",
+              "sha256": "b09715566825c4b0febaa8d776f3d0eeb441f69a56e2920f25c1c195ec3a8b96",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-02-topic-90-run-33620841392-attempt-1-portrait.png",
+              "sha256": "d7adaa2f5ba94f36653c6f5bd665a22bca373ccb00a5bce9244d3d37e500bbfe",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "1c172e6b396d5cdeacfbefa6390d1bdeb24f024c44e9f9b754b671ce9325f528",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206"
+}

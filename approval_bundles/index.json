@@ -2,6 +2,32 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206",
+      "draft_path": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206.json",
+      "preview_path": "approval_bundles/apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206.html",
+      "created_at": "2026-09-02T10:50:42Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
+      "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+      "draft_path": "content_drafts/2026-09-02-topic-03-run-33620841392-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce.json",
+      "preview_path": "approval_bundles/apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce.html",
+      "created_at": "2026-09-02T10:49:48Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
       "approval_id": "apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318",
       "draft_path": "content_drafts/2026-09-01-topic-07-run-33501045144-attempt-1.md",
       "bundle_path": "approval_bundles/apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318.json",

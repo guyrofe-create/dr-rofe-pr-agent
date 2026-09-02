@@ -1,6 +1,39 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-02-topic-03-run-33620841392-attempt-1.md",
+      "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+      "topic": "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי",
+      "excerpt": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מיומות ברחם הן גידולים שפירים המתפתחים מרקמת השריר של הרחם. ברוב המקרים הן אינן מסוכנות ואינן מחייבות טיפול. כאשר הן גורמות לדימום",
+      "generated_at": "2026-09-02T10:42:44.197936+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-30",
+      "cadence_local_date": "2026-09-02",
+      "public_execution_allowed": false
+    },
+    {
+      "path": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md",
+      "title": "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את המחיר",
+      "excerpt": "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בית חולים בישראל מקבל מהביטוח הלאומי מענק אשפוז קבוע עבור לידה, שגובהו 18,357 ש\"ח נכון ל־",
+      "generated_at": "2026-09-02T10:42:44.197936+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-08-30",
+      "cadence_local_date": "2026-09-02",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-5ab9d95572ba5295.json",
+      "analyzed_news_url": "https://healthy.walla.co.il/item/3864977"
+    },
+    {
       "path": "content_drafts/2026-09-01-topic-90-run-33501045144-attempt-1.md",
       "title": "חיים יותר אבל גם חולים וסובלים יותר? מה באמת עומד מאחורי הכותרת על העידן שנכנסנו אליו | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: חיים יותר אבל גם חולים וסובלים יותר? העידן הקשה שנכנסנו אליו",
@@ -473,45 +506,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-cf1417c346b1fe27.json",
       "analyzed_news_url": "https://healthy.walla.co.il/item/3859343"
-    },
-    {
-      "path": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה",
-      "excerpt": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מחקר עוקבה שוודי גדול מצא כי בקרב אנשים עם סוכרת מסוג 1, אבחון לפני גיל 10 היה קשור ל",
-      "generated_at": "2026-08-06T08:34:28.670708+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "pinterest",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-02",
-      "cadence_local_date": "2026-08-06",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-5ca879eaeecc5aa0.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/syxehf118fe"
-    },
-    {
-      "path": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
-      "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
-      "topic": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
-      "excerpt": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: אנדומטריוזיס עלולה להקשות על כניסה להיריון, אך היא אינה שוות־ערך לאי־פוריות. נשים רבות עם אנדומטריוזיס נכנסות להיריון באופן",
-      "generated_at": "2026-08-05T08:34:28.050169+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "instagram",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-02",
-      "cadence_local_date": "2026-08-05",
-      "public_execution_allowed": false
     }
   ]
 }
