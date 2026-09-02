@@ -574,6 +574,16 @@
         "https://guyrofe.blogspot.com/2026/09/blog-post.html",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPD514KZqpmZSQ"
       ]
+    },
+    "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206:785b523344a0df200a0bc4386fe990a51c3a20e139d4709dce7efaa674b6ea8d": {
+      "sent_at": "2026-09-02T19:58:33.412289+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206",
+      "state": "success",
+      "subject": "אישור פרסום: כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9b%d7%9c-%d7%9c%d7%99%d7%93%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%97%d7%95%d7%9c%d7%99%d7%9d-%d7%9b%d6%be20-%d7%90%d7%9c%d7%a3-%d7%a9%d7%a7%d7%9c/"
+      ]
     }
   }
 }

@@ -1662,6 +1662,20 @@
         "account": "accounts/110345401117888665629",
         "location": "accounts/110345401117888665629/locations/14140768355740435987"
       }
+    },
+    "pub_ca6ed4196f05565de872d964cbe20670f11d27a15b7772570407221d45ae0192": {
+      "version": 7,
+      "idempotency_key": "pub_ca6ed4196f05565de872d964cbe20670f11d27a15b7772570407221d45ae0192",
+      "approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "be7f1a3aeaa96ab56da27303b0053c70d9f67f6d0b859ecade7a30ce90685b5d",
+      "status": "published",
+      "started_at": "2026-09-02T19:58:24Z",
+      "published_at": "2026-09-02T19:58:30Z",
+      "url": "https://www.drguyrofe.co.il/%d7%9b%d7%9c-%d7%9c%d7%99%d7%93%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%97%d7%95%d7%9c%d7%99%d7%9d-%d7%9b%d6%be20-%d7%90%d7%9c%d7%a3-%d7%a9%d7%a7%d7%9c/",
+      "provider_receipt": null
     }
   }
 }

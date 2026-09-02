@@ -1,0 +1,108 @@
+{
+  "draft": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md",
+  "title": "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-09-02T19:58:31.842093+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9b%d7%9c-%d7%9c%d7%99%d7%93%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%97%d7%95%d7%9c%d7%99%d7%9d-%d7%9b%d6%be20-%d7%90%d7%9c%d7%a3-%d7%a9%d7%a7%d7%9c/",
+      "detail": "idempotency_key=pub_ca6ed4196f05565de872d964cbe20670f11d27a15b7772570407221d45ae0192"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9b%d7%9c-%d7%9c%d7%99%d7%93%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%97%d7%95%d7%9c%d7%99%d7%9d-%d7%9b%d6%be20-%d7%90%d7%9c%d7%a3-%d7%a9%d7%a7%d7%9c/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-02-topic-90-run-33620841392-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את",
+    "secondary_queries": [
+      "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר?",
+      "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9b%d7%9c-%d7%9c%d7%99%d7%93%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%97%d7%95%d7%9c%d7%99%d7%9d-%d7%9b%d6%be20-%d7%90%d7%9c%d7%a3-%d7%a9%d7%a7%d7%9c/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
