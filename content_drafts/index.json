@@ -1,6 +1,25 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-03-topic-90-run-33745856763-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר",
+      "excerpt": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: שמונה שעות אינן מספר קסם או צורך ביולוגי אחיד לכל מבוגר. לרוב המבוגרים מומלץ לישון",
+      "generated_at": "2026-09-03T10:43:59.970226+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-08-30",
+      "cadence_local_date": "2026-09-03",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-56fcbfcc27ad5b8e.json",
+      "analyzed_news_url": "https://healthy.walla.co.il/item/3863584"
+    },
+    {
       "path": "content_drafts/2026-09-02-topic-03-run-33620841392-attempt-1.md",
       "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
       "topic": "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי",
@@ -491,21 +510,6 @@
       "cadence_week": "week-of-2026-08-09",
       "cadence_local_date": "2026-08-09",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-08-09-topic-90-run-31299936904-attempt-1.md",
-      "title": "יש לכם קופסאות פלסטיק במטבח? זה מה שבאמת קרה למשתתפי המחקר שהחליפו אותן | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: יש לכם קופסאות פלסטיק במטבח? זה מה שקרה למשתתפי מחקר שהחליפו אותן",
-      "excerpt": "יש לכם קופסאות פלסטיק במטבח? זה מה שבאמת קרה למשתתפי המחקר שהחליפו אותן | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא – הפרופיל הרשמי](https://guyrofe.com/%D7%90%D7%95%D7%93%D7%95%D7%AA/) התשובה הקצרה: מ",
-      "generated_at": "2026-08-09T06:55:02.048008+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-08-09",
-      "cadence_local_date": "2026-08-09",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-cf1417c346b1fe27.json",
-      "analyzed_news_url": "https://healthy.walla.co.il/item/3859343"
     }
   ]
 }
