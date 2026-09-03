@@ -1,0 +1,116 @@
+{
+  "draft": "content_drafts/2026-09-03-topic-90-run-33745856763-attempt-1.md",
+  "title": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-09-03T13:57:07.647226+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a9%d7%a0%d7%99%d7%9d-%d7%90%d7%9e%d7%a8%d7%95-%d7%9c%d7%a0%d7%95/",
+      "detail": "idempotency_key=pub_4bd76f8e9c332f3a80dd9f01f8ee1e008b4a4a7f9e5f42f23e86869cefafdb1d"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a9%d7%a0%d7%99%d7%9d-%d7%90%d7%9e%d7%a8%d7%95-%d7%9c%d7%a0%d7%95/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-03-topic-90-run-33745856763-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122202465380942441",
+      "detail": "idempotency_key=pub_a7cb58e8a01a081c85110233b340f5afe87fda9f9e21fccf4f9a2584eaed1a71"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7501277083265044482/",
+      "detail": "idempotency_key=pub_5e9a1d378c15920237c0782e8ea0066968f79890cafdcfdf25dc1103055a25d6"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKHZyOi08tTZDw",
+      "detail": "idempotency_key=pub_3a68179bf47f182236e7c5b6b5de44c58caf8b90c5b4e99837c7d94d7e4021b0"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_42ac57bd78f6fbcccc93b0f0e70b65249430e5349a5dbecbc3a0e15005be3c0e",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר",
+    "secondary_queries": [
+      "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a9%d7%a0%d7%99%d7%9d-%d7%90%d7%9e%d7%a8%d7%95-%d7%9c%d7%a0%d7%95/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
