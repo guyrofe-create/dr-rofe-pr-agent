@@ -160,8 +160,16 @@ def json_ld_script(schema: dict) -> str:
 def render_profile_page(profile: dict, page_url: str | None = None) -> str:
     """Visible, factual profile content plus matching JSON-LD."""
     names = " · ".join(profile.get("alternateName", []))
+
+    def link_label(url: str) -> str:
+        parsed = urlparse(url)
+        host = parsed.netloc.lower().removeprefix("www.")
+        if host == "linkedin.com" and parsed.path.rstrip("/").lower() == "/in/guyrofe":
+            return "ד״ר גיא רופא בלינקדאין"
+        return parsed.netloc
+
     links = "".join(
-        f'<li><a rel="me" href="{escape(url)}">{escape(urlparse(url).netloc)}</a></li>'
+        f'<li><a rel="me" href="{escape(url)}">{escape(link_label(url))}</a></li>'
         for url in profile.get("sameAs", [])
     )
     return "\n".join(

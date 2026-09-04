@@ -10,6 +10,7 @@ from scripts.reputation_core.entity_seo import (
     build_article_schema,
     build_profile_page_schema,
     json_ld_script,
+    render_profile_page,
     validate_media_metadata,
 )
 from scripts.reputation_core.entity_contract import (
@@ -49,6 +50,14 @@ class EntitySeoTests(unittest.TestCase):
         self.assertEqual(page["mainEntity"]["@id"], person["@id"])
         self.assertEqual(person["mainEntityOfPage"]["@id"], page["@id"])
         self.assertTrue(person["sameAs"])
+
+    def test_profile_page_uses_descriptive_linkedin_anchor(self):
+        html = render_profile_page(self.profile)
+        self.assertIn(
+            '<a rel="me" href="https://www.linkedin.com/in/guyrofe">'
+            "ד״ר גיא רופא בלינקדאין</a>",
+            html,
+        )
 
     def test_verified_credentials_are_emitted_when_present(self):
         profile = {
