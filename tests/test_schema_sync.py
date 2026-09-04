@@ -2,7 +2,12 @@ import json
 import unittest
 from unittest.mock import Mock, patch
 
-from scripts.schema_sync import build_llms_txt, build_schema, wp_update_page
+from scripts.schema_sync import (
+    build_llms_txt,
+    build_schema,
+    wp_find_or_create_page,
+    wp_update_page,
+)
 
 
 class NeutralEntitySchemaTests(unittest.TestCase):
@@ -30,6 +35,23 @@ class NeutralEntitySchemaTests(unittest.TestCase):
         self.assertIn("not currently practicing medicine", text)
         self.assertIn("not accepting patients", text)
         self.assertNotIn("Services: fertility treatment", text)
+
+    @patch("scripts.schema_sync.requests.get")
+    def test_page_lookup_uses_public_status_without_draft_filter(self, get):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = [{"id": 7}]
+        get.return_value = response
+
+        page_id = wp_find_or_create_page(
+            "https://example.com", ("user", "password"), "profile", "Profile"
+        )
+
+        self.assertEqual(page_id, 7)
+        self.assertEqual(
+            get.call_args.kwargs["params"],
+            {"slug": "profile", "status": "publish"},
+        )
 
     @patch("scripts.schema_sync.requests.post")
     def test_existing_page_title_is_updated_with_content(self, post):
