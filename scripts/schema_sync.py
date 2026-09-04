@@ -85,9 +85,17 @@ Keywords: {variants}
 
 def wp_find_or_create_page(base_url, auth, slug, title):
     resp = requests.get(f"{base_url}/wp-json/wp/v2/pages", auth=auth,
-                         params={"slug": slug, "status": "publish,draft"}, timeout=20)
+                         params={"slug": slug, "status": "publish"}, timeout=20)
     resp.raise_for_status()
-    results = resp.json()
+    try:
+        results = resp.json()
+    except ValueError as exc:
+        content_type = resp.headers.get("content-type", "unknown")
+        raise RuntimeError(
+            "WordPress page lookup returned non-JSON "
+            f"(HTTP {resp.status_code}, content-type {content_type}, "
+            f"{len(resp.content)} bytes)"
+        ) from exc
     if results:
         return results[0]["id"]
     # doesn't exist yet - create it
