@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-06-topic-00-run-34027109221-attempt-1.md",
+      "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+      "topic": "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
+      "excerpt": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) כאבי אגן מתמשכים או חוזרים מצדיקים בדיקה רפואית כאשר הם נמשכים חודשים, פוגעים בתפקוד, מחמירים, מלווים בדימום חריג ",
+      "generated_at": "2026-09-06T10:20:04.556274+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-09-06",
+      "cadence_local_date": "2026-09-06",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-09-03-topic-90-run-33745856763-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר",
@@ -492,24 +509,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-500d6b117ac57862.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/rjkemi1ufe"
-    },
-    {
-      "path": "content_drafts/2026-08-09-topic-06-run-31299936904-attempt-1.md",
-      "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
-      "topic": "גיל המעבר - מידע כללי מבוסס מקורות",
-      "excerpt": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא – הפרופיל הרשמי](https://guyrofe.com) גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נ",
-      "generated_at": "2026-08-09T06:55:02.048008+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "pinterest",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-09",
-      "cadence_local_date": "2026-08-09",
-      "public_execution_allowed": false
     }
   ]
 }
