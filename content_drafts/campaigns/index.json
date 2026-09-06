@@ -1,6 +1,35 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-09-06-topic-00-run-34027109221-attempt-1.md",
+      "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+      "status": "failed",
+      "published_at": "2026-09-06T12:36:37.877447+00:00",
+      "destinations": [
+        {
+          "name": "guyrofe.com",
+          "status": "failed",
+          "detail": "CampaignTargetError: RuntimeError: WordPress media lookup returned a non-JSON response (Content-Type: text/html)"
+        }
+      ],
+      "approval_id": "apr_c7395f4e7fbcbf5dde711c3bbaeb2c748e410c61aceaef6ea8ef123c3d28c2a0",
+      "search_target": {
+        "primary_query": "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
+        "secondary_queries": [
+          "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית",
+          "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית ד״ר גיא רופא",
+          "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational_question"
+      },
+      "canonical_url": null,
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-09-03-topic-90-run-33745856763-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר | ד״ר גיא רופא",
       "status": "completed",

@@ -597,6 +597,14 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7501277083265044482/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKHZyOi08tTZDw"
       ]
+    },
+    "apr_c7395f4e7fbcbf5dde711c3bbaeb2c748e410c61aceaef6ea8ef123c3d28c2a0:7b06937a98fd85d83e53373bde44349f21b304d214c4dca33c2e9a8687021265": {
+      "sent_at": "2026-09-06T12:36:39.403761+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_c7395f4e7fbcbf5dde711c3bbaeb2c748e410c61aceaef6ea8ef123c3d28c2a0",
+      "state": "failed",
+      "subject": "הפרסום נכשל: כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }
