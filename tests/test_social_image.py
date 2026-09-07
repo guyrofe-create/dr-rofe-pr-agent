@@ -438,7 +438,6 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(url, "https://guyrofe.com/image.png")
         get.assert_called_once_with(
             "https://guyrofe.com/wp-json/wp/v2/media",
-            auth=("user", "password"),
             params={"slug": "approved-social", "_fields": "id,source_url,slug"},
             headers={
                 "Accept": "application/json",
@@ -517,13 +516,13 @@ class SocialImageTests(unittest.TestCase):
                 title="כותרת",
             )
 
-        self.assertEqual(get.call_count, 3)
-        self.assertEqual(sleep.call_count, 2)
+        self.assertEqual(get.call_count, 5)
+        self.assertEqual(sleep.call_count, 4)
 
     @patch("scripts.social_image.time.sleep")
     @patch("scripts.social_image.requests.post")
     @patch("scripts.social_image.requests.get")
-    def test_wordpress_lookup_recovers_from_authenticated_waf_with_public_read(
+    def test_wordpress_lookup_recovers_from_transient_public_waf_response(
         self, get, post, sleep
     ):
         waf = Mock(status_code=200, headers={"Content-Type": "text/html"})
@@ -534,7 +533,7 @@ class SocialImageTests(unittest.TestCase):
         public.json.return_value = [
             {"id": 7, "source_url": "https://guyrofe.com/image.png"}
         ]
-        get.side_effect = [waf, public]
+        get.side_effect = [waf, waf, public]
 
         url = social_image.upload_to_wordpress(
             social_image.SocialImage(b"image"),
@@ -546,8 +545,38 @@ class SocialImageTests(unittest.TestCase):
         )
 
         self.assertEqual(url, "https://guyrofe.com/image.png")
-        self.assertIn("auth", get.call_args_list[0].kwargs)
-        self.assertNotIn("auth", get.call_args_list[1].kwargs)
+        self.assertTrue(all("auth" not in call.kwargs for call in get.call_args_list))
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [1, 2])
+        post.assert_not_called()
+
+    @patch("scripts.social_image.time.sleep")
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_lookup_adds_auth_only_when_public_read_requires_it(
+        self, get, post, sleep
+    ):
+        unauthorized = Mock(status_code=401)
+        authenticated = Mock(status_code=200)
+        authenticated.raise_for_status.return_value = None
+        authenticated.json.return_value = [
+            {"id": 7, "source_url": "https://guyrofe.com/image.png"}
+        ]
+        get.side_effect = [unauthorized, authenticated]
+
+        url = social_image.upload_to_wordpress(
+            social_image.SocialImage(b"image"),
+            base_url="https://guyrofe.com",
+            username="user",
+            app_password="password",
+            slug="approved-social",
+            title="כותרת",
+        )
+
+        self.assertEqual(url, "https://guyrofe.com/image.png")
+        self.assertNotIn("auth", get.call_args_list[0].kwargs)
+        self.assertEqual(
+            get.call_args_list[1].kwargs["auth"], ("user", "password")
+        )
         sleep.assert_called_once_with(1)
         post.assert_not_called()
 
