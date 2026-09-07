@@ -1,0 +1,380 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-07T11:44:17Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-07-topic-90-run-34117806998-attempt-1.md",
+  "source_draft_sha256": "e8b9061cbdcca63c6d63b1495c59b1457725184921db9764df6347ef39aa8ade",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/rj86iyb00fe",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.gov.il/BlobFolder/reports/health-professions-manpower/he/files_publications_units_info_manpower2023.pdf",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/publications/i/item/9789241511131",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/publications/b/57953",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-landscape.png",
+    "sha256": "4a7ef7bfc14292c0d42187e186e00b04ccd5d8712c354f90df04365cb4134592",
+    "alt_text": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Royal_Victoria_Hospital,_Barrie,_Ontario,_Canada_(55046296281).jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Royal_Victoria_Hospital%2C_Barrie%2C_Ontario%2C_Canada_%2855046296281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "antefixus21",
+    "license_name": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "attribution": "Royal Victoria Hospital, Barrie, Ontario, Canada (55046296281).jpg — antefixus21; CC0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-hero.png",
+        "sha256": "36afa6333232fd7a47af3ff6ee9654dd43a96232d330a65f95f48bb2d21bb363",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-landscape.png",
+        "sha256": "4a7ef7bfc14292c0d42187e186e00b04ccd5d8712c354f90df04365cb4134592",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-square.jpg",
+        "sha256": "8df8927cbdeecdbb7480280945148e10f5dd91fc262079d35bb00941f0687657",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-portrait.png",
+        "sha256": "d096738f7a43c44f58475590d55d87064d67694ec035994e881304af76301578",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא",
+        "cms_title": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם",
+        "markdown": "# מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** הכותרת מבוססת על דיווח שלפיו 1,369 בעלי רישיון לעסוק ברפואה עזבו את ישראל לתקופה ממושכת בשנים 2023–2025. זהו נתון משמעותי, אך הביטוי “ישראל איבדה בית חולים גדול שלם” הוא המחשה תקשורתית של סדר הגודל — לא מדידה ישירה של מספר המשרות הקליניות שנגרעו מהמערכת, ולא הוכחה שכל העוזבים היגרו לצמיתות.\n\nהדיון הציבורי התעורר בעקבות [כתבת ynet הנבדקת על היקף עזיבת הרופאים מישראל](https://www.ynet.co.il/health/article/rj86iyb00fe). הכתבה היא מושא הניתוח בלבד ואינה משמשת מקור רפואי. המסמך הלא־מוסדי שנכלל בגרסה קודמת של הטיוטה הוסר לחלוטין, והמאמר אינו מסתמך עליו או מייחס לו נתונים. מאחר שלא אותר במסגרת המקורות המותרים פרסום מלא של המחקר הראשוני בכתב עת מדעי באמצעות DOI או באתר מוסדי מאושר, נתוני ההגירה מוצגים להלן כטענות שפורסמו בכתבה — ולא כממצאים רפואיים שעברו אימות עצמאי במסגרת הטיוטה.\n\n## מה בדיוק נטען בכתבה?\n\nלפי הפרסום, 1,369 רופאים עזבו את ישראל בשנים 2023–2025: 419 בשנת 2023, 530 בשנת 2024 ו־420 בשנת 2025. המספר לשנת 2025 הוגדר אומדן ראשוני, משום שהגדרת עזיבה ממושכת מחייבת תקופת מעקב שעדיין לא הושלמה ביחס לכל מי שיצאו באותה שנה.\n\nעוד דווח כי בשנים 2013–2015 עזבו 705 רופאים. השוואת שתי התקופות מצביעה, לפי הכתבה, על עלייה של כ־94% במספר העוזבים. מדובר בהשוואה בין שתי תקופות בנות שלוש שנים, אך היא אינה מלמדת לבדה אם מדובר בשינוי זמני, בנקודת שיא חריגה או במגמה שתימשך לאורך זמן.\n\nהגדרת “עוזב” בפרסום מתייחסת לבעל רישיון רפואי ששהה מחוץ לישראל שלושה חודשים רצופים לפחות, ובמהלך השנה הראשונה לאחר היציאה שהה בחו״ל יותר מ־270 ימים. זוהי הגדרה סטטיסטית של שהייה ממושכת, לא קביעה בדבר ניתוק תושבות, ויתור על רישיון או הגירה קבועה.\n\nהכותרת משווה את מספר העוזבים לסגל הרופאים של בית חולים גדול. זו דרך ברורה להמחיש מספר שקשה לתפוס, אך אין מדובר בשקילות תפעולית. בית חולים אינו אוסף מקרי של בעלי רישיון רפואי, אלא מערכת מאורגנת הכוללת תמהיל מסוים של מומחים, מתמחים, מנהלי יחידות, תורנים וצוותים ממקצועות בריאות נוספים. לכן אי אפשר להסיק כי מערכת הבריאות איבדה בפועל תפוקה הזהה לזו של מוסד רפואי שלם.\n\n## עזיבה, הגירה ואובדן כוח אדם אינם אותו דבר\n\nכדי להעריך את משמעות הנתון צריך להבחין בין ארבעה מושגים: יציאה מהארץ, שהייה ממושכת בחו״ל, הגירה לצמיתות ואובדן משרה קלינית. ארבעת המצבים עשויים לחפוף, אך אינם זהים.\n\nרופאים יוצאים לחו״ל גם לצורך התמחות־על, השתלמות מקצועית, מחקר או עבודה זמנית במרכז רפואי אחר. בחלק מהמקרים היציאה מתוכננת מראש לתקופה מוגבלת, והרופא חוזר לישראל עם ידע וניסיון נוספים. במקרים אחרים, יציאה זמנית עשויה להפוך להגירה קבועה בעקבות השתלבות מקצועית, רישוי מקומי או מעבר של המשפחה.\n\nגם רישיון לעסוק ברפואה אינו מעיד בהכרח על עבודה קלינית פעילה. בעלי רישיון עשויים לעבוד במחקר, בתעשיית התרופות והמכשור הרפואי, בניהול, בהוראה או בתחום שאינו רפואי. לכן מספר בעלי הרישיון שיצאו אינו שווה בהכרח למספר הרופאים שעבדו ערב יציאתם בבית חולים או בקופת חולים.\n\nיש להבחין גם בין עזיבה ברוטו לבין מאזן נטו. מספר העוזבים ברוטו אינו מביא בחשבון רופאים שחזרו לישראל, עלו אליה, קיבלו רישיון חדש או הצטרפו לשוק העבודה לאחר סיום התמחות. בכתבה נטען כי לאחר קיזוז חוזרים נגרעו 509 רופאים נטו בשנים 2023–2024. גם נתון זה דורש פרסום מלא של המתודולוגיה והנתונים הראשוניים כדי שיהיה אפשר לבחון אותו באופן עצמאי.\n\nמדד שימושי עוד יותר הוא מספר המשרות המלאות שאבדו בפועל. לדוגמה, עזיבה של רופא שעבד יום אחד בשבוע אינה שקולה לעזיבה של מומחה במשרה מלאה המבצע תורנויות ומדריך מתמחים. הערכה מדויקת מחייבת הצלבה עם נתוני העסקה, היקף משרה, תחום התמחות, מקום עבודה ופעילות קלינית בפועל.\n\n## מדוע גיל, התמחות ופיזור גאוגרפי משנים את התמונה?\n\nלפי הכתבה, כ־20% מהעוזבים בשנים 2023–2025 היו בני 45 ומעלה, לעומת 14% בתקופה המקבילה עשור קודם לכן. זהו נתון בעל חשיבות אפשרית, משום שבקבוצת גיל זו עשויים להימצא מומחים מנוסים, מדריכי מתמחים ובעלי תפקידים ארגוניים.\n\nעם זאת, גיל אינו מדד ישיר לבכירות. אי אפשר לקבוע על סמך גיל בלבד כי אדם מסוים ניהל מחלקה, עבד במשרה מלאה או עסק בתחום שבו קיים מחסור. זוהי נקודה מרכזית בהפרדה בין עובדה לפרשנות: העובדה המדווחת היא גילם של העוזבים; המשמעות המקצועית תלויה במידע תעסוקתי שאינו מוצג במלואו.\n\nחשוב באותה מידה לבחון את תחומי ההתמחות. לפי הכתבה, העזיבה כללה רופאים ברפואה פנימית, כירורגיה, רפואת ילדים, רפואת משפחה, גינקולוגיה ומיילדות, פסיכיאטריה, הרדמה, רדיולוגיה, פתולוגיה, טיפול נמרץ ורפואה דחופה. אין לפרש רשימה זו כהוכחה לכך שנגרם מחסור שווה בכל התחומים. לעזיבה של מספר קטן בתחום מצומצם, בפריפריה או במקצוע שבו אין עתודה מספקת, עלולה להיות השפעה גדולה יותר מאשר לעזיבה מספרית גבוהה בתחום רחב.\n\nהתמונה הלאומית הרחבה מתוארת ב[דוח הרשמי של משרד הבריאות על כוח האדם במקצועות הבריאות לשנת 2023](https://www.gov.il/BlobFolder/reports/health-professions-manpower/he/files_publications_units_info_manpower2023.pdf). לפי הדוח, בסוף 2023 היו בישראל 46,981 בעלי הרשאה לעסוק ברפואה, מהם 35,144 עד גיל 67. עוד עולה כי 45% מכלל הרופאים היו בני 55 ומעלה ו־25% היו בני 67 ומעלה. נתונים אלה אינם מוכיחים שהעזיבה המדווחת כבר יצרה מחסור ארצי, אך הם מדגישים מדוע יש לנתח הגירה לצד פרישה צפויה והתחדשות כוח האדם.\n\nהדוח מציין גם כי בשנת 2023 נוספו 1,171 מומחים חדשים וכי 2,035 רופאים התחילו התמחות. הנתונים האלה מזכירים שכוח האדם הרפואי אינו מאגר קבוע: במקביל לעוזבים יש מצטרפים, מתמחים חדשים ומומחים שמסיימים הכשרה. לכן התמונה המלאה חייבת לכלול הן את זרם היציאה והן את קצב ההכשרה, הרישוי, החזרה והפרישה.\n\n## מה הנתונים אינם מוכיחים?\n\nראשית, הנתונים שפורסמו אינם מוכיחים מה גרם לעלייה בעזיבה. העובדה שהשינוי החל בשנת 2023 אינה מספיקה כדי לייחס אותו לאירוע פוליטי, ביטחוני, כלכלי או מקצועי מסוים. סמיכות זמנים עשויה לעורר השערה, אך היא אינה מוכיחה סיבתיות.\n\nבירור סיבות ההגירה מחייב מחקר ייעודי: שאלונים או ראיונות מובנים עם העוזבים, השוואה לרופאים שנשארו, בחינת מגמות קודמות והתייחסות למשתנים כגון גיל, מצב משפחתי, תחום התמחות, יעד ההגירה, שכר, עומס, אפשרויות קידום ותנאי מחקר. ללא מידע כזה נכון לדבר על קשר אפשרי — לא על גורם מוכח.\n\nשנית, הנתונים אינם מוכיחים שכל העוזבים לא יחזרו. כדי להעריך כמה מהיציאות זמניות וכמה קבועות נדרש מעקב רב־שנתי. גם העובדה שאדם שהה מחוץ לישראל יותר מ־270 ימים בשנה אינה מלמדת לבדה מה הייתה כוונתו או היכן יעבוד בעתיד.\n\nשלישית, אין להסיק כי הציבור כבר חווה הארכה מסוימת בזמני ההמתנה בגלל 1,369 העוזבים. זמני המתנה מושפעים ממספר רב של גורמים: ביקוש לשירות, תקנים, זמינות חדרי ניתוח, כוח אדם סיעודי, תשתיות, שעות פעילות ומדיניות הקופות ובתי החולים. ייתכן שעזיבת רופאים תורמת לעומס, אך קביעת עוצמת ההשפעה מחייבת נתוני שירות ישירים.\n\nרביעית, שנת 2025 מבוססת על אומדן ראשוני. אומדן הוא כלי סטטיסטי לגיטימי, אולם יש לסמן אותו בבירור ולהימנע מהצגתו כמספר סופי. גם אם עדכון עתידי לא ישנה את כיוון המגמה, הוא עשוי לשנות את היקפה המדויק.\n\nלבסוף, מאחר שהמחקר הראשוני המלא שעליו נסמכת הכתבה לא אותר בפרסום מוסדי מאושר או באמצעות DOI ישיר, אי אפשר במסגרת מאמר זה לבדוק את כל הגדרות המשתנים, שיטות הטיפול בחסרים, החישובים והניתוחים. זו מגבלת ראיות מהותית שיש להציגה בגלוי.\n\n## מדוע המגמה בכל זאת מחייבת התייחסות רצינית?\n\nהסתייגות מפרשנות סנסציונית אינה סיבה להתעלם מהנתון. הכשרת רופא אורכת שנים, והכשרת מומחה מוסיפה שנות התמחות ולעיתים גם הכשרת־על. כאשר עוזב רופא פעיל ומנוסה, החלפתו אינה פעולה מיידית — גם אם מספר בעלי הרישיון הכולל ממשיך לעלות.\n\nלפי [האסטרטגיה העולמית של ארגון הבריאות העולמי לכוח האדם בבריאות עד 2030](https://www.who.int/publications/i/item/9789241511131), תכנון כוח אדם צריך להביא בחשבון לא רק את מספר אנשי המקצוע, אלא גם את פיזורם, תמהיל המיומנויות, תנאי עבודתם, הכשרתם ויכולת המערכת לשמר אותם. מבחינת המטופל, המספר הארצי פחות חשוב מהשאלה אם הרופא המתאים זמין בתחום, באזור ובמועד שבהם הוא נדרש.\n\nגם [הנחיית ארגון הבריאות העולמי לפיתוח, גיוס ושימור כוח אדם באזורים כפריים ומרוחקים](https://www.who.int/publications/b/57953) מדגישה שאין פתרון יחיד לבעיות כוח אדם. נדרשת חבילת צעדים מותאמת להקשר, ובה הכשרה, תמיכה מקצועית ואישית, תמריצים, תנאי עבודה ומעקב אחר התוצאות. אף שההנחיה מתמקדת באזורים כפריים ומרוחקים, העיקרון רלוונטי גם לדיון הישראלי: מדיניות שימור צריכה להתבסס על סוג המחסור ומיקומו, ולא רק על מספר ארצי כולל.\n\nהמשמעות המעשית היא צורך במערכת מעקב רציפה שתבדיל בין בעל רישיון, רופא מועסק ומשרה קלינית מלאה. רצוי לפרסם נתונים על יציאה וחזרה לפי גיל, התמחות, מקום עבודה, מחוז, היקף משרה ומשך השהייה בחו״ל. נתונים כאלה יאפשרו לזהות אם מדובר בפגיעה זמנית, במחסור מקומי או בשינוי מבני.\n\nמדיניות מאוזנת גם אינה צריכה להתייחס לכל יציאה לחו״ל כתופעה שלילית. השתלמות בינלאומית יכולה לתרום לרפואה בישראל אם קיימים מסלולים המעודדים חזרה והשתלבות. המטרה אינה למנוע ניידות מקצועית, אלא ליצור תנאים שבהם רופאים יכולים להתפתח ובוחרים להמשיך או לשוב לעבוד במערכת הישראלית.\n\n## סיכום\n\nהכותרת “ישראל איבדה בית חולים גדול שלם” ממחישה באופן דרמטי את הדיווח על 1,369 בעלי רישיון רפואי שעזבו את ישראל לתקופה ממושכת בשנים 2023–2025. היא אינה מוכיחה שמוסד רפואי שלם חדל לפעול, שכל העוזבים היו פעילים קלינית או שהמערכת איבדה 1,369 משרות מלאות לצמיתות.\n\nהעובדה המדווחת היא עלייה ניכרת במספר העוזבים. מה שעדיין אינו ידוע במלואו הוא כמה מהם עבדו ברפואה בישראל, כמה ישובו, מה היה היקף עבודתם ומה גרם להחלטתם. הניתוח הסביר הוא שהמגמה עלולה להכביד על מערכת המתמודדת גם עם פרישה, פערים גאוגרפיים ותהליך ממושך של הכשרת מומחים.\n\nהתגובה הנכונה אינה ביטול הכותרת וגם לא אימוצה כפשוטה. נדרשים פרסום שקוף של המחקר הראשוני, חישוב מאזן נטו, נתוני משרות בפועל ומעקב רב־שנתי. רק כך אפשר יהיה להפוך נתון מדאיג לתכנון כוח אדם אחראי ומבוסס ראיות.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים. ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים. תוכן זה מספק מידע כללי בלבד, אינו ייעוץ רפואי ומחייב ביקורת אנושית מקצועית ובדיקת רופא לפני פרסום.\n\n## מקורות\n\n1. [משרד הבריאות: כוח אדם במקצועות הבריאות 2023](https://www.gov.il/BlobFolder/reports/health-professions-manpower/he/files_publications_units_info_manpower2023.pdf)\n\n2. [ארגון הבריאות העולמי: Global Strategy on Human Resources for Health — Workforce 2030](https://www.who.int/publications/i/item/9789241511131)\n\n3. [ארגון הבריאות העולמי: הנחיה לפיתוח, משיכה, גיוס ושימור כוח אדם רפואי באזורים כפריים ומרוחקים](https://www.who.int/publications/b/57953)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)\n- [כתבת ynet הנבדקת על היקף עזיבת הרופאים מישראל](https://www.ynet.co.il/health/article/rj86iyb00fe)",
+        "canonical_url": "https://www.drguyrofe.co.il/מה-עומד-מאחורי-הכותרת-נחשף-היקף/",
+        "meta_description": "ד״ר גיא רופא: הכותרת מבוססת על דיווח שלפיו 1,369 בעלי רישיון לעסוק ברפואה עזבו את ישראל לתקופה ממושכת בשנים 2023–2025.",
+        "search_target": {
+          "primary_query": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול",
+          "secondary_queries": [
+            "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם",
+            "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול ד״ר גיא רופא",
+            "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר",
+            "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a9%d7%a0%d7%99%d7%9d-%d7%90%d7%9e%d7%a8%d7%95-%d7%9c%d7%a0%d7%95/"
+          }
+        ],
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "c564e7703f034803366261c1710e9d2dff4aba3873b69b0b992090bf998c034b",
+        "slug": "מה-עומד-מאחורי-הכותרת-נחשף-היקף",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-hero.png",
+          "sha256": "36afa6333232fd7a47af3ff6ee9654dd43a96232d330a65f95f48bb2d21bb363",
+          "alt_text": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Royal_Victoria_Hospital,_Barrie,_Ontario,_Canada_(55046296281).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Royal_Victoria_Hospital%2C_Barrie%2C_Ontario%2C_Canada_%2855046296281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "antefixus21",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Royal Victoria Hospital, Barrie, Ontario, Canada (55046296281).jpg — antefixus21; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-hero.png",
+              "sha256": "36afa6333232fd7a47af3ff6ee9654dd43a96232d330a65f95f48bb2d21bb363",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-landscape.png",
+              "sha256": "4a7ef7bfc14292c0d42187e186e00b04ccd5d8712c354f90df04365cb4134592",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-square.jpg",
+              "sha256": "8df8927cbdeecdbb7480280945148e10f5dd91fc262079d35bb00941f0687657",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-portrait.png",
+              "sha256": "d096738f7a43c44f58475590d55d87064d67694ec035994e881304af76301578",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: הכותרת מבוססת על דיווח שלפיו 1,369 בעלי רישיון לעסוק ברפואה עזבו את ישראל לתקופה ממושכת בשנים 2023–2025.\n\nזהו נתון משמעותי, אך הביטוי “ישראל איבדה בית חולים גדול שלם” הוא המחשה תקשורתית של סדר הגודל — לא מדידה ישירה של מספר המשרות הקליניות שנגרעו מהמערכת, ולא הוכחה שכל העוזבים היגרו לצמיתות.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Royal Victoria Hospital, Barrie, Ontario, Canada (55046296281).jpg — antefixus21; CC0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/מה-עומד-מאחורי-הכותרת-נחשף-היקף/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-landscape.png",
+          "sha256": "4a7ef7bfc14292c0d42187e186e00b04ccd5d8712c354f90df04365cb4134592",
+          "alt_text": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Royal_Victoria_Hospital,_Barrie,_Ontario,_Canada_(55046296281).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Royal_Victoria_Hospital%2C_Barrie%2C_Ontario%2C_Canada_%2855046296281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "antefixus21",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Royal Victoria Hospital, Barrie, Ontario, Canada (55046296281).jpg — antefixus21; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-hero.png",
+              "sha256": "36afa6333232fd7a47af3ff6ee9654dd43a96232d330a65f95f48bb2d21bb363",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-landscape.png",
+              "sha256": "4a7ef7bfc14292c0d42187e186e00b04ccd5d8712c354f90df04365cb4134592",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-square.jpg",
+              "sha256": "8df8927cbdeecdbb7480280945148e10f5dd91fc262079d35bb00941f0687657",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-portrait.png",
+              "sha256": "d096738f7a43c44f58475590d55d87064d67694ec035994e881304af76301578",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: הכותרת מבוססת על דיווח שלפיו 1,369 בעלי רישיון לעסוק ברפואה עזבו את ישראל לתקופה ממושכת בשנים 2023–2025.\n\n• זהו נתון משמעותי, אך הביטוי “ישראל איבדה בית חולים גדול שלם” הוא המחשה תקשורתית של סדר הגודל — לא מדידה ישירה של מספר המשרות הקליניות שנגרעו מהמערכת, ולא הוכחה שכל העוזבים היגרו לצמיתות.\n• הדיון הציבורי התעורר בעקבות [כתבת ynet הנבדקת על היקף עזיבת הרופאים מישראל]( הכתבה היא מושא הניתוח בלבד ואינה משמשת מקור רפואי.\n• המסמך הלא־מוסדי שנכלל בגרסה קודמת של הטיוטה הוסר לחלוטין, והמאמר אינו מסתמך עליו או מייחס לו נתונים.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Royal Victoria Hospital, Barrie, Ontario, Canada (55046296281).jpg — antefixus21; CC0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/מה-עומד-מאחורי-הכותרת-נחשף-היקף/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-landscape.png",
+          "sha256": "4a7ef7bfc14292c0d42187e186e00b04ccd5d8712c354f90df04365cb4134592",
+          "alt_text": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Royal_Victoria_Hospital,_Barrie,_Ontario,_Canada_(55046296281).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Royal_Victoria_Hospital%2C_Barrie%2C_Ontario%2C_Canada_%2855046296281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "antefixus21",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Royal Victoria Hospital, Barrie, Ontario, Canada (55046296281).jpg — antefixus21; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-hero.png",
+              "sha256": "36afa6333232fd7a47af3ff6ee9654dd43a96232d330a65f95f48bb2d21bb363",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-landscape.png",
+              "sha256": "4a7ef7bfc14292c0d42187e186e00b04ccd5d8712c354f90df04365cb4134592",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-square.jpg",
+              "sha256": "8df8927cbdeecdbb7480280945148e10f5dd91fc262079d35bb00941f0687657",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-portrait.png",
+              "sha256": "d096738f7a43c44f58475590d55d87064d67694ec035994e881304af76301578",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא",
+        "html": "<h2>מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה: הכותרת מבוססת על דיווח שלפיו 1,369 בעלי רישיון לעסוק ברפואה עזבו את ישראל לתקופה ממושכת בשנים 2023–2025.</p><p>זהו נתון משמעותי, אך הביטוי “ישראל איבדה בית חולים גדול שלם” הוא המחשה תקשורתית של סדר הגודל — לא מדידה ישירה של מספר המשרות הקליניות שנגרעו מהמערכת, ולא הוכחה שכל העוזבים היגרו לצמיתות.</p>\n<p><small>קרדיט תמונה: Royal Victoria Hospital, Barrie, Ontario, Canada (55046296281).jpg — antefixus21; CC0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/מה-עומד-מאחורי-הכותרת-נחשף-היקף/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-hero.png",
+          "sha256": "36afa6333232fd7a47af3ff6ee9654dd43a96232d330a65f95f48bb2d21bb363",
+          "alt_text": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מסדרון רחב וכמעט ריק בבית חולים, ובו שלטי הכוונה למרפאות טיפול ולמחלקת לב־ריאה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Royal_Victoria_Hospital,_Barrie,_Ontario,_Canada_(55046296281).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Royal_Victoria_Hospital%2C_Barrie%2C_Ontario%2C_Canada_%2855046296281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "antefixus21",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Royal Victoria Hospital, Barrie, Ontario, Canada (55046296281).jpg — antefixus21; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-hero.png",
+              "sha256": "36afa6333232fd7a47af3ff6ee9654dd43a96232d330a65f95f48bb2d21bb363",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-landscape.png",
+              "sha256": "4a7ef7bfc14292c0d42187e186e00b04ccd5d8712c354f90df04365cb4134592",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-square.jpg",
+              "sha256": "8df8927cbdeecdbb7480280945148e10f5dd91fc262079d35bb00941f0687657",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-07-topic-90-run-34117806998-attempt-1-portrait.png",
+              "sha256": "d096738f7a43c44f58475590d55d87064d67694ec035994e881304af76301578",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "c564e7703f034803366261c1710e9d2dff4aba3873b69b0b992090bf998c034b",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_47072281cebe4941dc54820ea3af4dce69bb7f4c86b33e1da9c269f85d8d8ca4"
+}
