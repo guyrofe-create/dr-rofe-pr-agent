@@ -605,6 +605,19 @@
       "state": "failed",
       "subject": "הפרסום נכשל: כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
       "urls": []
+    },
+    "apr_47072281cebe4941dc54820ea3af4dce69bb7f4c86b33e1da9c269f85d8d8ca4:65d729063bb8dfbd069e74e85cfa835b8067bedef5f1ddacbc75a744bdc00c6b": {
+      "sent_at": "2026-09-07T17:53:48.454117+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_47072281cebe4941dc54820ea3af4dce69bb7f4c86b33e1da9c269f85d8d8ca4",
+      "state": "success",
+      "subject": "אישור פרסום: מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a0%d7%97%d7%a9%d7%a3-%d7%94%d7%99%d7%a7%d7%a3/",
+        "https://www.facebook.com/122203088330942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7502786205965594624/",
+        "https://guyrofe.blogspot.com/2026/09/blog-post_07.html"
+      ]
     }
   }
 }

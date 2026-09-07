@@ -1,6 +1,123 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-09-07-topic-90-run-34117806998-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-09-07T17:53:47.733891+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a0%d7%97%d7%a9%d7%a3-%d7%94%d7%99%d7%a7%d7%a3/",
+          "detail": "idempotency_key=pub_194151cf3fb008768ac6820f95491c42c2d63d49fcbc97129a5920df2951c7e4"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a0%d7%97%d7%a9%d7%a3-%d7%94%d7%99%d7%a7%d7%a3/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-07-topic-90-run-34117806998-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122203088330942441",
+          "detail": "idempotency_key=pub_6db8e496b3c52cddb1082d63cef50beb6a9474869c75f6c5e2fa9ce83fd83c28"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7502786205965594624/",
+          "detail": "idempotency_key=pub_ad7c989d9fdd17144ec4026f89bb17ee9b098a1dba1ab4a995c9ce21d0e34cda"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "target_id": "blogger_blog",
+          "url": "https://guyrofe.blogspot.com/2026/09/blog-post_07.html",
+          "detail": "idempotency_key=pub_2f0c7cb29f7ec899ff3e542c21af54223bebeac86307d627a9b52f52c495b10f"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_47072281cebe4941dc54820ea3af4dce69bb7f4c86b33e1da9c269f85d8d8ca4",
+      "search_target": {
+        "primary_query": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול",
+        "secondary_queries": [
+          "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם",
+          "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a0%d7%97%d7%a9%d7%a3-%d7%94%d7%99%d7%a7%d7%a3/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-09-06-topic-00-run-34027109221-attempt-1.md",
       "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
       "status": "failed",
