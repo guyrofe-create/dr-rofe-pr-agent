@@ -67,6 +67,7 @@ MAX_SEARCH_QUERIES = 8
 MAX_REVIEWED_CANDIDATES = 24
 MAX_REVIEWED_PER_QUERY = 3
 TRANSIENT_WORDPRESS_HTTP = {408, 429, 500, 502, 503, 504}
+WORDPRESS_LOOKUP_ATTEMPTS = 5
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -957,8 +958,12 @@ def upload_to_wordpress(
         "Cache-Control": "no-cache",
         "User-Agent": f"ReputationAgentPublisher/1.0 (+{_CLIENT_SITE})",
     }
+    # Published attachment metadata is public on WordPress.  Starting this
+    # idempotency read with Basic Auth can trigger hosting WAF challenges that
+    # persist for the following requests from the same runner.  Read publicly
+    # first and attach credentials only when the endpoint explicitly requires
+    # them.  The upload itself remains authenticated and is never retried.
     lookup_args = {
-        "auth": auth,
         "params": {"slug": slug, "_fields": "id,source_url,slug"},
         "headers": headers,
         "timeout": 25,
@@ -966,10 +971,21 @@ def upload_to_wordpress(
     lookup = None
     existing = None
     last_decode_error = None
-    for attempt in range(3):
+    for attempt in range(WORDPRESS_LOOKUP_ATTEMPTS):
         try:
             lookup = requests.get(endpoint, **lookup_args)
-            if lookup.status_code in TRANSIENT_WORDPRESS_HTTP and attempt < 2:
+            if (
+                lookup.status_code in {401, 403}
+                and "auth" not in lookup_args
+                and attempt < WORDPRESS_LOOKUP_ATTEMPTS - 1
+            ):
+                lookup_args = {**lookup_args, "auth": auth}
+                time.sleep(2 ** attempt)
+                continue
+            if (
+                lookup.status_code in TRANSIENT_WORDPRESS_HTTP
+                and attempt < WORDPRESS_LOOKUP_ATTEMPTS - 1
+            ):
                 time.sleep(2 ** attempt)
                 continue
             lookup.raise_for_status()
@@ -978,12 +994,11 @@ def upload_to_wordpress(
                 break
             except ValueError as exc:
                 last_decode_error = exc
-                if attempt < 2:
-                    # Some WordPress WAF rules return an HTML challenge only
-                    # when Basic Auth is attached to a safe public GET. Media
-                    # metadata for published attachments is public, so repeat
-                    # the read without credentials. A second non-JSON response
-                    # remains inconclusive and still fails closed.
+                if attempt < WORDPRESS_LOOKUP_ATTEMPTS - 1:
+                    # If an authenticated fallback receives an HTML challenge,
+                    # return to the public read.  Otherwise keep retrying the
+                    # public endpoint long enough for a transient WAF response
+                    # to clear.  An inconclusive lookup still fails closed.
                     lookup_args = {
                         key: value
                         for key, value in lookup_args.items()
@@ -992,7 +1007,7 @@ def upload_to_wordpress(
                     time.sleep(2 ** attempt)
                     continue
         except (requests.ConnectionError, requests.Timeout):
-            if attempt == 2:
+            if attempt == WORDPRESS_LOOKUP_ATTEMPTS - 1:
                 raise
             time.sleep(2 ** attempt)
     if existing is None:
