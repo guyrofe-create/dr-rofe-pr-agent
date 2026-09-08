@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "run_at": "2026-09-07T09:55:05.247173+00:00",
+  "run_at": "2026-09-08T09:19:38.044446+00:00",
   "destination_site_key": "DRGUYROFE_CO_IL",
   "destination_url": "https://www.drguyrofe.co.il",
   "public_execution_allowed": false,
@@ -21,55 +21,9 @@
       "candidate_count": 20
     }
   ],
-  "ranked_candidates": [
-    {
-      "title": "נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול שלם",
-      "url": "https://www.ynet.co.il/health/article/rj86iyb00fe",
-      "summary": "מספר הרופאים שהיגרו מישראל זינק ב-94% בתוך עשור לממדים חסרי תקדים: 1,369 רופאים עזבו בין 2023 ל-2025. כך עולה ממחקר חדש של אוניברסיטת תל אביב, שמבוסס על נתוני הלמ\"ס. הפגיעה חוצה את כל תחומי הרפואה, ואחד מכל חמישה מהעוזבים הוא רופא ותיק בן 45 ומעלה. פרופ' איתי אטר, ממובילי המחקר: \"ישראל מאבדת את האנשים הכי טובים שלה. גובר החשש לנזק בלתי הפיך\"",
-      "feed_position": 9,
-      "published_at": "2026-09-06T09:50:00+00:00",
-      "source_id": "ynet_health",
-      "source_name": "ynet בריאות",
-      "source_kind": "major_news",
-      "attention_score": 4,
-      "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
-      "public_health_relevance": 2,
-      "client_topic_relevance": 1,
-      "analysis_gap": 1,
-      "sensationalism_risk": 0,
-      "source_diversity_penalty": 0,
-      "prohibited": false,
-      "age_hours": 24.1,
-      "opportunity_score": 29,
-      "eligible": true,
-      "requires_primary_source_research": true,
-      "requires_medical_review": true
-    }
-  ],
-  "selected": {
-    "title": "נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול שלם",
-    "url": "https://www.ynet.co.il/health/article/rj86iyb00fe",
-    "summary": "מספר הרופאים שהיגרו מישראל זינק ב-94% בתוך עשור לממדים חסרי תקדים: 1,369 רופאים עזבו בין 2023 ל-2025. כך עולה ממחקר חדש של אוניברסיטת תל אביב, שמבוסס על נתוני הלמ\"ס. הפגיעה חוצה את כל תחומי הרפואה, ואחד מכל חמישה מהעוזבים הוא רופא ותיק בן 45 ומעלה. פרופ' איתי אטר, ממובילי המחקר: \"ישראל מאבדת את האנשים הכי טובים שלה. גובר החשש לנזק בלתי הפיך\"",
-    "feed_position": 9,
-    "published_at": "2026-09-06T09:50:00+00:00",
-    "source_id": "ynet_health",
-    "source_name": "ynet בריאות",
-    "source_kind": "major_news",
-    "attention_score": 4,
-    "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
-    "public_health_relevance": 2,
-    "client_topic_relevance": 1,
-    "analysis_gap": 1,
-    "sensationalism_risk": 0,
-    "source_diversity_penalty": 0,
-    "prohibited": false,
-    "age_hours": 24.1,
-    "opportunity_score": 29,
-    "eligible": true,
-    "requires_primary_source_research": true,
-    "requires_medical_review": true
-  },
-  "brief_path": "opportunity_drafts/health-news-8d06d4e46ed014ab.json",
+  "ranked_candidates": [],
+  "selected": null,
+  "brief_path": null,
   "selection_history": [
     {
       "selection_id": "9caa78a2bc100abc",
