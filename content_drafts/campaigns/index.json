@@ -1,6 +1,35 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-09-08-topic-05-run-34216586885-attempt-1.md",
+      "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+      "status": "failed",
+      "published_at": "2026-09-08T15:17:06.957790+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.com",
+          "status": "failed",
+          "detail": "CampaignTargetError: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+        }
+      ],
+      "approval_id": "apr_a73be17c50af3df42b14a2d744f1dcabc590305e9dbedf2e737c81046d358bf9",
+      "search_target": {
+        "primary_query": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
+        "secondary_queries": [
+          "כאבי מחזור קשים – כמה כאב זה נורמלי?",
+          "כאבי מחזור קשים - כמה כאב זה נורמלי? ד״ר גיא רופא",
+          "כאבי מחזור קשים - כמה כאב זה נורמלי? גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational_question"
+      },
+      "canonical_url": null,
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-09-07-topic-90-run-34117806998-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא",
       "status": "completed",
