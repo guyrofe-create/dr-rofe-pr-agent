@@ -448,6 +448,113 @@ class SocialImageTests(unittest.TestCase):
         )
         post.assert_not_called()
 
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_upload_uses_multipart_and_returns_created_media(
+        self, get, post
+    ):
+        lookup = Mock(status_code=200)
+        lookup.raise_for_status.return_value = None
+        lookup.json.return_value = []
+        get.return_value = lookup
+        created = Mock(status_code=201)
+        created.raise_for_status.return_value = None
+        created.json.return_value = {
+            "id": 8,
+            "source_url": "https://guyrofe.com/approved-social.png",
+        }
+        metadata = Mock(status_code=200)
+        metadata.raise_for_status.return_value = None
+        post.side_effect = [created, metadata]
+
+        url = social_image.upload_to_wordpress(
+            social_image.SocialImage(
+                b"approved-image", media_type="image/png", extension="png"
+            ),
+            base_url="https://guyrofe.com",
+            username="user",
+            app_password="password",
+            slug="approved-social",
+            title="כותרת",
+        )
+
+        self.assertEqual(url, "https://guyrofe.com/approved-social.png")
+        upload = post.call_args_list[0]
+        self.assertNotIn("data", upload.kwargs)
+        self.assertEqual(
+            upload.kwargs["files"]["file"],
+            ("approved-social.png", b"approved-image", "image/png"),
+        )
+        self.assertNotIn("Content-Type", upload.kwargs["headers"])
+
+    @patch("scripts.social_image.time.sleep")
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_upload_reconciles_non_json_without_repeating_post(
+        self, get, post, sleep
+    ):
+        empty = Mock(status_code=200)
+        empty.raise_for_status.return_value = None
+        empty.json.return_value = []
+        found = Mock(status_code=200)
+        found.raise_for_status.return_value = None
+        found.json.return_value = [
+            {"id": 8, "source_url": "https://guyrofe.com/approved-social.png"}
+        ]
+        get.side_effect = [empty, empty, found]
+        waf = Mock(status_code=200, headers={"Content-Type": "text/html"})
+        waf.raise_for_status.return_value = None
+        waf.json.side_effect = ValueError("not JSON")
+        metadata = Mock(status_code=200)
+        metadata.raise_for_status.return_value = None
+        post.side_effect = [waf, metadata]
+
+        url = social_image.upload_to_wordpress(
+            social_image.SocialImage(b"approved-image", media_type="image/png"),
+            base_url="https://guyrofe.com",
+            username="user",
+            app_password="password",
+            slug="approved-social",
+            title="כותרת",
+        )
+
+        self.assertEqual(url, "https://guyrofe.com/approved-social.png")
+        self.assertEqual(post.call_count, 2)
+        upload_calls = [call for call in post.call_args_list if "files" in call.kwargs]
+        self.assertEqual(len(upload_calls), 1)
+        sleep.assert_called_once_with(1)
+
+    @patch("scripts.social_image.time.sleep")
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_upload_fails_closed_after_non_json_without_duplicate_write(
+        self, get, post, sleep
+    ):
+        empty = Mock(status_code=200)
+        empty.raise_for_status.return_value = None
+        empty.json.return_value = []
+        get.return_value = empty
+        waf = Mock(status_code=200, headers={"Content-Type": "text/html"})
+        waf.raise_for_status.return_value = None
+        waf.json.side_effect = ValueError("not JSON")
+        post.return_value = waf
+
+        with self.assertRaisesRegex(
+            RuntimeError, "exact-slug reconciliation found no media.*not retried"
+        ):
+            social_image.upload_to_wordpress(
+                social_image.SocialImage(b"approved-image", media_type="image/png"),
+                base_url="https://guyrofe.com",
+                username="user",
+                app_password="password",
+                slug="approved-social",
+                title="כותרת",
+            )
+
+        post.assert_called_once()
+        self.assertEqual(get.call_count, 6)
+        self.assertEqual(sleep.call_count, 4)
+
     @patch("scripts.social_image.requests.get")
     def test_wordpress_lookup_object_returns_actionable_error(self, get):
         response = Mock()
