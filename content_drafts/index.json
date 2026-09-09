@@ -1,6 +1,24 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md",
+      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
+      "excerpt": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) לפרוסקופיה גינקולוגית היא הליך זעיר־פולשני המאפשר לצוות הרפואי לבחון את איברי האגן ולעיתים גם לבצע טיפול ניתוחי, באמצעות מצלמה ומכשירי",
+      "generated_at": "2026-09-09T10:49:02.718421+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-09-06",
+      "cadence_local_date": "2026-09-09",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-09-08-topic-05-run-34216586885-attempt-1.md",
       "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
       "topic": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
@@ -491,23 +509,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-3f33a77fbc265435.json",
       "analyzed_news_url": "https://healthy.walla.co.il/item/3859636"
-    },
-    {
-      "path": "content_drafts/2026-08-11-topic-90-run-31467572739-attempt-1.md",
-      "title": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: מה קורה למי שמתעורר עם שבץ מוחי? מחקר חדש משנה את התמונה",
-      "excerpt": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com/%D7%90%D7%95%D7%93%D7%95%D7%AA/) התשוב",
-      "generated_at": "2026-08-11T07:05:59.974072+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "pinterest"
-      ],
-      "cadence_week": "week-of-2026-08-09",
-      "cadence_local_date": "2026-08-11",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-f764bc355a2471b4.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/s1nslbouzg"
     }
   ]
 }
