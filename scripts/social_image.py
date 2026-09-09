@@ -68,6 +68,7 @@ MAX_REVIEWED_CANDIDATES = 24
 MAX_REVIEWED_PER_QUERY = 3
 TRANSIENT_WORDPRESS_HTTP = {408, 429, 500, 502, 503, 504}
 WORDPRESS_LOOKUP_ATTEMPTS = 5
+WORDPRESS_RECONCILIATION_ATTEMPTS = 5
 QUERY_NOISE_WORDS = frozenset(
     {
         "and",
@@ -1035,21 +1036,56 @@ def upload_to_wordpress(
             raise RuntimeError("WordPress existing media item returned no media URL")
         return source_url
 
+    filename = f"{slug}.{image.extension}"
     response = requests.post(
         endpoint,
         auth=auth,
-        data=image.content,
-        headers={
-            **headers,
-            "Content-Type": image.media_type,
-            "Content-Disposition": (
-                f'attachment; filename="{slug}.{image.extension}"'
-            ),
-        },
+        files={"file": (filename, image.content, image.media_type)},
+        headers=headers,
         timeout=60,
     )
     response.raise_for_status()
-    media = response.json()
+    try:
+        media = response.json()
+    except ValueError as exc:
+        # A hosting WAF can replace a successful REST response with HTML.  The
+        # upload is a remote write, so never repeat it blindly.  Reconcile the
+        # exact deterministic slug through the public read endpoint instead.
+        reconciled = None
+        for attempt in range(WORDPRESS_RECONCILIATION_ATTEMPTS):
+            try:
+                check = requests.get(
+                    endpoint,
+                    params={"slug": slug, "_fields": "id,source_url,slug"},
+                    headers=headers,
+                    timeout=25,
+                )
+                if check.status_code in TRANSIENT_WORDPRESS_HTTP:
+                    raise requests.ConnectionError(
+                        f"transient WordPress status {check.status_code}"
+                    )
+                check.raise_for_status()
+                candidates = check.json()
+                if isinstance(candidates, list) and candidates:
+                    reconciled = candidates[0]
+                    break
+            except (requests.ConnectionError, requests.Timeout, ValueError):
+                pass
+            if attempt < WORDPRESS_RECONCILIATION_ATTEMPTS - 1:
+                time.sleep(2 ** attempt)
+        if reconciled and reconciled.get("id") and reconciled.get("source_url"):
+            media = reconciled
+        else:
+            content_type = str(response.headers.get("Content-Type") or "")
+            detail = f" (HTTP {response.status_code}, Content-Type: {content_type})"
+            raise RuntimeError(
+                "WordPress media upload returned a non-JSON response"
+                + detail
+                + "; exact-slug reconciliation found no media; the upload was not "
+                "retried because the remote write result is ambiguous"
+            ) from exc
+    if not isinstance(media, dict):
+        raise RuntimeError("WordPress media upload returned unexpected JSON")
     media_id = media.get("id")
     source_url = media.get("source_url")
     if not media_id or not source_url:
