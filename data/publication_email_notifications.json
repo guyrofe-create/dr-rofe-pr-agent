@@ -626,6 +626,14 @@
       "state": "failed",
       "subject": "הפרסום נכשל: כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
       "urls": []
+    },
+    "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d:5a7da3f22ba0cf281939b2bf2f479e79dd3d52415db0b3f34766cedd1d45a9cd": {
+      "sent_at": "2026-09-09T16:20:44.641622+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+      "state": "failed",
+      "subject": "הפרסום נכשל: לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }

@@ -1,6 +1,35 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md",
+      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "status": "failed",
+      "published_at": "2026-09-09T16:20:43.496981+00:00",
+      "destinations": [
+        {
+          "name": "guyrofe.com",
+          "status": "failed",
+          "detail": "CampaignTargetError: RuntimeError: WordPress media lookup returned a non-JSON response (Content-Type: text/html)"
+        }
+      ],
+      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+      "search_target": {
+        "primary_query": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
+        "secondary_queries": [
+          "לפרוסקופיה גינקולוגית: מידע כללי על ההליך",
+          "לפרוסקופיה גינקולוגית - מידע כללי על ההליך ד״ר גיא רופא",
+          "לפרוסקופיה גינקולוגית - מידע כללי על ההליך גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational"
+      },
+      "canonical_url": null,
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-09-08-topic-05-run-34216586885-attempt-1.md",
       "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
       "status": "failed",
