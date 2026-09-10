@@ -634,6 +634,20 @@
       "state": "failed",
       "subject": "הפרסום נכשל: לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
       "urls": []
+    },
+    "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d:3d211ba39981e5808a4feeb23a035a762e39cec3350c854835638f256c5d0246": {
+      "sent_at": "2026-09-10T07:02:31.257633+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+      "state": "success",
+      "subject": "אישור פרסום: לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
+        "https://www.facebook.com/122203461494942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7503709447291289601/",
+        "https://guyrofe.blogspot.com/2026/09/blog-post_10.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOHKo97r-Zak7wE"
+      ]
     }
   }
 }

@@ -1,13 +1,104 @@
 {
   "draft": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md",
   "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
-  "status": "failed",
-  "published_at": "2026-09-09T16:20:43.496981+00:00",
+  "status": "completed",
+  "published_at": "2026-09-10T07:02:29.114119+00:00",
   "destinations": [
     {
       "name": "guyrofe.com",
-      "status": "failed",
-      "detail": "CampaignTargetError: RuntimeError: WordPress media lookup returned a non-JSON response (Content-Type: text/html)"
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
+      "detail": "idempotency_key=pub_ce3d0ee5a49a96ca6fead444a6b50190632fc2ca01f7817a693b82101af712f9"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
+      "detail": "failed checks: canonical_person_linked"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-09-topic-01-run-34342210317-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122203461494942441",
+      "detail": "idempotency_key=pub_b2c71f4d284198635c5bd745585462272744f8f299cb5ff766f98de89f543467"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7503709447291289601/",
+      "detail": "idempotency_key=pub_04798fcab6b980cba3d1bad58e989a5c56c818b54c9d96cbee32ceb1d5d2c199"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/09/blog-post_10.html",
+      "detail": "idempotency_key=pub_dac13d6ecd2fdc025f1d2565cfd7b5f1324b1ac65fea7717e944419842d9c123"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOHKo97r-Zak7wE",
+      "detail": "idempotency_key=pub_734906451702c044fbb7246a3d56fd1a2d79746b91c5a05b0bb11786ff68ef89"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
     }
   ],
   "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
@@ -24,6 +115,6 @@
     ],
     "intent": "informational"
   },
-  "canonical_url": null,
+  "canonical_url": "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
   "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
 }

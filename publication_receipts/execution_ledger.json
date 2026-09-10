@@ -1795,6 +1795,83 @@
       "published_at": "2026-09-07T17:53:47Z",
       "url": "https://guyrofe.blogspot.com/2026/09/blog-post_07.html",
       "provider_receipt": null
+    },
+    "pub_ce3d0ee5a49a96ca6fead444a6b50190632fc2ca01f7817a693b82101af712f9": {
+      "version": 7,
+      "idempotency_key": "pub_ce3d0ee5a49a96ca6fead444a6b50190632fc2ca01f7817a693b82101af712f9",
+      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "request_sha256": "69cea9f13c15f7c01a4cfbd3d65f3db1c9cc462a0532c952069ac6053944d11d",
+      "status": "published",
+      "started_at": "2026-09-10T07:01:58Z",
+      "published_at": "2026-09-10T07:02:05Z",
+      "url": "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
+      "provider_receipt": null
+    },
+    "pub_b2c71f4d284198635c5bd745585462272744f8f299cb5ff766f98de89f543467": {
+      "version": 7,
+      "idempotency_key": "pub_b2c71f4d284198635c5bd745585462272744f8f299cb5ff766f98de89f543467",
+      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "a1714f80d1dc4d1661e21434747197c2fe100b7647a3f485385eada3804b0101",
+      "status": "published",
+      "started_at": "2026-09-10T07:02:10Z",
+      "published_at": "2026-09-10T07:02:21Z",
+      "url": "https://www.facebook.com/122203461494942441",
+      "provider_receipt": null
+    },
+    "pub_04798fcab6b980cba3d1bad58e989a5c56c818b54c9d96cbee32ceb1d5d2c199": {
+      "version": 7,
+      "idempotency_key": "pub_04798fcab6b980cba3d1bad58e989a5c56c818b54c9d96cbee32ceb1d5d2c199",
+      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "3535f28abd25cab621cf8558df355e12b78cf54070377c0b2de2c0c530c7256a",
+      "status": "published",
+      "started_at": "2026-09-10T07:02:21Z",
+      "published_at": "2026-09-10T07:02:24Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7503709447291289601/",
+      "provider_receipt": null
+    },
+    "pub_dac13d6ecd2fdc025f1d2565cfd7b5f1324b1ac65fea7717e944419842d9c123": {
+      "version": 7,
+      "idempotency_key": "pub_dac13d6ecd2fdc025f1d2565cfd7b5f1324b1ac65fea7717e944419842d9c123",
+      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "request_sha256": "0c9391218d31895862011de77a66c8faca994d7242df2c3e48cab3226527f10e",
+      "status": "published",
+      "started_at": "2026-09-10T07:02:24Z",
+      "published_at": "2026-09-10T07:02:26Z",
+      "url": "https://guyrofe.blogspot.com/2026/09/blog-post_10.html",
+      "provider_receipt": null
+    },
+    "pub_734906451702c044fbb7246a3d56fd1a2d79746b91c5a05b0bb11786ff68ef89": {
+      "version": 7,
+      "idempotency_key": "pub_734906451702c044fbb7246a3d56fd1a2d79746b91c5a05b0bb11786ff68ef89",
+      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "9a821116f214edf5f5a6fd3a78b86fc19eb06264e9d28341a62c0456e6b44a88",
+      "status": "published",
+      "started_at": "2026-09-10T07:02:26Z",
+      "published_at": "2026-09-10T07:02:29Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOHKo97r-Zak7wE",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/6287101935272606778",
+        "state": "PROCESSING",
+        "createTime": "2026-09-10T07:02:29.050669Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOHKo97r-Zak7wE",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }
