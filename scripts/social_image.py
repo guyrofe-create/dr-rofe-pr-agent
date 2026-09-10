@@ -99,6 +99,30 @@ class PhotoSelectionError(RuntimeError):
     """No safe licensed photo was selected; callers may queue manual recovery."""
 
 
+def _wordpress_media_lookup_request(base_url, slug, headers, attempt, auth=None):
+    """Read media through independent WordPress REST route shapes.
+
+    Some hosting WAF rules challenge the pretty ``/wp-json/`` route for a
+    runner IP while WordPress' equivalent ``rest_route`` entry point remains
+    available. Rotate only read-only lookups; publication writes continue to
+    use the canonical endpoint and are never retried here.
+    """
+    root = base_url.rstrip("/")
+    params = {"slug": slug, "_fields": "id,source_url,slug"}
+    if attempt < 2:
+        url = f"{root}/wp-json/wp/v2/media"
+    elif attempt < 4:
+        url = f"{root}/"
+        params = {"rest_route": "/wp/v2/media", **params}
+    else:
+        url = f"{root}/index.php"
+        params = {"rest_route": "/wp/v2/media", **params}
+    kwargs = {"params": params, "headers": headers, "timeout": 25}
+    if auth is not None:
+        kwargs["auth"] = auth
+    return requests.get(url, **kwargs)
+
+
 @dataclass(frozen=True)
 class SocialImage:
     content: bytes
@@ -964,23 +988,21 @@ def upload_to_wordpress(
     # persist for the following requests from the same runner.  Read publicly
     # first and attach credentials only when the endpoint explicitly requires
     # them.  The upload itself remains authenticated and is never retried.
-    lookup_args = {
-        "params": {"slug": slug, "_fields": "id,source_url,slug"},
-        "headers": headers,
-        "timeout": 25,
-    }
     lookup = None
     existing = None
     last_decode_error = None
+    lookup_auth = None
     for attempt in range(WORDPRESS_LOOKUP_ATTEMPTS):
         try:
-            lookup = requests.get(endpoint, **lookup_args)
+            lookup = _wordpress_media_lookup_request(
+                base_url, slug, headers, attempt, lookup_auth
+            )
             if (
                 lookup.status_code in {401, 403}
-                and "auth" not in lookup_args
+                and lookup_auth is None
                 and attempt < WORDPRESS_LOOKUP_ATTEMPTS - 1
             ):
-                lookup_args = {**lookup_args, "auth": auth}
+                lookup_auth = auth
                 time.sleep(2 ** attempt)
                 continue
             if (
@@ -1000,11 +1022,7 @@ def upload_to_wordpress(
                     # return to the public read.  Otherwise keep retrying the
                     # public endpoint long enough for a transient WAF response
                     # to clear.  An inconclusive lookup still fails closed.
-                    lookup_args = {
-                        key: value
-                        for key, value in lookup_args.items()
-                        if key != "auth"
-                    }
+                    lookup_auth = None
                     time.sleep(2 ** attempt)
                     continue
         except (requests.ConnectionError, requests.Timeout):
@@ -1054,11 +1072,11 @@ def upload_to_wordpress(
         reconciled = None
         for attempt in range(WORDPRESS_RECONCILIATION_ATTEMPTS):
             try:
-                check = requests.get(
-                    endpoint,
-                    params={"slug": slug, "_fields": "id,source_url,slug"},
-                    headers=headers,
-                    timeout=25,
+                check = _wordpress_media_lookup_request(
+                    base_url,
+                    slug,
+                    headers,
+                    attempt,
                 )
                 if check.status_code in TRANSIENT_WORDPRESS_HTTP:
                     raise requests.ConnectionError(

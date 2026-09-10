@@ -653,7 +653,48 @@ class SocialImageTests(unittest.TestCase):
 
         self.assertEqual(url, "https://guyrofe.com/image.png")
         self.assertTrue(all("auth" not in call.kwargs for call in get.call_args_list))
+        self.assertEqual(get.call_args_list[2].args[0], "https://guyrofe.com/")
+        self.assertEqual(
+            get.call_args_list[2].kwargs["params"]["rest_route"],
+            "/wp/v2/media",
+        )
         self.assertEqual([call.args[0] for call in sleep.call_args_list], [1, 2])
+        post.assert_not_called()
+
+    @patch("scripts.social_image.time.sleep")
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_lookup_uses_index_route_after_both_public_routes_are_blocked(
+        self, get, post, sleep
+    ):
+        waf = Mock(status_code=200, headers={"Content-Type": "text/html"})
+        waf.raise_for_status.return_value = None
+        waf.json.side_effect = ValueError("not JSON")
+        found = Mock(status_code=200, headers={"Content-Type": "application/json"})
+        found.raise_for_status.return_value = None
+        found.json.return_value = [
+            {"id": 7, "source_url": "https://guyrofe.com/image.png"}
+        ]
+        get.side_effect = [waf, waf, waf, waf, found]
+
+        url = social_image.upload_to_wordpress(
+            social_image.SocialImage(b"image"),
+            base_url="https://guyrofe.com",
+            username="user",
+            app_password="password",
+            slug="approved-social",
+            title="כותרת",
+        )
+
+        self.assertEqual(url, "https://guyrofe.com/image.png")
+        self.assertEqual(
+            get.call_args_list[4].args[0], "https://guyrofe.com/index.php"
+        )
+        self.assertEqual(
+            get.call_args_list[4].kwargs["params"]["rest_route"],
+            "/wp/v2/media",
+        )
+        self.assertEqual(get.call_count, 5)
         post.assert_not_called()
 
     @patch("scripts.social_image.time.sleep")
