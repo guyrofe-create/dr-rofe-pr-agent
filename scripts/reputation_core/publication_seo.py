@@ -204,6 +204,10 @@ def audit_published_html(
     description = html.unescape(description_match.group(1)).strip() \
         if description_match else ""
     expected_links = [item.get("url") for item in (expected_internal_links or [])]
+    # WordPress and SEO plugins commonly serialize JSON-LD with escaped URL
+    # slashes. Compare against a normalized view so a valid Person entity link
+    # is not reported missing merely because it appears as ``https:\/\/``.
+    comparison_document = html.unescape(document).replace("\\/", "/")
     checks = {
         "title_present": bool(title),
         "brand_once_in_title": normalized_title.count(canonical_name) == 1,
@@ -214,8 +218,12 @@ def audit_published_html(
             r"(?:pilot|run-\d+|attempt-\d+)", expected_url, re.I
         ),
         "single_document_head": len(re.findall(r"<head(?:\s|>)", document, re.I)) == 1,
-        "canonical_person_linked": "https://guyrofe.com/#person" in document,
-        "internal_links_present": all(url in document for url in expected_links),
+        "canonical_person_linked": (
+            "https://guyrofe.com/#person" in comparison_document
+        ),
+        "internal_links_present": all(
+            url in comparison_document for url in expected_links
+        ),
     }
     return {
         "passed": all(checks.values()),

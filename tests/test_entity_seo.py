@@ -351,6 +351,22 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         )
         self.assertTrue(report["checks"]["canonical_matches"])
 
+    def test_served_page_audit_accepts_json_ld_escaped_person_url(self):
+        document = r"""<html><head>
+        <title>לפרוסקופיה | ד״ר גיא רופא</title>
+        <meta name="description" content="תיאור מלא וברור.">
+        <link rel="canonical" href="https://guyrofe.com/laparoscopy/">
+        </head><body><script type="application/ld+json">
+        {"author":{"@id":"https:\/\/guyrofe.com\/#person"}}
+        </script></body></html>"""
+        report = audit_published_html(
+            document,
+            expected_url="https://guyrofe.com/laparoscopy/",
+            canonical_name="ד״ר גיא רופא",
+        )
+        self.assertTrue(report["checks"]["canonical_person_linked"])
+        self.assertTrue(report["passed"])
+
     def test_search_crawlers_are_audited_separately(self):
         robots = """User-agent: *
 Allow: /
