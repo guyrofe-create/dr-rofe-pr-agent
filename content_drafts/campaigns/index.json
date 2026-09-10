@@ -1,6 +1,123 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-09-10-topic-90-run-34467413377-attempt-1.md",
+      "title": "כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-09-10T15:30:51.653869+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%9b%d7%99%d7%9e%d7%99%d7%a7%d7%9c%d7%99%d7%9d-%d7%91%d7%97%d7%95%d7%9e%d7%a8%d7%99-%d7%a0%d7%99%d7%a7%d7%95%d7%99-%d7%a0%d7%9e%d7%a6%d7%90%d7%95-%d7%91%d7%93%d7%9d/",
+          "detail": "idempotency_key=pub_c142c6024e6a55c6aadae01d784c34ad8f496508f6c541db8a03382cf2a9179f"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%9b%d7%99%d7%9e%d7%99%d7%a7%d7%9c%d7%99%d7%9d-%d7%91%d7%97%d7%95%d7%9e%d7%a8%d7%99-%d7%a0%d7%99%d7%a7%d7%95%d7%99-%d7%a0%d7%9e%d7%a6%d7%90%d7%95-%d7%91%d7%93%d7%9d/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-10-topic-90-run-34467413377-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122203513382942441",
+          "detail": "idempotency_key=pub_e86499320f40c5e221b2e853620481d65f17bbc43d17bdf339a78eb152833d20"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7503837384581623808/",
+          "detail": "idempotency_key=pub_4a0d885f90882820ecea7a89f998c6c69043d2dde715b296bd91657a307c5bd8"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIPomtfZ98iuwgE",
+          "detail": "idempotency_key=pub_6255766b7c7a7cbca0f31019370c664abcdb0accdbeef390fe18355fbfe7b435"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_60982c34130658a967659c1a5f3db794273fe0f290ba3cd6bf288ac639dcfcf0",
+      "search_target": {
+        "primary_query": "מה עומד מאחורי הכותרת: כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו?",
+        "secondary_queries": [
+          "כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו?",
+          "מה עומד מאחורי הכותרת: כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%9b%d7%99%d7%9e%d7%99%d7%a7%d7%9c%d7%99%d7%9d-%d7%91%d7%97%d7%95%d7%9e%d7%a8%d7%99-%d7%a0%d7%99%d7%a7%d7%95%d7%99-%d7%a0%d7%9e%d7%a6%d7%90%d7%95-%d7%91%d7%93%d7%9d/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md",
       "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
       "status": "completed",

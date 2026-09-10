@@ -648,6 +648,19 @@
         "https://guyrofe.blogspot.com/2026/09/blog-post_10.html",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOHKo97r-Zak7wE"
       ]
+    },
+    "apr_60982c34130658a967659c1a5f3db794273fe0f290ba3cd6bf288ac639dcfcf0:1bc9c7d4024d39a9f87cee1660bb641ecb79656651ff0bd7466fb7e67a835097": {
+      "sent_at": "2026-09-10T15:30:54.300547+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_60982c34130658a967659c1a5f3db794273fe0f290ba3cd6bf288ac639dcfcf0",
+      "state": "success",
+      "subject": "אישור פרסום: כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9b%d7%99%d7%9e%d7%99%d7%a7%d7%9c%d7%99%d7%9d-%d7%91%d7%97%d7%95%d7%9e%d7%a8%d7%99-%d7%a0%d7%99%d7%a7%d7%95%d7%99-%d7%a0%d7%9e%d7%a6%d7%90%d7%95-%d7%91%d7%93%d7%9d/",
+        "https://www.facebook.com/122203513382942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7503837384581623808/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIPomtfZ98iuwgE"
+      ]
     }
   }
 }
