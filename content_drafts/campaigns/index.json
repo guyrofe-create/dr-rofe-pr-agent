@@ -1,6 +1,123 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-09-13-topic-02-run-34753686764-attempt-1.md",
+      "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-09-13T17:44:15.290895+00:00",
+      "destinations": [
+        {
+          "name": "guyrofe.com",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://guyrofe.com/%d7%90%d7%a0%d7%93%d7%95%d7%9e%d7%98%d7%a8%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%95%d7%a4%d7%95%d7%a8%d7%99%d7%95%d7%aa-%d7%9e%d7%94-%d7%99%d7%93%d7%95%d7%a2-%d7%a2%d7%9c/",
+          "detail": "idempotency_key=pub_754b063d2c44cad75f14140b7e8f08e2abd2df93b4ffe9ec7c4c5916b6a60d4f"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "seo_warning",
+          "url": "https://guyrofe.com/%d7%90%d7%a0%d7%93%d7%95%d7%9e%d7%98%d7%a8%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%95%d7%a4%d7%95%d7%a8%d7%99%d7%95%d7%aa-%d7%9e%d7%94-%d7%99%d7%93%d7%95%d7%a2-%d7%a2%d7%9c/",
+          "detail": "failed checks: canonical_person_linked"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-13-topic-02-run-34753686764-attempt-1-hero.png",
+          "detail": "owner_provided_default"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122203963766942441",
+          "detail": "idempotency_key=pub_f77bd902d23dfebb3f2062f0419876b5be825bede84db15f7714f9f1ffbb44f2"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7504958123787325440/",
+          "detail": "idempotency_key=pub_47ae0d129305244059cea6082d87124d5227da854b3952919e90fa00bd7266ab"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEI2s3OeHrf35DQ",
+          "detail": "idempotency_key=pub_1b6225bb04fabb93e0380532929322ea3cbedd4a510cf8109048aa6f9fbfeb24"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_716fd45f33ef9bb1c5b194ad07c07b9ef3e7062f9f234746dd5a5a69de0b8ba7",
+      "search_target": {
+        "primary_query": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
+        "secondary_queries": [
+          "אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול",
+          "אנדומטריוזיס ופוריות - מידע כללי על הקשר ד״ר גיא רופא",
+          "אנדומטריוזיס ופוריות - מידע כללי על הקשר גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational"
+      },
+      "canonical_url": "https://guyrofe.com/%d7%90%d7%a0%d7%93%d7%95%d7%9e%d7%98%d7%a8%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%95%d7%a4%d7%95%d7%a8%d7%99%d7%95%d7%aa-%d7%9e%d7%94-%d7%99%d7%93%d7%95%d7%a2-%d7%a2%d7%9c/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-09-10-topic-90-run-34467413377-attempt-1.md",
       "title": "כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? | ד״ר גיא רופא",
       "status": "completed",

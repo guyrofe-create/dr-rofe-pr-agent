@@ -661,6 +661,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7503837384581623808/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIPomtfZ98iuwgE"
       ]
+    },
+    "apr_716fd45f33ef9bb1c5b194ad07c07b9ef3e7062f9f234746dd5a5a69de0b8ba7:3c562f19686ba3810713a7ca7c243399a50575b6b94bd71fc15a1a0cd274b675": {
+      "sent_at": "2026-09-13T17:44:18.779654+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_716fd45f33ef9bb1c5b194ad07c07b9ef3e7062f9f234746dd5a5a69de0b8ba7",
+      "state": "success",
+      "subject": "אישור פרסום: אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%90%d7%a0%d7%93%d7%95%d7%9e%d7%98%d7%a8%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%95%d7%a4%d7%95%d7%a8%d7%99%d7%95%d7%aa-%d7%9e%d7%94-%d7%99%d7%93%d7%95%d7%a2-%d7%a2%d7%9c/",
+        "https://www.facebook.com/122203963766942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7504958123787325440/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEI2s3OeHrf35DQ"
+      ]
     }
   }
 }
