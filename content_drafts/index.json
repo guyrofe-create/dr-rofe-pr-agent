@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-13-topic-02-run-34753686764-attempt-1.md",
+      "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול | ד״ר גיא רופא",
+      "topic": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
+      "excerpt": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: אנדומטריוזיס עלול להקשות על כניסה להיריון, אך הוא אינו מוביל בהכרח לאי־פוריות. נשים רבות עם אנדו",
+      "generated_at": "2026-09-13T11:09:30.503315+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-09-13",
+      "cadence_local_date": "2026-09-13",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-09-10-topic-90-run-34467413377-attempt-1.md",
       "title": "כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו?",
@@ -494,25 +511,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-4814ef41f4e0305c.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/rj2tznqlzg"
-    },
-    {
-      "path": "content_drafts/2026-08-12-topic-07-run-31573715687-attempt-1.md",
-      "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
-      "topic": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
-      "excerpt": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא](https://guyrofe.com) התשובה הקצרה: מידע רפואי ברשת ראוי לאמון כאשר ברור מי פרסם אותו, מי כתב ובדק אותו, על אילו ",
-      "generated_at": "2026-08-12T07:23:03.466376+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "instagram",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-09",
-      "cadence_local_date": "2026-08-12",
-      "public_execution_allowed": false
     }
   ]
 }
