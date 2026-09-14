@@ -1,6 +1,25 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-14-topic-90-run-34840576898-attempt-1.md",
+      "title": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\"",
+      "excerpt": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: חצבת אמנם מזוהה בעיקר עם ילדים, אך היא עלולה להדביק בני אדם בכל גיל. אצל מבוגרי",
+      "generated_at": "2026-09-14T11:54:58.909655+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-09-13",
+      "cadence_local_date": "2026-09-14",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-c2b45c7c3effb3f5.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/bkvbvqhfgl"
+    },
+    {
       "path": "content_drafts/2026-09-13-topic-02-run-34753686764-attempt-1.md",
       "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול | ד״ר גיא רופא",
       "topic": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
@@ -491,26 +510,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-7721a73062793029.json",
       "analyzed_news_url": "https://healthy.walla.co.il/item/3860738"
-    },
-    {
-      "path": "content_drafts/2026-08-13-topic-90-run-31677663608-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI",
-      "excerpt": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: המחקר אינו מבטל את מדד ה־BMI ואינו מוכיח שהוא חסר ערך. הוא מחזק מסר מוכר אך חשוב: BMI לבדו עלול להחמיץ ",
-      "generated_at": "2026-08-13T07:25:24.693477+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "pinterest",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-09",
-      "cadence_local_date": "2026-08-13",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-4814ef41f4e0305c.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/rj2tznqlzg"
     }
   ]
 }

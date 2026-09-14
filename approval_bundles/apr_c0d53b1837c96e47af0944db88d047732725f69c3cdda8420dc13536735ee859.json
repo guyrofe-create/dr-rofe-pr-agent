@@ -1,0 +1,379 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-14T12:00:28Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-14-topic-90-run-34840576898-attempt-1.md",
+  "source_draft_sha256": "31e5063738ed0262538e92b698519f95652d21e0754fb9e9f6a1affb74df5331",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/bkvbvqhfgl",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/measles/hcp/clinical-overview/index.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/news-room/fact-sheets/detail/measles",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.cdc.gov/measles/vaccines/index.html",
+      "type": "citation"
+    },
+    {
+      "url": "https://me.health.gov.il/parenting/raising-children/immunization-schedule/children-vaccines/meruba/measles-vaccine/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-landscape.png",
+    "sha256": "418d300f5f9bf238984c7aee37931747f6f6930ff89c402456ded63fa74a204a",
+    "alt_text": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Priorix.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Priorix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Dctrzl",
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Priorix.jpg — Dctrzl; CC BY-SA 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-hero.png",
+        "sha256": "d1e93de94c75716d341edd28ebef038ca46afe8a7a1f3fea711cdcc7af45df2f",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-landscape.png",
+        "sha256": "418d300f5f9bf238984c7aee37931747f6f6930ff89c402456ded63fa74a204a",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-square.jpg",
+        "sha256": "3ef35c03b980ab5781843401bf408b352f9fdf68a6a71fbd7315126f990a54d5",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-portrait.png",
+        "sha256": "34da25b6a90c1889b39c7920ab11958406827d3c1026a847d8eed653db024a72",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא",
+        "cms_title": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות",
+        "markdown": "# מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** חצבת אמנם מזוהה בעיקר עם ילדים, אך היא עלולה להדביק בני אדם בכל גיל. אצל מבוגרים — במיוחד בנוכחות מחלת ריאות, דיכוי חיסוני, היריון או גורמי סיכון אחרים — המחלה עלולה לגרום לדלקת ריאות, לפגיעה מוחית, לאשפוז ואף למוות. עם זאת, במקרה החדשותי מפנסילבניה יש להבחין בין העובדה שהמוות אירע לאחר הידבקות בחצבת לבין קביעה רפואית מלאה שהנגיף היה סיבת המוות הישירה והבלעדית.\n\n## מה בדיוק נטען בכתבה — ומה ידוע על המקרה?\n\nלפי [הדיווח ב־ynet על מותה של אישה לא מחוסנת בת 40 לאחר שחלתה בחצבת](https://www.ynet.co.il/health/article/bkvbvqhfgl), האישה הייתה תושבת מחוז ג׳פרסון שבפנסילבניה, נדבקה לאחר שאחד מבני משפחתה חלה ולא הייתה מחוסנת נגד חצבת. עוד דווח כי סבלה מאסתמה וממחלת ריאות חסימתית כרונית, COPD, וכי נזקקה לתוספת חמצן בקביעות עוד לפני שנדבקה.\n\nאלה פרטים בעלי משמעות רפואית: חצבת עלולה לגרום למחלה קשה בדרכי הנשימה ולדלקת ריאות, ולכן זיהום כזה עשוי להעמיס במיוחד על אדם שתפקוד הריאות שלו היה מוגבל מלכתחילה. עם זאת, הידיעה החדשותית אינה תיק רפואי, דוח נתיחה או חקירת תמותה מלאה. היא אינה מאפשרת לקבוע לבדה אם החצבת הייתה סיבת המוות הראשית, גורם תורם שהחמיר את מחלת הריאות, או חלק משרשרת אירועים מורכבת.\n\nהכתבה גם דיווחה כי מתחילת שנת 2026 אובחנו בפנסילבניה מאות חולים, כי חלקם נזקקו לאשפוז וכי רובם הגדול לא היו מחוסנים באופן מלא. נתונים אלה מתארים את המידע שנמסר בכתבה, אך אינם משמשים כאן בסיס לטענה רפואית עצמאית. לאחר בקרת המקורות, הוסר מהטיוטה הייחוס לעמוד החדשות של ממשלת פנסילבניה, משום שהדומיין אינו נכלל ברשימת המקורות הרפואיים המאושרים. ההסבר הרפואי להלן מבוסס רק על מסמכים ישירים של ארגון הבריאות העולמי, ה־CDC ומשרד הבריאות הישראלי.\n\nההפרדה הזאת חשובה במיוחד בניתוח חדשות רפואיות. כותרת יכולה להעביר מסר נכון באופן כללי — חצבת אכן עלולה להרוג גם מבוגרים — ובכל זאת להשאיר שאלות פתוחות באשר למנגנון המוות במקרה מסוים.\n\n## חצבת אינה מחלת ילדות בלבד\n\nחצבת היא מחלה נגיפית חריפה ומידבקת מאוד. היא שכיחה במיוחד בקרב ילדים באוכלוסיות שבהן שיעורי החיסון נמוכים, אך הנגיף אינו מוגבל לגיל הילדות. כל אדם שאינו מחוסן ושלא פיתח חסינות בעקבות מחלה קודמת עלול להידבק לאחר חשיפה.\n\nהנגיף מועבר בעיקר באוויר כאשר אדם חולה נושם, משתעל או מתעטש. לפי [הסקירה הקלינית הרשמית של ה־CDC על חצבת, סיבוכיה ודרכי העברתה](https://www.cdc.gov/measles/hcp/clinical-overview/index.html), עד תשעה מכל עשרה אנשים רגישים שנמצאים במגע קרוב עם חולה עלולים להידבק. הנגיף עשוי להישאר מידבק באוויר עד כשעתיים לאחר שהחולה יצא מהחלל.\n\nתקופת המידבקות מתחילה עוד לפני שהפריחה מופיעה. אדם עם חצבת עשוי להעביר את הנגיף מארבעה ימים לפני הופעת הפריחה ועד ארבעה ימים לאחר הופעתה. משמעות הדבר היא שחולה יכול לחשוף בני משפחה, עמיתים ונוסעים אחרים עוד לפני שהוא מבין שמדובר בחצבת.\n\nהתסמינים הראשונים מופיעים בדרך כלל לאחר תקופת דגירה וכוללים חום, שיעול, נזלת ועיניים אדומות ודומעות. לעיתים מופיעות נקודות לבנות קטנות בחלל הפה. כמה ימים לאחר תחילת התסמינים מתפתחת לרוב פריחה שמתחילה בפנים ובצוואר ומתפשטת כלפי מטה.\n\nהפריחה היא הסימן המוכר ביותר, אך היא אינה הבעיה המרכזית. חצבת היא זיהום מערכתי: הנגיף מתחיל בדרכי הנשימה ועלול להתפשט בגוף, לפגוע בריאות ובמערכת העצבים ולהחליש זמנית את התגובה החיסונית לזיהומים אחרים.\n\nלפי [דף העובדות של ארגון הבריאות העולמי על חצבת](https://www.who.int/news-room/fact-sheets/detail/measles), סיבוכים שכיחים יותר בילדים מתחת לגיל חמש ובמבוגרים מעל גיל 30. הסיכון עשוי לעלות גם אצל נשים בהיריון, אנשים עם מערכת חיסון מוחלשת ואנשים הסובלים מתת־תזונה או ממחלות רקע משמעותיות. לכן, התיאור “מחלת ילדות” משקף בעיקר דפוס תחלואה היסטורי — לא הגבלה ביולוגית של המחלה.\n\n## כיצד חצבת עלולה להסתבך אצל מבוגרים?\n\nאצל חלק מהנדבקים המחלה חולפת לאחר חום, תסמינים נשימתיים ופריחה. אצל אחרים היא מסתבכת. חומרת המחלה מושפעת מגיל, מצב חיסוני, מחלות רקע ותפקוד מערכות הגוף לפני ההדבקה, אך אי אפשר לחזות מראש בביטחון מי יפתח סיבוך קשה.\n\nאחד הסיבוכים המרכזיים הוא דלקת ריאות. הפגיעה הנשימתית עשויה להיגרם ישירות מהנגיף, מזיהום חיידקי משני או משילוב ביניהם. אצל אדם עם COPD או אסתמה קשה, גם ירידה מתונה נוספת בתפקוד הנשימתי עלולה להוביל להחמרת קוצר הנשימה, לירידה ברמת החמצן בדם ולהזדקקות לתמיכה נשימתית.\n\nהמשמעות במקרה החדשותי ברורה אך מוגבלת: מחלות הריאה שעליהן דווח מספקות מנגנון אפשרי לכך שחצבת הייתה קשה במיוחד עבור האישה. הן אינן מוכיחות לבדן מה הייתה סיבת המוות המדויקת. לשם כך נדרשים נתונים קליניים כגון ממצאי הדמיה, בדיקות מעבדה, תפקודי נשימה, אבחנות נלוות ומהלך הטיפול.\n\nסיבוכים אפשריים נוספים כוללים דלקת אוזניים, שלשול והתייבשות, דלקת בדרכי הנשימה ופגיעה מוחית. דלקת מוח חריפה עלולה לגרום לפרכוסים, לשינויים במצב ההכרה ולנזק נוירולוגי קבוע. ה־CDC מציין כי דלקת מוח חריפה מתפתחת בערך במקרה אחד מכל אלף מקרי חצבת.\n\nסיבוך נדיר נוסף הוא דלקת מוח טרשתית תת־חריפה, SSPE. זוהי מחלה ניוונית וקטלנית של מערכת העצבים המרכזית העלולה להופיע שנים לאחר הזיהום הראשוני. היא ממחישה שגם לאחר שהחום והפריחה חלפו, לחצבת עשויות להיות השלכות מאוחרות וחריגות.\n\nחצבת בהיריון מחייבת תשומת לב מיוחדת. היא עלולה להיות קשורה לדלקת ריאות ולמחלה קשה אצל האם, וכן לאובדן היריון, ללידה מוקדמת ולמשקל לידה נמוך. מאחר שחיסון MMR הוא חיסון חי־מוחלש שאינו ניתן במהלך היריון, רצוי לברר חסינות ולהשלים חיסון לפי הצורך לפני היריון.\n\n## קשר אינו בהכרח סיבתיות — אבל גם אינו מקרי בהכרח\n\nכאשר אדם נדבק בחצבת ומת זמן קצר לאחר מכן, קיים קשר זמנים ברור. ואולם, סמיכות זמנים אינה מספיקה להוכחת סיבתיות. יש לברר אם הזיהום גרם ישירות לכשל נשימתי או לסיבוך אחר, אם החמיר מחלה כרונית קיימת, ואם היו גורמים נוספים שתרמו לתוצאה.\n\nהגדרה של “מוות מחצבת” עשויה לכלול כמה מצבים. במקרה אחד הנגיף גורם לדלקת ריאות ישירה; במקרה אחר הוא מאפשר התפתחות זיהום חיידקי משני; ובמקרה נוסף הוא מחמיר מחלת ריאות עד לאי־ספיקה נשימתית. בכל אחד מהתרחישים החצבת עשויה להיות גורם סיבתי או תורם, גם אם אינה הגורם היחיד.\n\nלכן נכון להפריד בין שלוש רמות מידע:\n\n1. **עובדה מדווחת:** האישה אובחנה עם חצבת, לא הייתה מחוסנת, סבלה ממחלות ריאה ומתה לאחר ההדבקה.\n2. **ניתוח רפואי סביר:** חצבת מסוגלת לגרום לדלקת ריאות ולהחמיר תפקוד נשימתי, ולכן ייתכן שהזיהום תרם משמעותית למותה.\n3. **עניין שאינו ידוע מן הכתבה:** המנגנון המדויק, מידת תרומתן של מחלות הרקע והאם החצבת הוגדרה בסופו של דבר כסיבת המוות הראשית.\n\nהזהירות אינה מפחיתה מחומרת החצבת. היא מונעת שימוש במקרה יחיד כהוכחה רחבה מדי. הסיכון לסיבוכים נשימתיים ונוירולוגיים אינו נשען על הכותרת, אלא מתועד בהנחיות ובסקירות של רשויות בריאות מוסמכות.\n\n## מה ידוע על החיסון — ומה משמעות הנתונים?\n\nהחיסון המשולב MMR מגן מפני חצבת, חזרת ואדמת. מטרת המנה השנייה אינה רק “חיזוק” של הראשונה: היא מאפשרת לפתח חסינות גם אצל חלק מהאנשים שלא הגיבו באופן מספק למנה הראשונה.\n\nלפי [הנחיות ה־CDC לחיסון נגד חצבת](https://www.cdc.gov/measles/vaccines/index.html), מנה אחת של MMR יעילה בכ־93% במניעת חצבת ושתי מנות יעילות בכ־97%. אין פירוש הדבר שכל מחוסן מוגן לחלוטין. מקרי תחלואה לאחר חיסון יכולים להתרחש, במיוחד לאחר חשיפה ממושכת וצפופה, אך הם אינם מבטלים את הירידה המשמעותית בסיכון.\n\nגם כאשר מתרחשת הדבקה אצל מחוסנים, ה־CDC מציין כי המחלה נוטה להיות קלה יותר וכי הסבירות להעברת הנגיף לאחרים עשויה להיות נמוכה יותר. עם זאת, אי אפשר ליישם נתון אוכלוסייתי על אדם יחיד ולקבוע בוודאות מה היה קורה אילו קיבל חיסון.\n\nהיעדר חיסון הוא גורם סיכון להידבקות, אך אין להסיק כי הוא לבדו “גרם למוות”. במקרה המתואר, הניתוח הסביר הוא שהיעדר חסינות אפשר את ההדבקה, ואילו מחלת הריאות הקיימת עשויה הייתה להפוך את הזיהום למסוכן יותר. מידת התרומה של כל גורם נותרת שאלה רפואית פרטנית.\n\n## המשמעות המעשית למבוגרים בישראל\n\nהמסר אינו שכל מבוגר זקוק אוטומטית למנה נוספת, אלא שאין להניח שחסינות קיימת בלי לבדוק את ההיסטוריה הרפואית והתיעוד. לפי [מידע משרד הבריאות הישראלי על חצבת והחיסון נגדה](https://me.health.gov.il/parenting/raising-children/immunization-schedule/children-vaccines/meruba/measles-vaccine/), החיסון ניתן בישראל כחלק מהחיסון המרובע MMRV בילדות. מבוגרים שאינם יודעים אם חוסנו יכולים לנסות לאתר פנקס חיסונים ורשומות רפואיות.\n\nההמלצה בפועל עשויה להשתנות בהתאם לשנת הלידה, מספר המנות המתועדות, היסטוריה של מחלה מאומתת, עיסוק, נסיעות לחו״ל, חשיפה לחולה ומצב בריאותי. חיסון MMR אינו ניתן במהלך היריון, והוא עשוי שלא להתאים לאנשים עם דיכוי חיסוני משמעותי או למי שסבל מתגובה אלרגית חמורה למנה קודמת.\n\nלאחר חשיפה לחצבת חשוב לפעול במהירות. על פי הנחיות ה־CDC, חיסון MMR בתוך 72 שעות מתחילת החשיפה עשוי לספק הגנה מסוימת או להפחית את חומרת המחלה. לאנשים המצויים בסיכון גבוה למחלה קשה ניתן לעיתים אימונוגלובולין בתוך שישה ימים מהחשיפה. ההתאמה תלויה בגיל, בהיריון, במצב החיסוני ובמחלות הרקע.\n\nאם מופיעים חום, שיעול, נזלת, עיניים אדומות ופריחה לאחר חשיפה אפשרית, אין להגיע ללא הודעה מוקדמת לחדר המתנה. תיאום עם מוקד רפואי מאפשר לצמצם חשיפה של תינוקות, נשים בהיריון ומדוכאי חיסון. מדובר במחלה מידבקת מאוד, ולכן ניהול החשיפה הוא חלק מההגנה על הציבור.\n\n## סיכום\n\nהכותרת על אישה בת 40 שמתה לאחר שחלתה בחצבת מדגישה עובדה רפואית חשובה: חצבת אינה מוגבלת לילדים. מבוגרים, ובפרט מי שסובלים ממחלות רקע או נמצאים בקבוצות סיכון, עלולים לפתח דלקת ריאות, דלקת מוח, צורך באשפוז ואף מחלה קטלנית.\n\nלצד זאת, יש להימנע מקביעה נחרצת מדי לגבי מקרה פרטני בלי חקירה רפואית מלאה. מן הכתבה ידוע שהאישה לא הייתה מחוסנת, סבלה ממחלות ריאה משמעותיות, נדבקה בחצבת ומתה לאחר מכן. לא ידוע מן המידע הפומבי מה היה המנגנון המדויק ומה היה משקלו היחסי של כל גורם.\n\nהמשמעות המעשית אינה בהלה אלא פעולה מסודרת: לבדוק תיעוד חיסונים, להכיר את גורמי הסיכון, לקבל הנחיה מהירה לאחר חשיפה ולהודיע מראש לפני הגעה למוסד רפואי כאשר קיים חשד לחצבת. החיסון אינו מבטיח אפס סיכון, אך שתי מנות מספקות הגנה גבוהה מאוד ומצמצמות משמעותית את יכולתו של הנגיף להתפשט.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** הוא יוצר תוכן רפואי ומחבר ספרים. בהתאם לסטטוס הנוכחי המאושר, הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים. מאמר זה מספק מידע רפואי כללי בלבד, אינו מהווה אבחון או המלצה אישית, וכל טענה רפואית בו מחייבת ביקורת אנושית ובדיקת רופא לפני פרסום.\n\n## מקורות\n\n### כתבת החדשות שנבדקה — אינה משמשת מקור רפואי\n\n- ynet — “בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה״ב: לא רק מחלת ילדות”:  \n  https://www.ynet.co.il/health/article/bkvbvqhfgl\n\n### מקורות רפואיים מוסדיים\n\n- ארגון הבריאות העולמי — דף עובדות על חצבת:  \n  https://www.who.int/news-room/fact-sheets/detail/measles\n\n- ה־CDC — סקירה קלינית של חצבת, סיבוכים, אבחון והעברה:  \n  https://www.cdc.gov/measles/hcp/clinical-overview/index.html\n\n- ה־CDC — הנחיות ומידע על חיסון MMR:  \n  https://www.cdc.gov/measles/vaccines/index.html\n\n- משרד הבריאות הישראלי — חצבת והחיסון נגדה:  \n  https://me.health.gov.il/parenting/raising-children/immunization-schedule/children-vaccines/meruba/measles-vaccine/\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/מוות-מחצבת-בגיל-40-בארה״ב-מה-באמת/",
+        "meta_description": "ד״ר גיא רופא: חצבת אמנם מזוהה בעיקר עם ילדים, אך היא עלולה להדביק בני אדם בכל גיל.",
+        "search_target": {
+          "primary_query": "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\"",
+          "secondary_queries": [
+            "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות",
+            "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\" ד״ר גיא רופא",
+            "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\" גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [],
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "39ec8325ad31cec5440208aedc8c19cf6202889c53a95b02ca9e7bdf812f9362",
+        "slug": "מוות-מחצבת-בגיל-40-בארה״ב-מה-באמת",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-hero.png",
+          "sha256": "d1e93de94c75716d341edd28ebef038ca46afe8a7a1f3fea711cdcc7af45df2f",
+          "alt_text": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Priorix.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Priorix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Dctrzl",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Priorix.jpg — Dctrzl; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-hero.png",
+              "sha256": "d1e93de94c75716d341edd28ebef038ca46afe8a7a1f3fea711cdcc7af45df2f",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-landscape.png",
+              "sha256": "418d300f5f9bf238984c7aee37931747f6f6930ff89c402456ded63fa74a204a",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-square.jpg",
+              "sha256": "3ef35c03b980ab5781843401bf408b352f9fdf68a6a71fbd7315126f990a54d5",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-portrait.png",
+              "sha256": "34da25b6a90c1889b39c7920ab11958406827d3c1026a847d8eed653db024a72",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: חצבת אמנם מזוהה בעיקר עם ילדים, אך היא עלולה להדביק בני אדם בכל גיל.\n\nאצל מבוגרים — במיוחד בנוכחות מחלת ריאות, דיכוי חיסוני, היריון או גורמי סיכון אחרים — המחלה עלולה לגרום לדלקת ריאות, לפגיעה מוחית, לאשפוז ואף למוות.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Priorix.jpg — Dctrzl; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/מוות-מחצבת-בגיל-40-בארה״ב-מה-באמת/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-landscape.png",
+          "sha256": "418d300f5f9bf238984c7aee37931747f6f6930ff89c402456ded63fa74a204a",
+          "alt_text": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Priorix.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Priorix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Dctrzl",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Priorix.jpg — Dctrzl; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-hero.png",
+              "sha256": "d1e93de94c75716d341edd28ebef038ca46afe8a7a1f3fea711cdcc7af45df2f",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-landscape.png",
+              "sha256": "418d300f5f9bf238984c7aee37931747f6f6930ff89c402456ded63fa74a204a",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-square.jpg",
+              "sha256": "3ef35c03b980ab5781843401bf408b352f9fdf68a6a71fbd7315126f990a54d5",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-portrait.png",
+              "sha256": "34da25b6a90c1889b39c7920ab11958406827d3c1026a847d8eed653db024a72",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: חצבת אמנם מזוהה בעיקר עם ילדים, אך היא עלולה להדביק בני אדם בכל גיל.\n\n• אצל מבוגרים — במיוחד בנוכחות מחלת ריאות, דיכוי חיסוני, היריון או גורמי סיכון אחרים — המחלה עלולה לגרום לדלקת ריאות, לפגיעה מוחית, לאשפוז ואף למוות.\n• עם זאת, במקרה החדשותי מפנסילבניה יש להבחין בין העובדה שהמוות אירע לאחר הידבקות בחצבת לבין קביעה רפואית מלאה שהנגיף היה סיבת המוות הישירה והבלעדית.\n• מה בדיוק נטען בכתבה — ומה ידוע על המקרה?\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Priorix.jpg — Dctrzl; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/מוות-מחצבת-בגיל-40-בארה״ב-מה-באמת/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-landscape.png",
+          "sha256": "418d300f5f9bf238984c7aee37931747f6f6930ff89c402456ded63fa74a204a",
+          "alt_text": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Priorix.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Priorix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Dctrzl",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Priorix.jpg — Dctrzl; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-hero.png",
+              "sha256": "d1e93de94c75716d341edd28ebef038ca46afe8a7a1f3fea711cdcc7af45df2f",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-landscape.png",
+              "sha256": "418d300f5f9bf238984c7aee37931747f6f6930ff89c402456ded63fa74a204a",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-square.jpg",
+              "sha256": "3ef35c03b980ab5781843401bf408b352f9fdf68a6a71fbd7315126f990a54d5",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-portrait.png",
+              "sha256": "34da25b6a90c1889b39c7920ab11958406827d3c1026a847d8eed653db024a72",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא",
+        "html": "<h2>מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה: חצבת אמנם מזוהה בעיקר עם ילדים, אך היא עלולה להדביק בני אדם בכל גיל.</p><p>אצל מבוגרים — במיוחד בנוכחות מחלת ריאות, דיכוי חיסוני, היריון או גורמי סיכון אחרים — המחלה עלולה לגרום לדלקת ריאות, לפגיעה מוחית, לאשפוז ואף למוות.</p>\n<p><small>קרדיט תמונה: Priorix.jpg — Dctrzl; CC BY-SA 4.0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/מוות-מחצבת-בגיל-40-בארה״ב-מה-באמת/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-hero.png",
+          "sha256": "d1e93de94c75716d341edd28ebef038ca46afe8a7a1f3fea711cdcc7af45df2f",
+          "alt_text": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "ערכת חיסון הכוללת בקבוקון, מזרק ושתי מחטים באריזת פלסטיק שקופה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Priorix.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Priorix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Dctrzl",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Priorix.jpg — Dctrzl; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-hero.png",
+              "sha256": "d1e93de94c75716d341edd28ebef038ca46afe8a7a1f3fea711cdcc7af45df2f",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-landscape.png",
+              "sha256": "418d300f5f9bf238984c7aee37931747f6f6930ff89c402456ded63fa74a204a",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-square.jpg",
+              "sha256": "3ef35c03b980ab5781843401bf408b352f9fdf68a6a71fbd7315126f990a54d5",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-14-topic-90-run-34840576898-attempt-1-portrait.png",
+              "sha256": "34da25b6a90c1889b39c7920ab11958406827d3c1026a847d8eed653db024a72",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "39ec8325ad31cec5440208aedc8c19cf6202889c53a95b02ca9e7bdf812f9362",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_c0d53b1837c96e47af0944db88d047732725f69c3cdda8420dc13536735ee859"
+}
