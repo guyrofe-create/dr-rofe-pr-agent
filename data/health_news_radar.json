@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "run_at": "2026-09-13T09:56:05.161964+00:00",
+  "run_at": "2026-09-14T10:17:12.536611+00:00",
   "destination_site_key": "DRGUYROFE_CO_IL",
   "destination_url": "https://www.drguyrofe.co.il",
   "public_execution_allowed": false,
@@ -21,9 +21,55 @@
       "candidate_count": 20
     }
   ],
-  "ranked_candidates": [],
-  "selected": null,
-  "brief_path": null,
+  "ranked_candidates": [
+    {
+      "title": "בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\"",
+      "url": "https://www.ynet.co.il/health/article/bkvbvqhfgl",
+      "summary": "אישה בת 40 שלא חוסנה נגד חצבת מתה מסיבוכי המחלה בפנסילבניה, על רקע ההתפרצות החמורה בארה\"ב זה עשרות שנים. פרופ' טל ברוש, מנהל היחידה למחלות זיהומיות באסותא אשדוד: \"ההתערבות הפוליטית במדיניות החיסונים ערערה את אמון הציבור\". פרופ' יסמין מאור, מנהלת היחידה למחלות זיהומיות בוולפסון: \"החיסון מגן מפני מוות ומפני סיבוכים קשים אחרים של המחלה\"",
+      "feed_position": 1,
+      "published_at": "2026-09-14T08:43:43+00:00",
+      "source_id": "ynet_health",
+      "source_name": "ynet בריאות",
+      "source_kind": "major_news",
+      "attention_score": 4,
+      "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
+      "public_health_relevance": 2,
+      "client_topic_relevance": 1,
+      "analysis_gap": 0,
+      "sensationalism_risk": 1,
+      "source_diversity_penalty": 5,
+      "prohibited": false,
+      "age_hours": 1.6,
+      "opportunity_score": 25,
+      "eligible": true,
+      "requires_primary_source_research": true,
+      "requires_medical_review": true
+    }
+  ],
+  "selected": {
+    "title": "בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\"",
+    "url": "https://www.ynet.co.il/health/article/bkvbvqhfgl",
+    "summary": "אישה בת 40 שלא חוסנה נגד חצבת מתה מסיבוכי המחלה בפנסילבניה, על רקע ההתפרצות החמורה בארה\"ב זה עשרות שנים. פרופ' טל ברוש, מנהל היחידה למחלות זיהומיות באסותא אשדוד: \"ההתערבות הפוליטית במדיניות החיסונים ערערה את אמון הציבור\". פרופ' יסמין מאור, מנהלת היחידה למחלות זיהומיות בוולפסון: \"החיסון מגן מפני מוות ומפני סיבוכים קשים אחרים של המחלה\"",
+    "feed_position": 1,
+    "published_at": "2026-09-14T08:43:43+00:00",
+    "source_id": "ynet_health",
+    "source_name": "ynet בריאות",
+    "source_kind": "major_news",
+    "attention_score": 4,
+    "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
+    "public_health_relevance": 2,
+    "client_topic_relevance": 1,
+    "analysis_gap": 0,
+    "sensationalism_risk": 1,
+    "source_diversity_penalty": 5,
+    "prohibited": false,
+    "age_hours": 1.6,
+    "opportunity_score": 25,
+    "eligible": true,
+    "requires_primary_source_research": true,
+    "requires_medical_review": true
+  },
+  "brief_path": "opportunity_drafts/health-news-c2b45c7c3effb3f5.json",
   "selection_history": [
     {
       "selection_id": "9caa78a2bc100abc",
@@ -198,6 +244,12 @@
       "source_id": "ynet_health",
       "url": "https://www.ynet.co.il/health/article/h19f3611wge",
       "selected_at": "2026-09-10T09:21:31.973832+00:00"
+    },
+    {
+      "selection_id": "c2b45c7c3effb3f5",
+      "source_id": "ynet_health",
+      "url": "https://www.ynet.co.il/health/article/bkvbvqhfgl",
+      "selected_at": "2026-09-14T10:17:12.536611+00:00"
     }
   ]
 }
