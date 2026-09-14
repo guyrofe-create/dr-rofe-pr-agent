@@ -1,0 +1,117 @@
+{
+  "draft": "content_drafts/2026-09-14-topic-90-run-34840576898-attempt-1.md",
+  "title": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-09-14T16:35:33.032119+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%95%d7%95%d7%aa-%d7%9e%d7%97%d7%a6%d7%91%d7%aa-%d7%91%d7%92%d7%99%d7%9c-40-%d7%91%d7%90%d7%a8%d7%94%d7%b4%d7%91-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+      "detail": "idempotency_key=pub_a86bb7e072a5f32ad361259dbfe9d256039c121d20ed223fcba040c3a8abcb68"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%95%d7%95%d7%aa-%d7%9e%d7%97%d7%a6%d7%91%d7%aa-%d7%91%d7%92%d7%99%d7%9c-40-%d7%91%d7%90%d7%a8%d7%94%d7%b4%d7%91-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-14-topic-90-run-34840576898-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122204097272942441",
+      "detail": "idempotency_key=pub_9f884336983967ea0c415935e0bb08de19a72222055fa1c6b5396d819bd48d14"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7505303228105015296/",
+      "detail": "idempotency_key=pub_545966003f98d71895201916547e871096528fff48955fb7bffcaf7c78028361"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/09/40.html",
+      "detail": "idempotency_key=pub_9567353410dac265a1b8758178e43d67bd783eaecb1fdfe6832313a7632c64fd"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_c0d53b1837c96e47af0944db88d047732725f69c3cdda8420dc13536735ee859",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\"",
+    "secondary_queries": [
+      "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות",
+      "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\" ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\" גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%95%d7%95%d7%aa-%d7%9e%d7%97%d7%a6%d7%91%d7%aa-%d7%91%d7%92%d7%99%d7%9c-40-%d7%91%d7%90%d7%a8%d7%94%d7%b4%d7%91-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

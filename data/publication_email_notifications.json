@@ -674,6 +674,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7504958123787325440/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEI2s3OeHrf35DQ"
       ]
+    },
+    "apr_c0d53b1837c96e47af0944db88d047732725f69c3cdda8420dc13536735ee859:d159a0eea8f5f016d63fa1cb38f75f2bdb851e05ff612b205669d1aab5a256aa": {
+      "sent_at": "2026-09-14T16:35:35.652862+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_c0d53b1837c96e47af0944db88d047732725f69c3cdda8420dc13536735ee859",
+      "state": "success",
+      "subject": "אישור פרסום: מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9e%d7%95%d7%95%d7%aa-%d7%9e%d7%97%d7%a6%d7%91%d7%aa-%d7%91%d7%92%d7%99%d7%9c-40-%d7%91%d7%90%d7%a8%d7%94%d7%b4%d7%91-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+        "https://www.facebook.com/122204097272942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7505303228105015296/",
+        "https://guyrofe.blogspot.com/2026/09/40.html"
+      ]
     }
   }
 }
