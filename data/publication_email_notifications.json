@@ -687,6 +687,16 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7505303228105015296/",
         "https://guyrofe.blogspot.com/2026/09/40.html"
       ]
+    },
+    "apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327:33e36169a92da98216d758adac07e72c06bbfae6423fb97832739ef7d0601c76": {
+      "sent_at": "2026-09-15T17:17:40.165260+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327",
+      "state": "success",
+      "subject": "אישור פרסום: גיל המעבר: תסמינים, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.com/post/גיל-המעבר-תסמינים-אבחון-ואפשרויות-טיפול"
+      ]
     }
   }
 }

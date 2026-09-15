@@ -2054,6 +2054,20 @@
       "published_at": "2026-09-14T16:35:33Z",
       "url": "https://guyrofe.blogspot.com/2026/09/40.html",
       "provider_receipt": null
+    },
+    "pub_9fc2bdada74715d0674defed2b764a0804a2da447e9a407f14a4e23fe9aee567": {
+      "version": 7,
+      "idempotency_key": "pub_9fc2bdada74715d0674defed2b764a0804a2da447e9a407f14a4e23fe9aee567",
+      "approval_id": "apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "740338fe5b6a58bffc2ad21d03d055143422fd65201d8fffe38663d63e349941",
+      "status": "published",
+      "started_at": "2026-09-15T17:17:32Z",
+      "published_at": "2026-09-15T17:17:34Z",
+      "url": "https://www.drguyrofe.com/post/גיל-המעבר-תסמינים-אבחון-ואפשרויות-טיפול",
+      "provider_receipt": null
     }
   }
 }
