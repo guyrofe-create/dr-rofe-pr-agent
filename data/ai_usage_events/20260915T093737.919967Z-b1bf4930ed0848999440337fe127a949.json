@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "occurred_at": "2026-09-15T09:37:37.919967Z",
+  "operation": "ai_reputation_monitoring",
+  "model": "gpt-5.6-sol",
+  "input_tokens": 15243,
+  "cached_input_tokens": 4370,
+  "cache_write_tokens": 18,
+  "output_tokens": 199,
+  "reasoning_tokens": 149,
+  "web_search_calls": 2,
+  "estimated_cost_usd": 0.0825425
+}
