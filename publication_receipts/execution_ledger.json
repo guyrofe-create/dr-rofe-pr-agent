@@ -2068,6 +2068,81 @@
       "published_at": "2026-09-15T17:17:34Z",
       "url": "https://www.drguyrofe.com/post/גיל-המעבר-תסמינים-אבחון-ואפשרויות-טיפול",
       "provider_receipt": null
+    },
+    "pub_06c579d925f77aa3bbdc5176ee737aaf62f2ea0b7d8f6d337cbe8a48d115dd70": {
+      "version": 7,
+      "idempotency_key": "pub_06c579d925f77aa3bbdc5176ee737aaf62f2ea0b7d8f6d337cbe8a48d115dd70",
+      "approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "request_sha256": "7ac207a8c113199f2ce04b41d344300310eb856971d41af45239c5364fd526a8",
+      "status": "published",
+      "started_at": "2026-09-16T16:10:13Z",
+      "published_at": "2026-09-16T16:10:18Z",
+      "url": "https://guyrofe.com/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a9%d7%97%d7%9c%d7%95%d7%aa-%d7%94%d7%a4%d7%95%d7%9c%d7%99%d7%a6%d7%99%d7%a1%d7%98%d7%99%d7%95%d7%aa/",
+      "provider_receipt": null
+    },
+    "pub_03267f5cefe571072548da5a3727e1e9ed7d32a84ca83d5d67b57240feaade78": {
+      "version": 7,
+      "idempotency_key": "pub_03267f5cefe571072548da5a3727e1e9ed7d32a84ca83d5d67b57240feaade78",
+      "approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "ba7e3cf594c4e12fefe4d24578cb324ab89131fcc84f9e0d7f6fc040fc616d59",
+      "status": "reconciliation_required",
+      "started_at": "2026-09-16T16:10:23Z",
+      "updated_at": "2026-09-16T16:10:25Z"
+    },
+    "pub_0eba9adedaffd5260124aee640f16dcc5c32d26ac0e8581d44be167701b822af": {
+      "version": 7,
+      "idempotency_key": "pub_0eba9adedaffd5260124aee640f16dcc5c32d26ac0e8581d44be167701b822af",
+      "approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "5a66cba55c2daa7fbb4fc7979f464ce8ca62c24c0695ea35c3000821923ae2e8",
+      "status": "published",
+      "started_at": "2026-09-16T16:10:25Z",
+      "published_at": "2026-09-16T16:10:28Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7506021698710990849/",
+      "provider_receipt": null
+    },
+    "pub_8eb12ecaa371464ab018b7c306b37b48a7f5bb2b111884a884c14a821e93ee4b": {
+      "version": 7,
+      "idempotency_key": "pub_8eb12ecaa371464ab018b7c306b37b48a7f5bb2b111884a884c14a821e93ee4b",
+      "approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4",
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "request_sha256": "38f369a45214e017705decc094205b822e8b6940af965c33a5393771daf8cc5e",
+      "status": "published",
+      "started_at": "2026-09-16T16:10:28Z",
+      "published_at": "2026-09-16T16:10:29Z",
+      "url": "https://guyrofe.blogspot.com/2026/09/blog-post_16.html",
+      "provider_receipt": null
+    },
+    "pub_02e3117e7744f1ced0c1cbe4a9794ea034adc465d4232616e5ada082ed86f085": {
+      "version": 7,
+      "idempotency_key": "pub_02e3117e7744f1ced0c1cbe4a9794ea034adc465d4232616e5ada082ed86f085",
+      "approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "7ab448b35ce57a0efa24e426fd24f9b70977cdc9cd1fb255ffebff4ee7ed8a92",
+      "status": "published",
+      "started_at": "2026-09-16T16:10:29Z",
+      "published_at": "2026-09-16T16:10:33Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKmtwrT4lOHW9AE",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/5334030298040697195",
+        "state": "PROCESSING",
+        "createTime": "2026-09-16T16:10:33.492589Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKmtwrT4lOHW9AE",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }
