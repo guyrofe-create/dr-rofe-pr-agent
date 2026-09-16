@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "run_at": "2026-09-15T09:45:06.776461+00:00",
+  "run_at": "2026-09-16T09:38:53.995728+00:00",
   "destination_site_key": "DRGUYROFE_CO_IL",
   "destination_url": "https://www.drguyrofe.co.il",
   "public_execution_allowed": false,
@@ -23,15 +23,15 @@
   ],
   "ranked_candidates": [
     {
-      "title": "האנשים שנעשו חולים בלי שקרה להם דבר | טור",
-      "url": "https://www.ynet.co.il/health/article/hjicwzhkgl",
-      "summary": "רובנו בטוחים שבדיקה רפואית היא הפעולה הבטוחה ביותר שאפשר לעשות. אבל כשמחפשים מספיק זמן אצל אנשים בריאים כמעט תמיד מוצאים משהו, ואז מתחיל מסע שאיש לא ביקש. לפני כל בדיקה יש שאלה אחת שצריכה להישאל תמיד",
-      "feed_position": 2,
-      "published_at": "2026-09-15T06:13:52+00:00",
+      "title": "\"משהו התחיל לחרוק\": עליזה גילתה בגיל 45 מה קורה לעצמות שלנו – ואיך לקחת את הבריאות בידיים",
+      "url": "https://www.ynet.co.il/health/article/h1yy11dsyzx",
+      "summary": "אחת מכל שלוש נשים ואחד מכל חמישה גברים ישברו עצם בגלל מחלה שקטה שברוב המקרים מתגלה רק אחרי השבר הראשון. בפרק השני של הפודקאסט \"מוציאים את השלדים מהארון\", בהגשת הפיזיולוג הקליני ד\"ר שון פורטל, משתפת עליזה אוליאל בסיפור האישי שלה, לצד תובנות רפואיות של ד\"ר ליאור בן משה. מהן הנורות האדומות, איך פועל המנגנון הביולוגי של העצם, וכיצד תוספים חדשניים ושינוי אורח חיים יכולים לשנות את התמונה?",
+      "feed_position": 4,
+      "published_at": "2026-09-16T05:54:23+00:00",
       "source_id": "ynet_health",
       "source_name": "ynet בריאות",
       "source_kind": "major_news",
-      "attention_score": 3,
+      "attention_score": 4,
       "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
       "public_health_relevance": 2,
       "client_topic_relevance": 1,
@@ -39,23 +39,23 @@
       "sensationalism_risk": 0,
       "source_diversity_penalty": 5,
       "prohibited": false,
-      "age_hours": 3.5,
-      "opportunity_score": 26,
+      "age_hours": 3.7,
+      "opportunity_score": 28,
       "eligible": true,
       "requires_primary_source_research": true,
       "requires_medical_review": true
     }
   ],
   "selected": {
-    "title": "האנשים שנעשו חולים בלי שקרה להם דבר | טור",
-    "url": "https://www.ynet.co.il/health/article/hjicwzhkgl",
-    "summary": "רובנו בטוחים שבדיקה רפואית היא הפעולה הבטוחה ביותר שאפשר לעשות. אבל כשמחפשים מספיק זמן אצל אנשים בריאים כמעט תמיד מוצאים משהו, ואז מתחיל מסע שאיש לא ביקש. לפני כל בדיקה יש שאלה אחת שצריכה להישאל תמיד",
-    "feed_position": 2,
-    "published_at": "2026-09-15T06:13:52+00:00",
+    "title": "\"משהו התחיל לחרוק\": עליזה גילתה בגיל 45 מה קורה לעצמות שלנו – ואיך לקחת את הבריאות בידיים",
+    "url": "https://www.ynet.co.il/health/article/h1yy11dsyzx",
+    "summary": "אחת מכל שלוש נשים ואחד מכל חמישה גברים ישברו עצם בגלל מחלה שקטה שברוב המקרים מתגלה רק אחרי השבר הראשון. בפרק השני של הפודקאסט \"מוציאים את השלדים מהארון\", בהגשת הפיזיולוג הקליני ד\"ר שון פורטל, משתפת עליזה אוליאל בסיפור האישי שלה, לצד תובנות רפואיות של ד\"ר ליאור בן משה. מהן הנורות האדומות, איך פועל המנגנון הביולוגי של העצם, וכיצד תוספים חדשניים ושינוי אורח חיים יכולים לשנות את התמונה?",
+    "feed_position": 4,
+    "published_at": "2026-09-16T05:54:23+00:00",
     "source_id": "ynet_health",
     "source_name": "ynet בריאות",
     "source_kind": "major_news",
-    "attention_score": 3,
+    "attention_score": 4,
     "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
     "public_health_relevance": 2,
     "client_topic_relevance": 1,
@@ -63,20 +63,14 @@
     "sensationalism_risk": 0,
     "source_diversity_penalty": 5,
     "prohibited": false,
-    "age_hours": 3.5,
-    "opportunity_score": 26,
+    "age_hours": 3.7,
+    "opportunity_score": 28,
     "eligible": true,
     "requires_primary_source_research": true,
     "requires_medical_review": true
   },
-  "brief_path": "opportunity_drafts/health-news-b58516758ad93737.json",
+  "brief_path": "opportunity_drafts/health-news-5c74d95d17fef643.json",
   "selection_history": [
-    {
-      "selection_id": "4956a2e25e3a8746",
-      "source_id": "walla_health",
-      "url": "https://healthy.walla.co.il/item/3857006",
-      "selected_at": "2026-07-30T07:32:11.229156+00:00"
-    },
     {
       "selection_id": "d2f730250b87e608",
       "source_id": "walla_health",
@@ -250,6 +244,12 @@
       "source_id": "ynet_health",
       "url": "https://www.ynet.co.il/health/article/hjicwzhkgl",
       "selected_at": "2026-09-15T09:45:06.776461+00:00"
+    },
+    {
+      "selection_id": "5c74d95d17fef643",
+      "source_id": "ynet_health",
+      "url": "https://www.ynet.co.il/health/article/h1yy11dsyzx",
+      "selected_at": "2026-09-16T09:38:53.995728+00:00"
     }
   ]
 }
