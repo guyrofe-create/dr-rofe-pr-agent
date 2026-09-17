@@ -54,8 +54,9 @@ jobs:
 
       - name: Install dependencies for an exact approved campaign
         if: >-
-          github.event_name == 'workflow_dispatch' &&
-          (inputs.approval_id != '' || inputs.retry_approval_id != '')
+          github.event_name == 'push' ||
+          (github.event_name == 'workflow_dispatch' &&
+            (inputs.approval_id != '' || inputs.retry_approval_id != ''))
         run: pip install -r requirements.txt
 
       - name: Check dashboard approval queue
@@ -217,6 +218,7 @@ jobs:
         if: >-
           steps.approval.outputs.draft_path != '' &&
           !(github.event_name == 'workflow_dispatch' && inputs.dry_run) &&
+          github.event_name != 'push' &&
           !(github.event_name == 'workflow_dispatch' &&
             (inputs.approval_id != '' || inputs.retry_approval_id != ''))
         run: pip install -r requirements.txt
