@@ -7,9 +7,6 @@ run-name: >-
 on:
   schedule:
     - cron: '*/5 * * * *'
-  push:
-    paths:
-      - '.github/recovery-trigger-20260917.txt'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -65,8 +62,8 @@ jobs:
           APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
           EXACT_APPROVAL_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.approval_id || '' }}
           EXACT_APPROVED_BY: ${{ github.event_name == 'workflow_dispatch' && inputs.approved_by || '' }}
-          RETRY_APPROVAL_ID: ${{ github.event_name == 'push' && 'apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f' || github.event_name == 'workflow_dispatch' && inputs.retry_approval_id || '' }}
-          RETRY_APPROVED_BY: ${{ github.event_name == 'push' && 'guyrofe-create' || github.event_name == 'workflow_dispatch' && inputs.retry_approved_by || '' }}
+          RETRY_APPROVAL_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.retry_approval_id || '' }}
+          RETRY_APPROVED_BY: ${{ github.event_name == 'workflow_dispatch' && inputs.retry_approved_by || '' }}
         run: |
           response_path="${RUNNER_TEMP}/dashboard-approval-response.json"
           bundle_path="${RUNNER_TEMP}/p7-bundle.json"
@@ -195,7 +192,7 @@ jobs:
           DRAFT_PATH: ${{ steps.approval.outputs.draft_path }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
           EXACT_APPROVAL_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.approval_id || '' }}
-          RETRY_APPROVAL_ID: ${{ github.event_name == 'push' && 'apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f' || github.event_name == 'workflow_dispatch' && inputs.retry_approval_id || '' }}
+          RETRY_APPROVAL_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.retry_approval_id || '' }}
         run: |
           if [[ "${DRY_RUN}" == "true" ]]; then
             echo "### CHECK ONLY — no publication was attempted" >> "${GITHUB_STEP_SUMMARY}"

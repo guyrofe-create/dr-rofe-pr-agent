@@ -65,9 +65,11 @@
       "platform": "WordPress",
       "asset": "guyrofe.com",
       "request_sha256": "263c07fbf428eb000b9e3c2e06a0581f2284b4c26fda9e765e0008ccec422077",
-      "status": "reconciliation_required",
-      "started_at": "2026-07-27T11:51:05Z",
-      "updated_at": "2026-09-16T19:34:46Z"
+      "status": "published",
+      "started_at": "2026-09-17T06:56:36Z",
+      "published_at": "2026-09-17T06:56:42Z",
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+      "provider_receipt": null
     },
     "pub_79eee6685a303947a46b57926dbbebad9d09ba33ee34ef1521eed5a2042789db": {
       "version": 7,
@@ -2143,6 +2145,48 @@
         "account": "accounts/110345401117888665629",
         "location": "accounts/110345401117888665629/locations/14140768355740435987"
       }
+    },
+    "pub_8edf27d4ee456aaaf7b0a9c93b8eada519645bd8d096d31269d391e4ae97eb7d": {
+      "version": 7,
+      "idempotency_key": "pub_8edf27d4ee456aaaf7b0a9c93b8eada519645bd8d096d31269d391e4ae97eb7d",
+      "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "e4250d190d700776240282b36db342bb25dc1a0402a9df0895f02c1bc338404b",
+      "status": "published",
+      "started_at": "2026-09-17T06:56:43Z",
+      "published_at": "2026-09-17T06:56:51Z",
+      "url": "https://www.facebook.com/122204463668942441",
+      "provider_receipt": null
+    },
+    "pub_d69a9f37f340cc96bf75f502963e83bab9d8985e524873df8ba3a2abb1ca2d2c": {
+      "version": 7,
+      "idempotency_key": "pub_d69a9f37f340cc96bf75f502963e83bab9d8985e524873df8ba3a2abb1ca2d2c",
+      "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "f8333d05c045f94ccebb5edeaa59dd3e6f211c169a28ff7220f73e958306b0f6",
+      "status": "published",
+      "started_at": "2026-09-17T06:56:51Z",
+      "published_at": "2026-09-17T06:56:55Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7506244778762805248/",
+      "provider_receipt": null
+    },
+    "pub_32914596335c15d2dc835c9da6f34d9d0a11a87932c97d9e15682bc2296aaa86": {
+      "version": 7,
+      "idempotency_key": "pub_32914596335c15d2dc835c9da6f34d9d0a11a87932c97d9e15682bc2296aaa86",
+      "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "request_sha256": "9d427dde84476696bd6bfbc65319f1ae050b5c482ec501b007b3c302e6f1ff85",
+      "status": "published",
+      "started_at": "2026-09-17T06:56:55Z",
+      "published_at": "2026-09-17T06:56:55Z",
+      "url": "https://guyrofe.blogspot.com/2026/09/blog-post_954.html",
+      "provider_receipt": null
     }
   }
 }
