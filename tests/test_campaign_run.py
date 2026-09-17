@@ -110,6 +110,53 @@ class CampaignRunTests(unittest.TestCase):
             "application/json",
         )
 
+    def test_wordpress_reconciliation_recovers_existing_post_without_republishing(self):
+        slug = "approved-article"
+        url = f"https://guyrofe.com/{slug}/"
+        bundle = {"approval_id": "approved-bundle"}
+        target = {"target_id": "canonical_wordpress", "payload": {
+            "slug": slug, "canonical_url": url,
+        }}
+        response = Mock()
+        response.json.return_value = [{"id": 42, "slug": slug, "link": url}]
+        with tempfile.TemporaryDirectory() as directory:
+            ledger = campaign_run.ExecutionLedger(Path(directory) / "ledger.json")
+            key = ledger.key(bundle["approval_id"], target["target_id"])
+            ledger._save({"version": 7, "executions": {key: {
+                "status": "reconciliation_required", "idempotency_key": key,
+            }}})
+            with patch.object(campaign_run.requests, "get", return_value=response):
+                receipt = ledger.execute(
+                    bundle, target,
+                    publisher=Mock(side_effect=AssertionError("duplicate write")),
+                    reconciler=lambda payload, _: campaign_run.wordpress_reconcile(
+                        "https://guyrofe.com", payload
+                    ),
+                )
+        self.assertEqual(receipt["status"], "published")
+        self.assertEqual(receipt["url"], url)
+
+    def test_wordpress_reconciliation_requires_exact_publication(self):
+        payload = {"slug": "approved-article", "canonical_url":
+                   "https://guyrofe.com/approved-article/"}
+        response = Mock()
+        with patch.object(campaign_run.requests, "get", return_value=response):
+            response.json.return_value = []
+            self.assertIsNone(campaign_run.wordpress_reconcile(
+                "https://guyrofe.com", payload
+            ))
+            response.json.return_value = [{"id": 42, "slug": "different",
+                                           "link": payload["canonical_url"]}]
+            with self.assertRaises(campaign_run.ReconciliationRequired):
+                campaign_run.wordpress_reconcile("https://guyrofe.com", payload)
+            response.json.return_value = [{"id": 42, "slug": payload["slug"],
+                                           "link": "https://guyrofe.com/other/"}]
+            with self.assertRaises(campaign_run.ReconciliationRequired):
+                campaign_run.wordpress_reconcile("https://guyrofe.com", payload)
+            response.json.return_value = {"unexpected": "response"}
+            with self.assertRaises(campaign_run.ReconciliationRequired):
+                campaign_run.wordpress_reconcile("https://guyrofe.com", payload)
+
     def test_canonical_provider_url_accepts_percent_encoded_hebrew(self):
         campaign_run.validate_canonical_provider_url(
             "https://www.drguyrofe.co.il/%D7%9E%D7%94-%D7%A2%D7%95%D7%9E%D7%93/",
