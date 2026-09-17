@@ -531,6 +531,27 @@ def _load_approved_local_image(media):
     return image, ""
 
 
+def ensure_unique_canonical_url(ledger, bundle, target, canonical_name):
+    """Stop distinct approvals from silently overwriting the same public article."""
+    url = target["payload"].get("canonical_url")
+    if not url:
+        return
+    for prior in ledger._load().get("executions", {}).values():
+        if (
+            prior.get("status") == "published"
+            and prior.get("target_id") == target["target_id"]
+            and prior.get("asset") == target["asset"]
+            and prior.get("approval_id") != bundle["approval_id"]
+            and prior.get("url")
+            and urls_equivalent(prior["url"], url)
+        ):
+            raise CampaignTargetError(
+                canonical_name,
+                "Canonical URL already belongs to a different approved campaign; "
+                "reconcile the editorial content before publishing",
+            )
+
+
 def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     if approved_bundle is None:
         raise PermissionError("A verified P7 approval bundle is required")
@@ -574,6 +595,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         raise PermissionError("Approved CMS target does not match the configured site")
     canonical_base = primary["base_url"].rstrip("/")
     canonical_name = re.sub(r"^www\.", "", urlparse(canonical_base).netloc)
+    ensure_unique_canonical_url(ledger, approved_bundle, canonical_target, canonical_name)
     if primary_platform == "wordpress":
         primary_user_env = primary["user_env"]
         primary_password_env = primary["app_password_env"]
