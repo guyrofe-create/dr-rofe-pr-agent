@@ -1,14 +1,21 @@
 {
   "draft": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
   "title": "בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא",
-  "status": "completed_with_errors",
-  "published_at": "2026-08-05T07:20:54.650265+00:00",
+  "status": "completed",
+  "published_at": "2026-09-17T19:05:02.257490+00:00",
   "destinations": [
     {
       "name": "drguyrofe.co.il",
       "status": "published",
+      "target_id": "canonical_wordpress",
       "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-04-topic-90-run-30892576802-attempt-1/",
       "detail": "idempotency_key=pub_1b3976a1e9f8666323e7ab51b926611a679b47f7d925fe7c7103ab34cc895e12"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-04-topic-90-run-30892576802-attempt-1/",
+      "detail": "failed checks: canonical_matches, no_internal_run_slug"
     },
     {
       "name": "Canonical editorial hero",
@@ -34,12 +41,14 @@
     {
       "name": "Facebook",
       "status": "published",
+      "target_id": "facebook_page",
       "url": "https://www.facebook.com/122197700126942441",
       "detail": "idempotency_key=pub_441c6559c2f3bdffc6f28f0e43a0264ffecdf49e3c31b6581ef137d17be5964c"
     },
     {
       "name": "LinkedIn",
       "status": "published",
+      "target_id": "linkedin_member",
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7490420767814488064/",
       "detail": "idempotency_key=pub_77aec2f76cb95c3c2d0dca639135bd90886ece35cdbf1909e37c11c9c023c70a"
     },
@@ -61,12 +70,9 @@
     {
       "name": "Blogger",
       "status": "published",
+      "target_id": "blogger_blog",
       "url": "https://guyrofe.blogspot.com/2026/08/blog-post_309.html",
       "detail": "idempotency_key=pub_4e8867550332d72d5b5903d4179507c99de2f3ec931b4ee2576afb1af9b741ea"
-    },
-    {
-      "name": "Instagram",
-      "status": "not_scheduled"
     },
     {
       "name": "Pinterest",
@@ -74,8 +80,10 @@
     },
     {
       "name": "Google Business Profile",
-      "status": "failed",
-      "detail": "Target google_business_profile may already be published; reconcile first"
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENyQlqHmvrrKhgE",
+      "detail": "idempotency_key=pub_740eded1619a6d8b75a794f311d778d8c79c2d05e9d148ea6b69281fc4ea9a26"
     },
     {
       "name": "Medium",
@@ -94,5 +102,7 @@
     }
   ],
   "approval_id": "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4",
+  "search_target": {},
+  "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-04-topic-90-run-30892576802-attempt-1/",
   "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
 }
