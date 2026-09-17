@@ -272,6 +272,40 @@ def wordpress_publish(
     return link
 
 
+def wordpress_reconcile(base_url, approved_payload):
+    """Resolve an uncertain canonical write without making another remote write."""
+    slug = approved_payload["slug"]
+    endpoint = f"{base_url.rstrip('/')}/wp-json/wp/v2/posts"
+    response = requests.get(
+        endpoint,
+        params={"slug": slug, "status": "publish", "_fields": "id,link,slug"},
+        headers={
+            "Accept": "application/json",
+            "Cache-Control": "no-cache",
+            "User-Agent": (
+                f"ReputationAgent/{CLIENT_PROFILE['client_id']} "
+                f"(+{CLIENT_PROFILE['canonical_facts']['canonical_site']})"
+            ),
+        },
+        timeout=25,
+    )
+    response.raise_for_status()
+    try:
+        posts = response.json()
+    except (ValueError, requests.exceptions.JSONDecodeError) as exc:
+        raise ReconciliationRequired("WordPress lookup returned non-JSON data") from exc
+    if not isinstance(posts, list):
+        raise ReconciliationRequired("WordPress lookup returned an invalid result")
+    if not posts:
+        return None
+    if len(posts) != 1 or posts[0].get("slug") != slug:
+        raise ReconciliationRequired("WordPress lookup did not identify one exact slug")
+    url = posts[0].get("link")
+    if not url or not urls_equivalent(url, approved_payload["canonical_url"]):
+        raise ReconciliationRequired("WordPress URL differs from the approved URL")
+    return {"url": url, "provider_receipt": {"id": posts[0]["id"]}}
+
+
 def destination(name, status, url=None, detail=None, target_id=None):
     item = {"name": name, "status": status}
     if target_id:
@@ -623,6 +657,9 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         ),
                     )
                 },
+                reconciler=lambda payload, key: wordpress_reconcile(
+                    canonical_base, payload
+                ),
             )
         else:
             canonical_receipt = ledger.execute(
