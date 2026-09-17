@@ -122,6 +122,52 @@ jobs:
           with open('provider_publication_audit.json','w',encoding='utf-8') as out:json.dump({'summary':summary,'blogger_api':blogger_status,'results':results},out,ensure_ascii=False,indent=2)
           print(json.dumps({'summary':summary,'blogger_api':blogger_status},ensure_ascii=False))
           PY
+      - name: Match Facebook receipts against Page published posts
+        env:
+          FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+        run: |
+          python - <<'PY'
+          import json,os,requests
+          from urllib.parse import urlsplit
+          token=os.environ.get('FACEBOOK_PAGE_TOKEN','')
+          page=os.environ.get('FACEBOOK_PAGE_ID','')
+          receipts=[x for x in json.load(open('full_publication_audit.json',encoding='utf-8'))['results'] if x['target']=='Facebook']
+          posts=[]
+          error=None
+          if page and token:
+              after=None
+              for _ in range(10):
+                  params={'fields':'id,permalink_url,created_time,attachments{target{id},url}','limit':100,'access_token':token}
+                  if after:params['after']=after
+                  try:
+                      response=requests.get('https://graph.facebook.com/v25.0/'+page+'/published_posts',params=params,timeout=25)
+                      if not response.ok:
+                          error='HTTP '+str(response.status_code)
+                          break
+                      payload=response.json()
+                      posts.extend(payload.get('data') or [])
+                      after=((payload.get('paging') or {}).get('cursors') or {}).get('after')
+                      if not after or not payload.get('data'):break
+                  except Exception as exc:
+                      error=type(exc).__name__
+                      break
+          results=[]
+          for item in receipts:
+              wanted=urlsplit(item['url']).path.rstrip('/').split('/')[-1]
+              matches=[]
+              for post in posts:
+                  pid=str(post.get('id') or '')
+                  targets=[str((a.get('target') or {}).get('id') or '') for a in (post.get('attachments') or {}).get('data',[])]
+                  if wanted==pid.split('_')[-1] or wanted in targets or wanted in str(post.get('permalink_url') or '').split('/'):
+                      matches.append(post)
+              result={'url':item['url'],'verification':'provider_object_confirmed' if len(matches)==1 else 'ambiguous_or_not_found','matches':len(matches)}
+              if len(matches)==1:result['provider_post_id']=matches[0].get('id')
+              results.append(result)
+          report={'posts_scanned':len(posts),'error':error,'confirmed':sum(x['verification']=='provider_object_confirmed' for x in results),'results':results}
+          with open('facebook_page_audit.json','w',encoding='utf-8') as out:json.dump(report,out,ensure_ascii=False,indent=2)
+          print(json.dumps({'posts_scanned':report['posts_scanned'],'error':error,'confirmed':report['confirmed'],'total':len(results)}))
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -129,4 +175,5 @@ jobs:
           path: |
             full_publication_audit.json
             provider_publication_audit.json
+            facebook_page_audit.json
           retention-days: 7
