@@ -213,6 +213,30 @@ jobs:
           with open('wordpress_owner_audit.json','w',encoding='utf-8') as out:json.dump({'summary':summary,'results':results},out,ensure_ascii=False,indent=2)
           print(json.dumps({'summary':summary,'total':len(results)}))
           PY
+      - name: Reconcile one legacy WordPress permalink by article title
+        env:
+          WORDPRESS_GUYROFE_COM_USER: ${{ secrets.WORDPRESS_GUYROFE_COM_USER }}
+          WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
+        run: |
+          python - <<'PY'
+          import html,json,os,re,requests
+          title='גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות'
+          auth=(os.environ.get('WORDPRESS_GUYROFE_COM_USER',''),os.environ.get('WORDPRESS_GUYROFE_COM_API',''))
+          report={'title':title,'status':'inconclusive','candidates':[]}
+          try:
+              response=requests.get('https://guyrofe.com/wp-json/wp/v2/posts',params={'search':'גיל המעבר','per_page':100,'status':'publish','_fields':'id,link,title,slug'},auth=auth,headers={'Accept':'application/json'},timeout=25)
+              report['http']=response.status_code
+              if response.ok:
+                  posts=response.json()
+                  for post in posts if isinstance(posts,list) else []:
+                      rendered=html.unescape(re.sub(r'<[^>]+>','',str((post.get('title') or {}).get('rendered') or '')))
+                      if rendered.strip()==title or (title.split(':')[0] in rendered and 'טיפול' in rendered):
+                          report['candidates'].append({'id':post.get('id'),'url':post.get('link'),'title':rendered})
+                  if len(report['candidates'])==1:report['status']='title_match_found'
+          except Exception as exc:report['error_type']=type(exc).__name__
+          with open('legacy_wordpress_reconciliation.json','w',encoding='utf-8') as out:json.dump(report,out,ensure_ascii=False,indent=2)
+          print(json.dumps(report,ensure_ascii=False))
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -222,4 +246,5 @@ jobs:
             provider_publication_audit.json
             facebook_page_audit.json
             wordpress_owner_audit.json
+            legacy_wordpress_reconciliation.json
           retention-days: 7
