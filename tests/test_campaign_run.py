@@ -320,6 +320,38 @@ class CampaignRunTests(unittest.TestCase):
         )
         self.assertTrue(caption.endswith(disclosure))
 
+    def test_distinct_approval_cannot_overwrite_existing_canonical_url(self):
+        target = {
+            "target_id": "canonical_wordpress",
+            "asset": "guyrofe.com",
+            "payload": {"canonical_url": "https://guyrofe.com/article/"},
+        }
+        ledger = Mock()
+        ledger._load.return_value = {
+            "executions": {
+                "prior": {
+                    "status": "published",
+                    "target_id": "canonical_wordpress",
+                    "asset": "guyrofe.com",
+                    "approval_id": "apr_original",
+                    "url": "https://guyrofe.com/article/",
+                }
+            }
+        }
+        with self.assertRaisesRegex(
+            campaign_run.CampaignTargetError, "different approved campaign"
+        ):
+            campaign_run.ensure_unique_canonical_url(
+                ledger, {"approval_id": "apr_new"}, target, "guyrofe.com"
+            )
+        campaign_run.ensure_unique_canonical_url(
+            ledger, {"approval_id": "apr_original"}, target, "guyrofe.com"
+        )
+        target["payload"]["canonical_url"] = "https://guyrofe.com/other/"
+        campaign_run.ensure_unique_canonical_url(
+            ledger, {"approval_id": "apr_new"}, target, "guyrofe.com"
+        )
+
     def test_destination_failure_is_reported_without_stopping_other_targets(self):
         target = {
             "target_id": "facebook_page",
