@@ -1,17 +1,105 @@
 {
   "draft": "content_drafts/2026-07-27-topic-06-run-30255219272-attempt-1.md",
   "title": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
-  "status": "failed",
-  "published_at": "2026-09-16T19:34:46.150017+00:00",
+  "status": "completed",
+  "published_at": "2026-09-17T06:56:55.748278+00:00",
   "destinations": [
     {
       "name": "guyrofe.com",
-      "status": "failed",
-      "detail": "CampaignTargetError: Target canonical_wordpress may already be published; reconcile first"
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+      "detail": "idempotency_key=pub_ddf32b027aa1ab95c97ffae8874d4865f60b86397efbdf2bf735ee0d8f942b19"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+      "detail": "failed checks: no_internal_run_slug, canonical_person_linked"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1-approved-1.png",
+      "detail": "approved_visual"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122204463668942441",
+      "detail": "idempotency_key=pub_8edf27d4ee456aaaf7b0a9c93b8eada519645bd8d096d31269d391e4ae97eb7d"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7506244778762805248/",
+      "detail": "idempotency_key=pub_d69a9f37f340cc96bf75f502963e83bab9d8985e524873df8ba3a2abb1ca2d2c"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/09/blog-post_954.html",
+      "detail": "idempotency_key=pub_32914596335c15d2dc835c9da6f34d9d0a11a87932c97d9e15682bc2296aaa86"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_configured"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
     }
   ],
   "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
   "search_target": {},
-  "canonical_url": null,
+  "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
   "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
 }
