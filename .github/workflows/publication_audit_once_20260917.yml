@@ -168,6 +168,42 @@ jobs:
           with open('facebook_page_audit.json','w',encoding='utf-8') as out:json.dump(report,out,ensure_ascii=False,indent=2)
           print(json.dumps({'posts_scanned':report['posts_scanned'],'error':error,'confirmed':report['confirmed'],'total':len(results)}))
           PY
+      - name: Verify WordPress posts through owner API
+        env:
+          WORDPRESS_GUYROFE_COM_USER: ${{ secrets.WORDPRESS_GUYROFE_COM_USER }}
+          WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
+        run: |
+          python - <<'PY'
+          import concurrent.futures,html,json,os,requests
+          from urllib.parse import urlsplit,unquote
+          items=[x for x in json.load(open('full_publication_audit.json',encoding='utf-8'))['results'] if urlsplit(x['url']).netloc=='guyrofe.com']
+          auth=(os.environ.get('WORDPRESS_GUYROFE_COM_USER',''),os.environ.get('WORDPRESS_GUYROFE_COM_API',''))
+          def check(item):
+              slug=unquote(urlsplit(item['url']).path.strip('/'))
+              row={'url':item['url'],'verification':'provider_read_inconclusive'}
+              if not all(auth):return row
+              try:
+                  response=requests.get('https://guyrofe.com/wp-json/wp/v2/posts',params={'slug':slug,'status':'publish','_fields':'id,link,slug,title'},auth=auth,headers={'Accept':'application/json'},timeout=25)
+                  row['http']=response.status_code
+                  if response.ok:
+                      posts=response.json()
+                      if isinstance(posts,list) and len(posts)==1 and posts[0].get('slug')==slug:
+                          row['verification']='provider_object_confirmed'
+                          row['provider_id']=posts[0].get('id')
+                          row['provider_url']=posts[0].get('link')
+                      elif isinstance(posts,list) and not posts:
+                          row['verification']='slug_not_found_in_api'
+              except Exception as exc:
+                  row['error_type']=type(exc).__name__
+              return row
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(check,items))
+          summary={}
+          for x in results:
+              key=x['verification']+' | '+str(x.get('http'))
+              summary[key]=summary.get(key,0)+1
+          with open('wordpress_owner_audit.json','w',encoding='utf-8') as out:json.dump({'summary':summary,'results':results},out,ensure_ascii=False,indent=2)
+          print(json.dumps({'summary':summary,'total':len(results)}))
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -176,4 +212,5 @@ jobs:
             full_publication_audit.json
             provider_publication_audit.json
             facebook_page_audit.json
+            wordpress_owner_audit.json
           retention-days: 7
