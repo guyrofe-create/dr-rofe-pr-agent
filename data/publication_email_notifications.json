@@ -731,6 +731,18 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7487906037862289409/",
         "https://guyrofe.blogspot.com/2026/07/blog-post_28.html"
       ]
+    },
+    "apr_5922f6d36128aa0e883963fc6755e20dffdbea6525cfb963389c898c7f8b6ff3:41a53c655be5c45efe15b774e8dc0e0469df580611d3cf13d21f18a89181aba9": {
+      "sent_at": "2026-09-17T00:41:59.738477+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_5922f6d36128aa0e883963fc6755e20dffdbea6525cfb963389c898c7f8b6ff3",
+      "state": "partial",
+      "subject": "הפרסום הושלם עם תקלות: כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+        "https://www.facebook.com/122197372376942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7489718427276972032/"
+      ]
     }
   }
 }
