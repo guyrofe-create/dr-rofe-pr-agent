@@ -1,0 +1,66 @@
+name: One-time full publication audit
+on:
+  push:
+    paths:
+      - '.github/workflows/publication_audit_once_20260917.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install requests
+      - name: Check recorded publication URLs
+        run: |
+          python - <<'PY'
+          import concurrent.futures, glob, html, json, re
+          import requests
+          from collections import Counter
+          from urllib.parse import urlparse
+          items=[]
+          for path in glob.glob('content_drafts/campaigns/*.json'):
+              if path.endswith('/index.json'): continue
+              try: record=json.load(open(path,encoding='utf-8'))
+              except Exception: continue
+              for dest in record.get('destinations',[]):
+                  if dest.get('status')=='published' and dest.get('url'):
+                      items.append({'receipt':path,'target':dest['name'],'url':dest['url'],'title':record.get('title','')})
+          def check(item):
+              result=dict(item)
+              try:
+                  response=requests.get(item['url'],timeout=12,allow_redirects=True,headers={'User-Agent':'Mozilla/5.0 (compatible; PublicationAudit/1.0)'})
+                  result.update(http=response.status_code,final_url=response.url)
+                  body=html.unescape(re.sub(r'<[^>]+>',' ',response.text))
+                  title=item['title'].split('|')[0].strip()
+                  if response.status_code==200 and title and title[:20] in body:
+                      result['verification']='title_observed'
+                  elif response.status_code==200 and any(x in body.lower() for x in ('captcha','checking the site connection security','log in','sign in')):
+                      result['verification']='access_challenge'
+                  elif response.status_code==200:
+                      result['verification']='live_page_content_unconfirmed'
+                  elif response.status_code in (404,410):
+                      result['verification']='missing'
+                  else:
+                      result['verification']='http_error_or_access_restricted'
+              except Exception as exc:
+                  result['verification']='request_inconclusive'
+                  result['detail']=type(exc).__name__+': '+str(exc)[:160]
+              return result
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
+              results=list(pool.map(check,items))
+          summary=Counter((urlparse(x['url']).netloc,x['verification']) for x in results)
+          report={'checked':len(results),'summary':{' | '.join(k):v for k,v in sorted(summary.items())},'results':results}
+          with open('full_publication_audit.json','w',encoding='utf-8') as out:json.dump(report,out,ensure_ascii=False,indent=2)
+          print(json.dumps({'checked':len(results),'summary':report['summary']},ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-publication-audit
+          path: full_publication_audit.json
+          retention-days: 7
