@@ -183,16 +183,25 @@ jobs:
               row={'url':item['url'],'verification':'provider_read_inconclusive'}
               if not all(auth):return row
               try:
-                  response=requests.get('https://guyrofe.com/wp-json/wp/v2/posts',params={'slug':slug,'status':'publish','_fields':'id,link,slug,title'},auth=auth,headers={'Accept':'application/json'},timeout=25)
+                  endpoint='https://guyrofe.com/wp-json/wp/v2/posts'
+                  params={'slug':slug,'status':'publish','_fields':'id,link,slug,title'}
+                  response=requests.get(endpoint,params=params,auth=auth,headers={'Accept':'application/json'},timeout=25)
+                  if response.status_code==503:
+                      response=requests.get(endpoint,params=params,auth=auth,headers={'Accept':'application/json'},timeout=25)
                   row['http']=response.status_code
                   if response.ok:
                       posts=response.json()
-                      if isinstance(posts,list) and len(posts)==1 and posts[0].get('slug')==slug:
+                      row['candidate_count']=len(posts) if isinstance(posts,list) else -1
+                      def same_link(left,right):
+                          return unquote(urlsplit(left or '').path).rstrip('/')==unquote(urlsplit(right).path).rstrip('/')
+                      if isinstance(posts,list) and len(posts)==1 and (posts[0].get('slug')==slug or same_link(posts[0].get('link'),item['url'])):
                           row['verification']='provider_object_confirmed'
                           row['provider_id']=posts[0].get('id')
                           row['provider_url']=posts[0].get('link')
                       elif isinstance(posts,list) and not posts:
                           row['verification']='slug_not_found_in_api'
+                      elif isinstance(posts,list):
+                          row['candidate_slugs']=[x.get('slug') for x in posts[:3]]
               except Exception as exc:
                   row['error_type']=type(exc).__name__
               return row
