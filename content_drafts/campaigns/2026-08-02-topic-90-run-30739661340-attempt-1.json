@@ -2,13 +2,20 @@
   "draft": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
   "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
   "status": "completed",
-  "published_at": "2026-08-02T17:36:25.909968+00:00",
+  "published_at": "2026-09-17T05:30:29.785115+00:00",
   "destinations": [
     {
       "name": "drguyrofe.co.il",
       "status": "published",
+      "target_id": "canonical_wordpress",
       "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
       "detail": "idempotency_key=pub_2bcf8379db0d333dc6eeba207b2ae4d7466c140638cf98d39b01e3f1e544d1f6"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
+      "detail": "failed checks: canonical_matches, no_internal_run_slug"
     },
     {
       "name": "Canonical editorial hero",
@@ -59,10 +66,6 @@
       "status": "not_scheduled"
     },
     {
-      "name": "Instagram",
-      "status": "not_scheduled"
-    },
-    {
       "name": "Pinterest",
       "status": "not_scheduled"
     },
@@ -87,5 +90,7 @@
     }
   ],
   "approval_id": "apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3",
+  "search_target": {},
+  "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
   "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
 }

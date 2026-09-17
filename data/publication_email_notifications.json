@@ -743,6 +743,16 @@
         "https://www.facebook.com/122197372376942441",
         "https://www.linkedin.com/feed/update/urn:li:share:7489718427276972032/"
       ]
+    },
+    "apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3:20db1f3137dba522e3304ed8a6d5e760a86670ecf7ca33ddc83f6927418bb6f1": {
+      "sent_at": "2026-09-17T05:30:32.094917+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3",
+      "state": "success",
+      "subject": "אישור פרסום: צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/"
+      ]
     }
   }
 }
