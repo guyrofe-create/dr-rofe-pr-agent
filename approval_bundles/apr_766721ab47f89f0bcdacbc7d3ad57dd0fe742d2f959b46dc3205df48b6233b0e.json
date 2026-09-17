@@ -1,0 +1,407 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-17T11:05:04Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-17-topic-90-run-35213563884-attempt-1.md",
+  "source_draft_sha256": "1223230e83736c827214c638bf7ad9a77fbba490a09301d0638ca5475ce24eb6",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://healthy.walla.co.il/item/3867903",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1093/hropen/hoag073",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/clinical/clinical-guidance/practice-advisory/articles/2025/09/acetaminophen-use-in-pregnancy-and-neurodevelopmental-outcomes",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ema.europa.eu/en/news/use-paracetamol-during-pregnancy-unchanged-eu",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.fda.gov/drugs/safe-use-over-counter-pain-relievers-and-fever-reducers/acetaminophen",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.fda.gov/safety/medical-product-safety-information/nonsteroidal-anti-inflammatory-drugs-nsaids-drug-safety-communication-avoid-use-nsaids-pregnancy-20",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+    "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+    "alt_text": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Extra_Strength_Tylenol_and_Tylenol_PM.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Extra_Strength_Tylenol_and_Tylenol_PM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Ragesoss",
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Extra Strength Tylenol and Tylenol PM.jpg — Ragesoss; CC BY-SA 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-hero.png",
+        "sha256": "993283f9c5e5fac4e0e50239fe25b97525094644244e66a99e410798a05a6388",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+        "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-square.jpg",
+        "sha256": "c0e2a10961a9e1fe2ce746332bfaf2212c2dfa1a56bae05c2d391a803b42f599",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-portrait.png",
+        "sha256": "c0542a604b95c589285586dda9ee6d2e8726ba079fbdd8f2cf60a04d8ae56f98",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא",
+        "cms_title": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה",
+        "markdown": "# מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** מחקר תצפיתי חדש מצא קשר בין חשיפה לפרצטמול במהלך ההיריון לבין הבדלים מסוימים במדדי התפתחות השחלות, הרחם ורקמת השד אצל בנות. עם זאת, המחקר אינו מוכיח שהתרופה גרמה לשינויים, אינו מראה פגיעה בפוריות בבגרות ואינו מצדיק הפסקה גורפת של השימוש בפרצטמול בהיריון. נכון להיום, גופים מקצועיים ממשיכים לראות בפרצטמול אפשרות מרכזית לטיפול בכאב ובחום בהיריון, כאשר יש צורך רפואי ובהתאם להנחיות.\n\nהכותרת “[אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה](https://healthy.walla.co.il/item/3867903)”, שפורסמה ב־17 בספטמבר 2026, מתייחסת למחקר דני שפורסם ב־8 בספטמבר 2026 בכתב העת *Human Reproduction Open*. הכותרת משקפת אות מדעי שמצדיק המשך מחקר, אך כדי להבין את משמעותו יש להבחין בין קשר סטטיסטי לבין סיבתיות, בין מדדי ביניים בינקות לבין תוצאה רפואית בבגרות, ובין שימוש נקודתי בתרופה לבין חשיפה חוזרת או ממושכת.\n\n## מה בדיוק בדק המחקר החדש?\n\nהמחקר, המכונה COPANA, היה מחקר עוקבה פרוספקטיבי ותצפיתי שנערך בבית חולים אוניברסיטאי בקופנהגן. מטרתו הייתה לבדוק אם חשיפה עוברית לפרצטמול — החומר הפעיל באקמול ובתרופות נוספות — קשורה למדדים של התפתחות מערכת הרבייה אצל תינוקות ממין נקבה.\n\nהחוקרים גייסו 685 נשים הרות בתחילת ההיריון. במסגרת המעקב הן דיווחו אחת לשבועיים על שימוש בפרצטמול, ובחלקן נמדדה נוכחות החומר גם בדגימת שתן בשליש הראשון. בהמשך נבדקו 302 מהבנות שנולדו, בתקופה שבה מתרחשת “מיני־התבגרות מינית” — שלב הורמונלי טבעי בחודשי החיים הראשונים.\n\nהבנות חולקו לשלוש קבוצות: חשיפה ראשונה לפני שבוע 17 להיריון, חשיפה שהחלה משבוע 17 ואילך, וקבוצה ללא חשיפה מדווחת. החוקרים בדקו, בין היתר, את נפח השחלות והרחם, את מספר הזקיקים שנראו באולטרסאונד, את רמות ההורמון AMH ואת קוטר רקמת השד.\n\nעל פי [המאמר המדעי המקורי של מחקר COPANA](https://doi.org/10.1093/hropen/hoag073), חשיפה מוקדמת לפרצטמול הייתה קשורה בממוצע לנפח שחלות קטן יותר ולנפח רחם קטן יותר. חשיפה שהחלה בשלב מאוחר יותר הייתה קשורה למספר נמוך יותר של זקיקים שנצפו בבדיקה. בתת־קבוצה קטנה של בנות שנחשפו רק בשלב המוקדם של ההיריון נמצאו גם רמות AMH נמוכות יותר.\n\nהחוקרים ניתחו גם קבוצת אימות נפרדת, שבה נאספו נתונים על 1,210 בנות מהינקות ועד גיל ההתבגרות. גם בקבוצה זו נמצא קשר בין דיווח אימהי על שימוש בפרצטמול בהיריון לבין נפח רחם קטן יותר בגיל ההתבגרות ונפח שחלות קטן יותר בחלק מהבדיקות. למרות זאת, שיטת הערכת החשיפה בקבוצת האימות הייתה כללית יותר והתבססה על דיווח של שימוש כלשהו בתרופה, ללא פירוט מספק של מינון, תדירות או משך.\n\n## מה הנתונים מראים — ומה הם אינם מוכיחים?\n\nהממצא המרכזי הוא **קשר סטטיסטי**: בקבוצות שנחשפו לפרצטמול נמצאו הבדלים ממוצעים בחלק מהמדדים שנבדקו, בהשוואה לקבוצה שלא דיווחה על חשיפה. קשר כזה עשוי להעלות השערה ביולוגית ולכוון למחקרים נוספים, אך הוא אינו מוכיח שהפרצטמול הוא שגרם להבדלים.\n\nלכך יש כמה סיבות. ראשית, הטיפול לא הוקצה באקראי. נשים נטלו פרצטמול מסיבה כלשהי — למשל חום, זיהום, כאב ראש, דלקת או כאב ממקור אחר. ייתכן שהמצב שבגללו נלקחה התרופה, ולא התרופה עצמה, קשור לפחות לחלק מהתוצאות. תופעה זו מכונה “ערפול לפי התוויה”. החוקרים ניסו להתחשב בחום ובגורמים אימהיים נוספים, אך במחקר תצפיתי לא ניתן לשלול לחלוטין משתנים שלא נמדדו או לא נמדדו במדויק.\n\nשנית, המחקר לא נועד לקבוע אם קיים קשר ברור של מנה–תגובה. כלומר, הוא אינו מספק תשובה מספקת לשאלה אם שימוש בתדירות גבוהה יותר, מינון גדול יותר או טיפול ממושך יותר קשורים לשינוי גדול יותר. ללא דפוס כזה קשה יותר לתמוך בפרשנות סיבתית.\n\nשלישית, המדדים נבדקו ברובם בינקות. בתקופה זו מערכת הרבייה עוברת שינויים הורמונליים מהירים, וקיימת שונות טבעית בין תינוקות בנפח השחלות, במספר הזקיקים וברמות ההורמונים. אין כיום ערכי סף מוסכמים בגיל זה המאפשרים לקבוע על בסיס המדדים הללו שתינוקת מסוימת תסבול בעתיד מרזרבה שחלתית נמוכה או מקושי להרות.\n\nלכן אין להסיק מהמחקר כי בנות שנחשפו לפרצטמול יפתחו אי־פוריות, גיל מעבר מוקדם או מחלה גינקולוגית. תוצאות כאלה כלל לא נמדדו. גם מחברי המחקר מציינים כי המשמעות הקלינית ארוכת הטווח נותרה בלתי ודאית ודורשת מעקב ממושך.\n\n## מדוע בכל זאת הממצאים מעוררים עניין?\n\nהמחקר חשוב משום שהוא בוחן בבני אדם שאלה שנחקרה בעבר בעיקר במודלים ניסויים. מחקרים בבעלי חיים ובתרביות של רקמה שחלתית עוברית העלו אפשרות שחשיפה לפרצטמול בשלבים רגישים של ההתפתחות עשויה להשפיע על תאי הנבט ועל יצירת זקיקים. הממצאים החדשים אינם מוכיחים שמנגנון דומה מתרחש בהיריון אנושי רגיל, אך הם מעניקים בסיס לבדיקה נוספת.\n\nנוסף על כך, החוקרים לא הסתמכו רק על דיווח חד־פעמי בדיעבד. הדיווחים נאספו לאורך ההיריון, ובחלק מהמשתתפות נערכו גם מדידות שתן. זהו יתרון ביחס למחקרים הנשענים אך ורק על זיכרון אימהי שנים לאחר הלידה.\n\nעם זאת, גם מדידה של פרצטמול בדגימת שתן אחת אינה משקפת בהכרח את מלוא החשיפה לאורך ההיריון. התרופה מתפנה מהגוף בתוך זמן קצר יחסית, ולכן דגימה עשויה לשקף שימוש סמוך לבדיקה ולא דפוס קבוע. בנוסף, אוכלוסיית המחקר הייתה מוגדרת למדי ונבחרה ממרכז יחיד, עובדה שעשויה להגביל את היכולת להשליך את התוצאות על כלל האוכלוסייה.\n\nהניתוח המדעי הזה מוביל למסקנה מאוזנת: מדובר באות שראוי לבדוק במחקרים גדולים ועצמאיים, אך לא בראיה מספקת לשינוי גורף בהמלצות הטיפול.\n\n## האם ההמלצות לגבי פרצטמול בהיריון השתנו?\n\nנכון לספטמבר 2026, המחקר החדש לבדו אינו משנה את ההנחיות המקצועיות המקובלות. [הנחיית ACOG בנושא שימוש בפרצטמול בהיריון](https://www.acog.org/clinical/clinical-guidance/practice-advisory/articles/2025/09/acetaminophen-use-in-pregnancy-and-neurodevelopmental-outcomes) קובעת כי פרצטמול נותר משכך הכאב ומוריד החום המועדף בהיריון, כאשר השימוש נעשה באופן מושכל, במינון היעיל הנמוך ביותר ולמשך הזמן הקצר הנדרש.\n\nגם [עמדת סוכנות התרופות האירופית בנוגע לפרצטמול בהיריון](https://www.ema.europa.eu/en/news/use-paracetamol-during-pregnancy-unchanged-eu) מבהירה כי ניתן להשתמש בתרופה לטיפול בכאב או בחום כאשר הדבר נחוץ מבחינה קלינית, וכי אין ראיות חדשות המחייבות שינוי של ההמלצות באיחוד האירופי.\n\nחשוב להבין שהערכת בטיחות אינה בחירה בין “תרופה” לבין “אפס סיכון”. חום משמעותי, כאב מתמשך או מחלה שאינה מטופלת עלולים גם הם להשפיע על בריאות האם וההיריון. בנוסף, משככי כאב אחרים אינם בהכרח חלופה בטוחה יותר: לתרופות נוגדות דלקת שאינן סטרואידיות, כגון איבופרופן ונפרוקסן, קיימות מגבלות מוכרות במהלך ההיריון, במיוחד משבוע 20 ואילך ובשליש השלישי.\n\nגם בתוך העמדות הרשמיות קיימים הבדלי ניסוח. ה־FDA האמריקאי נקט בספטמבר 2025 גישה זהירה יותר לנוכח מחקרים על תוצאות נוירו־התפתחותיות, אך ציין במפורש שלא הוכח קשר סיבתי ושפרצטמול נותר החלופה הבטוחה ביותר מבין משככי הכאב ומורידי החום הנמכרים ללא מרשם בהיריון. הדיון ההוא עסק בעיקר באוטיזם ובהפרעת קשב, בעוד שהמחקר הנוכחי עוסק במדדים של התפתחות מערכת הרבייה. אין לערבב בין שאלות מחקריות שונות או להציג אותן כהוכחה מצטברת לנזק יחיד ומוגדר.\n\n## מה המשמעות המעשית לנשים בהיריון?\n\nהמסר המעשי אינו “אסור לקחת אקמול”, אך גם לא “אפשר לקחת ללא כל שיקול”. פרצטמול הוא תרופה פעילה, ויש להשתמש בו למטרה רפואית מוגדרת ובהתאם לעלון, להנחיה המקצועית ולהוראות הגורם המטפל.\n\nשימוש חד־פעמי או קצר בעקבות צורך ממשי אינו זהה לשימוש יומיומי ממושך. המחקר החדש אינו מאפשר לחשב סיכון אישי, ואינו קובע כי מנה בודדת פוגעת בהתפתחות השחלות. מנגד, כאשר כאב או חום נמשכים, אין להמשיך טיפול עצמי לאורך זמן בלי לברר את הסיבה לתסמין.\n\nיש להיזהר גם מנטילה כפולה שלא במתכוון. פרצטמול נמצא בתכשירים רבים נגד כאב, הצטננות ושפעת, ולעיתים מופיע לצד חומרים פעילים נוספים. לכן יש לבדוק את רשימת המרכיבים ולא לשלב כמה מוצרים המכילים פרצטמול. מינון יתר עלול לגרום לנזק כבד חמור, ללא קשר להיריון.\n\nכאבי ראש חריגים, חזקים או מתמשכים בהיריון מחייבים בירור, משום שלעיתים הם עלולים להיות קשורים למצבים כגון יתר לחץ דם או רעלת היריון. גם חום גבוה, כאב בטן משמעותי, קוצר נשימה, הקאות ממושכות או החמרה כללית אינם מצבים שבהם נכון להסתפק בהמשך נטילת משכך כאב.\n\n## סיכום\n\nמחקר COPANA מצא קשר בין חשיפה לפרצטמול בהיריון לבין הבדלים ממוצעים בנפח השחלות והרחם, במספר הזקיקים ובחלק מהמדדים ההורמונליים אצל בנות. מדובר בממצא חדש ומעניין, הנשען על מחקר אנושי פרוספקטיבי ועל קבוצת אימות נוספת.\n\nעם זאת, המחקר הוא תצפיתי, אינו שולל באופן מלא השפעה של חום, כאב או מחלות אימהיות, אינו מספק הערכה מספקת של מינון ומשך השימוש ואינו מראה פגיעה בפוריות בפועל. נפח שחלה, מספר זקיקים או רמת AMH בינקות אינם שקולים לאבחנה של בעיית פוריות עתידית.\n\nלפיכך, הכותרת מצביעה על חשש מחקרי לגיטימי — לא על סכנה מוכחת. נכון לעכשיו אין בסיס להמלצה גורפת להימנע מפרצטמול כאשר הוא דרוש לטיפול בכאב או בחום בהיריון. הגישה הסבירה היא שימוש רק כשיש צורך, במינון היעיל הנמוך ביותר, למשך הזמן הקצר הנדרש, תוך הימנעות מנטילת כמה תכשירים המכילים את אותו חומר פעיל.\n\n> **הערה רפואית:** המאמר מספק מידע כללי בלבד ואינו מחליף הנחיה רפואית פרטנית. כל טענה רפואית והמלצה מעשית בטיוטה מחייבות בדיקת רופא וביקורת מקצועית אנושית לפני פרסום.\n\n> ### על המחבר\n>\n> **ד״ר גיא רופא** הוא יוצר תוכן רפואי ומחבר ספרים. הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. Fischer MB, et al. *Fetal exposure to paracetamol is associated with altered markers of ovarian development and reduced uterine volume in girls: the COPANA study*. Human Reproduction Open, 2026.  \n   https://doi.org/10.1093/hropen/hoag073\n\n2. American College of Obstetricians and Gynecologists. *Acetaminophen Use in Pregnancy and Neurodevelopmental Outcomes*.  \n   https://www.acog.org/clinical/clinical-guidance/practice-advisory/articles/2025/09/acetaminophen-use-in-pregnancy-and-neurodevelopmental-outcomes\n\n3. European Medicines Agency. *Use of paracetamol during pregnancy unchanged in the EU*.  \n   https://www.ema.europa.eu/en/news/use-paracetamol-during-pregnancy-unchanged-eu\n\n4. U.S. Food and Drug Administration. *Acetaminophen — What you should know about using acetaminophen safely*.  \n   https://www.fda.gov/drugs/safe-use-over-counter-pain-relievers-and-fever-reducers/acetaminophen\n\n5. U.S. Food and Drug Administration. *Nonsteroidal Anti-Inflammatory Drugs: Avoid Use of NSAIDs in Pregnancy at 20 Weeks or Later*.  \n   https://www.fda.gov/safety/medical-product-safety-information/nonsteroidal-anti-inflammatory-drugs-nsaids-drug-safety-communication-avoid-use-nsaids-pregnancy-20\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)\n- [אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה](https://healthy.walla.co.il/item/3867903)",
+        "canonical_url": "https://www.drguyrofe.co.il/מה-עומד-מאחורי-הכותרת-אקמול-בהריון/",
+        "meta_description": "ד״ר גיא רופא: מחקר תצפיתי חדש מצא קשר בין חשיפה לפרצטמול במהלך ההיריון לבין הבדלים מסוימים במדדי התפתחות השחלות, הרחם ורקמת השד אצל בנות.",
+        "search_target": {
+          "primary_query": "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה",
+          "secondary_queries": [
+            "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה",
+            "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה ד״ר גיא רופא",
+            "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "מה עומד מאחורי הכותרת: לוקחים תרופה לכולסטרול? זו תופעת הלוואי שמצא מחקר חדש",
+            "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-16-topic-90-run-31931866214-attempt-1/"
+          },
+          {
+            "title": "מה עומד מאחורי הכותרת: מחקר חדש גילה — זה המאפיין הגופני שקובע סיכון להתקף לב",
+            "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-17-topic-90-run-32003423255-attempt-1/"
+          },
+          {
+            "title": "בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר?",
+            "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1/"
+          }
+        ],
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "b307f54ffcd9544f4dbe2def75a833ddee508f8e8f814facaef6a1b8e8db4311",
+        "slug": "מה-עומד-מאחורי-הכותרת-אקמול-בהריון",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-hero.png",
+          "sha256": "993283f9c5e5fac4e0e50239fe25b97525094644244e66a99e410798a05a6388",
+          "alt_text": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Extra_Strength_Tylenol_and_Tylenol_PM.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Extra_Strength_Tylenol_and_Tylenol_PM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ragesoss",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Extra Strength Tylenol and Tylenol PM.jpg — Ragesoss; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-hero.png",
+              "sha256": "993283f9c5e5fac4e0e50239fe25b97525094644244e66a99e410798a05a6388",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+              "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-square.jpg",
+              "sha256": "c0e2a10961a9e1fe2ce746332bfaf2212c2dfa1a56bae05c2d391a803b42f599",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-portrait.png",
+              "sha256": "c0542a604b95c589285586dda9ee6d2e8726ba079fbdd8f2cf60a04d8ae56f98",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: מחקר תצפיתי חדש מצא קשר בין חשיפה לפרצטמול במהלך ההיריון לבין הבדלים מסוימים במדדי התפתחות השחלות, הרחם ורקמת השד אצל בנות.\n\nעם זאת, המחקר אינו מוכיח שהתרופה גרמה לשינויים, אינו מראה פגיעה בפוריות בבגרות ואינו מצדיק הפסקה גורפת של השימוש בפרצטמול בהיריון.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Extra Strength Tylenol and Tylenol PM.jpg — Ragesoss; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/מה-עומד-מאחורי-הכותרת-אקמול-בהריון/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+          "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+          "alt_text": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Extra_Strength_Tylenol_and_Tylenol_PM.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Extra_Strength_Tylenol_and_Tylenol_PM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ragesoss",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Extra Strength Tylenol and Tylenol PM.jpg — Ragesoss; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-hero.png",
+              "sha256": "993283f9c5e5fac4e0e50239fe25b97525094644244e66a99e410798a05a6388",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+              "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-square.jpg",
+              "sha256": "c0e2a10961a9e1fe2ce746332bfaf2212c2dfa1a56bae05c2d391a803b42f599",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-portrait.png",
+              "sha256": "c0542a604b95c589285586dda9ee6d2e8726ba079fbdd8f2cf60a04d8ae56f98",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: מחקר תצפיתי חדש מצא קשר בין חשיפה לפרצטמול במהלך ההיריון לבין הבדלים מסוימים במדדי התפתחות השחלות, הרחם ורקמת השד אצל בנות.\n\n• עם זאת, המחקר אינו מוכיח שהתרופה גרמה לשינויים, אינו מראה פגיעה בפוריות בבגרות ואינו מצדיק הפסקה גורפת של השימוש בפרצטמול בהיריון.\n• נכון להיום, גופים מקצועיים ממשיכים לראות בפרצטמול אפשרות מרכזית לטיפול בכאב ובחום בהיריון, כאשר יש צורך רפואי ובהתאם להנחיות.\n• הכותרת “[אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה]( שפורסמה ב־17 בספטמבר 2026, מתייחסת למחקר דני שפורסם ב־8 בספטמבר 2026 בכתב העת Human Reproduction Open.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Extra Strength Tylenol and Tylenol PM.jpg — Ragesoss; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/מה-עומד-מאחורי-הכותרת-אקמול-בהריון/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+          "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+          "alt_text": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Extra_Strength_Tylenol_and_Tylenol_PM.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Extra_Strength_Tylenol_and_Tylenol_PM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ragesoss",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Extra Strength Tylenol and Tylenol PM.jpg — Ragesoss; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-hero.png",
+              "sha256": "993283f9c5e5fac4e0e50239fe25b97525094644244e66a99e410798a05a6388",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+              "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-square.jpg",
+              "sha256": "c0e2a10961a9e1fe2ce746332bfaf2212c2dfa1a56bae05c2d391a803b42f599",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-portrait.png",
+              "sha256": "c0542a604b95c589285586dda9ee6d2e8726ba079fbdd8f2cf60a04d8ae56f98",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא.\n\nהתשובה הקצרה: מחקר תצפיתי חדש מצא קשר בין חשיפה לפרצטמול במהלך ההיריון לבין הבדלים מסוימים במדדי התפתחות השחלות, הרחם ורקמת השד אצל בנות.\n\nעם זאת, המחקר אינו מוכיח שהתרופה גרמה לשינויים, אינו מראה פגיעה בפוריות בבגרות ואינו מצדיק הפסקה גורפת של השימוש בפרצטמול בהיריון.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://www.drguyrofe.co.il/מה-עומד-מאחורי-הכותרת-אקמול-בהריון/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+          "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+          "alt_text": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שני בקבוקי טיילנול פתוחים ולצדם טבליות וקפסולות המכילות פרצטמול על משטח שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Extra_Strength_Tylenol_and_Tylenol_PM.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Extra_Strength_Tylenol_and_Tylenol_PM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ragesoss",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Extra Strength Tylenol and Tylenol PM.jpg — Ragesoss; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-hero.png",
+              "sha256": "993283f9c5e5fac4e0e50239fe25b97525094644244e66a99e410798a05a6388",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-landscape.png",
+              "sha256": "4979a933988cdb8df1d7a01fd86fb3656d9e60397c0ca4bf544604012c396889",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-square.jpg",
+              "sha256": "c0e2a10961a9e1fe2ce746332bfaf2212c2dfa1a56bae05c2d391a803b42f599",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-17-topic-90-run-35213563884-attempt-1-portrait.png",
+              "sha256": "c0542a604b95c589285586dda9ee6d2e8726ba079fbdd8f2cf60a04d8ae56f98",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "b307f54ffcd9544f4dbe2def75a833ddee508f8e8f814facaef6a1b8e8db4311",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_766721ab47f89f0bcdacbc7d3ad57dd0fe742d2f959b46dc3205df48b6233b0e"
+}

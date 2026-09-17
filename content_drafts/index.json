@@ -1,6 +1,25 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-17-topic-90-run-35213563884-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה",
+      "excerpt": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מחקר תצפיתי חדש מצא קשר בין חשיפה לפרצטמול במהלך ההיריון לבין הבדלים מסוימים במדדי התפתחות ה",
+      "generated_at": "2026-09-17T11:02:32.732785+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-09-13",
+      "cadence_local_date": "2026-09-17",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-251dc9fd567d543d.json",
+      "analyzed_news_url": "https://healthy.walla.co.il/item/3867903"
+    },
+    {
       "path": "content_drafts/2026-09-16-topic-04-run-35087466040-attempt-1.md",
       "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
       "topic": "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
@@ -488,26 +507,6 @@
       "cadence_week": "week-of-2026-08-16",
       "cadence_local_date": "2026-08-18",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-08-17-topic-90-run-32003423255-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: מחקר חדש גילה — זה המאפיין הגופני שקובע סיכון להתקף לב | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: מחקר חדש גילה: זה המאפיין הגופני שקובע סיכון להתקף לב",
-      "excerpt": "מה עומד מאחורי הכותרת: מחקר חדש גילה — זה המאפיין הגופני שקובע סיכון להתקף לב | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com/%D7%90%D7%95%D7%93%D7%95%D7%AA/) התשובה הק",
-      "generated_at": "2026-08-17T06:53:23.106930+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "instagram"
-      ],
-      "cadence_week": "week-of-2026-08-16",
-      "cadence_local_date": "2026-08-17",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-29639e6c8fb0a567.json",
-      "analyzed_news_url": "https://healthy.walla.co.il/item/3860982"
     }
   ]
 }
