@@ -2223,6 +2223,20 @@
       "published_at": "2026-09-17T06:56:55Z",
       "url": "https://guyrofe.blogspot.com/2026/09/blog-post_954.html",
       "provider_receipt": null
+    },
+    "pub_a96bb11b4abdda564a425b651c252e6e154acbf2eefd8bb1b6ce0f11d4c36527": {
+      "version": 7,
+      "idempotency_key": "pub_a96bb11b4abdda564a425b651c252e6e154acbf2eefd8bb1b6ce0f11d4c36527",
+      "approval_id": "apr_2e966747adddf5ec161f2574b4369207c01610995c977dd20901df9eaacd0d73",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "327c8e3fba49f3070ae635e59897a7e9598eef3b2d47d304171ec825a650c073",
+      "status": "published",
+      "started_at": "2026-09-18T00:19:11Z",
+      "published_at": "2026-09-18T00:19:17Z",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-05-topic-90-run-30989560897-attempt-1/",
+      "provider_receipt": null
     }
   }
 }
