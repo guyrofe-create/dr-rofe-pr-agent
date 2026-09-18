@@ -1,6 +1,123 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-09-17-topic-90-run-35213563884-attempt-1.md",
+      "title": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-09-18T09:35:07.434407+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%90%d7%a7%d7%9e%d7%95%d7%9c-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f/",
+          "detail": "idempotency_key=pub_42affb38dc8f123c9a08dac43d99714fc2acf2f230bf6407b1d35fac4f625f50"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%90%d7%a7%d7%9e%d7%95%d7%9c-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-17-topic-90-run-35213563884-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122204631002942441",
+          "detail": "idempotency_key=pub_edc312131c36fcbd7cd3043ca30b5b1b120d08e51637bca9200511ef7e5fc958"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7506646967507308544/",
+          "detail": "idempotency_key=pub_32f19d3208d5778df105acb9f9729180db2bea0ecadf856273833c2b813310ef"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIyzlKmM56mW_AE",
+          "detail": "idempotency_key=pub_5e56f9292f4a53787c58721754fa4e058bae4fba10c9e83eb0faad8b96c43116"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_766721ab47f89f0bcdacbc7d3ad57dd0fe742d2f959b46dc3205df48b6233b0e",
+      "search_target": {
+        "primary_query": "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה",
+        "secondary_queries": [
+          "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה",
+          "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%90%d7%a7%d7%9e%d7%95%d7%9c-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא",
       "status": "completed",
@@ -4651,98 +4768,6 @@
         }
       ],
       "approval_id": "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-09-topic-90-run-31299936904-attempt-1.md",
-      "title": "יש לכם קופסאות פלסטיק במטבח? זה מה שבאמת קרה למשתתפי המחקר שהחליפו אותן | ד״ר גיא רופא",
-      "status": "completed",
-      "published_at": "2026-08-09T08:03:23.605632+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.co.il",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-09-topic-90-run-31299936904-attempt-1/",
-          "detail": "idempotency_key=pub_640de3d1bfe2e62733e296435f8b6556a52b163b05b76e47642280cac2998e21"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-09-topic-90-run-31299936904-attempt-1-hero.png",
-          "detail": "wikimedia_commons_licensed_photo"
-        },
-        {
-          "name": "guyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Instagram",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_36c0ab57ac5d556c980a23840215136f8b997d7051b87a2047520870eb5d3c73",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

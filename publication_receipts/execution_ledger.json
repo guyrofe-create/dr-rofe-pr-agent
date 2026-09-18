@@ -2246,6 +2246,69 @@
       "published_at": "2026-09-18T00:19:17Z",
       "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-05-topic-90-run-30989560897-attempt-1/",
       "provider_receipt": null
+    },
+    "pub_42affb38dc8f123c9a08dac43d99714fc2acf2f230bf6407b1d35fac4f625f50": {
+      "version": 7,
+      "idempotency_key": "pub_42affb38dc8f123c9a08dac43d99714fc2acf2f230bf6407b1d35fac4f625f50",
+      "approval_id": "apr_766721ab47f89f0bcdacbc7d3ad57dd0fe742d2f959b46dc3205df48b6233b0e",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "059fe528c387eb706d3c9783f9df442ea69603b18ca0d9ef95365c5ee03b9499",
+      "status": "published",
+      "started_at": "2026-09-18T09:34:36Z",
+      "published_at": "2026-09-18T09:34:41Z",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%90%d7%a7%d7%9e%d7%95%d7%9c-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f/",
+      "provider_receipt": null
+    },
+    "pub_edc312131c36fcbd7cd3043ca30b5b1b120d08e51637bca9200511ef7e5fc958": {
+      "version": 7,
+      "idempotency_key": "pub_edc312131c36fcbd7cd3043ca30b5b1b120d08e51637bca9200511ef7e5fc958",
+      "approval_id": "apr_766721ab47f89f0bcdacbc7d3ad57dd0fe742d2f959b46dc3205df48b6233b0e",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "06087bd57ca53a148ca7b481057ad09a6978f4653ea32d61103cc50a56301ae6",
+      "status": "published",
+      "started_at": "2026-09-18T09:34:53Z",
+      "published_at": "2026-09-18T09:35:01Z",
+      "url": "https://www.facebook.com/122204631002942441",
+      "provider_receipt": null
+    },
+    "pub_32f19d3208d5778df105acb9f9729180db2bea0ecadf856273833c2b813310ef": {
+      "version": 7,
+      "idempotency_key": "pub_32f19d3208d5778df105acb9f9729180db2bea0ecadf856273833c2b813310ef",
+      "approval_id": "apr_766721ab47f89f0bcdacbc7d3ad57dd0fe742d2f959b46dc3205df48b6233b0e",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "a2754571c653a573740d9c5bd936796573c4a274d5a9be6c9e8911d0da616335",
+      "status": "published",
+      "started_at": "2026-09-18T09:35:01Z",
+      "published_at": "2026-09-18T09:35:04Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7506646967507308544/",
+      "provider_receipt": null
+    },
+    "pub_5e56f9292f4a53787c58721754fa4e058bae4fba10c9e83eb0faad8b96c43116": {
+      "version": 7,
+      "idempotency_key": "pub_5e56f9292f4a53787c58721754fa4e058bae4fba10c9e83eb0faad8b96c43116",
+      "approval_id": "apr_766721ab47f89f0bcdacbc7d3ad57dd0fe742d2f959b46dc3205df48b6233b0e",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "39cf01cfea2e190fd4acc6e5586811d5848501305a77b13ecd449e4f410361cd",
+      "status": "published",
+      "started_at": "2026-09-18T09:35:04Z",
+      "published_at": "2026-09-18T09:35:07Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIyzlKmM56mW_AE",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/2628060393027710422",
+        "state": "PROCESSING",
+        "createTime": "2026-09-18T09:35:07.396499Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIyzlKmM56mW_AE",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }
