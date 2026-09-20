@@ -1,8 +1,8 @@
 {
   "draft": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md",
   "title": "בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר? | ד״ר גיא רופא",
-  "status": "completed_with_errors",
-  "published_at": "2026-08-10T08:18:25.381740+00:00",
+  "status": "completed",
+  "published_at": "2026-09-20T18:10:00.567720+00:00",
   "destinations": [
     {
       "name": "drguyrofe.co.il",
@@ -10,6 +10,12 @@
       "target_id": "canonical_wordpress",
       "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1/",
       "detail": "idempotency_key=pub_e44e77b17a1e73d59fe8af685dc2e00b6c8cbfc5928f291f6420fabe343a7c1f"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1/",
+      "detail": "failed checks: canonical_matches, no_internal_run_slug"
     },
     {
       "name": "Canonical editorial hero",
@@ -70,9 +76,8 @@
     },
     {
       "name": "Instagram",
-      "status": "failed",
-      "target_id": "instagram_business",
-      "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=ADwP0N8esk-Ase1rFZLMTIC"
+      "status": "owner_managed",
+      "detail": "Instagram is managed independently by the owner"
     },
     {
       "name": "Pinterest",
@@ -99,5 +104,7 @@
     }
   ],
   "approval_id": "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123",
+  "search_target": {},
+  "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1/",
   "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
 }

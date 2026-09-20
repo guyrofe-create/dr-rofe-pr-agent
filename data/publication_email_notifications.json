@@ -871,6 +871,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7507452519506137088/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKCp54es2_yL-QE"
       ]
+    },
+    "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123:7edfd27938e8f8c0b50c60b8310758926f62ec09b4ae72657e2f36bf998494a1": {
+      "sent_at": "2026-09-20T18:10:02.700172+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123",
+      "state": "success",
+      "subject": "אישור פרסום: בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1/",
+        "https://www.facebook.com/122198678054942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7492494507427446784/",
+        "https://guyrofe.blogspot.com/2026/08/blog-post_10.html"
+      ]
     }
   }
 }
