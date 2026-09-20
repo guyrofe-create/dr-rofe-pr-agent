@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "run_at": "2026-09-17T09:47:42.403109+00:00",
+  "run_at": "2026-09-20T09:34:27.507720+00:00",
   "destination_site_key": "DRGUYROFE_CO_IL",
   "destination_url": "https://www.drguyrofe.co.il",
   "public_execution_allowed": false,
@@ -21,62 +21,10 @@
       "candidate_count": 20
     }
   ],
-  "ranked_candidates": [
-    {
-      "title": "אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה",
-      "url": "https://healthy.walla.co.il/item/3867903",
-      "summary": "האם לחשיפה לפרצטמול במהלך ההריון יכולה להיות השפעה על התפתחות השחלות של הבנות עוד כשהן ברחם?",
-      "feed_position": 4,
-      "published_at": "2026-09-17T08:42:00+00:00",
-      "source_id": "walla_health",
-      "source_name": "וואלה בריאות",
-      "source_kind": "major_news",
-      "attention_score": 4,
-      "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
-      "public_health_relevance": 2,
-      "client_topic_relevance": 3,
-      "analysis_gap": 1,
-      "sensationalism_risk": 0,
-      "source_diversity_penalty": 0,
-      "prohibited": false,
-      "age_hours": 1.1,
-      "opportunity_score": 35,
-      "eligible": true,
-      "requires_primary_source_research": true,
-      "requires_medical_review": true
-    }
-  ],
-  "selected": {
-    "title": "אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה",
-    "url": "https://healthy.walla.co.il/item/3867903",
-    "summary": "האם לחשיפה לפרצטמול במהלך ההריון יכולה להיות השפעה על התפתחות השחלות של הבנות עוד כשהן ברחם?",
-    "feed_position": 4,
-    "published_at": "2026-09-17T08:42:00+00:00",
-    "source_id": "walla_health",
-    "source_name": "וואלה בריאות",
-    "source_kind": "major_news",
-    "attention_score": 4,
-    "attention_signal_basis": "rss_feed_prominence_title_and_recency_proxy",
-    "public_health_relevance": 2,
-    "client_topic_relevance": 3,
-    "analysis_gap": 1,
-    "sensationalism_risk": 0,
-    "source_diversity_penalty": 0,
-    "prohibited": false,
-    "age_hours": 1.1,
-    "opportunity_score": 35,
-    "eligible": true,
-    "requires_primary_source_research": true,
-    "requires_medical_review": true
-  },
-  "brief_path": "opportunity_drafts/health-news-251dc9fd567d543d.json",
+  "ranked_candidates": [],
+  "selected": null,
+  "brief_path": null,
   "selection_history": [
-    {
-      "selection_id": "16953d925c21af74",
-      "source_id": "ynet_health",
-      "url": "https://www.ynet.co.il/health/article/b1kxgusngg",
-      "selected_at": "2026-08-03T08:24:56.467131+00:00"
-    },
     {
       "selection_id": "d98a2696435ca046",
       "source_id": "ynet_health",
