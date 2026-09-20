@@ -1,6 +1,122 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-09-20-topic-07-run-35505806969-attempt-1.md",
+      "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-09-20T14:56:05.229214+00:00",
+      "destinations": [
+        {
+          "name": "guyrofe.com",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://guyrofe.com/%d7%90%d7%99%d7%9a-%d7%9c%d7%94%d7%a2%d7%a8%d7%99%d7%9a-%d7%9e%d7%99%d7%93%d7%a2-%d7%a8%d7%a4%d7%95%d7%90%d7%99-%d7%91%d7%a8%d7%a9%d7%aa-%d7%95%d7%9c%d7%96%d7%94%d7%95%d7%aa/",
+          "detail": "idempotency_key=pub_be9975f3dc559a4fc71bd18e0ebdfaffe75f62c11ebaadbc0c996bb63c4f6748"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "seo_warning",
+          "url": "https://guyrofe.com/%d7%90%d7%99%d7%9a-%d7%9c%d7%94%d7%a2%d7%a8%d7%99%d7%9a-%d7%9e%d7%99%d7%93%d7%a2-%d7%a8%d7%a4%d7%95%d7%90%d7%99-%d7%91%d7%a8%d7%a9%d7%aa-%d7%95%d7%9c%d7%96%d7%94%d7%95%d7%aa/",
+          "detail": "failed checks: canonical_person_linked"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-20-topic-07-run-35505806969-attempt-1-hero.png",
+          "detail": "owner_provided_default"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122205014246942441",
+          "detail": "idempotency_key=pub_6f7748b45f31bba08d3c22691fed5a95e0d9545be02480e06352f125c4ba0700"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7507452519506137088/",
+          "detail": "idempotency_key=pub_e69aefdda64ca83c746e4c41864c49d7b8afb79d894ac75806962c0756aeaf2a"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKCp54es2_yL-QE",
+          "detail": "idempotency_key=pub_1b54dd71ca6a41bf898b3eb3f34c337103932fa3c42c033e4c21455147c88870"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_3e639a4e4200bf7c26bf2844c12ea478e4927121825f5ba35982abb6ba177eba",
+      "search_target": {
+        "primary_query": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+        "secondary_queries": [
+          "איך להעריך מידע רפואי ברשת ולזהות מקור אמין ד״ר גיא רופא",
+          "איך להעריך מידע רפואי ברשת ולזהות מקור אמין גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational_question"
+      },
+      "canonical_url": "https://guyrofe.com/%d7%90%d7%99%d7%9a-%d7%9c%d7%94%d7%a2%d7%a8%d7%99%d7%9a-%d7%9e%d7%99%d7%93%d7%a2-%d7%a8%d7%a4%d7%95%d7%90%d7%99-%d7%91%d7%a8%d7%a9%d7%aa-%d7%95%d7%9c%d7%96%d7%94%d7%95%d7%aa/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-09-17-topic-90-run-35213563884-attempt-1.md",
       "title": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא",
       "status": "completed",
@@ -4665,109 +4781,6 @@
         }
       ],
       "approval_id": "apr_4e84dc445127abe31bd23fbef97df42ed0e3708430227bc333ac84955779167d",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md",
-      "title": "בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר? | ד״ר גיא רופא",
-      "status": "completed_with_errors",
-      "published_at": "2026-08-10T08:18:25.381740+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.co.il",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1/",
-          "detail": "idempotency_key=pub_e44e77b17a1e73d59fe8af685dc2e00b6c8cbfc5928f291f6420fabe343a7c1f"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1-hero.png",
-          "detail": "owner_provided_default"
-        },
-        {
-          "name": "guyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "published",
-          "target_id": "facebook_page",
-          "url": "https://www.facebook.com/122198678054942441",
-          "detail": "idempotency_key=pub_aa7ea4749de8916963e23cc48a56a9fe8b22867ae9074fcc707b8a4dc1697849"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "published",
-          "target_id": "linkedin_member",
-          "url": "https://www.linkedin.com/feed/update/urn:li:share:7492494507427446784/",
-          "detail": "idempotency_key=pub_da99f7b18d119737ceee454fa9341e1794d6a86184d2dc236c78c6df673d9ac2"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "published",
-          "target_id": "blogger_blog",
-          "url": "https://guyrofe.blogspot.com/2026/08/blog-post_10.html",
-          "detail": "idempotency_key=pub_ef9aeeb7300892100a839481332c42b7452ea829ca25f1c397c17f148508f125"
-        },
-        {
-          "name": "Instagram",
-          "status": "failed",
-          "target_id": "instagram_business",
-          "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=ADwP0N8esk-Ase1rFZLMTIC"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

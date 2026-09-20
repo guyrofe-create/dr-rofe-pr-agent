@@ -858,6 +858,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7506646967507308544/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIyzlKmM56mW_AE"
       ]
+    },
+    "apr_3e639a4e4200bf7c26bf2844c12ea478e4927121825f5ba35982abb6ba177eba:c0face75b2c6b4a45fa96dbdbbbec240ed5fc073b8477dd77573ad974cc687f3": {
+      "sent_at": "2026-09-20T14:56:06.391277+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_3e639a4e4200bf7c26bf2844c12ea478e4927121825f5ba35982abb6ba177eba",
+      "state": "success",
+      "subject": "אישור פרסום: איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%90%d7%99%d7%9a-%d7%9c%d7%94%d7%a2%d7%a8%d7%99%d7%9a-%d7%9e%d7%99%d7%93%d7%a2-%d7%a8%d7%a4%d7%95%d7%90%d7%99-%d7%91%d7%a8%d7%a9%d7%aa-%d7%95%d7%9c%d7%96%d7%94%d7%95%d7%aa/",
+        "https://www.facebook.com/122205014246942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7507452519506137088/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKCp54es2_yL-QE"
+      ]
     }
   }
 }
