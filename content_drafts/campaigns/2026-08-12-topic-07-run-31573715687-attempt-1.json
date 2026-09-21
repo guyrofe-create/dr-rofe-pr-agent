@@ -1,8 +1,8 @@
 {
   "draft": "content_drafts/2026-08-12-topic-07-run-31573715687-attempt-1.md",
   "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
-  "status": "completed_with_errors",
-  "published_at": "2026-08-12T08:56:37.318440+00:00",
+  "status": "completed",
+  "published_at": "2026-09-21T00:56:04.508709+00:00",
   "destinations": [
     {
       "name": "guyrofe.com",
@@ -10,6 +10,12 @@
       "target_id": "canonical_wordpress",
       "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
       "detail": "idempotency_key=pub_33f6258b12bf3938fe155d729ff33d96fb2d1368dab05069868c846178fd5a18"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+      "detail": "failed checks: brand_once_in_title, no_internal_run_slug"
     },
     {
       "name": "Canonical editorial hero",
@@ -70,9 +76,8 @@
     },
     {
       "name": "Instagram",
-      "status": "failed",
-      "target_id": "instagram_business",
-      "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=ABKZaH1HU0ee_a7CTf6TyW0"
+      "status": "owner_managed",
+      "detail": "Instagram is managed independently by the owner"
     },
     {
       "name": "Pinterest",
@@ -80,9 +85,10 @@
     },
     {
       "name": "Google Business Profile",
-      "status": "failed",
+      "status": "published",
       "target_id": "google_business_profile",
-      "detail": "HTTPError: 429 Client Error: Too Many Requests for url: https://mybusinessaccountmanagement.googleapis.com/v1/accounts"
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPGooPKYy5m8dQ",
+      "detail": "idempotency_key=pub_9ec0731a9231c7a5b8b207e7d659570fff6ec6b60fdadf0524f4d40ff939dbe8"
     },
     {
       "name": "Medium",
@@ -101,5 +107,7 @@
     }
   ],
   "approval_id": "apr_e997cde484c028b7c652c52b61b8bacdc1819cb6ca4f92f7b603ff715540f5b6",
+  "search_target": {},
+  "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
   "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
 }

@@ -804,9 +804,18 @@
       "platform": "Google Business Profile",
       "asset": "configured verified Google Business location",
       "request_sha256": "7481a1f558cb5832dba8d74851539b15f613b06a3348c84c472d0168daca495d",
-      "status": "reconciliation_required",
-      "started_at": "2026-08-12T08:56:37Z",
-      "updated_at": "2026-08-12T08:56:37Z"
+      "status": "published",
+      "started_at": "2026-09-21T00:56:02Z",
+      "published_at": "2026-09-21T00:56:04Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPGooPKYy5m8dQ",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/8815347944657735768",
+        "state": "PROCESSING",
+        "createTime": "2026-09-21T00:56:04.459473Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPGooPKYy5m8dQ",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     },
     "pub_a948d73a475a42d954ed7cbb310be42e9df4d5e8e765b5464cb8a9b6d495e880": {
       "version": 7,

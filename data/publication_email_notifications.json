@@ -904,6 +904,20 @@
       "urls": [
         "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-11-topic-04-run-31467572739-attempt-1"
       ]
+    },
+    "apr_e997cde484c028b7c652c52b61b8bacdc1819cb6ca4f92f7b603ff715540f5b6:7670c75e84a01ac433b264ad46c2225443f5dfbfbe12e05c063957333be0a389": {
+      "sent_at": "2026-09-21T00:56:06.353623+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_e997cde484c028b7c652c52b61b8bacdc1819cb6ca4f92f7b603ff715540f5b6",
+      "state": "success",
+      "subject": "אישור פרסום: איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+        "https://www.facebook.com/122198994536942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7493228918792056832/",
+        "https://guyrofe.blogspot.com/2026/08/blog-post_12.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPGooPKYy5m8dQ"
+      ]
     }
   }
 }
