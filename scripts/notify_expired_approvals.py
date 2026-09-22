@@ -33,8 +33,8 @@ def notify(response_path, ledger_path, *, send=True):
     message = EmailMessage()
     message["From"] = username or "guyrofe@gmail.com"
     message["To"] = recipient or "guyrofe@gmail.com"
-    message["Subject"] = f"אישורי פרסום שפגו ללא פרסום מתועד: {len(pending)}"
-    prefix = "האישורים הבאים פגו. אין עבורם דוח פרסום תקין, ולא יתחיל פרסום על סמך האישורים האלה. נדרש אישור חדש לכל טיוטה."
+    message["Subject"] = f"אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: {len(pending)}"
+    prefix = "האישורים הבאים פגו, ולא נמצא עבורם דוח פרסום תקין במערכת. ייתכן שהתוכן כבר פורסם באתר היעד; ההודעה אינה קובעת שלא פורסם. יש לבדוק את יעד הפרסום. אישור שפג לא יאפשר פרסום נוסף. אם התוכן כבר פורסם, אין צורך לאשר אותו שוב. אם לא פורסם וברצונך לפרסמו, נדרש אישור חדש."
     rows = [f"• {item.get('title') or item.get('draft_path')} (אושר: {item['approved_at']})" for item in pending]
     dashboard = "https://dr-rofe-reputation-center.guyrofe.chatgpt.site"
     message.set_content("\n".join([prefix, "", *rows, "", f"מרכז האישור: {dashboard}"]))
