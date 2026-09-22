@@ -2458,6 +2458,20 @@
         "account": "accounts/110345401117888665629",
         "location": "accounts/110345401117888665629/locations/14140768355740435987"
       }
+    },
+    "pub_aad3317f57519dbbbf67a049655c7d8f9d527a6802f56a6460b55d035f7473c3": {
+      "version": 7,
+      "idempotency_key": "pub_aad3317f57519dbbbf67a049655c7d8f9d527a6802f56a6460b55d035f7473c3",
+      "approval_id": "apr_699c1e224d19c5df8d22f0973e9a25388b22f35b39f97cec5bf833d7f24e7cb6",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "218e98815f5efca8cbb4fcdd95327a879ae1996d751d8e1536b8767416ebb487",
+      "status": "published",
+      "started_at": "2026-09-22T15:03:46Z",
+      "published_at": "2026-09-22T15:03:47Z",
+      "url": "https://www.drguyrofe.com/post/מיומות-ברחם-אפשרויות-בירור-וטיפול-באופן-כללי",
+      "provider_receipt": null
     }
   }
 }

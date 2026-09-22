@@ -984,6 +984,16 @@
       "approval_id": "apr_c058d542e9dcfc6b57bc9b319121360cd5961eaa301472c1c6005bc491199b45",
       "state": "expired",
       "subject": "אישורי פרסום שפגו ללא פרסום מתועד: 1"
+    },
+    "apr_699c1e224d19c5df8d22f0973e9a25388b22f35b39f97cec5bf833d7f24e7cb6:a7e888fdc5f3a718e8b412c949973f92e7bb67cc3d386396af67d707ea05ebf3": {
+      "sent_at": "2026-09-22T15:03:51.222611+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_699c1e224d19c5df8d22f0973e9a25388b22f35b39f97cec5bf833d7f24e7cb6",
+      "state": "success",
+      "subject": "אישור פרסום: מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.com/post/מיומות-ברחם-אפשרויות-בירור-וטיפול-באופן-כללי"
+      ]
     }
   }
 }

@@ -1,0 +1,108 @@
+{
+  "draft": "content_drafts/2026-09-22-topic-03-run-35719116311-attempt-1.md",
+  "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-09-22T15:03:49.823149+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wix",
+      "url": "https://www.drguyrofe.com/post/מיומות-ברחם-אפשרויות-בירור-וטיפול-באופן-כללי",
+      "detail": "idempotency_key=pub_aad3317f57519dbbbf67a049655c7d8f9d527a6802f56a6460b55d035f7473c3"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://www.drguyrofe.com/post/מיומות-ברחם-אפשרויות-בירור-וטיפול-באופן-כללי",
+      "detail": "failed checks: canonical_person_linked, internal_links_present"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-22-topic-03-run-35719116311-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_699c1e224d19c5df8d22f0973e9a25388b22f35b39f97cec5bf833d7f24e7cb6",
+  "search_target": {
+    "primary_query": "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי",
+    "secondary_queries": [
+      "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי",
+      "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי ד״ר גיא רופא",
+      "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": "https://www.drguyrofe.com/post/מיומות-ברחם-אפשרויות-בירור-וטיפול-באופן-כללי",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
