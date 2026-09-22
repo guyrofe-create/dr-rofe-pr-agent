@@ -449,6 +449,10 @@ def _load_verified_approval():
     bundle = json.loads(Path(bundle_path).read_text(encoding="utf-8"))
     record = json.loads(Path(record_path).read_text(encoding="utf-8"))
     verify_approval(bundle, record, secret)
+    approved_at = datetime.fromisoformat(record["approved_at"].replace("Z", "+00:00"))
+    approval_age = (datetime.now(timezone.utc) - approved_at).total_seconds()
+    if not 0 <= approval_age < 24 * 60 * 60:
+        raise PermissionError("Approval expired; a new explicit approval is required")
     return bundle, record
 
 
