@@ -2,7 +2,7 @@
   "draft": "content_drafts/2026-07-27-topic-05.md",
   "title": "כאבי מחזור קשים: כמה כאב נחשב נורמלי?",
   "status": "failed",
-  "published_at": "2026-08-17T15:48:59.349783+00:00",
+  "published_at": "2026-09-22T05:33:46.863506+00:00",
   "destinations": [
     {
       "name": "Campaign",
@@ -11,5 +11,7 @@
     }
   ],
   "approval_id": "apr_638c1776dc48e99f9b8f6fbcf2561186fedcbfdee94226cc8dc01184d7e40e02",
+  "search_target": {},
+  "canonical_url": null,
   "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
 }
