@@ -977,6 +977,13 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7495055016840503296/",
         "https://guyrofe.blogspot.com/2026/08/blog-post_17.html"
       ]
+    },
+    "expired:apr_c058d542e9dcfc6b57bc9b319121360cd5961eaa301472c1c6005bc491199b45:2026-08-18T09:40:46Z": {
+      "sent_at": "2026-09-22T10:18:26.179670+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_c058d542e9dcfc6b57bc9b319121360cd5961eaa301472c1c6005bc491199b45",
+      "state": "expired",
+      "subject": "אישורי פרסום שפגו ללא פרסום מתועד: 1"
     }
   }
 }
