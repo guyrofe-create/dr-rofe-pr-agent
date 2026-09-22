@@ -994,6 +994,13 @@
       "urls": [
         "https://www.drguyrofe.com/post/מיומות-ברחם-אפשרויות-בירור-וטיפול-באופן-כללי"
       ]
+    },
+    "expired:apr_5fc942eede32bc3c12569bcc6236d10303f7789506d36285451f419ba4ef2075:2026-08-18T09:43:57Z": {
+      "sent_at": "2026-09-22T18:50:06.308599+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_5fc942eede32bc3c12569bcc6236d10303f7789506d36285451f419ba4ef2075",
+      "state": "expired",
+      "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
     }
   }
 }
