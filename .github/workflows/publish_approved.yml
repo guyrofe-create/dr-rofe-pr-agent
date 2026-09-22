@@ -175,6 +175,7 @@ jobs:
             bundle_path=""
             approval_record_path=""
           fi
+          echo "response_path=${response_path}" >> "${GITHUB_OUTPUT}"
           echo "draft_path=${draft_path}" >> "${GITHUB_OUTPUT}"
           echo "approval_id=${approval_id}" >> "${GITHUB_OUTPUT}"
           echo "bundle_path=${bundle_path}" >> "${GITHUB_OUTPUT}"
@@ -185,6 +186,15 @@ jobs:
             exit 1
           fi
           [[ -z "${draft_path}" ]] || echo "Signed P7 campaign ready: ${draft_path}"
+
+      - name: Email once about approvals that expired before publication
+        if: github.event_name == 'schedule' && steps.approval.outputs.response_path != ''
+        env:
+          PUBLICATION_EMAIL_TO: guyrofe@gmail.com
+          PUBLICATION_EMAIL_GMAIL_USERNAME: guyrofe@gmail.com
+          PUBLICATION_EMAIL_GMAIL_APP_PASSWORD: ${{ secrets.WEEKLY_REPORT_GMAIL_APP_PASSWORD }}
+          RESPONSE_PATH: ${{ steps.approval.outputs.response_path }}
+        run: python scripts/notify_expired_approvals.py --response "${RESPONSE_PATH}"
 
       - name: Report execution mode
         if: always()
@@ -284,7 +294,8 @@ jobs:
 
       - name: Commit campaign receipt and email delivery record
         if: >-
-          always() && steps.approval.outputs.draft_path != '' &&
+          always() &&
+          (steps.approval.outputs.draft_path != '' || github.event_name == 'schedule') &&
           !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
         run: |
           git config user.name "dr-rofe-pr-agent"
