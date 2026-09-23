@@ -1,0 +1,108 @@
+{
+  "draft": "content_drafts/2026-09-23-topic-90-run-35851040678-attempt-1.md",
+  "title": "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור — וזו הסיבה | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-09-23T13:53:57.860423+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%9e%d7%97%d7%9c%d7%aa-%d7%a0%d7%a4%d7%a9-%d7%a7%d7%a9%d7%94/",
+      "detail": "idempotency_key=pub_2b64bc56b7b9f80ce2e14c14fce05e129e0fae3d46d58b71bf8371de622977b8"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%9e%d7%97%d7%9c%d7%aa-%d7%a0%d7%a4%d7%a9-%d7%a7%d7%a9%d7%94/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-23-topic-90-run-35851040678-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_f695c221f62b7e4ca422a968e06dca9dc1fa159c08d97152bb4ad577e7d900e3",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור - וזו הסיבה",
+    "secondary_queries": [
+      "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור — וזו הסיבה",
+      "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור - וזו הסיבה ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור - וזו הסיבה גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%9e%d7%97%d7%9c%d7%aa-%d7%a0%d7%a4%d7%a9-%d7%a7%d7%a9%d7%94/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

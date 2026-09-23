@@ -1001,6 +1001,16 @@
       "approval_id": "apr_5fc942eede32bc3c12569bcc6236d10303f7789506d36285451f419ba4ef2075",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_f695c221f62b7e4ca422a968e06dca9dc1fa159c08d97152bb4ad577e7d900e3:eecd924e672e223893d2b93cd04089b9c34c0a226d0c77ec09b6ed6285d79cb7": {
+      "sent_at": "2026-09-23T13:53:58.803978+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_f695c221f62b7e4ca422a968e06dca9dc1fa159c08d97152bb4ad577e7d900e3",
+      "state": "success",
+      "subject": "אישור פרסום: מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור — וזו הסיבה | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%9e%d7%97%d7%9c%d7%aa-%d7%a0%d7%a4%d7%a9-%d7%a7%d7%a9%d7%94/"
+      ]
     }
   }
 }

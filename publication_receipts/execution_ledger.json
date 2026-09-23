@@ -2472,6 +2472,20 @@
       "published_at": "2026-09-22T15:03:47Z",
       "url": "https://www.drguyrofe.com/post/מיומות-ברחם-אפשרויות-בירור-וטיפול-באופן-כללי",
       "provider_receipt": null
+    },
+    "pub_2b64bc56b7b9f80ce2e14c14fce05e129e0fae3d46d58b71bf8371de622977b8": {
+      "version": 7,
+      "idempotency_key": "pub_2b64bc56b7b9f80ce2e14c14fce05e129e0fae3d46d58b71bf8371de622977b8",
+      "approval_id": "apr_f695c221f62b7e4ca422a968e06dca9dc1fa159c08d97152bb4ad577e7d900e3",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "71121fe869db84de513b18e88059eda42119e1cdde116b0e02c6d9357e8829e7",
+      "status": "published",
+      "started_at": "2026-09-23T13:53:51Z",
+      "published_at": "2026-09-23T13:53:56Z",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%9e%d7%97%d7%9c%d7%aa-%d7%a0%d7%a4%d7%a9-%d7%a7%d7%a9%d7%94/",
+      "provider_receipt": null
     }
   }
 }
