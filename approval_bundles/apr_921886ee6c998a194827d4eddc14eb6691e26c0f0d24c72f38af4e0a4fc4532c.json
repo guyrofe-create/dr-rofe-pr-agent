@@ -1,0 +1,453 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-23T10:54:45Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-23-topic-00-run-35851040678-attempt-1.md",
+  "source_draft_sha256": "1f8f591aa45d9ffba0903a24f94523fb5807ab355f4d0d4d8f370be2bcf2ed74",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/chronic-pelvic-pain",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng73",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/pelvic-pain/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+    "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+    "alt_text": "תקריב של אזור הבטן התחתונה והאגן של אישה, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "תקריב של אזור הבטן התחתונה והאגן של אישה.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Anterior_view_of_human_female_pelvic_region.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Anterior_view_of_human_female_pelvic_region.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480",
+    "license_name": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "attribution": "Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-hero.png",
+        "sha256": "92eaa13820a04c2c46f289c17e48828e46cf58718aa53b9ec0ef0a5fc2c2ffa6",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+        "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-square.jpg",
+        "sha256": "579ffab17bff8cdbf81baa865632e05ebc59c7df2751b1a1a8ed747d1ae7c88d",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-portrait.png",
+        "sha256": "8a88a90144a33f9e2e80cbf96cd69bcf56c2ee2d0eb813bf82223444b2958515",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+        "cms_title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית",
+        "markdown": "# כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nכאבי אגן כרוניים הם כאבים באזור הבטן התחתונה או האגן שנמשכים בדרך כלל שישה חודשים לפחות, ברציפות או לסירוגין. הם אינם אבחנה אחת אלא תסמין שיכול לנבוע ממגוון מצבים גינקולוגיים, אורולוגיים, במערכת העיכול, בשרירים ובשלד או במערכת העצבים. מומלץ לפנות לבדיקה רפואית כאשר הכאב מתמשך, חוזר, מחמיר, פוגע בתפקוד או מלווה בדימום חריג, חום, הפרשות לא רגילות, תסמיני היריון, ירידה בלתי מוסברת במשקל או שינוי בהרגלי השתן והיציאות. כאב פתאומי וחזק או כאב המלווה בעילפון, חולשה משמעותית או דימום כבד מחייב הערכה דחופה.\n\nמאמר זה מספק מידע כללי בלבד. הוא אינו מיועד לאבחון עצמי ואינו מחליף בדיקה, אבחון או טיפול של גורם רפואי מוסמך.\n\n## מהם כאבי אגן כרוניים?\n\nהאגן כולל איברים ומבנים רבים: הרחם, השחלות והחצוצרות, שלפוחית השתן, חלקים ממערכת העיכול, שרירי רצפת האגן, רצועות, כלי דם ועצבים. לכן, כאב באזור זה אינו מצביע בהכרח על מקור גינקולוגי. לעיתים קיימים כמה גורמים במקביל, וכל אחד מהם תורם לחוויה הכוללת של הכאב.\n\nכאב אגן כרוני עשוי להיות קבוע, להופיע בגלים או להיות קשור למצבים מסוימים, ובהם:\n\n- הווסת או הביוץ;\n- יחסי מין;\n- מתן שתן או יציאה;\n- פעילות גופנית או ישיבה ממושכת;\n- אכילה ותפקוד מערכת העיכול;\n- תקופות של מתח, עייפות או הפרעות שינה.\n\nלפי [המידע הקליני של ACOG על כאבי אגן כרוניים](https://www.acog.org/womens-health/faqs/chronic-pelvic-pain), כאב כרוני עלול להשפיע לא רק על התפקוד הגופני אלא גם על השינה, העבודה, הפעילות היומיומית, המיניות ואיכות החיים. השפעות רגשיות כגון חרדה, תסכול או מצב רוח ירוד אינן אומרות שהכאב “מדומיין”. כאב הוא חוויה גופנית ממשית, ובמצבים ממושכים עשויים להיות מעורבים גם שינויים באופן שבו מערכת העצבים מעבדת אותות כאב.\n\nחשוב להבחין בין כאב אגן כרוני לבין אירוע חד. כאב חד שהופיע לאחרונה עשוי לנבוע ממצב הדורש בירור מהיר, בעוד שכאב כרוני מתפתח או נמשך לאורך זמן. עם זאת, גם אצל אישה הסובלת מכאב כרוני עלולה להופיע החמרה חדה המחייבת הערכה דחופה.\n\n## מהם הגורמים האפשריים?\n\nאין גורם יחיד האחראי לכל המקרים. האבחנה מבוססת על מאפייני הכאב, תסמינים נלווים, בדיקה ולעיתים בדיקות עזר. בין האפשרויות המרכזיות:\n\n**אנדומטריוזיס:** מצב שבו רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. הוא עשוי להתבטא בכאבי וסת משמעותיים, כאב במהלך יחסי מין, כאב ביציאות או במתן שתן בתקופת הווסת, ולעיתים בקושי להרות. עוצמת הכאב אינה משקפת בהכרח את היקף המחלה. [הנחיית NICE בנושא אבחון וטיפול באנדומטריוזיס](https://www.nice.org.uk/guidance/ng73) מדגישה כי יש לחשוד במצב על סמך התסמינים המתאימים, וכי בדיקת הדמיה תקינה אינה שוללת אותו בכל המקרים.\n\n**אדנומיוזיס:** חדירה של רקמה הדומה לרירית הרחם אל שריר הרחם. המצב עשוי לגרום לווסת כואבת, דימום וסתי כבד, תחושת לחץ או כאב אגן. האבחון נשען לרוב על התסמינים ועל הדמיה, בהתאם לשיקול קליני.\n\n**שרירנים ברחם:** גידולים שפירים של שריר הרחם. חלקם אינם גורמים לתסמינים, ואחרים עלולים להיות קשורים לדימום מוגבר, לחץ באגן, תכיפות במתן שתן או כאב. נוכחות שרירן בבדיקה אינה מוכיחה בהכרח שהוא מקור הכאב.\n\n**הפרעות בשלפוחית השתן:** תסמונת כאב בשלפוחית השתן עלולה לגרום לכאב או לחץ המחמירים כאשר השלפוחית מתמלאת, לצד דחיפות ותכיפות במתן שתן. גם זיהום בדרכי השתן יכול לגרום לכאב, אך בדרך כלל מדובר באירוע חד יותר, ולעיתים נלווים אליו צריבה, חום או שתן עכור.\n\n**מצבים במערכת העיכול:** תסמונת המעי הרגיש, עצירות, מחלות מעי דלקתיות ומצבים נוספים עלולים לגרום לכאב בבטן התחתונה ובאגן. נפיחות, שלשול, עצירות או קשר בין הכאב ליציאות עשויים לסייע בכיוון הבירור, אך אינם מספיקים לאבחנה עצמית.\n\n**מקור שרירי־שלדי או עצבי:** מתח, חולשה או רגישות בשרירי רצפת האגן, כאב מדופן הבטן, בעיות בגב ובמפרקי האגן או גירוי עצבי עשויים לגרום לכאב מתמשך. כאב כזה יכול להחמיר בתנועה, בישיבה, במגע או ביחסי מין.\n\n**זיהומים והידבקויות:** דלקת באגן עלולה להיגרם מזיהום באיברי הרבייה ולהתבטא בכאב, חום, הפרשות או דימום חריג. הידבקויות לאחר ניתוח, זיהום או דלקת עשויות להימצא אצל חלק מהנשים, אך הקשר בינן לבין כאב אינו תמיד חד־משמעי.\n\nבמקרים רבים מתקיימת חפיפה בין מצבים, למשל אנדומטריוזיס לצד רגישות של רצפת האגן או תסמיני מעי. לכן רצוי להימנע מהנחה שכל הכאב נובע מממצא יחיד.\n\n## כיצד מתבצע הבירור הרפואי?\n\nהבירור מתחיל בדרך כלל בשיחה מפורטת. הרופא או הרופאה עשויים לשאול מתי התחיל הכאב, היכן הוא מורגש, האם הוא קשור למחזור, ליחסי מין, למתן שתן או ליציאות, ומה משפיע על עוצמתו. שאלות נוספות עשויות לעסוק בדימומים, הפרשות, הריונות, ניתוחים קודמים, תרופות, אמצעי מניעה ותסמינים במערכות גוף אחרות.\n\nיומן תסמינים עשוי לסייע בזיהוי דפוסים. אפשר לתעד במשך כמה שבועות את עוצמת הכאב, מיקומו, מועד הווסת, דימום, פעילות גופנית, יחסי מין, שתן, יציאות ותרופות שנלקחו. התיעוד אינו מחליף הערכה רפואית, אך עשוי לספק תמונה מדויקת יותר.\n\nבהתאם לנסיבות, הבדיקה עשויה לכלול בדיקת בטן, בדיקה גינקולוגית והערכה של שרירי רצפת האגן. אין בדיקה יחידה המתאימה לכל אישה, ויש להתאים את היקף הבדיקה לתסמינים, להסכמה ולצורך הקליני.\n\nבדיקות עזר אפשריות כוללות:\n\n- בדיקת היריון כאשר קיימת אפשרות להיריון;\n- בדיקות שתן או בדיקות לזיהומים;\n- ספירת דם ובדיקות נוספות לפי החשד;\n- אולטרסאונד של האגן;\n- MRI במצבים נבחרים;\n- הפניה להערכה בתחומים נוספים, כגון גסטרואנטרולוגיה, אורולוגיה או פיזיותרפיה של רצפת האגן;\n- לפרוסקופיה במקרים מסוימים, כאשר קיים חשד המצדיק פעולה פולשנית או כאשר תוצאותיה צפויות להשפיע על הטיפול.\n\nבדיקות הדמיה יכולות לזהות ממצאים מסוימים, אך תוצאה תקינה אינה שוללת את כל הגורמים האפשריים לכאב. מנגד, ממצא בהדמיה אינו תמיד הסיבה לתסמינים. את התוצאות יש לפרש בהקשר של הסיפור הרפואי והבדיקה.\n\n## מתי יש לפנות לבדיקה רפואית, ומתי נדרשת פנייה דחופה?\n\nמומלץ לקבוע בדיקה רפואית כאשר כאב האגן:\n\n- נמשך או חוזר לאורך שבועות או חודשים;\n- מחמיר עם הזמן;\n- מפריע לעבודה, לשינה, לפעילות גופנית או ליחסי מין;\n- קשור לווסת כואבת במיוחד או לדימום כבד;\n- מלווה בכאב בעת מתן שתן, יציאה או יחסי מין;\n- מלווה בנפיחות מתמשכת, שובע מוקדם או שינוי בהרגלי היציאות;\n- מופיע לצד קושי להרות;\n- אינו משתפר באמצעים בסיסיים או מחייב שימוש תכוף במשככי כאבים.\n\nיש לפנות להערכה רפואית דחופה במקרה של כאב פתאומי או חזק, במיוחד כאשר הוא מלווה באחד מהבאים:\n\n- היריון ידוע או אפשרות להיריון;\n- דימום נרתיקי כבד או חריג;\n- עילפון, סחרחורת קשה, חולשה ניכרת או כאב בכתף;\n- חום, צמרמורות, הקאות ממושכות או תחושת מחלה משמעותית;\n- בטן רגישה מאוד, נוקשה או נפוחה באופן חריג;\n- קושי להעביר שתן או צואה;\n- דם בשתן או בצואה;\n- כאב חדש לאחר גיל המעבר;\n- ירידה בלתי מוסברת במשקל.\n\nתסמינים אלה אינם מוכיחים שקיים מצב מסוכן, אך הם עשויים להתאים למצבים המחייבים שלילה מהירה, כגון היריון מחוץ לרחם, זיהום משמעותי, תסביב שחלה, דימום או בעיה חריפה במערכת העיכול או השתן. גם [הנחיות NHS בנושא כאבי אגן](https://www.nhs.uk/conditions/pelvic-pain/) מבחינות בין כאב מתמשך הדורש בירור לבין כאב חזק או תסמינים נלווים המחייבים סיוע דחוף.\n\n## עקרונות הטיפול וההתמודדות\n\nהטיפול נקבע לפי הגורם המשוער, חומרת התסמינים, מטרות המטופלת, רצון עתידי בהיריון, מחלות רקע והעדפות אישיות. כאשר מזוהה סיבה מסוימת, ניתן להתאים לה טיפול. כאשר אין גורם יחיד וברור, הטיפול עשוי להתמקד בהפחתת כאב, בשיפור התפקוד ובטיפול בכמה מנגנונים במקביל.\n\nאפשרויות טיפול עשויות לכלול תרופות לשיכוך כאב, טיפול הורמונלי במצבים מתאימים, טיפול בזיהום, טיפול בתסמיני מערכת העיכול או השתן, ופיזיותרפיה ייעודית לרצפת האגן. לעיתים נשקל טיפול ניתוחי, אך הוא אינו מתאים לכל מצב, ויש לבחון את התועלת הצפויה מול הסיכונים.\n\nפעילות גופנית הדרגתית, שינה מסודרת, התאמת עומסים וטיפול בעצירות עשויים לסייע לחלק מהנשים. תמיכה רגשית או טיפול פסיכולוגי ממוקד כאב יכולים להיות חלק מגישה רב־תחומית; מטרתם אינה לטעון שמקור הכאב נפשי, אלא לסייע בהתמודדות עם השפעותיו ולשפר תפקוד ואיכות חיים.\n\nשימוש ממושך או תכוף בתרופות ללא הערכה רפואית אינו רצוי. גם לתרופות ללא מרשם יש תופעות לוואי והתוויות נגד, במיוחד בנוכחות היריון, מחלת כליות, כיב קיבה, טיפול במדללי דם או מחלות רקע אחרות.\n\n## סיכום\n\nכאבי אגן כרוניים אצל נשים הם תסמין מורכב היכול לנבוע ממערכת הרבייה, שלפוחית השתן, מערכת העיכול, השרירים, השלד או העצבים — ולעיתים מכמה גורמים יחד. בירור מסודר מבוסס על תיאור מדויק של הכאב, תסמינים נלווים, בדיקה מותאמת ובדיקות עזר לפי הצורך.\n\nכאב מתמשך, חוזר או פוגע בתפקוד מצדיק בדיקה רפואית. כאב פתאומי וחזק, חשד להיריון, דימום כבד, עילפון, חום או הקאות משמעותיות מחייבים הערכה דחופה. אין להסתמך על תסמין יחיד, על בדיקת הדמיה בלבד או על אבחון עצמי כדי לקבוע את מקור הכאב.\n\n> **על המחבר**  \n> ד״ר גיא רופא הוא יוצר תוכן רפואי ומחבר ספרים. זהו תפקידו הנוכחי המאושר. ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים. המאמר הוא מידע רפואי כללי בלבד ומחייב ביקורת אנושית ורפואית לפני פרסום.\n\n## מקורות\n\n1. American College of Obstetricians and Gynecologists — Chronic Pelvic Pain:  \n   https://www.acog.org/womens-health/faqs/chronic-pelvic-pain\n\n2. National Institute for Health and Care Excellence — Endometriosis: diagnosis and management, NICE Guideline NG73:  \n   https://www.nice.org.uk/guidance/ng73\n\n3. NHS — Pelvic pain:  \n   https://www.nhs.uk/conditions/pelvic-pain/\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי/",
+        "meta_description": "ד״ר גיא רופא: כאבי אגן כרוניים הם כאבים באזור הבטן התחתונה או האגן שנמשכים בדרך כלל שישה חודשים לפחות, ברציפות או לסירוגין.",
+        "search_target": {
+          "primary_query": "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
+          "secondary_queries": [
+            "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית",
+            "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית ד״ר גיא רופא",
+            "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "informational_question"
+        },
+        "internal_links": [
+          {
+            "title": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+            "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/"
+          },
+          {
+            "title": "כאבי מחזור קשים – כמה כאב זה נורמלי?",
+            "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/"
+          },
+          {
+            "title": "כאבי מחזור קשים – כמה כאב זה נורמלי?",
+            "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-19-topic-05-run-32224474606-attempt-1/"
+          }
+        ],
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "848f46d6f0fab72b25b4542cb8471360d73941f0ae1ce3d4ea9c57863d1d98ed",
+        "slug": "כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-hero.png",
+          "sha256": "92eaa13820a04c2c46f289c17e48828e46cf58718aa53b9ec0ef0a5fc2c2ffa6",
+          "alt_text": "תקריב של אזור הבטן התחתונה והאגן של אישה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "תקריב של אזור הבטן התחתונה והאגן של אישה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anterior_view_of_human_female_pelvic_region.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Anterior_view_of_human_female_pelvic_region.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-hero.png",
+              "sha256": "92eaa13820a04c2c46f289c17e48828e46cf58718aa53b9ec0ef0a5fc2c2ffa6",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+              "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-square.jpg",
+              "sha256": "579ffab17bff8cdbf81baa865632e05ebc59c7df2751b1a1a8ed747d1ae7c88d",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-portrait.png",
+              "sha256": "8a88a90144a33f9e2e80cbf96cd69bcf56c2ee2d0eb813bf82223444b2958515",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+        "text": "כאבי אגן כרוניים הם כאבים באזור הבטן התחתונה או האגן שנמשכים בדרך כלל שישה חודשים לפחות, ברציפות או לסירוגין.\n\nהם אינם אבחנה אחת אלא תסמין שיכול לנבוע ממגוון מצבים גינקולוגיים, אורולוגיים, במערכת העיכול, בשרירים ובשלד או במערכת העצבים.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons",
+        "link": "https://guyrofe.com/כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+          "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+          "alt_text": "תקריב של אזור הבטן התחתונה והאגן של אישה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "תקריב של אזור הבטן התחתונה והאגן של אישה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anterior_view_of_human_female_pelvic_region.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Anterior_view_of_human_female_pelvic_region.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-hero.png",
+              "sha256": "92eaa13820a04c2c46f289c17e48828e46cf58718aa53b9ec0ef0a5fc2c2ffa6",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+              "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-square.jpg",
+              "sha256": "579ffab17bff8cdbf81baa865632e05ebc59c7df2751b1a1a8ed747d1ae7c88d",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-portrait.png",
+              "sha256": "8a88a90144a33f9e2e80cbf96cd69bcf56c2ee2d0eb813bf82223444b2958515",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+        "text": "כאבי אגן כרוניים הם כאבים באזור הבטן התחתונה או האגן שנמשכים בדרך כלל שישה חודשים לפחות, ברציפות או לסירוגין.\n\n• הם אינם אבחנה אחת אלא תסמין שיכול לנבוע ממגוון מצבים גינקולוגיים, אורולוגיים, במערכת העיכול, בשרירים ובשלד או במערכת העצבים.\n• מומלץ לפנות לבדיקה רפואית כאשר הכאב מתמשך, חוזר, מחמיר, פוגע בתפקוד או מלווה בדימום חריג, חום, הפרשות לא רגילות, תסמיני היריון, ירידה בלתי מוסברת במשקל או שינוי בהרגלי השתן והיציאות.\n• כאב פתאומי וחזק או כאב המלווה בעילפון, חולשה משמעותית או דימום כבד מחייב הערכה דחופה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons",
+        "link": "https://guyrofe.com/כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+          "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+          "alt_text": "תקריב של אזור הבטן התחתונה והאגן של אישה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "תקריב של אזור הבטן התחתונה והאגן של אישה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anterior_view_of_human_female_pelvic_region.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Anterior_view_of_human_female_pelvic_region.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-hero.png",
+              "sha256": "92eaa13820a04c2c46f289c17e48828e46cf58718aa53b9ec0ef0a5fc2c2ffa6",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+              "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-square.jpg",
+              "sha256": "579ffab17bff8cdbf81baa865632e05ebc59c7df2751b1a1a8ed747d1ae7c88d",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-portrait.png",
+              "sha256": "8a88a90144a33f9e2e80cbf96cd69bcf56c2ee2d0eb813bf82223444b2958515",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+        "html": "<h2>כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>כאבי אגן כרוניים הם כאבים באזור הבטן התחתונה או האגן שנמשכים בדרך כלל שישה חודשים לפחות, ברציפות או לסירוגין.</p><p>הם אינם אבחנה אחת אלא תסמין שיכול לנבוע ממגוון מצבים גינקולוגיים, אורולוגיים, במערכת העיכול, בשרירים ובשלד או במערכת העצבים.</p>\n<p><small>קרדיט תמונה: Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons</small></p>",
+        "link": "https://guyrofe.com/כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-hero.png",
+          "sha256": "92eaa13820a04c2c46f289c17e48828e46cf58718aa53b9ec0ef0a5fc2c2ffa6",
+          "alt_text": "תקריב של אזור הבטן התחתונה והאגן של אישה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "תקריב של אזור הבטן התחתונה והאגן של אישה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anterior_view_of_human_female_pelvic_region.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Anterior_view_of_human_female_pelvic_region.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-hero.png",
+              "sha256": "92eaa13820a04c2c46f289c17e48828e46cf58718aa53b9ec0ef0a5fc2c2ffa6",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+              "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-square.jpg",
+              "sha256": "579ffab17bff8cdbf81baa865632e05ebc59c7df2751b1a1a8ed747d1ae7c88d",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-portrait.png",
+              "sha256": "8a88a90144a33f9e2e80cbf96cd69bcf56c2ee2d0eb813bf82223444b2958515",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא.\n\nכאבי אגן כרוניים הם כאבים באזור הבטן התחתונה או האגן שנמשכים בדרך כלל שישה חודשים לפחות, ברציפות או לסירוגין.\n\nהם אינם אבחנה אחת אלא תסמין שיכול לנבוע ממגוון מצבים גינקולוגיים, אורולוגיים, במערכת העיכול, בשרירים ובשלד או במערכת העצבים.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/כאבי-אגן-כרוניים-אצל-נשים-מידע-כללי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+          "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+          "alt_text": "תקריב של אזור הבטן התחתונה והאגן של אישה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "תקריב של אזור הבטן התחתונה והאגן של אישה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Anterior_view_of_human_female_pelvic_region.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Anterior_view_of_human_female_pelvic_region.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Anterior view of human female pelvic region.jpg — Taken at City Studios in Stockholm (www.stockholmsfotografen.se), September 29, 2011, with assistance from KYO (The organisation of life models) in Stockholm. Both models have consented to the licence of the image, and its usage in Wikipedia. Image uploaded by Mikael Häggström . Derivative work Mine2480; CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-hero.png",
+              "sha256": "92eaa13820a04c2c46f289c17e48828e46cf58718aa53b9ec0ef0a5fc2c2ffa6",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-landscape.png",
+              "sha256": "e33b13f2d1f02705df18b9c56996f0ae3c5d86ed650c5ee403e69ce93af4ba9f",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-square.jpg",
+              "sha256": "579ffab17bff8cdbf81baa865632e05ebc59c7df2751b1a1a8ed747d1ae7c88d",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-23-topic-00-run-35851040678-attempt-1-portrait.png",
+              "sha256": "8a88a90144a33f9e2e80cbf96cd69bcf56c2ee2d0eb813bf82223444b2958515",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "848f46d6f0fab72b25b4542cb8471360d73941f0ae1ce3d4ea9c57863d1d98ed",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_921886ee6c998a194827d4eddc14eb6691e26c0f0d24c72f38af4e0a4fc4532c"
+}
