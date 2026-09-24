@@ -21,6 +21,19 @@ class CampaignRunTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "APPROVAL_BUNDLE_PATH"):
                 campaign_run.main()
 
+    def test_linkedin_api_requires_explicit_enablement_even_if_a_token_exists(self):
+        with patch.dict(os.environ, {"LINKEDIN_ACCESS_TOKEN": "expired"}, clear=True):
+            self.assertFalse(campaign_run.linkedin_api_publishing_enabled())
+        with patch.dict(
+            os.environ,
+            {
+                "LINKEDIN_ACCESS_TOKEN": "replacement",
+                "LINKEDIN_API_PUBLISHING_ENABLED": "true",
+            },
+            clear=True,
+        ):
+            self.assertTrue(campaign_run.linkedin_api_publishing_enabled())
+
     def test_stable_slug_keeps_hebrew_and_is_deterministic(self):
         self.assertEqual(
             campaign_run.stable_slug("לפני ניתוח: החלטה משותפת"),
