@@ -38,6 +38,11 @@ def _publication_state(result: dict) -> tuple[str, list[dict], list[dict]]:
     failures = [
         item for item in destinations if item.get("status") in FAILURE_STATUSES
     ]
+    manuals = [
+        item for item in destinations if item.get("status") in MANUAL_STATUSES
+    ]
+    if manuals and not failures:
+        return "manual", links, failures
     if links and not failures and result.get("status") == "completed":
         return "success", links, failures
     if links:
