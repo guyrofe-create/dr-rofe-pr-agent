@@ -826,7 +826,27 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
     linkedin_target = targets.get("linkedin_member")
     if not linkedin_target:
         destinations.append(destination("LinkedIn", "not_scheduled"))
-    elif linkedin.is_configured():
+    elif not linkedin_api_publishing_enabled() or not linkedin.is_configured():
+        linkedin_payload = linkedin_target["payload"]
+        manual_text_parts = [
+            linkedin_payload.get("title", "").strip(),
+            linkedin_payload.get("text", "").strip(),
+            canonical_url or linkedin_payload.get("link", ""),
+            (linkedin_payload.get("disclosure") or "").strip(),
+        ]
+        manual_text = enforce_publication_policy(
+            "\\n\\n".join(part for part in manual_text_parts if part)
+        )
+        destinations.append(
+            destination(
+                "LinkedIn",
+                "manual_required",
+                detail="LinkedIn requires manual posting until approved API access and a valid connection are available.",
+                target_id=linkedin_target["target_id"],
+                manual_text=manual_text,
+            )
+        )
+    else:
         linkedin_image, linkedin_image_url = approved_target_image(linkedin_target)
         destinations.append(
             _execute_target_safely(
@@ -845,8 +865,6 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                 },
             )
         )
-    else:
-        destinations.append(destination("LinkedIn", "not_configured"))
     destinations.append(
         destination("X", "disabled", detail="מושבת במדיניות המוצר")
     )
