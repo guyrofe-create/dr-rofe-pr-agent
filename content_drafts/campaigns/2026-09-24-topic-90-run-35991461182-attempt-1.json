@@ -1,0 +1,116 @@
+{
+  "draft": "content_drafts/2026-09-24-topic-90-run-35991461182-attempt-1.md",
+  "title": "לא רק כאבי גב: הבעיות הרפואיות של נשים עם חזה גדול | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-09-24T14:24:14.487159+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9c%d7%90-%d7%a8%d7%a7-%d7%9b%d7%90%d7%91%d7%99-%d7%92%d7%91-%d7%94%d7%91%d7%a2%d7%99%d7%95%d7%aa-%d7%94%d7%a8%d7%a4%d7%95%d7%90%d7%99%d7%95%d7%aa-%d7%a9%d7%9c/",
+      "detail": "idempotency_key=pub_e99f6a7e9e5d2594bfd8c93e710f603d447d8e28cfbb1e07b829b1bb396ab667"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9c%d7%90-%d7%a8%d7%a7-%d7%9b%d7%90%d7%91%d7%99-%d7%92%d7%91-%d7%94%d7%91%d7%a2%d7%99%d7%95%d7%aa-%d7%94%d7%a8%d7%a4%d7%95%d7%90%d7%99%d7%95%d7%aa-%d7%a9%d7%9c/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-24-topic-90-run-35991461182-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122205804758942441",
+      "detail": "idempotency_key=pub_4c8b60beb366778c87a7e7cf3b3371834c5363d072a6dc8e9037703022725811"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "failed",
+      "target_id": "linkedin_member",
+      "detail": "HTTPError: 401 Client Error: Unauthorized for url: https://api.linkedin.com/v2/userinfo"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK7Zv5qCkLCZzwE",
+      "detail": "idempotency_key=pub_c21a77a74a4c69904ae0e0849e3f4f5ee42250fa930f24808fe3c415779977b8"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_4305ffb673d23d4c394dab016e6669da96d22c73c7ada9ebc4fea39d57077bf5",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: לא רק כאבי גב. הבעיות הרפואיות של נשים עם חזה גדול",
+    "secondary_queries": [
+      "לא רק כאבי גב: הבעיות הרפואיות של נשים עם חזה גדול",
+      "מה עומד מאחורי הכותרת: לא רק כאבי גב. הבעיות הרפואיות של נשים עם חזה גדול ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: לא רק כאבי גב. הבעיות הרפואיות של נשים עם חזה גדול גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9c%d7%90-%d7%a8%d7%a7-%d7%9b%d7%90%d7%91%d7%99-%d7%92%d7%91-%d7%94%d7%91%d7%a2%d7%99%d7%95%d7%aa-%d7%94%d7%a8%d7%a4%d7%95%d7%90%d7%99%d7%95%d7%aa-%d7%a9%d7%9c/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
