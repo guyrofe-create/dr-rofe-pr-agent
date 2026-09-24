@@ -1030,6 +1030,13 @@
         "https://www.facebook.com/122205804758942441",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK7Zv5qCkLCZzwE"
       ]
+    },
+    "expired:apr_dcc610a70bef34fff806d5fc236d587041c621516a5e972fac972f1c2be3d7cf:2026-08-19T10:05:49Z": {
+      "sent_at": "2026-09-24T18:35:16.601065+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_dcc610a70bef34fff806d5fc236d587041c621516a5e972fac972f1c2be3d7cf",
+      "state": "expired",
+      "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
     }
   }
 }
