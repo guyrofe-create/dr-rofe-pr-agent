@@ -34,6 +34,16 @@ class CampaignRunTests(unittest.TestCase):
         ):
             self.assertTrue(campaign_run.linkedin_api_publishing_enabled())
 
+    def test_linkedin_api_workflow_is_disabled_without_explicit_approval(self):
+        workflow = (
+            Path(__file__).resolve().parents[1]
+            / ".github"
+            / "workflows"
+            / "linkedin_publish.yml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("vars.LINKEDIN_API_PUBLISHING_ENABLED == 'true'", workflow)
+        self.assertIn("vars.LINKEDIN_API_PUBLISHING_ENABLED != 'true'", workflow)
+
     def test_stable_slug_keeps_hebrew_and_is_deterministic(self):
         self.assertEqual(
             campaign_run.stable_slug("לפני ניתוח: החלטה משותפת"),
