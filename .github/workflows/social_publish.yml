@@ -55,6 +55,7 @@ jobs:
           WIX_DRGUYROFE_COM_MEMBER_ID: ${{ secrets.WIX_DRGUYROFE_COM_MEMBER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+          LINKEDIN_API_PUBLISHING_ENABLED: 'false'
           X_PUBLISHING_ENABLED: 'false'
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
