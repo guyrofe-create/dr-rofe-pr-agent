@@ -313,7 +313,7 @@ def wordpress_reconcile(base_url, approved_payload):
     return {"url": url, "provider_receipt": {"id": posts[0]["id"]}}
 
 
-def destination(name, status, url=None, detail=None, target_id=None):
+def destination(name, status, url=None, detail=None, target_id=None, manual_text=None):
     item = {"name": name, "status": status}
     if target_id:
         item["target_id"] = target_id
@@ -321,6 +321,8 @@ def destination(name, status, url=None, detail=None, target_id=None):
         item["url"] = url
     if detail:
         item["detail"] = detail
+    if manual_text:
+        item["manual_text"] = manual_text
     return item
 
 
