@@ -1,5 +1,6 @@
 name: LinkedIn Connection Check
 
+# Pushing a workflow-only change triggers a fresh read-only OAuth check.
 on:
   workflow_dispatch:
   push:
