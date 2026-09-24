@@ -22,23 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Explain manual posting requirement
-        if: ${{ vars.LINKEDIN_API_PUBLISHING_ENABLED != 'true' }}
-        run: |
-          echo "LinkedIn automatic posting is disabled until approved API access and a valid connection are available." >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Copy the approved text from this workflow input and publish it manually in LinkedIn." >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/checkout@v7
-        if: ${{ vars.LINKEDIN_API_PUBLISHING_ENABLED == 'true' }}
       - uses: actions/setup-python@v7
-        if: ${{ vars.LINKEDIN_API_PUBLISHING_ENABLED == 'true' }}
         with:
           python-version: '3.11'
       - name: Install dependencies
-        if: ${{ vars.LINKEDIN_API_PUBLISHING_ENABLED == 'true' }}
         run: pip install requests
       - name: Publish exact approved text
-        if: ${{ vars.LINKEDIN_API_PUBLISHING_ENABLED == 'true' }}
         run: python scripts/linkedin_publish.py
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
