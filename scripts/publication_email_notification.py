@@ -18,7 +18,6 @@ DEFAULT_LEDGER = ROOT / "data" / "publication_email_notifications.json"
 DEFAULT_RECIPIENT = "guyrofe@gmail.com"
 LINK_STATUSES = {"published", "skipped_duplicate"}
 FAILURE_STATUSES = {"failed", "blocked", "reconciliation_required"}
-MANUAL_STATUSES = {"manual_required"}
 
 
 def _load_json(path: Path, default: dict) -> dict:
@@ -38,11 +37,6 @@ def _publication_state(result: dict) -> tuple[str, list[dict], list[dict]]:
     failures = [
         item for item in destinations if item.get("status") in FAILURE_STATUSES
     ]
-    manuals = [
-        item for item in destinations if item.get("status") in MANUAL_STATUSES
-    ]
-    if manuals and not failures:
-        return "manual", links, failures
     if links and not failures and result.get("status") == "completed":
         return "success", links, failures
     if links:
@@ -71,24 +65,16 @@ def build_message(
     dashboard_url: str,
 ) -> EmailMessage:
     state, links, failures = _publication_state(result)
-    manuals = [
-        item for item in result.get("destinations", [])
-        if item.get("status") in MANUAL_STATUSES
-    ]
-    if manuals and not failures:
-        state = "manual"
     title = str(result.get("title") or "תוכן מאושר")
     subjects = {
         "success": f"אישור פרסום: {title}",
         "partial": f"הפרסום הושלם עם תקלות: {title}",
         "failed": f"הפרסום נכשל: {title}",
-        "manual": f"נדרש פרסום ידני ב-LinkedIn: {title}",
     }
     headings = {
         "success": "הפרסום הושלם בהצלחה",
         "partial": "הפרסום הושלם בחלק מהיעדים",
         "failed": "הפרסום לא הושלם",
-        "manual": "האתר והיעדים המחוברים פורסמו. LinkedIn דורש פרסום ידני.",
     }
     message = EmailMessage()
     message["Subject"] = subjects[state]
@@ -106,12 +92,6 @@ def build_message(
         )
     else:
         text_lines.append("לא התקבל קישור מאומת לנכס שפורסם.")
-    if manuals:
-        text_lines.extend(["", "נדרש פרסום ידני ב-LinkedIn:"])
-        for item in manuals:
-            text_lines.append(item.get("detail") or "העתק את הנוסח המאושר ל-LinkedIn.")
-            if item.get("manual_text"):
-                text_lines.extend(["", item["manual_text"]])
     if failures:
         text_lines.extend(["", "יעדים שנכשלו או נחסמו:"])
         text_lines.extend(
@@ -141,12 +121,6 @@ def build_message(
         if failure_rows
         else ""
     )
-    manual_section = "".join(
-        "<h2>LinkedIn: נוסח מוכן לפרסום ידני</h2>"
-        f"<p>{html.escape(str(item.get('detail') or 'העתק את הנוסח ל-LinkedIn.'))}</p>"
-        f"<pre style='white-space:pre-wrap;font-family:Arial,sans-serif'>{html.escape(str(item.get('manual_text') or ''))}</pre>"
-        for item in manuals
-    )
     message.add_alternative(
         f"""<!doctype html>
 <html lang="he" dir="rtl"><body style="font-family:Arial,sans-serif;line-height:1.6">
@@ -155,7 +129,6 @@ def build_message(
 <h2>קישורים לנכסים שפורסמו</h2>
 <ul>{link_rows}</ul>
 {failure_section}
-{manual_section}
 <p><a href="{html.escape(dashboard_url, quote=True)}">פתיחת מרכז האישור</a></p>
 <p style="color:#667085">מזהה אישור: {html.escape(str(result.get('approval_id') or 'unknown'))}</p>
 </body></html>""",
