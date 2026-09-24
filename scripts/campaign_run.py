@@ -95,6 +95,13 @@ def configured(*names):
     return all(os.environ.get(name, "").strip() for name in names)
 
 
+def linkedin_api_publishing_enabled():
+    """Require explicit enablement after LinkedIn API access is approved."""
+    return os.environ.get("LINKEDIN_API_PUBLISHING_ENABLED", "").strip().lower() in {
+        "1", "true", "yes"
+    }
+
+
 def stable_slug(title):
     value = re.sub(r"[^\w\u0590-\u05FF-]+", "-", title, flags=re.UNICODE)
     return re.sub(r"-+", "-", value).strip("-").lower()[:180]
