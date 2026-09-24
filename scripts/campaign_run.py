@@ -835,7 +835,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
             (linkedin_payload.get("disclosure") or "").strip(),
         ]
         manual_text = enforce_publication_policy(
-            "\\n\\n".join(part for part in manual_text_parts if part)
+            "\n\n".join(part for part in manual_text_parts if part)
         )
         destinations.append(
             destination(
