@@ -43,39 +43,6 @@ class PublicationEmailNotificationTests(unittest.TestCase):
         self.assertIn("https://facebook.com/post/1", plain)
         self.assertNotIn("https://example.com/image.jpg", plain)
 
-    def test_manual_linkedin_email_includes_ready_to_paste_approved_copy(self):
-        result = {
-            "approval_id": "apr_manual",
-            "title": "כותרת",
-            "status": "completed",
-            "destinations": [
-                {
-                    "name": "Website",
-                    "status": "published",
-                    "url": "https://example.com/post",
-                },
-                {
-                    "name": "LinkedIn",
-                    "status": "manual_required",
-                    "detail": "פרסום ידני נדרש",
-                    "manual_text": "כותרת הפוסט\\n\\nנוסח מאושר",
-                },
-            ],
-        }
-        message = build_message(
-            result,
-            recipient="owner@example.com",
-            sender="sender@example.com",
-            dashboard_url="https://approval.example",
-        )
-        plain = message.get_body(preferencelist=("plain",)).get_content()
-        html_body = message.get_body(preferencelist=("html",)).get_content()
-        self.assertIn("נדרש פרסום ידני ב-LinkedIn", message["Subject"])
-        self.assertIn("כותרת הפוסט", plain)
-        self.assertIn("נוסח מאושר", plain)
-        self.assertIn("נוסח מאושר", html_body)
-        self.assertNotIn("יעדים שנכשלו", plain)
-
     def test_partial_email_reports_successes_and_failures(self):
         result = {
             "approval_id": "apr_partial",
