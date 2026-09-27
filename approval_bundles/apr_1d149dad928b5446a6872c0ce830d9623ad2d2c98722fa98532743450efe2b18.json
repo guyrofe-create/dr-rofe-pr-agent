@@ -1,0 +1,384 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-27T11:30:12Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-27-topic-05-run-36315829970-attempt-1.md",
+  "source_draft_sha256": "34ea5be69b577a7590bc42d52d36eca3c28f3a6e537e28e708135ba84b9ef991",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng73",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+    "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+    "alt_text": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Experiencing_menstrual_pain_with_hot_water_bottle.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Experiencing_menstrual_pain_with_hot_water_bottle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Vulvani",
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Experiencing menstrual pain with hot water bottle.jpg — Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-hero.png",
+        "sha256": "ed647a000c4759c90cb494c29f80466244504fc434d5ee848995f6816f4861bf",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+        "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-square.jpg",
+        "sha256": "31f574bd3ea6adaff9185288e5e6fdab6766eb7bacb42d91a9490d49cc025bb9",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-portrait.png",
+        "sha256": "21be6b91ad4c9b28e7c41b0b553dea8cd837f2390b24e18c8743463f4801ce85",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא",
+        "cms_title": "כאבי מחזור קשים — כמה כאב נחשב נורמלי?",
+        "markdown": "# כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nהתשובה הקצרה: אי־נוחות או כאב קל עד בינוני בתחילת הווסת יכולים להיות חלק שכיח מהמחזור, במיוחד אם הם חולפים בתוך זמן קצר ומגיבים לטיפול פשוט. לעומת זאת, כאב עז שמשבית מפעילות, מחמיר עם הזמן, מופיע גם מחוץ לימי הווסת או מלווה בתסמינים חריגים אינו מצב שכדאי לקבל כ״נורמלי״ — והוא מצדיק בירור רפואי.\n\nכאבי מחזור, המכונים ברפואה דיסמנוריאה, עשויים להופיע כהתכווצויות בבטן התחתונה ולהקרין לגב התחתון או לירכיים. אצל חלק מהנשים והנערות הם מלווים בבחילה, שלשול, כאב ראש, עייפות או תחושת חולשה. השאלה החשובה אינה רק עד כמה הכאב חזק בסולם מספרי, אלא גם כיצד הוא משפיע על התפקוד, האם חל שינוי בדפוס שלו והאם קיימים סימנים היכולים להצביע על בעיה רפואית אחרת.\n\n## מה מאפיין כאב מחזור שכיח?\n\nכאבי מחזור שכיחים נגרמים בדרך כלל מהתכווצויות הרחם. במהלך הווסת רירית הרחם נושרת, וחומרים בשם פרוסטגלנדינים מעודדים את שריר הרחם להתכווץ. רמות גבוהות יותר של פרוסטגלנדינים עשויות להיות קשורות לכאב משמעותי יותר ולתסמינים נלווים במערכת העיכול.\n\nבדיסמנוריאה ראשונית אין מחלה אגנית מזוהה שמסבירה את הכאב. הכאב מתחיל לרוב סמוך להופעת הדימום, עשוי להיות חזק יותר ביממה הראשונה ולאחר מכן להיחלש בהדרגה. הוא יכול להופיע כבר בגיל ההתבגרות, לאחר שהמחזורים נעשים ביוציים וסדירים יותר.\n\nלפי [המידע המקצועי של ACOG על דיסמנוריאה](https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods), התכווצויות הקשורות לווסת עשויות להתחיל יום או יומיים לפני הדימום או עם תחילתו, ובמקרים רבים הן נמשכות כמה ימים. עם זאת, עצם העובדה שכאבי מחזור שכיחים אינה אומרת שכל דרגת כאב היא תקינה או שאין צורך לבדוק כאב קשה.\n\nכאב סביר מבחינה תפקודית הוא בדרך כלל כאב שאפשר להתמודד איתו באמצעים פשוטים, שאינו מונע באופן עקבי יציאה ללימודים או לעבודה, ואינו מחייב הישארות במיטה בכל מחזור. אין סף מספרי אחיד שמפריד בין כאב ״תקין״ לכאב חריג. אותה עוצמת כאב יכולה להיתפס אחרת אצל נשים שונות, ולכן חשוב להעריך גם את ההשפעה המעשית:\n\n- האם ניתן להמשיך בפעילות היומיומית?\n- האם הכאב גורם להיעדרויות חוזרות?\n- האם יש צורך ליטול משככי כאבים בתדירות גבוהה מהמקובל או ללא השפעה מספקת?\n- האם קיימת יקיצה משינה בשל הכאב?\n- האם הכאב מחמיר מחודש לחודש?\n- האם הוא מופיע גם בין הווסתות?\n\nכאשר התשובות מעידות על פגיעה משמעותית בתפקוד, אין צורך להמתין עד שהכאב יהפוך ל״בלתי נסבל״ כדי לפנות להערכה רפואית.\n\n## מתי כאבי מחזור עלולים להצביע על בעיה אחרת?\n\nדיסמנוריאה משנית היא כאב וסת שנובע ממצב רפואי אחר. בניגוד לדיסמנוריאה ראשונית, היא עשויה להתחיל לאחר תקופה של מחזורים ללא כאב משמעותי, להחמיר בהדרגה, להימשך מעבר לימי הדימום או להיות מלווה בתסמינים נוספים.\n\nאחת הסיבות האפשריות היא אנדומטריוזיס — מצב שבו רקמה הדומה לרירית הרחם נמצאת מחוץ לחלל הרחם. אנדומטריוזיס עשויה לגרום לכאבי וסת קשים, כאב אגני מתמשך, כאב במהלך יחסי מין, כאב ביציאות או במתן שתן סביב הווסת ולעיתים גם לקושי להרות. על פי [הנחיית NICE לאבחון ולטיפול באנדומטריוזיס](https://www.nice.org.uk/guidance/ng73), יש לחשוד באנדומטריוזיס בין היתר כאשר קיימים כאבי מחזור המשפיעים על הפעילות היומיומית ועל איכות החיים.\n\nסיבות אפשריות נוספות כוללות אדנומיוזיס, שבו רקמה דמוית רירית רחם נמצאת בתוך שריר הרחם; שרירנים ברחם; זיהום באגן; ציסטות שחלתיות; ולעיתים בעיות הקשורות להתקן תוך־רחמי, בעיקר בתקופה שלאחר הכנסתו. לא ניתן להבחין בין המצבים על סמך עוצמת הכאב בלבד.\n\nסימנים המצדיקים בירור רפואי מסודר כוללים:\n\n- כאב חדש או החמרה ברורה בדפוס הכאבים.\n- כאב שאינו מגיב לטיפול מקובל או דורש מינונים הולכים וגדלים.\n- דימום כבד מאוד, ממושך או לא סדיר.\n- דימום בין הווסתות או לאחר יחסי מין.\n- כאב בזמן יחסי מין.\n- כאב ביציאות או במתן שתן, במיוחד סביב הווסת.\n- כאב אגני גם בימים שבהם אין דימום.\n- הפרשות חריגות, ריח חריג או חום.\n- קושי להרות לצד כאבי מחזור משמעותיים.\n- הופעה חדשה של כאבי וסת קשים לאחר שנים של מחזורים קלים יחסית.\n\nבירור אינו מעיד בהכרח שקיימת מחלה משמעותית. מטרתו לזהות אם מדובר בדיסמנוריאה ראשונית או בכאב משני, ולבחור טיפול המתאים לגורם, למצב הבריאותי ולהעדפות המטופלת.\n\n## אילו סימנים דורשים הערכה דחופה?\n\nרוב כאבי המחזור אינם מצב חירום, אך כאב חריג בעוצמתו או באופיו מחייב לעיתים בדיקה דחופה. יש לפנות לשירות רפואי דחוף כאשר מופיע כאב חד ופתאומי, במיוחד אם הוא ממוקד בצד אחד, או כאשר הכאב מלווה בעילפון, סחרחורת קשה, חולשה קיצונית, בלבול, חום גבוה או הקאות שאינן מאפשרות שתייה.\n\nגם דימום כבד מאוד המלווה בסימני חולשה, קוצר נשימה, דופק מהיר או תחושת עילפון מצריך הערכה ללא דיחוי. אם קיים סיכוי להיריון, כאב אגני עם דימום עלול להיות קשור גם לסיבוכי היריון, לרבות היריון מחוץ לרחם, ולכן אין להניח שמדובר בווסת רגילה.\n\nכאב פתאומי וחזק עשוי לנבוע גם מתסביב שחלה, מקרע של ציסטה או ממצבים שאינם גינקולוגיים, כגון דלקת התוספתן. אי אפשר לאבחן מצבים אלה בבית לפי תחושת הכאב בלבד. שינוי חד מהדפוס המוכר חשוב לא פחות מעוצמת הכאב: כאב ששונה באופן ברור מכאבי המחזור הרגילים ראוי להערכה גם אם הדימום הופיע במועד הצפוי.\n\n## כיצד מתבצע הבירור הרפואי?\n\nהבירור מתחיל בדרך כלל בתיאור מפורט של הכאב. מידע שימושי כולל את מועד הופעתו ביחס לדימום, משך הכאב, מיקומו, תסמינים נלווים, השפעתו על התפקוד והתגובה לטיפולים שנוסו. לעיתים מתבצעת בדיקה גופנית או גינקולוגית, בהתאם לגיל, לתסמינים ולהקשר הרפואי.\n\nבדיקת היריון עשויה להידרש כאשר הדבר רלוונטי. לפי התמונה הקלינית ניתן לשקול בדיקות דם, בדיקות לזיהומים או אולטרסאונד של האגן. חשוב לדעת שאולטרסאונד תקין אינו שולל בהכרח אנדומטריוזיס. [הנחיית NICE בנושא אנדומטריוזיס](https://www.nice.org.uk/guidance/ng73) מדגישה שאין לשלול את האפשרות למחלה רק משום שהבדיקה הגופנית או ההדמיה אינן מראות ממצא ברור.\n\nיומן תסמינים יכול לסייע לבירור. במשך שניים או שלושה מחזורים אפשר לתעד את מועד הדימום, עוצמת הכאב, מיקומו, כמות הדימום המשוערת, תסמינים במערכת העיכול או השתן, תרופות שנלקחו והשפעתן. תיעוד כזה אינו מחליף בדיקה, אך הוא מאפשר לזהות דפוסים ולהציג תמונה מדויקת יותר.\n\nהאבחון עשוי להיעשות בשלבים. לעיתים מתחילים בטיפול המתאים לדיסמנוריאה ראשונית ועוקבים אחר התגובה. אם אין שיפור מספק, אם קיימים סימנים מחשידים או אם התמונה משתנה, ממשיכים בבירור. ניתוח אינו נדרש בכל מקרה, וההחלטה על בדיקות נוספות תלויה במכלול הנתונים.\n\n## מה עשוי לסייע בהקלה על הכאב?\n\nהטיפול תלוי בחומרת התסמינים, במצב הבריאותי ובשאלה אם קיים גורם משני. חימום מקומי של הבטן התחתונה, שינה מספקת ופעילות גופנית מתונה עשויים לסייע לחלק מהנשים. אין לצפות ששינוי אורח חיים לבדו יפתור כאב קשה או מחלה גינקולוגית, אך הוא יכול להיות מרכיב משלים.\n\nתרופות נוגדות דלקת שאינן סטרואידליות, כגון איבופרופן או נפרוקסן, משמשות לעיתים לטיפול בכאבי וסת משום שהן מפחיתות את ייצור הפרוסטגלנדינים. הן עשויות להיות יעילות יותר כאשר נלקחות בתחילת הכאב או הדימום, ולעיתים עוד לפני הופעת הכאב כאשר מועד הווסת צפוי. עם זאת, תרופות אלה אינן מתאימות לכל אחת. יש להביא בחשבון מחלות כליה, כיב או דימום במערכת העיכול, רגישות לתרופה, שימוש במדללי דם, סוגים מסוימים של אסתמה, היריון אפשרי ותרופות נוספות. אין לעבור על המינון המופיע בעלון או לשלב תכשירים המכילים חומרים דומים ללא הנחיה מקצועית.\n\nטיפול הורמונלי, לרבות גלולות ואמצעים הורמונליים אחרים, עשוי להפחית כאבי וסת אצל חלק מהנשים באמצעות דיכוי ביוץ או הפחתת עובי רירית הרחם והדימום. בחירת הטיפול דורשת הערכה של גורמי סיכון, התוויות נגד, צורך במניעת היריון והעדפות אישיות. כאשר הכאב נובע מאנדומטריוזיס, אדנומיוזיס, שרירנים או מצב אחר, ייתכן צורך בטיפול ממוקד יותר.\n\nתוספי תזונה וצמחי מרפא אינם נטולי סיכון, והראיות לגבי חלקם מוגבלות או אינן אחידות. הם עלולים לגרום לתופעות לוואי או להשפיע על תרופות אחרות. לכן גם טיפול המוגדר ״טבעי״ ראוי לבדיקה מקצועית, במיוחד כאשר קיימות מחלות רקע או אפשרות להיריון.\n\n## סיכום\n\nכאב מחזור קל עד בינוני, קצר יחסית ושאינו פוגע משמעותית בתפקוד עשוי להשתייך לתגובה הגופנית השכיחה לווסת. כאב שגורם להיעדרות קבועה, משבית מפעילות, מחמיר לאורך זמן, מופיע מחוץ לווסת או מלווה בדימום חריג, כאב ביחסי מין, חום או תסמינים במערכת השתן והעיכול — אינו כאב שיש להתעלם ממנו.\n\nאין מדד יחיד שמגדיר כמה כאב הוא ״יותר מדי״. השילוב בין עוצמת הכאב, משכו, השינוי לעומת העבר והשפעתו על איכות החיים הוא שמכוון לצורך בבירור. במקביל, כאב חד ופתאומי, דימום כבד עם חולשה, חום משמעותי או כאב בנוכחות אפשרות להיריון דורשים הערכה דחופה.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד, אינו אבחון ואינו תחליף להערכה רפואית פרטנית. כל טענה רפואית והנחיית טיפול בטיוטה מחייבות בדיקה ואישור של רופא או רופאה מוסמכים לפני הפרסום.\n\n> **על המחבר**  \n> **ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.  \n> סטטוס נוכחי מאושר: אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. American College of Obstetricians and Gynecologists (ACOG), **Dysmenorrhea: Painful Periods**:  \n   https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods\n\n2. National Institute for Health and Care Excellence (NICE), **Endometriosis: diagnosis and management — NG73**:  \n   https://www.nice.org.uk/guidance/ng73\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי של ד״ר גיא רופא](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/כאבי-מחזור-קשים-כמה-כאב-נחשב-נורמלי/",
+        "meta_description": "ד״ר גיא רופא: אי־נוחות או כאב קל עד בינוני בתחילת הווסת יכולים להיות חלק שכיח מהמחזור, במיוחד אם הם חולפים בתוך זמן קצר ומגיבים לטיפול פשוט.",
+        "search_target": {
+          "primary_query": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
+          "secondary_queries": [
+            "כאבי מחזור קשים — כמה כאב נחשב נורמלי?",
+            "כאבי מחזור קשים - כמה כאב זה נורמלי? ד״ר גיא רופא",
+            "כאבי מחזור קשים - כמה כאב זה נורמלי? גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "informational_question"
+        },
+        "internal_links": [
+          {
+            "title": "כאבי מחזור קשים – כמה כאב זה נורמלי?",
+            "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/"
+          }
+        ],
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "261824a358c89639d591f22296a1db624fe000cd40020c8e0cfc27ed4e191ec2",
+        "slug": "כאבי-מחזור-קשים-כמה-כאב-נחשב-נורמלי",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-hero.png",
+          "sha256": "ed647a000c4759c90cb494c29f80466244504fc434d5ee848995f6816f4861bf",
+          "alt_text": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Experiencing_menstrual_pain_with_hot_water_bottle.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Experiencing_menstrual_pain_with_hot_water_bottle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Experiencing menstrual pain with hot water bottle.jpg — Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-hero.png",
+              "sha256": "ed647a000c4759c90cb494c29f80466244504fc434d5ee848995f6816f4861bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+              "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-square.jpg",
+              "sha256": "31f574bd3ea6adaff9185288e5e6fdab6766eb7bacb42d91a9490d49cc025bb9",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-portrait.png",
+              "sha256": "21be6b91ad4c9b28e7c41b0b553dea8cd837f2390b24e18c8743463f4801ce85",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: אי־נוחות או כאב קל עד בינוני בתחילת הווסת יכולים להיות חלק שכיח מהמחזור, במיוחד אם הם חולפים בתוך זמן קצר ומגיבים לטיפול פשוט.\n\nלעומת זאת, כאב עז שמשבית מפעילות, מחמיר עם הזמן, מופיע גם מחוץ לימי הווסת או מלווה בתסמינים חריגים אינו מצב שכדאי לקבל כ״נורמלי״ — והוא מצדיק בירור רפואי.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Experiencing menstrual pain with hot water bottle.jpg — Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/כאבי-מחזור-קשים-כמה-כאב-נחשב-נורמלי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+          "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+          "alt_text": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Experiencing_menstrual_pain_with_hot_water_bottle.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Experiencing_menstrual_pain_with_hot_water_bottle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Experiencing menstrual pain with hot water bottle.jpg — Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-hero.png",
+              "sha256": "ed647a000c4759c90cb494c29f80466244504fc434d5ee848995f6816f4861bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+              "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-square.jpg",
+              "sha256": "31f574bd3ea6adaff9185288e5e6fdab6766eb7bacb42d91a9490d49cc025bb9",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-portrait.png",
+              "sha256": "21be6b91ad4c9b28e7c41b0b553dea8cd837f2390b24e18c8743463f4801ce85",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: אי־נוחות או כאב קל עד בינוני בתחילת הווסת יכולים להיות חלק שכיח מהמחזור, במיוחד אם הם חולפים בתוך זמן קצר ומגיבים לטיפול פשוט.\n\n• לעומת זאת, כאב עז שמשבית מפעילות, מחמיר עם הזמן, מופיע גם מחוץ לימי הווסת או מלווה בתסמינים חריגים אינו מצב שכדאי לקבל כ״נורמלי״ — והוא מצדיק בירור רפואי.\n• כאבי מחזור, המכונים ברפואה דיסמנוריאה, עשויים להופיע כהתכווצויות בבטן התחתונה ולהקרין לגב התחתון או לירכיים.\n• אצל חלק מהנשים והנערות הם מלווים בבחילה, שלשול, כאב ראש, עייפות או תחושת חולשה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Experiencing menstrual pain with hot water bottle.jpg — Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/כאבי-מחזור-קשים-כמה-כאב-נחשב-נורמלי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+          "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+          "alt_text": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Experiencing_menstrual_pain_with_hot_water_bottle.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Experiencing_menstrual_pain_with_hot_water_bottle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Experiencing menstrual pain with hot water bottle.jpg — Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-hero.png",
+              "sha256": "ed647a000c4759c90cb494c29f80466244504fc434d5ee848995f6816f4861bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+              "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-square.jpg",
+              "sha256": "31f574bd3ea6adaff9185288e5e6fdab6766eb7bacb42d91a9490d49cc025bb9",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-portrait.png",
+              "sha256": "21be6b91ad4c9b28e7c41b0b553dea8cd837f2390b24e18c8743463f4801ce85",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא.\n\nהתשובה הקצרה: אי־נוחות או כאב קל עד בינוני בתחילת הווסת יכולים להיות חלק שכיח מהמחזור, במיוחד אם הם חולפים בתוך זמן קצר ומגיבים לטיפול פשוט.\n\nלעומת זאת, כאב עז שמשבית מפעילות, מחמיר עם הזמן, מופיע גם מחוץ לימי הווסת או מלווה בתסמינים חריגים אינו מצב שכדאי לקבל כ״נורמלי״ — והוא מצדיק בירור רפואי.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/כאבי-מחזור-קשים-כמה-כאב-נחשב-נורמלי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+          "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+          "alt_text": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "אישה שוכבת במיטה ומניחה בקבוק חם על הבטן התחתונה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Experiencing_menstrual_pain_with_hot_water_bottle.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Experiencing_menstrual_pain_with_hot_water_bottle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Vulvani",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Experiencing menstrual pain with hot water bottle.jpg — Vulvani; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-hero.png",
+              "sha256": "ed647a000c4759c90cb494c29f80466244504fc434d5ee848995f6816f4861bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-landscape.png",
+              "sha256": "983dad62958557271d1be28eab6a45fae0c8df0090bd829eea1ce7c5244976b0",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-square.jpg",
+              "sha256": "31f574bd3ea6adaff9185288e5e6fdab6766eb7bacb42d91a9490d49cc025bb9",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-27-topic-05-run-36315829970-attempt-1-portrait.png",
+              "sha256": "21be6b91ad4c9b28e7c41b0b553dea8cd837f2390b24e18c8743463f4801ce85",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "261824a358c89639d591f22296a1db624fe000cd40020c8e0cfc27ed4e191ec2",
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_1d149dad928b5446a6872c0ce830d9623ad2d2c98722fa98532743450efe2b18"
+}
