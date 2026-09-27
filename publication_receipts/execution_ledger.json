@@ -2523,11 +2523,11 @@
       "platform": "LinkedIn",
       "asset": "configured LinkedIn member",
       "request_sha256": "0ad6245baf75cf5253ff66254ae78f4b196e7cbece5e1b6274d0d0d0f912c2d9",
-            "status": "failed",
-            "safe_to_retry": true,
-      "detail": "HTTP 401 from LinkedIn userinfo before any publication write; token refreshed and connection check #7 passed.",
-      "started_at": "2026-09-24T14:24:11Z",
-      "updated_at": "2026-09-24T14:24:11Z"
+      "status": "published",
+      "started_at": "2026-09-27T06:48:06Z",
+      "published_at": "2026-09-27T06:48:09Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7509866452422721536/",
+      "provider_receipt": null
     },
     "pub_c21a77a74a4c69904ae0e0849e3f4f5ee42250fa930f24808fe3c415779977b8": {
       "version": 7,

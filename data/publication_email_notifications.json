@@ -1037,6 +1037,19 @@
       "approval_id": "apr_dcc610a70bef34fff806d5fc236d587041c621516a5e972fac972f1c2be3d7cf",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_4305ffb673d23d4c394dab016e6669da96d22c73c7ada9ebc4fea39d57077bf5:f34e8f4d80d396c7e76b30475acd6d777e09abaa52af2c29360ff78b9073cfeb": {
+      "sent_at": "2026-09-27T06:48:10.405361+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_4305ffb673d23d4c394dab016e6669da96d22c73c7ada9ebc4fea39d57077bf5",
+      "state": "success",
+      "subject": "אישור פרסום: לא רק כאבי גב: הבעיות הרפואיות של נשים עם חזה גדול | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9c%d7%90-%d7%a8%d7%a7-%d7%9b%d7%90%d7%91%d7%99-%d7%92%d7%91-%d7%94%d7%91%d7%a2%d7%99%d7%95%d7%aa-%d7%94%d7%a8%d7%a4%d7%95%d7%90%d7%99%d7%95%d7%aa-%d7%a9%d7%9c/",
+        "https://www.facebook.com/122205804758942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7509866452422721536/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK7Zv5qCkLCZzwE"
+      ]
     }
   }
 }

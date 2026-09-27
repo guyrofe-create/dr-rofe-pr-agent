@@ -1,8 +1,8 @@
 {
   "draft": "content_drafts/2026-09-24-topic-90-run-35991461182-attempt-1.md",
   "title": "לא רק כאבי גב: הבעיות הרפואיות של נשים עם חזה גדול | ד״ר גיא רופא",
-  "status": "completed_with_errors",
-  "published_at": "2026-09-24T14:24:14.487159+00:00",
+  "status": "completed",
+  "published_at": "2026-09-27T06:48:09.434264+00:00",
   "destinations": [
     {
       "name": "drguyrofe.co.il",
@@ -47,9 +47,10 @@
     },
     {
       "name": "LinkedIn",
-      "status": "failed",
+      "status": "published",
       "target_id": "linkedin_member",
-      "detail": "HTTPError: 401 Client Error: Unauthorized for url: https://api.linkedin.com/v2/userinfo"
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7509866452422721536/",
+      "detail": "idempotency_key=pub_fe01874cc5e554332768c15366bd4a504881ac7fb2514a46bc187299ad2f3d53"
     },
     {
       "name": "X",
