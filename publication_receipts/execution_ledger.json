@@ -2523,7 +2523,9 @@
       "platform": "LinkedIn",
       "asset": "configured LinkedIn member",
       "request_sha256": "0ad6245baf75cf5253ff66254ae78f4b196e7cbece5e1b6274d0d0d0f912c2d9",
-      "status": "reconciliation_required",
+            "status": "failed",
+            "safe_to_retry": true,
+      "detail": "HTTP 401 from LinkedIn userinfo before any publication write; token refreshed and connection check #7 passed.",
       "started_at": "2026-09-24T14:24:11Z",
       "updated_at": "2026-09-24T14:24:11Z"
     },
