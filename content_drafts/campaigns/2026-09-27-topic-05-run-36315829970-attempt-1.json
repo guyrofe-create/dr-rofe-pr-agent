@@ -1,0 +1,117 @@
+{
+  "draft": "content_drafts/2026-09-27-topic-05-run-36315829970-attempt-1.md",
+  "title": "כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-09-27T17:51:31.133619+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/%d7%9b%d7%90%d7%91%d7%99-%d7%9e%d7%97%d7%96%d7%95%d7%a8-%d7%a7%d7%a9%d7%99%d7%9d-%d7%9b%d7%9e%d7%94-%d7%9b%d7%90%d7%91-%d7%a0%d7%97%d7%a9%d7%91-%d7%a0%d7%95%d7%a8%d7%9e%d7%9c%d7%99/",
+      "detail": "idempotency_key=pub_0d1456e89f20796f6bf455b2e43c25fe7ca71a10f69afb8e2e28bc2d7fe97911"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://guyrofe.com/%d7%9b%d7%90%d7%91%d7%99-%d7%9e%d7%97%d7%96%d7%95%d7%a8-%d7%a7%d7%a9%d7%99%d7%9d-%d7%9b%d7%9e%d7%94-%d7%9b%d7%90%d7%91-%d7%a0%d7%97%d7%a9%d7%91-%d7%a0%d7%95%d7%a8%d7%9e%d7%9c%d7%99/",
+      "detail": "failed checks: canonical_person_linked"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-27-topic-05-run-36315829970-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122206348448942441",
+      "detail": "idempotency_key=pub_8f018a28e08a22a3887a9c162f0616b26f4b5e2522f5edc5c7235f4967dc6f4c"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7510033381611712512/",
+      "detail": "idempotency_key=pub_0311709ca09767050faf7e9d785e62084a81bf32c0fc84cdc9d9d574dfd9c68d"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJDntMGli6OzmgE",
+      "detail": "idempotency_key=pub_214eb1502a36d7140b919bf068732e5a2098ce3761cf6a9ab3083f7c90115aea"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_1d149dad928b5446a6872c0ce830d9623ad2d2c98722fa98532743450efe2b18",
+  "search_target": {
+    "primary_query": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
+    "secondary_queries": [
+      "כאבי מחזור קשים — כמה כאב נחשב נורמלי?",
+      "כאבי מחזור קשים - כמה כאב זה נורמלי? ד״ר גיא רופא",
+      "כאבי מחזור קשים - כמה כאב זה נורמלי? גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational_question"
+  },
+  "canonical_url": "https://guyrofe.com/%d7%9b%d7%90%d7%91%d7%99-%d7%9e%d7%97%d7%96%d7%95%d7%a8-%d7%a7%d7%a9%d7%99%d7%9d-%d7%9b%d7%9e%d7%94-%d7%9b%d7%90%d7%91-%d7%a0%d7%97%d7%a9%d7%91-%d7%a0%d7%95%d7%a8%d7%9e%d7%9c%d7%99/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

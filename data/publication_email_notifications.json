@@ -1050,6 +1050,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7509866452422721536/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK7Zv5qCkLCZzwE"
       ]
+    },
+    "apr_1d149dad928b5446a6872c0ce830d9623ad2d2c98722fa98532743450efe2b18:a8f5e7675773aff4cad963ff6e1bb7ab28c4e30f085f63ca7cf0e6261ec46ebe": {
+      "sent_at": "2026-09-27T17:51:32.085545+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_1d149dad928b5446a6872c0ce830d9623ad2d2c98722fa98532743450efe2b18",
+      "state": "success",
+      "subject": "אישור פרסום: כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%9b%d7%90%d7%91%d7%99-%d7%9e%d7%97%d7%96%d7%95%d7%a8-%d7%a7%d7%a9%d7%99%d7%9d-%d7%9b%d7%9e%d7%94-%d7%9b%d7%90%d7%91-%d7%a0%d7%97%d7%a9%d7%91-%d7%a0%d7%95%d7%a8%d7%9e%d7%9c%d7%99/",
+        "https://www.facebook.com/122206348448942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7510033381611712512/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJDntMGli6OzmgE"
+      ]
     }
   }
 }
