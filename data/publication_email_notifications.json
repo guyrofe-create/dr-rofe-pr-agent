@@ -1063,6 +1063,13 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7510033381611712512/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJDntMGli6OzmgE"
       ]
+    },
+    "expired:apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab:2026-08-20T08:12:02Z": {
+      "sent_at": "2026-09-27T20:42:49.904615+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab",
+      "state": "expired",
+      "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
     }
   }
 }
