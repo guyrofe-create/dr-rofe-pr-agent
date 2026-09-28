@@ -1,0 +1,65 @@
+{
+  "version": 4,
+  "opportunity_id": "opp_978a3335285c326e",
+  "prepared_at": "2026-09-28T06:51:21Z",
+  "status": "awaiting_item_approval",
+  "public_execution_allowed": false,
+  "approval_invalidated_by_any_edit": true,
+  "opportunity": {
+    "id": "opp_978a3335285c326e",
+    "version": 4,
+    "action_type": "strengthen_existing_asset",
+    "kind": "strengthen_asset",
+    "source_kind": "strengthen_asset",
+    "asset_id": "YouTube",
+    "asset_url": "https://www.youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
+    "query": "Guy Rofe",
+    "reason": "Controlled asset is within striking distance at position 16 (page 2).",
+    "recommended_actions": [
+      "Improve the exact ranking page and preserve its URL",
+      "Strengthen branded identity relevance with original platform-native evidence",
+      "Add a small number of natural contextual links from approved relevant assets",
+      "Verify indexing and remeasure before creating more content"
+    ],
+    "evidence": {
+      "position": 16,
+      "result_page": 2,
+      "striking_distance": true
+    },
+    "factors": {
+      "expected_impact": 8.0,
+      "asset_authority": 9.5,
+      "query_relevance": 8.0,
+      "control": 10.0,
+      "time_cost": 4.0,
+      "financial_cost": 2.0,
+      "risk": 2.0,
+      "benefit_product": 6080.0,
+      "burden_sum": 8.0,
+      "raw_priority_index": 760.0,
+      "opportunity_score": 100.0,
+      "formula": "impact × authority × relevance × control ÷ (time + financial cost + risk)"
+    },
+    "score": 100.0,
+    "confidence": 0.85,
+    "status": "selected_for_preparation",
+    "blocked_reasons": [],
+    "preparation_autonomous": true,
+    "final_execution_requires_approval": true,
+    "authorization_scope": "prepare_action_only",
+    "new_asset_build_authorized": false,
+    "approval_required": "standard",
+    "approval_bundle_requirements": [
+      "Evidence and exact target",
+      "Expected benefit, cost, risk and measurement plan",
+      "Exact proposed change or outreach text",
+      "Rollback or stop condition"
+    ],
+    "measurement_after_action": [
+      "Re-measure the same engine, surface, query and locale",
+      "Compare against 7-day and 28-day baselines",
+      "Stop or reverse if risk, duplication or cannibalization rises"
+    ],
+    "execution_mode": "autonomous_prepare_then_approval"
+  }
+}

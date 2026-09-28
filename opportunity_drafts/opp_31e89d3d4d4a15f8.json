@@ -1,0 +1,62 @@
+{
+  "version": 4,
+  "opportunity_id": "opp_31e89d3d4d4a15f8",
+  "prepared_at": "2026-09-28T06:51:21Z",
+  "status": "awaiting_item_approval",
+  "public_execution_allowed": false,
+  "approval_invalidated_by_any_edit": true,
+  "opportunity": {
+    "id": "opp_31e89d3d4d4a15f8",
+    "version": 4,
+    "action_type": "strengthen_existing_asset",
+    "kind": "defend_asset",
+    "source_kind": "defend_asset",
+    "asset_id": "Canonical website",
+    "asset_url": "https://guyrofe.com/",
+    "query": "דר גיא רופא",
+    "reason": "Controlled asset already holds a defensive top-2 result.",
+    "recommended_actions": [
+      "Protect URL stability and factual accuracy",
+      "Refresh only when material value or facts change",
+      "Monitor title, snippet, sitelinks and displacement risk"
+    ],
+    "evidence": {
+      "position": 2
+    },
+    "factors": {
+      "expected_impact": 8.0,
+      "asset_authority": 10.0,
+      "query_relevance": 8.0,
+      "control": 10.0,
+      "time_cost": 4.0,
+      "financial_cost": 2.0,
+      "risk": 2.0,
+      "benefit_product": 6400.0,
+      "burden_sum": 8.0,
+      "raw_priority_index": 800.0,
+      "opportunity_score": 100.0,
+      "formula": "impact × authority × relevance × control ÷ (time + financial cost + risk)"
+    },
+    "score": 100.0,
+    "confidence": 0.85,
+    "status": "selected_for_preparation",
+    "blocked_reasons": [],
+    "preparation_autonomous": true,
+    "final_execution_requires_approval": true,
+    "authorization_scope": "prepare_action_only",
+    "new_asset_build_authorized": false,
+    "approval_required": "standard",
+    "approval_bundle_requirements": [
+      "Evidence and exact target",
+      "Expected benefit, cost, risk and measurement plan",
+      "Exact proposed change or outreach text",
+      "Rollback or stop condition"
+    ],
+    "measurement_after_action": [
+      "Re-measure the same engine, surface, query and locale",
+      "Compare against 7-day and 28-day baselines",
+      "Stop or reverse if risk, duplication or cannibalization rises"
+    ],
+    "execution_mode": "autonomous_prepare_then_approval"
+  }
+}
