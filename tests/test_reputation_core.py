@@ -457,6 +457,76 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertEqual(report["status"], "not_measured")
         self.assertEqual(report["assets"], [])
 
+    def test_incomplete_measurement_holds_brand_execution(self):
+        cycle = orchestrate_reputation_cycle(
+            [{
+                "platform": "LinkedIn",
+                "url": "https://www.linkedin.com/in/guyrofe",
+                "controlled": True,
+                "tier": "A",
+                "status": "active",
+                "priority": 95,
+            }],
+            [],
+            search_console_rows=[{
+                "query": "ד״ר גיא רופא",
+                "page": "https://www.linkedin.com/in/guyrofe",
+                "position": 8,
+                "impressions": 100,
+            }],
+            asset_rank_measurement_complete=False,
+        )
+        self.assertFalse(cycle["brand_execution_gate"]["ready"])
+        self.assertEqual(cycle["selected_actions"], [])
+
+    def test_rank_beyond_page_one_is_a_striking_distance_action(self):
+        assets = [{
+            "platform": "LinkedIn",
+            "url": "https://www.linkedin.com/in/guyrofe",
+            "controlled": True,
+            "tier": "A",
+            "status": "active",
+            "priority": 95,
+        }]
+        cycle = orchestrate_reputation_cycle(
+            assets,
+            [{"query": "גיא רופא", "results": [{
+                "position": 15,
+                "link": "https://www.linkedin.com/in/guyrofe",
+            }]}],
+        )
+        actions = [
+            item for item in cycle["legacy_action_evidence"]
+            if item.get("asset_id") == "LinkedIn"
+        ]
+        self.assertEqual(actions[0]["kind"], "strengthen_asset")
+        self.assertTrue(actions[0]["evidence"]["striking_distance"])
+
+    def test_month_without_improvement_changes_tactic(self):
+        assets = [{
+            "platform": "LinkedIn",
+            "url": "https://www.linkedin.com/in/guyrofe",
+            "controlled": True,
+            "tier": "A",
+            "status": "active",
+            "priority": 95,
+            "consecutive_no_improvement_measurements": 4,
+            "no_improvement_days": 31,
+        }]
+        cycle = orchestrate_reputation_cycle(
+            assets,
+            [{"query": "גיא רופא", "results": [{
+                "position": 15,
+                "link": "https://www.linkedin.com/in/guyrofe",
+            }]}],
+        )
+        actions = [
+            item for item in cycle["legacy_action_evidence"]
+            if item.get("asset_id") == "LinkedIn"
+        ]
+        self.assertEqual(actions[0]["kind"], "change_tactic")
+        self.assertEqual(actions[0]["evidence"]["no_improvement_days"], 31)
+
     def test_orchestrator_builds_closed_loop_actions_and_ai_metrics(self):
         assets = [
             {"platform": "Main", "url": "https://guyrofe.com/", "controlled": True,
@@ -477,7 +547,7 @@ class GrowthEngineTests(unittest.TestCase):
                 "cited_sources": ["https://bad.example/story"],
             }],
             search_console_rows=[{
-                "query": "ד״ר גיא רופא חדשות", "page": "https://drguyrofe.co.il/news",
+                "query": "ד״ר גיא רופא", "page": "https://drguyrofe.co.il/news",
                 "position": 8.2, "impressions": 150,
             }],
         )

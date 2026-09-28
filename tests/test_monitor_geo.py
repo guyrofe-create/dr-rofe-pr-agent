@@ -25,6 +25,40 @@ class MonitorGeoTests(unittest.TestCase):
         self.assertEqual(len(saved["snapshots"]), 24)
         self.assertEqual(saved["snapshots"][0]["date"], "56")
 
+    def test_complete_rank_measurement_updates_registry_and_learning_counter(self):
+        registry = {"assets": [{
+            "platform": "LinkedIn",
+            "url": "https://www.linkedin.com/in/guyrofe",
+            "observed_position": 12,
+            "consecutive_no_improvement_measurements": 1,
+        }]}
+        changed = monitor_run.sync_asset_registry_measurements(registry, {
+            "status": "compared",
+            "previous_observed_at": "2026-09-14T05:00:00",
+            "current_observed_at": "2026-09-28T05:00:00",
+            "assets": [{
+                "asset_id": "LinkedIn",
+                "url": "https://www.linkedin.com/in/guyrofe",
+                "current_position": 15,
+                "current_query": "גיא רופא",
+                "current_device": "mobile",
+                "change": "declined",
+            }],
+        })
+        asset = registry["assets"][0]
+        self.assertTrue(changed)
+        self.assertEqual(asset["observed_position"], 15)
+        self.assertEqual(asset["result_page"], 2)
+        self.assertEqual(asset["consecutive_no_improvement_measurements"], 2)
+        self.assertEqual(asset["no_improvement_days"], 14)
+
+    def test_incomplete_rank_measurement_does_not_overwrite_registry(self):
+        registry = {"assets": [{"platform": "Main", "observed_position": 4}]}
+        self.assertFalse(monitor_run.sync_asset_registry_measurements(
+            registry, {"status": "not_measured", "assets": []}
+        ))
+        self.assertEqual(registry["assets"][0]["observed_position"], 4)
+
     def test_normalized_host_skips_unconfigured_asset_urls(self):
         self.assertEqual(monitor_run.normalized_host(None), "")
         self.assertEqual(monitor_run.normalized_host(b"https://example.com"), "")
@@ -208,15 +242,15 @@ class MonitorGeoTests(unittest.TestCase):
             monitor_run.REPORT["facebook_recommendations"] = old_value
         self.assertEqual(result["status"], "skipped_missing_permission")
 
-    def test_serp_checks_run_only_on_twice_monthly_dates(self):
+    def test_serp_checks_run_only_on_twice_weekly_days(self):
         with patch.object(
             monitor_run,
             "HISTORY",
             {"last_serp_check_date": "2026-07-01"},
         ):
             self.assertFalse(monitor_run.serp_checks_due("2026-07-01"))
-            self.assertFalse(monitor_run.serp_checks_due("2026-07-02"))
-            self.assertTrue(monitor_run.serp_checks_due("2026-07-15"))
+            self.assertTrue(monitor_run.serp_checks_due("2026-07-02"))
+            self.assertFalse(monitor_run.serp_checks_due("2026-07-15"))
 
     def test_manual_serp_check_can_override_calendar(self):
         with patch.object(monitor_run, "HISTORY", {}), patch.dict(
@@ -226,22 +260,19 @@ class MonitorGeoTests(unittest.TestCase):
         ):
             self.assertTrue(monitor_run.serp_checks_due("2026-07-02"))
 
-    def test_free_serp_plan_uses_two_core_queries_on_regular_day(self):
+    def test_free_serp_plan_uses_full_brand_matrix_on_every_run(self):
         plan = monitor_run.serp_run_plan("2026-07-27")
-        self.assertEqual(plan["mode"], "daily_core")
-        self.assertEqual(
-            plan["queries"],
-            ["ד״ר גיא רופא", "גיא רופא"],
-        )
+        self.assertEqual(plan["mode"], "full_brand_matrix")
+        self.assertEqual(len(plan["queries"]), 6)
         self.assertEqual(plan["engines"], ["google"])
-        self.assertEqual(plan["devices"], ["mobile"])
+        self.assertEqual(plan["devices"], ["mobile", "desktop"])
         self.assertFalse(plan["web_mentions"])
 
-    def test_free_serp_plan_runs_full_matrix_on_sunday(self):
+    def test_free_serp_plan_does_not_switch_dimensions_by_weekday(self):
         plan = monitor_run.serp_run_plan("2026-08-02")
-        self.assertEqual(plan["mode"], "extended_weekly")
-        self.assertEqual(len(plan["queries"]), 4)
-        self.assertEqual(plan["engines"], ["google", "bing"])
+        self.assertEqual(plan["mode"], "full_brand_matrix")
+        self.assertEqual(len(plan["queries"]), 6)
+        self.assertEqual(plan["engines"], ["google"])
         self.assertEqual(plan["devices"], ["mobile", "desktop"])
         self.assertFalse(plan["web_mentions"])
 
@@ -315,12 +346,12 @@ class MonitorGeoTests(unittest.TestCase):
             "HISTORY",
             {
                 "snapshots": [{
-                    "date": "2026-07-15T10:00:00",
+                    "date": "2026-07-16T10:00:00",
                     "rank": [{"status": "error", "detail": "429"}],
                 }],
             },
         ):
-            self.assertTrue(monitor_run.serp_checks_due("2026-07-15"))
+            self.assertTrue(monitor_run.serp_checks_due("2026-07-16"))
 
     def test_serp_quota_backoff_stops_same_day_retry_storm(self):
         with patch.object(
@@ -329,7 +360,7 @@ class MonitorGeoTests(unittest.TestCase):
             {"serp_retry_on_date": "2026-07-16"},
         ):
             self.assertFalse(monitor_run.serp_checks_due("2026-07-15"))
-            self.assertTrue(monitor_run.serp_checks_due("2026-08-01"))
+            self.assertTrue(monitor_run.serp_checks_due("2026-08-03"))
 
     def test_active_serp_backoff_does_not_repeat_failure_email(self):
         old_rank = monitor_run.REPORT["rank"]

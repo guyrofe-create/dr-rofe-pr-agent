@@ -10,7 +10,9 @@ from openai import OpenAI
 from urllib.parse import parse_qs, urlparse
 
 sys.path.insert(0, os.path.dirname(__file__))
-from social_publishers import meta, twitter, tumblr, telegram, blogger, pinterest
+from social_publishers import (
+    meta, twitter, tumblr, telegram, blogger, pinterest, google_business,
+)
 from reputation_core import (
     CommandCenter,
     client_search_queries,
@@ -28,6 +30,9 @@ from reputation_core.strategy import load_strategy
 from reputation_core.orchestrator import load_serp_targets
 from reputation_core.ai_evaluator import evaluate_ai_answer
 from reputation_core.ai_usage import record_ai_usage
+from reputation_core.google_business_performance import (
+    fetch_google_business_performance,
+)
 
 CLIENT_PROFILE = load_client_profile()
 CLIENT_FACTS = CLIENT_PROFILE["canonical_facts"]
@@ -60,6 +65,7 @@ REPORT = {
     "rank": [], "geo": [], "tokens": [], "reviews": None,
     "facebook_recommendations": None, "web_mentions": None,
     "search_console": None, "bing_ai_performance": None, "backlinks": None,
+    "google_business_performance": None,
     "orchestration": None,
     "alerts": [], "errors": [],
 }
@@ -134,6 +140,33 @@ def collect_search_console_evidence():
             "rows": [],
         }
         return []
+
+
+def collect_google_business_performance():
+    """Collect read-only GBP discovery and interaction evidence."""
+    names = (
+        "GOOGLE_OAUTH_CLIENT_ID",
+        "GOOGLE_OAUTH_CLIENT_SECRET",
+        "GOOGLE_OAUTH_REFRESH_TOKEN",
+    )
+    credentials = [env(name) for name in names]
+    if not all(credentials):
+        REPORT["google_business_performance"] = {
+            "status": "skipped",
+            "reason": "shared Google OAuth credentials are not configured",
+        }
+        return
+    try:
+        access_token = refresh_google_access_token(*credentials)
+        _account, location, _metadata = google_business.resolve_location(access_token)
+        REPORT["google_business_performance"] = (
+            fetch_google_business_performance(access_token, location)
+        )
+    except Exception as exc:
+        REPORT["google_business_performance"] = {
+            "status": "degraded",
+            "reason": safe_error(exc),
+        }
 
 
 def has_active_practice_claim(answer):
@@ -232,18 +265,18 @@ HISTORY = load_history()
 # ─── 1. Google rank via SerpApi ──────────────────────────────────────────────
 
 def serp_checks_due(today=None):
-    """Run routine rank checks only on the configured twice-monthly dates."""
+    """Run routine rank checks on configured weekdays, unless forced."""
     today = today or date.today().isoformat()
     today_value = date.fromisoformat(today)
     policy = free_serpapi_policy()
-    scheduled_days = {
+    scheduled_weekdays = {
         int(day)
-        for day in policy.get("rank_check_days_of_month", [1, 15])
+        for day in policy.get("rank_check_weekdays", [0, 3])
     }
     force_check = os.environ.get("FORCE_SERP_CHECK", "").strip().lower() in {
         "1", "true", "yes",
     }
-    if not force_check and today_value.day not in scheduled_days:
+    if not force_check and today_value.weekday() not in scheduled_weekdays:
         return False
     if serp_backoff_active(today):
         return False
@@ -272,7 +305,7 @@ def free_serpapi_policy():
 
 
 def serp_run_plan(today=None):
-    """Choose a low-cost daily core run or the weekly full measurement."""
+    """Choose a budget-safe measurement plan for exact brand queries."""
     today_value = date.fromisoformat(today or date.today().isoformat())
     policy = free_serpapi_policy()
     configured_queries = SERP_TARGETS.get("queries", [])
@@ -294,6 +327,17 @@ def serp_run_plan(today=None):
                 if item.strip() in {"mobile", "desktop", "tablet"}
             ],
             "web_mentions": True,
+        }
+
+    if policy.get("full_brand_matrix_every_run", False):
+        return {
+            "mode": "full_brand_matrix",
+            "queries": list(dict.fromkeys(
+                item["query"] for item in configured_queries
+            )),
+            "engines": ["google"],
+            "devices": ["mobile", "desktop"],
+            "web_mentions": bool(policy.get("web_mentions_enabled", False)),
         }
 
     extended_weekday = int(policy.get("extended_weekday", 6))
@@ -468,6 +512,66 @@ def rank_measurement_succeeded() -> bool:
     return bool(measured) and all(
         item.get("status") in {"found", "not_in_measured_results"} for item in measured
     )
+
+
+def sync_asset_registry_measurements(registry: dict, rank_changes: dict) -> bool:
+    """Persist current complete Google evidence without overwriting on failure."""
+    if rank_changes.get("status") not in {"baseline", "compared"}:
+        return False
+    rows = {
+        (row.get("asset_id"), row.get("url")): row
+        for row in rank_changes.get("assets", [])
+    }
+    observed_at = rank_changes.get("current_observed_at")
+    changed = False
+    for asset in registry.get("assets", []):
+        key = (asset.get("id") or asset.get("asset_id"), asset.get("url"))
+        row = rows.get(key)
+        if row is None:
+            # Some registries derive their id from platform when no explicit id exists.
+            key = (asset.get("platform"), asset.get("url"))
+            row = rows.get(key)
+        if row is None:
+            continue
+        position = row.get("current_position")
+        asset["previous_observed_position"] = asset.get("observed_position")
+        asset["observed_position"] = position
+        asset["observed_query"] = row.get("current_query")
+        asset["observed_device"] = row.get("current_device")
+        asset["observed_at"] = observed_at
+        asset["page_one"] = bool(position and position <= 10)
+        asset["result_page"] = ((position - 1) // 10 + 1) if position else None
+        asset["measurement_status"] = (
+            "found" if position is not None else "not_in_measured_results"
+        )
+        previous_cycles = int(
+            asset.get("consecutive_no_improvement_measurements") or 0
+        )
+        change = row.get("change")
+        if change in {"improved", "entered_measured_results"}:
+            asset["consecutive_no_improvement_measurements"] = 0
+            asset["no_improvement_since"] = None
+            asset["no_improvement_days"] = 0
+        elif change in {
+            "unchanged", "unchanged_not_found", "declined", "left_measured_results"
+        }:
+            asset["consecutive_no_improvement_measurements"] = previous_cycles + 1
+            since = (
+                asset.get("no_improvement_since")
+                or rank_changes.get("previous_observed_at")
+                or observed_at
+            )
+            asset["no_improvement_since"] = since
+            try:
+                start = datetime.fromisoformat(str(since).replace("Z", "+00:00"))
+                end = datetime.fromisoformat(
+                    str(observed_at).replace("Z", "+00:00")
+                )
+                asset["no_improvement_days"] = max(0, (end - start).days)
+            except (TypeError, ValueError):
+                asset["no_improvement_days"] = 0
+        changed = True
+    return changed
 
 
 def _next_serp_start(data, current_start, organic_count):
@@ -1507,7 +1611,7 @@ def main():
         elif not serp_budget_available(today_str):
             backoff_reason = "configured monthly SerpApi safety budget reached"
         else:
-            backoff_reason = "twice-monthly SerpApi cadence is not due or already completed"
+            backoff_reason = "twice-weekly SerpApi cadence is not due or already completed"
         REPORT["rank"].append({
             "status": "skipped",
             "reason": backoff_reason,
@@ -1574,6 +1678,7 @@ def main():
             "status": "disabled",
             "reason": "Google review monitoring disabled; owner receives Google email alerts",
         }
+    collect_google_business_performance()
     if free_serpapi_policy().get("facebook_recommendations_enabled", False):
         check_facebook_recommendations()
     else:
@@ -1664,6 +1769,12 @@ def main():
         content_freeze=command_center.state.get("content_freeze", False),
         asset_rank_measurement_complete=rank_measurement_succeeded(),
     )
+    if sync_asset_registry_measurements(
+        registry,
+        REPORT["orchestration"]["visibility_measurement"]["asset_rank_changes"],
+    ):
+        with open(ASSET_REGISTRY_PATH, "w", encoding="utf-8") as handle:
+            json.dump(registry, handle, ensure_ascii=False, indent=2)
     REPORT["bing_ai_performance"] = REPORT["orchestration"][
         "visibility_measurement"
     ]["bing_ai_performance"]

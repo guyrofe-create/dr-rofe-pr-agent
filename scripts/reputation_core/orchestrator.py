@@ -10,6 +10,7 @@ import json
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
+import re
 from urllib.parse import urlparse
 
 from .coverage_safety import evaluate_coverage_safety
@@ -58,7 +59,17 @@ def load_serp_targets(path: str | Path | None = None) -> dict:
             {"query": query, "kind": "measurement_variant", "priority": 80}
             for query in goal.get("measurement_variants", [])
         ]
-        data["queries"] = primary + variants
+        profile_queries = primary + variants
+        existing_queries = {
+            item["query"]: item for item in data.get("queries", [])
+        }
+        data["queries"] = [
+            {**existing_queries.get(item["query"], {}), **item}
+            for item in profile_queries
+        ] + [
+            item for item in data.get("queries", [])
+            if item["query"] not in {query["query"] for query in profile_queries}
+        ]
         data["market"] = profile["market"]
         data["objective"] = {
             **data.get("objective", {}),
@@ -350,7 +361,7 @@ def _action(priority: str, kind: str, asset: dict | None, query: str, reason: st
 
 def _ranked_asset(asset: dict, control_maps: list[dict]) -> tuple[int | None, str | None]:
     for control_map in control_maps:
-        for result in control_map["results"]:
+        for result in control_map.get("rank_results", control_map.get("results", [])):
             if result.get("asset_id") == _asset_id(asset):
                 return result["position"], control_map["query"]
     return None, None
@@ -381,6 +392,31 @@ def _asset_opportunities(assets: list[dict], control_maps: list[dict]) -> list[d
                 ],
                 {"health_status": health},
             ))
+            continue
+        no_improvement_cycles = int(
+            asset.get("consecutive_no_improvement_measurements") or 0
+        )
+        no_improvement_days = int(asset.get("no_improvement_days") or 0)
+        if (
+            position is not None
+            and no_improvement_cycles >= 2
+            and no_improvement_days >= 28
+        ):
+            actions.append(_action(
+                "P1", "change_tactic", asset, query or target_query,
+                f"The asset has not improved for {no_improvement_days} days across {no_improvement_cycles} complete measurement cycles; routine repetition must stop.",
+                [
+                    "Stop repeating the same publication or link pattern",
+                    "Audit indexability, canonical selection, query intent and external authority",
+                    "Choose one evidence-backed tactic change and define its next measurement window",
+                ],
+                {
+                    "position": position,
+                    "no_improvement_cycles": no_improvement_cycles,
+                    "no_improvement_days": no_improvement_days,
+                    "stop_routine_publication": no_improvement_days >= 42,
+                },
+            ))
         elif position is None:
             actions.append(_action(
                 "P1", "activate_asset", asset, target_query,
@@ -403,7 +439,7 @@ def _asset_opportunities(assets: list[dict], control_maps: list[dict]) -> list[d
                 ],
                 {"position": position},
             ))
-        else:
+        elif position <= 10:
             actions.append(_action(
                 "P1", "strengthen_asset", asset, query or target_query,
                 f"Controlled asset is on page one at position {position} and can gain defensive weight.",
@@ -414,12 +450,50 @@ def _asset_opportunities(assets: list[dict], control_maps: list[dict]) -> list[d
                 ],
                 {"position": position},
             ))
+        elif position <= 30:
+            actions.append(_action(
+                "P1", "strengthen_asset", asset, query or target_query,
+                f"Controlled asset is within striking distance at position {position} (page {((position - 1) // 10) + 1}).",
+                [
+                    "Improve the exact ranking page and preserve its URL",
+                    "Strengthen branded identity relevance with original platform-native evidence",
+                    "Add a small number of natural contextual links from approved relevant assets",
+                    "Verify indexing and remeasure before creating more content",
+                ],
+                {
+                    "position": position,
+                    "result_page": ((position - 1) // 10) + 1,
+                    "striking_distance": True,
+                },
+            ))
+        else:
+            actions.append(_action(
+                "P1", "activate_asset", asset, query or target_query,
+                f"Controlled asset is measured at position {position}, outside the striking-distance range.",
+                [
+                    "Confirm indexability, canonical selection and exact ranking URL",
+                    "Audit whether the asset has a distinct platform-native identity purpose",
+                    "Change tactic before any additional routine publication",
+                ],
+                {"position": position, "result_page": ((position - 1) // 10) + 1},
+            ))
     return actions
 
 
-def search_console_opportunities(rows: list[dict], assets: list[dict]) -> list[dict]:
+def _normalized_query(value: str | None) -> str:
+    value = str(value or "").lower().replace("״", '"').replace("׳", "'")
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def search_console_opportunities(
+    rows: list[dict], assets: list[dict], allowed_queries: list[str] | None = None
+) -> list[dict]:
     """Turn Search Console query/page rows into striking-distance work."""
     actions = []
+    allowed = {
+        _normalized_query(query)
+        for query in (allowed_queries or client_search_queries())
+    }
     for row in rows:
         position = float(row.get("position", 100))
         impressions = float(row.get("impressions", 0))
@@ -427,6 +501,8 @@ def search_console_opportunities(rows: list[dict], assets: list[dict]) -> list[d
             continue
         page = row.get("page") or (row.get("keys") or [None, None])[-1]
         query = row.get("query") or (row.get("keys") or [None])[0]
+        if _normalized_query(query) not in allowed:
+            continue
         asset = match_asset(page or "", assets)
         if not asset or not asset.get("controlled"):
             continue
@@ -652,8 +728,14 @@ def orchestrate_reputation_cycle(
     coverage_safety = evaluate_coverage_safety(
         assets, risks, client_asset_policy()
     )
-    actions = _asset_opportunities(assets, control_maps)
-    actions.extend(search_console_opportunities(search_console_rows or [], assets))
+    measurement_ready = bool(control_maps) and asset_rank_measurement_complete
+    actions = _asset_opportunities(assets, control_maps) if measurement_ready else []
+    if measurement_ready:
+        actions.extend(search_console_opportunities(
+            search_console_rows or [],
+            assets,
+            [item["query"] for item in targets.get("queries", [])],
+        ))
     asset_engine = build_creative_asset_portfolio(
         assets,
         control_maps,
@@ -670,12 +752,12 @@ def orchestrate_reputation_cycle(
     new_asset_proposals = [
         candidate_to_action(candidate)
         for candidate in asset_engine["candidates"]
-    ]
+    ] if measurement_ready else []
     asset_engine["portfolio_safety"] = coverage_safety
     asset_engine["eligible_for_p4_proposal"] = (
         coverage_safety["mode"] == "expand"
     )
-    if coverage_safety["mode"] != "expand":
+    if measurement_ready and coverage_safety["mode"] != "expand":
         new_asset_proposals = []
         for candidate in asset_engine["candidates"]:
             candidate["portfolio_status"] = (
@@ -692,7 +774,7 @@ def orchestrate_reputation_cycle(
             ],
             coverage_safety,
         ))
-    for control_map in control_maps:
+    for control_map in control_maps if measurement_ready else []:
         if control_map["negative_count"]:
             actions.append(_action(
                 "P1", "displacement_campaign", None, control_map["query"],
@@ -735,9 +817,13 @@ def orchestrate_reputation_cycle(
     opportunity_engine = build_opportunity_portfolio(
         actions,
         new_asset_proposals,
-        assets,
+        assets if measurement_ready else [],
         visibility_measurement,
-        objective,
+        objective if measurement_ready else {
+            **objective,
+            "desired_results_target": 0,
+            "controlled_results_target": 0,
+        },
         query_priorities,
         policy=profile.get("opportunity_policy"),
         content_freeze=content_freeze,
@@ -749,6 +835,14 @@ def orchestrate_reputation_cycle(
         ),
         "mode": targets["aggressiveness"]["mode"],
         "guardrail": "Maximum sustainable execution without spam, deception, fake independence or medical solicitation.",
+        "brand_execution_gate": {
+            "ready": measurement_ready,
+            "reason": (
+                "complete current brand SERP measurement available"
+                if measurement_ready
+                else "brand actions held because the current SERP measurement is missing or incomplete"
+            ),
+        },
         "control_maps": control_maps,
         "ai_visibility": ai,
         "visibility_measurement": visibility_measurement,
@@ -762,9 +856,9 @@ def orchestrate_reputation_cycle(
         "legacy_action_evidence": actions,
         "targets": objective,
         "measurement": {
-            "serp": "daily by exact query, country, language and device",
-            "search_console": "weekly 28-day and prior-period comparison by query and page",
-            "ai": "daily repeated samples; preserve exact answer and citations",
-            "reprioritization": "weekly and immediately after a material negative result",
+            "serp": "twice weekly full exact-brand matrix on Google mobile and desktop",
+            "search_console": "twice monthly 28-day comparison; only exact brand queries enter the brand queue",
+            "ai": "twice monthly repeated samples; preserve exact answer and citations",
+            "reprioritization": "after every complete rank run and immediately after a material negative result",
         },
     }

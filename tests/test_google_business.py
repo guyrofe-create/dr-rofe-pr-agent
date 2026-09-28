@@ -160,6 +160,38 @@ class GoogleBusinessPublisherTests(unittest.TestCase):
 
         self.assertEqual(result["url"], "https://posts.gle/example")
 
+    def test_processing_post_is_not_claimed_as_published(self):
+        with self.assertRaisesRegex(RuntimeError, "not LIVE"):
+            google_business._receipt(
+                {
+                    "name": "accounts/12/locations/34/localPosts/78",
+                    "state": "PROCESSING",
+                    "searchUrl": "https://posts.gle/example",
+                },
+                account="accounts/12",
+                location="accounts/12/locations/34",
+            )
+
+    @patch("scripts.social_publishers.google_business.time.sleep")
+    @patch("scripts.social_publishers.google_business.requests.get")
+    def test_processing_post_is_polled_until_live(self, get, _sleep):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {
+            "name": "accounts/12/locations/34/localPosts/78",
+            "state": "LIVE",
+            "searchUrl": "https://posts.gle/example",
+        }
+        get.return_value = response
+        result = google_business._wait_until_live(
+            "token",
+            {
+                "name": "accounts/12/locations/34/localPosts/78",
+                "state": "PROCESSING",
+            },
+        )
+        self.assertEqual(result["state"], "LIVE")
+
     @patch("scripts.social_publishers.google_business.time.sleep")
     @patch("scripts.social_publishers.google_business.requests.get")
     @patch("scripts.social_publishers.google_business.requests.post")

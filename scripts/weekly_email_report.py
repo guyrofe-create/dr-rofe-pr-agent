@@ -139,6 +139,21 @@ def _annotate_publication_outcomes(measurement, root):
             default=None,
         )
         asset["outcome_assessment"] = _outcome_assessment(asset)
+        evaluation_days = (
+            max(0, (current - previous).days) if previous and current else None
+        )
+        asset["evaluation_days"] = evaluation_days
+        no_improvement = asset["outcome_assessment"] in {
+            "declined_after_publication",
+            "still_not_found_after_publication",
+            "no_improvement_after_publication",
+        }
+        asset["tactic_change_required"] = bool(
+            no_improvement and evaluation_days is not None and evaluation_days >= 28
+        )
+        asset["stop_routine_publication"] = bool(
+            no_improvement and evaluation_days is not None and evaluation_days >= 42
+        )
     measurement["outcome_summary"] = {
         "tracked_assets": len(measurement.get("assets", [])),
         "found_assets": sum(
@@ -159,6 +174,14 @@ def _annotate_publication_outcomes(measurement, root):
         ),
         "publication_placements_between_measurements": sum(
             int(item.get("publications_since_previous") or 0)
+            for item in measurement.get("assets", [])
+        ),
+        "tactic_changes_required": sum(
+            bool(item.get("tactic_change_required"))
+            for item in measurement.get("assets", [])
+        ),
+        "routine_publication_stops": sum(
+            bool(item.get("stop_routine_publication"))
             for item in measurement.get("assets", [])
         ),
     }

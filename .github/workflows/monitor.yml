@@ -2,7 +2,8 @@ name: Dr. Rofe Reputation Monitor
 
 on:
   schedule:
-    - cron: '30 4 1,15 * *'
+    # Full six-query brand matrix on Google mobile + desktop, twice weekly.
+    - cron: '30 4 * * 1,4'
   workflow_dispatch:
     inputs:
       force_search_console:
@@ -63,7 +64,7 @@ jobs:
           FORCE_SEARCH_CONSOLE_CHECK: ${{ inputs.force_search_console || 'false' }}
 
       - name: Prepare highest-ranked P4 actions for review
-        if: always()
+        if: success()
         run: python scripts/prepare_opportunities.py
 
       - name: Commit reputation state
@@ -71,13 +72,13 @@ jobs:
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
-          git add data/reputation_history.json data/command_center.json opportunity_drafts/ || true
+          git add data/reputation_history.json data/command_center.json data/asset_registry.json opportunity_drafts/ || true
           git add data/ai_usage_events/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Update reputation state $(date +%Y-%m-%d\ %H:%M)"
           git pull --rebase
           git push
 
-      - name: Build the exact twice-monthly asset rank report
+      - name: Build the exact twice-weekly asset rank report
         if: always()
         run: >-
           python scripts/weekly_email_report.py

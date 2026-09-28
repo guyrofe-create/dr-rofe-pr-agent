@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "market": {
     "country": "IL",
     "language": "he",
@@ -32,8 +32,9 @@
       "enabled": true,
       "monthly_request_budget": 220,
       "results_per_query": 100,
-      "maximum_rank_position": 1000,
-      "rank_check_days_of_month": [1, 15],
+      "maximum_rank_position": 30,
+      "rank_check_weekdays": [0, 3],
+      "full_brand_matrix_every_run": true,
       "ai_check_days_of_month": [1, 15],
       "search_console_check_days_of_month": [1, 15],
       "connection_health_check_days_of_month": [1],
@@ -143,7 +144,7 @@
   "aggressiveness": {
     "mode": "maximum_sustainable",
     "daily_measurement": false,
-    "routine_measurement_cadence": "twice_monthly",
+    "routine_measurement_cadence": "twice_weekly",
     "weekly_reprioritization": true,
     "publish_only_when_material_value_exists": true,
     "create_new_assets_when_gap_is_evidence_backed": true,
@@ -159,6 +160,15 @@
       "paid dofollow links",
       "false removal reports"
     ]
+  },
+  "brand_serp_execution_policy": {
+    "primary_kpi": "controlled_results_top10",
+    "measurement_required_before_action": true,
+    "striking_distance_max_position": 30,
+    "no_improvement_cycles_before_tactic_change": 2,
+    "minimum_evaluation_days": 28,
+    "maximum_evaluation_days": 42,
+    "generic_search_console_queries_compete_with_brand_actions": false
   },
   "asset_creation_portfolio": [
     {

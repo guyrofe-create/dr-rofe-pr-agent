@@ -214,6 +214,12 @@ def _existing_post(token: str, location_name: str, payload: dict) -> dict | None
 
 
 def _receipt(post: dict, *, account: str, location: str) -> dict:
+    state = str(post.get("state") or "").upper()
+    if state != "LIVE":
+        raise RuntimeError(
+            f"Google Business post is {state or 'UNKNOWN'}, not LIVE; "
+            "publication cannot be claimed and reconciliation is required"
+        )
     search_url = str(post.get("searchUrl") or "").strip()
     if not search_url:
         raise RuntimeError(
@@ -231,6 +237,27 @@ def _receipt(post: dict, *, account: str, location: str) -> dict:
             "location": location,
         },
     }
+
+
+def _wait_until_live(token: str, post: dict, *, attempts: int = 6) -> dict:
+    """Poll a created post until Google explicitly reports public LIVE state."""
+    if str(post.get("state") or "").upper() == "LIVE":
+        return post
+    name = post.get("name")
+    if not name:
+        return post
+    for _attempt in range(attempts):
+        time.sleep(2)
+        check = requests.get(
+            f"{MY_BUSINESS_V4}/{name}",
+            headers=_headers(token),
+            timeout=20,
+        )
+        check.raise_for_status()
+        post = check.json()
+        if str(post.get("state") or "").upper() == "LIVE":
+            break
+    return post
 
 
 def publish(
@@ -251,6 +278,7 @@ def publish(
     )
     existing = _existing_post(token, location, payload)
     if existing:
+        existing = _wait_until_live(token, existing)
         return _receipt(existing, account=account, location=location)
 
     response = requests.post(
@@ -261,19 +289,7 @@ def publish(
     )
     response.raise_for_status()
     post = response.json()
-    if not post.get("searchUrl") and post.get("name"):
-        # Google can briefly return PROCESSING before the public link is populated.
-        for _attempt in range(3):
-            time.sleep(2)
-            check = requests.get(
-                f"{MY_BUSINESS_V4}/{post['name']}",
-                headers=_headers(token),
-                timeout=20,
-            )
-            check.raise_for_status()
-            post = check.json()
-            if post.get("searchUrl"):
-                break
+    post = _wait_until_live(token, post)
     return _receipt(post, account=account, location=location)
 
 
