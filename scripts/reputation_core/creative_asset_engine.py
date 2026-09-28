@@ -478,12 +478,15 @@ def build_creative_asset_portfolio(
     weakest = min(
         control_maps,
         key=lambda item: (
-            item.get("desired_count", 0),
-            item.get("controlled_count", 0),
+            item.get("desired_unique_asset_count", item.get("desired_count", 0)),
+            item.get("controlled_unique_asset_count", item.get("controlled_count", 0)),
         ),
         default=None,
     )
-    target = int(policy.get("desired_results_target", 7))
+    target = int(policy.get(
+        "desired_unique_assets_target",
+        policy.get("desired_results_target", 7),
+    ))
     if not weakest:
         return {
             "version": 5,
@@ -491,7 +494,9 @@ def build_creative_asset_portfolio(
             "candidates": [],
             "reason": "No measured query surface is available.",
         }
-    gap = max(0, target - int(weakest.get("desired_count", 0)))
+    gap = max(0, target - int(weakest.get(
+        "desired_unique_asset_count", weakest.get("desired_count", 0)
+    )))
     if gap <= 0:
         return {
             "version": 5,

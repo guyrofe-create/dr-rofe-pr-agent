@@ -364,6 +364,25 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertEqual(control["negative_count"], 1)
         self.assertEqual(control["controlled_positions"], [1, 3])
 
+    def test_multiple_urls_from_one_property_count_as_one_unique_asset(self):
+        assets = [{
+            "platform": "Main",
+            "url": "https://guyrofe.com/",
+            "controlled": True,
+            "tier": "A",
+            "status": "active",
+        }]
+        control = build_query_control_map({
+            "query": "גיא רופא",
+            "results": [
+                {"position": 1, "link": "https://guyrofe.com/article-a/"},
+                {"position": 2, "link": "https://guyrofe.com/article-b/"},
+            ],
+        }, assets)
+        self.assertEqual(control["controlled_count"], 2)
+        self.assertEqual(control["controlled_unique_asset_count"], 1)
+        self.assertEqual(control["controlled_asset_ids"], ["Main"])
+
     def test_asset_match_does_not_confuse_another_social_profile(self):
         assets = [{
             "platform": "LinkedIn",

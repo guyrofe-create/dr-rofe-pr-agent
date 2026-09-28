@@ -149,6 +149,12 @@ def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
     desired = [r for r in results if r["desired"]]
     controlled = [r for r in desired if r["controlled"]]
     negative = [r for r in results if r["sentiment"] in {"negative", "harmful"}]
+    desired_asset_ids = list(dict.fromkeys(
+        r["asset_id"] for r in desired if r.get("asset_id")
+    ))
+    controlled_asset_ids = list(dict.fromkeys(
+        r["asset_id"] for r in controlled if r.get("asset_id")
+    ))
     weighted_total = sum(RANK_WEIGHTS.get(r["position"], 0) for r in results) or 1
     weighted_desired = sum(RANK_WEIGHTS.get(r["position"], 0) for r in desired)
     return {
@@ -167,6 +173,10 @@ def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
         "rank_results": rank_results,
         "desired_count": len(desired),
         "controlled_count": len(controlled),
+        "desired_unique_asset_count": len(desired_asset_ids),
+        "controlled_unique_asset_count": len(controlled_asset_ids),
+        "desired_asset_ids": desired_asset_ids,
+        "controlled_asset_ids": controlled_asset_ids,
         "negative_count": len(negative),
         "unclassified_count": sum(r["sentiment"] == "unknown" for r in results),
         "weighted_desired_share": round(weighted_desired / weighted_total, 4),
@@ -379,9 +389,18 @@ def _asset_opportunities(assets: list[dict], control_maps: list[dict]) -> list[d
             continue
         if asset.get("status") == "quarantined" or asset.get("automation") in BLOCKED_AUTOMATION:
             continue
+        automation = str(asset.get("automation") or "")
+        health = str(asset.get("status") or "")
+        if (
+            "read_only" in health
+            or health == "missing_profile_url"
+            or "owner_managed" in automation
+            or "episode_link" in automation
+            or "paused" in health
+        ):
+            continue
         position, query = _ranked_asset(asset, control_maps)
-        health = asset.get("status", "")
-        if "audit_required" in health or health.endswith("_required"):
+        if "audit" in health:
             actions.append(_action(
                 "P1", "asset_audit", asset, query or target_query,
                 "A high-priority controlled asset cannot be pushed safely before its factual, canonical and content audit.",
@@ -427,6 +446,7 @@ def _asset_opportunities(assets: list[dict], control_maps: list[dict]) -> list[d
                     "Add one natural contextual link from a relevant stronger approved asset",
                     "Maintain the asset and measure branded-query movement weekly",
                 ],
+                {"existing_asset_first": True},
             ))
         elif position <= 3:
             actions.append(_action(
@@ -475,9 +495,44 @@ def _asset_opportunities(assets: list[dict], control_maps: list[dict]) -> list[d
                     "Audit whether the asset has a distinct platform-native identity purpose",
                     "Change tactic before any additional routine publication",
                 ],
-                {"position": position, "result_page": ((position - 1) // 10) + 1},
+                {
+                    "position": position,
+                    "result_page": ((position - 1) // 10) + 1,
+                    "existing_asset_first": True,
+                },
             ))
     return actions
+
+
+def existing_asset_activation_candidates(
+    assets: list[dict], control_maps: list[dict]
+) -> list[dict]:
+    """Return usable existing assets not represented on any measured first page."""
+    represented = {
+        asset_id
+        for control_map in control_maps
+        for asset_id in control_map.get("controlled_asset_ids", [])
+    }
+    candidates = []
+    for asset in assets:
+        status = str(asset.get("status") or "")
+        automation = str(asset.get("automation") or "")
+        if not asset.get("controlled") or asset.get("tier") not in {"A", "B"}:
+            continue
+        if not asset.get("url") or _asset_id(asset) in represented:
+            continue
+        if (
+            "audit" in status
+            or status in {"quarantined", "missing_profile_url"}
+            or automation in BLOCKED_AUTOMATION
+            or "read_only" in status
+            or "owner_managed" in automation
+            or "episode_link" in automation
+            or "paused" in status
+        ):
+            continue
+        candidates.append(asset)
+    return sorted(candidates, key=lambda item: item.get("priority", 0), reverse=True)
 
 
 def _normalized_query(value: str | None) -> str:
@@ -609,6 +664,10 @@ def propose_new_assets(
             "desired_results_target": targets["objective"][
                 "desired_results_target"
             ],
+            "desired_unique_assets_target": targets["objective"].get(
+                "desired_unique_assets_target",
+                targets["objective"]["desired_results_target"],
+            ),
         },
         evidence_by_archetype=evidence_by_archetype,
     )
@@ -753,10 +812,26 @@ def orchestrate_reputation_cycle(
         candidate_to_action(candidate)
         for candidate in asset_engine["candidates"]
     ] if measurement_ready else []
+    reusable_existing_assets = existing_asset_activation_candidates(
+        assets, control_maps
+    ) if measurement_ready else []
     asset_engine["portfolio_safety"] = coverage_safety
     asset_engine["eligible_for_p4_proposal"] = (
         coverage_safety["mode"] == "expand"
+        and not reusable_existing_assets
     )
+    asset_engine["reusable_existing_assets_first"] = [
+        {
+            "asset_id": _asset_id(asset),
+            "url": asset.get("url"),
+            "priority": asset.get("priority", 0),
+        }
+        for asset in reusable_existing_assets
+    ]
+    if reusable_existing_assets:
+        new_asset_proposals = []
+        for candidate in asset_engine["candidates"]:
+            candidate["portfolio_status"] = "held_until_existing_assets_are_used"
     if measurement_ready and coverage_safety["mode"] != "expand":
         new_asset_proposals = []
         for candidate in asset_engine["candidates"]:

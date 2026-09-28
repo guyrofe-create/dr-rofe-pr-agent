@@ -61,6 +61,12 @@ def measure_serp_surface(control_map: dict, sample: dict) -> dict:
         item for item in results
         if item.get("sentiment") in {"negative", "harmful"}
     ]
+    controlled_asset_ids = list(dict.fromkeys(
+        item.get("asset_id") for item in controlled if item.get("asset_id")
+    ))
+    desired_asset_ids = list(dict.fromkeys(
+        item.get("asset_id") for item in desired if item.get("asset_id")
+    ))
     feature_payload = sample.get("features") or {}
     features = {
         name: bool(value)
@@ -74,6 +80,10 @@ def measure_serp_surface(control_map: dict, sample: dict) -> dict:
         ),
         "controlled_count_top10": len(controlled),
         "desired_count_top10": len(desired),
+        "controlled_unique_assets_top10": len(controlled_asset_ids),
+        "desired_unique_assets_top10": len(desired_asset_ids),
+        "controlled_asset_ids_top10": controlled_asset_ids,
+        "desired_asset_ids_top10": desired_asset_ids,
         "controlled_positions": [item["position"] for item in controlled],
         "desired_positions": [item["position"] for item in desired],
         "negative_count_top10": len(negative),

@@ -350,38 +350,64 @@ def _synthetic_actions(
     )
     for measurement in visibility_measurement.get("serp_surfaces", []):
         query = measurement.get("query")
+        represented_ids = set(measurement.get("controlled_asset_ids_top10") or [])
+        reusable = [
+            asset for asset in controlled
+            if _asset_key(asset) not in represented_ids
+            and asset.get("url")
+            and "audit" not in str(asset.get("status") or "")
+            and "read_only" not in str(asset.get("status") or "")
+            and "owner_managed" not in str(asset.get("automation") or "")
+            and "disabled" not in str(asset.get("automation") or "")
+            and "episode_link" not in str(asset.get("automation") or "")
+            and "paused" not in str(asset.get("status") or "")
+        ]
+        next_existing = max(
+            reusable, key=lambda item: item.get("priority", 0), default=None
+        )
         gap = max(
             0,
-            int(objective.get("desired_results_target", 7))
-            - int(measurement.get("desired_count_top10", 0)),
+            int(objective.get(
+                "desired_unique_assets_target",
+                objective.get("desired_results_target", 7),
+            ))
+            - int(measurement.get(
+                "desired_unique_assets_top10",
+                measurement.get("desired_count_top10", 0),
+            )),
         )
         source = {
             "engine": measurement.get("engine"),
             "surface": measurement.get("surface"),
             "device": measurement.get("device"),
             "desired_gap": gap,
+            "represented_unique_assets": sorted(represented_ids),
+            "existing_asset_first": bool(next_existing),
         }
-        if gap and strongest:
+        if gap and next_existing:
             actions.extend([
                 {
-                    "kind": "create_new_content",
-                    "action_type": "create_new_content",
-                    "asset_id": _asset_key(strongest),
-                    "asset_url": strongest.get("url"),
+                    "kind": "activate_asset",
+                    "action_type": "strengthen_existing_asset",
+                    "asset_id": _asset_key(next_existing),
+                    "asset_url": next_existing.get("url"),
                     "query": query,
-                    "reason": f"Measured desired-result gap is {gap}.",
+                    "reason": (
+                        f"Measured unique-asset gap is {gap}; use the existing "
+                        f"{_asset_key(next_existing)} asset before creating another asset."
+                    ),
                     "actions": [
-                        "Prepare one original query-relevant content brief",
-                        "Choose the strongest distinct existing property",
-                        "Submit the complete sourced draft for item approval",
+                        "Prepare one platform-native publication or profile improvement on this existing asset",
+                        "Use original value suited to the platform and link only where natural",
+                        "Submit the exact change for approval and remeasure the same brand query",
                     ],
                     "evidence": source,
                 },
                 {
                     "kind": "connect_assets",
                     "action_type": "connect_assets",
-                    "asset_id": _asset_key(strongest),
-                    "asset_url": strongest.get("url"),
+                    "asset_id": _asset_key(next_existing),
+                    "asset_url": next_existing.get("url"),
                     "query": query,
                     "reason": f"Measured desired-result gap is {gap}.",
                     "actions": [
@@ -390,18 +416,22 @@ def _synthetic_actions(
                     ],
                     "evidence": source,
                 },
-                {
-                    "kind": "digital_pr",
-                    "action_type": "earn_external_mention",
-                    "query": query,
-                    "reason": f"Measured desired-result gap is {gap}.",
-                    "actions": [
-                        "Identify one genuinely relevant publisher or journalist",
-                        "Prepare a useful evidence-led angle, not a biography pitch",
-                    ],
-                    "evidence": source,
-                },
             ])
+        elif gap and strongest:
+            actions.append({
+                "kind": "digital_pr",
+                "action_type": "earn_external_mention",
+                "query": query,
+                "reason": (
+                    f"Unique-asset gap is {gap}, and no additional publication-ready "
+                    "existing controlled asset is available."
+                ),
+                "actions": [
+                    "Identify one genuinely relevant publisher or journalist",
+                    "Prepare a useful evidence-led angle, not a biography pitch",
+                ],
+                "evidence": source,
+            })
         features = measurement.get("features") or {}
         missing_media = [
             feature for feature in ("images", "video")
@@ -482,6 +512,7 @@ def select_opportunities(
         opportunities,
         key=lambda item: (
             item.get("status") == "blocked",
+            not bool((item.get("evidence") or {}).get("existing_asset_first")),
             -item.get("score", 0),
             -item.get("confidence", 0),
             item.get("factors", {}).get("risk", 10),

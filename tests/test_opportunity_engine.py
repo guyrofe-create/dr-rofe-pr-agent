@@ -178,13 +178,14 @@ class OpportunityScoringTests(unittest.TestCase):
         }
         self.assertTrue({
             "refresh_existing_content",
-            "create_new_content",
+            "strengthen_existing_asset",
             "connect_assets",
             "create_media_or_page",
             "request_correction_or_removal",
-            "earn_external_mention",
             "correct_profile_or_fact",
         }.issubset(kinds))
+        self.assertNotIn("create_new_content", kinds)
+        self.assertNotIn("propose_new_asset", kinds)
         self.assertIn("fixed weekdays", portfolio["calendar_rule"])
 
 

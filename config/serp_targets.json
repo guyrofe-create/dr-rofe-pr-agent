@@ -14,6 +14,8 @@
     "page_one_size": 10,
     "desired_results_target": 7,
     "controlled_results_target": 5,
+    "desired_unique_assets_target": 7,
+    "controlled_unique_assets_target": 5,
     "negative_results_target": 0,
     "ai_factual_accuracy_target": 1.0,
     "ai_official_citation_target": 0.75,

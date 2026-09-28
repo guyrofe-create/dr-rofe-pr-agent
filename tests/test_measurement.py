@@ -74,6 +74,8 @@ class SerpMeasurementTests(unittest.TestCase):
         measured = measure_serp_surface(control, sample)
         self.assertEqual(measured["controlled_count_top10"], 1)
         self.assertEqual(measured["desired_count_top10"], 2)
+        self.assertEqual(measured["controlled_unique_assets_top10"], 0)
+        self.assertEqual(measured["desired_unique_assets_top10"], 0)
         self.assertEqual(measured["weighted_desired_score"], 1.5)
         self.assertEqual(measured["weighted_negative_exposure"], 0.3333)
         self.assertEqual(measured["negative_positions"], [3])
