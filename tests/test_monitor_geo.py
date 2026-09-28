@@ -327,6 +327,15 @@ class MonitorGeoTests(unittest.TestCase):
             )[0]["position"],
             101,
         )
+
+    @patch.object(monitor_run.time, "sleep")
+    @patch.object(monitor_run.requests, "get")
+    def test_serpapi_transient_timeout_is_retried(self, get, _sleep):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        get.side_effect = [monitor_run.requests.Timeout("temporary"), response]
+        self.assertIs(monitor_run._serpapi_get({"q": "גיא רופא"}), response)
+        self.assertEqual(get.call_count, 2)
         self.assertEqual(
             monitor_run._next_serp_start(
                 {

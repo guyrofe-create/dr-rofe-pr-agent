@@ -5,6 +5,7 @@ import sys
 import json
 import requests
 import re
+import time
 from datetime import datetime, date, timedelta
 from openai import OpenAI
 from urllib.parse import parse_qs, urlparse
@@ -601,6 +602,30 @@ def _absolute_organic_results(organic, start):
     return rows
 
 
+def _serpapi_get(params, *, attempts=2):
+    """Retry transient, idempotent SerpApi reads without retrying 4xx errors."""
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            response = requests.get(
+                "https://serpapi.com/search.json",
+                params=params,
+                timeout=30,
+            )
+            response.raise_for_status()
+            return response
+        except requests.HTTPError as exc:
+            status = getattr(exc.response, "status_code", 0) or 0
+            if status and status < 500:
+                raise
+            last_error = exc
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            last_error = exc
+        if attempt + 1 < attempts:
+            time.sleep(1)
+    raise last_error
+
+
 def ai_measurement_succeeded() -> bool:
     measured = [
         item for item in REPORT.get("geo", [])
@@ -679,12 +704,7 @@ def check_google_rank(today=None):
                     })
                 else:
                     params["cc"] = MARKET_COUNTRY.lower()
-                resp = requests.get(
-                    "https://serpapi.com/search.json",
-                    params=params,
-                    timeout=20,
-                )
-                resp.raise_for_status()
+                resp = _serpapi_get(params)
                 data = resp.json()
                 if "error" in data:
                     REPORT["rank"].append({
