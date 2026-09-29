@@ -24,6 +24,7 @@ try:
     from scripts.reputation_core.strategy import client_content_plan, load_client_profile
     from scripts.reputation_core.ai_usage import record_ai_usage
     from scripts.reputation_core.content_routing import topic_is_duplicate
+    from scripts.reputation_core.medical_evidence import audit_medical_claim_sources
     from scripts.reputation_core.entity_contract import (
         apply_article_contract,
         audit_article_entity_contract,
@@ -37,6 +38,7 @@ except ModuleNotFoundError:
     from reputation_core.strategy import client_content_plan, load_client_profile
     from reputation_core.ai_usage import record_ai_usage
     from reputation_core.content_routing import topic_is_duplicate
+    from reputation_core.medical_evidence import audit_medical_claim_sources
     from reputation_core.entity_contract import (
         apply_article_contract,
         audit_article_entity_contract,
@@ -456,6 +458,15 @@ def validate_generated_article(
             raise ValueError(
                 "inline evidence links must point to a direct source page"
             )
+        evidence_audit = audit_medical_claim_sources(content)
+        if not evidence_audit["ready_for_medical_approval"]:
+            missing_sections = sorted({
+                item["section"] for item in evidence_audit["unsupported_claims"]
+            })
+            raise ValueError(
+                "medical claim sections are missing direct inline evidence: "
+                + ", ".join(missing_sections[:6])
+            )
         missing_required = sorted(required_urls - all_urls)
         if missing_required:
             raise ValueError(
@@ -545,6 +556,8 @@ def generate_article(
 - אין להזכיר את שם הלקוח בגוף המאמר; הוא יופיע רק בכותרת, בשורת המחבר ובתיבת המחבר
 - שלב בגוף המאמר לפחות שני קישורים ישירים למקורות סמכותיים, צמודים לטענה
   שהם תומכים בה, עם טקסט עוגן תיאורי; אותם URLs יופיעו גם בסעיף המקורות
+- בכל סעיף H2 הכולל טענה רפואית מהותית חייב להופיע לפחות קישור ראייתי ישיר
+  בתוך אותו סעיף; רשימת מקורות בסוף אינה מחליפה תמיכה מקומית בטענות
 - אל תשתמש בעוגנים גנריים כגון "כאן", "מקור" או "למידע נוסף", ואל תקשר
   לעמוד בית או לדף חיפוש במקום למסמך, להנחיה או למחקר המדויקים
 - לטענות רפואיות העדף לפי הסדר: הנחיה מקצועית רשמית, סקירה שיטתית או מחקר

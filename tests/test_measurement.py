@@ -9,6 +9,7 @@ from scripts.reputation_core.bing_ai_performance import (
 )
 from scripts.reputation_core.measurement import (
     add_serp_volatility,
+    build_portfolio_serp_report,
     measure_ai_surfaces,
     measure_serp_surface,
     summarize_bing_ai_performance,
@@ -16,6 +17,18 @@ from scripts.reputation_core.measurement import (
 
 
 class SerpMeasurementTests(unittest.TestCase):
+    def test_portfolio_report_includes_all_controlled_assets_and_striking_distance(self):
+        report = build_portfolio_serp_report([{
+            "engine": "google", "query": "Name", "device": "mobile",
+            "rank_results": [
+                {"position": 2, "controlled": True, "desired": True, "asset_id": "site", "url": "https://site.test"},
+                {"position": 14, "controlled": True, "desired": True, "asset_id": "youtube", "url": "https://youtube.test"},
+            ],
+        }])
+        self.assertEqual(report["page_one_asset_ids"], ["site"])
+        self.assertEqual(report["striking_distance_asset_ids"], ["youtube"])
+        self.assertEqual(report["queries"][0]["controlled_results_top10"], 1)
+
     def test_ai_measurement_plan_covers_major_answer_surfaces(self):
         config = json.loads(Path("config/serp_targets.json").read_text(encoding="utf-8"))
         surfaces = {

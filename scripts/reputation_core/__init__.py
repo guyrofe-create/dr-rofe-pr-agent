@@ -4,7 +4,11 @@ from .command_center import CommandCenter
 from .growth import plan_growth_campaign
 from .editorial_radar import build_news_analysis_brief, rank_news_candidates
 from .orchestrator import evaluate_new_asset_hypothesis, orchestrate_reputation_cycle
-from .search_console import fetch_search_console_rows, refresh_google_access_token
+from .search_console import (
+    fetch_search_console_rows,
+    inspect_search_console_urls,
+    refresh_google_access_token,
+)
 from .installation import (
     assert_isolated_installation,
     config_path,
@@ -28,6 +32,7 @@ from .campaign_wizard import (
 )
 from .measurement import (
     add_serp_volatility,
+    build_portfolio_serp_report,
     measure_ai_surfaces,
     measure_serp_surface,
     summarize_bing_ai_performance,
@@ -41,6 +46,7 @@ from .opportunity_engine import (
 from .entity_seo import (
     audit_article_markdown,
     build_article_schema,
+    build_article_graph,
     build_person_schema,
     build_profile_page_schema,
     validate_media_metadata,
@@ -107,6 +113,7 @@ __all__ = [
     "build_news_analysis_brief",
     "orchestrate_reputation_cycle",
     "fetch_search_console_rows",
+    "inspect_search_console_urls",
     "refresh_google_access_token",
     "evaluate_new_asset_hypothesis",
     "load_strategy",
@@ -137,6 +144,7 @@ __all__ = [
     "validate_campaign_draft",
     "apply_approved_campaign",
     "measure_serp_surface",
+    "build_portfolio_serp_report",
     "add_serp_volatility",
     "measure_ai_surfaces",
     "summarize_bing_ai_performance",
@@ -146,6 +154,7 @@ __all__ = [
     "build_opportunity_portfolio",
     "audit_article_markdown",
     "build_article_schema",
+    "build_article_graph",
     "build_person_schema",
     "build_profile_page_schema",
     "validate_media_metadata",

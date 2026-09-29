@@ -21,6 +21,7 @@ from .creative_asset_engine import (
 from .installation import config_path
 from .measurement import (
     add_serp_volatility,
+    build_portfolio_serp_report,
     measure_ai_surfaces,
     measure_serp_surface,
     summarize_bing_ai_performance,
@@ -149,6 +150,7 @@ def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
     desired = [r for r in results if r["desired"]]
     controlled = [r for r in desired if r["controlled"]]
     negative = [r for r in results if r["sentiment"] in {"negative", "harmful"}]
+    unclassified_count = sum(r["sentiment"] == "unknown" for r in results)
     desired_asset_ids = list(dict.fromkeys(
         r["asset_id"] for r in desired if r.get("asset_id")
     ))
@@ -178,7 +180,13 @@ def build_query_control_map(snapshot: dict, assets: list[dict]) -> dict:
         "desired_asset_ids": desired_asset_ids,
         "controlled_asset_ids": controlled_asset_ids,
         "negative_count": len(negative),
-        "unclassified_count": sum(r["sentiment"] == "unknown" for r in results),
+        "unclassified_count": unclassified_count,
+        "negative_measurement_complete": unclassified_count == 0,
+        "negative_target_status": (
+            "met" if not negative and unclassified_count == 0
+            else "not_met" if negative
+            else "unknown"
+        ),
         "weighted_desired_share": round(weighted_desired / weighted_total, 4),
         "controlled_positions": [r["position"] for r in controlled],
         "negative_positions": [r["position"] for r in negative],
@@ -770,6 +778,7 @@ def orchestrate_reputation_cycle(
     visibility_measurement = {
         "version": 4,
         "serp_surfaces": serp_measurements,
+        "controlled_asset_portfolio": build_portfolio_serp_report(control_maps),
         "asset_rank_changes": measure_asset_rank_changes(
             assets,
             control_maps,

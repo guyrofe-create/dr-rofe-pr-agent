@@ -151,6 +151,76 @@ def build_article_schema(
     return schema
 
 
+def build_article_graph(
+    profile: dict,
+    *,
+    headline: str,
+    article_url: str,
+    description: str,
+    date_published: str | None = None,
+    date_modified: str | None = None,
+    image_url: str | None = None,
+    image_width: int = 1600,
+    image_height: int = 900,
+    citations: list[str] | None = None,
+) -> dict:
+    """Article plus WebSite, breadcrumb and primary-image entity graph."""
+    article = build_article_schema(
+        profile,
+        headline=headline,
+        article_url=article_url,
+        description=description,
+        date_published=date_published,
+        date_modified=date_modified,
+        image_url=image_url,
+        citations=citations,
+    )
+    article.pop("@context", None)
+    site_url = canonical_url(profile)
+    website_id = site_url + "#website"
+    breadcrumb_id = article_url.rstrip("/") + "/#breadcrumb"
+    article["isPartOf"] = {"@id": website_id}
+    article["breadcrumb"] = {"@id": breadcrumb_id}
+    graph = [
+        article,
+        {
+            "@type": "WebSite",
+            "@id": website_id,
+            "url": site_url,
+            "name": profile.get("siteName") or profile["name"],
+            "inLanguage": profile.get("primaryLanguage", "he"),
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": breadcrumb_id,
+            "itemListElement": [
+                {
+                    "@type": "ListItem", "position": 1,
+                    "name": profile.get("siteName") or profile["name"],
+                    "item": site_url,
+                },
+                {
+                    "@type": "ListItem", "position": 2,
+                    "name": headline, "item": article_url,
+                },
+            ],
+        },
+    ]
+    if image_url:
+        image_id = article_url.rstrip("/") + "/#primaryimage"
+        article["image"] = {"@id": image_id}
+        article["primaryImageOfPage"] = {"@id": image_id}
+        graph.append({
+            "@type": "ImageObject",
+            "@id": image_id,
+            "url": image_url,
+            "contentUrl": image_url,
+            "width": image_width,
+            "height": image_height,
+        })
+    return {"@context": "https://schema.org", "@graph": graph}
+
+
 def json_ld_script(schema: dict) -> str:
     payload = json.dumps(schema, ensure_ascii=False, separators=(",", ":"))
     payload = payload.replace("</", "<\\/")

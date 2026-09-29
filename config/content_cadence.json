@@ -77,5 +77,9 @@
     ,"maximum_total_weekly_articles": 4,
     "public_topic_catalogs_are_discovery_only": true,
     "minimum_official_medical_sources_per_article": 2
+    ,"semantic_topic_reuse_forbidden": true
+    ,"claim_to_inline_source_mapping_required": true
+    ,"medical_source_refresh_age_days": 730
+    ,"rank_loss_refresh_threshold_positions": 3
   }
 }

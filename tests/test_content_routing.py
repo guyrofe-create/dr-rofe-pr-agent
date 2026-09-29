@@ -8,6 +8,7 @@ from scripts.reputation_core.content_routing import (
     content_fingerprint,
     draft_metadata,
     topic_is_duplicate,
+    semantic_topic_analysis,
     validate_stream_destination,
 )
 
@@ -113,6 +114,20 @@ class ContentRoutingTests(unittest.TestCase):
                 "כאבים בזמן הווסת: מתי לפנות לבדיקה",
             )
         )
+
+    def test_medical_synonyms_are_semantic_duplicates(self):
+        report = semantic_topic_analysis(
+            "דיסמנוריאה: תסמינים ואבחון",
+            "כאבי מחזור: איך מאבחנים את הבעיה",
+        )
+        self.assertTrue(report["duplicate"])
+        self.assertIn("menstrual_pain", report["shared_medical_concepts"])
+
+    def test_same_condition_with_distinct_reader_intent_is_allowed(self):
+        self.assertFalse(topic_is_duplicate(
+            "אנדומטריוזיס: תסמינים",
+            "אנדומטריוזיס: אפשרויות טיפול",
+        ))
 
     def test_fingerprint_ignores_links_but_not_article_substance(self):
         left = "# כותרת\n\nמידע חשוב [במקור](https://example.com/a)"
