@@ -497,6 +497,7 @@ def prepare_bundle(
         index = {"version": 7, "bundles": []}
     entry = {
         "approval_id": bundle["approval_id"],
+        "status": bundle["status"],
         "draft_path": relative_draft,
         "bundle_path": json_path.relative_to(PROJECT_ROOT).as_posix(),
         "preview_path": preview_path.relative_to(PROJECT_ROOT).as_posix(),

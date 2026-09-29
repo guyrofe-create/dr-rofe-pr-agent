@@ -119,6 +119,10 @@ def validate_bundle(bundle: dict, *, require_execution_ready: bool = False) -> N
     expected = approval_id(bundle)
     if not hmac.compare_digest(str(bundle.get("approval_id", "")), expected):
         raise ValueError("Approval bundle has changed or has an invalid approval_id")
+    if bundle.get("status") != "awaiting_explicit_approval":
+        raise PermissionError(
+            "Approval bundle is no longer active and cannot be approved or published"
+        )
     required = set(bundle.get("required_approval_scopes", []))
     if "public_publication" not in required:
         raise ValueError("Public publication approval is always required")

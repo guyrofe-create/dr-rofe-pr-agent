@@ -43,6 +43,17 @@ def sample_bundle():
 
 
 class ApprovalWorkflowTests(unittest.TestCase):
+    def test_invalidated_duplicate_bundle_cannot_be_approved(self):
+        bundle = sample_bundle()
+        bundle["status"] = "invalidated_duplicate_topic"
+        with self.assertRaisesRegex(PermissionError, "no longer active"):
+            approve_bundle(
+                bundle,
+                approved_by="owner",
+                approved_scopes=["public_publication", "medical_content"],
+                signing_secret=SECRET,
+            )
+
     def test_every_material_edit_invalidates_approval(self):
         bundle = sample_bundle()
         record = approve_bundle(

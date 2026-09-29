@@ -73,6 +73,8 @@ def pending_notifications(
     sent = ledger.get("notifications", {})
     pending = []
     for entry in index.get("bundles", []):
+        if entry.get("status", "awaiting_explicit_approval") != "awaiting_explicit_approval":
+            continue
         approval_id = str(entry.get("approval_id") or "")
         created_at = _parse_time(entry.get("created_at"))
         if not approval_id or approval_id in sent:

@@ -3,6 +3,7 @@
   "bundles": [
     {
       "approval_id": "apr_cc566fddc8e3d9b5ce861bb030b1723e6eac2d843bd68c87f5ee4942cbd1935d",
+      "status": "invalidated_duplicate_topic",
       "draft_path": "content_drafts/2026-09-29-topic-01-run-36566535339-attempt-1.md",
       "bundle_path": "approval_bundles/apr_cc566fddc8e3d9b5ce861bb030b1723e6eac2d843bd68c87f5ee4942cbd1935d.json",
       "preview_path": "approval_bundles/apr_cc566fddc8e3d9b5ce861bb030b1723e6eac2d843bd68c87f5ee4942cbd1935d.html",

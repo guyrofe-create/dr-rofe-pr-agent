@@ -15,6 +15,17 @@ SECRET = "a-test-signing-secret-with-32-characters"
 
 
 class PrepareApprovalBundleTests(unittest.TestCase):
+    def setUp(self):
+        # Routing originality is covered independently; these tests exercise
+        # bundle/media behavior with synthetic titles that may exist in fixtures.
+        guard = patch.object(
+            prepare_approval_bundle,
+            "assert_cross_domain_original",
+            return_value="test-content-fingerprint",
+        )
+        guard.start()
+        self.addCleanup(guard.stop)
+
     def test_google_business_target_is_exact_short_information_payload(self):
         with tempfile.TemporaryDirectory(
             dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"

@@ -113,6 +113,11 @@ class ContentCadenceTests(unittest.TestCase):
             self.cadence["quality_policy"]["ai_image_generation_forbidden"]
         )
 
+    def test_editorial_topic_reuse_is_forbidden(self):
+        self.assertTrue(
+            self.cadence["quality_policy"]["topic_reuse_forbidden"]
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

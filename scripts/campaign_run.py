@@ -40,6 +40,7 @@ from reputation_core.entity_seo import (
 )
 from reputation_core.entity_contract import meta_description
 from reputation_core.platform_content import build_platform_variants
+from reputation_core.content_routing import assert_cross_domain_original
 from reputation_core.publication_seo import (
     audit_published_html,
     render_related_links_html,
@@ -599,6 +600,21 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         raise PermissionError("Approved CMS target does not match the configured site")
     canonical_base = primary["base_url"].rstrip("/")
     canonical_name = re.sub(r"^www\.", "", urlparse(canonical_base).netloc)
+    cadence = json.loads(
+        (PROJECT_ROOT / "config" / "content_cadence.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert_cross_domain_original(
+        content=content,
+        site_key=primary["key"],
+        draft_path=draft_path,
+        draft_index_path=PROJECT_ROOT / "content_drafts" / "index.json",
+        project_root=PROJECT_ROOT,
+        threshold=float(
+            cadence["quality_policy"]["near_duplicate_cross_domain_threshold"]
+        ),
+    )
     ensure_unique_canonical_url(ledger, approved_bundle, canonical_target, canonical_name)
     if primary_platform == "wordpress":
         primary_user_env = primary["user_env"]
