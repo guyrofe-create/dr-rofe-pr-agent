@@ -62,6 +62,13 @@ SYNTHETIC_OR_NONPHOTO_MARKERS = (
     "cgi",
     "computer-generated",
 )
+VISIBLE_PERSON_WORDS = frozenset(
+    {
+        "אדם", "אישה", "איש", "גבר", "ילד", "ילדה", "רופא", "רופאה",
+        "מטופל", "מטופלת", "חולה", "פנים", "person", "people", "man",
+        "woman", "child", "doctor", "clinician", "patient", "face",
+    }
+)
 PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 8
 MAX_REVIEWED_CANDIDATES = 24
@@ -196,9 +203,10 @@ def _search_query_prompt(title, summary):
         "editorial photograph that directly illustrates this Hebrew medical "
         "article. Each query must contain only 2-4 concrete searchable words, "
         "not a sentence or metaphor. Name visible subjects, objects or places. "
-        "Optimize only for direct topical relevance. People, clinical settings, "
-        "equipment, body parts, visible text, labels and brands are all acceptable "
-        "when they genuinely illustrate the article. The source and reusable "
+        "Optimize only for direct topical relevance. Return only people-free "
+        "subjects such as equipment, research objects or microscopy. Do not query "
+        "for a patient, clinician, identifiable person, face or active procedure. "
+        "Visible text, labels and brands may still be rejected during review. The source and reusable "
         "license are verified separately by the product. "
         "Return JSON only in this exact form: "
         '{"queries":["query 1","query 2","query 3","query 4","query 5"]}.\n'
@@ -295,6 +303,13 @@ def topic_search_queries(title):
             "vegetables dinner table",
             "meal preparation kitchen",
             "empty dining table",
+        ]
+    if "גייאן" in topic or "guillain" in topic.lower():
+        return [
+            "peripheral nerve histology",
+            "nerve myelin microscopy",
+            "nerve biopsy microscopy",
+            "electromyography equipment",
         ]
     return []
 
@@ -634,10 +649,11 @@ def review_relevance(client, image_bytes, media_type, title, summary):
                         "This photograph has already passed the product's approved-source "
                         "and reusable-license checks. Judge it only by whether the visible "
                         "content directly and truthfully illustrates the exact article. "
-                        "Do not reject it because it contains people, a patient, a clinician, "
-                        "a body part, a clinical setting, visible text, numbers, labels, "
-                        "branding or a watermark. Reject it only when it is not topically "
-                        "relevant or would materially misrepresent the article's subject. "
+                        "Reject any image containing an identifiable person, patient, "
+                        "clinician, face or active medical procedure. Also reject it when "
+                        "it is not topically relevant or would materially misrepresent the "
+                        "article's subject. Prefer people-free equipment, research objects "
+                        "or microscopy. "
                         "Return exactly one line. If suitable: "
                             "ACCEPT: followed by a concrete truthful Hebrew alt-text "
                             "description of only what is visibly present. Otherwise: "
@@ -668,6 +684,12 @@ def review_relevance(client, image_bytes, media_type, title, summary):
         description = detail
         if len(description) < 12:
             raise RuntimeError("Photo review returned an unusable description")
+        description_words = {
+            word.lower()
+            for word in re.findall(r"[\w\u0590-\u05FF]+", description)
+        }
+        if description_words & VISIBLE_PERSON_WORDS:
+            return False, "client visual policy excludes identifiable people"
         return True, description
     return False, detail
 
