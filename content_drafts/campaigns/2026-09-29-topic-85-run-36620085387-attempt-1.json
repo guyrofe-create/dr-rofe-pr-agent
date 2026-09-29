@@ -1,0 +1,119 @@
+{
+  "draft": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
+  "title": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-09-29T20:00:28.497331+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%92%d7%99%d7%99%d7%90%d7%9f%d6%be%d7%91%d7%90%d7%a8%d7%94-%d7%94%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+      "detail": "idempotency_key=pub_c83108dae28a1bdf456442dde86b19332520a879f2df1fa13d750e73073feec4"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%92%d7%99%d7%99%d7%90%d7%9f%d6%be%d7%91%d7%90%d7%a8%d7%94-%d7%94%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-29-topic-85-run-36620085387-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122206733888942441",
+      "detail": "idempotency_key=pub_36b334fcbe380dee97245353f35d186ed0afe7973ee5ffa6d85a8fd052725301"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7510790563651289089/",
+      "detail": "idempotency_key=pub_da600693a3bfe7e4cd2392e5b1efffbab665d51109fde808daa23f0b43c35da4"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/09/blog-post_29.html",
+      "detail": "idempotency_key=pub_481c1ddf2fe9f848b96441dd598095d7b0b5b59d59ed8a099743607f479c9a4d"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEM7Yj8LvtfDaJA",
+      "detail": "idempotency_key=pub_b67b3f45956418d6349631509ecc34f8441b0e2ddbe089da6e4eb4781cce498b"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_694ff50cdb327bbe76f1da1949abe760f2484685a5f5fa41914a0c7d6fc2437d",
+  "search_target": {
+    "primary_query": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים",
+    "secondary_queries": [
+      "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים ד״ר גיא רופא",
+      "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%92%d7%99%d7%99%d7%90%d7%9f%d6%be%d7%91%d7%90%d7%a8%d7%94-%d7%94%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

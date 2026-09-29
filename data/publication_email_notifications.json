@@ -1070,6 +1070,20 @@
       "approval_id": "apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_694ff50cdb327bbe76f1da1949abe760f2484685a5f5fa41914a0c7d6fc2437d:be18780dacbf9b310093f3cb3d7409add3ba058cbef763bc4d4a05150b947b88": {
+      "sent_at": "2026-09-29T20:00:30.309098+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_694ff50cdb327bbe76f1da1949abe760f2484685a5f5fa41914a0c7d6fc2437d",
+      "state": "success",
+      "subject": "אישור פרסום: תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%92%d7%99%d7%99%d7%90%d7%9f%d6%be%d7%91%d7%90%d7%a8%d7%94-%d7%94%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+        "https://www.facebook.com/122206733888942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7510790563651289089/",
+        "https://guyrofe.blogspot.com/2026/09/blog-post_29.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEM7Yj8LvtfDaJA"
+      ]
     }
   }
 }
