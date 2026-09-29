@@ -1,6 +1,21 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-29-topic-82-run-36619147012-attempt-1.md",
+      "title": "דלקת עורקים של תאי ענק: סימני האזהרה, האבחון והסיכון לפגיעה בראייה | ד״ר גיא רופא",
+      "topic": "דלקת עורקים של תאי ענק: סימני האזהרה, האבחון והסיכון לפגיעה בראייה",
+      "excerpt": "דלקת עורקים של תאי ענק: סימני האזהרה, האבחון והסיכון לפגיעה בראייה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: דלקת עורקים של תאי ענק היא מחלה דלקתית של עורקים בינוניים וגדולים, המופיעה כמעט רק בקרב בני 50 ",
+      "generated_at": "2026-09-29T19:25:58.107063+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-09-27",
+      "cadence_local_date": "2026-09-29",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-09-29-topic-01-run-36566535339-attempt-1.md",
       "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
       "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
@@ -482,26 +497,6 @@
       "cadence_week": "week-of-2026-08-23",
       "cadence_local_date": "2026-08-25",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-08-24-topic-90-run-32699319798-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון: האם הם בכלל תורמים לבריאות?",
-      "excerpt": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com) התשובה הקצרה: המשקאות האלה יכולים להש",
-      "generated_at": "2026-08-24T06:56:06.049563+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "instagram"
-      ],
-      "cadence_week": "week-of-2026-08-23",
-      "cadence_local_date": "2026-08-24",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-37e93741b80f3285.json",
-      "analyzed_news_url": "https://healthy.walla.co.il/item/3862686"
     }
   ]
 }
