@@ -231,9 +231,9 @@ def propose_novel_topic(*, stream="canonical_depth"):
         request = {
             "model": os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
             "input": prompt,
-            "reasoning": {"effort": "medium"},
+            "reasoning": {"effort": "low"},
             "text": {"verbosity": "low"},
-            "max_output_tokens": 120,
+            "max_output_tokens": 500,
         }
         if catalog_lines:
             request["tools"] = [{"type": "web_search"}]

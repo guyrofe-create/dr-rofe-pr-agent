@@ -41,6 +41,16 @@ class DailyRunTests(unittest.TestCase):
             )
         )
 
+    def test_catalog_topic_discovery_has_room_for_search_and_answer(self):
+        policy = daily_run.stream_topic_policy("health_news")
+        self.assertEqual(
+            policy["catalog_sources"][0]["url"],
+            "https://www.mayoclinic.org/diseases-conditions",
+        )
+        source = Path(daily_run.__file__).read_text(encoding="utf-8")
+        self.assertIn('"max_output_tokens": 500', source)
+        self.assertIn('request["tools"] = [{"type": "web_search"}]', source)
+
     def setUp(self):
         daily_run.LOG_LINES.clear()
 
