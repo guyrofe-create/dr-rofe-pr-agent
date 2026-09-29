@@ -1084,6 +1084,13 @@
         "https://guyrofe.blogspot.com/2026/09/blog-post_29.html",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEM7Yj8LvtfDaJA"
       ]
+    },
+    "expired:apr_5e330c81763fd81714c44e21353e343e01940a8fe33aa04468315de39383e96f:2026-08-23T07:48:56Z": {
+      "sent_at": "2026-09-29T23:38:57.594718+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_5e330c81763fd81714c44e21353e343e01940a8fe33aa04468315de39383e96f",
+      "state": "expired",
+      "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
     }
   }
 }
