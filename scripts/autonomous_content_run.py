@@ -17,7 +17,9 @@ try:
     from scripts.reputation_core.content_cadence import (
         due_jobs,
         load_cadence,
+        local_now,
         record_generation,
+        week_key,
     )
 except ModuleNotFoundError:
     from daily_run import (
@@ -29,7 +31,9 @@ except ModuleNotFoundError:
     from reputation_core.content_cadence import (
         due_jobs,
         load_cadence,
+        local_now,
         record_generation,
+        week_key,
     )
 
 
@@ -327,6 +331,7 @@ def run(
     media_brief_dir: Path = DEFAULT_MEDIA_BRIEFS,
     manifest_path: Path,
     now: datetime | None = None,
+    force_stream: str | None = None,
 ) -> dict:
     now = now or datetime.now(timezone.utc)
     cadence = load_cadence(cadence_path)
@@ -354,10 +359,27 @@ def run(
     manifest["jobs"].extend(
         unbundled_generated_jobs(state, DEFAULT_APPROVAL_INDEX)
     )
-    planned_jobs = due_jobs(cadence, state, now)
-    event_job = media_archive_job(cadence, state, now)
-    if event_job and unused_media_brief(media_brief_dir, state):
-        planned_jobs.append(event_job)
+    if force_stream:
+        if force_stream not in {"canonical_depth", "evergreen_knowledge"}:
+            raise ValueError(
+                "Manual topic verification is limited to canonical or evergreen content"
+            )
+        localized = local_now(now, cadence)
+        stream = cadence["streams"][force_stream]
+        planned_jobs = [{
+            "stream": force_stream,
+            "site_key": stream["site_key"],
+            "channels": [],
+            "week": week_key(now, cadence),
+            "local_date": localized.date().isoformat(),
+            "weekday": "manual_verification",
+            "public_execution_allowed": False,
+        }]
+    else:
+        planned_jobs = due_jobs(cadence, state, now)
+        event_job = media_archive_job(cadence, state, now)
+        if event_job and unused_media_brief(media_brief_dir, state):
+            planned_jobs.append(event_job)
     for job in planned_jobs:
         try:
             result = generate_job(
@@ -407,6 +429,11 @@ def main() -> None:
     parser.add_argument("--news-brief-dir", type=Path, default=DEFAULT_NEWS_BRIEFS)
     parser.add_argument("--media-brief-dir", type=Path, default=DEFAULT_MEDIA_BRIEFS)
     parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument(
+        "--force-stream",
+        choices=("canonical_depth", "evergreen_knowledge"),
+        help="Create one approval-gated draft even when today's cadence is complete.",
+    )
     args = parser.parse_args()
     manifest = run(
         cadence_path=args.cadence,
@@ -414,6 +441,7 @@ def main() -> None:
         news_brief_dir=args.news_brief_dir,
         media_brief_dir=args.media_brief_dir,
         manifest_path=args.manifest,
+        force_stream=args.force_stream,
     )
     print(json.dumps({
         "drafts_ready": len(manifest["jobs"]),

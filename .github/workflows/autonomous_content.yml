@@ -4,6 +4,16 @@ on:
   schedule:
     - cron: '0 6 * * 0-4'
   workflow_dispatch:
+    inputs:
+      force_stream:
+        description: Create one new approval-gated topic outside today's cadence
+        required: false
+        default: none
+        type: choice
+        options:
+          - none
+          - canonical_depth
+          - evergreen_knowledge
 
 permissions:
   contents: write
@@ -30,10 +40,14 @@ jobs:
       - name: Generate cadence-due medical drafts
         id: generate
         continue-on-error: true
-        run: >-
-          python scripts/autonomous_content_run.py
-          --manifest "${RUNNER_TEMP}/content-cadence-manifest.json"
+        run: |
+          args=(--manifest "${RUNNER_TEMP}/content-cadence-manifest.json")
+          if [[ "${FORCE_STREAM}" != "none" ]]; then
+            args+=(--force-stream "${FORCE_STREAM}")
+          fi
+          python scripts/autonomous_content_run.py "${args[@]}"
         env:
+          FORCE_STREAM: ${{ inputs.force_stream || 'none' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}

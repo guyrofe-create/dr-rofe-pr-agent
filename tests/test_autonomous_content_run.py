@@ -9,6 +9,42 @@ from scripts import autonomous_content_run
 
 
 class AutonomousContentRunTests(unittest.TestCase):
+    def test_manual_verification_creates_one_new_approval_gated_job(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(
+            autonomous_content_run, "content_is_frozen", return_value=False
+        ), patch.object(
+            autonomous_content_run,
+            "unbundled_generated_jobs",
+            return_value=[],
+        ), patch.object(
+            autonomous_content_run,
+            "generate_job",
+            return_value={
+                "stream": "evergreen_knowledge",
+                "site_key": "DRGUYROFE_COM",
+                "channels": [],
+                "draft_path": "content_drafts/new.md",
+                "public_execution_allowed": False,
+            },
+        ) as generate, patch.object(
+            autonomous_content_run, "record_generation", return_value={"generated": []}
+        ):
+            root = Path(directory)
+            manifest = autonomous_content_run.run(
+                cadence_path=autonomous_content_run.DEFAULT_CADENCE,
+                state_path=root / "state.json",
+                news_brief_dir=root,
+                manifest_path=root / "manifest.json",
+                now=datetime(2026, 7, 28, 6, 0, tzinfo=timezone.utc),
+                force_stream="evergreen_knowledge",
+            )
+        job = generate.call_args.args[0]
+        self.assertEqual(job["stream"], "evergreen_knowledge")
+        self.assertEqual(job["weekday"], "manual_verification")
+        self.assertEqual(job["channels"], [])
+        self.assertFalse(job["public_execution_allowed"])
+        self.assertEqual(len(manifest["jobs"]), 1)
+
     def test_content_freeze_blocks_all_generation(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(
             autonomous_content_run, "content_is_frozen", return_value=True
