@@ -72,6 +72,10 @@ def validate_cadence(cadence: dict) -> None:
         raise ValueError("Cadence must forbid reuse of an editorial topic")
     if int(quality.get("max_news_brief_age_hours", 0)) <= 0:
         raise ValueError("Cadence needs a positive max_news_brief_age_hours")
+    if sum(int(stream.get("weekly_target", 0)) for stream in streams.values()) > int(
+        quality.get("maximum_total_weekly_articles", 0)
+    ):
+        raise ValueError("Cadence exceeds the people-first weekly article limit")
     if not quality.get("destination_role_must_match_content_stream"):
         raise ValueError("Every draft must be routed to its distinct property role")
     threshold = float(quality.get("near_duplicate_cross_domain_threshold", 0))
@@ -121,6 +125,9 @@ def due_jobs(cadence: dict, state: dict, now: datetime) -> list[dict]:
             "week": current_week,
             "local_date": localized.date().isoformat(),
             "weekday": weekday,
+            "topic_source": (stream.get("topic_source_by_weekday") or {}).get(
+                weekday, "approved_stream_policy"
+            ),
             "public_execution_allowed": False,
         })
     return jobs

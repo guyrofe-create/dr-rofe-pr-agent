@@ -152,7 +152,25 @@ def historical_topics():
     return list(dict.fromkeys(value for value in values if value.strip()))
 
 
-def selected_topic(now=None):
+def stream_topic_policy(stream):
+    policies = CONTENT_PLAN.get("stream_topic_policies") or {}
+    try:
+        return policies[stream]
+    except KeyError as exc:
+        raise ValueError(f"Missing topic policy for content stream: {stream}") from exc
+
+
+def topic_matches_stream(topic, stream):
+    """Apply the installation's public editorial scope before generation."""
+    policy = stream_topic_policy(stream)
+    required = [str(term).lower() for term in policy.get("required_terms_any", [])]
+    searchable = str(topic or "").lower()
+    return bool(searchable) and (
+        not required or any(term in searchable for term in required)
+    )
+
+
+def selected_topic(now=None, *, stream="canonical_depth"):
     if not TOPICS:
         raise RuntimeError("installation has no approved content topics")
     now = now or utc_now()
@@ -164,8 +182,9 @@ def selected_topic(now=None):
     ordered_indexes = [
         (start + offset) % len(TOPICS) for offset in range(len(TOPICS))
     ]
-    never_used = [index for index in ordered_indexes if not any(
-        topic_is_duplicate(TOPICS[index], prior) for prior in history
+    never_used = [index for index in ordered_indexes if (
+        topic_matches_stream(TOPICS[index], stream)
+        and not any(topic_is_duplicate(TOPICS[index], prior) for prior in history)
     )]
     if never_used:
         index = never_used[0]
@@ -183,24 +202,42 @@ def propose_novel_topic(*, stream="canonical_depth"):
     history = historical_topics()
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     forbidden = "\n".join(f"- {item}" for item in history)
-    prompt = f"""הצע נושא אחד חדש למאמר רפואי בעברית עבור מרכז ידע בבריאות האישה.
-הזרם: {stream}.
+    policy = stream_topic_policy(stream)
+    role = policy["public_role"]
+    catalog_lines = "\n".join(
+        f"- {item['name']}: {item['url']} ({item['usage']})"
+        for item in policy.get("catalog_sources", [])
+    )
+    catalog_instruction = (
+        "\nלצורך גילוי רעיון בלבד, בדוק את האינדקס הציבורי הבא. "
+        "אין להעתיק ממנו ואין להשתמש בו כמקור רפואי למאמר:\n"
+        f"{catalog_lines}\n"
+        if catalog_lines else ""
+    )
+    prompt = f"""הצע נושא אחד חדש למאמר רפואי בעברית.
+תפקיד הנכס: {role}.
+זרם התוכן: {stream}.
 אסור לחזור, להרחיב, לנסח מחדש או להחליף זווית של אף נושא שכבר קיים.
 בחר כוונת חיפוש רפואית מובחנת וספציפית שאינה חופפת לרשימה.
 אל תציע חדשות, שירות, טיפול אישי או נושא שאינו ניתן לביסוס במקורות מוסדיים.
+הנושא חייב להתאים במדויק לתפקיד הנכס המתואר לעיל.
+{catalog_instruction}
 החזר שורה אחת בלבד, ללא מספור וללא הסבר.
 
 נושאים וכותרות שכבר שימשו ואסורים מעתה:
 {forbidden}"""
     last_candidate = ""
     for _attempt in range(3):
-        response = client.responses.create(
-            model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
-            input=prompt,
-            reasoning={"effort": "medium"},
-            text={"verbosity": "low"},
-            max_output_tokens=120,
-        )
+        request = {
+            "model": os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
+            "input": prompt,
+            "reasoning": {"effort": "medium"},
+            "text": {"verbosity": "low"},
+            "max_output_tokens": 120,
+        }
+        if catalog_lines:
+            request["tools"] = [{"type": "web_search"}]
+        response = client.responses.create(**request)
         record_ai_usage(
             response,
             operation="novel_topic_generation",
@@ -211,6 +248,7 @@ def propose_novel_topic(*, stream="canonical_depth"):
         last_candidate = candidate
         if (
             4 <= len(candidate.split()) <= 18
+            and topic_matches_stream(candidate, stream)
             and not any(topic_is_duplicate(candidate, prior) for prior in history)
         ):
             digest = hashlib.sha256(candidate.encode("utf-8")).hexdigest()
@@ -222,10 +260,12 @@ def propose_novel_topic(*, stream="canonical_depth"):
 
 
 def topic_for_generation(now=None, *, stream="canonical_depth"):
-    try:
-        return selected_topic(now)
-    except TopicPoolExhausted:
-        return propose_novel_topic(stream=stream)
+    if stream == "canonical_depth":
+        try:
+            return selected_topic(now, stream=stream)
+        except TopicPoolExhausted:
+            pass
+    return propose_novel_topic(stream=stream)
 
 
 def clean_generated_markdown(content):
@@ -502,7 +542,7 @@ def generate_article(
 - הכותרת תסתיים פעם אחת בלבד ב-"| {CLIENT_FACTS['primary_name']}"
 - מיד לאחר הכותרת תופיע שורת מחבר מקושרת לפרופיל הרשמי
 - לפני המקורות תופיע תיבת "על המחבר" עם התפקיד והסטטוס הנוכחיים המאושרים
-- אין לחזור על שם הלקוח באופן מלאכותי בגוף המאמר
+- אין להזכיר את שם הלקוח בגוף המאמר; הוא יופיע רק בכותרת, בשורת המחבר ובתיבת המחבר
 - שלב בגוף המאמר לפחות שני קישורים ישירים למקורות סמכותיים, צמודים לטענה
   שהם תומכים בה, עם טקסט עוגן תיאורי; אותם URLs יופיעו גם בסעיף המקורות
 - אל תשתמש בעוגנים גנריים כגון "כאן", "מקור" או "למידע נוסף", ואל תקשר

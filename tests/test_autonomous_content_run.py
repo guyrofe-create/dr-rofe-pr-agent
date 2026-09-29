@@ -9,6 +9,77 @@ from scripts import autonomous_content_run
 
 
 class AutonomousContentRunTests(unittest.TestCase):
+    def test_manual_health_news_verification_uses_mayo_for_discovery_only(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(
+            autonomous_content_run, "content_is_frozen", return_value=False
+        ), patch.object(
+            autonomous_content_run, "unbundled_generated_jobs", return_value=[]
+        ), patch.object(
+            autonomous_content_run,
+            "generate_job",
+            return_value={
+                "stream": "health_news",
+                "site_key": "DRGUYROFE_CO_IL",
+                "channels": [],
+                "draft_path": "content_drafts/new-medical-topic.md",
+                "public_execution_allowed": False,
+            },
+        ) as generate, patch.object(
+            autonomous_content_run, "record_generation", return_value={"generated": []}
+        ):
+            root = Path(directory)
+            manifest = autonomous_content_run.run(
+                cadence_path=autonomous_content_run.DEFAULT_CADENCE,
+                state_path=root / "state.json",
+                news_brief_dir=root,
+                manifest_path=root / "manifest.json",
+                now=datetime(2026, 7, 30, 6, 0, tzinfo=timezone.utc),
+                force_stream="health_news",
+            )
+        job = generate.call_args.args[0]
+        self.assertEqual(job["topic_source"], "mayo_public_catalog")
+        self.assertEqual(job["channels"], [])
+        self.assertFalse(job["public_execution_allowed"])
+        self.assertEqual(len(manifest["jobs"]), 1)
+
+    def test_mayo_catalog_job_never_uses_mayo_as_medical_evidence(self):
+        job = {
+            "stream": "health_news",
+            "site_key": "DRGUYROFE_CO_IL",
+            "channels": [],
+            "week": "week-of-2026-07-26",
+            "local_date": "2026-07-30",
+            "weekday": "thursday",
+            "topic_source": "mayo_public_catalog",
+            "public_execution_allowed": False,
+        }
+        with tempfile.TemporaryDirectory() as directory, patch.object(
+            autonomous_content_run,
+            "topic_for_generation",
+            return_value=(88, "מיגרנה: תסמינים ומתי לפנות לבדיקה"),
+        ), patch.object(
+            autonomous_content_run,
+            "generate_article",
+            return_value=("כותרת", "# כותרת\n\nתוכן"),
+        ) as generate, patch.object(
+            autonomous_content_run,
+            "save_draft",
+            return_value=Path(directory) / "draft.md",
+        ):
+            result = autonomous_content_run.generate_job(
+                job,
+                datetime(2026, 7, 30, 6, 0, tzinfo=timezone.utc),
+                Path(directory),
+            )
+        self.assertEqual(
+            result["topic_seed_usage"], "discovery_only"
+        )
+        self.assertTrue(generate.call_args.kwargs["use_web_search"])
+        self.assertIn(
+            "אין להעתיק",
+            generate.call_args.kwargs["editorial_context"],
+        )
+
     def test_manual_verification_creates_one_new_approval_gated_job(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(
             autonomous_content_run, "content_is_frozen", return_value=False

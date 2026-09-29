@@ -83,9 +83,42 @@
       "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
       "כאבי מחזור קשים - כמה כאב זה נורמלי?",
       "גיל המעבר - מידע כללי מבוסס מקורות",
-      "איך להעריך מידע רפואי ברשת ולזהות מקור אמין"
+      "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה"
     ],
-    "tags": ["גינקולוגיה", "בריאות האישה", "מידע רפואי"]
+    "tags": ["גינקולוגיה", "בריאות האישה", "מידע רפואי"],
+    "stream_topic_policies": {
+      "canonical_depth": {
+        "public_role": "מידע לציבור בנושאי רפואת נשים בלבד",
+        "required_terms_any": [
+          "נשים", "אישה", "גינקולוג", "רחם", "רחמי", "שחלה", "שחלות",
+          "פוריות", "הריון", "היריון", "לידה", "מחזור", "וסת",
+          "אנדומטריוזיס", "מיומה", "מיומות", "אגן", "מנופאוזה",
+          "גיל המעבר", "צוואר הרחם", "HPV"
+        ],
+        "topic_discovery": "approved_seed_list_then_new_distinct_womens_health_intent"
+      },
+      "health_news": {
+        "public_role": "חדשות והסברים מבוססי ראיות מכל תחומי הרפואה",
+        "required_terms_any": [],
+        "topic_discovery": "fresh_news_plus_mayo_public_catalog",
+        "catalog_sources": [
+          {
+            "name": "Mayo Clinic Diseases & Conditions",
+            "url": "https://www.mayoclinic.org/diseases-conditions",
+            "usage": "topic_discovery_only_never_copy_or_medical_source"
+          }
+        ]
+      },
+      "evergreen_knowledge": {
+        "public_role": "אוריינות רפואית, הבנת מחקרים ובדיקות וקבלת החלטות מושכלת",
+        "required_terms_any": [
+          "מחקר", "ראיות", "בדיקה", "בדיקות", "סקר", "אבחון",
+          "סיכון", "סטטיסטיקה", "מידע רפואי", "החלטה רפואית",
+          "חוות דעת נוספת", "תוצאה", "תוצאות"
+        ],
+        "topic_discovery": "distinct_medical_literacy_intent"
+      }
+    }
   },
   "publication_guardrails": {
     "prohibited_solicitation_phrases": [
@@ -140,8 +173,9 @@
     "canonical_name_in_title_required": true,
     "linked_visible_byline_required": true,
     "author_box_required": true,
-    "natural_entity_mentions_minimum": 3,
-    "natural_entity_mentions_maximum": 8,
+    "entity_mention_policy": "structural_not_density",
+    "canonical_name_visible_mentions": 3,
+    "canonical_name_body_mentions": 0,
     "video_transcript_required": true,
     "search_crawlers": [
       "Googlebot", "Google-Extended", "Bingbot",

@@ -228,19 +228,42 @@ def generate_job(
         )
         title, content = generate_article(topic)
     elif job["stream"] == "health_news":
-        selected = unused_news_brief(
-            news_brief_dir,
-            state or {"generated": []},
-            now=now,
-            max_age_hours=max_news_brief_age_hours,
-        )
-        if not selected:
-            return None
-        _brief_path, brief = selected
-        news_url = brief["analyzed_news_url"]
-        topic_index = 90
-        topic = brief["working_title"]
-        context = (
+        topic_source = job.get("topic_source", "fresh_news_radar")
+        if topic_source == "mayo_public_catalog":
+            topic_index, topic = topic_for_generation(
+                now, stream=job["stream"]
+            )
+            context = (
+                "\nכללים מיוחדים להסבר רפואי לציבור:\n"
+                "- Mayo Clinic Diseases & Conditions משמש רק לאיתור רעיון.\n"
+                "- אין להעתיק, לתרגם או לשכתב תוכן מ-Mayo Clinic.\n"
+                "- בסס את המאמר על לפחות שני מקורות רפואיים רשמיים או ראשוניים ישירים.\n"
+                "- כתוב הסבר עצמאי, נגיש ומועיל מכל תחום רפואי.\n"
+                "- ענה על כוונת חיפוש אחת והימנע מחפיפה למאמרים קיימים.\n"
+            )
+            title, content = generate_article(
+                topic,
+                editorial_context=context,
+                use_web_search=True,
+            )
+            metadata["topic_seed_source"] = (
+                "https://www.mayoclinic.org/diseases-conditions"
+            )
+            metadata["topic_seed_usage"] = "discovery_only"
+        else:
+            selected = unused_news_brief(
+                news_brief_dir,
+                state or {"generated": []},
+                now=now,
+                max_age_hours=max_news_brief_age_hours,
+            )
+            if not selected:
+                return None
+            _brief_path, brief = selected
+            news_url = brief["analyzed_news_url"]
+            topic_index = 90
+            topic = brief["working_title"]
+            context = (
             "\nכללים מיוחדים לניתוח חדשות רפואיות:\n"
             f"- יעד הפרסום הראשי של הטיוטה: {brief['destination_url']}\n"
             f"- כתבת החדשות הנבדקת: {news_url}\n"
@@ -252,15 +275,15 @@ def generate_job(
             "- הסבר מה נטען, מה הנתונים באמת מראים, מה המגבלות ומה המשמעות "
             "המעשית; הפרד קשר מסיבתיות והימנע מכותרת סנסציונית.\n"
         )
-        title, content = generate_article(
-            topic,
-            editorial_context=context,
-            allowed_external_urls={news_url},
-            required_urls={news_url},
-            use_web_search=True,
-        )
-        metadata["source_brief"] = brief["_relative_path"]
-        metadata["analyzed_news_url"] = news_url
+            title, content = generate_article(
+                topic,
+                editorial_context=context,
+                allowed_external_urls={news_url},
+                required_urls={news_url},
+                use_web_search=True,
+            )
+            metadata["source_brief"] = brief["_relative_path"]
+            metadata["analyzed_news_url"] = news_url
     elif job["stream"] == "evergreen_knowledge":
         topic_index, topic = topic_for_generation(
             now, stream=job["stream"]
@@ -360,9 +383,11 @@ def run(
         unbundled_generated_jobs(state, DEFAULT_APPROVAL_INDEX)
     )
     if force_stream:
-        if force_stream not in {"canonical_depth", "evergreen_knowledge"}:
+        if force_stream not in {
+            "canonical_depth", "health_news", "evergreen_knowledge"
+        }:
             raise ValueError(
-                "Manual topic verification is limited to canonical or evergreen content"
+                "Manual topic verification is limited to an owned medical content stream"
             )
         localized = local_now(now, cadence)
         stream = cadence["streams"][force_stream]
@@ -373,6 +398,11 @@ def run(
             "week": week_key(now, cadence),
             "local_date": localized.date().isoformat(),
             "weekday": "manual_verification",
+            "topic_source": (
+                "mayo_public_catalog"
+                if force_stream == "health_news"
+                else "approved_stream_policy"
+            ),
             "public_execution_allowed": False,
         }]
     else:

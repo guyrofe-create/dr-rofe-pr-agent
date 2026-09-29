@@ -73,15 +73,20 @@ def visible_byline(context: EntityContext) -> str:
 
 
 def author_box(context: EntityContext) -> str:
+    status = context.public_status
+    if status.startswith(context.canonical_name):
+        status = status[len(context.canonical_name):].lstrip(" —–-:,.")
+        if status:
+            status = status[0].upper() + status[1:]
     return "\n".join(
         [
             "## על המחבר",
             "",
             f"**{context.canonical_name}** — {context.current_role}.",
             "",
-            context.public_status,
+            status,
             "",
-            f"[לפרופיל הרשמי של {context.canonical_name}]({context.profile_url})",
+            f"[לפרופיל הרשמי]({context.profile_url})",
         ]
     )
 
@@ -131,27 +136,6 @@ def apply_article_contract(markdown: str, profile: dict) -> str:
     lines[h1_index + 1 : h1_index + 1] = ["", visible_byline(context)]
     text = "\n".join(lines).strip()
 
-    if context.canonical_name not in _article_body(text, context):
-        byline = visible_byline(context)
-        branded_sentence = (
-            f"המאמר הוכן עבור מאגר המידע של {context.canonical_name} "
-            "ומציג מידע כללי המבוסס על מקורות."
-        )
-        parts = text.splitlines()
-        byline_index = parts.index(byline)
-        paragraph_start = byline_index + 1
-        while paragraph_start < len(parts) and not parts[paragraph_start].strip():
-            paragraph_start += 1
-        paragraph_end = paragraph_start
-        while (
-            paragraph_end < len(parts)
-            and parts[paragraph_end].strip()
-            and not parts[paragraph_end].startswith("## ")
-        ):
-            paragraph_end += 1
-        parts[paragraph_end:paragraph_end] = ["", branded_sentence]
-        text = "\n".join(parts).strip()
-
     text = re.sub(
         r"^##\s+על המחבר\s*$.*?(?=^##\s+מקורות\s*$|\Z)",
         "",
@@ -189,9 +173,14 @@ def audit_article_entity_contract(markdown: str, profile: dict) -> EntityContrac
         ),
         "linked_profile": (markdown or "").count(context.profile_url) >= 2,
         "current_role_visible": context.current_role in (markdown or ""),
-        "status_truthful": context.public_status in (markdown or ""),
-        "body_entity_frequency": 1 <= body_mentions <= 4,
-        "natural_entity_frequency": 3 <= canonical_mentions <= 8,
+        "status_truthful": (
+            context.public_status in (markdown or "")
+            or context.public_status.removeprefix(context.canonical_name).lstrip(
+                " —–-:, ."
+            ) in (markdown or "")
+        ),
+        "no_forced_body_entity_mentions": body_mentions == 0,
+        "structural_entity_frequency": canonical_mentions == 3,
     }
     messages = {
         "canonical_name_once_in_title": "canonical client name must appear once in H1",
@@ -200,8 +189,8 @@ def audit_article_entity_contract(markdown: str, profile: dict) -> EntityContrac
         "linked_profile": "byline and author box must link to the official profile",
         "current_role_visible": "approved current role is required",
         "status_truthful": "approved current-practice status is required",
-        "body_entity_frequency": "client name must appear naturally in the article body",
-        "natural_entity_frequency": "client name frequency must remain natural",
+        "no_forced_body_entity_mentions": "client name must not be repeated in the editorial body",
+        "structural_entity_frequency": "client name must appear exactly in title, byline and author box",
     }
     errors = tuple(messages[key] for key, passed in checks.items() if not passed)
     return EntityContractReport(

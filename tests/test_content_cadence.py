@@ -22,18 +22,18 @@ class ContentCadenceTests(unittest.TestCase):
         self.assertEqual(
             self.cadence["weekly_channel_targets"],
             {
-                "facebook": 4,
-                "linkedin": 4,
+                "facebook": 2,
+                "linkedin": 2,
                 "pinterest": 0,
-                "blogger": 2,
-                "google_business": 3,
+                "blogger": 1,
+                "google_business": 2,
             },
         )
         self.assertEqual(
-            self.cadence["streams"]["canonical_depth"]["weekly_target"], 2
+            self.cadence["streams"]["canonical_depth"]["weekly_target"], 1
         )
         self.assertEqual(
-            self.cadence["streams"]["health_news"]["weekly_target"], 5
+            self.cadence["streams"]["health_news"]["weekly_target"], 2
         )
         self.assertEqual(
             self.cadence["streams"]["evergreen_knowledge"]["weekly_target"], 1
@@ -44,30 +44,25 @@ class ContentCadenceTests(unittest.TestCase):
         google = self.cadence["channel_requirements"]["google_business"]
         self.assertEqual(
             google["weekly_destination_mix"],
-            {"guyrofe.com": 2, "drguyrofe.co.il": 1},
+            {"guyrofe.com": 1, "drguyrofe.co.il": 1},
         )
         self.assertEqual(
             google["link_policy"],
             "exact_published_topic_page_never_homepage",
         )
 
-    def test_sunday_plans_two_sites_but_social_only_once(self):
+    def test_sunday_plans_womens_health_canonical_content(self):
         sunday = datetime(2026, 7, 26, 6, 0, tzinfo=timezone.utc)
         jobs = due_jobs(self.cadence, {"generated": []}, sunday)
         self.assertEqual(
             [(job["stream"], job["site_key"]) for job in jobs],
-            [
-                ("canonical_depth", "GUYROFE_COM"),
-                ("health_news", "DRGUYROFE_CO_IL"),
-            ],
+            [("canonical_depth", "GUYROFE_COM")],
         )
         canonical = jobs[0]
-        news = jobs[1]
         self.assertEqual(
             canonical["channels"],
             ["facebook", "linkedin", "google_business"],
         )
-        self.assertEqual(news["channels"], [])
         self.assertFalse(canonical["public_execution_allowed"])
 
     def test_same_stream_is_not_generated_twice_on_same_local_day(self):
@@ -80,17 +75,14 @@ class ContentCadenceTests(unittest.TestCase):
             sunday.isoformat(),
         )
         remaining = due_jobs(self.cadence, state, sunday)
-        self.assertEqual([job["stream"] for job in remaining], ["health_news"])
+        self.assertEqual([job["stream"] for job in remaining], [])
 
-    def test_tuesday_adds_only_the_distinct_wix_knowledge_stream(self):
+    def test_tuesday_adds_only_the_distinct_knowledge_stream(self):
         tuesday = datetime(2026, 7, 28, 6, 0, tzinfo=timezone.utc)
         jobs = due_jobs(self.cadence, {"generated": []}, tuesday)
         self.assertEqual(
             [(job["stream"], job["site_key"], job["channels"]) for job in jobs],
-            [
-                ("health_news", "DRGUYROFE_CO_IL", []),
-                ("evergreen_knowledge", "DRGUYROFE_COM", []),
-            ],
+            [("evergreen_knowledge", "DRGUYROFE_COM", [])],
         )
         self.assertNotIn(
             "media_archive",

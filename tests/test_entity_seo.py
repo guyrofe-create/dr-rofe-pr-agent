@@ -174,7 +174,7 @@ https://pubmed.ncbi.nlm.nih.gov/1/
             contracted.index("## על המחבר"), contracted.index("## מקורות")
         )
 
-    def test_article_contract_replaces_model_byline_and_requires_real_body_mention(self):
+    def test_article_contract_replaces_model_byline_without_body_name_stuffing(self):
         profile = load_client_profile()
         contracted = apply_article_contract(
             "# כותרת\n\n"
@@ -188,11 +188,8 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertTrue(report.passed, report.errors)
         self.assertEqual(contracted.count("מאת [ד״ר גיא רופא]"), 1)
         self.assertNotIn("[מאת ד״ר גיא רופא]", contracted)
-        self.assertIn("מאגר המידע של ד״ר גיא רופא", contracted)
-        self.assertLess(
-            contracted.index("תוכן עובדתי ללא אזכור בגוף."),
-            contracted.index("מאגר המידע של ד״ר גיא רופא"),
-        )
+        self.assertEqual(contracted.count("ד״ר גיא רופא"), 3)
+        self.assertNotIn("מאגר המידע של ד״ר גיא רופא", contracted)
 
     def test_title_and_meta_description_use_name_once(self):
         profile = load_client_profile()
