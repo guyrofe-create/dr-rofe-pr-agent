@@ -136,12 +136,18 @@ def apply_article_contract(markdown: str, profile: dict) -> str:
     lines[h1_index + 1 : h1_index + 1] = ["", visible_byline(context)]
     text = "\n".join(lines).strip()
 
-    text = re.sub(
-        r"^##\s+על המחבר\s*$.*?(?=^##\s+מקורות\s*$|\Z)",
-        "",
-        text,
-        flags=re.MULTILINE | re.DOTALL,
-    ).strip()
+    author_section_patterns = (
+        r"^#{2,3}\s+על המחבר\s*$.*?(?=^#{2,3}\s+מקורות\s*$|\Z)",
+        r"^>\s*\*\*על המחבר\*\*\s{0,2}$.*?(?=^#{2,3}\s+מקורות\s*$|\Z)",
+        r"^\*\*על המחבר\*\*\s*$.*?(?=^#{2,3}\s+מקורות\s*$|\Z)",
+    )
+    for pattern in author_section_patterns:
+        text = re.sub(
+            pattern,
+            "",
+            text,
+            flags=re.MULTILINE | re.DOTALL,
+        ).strip()
     # The entity belongs in structural SEO furniture only. Models occasionally
     # repeat it despite the prompt, so normalize any editorial-body occurrence
     # deterministically instead of relying on probabilistic retries.

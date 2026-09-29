@@ -3,7 +3,9 @@
   "bundles": [
     {
       "approval_id": "apr_d1bb25627c72c15b1d6da4cf2cc0a8eeee9b9caaf45ce11985518d04aedd985f",
-      "status": "awaiting_explicit_approval",
+      "status": "cancelled",
+      "cancelled_at": "2026-09-29T19:31:00Z",
+      "cancellation_reason": "Superseded after QA found a model-generated duplicate author box; no publication authorized.",
       "draft_path": "content_drafts/2026-09-29-topic-82-run-36619147012-attempt-1.md",
       "bundle_path": "approval_bundles/apr_d1bb25627c72c15b1d6da4cf2cc0a8eeee9b9caaf45ce11985518d04aedd985f.json",
       "preview_path": "approval_bundles/apr_d1bb25627c72c15b1d6da4cf2cc0a8eeee9b9caaf45ce11985518d04aedd985f.html",
