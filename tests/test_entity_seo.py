@@ -193,6 +193,22 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertIn("המחבר מסביר את הנושא בגוף הטיוטה.", contracted)
         self.assertNotIn("ד״ר גיא רופא מסביר", contracted)
 
+    def test_article_contract_removes_model_generated_blockquote_author_box(self):
+        profile = load_client_profile()
+        contracted = apply_article_contract(
+            "# כותרת\n\nתוכן רפואי.\n\n"
+            "> **על המחבר**  \n"
+            "> **ד״ר גיא רופא** — תיבה שהמודל יצר.  \n"
+            "> למידע נוסף: https://guyrofe.com\n\n"
+            "## מקורות\n\nhttps://www.who.int/a",
+            profile,
+        )
+        report = audit_article_entity_contract(contracted, profile)
+        self.assertTrue(report.passed, report.errors)
+        self.assertEqual(contracted.count("על המחבר"), 1)
+        self.assertNotIn("> **על המחבר**", contracted)
+        self.assertNotIn("תיבה שהמודל יצר", contracted)
+
     def test_title_and_meta_description_use_name_once(self):
         profile = load_client_profile()
         context = build_entity_context(profile)
