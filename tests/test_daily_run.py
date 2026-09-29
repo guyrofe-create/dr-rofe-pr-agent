@@ -19,6 +19,28 @@ INLINE_EVIDENCE = (
 
 
 class DailyRunTests(unittest.TestCase):
+    def test_stream_topic_scopes_are_distinct(self):
+        self.assertTrue(
+            daily_run.topic_matches_stream(
+                "דימום רחמי חריג - מתי לפנות לבדיקה", "canonical_depth"
+            )
+        )
+        self.assertFalse(
+            daily_run.topic_matches_stream(
+                "מיגרנה - תסמינים וטיפול", "canonical_depth"
+            )
+        )
+        self.assertTrue(
+            daily_run.topic_matches_stream(
+                "מיגרנה - תסמינים וטיפול", "health_news"
+            )
+        )
+        self.assertTrue(
+            daily_run.topic_matches_stream(
+                "איך להבין תוצאות של בדיקות סקר", "evergreen_knowledge"
+            )
+        )
+
     def setUp(self):
         daily_run.LOG_LINES.clear()
 
@@ -88,6 +110,7 @@ class DailyRunTests(unittest.TestCase):
             )
             with (
                 patch.object(daily_run, "TOPICS", topics),
+                patch.object(daily_run, "topic_matches_stream", return_value=True),
                 patch.dict(os.environ, {"CONTENT_DRAFT_DIR": directory}),
             ):
                 _, topic = daily_run.selected_topic(now)
@@ -122,6 +145,7 @@ class DailyRunTests(unittest.TestCase):
             )
             with (
                 patch.object(daily_run, "TOPICS", topics),
+                patch.object(daily_run, "topic_matches_stream", return_value=True),
                 patch.dict(os.environ, {"CONTENT_DRAFT_DIR": directory}),
             ):
                 with self.assertRaisesRegex(

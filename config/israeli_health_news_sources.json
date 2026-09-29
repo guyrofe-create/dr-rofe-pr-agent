@@ -9,8 +9,19 @@
     "source_cooldown_days": 5,
     "source_diversity_penalty": 5,
     "minimum_opportunity_score": 25,
-    "minimum_client_topic_relevance": 1
+    "minimum_client_topic_relevance": 0,
+    "scope": "all_medical_topics"
   },
+  "public_topic_catalogs": [
+    {
+      "id": "mayo_diseases_conditions",
+      "name": "Mayo Clinic Diseases & Conditions",
+      "index_url": "https://www.mayoclinic.org/diseases-conditions",
+      "usage": "topic_discovery_only",
+      "copying_forbidden": true,
+      "must_verify_with_primary_or_official_sources": true
+    }
+  ],
   "sources": [
     {
       "id": "ynet_health",
