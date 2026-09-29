@@ -3,7 +3,9 @@
   "bundles": [
     {
       "approval_id": "apr_30e21f524178d7d8c18dc3d84b4783094c22bc75a5bd553f7ba187cb688cb7f6",
-      "status": "awaiting_explicit_approval",
+      "status": "cancelled",
+      "cancelled_at": "2026-09-29T19:39:00Z",
+      "cancellation_reason": "Superseded because final visual QA found an identifiable person in a medical-procedure image; no publication authorized.",
       "draft_path": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
       "bundle_path": "approval_bundles/apr_30e21f524178d7d8c18dc3d84b4783094c22bc75a5bd553f7ba187cb688cb7f6.json",
       "preview_path": "approval_bundles/apr_30e21f524178d7d8c18dc3d84b4783094c22bc75a5bd553f7ba187cb688cb7f6.html",

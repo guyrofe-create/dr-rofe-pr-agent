@@ -54,10 +54,10 @@ class SocialImageTests(unittest.TestCase):
         prompt = client.responses.create.call_args.kwargs["input"]
         self.assertIn("real editorial photograph", prompt)
         self.assertIn("only for direct topical relevance", prompt)
-        self.assertIn("visible text, labels and brands are all acceptable", prompt)
+        self.assertIn("Return only people-free subjects", prompt)
         self.assertIn("2-4 concrete searchable words", prompt)
 
-    def test_relevance_review_uses_topic_only_policy(self):
+    def test_relevance_review_rejects_visible_people_even_after_model_accepts(self):
         client = Mock()
         client.responses.create.return_value = SimpleNamespace(
             output_text="ACCEPT: צילום רלוונטי של רופאה ליד מכשיר רפואי"
@@ -71,13 +71,13 @@ class SocialImageTests(unittest.TestCase):
             "מידע על הבדיקה",
         )
 
-        self.assertTrue(accepted)
-        self.assertIn("רופאה", description)
+        self.assertFalse(accepted)
+        self.assertIn("excludes identifiable people", description)
         prompt = client.responses.create.call_args.kwargs["input"][0]["content"][0][
             "text"
         ]
         self.assertIn("Judge it only", prompt)
-        self.assertIn("Do not reject it because it contains people", prompt)
+        self.assertIn("Reject any image containing an identifiable person", prompt)
         self.assertNotIn("Reject generic wellness imagery", prompt)
         self.assertNotIn("ANY visible letter", prompt)
 
@@ -202,6 +202,10 @@ class SocialImageTests(unittest.TestCase):
         self.assertIn(
             "therapy dog rehabilitation",
             social_image.topic_search_queries("כלבי טיפול בשיקום לאחר שבץ"),
+        )
+        self.assertIn(
+            "peripheral nerve histology",
+            social_image.topic_search_queries("תסמונת גייאן־בארה"),
         )
 
     @patch("scripts.social_image.search_openverse", return_value=[])
