@@ -461,7 +461,7 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument(
         "--force-stream",
-        choices=("canonical_depth", "evergreen_knowledge"),
+        choices=("canonical_depth", "health_news", "evergreen_knowledge"),
         help="Create one approval-gated draft even when today's cadence is complete.",
     )
     args = parser.parse_args()

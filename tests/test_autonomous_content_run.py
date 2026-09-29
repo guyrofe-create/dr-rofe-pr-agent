@@ -1,4 +1,5 @@
 import json
+import sys
 import tempfile
 import unittest
 from datetime import datetime, timezone
@@ -9,6 +10,23 @@ from scripts import autonomous_content_run
 
 
 class AutonomousContentRunTests(unittest.TestCase):
+    def test_cli_accepts_forced_health_news_stream(self):
+        with patch.object(
+            sys,
+            "argv",
+            [
+                "autonomous_content_run.py",
+                "--manifest",
+                "/tmp/manifest.json",
+                "--force-stream",
+                "health_news",
+            ],
+        ), patch.object(autonomous_content_run, "run", return_value={
+            "jobs": [], "skipped": [], "errors": []
+        }) as run:
+            autonomous_content_run.main()
+        self.assertEqual(run.call_args.kwargs["force_stream"], "health_news")
+
     def test_manual_health_news_verification_uses_mayo_for_discovery_only(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(
             autonomous_content_run, "content_is_frozen", return_value=False
