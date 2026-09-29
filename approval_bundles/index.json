@@ -3,7 +3,9 @@
   "bundles": [
     {
       "approval_id": "apr_6f4d01ec2b005554436a88dc9618be52666c36f7b69303682319bf91e769476e",
-      "status": "awaiting_explicit_approval",
+      "status": "cancelled",
+      "cancelled_at": "2026-09-29T20:39:45Z",
+      "cancellation_reason": "Cancelled after live QA found that the medical evidence audit treated identity metadata as medical evidence; no publication authorized.",
       "draft_path": "content_drafts/2026-09-29-topic-80-run-36627192118-attempt-1.md",
       "bundle_path": "approval_bundles/apr_6f4d01ec2b005554436a88dc9618be52666c36f7b69303682319bf91e769476e.json",
       "preview_path": "approval_bundles/apr_6f4d01ec2b005554436a88dc9618be52666c36f7b69303682319bf91e769476e.html",
