@@ -308,7 +308,9 @@ function renderStats(pubNotifs, apprNotifs, reviews, generated, snapshots) {
   const successRate = thisWeek.length ? Math.round(100*successes.length/thisWeek.length) : 0;
   const todayStr = now.toISOString().substring(0,10);
   const todayPub = pubNotifs.filter(n => (n.sent_at||"").startsWith(todayStr));
-  const pending = apprNotifs.filter(n => !n.published_at);
+  const pending = apprNotifs.filter(
+    n => !n.published_at && n.status !== "cancelled"
+  );
   const latest = snapshots[snapshots.length-1] || {};
   const rankEntry = (latest.rank||[]).find(r=>r.keyword&&(r.keyword.includes("גיא רופא")||r.keyword.includes("Guy Rofe")));
   const serpPos = rankEntry?.position_top10;
@@ -406,7 +408,9 @@ function renderContent(pubNotifs, generated) {
 
 /* ── APPROVALS ── */
 function renderApprovals(apprNotifs) {
-  const sorted = [...apprNotifs].sort((a,b) => b.sent_at?.localeCompare(a.sent_at||"")||0);
+  const sorted = apprNotifs
+    .filter(n => !n.published_at && n.status !== "cancelled")
+    .sort((a,b) => b.sent_at?.localeCompare(a.sent_at||"")||0);
   document.getElementById("apprBadge").textContent = sorted.length + " ממתינים";
 
   document.getElementById("apprList").innerHTML = sorted.slice(0,6).map(n => {

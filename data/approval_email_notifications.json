@@ -363,6 +363,9 @@
     },
     "apr_cc566fddc8e3d9b5ce861bb030b1723e6eac2d843bd68c87f5ee4942cbd1935d": {
       "sent_at": "2026-09-29T14:04:18.773083+00:00",
+      "status": "cancelled",
+      "cancelled_at": "2026-09-29T14:33:36Z",
+      "cancellation_reason": "Duplicate editorial topic invalidated after full publication-history audit",
       "recipient": "guyrofe@gmail.com",
       "approval_url": "https://dr-rofe-reputation-center.guyrofe.chatgpt.site?approval_id=apr_cc566fddc8e3d9b5ce861bb030b1723e6eac2d843bd68c87f5ee4942cbd1935d",
       "bundle_path": "approval_bundles/apr_cc566fddc8e3d9b5ce861bb030b1723e6eac2d843bd68c87f5ee4942cbd1935d.json"
