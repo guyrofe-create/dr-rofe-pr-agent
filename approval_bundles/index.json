@@ -2,6 +2,20 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_6f4d01ec2b005554436a88dc9618be52666c36f7b69303682319bf91e769476e",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-09-29-topic-80-run-36627192118-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_6f4d01ec2b005554436a88dc9618be52666c36f7b69303682319bf91e769476e.json",
+      "preview_path": "approval_bundles/apr_6f4d01ec2b005554436a88dc9618be52666c36f7b69303682319bf91e769476e.html",
+      "created_at": "2026-09-29T20:37:42Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
       "approval_id": "apr_30e21f524178d7d8c18dc3d84b4783094c22bc75a5bd553f7ba187cb688cb7f6",
       "status": "cancelled",
       "cancelled_at": "2026-09-29T19:39:00Z",

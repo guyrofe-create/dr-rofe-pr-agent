@@ -1,0 +1,567 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-29T20:37:42Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-29-topic-80-run-36627192118-attempt-1.md",
+  "source_draft_sha256": "85158ebe87d4e6750851186e0ac050b3e27c8e4e685800c4a9d86f6ca4e2887e",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1183/13993003.00879-2022",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nhlbi.nih.gov/health/high-blood-pressure",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-landscape.png",
+    "sha256": "7429c9c3c23c535e8df1ef38d466499e5100246aa47f79991625b3220888cd13",
+    "alt_text": "תרשים אק״ג בן 12 לידים מודפס על נייר משבצות אדום, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "תרשים אק״ג בן 12 לידים מודפס על נייר משבצות אדום.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:E0007081_(CardioNetworks_ECGpedia).jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/E0007081_%28CardioNetworks_ECGpedia%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Michael Rosengarten BEng, MD.McGill",
+    "license_name": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attribution": "E0007081 (CardioNetworks ECGpedia).jpg — Michael Rosengarten BEng, MD.McGill; CC BY-SA 3.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-hero.png",
+        "sha256": "bcd813776d2dd37c81dc44fd78b63339bf280bce048da7e7de339d0cbfcef464",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-landscape.png",
+        "sha256": "7429c9c3c23c535e8df1ef38d466499e5100246aa47f79991625b3220888cd13",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-square.jpg",
+        "sha256": "784e92dcf5acece9b1c65d4bfd57c1de6ecdda2f54f29710d433b8a757abd147",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-portrait.png",
+        "sha256": "4ce598d1c7d51501a52b956f97ad13ff51e55740f2f63a21d9fa299ae37da0dd",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי | ד״ר גיא רופא",
+        "cms_title": "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי",
+        "markdown": "# יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nיתר לחץ דם ריאתי הוא לחץ מוגבר בכלי הדם המובילים דם מן הלב אל הריאות. הוא שונה מיתר לחץ דם מערכתי, הנמדד בדרך כלל באמצעות שרוול סביב הזרוע ומשקף את הלחץ בעורקי הגוף. התסמינים המוקדמים — בעיקר קוצר נשימה במאמץ, עייפות וירידה הדרגתית בכושר — אינם ייחודיים למחלה, ולכן האבחון מחייב בירור רפואי מסודר ולא מדידת לחץ דם רגילה בלבד.\n\n## מהו יתר לחץ דם ריאתי, ומה בעצם עולה בו?\n\nמחזור הדם הריאתי מוביל דם מהחדר הימני של הלב אל הריאות, שבהן הדם קולט חמצן ופולט פחמן דו־חמצני. לאחר מכן חוזר הדם המחומצן אל הצד השמאלי של הלב ומוזרם אל איברי הגוף. כאשר הלחץ בכלי הדם הריאתיים עולה, החדר הימני נדרש להשקיע כוח רב יותר כדי להזרים דם דרך הריאות. עומס ממושך עלול לגרום בהדרגה להתרחבות החדר הימני, לירידה בתפקודו ולתסמינים של אי־ספיקת לב ימנית.\n\nלפי [הנחיות ESC/ERS לאבחון ולטיפול ביתר לחץ דם ריאתי](https://doi.org/10.1183/13993003.00879-2022), ההגדרה ההמודינמית מבוססת על לחץ ממוצע בעורק הריאה הגבוה מ־20 מ\"מ כספית במנוחה, כפי שהוא נמדד בצנתור לב ימני. עם זאת, עצם קיומו של לחץ מוגבר אינו מסביר מה גרם לו. לצורך סיווג מדויק בוחנים מדדים נוספים, ובהם התנגודת של כלי הדם הריאתיים והלחץ המשקף את המתרחש בצדו השמאלי של הלב.\n\nחשוב להבחין בין שני מונחים דומים. **יתר לחץ דם ריאתי** הוא שם כולל למצבים שבהם הלחץ במחזור הדם הריאתי מוגבר. **יתר לחץ דם עורקי ריאתי**, המכונה PAH, הוא תת־קבוצה מסוימת שבה קיימים שינויים אופייניים בעורקים הריאתיים הקטנים ועלייה בתנגודת לזרימת הדם. לכן לא כל אדם עם יתר לחץ דם ריאתי סובל מ־PAH, ולא כל טיפול המיועד ל־PAH מתאים לשאר סוגי המחלה.\n\nהסיבות האפשריות כוללות מחלות של הצד השמאלי של הלב, מחלות ריאה ומחסור כרוני בחמצן, חסימה כרונית של עורקי הריאה בעקבות קרישי דם, מחלות מערכתיות מסוימות ומצבים מורכבים שבהם פועלים כמה מנגנונים במקביל. הסיווג אינו טכני בלבד: הוא קובע אילו בדיקות נדרשות ואיזה טיפול עשוי להתאים.\n\n## מהם התסמינים המוקדמים שכדאי להכיר?\n\nבשלבים מוקדמים, התסמין הבולט ביותר הוא לעיתים קרובות קוצר נשימה בזמן מאמץ. בתחילה הוא עשוי להופיע רק בעלייה במדרגות, בהליכה מהירה, בנשיאת משקל או בפעילות ספורטיבית. מאחר שהתסמין מתפתח לעיתים בהדרגה, אדם עשוי להפחית את רמת הפעילות מבלי לשים לב שהיכולת הגופנית שלו השתנתה.\n\nעל פי [המידע של המכון הלאומי ללב, ריאות ודם בארצות הברית על תסמיני יתר לחץ דם ריאתי](https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms), המחלה עשויה להתבטא בקוצר נשימה, עייפות, חולשה, כאב בחזה, סחרחורת עד כדי עילפון ונפיחות בבטן, ברגליים או בכפות הרגליים.\n\nתסמינים מוקדמים אפשריים כוללים:\n\n- קוצר נשימה המופיע בעיקר בזמן פעילות;\n- ירידה בלתי מוסברת בסיבולת למאמץ;\n- צורך לעצור לעיתים קרובות יותר בהליכה;\n- עייפות שאינה תואמת את רמת הפעילות;\n- חולשה כללית או תחושת כבדות;\n- דופק מהיר או תחושת פעימות לב;\n- אי־נוחות, לחץ או כאב בחזה;\n- סחרחורת, במיוחד בזמן מאמץ.\n\nבשלבים מתקדמים יותר עלולים להופיע קוצר נשימה גם בפעילות קלה או במנוחה, אירועי עילפון, בצקות ברגליים, תפיחות בטנית ולעיתים שינוי בגוון השפתיים או העור עקב ירידה ברמת החמצן. הצטברות נוזלים עלולה להצביע על קושי של החדר הימני להתמודד עם העומס, אך אינה ייחודית ליתר לחץ דם ריאתי.\n\nהאתגר הוא שתסמינים אלה שכיחים גם במחלות ובמצבים אחרים, ובהם אסתמה, מחלת ריאות חסימתית כרונית, אנמיה, אי־ספיקת לב, הפרעות בקצב הלב, הפרעות בתפקוד בלוטת התריס, זיהומים, ירידה בכושר וחרדה. לכן אי אפשר לאבחן יתר לחץ דם ריאתי על סמך תסמינים בלבד.\n\nהחשד עשוי להתחזק כאשר קיימת החמרה עקבית לאורך זמן, כאשר קוצר הנשימה אינו מוסבר היטב בבירור הראשוני, או כאשר קיימים גורמי סיכון כגון מחלת לב או ריאה, קרישי דם קודמים, מחלת רקמת חיבור או סיפור משפחתי מתאים. גם במצבים אלה נדרשת בדיקה רפואית כדי לברר אם מדובר ביתר לחץ דם ריאתי או בגורם אחר.\n\n## יתר לחץ דם ריאתי לעומת יתר לחץ דם מערכתי\n\nלמרות הדמיון בשם, אלה שני מצבים שונים מבחינת מיקום הלחץ, דרך המדידה וההשפעה על הלב. יתר לחץ דם מערכתי מתייחס ללחץ בעורקים המובילים דם מהלב אל איברי הגוף. לפי [הסבר המכון הלאומי ללב, ריאות ודם על יתר לחץ דם מערכתי](https://www.nhlbi.nih.gov/health/high-blood-pressure), לחץ זה מתואר באמצעות ערך סיסטולי, הנמדד בזמן התכווצות הלב, וערך דיאסטולי, הנמדד בין פעימות הלב.\n\n| מאפיין | יתר לחץ דם ריאתי | יתר לחץ דם מערכתי |\n|---|---|---|\n| כלי הדם המעורבים | כלי הדם שבין הצד הימני של הלב לריאות | עורקי מחזור הדם הכללי |\n| החלק בלב הנושא בעיקר העומס | החדר הימני | בעיקר החדר השמאלי |\n| אופן ההערכה | אקו לב ובדיקות נוספות; לעיתים נדרש צנתור לב ימני | מדידת לחץ דם בזרוע, לעיתים במדידות חוזרות או בניטור |\n| תסמינים מוקדמים אופייניים | קוצר נשימה במאמץ, עייפות וירידה בכושר | לעיתים קרובות אין תסמינים |\n| משמעות מדידה תקינה בזרוע | אינה שוללת לחץ ריאתי מוגבר | רלוונטית להערכת לחץ הדם המערכתי |\n\nאדם יכול לסבול מאחד המצבים או משניהם במקביל. נוסף על כך, יתר לחץ דם מערכתי ממושך עלול לתרום לפגיעה בצד השמאלי של הלב. במצב כזה, עליית הלחץ בצד השמאלי עשויה לעבור לאחור אל כלי הדם בריאות ולגרום ליתר לחץ דם ריאתי משני למחלת לב שמאלית.\n\nאין להסיק ממדידת לחץ דם גבוהה בזרוע שגם הלחץ בעורקי הריאה גבוה. באותה מידה, מדידה תקינה בזרוע אינה שוללת יתר לחץ דם ריאתי. מדובר במערכות כלי דם שונות ובשיטות מדידה שונות.\n\nגם הטיפול אינו זהה. תרופות המשמשות להפחתת לחץ דם מערכתי אינן בהכרח מטפלות ביתר לחץ דם ריאתי. מנגד, תרופות ייעודיות לתת־סוגים מסוימים של יתר לחץ דם ריאתי אינן מתאימות לכל אדם שנמצא אצלו לחץ ריאתי מוגבר. בחירת טיפול ללא בירור הסיבה עלולה להיות בלתי יעילה ואף להזיק.\n\n## כיצד מתבצע תהליך האבחון?\n\nהאבחון הוא תהליך מדורג הכולל העלאת חשד, הערכה לא פולשנית, בירור הסיבה ואישור הממצאים כאשר הדבר נדרש. [הנחיות ESC/ERS לאבחון ולטיפול ביתר לחץ דם ריאתי](https://doi.org/10.1183/13993003.00879-2022) מתארות גישה המבוססת על זיהוי קליני, הערכת ההסתברות באמצעות אקו לב ואישור המודינמי בצנתור לב ימני במקרים המתאימים.\n\nהשלב הראשון כולל תשאול רפואי ובדיקה גופנית. נבדקים אופי קוצר הנשימה, מועד תחילתו, קצב ההחמרה, כאבים בחזה, דפיקות לב, אירועי סחרחורת או עילפון והופעת בצקות. נאסף מידע על מחלות לב וריאה, קרישי דם קודמים, מחלות רקמת חיבור, מחלות כבד, תרופות והיסטוריה משפחתית.\n\nבבדיקה הגופנית ניתן להעריך את קצב הלב, ריווי החמצן, קולות הלב והריאות, ורידי הצוואר, הכבד והימצאות בצקות. ממצא יחיד אינו מספיק לאבחנה, ולעיתים הבדיקה הגופנית אינה מגלה שינוי בולט בשלבים המוקדמים.\n\nהבירור עשוי לכלול:\n\n1. **בדיקות דם** — עשויות לסייע באיתור אנמיה, הפרעות בתפקודי כבד או בלוטת התריס ומחלות נלוות. סמנים כגון BNP או NT-proBNP עשויים לשקף עומס על הלב, אך אינם מאבחנים לבדם יתר לחץ דם ריאתי.\n2. **אק\"ג** — עשוי להראות סימנים לעומס על החלק הימני של הלב או הפרעת קצב. אק\"ג תקין אינו שולל את המחלה.\n3. **צילום חזה** — עשוי להדגים שינויים בגודל הלב או בכלי הדם ולסייע בזיהוי מחלת ריאה.\n4. **בדיקות תפקודי ריאה** — מעריכות את זרימת האוויר, נפחי הריאה ויכולת חילוף הגזים.\n5. **אקו לב** — מספק מידע על מבנה הלב, תפקוד החדר הימני, המסתמים וסימנים עקיפים ללחץ ריאתי מוגבר. הוא כלי מרכזי להערכת ההסתברות למחלה, אך אינו מחליף תמיד מדידה ישירה.\n6. **הדמיית CT** — עשויה לסייע בבדיקת רקמת הריאה, עורקי הריאה ומבנים נוספים בבית החזה.\n7. **מיפוי אוורור־זילוח** — משמש במיוחד לבירור חשד לחסימה כרונית של עורקי הריאה בעקבות תסחיפים.\n8. **מבחן הליכה או בדיקת מאמץ לב־ריאה** — מספקים מידע על היכולת התפקודית ועל תגובת מערכות הלב והריאות למאמץ.\n\nעל פי [המידע של המכון הלאומי ללב, ריאות ודם על אבחון יתר לחץ דם ריאתי](https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis), צנתור לב ימני מאפשר למדוד ישירות את הלחצים בצד הימני של הלב ובעורקי הריאה. במהלך הבדיקה מוחדר צנתר דק דרך וריד ומקודם אל הלב הימני ואל מחזור הדם הריאתי.\n\nהמדידות בצנתור מסייעות לאשר את האבחנה ולהבחין בין לחץ שמקורו בעיקר בכלי הדם הריאתיים לבין לחץ הקשור למחלה בצד השמאלי של הלב. הבחנה זו חיונית משום שמצבים הנראים דומים באקו לב עשויים לדרוש טיפול שונה לחלוטין.\n\n## אילו סימנים מחייבים הערכה דחופה?\n\nקוצר נשימה קל והדרגתי אינו בהכרח מצב חירום, אך החמרה חדה או תסמינים המעידים על ירידה באספקת הדם והחמצן מחייבים הערכה רפואית דחופה. [דף התסמינים של המכון הלאומי ללב, ריאות ודם](https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms) מציין כי שילוב של כאב בחזה וקוצר נשימה עשוי להיות קשור גם להתקף לב או לתסחיף ריאתי ודורש טיפול חירום.\n\nסימני אזהרה כוללים:\n\n- קוצר נשימה פתאומי או החמרה מהירה בנשימה;\n- כאב חזה חדש, חזק או ממושך;\n- עילפון או כמעט־עילפון;\n- בלבול או ירידה במצב ההכרה;\n- גוון כחלחל בשפתיים או בעור;\n- ירידה ניכרת בריווי החמצן;\n- דופק מהיר מאוד או בלתי סדיר המלווה בחולשה;\n- החמרה מהירה בבצקות או בתפיחות הבטן.\n\nתסמינים אלה אינם מוכיחים שמדובר ביתר לחץ דם ריאתי. הם עלולים להופיע גם בתסחיף ריאתי חריף, התקף לב, הפרעת קצב, זיהום קשה או מחלה דחופה אחרת. משום כך אין לנסות לקבוע את הסיבה באופן עצמאי או להמתין לשיפור כאשר התסמינים משמעותיים.\n\n## סיכום\n\nיתר לחץ דם ריאתי הוא קבוצה של מצבים המתאפיינים בלחץ מוגבר במחזור הדם שבין הלב לריאות. הוא אינו זהה ליתר לחץ דם מערכתי ואינו מתגלה באמצעות מדידת לחץ דם רגילה בזרוע. קוצר נשימה במאמץ, עייפות וירידה בכושר הם סימנים מוקדמים אפשריים, אך מאחר שאינם ייחודיים למחלה, יש לפרש אותם כחלק מהתמונה הרפואית המלאה.\n\nהבירור מתקדם מהיסטוריה רפואית ובדיקה גופנית אל בדיקות דם, אק\"ג, תפקודי ריאה והדמיה. אקו לב משמש להערכת ההסתברות ליתר לחץ דם ריאתי, ואילו צנתור לב ימני מאפשר במקרים המתאימים למדוד את הלחצים ישירות ולסווג את ההפרעה. כפי שמודגש ב[הנחיות המקצועיות לאבחון ולטיפול ביתר לחץ דם ריאתי](https://doi.org/10.1183/13993003.00879-2022), זיהוי המנגנון והסיבה חשוב לא פחות מזיהוי עצם העלייה בלחץ, משום שהטיפול משתנה בין הקבוצות השונות.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון עצמי ואינו מחליף הערכה רפואית. כל טענה רפואית בטיוטה מחייבת ביקורת אנושית של רופא או רופאה מוסמכים לפני הפרסום.\n\n## מקורות\n\n1. [הנחיות ESC/ERS לאבחון ולטיפול ביתר לחץ דם ריאתי — DOI ישיר](https://doi.org/10.1183/13993003.00879-2022)\n2. [המכון הלאומי ללב, ריאות ודם — תסמיני יתר לחץ דם ריאתי](https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms)\n3. [המכון הלאומי ללב, ריאות ודם — אבחון יתר לחץ דם ריאתי](https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis)\n4. [המכון הלאומי ללב, ריאות ודם — יתר לחץ דם מערכתי](https://www.nhlbi.nih.gov/health/high-blood-pressure)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/יתר-לחץ-דם-ריאתי-תסמינים-מוקדמים/",
+        "meta_description": "ד״ר גיא רופא: יתר לחץ דם ריאתי הוא לחץ מוגבר בכלי הדם המובילים דם מן הלב אל הריאות.",
+        "search_target": {
+          "primary_query": "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי",
+          "secondary_queries": [
+            "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי ד״ר גיא רופא",
+            "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/יתר-לחץ-דם-ריאתי-תסמינים-מוקדמים/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 12,
+            "observed_query": "Dr. Guy Rofe",
+            "observed_at": "2026-09-28T06:51:00.186409"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "b331949a8a936027530d964cda02e6c24b538b6fcc374674da86c99c42fee2e5",
+        "slug": "יתר-לחץ-דם-ריאתי-תסמינים-מוקדמים",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-hero.png",
+          "sha256": "bcd813776d2dd37c81dc44fd78b63339bf280bce048da7e7de339d0cbfcef464",
+          "alt_text": "תרשים אק״ג בן 12 לידים מודפס על נייר משבצות אדום, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "תרשים אק״ג בן 12 לידים מודפס על נייר משבצות אדום.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:E0007081_(CardioNetworks_ECGpedia).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/E0007081_%28CardioNetworks_ECGpedia%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Michael Rosengarten BEng, MD.McGill",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "E0007081 (CardioNetworks ECGpedia).jpg — Michael Rosengarten BEng, MD.McGill; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-hero.png",
+              "sha256": "bcd813776d2dd37c81dc44fd78b63339bf280bce048da7e7de339d0cbfcef464",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-landscape.png",
+              "sha256": "7429c9c3c23c535e8df1ef38d466499e5100246aa47f79991625b3220888cd13",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-square.jpg",
+              "sha256": "784e92dcf5acece9b1c65d4bfd57c1de6ecdda2f54f29710d433b8a757abd147",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-29-topic-80-run-36627192118-attempt-1-portrait.png",
+              "sha256": "4ce598d1c7d51501a52b956f97ad13ff51e55740f2f63a21d9fa299ae37da0dd",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 36,
+      "supported_claim_count": 36,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "פתיחה",
+          "claim": "התסמינים המוקדמים — בעיקר קוצר נשימה במאמץ, עייפות וירידה הדרגתית בכושר — אינם ייחודיים למחלה, ולכן האבחון מחייב בירור רפואי מסודר ולא מדידת לחץ דם רגילה בלבד.",
+          "source_urls": [
+            "https://guyrofe.com/profile/"
+          ]
+        },
+        {
+          "section": "מהו יתר לחץ דם ריאתי, ומה בעצם עולה בו?",
+          "claim": "עומס ממושך עלול לגרום בהדרגה להתרחבות החדר הימני, לירידה בתפקודו ולתסמינים של אי־ספיקת לב ימנית.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022"
+          ]
+        },
+        {
+          "section": "מהו יתר לחץ דם ריאתי, ומה בעצם עולה בו?",
+          "claim": "לפי הנחיות ESC/ERS לאבחון ולטיפול ביתר לחץ דם ריאתי, ההגדרה ההמודינמית מבוססת על לחץ ממוצע בעורק הריאה הגבוה מ־20 מ\"מ כספית במנוחה, כפי שהוא נמדד בצנתור לב ימני.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022"
+          ]
+        },
+        {
+          "section": "מהו יתר לחץ דם ריאתי, ומה בעצם עולה בו?",
+          "claim": "לכן לא כל אדם עם יתר לחץ דם ריאתי סובל מ־PAH, ולא כל טיפול המיועד ל־PAH מתאים לשאר סוגי המחלה.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022"
+          ]
+        },
+        {
+          "section": "מהו יתר לחץ דם ריאתי, ומה בעצם עולה בו?",
+          "claim": "הסיווג אינו טכני בלבד: הוא קובע אילו בדיקות נדרשות ואיזה טיפול עשוי להתאים.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022"
+          ]
+        },
+        {
+          "section": "מהם התסמינים המוקדמים שכדאי להכיר?",
+          "claim": "בשלבים מוקדמים, התסמין הבולט ביותר הוא לעיתים קרובות קוצר נשימה בזמן מאמץ.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "מהם התסמינים המוקדמים שכדאי להכיר?",
+          "claim": "בתחילה הוא עשוי להופיע רק בעלייה במדרגות, בהליכה מהירה, בנשיאת משקל או בפעילות ספורטיבית.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "מהם התסמינים המוקדמים שכדאי להכיר?",
+          "claim": "מאחר שהתסמין מתפתח לעיתים בהדרגה, אדם עשוי להפחית את רמת הפעילות מבלי לשים לב שהיכולת הגופנית שלו השתנתה.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "מהם התסמינים המוקדמים שכדאי להכיר?",
+          "claim": "על פי המידע של המכון הלאומי ללב, ריאות ודם בארצות הברית על תסמיני יתר לחץ דם ריאתי, המחלה עשויה להתבטא בקוצר נשימה, עייפות, חולשה, כאב בחזה, סחרחורת עד כדי עילפון ונפיחות בבטן, ברגליים או בכפות הרגליים.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "מהם התסמינים המוקדמים שכדאי להכיר?",
+          "claim": "בשלבים מתקדמים יותר עלולים להופיע קוצר נשימה גם בפעילות קלה או במנוחה, אירועי עילפון, בצקות ברגליים, תפיחות בטנית ולעיתים שינוי בגוון השפתיים או העור עקב ירידה ברמת החמצן.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "מהם התסמינים המוקדמים שכדאי להכיר?",
+          "claim": "הצטברות נוזלים עלולה להצביע על קושי של החדר הימני להתמודד עם העומס, אך אינה ייחודית ליתר לחץ דם ריאתי.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "מהם התסמינים המוקדמים שכדאי להכיר?",
+          "claim": "החשד עשוי להתחזק כאשר קיימת החמרה עקבית לאורך זמן, כאשר קוצר הנשימה אינו מוסבר היטב בבירור הראשוני, או כאשר קיימים גורמי סיכון כגון מחלת לב או ריאה, קרישי דם קודמים, מחלת רקמת חיבור או סיפור משפחתי מתאים.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "מהם התסמינים המוקדמים שכדאי להכיר?",
+          "claim": "גם במצבים אלה נדרשת בדיקה רפואית כדי לברר אם מדובר ביתר לחץ דם ריאתי או בגורם אחר.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "יתר לחץ דם ריאתי לעומת יתר לחץ דם מערכתי",
+          "claim": "נוסף על כך, יתר לחץ דם מערכתי ממושך עלול לתרום לפגיעה בצד השמאלי של הלב.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/high-blood-pressure"
+          ]
+        },
+        {
+          "section": "יתר לחץ דם ריאתי לעומת יתר לחץ דם מערכתי",
+          "claim": "במצב כזה, עליית הלחץ בצד השמאלי עשויה לעבור לאחור אל כלי הדם בריאות ולגרום ליתר לחץ דם ריאתי משני למחלת לב שמאלית.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/high-blood-pressure"
+          ]
+        },
+        {
+          "section": "יתר לחץ דם ריאתי לעומת יתר לחץ דם מערכתי",
+          "claim": "גם הטיפול אינו זהה.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/high-blood-pressure"
+          ]
+        },
+        {
+          "section": "יתר לחץ דם ריאתי לעומת יתר לחץ דם מערכתי",
+          "claim": "בחירת טיפול ללא בירור הסיבה עלולה להיות בלתי יעילה ואף להזיק.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/high-blood-pressure"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "האבחון הוא תהליך מדורג הכולל העלאת חשד, הערכה לא פולשנית, בירור הסיבה ואישור הממצאים כאשר הדבר נדרש.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "הנחיות ESC/ERS לאבחון ולטיפול ביתר לחץ דם ריאתי מתארות גישה המבוססת על זיהוי קליני, הערכת ההסתברות באמצעות אקו לב ואישור המודינמי בצנתור לב ימני במקרים המתאימים.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "השלב הראשון כולל תשאול רפואי ובדיקה גופנית.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "בבדיקה הגופנית ניתן להעריך את קצב הלב, ריווי החמצן, קולות הלב והריאות, ורידי הצוואר, הכבד והימצאות בצקות.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "ממצא יחיד אינו מספיק לאבחנה, ולעיתים הבדיקה הגופנית אינה מגלה שינוי בולט בשלבים המוקדמים.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "הבירור עשוי לכלול:",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "**בדיקות דם** — עשויות לסייע באיתור אנמיה, הפרעות בתפקודי כבד או בלוטת התריס ומחלות נלוות.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "סמנים כגון BNP או NT-proBNP עשויים לשקף עומס על הלב, אך אינם מאבחנים לבדם יתר לחץ דם ריאתי.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "**אק\"ג** — עשוי להראות סימנים לעומס על החלק הימני של הלב או הפרעת קצב.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "**צילום חזה** — עשוי להדגים שינויים בגודל הלב או בכלי הדם ולסייע בזיהוי מחלת ריאה.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "**הדמיית CT** — עשויה לסייע בבדיקת רקמת הריאה, עורקי הריאה ומבנים נוספים בבית החזה.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "על פי המידע של המכון הלאומי ללב, ריאות ודם על אבחון יתר לחץ דם ריאתי, צנתור לב ימני מאפשר למדוד ישירות את הלחצים בצד הימני של הלב ובעורקי הריאה.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "במהלך הבדיקה מוחדר צנתר דק דרך וריד ומקודם אל הלב הימני ואל מחזור הדם הריאתי.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע תהליך האבחון?",
+          "claim": "הבחנה זו חיונית משום שמצבים הנראים דומים באקו לב עשויים לדרוש טיפול שונה לחלוטין.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022",
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis"
+          ]
+        },
+        {
+          "section": "אילו סימנים מחייבים הערכה דחופה?",
+          "claim": "דף התסמינים של המכון הלאומי ללב, ריאות ודם מציין כי שילוב של כאב בחזה וקוצר נשימה עשוי להיות קשור גם להתקף לב או לתסחיף ריאתי ודורש טיפול חירום.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "אילו סימנים מחייבים הערכה דחופה?",
+          "claim": "הם עלולים להופיע גם בתסחיף ריאתי חריף, התקף לב, הפרעת קצב, זיהום קשה או מחלה דחופה אחרת.",
+          "source_urls": [
+            "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "הבירור מתקדם מהיסטוריה רפואית ובדיקה גופנית אל בדיקות דם, אק\"ג, תפקודי ריאה והדמיה.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "כפי שמודגש בהנחיות המקצועיות לאבחון ולטיפול ביתר לחץ דם ריאתי, זיהוי המנגנון והסיבה חשוב לא פחות מזיהוי עצם העלייה בלחץ, משום שהטיפול משתנה בין הקבוצות השונות.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון עצמי ואינו מחליף הערכה רפואית.",
+          "source_urls": [
+            "https://doi.org/10.1183/13993003.00879-2022"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://guyrofe.com/profile/",
+          "host": "guyrofe.com",
+          "year_markers": []
+        },
+        {
+          "url": "https://doi.org/10.1183/13993003.00879-2022",
+          "host": "doi.org",
+          "year_markers": [
+            "2022"
+          ]
+        },
+        {
+          "url": "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/symptoms",
+          "host": "nhlbi.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nhlbi.nih.gov/health/high-blood-pressure",
+          "host": "nhlbi.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis",
+          "host": "nhlbi.nih.gov",
+          "year_markers": [
+            "2022"
+          ]
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "b331949a8a936027530d964cda02e6c24b538b6fcc374674da86c99c42fee2e5",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/יתר-לחץ-דם-ריאתי-תסמינים-מוקדמים/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 12,
+        "observed_query": "Dr. Guy Rofe",
+        "observed_at": "2026-09-28T06:51:00.186409"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_6f4d01ec2b005554436a88dc9618be52666c36f7b69303682319bf91e769476e"
+}

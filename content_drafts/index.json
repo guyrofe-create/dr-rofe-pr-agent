@@ -1,6 +1,21 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-29-topic-80-run-36627192118-attempt-1.md",
+      "title": "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי | ד״ר גיא רופא",
+      "topic": "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי",
+      "excerpt": "יתר לחץ דם ריאתי: תסמינים מוקדמים, תהליך האבחון וההבדל מיתר לחץ דם מערכתי | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) יתר לחץ דם ריאתי הוא לחץ מוגבר בכלי הדם המובילים דם מן הלב אל הריאות. הוא שונה מיתר לחץ דם מערכתי, הנמ",
+      "generated_at": "2026-09-29T20:34:06.327177+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-09-27",
+      "cadence_local_date": "2026-09-29",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
       "title": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא",
       "topic": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים",
@@ -484,21 +499,6 @@
       "cadence_week": "week-of-2026-08-23",
       "cadence_local_date": "2026-08-26",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: \"שלא תצטרכו ניתוח מוח — אף אחד לא רוצה להיות נוירוכירורג בישראל\" | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: שלא תצטרכו ניתוח מוח: אף אחד לא רוצה להיות נוירוכירורג בישראל",
-      "excerpt": "מה עומד מאחורי הכותרת: \"שלא תצטרכו ניתוח מוח — אף אחד לא רוצה להיות נוירוכירורג בישראל\" | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא — הפרופיל הרשמי](https://guyrofe.com) התשובה הקצרה: הכותרת מצביעה על ",
-      "generated_at": "2026-08-26T06:46:54.595853+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-08-23",
-      "cadence_local_date": "2026-08-26",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-732929e4ee53f5f6.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/rjyzvwjpge"
     }
   ]
 }
