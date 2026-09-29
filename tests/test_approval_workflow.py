@@ -88,6 +88,26 @@ class ApprovalWorkflowTests(unittest.TestCase):
                 signing_secret=SECRET,
             )
 
+    def test_unresolved_medical_claims_block_exact_approval(self):
+        bundle = sample_bundle()
+        bundle["compliance"].update({
+            "medical_review_required": True,
+            "medical_evidence_audit": {
+                "ready_for_medical_approval": False,
+                "unsupported_claims": ["claim"],
+            },
+        })
+        bundle["approval_id"] = __import__(
+            "scripts.reputation_core.approval_workflow", fromlist=["approval_id"]
+        ).approval_id(bundle)
+        with self.assertRaisesRegex(PermissionError, "claim-to-source"):
+            approve_bundle(
+                bundle,
+                approved_by="owner",
+                approved_scopes=["public_publication", "medical_content"],
+                signing_secret=SECRET,
+            )
+
     def test_tampered_signature_is_rejected(self):
         bundle = sample_bundle()
         record = approve_bundle(

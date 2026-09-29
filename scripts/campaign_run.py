@@ -34,7 +34,7 @@ from reputation_core.approval_workflow import (
     verify_approval,
 )
 from reputation_core.entity_seo import (
-    build_article_schema,
+    build_article_graph,
     extract_citation_urls,
     json_ld_script,
 )
@@ -688,7 +688,7 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         ),
                         idempotency_key=payload["slug"],
                         meta_description=seo_description,
-                        article_schema_factory=lambda article_url: build_article_schema(
+                        article_schema_factory=lambda article_url: build_article_graph(
                             business,
                             headline=payload.get("cms_title")
                             or unbranded_title(payload["title"]),

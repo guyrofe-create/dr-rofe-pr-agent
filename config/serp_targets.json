@@ -48,7 +48,7 @@
       "web_mentions_enabled": false,
       "google_reviews_enabled": false,
       "facebook_recommendations_enabled": false,
-      "backlink_monitoring_enabled": false,
+      "backlink_monitoring_enabled": true,
       "reserve_for_manual_checks": 30
     },
     "ai_surfaces": [
@@ -105,6 +105,24 @@
       "language",
       "device_or_model"
     ]
+  },
+  "technical_visibility": {
+    "url_inspection_enabled": true,
+    "sitemap_membership_required": true,
+    "structured_data_audit_enabled": true,
+    "core_web_vitals_read_only": true,
+    "indexnow": {
+      "enabled_when_verified_key_present": true,
+      "google_indexing_api_for_articles_forbidden": true
+    },
+    "publication_measurement_windows_days": [7, 28, 42],
+    "change_tactic_after_days_without_improvement": 42,
+    "homepage_public_write_prohibited": true
+  },
+  "mention_monitoring": {
+    "provider_or_export_enabled": true,
+    "serpapi_discovery_disabled_to_preserve_rank_budget": true,
+    "read_only": true
   },
   "queries": [
     {"query": "ד״ר גיא רופא", "kind": "exact_brand", "priority": 100, "cadence": "daily_core"},

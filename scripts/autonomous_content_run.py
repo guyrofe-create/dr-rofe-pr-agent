@@ -43,6 +43,14 @@ DEFAULT_STATE = ROOT / "data" / "content_cadence_state.json"
 DEFAULT_NEWS_BRIEFS = ROOT / "opportunity_drafts"
 DEFAULT_MEDIA_BRIEFS = ROOT / "opportunity_drafts" / "media"
 DEFAULT_APPROVAL_INDEX = ROOT / "approval_bundles" / "index.json"
+DEFAULT_ASSET_REGISTRY = ROOT / "data" / "asset_registry.json"
+
+SITE_HOSTS = {
+    "GUYROFE_COM": "guyrofe.com",
+    "DRGUYROFE_CO_IL": "drguyrofe.co.il",
+    "DRGUYROFE_COM": "drguyrofe.com",
+    "GUYROFE_WIX_MEDIA_ARCHIVE": "guyrofe.wixsite.com",
+}
 
 
 def _load_json(path: Path, default: dict) -> dict:
@@ -50,6 +58,23 @@ def _load_json(path: Path, default: dict) -> dict:
         return json.loads(path.read_text(encoding="utf-8"))
     except FileNotFoundError:
         return default
+
+
+def stalled_asset_for_site(site_key: str, registry_path: Path = DEFAULT_ASSET_REGISTRY) -> dict | None:
+    """Hold routine volume after 42 days and two measured no-improvement cycles."""
+    host = SITE_HOSTS.get(site_key)
+    if not host:
+        return None
+    registry = _load_json(registry_path, {"assets": []})
+    for asset in registry.get("assets", []):
+        if host not in str(asset.get("url") or ""):
+            continue
+        if (
+            int(asset.get("no_improvement_days") or 0) >= 42
+            and int(asset.get("consecutive_no_improvement_measurements") or 0) >= 2
+        ):
+            return asset
+    return None
 
 
 def unused_news_brief(
@@ -411,6 +436,16 @@ def run(
         if event_job and unused_media_brief(media_brief_dir, state):
             planned_jobs.append(event_job)
     for job in planned_jobs:
+        stalled = stalled_asset_for_site(job["site_key"])
+        if stalled and not force_stream:
+            manifest["skipped"].append({
+                **job,
+                "reason": "asset_tactic_change_required_after_42_days",
+                "asset_url": stalled.get("url"),
+                "no_improvement_days": stalled.get("no_improvement_days"),
+                "public_execution_allowed": False,
+            })
+            continue
         try:
             result = generate_job(
                 job,

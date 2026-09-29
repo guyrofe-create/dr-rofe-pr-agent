@@ -140,6 +140,19 @@ def validate_bundle(bundle: dict, *, require_execution_ready: bool = False) -> N
             "The approval bundle is waiting for an approved image and cannot "
             "be approved or published yet"
         )
+    medical_audit = bundle.get("compliance", {}).get("medical_evidence_audit")
+    if (
+        require_execution_ready
+        and bundle.get("compliance", {}).get("medical_review_required")
+        and (
+            not isinstance(medical_audit, dict)
+            or not medical_audit.get("ready_for_medical_approval")
+        )
+    ):
+        raise PermissionError(
+            "Medical claim-to-source audit has unresolved claims; repair the "
+            "draft and create a new exact approval bundle"
+        )
 
 
 def _approval_claim(record: dict) -> dict:
@@ -149,6 +162,7 @@ def _approval_claim(record: dict) -> dict:
         "approved_at": record["approved_at"],
         "approved_scopes": sorted(record["approved_scopes"]),
         "decision": record["decision"],
+        "medical_review": record.get("medical_review"),
     }
 
 
@@ -181,6 +195,20 @@ def approve_bundle(
         "approved_at": approved_at or utc_now(),
         "approved_scopes": sorted(supplied),
     }
+    if "medical_content" in supplied:
+        record["medical_review"] = {
+            "reviewed_by": approved_by.strip(),
+            "reviewed_at": record["approved_at"],
+            "claim_source_audit_sha256": sha256(
+                bundle.get("compliance", {}).get("medical_evidence_audit", {})
+            ),
+            "attestations": [
+                "material claims are supported by the cited source in context",
+                "source currency and guideline version were reviewed",
+                "material source conflicts and evidence limitations were reviewed",
+                "the exact approved content remains general public information",
+            ],
+        }
     record["signature"] = hmac.new(
         signing_secret.encode("utf-8"),
         canonical_json(_approval_claim(record)).encode("utf-8"),

@@ -14,6 +14,36 @@ STREAM_SITE = {
     "media_archive": "GUYROFE_WIX_MEDIA_ARCHIVE",
 }
 
+# A deterministic medical concept layer catches topic reuse that token overlap
+# cannot see (for example "דיסמנוריאה" versus "כאבי מחזור").  The list is
+# deliberately editorial rather than diagnostic: it is used only to compare
+# proposed subjects, never to infer a reader's condition.
+MEDICAL_CONCEPT_ALIASES = {
+    "menstrual_pain": {"כאבי מחזור", "כאבים בזמן הווסת", "דיסמנוריאה"},
+    "heavy_bleeding": {"דימום וסתי כבד", "דימום כבד במחזור", "מנורגיה"},
+    "endometriosis": {"אנדומטריוזיס", "רירית רחם מחוץ לרחם"},
+    "pcos": {"שחלות פוליציסטיות", "תסמונת השחלות הפוליציסטיות", "pcos"},
+    "menopause": {"גיל המעבר", "מנופאוזה", "חדלון הווסת"},
+    "pregnancy_screening": {"בדיקות בהריון", "סקר בהריון", "בדיקות טרום לידתיות"},
+    "nipt": {"nipt", "בדיקת דם עוברית", "דנא עוברי בדם האם"},
+    "amniocentesis": {"מי שפיר", "דיקור מי שפיר", "amniocentesis"},
+    "chorionic_villus": {"סיסי שליה", "בדיקת סיסי שליה", "cvs"},
+    "fertility": {"פוריות", "אי פוריות", "קושי להרות"},
+    "ivf": {"ivf", "הפריה חוץ גופית", "הפריית מבחנה"},
+    "gbs": {"gbs", "סטרפטוקוק מקבוצה b", "סטרפטוקוקוס בי"},
+    "breastfeeding": {"הנקה", "חלב אם", "הזנת תינוק בחלב אם"},
+}
+
+INTENT_ALIASES = {
+    "symptoms": {"תסמינים", "סימנים", "איך מרגיש", "מה מרגישים"},
+    "diagnosis": {"אבחון", "איך מאבחנים", "בדיקה", "בדיקות"},
+    "treatment": {"טיפול", "אפשרויות טיפול", "איך מטפלים"},
+    "risk": {"סיכון", "סיכונים", "גורמי סיכון"},
+    "timing": {"מתי", "באיזה שבוע", "תזמון"},
+    "interpretation": {"פענוח", "משמעות התוצאה", "מה אומרת התוצאה"},
+    "comparison": {"השוואה", "הבדל", "לעומת", "מה עדיף"},
+}
+
 
 def draft_metadata(path: str | Path) -> dict:
     """Read JSON-valued scheduling fields from the leading draft comment."""
@@ -94,7 +124,45 @@ def topic_is_duplicate(left: str, right: str) -> bool:
     smaller = min(len(left_tokens), len(right_tokens))
     if smaller < 2:
         return False
-    return len(left_tokens & right_tokens) / smaller >= 0.75
+    lexical_overlap = len(left_tokens & right_tokens) / smaller
+    if lexical_overlap >= 0.75:
+        return True
+    semantic = semantic_topic_analysis(left, right)
+    return semantic["duplicate"]
+
+
+def _matched_aliases(value: str, aliases: dict[str, set[str]]) -> set[str]:
+    normalized = normalized_topic(value)
+    return {
+        concept
+        for concept, variants in aliases.items()
+        if any(normalized_topic(variant) in normalized for variant in variants)
+    }
+
+
+def semantic_topic_analysis(left: str, right: str) -> dict:
+    """Explain semantic topic reuse using medical subject and reader intent."""
+    left_subjects = _matched_aliases(left, MEDICAL_CONCEPT_ALIASES)
+    right_subjects = _matched_aliases(right, MEDICAL_CONCEPT_ALIASES)
+    shared_subjects = sorted(left_subjects & right_subjects)
+    left_intents = _matched_aliases(left, INTENT_ALIASES)
+    right_intents = _matched_aliases(right, INTENT_ALIASES)
+    shared_intents = sorted(left_intents & right_intents)
+    # Same medical concept and same explicit reader question is a duplicate.
+    # When neither title states an intent, both are broad treatments of the
+    # same subject and are also blocked; a clearly different intent is allowed.
+    duplicate = bool(shared_subjects) and (
+        bool(shared_intents)
+        or (not left_intents and not right_intents)
+        or left_intents == right_intents
+    )
+    return {
+        "duplicate": duplicate,
+        "shared_medical_concepts": shared_subjects,
+        "shared_reader_intents": shared_intents,
+        "left_intents": sorted(left_intents),
+        "right_intents": sorted(right_intents),
+    }
 
 
 def content_fingerprint(value: str) -> str:
@@ -161,8 +229,10 @@ def assert_cross_domain_original(
         other_topic = str(item.get("topic") or other_metadata.get("topic") or "")
         other_title = article_title(other_content)
         if current_topic and other_topic and topic_is_duplicate(current_topic, other_topic):
+            semantic = semantic_topic_analysis(current_topic, other_topic)
             raise ValueError(
-                f"Editorial topic was already used by {other_path.name}: {other_topic}"
+                f"Editorial topic was already used by {other_path.name}: {other_topic}; "
+                f"semantic_evidence={json.dumps(semantic, ensure_ascii=False, sort_keys=True)}"
             )
         if current_title and other_title and topic_is_duplicate(current_title, other_title):
             raise ValueError(
