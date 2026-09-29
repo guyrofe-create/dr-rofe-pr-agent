@@ -1,6 +1,21 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
+      "title": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא",
+      "topic": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים",
+      "excerpt": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) בקצרה: תסמונת גייאן־בארה היא מחלה נוירולוגית נדירה שבה מערכת החיסון פוגעת בטעות בעצבים ההיקפיים. הסימנים המוקד",
+      "generated_at": "2026-09-29T19:33:53.605641+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-09-27",
+      "cadence_local_date": "2026-09-29",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-09-29-topic-82-run-36619147012-attempt-1.md",
       "title": "דלקת עורקים של תאי ענק: סימני האזהרה, האבחון והסיכון לפגיעה בראייה | ד״ר גיא רופא",
       "topic": "דלקת עורקים של תאי ענק: סימני האזהרה, האבחון והסיכון לפגיעה בראייה",
@@ -484,19 +499,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-732929e4ee53f5f6.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/rjyzvwjpge"
-    },
-    {
-      "path": "content_drafts/2026-08-25-topic-02-run-32818216514-attempt-1.md",
-      "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ומהן אפשרויות הבירור והטיפול? | ד״ר גיא רופא",
-      "topic": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
-      "excerpt": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ומהן אפשרויות הבירור והטיפול? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא](https://guyrofe.com) התשובה הקצרה: אנדומטריוזיס עלולה להקשות על השגת היריון, אך האבחנה א",
-      "generated_at": "2026-08-25T06:43:41.537422+00:00",
-      "content_stream": "evergreen_knowledge",
-      "destination_site_key": "DRGUYROFE_COM",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-08-23",
-      "cadence_local_date": "2026-08-25",
-      "public_execution_allowed": false
     }
   ]
 }
