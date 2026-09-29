@@ -1,6 +1,19 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-29-topic-01-run-36566535339-attempt-1.md",
+      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
+      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
+      "excerpt": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) לפרוסקופיה גינקולוגית היא הליך זעיר־פולשני המאפשר לבחון את איברי האגן ולעיתים גם לבצע טיפול ניתוחי, באמצעות מצלמה דקה ומכשירים המוחדרי",
+      "generated_at": "2026-09-29T12:12:24.270394+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-09-27",
+      "cadence_local_date": "2026-09-29",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-09-27-topic-05-run-36315829970-attempt-1.md",
       "title": "כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא",
       "topic": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
@@ -489,24 +502,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-37e93741b80f3285.json",
       "analyzed_news_url": "https://healthy.walla.co.il/item/3862686"
-    },
-    {
-      "path": "content_drafts/2026-08-23-topic-01-run-32623454483-attempt-1.md",
-      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
-      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
-      "excerpt": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מאת: [ד״ר גיא רופא](https://guyrofe.com) לפרוסקופיה גינקולוגית היא הליך ניתוחי זעיר־פולשני המאפשר לבדוק את איברי האגן ולעיתים גם לטפל ",
-      "generated_at": "2026-08-23T06:38:46.024764+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "pinterest",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-23",
-      "cadence_local_date": "2026-08-23",
-      "public_execution_allowed": false
     }
   ]
 }
