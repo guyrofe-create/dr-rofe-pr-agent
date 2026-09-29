@@ -179,7 +179,7 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         contracted = apply_article_contract(
             "# כותרת\n\n"
             "[מאת ד״ר גיא רופא](https://guyrofe.com)\n\n"
-            "תוכן עובדתי ללא אזכור בגוף.\n\n"
+            "ד״ר גיא רופא מסביר את הנושא בגוף הטיוטה.\n\n"
             "## מקורות\n\nhttps://www.who.int/a",
             profile,
         )
@@ -190,6 +190,8 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         self.assertNotIn("[מאת ד״ר גיא רופא]", contracted)
         self.assertEqual(contracted.count("ד״ר גיא רופא"), 3)
         self.assertNotIn("מאגר המידע של ד״ר גיא רופא", contracted)
+        self.assertIn("המחבר מסביר את הנושא בגוף הטיוטה.", contracted)
+        self.assertNotIn("ד״ר גיא רופא מסביר", contracted)
 
     def test_title_and_meta_description_use_name_once(self):
         profile = load_client_profile()

@@ -142,6 +142,16 @@ def apply_article_contract(markdown: str, profile: dict) -> str:
         text,
         flags=re.MULTILINE | re.DOTALL,
     ).strip()
+    # The entity belongs in structural SEO furniture only. Models occasionally
+    # repeat it despite the prompt, so normalize any editorial-body occurrence
+    # deterministically instead of relying on probabilistic retries.
+    normalized_lines = []
+    for line in text.splitlines():
+        if re.match(r"^#\s+\S", line) or _looks_like_byline(line, context):
+            normalized_lines.append(line)
+        else:
+            normalized_lines.append(_name_pattern(context).sub("המחבר", line))
+    text = "\n".join(normalized_lines).strip()
     # Keep the truthful current-status note as the final readable section,
     # after the article and its source links.
     text = text.rstrip() + "\n\n" + author_box(context)
