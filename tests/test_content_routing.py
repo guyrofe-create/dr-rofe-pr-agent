@@ -7,6 +7,7 @@ from scripts.reputation_core.content_routing import (
     assert_cross_domain_original,
     content_fingerprint,
     draft_metadata,
+    topic_is_duplicate,
     validate_stream_destination,
 )
 
@@ -70,7 +71,7 @@ class ContentRoutingTests(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
-            with self.assertRaisesRegex(ValueError, "Exact cross-domain duplicate"):
+            with self.assertRaisesRegex(ValueError, "already used|Exact duplicate"):
                 assert_cross_domain_original(
                     content=text,
                     site_key="DRGUYROFE_COM",
@@ -78,6 +79,40 @@ class ContentRoutingTests(unittest.TestCase):
                     draft_index_path=index,
                     project_root=root,
                 )
+
+    def test_same_domain_topic_reuse_is_rejected_even_with_new_copy(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            drafts = root / "content_drafts"
+            drafts.mkdir()
+            current = drafts / "current.md"
+            other = drafts / "other.md"
+            current.write_text(
+                '<!--\ntopic: "כאבים בזמן הווסת"\n-->'
+                "\n\n# כאבי מחזור: מדריך חדש\n\nטקסט חדש לחלוטין",
+                encoding="utf-8",
+            )
+            other.write_text(
+                '<!--\ntopic: "כאבים בזמן הווסת"\n-->'
+                "\n\n# שאלות על כאבי מחזור\n\nתוכן ישן ושונה",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "Editorial topic was already used"):
+                assert_cross_domain_original(
+                    content=current.read_text(encoding="utf-8"),
+                    site_key="GUYROFE_COM",
+                    draft_path=current,
+                    draft_index_path=drafts / "missing-index.json",
+                    project_root=root,
+                )
+
+    def test_topic_match_tolerates_light_rewording(self):
+        self.assertTrue(
+            topic_is_duplicate(
+                "כאבים חזקים בזמן הווסת",
+                "כאבים בזמן הווסת: מתי לפנות לבדיקה",
+            )
+        )
 
     def test_fingerprint_ignores_links_but_not_article_substance(self):
         left = "# כותרת\n\nמידע חשוב [במקור](https://example.com/a)"

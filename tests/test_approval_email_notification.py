@@ -8,10 +8,32 @@ from scripts.approval_email_notification import (
     build_digest_message,
     build_message,
     notify,
+    pending_notifications,
 )
 
 
 class ApprovalEmailNotificationTests(unittest.TestCase):
+    def test_invalidated_duplicate_is_not_offered_for_approval(self):
+        items = pending_notifications(
+            config={
+                "enabled": True,
+                "dashboard_url": "https://approval.example",
+                "send_only_when_image_ready": True,
+            },
+            index={
+                "bundles": [
+                    {
+                        "approval_id": "apr_duplicate",
+                        "status": "invalidated_duplicate_topic",
+                        "created_at": "2026-09-29T12:14:13Z",
+                        "image_status": "ready",
+                    }
+                ]
+            },
+            ledger={"notifications": {}},
+        )
+        self.assertEqual(items, [])
+
     def test_digest_combines_multiple_pending_decisions(self):
         items = [
             {

@@ -78,7 +78,7 @@ class AutonomousContentRunTests(unittest.TestCase):
             "public_execution_allowed": False,
         }
         with tempfile.TemporaryDirectory() as directory, patch.object(
-            autonomous_content_run, "selected_topic", return_value=(1, "נושא")
+            autonomous_content_run, "topic_for_generation", return_value=(1, "נושא")
         ), patch.object(
             autonomous_content_run,
             "generate_article",
@@ -110,7 +110,7 @@ class AutonomousContentRunTests(unittest.TestCase):
             "public_execution_allowed": False,
         }
         with tempfile.TemporaryDirectory() as directory, patch.object(
-            autonomous_content_run, "selected_topic", return_value=(2, "נושא")
+            autonomous_content_run, "topic_for_generation", return_value=(2, "נושא")
         ), patch.object(
             autonomous_content_run,
             "generate_article",

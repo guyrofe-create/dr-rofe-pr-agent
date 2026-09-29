@@ -67,6 +67,7 @@
   "quality_policy": {
     "skip_instead_of_forcing_weak_content": true,
     "duplicate_article_forbidden": true,
+    "topic_reuse_forbidden": true,
     "near_duplicate_cross_domain_threshold": 0.82,
     "destination_role_must_match_content_stream": true,
     "identical_cross_platform_copy_forbidden": true,

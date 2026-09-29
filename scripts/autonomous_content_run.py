@@ -12,7 +12,7 @@ try:
         content_is_frozen,
         generate_article,
         save_draft,
-        selected_topic,
+        topic_for_generation,
     )
     from scripts.reputation_core.content_cadence import (
         due_jobs,
@@ -24,7 +24,7 @@ except ModuleNotFoundError:
         content_is_frozen,
         generate_article,
         save_draft,
-        selected_topic,
+        topic_for_generation,
     )
     from reputation_core.content_cadence import (
         due_jobs,
@@ -219,7 +219,9 @@ def generate_job(
         "public_execution_allowed": False,
     }
     if job["stream"] == "canonical_depth":
-        topic_index, topic = selected_topic(now)
+        topic_index, topic = topic_for_generation(
+            now, stream=job["stream"]
+        )
         title, content = generate_article(topic)
     elif job["stream"] == "health_news":
         selected = unused_news_brief(
@@ -256,7 +258,9 @@ def generate_job(
         metadata["source_brief"] = brief["_relative_path"]
         metadata["analyzed_news_url"] = news_url
     elif job["stream"] == "evergreen_knowledge":
-        topic_index, topic = selected_topic(now)
+        topic_index, topic = topic_for_generation(
+            now, stream=job["stream"]
+        )
         context = (
             "\nכללים מיוחדים למרכז הידע drguyrofe.com:\n"
             "- כתוב מדריך רפואי ירוק-עד ומעמיק, לא תגובה לחדשות.\n"

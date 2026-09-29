@@ -7,6 +7,7 @@ explicitly approved workflow-dispatch operation.
 
 from datetime import datetime, timezone
 from pathlib import Path
+import hashlib
 import json
 import os
 import re
@@ -22,6 +23,7 @@ if str(SCRIPT_DIR) not in sys.path:
 try:
     from scripts.reputation_core.strategy import client_content_plan, load_client_profile
     from scripts.reputation_core.ai_usage import record_ai_usage
+    from scripts.reputation_core.content_routing import topic_is_duplicate
     from scripts.reputation_core.entity_contract import (
         apply_article_contract,
         audit_article_entity_contract,
@@ -34,6 +36,7 @@ try:
 except ModuleNotFoundError:
     from reputation_core.strategy import client_content_plan, load_client_profile
     from reputation_core.ai_usage import record_ai_usage
+    from reputation_core.content_routing import topic_is_duplicate
     from reputation_core.entity_contract import (
         apply_article_contract,
         audit_article_entity_contract,
@@ -116,6 +119,39 @@ def draft_root():
     return Path(os.environ.get("CONTENT_DRAFT_DIR", "content_drafts"))
 
 
+class TopicPoolExhausted(RuntimeError):
+    """All configured subjects already exist in the durable draft history."""
+
+
+def historical_topics():
+    """Return durable subjects and titles from every retained draft, not a short index."""
+    root = draft_root()
+    values = []
+    try:
+        index = json.loads((root / "index.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        index = {"drafts": []}
+    for item in index.get("drafts", []):
+        values.extend([str(item.get("topic") or ""), str(item.get("title") or "")])
+    for path in root.glob("*.md"):
+        try:
+            text = path.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        topic = re.search(r"^topic:\s*(.+)$", text, flags=re.MULTILINE)
+        title = re.search(r"^#\s+(.+)$", text, flags=re.MULTILINE)
+        if topic:
+            raw = topic.group(1).strip()
+            try:
+                raw = json.loads(raw)
+            except json.JSONDecodeError:
+                pass
+            values.append(str(raw))
+        if title:
+            values.append(title.group(1).strip())
+    return list(dict.fromkeys(value for value in values if value.strip()))
+
+
 def selected_topic(now=None):
     if not TOPICS:
         raise RuntimeError("installation has no approved content topics")
@@ -123,38 +159,73 @@ def selected_topic(now=None):
     week = now.isocalendar()[1]
     day = now.weekday()
     start = (week * 3 + day) % len(TOPICS)
-    index_path = draft_root() / "index.json"
-    try:
-        history = json.loads(index_path.read_text(encoding="utf-8")).get(
-            "drafts", []
-        )
-    except (OSError, ValueError, TypeError):
-        history = []
-
-    last_seen = {}
-    for item in history:
-        topic = item.get("topic")
-        generated_at = item.get("generated_at", "")
-        if topic in TOPICS and generated_at > last_seen.get(topic, ""):
-            last_seen[topic] = generated_at
+    history = historical_topics()
 
     ordered_indexes = [
         (start + offset) % len(TOPICS) for offset in range(len(TOPICS))
     ]
-    never_used = [
-        index for index in ordered_indexes if TOPICS[index] not in last_seen
-    ]
+    never_used = [index for index in ordered_indexes if not any(
+        topic_is_duplicate(TOPICS[index], prior) for prior in history
+    )]
     if never_used:
         index = never_used[0]
     else:
-        index = min(
-            ordered_indexes,
-            key=lambda candidate: (
-                last_seen[TOPICS[candidate]],
-                ordered_indexes.index(candidate),
-            ),
+        raise TopicPoolExhausted(
+            "all configured topics were already used; topic reuse is forbidden"
         )
     return index, TOPICS[index]
+
+
+def propose_novel_topic(*, stream="canonical_depth"):
+    """Ask for a new search intent and reject anything overlapping durable history."""
+    from openai import OpenAI
+
+    history = historical_topics()
+    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    forbidden = "\n".join(f"- {item}" for item in history)
+    prompt = f"""הצע נושא אחד חדש למאמר רפואי בעברית עבור מרכז ידע בבריאות האישה.
+הזרם: {stream}.
+אסור לחזור, להרחיב, לנסח מחדש או להחליף זווית של אף נושא שכבר קיים.
+בחר כוונת חיפוש רפואית מובחנת וספציפית שאינה חופפת לרשימה.
+אל תציע חדשות, שירות, טיפול אישי או נושא שאינו ניתן לביסוס במקורות מוסדיים.
+החזר שורה אחת בלבד, ללא מספור וללא הסבר.
+
+נושאים וכותרות שכבר שימשו ואסורים מעתה:
+{forbidden}"""
+    last_candidate = ""
+    for _attempt in range(3):
+        response = client.responses.create(
+            model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
+            input=prompt,
+            reasoning={"effort": "medium"},
+            text={"verbosity": "low"},
+            max_output_tokens=120,
+        )
+        record_ai_usage(
+            response,
+            operation="novel_topic_generation",
+            model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
+        )
+        candidate = " ".join((response.output_text or "").strip().split())
+        candidate = re.sub(r"^(?:[-*]|\d+[.)])\s*", "", candidate)
+        last_candidate = candidate
+        if (
+            4 <= len(candidate.split()) <= 18
+            and not any(topic_is_duplicate(candidate, prior) for prior in history)
+        ):
+            digest = hashlib.sha256(candidate.encode("utf-8")).hexdigest()
+            return 80 + int(digest[:2], 16) % 10, candidate
+        prompt += f"\nההצעה האחרונה נדחתה כחופפת או לא תקינה: {candidate}\nהצע נושא אחר לחלוטין."
+    raise RuntimeError(
+        f"OpenAI could not propose a genuinely new topic; last candidate: {last_candidate}"
+    )
+
+
+def topic_for_generation(now=None, *, stream="canonical_depth"):
+    try:
+        return selected_topic(now)
+    except TopicPoolExhausted:
+        return propose_novel_topic(stream=stream)
 
 
 def clean_generated_markdown(content):
@@ -810,7 +881,7 @@ def publish_via_cookie(sid, title, content_md):
 def generate_mode():
     if not os.environ.get("OPENAI_API_KEY"):
         raise RuntimeError("OPENAI_API_KEY secret is not set")
-    index, topic = selected_topic()
+    index, topic = topic_for_generation()
     log(f"Topic: {topic}")
     log("Generating medical draft via OpenAI...")
     title, content = generate_article(topic)

@@ -68,6 +68,8 @@ def validate_cadence(cadence: dict) -> None:
         raise ValueError("AI image generation must remain forbidden")
     if not quality.get("skip_instead_of_forcing_weak_content"):
         raise ValueError("Cadence must skip weak content instead of filling a quota")
+    if not quality.get("topic_reuse_forbidden"):
+        raise ValueError("Cadence must forbid reuse of an editorial topic")
     if int(quality.get("max_news_brief_age_hours", 0)) <= 0:
         raise ValueError("Cadence needs a positive max_news_brief_age_hours")
     if not quality.get("destination_role_must_match_content_stream"):

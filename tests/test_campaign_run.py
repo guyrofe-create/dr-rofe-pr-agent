@@ -274,6 +274,46 @@ class CampaignRunTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "Canonical"):
                 campaign_run.publish_campaign(draft, approved_bundle=bundle)
 
+    def test_publish_rechecks_topic_novelty_before_any_provider_write(self):
+        draft = Path(tempfile.mkdtemp(dir=campaign_run.PROJECT_ROOT)) / "draft.md"
+        content = "# כותרת חדשה\n\nתוכן מאושר"
+        draft.write_text(content, encoding="utf-8")
+        bundle = {
+            "approval_id": "apr_duplicate_topic",
+            "source_draft": draft.resolve().relative_to(
+                campaign_run.PROJECT_ROOT
+            ).as_posix(),
+            "source_draft_sha256": hashlib.sha256(draft.read_bytes()).hexdigest(),
+            "targets": [
+                {
+                    "target_id": "canonical_wordpress",
+                    "platform": "WordPress",
+                    "asset": "guyrofe.com",
+                    "payload": {
+                        "title": "כותרת חדשה",
+                        "markdown": content,
+                        "site_key": "GUYROFE_COM",
+                    },
+                }
+            ],
+        }
+        self.addCleanup(draft.parent.rmdir)
+        self.addCleanup(draft.unlink, missing_ok=True)
+        with patch.object(
+            campaign_run, "enforce_publication_policy"
+        ), patch.object(
+            campaign_run,
+            "assert_cross_domain_original",
+            side_effect=ValueError("Editorial topic was already used"),
+        ) as guard:
+            with self.assertRaisesRegex(ValueError, "already used"):
+                campaign_run.publish_campaign(
+                    draft,
+                    approved_bundle=bundle,
+                    ledger=Mock(),
+                )
+        guard.assert_called_once()
+
     def test_campaign_result_contains_destination_receipts(self):
         with tempfile.TemporaryDirectory(dir=campaign_run.PROJECT_ROOT) as directory:
             draft = Path(directory) / "approved.md"

@@ -93,7 +93,7 @@ class DailyRunTests(unittest.TestCase):
                 _, topic = daily_run.selected_topic(now)
             self.assertEqual(topic, "נושא ג")
 
-    def test_topic_rotation_reuses_only_the_oldest_after_full_cycle(self):
+    def test_full_topic_cycle_refuses_to_reuse_a_topic(self):
         topics = ["נושא א", "נושא ב", "נושא ג"]
         now = datetime(2026, 7, 27, 9, 30, tzinfo=timezone.utc)
         with tempfile.TemporaryDirectory() as directory:
@@ -124,8 +124,20 @@ class DailyRunTests(unittest.TestCase):
                 patch.object(daily_run, "TOPICS", topics),
                 patch.dict(os.environ, {"CONTENT_DRAFT_DIR": directory}),
             ):
-                _, topic = daily_run.selected_topic(now)
-            self.assertEqual(topic, "נושא ג")
+                with self.assertRaisesRegex(
+                    daily_run.TopicPoolExhausted, "topic reuse is forbidden"
+                ):
+                    daily_run.selected_topic(now)
+
+    def test_exhausted_topic_pool_requests_a_new_topic(self):
+        with patch.object(
+            daily_run, "selected_topic", side_effect=daily_run.TopicPoolExhausted
+        ), patch.object(
+            daily_run, "propose_novel_topic", return_value=(84, "נושא חדש באמת")
+        ) as propose:
+            selected = daily_run.topic_for_generation(stream="evergreen_knowledge")
+        self.assertEqual(selected, (84, "נושא חדש באמת"))
+        propose.assert_called_once_with(stream="evergreen_knowledge")
 
     def test_each_github_run_gets_its_own_draft_path(self):
         with tempfile.TemporaryDirectory() as directory:
