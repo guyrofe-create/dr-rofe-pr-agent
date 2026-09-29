@@ -1,0 +1,475 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-29T20:44:03Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-29-topic-89-run-36628155910-attempt-1.md",
+  "source_draft_sha256": "5cda075b4515fcf6bc9892a133601b42018c117ea495b93e6c432968ca959b79",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/trigeminal-neuralgia/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/cg173/evidence/full-guideline-pdf-4840898221",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-landscape.png",
+    "sha256": "d0451e65e62566d1329e692e9e2dd37402c5db4434850b05b9382840ca308b8b",
+    "alt_text": "שחזור תלת־ממדי מסומן של גזע המוח ועצבי הגולגולת, ובהם עצב V, על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "שחזור תלת־ממדי מסומן של גזע המוח ועצבי הגולגולת, ובהם עצב V, על רקע שחור.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Endocranial_cast_of_Alioramus_altai.png",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Endocranial_cast_of_Alioramus_altai.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Gabe S. Bever, Stephen L. Brusatte, Amy M. Balanoff, Mark A. Norell",
+    "license_name": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "attribution": "Endocranial cast of Alioramus altai.png — Gabe S. Bever, Stephen L. Brusatte, Amy M. Balanoff, Mark A. Norell; CC BY 2.5; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-hero.png",
+        "sha256": "6336824d417e15d48a354ae771c8c22c69561635db05afb9af39146ab78d70a8",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-landscape.png",
+        "sha256": "d0451e65e62566d1329e692e9e2dd37402c5db4434850b05b9382840ca308b8b",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-square.jpg",
+        "sha256": "03221845b10c49823d6d55210a89a59b26499c8269d7dd325f3e416546e1591d",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-portrait.png",
+        "sha256": "b9ba7db7140a11b4fc36709b5712850177c05747e5fa648a1fa7d95b0f7d89e9",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים וממיגרנה | ד״ר גיא רופא",
+        "cms_title": "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים וממיגרנה",
+        "markdown": "# נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים וממיגרנה | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** נוירלגיה של העצב המשולש מתבטאת בדרך כלל בהתקפים פתאומיים, קצרים ועזים מאוד של כאב חד או דמוי זרם חשמלי בצד אחד של הפנים. פעולות יומיומיות תמימות, כמו צחצוח שיניים, לעיסה, דיבור, גילוח או מגע קל בעור, עלולות לעורר את ההתקף. בניגוד לכך, כאב שיניים נוטה להיות ממוקד סביב שן או אזור בחלל הפה ולעיתים מגיב לחום, לקור או ללחץ; מיגרנה נמשכת בדרך כלל שעות, ולעיתים מלווה בבחילה וברגישות לאור ולרעש. עם זאת, אין להסתמך על התיאור בלבד: אבחון נכון מחייב הערכה רפואית ולעיתים גם בדיקת שיניים והדמיית MRI.\n\n## מהי נוירלגיה של העצב המשולש?\n\nהעצב המשולש, הקרוי גם העצב הטריגמינלי, הוא אחד מעצבי הגולגולת המרכזיים. הוא אחראי במידה רבה על העברת תחושות מהפנים אל המוח ומשתתף גם בתפקוד שרירי הלעיסה. לעצב שלושה ענפים עיקריים: ענף המשרת את אזור המצח והעין, ענף המשרת את הלחי והלסת העליונה וענף הקשור ללסת התחתונה.\n\nנוירלגיה של העצב המשולש היא תסמונת כאב עצבי שבה מופיעים התקפים עזים לאורך אחד או יותר מענפי העצב. לפי [המידע הרשמי של שירות הבריאות הלאומי הבריטי על נוירלגיה של העצב המשולש](https://www.nhs.uk/conditions/trigeminal-neuralgia/), הכאב מופיע לרוב בצד אחד של הפנים, מתפתח באופן פתאומי ועשוי להימשך משניות ספורות ועד כשתי דקות בכל התקף. התקפים רבים יכולים להתרחש בזה אחר זה.\n\nבחלק מהמקרים קיימת דחיסה של שורש העצב בידי כלי דם סמוך. במקרים אחרים לא מזוהה סיבה ברורה, ולעיתים הכאב קשור למחלה אחרת הפוגעת בעצב, כגון טרשת נפוצה, או לעיתים רחוקות יותר לתהליך מבני אחר. לכן חשוב להבחין בין נוירלגיה קלאסית, נוירלגיה ללא סיבה מודגמת ונוירלגיה משנית למחלה אחרת.\n\nחשוב גם לדעת כי ייתכנו תקופות הפוגה הנמשכות שבועות, חודשים ואף יותר, ולאחריהן הכאב חוזר. אצל חלק מהאנשים קיים כאב רק בזמן ההתקפים; אצל אחרים נוסף בין ההתקפים כאב מתמשך, עמום או שורף. דפוס כזה אינו שולל את האבחנה, אך מחייב אפיון מדויק יותר.\n\n## כיצד מרגיש הכאב ואילו פעולות עלולות לעורר אותו?\n\nהתיאור האופייני הוא כאב חד, דוקר, חותך או דמוי מכת חשמל. הוא מתחיל ללא בנייה הדרגתית, מגיע במהירות לעוצמה גבוהה ונפסק בדרך כלל בתוך זמן קצר. ברוב המקרים הוא מורגש בלחי, בלסת העליונה, בלסת התחתונה, בשפתיים, בחניכיים או בסנטר. מעורבות של אזור המצח והעין אפשרית, אך שכיחה פחות.\n\nאחד המאפיינים החשובים הוא קיומם של **אזורי הדק**: נקודות בפנים או בחלל הפה שמגע קל בהן עלול לעורר התקף. גירויים אפשריים כוללים:\n\n- צחצוח שיניים או שטיפת פנים  \n- לעיסה, בליעה או דיבור  \n- גילוח או איפור  \n- חיוך, נשיקה או מגע קל בלחי  \n- חשיפה לרוח או לאוויר קר  \n- נגיעה באזור מסוים בשפה, בחניכיים או בעור הפנים  \n\nהכאב עשוי להיות כה פתאומי, עד שהאדם קופא במקומו ונמנע מתנועה מחשש להתקף נוסף. בין ההתקפים יכולה להיות הפוגה מלאה, וזהו פרט משמעותי בהשוואה לכאבים דלקתיים או לכאב שיניים מתמשך.\n\nעל פי [הסקירה הקלינית על אבחון נוירלגיה של העצב המשולש ב-NCBI](https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/), השילוב בין התקפים קצרים מאוד, התחלה חדה, פיזור המתאים לענפי העצב והופעת כאב בעקבות גירוי בלתי מזיק הוא מרכיב מרכזי בזיהוי התסמונת. עם זאת, קיימים מצבים אחרים שיכולים לחקות חלק מהמאפיינים, ולכן תיאור אופייני אינו מהווה אבחנה בפני עצמו.\n\nכאב קבוע בלבד, כאב מפושט בשני צדי הפנים, ירידה תחושתית בולטת או חולשה אינם התבנית הקלאסית. ממצאים כאלה אינם מצביעים בהכרח על מצב מסוכן, אך הם מחייבים בירור רחב יותר ולא נכון לייחס אותם אוטומטית לנוירלגיה של העצב המשולש.\n\n## כיצד מאבחנים נוירלגיה של העצב המשולש?\n\nאין בדיקת דם יחידה או סמן מעבדתי המאשרים את האבחנה. התהליך מתחיל בתשאול מפורט: היכן נמצא הכאב, כמה זמן נמשך כל התקף, מה מעורר אותו, האם קיימים תסמינים בין ההתקפים והאם הופיעו שינויים בתחושה, בראייה, בשמיעה או בתנועת הפנים.\n\nבמהלך הבדיקה מעריכים את התחושה באזורים השונים של הפנים, את רפלקסי עצבי הגולגולת, את כוח שרירי הלעיסה וממצאים נוירולוגיים נוספים. במקביל יש לבדוק אם קיימת סיבה מקומית בחלל הפה, בשיניים, במפרק הלסת או בסינוסים. כאשר הכאב מורגש סביב שן מסוימת, בדיקה דנטלית מסודרת עשויה להיות חלק חיוני מהבירור.\n\nלעיתים קרובות מבוצעת בדיקת MRI של המוח ושל מהלך העצב. ההדמיה יכולה לסייע בזיהוי מגע או לחץ של כלי דם על העצב וכן בבירור גורמים משניים, ובהם טרשת נפוצה או תהליך מבני. עם זאת, ממצא של מגע בין כלי דם לעצב אינו מוכיח לבדו שהוא מקור הכאב, וגם MRI ללא ממצא חריג אינו שולל בהכרח את האבחנה. [המדריך הקליני המעשי לנוירלגיה של העצב המשולש ב-NCBI](https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/) מדגיש כי האבחנה מבוססת על שילוב בין התמונה הקלינית, הבדיקה והדמיה מתאימה — ולא על בדיקה אחת בלבד.\n\nתגובה לתרופה מסוימת עשויה לתמוך בהשערה האבחנתית, אך אינה תחליף לבירור. אין להתחיל, להפסיק או לשנות טיפול תרופתי על סמך ניסיון עצמי, משום שחלק מהתרופות מחייבות התאמת מינון, מעקב אחר תופעות לוואי ולעיתים בדיקות דם.\n\n## מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?\n\nההבחנה אינה תמיד פשוטה. ענפי העצב המשולש מעצבבים גם את אזור השיניים והחניכיים, ולכן כאב עצבי עשוי להיתפס בטעות ככאב שמקורו בשן. מנגד, דלקת בשן, סדק, מחלת חניכיים או בעיה במפרק הלסת עלולים ליצור כאב פנים הדומה לכאב עצבי.\n\nהטבלה הבאה מציגה דפוסים שכיחים, אך אינה מחליפה אבחון:\n\n| מאפיין | נוירלגיה של העצב המשולש | כאב שמקורו בשן | מיגרנה |\n|---|---|---|---|\n| אופי הכאב | חד, דוקר או דמוי זרם חשמלי | עמום, פועם, לוחץ או חד בהתאם לבעיה | פועם או לוחץ, לעיתים בעוצמה בינונית עד קשה |\n| משך אופייני | שניות ועד כשתי דקות בכל התקף | לרוב ממושך יותר או חוזר סביב גירוי דנטלי | בדרך כלל שעות ולעיתים ימים |\n| מיקום | לאורך אזור בלחי או בלסת, לרוב בצד אחד | סביב שן, חניכיים או אזור מוגדר בפה | בראש או בפנים, לעיתים בצד אחד |\n| גורמים מעוררים | מגע קל, דיבור, גילוח, צחצוח ולעיסה | חום, קור, מתוק, נשיכה או לחץ על השן | פעילות גופנית, אור, רעש, שינויים הורמונליים או גורמים אישיים |\n| תסמינים נלווים | בדרך כלל ללא בחילה או רגישות ממושכת לאור | רגישות מקומית, נפיחות או כאב בנשיכה עשויים להופיע | בחילה, הקאה, רגישות לאור ולרעש ולעיתים אאורה |\n| בין ההתקפים | לעיתים אין כאב כלל | רגישות או כאב עשויים להישאר | ההתקף חולף, אך תיתכן עייפות לפניו או אחריו |\n\nעל פי [הסקירה על אתגרי האבחון הקליני של נוירלגיה של העצב המשולש](https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/), כאב דנטלי נוטה להיות ממוקם בתוך הפה וסביב השן, ולעיתים מושפע מטמפרטורה או מלחץ. נוירלגיה מתאפיינת יותר בפרצי כאב קצרים ובתגובה למגע קל באזור הפנים. עם זאת, לעיסה יכולה לעורר את שני סוגי הכאב, ולכן מאפיין זה לבדו אינו מספיק.\n\nמיגרנה יכולה להיות חד-צדדית ועזה, אך בדרך כלל אינה מורכבת מהבזקים בני שניות הנגרמים מנגיעה בלחי או מצחצוח שיניים. ההתקף המיגרנוטי ארוך יותר, ולעיתים קרובות נלווים אליו בחילה, רגישות לאור או לרעש, החמרה בפעילות ולעיתים אאורה. בנוסף, אדם יכול לסבול מיותר ממצב אחד במקביל; אבחנה של מיגרנה אינה שוללת כאב דנטלי או נוירלגיה.\n\nכאשר אין ממצא דנטלי שמסביר את הכאב, מומלץ להימנע מטיפול בלתי הפיך בשן רק בניסיון “לבדוק אם הכאב יעבור”. טיפול שורש או עקירה אינם מיועדים לטפל בכאב עצבי, ובירור שיטתי חשוב במיוחד לפני פעולה שאינה ניתנת לביטול.\n\n## מה עושים לאחר העלאת החשד, ומתי נדרש בירור דחוף?\n\nהצעד הראשון הוא לתעד את דפוס הכאב: מועד ההתחלה, משך כל התקף, המיקום המדויק, הטריגרים והתסמינים הנלווים. אפשר לציין גם אם הכאב מעיר משינה, אם הוא מופיע משני צדי הפנים ואם קיימים חוסר תחושה, חולשה או שינוי בשמיעה ובראייה. תיעוד כזה מסייע להבחין בין תסמונות כאב שונות.\n\nכאשר האבחנה מתאימה, טיפול תרופתי נוגד פרכוסים עשוי לשמש להפחתת ההתקפים. [הנחיית NICE לטיפול בכאב נוירופתי](https://www.nice.org.uk/guidance/cg173/evidence/full-guideline-pdf-4840898221) מציינת קרבמזפין כטיפול התחלתי מקובל בנוירלגיה של העצב המשולש. הטיפול מחייב מרשם ופיקוח רפואי, משום שהוא עלול לגרום לתופעות לוואי ולקיים אינטראקציות עם תרופות אחרות. במקרים שאינם נשלטים בתרופות נשקלות אפשרויות נוספות, לרבות הליכים המכוונים לעצב או לכלי דם הלוחץ עליו, בהתאם לסיבה, לממצאים ולמצב הכללי.\n\nיש לפנות להערכה רפואית דחופה כאשר לכאב מתווספים חולשה בפנים או בגפיים, הפרעת דיבור, בלבול, שינוי פתאומי בראייה, כאב ראש חריג שהגיע לשיא בתוך רגעים, חום עם נפיחות בפנים, נפיחות משמעותית סביב העין או קושי בנשימה ובבליעה. סימנים אלה אינם אופייניים לנוירלגיה פשוטה ועלולים להעיד על מצב אחר הדורש טיפול מהיר.\n\n## סיכום\n\nנוירלגיה של העצב המשולש מתאפיינת בעיקר בהתקפים קצרים, פתאומיים ועזים של כאב חד או חשמלי בצד אחד של הפנים, לעיתים בעקבות מגע קל או פעולה יומיומית. כאב שיניים נוטה להיות ממוקד יותר ולהגיב לחום, לקור או ללחץ, ואילו מיגרנה נמשכת בדרך כלל שעות ומלווה לעיתים בבחילה וברגישות לאור ולרעש. אלו הבדלים שימושיים, אך קיימת חפיפה בין המצבים.\n\nהאבחון נשען על תיאור מדויק, בדיקה רפואית, שלילת מקור דנטלי ולעיתים MRI. לפי [המידע הרשמי של NHS על אבחון נוירלגיה של העצב המשולש](https://www.nhs.uk/conditions/trigeminal-neuralgia/), הקושי להבחין בינה לבין סיבות אחרות לכאב פנים עלול לעכב את האבחנה. לכן המטרה אינה רק לתת שם לכאב, אלא לזהות את מקורו לפני ביצוע טיפול בלתי הפיך או התחלת טיפול תרופתי.\n\n## מקורות\n\n1. [NHS — Trigeminal neuralgia](https://www.nhs.uk/conditions/trigeminal-neuralgia/)\n2. [NCBI/PMC — The Challenges in Clinical Diagnosis of Trigeminal Neuralgia: A Review](https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/)\n3. [NCBI/PMC — Trigeminal Neuralgia: A Practical Guide](https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/)\n4. [NICE — Neuropathic Pain: Pharmacological Management, Clinical Guideline CG173](https://www.nice.org.uk/guidance/cg173/evidence/full-guideline-pdf-4840898221)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/נוירלגיה-של-העצב-המשולש-איך-מזהים/",
+        "meta_description": "ד״ר גיא רופא: נוירלגיה של העצב המשולש מתבטאת בדרך כלל בהתקפים פתאומיים, קצרים ועזים מאוד של כאב חד או דמוי זרם חשמלי בצד אחד של הפנים.",
+        "search_target": {
+          "primary_query": "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים",
+          "secondary_queries": [
+            "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים וממיגרנה",
+            "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים ד״ר גיא רופא",
+            "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/נוירלגיה-של-העצב-המשולש-איך-מזהים/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 12,
+            "observed_query": "Dr. Guy Rofe",
+            "observed_at": "2026-09-28T06:51:00.186409"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "efa11780948801ed2182ba3d9b6b24611cf907be37fb10df13270204f54840ac",
+        "slug": "נוירלגיה-של-העצב-המשולש-איך-מזהים",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-hero.png",
+          "sha256": "6336824d417e15d48a354ae771c8c22c69561635db05afb9af39146ab78d70a8",
+          "alt_text": "שחזור תלת־ממדי מסומן של גזע המוח ועצבי הגולגולת, ובהם עצב V, על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שחזור תלת־ממדי מסומן של גזע המוח ועצבי הגולגולת, ובהם עצב V, על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Endocranial_cast_of_Alioramus_altai.png",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Endocranial_cast_of_Alioramus_altai.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Gabe S. Bever, Stephen L. Brusatte, Amy M. Balanoff, Mark A. Norell",
+          "license_name": "CC BY 2.5",
+          "license_url": "https://creativecommons.org/licenses/by/2.5",
+          "attribution": "Endocranial cast of Alioramus altai.png — Gabe S. Bever, Stephen L. Brusatte, Amy M. Balanoff, Mark A. Norell; CC BY 2.5; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-hero.png",
+              "sha256": "6336824d417e15d48a354ae771c8c22c69561635db05afb9af39146ab78d70a8",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-landscape.png",
+              "sha256": "d0451e65e62566d1329e692e9e2dd37402c5db4434850b05b9382840ca308b8b",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-square.jpg",
+              "sha256": "03221845b10c49823d6d55210a89a59b26499c8269d7dd325f3e416546e1591d",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-29-topic-89-run-36628155910-attempt-1-portrait.png",
+              "sha256": "b9ba7db7140a11b4fc36709b5712850177c05747e5fa648a1fa7d95b0f7d89e9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 26,
+      "supported_claim_count": 26,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי נוירלגיה של העצב המשולש?",
+          "claim": "לפי המידע הרשמי של שירות הבריאות הלאומי הבריטי על נוירלגיה של העצב המשולש, הכאב מופיע לרוב בצד אחד של הפנים, מתפתח באופן פתאומי ועשוי להימשך משניות ספורות ועד כשתי דקות בכל התקף.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+          ]
+        },
+        {
+          "section": "מהי נוירלגיה של העצב המשולש?",
+          "claim": "חשוב גם לדעת כי ייתכנו תקופות הפוגה הנמשכות שבועות, חודשים ואף יותר, ולאחריהן הכאב חוזר.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+          ]
+        },
+        {
+          "section": "מהי נוירלגיה של העצב המשולש?",
+          "claim": "אצל חלק מהאנשים קיים כאב רק בזמן ההתקפים; אצל אחרים נוסף בין ההתקפים כאב מתמשך, עמום או שורף.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+          ]
+        },
+        {
+          "section": "כיצד מרגיש הכאב ואילו פעולות עלולות לעורר אותו?",
+          "claim": "אחד המאפיינים החשובים הוא קיומם של **אזורי הדק**: נקודות בפנים או בחלל הפה שמגע קל בהן עלול לעורר התקף.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "כיצד מרגיש הכאב ואילו פעולות עלולות לעורר אותו?",
+          "claim": "הכאב עשוי להיות כה פתאומי, עד שהאדם קופא במקומו ונמנע מתנועה מחשש להתקף נוסף.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "כיצד מרגיש הכאב ואילו פעולות עלולות לעורר אותו?",
+          "claim": "על פי הסקירה הקלינית על אבחון נוירלגיה של העצב המשולש ב-NCBI, השילוב בין התקפים קצרים מאוד, התחלה חדה, פיזור המתאים לענפי העצב והופעת כאב בעקבות גירוי בלתי מזיק הוא מרכיב מרכזי בזיהוי התסמונת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים נוירלגיה של העצב המשולש?",
+          "claim": "במהלך הבדיקה מעריכים את התחושה באזורים השונים של הפנים, את רפלקסי עצבי הגולגולת, את כוח שרירי הלעיסה וממצאים נוירולוגיים נוספים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים נוירלגיה של העצב המשולש?",
+          "claim": "כאשר הכאב מורגש סביב שן מסוימת, בדיקה דנטלית מסודרת עשויה להיות חלק חיוני מהבירור.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים נוירלגיה של העצב המשולש?",
+          "claim": "המדריך הקליני המעשי לנוירלגיה של העצב המשולש ב-NCBI מדגיש כי האבחנה מבוססת על שילוב בין התמונה הקלינית, הבדיקה והדמיה מתאימה — ולא על בדיקה אחת בלבד.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים נוירלגיה של העצב המשולש?",
+          "claim": "תגובה לתרופה מסוימת עשויה לתמוך בהשערה האבחנתית, אך אינה תחליף לבירור.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים נוירלגיה של העצב המשולש?",
+          "claim": "אין להתחיל, להפסיק או לשנות טיפול תרופתי על סמך ניסיון עצמי, משום שחלק מהתרופות מחייבות התאמת מינון, מעקב אחר תופעות לוואי ולעיתים בדיקות דם.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/"
+          ]
+        },
+        {
+          "section": "מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?",
+          "claim": "ענפי העצב המשולש מעצבבים גם את אזור השיניים והחניכיים, ולכן כאב עצבי עשוי להיתפס בטעות ככאב שמקורו בשן.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?",
+          "claim": "מנגד, דלקת בשן, סדק, מחלת חניכיים או בעיה במפרק הלסת עלולים ליצור כאב פנים הדומה לכאב עצבי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?",
+          "claim": "הטבלה הבאה מציגה דפוסים שכיחים, אך אינה מחליפה אבחון:",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?",
+          "claim": "| תסמינים נלווים | בדרך כלל ללא בחילה או רגישות ממושכת לאור | רגישות מקומית, נפיחות או כאב בנשיכה עשויים להופיע | בחילה, הקאה, רגישות לאור ולרעש ולעיתים אאורה |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?",
+          "claim": "| בין ההתקפים | לעיתים אין כאב כלל | רגישות או כאב עשויים להישאר | ההתקף חולף, אך תיתכן עייפות לפניו או אחריו |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?",
+          "claim": "על פי הסקירה על אתגרי האבחון הקליני של נוירלגיה של העצב המשולש, כאב דנטלי נוטה להיות ממוקם בתוך הפה וסביב השן, ולעיתים מושפע מטמפרטורה או מלחץ.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?",
+          "claim": "כאשר אין ממצא דנטלי שמסביר את הכאב, מומלץ להימנע מטיפול בלתי הפיך בשן רק בניסיון “לבדוק אם הכאב יעבור”.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "מה מבדיל נוירלגיה מכאב שיניים וממיגרנה?",
+          "claim": "טיפול שורש או עקירה אינם מיועדים לטפל בכאב עצבי, ובירור שיטתי חשוב במיוחד לפני פעולה שאינה ניתנת לביטול.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר העלאת החשד, ומתי נדרש בירור דחוף?",
+          "claim": "כאשר האבחנה מתאימה, טיפול תרופתי נוגד פרכוסים עשוי לשמש להפחתת ההתקפים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg173/evidence/full-guideline-pdf-4840898221"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר העלאת החשד, ומתי נדרש בירור דחוף?",
+          "claim": "הנחיית NICE לטיפול בכאב נוירופתי מציינת קרבמזפין כטיפול התחלתי מקובל בנוירלגיה של העצב המשולש.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg173/evidence/full-guideline-pdf-4840898221"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר העלאת החשד, ומתי נדרש בירור דחוף?",
+          "claim": "הטיפול מחייב מרשם ופיקוח רפואי, משום שהוא עלול לגרום לתופעות לוואי ולקיים אינטראקציות עם תרופות אחרות.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg173/evidence/full-guideline-pdf-4840898221"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר העלאת החשד, ומתי נדרש בירור דחוף?",
+          "claim": "סימנים אלה אינם אופייניים לנוירלגיה פשוטה ועלולים להעיד על מצב אחר הדורש טיפול מהיר.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg173/evidence/full-guideline-pdf-4840898221"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "האבחון נשען על תיאור מדויק, בדיקה רפואית, שלילת מקור דנטלי ולעיתים MRI.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "לפי המידע הרשמי של NHS על אבחון נוירלגיה של העצב המשולש, הקושי להבחין בינה לבין סיבות אחרות לכאב פנים עלול לעכב את האבחנה.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "לכן המטרה אינה רק לתת שם לכאב, אלא לזהות את מקורו לפני ביצוע טיפול בלתי הפיך או התחלת טיפול תרופתי.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nhs.uk/conditions/trigeminal-neuralgia/",
+          "host": "nhs.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11228405/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8461413/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nice.org.uk/guidance/cg173/evidence/full-guideline-pdf-4840898221",
+          "host": "nice.org.uk",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "efa11780948801ed2182ba3d9b6b24611cf907be37fb10df13270204f54840ac",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/נוירלגיה-של-העצב-המשולש-איך-מזהים/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 12,
+        "observed_query": "Dr. Guy Rofe",
+        "observed_at": "2026-09-28T06:51:00.186409"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_edf111847c8c807f695198c6a3290171e257c44503c2dea08855992c99bacde2"
+}
