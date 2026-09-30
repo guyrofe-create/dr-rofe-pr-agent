@@ -78,6 +78,7 @@ class SocialImageTests(unittest.TestCase):
         ]
         self.assertIn("Judge it only", prompt)
         self.assertIn("Reject any image containing an identifiable person", prompt)
+        self.assertIn("non-human animal", prompt)
         self.assertNotIn("Reject generic wellness imagery", prompt)
         self.assertNotIn("ANY visible letter", prompt)
 
@@ -206,6 +207,31 @@ class SocialImageTests(unittest.TestCase):
         self.assertIn(
             "peripheral nerve histology",
             social_image.topic_search_queries("תסמונת גייאן־בארה"),
+        )
+        self.assertIn(
+            "human skull anatomy model",
+            social_image.topic_search_queries("נוירלגיה של העצב המשולש"),
+        )
+
+    def test_non_human_anatomy_is_rejected_for_human_medical_article(self):
+        dinosaur = {
+            "description": "Endocranial cast with cranial nerves",
+            "source_page_url": (
+                "https://commons.wikimedia.org/wiki/"
+                "File:Endocranial_cast_of_Alioramus_altai.png"
+            ),
+            "source_image_url": "https://upload.wikimedia.org/alioramus.png",
+            "attribution": "Cretaceous theropod fossil",
+        }
+        self.assertFalse(
+            social_image.candidate_matches_human_medical_context(
+                dinosaur, "נוירלגיה של העצב המשולש"
+            )
+        )
+        self.assertTrue(
+            social_image.candidate_matches_human_medical_context(
+                dinosaur, "מחקר על דינוזאור"
+            )
         )
 
     @patch("scripts.social_image.search_openverse", return_value=[])

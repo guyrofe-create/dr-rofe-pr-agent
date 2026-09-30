@@ -69,6 +69,19 @@ VISIBLE_PERSON_WORDS = frozenset(
         "woman", "child", "doctor", "clinician", "patient", "face",
     }
 )
+NON_HUMAN_MEDICAL_MARKERS = frozenset(
+    {
+        "alioramus", "dinosaur", "theropod", "tyrannosaur", "cretaceous",
+        "paleontology", "palaeontology", "fossil", "veterinary", "canine",
+        "feline", "animal anatomy", "animal skull",
+    }
+)
+ANIMAL_TOPIC_MARKERS = frozenset(
+    {
+        "כלב", "חתול", "בעל חיים", "וטרינר", "דינוזאור", "מאובן",
+        "dog", "cat", "animal", "veterinary", "dinosaur", "fossil",
+    }
+)
 PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 8
 MAX_REVIEWED_CANDIDATES = 24
@@ -219,6 +232,12 @@ def _search_query_prompt(title, summary):
 def topic_search_queries(title):
     """Return deterministic Commons queries for recognized medical topics."""
     topic = _topic_without_client(title)
+    if "העצב המשולש" in topic or "נוירלגיה" in topic:
+        return [
+            "human skull anatomy model",
+            "cranial nerve anatomy model",
+            "dental examination equipment",
+        ]
     if "כאבי מחזור" in topic or "דיסמנוריאה" in topic:
         return [
             "experiencing menstrual pain",
@@ -633,6 +652,23 @@ def interleave_candidates(*groups):
     return merged
 
 
+def candidate_matches_human_medical_context(candidate, title):
+    """Reject animal and palaeontology assets for human-health articles."""
+    topic = _topic_without_client(title).lower()
+    if any(marker in topic for marker in ANIMAL_TOPIC_MARKERS):
+        return True
+    probe = " ".join(
+        str(candidate.get(key) or "")
+        for key in (
+            "description",
+            "source_page_url",
+            "source_image_url",
+            "attribution",
+        )
+    ).lower()
+    return not any(marker in probe for marker in NON_HUMAN_MEDICAL_MARKERS)
+
+
 def review_relevance(client, image_bytes, media_type, title, summary):
     """Accept a licensed photograph based only on direct topical relevance."""
     encoded = base64.b64encode(image_bytes).decode("ascii")
@@ -650,8 +686,11 @@ def review_relevance(client, image_bytes, media_type, title, summary):
                         "and reusable-license checks. Judge it only by whether the visible "
                         "content directly and truthfully illustrates the exact article. "
                         "Reject any image containing an identifiable person, patient, "
-                        "clinician, face or active medical procedure. Also reject it when "
-                        "it is not topically relevant or would materially misrepresent the "
+                        "clinician, face or active medical procedure. Also reject a "
+                        "non-human animal, fossil, dinosaur, veterinary specimen or "
+                        "non-human anatomy unless the article explicitly concerns that "
+                        "animal subject. Reject it when it is not topically relevant or "
+                        "would materially misrepresent the "
                         "article's subject. Prefer people-free equipment, research objects "
                         "or microscopy. "
                         "Return exactly one line. If suitable: "
@@ -747,6 +786,9 @@ def select_licensed_photo(title, summary, client=None):
             f"pexels={len(pexels)}, pixabay={len(pixabay)}"
         )
         for candidate in candidates:
+            if not candidate_matches_human_medical_context(candidate, title):
+                rejection_reasons.append("non-human subject metadata")
+                continue
             source = candidate["source_image_url"]
             if source in seen:
                 continue
