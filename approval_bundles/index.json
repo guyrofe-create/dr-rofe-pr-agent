@@ -3,7 +3,9 @@
   "bundles": [
     {
       "approval_id": "apr_694ff50cdb327bbe76f1da1949abe760f2484685a5f5fa41914a0c7d6fc2437d",
-      "status": "awaiting_explicit_approval",
+      "status": "published",
+      "published_at": "2026-09-29T20:00:28Z",
+      "status_reconciliation_note": "The approval request is no longer active: the execution ledger records completed publication to all five approved targets.",
       "draft_path": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
       "bundle_path": "approval_bundles/apr_694ff50cdb327bbe76f1da1949abe760f2484685a5f5fa41914a0c7d6fc2437d.json",
       "preview_path": "approval_bundles/apr_694ff50cdb327bbe76f1da1949abe760f2484685a5f5fa41914a0c7d6fc2437d.html",
