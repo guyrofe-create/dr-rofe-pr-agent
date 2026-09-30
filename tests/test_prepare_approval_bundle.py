@@ -317,12 +317,12 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                 Path(result["bundle_path"]).read_text(encoding="utf-8")
             )
             index = json.loads((output / "index.json").read_text(encoding="utf-8"))
-            self.assertEqual(result["image_status"], "awaiting_replacement")
+            self.assertEqual(result["image_status"], "ready")
             self.assertIn("no suitable licensed photograph", result["image_selection_error"])
-            self.assertIsNone(bundle["media"])
-            self.assertFalse(bundle["compliance"]["approved_image_ready"])
+            self.assertEqual(bundle["media"]["source_type"], "owner_provided_default")
+            self.assertTrue(bundle["compliance"]["approved_image_ready"])
             self.assertEqual(
-                index["bundles"][0]["image_status"], "awaiting_replacement"
+                index["bundles"][0]["image_status"], "ready"
             )
 
     def test_missing_image_argument_uses_owner_default_image(self):

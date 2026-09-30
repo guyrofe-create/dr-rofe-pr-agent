@@ -608,10 +608,10 @@ def main() -> None:
             image = social_image.generate(title, article_visual_context(content))
         except social_image.PhotoSelectionError as exc:
             image_selection_error = f"{type(exc).__name__}: {exc}"
-            # A generic owner logo is not a topic-relevant medical photograph.
-            # Preserve the draft and create a visibly blocked review bundle so
-            # publication cannot proceed until a suitable image is supplied.
-            image = None
+            # Prefer a licensed topic photograph, then fall back automatically
+            # to the corrected owner-provided brand mark. The recorded search
+            # error keeps the substitution transparent in the review bundle.
+            image = social_image.default_branded_image()
         except Exception as exc:
             raise RuntimeError(
                 "The licensed-photo search failed without creating an AI image: "
