@@ -42,14 +42,25 @@ class Session:
 class VisibilityExtensionTests(unittest.TestCase):
     def test_medical_claims_require_inline_sources(self):
         failed = audit_medical_claim_sources(
-            "# כותרת\n\nהבדיקה עלולה להצביע על סיכון רפואי.\n\n## מקורות\nhttps://who.int/a"
+            "# כותרת\n\n## אבחון\n\nהבדיקה עלולה להצביע על סיכון רפואי."
+            "\n\n## מקורות\nhttps://who.int/a"
         )
         self.assertFalse(failed["ready_for_medical_approval"])
         passed = audit_medical_claim_sources(
-            "# כותרת\n\nהבדיקה עלולה להצביע על סיכון רפואי לפי "
+            "# כותרת\n\n## אבחון\n\nהבדיקה עלולה להצביע על סיכון רפואי לפי "
             "[הנחיות WHO](https://who.int/a)."
         )
         self.assertTrue(passed["ready_for_medical_approval"])
+
+    def test_profile_links_and_front_matter_never_count_as_medical_evidence(self):
+        report = audit_medical_claim_sources(
+            "<!-- topic: בדיקה רפואית -->\n# כותרת\n"
+            "מאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n"
+            "## אבחון\n\nהבדיקה עלולה להצביע על סיכון רפואי."
+        )
+        self.assertFalse(report["ready_for_medical_approval"])
+        self.assertEqual(report["claim_count"], 1)
+        self.assertEqual(report["claim_source_matrix"][0]["source_urls"], [])
 
     def test_reinforcement_plan_never_injects_unproven_cross_property_homepage(self):
         plan = build_asset_reinforcement_plan(
