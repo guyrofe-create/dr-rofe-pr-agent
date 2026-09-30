@@ -36,6 +36,19 @@ class SocialImageTests(unittest.TestCase):
         self.assertNotIn("גיא רופא", text)
         self.assertIn("אישה קוראת", text)
 
+    def test_alt_text_preserves_name_already_present_in_description(self):
+        text = social_image.alt_text(
+            "מידע רפואי | ד״ר גיא רופא",
+            "הלוגו של ד״ר גיא רופא על רקע לבן",
+        )
+        self.assertEqual(text, "הלוגו של ד״ר גיא רופא על רקע לבן")
+        self.assertEqual(text.count("גיא רופא"), 1)
+
+    def test_explicit_brand_fallback_uses_intact_mark_not_clipped_wordmark(self):
+        image = social_image.default_branded_image()
+        self.assertIn("סמל המותג", image.visual_description)
+        self.assertEqual(set(image.variants), {"hero", "landscape", "square", "portrait"})
+
     def test_search_planner_returns_concrete_queries(self):
         client = Mock()
         client.responses.create.return_value = SimpleNamespace(
@@ -410,20 +423,10 @@ class SocialImageTests(unittest.TestCase):
         "scripts.social_image.select_licensed_photo",
         side_effect=social_image.PhotoSelectionError("none"),
     )
-    def test_generate_uses_owner_default_without_creating_an_ai_image(self, select):
+    def test_generate_fails_closed_without_creating_an_ai_image(self, select):
         client = Mock()
-        result = social_image.generate("כותרת", "תקציר", client=client)
-
-        self.assertEqual(result.source_type, "owner_provided_default")
-        self.assertEqual(
-            set(result.variants),
-            {"hero", "landscape", "square", "portrait"},
-        )
-        self.assertEqual(Image.open(BytesIO(result.variants["hero"])).size, (1600, 900))
-        self.assertEqual(
-            Image.open(BytesIO(result.variants["portrait"])).size,
-            (1080, 1350),
-        )
+        with self.assertRaisesRegex(social_image.PhotoSelectionError, "none"):
+            social_image.generate("כותרת", "תקציר", client=client)
         self.assertFalse(hasattr(client, "images") and client.images.generate.called)
 
     def test_commons_candidate_rejects_ai_or_illustration(self):
