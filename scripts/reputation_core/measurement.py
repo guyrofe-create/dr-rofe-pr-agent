@@ -61,6 +61,9 @@ def measure_serp_surface(control_map: dict, sample: dict) -> dict:
         item for item in results
         if item.get("sentiment") in {"negative", "harmful"}
     ]
+    unknown_sentiment_count = sum(
+        item.get("sentiment", "unknown") == "unknown" for item in results
+    )
     controlled_asset_ids = list(dict.fromkeys(
         item.get("asset_id") for item in controlled if item.get("asset_id")
     ))
@@ -87,6 +90,8 @@ def measure_serp_surface(control_map: dict, sample: dict) -> dict:
         "controlled_positions": [item["position"] for item in controlled],
         "desired_positions": [item["position"] for item in desired],
         "negative_count_top10": len(negative),
+        "negative_measurement_complete": unknown_sentiment_count == 0,
+        "unclassified_sentiment_count_top10": unknown_sentiment_count,
         "negative_positions": [item["position"] for item in negative],
         "weighted_controlled_score": round(sum(
             RANK_WEIGHTS.get(item["position"], 0) for item in controlled
@@ -112,6 +117,74 @@ def measure_serp_surface(control_map: dict, sample: dict) -> dict:
     }
 
 
+def build_portfolio_serp_report(control_maps: list[dict]) -> dict:
+    """Report the whole controlled portfolio, never only the canonical domain."""
+    query_rows = []
+    asset_best: dict[str, dict] = {}
+    for control in control_maps:
+        controlled = [
+            item for item in control.get("rank_results", control.get("results", []))
+            if item.get("controlled") and item.get("desired")
+        ]
+        controlled.sort(key=lambda item: int(item.get("position") or 999))
+        striking = [
+            item for item in controlled
+            if 11 <= int(item.get("position") or 999) <= 30
+        ]
+        row = {
+            **serp_dimension(control),
+            "observed_at": control.get("observed_at"),
+            "controlled_results_top10": sum(
+                int(item.get("position") or 999) <= 10 for item in controlled
+            ),
+            "controlled_unique_assets_top10": len({
+                item.get("asset_id") for item in controlled
+                if int(item.get("position") or 999) <= 10 and item.get("asset_id")
+            }),
+            "portfolio_results": [{
+                "asset_id": item.get("asset_id"),
+                "asset_type": item.get("asset_type"),
+                "url": item.get("url") or item.get("link"),
+                "position": item.get("position"),
+                "page_one": int(item.get("position") or 999) <= 10,
+            } for item in controlled],
+            "striking_distance_assets": [{
+                "asset_id": item.get("asset_id"),
+                "url": item.get("url") or item.get("link"),
+                "position": item.get("position"),
+            } for item in striking],
+        }
+        query_rows.append(row)
+        for item in controlled:
+            asset_id = item.get("asset_id")
+            if not asset_id:
+                continue
+            candidate = {
+                "asset_id": asset_id,
+                "url": item.get("url") or item.get("link"),
+                "position": int(item.get("position") or 999),
+                "query": control.get("query") or control.get("keyword"),
+                "device": control.get("device"),
+            }
+            previous = asset_best.get(asset_id)
+            if not previous or candidate["position"] < previous["position"]:
+                asset_best[asset_id] = candidate
+    return {
+        "kind": "controlled_asset_portfolio",
+        "status": "measured" if query_rows else "not_measured",
+        "queries": query_rows,
+        "assets": sorted(
+            asset_best.values(), key=lambda item: (item["position"], item["asset_id"])
+        ),
+        "page_one_asset_ids": sorted({
+            item["asset_id"] for item in asset_best.values()
+            if item["position"] <= 10
+        }),
+        "striking_distance_asset_ids": sorted({
+            item["asset_id"] for item in asset_best.values()
+            if 11 <= item["position"] <= 30
+        }),
+    }
 def _position_map(measurement: dict) -> dict[str, int]:
     return {
         item["url"]: int(item["position"])

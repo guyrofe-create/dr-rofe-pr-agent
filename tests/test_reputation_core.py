@@ -21,6 +21,7 @@ from scripts.reputation_core.editorial_radar import (
 )
 from scripts.reputation_core.search_console import (
     fetch_search_console_rows,
+    inspect_search_console_urls,
     refresh_google_access_token,
 )
 from scripts.reputation_core.tactics import ranked_tactics
@@ -173,6 +174,28 @@ class SearchConsoleAdapterTests(unittest.TestCase):
             "token", ["sc-domain:missing.example"], session=ForbiddenSession()
         )
         self.assertEqual(rows, [])
+
+    def test_url_inspection_normalizes_index_and_canonical_evidence(self):
+        class InspectionSession(self.Session):
+            def post(self, url, **kwargs):
+                return SearchConsoleAdapterTests.Response({"inspectionResult": {
+                    "indexStatusResult": {
+                        "verdict": "PASS",
+                        "coverageState": "Submitted and indexed",
+                        "lastCrawlTime": "2026-09-29T00:00:00Z",
+                        "googleCanonical": "https://example.test/a",
+                        "userCanonical": "https://example.test/a",
+                        "sitemap": ["https://example.test/sitemap.xml"],
+                    },
+                    "richResultsResult": {"verdict": "PASS"},
+                }})
+        reports = inspect_search_console_urls(
+            "token",
+            [{"inspection_url": "https://example.test/a", "site_url": "sc-domain:example.test"}],
+            session=InspectionSession(),
+        )
+        self.assertEqual(reports[0]["verdict"], "PASS")
+        self.assertEqual(reports[0]["google_canonical"], "https://example.test/a")
 
 
 class GrowthEngineTests(unittest.TestCase):

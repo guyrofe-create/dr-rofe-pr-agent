@@ -40,6 +40,11 @@ from reputation_core.content_routing import (
     draft_metadata,
     validate_stream_destination,
 )
+from reputation_core.asset_reinforcement import (
+    approved_reinforcement_links,
+    build_asset_reinforcement_plan,
+)
+from reputation_core.medical_evidence import audit_medical_claim_sources
 import social_image
 
 
@@ -244,6 +249,21 @@ def prepare_bundle(
         canonical_url,
         campaign_history,
     )
+    try:
+        asset_registry = json.loads(
+            (PROJECT_ROOT / "data" / "asset_registry.json").read_text(encoding="utf-8")
+        ).get("assets", [])
+    except (OSError, ValueError, TypeError):
+        asset_registry = []
+    reinforcement_plan = build_asset_reinforcement_plan(
+        canonical_url=canonical_url,
+        canonical_name=client["canonical_facts"]["primary_name"],
+        profile_url=business.get("profilePageUrl", "https://guyrofe.com/profile/"),
+        search_target=search_target,
+        same_site_links=related_links,
+        assets=asset_registry,
+    )
+    publication_links = approved_reinforcement_links(reinforcement_plan)
     variants = build_platform_variants(title, content, canonical_url)
     primary_query = client["search_goal"]["primary_queries"][0]["query"]
     sources = [{"url": url, "type": "citation"} for url in extract_citation_urls(content)]
@@ -347,7 +367,8 @@ def prepare_bundle(
                 "canonical_url": canonical_url,
                 "meta_description": meta_description(content, client),
                 "search_target": search_target,
-                "internal_links": related_links,
+                "internal_links": publication_links,
+                "asset_reinforcement_plan": reinforcement_plan,
                 "site_key": primary["key"],
                 "content_stream": metadata.get("content_stream"),
                 "content_fingerprint": fingerprint,
@@ -433,6 +454,18 @@ def prepare_bundle(
         else str(draft.resolve())
     )
     medical = bool(client.get("content_plan", {}).get("medical_content"))
+    medical_evidence = audit_medical_claim_sources(content) if medical else {
+        "status": "not_applicable",
+        "ready_for_medical_approval": True,
+    }
+    if medical and not medical_evidence["ready_for_medical_approval"]:
+        sections = sorted({
+            item["section"] for item in medical_evidence.get("unsupported_claims", [])
+        })
+        raise ValueError(
+            "Medical draft cannot enter approval: claim-to-source evidence is "
+            "missing in sections: " + ", ".join(sections[:8])
+        )
     bundle = build_bundle(
         action_type="coordinated_owned_media_publication",
         objective=client["search_goal"]["statement"],
@@ -455,6 +488,8 @@ def prepare_bundle(
         },
         compliance={
             "medical_review_required": medical,
+            "medical_evidence_audit": medical_evidence,
+            "medical_review_recorded_by_exact_approval": medical,
             "no_consultation_invitation": True,
             "no_current_practice_implication": True,
             "instagram_product_publication_scheduled": False,
@@ -474,6 +509,7 @@ def prepare_bundle(
             "destination_role_validated": True,
             "cross_domain_originality_checked": True,
             "content_fingerprint": fingerprint,
+            "asset_reinforcement_plan": reinforcement_plan,
             "secondary_wix_audit_passed": (
                 primary.get("audit_status") == "passed"
                 if primary["key"] == "GUYROFE_WIX_MEDIA_ARCHIVE"
@@ -572,7 +608,10 @@ def main() -> None:
             image = social_image.generate(title, article_visual_context(content))
         except social_image.PhotoSelectionError as exc:
             image_selection_error = f"{type(exc).__name__}: {exc}"
-            image = social_image.default_branded_image()
+            # A generic owner logo is not a topic-relevant medical photograph.
+            # Preserve the draft and create a visibly blocked review bundle so
+            # publication cannot proceed until a suitable image is supplied.
+            image = None
         except Exception as exc:
             raise RuntimeError(
                 "The licensed-photo search failed without creating an AI image: "

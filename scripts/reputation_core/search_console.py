@@ -16,6 +16,9 @@ TOKEN_URL = "https://oauth2.googleapis.com/token"
 SEARCH_ANALYTICS_URL = (
     "https://www.googleapis.com/webmasters/v3/sites/{site}/searchAnalytics/query"
 )
+URL_INSPECTION_URL = (
+    "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect"
+)
 
 
 def refresh_google_access_token(
@@ -85,3 +88,65 @@ def fetch_search_console_rows(
                 "period": {"start": start.isoformat(), "end": end.isoformat()},
             })
     return rows
+
+
+def inspect_search_console_urls(
+    access_token: str,
+    targets: list[dict],
+    *,
+    language_code: str = "he-IL",
+    session=requests,
+) -> list[dict]:
+    """Inspect exact published URLs without requesting indexing or changing sites."""
+    reports = []
+    for target in targets:
+        inspection_url = str(target.get("inspection_url") or "").strip()
+        site_url = str(target.get("site_url") or "").strip()
+        if not inspection_url or not site_url:
+            reports.append({
+                "inspection_url": inspection_url,
+                "site_url": site_url,
+                "status": "invalid_target",
+            })
+            continue
+        response = session.post(
+            URL_INSPECTION_URL,
+            headers={"Authorization": f"Bearer {access_token}"},
+            json={
+                "inspectionUrl": inspection_url,
+                "siteUrl": site_url,
+                "languageCode": language_code,
+            },
+            timeout=30,
+        )
+        if response.status_code in {403, 404}:
+            reports.append({
+                "inspection_url": inspection_url,
+                "site_url": site_url,
+                "status": "inaccessible",
+                "http_status": response.status_code,
+            })
+            continue
+        response.raise_for_status()
+        payload = response.json().get("inspectionResult", {})
+        index = payload.get("indexStatusResult", {})
+        rich = payload.get("richResultsResult", {})
+        reports.append({
+            "inspection_url": inspection_url,
+            "site_url": site_url,
+            "status": "ok",
+            "verdict": index.get("verdict"),
+            "coverage_state": index.get("coverageState"),
+            "indexing_state": index.get("indexingState"),
+            "robots_txt_state": index.get("robotsTxtState"),
+            "page_fetch_state": index.get("pageFetchState"),
+            "last_crawl_time": index.get("lastCrawlTime"),
+            "google_canonical": index.get("googleCanonical"),
+            "user_canonical": index.get("userCanonical"),
+            "sitemap": index.get("sitemap", []),
+            "referring_urls": index.get("referringUrls", []),
+            "rich_results_verdict": rich.get("verdict"),
+            "rich_result_items": rich.get("detectedItems", []),
+            "mobile_usability": payload.get("mobileUsabilityResult", {}),
+        })
+    return reports

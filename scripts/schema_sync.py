@@ -179,6 +179,12 @@ def main():
         return
 
     for site in profile["sites"]:
+        if site.get("public_sync_prohibited"):
+            log(
+                f"[{site['key']}] SKIPPED - public sync prohibited; "
+                "read-only audit only until separate exact approval"
+            )
+            continue
         if site.get("platform", "wordpress") != "wordpress":
             api_key = env(site.get("api_key_env", ""))
             site_id = env(site.get("site_id_env", ""))

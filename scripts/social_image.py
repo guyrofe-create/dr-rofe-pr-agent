@@ -69,6 +69,19 @@ VISIBLE_PERSON_WORDS = frozenset(
         "woman", "child", "doctor", "clinician", "patient", "face",
     }
 )
+NON_HUMAN_MEDICAL_MARKERS = frozenset(
+    {
+        "alioramus", "dinosaur", "theropod", "tyrannosaur", "cretaceous",
+        "paleontology", "palaeontology", "fossil", "veterinary", "canine",
+        "feline", "animal anatomy", "animal skull",
+    }
+)
+ANIMAL_TOPIC_MARKERS = frozenset(
+    {
+        "כלב", "חתול", "בעל חיים", "וטרינר", "דינוזאור", "מאובן",
+        "dog", "cat", "animal", "veterinary", "dinosaur", "fossil",
+    }
+)
 PLANNED_SEARCH_QUERIES = 5
 MAX_SEARCH_QUERIES = 8
 MAX_REVIEWED_CANDIDATES = 24
@@ -163,12 +176,15 @@ def alt_text(title, description=None, entity_relevant=None):
     )
     base = " ".join((description or visual_description(clean_title)).split())
     if relevant:
-        base = f"{base.rstrip(' .')}, מלווה מאמר של {_CLIENT_NAME}"
         for variant in sorted(name_variants, key=len, reverse=True):
             if variant != _CLIENT_NAME:
-                base = base.replace(variant, "")
+                base = base.replace(variant, _CLIENT_NAME)
+        if _CLIENT_NAME not in base:
+            base = f"{base.rstrip(' .')}, מלווה מאמר של {_CLIENT_NAME}"
         while base.count(_CLIENT_NAME) > 1:
-            base = base.replace(_CLIENT_NAME, "", 1)
+            first = base.find(_CLIENT_NAME)
+            duplicate = base.find(_CLIENT_NAME, first + len(_CLIENT_NAME))
+            base = base[:duplicate] + base[duplicate + len(_CLIENT_NAME):]
         base = " ".join(base.split())
     return base[:300]
 
@@ -219,6 +235,12 @@ def _search_query_prompt(title, summary):
 def topic_search_queries(title):
     """Return deterministic Commons queries for recognized medical topics."""
     topic = _topic_without_client(title)
+    if "העצב המשולש" in topic or "נוירלגיה" in topic:
+        return [
+            "human skull anatomy model",
+            "cranial nerve anatomy model",
+            "dental examination equipment",
+        ]
     if "כאבי מחזור" in topic or "דיסמנוריאה" in topic:
         return [
             "experiencing menstrual pain",
@@ -633,6 +655,23 @@ def interleave_candidates(*groups):
     return merged
 
 
+def candidate_matches_human_medical_context(candidate, title):
+    """Reject animal and palaeontology assets for human-health articles."""
+    topic = _topic_without_client(title).lower()
+    if any(marker in topic for marker in ANIMAL_TOPIC_MARKERS):
+        return True
+    probe = " ".join(
+        str(candidate.get(key) or "")
+        for key in (
+            "description",
+            "source_page_url",
+            "source_image_url",
+            "attribution",
+        )
+    ).lower()
+    return not any(marker in probe for marker in NON_HUMAN_MEDICAL_MARKERS)
+
+
 def review_relevance(client, image_bytes, media_type, title, summary):
     """Accept a licensed photograph based only on direct topical relevance."""
     encoded = base64.b64encode(image_bytes).decode("ascii")
@@ -650,8 +689,11 @@ def review_relevance(client, image_bytes, media_type, title, summary):
                         "and reusable-license checks. Judge it only by whether the visible "
                         "content directly and truthfully illustrates the exact article. "
                         "Reject any image containing an identifiable person, patient, "
-                        "clinician, face or active medical procedure. Also reject it when "
-                        "it is not topically relevant or would materially misrepresent the "
+                        "clinician, face or active medical procedure. Also reject a "
+                        "non-human animal, fossil, dinosaur, veterinary specimen or "
+                        "non-human anatomy unless the article explicitly concerns that "
+                        "animal subject. Reject it when it is not topically relevant or "
+                        "would materially misrepresent the "
                         "article's subject. Prefer people-free equipment, research objects "
                         "or microscopy. "
                         "Return exactly one line. If suitable: "
@@ -747,6 +789,9 @@ def select_licensed_photo(title, summary, client=None):
             f"pexels={len(pexels)}, pixabay={len(pixabay)}"
         )
         for candidate in candidates:
+            if not candidate_matches_human_medical_context(candidate, title):
+                rejection_reasons.append("non-human subject metadata")
+                continue
             source = candidate["source_image_url"]
             if source in seen:
                 continue
@@ -923,7 +968,7 @@ def _jpeg_bytes(image):
 
 
 def default_branded_image(path=DEFAULT_IMAGE_PATH):
-    """Return the owner-provided logo package used only when no other image exists."""
+    """Return a clean owner brand-mark package for explicit manual use only."""
     try:
         base = Image.open(path)
         base.load()
@@ -931,6 +976,18 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
         raise PhotoSelectionError(
             f"The default reputation image could not be loaded: {path}"
         ) from exc
+    # The supplied raster's navy Hebrew wordmark touches the bottom edge and is
+    # visibly clipped. Retain only the distinct blue GR mark; automatic medical
+    # photo selection never calls this fallback.
+    base = base.convert("RGBA")
+    base.putdata([
+        pixel
+        if pixel[2] > 120
+        and pixel[2] - pixel[0] > 40
+        and pixel[1] - pixel[0] > 30
+        else (255, 255, 255, pixel[3])
+        for pixel in base.get_flattened_data()
+    ])
     variants = {
         "hero": _png_bytes(_fit_contain(base, (1600, 900))),
         "landscape": _png_bytes(_fit_contain(base, (1200, 630))),
@@ -941,7 +998,7 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
         content=variants["landscape"],
         media_type="image/png",
         extension="png",
-        visual_description="הלוגו של ד״ר גיא רופא על רקע לבן",
+        visual_description="סמל המותג של ד״ר גיא רופא על רקע לבן",
         creator=_CLIENT_NAME,
         license_name="Owner-provided brand asset",
         attribution="",
@@ -951,11 +1008,8 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
 
 
 def generate(title, summary, client=None):
-    """Return four image variants after exhaustive search, else owner logo."""
-    try:
-        licensed = select_licensed_photo(title, summary, client=client)
-    except PhotoSelectionError:
-        return default_branded_image()
+    """Return four variants of a verified topic photo, or fail closed."""
+    licensed = select_licensed_photo(title, summary, client=client)
     try:
         base = Image.open(BytesIO(licensed.content)).convert("RGB")
     except Exception as exc:

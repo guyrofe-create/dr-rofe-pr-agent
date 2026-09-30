@@ -16,16 +16,20 @@
     "אנדומטריוזיס","שחלות פוליציסטיות","מחזור לא סדיר","דימומים רחמיים","מנופאוזה","לידה","הנקה"
   ],
   "sameAs": [
+    "https://www.drguyrofe.co.il/",
+    "https://www.drguyrofe.com/",
     "https://www.facebook.com/drguyrofe",
     "https://www.instagram.com/guy_rofe_md/",
     "https://www.linkedin.com/in/guyrofe",
     "https://youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
     "https://www.tiktok.com/@guy_rofe_obgyn",
-    "https://pin.it/5n8l2PoBh",
     "https://about.me/drguyrofe",
-    "https://drguyrofe.blogspot.com/",
+    "https://guyrofe.blogspot.com/",
     "https://medium.com/@guyrofe",
     "https://www.tumblr.com/blog/drguyrofe",
+    "https://podcasts.apple.com/us/podcast/%D7%A8%D7%A4%D7%95%D7%90%D7%94-%D7%A2%D7%9C-%D7%9B%D7%95%D7%A1-%D7%A7%D7%A4%D7%94/id1787147468",
+    "https://open.spotify.com/show/2o8f3yN18UunMRpsEBPTg7",
+    "https://share.google/sTaxQJMQnwKZhXK5X",
     "https://www.wikidata.org/wiki/Q140470790"
   ],
   "wikidata": "Q140470790",
@@ -41,6 +45,8 @@
       "user_env": "WORDPRESS_GUYROFE_COM_USER",
       "app_password_env": "WORDPRESS_GUYROFE_COM_API",
       "canonical_url": "https://guyrofe.com/",
+      "public_sync_prohibited": true,
+      "public_sync_reason": "canonical site is read-only until a separate exact owner decision",
       "profile_page_slug": "profile",
       "schema_page_slug": "schema-markup",
       "llms_page_slug": "llms"

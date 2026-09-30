@@ -7,6 +7,7 @@ import requests
 import re
 import time
 from datetime import datetime, date, timedelta
+from pathlib import Path
 from openai import OpenAI
 from urllib.parse import parse_qs, urlparse
 
@@ -18,6 +19,7 @@ from reputation_core import (
     CommandCenter,
     client_search_queries,
     fetch_search_console_rows,
+    inspect_search_console_urls,
     load_client_profile,
     load_fact_registry,
     monitoring_prompts,
@@ -27,6 +29,12 @@ from reputation_core import (
     data_path,
     audit_backlinks,
 )
+from reputation_core.technical_visibility import (
+    audit_sitemap_membership,
+    build_publication_lifecycle,
+    fetch_sitemap_urls,
+)
+from reputation_core.page_experience import fetch_page_experience
 from reputation_core.strategy import load_strategy
 from reputation_core.orchestrator import load_serp_targets
 from reputation_core.ai_evaluator import evaluate_ai_answer
@@ -65,7 +73,10 @@ REPORT = {
     "date": datetime.now().isoformat(),
     "rank": [], "geo": [], "tokens": [], "reviews": None,
     "facebook_recommendations": None, "web_mentions": None,
-    "search_console": None, "bing_ai_performance": None, "backlinks": None,
+    "search_console": None, "url_inspection": None,
+    "publication_lifecycle": [], "page_experience": None,
+    "runtime_connection_health": None,
+    "bing_ai_performance": None, "backlinks": None,
     "google_business_performance": None,
     "orchestration": None,
     "alerts": [], "errors": [],
@@ -127,6 +138,74 @@ def collect_search_console_evidence():
         access_token = refresh_google_access_token(*credentials)
         properties = load_serp_targets().get("search_console_properties", [])
         rows = fetch_search_console_rows(access_token, properties)
+        project_root = Path(__file__).resolve().parents[1]
+        campaign_urls = []
+        for path in sorted(
+            (project_root / "content_drafts" / "campaigns").glob("*.json"),
+            reverse=True,
+        ):
+            if path.name == "index.json":
+                continue
+            try:
+                campaign = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, ValueError, TypeError):
+                continue
+            campaign_urls.extend(
+                item.get("url") for item in campaign.get("destinations", [])
+                if item.get("url")
+            )
+            if len(campaign_urls) >= 50:
+                break
+        candidate_urls = list(dict.fromkeys(
+            campaign_urls + [item.get("page") for item in rows if item.get("page")]
+        ))
+        inspection_targets = []
+        for url in candidate_urls:
+            host = normalized_host(url)
+            site_url = next((
+                item for item in properties
+                if host == str(item).removeprefix("sc-domain:").removeprefix("https://").rstrip("/").removeprefix("www.")
+            ), None)
+            if site_url:
+                inspection_targets.append({"inspection_url": url, "site_url": site_url})
+        try:
+            inspections = inspect_search_console_urls(
+                access_token, inspection_targets[:50]
+            )
+            REPORT["url_inspection"] = {
+                "status": "ok",
+                "target_count": len(inspection_targets[:50]),
+                "results": inspections,
+            }
+            sitemap_cache = {}
+            lifecycles = []
+            for inspection in inspections:
+                url = inspection["inspection_url"]
+                host = normalized_host(url)
+                if host not in sitemap_cache:
+                    try:
+                        sitemap_cache[host] = fetch_sitemap_urls(f"https://{host}")
+                    except Exception as sitemap_exc:
+                        sitemap_cache[host] = []
+                        inspection["sitemap_error"] = safe_error(sitemap_exc)
+                sitemap = audit_sitemap_membership(url, sitemap_cache[host])
+                row = next((item for item in rows if item.get("page", "").rstrip("/") == url.rstrip("/")), None)
+                lifecycles.append(build_publication_lifecycle(
+                    url=url,
+                    receipt={"status": "accepted"},
+                    live_verification={"state": "live"},
+                    sitemap_audit=sitemap,
+                    inspection=inspection,
+                    search_console_row=row,
+                ))
+            REPORT["publication_lifecycle"] = lifecycles
+        except Exception as inspection_exc:
+            REPORT["url_inspection"] = {
+                "status": "error",
+                "error": safe_error(inspection_exc),
+                "results": [],
+            }
+            REPORT["publication_lifecycle"] = []
         REPORT["search_console"] = {
             "status": "ok",
             "properties": properties,
@@ -140,7 +219,81 @@ def collect_search_console_evidence():
             "error": safe_error(exc),
             "rows": [],
         }
+        REPORT["url_inspection"] = {
+            "status": "error",
+            "error": safe_error(exc),
+            "results": [],
+        }
         return []
+
+
+def collect_page_experience():
+    """Read-only field/lab evidence for every configured website."""
+    profile = load_json_file(PROFILE_PATH, {})
+    reports = []
+    for site in profile.get("sites", []):
+        if site.get("key") == "GUYROFE_WIX_MEDIA_ARCHIVE":
+            continue
+        url = site.get("base_url")
+        if not url:
+            continue
+        for strategy in ("mobile", "desktop"):
+            try:
+                reports.append(fetch_page_experience(
+                    url,
+                    strategy=strategy,
+                    api_key=env("PAGESPEED_API_KEY"),
+                ))
+            except Exception as exc:
+                reports.append({
+                    "url": url,
+                    "strategy": strategy,
+                    "status": "error",
+                    "error": safe_error(exc),
+                    "public_write_performed": False,
+                })
+    REPORT["page_experience"] = {
+        "status": "ok" if any(not item.get("error") for item in reports) else "unavailable",
+        "results": reports,
+    }
+    return reports
+
+
+def derive_runtime_connection_health():
+    """Build current evidence from this run; never trust static secret metadata."""
+    rank_items = REPORT.get("rank", [])
+    health = {
+        "serp_provider": {
+            "status": "ok" if any(item.get("results") for item in rank_items) else "unverified",
+            "evidence": "current_run_results",
+        },
+        "search_console": {
+            "status": (REPORT.get("search_console") or {}).get("status", "unverified"),
+            "evidence": "current_api_call",
+        },
+        "url_inspection": {
+            "status": (REPORT.get("url_inspection") or {}).get("status", "unverified"),
+            "evidence": "current_api_call",
+        },
+        "google_business": {
+            "status": (REPORT.get("google_business_performance") or {}).get("status", "unverified"),
+            "evidence": "current_api_call",
+        },
+        "backlink_feed": {
+            "status": "ok" if (REPORT.get("backlinks") or {}).get("links") else "baseline_required",
+            "evidence": "current_import",
+        },
+        "page_experience": {
+            "status": (REPORT.get("page_experience") or {}).get("status", "unverified"),
+            "evidence": "current_api_call",
+        },
+    }
+    REPORT["runtime_connection_health"] = {
+        "source_of_truth": "live_read_only_checks",
+        "static_manifest_authoritative": False,
+        "connections": health,
+    }
+    return health
 
 
 def collect_google_business_performance():
@@ -640,6 +793,15 @@ def check_google_rank(today=None):
         REPORT["rank"].append({"status": "skipped", "reason": "SERPAPI_KEY not set"})
         return
     today = today or date.today().isoformat()
+    asset_registry = load_json_file(ASSET_REGISTRY_PATH, {"assets": []})
+    controlled_hosts = {
+        normalized_host(item.get("url"))
+        for item in asset_registry.get("assets", [])
+        if item.get("controlled")
+        and item.get("tier") in {"A", "B"}
+        and item.get("status") != "quarantined"
+        and normalized_host(item.get("url"))
+    }
     plan = serp_run_plan(today)
     request_depth = max(10, min(int(free_serpapi_policy().get("results_per_query", 100)), 100))
     maximum_rank_position = max(
@@ -743,9 +905,22 @@ def check_google_rank(today=None):
                 key=lambda item: item["position"],
             )
             result_depth = max((item["position"] for item in organic), default=0)
-            position = next(
+            canonical_position = next(
                 (r.get("position", i + 1) for i, r in enumerate(organic) if SITE_DOMAIN in r.get("link", "")),
                 None,
+            )
+            portfolio_results = [
+                {
+                    "position": item.get("position", index + 1),
+                    "link": item.get("link"),
+                    "host": normalized_host(item.get("link")),
+                }
+                for index, item in enumerate(organic)
+                if normalized_host(item.get("link")) in controlled_hosts
+            ]
+            position = min(
+                (int(item["position"]) for item in portfolio_results),
+                default=None,
             )
             result = {
                 "engine": engine,
@@ -755,6 +930,9 @@ def check_google_rank(today=None):
                 "keyword": kw, "device": device, "country": MARKET_COUNTRY,
                 "language": MARKET_LANGUAGE,
                 "position": position,
+                "canonical_position": canonical_position,
+                "position_scope": "best_registered_controlled_asset",
+                "controlled_portfolio_results": portfolio_results,
                 "position_top10": position if position and position <= 10 else None,
                 "result_page": ((position - 1) // 10 + 1) if position else None,
                 "page_position": ((position - 1) % 10 + 1) if position else None,
@@ -1309,6 +1487,20 @@ def format_report_markdown():
         (REPORT.get("orchestration") or {})
         .get("visibility_measurement", {})
     )
+    portfolio = visibility.get("controlled_asset_portfolio", {})
+    lines.append("## פורטפוליו הנכסים הנשלטים")
+    if portfolio.get("queries"):
+        for item in portfolio["queries"]:
+            lines.append(
+                f"- {str(item.get('engine', '?')).title()} / "
+                f"{item.get('device', '?')} / `{item.get('query', '?')}`: "
+                f"{item.get('controlled_unique_assets_top10', 0)} נכסים ייחודיים "
+                f"בעשירייה; {len(item.get('striking_distance_assets', []))} "
+                "נכסים במקומות 11–30"
+            )
+    else:
+        lines.append("- לא הושלמה מדידת פורטפוליו בריצה זו.")
+    lines.append("")
     asset_rank = visibility.get("asset_rank_changes", {})
     lines.append("## שינוי מיקום ב-Google לפי נכס")
     if asset_rank.get("assets"):
@@ -1716,6 +1908,7 @@ def main():
         force_environment_key="FORCE_SEARCH_CONSOLE_CHECK",
     ):
         search_console_rows = collect_search_console_evidence()
+        collect_page_experience()
         if (REPORT.get("search_console") or {}).get("status") == "ok":
             HISTORY["last_search_console_check_date"] = today_str
     else:
@@ -1725,6 +1918,13 @@ def main():
             "reason": "twice-monthly Search Console check is not due or already completed",
             "rows": [],
         }
+        REPORT["page_experience"] = {
+            "status": "skipped",
+            "reason": "technical visibility maintenance is not due",
+            "results": [],
+        }
+
+    derive_runtime_connection_health()
 
     # Convert raw monitor findings into durable, routed reputation events.
     # This is the active layer: each new risk receives a priority, SLA,

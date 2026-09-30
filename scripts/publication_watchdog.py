@@ -19,6 +19,8 @@ from pathlib import Path
 
 import requests
 
+from reputation_core.technical_visibility import normalize_provider_state
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CAMPAIGN_ROOT = PROJECT_ROOT / "content_drafts" / "campaigns"
@@ -227,6 +229,7 @@ def build_report(hours=30, *, now=None, request_get=requests.get):
         "missing_urls": 0, "missing_intended_targets": 0,
         "unfulfilled_intended_targets": 0,
         "missing_approval_bundles": 0,
+        "provider_accepted_not_yet_live": 0, "live_verified": 0,
     }
     for path, campaign in load_recent_campaigns(hours, now=now):
         bundle = load_bundle(campaign.get("approval_id"))
@@ -266,6 +269,7 @@ def build_report(hours=30, *, now=None, request_get=requests.get):
                     )
                     if current["verification"]["state"] == "verified_content":
                         totals["content_verified"] += 1
+                        totals["live_verified"] += 1
                     elif current["verification"]["state"] in {
                         "live_url_content_unconfirmed",
                         "inconclusive_login_or_rate_limit",
@@ -273,8 +277,22 @@ def build_report(hours=30, *, now=None, request_get=requests.get):
                         totals["inconclusive"] += 1
                     if current["verification"]["state"] == "missing":
                         totals["missing_urls"] += 1
+                    lifecycle_input = {
+                        **current,
+                        "provider_state": (
+                            "LIVE"
+                            if current["verification"]["state"] == "verified_content"
+                            else current.get("provider_state") or current.get("status")
+                        ),
+                    }
+                    current["visibility_state"] = normalize_provider_state(
+                        lifecycle_input
+                    )
+                    if current["visibility_state"]["requires_reconciliation"]:
+                        totals["provider_accepted_not_yet_live"] += 1
                 else:
                     current["verification"] = {"state": "receipt_missing_url"}
+                    current["visibility_state"] = normalize_provider_state(current)
                     totals["missing_urls"] += 1
             elif current.get("status") == "failed":
                 totals["failures"] += 1

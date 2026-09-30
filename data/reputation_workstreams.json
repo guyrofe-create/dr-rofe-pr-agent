@@ -25,9 +25,25 @@
     },
     {
       "id": "backlink-monitoring",
-      "status": "connector_required",
+      "status": "active_read_only_baseline_pending_provider_data",
       "auto_disavow": false,
-      "next_action": "Connect an authorized backlink export or provider and establish the first baseline."
+      "next_action": "Import an authorized backlink/mention export or provider feed; never auto-disavow."
+    },
+    {
+      "id": "publication-index-lifecycle",
+      "status": "active",
+      "stages": ["provider_accepted", "live_verified", "sitemap_present", "google_crawled", "google_indexed", "search_impressions", "brand_query_visibility"],
+      "next_action": "Inspect newly published URLs at 7, 28 and 42 days and change tactics after a measured 42-day stall."
+    },
+    {
+      "id": "core-web-vitals",
+      "status": "active_read_only",
+      "next_action": "Collect mobile and desktop field/lab evidence; propose changes separately and never mutate the canonical homepage automatically."
+    },
+    {
+      "id": "indexnow",
+      "status": "verified_key_required",
+      "next_action": "Prepare Bing/IndexNow submissions only after a verified per-host key is configured; Google article indexing API remains prohibited."
     },
     {
       "id": "honest-review-requests",
