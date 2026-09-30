@@ -3,7 +3,9 @@
   "bundles": [
     {
       "approval_id": "apr_de396c585908a492f9bb4d8c3d37b65474673db52820c9a9ece847aa8d8d5427",
-      "status": "awaiting_explicit_approval",
+      "status": "cancelled",
+      "cancelled_at": "2026-09-30T11:07:44Z",
+      "cancellation_reason": "Cancelled after final visual QA found a cropped generic brand fallback and malformed alt text; no publication authorized.",
       "draft_path": "content_drafts/2026-09-30-topic-87-run-36705488871-attempt-1.md",
       "bundle_path": "approval_bundles/apr_de396c585908a492f9bb4d8c3d37b65474673db52820c9a9ece847aa8d8d5427.json",
       "preview_path": "approval_bundles/apr_de396c585908a492f9bb4d8c3d37b65474673db52820c9a9ece847aa8d8d5427.html",

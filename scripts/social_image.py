@@ -176,12 +176,15 @@ def alt_text(title, description=None, entity_relevant=None):
     )
     base = " ".join((description or visual_description(clean_title)).split())
     if relevant:
-        base = f"{base.rstrip(' .')}, מלווה מאמר של {_CLIENT_NAME}"
         for variant in sorted(name_variants, key=len, reverse=True):
             if variant != _CLIENT_NAME:
-                base = base.replace(variant, "")
+                base = base.replace(variant, _CLIENT_NAME)
+        if _CLIENT_NAME not in base:
+            base = f"{base.rstrip(' .')}, מלווה מאמר של {_CLIENT_NAME}"
         while base.count(_CLIENT_NAME) > 1:
-            base = base.replace(_CLIENT_NAME, "", 1)
+            first = base.find(_CLIENT_NAME)
+            duplicate = base.find(_CLIENT_NAME, first + len(_CLIENT_NAME))
+            base = base[:duplicate] + base[duplicate + len(_CLIENT_NAME):]
         base = " ".join(base.split())
     return base[:300]
 
@@ -965,7 +968,7 @@ def _jpeg_bytes(image):
 
 
 def default_branded_image(path=DEFAULT_IMAGE_PATH):
-    """Return the owner-provided logo package used only when no other image exists."""
+    """Return a clean owner brand-mark package for explicit manual use only."""
     try:
         base = Image.open(path)
         base.load()
@@ -973,6 +976,18 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
         raise PhotoSelectionError(
             f"The default reputation image could not be loaded: {path}"
         ) from exc
+    # The supplied raster's navy Hebrew wordmark touches the bottom edge and is
+    # visibly clipped. Retain only the distinct blue GR mark; automatic medical
+    # photo selection never calls this fallback.
+    base = base.convert("RGBA")
+    base.putdata([
+        pixel
+        if pixel[2] > 120
+        and pixel[2] - pixel[0] > 40
+        and pixel[1] - pixel[0] > 30
+        else (255, 255, 255, pixel[3])
+        for pixel in base.get_flattened_data()
+    ])
     variants = {
         "hero": _png_bytes(_fit_contain(base, (1600, 900))),
         "landscape": _png_bytes(_fit_contain(base, (1200, 630))),
@@ -983,7 +998,7 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
         content=variants["landscape"],
         media_type="image/png",
         extension="png",
-        visual_description="הלוגו של ד״ר גיא רופא על רקע לבן",
+        visual_description="סמל המותג של ד״ר גיא רופא על רקע לבן",
         creator=_CLIENT_NAME,
         license_name="Owner-provided brand asset",
         attribution="",
@@ -993,11 +1008,8 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
 
 
 def generate(title, summary, client=None):
-    """Return four image variants after exhaustive search, else owner logo."""
-    try:
-        licensed = select_licensed_photo(title, summary, client=client)
-    except PhotoSelectionError:
-        return default_branded_image()
+    """Return four variants of a verified topic photo, or fail closed."""
+    licensed = select_licensed_photo(title, summary, client=client)
     try:
         base = Image.open(BytesIO(licensed.content)).convert("RGB")
     except Exception as exc:

@@ -1,6 +1,8 @@
 {
   "version": 7,
-  "status": "awaiting_explicit_approval",
+  "status": "cancelled",
+  "cancelled_at": "2026-09-30T11:07:44Z",
+  "cancellation_reason": "Cancelled after final visual QA found a cropped generic brand fallback and malformed alt text; no publication authorized.",
   "created_at": "2026-09-30T10:59:44Z",
   "action_type": "coordinated_owned_media_publication",
   "source_draft": "content_drafts/2026-09-30-topic-87-run-36705488871-attempt-1.md",
