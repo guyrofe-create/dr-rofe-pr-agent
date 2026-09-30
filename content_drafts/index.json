@@ -1,6 +1,21 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-09-30-topic-87-run-36705488871-attempt-1.md",
+      "title": "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית | ד״ר גיא רופא",
+      "topic": "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית",
+      "excerpt": "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה בקצרה: אכלזיה היא הפרעת תנועתיות של הוושט שבה גלי הכיווץ אינם פועלים באופן תקין, והסוגר התחתו",
+      "generated_at": "2026-09-30T10:57:13.166740+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-09-27",
+      "cadence_local_date": "2026-09-30",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-09-29-topic-89-run-36628155910-attempt-1.md",
       "title": "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים וממיגרנה | ד״ר גיא רופא",
       "topic": "נוירלגיה של העצב המשולש: איך מזהים את הכאב, כיצד מאבחנים ומה מבדיל אותו מכאב שיניים וממיגרנה",
@@ -475,26 +490,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-5a091e3efc7f2af7.json",
       "analyzed_news_url": "https://healthy.walla.co.il/item/3863988"
-    },
-    {
-      "path": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md",
-      "title": "בדיקת דם העלתה חשד לסרטן ובצילום התגלה גוש בריאה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: \"לא האמנתי\": בדיקת דם חדשנית העלתה חשד לסרטן - ובצילום התגלה גוש בריאה",
-      "excerpt": "בדיקת דם העלתה חשד לסרטן ובצילום התגלה גוש בריאה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בדיקת הדם המתוארת בכותרת לא אבחנה סרטן ולא “ראתה” גוש בריאה. היא זיהתה בדם אות מולקו",
-      "generated_at": "2026-08-27T17:21:32.810696+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "pinterest",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-23",
-      "cadence_local_date": "2026-08-27",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-0a240126219ec563.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/h1c11ef6dgl"
     }
   ]
 }

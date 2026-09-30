@@ -1,0 +1,620 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-09-30T10:59:44Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-09-30-topic-87-run-36705488871-attempt-1.md",
+  "source_draft_sha256": "6f571e890759aca48bb5d447cd6beaf4a34da38d3768d10e1c2a312dfed7a179",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-landscape.png",
+    "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+    "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-hero.png",
+        "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-landscape.png",
+        "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-square.jpg",
+        "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-portrait.png",
+        "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית | ד״ר גיא רופא",
+        "cms_title": "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית",
+        "markdown": "# אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה בקצרה:** אכלזיה היא הפרעת תנועתיות של הוושט שבה גלי הכיווץ אינם פועלים באופן תקין, והסוגר התחתון של הוושט אינו נרפה במידה מספקת בזמן בליעה. החשד עולה בעיקר כאשר קיימת הפרעה מתמשכת בבליעת מזון מוצק וגם נוזלים, לעיתים לצד עליית מזון לא מעוכל, כאב בחזה או ירידה במשקל. בניגוד לכך, רפלוקס נובע בעיקר מעליית תוכן קיבה לוושט, ואילו חסימה מכנית נוטה להתחיל בקושי בבליעת מוצקים ורק בהמשך לערב נוזלים. עם זאת, התסמינים עלולים לחפוף, ולכן אי אפשר לקבוע את האבחנה לפי התחושה בלבד.\n\n## מהי אכלזיה ומה משתבש בתהליך הבליעה?\n\nבליעה תקינה אינה מסתכמת במעבר פסיבי של מזון מהפה לקיבה. לאחר שהמזון נכנס לוושט, מתקדמים לאורכו גלי כיווץ מתואמים — תנועה הנקראת פריסטלטיקה. במקביל, הסוגר התחתון של הוושט, המצוי באזור החיבור לקיבה, אמור להתרפות ולאפשר לתוכן לעבור.\n\nבאכלזיה נפגעים שני מרכיבים מרכזיים בתהליך: הפריסטלטיקה בגוף הוושט נעדרת או משתבשת, והרפיית הסוגר התחתון אינה מלאה. כתוצאה מכך מזון ונוזלים עלולים להישאר בוושט במקום להתפנות לקיבה. על פי [ההנחיה הקלינית של הקולג' האמריקאי לגסטרואנטרולוגיה לאבחון ולטיפול באכלזיה](https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/), מדובר בהפרעת תנועתיות שאבחונה נשען על שילוב בין התסמינים לבין מנומטריה, אנדוסקופיה ובדיקת בליעת בריום. ([pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai))\n\nהמחלה עשויה להתפתח בהדרגה. בתחילה האדם עשוי לשנות בלי לשים לב את הרגלי האכילה: לאכול לאט יותר, לשתות בין ביסים, להימנע ממזונות מסוימים או להמתין עד שהתחושה של מזון “תקוע” תחלוף. התאמות אלה עלולות לדחות את הבירור, במיוחד כאשר התסמינים מיוחסים בטעות לרפלוקס, לאכילה מהירה או למתח.\n\nחשוב להדגיש כי אכלזיה אינה חסימה אנטומית רגילה. אין בהכרח גוף זר, גידול או היצרות קבועה שסוגרים את חלל הוושט. הבעיה העיקרית היא תפקודית: אזור המעבר לקיבה אינו נפתח כראוי, ותנועת הוושט אינה דוחפת את התוכן באופן יעיל.\n\n## אילו תסמינים צריכים לעורר חשד להפרעת בליעה?\n\nהתסמין המרכזי הוא דיספגיה — קושי בבליעה או תחושה שמזון ונוזלים אינם עוברים כראוי. אחד הרמזים החשובים לאכלזיה הוא קושי בבליעת **מוצקים ונוזלים גם יחד**. לעומת זאת, כאשר מדובר בחסימה מכנית מתפתחת, הקושי מופיע לעיתים קרובות תחילה במזונות מוצקים, ורק לאחר שההיצרות מחמירה מתעורר קושי גם בשתייה.\n\nתסמינים אפשריים נוספים כוללים:\n\n- עלייה לפה של מזון או נוזלים שלא עברו עיכול;\n- תחושת לחץ, מלאות או כאב מאחורי עצם החזה;\n- שיעול, חנק או תחושת מחנק, במיוחד בשכיבה;\n- צורך לשתות כמויות גדולות בזמן הארוחה כדי לקדם את המזון;\n- אכילה איטית והימנעות ממזונות מסוימים;\n- ירידה לא מכוונת במשקל;\n- צרבת או תחושת שריפה, שעלולות להוביל לאבחנה שגויה של רפלוקס.\n\nהעובדה שמופיעה “צרבת” אינה שוללת אכלזיה. לפי [ההנחיה הקלינית לאבחון ולטיפול במחלת רפלוקס קיבתי־ושטי](https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/), אנשים עם אכלזיה עלולים לדווח על צרבת ועל עליית תוכן, אף שמקור התסמינים עשוי להיות הצטברות ותסיסה של מזון בוושט ולא בהכרח חשיפה מוגברת לחומצת קיבה. ([pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai))\n\nיש להבחין גם בין דיספגיה ושטית לבין קושי בתחילת פעולת הבליעה. שיעול מיידי עם הבליעה, קול “רטוב”, זליגת מזון מהפה או קושי להעביר את המזון מהפה אל הגרון עשויים להצביע על הפרעה בחלל הפה או בלוע. באכלזיה, לעומת זאת, התחושה האופיינית מופיעה בדרך כלל לאחר שהבליעה כבר החלה, ולעיתים מורגשת מאחורי עצם החזה.\n\nקושי חדש או מתקדם בבליעה, ירידה לא מוסברת במשקל, הקאות דמיות, צואה שחורה, אנמיה, כאב משמעותי או אירועי חנק מחייבים בירור רפואי ללא דיחוי. תסמינים אלה אינם מוכיחים שמדובר במחלה מסוימת, אך הם עשויים להעיד על מצב הדורש הערכה מהירה.\n\n## אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?\n\nהתסמינים בשלושת המצבים עשויים לחפוף, אך דפוס הופעתם מספק כיוון ראשוני. ההבדלים בטבלה אינם תחליף לבדיקות, אלא כלי להבנת החשד הקליני:\n\n| מאפיין | אכלזיה | רפלוקס קיבתי־ושטי | חסימה מכנית |\n|---|---|---|---|\n| מנגנון עיקרי | הפרעת תנועתיות והרפיה לקויה של הסוגר התחתון | עליית תוכן קיבה לוושט | היצרות אנטומית של חלל הוושט |\n| דפוס הבליעה | קושי במוצקים ובנוזלים | דיספגיה אינה תמיד קיימת | לרוב מוצקים תחילה, ובהמשך גם נוזלים |\n| עליית תוכן | לעיתים מזון לא מעוכל, גם שעות לאחר הארוחה | לרוב תוכן חומצי או מר | מזון עלול להיעצר מעל ההיצרות |\n| צרבת | אפשרית ועלולה להטעות | תסמין שכיח | תיתכן, אך אינה המאפיין המרכזי |\n| מהלך | הדרגתי ולעיתים ממושך | משתנה, לעיתים קשור לארוחות או לשכיבה | עלול להיות מתקדם, בהתאם לגורם |\n| בדיקה מרכזית | מנומטריה ברזולוציה גבוהה | ניטור רפלוקס במקרים מתאימים | אנדוסקופיה ולעיתים הדמיה |\n\nברפלוקס, הבעיה העיקרית היא מעבר של תוכן קיבה אל הוושט. התסמינים האופייניים הם צרבת ועליית תוכן, ולעיתים הם מוחמרים לאחר ארוחות או בשכיבה. קושי מתמשך בבליעה אינו אמור להיחשב אוטומטית לביטוי רגיל של רפלוקס, משום שהוא עלול לנבוע מהיצרות דלקתית, מהפרעת תנועתיות או מגורם אחר.\n\nחסימה מכנית יכולה להיגרם, בין היתר, מהיצרות פפטית, טבעת בוושט, דלקת, לחץ חיצוני או גידול. על פי [ההנחיות האירופיות לאכלזיה](https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/), יש לבצע אנדוסקופיה באנשים עם תסמינים המתאימים לאכלזיה כדי לשלול מחלות אחרות וחסימה מכנית. במקרים שבהם קיים חשד ל“פסאודו־אכלזיה” ממקור ממאיר, ייתכן צורך גם בהדמיה או באולטרסאונד אנדוסקופי. ([pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai))\n\nפסאודו־אכלזיה היא מצב שבו חסימה אורגנית באזור החיבור בין הוושט לקיבה מחקה את התסמינים ולעיתים גם חלק מממצאי הבדיקות של אכלזיה. חשד כזה עשוי להתעורר במיוחד כאשר התסמינים הופיעו במהירות יחסית, כאשר קיימת ירידה ניכרת במשקל או כאשר מעבר האנדוסקופ באזור החיבור לקיבה קשה באופן חריג.\n\n## כיצד מאבחנים אכלזיה ושוללים סיבות אחרות?\n\nאין בדיקה יחידה שנותנת תמיד את התמונה המלאה. הבירור מבוסס על תיאור מדויק של התסמינים ועל כמה בדיקות משלימות.\n\n**אנדוסקופיה של מערכת העיכול העליונה** מאפשרת לראות את חלל הוושט והקיבה, לזהות דלקת או היצרות, לקחת דגימות רקמה בעת הצורך ולשלול חסימה מכנית. באכלזיה ניתן לעיתים לראות ושט מורחב, שאריות מזון או רוק והתנגדות באזור הסוגר התחתון. עם זאת, בדיקה תקינה אינה שוללת אכלזיה, במיוחד בשלבים מוקדמים.\n\n**מנומטריה ברזולוציה גבוהה** מודדת את הלחצים ואת תבנית הכיווצים לאורך הוושט בזמן בליעות מבוקרות. היא נחשבת לבדיקה המרכזית לאישור האבחנה ולסיווג המחלה. לפי [סיווג שיקגו גרסה 4.0 להפרעות תנועתיות של הוושט](https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/), אבחנה מנומטרית של אכלזיה מתבססת על הרפיה לקויה באזור החיבור בין הוושט לקיבה ועל היעדר פריסטלטיקה תקינה. הסיווג מבחין בין סוגים I, II ו־III בהתאם לדפוסי הלחץ והכיווץ. ([pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai))\n\n**צילום בליעת בריום**, ובפרט צילום מתוזמן, בוחן את התרוקנות הוושט לאחר שתיית חומר ניגוד. הבדיקה עשויה להראות עיכוב של הבריום, הרחבה של הוושט והיצרות אופיינית באזור התחתון. ההנחיה האמריקאית מציינת כי אנדוסקופיה, בליעת בריום ומנומטריה הן בדיקות מבוססות ומשלימות בתהליך האבחון, ולא חלופות מוחלטות זו לזו.\n\nבמקרים שבהם תוצאת המנומטריה אינה חד־משמעית, ניתן להיעזר בבדיקות משלימות, ובהן צילום בריום מתוזמן או FLIP — טכנולוגיה המעריכה את מידת הפתיחה והגמישות של אזור החיבור בין הוושט לקיבה. מטרת הבדיקות אינה רק לתת שם לתסמינים, אלא גם לוודא שלא קיימת חסימה מכנית שהטיפול בה שונה לחלוטין.\n\n## מה עושים לאחר שהאבחנה מאושרת?\n\nהטיפול באכלזיה אינו מחזיר בדרך כלל את העצבים ואת הפריסטלטיקה התקינה של הוושט. מטרתו להפחית את ההתנגדות באזור הסוגר התחתון, לשפר את מעבר המזון לקיבה ולהקל על דיספגיה, עלייה של מזון וכאבים.\n\nאפשרויות הטיפול כוללות הרחבה פנאומטית באמצעות בלון, מיוטומיה כירורגית על שם הלר, מיוטומיה אנדוסקופית דרך הפה — POEM — ובמצבים מסוימים הזרקת בוטולינום טוקסין או טיפול תרופתי. בחירת הגישה תלויה בתת־הסוג המנומטרי, בגיל, במצב הבריאותי, במבנה הוושט, בטיפולים קודמים וביתרונות ובסיכונים של כל אפשרות.\n\nלפי [הנחיית הקולג' האמריקאי לגסטרואנטרולוגיה](https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/), הרחבה פנאומטית, מיוטומיה על שם הלר ו־POEM הן אפשרויות טיפול מבוססות, אך ההתאמה ביניהן אינה זהה בכל מצב. לדוגמה, לסוג III, שבו קיימים כיווצים מוקדמים או ספסטיים, עשוי להידרש טיפול המאפשר מיוטומיה ארוכה יותר. ([pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai))\n\nגם לאחר טיפול מוצלח דרוש מעקב כאשר התסמינים חוזרים או נמשכים. הישנות של דיספגיה עשויה לנבוע מהתרוקנות לא מספקת, הצטלקות, שינוי במבנה הוושט או רפלוקס שהתפתח לאחר הפחתת לחץ הסוגר. משום כך, אין להניח שכל תחושה חוזרת של צרבת או תקיעות משמעה בהכרח חזרה של אותה בעיה; לעיתים נדרש בירור אובייקטיבי חוזר.\n\n## סיכום\n\nאכלזיה היא הפרעת תנועתיות שבה הוושט אינו מקדם מזון באופן תקין והסוגר התחתון אינו נרפה במידה מספקת. הדפוס הבולט הוא קושי בבליעת מוצקים ונוזלים, ולעיתים עליית מזון לא מעוכל, כאב בחזה, שיעול לילי או ירידה במשקל. צרבת אינה שוללת אכלזיה, ותסמינים דמויי רפלוקס עלולים לעכב את האבחנה.\n\nההבדלה מרפלוקס ומחסימה מכנית אינה נעשית על בסיס תסמין יחיד. אנדוסקופיה חיונית לשלילת חסימה, מנומטריה ברזולוציה גבוהה משמשת לאישור ולסיווג הפרעת התנועתיות, וצילום בליעת בריום מספק מידע על מעבר התוכן והתרוקנות הוושט. [ההנחיות האירופיות לאבחון אכלזיה](https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/) מדגישות את מרכזיות המנומטריה ואת תפקידן המשלים של האנדוסקופיה ושל בדיקת הבריום. ([pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai))\n\nהמידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון עצמי ואינו מחליף הערכה רפואית. כל טענה רפואית וכל נוסח המיועד לפרסום מחייבים ביקורת אנושית מקצועית.\n\n> ## על המחבר\n>\n> **המחבר**  \n> תפקיד נוכחי מאושר: יוצר תוכן רפואי ומחבר ספרים.  \n> סטטוס נוכחי מאושר: אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. American College of Gastroenterology, **ACG Clinical Guidelines: Diagnosis and Management of Achalasia**:  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/\n\n2. United European Gastroenterology and European Society of Neurogastroenterology and Motility, **European Guideline on Achalasia – UEG and ESNM Recommendations**:  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/\n\n3. Chicago Classification Working Group, **Esophageal Motility Disorders on High-Resolution Manometry: Chicago Classification Version 4.0**:  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/\n\n4. American College of Gastroenterology, **Clinical Guideline for the Diagnosis and Management of Gastroesophageal Reflux Disease**:  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)\n- [pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai)\n- [pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai)\n- [pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai)\n- [pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai)",
+        "canonical_url": "https://www.drguyrofe.co.il/אכלזיה-של-הוושט-איך-מזהים-הפרעת/",
+        "meta_description": "ד״ר גיא רופא: התשובה בקצרה: אכלזיה היא הפרעת תנועתיות של הוושט שבה גלי הכיווץ אינם פועלים באופן תקין, והסוגר התחתון של הוושט אינו נרפה במידה מספקת בזמן בליעה.",
+        "search_target": {
+          "primary_query": "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית",
+          "secondary_queries": [
+            "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית ד״ר גיא רופא",
+            "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/אכלזיה-של-הוושט-איך-מזהים-הפרעת/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 12,
+            "observed_query": "Dr. Guy Rofe",
+            "observed_at": "2026-09-28T06:51:00.186409"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "0dc35796c76c14a32290ef2cc7e668b3708ddd4c6acd3a7960a2cd20409dcf65",
+        "slug": "אכלזיה-של-הוושט-איך-מזהים-הפרעת",
+        "image": {
+          "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-hero.png",
+          "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+          "alt_text": "הלוגו של על רקע לבן, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "הלוגו של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-hero.png",
+              "sha256": "0aa00c5b4f49c38ebb51f51fb28f2a461a2369416f141e23c9a7fd62a3593279",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-landscape.png",
+              "sha256": "5fdad711b6936d4418898d346a927d76ead97239967ca79a5e3dc864eb3ff26d",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-square.jpg",
+              "sha256": "440ffeaeb37d67781e4d07cda7aa33b4a5e33aa5ed0eb64b986228d8d2efd1bc",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-09-30-topic-87-run-36705488871-attempt-1-portrait.png",
+              "sha256": "820c619990163861966ab5847a9b5ffb479081b14d26bbce80c176b1c8a991b3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 36,
+      "supported_claim_count": 36,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי אכלזיה ומה משתבש בתהליך הבליעה?",
+          "claim": "כתוצאה מכך מזון ונוזלים עלולים להישאר בוושט במקום להתפנות לקיבה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מהי אכלזיה ומה משתבש בתהליך הבליעה?",
+          "claim": "על פי ההנחיה הקלינית של הקולג' האמריקאי לגסטרואנטרולוגיה לאבחון ולטיפול באכלזיה, מדובר בהפרעת תנועתיות שאבחונה נשען על שילוב בין התסמינים לבין מנומטריה, אנדוסקופיה ובדיקת בליעת בריום.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מהי אכלזיה ומה משתבש בתהליך הבליעה?",
+          "claim": "המחלה עשויה להתפתח בהדרגה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מהי אכלזיה ומה משתבש בתהליך הבליעה?",
+          "claim": "בתחילה האדם עשוי לשנות בלי לשים לב את הרגלי האכילה: לאכול לאט יותר, לשתות בין ביסים, להימנע ממזונות מסוימים או להמתין עד שהתחושה של מזון “תקוע” תחלוף.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מהי אכלזיה ומה משתבש בתהליך הבליעה?",
+          "claim": "התאמות אלה עלולות לדחות את הבירור, במיוחד כאשר התסמינים מיוחסים בטעות לרפלוקס, לאכילה מהירה או למתח.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אילו תסמינים צריכים לעורר חשד להפרעת בליעה?",
+          "claim": "התסמין המרכזי הוא דיספגיה — קושי בבליעה או תחושה שמזון ונוזלים אינם עוברים כראוי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אילו תסמינים צריכים לעורר חשד להפרעת בליעה?",
+          "claim": "- צרבת או תחושת שריפה, שעלולות להוביל לאבחנה שגויה של רפלוקס.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אילו תסמינים צריכים לעורר חשד להפרעת בליעה?",
+          "claim": "לפי ההנחיה הקלינית לאבחון ולטיפול במחלת רפלוקס קיבתי־ושטי, אנשים עם אכלזיה עלולים לדווח על צרבת ועל עליית תוכן, אף שמקור התסמינים עשוי להיות הצטברות ותסיסה של מזון בוושט ולא בהכרח חשיפה מוגברת לחומצת קיבה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אילו תסמינים צריכים לעורר חשד להפרעת בליעה?",
+          "claim": "שיעול מיידי עם הבליעה, קול “רטוב”, זליגת מזון מהפה או קושי להעביר את המזון מהפה אל הגרון עשויים להצביע על הפרעה בחלל הפה או בלוע.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אילו תסמינים צריכים לעורר חשד להפרעת בליעה?",
+          "claim": "תסמינים אלה אינם מוכיחים שמדובר במחלה מסוימת, אך הם עשויים להעיד על מצב הדורש הערכה מהירה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?",
+          "claim": "התסמינים בשלושת המצבים עשויים לחפוף, אך דפוס הופעתם מספק כיוון ראשוני.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?",
+          "claim": "| עליית תוכן | לעיתים מזון לא מעוכל, גם שעות לאחר הארוחה | לרוב תוכן חומצי או מר | מזון עלול להיעצר מעל ההיצרות |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?",
+          "claim": "| צרבת | אפשרית ועלולה להטעות | תסמין שכיח | תיתכן, אך אינה המאפיין המרכזי |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?",
+          "claim": "| מהלך | הדרגתי ולעיתים ממושך | משתנה, לעיתים קשור לארוחות או לשכיבה | עלול להיות מתקדם, בהתאם לגורם |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?",
+          "claim": "| בדיקה מרכזית | מנומטריה ברזולוציה גבוהה | ניטור רפלוקס במקרים מתאימים | אנדוסקופיה ולעיתים הדמיה |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?",
+          "claim": "קושי מתמשך בבליעה אינו אמור להיחשב אוטומטית לביטוי רגיל של רפלוקס, משום שהוא עלול לנבוע מהיצרות דלקתית, מהפרעת תנועתיות או מגורם אחר.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?",
+          "claim": "על פי ההנחיות האירופיות לאכלזיה, יש לבצע אנדוסקופיה באנשים עם תסמינים המתאימים לאכלזיה כדי לשלול מחלות אחרות וחסימה מכנית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "אכלזיה, רפלוקס וחסימה מכנית: מה ההבדלים המרכזיים?",
+          "claim": "חשד כזה עשוי להתעורר במיוחד כאשר התסמינים הופיעו במהירות יחסית, כאשר קיימת ירידה ניכרת במשקל או כאשר מעבר האנדוסקופ באזור החיבור לקיבה קשה באופן חריג.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אכלזיה ושוללים סיבות אחרות?",
+          "claim": "אין בדיקה יחידה שנותנת תמיד את התמונה המלאה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אכלזיה ושוללים סיבות אחרות?",
+          "claim": "עם זאת, בדיקה תקינה אינה שוללת אכלזיה, במיוחד בשלבים מוקדמים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אכלזיה ושוללים סיבות אחרות?",
+          "claim": "היא נחשבת לבדיקה המרכזית לאישור האבחנה ולסיווג המחלה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אכלזיה ושוללים סיבות אחרות?",
+          "claim": "הבדיקה עשויה להראות עיכוב של הבריום, הרחבה של הוושט והיצרות אופיינית באזור התחתון.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אכלזיה ושוללים סיבות אחרות?",
+          "claim": "ההנחיה האמריקאית מציינת כי אנדוסקופיה, בליעת בריום ומנומטריה הן בדיקות מבוססות ומשלימות בתהליך האבחון, ולא חלופות מוחלטות זו לזו.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אכלזיה ושוללים סיבות אחרות?",
+          "claim": "מטרת הבדיקות אינה רק לתת שם לתסמינים, אלא גם לוודא שלא קיימת חסימה מכנית שהטיפול בה שונה לחלוטין.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר שהאבחנה מאושרת?",
+          "claim": "הטיפול באכלזיה אינו מחזיר בדרך כלל את העצבים ואת הפריסטלטיקה התקינה של הוושט.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר שהאבחנה מאושרת?",
+          "claim": "אפשרויות הטיפול כוללות הרחבה פנאומטית באמצעות בלון, מיוטומיה כירורגית על שם הלר, מיוטומיה אנדוסקופית דרך הפה — POEM — ובמצבים מסוימים הזרקת בוטולינום טוקסין או טיפול תרופתי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר שהאבחנה מאושרת?",
+          "claim": "בחירת הגישה תלויה בתת־הסוג המנומטרי, בגיל, במצב הבריאותי, במבנה הוושט, בטיפולים קודמים וביתרונות ובסיכונים של כל אפשרות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר שהאבחנה מאושרת?",
+          "claim": "לפי הנחיית הקולג' האמריקאי לגסטרואנטרולוגיה, הרחבה פנאומטית, מיוטומיה על שם הלר ו־POEM הן אפשרויות טיפול מבוססות, אך ההתאמה ביניהן אינה זהה בכל מצב.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר שהאבחנה מאושרת?",
+          "claim": "לדוגמה, לסוג III, שבו קיימים כיווצים מוקדמים או ספסטיים, עשוי להידרש טיפול המאפשר מיוטומיה ארוכה יותר.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר שהאבחנה מאושרת?",
+          "claim": "גם לאחר טיפול מוצלח דרוש מעקב כאשר התסמינים חוזרים או נמשכים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "מה עושים לאחר שהאבחנה מאושרת?",
+          "claim": "הישנות של דיספגיה עשויה לנבוע מהתרוקנות לא מספקת, הצטלקות, שינוי במבנה הוושט או רפלוקס שהתפתח לאחר הפחתת לחץ הסוגר.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "צרבת אינה שוללת אכלזיה, ותסמינים דמויי רפלוקס עלולים לעכב את האבחנה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "ההבדלה מרפלוקס ומחסימה מכנית אינה נעשית על בסיס תסמין יחיד.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "ההנחיות האירופיות לאבחון אכלזיה מדגישות את מרכזיות המנומטריה ואת תפקידן המשלים של האנדוסקופיה ושל בדיקת הבריום.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון עצמי ואינו מחליף הערכה רפואית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "> סטטוס נוכחי מאושר: אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9896940/?utm_source=openai",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8754510/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/8754510/?utm_source=openai",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7005998/?utm_source=openai",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8034247/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/8034247/?utm_source=openai",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "0dc35796c76c14a32290ef2cc7e668b3708ddd4c6acd3a7960a2cd20409dcf65",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/אכלזיה-של-הוושט-איך-מזהים-הפרעת/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "אכלזיה של הוושט: איך מזהים הפרעת בליעה ומה מבדיל אותה מרפלוקס ומחסימה מכנית",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 12,
+        "observed_query": "Dr. Guy Rofe",
+        "observed_at": "2026-09-28T06:51:00.186409"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_de396c585908a492f9bb4d8c3d37b65474673db52820c9a9ece847aa8d8d5427"
+}
