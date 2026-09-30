@@ -3,7 +3,9 @@
   "bundles": [
     {
       "approval_id": "apr_edf111847c8c807f695198c6a3290171e257c44503c2dea08855992c99bacde2",
-      "status": "awaiting_explicit_approval",
+      "status": "cancelled",
+      "cancelled_at": "2026-09-29T20:45:51Z",
+      "cancellation_reason": "Cancelled after visual QA found a non-human dinosaur endocranial cast that could mislead readers of a human medical article; no publication authorized.",
       "draft_path": "content_drafts/2026-09-29-topic-89-run-36628155910-attempt-1.md",
       "bundle_path": "approval_bundles/apr_edf111847c8c807f695198c6a3290171e257c44503c2dea08855992c99bacde2.json",
       "preview_path": "approval_bundles/apr_edf111847c8c807f695198c6a3290171e257c44503c2dea08855992c99bacde2.html",
