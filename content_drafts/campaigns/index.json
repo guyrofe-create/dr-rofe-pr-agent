@@ -1,6 +1,116 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-10-01-topic-81-run-36862232137-attempt-1.md",
+      "title": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-10-01T20:23:50.547358+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/",
+          "detail": "idempotency_key=pub_7de3926354e6f499e2b9795bbb4b1e5e13e2864a40336b83679a69f0f03366d0"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-01-topic-81-run-36862232137-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIvUi9WX29XMeg",
+          "detail": "idempotency_key=pub_35dba3a7566bf81750dcc0e7bee174952209e40a5d5c8664282f6d4eacacf1ac"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_c89c9f17ed71766253325e27fe8c4cb1d69b7e2354c818c031bb6b439652a1c9",
+      "search_target": {
+        "primary_query": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+        "secondary_queries": [
+          "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה ד״ר גיא רופא",
+          "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
       "title": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא",
       "status": "completed",
@@ -4988,98 +5098,6 @@
         }
       ],
       "approval_id": "apr_68897c633cd7a8af8fa6b2bf6aa1605ab71b70611c97d83f57aa144590f9f60c",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-23-topic-90-run-32623454483-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: אפשר למנוע עד 45% מהסיכון לדמנציה — הדברים שחשוב לשנות עוד היום | ד״ר גיא רופא",
-      "status": "completed",
-      "published_at": "2026-08-23T08:45:34.888004+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.co.il",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-23-topic-90-run-32623454483-attempt-1/",
-          "detail": "idempotency_key=pub_412b48ba19c01bfdb193e2509742f803ec38fe80aa7575c64e54195426a7af43"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-23-topic-90-run-32623454483-attempt-1-hero.png",
-          "detail": "wikimedia_commons_licensed_photo"
-        },
-        {
-          "name": "guyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Instagram",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_394b84396f692bcac39b687f70d845dd093808b9b2bfcd9d919af543b1bac3f0",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]
