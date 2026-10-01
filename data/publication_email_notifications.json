@@ -1110,6 +1110,13 @@
         "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIvUi9WX29XMeg"
       ]
+    },
+    "expired:apr_394b84396f692bcac39b687f70d845dd093808b9b2bfcd9d919af543b1bac3f0:2026-08-23T07:49:12Z": {
+      "sent_at": "2026-10-01T22:27:37.350131+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_394b84396f692bcac39b687f70d845dd093808b9b2bfcd9d919af543b1bac3f0",
+      "state": "expired",
+      "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
     }
   }
 }
