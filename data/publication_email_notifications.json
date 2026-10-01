@@ -1091,6 +1091,14 @@
       "approval_id": "apr_5e330c81763fd81714c44e21353e343e01940a8fe33aa04468315de39383e96f",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_c89c9f17ed71766253325e27fe8c4cb1d69b7e2354c818c031bb6b439652a1c9:4fd91317a0638949054e3803f6cc0ad47fc54b878756efa33eb6798bf4be29e6": {
+      "sent_at": "2026-10-01T17:54:09.942174+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_c89c9f17ed71766253325e27fe8c4cb1d69b7e2354c818c031bb6b439652a1c9",
+      "state": "failed",
+      "subject": "הפרסום נכשל: 2026-10-01-topic-81-run-36862232137-attempt-1",
+      "urls": []
     }
   }
 }
