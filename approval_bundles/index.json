@@ -2,6 +2,20 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-10-04-topic-07-run-37200043175-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532.json",
+      "preview_path": "approval_bundles/apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532.html",
+      "created_at": "2026-10-04T11:52:08Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=5; unique_candidates=3; downloaded=3; undersized=0; reviewed=3; rejected=3; search=[uterus anatomical model: commons=27, openverse=0, pexels=0, pixabay=0 | gynecological ultrasound machine: commons=0, openverse=0, pexels=0, pixabay=0 | hysteroscope medical instrument: commons=0, openverse=0, pexels=0, pixabay=0 | uterine fibroid microscopy: commons=0, openverse=0, pexels=0, pixabay=0 | endometrial polyp microscopy: commons=0, openverse=0, pexels=0, pixabay=0]; review_notes=[פסלון היסטורי של אישה בהיריון אינו ממחיש ישירות דימום רחמי חריג. | פסלון עתיק של אישה הרה אינו ממחיש דימום רחמי חריג. | פסלון עתיק של אישה הרה אינו ממחיש דימום רחמי חריג.]"
+    },
+    {
       "approval_id": "apr_c89c9f17ed71766253325e27fe8c4cb1d69b7e2354c818c031bb6b439652a1c9",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-10-01-topic-81-run-36862232137-attempt-1.md",

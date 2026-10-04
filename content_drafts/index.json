@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-04-topic-07-run-37200043175-attempt-1.md",
+      "title": "דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה | ד״ר גיא רופא",
+      "topic": "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה",
+      "excerpt": "דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) דימום רחמי חריג הוא דימום השונה מהדפוס הרגיל מבחינת העיתוי, התדירות, משך הדימום או הכמות. ברוב המקרים אין מדובר במצב מסוכן, אך",
+      "generated_at": "2026-10-04T11:50:22.485303+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-10-04",
+      "cadence_local_date": "2026-10-04",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-10-01-topic-81-run-36862232137-attempt-1.md",
       "title": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
       "topic": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
@@ -482,25 +499,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-0a240126219ec563.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/h1c11ef6dgl"
-    },
-    {
-      "path": "content_drafts/2026-08-26-topic-06-run-32939634105-attempt-1.md",
-      "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
-      "topic": "גיל המעבר - מידע כללי מבוסס מקורות",
-      "excerpt": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת. הוא אינו מחלה, אך השינויים ההורמונליים המתלווים אל",
-      "generated_at": "2026-08-26T06:46:54.595853+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "instagram",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-23",
-      "cadence_local_date": "2026-08-26",
-      "public_execution_allowed": false
     }
   ]
 }
