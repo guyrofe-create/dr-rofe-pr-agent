@@ -1,6 +1,123 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-10-04-topic-07-run-37200043175-attempt-1.md",
+      "title": "דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-10-04T14:23:23.860265+00:00",
+      "destinations": [
+        {
+          "name": "guyrofe.com",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://guyrofe.com/%d7%93%d7%99%d7%9e%d7%95%d7%9d-%d7%a8%d7%97%d7%9e%d7%99-%d7%97%d7%a8%d7%99%d7%92-%d7%a1%d7%99%d7%91%d7%95%d7%aa-%d7%90%d7%a4%d7%a9%d7%a8%d7%99%d7%95%d7%aa-%d7%95%d7%9e%d7%aa%d7%99/",
+          "detail": "idempotency_key=pub_f78cd2435f685f69b6b1aca574ab3a5af6f66f56c6222758e12e01d658795393"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "seo_warning",
+          "url": "https://guyrofe.com/%d7%93%d7%99%d7%9e%d7%95%d7%9d-%d7%a8%d7%97%d7%9e%d7%99-%d7%97%d7%a8%d7%99%d7%92-%d7%a1%d7%99%d7%91%d7%95%d7%aa-%d7%90%d7%a4%d7%a9%d7%a8%d7%99%d7%95%d7%aa-%d7%95%d7%9e%d7%aa%d7%99/",
+          "detail": "failed checks: canonical_person_linked"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-04-topic-07-run-37200043175-attempt-1-hero.png",
+          "detail": "owner_provided_default"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122207629568942441",
+          "detail": "idempotency_key=pub_7fbbe20f74e9433dd113f9f84bf49b65f1fe7ab13ccd39234a406c1b3852b51c"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7512517699499962368/",
+          "detail": "idempotency_key=pub_90907971b67b70a77186aa7fd8c3fafc12f8449d538d668c11bd20d2d8d58183"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOm80JC83NT6Yw",
+          "detail": "idempotency_key=pub_1dd063d4047ba28815df16c281a586d9c7d698540629cb316c04a7581ec029ef"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532",
+      "search_target": {
+        "primary_query": "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה",
+        "secondary_queries": [
+          "דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה",
+          "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה ד״ר גיא רופא",
+          "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational_question"
+      },
+      "canonical_url": "https://guyrofe.com/%d7%93%d7%99%d7%9e%d7%95%d7%9d-%d7%a8%d7%97%d7%9e%d7%99-%d7%97%d7%a8%d7%99%d7%92-%d7%a1%d7%99%d7%91%d7%95%d7%aa-%d7%90%d7%a4%d7%a9%d7%a8%d7%99%d7%95%d7%aa-%d7%95%d7%9e%d7%aa%d7%99/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-10-01-topic-81-run-36862232137-attempt-1.md",
       "title": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
       "status": "completed",
@@ -4995,109 +5112,6 @@
         }
       ],
       "approval_id": "apr_4f0d86fb7b1fd68c2026f689d01932a11a4145996132bb025387e2cc1ce66f40",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-24-topic-90-run-32699319798-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא",
-      "status": "completed_with_errors",
-      "published_at": "2026-08-24T10:02:24.485157+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.co.il",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1/",
-          "detail": "idempotency_key=pub_898b858d72722b143a88ce092c92a9e5426f8bf5353e825a866619cdfec013cb"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1-hero.png",
-          "detail": "wikimedia_commons_licensed_photo"
-        },
-        {
-          "name": "guyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "published",
-          "target_id": "facebook_page",
-          "url": "https://www.facebook.com/122200926482942441",
-          "detail": "idempotency_key=pub_a9c9eb3487818e6d6a6a54c1b9ee3ac6a5408ab4acc4f9c0b3b93a1d911b0950"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "published",
-          "target_id": "linkedin_member",
-          "url": "https://www.linkedin.com/feed/update/urn:li:share:7497594123907072000/",
-          "detail": "idempotency_key=pub_466edd0e9e7646646a28853f5ab0734fa01addbee6e37f6316c6890049fba5ff"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "published",
-          "target_id": "blogger_blog",
-          "url": "https://guyrofe.blogspot.com/2026/08/blog-post_24.html",
-          "detail": "idempotency_key=pub_77673e4322f522ed8f613f5f4994f4842d5208ac1ceade3cd9b43545199fb1d6"
-        },
-        {
-          "name": "Instagram",
-          "status": "failed",
-          "target_id": "instagram_business",
-          "detail": "RuntimeError: Meta Instagram media container creation failed: message=(#10) Application does not have permission for this action; type=OAuthException; code=10; fbtrace_id=AihVF-9LN7_KU9jRh_gc6ar"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_68897c633cd7a8af8fa6b2bf6aa1605ab71b70611c97d83f57aa144590f9f60c",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

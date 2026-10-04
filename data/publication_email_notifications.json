@@ -1117,6 +1117,19 @@
       "approval_id": "apr_394b84396f692bcac39b687f70d845dd093808b9b2bfcd9d919af543b1bac3f0",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532:b3a7ca5674e23e78848f10d40c4a01af3ff68202c5d5461f0a8dd90b976069db": {
+      "sent_at": "2026-10-04T14:23:25.085409+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532",
+      "state": "success",
+      "subject": "אישור פרסום: דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%93%d7%99%d7%9e%d7%95%d7%9d-%d7%a8%d7%97%d7%9e%d7%99-%d7%97%d7%a8%d7%99%d7%92-%d7%a1%d7%99%d7%91%d7%95%d7%aa-%d7%90%d7%a4%d7%a9%d7%a8%d7%99%d7%95%d7%aa-%d7%95%d7%9e%d7%aa%d7%99/",
+        "https://www.facebook.com/122207629568942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7512517699499962368/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOm80JC83NT6Yw"
+      ]
     }
   }
 }

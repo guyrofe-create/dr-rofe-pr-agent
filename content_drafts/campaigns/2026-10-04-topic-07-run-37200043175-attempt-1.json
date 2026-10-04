@@ -1,0 +1,117 @@
+{
+  "draft": "content_drafts/2026-10-04-topic-07-run-37200043175-attempt-1.md",
+  "title": "דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-10-04T14:23:23.860265+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/%d7%93%d7%99%d7%9e%d7%95%d7%9d-%d7%a8%d7%97%d7%9e%d7%99-%d7%97%d7%a8%d7%99%d7%92-%d7%a1%d7%99%d7%91%d7%95%d7%aa-%d7%90%d7%a4%d7%a9%d7%a8%d7%99%d7%95%d7%aa-%d7%95%d7%9e%d7%aa%d7%99/",
+      "detail": "idempotency_key=pub_f78cd2435f685f69b6b1aca574ab3a5af6f66f56c6222758e12e01d658795393"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://guyrofe.com/%d7%93%d7%99%d7%9e%d7%95%d7%9d-%d7%a8%d7%97%d7%9e%d7%99-%d7%97%d7%a8%d7%99%d7%92-%d7%a1%d7%99%d7%91%d7%95%d7%aa-%d7%90%d7%a4%d7%a9%d7%a8%d7%99%d7%95%d7%aa-%d7%95%d7%9e%d7%aa%d7%99/",
+      "detail": "failed checks: canonical_person_linked"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-04-topic-07-run-37200043175-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122207629568942441",
+      "detail": "idempotency_key=pub_7fbbe20f74e9433dd113f9f84bf49b65f1fe7ab13ccd39234a406c1b3852b51c"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7512517699499962368/",
+      "detail": "idempotency_key=pub_90907971b67b70a77186aa7fd8c3fafc12f8449d538d668c11bd20d2d8d58183"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOm80JC83NT6Yw",
+      "detail": "idempotency_key=pub_1dd063d4047ba28815df16c281a586d9c7d698540629cb316c04a7581ec029ef"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532",
+  "search_target": {
+    "primary_query": "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה",
+    "secondary_queries": [
+      "דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה",
+      "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה ד״ר גיא רופא",
+      "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational_question"
+  },
+  "canonical_url": "https://guyrofe.com/%d7%93%d7%99%d7%9e%d7%95%d7%9d-%d7%a8%d7%97%d7%9e%d7%99-%d7%97%d7%a8%d7%99%d7%92-%d7%a1%d7%99%d7%91%d7%95%d7%aa-%d7%90%d7%a4%d7%a9%d7%a8%d7%99%d7%95%d7%aa-%d7%95%d7%9e%d7%aa%d7%99/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
