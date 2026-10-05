@@ -1,0 +1,67 @@
+{
+  "version": 4,
+  "opportunity_id": "opp_ea4ec28103c8d63d",
+  "prepared_at": "2026-10-05T11:43:16Z",
+  "status": "awaiting_item_approval",
+  "public_execution_allowed": false,
+  "approval_invalidated_by_any_edit": true,
+  "opportunity": {
+    "id": "opp_ea4ec28103c8d63d",
+    "version": 4,
+    "action_type": "strengthen_existing_asset",
+    "kind": "activate_asset",
+    "source_kind": "activate_asset",
+    "asset_id": "Canonical website",
+    "asset_url": "https://guyrofe.com/",
+    "query": "ד״ר גיא רופא",
+    "reason": "Measured unique-asset gap is 7; use the existing Canonical website asset before creating another asset.",
+    "recommended_actions": [
+      "Prepare one platform-native publication or profile improvement on this existing asset",
+      "Use original value suited to the platform and link only where natural",
+      "Submit the exact change for approval and remeasure the same brand query"
+    ],
+    "evidence": {
+      "engine": "google",
+      "surface": "web_search",
+      "device": "mobile",
+      "desired_gap": 7,
+      "represented_unique_assets": [],
+      "existing_asset_first": true
+    },
+    "factors": {
+      "expected_impact": 8.0,
+      "asset_authority": 10.0,
+      "query_relevance": 10.0,
+      "control": 10.0,
+      "time_cost": 4.0,
+      "financial_cost": 2.0,
+      "risk": 2.0,
+      "benefit_product": 8000.0,
+      "burden_sum": 8.0,
+      "raw_priority_index": 1000.0,
+      "opportunity_score": 100.0,
+      "formula": "impact × authority × relevance × control ÷ (time + financial cost + risk)"
+    },
+    "score": 100.0,
+    "confidence": 0.85,
+    "status": "selected_for_preparation",
+    "blocked_reasons": [],
+    "preparation_autonomous": true,
+    "final_execution_requires_approval": true,
+    "authorization_scope": "prepare_action_only",
+    "new_asset_build_authorized": false,
+    "approval_required": "owner",
+    "approval_bundle_requirements": [
+      "Evidence and exact target",
+      "Expected benefit, cost, risk and measurement plan",
+      "Exact proposed change or outreach text",
+      "Rollback or stop condition"
+    ],
+    "measurement_after_action": [
+      "Re-measure the same engine, surface, query and locale",
+      "Compare against 7-day and 28-day baselines",
+      "Stop or reverse if risk, duplication or cannibalization rises"
+    ],
+    "execution_mode": "autonomous_prepare_then_approval"
+  }
+}

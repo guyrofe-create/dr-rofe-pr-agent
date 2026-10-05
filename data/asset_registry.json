@@ -115,13 +115,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Canonical website",
@@ -141,14 +141,14 @@
       ],
       "automation": "cms",
       "priority": 100,
-      "previous_observed_position": 4,
+      "previous_observed_position": 1,
       "observed_device": "mobile",
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Secondary official website",
@@ -164,16 +164,16 @@
       "automation": "cms_after_canonical_audit",
       "priority": 92,
       "notes": "Must have a distinct purpose and content; avoid duplicating the canonical site.",
-      "previous_observed_position": null,
-      "observed_position": 12,
-      "observed_query": "Dr. Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-09-28T06:51:00.186409",
-      "page_one": false,
-      "result_page": 2,
+      "previous_observed_position": 12,
+      "observed_position": 7,
+      "observed_query": "Guy Rofe",
+      "observed_device": "mobile",
+      "observed_at": "2026-10-05T11:41:11.432238",
+      "page_one": true,
+      "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
       "no_improvement_days": 0
     },
     {
@@ -192,17 +192,17 @@
       "automation": "wix_blog_api_after_exact_p7_approval",
       "priority": 96,
       "notes": "Independent custom-domain knowledge hub. Publish one original evergreen medical guide weekly; never echo another owned site.",
-      "previous_observed_position": null,
+      "previous_observed_position": 1,
       "observed_position": 1,
       "observed_query": "דר גיא רופא",
-      "observed_device": "mobile",
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": true,
       "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "GuyRofe Wix media archive",
@@ -223,13 +223,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Google Business Profile",
@@ -253,13 +253,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "LinkedIn",
@@ -280,13 +280,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "YouTube",
@@ -304,16 +304,16 @@
       "automation": "oauth_connection_check_and_transcript_source_only",
       "priority": 95,
       "notes": "OAuth and target channel are configured. The product does not currently upload videos or edit YouTube metadata.",
-      "previous_observed_position": null,
-      "observed_position": 16,
+      "previous_observed_position": 16,
+      "observed_position": 5,
       "observed_query": "Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-09-28T06:51:00.186409",
-      "page_one": false,
-      "result_page": 2,
+      "observed_device": "mobile",
+      "observed_at": "2026-10-05T11:41:11.432238",
+      "page_one": true,
+      "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
       "no_improvement_days": 0
     },
     {
@@ -335,13 +335,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Instagram",
@@ -377,13 +377,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Spotify",
@@ -404,13 +404,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Wikidata",
@@ -429,13 +429,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Muck Rack",
@@ -451,17 +451,17 @@
       ],
       "automation": "manual",
       "priority": 86,
-      "previous_observed_position": null,
-      "observed_position": 15,
+      "previous_observed_position": 15,
+      "observed_position": 16,
       "observed_query": "Guy Rofe",
       "observed_device": "desktop",
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": 2,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Crunchbase",
@@ -477,16 +477,16 @@
       "automation": "manual",
       "priority": 72,
       "notes": "Useful only if the business/founder information is factual and relevant.",
-      "previous_observed_position": null,
-      "observed_position": 14,
+      "previous_observed_position": 14,
+      "observed_position": 13,
       "observed_query": "Guy Rofe",
       "observed_device": "desktop",
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": 2,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
       "no_improvement_days": 0
     },
     {
@@ -508,13 +508,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Blogger",
@@ -534,13 +534,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "X",
@@ -559,13 +559,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "TikTok",
@@ -585,13 +585,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Telegram",
@@ -628,13 +628,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Quora",
@@ -655,13 +655,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Pinterest",
@@ -680,13 +680,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Tumblr",
@@ -705,13 +705,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Issuu",
@@ -727,15 +727,15 @@
       "automation": "manual_publish",
       "priority": 62,
       "previous_observed_position": null,
-      "observed_position": null,
-      "observed_query": null,
-      "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
-      "page_one": false,
-      "result_page": null,
-      "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
+      "observed_position": 5,
+      "observed_query": "Dr. Guy Rofe",
+      "observed_device": "mobile",
+      "observed_at": "2026-10-05T11:41:11.432238",
+      "page_one": true,
+      "result_page": 1,
+      "measurement_status": "found",
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
       "no_improvement_days": 0
     },
     {
@@ -755,13 +755,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "About.me",
@@ -776,17 +776,17 @@
       ],
       "automation": "manual",
       "priority": 58,
-      "previous_observed_position": null,
-      "observed_position": 15,
-      "observed_query": "Dr. Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "previous_observed_position": 15,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
-      "result_page": 2,
-      "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Flipboard",
@@ -806,13 +806,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Foursquare",
@@ -831,13 +831,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Flickr",
@@ -855,13 +855,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Giphy",
@@ -879,13 +879,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Slides.com",
@@ -899,17 +899,17 @@
       ],
       "automation": "manual",
       "priority": 38,
-      "previous_observed_position": null,
-      "observed_position": 10,
-      "observed_query": "Dr. Guy Rofe",
-      "observed_device": "mobile",
-      "observed_at": "2026-09-28T06:51:00.186409",
-      "page_one": true,
-      "result_page": 1,
+      "previous_observed_position": 10,
+      "observed_position": 63,
+      "observed_query": "Guy Rofe",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-05T11:41:11.432238",
+      "page_one": false,
+      "result_page": 7,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "HubPages",
@@ -927,13 +927,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Gravatar",
@@ -951,13 +951,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Scoop.it",
@@ -975,13 +975,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Disqus",
@@ -999,13 +999,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "OpenStreetMap user",
@@ -1021,13 +1021,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "WordPress.com mirror",
@@ -1043,13 +1043,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Google Sites mirror",
@@ -1061,16 +1061,16 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "previous_observed_position": null,
-      "observed_position": 14,
+      "previous_observed_position": 14,
+      "observed_position": 2,
       "observed_query": "Dr. Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-09-28T06:51:00.186409",
-      "page_one": false,
-      "result_page": 2,
+      "observed_device": "mobile",
+      "observed_at": "2026-10-05T11:41:11.432238",
+      "page_one": true,
+      "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
       "no_improvement_days": 0
     },
     {
@@ -1084,15 +1084,15 @@
       "automation": "disabled",
       "priority": 0,
       "previous_observed_position": null,
-      "observed_position": null,
-      "observed_query": null,
-      "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_position": 39,
+      "observed_query": "Guy Rofe",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
-      "result_page": null,
-      "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
+      "result_page": 4,
+      "measurement_status": "found",
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
       "no_improvement_days": 0
     },
     {
@@ -1109,13 +1109,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Bravesites mirror",
@@ -1131,13 +1131,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Wixsite mirror",
@@ -1153,13 +1153,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Jimdo mirror",
@@ -1171,17 +1171,17 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "previous_observed_position": null,
+      "previous_observed_position": 6,
       "observed_position": 6,
       "observed_query": "Guy Rofe",
       "observed_device": "mobile",
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": true,
       "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "SITE123 mirror",
@@ -1193,17 +1193,17 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "previous_observed_position": null,
-      "observed_position": 5,
-      "observed_query": "Dr. Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-09-28T06:51:00.186409",
-      "page_one": true,
-      "result_page": 1,
-      "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
+      "previous_observed_position": 5,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-05T11:41:11.432238",
+      "page_one": false,
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Weebly mirror",
@@ -1219,13 +1219,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Jotform blog",
@@ -1241,13 +1241,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Webflow mirror",
@@ -1263,13 +1263,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "CakeResume",
@@ -1285,13 +1285,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Completed.com",
@@ -1307,13 +1307,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Xing",
@@ -1329,13 +1329,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Wattpad",
@@ -1351,13 +1351,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Minds",
@@ -1373,13 +1373,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Product Hunt",
@@ -1395,13 +1395,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Docker Hub",
@@ -1417,13 +1417,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "CodePen",
@@ -1439,13 +1439,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Last.fm",
@@ -1461,13 +1461,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Imgur",
@@ -1483,13 +1483,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Dwell",
@@ -1505,13 +1505,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-09-28T06:51:00.186409",
+      "observed_at": "2026-10-05T11:41:11.432238",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     },
     {
       "platform": "Creator Spring",
@@ -1523,17 +1523,17 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "previous_observed_position": null,
-      "observed_position": 2,
-      "observed_query": "Dr. Guy Rofe",
-      "observed_device": "mobile",
-      "observed_at": "2026-09-28T06:51:00.186409",
-      "page_one": true,
-      "result_page": 1,
+      "previous_observed_position": 2,
+      "observed_position": 47,
+      "observed_query": "Guy Rofe",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-05T11:41:11.432238",
+      "page_one": false,
+      "result_page": 5,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 1,
+      "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 0
+      "no_improvement_days": 7
     }
   ]
 }
