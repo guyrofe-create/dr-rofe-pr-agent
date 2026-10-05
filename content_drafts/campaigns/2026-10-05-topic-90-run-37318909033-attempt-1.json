@@ -1,0 +1,117 @@
+{
+  "draft": "content_drafts/2026-10-05-topic-90-run-37318909033-attempt-1.md",
+  "title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-10-05T21:14:25.701840+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9b%d7%91%d7%a8-%d7%9c%d7%90-%d7%92%d7%99%d7%a9%d7%94-%d7%90%d7%97%d7%aa-%d7%9c%d7%9b%d7%95%d7%9c%d7%9f-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa-%d7%a2%d7%95%d7%9e%d7%93/",
+      "detail": "idempotency_key=pub_6e44bbbfa07b3b4c6dc2841bdf93270121b1f71fc967ade5785a1b2fe3835995"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9b%d7%91%d7%a8-%d7%9c%d7%90-%d7%92%d7%99%d7%a9%d7%94-%d7%90%d7%97%d7%aa-%d7%9c%d7%9b%d7%95%d7%9c%d7%9f-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa-%d7%a2%d7%95%d7%9e%d7%93/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-05-topic-90-run-37318909033-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122207876612942441",
+      "detail": "idempotency_key=pub_927799d999caceece2b95b4cbb0ce9076162ce60c9d47361c749b4dba2119434"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7512983557007601665/",
+      "detail": "idempotency_key=pub_f816097c85563e05871c88cb287129a3ada3f8ec970d2e3910da0d7780bb10a0"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/10/blog-post.html",
+      "detail": "idempotency_key=pub_16c3fbb10ed0b3bade8711e3a09d801fa3f8818d5c7caee104fc554d3cfbf9c5"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_3d76c0b22b74f488cfcac007da37a16ae47b204f42692da8fa10ccb14bda22d3",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן",
+    "secondary_queries": [
+      "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות",
+      "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9b%d7%91%d7%a8-%d7%9c%d7%90-%d7%92%d7%99%d7%a9%d7%94-%d7%90%d7%97%d7%aa-%d7%9c%d7%9b%d7%95%d7%9c%d7%9f-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa-%d7%a2%d7%95%d7%9e%d7%93/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

@@ -1137,6 +1137,19 @@
       "approval_id": "apr_68897c633cd7a8af8fa6b2bf6aa1605ab71b70611c97d83f57aa144590f9f60c",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_3d76c0b22b74f488cfcac007da37a16ae47b204f42692da8fa10ccb14bda22d3:8a571426da6ac5c0dea3455ac97fed1fe3de2e5950853097ab56c2306c66d9b8": {
+      "sent_at": "2026-10-05T21:14:27.818320+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_3d76c0b22b74f488cfcac007da37a16ae47b204f42692da8fa10ccb14bda22d3",
+      "state": "success",
+      "subject": "אישור פרסום: כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9b%d7%91%d7%a8-%d7%9c%d7%90-%d7%92%d7%99%d7%a9%d7%94-%d7%90%d7%97%d7%aa-%d7%9c%d7%9b%d7%95%d7%9c%d7%9f-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa-%d7%a2%d7%95%d7%9e%d7%93/",
+        "https://www.facebook.com/122207876612942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7512983557007601665/",
+        "https://guyrofe.blogspot.com/2026/10/blog-post.html"
+      ]
     }
   }
 }
