@@ -1,0 +1,892 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-10-05T13:47:09Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-10-05-topic-90-run-37318909033-attempt-1.md",
+  "source_draft_sha256": "8c00b8b46f88f25aed0e2c9655f9f8c5460265fde0a65aa01f6d1751afdcbcfa",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ynet.co.il/health/article/bkfi7tjsfx",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.3389/fonc.2024.1405361",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1200/JCO.22.01549",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.annonc.2023.05.005",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-landscape.png",
+    "sha256": "9cbadce9d6fd71c464257fdbe230d5f68d613ce4638e5c93467b0cf6fc0de626",
+    "alt_text": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Ovarian_Mucinous_Cystadenoma_(180691375).jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Ovarian_Mucinous_Cystadenoma_%28180691375%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Ed Uthman from Houston, TX, USA",
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "attribution": "Ovarian Mucinous Cystadenoma (180691375).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-hero.png",
+        "sha256": "24ac95047efbbcc64272a8911234afacd055268358cc943097fc8f8e584342bb",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-landscape.png",
+        "sha256": "9cbadce9d6fd71c464257fdbe230d5f68d613ce4638e5c93467b0cf6fc0de626",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-square.jpg",
+        "sha256": "d37f86ab2d34b44850910f5dfa3c8b29ac0e587231da94b8813bc8c726bd616c",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-portrait.png",
+        "sha256": "8cbc47089002b853c765d9b65ce66afa2a49c5cc36af593b06f4435fbe7d825f",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
+        "cms_title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות",
+        "markdown": "# כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nהתשובה הקצרה היא שטיפול מותאם אישית בסרטן השחלות אינו תרופה אחת המתאימה לכולן, אלא תהליך המחבר בין סוג הגידול, שלב המחלה, תוצאות הניתוח, התגובה לכימותרפיה, מצבה הכללי של המטופלת ומאפיינים מולקולריים כגון מוטציות ב־BRCA וחסר ברקומבינציה הומולוגית — HRD. בדיקות אלה עשויות לסייע בבחירת טיפול אחזקה ממוקד, אך הן אינן מבטיחות תגובה ואינן מחליפות הערכה קלינית מלאה.\n\n[כתבת ynet העוסקת בטיפול המותאם אישית בסרטן השחלות](https://www.ynet.co.il/health/article/bkfi7tjsfx), שפורסמה ב־5 באוקטובר 2026, מתארת את המעבר מגישה אחידה יחסית לקבלת החלטות המבוססת גם על הביולוגיה של הגידול. חשוב להבהיר כי מדובר בכתבת תוכן שהוגשה בשיתוף חברות מסחריות, ולא במחקר רפואי או בהנחיה מקצועית. היא אינה מציגה מחקר חדש יחיד, אלא מסכמת מגמה שהתפתחה לאורך שנים ונשענת, בין השאר, על מחקרים קליניים כגון SOLO-1 ו־PAOLA-1. לכן נכון לבחון בנפרד מה נטען בכותרת, מה הראו המחקרים בפועל, באילו קבוצות נמצאה תועלת ומה עדיין אינו ידוע.\n\n## סרטן השחלות אינו מחלה ביולוגית אחת\n\nהמונח \"סרטן השחלות\" כולל כמה מחלות הנבדלות זו מזו במראה הרקמתי, בהתנהגות הביולוגית, בשכיחות השינויים הגנטיים ובתגובה לטיפול. במסגרת הקבוצה נכללים גם גידולים אפיתליאליים של השחלה, החצוצרה והצפק הראשוני, שלעיתים מטופלים לפי עקרונות דומים. הסוג הסרוזי בדרגה גבוהה נפוץ בקרב גידולים אפיתליאליים מתקדמים, אך קיימים גם גידולים אנדומטריואידיים, צלולי־תא, מוקיניים וסוגים נוספים.\n\nהטיפול במחלה אפיתליאלית עשוי לכלול ניתוח וכימותרפיה המבוססת על תרכובות פלטינה. ההחלטה אם להתחיל בניתוח או בכימותרפיה לפני ניתוח, מה יהיה היקף ההתערבות ומה יינתן לאחריה תלויה בשלב המחלה, בסוג הגידול, בפיזורו, באפשרות להשיג הסרה ניתוחית מיטבית ובמצבה הרפואי של המטופלת. עקרונות אלה מפורטים ב[הנחיית NICE לזיהוי ולטיפול הראשוני בסרטן השחלות](https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557).\n\nמכאן נובעת המשמעות המדויקת של הביטוי \"כבר לא גישה אחת לכולן\". אין פירוש הדבר שהטיפול הבסיסי נעלם, אלא שעל גבי התשתית של ניתוח וכימותרפיה נוספה שכבה של החלטות פתולוגיות, גנטיות ומולקולריות. שתי נשים בעלות אבחנה כללית דומה עשויות לקבל אסטרטגיות המשך שונות בגלל תת־סוג היסטולוגי אחר, תגובה שונה לפלטינה, מוטציה ב־BRCA, תוצאת HRD, טיפול קודם, מחלות רקע או סיכון שונה לתופעות לוואי.\n\nגם סוגיית האבחון המוקדם דורשת ניסוח זהיר. נפיחות בטנית מתמשכת, שובע מוקדם, כאבי בטן או אגן, צורך תכוף יותר במתן שתן ושינויים בהרגלי היציאות עשויים להופיע במחלה, אך אינם ייחודיים לה. אותה [הנחיית NICE](https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557) מדגישה כי תסמינים חדשים, תכופים או מתמשכים מצדיקים הערכה רפואית מתאימה. תסמין בודד אינו מוכיח ממאירות, אך גם אין להתעלם משינוי מתמשך רק מפני שהוא עשוי להופיע במצבים שפירים.\n\n## BRCA ו־HRD: שני מושגים קשורים, אך לא זהים\n\nBRCA1 ו־BRCA2 הם גנים המשתתפים בתיקון נזקי DNA. שינוי פתוגני באחד מהם עלול לפגוע ביכולת התא לתקן שברים דו־גדיליים באמצעות מנגנון הנקרא רקומבינציה הומולוגית. מוטציה יכולה להיות תורשתית — כלומר להימצא מלידה בתאי הגוף — או סומטית, הקיימת בתאי הגידול בלבד.\n\nלהבחנה זו יש משמעות החורגת לעיתים מבחירת התרופה. ממצא תורשתי עשוי להיות רלוונטי גם להערכת סיכון אצל קרובות וקרובי משפחה, ואילו ממצא שנמצא רק ברקמת הגידול אינו מוכיח לבדו תסמונת תורשתית. לכן אין לראות בבדיקה גידולית ובבדיקת דם גנטית בדיקות זהות או חלופיות בהכרח.\n\nHRD הוא מושג רחב יותר. הוא מתאר מצב שבו מנגנון התיקון באמצעות רקומבינציה הומולוגית אינו פועל כראוי, בין אם הסיבה היא מוטציה ב־BRCA ובין אם קיימים שינויים אחרים במסלול התיקון. לכן גידול עשוי להיות מסווג כ־HRD חיובי גם כאשר לא זוהתה בו מוטציה ב־BRCA.\n\nחלק מבדיקות HRD משלבות חיפוש אחר מוטציות עם מדדים של אי־יציבות גנומית — מעין \"צלקות\" שהצטברו בגנום לאורך התפתחות הגידול. ה־FDA מגדיר, בהקשרים טיפוליים מסוימים, HRD חיובי באמצעות מוטציה מזיקה או חשודה כמזיקה ב־BRCA ו/או עדות לאי־יציבות גנומית, כפי שמפורט ב[מידע הרשמי של ה־FDA על אולפריב](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf).\n\nעם זאת, בדיקת HRD אינה תשובת \"כן או לא\" מוחלטת לגבי הצלחת הטיפול. הבדיקה עשויה למדוד עקבות היסטוריים של פגיעה בתיקון ה־DNA, ולא בהכרח את תפקודו הנוכחי של הגידול. התוצאה עלולה להיות מושפעת מסוג הבדיקה, מסף החיוביות, מאיכות הדגימה ומשיעור תאי הגידול ברקמה. [סקירה מדעית על בדיקות HRD ועל מגבלותיהן](https://doi.org/10.3389/fonc.2024.1405361) מדגישה כי השיטות השונות אינן בהכרח שקולות, וכי עמידות לטיפול עלולה להתפתח גם בגידול שסווג בתחילה כ־HRD חיובי.\n\n## מעכבי PARP: מה הראו המחקרים המרכזיים?\n\nמעכבי PARP חוסמים אנזימים המשתתפים בתיקון נזקי DNA. בתא סרטני שכבר קיימת בו פגיעה במסלול תיקון מרכזי, החסימה הנוספת עלולה להוביל להצטברות נזקים ולמוות תאי. עיקרון זה מכונה \"קטלניות סינתטית\". ההיגיון הביולוגי מסביר מדוע התרופות עשויות לפעול, אך ההתאמה הקלינית נקבעת לפי תוצאות ניסויים, מאפייני המחלה, קו הטיפול והוראות הרשויות.\n\nמחקר SOLO-1 בחן טיפול אחזקה באולפריב לעומת פלצבו בנשים עם סרטן מתקדם שאובחן לראשונה, עם מוטציה ב־BRCA ותגובה מלאה או חלקית לכימותרפיה מבוססת פלטינה. המחקר הראה הארכה ניכרת בזמן ללא התקדמות המחלה. ב[ניתוח המעקב בן שבע השנים של SOLO-1](https://doi.org/10.1200/JCO.22.01549) נרשם גם הבדל בעל משמעות קלינית בהישרדות הכוללת לטובת אולפריב, אך הסף הסטטיסטי המחמיר שנקבע מראש לא הושג. במקביל נותר יתרון ממושך בדחיית הצורך בטיפול נוסף.\n\nהבחנה זו חשובה: \"משמעות קלינית\" ו\"מובהקות סטטיסטית\" אינן מילים נרדפות. נתון יכול להיראות חשוב מבחינה רפואית, אך עדיין לא לעמוד בסף הסטטיסטי שהוגדר בפרוטוקול המחקר. נוסף על כך, הארכת ההישרדות ללא התקדמות המחלה אינה זהה בהכרח להוכחה שהטיפול מאריך את ההישרדות הכוללת.\n\nמחקר PAOLA-1 בחן הוספת אולפריב לבוואציזומאב כטיפול אחזקה לאחר טיפול ראשוני שכלל בוואציזומאב. באוכלוסיית המחקר הכוללת לא נמצא יתרון מובהק בהישרדות הכוללת. לעומת זאת, בניתוח שתוכנן מראש לפי סמנים מולקולריים נמצא יתרון בקבוצת המטופלות עם HRD חיובי, בעוד שבקבוצת HRD השלילית לא הודגם אותו דפוס תועלת. [תוצאות ההישרדות הסופיות של PAOLA-1](https://doi.org/10.1016/j.annonc.2023.05.005) ממחישות מדוע אין להשליך תוצאה ממוצעת על כל המטופלות באותה מידה.\n\nלכן המשפט \"מעכבי PARP משפרים הישרדות בסרטן השחלות\" רחב מדי. התוצאה תלויה בתרופה, בשילוב שנבדק, בקו הטיפול, בתגובה לפלטינה, בטיפול קודם ובמאפיינים כגון BRCA ו־HRD. תוצאות מחקר שנערך בקבוצה מולקולרית מוגדרת אינן מוכיחות תועלת זהה לכל מי שאובחנה בסרטן השחלות.\n\n## מה הכותרת מספרת נכון — ומה היא מפשטת?\n\nהכותרת מספרת נכון שהאונקולוגיה המודרנית אינה מסתפקת בשם האיבר שבו נמצא הגידול. בדיקות פתולוגיות ומולקולריות עשויות לספק מידע המשפיע על בחירת טיפול האחזקה, ולעיתים גם לזהות ממצא תורשתי בעל משמעות משפחתית. היא נכונה גם בכך שמעכבי PARP שינו את ניהול המחלה עבור קבוצות מוגדרות.\n\nעם זאת, טיפול \"מותאם אישית\" אינו בהכרח טיפול ייחודי שנתפר מאפס לכל מטופלת. בפועל, לרוב מדובר בבחירת האפשרות המתאימה ביותר מתוך חלופות שנבדקו במחקרים בקרב אוכלוסיות מוגדרות. הסמן המולקולרי הוא חלק מההחלטה, אך אינו השיקול היחיד. יש להביא בחשבון גם את סוג הגידול, היקף המחלה, התגובה לפלטינה, הטיפולים שכבר ניתנו, תפקודי הכליות והכבד, ספירות הדם והעדפות המטופלת.\n\nגם האמירה שטיפול ממוקד כרוך בהכרח בפחות תופעות לוואי אינה מדויקת. טיפול ממוקד אינו טיפול נטול רעילות. על פי [המידע הרשמי של ה־FDA על אולפריב](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf), הטיפול עשוי להיות כרוך בין היתר באנמיה, בחילה, עייפות ושינויים בספירות הדם, ובמקרים נדירים גם בסיבוכים חמורים. המטרה היא לשפר את יחס התועלת־סיכון עבור מטופלת מתאימה, ולא לבטל את הצורך במעקב.\n\nלבסוף, הכתבה הנבחנת היא תוכן ממומן ולא הנחיה רפואית או מאמר שעבר ביקורת עמיתים. עובדה זו אינה מבטלת כל מידע המופיע בה, אך מחייבת להתייחס אליה כנקודת מוצא לבדיקת הטענות — ולא כראיה רפואית עצמאית.\n\n## מה המשמעות המעשית עבור מטופלת שאובחנה?\n\nלאחר אבחנה, השאלה אינה רק \"איזו תרופה מתאימה לסרטן השחלות?\", אלא איזה סוג גידול אובחן, באיזה שלב, האם קיימת מוטציה תורשתית או גידולית, מהי תוצאת HRD, כיצד המחלה הגיבה לטיפול הראשוני ומהו מאזן התועלת והסיכון של כל חלופה.\n\nבירור גנטי באמצעות דם ובדיקה מולקולרית של רקמת הגידול אינם בהכרח אותו תהליך. בדיקת דם עשויה לזהות שינוי תורשתי, בעוד שבדיקת הגידול עשויה לזהות גם מוטציות סומטיות ומאפיינים גנומיים נוספים. כאשר נמצא בגידול שינוי שעשוי להיות תורשתי, ייתכן שיידרשו בדיקת אימות וייעוץ גנטי. אין להסיק מתוצאת גידול בלבד מסקנות אוטומטיות לגבי בני המשפחה.\n\nגם תוצאה שלילית אינה אומרת שאין אפשרויות טיפול, ותוצאה חיובית אינה מחייבת אוטומטית תרופה מסוימת. לדוגמה, [ההתוויה הרשמית של ה־FDA לאולפריב](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf) מבחינה בין טיפול אחזקה בגידול עם מוטציית BRCA לבין שילוב אולפריב ובוואציזומאב במצב של HRD חיובי לאחר תגובה לכימותרפיה ראשונית מבוססת פלטינה. אלה הגדרות טיפוליות מסוימות, ולא המלצה גורפת לכל מצב של סרטן שחלות.\n\nהמשמעות המעשית של רפואה מותאמת היא קבלת החלטה משולבת: המחקרים מגדירים באילו קבוצות נמצא יתרון; הבדיקות מסייעות לבדוק עד כמה מאפייני המטופלת והגידול דומים לאוכלוסיות שנחקרו; וההערכה הקלינית קובעת אם התועלת הצפויה מצדיקה את הסיכונים במקרה הפרטני.\n\n## סיכום\n\nהמעבר מ\"גישה אחת לכולן\" לטיפול מותאם בסרטן השחלות הוא שינוי ממשי, אך מורכב יותר מכפי שכותרת חדשותית יכולה לשקף. BRCA ו־HRD מסייעים לתאר את הביולוגיה של הגידול ולהעריך התאמה לטיפולים מסוימים, והמחקרים המרכזיים מצביעים על תועלת של מעכבי PARP בקבוצות מוגדרות. עם זאת, [נתוני PAOLA-1](https://doi.org/10.1016/j.annonc.2023.05.005) מראים גם מדוע חיוני להבחין בין אוכלוסיית המחקר הכוללת לבין תת־קבוצות מולקולריות.\n\nלא כל תוצאה חיובית מבטיחה תגובה, לא כל תוצאה שלילית שוללת כל אפשרות טיפולית, ושיפור בזמן ללא התקדמות אינו תמיד הוכחה להארכת ההישרדות הכוללת. טיפול מותאם נשען על שילוב בין פתולוגיה, ביולוגיה מולקולרית, שלב המחלה, תגובה לטיפול, בטיחות והעדפות המטופלת — ולא על בדיקה יחידה.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד. הוא אינו תחליף להנחיה רפואית פרטנית, וכל טענה רפואית מחייבת בדיקת רופא וביקורת מקצועית לפני פרסום.\n\n## מקורות\n\n1. [NICE — Ovarian cancer: recognition and initial management](https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557)\n2. [SOLO-1 — Overall Survival With Maintenance Olaparib at a 7-Year Follow-Up](https://doi.org/10.1200/JCO.22.01549)\n3. [PAOLA-1 — Final Overall Survival Results and Updated Progression-Free Survival](https://doi.org/10.1016/j.annonc.2023.05.005)\n4. [סקירה מד\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)\n- [כתבת ynet העוסקת בטיפול המותאם אישית בסרטן השחלות](https://www.ynet.co.il/health/article/bkfi7tjsfx)\n- [מידע הרשמי של ה־FDA על אולפריב](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf)\n- [סקירה מדעית על בדיקות HRD ועל מגבלותיהן](https://doi.org/10.3389/fonc.2024.1405361)",
+        "canonical_url": "https://www.drguyrofe.co.il/כבר-לא-גישה-אחת-לכולן-מה-באמת-עומד/",
+        "meta_description": "ד״ר גיא רופא: בדיקות אלה עשויות לסייע בבחירת טיפול אחזקה ממוקד, אך הן אינן מבטיחות תגובה ואינן מחליפות הערכה קלינית מלאה.",
+        "search_target": {
+          "primary_query": "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן",
+          "secondary_queries": [
+            "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות",
+            "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן ד״ר גיא רופא",
+            "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/כבר-לא-גישה-אחת-לכולן-מה-באמת-עומד/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 7,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-10-05T11:41:11.432238"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "7358d832821d257eac89c53b1dbba2cce969d13a43ca40d6ac46d56ebc09913f",
+        "slug": "כבר-לא-גישה-אחת-לכולן-מה-באמת-עומד",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-hero.png",
+          "sha256": "24ac95047efbbcc64272a8911234afacd055268358cc943097fc8f8e584342bb",
+          "alt_text": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Ovarian_Mucinous_Cystadenoma_(180691375).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Ovarian_Mucinous_Cystadenoma_%28180691375%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ed Uthman from Houston, TX, USA",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "attribution": "Ovarian Mucinous Cystadenoma (180691375).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-hero.png",
+              "sha256": "24ac95047efbbcc64272a8911234afacd055268358cc943097fc8f8e584342bb",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-landscape.png",
+              "sha256": "9cbadce9d6fd71c464257fdbe230d5f68d613ce4638e5c93467b0cf6fc0de626",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-square.jpg",
+              "sha256": "d37f86ab2d34b44850910f5dfa3c8b29ac0e587231da94b8813bc8c726bd616c",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-portrait.png",
+              "sha256": "8cbc47089002b853c765d9b65ce66afa2a49c5cc36af593b06f4435fbe7d825f",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
+        "text": "התשובה הקצרה היא שטיפול מותאם אישית בסרטן השחלות אינו תרופה אחת המתאימה לכולן, אלא תהליך המחבר בין סוג הגידול, שלב המחלה, תוצאות הניתוח, התגובה לכימותרפיה, מצבה הכללי של המטופלת ומאפיינים מולקולריים כגון מוטציות ב־BRCA וחסר ברקומבינציה הומולוגית — HRD.\n\nבדיקות אלה עשויות לסייע בבחירת טיפול אחזקה ממוקד, אך הן אינן מבטיחות תגובה ואינן מחליפות הערכה קלינית מלאה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Ovarian Mucinous Cystadenoma (180691375).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/כבר-לא-גישה-אחת-לכולן-מה-באמת-עומד/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-landscape.png",
+          "sha256": "9cbadce9d6fd71c464257fdbe230d5f68d613ce4638e5c93467b0cf6fc0de626",
+          "alt_text": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Ovarian_Mucinous_Cystadenoma_(180691375).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Ovarian_Mucinous_Cystadenoma_%28180691375%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ed Uthman from Houston, TX, USA",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "attribution": "Ovarian Mucinous Cystadenoma (180691375).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-hero.png",
+              "sha256": "24ac95047efbbcc64272a8911234afacd055268358cc943097fc8f8e584342bb",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-landscape.png",
+              "sha256": "9cbadce9d6fd71c464257fdbe230d5f68d613ce4638e5c93467b0cf6fc0de626",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-square.jpg",
+              "sha256": "d37f86ab2d34b44850910f5dfa3c8b29ac0e587231da94b8813bc8c726bd616c",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-portrait.png",
+              "sha256": "8cbc47089002b853c765d9b65ce66afa2a49c5cc36af593b06f4435fbe7d825f",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
+        "text": "התשובה הקצרה היא שטיפול מותאם אישית בסרטן השחלות אינו תרופה אחת המתאימה לכולן, אלא תהליך המחבר בין סוג הגידול, שלב המחלה, תוצאות הניתוח, התגובה לכימותרפיה, מצבה הכללי של המטופלת ומאפיינים מולקולריים כגון מוטציות ב־BRCA וחסר ברקומבינציה הומולוגית — HRD.\n\n• בדיקות אלה עשויות לסייע בבחירת טיפול אחזקה ממוקד, אך הן אינן מבטיחות תגובה ואינן מחליפות הערכה קלינית מלאה.\n• [כתבת ynet העוסקת בטיפול המותאם אישית בסרטן השחלות]( שפורסמה ב־5 באוקטובר 2026, מתארת את המעבר מגישה אחידה יחסית לקבלת החלטות המבוססת גם על הביולוגיה של הגידול.\n• חשוב להבהיר כי מדובר בכתבת תוכן שהוגשה בשיתוף חברות מסחריות, ולא במחקר רפואי או בהנחיה מקצועית.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Ovarian Mucinous Cystadenoma (180691375).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/כבר-לא-גישה-אחת-לכולן-מה-באמת-עומד/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-landscape.png",
+          "sha256": "9cbadce9d6fd71c464257fdbe230d5f68d613ce4638e5c93467b0cf6fc0de626",
+          "alt_text": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Ovarian_Mucinous_Cystadenoma_(180691375).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Ovarian_Mucinous_Cystadenoma_%28180691375%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ed Uthman from Houston, TX, USA",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "attribution": "Ovarian Mucinous Cystadenoma (180691375).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-hero.png",
+              "sha256": "24ac95047efbbcc64272a8911234afacd055268358cc943097fc8f8e584342bb",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-landscape.png",
+              "sha256": "9cbadce9d6fd71c464257fdbe230d5f68d613ce4638e5c93467b0cf6fc0de626",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-square.jpg",
+              "sha256": "d37f86ab2d34b44850910f5dfa3c8b29ac0e587231da94b8813bc8c726bd616c",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-portrait.png",
+              "sha256": "8cbc47089002b853c765d9b65ce66afa2a49c5cc36af593b06f4435fbe7d825f",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
+        "html": "<h2>כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה היא שטיפול מותאם אישית בסרטן השחלות אינו תרופה אחת המתאימה לכולן, אלא תהליך המחבר בין סוג הגידול, שלב המחלה, תוצאות הניתוח, התגובה לכימותרפיה, מצבה הכללי של המטופלת ומאפיינים מולקולריים כגון מוטציות ב־BRCA וחסר ברקומבינציה הומולוגית — HRD.</p><p>בדיקות אלה עשויות לסייע בבחירת טיפול אחזקה ממוקד, אך הן אינן מבטיחות תגובה ואינן מחליפות הערכה קלינית מלאה.</p>\n<p><small>קרדיט תמונה: Ovarian Mucinous Cystadenoma (180691375).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/כבר-לא-גישה-אחת-לכולן-מה-באמת-עומד/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-hero.png",
+          "sha256": "24ac95047efbbcc64272a8911234afacd055268358cc943097fc8f8e584342bb",
+          "alt_text": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חתך של דגימת שחלה ובה חללים ציסטיים גדולים ורקמה בהירה על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Ovarian_Mucinous_Cystadenoma_(180691375).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Ovarian_Mucinous_Cystadenoma_%28180691375%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ed Uthman from Houston, TX, USA",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "attribution": "Ovarian Mucinous Cystadenoma (180691375).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-hero.png",
+              "sha256": "24ac95047efbbcc64272a8911234afacd055268358cc943097fc8f8e584342bb",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-landscape.png",
+              "sha256": "9cbadce9d6fd71c464257fdbe230d5f68d613ce4638e5c93467b0cf6fc0de626",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-square.jpg",
+              "sha256": "d37f86ab2d34b44850910f5dfa3c8b29ac0e587231da94b8813bc8c726bd616c",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-05-topic-90-run-37318909033-attempt-1-portrait.png",
+              "sha256": "8cbc47089002b853c765d9b65ce66afa2a49c5cc36af593b06f4435fbe7d825f",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 53,
+      "supported_claim_count": 53,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "המונח \"סרטן השחלות\" כולל כמה מחלות הנבדלות זו מזו במראה הרקמתי, בהתנהגות הביולוגית, בשכיחות השינויים הגנטיים ובתגובה לטיפול.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "במסגרת הקבוצה נכללים גם גידולים אפיתליאליים של השחלה, החצוצרה והצפק הראשוני, שלעיתים מטופלים לפי עקרונות דומים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "הטיפול במחלה אפיתליאלית עשוי לכלול ניתוח וכימותרפיה המבוססת על תרכובות פלטינה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "ההחלטה אם להתחיל בניתוח או בכימותרפיה לפני ניתוח, מה יהיה היקף ההתערבות ומה יינתן לאחריה תלויה בשלב המחלה, בסוג הגידול, בפיזורו, באפשרות להשיג הסרה ניתוחית מיטבית ובמצבה הרפואי של המטופלת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "עקרונות אלה מפורטים בהנחיית NICE לזיהוי ולטיפול הראשוני בסרטן השחלות.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "אין פירוש הדבר שהטיפול הבסיסי נעלם, אלא שעל גבי התשתית של ניתוח וכימותרפיה נוספה שכבה של החלטות פתולוגיות, גנטיות ומולקולריות.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "שתי נשים בעלות אבחנה כללית דומה עשויות לקבל אסטרטגיות המשך שונות בגלל תת־סוג היסטולוגי אחר, תגובה שונה לפלטינה, מוטציה ב־BRCA, תוצאת HRD, טיפול קודם, מחלות רקע או סיכון שונה לתופעות לוואי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "גם סוגיית האבחון המוקדם דורשת ניסוח זהיר.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "נפיחות בטנית מתמשכת, שובע מוקדם, כאבי בטן או אגן, צורך תכוף יותר במתן שתן ושינויים בהרגלי היציאות עשויים להופיע במחלה, אך אינם ייחודיים לה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "סרטן השחלות אינו מחלה ביולוגית אחת",
+          "claim": "תסמין בודד אינו מוכיח ממאירות, אך גם אין להתעלם משינוי מתמשך רק מפני שהוא עשוי להופיע במצבים שפירים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "שינוי פתוגני באחד מהם עלול לפגוע ביכולת התא לתקן שברים דו־גדיליים באמצעות מנגנון הנקרא רקומבינציה הומולוגית.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "ממצא תורשתי עשוי להיות רלוונטי גם להערכת סיכון אצל קרובות וקרובי משפחה, ואילו ממצא שנמצא רק ברקמת הגידול אינו מוכיח לבדו תסמונת תורשתית.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "לכן אין לראות בבדיקה גידולית ובבדיקת דם גנטית בדיקות זהות או חלופיות בהכרח.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "לכן גידול עשוי להיות מסווג כ־HRD חיובי גם כאשר לא זוהתה בו מוטציה ב־BRCA.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "ה־FDA מגדיר, בהקשרים טיפוליים מסוימים, HRD חיובי באמצעות מוטציה מזיקה או חשודה כמזיקה ב־BRCA ו/או עדות לאי־יציבות גנומית, כפי שמפורט במידע הרשמי של ה־FDA על אולפריב.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "עם זאת, בדיקת HRD אינה תשובת \"כן או לא\" מוחלטת לגבי הצלחת הטיפול.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "הבדיקה עשויה למדוד עקבות היסטוריים של פגיעה בתיקון ה־DNA, ולא בהכרח את תפקודו הנוכחי של הגידול.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "התוצאה עלולה להיות מושפעת מסוג הבדיקה, מסף החיוביות, מאיכות הדגימה ומשיעור תאי הגידול ברקמה.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "BRCA ו־HRD: שני מושגים קשורים, אך לא זהים",
+          "claim": "סקירה מדעית על בדיקות HRD ועל מגבלותיהן מדגישה כי השיטות השונות אינן בהכרח שקולות, וכי עמידות לטיפול עלולה להתפתח גם בגידול שסווג בתחילה כ־HRD חיובי.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+            "https://doi.org/10.3389/fonc.2024.1405361"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "בתא סרטני שכבר קיימת בו פגיעה במסלול תיקון מרכזי, החסימה הנוספת עלולה להוביל להצטברות נזקים ולמוות תאי.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "ההיגיון הביולוגי מסביר מדוע התרופות עשויות לפעול, אך ההתאמה הקלינית נקבעת לפי תוצאות ניסויים, מאפייני המחלה, קו הטיפול והוראות הרשויות.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "מחקר SOLO-1 בחן טיפול אחזקה באולפריב לעומת פלצבו בנשים עם סרטן מתקדם שאובחן לראשונה, עם מוטציה ב־BRCA ותגובה מלאה או חלקית לכימותרפיה מבוססת פלטינה.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "המחקר הראה הארכה ניכרת בזמן ללא התקדמות המחלה.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "במקביל נותר יתרון ממושך בדחיית הצורך בטיפול נוסף.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "נתון יכול להיראות חשוב מבחינה רפואית, אך עדיין לא לעמוד בסף הסטטיסטי שהוגדר בפרוטוקול המחקר.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "נוסף על כך, הארכת ההישרדות ללא התקדמות המחלה אינה זהה בהכרח להוכחה שהטיפול מאריך את ההישרדות הכוללת.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "מחקר PAOLA-1 בחן הוספת אולפריב לבוואציזומאב כטיפול אחזקה לאחר טיפול ראשוני שכלל בוואציזומאב.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "באוכלוסיית המחקר הכוללת לא נמצא יתרון מובהק בהישרדות הכוללת.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "לעומת זאת, בניתוח שתוכנן מראש לפי סמנים מולקולריים נמצא יתרון בקבוצת המטופלות עם HRD חיובי, בעוד שבקבוצת HRD השלילית לא הודגם אותו דפוס תועלת.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "תוצאות ההישרדות הסופיות של PAOLA-1 ממחישות מדוע אין להשליך תוצאה ממוצעת על כל המטופלות באותה מידה.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "התוצאה תלויה בתרופה, בשילוב שנבדק, בקו הטיפול, בתגובה לפלטינה, בטיפול קודם ובמאפיינים כגון BRCA ו־HRD.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מעכבי PARP: מה הראו המחקרים המרכזיים?",
+          "claim": "תוצאות מחקר שנערך בקבוצה מולקולרית מוגדרת אינן מוכיחות תועלת זהה לכל מי שאובחנה בסרטן השחלות.",
+          "source_urls": [
+            "https://doi.org/10.1200/JCO.22.01549",
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "מה הכותרת מספרת נכון — ומה היא מפשטת?",
+          "claim": "בדיקות פתולוגיות ומולקולריות עשויות לספק מידע המשפיע על בחירת טיפול האחזקה, ולעיתים גם לזהות ממצא תורשתי בעל משמעות משפחתית.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה הכותרת מספרת נכון — ומה היא מפשטת?",
+          "claim": "עם זאת, טיפול \"מותאם אישית\" אינו בהכרח טיפול ייחודי שנתפר מאפס לכל מטופלת.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה הכותרת מספרת נכון — ומה היא מפשטת?",
+          "claim": "בפועל, לרוב מדובר בבחירת האפשרות המתאימה ביותר מתוך חלופות שנבדקו במחקרים בקרב אוכלוסיות מוגדרות.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה הכותרת מספרת נכון — ומה היא מפשטת?",
+          "claim": "יש להביא בחשבון גם את סוג הגידול, היקף המחלה, התגובה לפלטינה, הטיפולים שכבר ניתנו, תפקודי הכליות והכבד, ספירות הדם והעדפות המטופלת.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה הכותרת מספרת נכון — ומה היא מפשטת?",
+          "claim": "גם האמירה שטיפול ממוקד כרוך בהכרח בפחות תופעות לוואי אינה מדויקת.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה הכותרת מספרת נכון — ומה היא מפשטת?",
+          "claim": "טיפול ממוקד אינו טיפול נטול רעילות.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה הכותרת מספרת נכון — ומה היא מפשטת?",
+          "claim": "על פי המידע הרשמי של ה־FDA על אולפריב, הטיפול עשוי להיות כרוך בין היתר באנמיה, בחילה, עייפות ושינויים בספירות הדם, ובמקרים נדירים גם בסיבוכים חמורים.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה הכותרת מספרת נכון — ומה היא מפשטת?",
+          "claim": "המטרה היא לשפר את יחס התועלת־סיכון עבור מטופלת מתאימה, ולא לבטל את הצורך במעקב.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה המשמעות המעשית עבור מטופלת שאובחנה?",
+          "claim": "לאחר אבחנה, השאלה אינה רק \"איזו תרופה מתאימה לסרטן השחלות?\", אלא איזה סוג גידול אובחן, באיזה שלב, האם קיימת מוטציה תורשתית או גידולית, מהי תוצאת HRD, כיצד המחלה הגיבה לטיפול הראשוני ומהו מאזן התועלת והסיכון של כל חלופה.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה המשמעות המעשית עבור מטופלת שאובחנה?",
+          "claim": "בירור גנטי באמצעות דם ובדיקה מולקולרית של רקמת הגידול אינם בהכרח אותו תהליך.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה המשמעות המעשית עבור מטופלת שאובחנה?",
+          "claim": "בדיקת דם עשויה לזהות שינוי תורשתי, בעוד שבדיקת הגידול עשויה לזהות גם מוטציות סומטיות ומאפיינים גנומיים נוספים.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה המשמעות המעשית עבור מטופלת שאובחנה?",
+          "claim": "כאשר נמצא בגידול שינוי שעשוי להיות תורשתי, ייתכן שיידרשו בדיקת אימות וייעוץ גנטי.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה המשמעות המעשית עבור מטופלת שאובחנה?",
+          "claim": "גם תוצאה שלילית אינה אומרת שאין אפשרויות טיפול, ותוצאה חיובית אינה מחייבת אוטומטית תרופה מסוימת.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה המשמעות המעשית עבור מטופלת שאובחנה?",
+          "claim": "לדוגמה, ההתוויה הרשמית של ה־FDA לאולפריב מבחינה בין טיפול אחזקה בגידול עם מוטציית BRCA לבין שילוב אולפריב ובוואציזומאב במצב של HRD חיובי לאחר תגובה לכימותרפיה ראשונית מבוססת פלטינה.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה המשמעות המעשית עבור מטופלת שאובחנה?",
+          "claim": "אלה הגדרות טיפוליות מסוימות, ולא המלצה גורפת לכל מצב של סרטן שחלות.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "מה המשמעות המעשית עבור מטופלת שאובחנה?",
+          "claim": "המשמעות המעשית של רפואה מותאמת היא קבלת החלטה משולבת: המחקרים מגדירים באילו קבוצות נמצא יתרון; הבדיקות מסייעות לבדוק עד כמה מאפייני המטופלת והגידול דומים לאוכלוסיות שנחקרו; וההערכה הקלינית קובעת אם התועלת הצפויה מצדיקה את הסיכונים במקרה הפרטני.",
+          "source_urls": [
+            "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המעבר מ\"גישה אחת לכולן\" לטיפול מותאם בסרטן השחלות הוא שינוי ממשי, אך מורכב יותר מכפי שכותרת חדשותית יכולה לשקף.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "BRCA ו־HRD מסייעים לתאר את הביולוגיה של הגידול ולהעריך התאמה לטיפולים מסוימים, והמחקרים המרכזיים מצביעים על תועלת של מעכבי PARP בקבוצות מוגדרות.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "עם זאת, נתוני PAOLA-1 מראים גם מדוע חיוני להבחין בין אוכלוסיית המחקר הכוללת לבין תת־קבוצות מולקולריות.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "לא כל תוצאה חיובית מבטיחה תגובה, לא כל תוצאה שלילית שוללת כל אפשרות טיפולית, ושיפור בזמן ללא התקדמות אינו תמיד הוכחה להארכת ההישרדות הכוללת.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "טיפול מותאם נשען על שילוב בין פתולוגיה, ביולוגיה מולקולרית, שלב המחלה, תגובה לטיפול, בטיחות והעדפות המטופלת — ולא על בדיקה יחידה.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.annonc.2023.05.005"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nice.org.uk/guidance/cg122/resources/ovarian-cancer-recognition-and-initial-management-pdf-35109446543557",
+          "host": "nice.org.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208558s025lbl.pdf",
+          "host": "accessdata.fda.gov",
+          "year_markers": [
+            "2023",
+            "2024"
+          ]
+        },
+        {
+          "url": "https://doi.org/10.3389/fonc.2024.1405361",
+          "host": "doi.org",
+          "year_markers": [
+            "2023",
+            "2024"
+          ]
+        },
+        {
+          "url": "https://doi.org/10.1200/JCO.22.01549",
+          "host": "doi.org",
+          "year_markers": [
+            "2023"
+          ]
+        },
+        {
+          "url": "https://doi.org/10.1016/j.annonc.2023.05.005",
+          "host": "doi.org",
+          "year_markers": [
+            "2023"
+          ]
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "7358d832821d257eac89c53b1dbba2cce969d13a43ca40d6ac46d56ebc09913f",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/כבר-לא-גישה-אחת-לכולן-מה-באמת-עומד/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 7,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-10-05T11:41:11.432238"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_3d76c0b22b74f488cfcac007da37a16ae47b204f42692da8fa10ccb14bda22d3"
+}

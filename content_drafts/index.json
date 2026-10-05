@@ -1,6 +1,25 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-05-topic-90-run-37318909033-attempt-1.md",
+      "title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן השחלות",
+      "excerpt": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה היא שטיפול מותאם אישית בסרטן השחלות אינו תרופה אחת המתאימה לכולן, אלא תהליך המחבר בין ס",
+      "generated_at": "2026-10-05T13:43:08.700612+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-10-04",
+      "cadence_local_date": "2026-10-05",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-eec5def669b3799c.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/article/bkfi7tjsfx"
+    },
+    {
       "path": "content_drafts/2026-10-04-topic-07-run-37200043175-attempt-1.md",
       "title": "דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה | ד״ר גיא רופא",
       "topic": "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה",
@@ -479,26 +498,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-5a091e3efc7f2af7.json",
       "analyzed_news_url": "https://healthy.walla.co.il/item/3863988"
-    },
-    {
-      "path": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md",
-      "title": "בדיקת דם העלתה חשד לסרטן ובצילום התגלה גוש בריאה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: \"לא האמנתי\": בדיקת דם חדשנית העלתה חשד לסרטן - ובצילום התגלה גוש בריאה",
-      "excerpt": "בדיקת דם העלתה חשד לסרטן ובצילום התגלה גוש בריאה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בדיקת הדם המתוארת בכותרת לא אבחנה סרטן ולא “ראתה” גוש בריאה. היא זיהתה בדם אות מולקו",
-      "generated_at": "2026-08-27T17:21:32.810696+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "pinterest",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-23",
-      "cadence_local_date": "2026-08-27",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-0a240126219ec563.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/h1c11ef6dgl"
     }
   ]
 }
