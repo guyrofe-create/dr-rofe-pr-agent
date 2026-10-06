@@ -1150,6 +1150,13 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7512983557007601665/",
         "https://guyrofe.blogspot.com/2026/10/blog-post.html"
       ]
+    },
+    "expired:apr_4f0d86fb7b1fd68c2026f689d01932a11a4145996132bb025387e2cc1ce66f40:2026-08-25T07:58:29Z": {
+      "sent_at": "2026-10-06T01:46:11.954916+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_4f0d86fb7b1fd68c2026f689d01932a11a4145996132bb025387e2cc1ce66f40",
+      "state": "expired",
+      "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
     }
   }
 }
