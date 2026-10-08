@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Read-only Wix connection check. Never prints credentials or response bodies."""
+"""Wix connection check. Never prints credentials or response bodies."""
+import argparse
 import os
 import sys
 
@@ -38,7 +39,14 @@ def check(name, method, url, **kwargs):
     return False
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--read-only",
+        action="store_true",
+        help="Verify only the permissions needed for audit and monitoring.",
+    )
+    args = parser.parse_args(argv)
     if not API_KEY or not SITE_ID:
         print("FAIL Wix credentials are missing")
         return 1
@@ -64,7 +72,7 @@ def main():
         status = "PASS" if account_ok else "WARN"
         print(f"{status} account owns target site: HTTP {response.status_code}{detail}")
     else:
-        print("FAIL Wix account ID is missing")
+        print("WARN Wix account ID is missing; site-scoped permission checks continue")
 
     results = [
         check(
@@ -86,6 +94,10 @@ def main():
             params={"paging.limit": 1},
         ),
     ]
+    if args.read_only:
+        print("SKIP blog author readiness: not required for read-only audit")
+        return 0 if all(results) else 1
+
     site = {
         "key": "WIX_CONNECTION_CHECK",
         "api_key_env": "WIX_DRGUYROFE_COM_API",
