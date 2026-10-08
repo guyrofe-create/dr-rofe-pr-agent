@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-08T07:03:39.077218+00:00",
+  "generated_at": "2026-10-08T11:29:31.790186+00:00",
   "objective": "Maximize accurate first-page and discovery visibility with the existing asset portfolio.",
   "policy": "Effort follows authority, measured visibility, audience fit and control; account count alone is not a success metric.",
   "asset_count": 67,
@@ -12,8 +12,8 @@
     "retain_only": 8,
     "quarantine": 24
   },
-  "audit_complete_count": 5,
-  "action_required_count": 62,
+  "audit_complete_count": 4,
+  "action_required_count": 63,
   "assets": [
     {
       "platform": "Canonical website",
@@ -26,25 +26,19 @@
       "effort": "core",
       "reason": "High-authority owned or identity asset; maintain facts, freshness and measurement.",
       "next_action": "audit_facts_then_measure_and_maintain",
-      "reachability": "reachable",
-      "http_status": 202,
+      "reachability": "access_restricted_or_anti_bot",
+      "http_status": 403,
       "final_url": "https://guyrofe.com/",
-      "content_audit": "complete",
+      "content_audit": "manual_required",
       "title": null,
       "meta_description": null,
       "canonical": null,
-      "noindex": false,
-      "entity_in_title": false,
-      "entity_in_page": false,
-      "official_link_present": false,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
       "schema_types": [],
-      "seo_issues": [
-        "missing_title",
-        "missing_meta_description",
-        "missing_entity_name",
-        "missing_canonical",
-        "h1_count_not_one"
-      ],
+      "seo_issues": [],
       "action_checklist": [
         "monitor_rank_and_indexation_without_content_or_structure_changes"
       ],
@@ -507,7 +501,7 @@
       "http_status": 200,
       "final_url": "https://issuu.com/drguyrofe",
       "content_audit": "complete",
-      "title": "drguyrofe Publisher Publications - Issuu",
+      "title": "Issuu",
       "meta_description": "ד\"ר גיא רופא הוא רופא נשים ומיילד בעל הכשרה גבוהה המתמחה בניתוח גינקולוגי זעיר פולשני. בעל ניסיון של שנים במספר תפקידי מנהיגות ותפקידי רפואה בכירים. ד\"ר רופא שימש בעבר כמנהל המרכז לבריאות האישה \"ליס\" במרכז הרפואי ע\"ש סוראסקי-איכילוב, שם היה גורם מרכזי בהמשך הצמיחה והפיתוח של המרכז. הוא חלק בלתי נפרד מצוות הרופאים הבכירים במחלקה למיילדות וגינקולוגיה ומצוות היחידה לאנדוסקופיה גינקולוגית. בנוסף לעבודתו הקלינית, ד\"ר רופא עוסק רבות במחקר, ולעתים קרובות מפרסם את ממצאיו בכתבי עת שנבדקו עמיתים. הוא איש חינוך נלהב, המעביר את הידע שלו לדור הבא של אנשי רפואה כחבר סגל בפקולטה לרפואה. ד\"ר רופא סיים את תואר הרפואה מהטכניון היוקרתי בהצטיינות יתרה. את התמחותו בגינקולוגיה סיים בבית החולים כרמל, שם שיפר את כישוריו הקליניים. יתר על כן, הוא עבר הכשרה נוספת בלפרוסקופיה אונקולוגית מתקדמת באוולינו, איטליה. תחומי ההתמחות של ד\"ר רופא כוללים היסטרוסקופיה, ניתוחים לפרוסקופיים וניתוחי נרתיק. הוא בקיא בתכנון המשפחה ומציע מגוון שיטות מניעה. ד\"ר רופא חבר במספר ארגונים מקצועיים, ביניהם האגודה הישראלית לגינקולוגיה אנדוסקופית, האיגוד הישראלי למיילדות וגינקולוגיה, והאיגוד האמריקאי לניתוחים גינקולוגיים לפרוסקופיים מתקדמים (AAGL). מטופלים המחפשים טיפול איכותי מאיש מקצוע רפואי רחום ירוויחו מאוד מלראות את רופ.",
       "canonical": null,
       "noindex": false,
@@ -739,7 +733,7 @@
       "next_action": "one_time_audit_then_use_only_for_unique_fit",
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 429,
-      "final_url": "https://www.google.com/sorry/index?continue=https://guyrofe.blogspot.com/&q=EgQ0oS3hGL6AndYGIi3T9SDz1UAokdJbg4BWKDoDmJG4JHjy7CuNJvwZUIkXbQrrdEuu56Yax0fk0YgyAnJSWgFD",
+      "final_url": "https://www.google.com/sorry/index?continue=https://guyrofe.blogspot.com/&q=EgQ5mCTAGJP9ndYGIi005csURD8z7UcpeWHhzyG4H2DP5uk9o2sf-oE8uv1fzTfxfz5g9sTkiiJBD6gyAnJSWgFD",
       "content_audit": "manual_required",
       "title": null,
       "meta_description": null,
@@ -804,28 +798,21 @@
       "effort": "selective",
       "reason": "Use only when the platform can carry unique, audience-native material or a factual profile improvement.",
       "next_action": "one_time_audit_then_use_only_for_unique_fit",
-      "reachability": "reachable",
-      "http_status": 200,
+      "reachability": "http_error",
+      "http_status": 406,
       "final_url": "https://linktr.ee/drguyrofe",
-      "content_audit": "complete",
-      "title": "ד\"ר גיא רופא Official: Instagram, X | Linktree",
-      "meta_description": "ד\"ר גיא רופא הוא גינקולוג ומיילד מוערך מאוד.",
-      "canonical": "https://linktr.ee/drguyrofe",
-      "noindex": true,
-      "entity_in_title": true,
-      "entity_in_page": true,
-      "official_link_present": true,
-      "schema_types": [
-        "BreadcrumbList",
-        "ListItem",
-        "Person",
-        "ProfilePage"
-      ],
-      "seo_issues": [
-        "noindex"
-      ],
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
       "action_checklist": [
-        "fix_noindex",
+        "repair_or_confirm_public_url",
         "complete_registered_factual_audit"
       ],
       "audit_complete": false,
@@ -1071,15 +1058,15 @@
       "noindex": false,
       "entity_in_title": true,
       "entity_in_page": true,
-      "official_link_present": true,
-      "schema_types": [
-        "ImageObject",
-        "Person",
-        "ProfilePage"
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "h1_count_not_one"
       ],
-      "seo_issues": [],
-      "action_checklist": [],
-      "audit_complete": true,
+      "action_checklist": [
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -1613,23 +1600,21 @@
       "effort": "quarantine",
       "reason": "Low-quality mirror/network risk outweighs routine publishing value.",
       "next_action": "no_automation_no_cross_link_network",
-      "reachability": "reachable",
-      "http_status": 200,
+      "reachability": "access_restricted_or_anti_bot",
+      "http_status": 429,
       "final_url": "https://dr-guy-rofe.creator-spring.com/",
-      "content_audit": "complete",
-      "title": "גיא רופא",
-      "meta_description": "ד\"ר גיא רופא הוא רופא מומחה ישראלי בתחום גינקולוגיה ומיילדות, המציע ייעוץ רפואי מתקדם ושירותי בריאות ברמה גבוהה. עם מעל לשנתיים נסיון מקצועי בתחום, ד\"ר רופא מצ…",
-      "canonical": "https://dr-guy-rofe.creator-spring.com",
-      "noindex": false,
-      "entity_in_title": true,
-      "entity_in_page": true,
-      "official_link_present": false,
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
       "schema_types": [],
-      "seo_issues": [
-        "h1_count_not_one"
-      ],
+      "seo_issues": [],
       "action_checklist": [
-        "fix_h1_count_not_one"
+        "manual_browser_audit"
       ],
       "audit_complete": false,
       "public_execution_allowed": false
@@ -1905,29 +1890,21 @@
       "effort": "quarantine",
       "reason": "Low-quality mirror/network risk outweighs routine publishing value.",
       "next_action": "no_automation_no_cross_link_network",
-      "reachability": "reachable",
-      "http_status": 200,
+      "reachability": "access_restricted_or_anti_bot",
+      "http_status": 401,
       "final_url": "https://www.minds.com/drguyrofe",
-      "content_audit": "complete",
-      "title": "Minds",
+      "content_audit": "manual_required",
+      "title": null,
       "meta_description": null,
       "canonical": null,
-      "noindex": false,
-      "entity_in_title": false,
-      "entity_in_page": false,
-      "official_link_present": false,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
       "schema_types": [],
-      "seo_issues": [
-        "missing_meta_description",
-        "missing_entity_name",
-        "missing_canonical",
-        "h1_count_not_one"
-      ],
+      "seo_issues": [],
       "action_checklist": [
-        "fix_missing_meta_description",
-        "fix_missing_entity_name",
-        "fix_missing_canonical",
-        "fix_h1_count_not_one"
+        "manual_browser_audit"
       ],
       "audit_complete": false,
       "public_execution_allowed": false
