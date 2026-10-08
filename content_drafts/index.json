@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-08-topic-82-run-37780011057-attempt-1.md",
+      "title": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה | ד״ר גיא רופא",
+      "topic": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה",
+      "excerpt": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) בקצרה: בתסמונת POTS הדופק עולה במידה חריגה לאחר מעבר משכיבה לעמידה, מפני שמנגנוני ויסות מחזור הדם אינם מפצים ביעילות",
+      "generated_at": "2026-10-08T12:52:56.897719+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-10-04",
+      "cadence_local_date": "2026-10-08",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-10-05-topic-90-run-37318909033-attempt-1.md",
       "title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן השחלות",
@@ -483,21 +500,6 @@
       "cadence_week": "week-of-2026-08-30",
       "cadence_local_date": "2026-08-30",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-08-30-topic-90-run-33308645627-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד",
-      "excerpt": "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: המחקר מצא כי בני 80 ומעלה שמהירות ההליכה הרגילה שלהם גבוהה במיוחד ביחס לבני גילם נטו לשמור ",
-      "generated_at": "2026-08-30T11:20:03.203478+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-08-30",
-      "cadence_local_date": "2026-08-30",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-5a091e3efc7f2af7.json",
-      "analyzed_news_url": "https://healthy.walla.co.il/item/3863988"
     }
   ]
 }
