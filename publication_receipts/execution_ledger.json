@@ -2843,6 +2843,41 @@
       "published_at": "2026-10-05T21:14:25Z",
       "url": "https://guyrofe.blogspot.com/2026/10/blog-post.html",
       "provider_receipt": null
+    },
+    "pub_218292ead56cb211a60b01774d601ab1fb8a1c870cbbf09a10db29a04665277a": {
+      "version": 7,
+      "idempotency_key": "pub_218292ead56cb211a60b01774d601ab1fb8a1c870cbbf09a10db29a04665277a",
+      "approval_id": "apr_511043f330e03570e7d06bd81364ae58980a705808829230cde54642bad4358e",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "f0da386e7a8872dc9d89dccb20ae6905f11103c6cb540d714eecc4adc57acf3c",
+      "status": "published",
+      "started_at": "2026-10-08T17:24:51Z",
+      "published_at": "2026-10-08T17:24:58Z",
+      "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-pots-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%93%d7%95%d7%a4%d7%a7-%d7%9e%d7%96%d7%a0%d7%a7-%d7%91%d7%a2%d7%9e%d7%99%d7%93%d7%94/",
+      "provider_receipt": null
+    },
+    "pub_e7f284e5df07ff864394cf747e5c39a1bf735d64c096aeb5a9bf1ec35ba51bf2": {
+      "version": 7,
+      "idempotency_key": "pub_e7f284e5df07ff864394cf747e5c39a1bf735d64c096aeb5a9bf1ec35ba51bf2",
+      "approval_id": "apr_511043f330e03570e7d06bd81364ae58980a705808829230cde54642bad4358e",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "88b02c2d80e99ffa28351879c32a2d6847abda4a1f8b380093befb7e68e4f44d",
+      "status": "published",
+      "started_at": "2026-10-08T17:25:07Z",
+      "published_at": "2026-10-08T17:25:15Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKOfiMHiwMLsQA",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/8905140875516353184",
+        "state": "LIVE",
+        "createTime": "2026-10-08T17:25:10.577192Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKOfiMHiwMLsQA",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }

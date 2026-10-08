@@ -1,6 +1,116 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-10-08-topic-82-run-37780011057-attempt-1.md",
+      "title": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-10-08T17:25:15.415290+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-pots-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%93%d7%95%d7%a4%d7%a7-%d7%9e%d7%96%d7%a0%d7%a7-%d7%91%d7%a2%d7%9e%d7%99%d7%93%d7%94/",
+          "detail": "idempotency_key=pub_218292ead56cb211a60b01774d601ab1fb8a1c870cbbf09a10db29a04665277a"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-pots-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%93%d7%95%d7%a4%d7%a7-%d7%9e%d7%96%d7%a0%d7%a7-%d7%91%d7%a2%d7%9e%d7%99%d7%93%d7%94/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-08-topic-82-run-37780011057-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKOfiMHiwMLsQA",
+          "detail": "idempotency_key=pub_e7f284e5df07ff864394cf747e5c39a1bf735d64c096aeb5a9bf1ec35ba51bf2"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_511043f330e03570e7d06bd81364ae58980a705808829230cde54642bad4358e",
+      "search_target": {
+        "primary_query": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה",
+        "secondary_queries": [
+          "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה ד״ר גיא רופא",
+          "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-pots-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%93%d7%95%d7%a4%d7%a7-%d7%9e%d7%96%d7%a0%d7%a7-%d7%91%d7%a2%d7%9e%d7%99%d7%93%d7%94/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-10-05-topic-90-run-37318909033-attempt-1.md",
       "title": "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא",
       "status": "completed",
@@ -5045,98 +5155,6 @@
         }
       ],
       "approval_id": "apr_5631de005f6d1a50472454f5dfb9c468198c8a80f0a64e62db9625f0703fcb57",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: \"שלא תצטרכו ניתוח מוח — אף אחד לא רוצה להיות נוירוכירורג בישראל\" | ד״ר גיא רופא",
-      "status": "completed",
-      "published_at": "2026-08-26T08:55:40.203309+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.co.il",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-26-topic-90-run-32939634105-attempt-1/",
-          "detail": "idempotency_key=pub_c614c245bb351f77855d7ccfb91c1a90396f59abdcd7f28bfb5f84c66589e13c"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-26-topic-90-run-32939634105-attempt-1-hero.png",
-          "detail": "wikimedia_commons_licensed_photo"
-        },
-        {
-          "name": "guyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Instagram",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_59f3732a9a3fd382ccfba6e30b29cdf0737c6a39dea15f6fdb4eadf55e1c8be2",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]
