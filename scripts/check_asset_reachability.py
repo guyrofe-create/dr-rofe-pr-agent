@@ -4,14 +4,20 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
+from html import unescape
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
+ENTITY_VARIANTS = ("ד״ר גיא רופא", 'ד"ר גיא רופא', "גיא רופא", "Guy Rofe", "Dr. Guy Rofe")
+OFFICIAL_HOSTS = {"guyrofe.com", "www.guyrofe.com", "drguyrofe.co.il", "www.drguyrofe.co.il", "drguyrofe.com", "www.drguyrofe.com"}
+MAX_HTML_BYTES = 1_500_000
 
 
 def classify(status: int | None, error: str | None) -> str:
@@ -26,6 +32,84 @@ def classify(status: int | None, error: str | None) -> str:
     if status in {404, 410}:
         return "not_found"
     return "http_error"
+
+
+def _clean_text(value: str | None) -> str | None:
+    if not value:
+        return None
+    return " ".join(unescape(re.sub(r"<[^>]+>", " ", value)).split()) or None
+
+
+def _attributes(tag: str) -> dict[str, str]:
+    return {
+        name.casefold(): unescape(value)
+        for name, _quote, value in re.findall(
+            r"([:\w-]+)\s*=\s*([\"'])(.*?)\2", tag, re.I | re.S
+        )
+    }
+
+
+def audit_html(document: str, final_url: str) -> dict:
+    """Extract public SEO/entity signals without executing scripts or logging in."""
+    title = re.search(r"<title[^>]*>(.*?)</title>", document, re.I | re.S)
+    meta_tags = [_attributes(tag) for tag in re.findall(r"<meta\b[^>]*>", document, re.I)]
+    link_tags = [_attributes(tag) for tag in re.findall(r"<link\b[^>]*>", document, re.I)]
+    description_value_raw = next((
+        tag.get("content") for tag in meta_tags
+        if tag.get("name", tag.get("property", "")).casefold() in {"description", "og:description"}
+    ), None)
+    canonical_value_raw = next((
+        tag.get("href") for tag in link_tags
+        if "canonical" in tag.get("rel", "").casefold().split()
+    ), None)
+    robots = [
+        tag.get("content", "") for tag in meta_tags
+        if tag.get("name", "").casefold() in {"robots", "googlebot"}
+    ]
+    headings = re.findall(r"<h1\b[^>]*>(.*?)</h1>", document, re.I | re.S)
+    visible = _clean_text(re.sub(r"<script.*?</script>|<style.*?</style>", " ", document, flags=re.I | re.S)) or ""
+    links = re.findall(r'<a\b[^>]+href=["\']([^"\']+)', document, re.I)
+    link_hosts = {
+        urlparse(urljoin(final_url, link)).hostname
+        for link in links
+        if urlparse(urljoin(final_url, link)).hostname
+    }
+    schema_types = sorted(set(re.findall(r'["\']@type["\']\s*:\s*["\']([^"\']+)', document)))
+    canonical_url = urljoin(final_url, canonical_value_raw) if canonical_value_raw else None
+    robots_value = ", ".join(robots).casefold()
+    title_value = _clean_text(title.group(1)) if title else None
+    description_value = _clean_text(description_value_raw)
+    entity_in_title = bool(title_value and any(name.casefold() in title_value.casefold() for name in ENTITY_VARIANTS))
+    entity_in_page = any(name.casefold() in visible.casefold() for name in ENTITY_VARIANTS)
+    official_link_present = bool(link_hosts & OFFICIAL_HOSTS)
+    issues = []
+    if "noindex" in robots_value:
+        issues.append("noindex")
+    if not title_value:
+        issues.append("missing_title")
+    if not description_value:
+        issues.append("missing_meta_description")
+    if not entity_in_page:
+        issues.append("missing_entity_name")
+    if not canonical_url:
+        issues.append("missing_canonical")
+    if len(headings) != 1:
+        issues.append("h1_count_not_one")
+    return {
+        "content_audit": "complete",
+        "title": title_value,
+        "meta_description": description_value,
+        "canonical": canonical_url,
+        "robots": robots,
+        "noindex": "noindex" in robots_value,
+        "h1_count": len(headings),
+        "h1": [_clean_text(item) for item in headings[:3]],
+        "entity_in_title": entity_in_title,
+        "entity_in_page": entity_in_page,
+        "official_link_present": official_link_present,
+        "schema_types": schema_types,
+        "seo_issues": issues,
+    }
 
 
 def check(asset: dict, *, timeout: int = 12) -> dict:
@@ -43,12 +127,28 @@ def check(asset: dict, *, timeout: int = 12) -> dict:
         )
         status = response.status_code
         final_url = response.url
+        content_type = response.headers.get("content-type", "")
+        encoding = response.encoding or "utf-8"
+        body = b""
+        if 200 <= status < 400 and "html" in content_type.casefold():
+            for chunk in response.iter_content(chunk_size=65536):
+                body += chunk
+                if len(body) >= MAX_HTML_BYTES:
+                    body = body[:MAX_HTML_BYTES]
+                    break
         response.close()
-        return {
+        result = {
             "platform": asset.get("platform"), "url": url,
             "http_status": status, "final_url": final_url,
             "reachability": classify(status, None),
+            "content_type": content_type,
+            "checked_at": datetime.now(timezone.utc).isoformat(),
         }
+        if body:
+            result.update(audit_html(body.decode(encoding, errors="replace"), final_url))
+        else:
+            result.update({"content_audit": "manual_required", "seo_issues": []})
+        return result
     except requests.RequestException as exc:
         return {
             "platform": asset.get("platform"), "url": url,
@@ -77,8 +177,9 @@ def main() -> None:
         key = row["reachability"]
         counts[key] = counts.get(key, 0) + 1
     payload = {
-        "version": 1,
+        "version": 2,
         "checked_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "asset_count": len(rows),
         "summary": counts,
         "credentials_used": False,

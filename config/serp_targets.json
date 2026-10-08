@@ -38,14 +38,16 @@
       "rank_check_weekdays": [0, 3],
       "full_brand_matrix_every_run": true,
       "ai_check_days_of_month": [1, 15],
+      "ai_check_interval_days": 7,
       "search_console_check_days_of_month": [1, 15],
+      "search_console_check_interval_days": 7,
       "connection_health_check_days_of_month": [1],
       "daily_engines": ["google"],
       "daily_devices": ["mobile"],
       "extended_weekday": 6,
       "extended_engines": ["google", "bing"],
       "extended_devices": ["mobile", "desktop"],
-      "web_mentions_enabled": false,
+      "web_mentions_enabled": true,
       "google_reviews_enabled": false,
       "facebook_recommendations_enabled": false,
       "backlink_monitoring_enabled": true,
@@ -121,7 +123,9 @@
   },
   "mention_monitoring": {
     "provider_or_export_enabled": true,
-    "serpapi_discovery_disabled_to_preserve_rank_budget": true,
+    "serpapi_discovery_disabled_to_preserve_rank_budget": false,
+    "reuse_brand_serp_results_before_extra_requests": true,
+    "classify_registered_and_unregistered_domains": true,
     "read_only": true
   },
   "queries": [

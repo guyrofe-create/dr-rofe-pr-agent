@@ -270,6 +270,7 @@ class AutonomousContentRunTests(unittest.TestCase):
                         "platform_urls": {
                             "spotify": "https://open.spotify.com/episode/real",
                             "apple_podcasts": "https://podcasts.apple.com/il/podcast/show/id1?i=2",
+                            "youtube": "https://www.youtube.com/watch?v=abcdefghijk",
                         },
                         "working_title": "פרק בדיקה",
                         "transcript_markdown": "# פרק בדיקה\n\nתמליל מקורי",
@@ -306,6 +307,7 @@ class AutonomousContentRunTests(unittest.TestCase):
         saved_content = save.call_args.args[3]
         self.assertIn("האזנה ב‑Spotify", saved_content)
         self.assertIn("האזנה ב‑Apple Podcasts", saved_content)
+        self.assertIn("צפייה והאזנה ב‑YouTube", saved_content)
         self.assertEqual(
             save.call_args.kwargs["metadata"]["content_stream"],
             "media_archive",

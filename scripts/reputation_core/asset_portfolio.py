@@ -10,6 +10,43 @@ BLOCKED_STATUSES = {
 }
 
 
+def _asset_actions(asset: dict, reachability: dict | None, effort: str) -> list[str]:
+    reachability = reachability or {}
+    platform = str(asset.get("platform") or "")
+    url = str(asset.get("url") or "").rstrip("/")
+    if platform == "Google Business Profile":
+        return [
+            "preserve_core_profile_configuration",
+            "continue_exact_approved_information_posts_media_and_contextual_links",
+            "measure_search_and_maps_visibility",
+        ]
+    if platform == "Canonical website" and url == "https://guyrofe.com":
+        return ["monitor_rank_and_indexation_without_content_or_structure_changes"]
+    actions: list[str] = []
+    public_state = reachability.get("reachability", "not_checked")
+    if public_state in {"not_found", "network_or_provider_error", "http_error"}:
+        actions.append("repair_or_confirm_public_url")
+    if public_state in {"access_restricted_or_anti_bot", "not_checked"}:
+        actions.append("manual_browser_audit")
+    if reachability.get("content_audit") == "complete":
+        issue_prefix = "fix" if asset.get("controlled") else "request_or_document"
+        actions.extend(
+            f"{issue_prefix}_{issue}" for issue in reachability.get("seo_issues", [])
+        )
+        if not reachability.get("entity_in_title") and effort in {"core", "defend", "selective"}:
+            actions.append("review_entity_name_in_title")
+        if not reachability.get("official_link_present") and effort in {"core", "defend", "selective"}:
+            actions.append("add_reader_useful_official_link_if_platform_allows")
+    elif public_state == "reachable":
+        actions.append("manual_content_and_profile_field_audit")
+    status = str(asset.get("status") or "")
+    if "audit_required" in status or status in {"accuracy_audit_required", "factual_audit_required", "urgent_content_audit"}:
+        actions.append("complete_registered_factual_audit")
+    if asset.get("type") in {"book_product", "podcast", "podcast_profile", "video_channel"}:
+        actions.append("measure_exact_brand_serp_and_search_console_visibility")
+    return list(dict.fromkeys(actions))
+
+
 def asset_effort_decision(asset: dict, reachability: dict | None = None) -> dict:
     tier = str(asset.get("tier") or "C")
     priority = int(asset.get("priority") or 0)
@@ -54,6 +91,7 @@ def asset_effort_decision(asset: dict, reachability: dict | None = None) -> dict
     else:
         next_action = "retain_without_recurring_effort"
 
+    actions = _asset_actions(asset, reachability, effort)
     return {
         "platform": asset.get("platform"),
         "url": asset.get("url"),
@@ -68,6 +106,18 @@ def asset_effort_decision(asset: dict, reachability: dict | None = None) -> dict
         "reachability": public_state,
         "http_status": (reachability or {}).get("http_status"),
         "final_url": (reachability or {}).get("final_url"),
+        "content_audit": (reachability or {}).get("content_audit", "not_checked"),
+        "title": (reachability or {}).get("title"),
+        "meta_description": (reachability or {}).get("meta_description"),
+        "canonical": (reachability or {}).get("canonical"),
+        "noindex": (reachability or {}).get("noindex"),
+        "entity_in_title": (reachability or {}).get("entity_in_title"),
+        "entity_in_page": (reachability or {}).get("entity_in_page"),
+        "official_link_present": (reachability or {}).get("official_link_present"),
+        "schema_types": (reachability or {}).get("schema_types", []),
+        "seo_issues": (reachability or {}).get("seo_issues", []),
+        "action_checklist": actions,
+        "audit_complete": not actions,
         "public_execution_allowed": False,
     }
 
@@ -96,12 +146,14 @@ def build_asset_portfolio_plan(
     for row in rows:
         counts[row["effort"]] = counts.get(row["effort"], 0) + 1
     return {
-        "version": 1,
+        "version": 2,
         "generated_at": generated_at or datetime.now(timezone.utc).isoformat(),
         "objective": "Maximize accurate first-page and discovery visibility with the existing asset portfolio.",
         "policy": "Effort follows authority, measured visibility, audience fit and control; account count alone is not a success metric.",
         "asset_count": len(rows),
         "effort_counts": counts,
+        "audit_complete_count": sum(1 for row in rows if row["audit_complete"]),
+        "action_required_count": sum(1 for row in rows if not row["audit_complete"]),
         "assets": rows,
         "credentials_included": False,
         "public_execution_allowed": False,

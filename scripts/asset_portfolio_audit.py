@@ -46,17 +46,20 @@ def render_markdown(plan: dict) -> str:
         lines.append(f"- {EFFORT_HE[key]}: {plan['effort_counts'].get(key, 0)}")
     lines.extend([
         "",
+        f"בדיקת תוכן/SEO מלאה ללא משימות פתוחות: {plan.get('audit_complete_count', 0)}; נכסים הדורשים פעולה או בדיקה ידנית: {plan.get('action_required_count', 0)}.",
+        "",
         "## כל הנכסים",
         "",
-        "| נכס | החלטת מאמץ | זמינות ציבורית | מצב רשום | כתובת |",
-        "|---|---|---|---|---|",
+        "| נכס | החלטת מאמץ | זמינות ציבורית | בדיקת תוכן | פעולות נדרשות | כתובת |",
+        "|---|---|---|---|---|---|",
     ])
     for row in plan["assets"]:
         values = [
             row.get("platform") or "—",
             EFFORT_HE.get(row.get("effort"), row.get("effort") or "—"),
             REACHABILITY_HE.get(row.get("reachability"), row.get("reachability") or "—"),
-            row.get("status") or "—",
+            row.get("content_audit") or "—",
+            ", ".join(row.get("action_checklist") or []) or "אין",
             row.get("url") or "—",
         ]
         values = [str(value).replace("|", "\\|").replace("\n", " ") for value in values]

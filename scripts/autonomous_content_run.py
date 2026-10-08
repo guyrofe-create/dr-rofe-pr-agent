@@ -157,6 +157,9 @@ def unused_media_brief(
                 and str(platform_urls.get("apple_podcasts") or "").startswith(
                     "https://podcasts.apple.com/"
                 )
+                and str(platform_urls.get("youtube") or "").startswith(
+                    ("https://www.youtube.com/watch", "https://youtube.com/watch", "https://youtu.be/")
+                )
             )
         )
         if (
@@ -341,6 +344,10 @@ def generate_job(
         if platform_urls.get("apple_podcasts"):
             original_links.append(
                 f"- [האזנה ב‑Apple Podcasts]({platform_urls['apple_podcasts']})"
+            )
+        if platform_urls.get("youtube"):
+            original_links.append(
+                f"- [צפייה והאזנה ב‑YouTube]({platform_urls['youtube']})"
             )
         if original_links:
             content = (

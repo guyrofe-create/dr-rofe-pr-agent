@@ -266,7 +266,7 @@ class MonitorGeoTests(unittest.TestCase):
         self.assertEqual(len(plan["queries"]), 6)
         self.assertEqual(plan["engines"], ["google"])
         self.assertEqual(plan["devices"], ["mobile", "desktop"])
-        self.assertFalse(plan["web_mentions"])
+        self.assertTrue(plan["web_mentions"])
 
     def test_free_serp_plan_does_not_switch_dimensions_by_weekday(self):
         plan = monitor_run.serp_run_plan("2026-08-02")
@@ -274,7 +274,7 @@ class MonitorGeoTests(unittest.TestCase):
         self.assertEqual(len(plan["queries"]), 6)
         self.assertEqual(plan["engines"], ["google"])
         self.assertEqual(plan["devices"], ["mobile", "desktop"])
-        self.assertFalse(plan["web_mentions"])
+        self.assertTrue(plan["web_mentions"])
 
     def test_serp_budget_stops_before_provider_free_limit(self):
         with patch.object(
@@ -463,12 +463,12 @@ class MonitorGeoTests(unittest.TestCase):
         ):
             self.assertTrue(monitor_run.ai_checks_due("2026-07-02"))
 
-    def test_search_console_maintenance_runs_twice_monthly(self):
-        with patch.object(monitor_run, "HISTORY", {}):
+    def test_search_console_maintenance_runs_weekly(self):
+        with patch.object(monitor_run, "HISTORY", {"last_search_console_check_date": "2026-07-01"}):
             self.assertTrue(monitor_run.scheduled_maintenance_due(
                 "last_search_console_check_date",
                 "search_console_check_days_of_month",
-                "2026-07-01",
+                "2026-07-08",
                 default_days=[1, 15],
                 force_environment_key="FORCE_SEARCH_CONSOLE_CHECK",
             ))
