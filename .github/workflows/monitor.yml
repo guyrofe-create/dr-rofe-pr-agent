@@ -65,6 +65,12 @@ jobs:
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
           FORCE_SEARCH_CONSOLE_CHECK: ${{ inputs.force_search_console || 'false' }}
 
+      - name: Audit every registered public asset
+        if: always()
+        run: |
+          python scripts/check_asset_reachability.py --output data/asset_reachability_audit.json
+          python scripts/asset_portfolio_audit.py
+
       - name: Prepare highest-ranked P4 actions for review
         if: success()
         run: python scripts/prepare_opportunities.py
@@ -74,7 +80,7 @@ jobs:
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
-          git add data/reputation_history.json data/command_center.json data/asset_registry.json opportunity_drafts/ || true
+          git add data/reputation_history.json data/command_center.json data/asset_registry.json data/asset_reachability_audit.json data/asset_portfolio_plan.json opportunity_drafts/ || true
           git add data/ai_usage_events/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Update reputation state $(date +%Y-%m-%d\ %H:%M)"
           git pull --rebase

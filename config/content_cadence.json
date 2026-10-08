@@ -2,6 +2,11 @@
   "version": 1,
   "timezone": "Asia/Jerusalem",
   "approval_required_before_publication": true,
+  "recovery_policy": {
+    "same_week_backfill": true,
+    "maximum_jobs_per_run": 2,
+    "preserve_original_slot_identity": true
+  },
   "streams": {
     "canonical_depth": {
       "site_key": "GUYROFE_COM",
@@ -20,7 +25,8 @@
       "topic_source_by_weekday": {
         "monday": "fresh_news_radar",
         "thursday": "mayo_public_catalog"
-      }
+      },
+      "backfill_topic_source": "mayo_public_catalog"
     },
     "evergreen_knowledge": {
       "site_key": "DRGUYROFE_COM",

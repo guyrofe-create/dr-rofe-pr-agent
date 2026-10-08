@@ -40,7 +40,9 @@ from reputation_core.orchestrator import load_serp_targets
 from reputation_core.ai_evaluator import evaluate_ai_answer
 from reputation_core.ai_usage import record_ai_usage
 from reputation_core.google_business_performance import (
+    assess_business_model_alignment,
     fetch_google_business_performance,
+    fetch_google_business_profile_details,
 )
 
 CLIENT_PROFILE = load_client_profile()
@@ -313,9 +315,21 @@ def collect_google_business_performance():
     try:
         access_token = refresh_google_access_token(*credentials)
         _account, location, _metadata = google_business.resolve_location(access_token)
-        REPORT["google_business_performance"] = (
-            fetch_google_business_performance(access_token, location)
-        )
+        performance = fetch_google_business_performance(access_token, location)
+        try:
+            details = fetch_google_business_profile_details(access_token, location)
+            performance["profile_details"] = details
+            performance["business_model_alignment"] = assess_business_model_alignment(
+                details,
+                CLIENT_PROFILE.get("business_activity", {}),
+            )
+        except Exception as detail_exc:
+            performance["business_model_alignment"] = {
+                "status": "measurement_unavailable",
+                "reason": safe_error(detail_exc),
+                "public_write_performed": False,
+            }
+        REPORT["google_business_performance"] = performance
     except Exception as exc:
         REPORT["google_business_performance"] = {
             "status": "degraded",
@@ -2049,11 +2063,18 @@ def main():
         for asset in registry.get("assets", [])
         if asset.get("tier") in {"A", "B"} and asset.get("priority", 0) >= 55
     ]
-    ranked = [
-        r for r in REPORT.get("rank", [])
-        if r.get("status") in {"found", "not_in_top10"}
-    ]
-    observations["local_rank_weak"] = any(r.get("status") == "not_in_top10" for r in ranked)
+    # Organic results and Google Business/Maps are different surfaces.  Do not
+    # diagnose local weakness from a normal web result position.
+    gbp_performance = REPORT.get("google_business_performance") or {}
+    gbp_summary = gbp_performance.get("summary") or {}
+    observations["local_rank_weak"] = (
+        gbp_summary.get("local_rank_weak")
+        if gbp_performance.get("status") == "ok"
+        else None
+    )
+    observations["local_visibility_status"] = (
+        gbp_summary.get("visibility_status") or "measurement_unavailable"
+    )
     geo = [g for g in REPORT.get("geo", []) if "mentions_dr_rofe" in g]
     observations["ai_mention_gap"] = any(not g.get("mentions_dr_rofe") for g in geo) if geo else True
     observations["eligible_policy_violations"] = sum(

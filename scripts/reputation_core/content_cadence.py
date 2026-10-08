@@ -64,6 +64,13 @@ def validate_cadence(cadence: dict) -> None:
             f"{planned_channels}"
         )
     quality = cadence.get("quality_policy") or {}
+    recovery = cadence.get("recovery_policy") or {}
+    if not recovery.get("same_week_backfill"):
+        raise ValueError("Cadence must recover missed slots within the same week")
+    if not 1 <= int(recovery.get("maximum_jobs_per_run", 0)) <= 4:
+        raise ValueError("Cadence recovery must allow between one and four jobs per run")
+    if not recovery.get("preserve_original_slot_identity"):
+        raise ValueError("Cadence recovery must preserve original slot identity")
     if not quality.get("ai_image_generation_forbidden"):
         raise ValueError("AI image generation must remain forbidden")
     if not quality.get("skip_instead_of_forcing_weak_content"):
@@ -102,35 +109,61 @@ def week_key(now: datetime, cadence: dict) -> str:
 
 
 def due_jobs(cadence: dict, state: dict, now: datetime) -> list[dict]:
-    """Return each stream due today at most once; never authorizes publication."""
+    """Return due slots, including bounded same-week recovery; never publish.
+
+    A failed scheduled run used to disappear as soon as the calendar moved to
+    the next day.  Recovery keeps the original slot identity, so retries remain
+    idempotent and weekly targets cannot be exceeded.
+    """
     localized = local_now(now, cadence)
-    weekday = WEEKDAYS[localized.weekday()]
     current_week = week_key(now, cadence)
     generated = {
         (item.get("stream"), item.get("local_date"))
         for item in state.get("generated", [])
         if item.get("week") == current_week
     }
+    recovery = cadence.get("recovery_policy") or {}
+    recover_missed = bool(recovery.get("same_week_backfill", True))
+    max_jobs = max(1, int(recovery.get("maximum_jobs_per_run", 2)))
+    today_index = localized.weekday()
+    week_start = localized.date() - timedelta(days=(today_index + 1) % 7)
     jobs = []
     for stream_name, stream in cadence["streams"].items():
-        if weekday not in stream["weekdays"]:
-            continue
-        key = (stream_name, localized.date().isoformat())
-        if key in generated:
-            continue
-        jobs.append({
-            "stream": stream_name,
-            "site_key": stream["site_key"],
-            "channels": list(stream["weekdays"][weekday]),
-            "week": current_week,
-            "local_date": localized.date().isoformat(),
-            "weekday": weekday,
-            "topic_source": (stream.get("topic_source_by_weekday") or {}).get(
+        for weekday, channels in stream["weekdays"].items():
+            slot_index = WEEKDAYS.index(weekday)
+            days_from_sunday = (slot_index + 1) % 7
+            slot_date = week_start + timedelta(days=days_from_sunday)
+            if slot_date > localized.date():
+                continue
+            is_backfill = slot_date < localized.date()
+            if is_backfill and not recover_missed:
+                continue
+            key = (stream_name, slot_date.isoformat())
+            if key in generated:
+                continue
+            topic_source = (stream.get("topic_source_by_weekday") or {}).get(
                 weekday, "approved_stream_policy"
-            ),
-            "public_execution_allowed": False,
-        })
-    return jobs
+            )
+            if is_backfill:
+                topic_source = (
+                    stream.get("backfill_topic_source") or topic_source
+                )
+            jobs.append({
+                "stream": stream_name,
+                "site_key": stream["site_key"],
+                "channels": list(channels),
+                "week": current_week,
+                "local_date": slot_date.isoformat(),
+                "weekday": weekday,
+                "topic_source": topic_source,
+                "is_backfill": is_backfill,
+                "recovery_run_date": (
+                    localized.date().isoformat() if is_backfill else None
+                ),
+                "public_execution_allowed": False,
+            })
+    jobs.sort(key=lambda item: (item["local_date"], item["stream"]))
+    return jobs[:max_jobs]
 
 
 def record_generation(state: dict, job: dict, draft_path: str, created_at: str) -> dict:

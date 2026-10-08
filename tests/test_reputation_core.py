@@ -235,6 +235,12 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertTrue(mirrors)
         self.assertTrue(all(a["tier"] == "Q" and a["automation"] == "disabled" for a in mirrors))
 
+    def test_asset_registry_has_one_row_per_public_url(self):
+        with open("data/asset_registry.json", encoding="utf-8") as handle:
+            registry = json.load(handle)
+        urls = [item.get("url") for item in registry["assets"] if item.get("url")]
+        self.assertEqual(len(urls), len(set(urls)))
+
     def test_wikidata_is_registered_as_independent_not_owned_media(self):
         with open("data/asset_registry.json", encoding="utf-8") as handle:
             registry = json.load(handle)

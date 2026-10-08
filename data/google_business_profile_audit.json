@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "audited_at": "2026-10-08T00:00:00+03:00",
+  "mode": "read_only",
+  "public_changes_made": false,
+  "profile_location_id": "locations/14140768355740435987",
+  "actual_business_model": "Non-clinical office for producing and making medical information, books and podcasts accessible to the public; no patient intake, diagnosis, treatment or appointments.",
+  "visibility_evidence": {
+    "exact_query": "גיא רופא",
+    "current_manager_search_view": "Business Profile panel shown above organic results",
+    "manager_view_customer_interactions": 448,
+    "manager_view_monthly_views": 2113,
+    "performance_api_period": {
+      "start": "2026-09-08",
+      "end": "2026-10-05"
+    },
+    "performance_api_search_impressions": 1581,
+    "performance_api_maps_impressions": 88,
+    "performance_api_interactions": 61,
+    "conclusion": "The profile is live and receiving Search and Maps exposure. It is not absent from Google; organic web ranking and the local Business Profile are separate surfaces."
+  },
+  "current_profile_semantics": {
+    "primary_category": "רופא נשים",
+    "additional_categories": [
+      "מנתח",
+      "גינקולוגיה",
+      "מרכז טיפול בהריון"
+    ],
+    "description_focus": "Medical information, women's health, books and the official website",
+    "appointment_required": true,
+    "payment_methods_present": true,
+    "service_area": "ישראל",
+    "website": "https://guyrofe.com/",
+    "recent_owner_posts_visible": true
+  },
+  "diagnosis": {
+    "visibility_problem": false,
+    "measurement_problem_in_tool": true,
+    "profile_business_model_mismatch": true,
+    "summary": "The profile is visible, but its categories and several attributes describe a patient-facing clinic rather than the owner's stated non-clinical publishing and information office."
+  },
+  "recommended_exact_changes_pending_owner_confirmation": {
+    "primary_category": "מוציא לאור",
+    "additional_categories": [
+      "חברת מדיה"
+    ],
+    "remove_categories": [
+      "רופא נשים",
+      "מנתח",
+      "גינקולוגיה",
+      "מרכז טיפול בהריון"
+    ],
+    "description": "המשרד של גיא רופא מפיק ומנגיש לציבור תוכן רפואי מבוסס בעברית, ספרים ופודקאסטים בנושאי בריאות האישה, הריון, לידה ופוריות. הפעילות במקום היא פעילות תוכן, הוצאה לאור ומדיה בלבד; אין במקום קבלת מטופלות, אבחון, טיפול רפואי או קביעת תורים.",
+    "remove_attributes": [
+      "צריך לקבוע תור",
+      "clinical payment signals"
+    ],
+    "review_before_change": [
+      "Keep the public address and opening hours only if visitors can actually meet the business in person there during those hours.",
+      "Keep a service area only if the business actually visits customers in person in that area.",
+      "Review products and services after the category change and remove any clinical service entries."
+    ],
+    "warning": "Google may require reverification after a category change."
+  },
+  "approval_required_before_public_edit": true
+}

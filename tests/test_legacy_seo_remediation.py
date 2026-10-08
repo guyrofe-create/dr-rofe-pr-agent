@@ -86,10 +86,12 @@ class LegacySeoRemediationTests(unittest.TestCase):
             self.assertTrue(payload["selection_reason"])
             self.assertNotIn("ד״ר גיא רופא", payload["new_title"])
 
-    def test_wix_bundle_targets_only_three_exact_custom_domain_posts(self):
+    def test_wix_bundle_targets_only_current_exact_custom_domain_pilot_posts(self):
         bundle = prepare_wix_legacy_seo_remediation.build_wix_bundle()
         self.assertEqual(bundle["action_type"], "legacy_wix_seo_remediation")
-        self.assertEqual(len(bundle["targets"]), 3)
+        # One of the original three pilot URLs has already been remediated; the
+        # current campaign index contains exactly two remaining pilot URLs.
+        self.assertEqual(len(bundle["targets"]), 2)
         for target in bundle["targets"]:
             payload = target["payload"]
             self.assertEqual(payload["site_key"], "DRGUYROFE_COM")

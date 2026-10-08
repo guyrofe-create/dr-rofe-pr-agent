@@ -79,7 +79,10 @@ class ContentCadenceTests(unittest.TestCase):
 
     def test_tuesday_adds_only_the_distinct_knowledge_stream(self):
         tuesday = datetime(2026, 7, 28, 6, 0, tzinfo=timezone.utc)
-        jobs = due_jobs(self.cadence, {"generated": []}, tuesday)
+        jobs = due_jobs(self.cadence, {"generated": [
+            {"stream": "canonical_depth", "local_date": "2026-07-26", "week": "week-of-2026-07-26"},
+            {"stream": "health_news", "local_date": "2026-07-27", "week": "week-of-2026-07-26"},
+        ]}, tuesday)
         self.assertEqual(
             [(job["stream"], job["site_key"], job["channels"]) for job in jobs],
             [("evergreen_knowledge", "DRGUYROFE_COM", [])],
@@ -92,8 +95,37 @@ class ContentCadenceTests(unittest.TestCase):
     def test_weekend_has_no_article_quota(self):
         friday = datetime(2026, 7, 31, 6, 0, tzinfo=timezone.utc)
         saturday = datetime(2026, 8, 1, 6, 0, tzinfo=timezone.utc)
-        self.assertEqual(due_jobs(self.cadence, {"generated": []}, friday), [])
-        self.assertEqual(due_jobs(self.cadence, {"generated": []}, saturday), [])
+        state = {"generated": [
+            {"stream": "canonical_depth", "local_date": "2026-07-26", "week": "week-of-2026-07-26"},
+            {"stream": "health_news", "local_date": "2026-07-27", "week": "week-of-2026-07-26"},
+            {"stream": "evergreen_knowledge", "local_date": "2026-07-28", "week": "week-of-2026-07-26"},
+            {"stream": "health_news", "local_date": "2026-07-30", "week": "week-of-2026-07-26"},
+        ]}
+        self.assertEqual(due_jobs(self.cadence, state, friday), [])
+        self.assertEqual(due_jobs(self.cadence, state, saturday), [])
+
+    def test_failed_slot_is_recovered_later_in_same_week(self):
+        tuesday = datetime(2026, 7, 28, 6, 0, tzinfo=timezone.utc)
+        state = {"generated": [{
+            "stream": "canonical_depth",
+            "local_date": "2026-07-26",
+            "week": "week-of-2026-07-26",
+        }]}
+        jobs = due_jobs(self.cadence, state, tuesday)
+        self.assertEqual(
+            [(job["stream"], job["local_date"]) for job in jobs],
+            [("health_news", "2026-07-27"), ("evergreen_knowledge", "2026-07-28")],
+        )
+        self.assertTrue(jobs[0]["is_backfill"])
+        self.assertEqual(jobs[0]["topic_source"], "mayo_public_catalog")
+        self.assertEqual(jobs[0]["channels"], ["facebook", "linkedin", "blogger"])
+        self.assertFalse(jobs[1]["is_backfill"])
+
+    def test_recovery_is_bounded_and_never_crosses_week_boundary(self):
+        thursday = datetime(2026, 7, 30, 6, 0, tzinfo=timezone.utc)
+        jobs = due_jobs(self.cadence, {"generated": []}, thursday)
+        self.assertEqual(len(jobs), 2)
+        self.assertTrue(all(job["week"] == "week-of-2026-07-26" for job in jobs))
 
     def test_content_week_runs_sunday_through_saturday(self):
         sunday = datetime(2026, 7, 26, 6, 0, tzinfo=timezone.utc)

@@ -132,6 +132,7 @@ jobs:
             if [[ -f "${RUNNER_TEMP}/content-cadence-manifest.json" ]]; then
               echo "Generation errors: $(jq '.errors | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
               echo "Quality skips: $(jq '.skipped | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
+              echo "Recovered missed slots: $(jq '[.jobs[] | select(.is_backfill == true)] | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
             fi
             echo
             echo "[Open the approval dashboard](https://dr-rofe-reputation-center.guyrofe.chatgpt.site)"

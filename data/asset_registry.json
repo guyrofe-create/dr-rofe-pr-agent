@@ -105,6 +105,7 @@
       "controlled": false,
       "uses": [
         "entity_disambiguation",
+        "entity_corroboration",
         "knowledge_graph",
         "ai_retrieval"
       ],
@@ -236,7 +237,7 @@
       "url": "https://share.google/sTaxQJMQnwKZhXK5X",
       "type": "review_profile",
       "tier": "A",
-      "status": "publisher_ready_pending_google_api_access",
+      "status": "connected_exact_approval_required",
       "controlled": true,
       "uses": [
         "reviews",
@@ -248,7 +249,7 @@
       ],
       "automation": "exact_p7_google_business_information_only_standard_post",
       "priority": 100,
-      "notes": "Prepare three short information posts weekly: two exact topic links to guyrofe.com and one exact original-analysis link to drguyrofe.co.il, never a homepage link. Each uses one exact-approved licensed image and a LEARN_MORE CTA. Never imply current clinical activity, patient availability, treatment, consultation or appointment booking. Public execution remains blocked while Google API quota is zero.",
+      "notes": "The read-only Performance API returned live Search and Maps activity and exact-approved posts have reached LIVE state. Prepare two short information posts weekly: one exact topic link to guyrofe.com and one exact original-analysis link to drguyrofe.co.il, never a homepage link. Each uses one exact-approved licensed image and a LEARN_MORE CTA. The profile represents non-clinical office and information activity; do not imply patient availability, treatment, consultation or appointment booking.",
       "previous_observed_position": null,
       "observed_position": null,
       "observed_query": null,
@@ -413,31 +414,6 @@
       "no_improvement_days": 7
     },
     {
-      "platform": "Wikidata",
-      "url": "https://www.wikidata.org/wiki/Q140470790",
-      "type": "knowledge_entity",
-      "tier": "A",
-      "status": "audit_required",
-      "controlled": false,
-      "uses": [
-        "entity_corroboration"
-      ],
-      "automation": "manual_cited_edits_only",
-      "priority": 88,
-      "notes": "Every claim must be supported by an independent reliable source.",
-      "previous_observed_position": null,
-      "observed_position": null,
-      "observed_query": null,
-      "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
-      "page_one": false,
-      "result_page": null,
-      "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
-    },
-    {
       "platform": "Muck Rack",
       "url": "https://muckrack.com/drguyrofe",
       "type": "publisher_profile",
@@ -466,6 +442,9 @@
     {
       "platform": "Crunchbase",
       "url": "https://www.crunchbase.com/person/dr-guy-rofe",
+      "alternate_urls": [
+        "https://www.crunchbase.com/person/%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90"
+      ],
       "type": "professional_profile",
       "tier": "B",
       "status": "audit_required",
@@ -492,6 +471,9 @@
     {
       "platform": "Medium",
       "url": "https://medium.com/@guyrofe",
+      "alternate_urls": [
+        "https://drguyrofe.medium.com"
+      ],
       "type": "publisher_profile",
       "tier": "B",
       "status": "content_audit_required",
@@ -519,6 +501,9 @@
     {
       "platform": "Blogger",
       "url": "https://guyrofe.blogspot.com/",
+      "alternate_urls": [
+        "https://drguyrofe.blogspot.com"
+      ],
       "type": "publisher_profile",
       "tier": "B",
       "status": "content_audit_required",
@@ -1512,6 +1497,69 @@
       "consecutive_no_improvement_measurements": 2,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
       "no_improvement_days": 7
+    },
+    {
+      "platform": "GuyRofe.net legacy WordPress",
+      "url": "https://guyrofe.net/",
+      "type": "legacy_owned_domain",
+      "tier": "B",
+      "status": "technical_content_audit_required",
+      "controlled": true,
+      "uses": ["legacy_brand_domain", "redirect_or_distinct_role_candidate"],
+      "automation": "disabled_until_canonical_and_content_role_audit",
+      "priority": 65,
+      "notes": "Found in the owner connection inventory. Decide between a clean redirect and a genuinely distinct purpose; never run it as a duplicate mirror.",
+      "page_one": false
+    },
+    {
+      "platform": "GuyRofe.co.il legacy WordPress",
+      "url": "https://www.guyrofe.co.il/",
+      "type": "legacy_owned_domain",
+      "tier": "B",
+      "status": "technical_content_audit_required",
+      "controlled": true,
+      "uses": ["legacy_brand_domain", "redirect_or_distinct_role_candidate"],
+      "automation": "disabled_until_canonical_and_content_role_audit",
+      "priority": 68,
+      "notes": "Distinct from drguyrofe.co.il. Audit indexability, canonicals and content overlap before deciding whether to retain or redirect.",
+      "page_one": false
+    },
+    {
+      "platform": "Infogram",
+      "url": "https://infogram.com/drguyrofe",
+      "type": "visual_publisher_profile",
+      "tier": "C",
+      "status": "retain_if_original_visuals_exist",
+      "controlled": true,
+      "uses": ["original_data_visualization"],
+      "automation": "none",
+      "priority": 32,
+      "page_one": false
+    },
+    {
+      "platform": "SS Blog",
+      "url": "https://drguyrofe.blog.ss-blog.jp/_pages/user/profile/index",
+      "type": "web2_site",
+      "tier": "Q",
+      "status": "quarantined",
+      "controlled": true,
+      "uses": [],
+      "automation": "disabled",
+      "priority": 0,
+      "page_one": false
+    },
+    {
+      "platform": "Rebrandly short link",
+      "url": "https://rebrand.ly/%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90",
+      "type": "redirect_utility",
+      "tier": "C",
+      "status": "destination_audit_required",
+      "controlled": true,
+      "uses": ["campaign_redirect_only"],
+      "automation": "none",
+      "priority": 20,
+      "notes": "A redirect is not a search asset. Retain only if its destination and analytics purpose are still valid.",
+      "page_one": false
     },
     {
       "platform": "Creator Spring",

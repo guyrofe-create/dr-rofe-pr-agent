@@ -1,0 +1,464 @@
+{
+  "version": 1,
+  "checked_at": "2026-10-08T06:18:44.827953+00:00",
+  "asset_count": 64,
+  "summary": {
+    "access_restricted_or_anti_bot": 12,
+    "reachable": 41,
+    "http_error": 1,
+    "missing_url": 1,
+    "not_found": 5,
+    "network_or_provider_error": 4
+  },
+  "credentials_used": false,
+  "public_changes_made": false,
+  "assets": [
+    {
+      "platform": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q140470790",
+      "http_status": 403,
+      "final_url": "https://www.wikidata.org/wiki/Q140470790",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Canonical website",
+      "url": "https://guyrofe.com/",
+      "http_status": 403,
+      "final_url": "https://guyrofe.com/",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Secondary official website",
+      "url": "https://www.drguyrofe.co.il/",
+      "http_status": 200,
+      "final_url": "https://www.drguyrofe.co.il/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "DrGuyRofe.com knowledge hub",
+      "url": "https://www.drguyrofe.com/",
+      "http_status": 200,
+      "final_url": "https://www.drguyrofe.com/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "GuyRofe Wix media archive",
+      "url": "https://guyrofe.wixsite.com/homepage",
+      "http_status": 200,
+      "final_url": "https://guyrofe.wixsite.com/homepage",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Google Business Profile",
+      "url": "https://share.google/sTaxQJMQnwKZhXK5X",
+      "http_status": 200,
+      "final_url": "https://www.google.com/search?sca_esv=fc249485959e2dfc&hl=iw&authuser=0&sxsrf=AE3TifNAjWnQTiJNI1sGbKy62RvxTf7nng:1755841269384&kgmid=/g/11gcysvr57&q=%D7%93%D7%B4%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90&shndl=30&shem=lcuae,lsptbl1c,uaasie&source=sh/x/loc/uni/m1/1&kgs=58a2063cf76139e1&utm_source=lcuae,lsptbl1c,uaasie,sh/x/loc/uni/m1/1",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/guyrofe",
+      "http_status": 999,
+      "final_url": "https://www.linkedin.com/in/guyrofe",
+      "reachability": "http_error"
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
+      "http_status": 200,
+      "final_url": "https://www.youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://www.facebook.com/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/guy_rofe_md/",
+      "http_status": 200,
+      "final_url": "https://www.instagram.com/guy_rofe_md/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Apple Podcasts",
+      "url": "https://podcasts.apple.com/us/podcast/%D7%A8%D7%A4%D7%95%D7%90%D7%94-%D7%A2%D7%9C-%D7%9B%D7%95%D7%A1-%D7%A7%D7%A4%D7%94/id1787147468",
+      "http_status": 200,
+      "final_url": "https://podcasts.apple.com/us/podcast/%D7%A8%D7%A4%D7%95%D7%90%D7%94-%D7%A2%D7%9C-%D7%9B%D7%95%D7%A1-%D7%A7%D7%A4%D7%94/id1787147468",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Spotify",
+      "url": "https://open.spotify.com/show/2o8f3yN18UunMRpsEBPTg7",
+      "http_status": 200,
+      "final_url": "https://open.spotify.com/show/2o8f3yN18UunMRpsEBPTg7",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Muck Rack",
+      "url": "https://muckrack.com/drguyrofe",
+      "http_status": 403,
+      "final_url": "https://muckrack.com/drguyrofe",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Crunchbase",
+      "url": "https://www.crunchbase.com/person/dr-guy-rofe",
+      "http_status": 403,
+      "final_url": "https://www.crunchbase.com/person/dr-guy-rofe",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Medium",
+      "url": "https://medium.com/@guyrofe",
+      "http_status": 403,
+      "final_url": "https://medium.com/@guyrofe",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Blogger",
+      "url": "https://guyrofe.blogspot.com/",
+      "http_status": 200,
+      "final_url": "https://guyrofe.blogspot.com/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/GuyRofe",
+      "http_status": 200,
+      "final_url": "https://x.com/GuyRofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "TikTok",
+      "url": "https://www.tiktok.com/@guy_rofe_obgyn",
+      "http_status": 200,
+      "final_url": "https://www.tiktok.com/@guy_rofe_obgyn",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Telegram",
+      "url": null,
+      "http_status": null,
+      "reachability": "missing_url"
+    },
+    {
+      "platform": "SlideShare",
+      "url": "https://www.slideshare.net/DrGuyRofe",
+      "http_status": 200,
+      "final_url": "https://www.slideshare.net/DrGuyRofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Quora",
+      "url": "https://www.quora.com/profile/Dr-Guy-Rofe",
+      "http_status": 403,
+      "final_url": "https://www.quora.com/profile/Dr-Guy-Rofe",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Pinterest",
+      "url": "https://www.pinterest.com/drguyrofe/",
+      "http_status": 200,
+      "final_url": "https://www.pinterest.com/drguyrofe/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Tumblr",
+      "url": "https://drguyrofe.tumblr.com/",
+      "http_status": 200,
+      "final_url": "https://drguyrofe.tumblr.com/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Issuu",
+      "url": "https://issuu.com/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://issuu.com/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Linktree",
+      "url": "https://linktr.ee/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://linktr.ee/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "About.me",
+      "url": "https://about.me/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://about.me/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Flipboard",
+      "url": "https://flipboard.com/@drguyrofe0",
+      "http_status": 200,
+      "final_url": "https://flipboard.com/@drguyrofe0",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Foursquare",
+      "url": "https://foursquare.com/guyrofe",
+      "http_status": 404,
+      "final_url": "https://foursquare.com/guyrofe",
+      "reachability": "not_found"
+    },
+    {
+      "platform": "Flickr",
+      "url": "https://www.flickr.com/people/drguyrofe/",
+      "http_status": 200,
+      "final_url": "https://www.flickr.com/people/drguyrofe/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Giphy",
+      "url": "https://giphy.com/channel/drguyrofe",
+      "http_status": 403,
+      "final_url": "https://giphy.com/channel/drguyrofe",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Slides.com",
+      "url": "https://slides.com/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://slides.com/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "HubPages",
+      "url": "https://hubpages.com/@drguyrofe",
+      "http_status": 200,
+      "final_url": "https://hubpages.com/@drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Gravatar",
+      "url": "https://en.gravatar.com/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://gravatar.com/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Scoop.it",
+      "url": "https://www.scoop.it/u/dr-guy-rofe",
+      "http_status": 404,
+      "final_url": "https://www.scoop.it/u/dr-guy-rofe",
+      "reachability": "not_found"
+    },
+    {
+      "platform": "Disqus",
+      "url": "https://disqus.com/by/drguyrofe/about/",
+      "http_status": 200,
+      "final_url": "https://disqus.com/by/drguyrofe/about/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "OpenStreetMap user",
+      "url": "https://www.openstreetmap.org/user/%D7%92%D7%99%D7%90%20%D7%A8%D7%95%D7%A4%D7%90",
+      "http_status": 404,
+      "final_url": "https://www.openstreetmap.org/user/%D7%92%D7%99%D7%90%20%D7%A8%D7%95%D7%A4%D7%90",
+      "reachability": "not_found"
+    },
+    {
+      "platform": "WordPress.com mirror",
+      "url": "https://drguyrofe.wordpress.com/",
+      "http_status": 200,
+      "final_url": "https://drguyrofe.wordpress.com/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Google Sites mirror",
+      "url": "https://sites.google.com/view/dr-guy-rofe",
+      "http_status": 200,
+      "final_url": "https://sites.google.com/view/dr-guy-rofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Strikingly mirror",
+      "url": "https://drguyrofe.mystrikingly.com/",
+      "http_status": 200,
+      "final_url": "https://drguyrofe.mystrikingly.com/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Jigsy mirror",
+      "url": "https://dr-guy-rofe.jigsy.com/",
+      "http_status": 404,
+      "final_url": "https://dr-guy-rofe.jigsy.com/",
+      "reachability": "not_found"
+    },
+    {
+      "platform": "Bravesites mirror",
+      "url": "https://drguyrofe0.bravesites.com/",
+      "http_status": 403,
+      "final_url": "https://drguyrofe0.bravesites.com/",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Wixsite mirror",
+      "url": "https://drguyrofe.wixsite.com/home",
+      "http_status": 200,
+      "final_url": "https://www.drguyrofe.com/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Jimdo mirror",
+      "url": "https://dr-guy-rofe.jimdosite.com/",
+      "http_status": 200,
+      "final_url": "https://dr-guy-rofe.jimdosite.com/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "SITE123 mirror",
+      "url": "https://644181f572030.site123.me/",
+      "http_status": 200,
+      "final_url": "https://644181f572030.site123.me/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Weebly mirror",
+      "url": "https://drguyrofe.weebly.com/",
+      "http_status": 200,
+      "final_url": "https://drguyrofe.weebly.com/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Jotform blog",
+      "url": "https://form.jotform.com/drguyrofe/blog",
+      "http_status": 404,
+      "final_url": "https://form.jotform.com/drguyrofe/blog",
+      "reachability": "not_found"
+    },
+    {
+      "platform": "Webflow mirror",
+      "url": "https://guyrofe.webflow.io/",
+      "http_status": 200,
+      "final_url": "https://guyrofe.webflow.io/",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "CakeResume",
+      "url": "https://www.cakeresume.com/me/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://www.cake.me/me/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Completed.com",
+      "url": "https://completed.com/individual/30555939/dr-guy-rofe",
+      "http_status": 200,
+      "final_url": "https://completed.com/individual/30555939/dr-guy-rofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Xing",
+      "url": "https://www.xing.com/profile/user_064926/cv",
+      "http_status": 200,
+      "final_url": "https://www.xing.com/profile/user_064926",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Wattpad",
+      "url": "https://www.wattpad.com/user/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://www.wattpad.com/user/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Minds",
+      "url": "https://www.minds.com/drguyrofe",
+      "http_status": 401,
+      "final_url": "https://www.minds.com/drguyrofe",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Product Hunt",
+      "url": "https://www.producthunt.com/@drguyrofe",
+      "http_status": 403,
+      "final_url": "https://www.producthunt.com/@drguyrofe",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Docker Hub",
+      "url": "https://hub.docker.com/u/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://hub.docker.com/u/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "CodePen",
+      "url": "https://codepen.io/drguyrofe",
+      "http_status": 403,
+      "final_url": "https://codepen.io/drguyrofe",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Last.fm",
+      "url": "https://www.last.fm/user/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://www.last.fm/user/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "Imgur",
+      "url": "https://imgur.com/user/drguyrofe/about",
+      "http_status": 429,
+      "final_url": "https://imgur.com/user/drguyrofe/about",
+      "reachability": "access_restricted_or_anti_bot"
+    },
+    {
+      "platform": "Dwell",
+      "url": "https://www.dwell.com/@drguyrofe",
+      "http_status": 200,
+      "final_url": "https://www.dwell.com/@drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "GuyRofe.net legacy WordPress",
+      "url": "https://guyrofe.net/",
+      "http_status": null,
+      "reachability": "network_or_provider_error",
+      "error_type": "ConnectionError"
+    },
+    {
+      "platform": "GuyRofe.co.il legacy WordPress",
+      "url": "https://www.guyrofe.co.il/",
+      "http_status": null,
+      "reachability": "network_or_provider_error",
+      "error_type": "ConnectionError"
+    },
+    {
+      "platform": "Infogram",
+      "url": "https://infogram.com/drguyrofe",
+      "http_status": 200,
+      "final_url": "https://infogram.com/drguyrofe",
+      "reachability": "reachable"
+    },
+    {
+      "platform": "SS Blog",
+      "url": "https://drguyrofe.blog.ss-blog.jp/_pages/user/profile/index",
+      "http_status": null,
+      "reachability": "network_or_provider_error",
+      "error_type": "ConnectionError"
+    },
+    {
+      "platform": "Rebrandly short link",
+      "url": "https://rebrand.ly/%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90",
+      "http_status": null,
+      "reachability": "network_or_provider_error",
+      "error_type": "ConnectionError"
+    },
+    {
+      "platform": "Creator Spring",
+      "url": "https://dr-guy-rofe.creator-spring.com/",
+      "http_status": 200,
+      "final_url": "https://dr-guy-rofe.creator-spring.com/",
+      "reachability": "reachable"
+    }
+  ]
+}

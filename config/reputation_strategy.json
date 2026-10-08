@@ -33,6 +33,21 @@
     "facts_require_evidence": true,
     "homepage_change_prohibited": true
   },
+  "business_activity": {
+    "model": "non_clinical_medical_information_publishing_office",
+    "patient_services_offered": false,
+    "content_and_publishing_only": true,
+    "google_business_expected_categories_he": [
+      "מוציא לאור",
+      "חברת מדיה"
+    ],
+    "google_business_misaligned_categories_he": [
+      "רופא נשים",
+      "מנתח",
+      "גינקולוגיה",
+      "מרכז טיפול בהריון"
+    ]
+  },
   "content_policy": {
     "information_only": true,
     "medical_review_required_before_publication": true,
