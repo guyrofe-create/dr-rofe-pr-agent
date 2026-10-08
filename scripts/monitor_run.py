@@ -40,7 +40,6 @@ from reputation_core.orchestrator import load_serp_targets
 from reputation_core.ai_evaluator import evaluate_ai_answer
 from reputation_core.ai_usage import record_ai_usage
 from reputation_core.google_business_performance import (
-    assess_business_model_alignment,
     fetch_google_business_performance,
     fetch_google_business_profile_details,
 )
@@ -319,12 +318,13 @@ def collect_google_business_performance():
         try:
             details = fetch_google_business_profile_details(access_token, location)
             performance["profile_details"] = details
-            performance["business_model_alignment"] = assess_business_model_alignment(
-                details,
-                CLIENT_PROFILE.get("business_activity", {}),
+            performance["profile_configuration_policy"] = (
+                CLIENT_PROFILE.get("business_activity", {}).get(
+                    "google_business_profile_policy"
+                )
             )
         except Exception as detail_exc:
-            performance["business_model_alignment"] = {
+            performance["profile_details_status"] = {
                 "status": "measurement_unavailable",
                 "reason": safe_error(detail_exc),
                 "public_write_performed": False,

@@ -61,29 +61,6 @@ def fetch_google_business_profile_details(
     return response.json()
 
 
-def assess_business_model_alignment(details: dict, policy: dict) -> dict:
-    categories = details.get("categories") or {}
-    category_rows = [categories.get("primaryCategory") or {}]
-    category_rows.extend(categories.get("additionalCategories") or [])
-    names = [
-        str(item.get("displayName") or item.get("categoryId") or "").strip()
-        for item in category_rows
-    ]
-    names = [name for name in names if name]
-    forbidden = set(policy.get("google_business_misaligned_categories_he") or [])
-    expected = set(policy.get("google_business_expected_categories_he") or [])
-    mismatches = [name for name in names if name in forbidden]
-    matches = [name for name in names if name in expected]
-    return {
-        "status": "misaligned" if mismatches else ("aligned" if matches else "review_required"),
-        "observed_categories": names,
-        "misaligned_categories": mismatches,
-        "expected_category_matches": matches,
-        "actual_business_model": policy.get("model"),
-        "public_write_performed": False,
-    }
-
-
 def _date_params(prefix: str, start: date, end: date) -> dict:
     params = {}
     for label, value in (("start_date", start), ("end_date", end)):

@@ -53,16 +53,7 @@
     "model": "non_clinical_medical_information_publishing_office",
     "patient_services_offered": false,
     "content_and_publishing_only": true,
-    "google_business_expected_categories_he": [
-      "מוציא לאור",
-      "חברת מדיה"
-    ],
-    "google_business_misaligned_categories_he": [
-      "רופא נשים",
-      "מנתח",
-      "גינקולוגיה",
-      "מרכז טיפול בהריון"
-    ]
+    "google_business_profile_policy": "preserve_existing_profile_unless_owner_explicitly_requests_a_change"
   },
   "channel_policy": {
     "product_managed": [

@@ -36,31 +36,20 @@
   "diagnosis": {
     "visibility_problem": false,
     "measurement_problem_in_tool": true,
-    "profile_business_model_mismatch": true,
-    "summary": "The profile is visible, but its categories and several attributes describe a patient-facing clinic rather than the owner's stated non-clinical publishing and information office."
+    "profile_change_recommended": false,
+    "summary": "The profile is visible and active. The owner decided to preserve its established name, categories, address, reviews and configuration; the tool must measure it as a local surface and must not repeatedly propose category changes."
   },
-  "recommended_exact_changes_pending_owner_confirmation": {
-    "primary_category": "מוציא לאור",
-    "additional_categories": [
-      "חברת מדיה"
+  "owner_decision": {
+    "action": "preserve_existing_profile",
+    "fields_to_preserve": [
+      "business name",
+      "categories",
+      "address",
+      "reviews",
+      "existing profile configuration"
     ],
-    "remove_categories": [
-      "רופא נשים",
-      "מנתח",
-      "גינקולוגיה",
-      "מרכז טיפול בהריון"
-    ],
-    "description": "המשרד של גיא רופא מפיק ומנגיש לציבור תוכן רפואי מבוסס בעברית, ספרים ופודקאסטים בנושאי בריאות האישה, הריון, לידה ופוריות. הפעילות במקום היא פעילות תוכן, הוצאה לאור ומדיה בלבד; אין במקום קבלת מטופלות, אבחון, טיפול רפואי או קביעת תורים.",
-    "remove_attributes": [
-      "צריך לקבוע תור",
-      "clinical payment signals"
-    ],
-    "review_before_change": [
-      "Keep the public address and opening hours only if visitors can actually meet the business in person there during those hours.",
-      "Keep a service area only if the business actually visits customers in person in that area.",
-      "Review products and services after the category change and remove any clinical service entries."
-    ],
-    "warning": "Google may require reverification after a category change."
+    "publishing_scope": "Information-only posts linking to exact approved content pages.",
+    "measurement_scope": "Measure Business Profile and Maps separately from organic web results."
   },
   "approval_required_before_public_edit": true
 }
