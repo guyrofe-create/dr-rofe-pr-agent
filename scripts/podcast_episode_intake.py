@@ -18,12 +18,20 @@ DEFAULT_OUTPUT = ROOT / "opportunity_drafts" / "media"
 def _valid_episode_url(url: str, host: str) -> bool:
     parsed = urlparse(url)
     trusted_host = parsed.netloc == host or parsed.netloc.endswith(f".{host}")
+    if host == "youtube.com":
+        trusted_host = trusted_host or parsed.netloc in {"youtu.be", "www.youtu.be"}
     if parsed.scheme != "https" or not trusted_host:
         return False
     if host == "open.spotify.com":
         return parsed.path.startswith("/episode/") and len(parsed.path) > 9
     if host == "podcasts.apple.com":
         return bool(parse_qs(parsed.query).get("i"))
+    if host == "youtube.com":
+        return (
+            parsed.netloc in {"youtu.be", "www.youtu.be"} and len(parsed.path.strip("/")) >= 6
+        ) or (
+            trusted_host and parsed.path == "/watch" and bool(parse_qs(parsed.query).get("v"))
+        )
     return (
         parsed.netloc == host or parsed.netloc.endswith(f".{host}")
     )
@@ -35,6 +43,7 @@ def create_episode_brief(
     transcript_markdown: str,
     spotify_url: str,
     apple_url: str,
+    youtube_url: str,
     published_at: str | None = None,
     config_path: Path = DEFAULT_CONFIG,
     output_dir: Path = DEFAULT_OUTPUT,
@@ -55,8 +64,10 @@ def create_episode_brief(
         raise ValueError("A valid Spotify episode URL is required")
     if not _valid_episode_url(apple_url, "podcasts.apple.com"):
         raise ValueError("A valid Apple Podcasts episode URL is required")
+    if not _valid_episode_url(youtube_url, "youtube.com"):
+        raise ValueError("A valid YouTube episode URL is required")
     episode_key = hashlib.sha256(
-        f"{spotify_url.strip()}\n{apple_url.strip()}".encode("utf-8")
+        f"{spotify_url.strip()}\n{apple_url.strip()}\n{youtube_url.strip()}".encode("utf-8")
     ).hexdigest()[:16]
     created_at = (now or datetime.now(timezone.utc)).isoformat()
     brief = {
@@ -72,7 +83,8 @@ def create_episode_brief(
         "source_media_url": spotify_url.strip(),
         "platform_urls": {
             "spotify": spotify_url.strip(),
-            "apple_podcasts": apple_url.strip()
+            "apple_podcasts": apple_url.strip(),
+            "youtube": youtube_url.strip()
         },
         "published_at": published_at,
         "transcript_markdown": transcript,
@@ -95,6 +107,7 @@ def main() -> None:
     parser.add_argument("--transcript", type=Path, required=True)
     parser.add_argument("--spotify-url", required=True)
     parser.add_argument("--apple-url", required=True)
+    parser.add_argument("--youtube-url", required=True)
     parser.add_argument("--published-at")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
@@ -104,6 +117,7 @@ def main() -> None:
         transcript_markdown=args.transcript.read_text(encoding="utf-8"),
         spotify_url=args.spotify_url,
         apple_url=args.apple_url,
+        youtube_url=args.youtube_url,
         published_at=args.published_at,
         config_path=args.config,
         output_dir=args.output_dir,

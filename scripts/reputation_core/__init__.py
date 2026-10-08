@@ -5,6 +5,7 @@ from .growth import plan_growth_campaign
 from .editorial_radar import build_news_analysis_brief, rank_news_candidates
 from .orchestrator import evaluate_new_asset_hypothesis, orchestrate_reputation_cycle
 from .search_console import (
+    fetch_search_console_appearance_rows,
     fetch_search_console_rows,
     inspect_search_console_urls,
     refresh_google_access_token,
@@ -113,6 +114,7 @@ __all__ = [
     "build_news_analysis_brief",
     "orchestrate_reputation_cycle",
     "fetch_search_console_rows",
+    "fetch_search_console_appearance_rows",
     "inspect_search_console_urls",
     "refresh_google_access_token",
     "evaluate_new_asset_hypothesis",

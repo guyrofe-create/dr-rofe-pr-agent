@@ -97,6 +97,14 @@ jobs:
           echo "image_ready=${image_ready}" >> "${GITHUB_OUTPUT}"
           echo "owner_actions=${owner_actions}" >> "${GITHUB_OUTPUT}"
           echo "failures=${failures}" >> "${GITHUB_OUTPUT}"
+          job_count="$(jq '.jobs | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
+          if (( failures > 0 )); then
+            echo "outcome=failed" >> "${GITHUB_OUTPUT}"
+          elif (( job_count == 0 )); then
+            echo "outcome=noop_no_due_or_eligible_slots" >> "${GITHUB_OUTPUT}"
+          else
+            echo "outcome=prepared_for_approval" >> "${GITHUB_OUTPUT}"
+          fi
           if (( failures > 0 )); then
             exit 1
           fi
@@ -129,6 +137,7 @@ jobs:
             echo "Image-ready bundles: ${{ steps.bundles.outputs.image_ready || '0' }}"
             echo "Owner image decisions requested: ${{ steps.bundles.outputs.owner_actions || '0' }}"
             echo "Bundle failures: ${{ steps.bundles.outputs.failures || '0' }}"
+            echo "Operational outcome: ${{ steps.bundles.outputs.outcome || 'failed_before_classification' }}"
             if [[ -f "${RUNNER_TEMP}/content-cadence-manifest.json" ]]; then
               echo "Generation errors: $(jq '.errors | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
               echo "Quality skips: $(jq '.skipped | length' "${RUNNER_TEMP}/content-cadence-manifest.json")"
@@ -137,6 +146,14 @@ jobs:
             echo
             echo "[Open the approval dashboard](https://dr-rofe-reputation-center.guyrofe.chatgpt.site)"
           } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Enforce truthful workflow status
+        if: always()
+        run: |
+          if [[ "${{ steps.generate.outcome }}" != "success" || "${{ steps.bundles.outcome }}" != "success" ]]; then
+            echo "::error::Content cadence did not complete cleanly; see the operational outcome in the summary."
+            exit 1
+          fi
 
       - name: Upload cadence manifest
         if: always()

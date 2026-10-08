@@ -99,6 +99,16 @@ def _public_page_metadata(url: str, *, session=requests) -> dict:
         "content",
     )
     description = " ".join(description.split())
+    visible = re.sub(r"<script.*?</script>|<style.*?</style>", " ", document, flags=re.I | re.S)
+    visible = html.unescape(re.sub(r"<[^>]+>", " ", visible))
+    visible = " ".join(visible.split())
+    active_service_phrases = [
+        phrase for phrase in (
+            "הקליניקה משרתת", "לקביעת תור", "מלאו פרטים ואחזור", "מבצע את הבדיקה בקליניקה",
+            "accepting patients", "book an appointment", "our clinic",
+        )
+        if phrase.casefold() in visible.casefold()
+    ]
     fingerprint = hashlib.sha256(
         f"{title}\n{description}".encode("utf-8")
     ).hexdigest()
@@ -106,6 +116,11 @@ def _public_page_metadata(url: str, *, session=requests) -> dict:
         "title": title,
         "description": description,
         "metadata_sha256": fingerprint,
+        "entity_name_present": any(
+            phrase.casefold() in visible.casefold()
+            for phrase in ("ד״ר גיא רופא", 'ד"ר גיא רופא', "גיא רופא", "Guy Rofe")
+        ),
+        "active_service_claims": active_service_phrases,
     }
 
 
@@ -157,12 +172,14 @@ def audit_site(site: dict, *, session=requests) -> dict:
         f"{site['base_url'].rstrip('/')}/sitemap.xml",
         session=session,
     )
+    homepage_url = site["base_url"].rstrip("/") + "/"
     candidates = [
         url
         for url in urls
         if LEGACY_SLUG.search(urlparse(url).path.strip("/"))
         or "/service-page/" in f"/{urlparse(url).path.strip('/')}/"
     ]
+    candidates = list(dict.fromkeys([homepage_url] + candidates))
     metadata_by_url = {
         url: _public_page_metadata(url, session=session)
         for url in candidates
@@ -177,6 +194,9 @@ def audit_site(site: dict, *, session=requests) -> dict:
         blockers.append("legacy_or_placeholder_urls")
     if classification["service_or_booking_urls_requiring_factual_review"]:
         blockers.append("service_or_booking_claims_require_review")
+    homepage = metadata_by_url.get(homepage_url, {})
+    if homepage.get("active_service_claims"):
+        blockers.append("homepage_active_service_claims_require_exact_review")
     result = {
         "site_key": site["key"],
         "base_url": site["base_url"],
@@ -184,6 +204,7 @@ def audit_site(site: dict, *, session=requests) -> dict:
         "audited_at": datetime.now(timezone.utc).isoformat(),
         **classification,
         "publication_blockers": blockers,
+        "homepage_audit": homepage,
         "audit_passed": not blockers,
         "changes_performed": False,
         "public_metadata_checked": len(metadata_by_url),

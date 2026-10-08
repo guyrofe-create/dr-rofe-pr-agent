@@ -90,6 +90,56 @@ def fetch_search_console_rows(
     return rows
 
 
+def fetch_search_console_appearance_rows(
+    access_token: str,
+    properties: list[str],
+    *,
+    end_date: date | None = None,
+    days: int = 28,
+    row_limit: int = 25000,
+    session=requests,
+) -> list[dict]:
+    """Return page-level Search appearance evidence, including AI types when exposed."""
+    end = end_date or (date.today() - timedelta(days=3))
+    start = end - timedelta(days=days - 1)
+    payload = {
+        "startDate": start.isoformat(),
+        "endDate": end.isoformat(),
+        "dimensions": ["searchAppearance", "page"],
+        "type": "web",
+        "rowLimit": row_limit,
+        "dataState": "final",
+    }
+    rows: list[dict] = []
+    for site in properties:
+        response = session.post(
+            SEARCH_ANALYTICS_URL.format(site=quote(site, safe="")),
+            headers={"Authorization": f"Bearer {access_token}"},
+            json=payload,
+            timeout=30,
+        )
+        if response.status_code in {403, 404}:
+            continue
+        response.raise_for_status()
+        for item in response.json().get("rows", []):
+            keys = item.get("keys") or []
+            appearance = keys[0] if keys else None
+            rows.append({
+                "property": site,
+                "search_appearance": appearance,
+                "page": keys[1] if len(keys) > 1 else None,
+                "is_generative_ai": bool(
+                    appearance and any(token in str(appearance).upper() for token in ("AI", "GENERATIVE"))
+                ),
+                "clicks": item.get("clicks", 0),
+                "impressions": item.get("impressions", 0),
+                "ctr": item.get("ctr", 0),
+                "position": item.get("position", 100),
+                "period": {"start": start.isoformat(), "end": end.isoformat()},
+            })
+    return rows
+
+
 def inspect_search_console_urls(
     access_token: str,
     targets: list[dict],

@@ -18,6 +18,7 @@ from social_publishers import (
 from reputation_core import (
     CommandCenter,
     client_search_queries,
+    fetch_search_console_appearance_rows,
     fetch_search_console_rows,
     inspect_search_console_urls,
     load_client_profile,
@@ -57,6 +58,7 @@ COMMAND_CENTER_PATH = str(data_path("command_center.json"))
 PROFILE_PATH = str(data_path("business_profile.json"))
 GROWTH_OBSERVATIONS_PATH = str(data_path("growth_observations.json"))
 ASSET_REGISTRY_PATH = str(data_path("asset_registry.json"))
+ASSET_PORTFOLIO_PATH = str(data_path("asset_portfolio_plan.json"))
 BING_AI_PERFORMANCE_PATH = str(data_path("bing_ai_performance.json"))
 MANUAL_AI_SAMPLES_PATH = str(data_path("manual_ai_samples.json"))
 BACKLINKS_PATH = str(data_path("backlinks.json"))
@@ -74,7 +76,7 @@ REPORT = {
     "date": datetime.now().isoformat(),
     "rank": [], "geo": [], "tokens": [], "reviews": None,
     "facebook_recommendations": None, "web_mentions": None,
-    "search_console": None, "url_inspection": None,
+    "search_console": None, "search_appearances": None, "url_inspection": None,
     "publication_lifecycle": [], "page_experience": None,
     "runtime_connection_health": None,
     "bing_ai_performance": None, "backlinks": None,
@@ -134,11 +136,39 @@ def collect_search_console_evidence():
             "reason": "shared Google OAuth credentials are not configured",
             "rows": [],
         }
+        REPORT["search_appearances"] = {
+            "status": "skipped",
+            "reason": "shared Google OAuth credentials are not configured",
+            "rows": [],
+        }
         return []
     try:
         access_token = refresh_google_access_token(*credentials)
         properties = load_serp_targets().get("search_console_properties", [])
         rows = fetch_search_console_rows(access_token, properties)
+        try:
+            appearance_rows = fetch_search_console_appearance_rows(
+                access_token, properties
+            )
+            REPORT["search_appearances"] = {
+                "status": "ok",
+                "row_count": len(appearance_rows),
+                "generative_ai_row_count": sum(
+                    1 for row in appearance_rows if row.get("is_generative_ai")
+                ),
+                "rows": appearance_rows,
+            }
+        except Exception as appearance_exc:
+            # Search appearance dimensions are not exposed uniformly across all
+            # properties/API versions. Keep the ordinary Search Console evidence
+            # instead of turning an optional extension into a total collection
+            # failure.
+            REPORT["search_appearances"] = {
+                "status": "unavailable",
+                "reason": "searchAppearance dimension is not available for this property/API",
+                "error": safe_error(appearance_exc),
+                "rows": [],
+            }
         project_root = Path(__file__).resolve().parents[1]
         campaign_urls = []
         for path in sorted(
@@ -224,6 +254,11 @@ def collect_search_console_evidence():
             "status": "error",
             "error": safe_error(exc),
             "results": [],
+        }
+        REPORT["search_appearances"] = {
+            "status": "error",
+            "error": safe_error(exc),
+            "rows": [],
         }
         return []
 
@@ -403,6 +438,13 @@ def load_json_file(path, default):
             return json.load(handle)
     except (OSError, ValueError, TypeError):
         return default
+
+
+def write_json_file(path, payload):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
 
 
 # ─── History (state) helpers ─────────────────────────────────────────────────
@@ -628,7 +670,7 @@ def is_serp_quota_error(error):
 
 
 def ai_checks_due(today=None):
-    """AI-answer sampling runs twice monthly with repeated stability samples."""
+    """AI-answer sampling runs at the configured interval."""
     today = today or date.today().isoformat()
     today_value = date.fromisoformat(today)
     policy = free_serpapi_policy()
@@ -639,6 +681,12 @@ def ai_checks_due(today=None):
     force_check = os.environ.get("FORCE_AI_CHECK", "").strip().lower() in {
         "1", "true", "yes",
     }
+    interval_days = int(policy.get("ai_check_interval_days") or 0)
+    last_value = HISTORY.get("last_ai_check_date")
+    if interval_days and not force_check:
+        if not last_value:
+            return True
+        return (today_value - date.fromisoformat(last_value)).days >= interval_days
     return (
         (force_check or today_value.day in scheduled_days)
         and HISTORY.get("last_ai_check_date") != today
@@ -665,6 +713,13 @@ def scheduled_maintenance_due(
         force_environment_key,
         "",
     ).strip().lower() in {"1", "true", "yes"}
+    interval_key = policy_key.replace("_days_of_month", "_interval_days")
+    interval_days = int(policy.get(interval_key) or 0)
+    last_value = HISTORY.get(history_key)
+    if interval_days and not force_check:
+        if not last_value:
+            return True
+        return (today_value - date.fromisoformat(last_value)).days >= interval_days
     return (
         (force_check or today_value.day in scheduled_days)
         and HISTORY.get(history_key) != today
@@ -1392,10 +1447,78 @@ def check_web_mentions(today=None):
         new_mentions = [r for r in organic if r.get("link") in new_urls] if have_baseline else []
 
         HISTORY["seen_urls"] = list(seen_urls | current_urls)[-500:]
+        registry = load_json_file(ASSET_REGISTRY_PATH, {"assets": []})
+        registered_urls = {
+            str(item.get("url") or "").rstrip("/")
+            for item in registry.get("assets", [])
+        }
+        owned_hosts = {"guyrofe.com", "drguyrofe.co.il", "drguyrofe.com"}
+        mention_rows = []
+        verified_links = []
+        for item in organic:
+            link = item.get("link")
+            if not link:
+                continue
+            host = normalized_host(link)
+            registered = link.rstrip("/") in registered_urls
+            mention = {
+                "title": item.get("title"),
+                "source_url": link,
+                "source_host": host,
+                "registered_asset": registered,
+                "independent_source": host not in owned_hosts,
+                "discovered_at": datetime.now().isoformat(),
+            }
+            if host not in owned_hosts:
+                try:
+                    page = requests.get(
+                        link,
+                        timeout=12,
+                        headers={"User-Agent": "Mozilla/5.0 (compatible; ReputationAuthorityAudit/1.0)"},
+                    )
+                    if page.status_code < 400 and "html" in page.headers.get("content-type", "").casefold():
+                        hrefs = re.findall(r'href=["\']([^"\']+)', page.text[:750000], re.I)
+                        targets = []
+                        for href in hrefs:
+                            target_host = normalized_host(href)
+                            if target_host in owned_hosts:
+                                targets.append(href)
+                        mention["owned_links_found"] = list(dict.fromkeys(targets))
+                        verified_links.extend({
+                            "source_url": link,
+                            "target_url": target,
+                            "discovery_method": "brand_serp_public_html",
+                            "risk_signals": [],
+                        } for target in mention["owned_links_found"])
+                    else:
+                        mention["owned_link_check"] = "unavailable"
+                except requests.RequestException:
+                    mention["owned_link_check"] = "unavailable"
+            mention_rows.append(mention)
+
+        backlink_state = load_json_file(BACKLINKS_PATH, {"previous": [], "current": []})
+        write_json_file(BACKLINKS_PATH, {
+            "version": 2,
+            "provider_status": "active_public_brand_serp_discovery",
+            "checked_at": datetime.now().isoformat(),
+            "previous": backlink_state.get("current", []),
+            "current": list({
+                (item["source_url"], item["target_url"]): item
+                for item in verified_links
+            }.values()),
+            "mentions": mention_rows,
+            "limitations": "Public discovery verifies links visible in fetched HTML; provider exports may add broader coverage.",
+        })
         REPORT["web_mentions"] = {
             "status": "ok",
             "total_results_checked": len(organic),
             "new_mentions": [{"title": r.get("title"), "link": r.get("link")} for r in new_mentions],
+            "registered_asset_results": sum(1 for row in mention_rows if row["registered_asset"]),
+            "unregistered_authority_candidates": [
+                row for row in mention_rows
+                if row["independent_source"] and not row["registered_asset"]
+            ],
+            "verified_backlinks": verified_links,
         }
     except Exception as e:
         if is_serp_quota_error(e):
@@ -1929,7 +2052,12 @@ def main():
         search_console_rows = []
         REPORT["search_console"] = {
             "status": "skipped",
-            "reason": "twice-monthly Search Console check is not due or already completed",
+            "reason": "weekly Search Console check is not due or already completed",
+            "rows": [],
+        }
+        REPORT["search_appearances"] = {
+            "status": "skipped",
+            "reason": "weekly Search Console appearance check is not due",
             "rows": [],
         }
         REPORT["page_experience"] = {
@@ -1944,6 +2072,25 @@ def main():
     # This is the active layer: each new risk receives a priority, SLA,
     # approval policy, playbook tasks and (for P0/P1) a crisis room.
     command_center = CommandCenter(COMMAND_CENTER_PATH)
+    asset_portfolio = load_json_file(ASSET_PORTFOLIO_PATH, {})
+    REPORT["asset_portfolio"] = {
+        "generated_at": asset_portfolio.get("generated_at"),
+        "asset_count": asset_portfolio.get("asset_count", 0),
+        "effort_counts": asset_portfolio.get("effort_counts", {}),
+        "audit_complete_count": asset_portfolio.get("audit_complete_count", 0),
+        "action_required_count": asset_portfolio.get("action_required_count", 0),
+        "priority_actions": [
+            {
+                "platform": item.get("platform"),
+                "effort": item.get("effort"),
+                "actions": item.get("action_checklist", []),
+                "public_execution_allowed": False,
+            }
+            for item in asset_portfolio.get("assets", [])
+            if item.get("effort") in {"core", "defend"} and item.get("action_checklist")
+        ][:25],
+    }
+    command_center.state["asset_audit"] = REPORT["asset_portfolio"]
     routed_events = command_center.ingest_monitor_report(REPORT)
 
     # Re-plan the current high-cadence growth campaign from live evidence.

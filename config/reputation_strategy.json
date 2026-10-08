@@ -33,6 +33,19 @@
     "facts_require_evidence": true,
     "homepage_change_prohibited": true
   },
+  "accepted_preservation_decisions": {
+    "canonical_homepage": {
+      "url": "https://guyrofe.com/",
+      "decision": "preserve_without_automatic_copy_or_structure_changes",
+      "reason": "The strongest asset already ranks on page one; avoid risking established visibility.",
+      "monitor_only": true
+    },
+    "organic_result_sentiment": {
+      "decision": "not_a_product_kpi",
+      "primary_measurement": "desired_unique_asset_coverage_and_positions",
+      "reason": "Optimize measurable coverage of desired assets rather than subjective sentiment classification."
+    }
+  },
   "business_activity": {
     "model": "non_clinical_medical_information_publishing_office",
     "patient_services_offered": false,

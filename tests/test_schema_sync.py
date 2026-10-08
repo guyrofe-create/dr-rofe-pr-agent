@@ -3,8 +3,8 @@ import unittest
 from unittest.mock import Mock, patch
 
 from scripts.schema_sync import (
-    build_llms_txt,
     build_schema,
+    llms_txt_policy,
     wp_find_or_create_page,
     wp_update_page,
 )
@@ -30,11 +30,10 @@ class NeutralEntitySchemaTests(unittest.TestCase):
         self.assertNotIn("telephone", serialized)
         self.assertNotIn("aggregateRating", serialized)
 
-    def test_llms_text_states_non_practicing_status(self):
-        text = build_llms_txt(self.profile)
-        self.assertIn("not currently practicing medicine", text)
-        self.assertIn("not accepting patients", text)
-        self.assertNotIn("Services: fertility treatment", text)
+    def test_llms_text_is_deprecated_and_not_published(self):
+        policy = llms_txt_policy()
+        self.assertEqual(policy["status"], "deprecated_not_published")
+        self.assertIn("separate_exact_approval", policy["existing_public_page_action"])
 
     @patch("scripts.schema_sync.requests.get")
     def test_page_lookup_uses_public_status_without_draft_filter(self, get):

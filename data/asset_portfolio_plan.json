@@ -1,17 +1,19 @@
 {
-  "version": 1,
-  "generated_at": "2026-10-08T06:22:48.049176+00:00",
+  "version": 2,
+  "generated_at": "2026-10-08T07:01:53.163508+00:00",
   "objective": "Maximize accurate first-page and discovery visibility with the existing asset portfolio.",
   "policy": "Effort follows authority, measured visibility, audience fit and control; account count alone is not a success metric.",
-  "asset_count": 64,
+  "asset_count": 67,
   "effort_counts": {
-    "core": 10,
+    "core": 13,
     "defend": 1,
     "selective": 12,
     "resolve_or_hold": 9,
     "retain_only": 8,
     "quarantine": 24
   },
+  "audit_complete_count": 5,
+  "action_required_count": 62,
   "assets": [
     {
       "platform": "Canonical website",
@@ -27,6 +29,20 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://guyrofe.com/",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "monitor_rank_and_indexation_without_content_or_structure_changes"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -43,6 +59,27 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.google.com/search?sca_esv=fc249485959e2dfc&hl=iw&authuser=0&sxsrf=AE3TifNAjWnQTiJNI1sGbKy62RvxTf7nng:1755841269384&kgmid=/g/11gcysvr57&q=%D7%93%D7%B4%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90&shndl=30&shem=lcuae,lsptbl1c,uaasie&source=sh/x/loc/uni/m1/1&kgs=58a2063cf76139e1&utm_source=lcuae,lsptbl1c,uaasie,sh/x/loc/uni/m1/1",
+      "content_audit": "complete",
+      "title": "Google Search",
+      "meta_description": null,
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": false,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_entity_name",
+        "missing_canonical",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "preserve_core_profile_configuration",
+        "continue_exact_approved_information_posts_media_and_contextual_links",
+        "measure_search_and_maps_visibility"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -59,6 +96,29 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.drguyrofe.com/",
+      "content_audit": "complete",
+      "title": "ד״ר גיא רופא – מומחה במיילדות וגינקולוגיה | ייעוץ בריאות האישה בת״א",
+      "meta_description": "ד״ר גיא רופא, רופא נשים מומחה בת״א. בדיקות היריון לפי שבועות, סקירות ו-CMV, הכוונה מבוססת מחקר וייעוץ אישי. ידע ברור, מקצועי ומעודכן לבריאות האישה.",
+      "canonical": "https://www.drguyrofe.com",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "ContactPoint",
+        "LocalBusiness",
+        "MedicalClinic",
+        "Person",
+        "PostalAddress",
+        "WebSite"
+      ],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -75,6 +135,20 @@
       "reachability": "http_error",
       "http_status": 999,
       "final_url": "https://www.linkedin.com/in/guyrofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -91,6 +165,107 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
+      "content_audit": "complete",
+      "title": "Guy Rofe, MD - YouTube",
+      "meta_description": "Dr. Guy Rofe shares his experience and knowledge on various topics related to gynecology and medicine in general. Dr. Guy Rofe graduated with honors from the...",
+      "canonical": "https://www.youtube.com/channel/UC0TaKPdfa-wZCe5cG6tcRtg",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [
+        "FollowAction",
+        "InteractionCounter",
+        "Person",
+        "ProfilePage"
+      ],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one",
+        "add_reader_useful_official_link_if_platform_allows",
+        "measure_exact_brand_serp_and_search_console_visibility"
+      ],
+      "audit_complete": false,
+      "public_execution_allowed": false
+    },
+    {
+      "platform": "BookPod — הריון ולידה",
+      "url": "https://bookpod.co.il/product/%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%95%d7%9c%d7%99%d7%93%d7%94-%d7%9e%d7%94%d7%a8%d7%a6%d7%95%d7%9f-%d7%9c%d7%94%d7%a8%d7%95%d7%aa-%d7%95%d7%a2%d7%93-%d7%90%d7%97%d7%a8%d7%99-%d7%94%d7%9c%d7%99%d7%93/",
+      "tier": "A",
+      "priority": 93,
+      "status": "external_verified_product_page",
+      "controlled": false,
+      "page_one": false,
+      "effort": "core",
+      "reason": "High-authority owned or identity asset; maintain facts, freshness and measurement.",
+      "next_action": "audit_facts_then_measure_and_maintain",
+      "reachability": "reachable",
+      "http_status": 200,
+      "final_url": "https://bookpod.co.il/book/%D7%94%D7%A8%D7%99%D7%95%D7%9F-%D7%95%D7%9C%D7%99%D7%93%D7%94-%D7%9E%D7%94%D7%91%D7%93%D7%99%D7%A7%D7%94-%D7%94%D7%97%D7%99%D7%95%D7%91%D7%99%D7%AA-%D7%95%D7%A2%D7%93-%D7%90%D7%97%D7%A8%D7%99-%D7%94%D7%9C%D7%99%D7%93%D7%94-17036",
+      "content_audit": "complete",
+      "title": "הריון ולידה - מהבדיקה החיובית ועד אחרי הלידה מאת ד״ר גיא רופא | בוקפוד - מהסופר לקורא - חנות הספרים החברתית של ישראל",
+      "meta_description": "הריון ולידה - מבדיקת ההריון החיובית ועד אחרי הלידה הוא מדריך ישראלי מקיף ועדכני מאת ד״ר גיא רופא, שנכתב כדי להעניק לנשים ולזוגות מידע רפואי ברור, מסודר ומעשי…",
+      "canonical": "https://bookpod.co.il/book/%D7%94%D7%A8%D7%99%D7%95%D7%9F-%D7%95%D7%9C%D7%99%D7%93%D7%94-%D7%9E%D7%94%D7%91%D7%93%D7%99%D7%A7%D7%94-%D7%94%D7%97%D7%99%D7%95%D7%91%D7%99%D7%AA-%D7%95%D7%A2%D7%93-%D7%90%D7%97%D7%A8%D7%99-%D7%94%D7%9C%D7%99%D7%93%D7%94-17036",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "BreadcrumbList",
+        "ListItem",
+        "Offer",
+        "Organization",
+        "Person"
+      ],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "request_or_document_h1_count_not_one",
+        "measure_exact_brand_serp_and_search_console_visibility"
+      ],
+      "audit_complete": false,
+      "public_execution_allowed": false
+    },
+    {
+      "platform": "BookPod — איך להרות באופן טבעי",
+      "url": "https://bookpod.co.il/product/%d7%90%d7%99%d7%9a-%d7%9c%d7%94%d7%a8%d7%95%d7%aa-%d7%91%d7%90%d7%95%d7%a4%d7%9f-%d7%98%d7%91%d7%a2%d7%99-%d7%9c%d7%a0%d7%a1%d7%95%d7%aa-%d7%97%d7%9b%d7%9d-%d7%95%d7%9e%d7%aa%d7%99-%d7%9c%d7%a4/",
+      "tier": "A",
+      "priority": 92,
+      "status": "external_verified_product_page",
+      "controlled": false,
+      "page_one": false,
+      "effort": "core",
+      "reason": "High-authority owned or identity asset; maintain facts, freshness and measurement.",
+      "next_action": "audit_facts_then_measure_and_maintain",
+      "reachability": "reachable",
+      "http_status": 200,
+      "final_url": "https://bookpod.co.il/book/%D7%90%D7%99%D7%9A-%D7%9C%D7%94%D7%A8%D7%95%D7%AA-%D7%91%D7%90%D7%95%D7%A4%D7%9F-%D7%98%D7%91%D7%A2%D7%99-%D7%9C%D7%A0%D7%A1%D7%95%D7%AA-%D7%97%D7%9B%D7%9D-%D7%95%D7%9E%D7%AA%D7%99-%D7%9C%D7%A4%D7%A0%D7%95%D7%AA-%D7%9C%D7%A2%D7%96%D7%A8%D7%94-17463",
+      "content_audit": "complete",
+      "title": "איך להרות באופן טבעי - לנסות חכם ומתי לפנות לעזרה מאת ד״ר גיא רופא | בוקפוד - מהסופר לקורא - חנות הספרים החברתית של ישראל",
+      "meta_description": "איך להרות באופן טבעי הוא מדריך רפואי בהיר ומקיף לזוגות שנמצאים בדרך להריון - מהתזמון הנכון ועד הבירור הרפואי. ד\"ר גיא רופא , רופא בעל ניסיון קליני רב-שנים…",
+      "canonical": "https://bookpod.co.il/book/%D7%90%D7%99%D7%9A-%D7%9C%D7%94%D7%A8%D7%95%D7%AA-%D7%91%D7%90%D7%95%D7%A4%D7%9F-%D7%98%D7%91%D7%A2%D7%99-%D7%9C%D7%A0%D7%A1%D7%95%D7%AA-%D7%97%D7%9B%D7%9D-%D7%95%D7%9E%D7%AA%D7%99-%D7%9C%D7%A4%D7%A0%D7%95%D7%AA-%D7%9C%D7%A2%D7%96%D7%A8%D7%94-17463",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "BreadcrumbList",
+        "ListItem",
+        "Offer",
+        "Organization",
+        "Person"
+      ],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "request_or_document_h1_count_not_one",
+        "measure_exact_brand_serp_and_search_console_visibility"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -107,6 +282,69 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.drguyrofe.co.il/",
+      "content_audit": "complete",
+      "title": "ד\"ר גיא רופא | חדשות בריאות ומידע רפואי מבוסס ראיות",
+      "meta_description": "חדשות בריאות, סקירות מחקרים ומידע רפואי בעברית מאת ד\"ר גיא רופא, מומחה בגינקולוגיה ומיילדות בישראל, בתחומי בריאות האישה, הריון, פוריות ורפואה מבוססת ראיות.",
+      "canonical": "https://www.drguyrofe.co.il/",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "BreadcrumbList",
+        "Country",
+        "ImageObject",
+        "ListItem",
+        "Person",
+        "PostalAddress",
+        "SearchAction",
+        "WebPage",
+        "WebSite"
+      ],
+      "seo_issues": [],
+      "action_checklist": [
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
+      "public_execution_allowed": false
+    },
+    {
+      "platform": "BookPod — המדריך הישראלי לטיפולי פריון",
+      "url": "https://bookpod.co.il/book/%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99-%D7%9C%D7%98%D7%99%D7%A4%D7%95%D7%9C%D7%99-%D7%A4%D7%A8%D7%99%D7%95%D7%9F-17634",
+      "tier": "A",
+      "priority": 91,
+      "status": "external_verified_product_page",
+      "controlled": false,
+      "page_one": false,
+      "effort": "core",
+      "reason": "High-authority owned or identity asset; maintain facts, freshness and measurement.",
+      "next_action": "audit_facts_then_measure_and_maintain",
+      "reachability": "reachable",
+      "http_status": 200,
+      "final_url": "https://bookpod.co.il/book/%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99-%D7%9C%D7%98%D7%99%D7%A4%D7%95%D7%9C%D7%99-%D7%A4%D7%A8%D7%99%D7%95%D7%9F-17634",
+      "content_audit": "complete",
+      "title": "המדריך הישראלי לטיפולי פריון מאת ד״ר גיא רופא | בוקפוד - מהסופר לקורא - חנות הספרים החברתית של ישראל",
+      "meta_description": "המדריך הישראלי לטיפולי פוריות מאת ד\"ר גיא רופא הוא מדריך מקיף, מעשי ומבוסס עובדות שנועד לעזור לנשים, לזוגות ולמשפחות להבין את עולם הפוריות ולקבל החלטות מושכלות…",
+      "canonical": "https://bookpod.co.il/book/%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99-%D7%9C%D7%98%D7%99%D7%A4%D7%95%D7%9C%D7%99-%D7%A4%D7%A8%D7%99%D7%95%D7%9F-17634",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "BreadcrumbList",
+        "ListItem",
+        "Offer",
+        "Organization",
+        "Person"
+      ],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "request_or_document_h1_count_not_one",
+        "measure_exact_brand_serp_and_search_console_visibility"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -123,6 +361,30 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://podcasts.apple.com/us/podcast/%D7%A8%D7%A4%D7%95%D7%90%D7%94-%D7%A2%D7%9C-%D7%9B%D7%95%D7%A1-%D7%A7%D7%A4%D7%94/id1787147468",
+      "content_audit": "complete",
+      "title": "×¨×¤××× ×¢× ×××¡ ×§×¤× - Podcast - Apple Podcasts",
+      "meta_description": "Listen to ××´×¨ ××× ×¨××¤×'s ×¨×¤××× ×¢× ×××¡ ×§×¤× podcast on Apple Podcasts.",
+      "canonical": "https://podcasts.apple.com/us/podcast/%D7%A8%D7%A4%D7%95%D7%90%D7%94-%D7%A2%D7%9C-%D7%9B%D7%95%D7%A1-%D7%A7%D7%A4%D7%94/id1787147468",
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": false,
+      "official_link_present": false,
+      "schema_types": [
+        "AudioObject",
+        "CreativeWorkSeries",
+        "ImageObject",
+        "Offer"
+      ],
+      "seo_issues": [
+        "missing_entity_name"
+      ],
+      "action_checklist": [
+        "fix_missing_entity_name",
+        "review_entity_name_in_title",
+        "add_reader_useful_official_link_if_platform_allows",
+        "measure_exact_brand_serp_and_search_console_visibility"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -139,6 +401,23 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.facebook.com/drguyrofe",
+      "content_audit": "complete",
+      "title": "ד״ר גיא רופא - יוצר תוכן רפואי | Haifa",
+      "meta_description": "‏ד״ר גיא רופא - יוצר תוכן רפואי‏, ‏חיפה‏. ‏‏66‏ עוקבים · ‏51‏ מדברים על כך‏. ‏יוצר תוכן ברפואה - מנגיש מהידע שלו עם שליחות ליצירת תוכן רפואי קל להבנה‏",
+      "canonical": "https://www.facebook.com/drguyrofe/",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one",
+        "add_reader_useful_official_link_if_platform_allows"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -155,6 +434,25 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://open.spotify.com/show/2o8f3yN18UunMRpsEBPTg7",
+      "content_audit": "complete",
+      "title": "רפואה על כוס קפה | Podcast on Spotify",
+      "meta_description": "Podcast · ד״ר גיא רופא · ד״ר גיא רופא מדבר על נושאים שונים ברפואה. ד״ר גיא רופא בעל ידע נרחב ונסיון קליני רב, במסגרת הפודקאסט מסכם מידע מעודכן מחקרית בשפה המתאימה לכל קהל. ד״ר גיא רופא ישמח לענות על שאלות ברשתות החברתיות אז חפשו אותו באינסטגרם, פייסבוק וטיקטוק",
+      "canonical": "https://open.spotify.com/show/2o8f3yN18UunMRpsEBPTg7",
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [
+        "Person",
+        "PodcastSeries"
+      ],
+      "seo_issues": [],
+      "action_checklist": [
+        "review_entity_name_in_title",
+        "add_reader_useful_official_link_if_platform_allows",
+        "measure_exact_brand_serp_and_search_console_visibility"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -171,6 +469,21 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://muckrack.com/drguyrofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -187,6 +500,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://issuu.com/drguyrofe",
+      "content_audit": "complete",
+      "title": "drguyrofe Publisher Publications - Issuu",
+      "meta_description": "ד\"ר גיא רופא הוא רופא נשים ומיילד בעל הכשרה גבוהה המתמחה בניתוח גינקולוגי זעיר פולשני. בעל ניסיון של שנים במספר תפקידי מנהיגות ותפקידי רפואה בכירים. ד\"ר רופא שימש בעבר כמנהל המרכז לבריאות האישה \"ליס\" במרכז הרפואי ע\"ש סוראסקי-איכילוב, שם היה גורם מרכזי בהמשך הצמיחה והפיתוח של המרכז. הוא חלק בלתי נפרד מצוות הרופאים הבכירים במחלקה למיילדות וגינקולוגיה ומצוות היחידה לאנדוסקופיה גינקולוגית. בנוסף לעבודתו הקלינית, ד\"ר רופא עוסק רבות במחקר, ולעתים קרובות מפרסם את ממצאיו בכתבי עת שנבדקו עמיתים. הוא איש חינוך נלהב, המעביר את הידע שלו לדור הבא של אנשי רפואה כחבר סגל בפקולטה לרפואה. ד\"ר רופא סיים את תואר הרפואה מהטכניון היוקרתי בהצטיינות יתרה. את התמחותו בגינקולוגיה סיים בבית החולים כרמל, שם שיפר את כישוריו הקליניים. יתר על כן, הוא עבר הכשרה נוספת בלפרוסקופיה אונקולוגית מתקדמת באוולינו, איטליה. תחומי ההתמחות של ד\"ר רופא כוללים היסטרוסקופיה, ניתוחים לפרוסקופיים וניתוחי נרתיק. הוא בקיא בתכנון המשפחה ומציע מגוון שיטות מניעה. ד\"ר רופא חבר במספר ארגונים מקצועיים, ביניהם האגודה הישראלית לגינקולוגיה אנדוסקופית, האיגוד הישראלי למיילדות וגינקולוגיה, והאיגוד האמריקאי לניתוחים גינקולוגיים לפרוסקופיים מתקדמים (AAGL). מטופלים המחפשים טיפול איכותי מאיש מקצוע רפואי רחום ירוויחו מאוד מלראות את רופ.",
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_canonical"
+      ],
+      "action_checklist": [
+        "fix_missing_canonical",
+        "review_entity_name_in_title",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -203,6 +534,21 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://www.wikidata.org/wiki/Q140470790",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -219,6 +565,21 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://medium.com/@guyrofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -235,6 +596,27 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.tiktok.com/@guy_rofe_obgyn",
+      "content_audit": "complete",
+      "title": "TikTok - Make Your Day",
+      "meta_description": null,
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_canonical"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_missing_canonical",
+        "review_entity_name_in_title",
+        "add_reader_useful_official_link_if_platform_allows",
+        "measure_exact_brand_serp_and_search_console_visibility"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -251,6 +633,30 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.slideshare.net/DrGuyRofe",
+      "content_audit": "complete",
+      "title": "Client Challenge",
+      "meta_description": null,
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": false,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_entity_name",
+        "missing_canonical",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_missing_entity_name",
+        "fix_missing_canonical",
+        "fix_h1_count_not_one",
+        "review_entity_name_in_title",
+        "add_reader_useful_official_link_if_platform_allows"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -267,6 +673,21 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://www.quora.com/profile/Dr-Guy-Rofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -283,6 +704,21 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://www.crunchbase.com/person/dr-guy-rofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -299,6 +735,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://guyrofe.blogspot.com/",
+      "content_audit": "complete",
+      "title": "Rotem - First Week",
+      "meta_description": null,
+      "canonical": "http://guyrofe.blogspot.com/",
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "review_entity_name_in_title",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -315,6 +769,26 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://drguyrofe.tumblr.com/",
+      "content_audit": "complete",
+      "title": "ד\"ר גיא רופא",
+      "meta_description": "ד״ר גיא רופא – מומחה ברפואת נשים ומיילדות. יוצר „רפואה על כוס קפה”. כאן משתף עדכונים, משאבים וקישורים רשמיים.",
+      "canonical": "https://www.tumblr.com/drguyrofe",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "ItemList",
+        "ListItem"
+      ],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -331,6 +805,28 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://linktr.ee/drguyrofe",
+      "content_audit": "complete",
+      "title": "ד\"ר גיא רופא Official: Instagram, X | Linktree",
+      "meta_description": "ד\"ר גיא רופא הוא גינקולוג ומיילד מוערך מאוד.",
+      "canonical": "https://linktr.ee/drguyrofe",
+      "noindex": true,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "BreadcrumbList",
+        "ListItem",
+        "Person",
+        "ProfilePage"
+      ],
+      "seo_issues": [
+        "noindex"
+      ],
+      "action_checklist": [
+        "fix_noindex",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -347,6 +843,23 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://about.me/drguyrofe",
+      "content_audit": "complete",
+      "title": "ד\"ר גיא רופא - ישראל | ידע רפואי נגיש לציבור, הטכניון - המכון הטכנולוגי הישראלי, עירוני ה׳ חיפה | about.me",
+      "meta_description": "I am a Medical doctor in ישראל | ידע רפואי נגיש לציבור. Visit my website.",
+      "canonical": "https://about.me/drguyrofe",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "Person",
+        "ProfilePage"
+      ],
+      "seo_issues": [],
+      "action_checklist": [
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -363,6 +876,25 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://guyrofe.wixsite.com/homepage",
+      "content_audit": "complete",
+      "title": "ד״ר גיא רופא מומחה ברפואת נשים ומיילדות, תל אביב, ישראל",
+      "meta_description": null,
+      "canonical": "https://guyrofe.wixsite.com/homepage",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_h1_count_not_one",
+        "add_reader_useful_official_link_if_platform_allows"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -379,6 +911,21 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://flipboard.com/@drguyrofe0",
+      "content_audit": "complete",
+      "title": "ד\"ר גיא רופא (@drguyrofe0) on Flipboard",
+      "meta_description": "ד\"ר גיא רופא הינו רופא נשים ומיילד מיומן ביותר, בעל ניסיון רב בניתוחים גינקולוגיים זעיר פולשניים. הוא מוסמך על ידי המועצה ומתמקד בניתוחים, אנדוסקופיות והיסטרוסקופיה. ד\"ר רופא שימשה בעבר כמנהלת המרכז לבריאות האישה \"ליס\" במרכז הרפואי הנודע סוראסקי-איכילוב תל אביב. הוא היה חלק בלתי נפרד מצוות הרופאים הבכירים במחלקה למיילדות, גינקולוגיה ויחידה לאנדוסקופיה גינקולוגית. מומחיותו של ד\"ר רופא משתרעת על תרומתו הפעילה למחקר בתחומי התשוקה שלו ותפקידו כמורה בפקולטה לרפואה. הוא סיים בהצטיינות את לימודיו בפקולטה לרפואה בטכניון העילית וסיים את התמחותו בגינקולוגיה בבית החולים כרמל. ד\"ר רופא העשיר את לימודיו בלפרוסקופיה אונקולוגית מתקדמת באוולינו, איטליה.",
+      "canonical": "https://flipboard.com/@drguyrofe0",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "add_reader_useful_official_link_if_platform_allows",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -395,6 +942,22 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.instagram.com/guy_rofe_md/",
+      "content_audit": "complete",
+      "title": "‎ד״ר גיא רופא‎ (@guy_rofe_md) • Instagram photos and videos",
+      "meta_description": "387 Followers, 308 Following, 350 Posts - See Instagram photos and videos from ‎ד״ר גיא רופא‎ (@guy_rofe_md)",
+      "canonical": "https://www.instagram.com/guy_rofe_md/",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -411,6 +974,18 @@
       "reachability": "missing_url",
       "http_status": null,
       "final_url": null,
+      "content_audit": "not_checked",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [],
+      "audit_complete": true,
       "public_execution_allowed": false
     },
     {
@@ -427,6 +1002,21 @@
       "reachability": "network_or_provider_error",
       "http_status": null,
       "final_url": null,
+      "content_audit": "not_checked",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -443,6 +1033,21 @@
       "reachability": "network_or_provider_error",
       "http_status": null,
       "final_url": null,
+      "content_audit": "not_checked",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -459,6 +1064,22 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.pinterest.com/drguyrofe/",
+      "content_audit": "complete",
+      "title": "ד״ר גיא רופא (drguyrofe) - Profile | Pinterest",
+      "meta_description": "ד״ר גיא רופא | ד\"ר גיא רופא | בוגר הטכניון בהצטיינות, לשעבר רופא בכיר בכרמל ואיכילוב, כיום עוסק ביצירת תוכן ומשלב הסברה נגישה ומובילה ברשת. 📍 האתר שלי: https://bit.ly/3UlunCR 🔎 חפשו בגוגל: ד\"ר גיא רופא 📌 באינסטגרם, לינקדאין, יוטיוב, פייסבוק וטוויטר",
+      "canonical": "https://www.pinterest.com/drguyrofe/",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "ImageObject",
+        "Person",
+        "ProfilePage"
+      ],
+      "seo_issues": [],
+      "action_checklist": [],
+      "audit_complete": true,
       "public_execution_allowed": false
     },
     {
@@ -475,6 +1096,21 @@
       "reachability": "not_found",
       "http_status": 404,
       "final_url": "https://foursquare.com/guyrofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -491,6 +1127,28 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://x.com/GuyRofe",
+      "content_audit": "complete",
+      "title": "Profile / X",
+      "meta_description": null,
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": false,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_entity_name",
+        "missing_canonical",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_missing_entity_name",
+        "fix_missing_canonical",
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -507,6 +1165,20 @@
       "reachability": "not_found",
       "http_status": 404,
       "final_url": "https://www.scoop.it/u/dr-guy-rofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -523,6 +1195,20 @@
       "reachability": "not_found",
       "http_status": 404,
       "final_url": "https://www.openstreetmap.org/user/%D7%92%D7%99%D7%90%20%D7%A8%D7%95%D7%A4%D7%90",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -539,6 +1225,22 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://slides.com/drguyrofe",
+      "content_audit": "complete",
+      "title": "Presentations by ד\"ר גיא רופא",
+      "meta_description": "ד\"ר גיא רופא צבר ניסיון רב ומומחיות בתחומים שונים של גינקולוגיה ומיילדות, לרבות היסטרוסקופיה, ניתוחים לפרוסקופיים וניתוחי נרתיק.",
+      "canonical": "https://slides.com/drguyrofe",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -555,6 +1257,29 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.flickr.com/people/drguyrofe/",
+      "content_audit": "complete",
+      "title": "About ד\"ר גיא רופא | Flickr",
+      "meta_description": "ד״ר גיא רופא – מומחה ברפואת נשים ומיילדות. יוצר הפודקאסט „רפואה על כוס קפה”. מידע נוסף וקביעת תור: guyrofe.com • האתר האישי: drguyrofe.com Dr. Guy Rofe, OB/GYN. Creator of the podcast “Rafua al Kos Kafe”. More info: guyrofe.com • Personal site: drguyrofe.com",
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "Organization",
+        "Person",
+        "SearchAction",
+        "WebSite"
+      ],
+      "seo_issues": [
+        "missing_canonical",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_missing_canonical",
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -571,6 +1296,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://infogram.com/drguyrofe",
+      "content_audit": "complete",
+      "title": "גיא רופא - Infogram",
+      "meta_description": null,
+      "canonical": "https://infogram.com/drguyrofe",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -587,6 +1330,20 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://gravatar.com/drguyrofe",
+      "content_audit": "complete",
+      "title": "גיא רופא | חיפה, ישראל | Gravatar",
+      "meta_description": "ד\"ר גיא רופא הוא גינקולוג ומיילד מוערך ביותר הידוע במומחיותו בניתוח גינקולוגי זעיר פולשני. כיום הוא משמש כחבר מרכזי בצוות הרופאים הבכירים במחלקת נשים ויולדות וביחידה לאנדוסקופיה גינקולוגית. ד\"ר רופא מוסמך ע\"י המועצה בגינקולוגיה ומיילדות, והעיסוק הרפואי שלו עוסק בעיקר בניתוחים זעיר פולשניים, אנדוסקופיות והיסטרוסקופיות.",
+      "canonical": "https://gravatar.com/drguyrofe",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [
+        "Person"
+      ],
+      "seo_issues": [],
+      "action_checklist": [],
+      "audit_complete": true,
       "public_execution_allowed": false
     },
     {
@@ -603,6 +1360,25 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://hubpages.com/@drguyrofe",
+      "content_audit": "complete",
+      "title": "גיא רופא on HubPages",
+      "meta_description": "ד\"ר גיא רופא הוא גינקולוג ומומחה מיילדות בעל ניסיון רב, בעל ידע רב בכירורגיה גינקולוגית זעיר פולשנית. הוא איש מקצוע מוסמך עם שנים של מומחיות בביצוע...",
+      "canonical": null,
+      "noindex": true,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "noindex",
+        "missing_canonical"
+      ],
+      "action_checklist": [
+        "fix_noindex",
+        "fix_missing_canonical",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -619,6 +1395,20 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://giphy.com/channel/drguyrofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -635,6 +1425,21 @@
       "reachability": "network_or_provider_error",
       "http_status": null,
       "final_url": null,
+      "content_audit": "not_checked",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url",
+        "complete_registered_factual_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -651,6 +1456,28 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://disqus.com/by/drguyrofe/about/",
+      "content_audit": "complete",
+      "title": "Disqus Profile - drguyrofe",
+      "meta_description": null,
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": false,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_entity_name",
+        "missing_canonical",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_missing_entity_name",
+        "fix_missing_canonical",
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -667,6 +1494,20 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://drguyrofe0.bravesites.com/",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -683,6 +1524,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.cake.me/me/drguyrofe",
+      "content_audit": "complete",
+      "title": "ד\"ר גיא רופא | Cake",
+      "meta_description": "ד\"ר גיא רופא הוא גינקולוג ומיילד בעל הסמכה גבוהה ומנוסה המתמחה בניתוח גינקולוגי זעיר פולשני. הוא מוסמך בגינקולוגיה ומיילדות ומתעניין במיוחד בהיסטרוסקופיה, אנדוסקופיה ולפרוסקופיה. לד\"ר רופא קריירה מרשימה בתחום הרפואי, לאחר שימשה כמנהלת לשעבר של המרכז לבריאות האישה \"ליס\" במרכז הרפואי סוראסקי-איכילוב תל אביב. כיום ד\"ר רופא הוא חלק מהצוות הרפואי הבכיר במחלקת נשים ויולדות וביחידה לאנדוסקופיה גינקולוגית. הוא גם מעורב במחקר וחינוך מתמשכים, מלמד בפקולטה לרפואה. ד\"ר רופא סיים את התואר ברפואה בפקולטה לרפואה של הטכניון, שם סיים בהצטיינות. לאחר מכן סיים את התמחותו ברפואת נשים בבית החולים כרמל ועבר הכשרה נוספת בלפרוסקופיה אונקולוגית מתקדמת באוולינו, איטליה. אחד מתחומי ההתמחות של ד\"ר רופא הוא היסטרוסקופיה. הוא מבצע היסטרוסקופיה למטרות אבחון, לרבות איתור וטיפול בפתולוגיות רחם במסגרת חקירת בעיות פוריות. כמו כן, הוא מבצע כריתת פוליפים ושרירנים ברחם, הפרדת מחיצת הרחם וטיפול בדימום רחמי מוגבר, כולל אבלציה של רירית הרחם והפרדה של הידבקויות תוך רחמיות. בנוסף להיסטרוסקופיה, ד\"ר רופא מתמחה בניתוחים לפרוסקופיים. הוא מבצע כריתת רחם, כריתת שחלות, הסרת חצוצרות, כריתת ציסטה בשחלה, כריתת שריר הרחם, קשירת חצוצרות ותיקון של גדם נרתיק צניחת ואנדומטריוזיס. ד\"ר רופא חבר במספר ארגונים מקצועיים, ביניהם האגודה הישראלית לגינקולוגיה אנדוסקופית, האיגוד הישראלי למיילדות וגינקולוגיה והאגודה האמריקאית לניתוחים גינקולוגיים לפרוסקופיים מתקדמים (AAGL).",
+      "canonical": "https://www.cake.me/me/drguyrofe",
+      "noindex": true,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "noindex",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_noindex",
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -699,6 +1558,20 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://codepen.io/drguyrofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -715,6 +1588,26 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://completed.com/individual/30555939/dr-guy-rofe",
+      "content_audit": "complete",
+      "title": "Domain Registered at Safenames",
+      "meta_description": null,
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": false,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_entity_name",
+        "missing_canonical"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_missing_entity_name",
+        "fix_missing_canonical"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -731,6 +1624,22 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://dr-guy-rofe.creator-spring.com/",
+      "content_audit": "complete",
+      "title": "גיא רופא",
+      "meta_description": "ד\"ר גיא רופא הוא רופא מומחה ישראלי בתחום גינקולוגיה ומיילדות, המציע ייעוץ רפואי מתקדם ושירותי בריאות ברמה גבוהה. עם מעל לשנתיים נסיון מקצועי בתחום, ד\"ר רופא מצ…",
+      "canonical": "https://dr-guy-rofe.creator-spring.com",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -747,6 +1656,18 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://hub.docker.com/u/drguyrofe",
+      "content_audit": "complete",
+      "title": "drguyrofe (גיא רופא)",
+      "meta_description": "Discover Docker images from drguyrofe. Visit their profile and explore images they maintain.",
+      "canonical": "https://hub.docker.com/u/drguyrofe",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [],
+      "audit_complete": true,
       "public_execution_allowed": false
     },
     {
@@ -763,6 +1684,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.dwell.com/@drguyrofe",
+      "content_audit": "complete",
+      "title": "גיא רופא on Dwell",
+      "meta_description": null,
+      "canonical": "https://www.dwell.com/@drguyrofe",
+      "noindex": true,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "noindex",
+        "missing_meta_description"
+      ],
+      "action_checklist": [
+        "fix_noindex",
+        "fix_missing_meta_description"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -779,6 +1718,22 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://sites.google.com/view/dr-guy-rofe",
+      "content_audit": "complete",
+      "title": "ד\"ר גיא רופא",
+      "meta_description": "ד\"ר גיא רופא רופא",
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_canonical"
+      ],
+      "action_checklist": [
+        "fix_missing_canonical"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -795,6 +1750,20 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 429,
       "final_url": "https://imgur.com/user/drguyrofe/about",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -811,6 +1780,20 @@
       "reachability": "not_found",
       "http_status": 404,
       "final_url": "https://dr-guy-rofe.jigsy.com/",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -827,6 +1810,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://dr-guy-rofe.jimdosite.com/",
+      "content_audit": "complete",
+      "title": "Home | Dr. Guy Rofe",
+      "meta_description": ". ד\"ר גיא רופא. רופא",
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_canonical",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_missing_canonical",
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -843,6 +1844,20 @@
       "reachability": "not_found",
       "http_status": 404,
       "final_url": "https://form.jotform.com/drguyrofe/blog",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -859,6 +1874,28 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.last.fm/user/drguyrofe",
+      "content_audit": "complete",
+      "title": "Client Challenge",
+      "meta_description": null,
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": false,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_entity_name",
+        "missing_canonical",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_missing_entity_name",
+        "fix_missing_canonical",
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -875,6 +1912,20 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 401,
       "final_url": "https://www.minds.com/drguyrofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -891,6 +1942,20 @@
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 403,
       "final_url": "https://www.producthunt.com/@drguyrofe",
+      "content_audit": "manual_required",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "manual_browser_audit"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -907,6 +1972,21 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://644181f572030.site123.me/",
+      "content_audit": "complete",
+      "title": "Dr. Guy Rofe - ד\"ר גיא רופא",
+      "meta_description": "Dr. Guy Rofe - ד\"ר גיא רופא",
+      "canonical": "https://644181f572030.site123.me/",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [
+        "SearchAction",
+        "WebSite"
+      ],
+      "seo_issues": [],
+      "action_checklist": [],
+      "audit_complete": true,
       "public_execution_allowed": false
     },
     {
@@ -923,6 +2003,20 @@
       "reachability": "network_or_provider_error",
       "http_status": null,
       "final_url": null,
+      "content_audit": "not_checked",
+      "title": null,
+      "meta_description": null,
+      "canonical": null,
+      "noindex": null,
+      "entity_in_title": null,
+      "entity_in_page": null,
+      "official_link_present": null,
+      "schema_types": [],
+      "seo_issues": [],
+      "action_checklist": [
+        "repair_or_confirm_public_url"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -939,6 +2033,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://drguyrofe.mystrikingly.com/",
+      "content_audit": "complete",
+      "title": "Dr. Guy Rofe on Strikingly",
+      "meta_description": null,
+      "canonical": "https://drguyrofe.mystrikingly.com/",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [
+        "WebSite"
+      ],
+      "seo_issues": [
+        "missing_meta_description"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -955,6 +2067,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.wattpad.com/user/drguyrofe",
+      "content_audit": "complete",
+      "title": "drguyrofe - Wattpad",
+      "meta_description": "ד\"ר גיא רופא הוא גינקולוג ומיילד מוערך מאוד שתרם משמעותית לניתוח גינקולוגי זעיר פולשני. הוא בעל הסמכה של מועצת המנהלים, עוסק ברפואה כבר שנים רבות, וצבר מו...",
+      "canonical": "https://www.wattpad.com/user/drguyrofe",
+      "noindex": true,
+      "entity_in_title": false,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "noindex",
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_noindex",
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -971,6 +2101,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://guyrofe.webflow.io/",
+      "content_audit": "complete",
+      "title": "גיא רופא",
+      "meta_description": null,
+      "canonical": null,
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_canonical"
+      ],
+      "action_checklist": [
+        "fix_missing_meta_description",
+        "fix_missing_canonical"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -987,6 +2135,24 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://drguyrofe.weebly.com/",
+      "content_audit": "complete",
+      "title": "ד״ר גיא רופא – רפואה בגובה העיניים | פודקאסט",
+      "meta_description": "ד״ר גיא רופא – מומחה ברפואת נשים ומיילדות. פודקאסט „רפואה על כוס קפה”, תכנים מקצועיים וקישורים רשמיים.",
+      "canonical": "https://drguyrofe.weebly.com/",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "Physician"
+      ],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -1003,6 +2169,29 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.drguyrofe.com/",
+      "content_audit": "complete",
+      "title": "ד״ר גיא רופא – מומחה במיילדות וגינקולוגיה | ייעוץ בריאות האישה בת״א",
+      "meta_description": "ד״ר גיא רופא, רופא נשים מומחה בת״א. בדיקות היריון לפי שבועות, סקירות ו-CMV, הכוונה מבוססת מחקר וייעוץ אישי. ידע ברור, מקצועי ומעודכן לבריאות האישה.",
+      "canonical": "https://www.drguyrofe.com",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": true,
+      "schema_types": [
+        "ContactPoint",
+        "LocalBusiness",
+        "MedicalClinic",
+        "Person",
+        "PostalAddress",
+        "WebSite"
+      ],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -1019,6 +2208,22 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://drguyrofe.wordpress.com/",
+      "content_audit": "complete",
+      "title": "ד\"ר גיא רופא",
+      "meta_description": "ד\"ר גיא רופא רופא ד\"ר גיא רופא הינו בעל הכשרה וניסיון רב בכירורגיה גינקולוגית זעיר פולשנית ובעל הסמכה לגינקולוגיה ומיילדות. לאחר ששימש בעבר כמנהל המרכז לבריאות האישה \"ליס\" במרכז הרפואי ע\"ש סוראסקי-איכילוב, הוא כיום אחד מהרופאים הבכירים במחלקת נשים ויולדות וביחידה לאנדוסקופיה גינקולוגית במקום. הוא פרופסור מוערך שעושה מחקר פעיל בתחום הרפואה שלו. לד\"ר רופא…",
+      "canonical": "https://drguyrofe.wordpress.com/",
+      "noindex": false,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "h1_count_not_one"
+      ],
+      "action_checklist": [
+        "fix_h1_count_not_one"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -1035,6 +2240,22 @@
       "reachability": "reachable",
       "http_status": 200,
       "final_url": "https://www.xing.com/profile/user_064926",
+      "content_audit": "complete",
+      "title": "××× ×¨××¤× - Medical Doctor, Obgyn - Dr. Guy Rofe | XING",
+      "meta_description": "××× ×¨××¤×, Haifa Berufserfahrung, Kontaktdaten, Portfolio und weitere Infos: Erfahr mehr â oder kontaktier ××× ×¨××¤× direkt bei XING.",
+      "canonical": "https://www.xing.com/profile/user_064926",
+      "noindex": true,
+      "entity_in_title": true,
+      "entity_in_page": true,
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "noindex"
+      ],
+      "action_checklist": [
+        "fix_noindex"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     }
   ],
