@@ -6,6 +6,7 @@ import json
 import requests
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, date, timedelta
 from pathlib import Path
 from openai import OpenAI
@@ -1061,6 +1062,88 @@ def check_google_rank(today=None):
 
 # ─── 2. AI / GEO presence check ──────────────────────────────────────────────
 
+def _ai_presence_sample(
+    client, *, prompt, sample_number, model, approved_hosts,
+    fact_registry, evaluation_policy,
+):
+    """Collect one independent AI answer; callers may run samples in parallel."""
+    try:
+        resp = client.responses.create(
+            model=model,
+            input=prompt,
+            tools=[{
+                "type": "web_search",
+                "search_context_size": "medium",
+                "user_location": {
+                    "type": "approximate", "country": MARKET_COUNTRY,
+                },
+            }],
+            max_output_tokens=500,
+        )
+        record_ai_usage(resp, operation="ai_reputation_monitoring", model=model)
+        answer = resp.output_text or ""
+        citations = []
+        for output_item in getattr(resp, "output", []) or []:
+            for part in getattr(output_item, "content", []) or []:
+                for annotation in getattr(part, "annotations", []) or []:
+                    payload = (
+                        annotation.model_dump()
+                        if hasattr(annotation, "model_dump")
+                        else annotation if isinstance(annotation, dict) else {}
+                    )
+                    url = payload.get("url") or (
+                        payload.get("url_citation") or {}
+                    ).get("url")
+                    if url and url not in citations:
+                        citations.append(url)
+        cited_hosts = {
+            host for url in citations if (host := normalized_host(url))
+        }
+        mentioned = any(
+            variant.lower() in answer.lower()
+            for variant in CLIENT_FACTS.get(
+                "name_variants", [CLIENT_FACTS["primary_name"]]
+            )
+        )
+        active_practice_claim = has_active_practice_claim(answer)
+        identity_misinformation = has_identity_misinformation(answer)
+        knowledge_gap = (
+            not identity_misinformation and has_ai_knowledge_gap(prompt, answer)
+        )
+        fact_evaluation = evaluate_ai_answer(
+            prompt, answer, fact_registry, evaluation_policy,
+            known_conflict=identity_misinformation,
+            active_practice_claim=active_practice_claim,
+            knowledge_gap=knowledge_gap,
+        )
+        return {
+            "engine": "OpenAI",
+            "surface": "responses_web_search",
+            "interface": "api",
+            "collection_method": "openai_responses_api",
+            "model": model,
+            "country": MARKET_COUNTRY,
+            "language": "he" if re.search(r"[\u0590-\u05FF]", prompt) else "en",
+            "sample": sample_number,
+            "prompt": prompt,
+            "mentions_dr_rofe": mentioned,
+            "active_practice_claim": active_practice_claim,
+            "identity_misinformation": identity_misinformation,
+            "knowledge_gap": knowledge_gap,
+            "official_source_cited": bool(cited_hosts & approved_hosts),
+            "cited_sources": citations,
+            "fact_evaluation": fact_evaluation,
+            "safe_status": fact_evaluation["status"],
+            "exact_answer": answer,
+            "excerpt": answer[:300],
+        }
+    except Exception as exc:
+        return {
+            "engine": "OpenAI", "model": model, "sample": sample_number,
+            "prompt": prompt, "status": "error", "detail": safe_error(exc),
+        }
+
+
 def check_ai_presence():
     openai_key = env("OPENAI_API_KEY")
     if not openai_key:
@@ -1083,102 +1166,34 @@ def check_ai_presence():
         and asset.get("status") != "quarantined"
         and (host := normalized_host(asset.get("url")))
     }
+    tasks = [
+        (prompt, sample_number)
+        for prompt in GEO_PROMPTS
+        for sample_number in range(1, sample_count + 1)
+    ]
+    workers = max(
+        1, min(int(os.environ.get("AI_MONITOR_WORKERS", "6")), len(tasks), 8)
+    )
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        results = list(pool.map(
+            lambda task: _ai_presence_sample(
+                client,
+                prompt=task[0],
+                sample_number=task[1],
+                model=model,
+                approved_hosts=approved_hosts,
+                fact_registry=fact_registry,
+                evaluation_policy=evaluation_policy,
+            ),
+            tasks,
+        ))
+    REPORT["geo"].extend(results)
+
     for prompt in GEO_PROMPTS:
-        samples = []
-        for sample_number in range(1, sample_count + 1):
-            try:
-                resp = client.responses.create(
-                    model=model,
-                    input=prompt,
-                    tools=[{
-                        "type": "web_search",
-                        "search_context_size": "medium",
-                        "user_location": {
-                            "type": "approximate",
-                            "country": MARKET_COUNTRY,
-                        },
-                    }],
-                    max_output_tokens=500,
-                )
-                record_ai_usage(
-                    resp,
-                    operation="ai_reputation_monitoring",
-                    model=model,
-                )
-                answer = resp.output_text or ""
-                citations = []
-                for output_item in getattr(resp, "output", []) or []:
-                    for part in getattr(output_item, "content", []) or []:
-                        for annotation in getattr(part, "annotations", []) or []:
-                            payload = (
-                                annotation.model_dump()
-                                if hasattr(annotation, "model_dump")
-                                else annotation if isinstance(annotation, dict) else {}
-                            )
-                            url = payload.get("url") or (
-                                payload.get("url_citation") or {}
-                            ).get("url")
-                            if url and url not in citations:
-                                citations.append(url)
-                cited_hosts = {
-                    host
-                    for url in citations
-                    if (host := normalized_host(url))
-                }
-                mentioned = any(
-                    variant.lower() in answer.lower()
-                    for variant in CLIENT_FACTS.get(
-                        "name_variants",
-                        [CLIENT_FACTS["primary_name"]],
-                    )
-                )
-                active_practice_claim = has_active_practice_claim(answer)
-                identity_misinformation = has_identity_misinformation(answer)
-                knowledge_gap = (
-                    not identity_misinformation
-                    and has_ai_knowledge_gap(prompt, answer)
-                )
-                fact_evaluation = evaluate_ai_answer(
-                    prompt,
-                    answer,
-                    fact_registry,
-                    evaluation_policy,
-                    known_conflict=identity_misinformation,
-                    active_practice_claim=active_practice_claim,
-                    knowledge_gap=knowledge_gap,
-                )
-                result = {
-                    "engine": "OpenAI",
-                    "surface": "responses_web_search",
-                    "interface": "api",
-                    "collection_method": "openai_responses_api",
-                    "model": model,
-                    "country": MARKET_COUNTRY,
-                    "language": "he" if re.search(r"[\u0590-\u05FF]", prompt) else "en",
-                    "sample": sample_number,
-                    "prompt": prompt,
-                    "mentions_dr_rofe": mentioned,
-                    "active_practice_claim": active_practice_claim,
-                    "identity_misinformation": identity_misinformation,
-                    "knowledge_gap": knowledge_gap,
-                    "official_source_cited": bool(cited_hosts & approved_hosts),
-                    "cited_sources": citations,
-                    "fact_evaluation": fact_evaluation,
-                    "safe_status": fact_evaluation["status"],
-                    "exact_answer": answer,
-                    "excerpt": answer[:300],
-                }
-                samples.append(result)
-                REPORT["geo"].append(result)
-            except Exception as e:
-                REPORT["geo"].append({
-                    "engine": "OpenAI",
-                    "model": model,
-                    "sample": sample_number,
-                    "prompt": prompt,
-                    "status": "error",
-                    "detail": safe_error(e),
-                })
+        samples = [
+            result for result in results
+            if result.get("prompt") == prompt and result.get("status") != "error"
+        ]
 
         alert_types = (
             ("active_practice_claim", "ai_active_practice_misinformation"),

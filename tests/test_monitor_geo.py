@@ -14,6 +14,34 @@ with patch.dict(
 
 
 class MonitorGeoTests(unittest.TestCase):
+    def test_ai_monitor_collects_all_samples_through_bounded_worker_pool(self):
+        fake_client = Mock()
+        sample = Mock(side_effect=lambda _client, **kwargs: {
+            "engine": "OpenAI",
+            "prompt": kwargs["prompt"],
+            "sample": kwargs["sample_number"],
+            "fact_evaluation": {"status": "pass"},
+            "excerpt": "ok",
+        })
+        report = {"geo": [], "alerts": []}
+        with patch.object(monitor_run, "REPORT", report), patch.object(
+            monitor_run, "GEO_PROMPTS", ["one", "two"]
+        ), patch.object(monitor_run, "OpenAI", return_value=fake_client), patch.object(
+            monitor_run, "env", return_value="key"
+        ), patch.object(
+            monitor_run, "load_strategy",
+            return_value={"ai_monitoring": {"samples_per_prompt": 3}},
+        ), patch.object(
+            monitor_run, "load_fact_registry", return_value={}
+        ), patch.object(
+            monitor_run, "load_json_file", return_value={"assets": []}
+        ), patch.object(
+            monitor_run, "_ai_presence_sample", sample
+        ), patch.dict(os.environ, {"AI_MONITOR_WORKERS": "2"}, clear=False):
+            monitor_run.check_ai_presence()
+        self.assertEqual(sample.call_count, 6)
+        self.assertEqual(len(report["geo"]), 6)
+
     def test_history_retention_keeps_state_below_unbounded_growth(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = os.path.join(tmp, "history.json")
