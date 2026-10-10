@@ -163,13 +163,17 @@ def build_article_graph(
     image_width: int = 1600,
     image_height: int = 900,
     citations: list[str] | None = None,
+    breadcrumb_owner: str = "agent",
 ) -> dict:
-    """Article plus WebSite and primary-image entity graph.
+    """Build the article graph while respecting the site's schema owner.
 
-    WordPress SEO plugins own breadcrumb markup. Emitting another
-    ``BreadcrumbList`` with the same ``@id`` makes Google merge the lists and
-    can turn the plugin's valid final item into an invalid intermediate item.
+    ``breadcrumb_owner="cms"`` defers the breadcrumb to Yoast, Rank Math, or
+    another CMS integration.  Standalone destinations keep the agent's
+    breadcrumb capability.  The agent uses its own ``@id`` namespace so that
+    an unexpected second provider cannot merge two different lists.
     """
+    if breadcrumb_owner not in {"agent", "cms"}:
+        raise ValueError("breadcrumb_owner must be 'agent' or 'cms'")
     article = build_article_schema(
         profile,
         headline=headline,
@@ -194,6 +198,26 @@ def build_article_graph(
             "inLanguage": profile.get("primaryLanguage", "he"),
         },
     ]
+    if breadcrumb_owner == "agent":
+        breadcrumb_id = article_url.rstrip("/") + "/#reputation-agent-breadcrumb"
+        article["breadcrumb"] = {"@id": breadcrumb_id}
+        graph.append({
+            "@type": "BreadcrumbList",
+            "@id": breadcrumb_id,
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": profile.get("siteName") or profile["name"],
+                    "item": site_url,
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": headline,
+                },
+            ],
+        })
     if image_url:
         image_id = article_url.rstrip("/") + "/#primaryimage"
         article["image"] = {"@id": image_id}
