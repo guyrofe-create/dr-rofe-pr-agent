@@ -7,6 +7,7 @@ from scripts.reputation_core.crawler_policy import (
 )
 from scripts.reputation_core.entity_seo import (
     audit_article_markdown,
+    build_article_graph,
     build_article_schema,
     build_profile_page_schema,
     json_ld_script,
@@ -122,6 +123,17 @@ https://pubmed.ncbi.nlm.nih.gov/1/
         bad_faq = good + "\n## שאלות נפוצות\n\nטקסט ללא שאלות ממשיות."
         report = audit_article_markdown(bad_faq)
         self.assertFalse(report.checks["faq_valid_when_present"])
+
+    def test_article_graph_defers_breadcrumbs_to_cms_seo_plugin(self):
+        graph = build_article_graph(
+            self.profile,
+            headline="כותרת",
+            article_url="https://guyrofe.com/article/",
+            description="תיאור",
+        )["@graph"]
+        self.assertNotIn("BreadcrumbList", [node.get("@type") for node in graph])
+        article = next(node for node in graph if node.get("@type") == "Article")
+        self.assertNotIn("breadcrumb", article)
 
     def test_media_requires_truthful_description_and_video_transcript(self):
         self.assertEqual(
