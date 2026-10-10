@@ -164,7 +164,12 @@ def build_article_graph(
     image_height: int = 900,
     citations: list[str] | None = None,
 ) -> dict:
-    """Article plus WebSite, breadcrumb and primary-image entity graph."""
+    """Article plus WebSite and primary-image entity graph.
+
+    WordPress SEO plugins own breadcrumb markup. Emitting another
+    ``BreadcrumbList`` with the same ``@id`` makes Google merge the lists and
+    can turn the plugin's valid final item into an invalid intermediate item.
+    """
     article = build_article_schema(
         profile,
         headline=headline,
@@ -178,9 +183,7 @@ def build_article_graph(
     article.pop("@context", None)
     site_url = canonical_url(profile)
     website_id = site_url + "#website"
-    breadcrumb_id = article_url.rstrip("/") + "/#breadcrumb"
     article["isPartOf"] = {"@id": website_id}
-    article["breadcrumb"] = {"@id": breadcrumb_id}
     graph = [
         article,
         {
@@ -189,21 +192,6 @@ def build_article_graph(
             "url": site_url,
             "name": profile.get("siteName") or profile["name"],
             "inLanguage": profile.get("primaryLanguage", "he"),
-        },
-        {
-            "@type": "BreadcrumbList",
-            "@id": breadcrumb_id,
-            "itemListElement": [
-                {
-                    "@type": "ListItem", "position": 1,
-                    "name": profile.get("siteName") or profile["name"],
-                    "item": site_url,
-                },
-                {
-                    "@type": "ListItem", "position": 2,
-                    "name": headline, "item": article_url,
-                },
-            ],
         },
     ]
     if image_url:
