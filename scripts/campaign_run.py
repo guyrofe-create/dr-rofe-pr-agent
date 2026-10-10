@@ -696,6 +696,9 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                             description=seo_description,
                             image_url=canonical_image_url,
                             citations=extract_citation_urls(payload["markdown"]),
+                            breadcrumb_owner=primary.get(
+                                "breadcrumb_schema_owner", "agent"
+                            ),
                         ),
                     )
                 },
