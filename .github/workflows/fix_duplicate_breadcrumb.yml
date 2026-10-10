@@ -1,0 +1,28 @@
+name: Fix Duplicate Breadcrumb
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fix_duplicate_breadcrumb.py'
+      - '.github/workflows/fix_duplicate_breadcrumb.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Remove duplicate breadcrumb and verify the public article
+        run: python scripts/fix_duplicate_breadcrumb.py
+        env:
+          WORDPRESS_GUYROFE_COM_USER: ${{ secrets.WORDPRESS_GUYROFE_COM_USER }}
+          WORDPRESS_GUYROFE_COM_API: ${{ secrets.WORDPRESS_GUYROFE_COM_API }}
