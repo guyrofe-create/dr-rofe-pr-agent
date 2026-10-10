@@ -23,6 +23,11 @@ SCRIPT_RE = re.compile(
     r"(<script\b(?P<attrs>[^>]*)>)(?P<body>.*?)(</script>)",
     re.IGNORECASE | re.DOTALL,
 )
+HEADERS = {
+    "Accept": "application/json",
+    "Cache-Control": "no-cache",
+    "User-Agent": "ReputationAgent/guy-rofe-pilot (+https://guyrofe.com)",
+}
 
 
 def _is_json_ld(attrs: str) -> bool:
@@ -132,10 +137,19 @@ def main() -> None:
         endpoint,
         params={"context": "edit", "_fields": "id,link,slug,status,title,content"},
         auth=(username, password),
+        headers=HEADERS,
         timeout=30,
     )
     response.raise_for_status()
-    post = response.json()
+    try:
+        post = response.json()
+    except ValueError as exc:
+        raise RuntimeError(
+            "WordPress returned non-JSON "
+            f"(HTTP {response.status_code}, "
+            f"content-type {response.headers.get('content-type', 'unknown')}, "
+            f"{len(response.content)} bytes)"
+        ) from exc
     if post.get("link") != TARGET_URL:
         raise RuntimeError(f"Post {POST_ID} URL changed; refusing repair")
     raw = post["content"]["raw"]
@@ -151,6 +165,7 @@ def main() -> None:
             endpoint,
             auth=(username, password),
             json={"content": updated},
+            headers=HEADERS,
             timeout=30,
         )
         update.raise_for_status()
