@@ -1,8 +1,3 @@
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
-
-OK
 #!/usr/bin/env python3
 """Remove the one duplicate agent breadcrumb without changing article content."""
 from __future__ import annotations
