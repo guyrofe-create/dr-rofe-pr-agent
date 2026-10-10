@@ -5,7 +5,9 @@ from __future__ import annotations
 import json
 import os
 import re
+import xmlrpc.client
 from hashlib import sha256
+from urllib.parse import unquote
 
 import requests
 
@@ -129,6 +131,22 @@ def verify_public_page() -> None:
         raise RuntimeError("A non-final breadcrumb item is still missing item")
 
 
+def _same_url(left: str, right: str) -> bool:
+    return unquote((left or "").rstrip("/")) == unquote((right or "").rstrip("/"))
+
+
+def _xmlrpc_call(method: str, params: tuple):
+    response = requests.post(
+        f"{BASE_URL}/xmlrpc.php",
+        data=xmlrpc.client.dumps(params, methodname=method, allow_none=True),
+        headers={**HEADERS, "Content-Type": "text/xml"},
+        timeout=30,
+    )
+    response.raise_for_status()
+    values, _ = xmlrpc.client.loads(response.content)
+    return values[0]
+
+
 def main() -> None:
     username = os.environ["WORDPRESS_GUYROFE_COM_USER"]
     password = os.environ["WORDPRESS_GUYROFE_COM_API"]
@@ -141,18 +159,16 @@ def main() -> None:
         timeout=30,
     )
     response.raise_for_status()
+    use_xmlrpc = False
     try:
         post = response.json()
-    except ValueError as exc:
-        raise RuntimeError(
-            "WordPress returned non-JSON "
-            f"(HTTP {response.status_code}, "
-            f"content-type {response.headers.get('content-type', 'unknown')}, "
-            f"{len(response.content)} bytes)"
-        ) from exc
-    if post.get("link") != TARGET_URL:
+        raw = post["content"]["raw"]
+    except (ValueError, KeyError, TypeError):
+        use_xmlrpc = True
+        post = _xmlrpc_call("wp.getPost", (0, username, password, POST_ID))
+        raw = post["post_content"]
+    if not _same_url(post.get("link"), TARGET_URL):
         raise RuntimeError(f"Post {POST_ID} URL changed; refusing repair")
-    raw = post["content"]["raw"]
     updated, changed = remove_agent_breadcrumb(raw)
     visible_before = SCRIPT_RE.sub("", raw)
     visible_after = SCRIPT_RE.sub("", updated)
@@ -161,17 +177,25 @@ def main() -> None:
     if changed > 1:
         raise RuntimeError(f"Expected at most one agent graph; found {changed}")
     if changed == 1:
-        update = requests.post(
-            endpoint,
-            auth=(username, password),
-            json={"content": updated},
-            headers=HEADERS,
-            timeout=30,
-        )
-        update.raise_for_status()
-        result = update.json()
-        if result.get("link") != TARGET_URL:
-            raise RuntimeError("WordPress returned an unexpected URL after repair")
+        if use_xmlrpc:
+            applied = _xmlrpc_call(
+                "wp.editPost",
+                (0, username, password, POST_ID, {"post_content": updated}),
+            )
+            if applied is not True:
+                raise RuntimeError("WordPress XML-RPC did not confirm the repair")
+        else:
+            update = requests.post(
+                endpoint,
+                auth=(username, password),
+                json={"content": updated},
+                headers=HEADERS,
+                timeout=30,
+            )
+            update.raise_for_status()
+            result = update.json()
+            if not _same_url(result.get("link"), TARGET_URL):
+                raise RuntimeError("WordPress returned an unexpected URL after repair")
         print(
             "Removed duplicate breadcrumb only; visible-content SHA256 remains "
             + sha256(visible_after.encode()).hexdigest()
