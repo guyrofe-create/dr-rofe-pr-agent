@@ -45,6 +45,8 @@
       "user_env": "WORDPRESS_GUYROFE_COM_USER",
       "app_password_env": "WORDPRESS_GUYROFE_COM_API",
       "canonical_url": "https://guyrofe.com/",
+      "breadcrumb_schema_owner": "cms",
+      "seo_plugin": "yoast",
       "public_sync_prohibited": true,
       "public_sync_reason": "canonical site is read-only until a separate exact owner decision",
       "profile_page_slug": "profile",
@@ -60,6 +62,8 @@
       "user_env": "WORDPRESS_DRGUYROFE_CO_IL_USER",
       "app_password_env": "WORDPRESS_DRGUYROFE_CO_IL_API",
       "canonical_url": "https://guyrofe.com/",
+      "breadcrumb_schema_owner": "cms",
+      "seo_plugin": "rank_math",
       "profile_page_slug": "profile",
       "schema_page_slug": "schema-markup",
       "llms_page_slug": "llms"
