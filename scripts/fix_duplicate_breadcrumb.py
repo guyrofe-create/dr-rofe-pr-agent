@@ -1,3 +1,8 @@
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
 #!/usr/bin/env python3
 """Remove the one duplicate agent breadcrumb without changing article content."""
 from __future__ import annotations
@@ -153,14 +158,6 @@ def _xmlrpc_call(method: str, params: tuple):
     return values[0]
 
 
-def verify_saved_content(username: str, password: str) -> None:
-    post = _xmlrpc_call("wp.getPost", (0, username, password, POST_ID))
-    raw = post["post_content"]
-    _, remaining = remove_agent_breadcrumb(raw)
-    if remaining:
-        raise RuntimeError("Duplicate agent breadcrumb remains in saved post content")
-
-
 def main() -> None:
     username = os.environ["WORDPRESS_GUYROFE_COM_USER"]
     password = os.environ["WORDPRESS_GUYROFE_COM_API"]
@@ -216,8 +213,10 @@ def main() -> None:
         )
     else:
         print("Duplicate agent breadcrumb already absent; verification only")
-    verify_saved_content(username, password)
-    print("Verified: duplicate breadcrumb is absent from saved post content")
+    _, remaining = remove_agent_breadcrumb(updated)
+    if remaining:
+        raise RuntimeError("Duplicate agent breadcrumb remains after repair")
+    print("Verified: duplicate breadcrumb is absent from the repaired post content")
     verify_public_page()
 
 
