@@ -130,10 +130,57 @@ https://pubmed.ncbi.nlm.nih.gov/1/
             headline="כותרת",
             article_url="https://guyrofe.com/article/",
             description="תיאור",
+            breadcrumb_owner="cms",
         )["@graph"]
         self.assertNotIn("BreadcrumbList", [node.get("@type") for node in graph])
         article = next(node for node in graph if node.get("@type") == "Article")
         self.assertNotIn("breadcrumb", article)
+
+    def test_article_graph_keeps_safe_breadcrumb_for_standalone_site(self):
+        graph = build_article_graph(
+            self.profile,
+            headline="כותרת",
+            article_url="https://guyrofe.com/article/",
+            description="תיאור",
+            breadcrumb_owner="agent",
+        )["@graph"]
+        breadcrumb = next(
+            node for node in graph if node.get("@type") == "BreadcrumbList"
+        )
+        self.assertEqual(
+            breadcrumb["@id"],
+            "https://guyrofe.com/article/#reputation-agent-breadcrumb",
+        )
+        self.assertNotIn("item", breadcrumb["itemListElement"][-1])
+        article = next(node for node in graph if node.get("@type") == "Article")
+        self.assertEqual(article["breadcrumb"], {"@id": breadcrumb["@id"]})
+
+    def test_article_graph_rejects_unknown_breadcrumb_owner(self):
+        with self.assertRaises(ValueError):
+            build_article_graph(
+                self.profile,
+                headline="כותרת",
+                article_url="https://guyrofe.com/article/",
+                description="תיאור",
+                breadcrumb_owner="unknown",
+            )
+
+    def test_connected_wordpress_seo_plugins_own_their_breadcrumbs(self):
+        wordpress_sites = {
+            site["key"]: site
+            for site in self.profile["sites"]
+            if site.get("platform") == "wordpress"
+        }
+        self.assertEqual(
+            wordpress_sites["GUYROFE_COM"]["breadcrumb_schema_owner"], "cms"
+        )
+        self.assertEqual(wordpress_sites["GUYROFE_COM"]["seo_plugin"], "yoast")
+        self.assertEqual(
+            wordpress_sites["DRGUYROFE_CO_IL"]["breadcrumb_schema_owner"], "cms"
+        )
+        self.assertEqual(
+            wordpress_sites["DRGUYROFE_CO_IL"]["seo_plugin"], "rank_math"
+        )
 
     def test_media_requires_truthful_description_and_video_transcript(self):
         self.assertEqual(
