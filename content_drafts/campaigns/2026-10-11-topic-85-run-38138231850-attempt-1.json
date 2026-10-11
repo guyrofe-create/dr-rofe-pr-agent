@@ -1,0 +1,28 @@
+{
+  "draft": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md",
+  "title": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+  "status": "failed",
+  "published_at": "2026-10-11T18:07:48.999240+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "failed",
+      "detail": "CampaignTargetError: RuntimeError: WordPress media lookup returned a non-JSON response (Content-Type: text/html)"
+    }
+  ],
+  "approval_id": "apr_6921de6a116b38817198eaf318403d851b33a5ee17217e0fab28459ddf87b93b",
+  "search_target": {
+    "primary_query": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול",
+    "secondary_queries": [
+      "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול ד״ר גיא רופא",
+      "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": null,
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
