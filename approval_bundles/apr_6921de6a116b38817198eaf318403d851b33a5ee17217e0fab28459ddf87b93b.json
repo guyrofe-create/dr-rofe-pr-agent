@@ -1,0 +1,830 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-10-11T12:12:50Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md",
+  "source_draft_sha256": "bb708f74ac407a7fd8a11b477ce7427edb94f9f931a0be08a23f71e9b444591f",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng123",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+    "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+    "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-hero.png",
+        "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+        "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-square.jpg",
+        "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-portrait.png",
+        "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+        "cms_title": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול",
+        "markdown": "# צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nצניחת איברי האגן היא מצב שבו אחד או יותר מאיברי האגן יורדים ממקומם הרגיל ויוצרים בליטה אל תוך הנרתיק, ולעיתים אף מעבר לפתח הנרתיק. התופעה עלולה לגרום לתחושת לחץ או כובד, לבליטה נרתיקית ולהפרעות במתן שתן, ביציאות או בתפקוד המיני. לא כל צניחה מחייבת טיפול: הבחירה בין מעקב, טיפול שמרני וניתוח תלויה בחומרת התסמינים, בממצאי הבדיקה ובהעדפות האישה.\n\nחשוב להדגיש כי צניחת איברי האגן אינה בהכרח מצב מסוכן, אך היא עשויה להשפיע במידה ניכרת על איכות החיים. אבחון מסודר מאפשר להבחין בינה לבין מצבים אחרים, להעריך אילו איברים מעורבים ולבחור טיפול המתאים לצרכים האישיים.\n\n## מהי צניחת איברי האגן?\n\nרצפת האגן מורכבת משרירים, מרקמות חיבור ומרצועות התומכים ברחם, בשלפוחית השתן, בנרתיק ובחלחולת. כאשר מערכת התמיכה נחלשת או נמתחת, איבר אחד או יותר עלולים לבלוט אל הנרתיק. לפי [הנחיות NICE להערכת צניחת איברי האגן](https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse), ההערכה הרפואית צריכה להתייחס למיקום הצניחה, למידתה, לתסמינים הנלווים ולהשפעתה על חיי היום־יום.\n\nמקובל לתאר כמה סוגים עיקריים:\n\n- **צניחה קדמית:** הדופן הקדמית של הנרתיק יורדת, בדרך כלל יחד עם שלפוחית השתן. מצב זה מכונה לעיתים צניחת שלפוחית או ציסטוצלה.\n- **צניחה אחורית:** הדופן האחורית של הנרתיק בולטת, לרוב בשל ירידה של החלחולת לכיוונה. מצב זה מכונה רקטוצלה.\n- **צניחת הרחם:** הרחם יורד לתוך תעלת הנרתיק, ובדרגות מתקדמות עשוי להגיע לפתח הנרתיק או לבלוט דרכו.\n- **צניחת כיפת הנרתיק:** עלולה להופיע לאחר כריתת רחם, כאשר חלקו העליון של הנרתיק מאבד מתמיכתו ויורד כלפי מטה.\n- **אנטרוצלה:** בליטה של המעי הדק לכיוון החלק העליון של הנרתיק.\n\nלעיתים קיימים כמה סוגי צניחה במקביל. חומרת הממצא האנטומי אינה תמיד תואמת את חומרת ההפרעה: צניחה הנראית משמעותית בבדיקה עשויה לגרום למעט תסמינים, בעוד שממצא מתון יותר עלול להיות מטריד מאוד. משום כך, ההחלטה על טיפול אינה מבוססת על דרגת הצניחה בלבד.\n\n## תסמינים והשפעה על התפקוד היומיומי\n\nהתסמין האופייני ביותר הוא תחושה של בליטה, גוף זר, לחץ או כובד בנרתיק. נשים מסוימות מתארות תחושה ש״משהו יורד״, בעיקר לאחר עמידה ממושכת, מאמץ גופני, הרמת משא או לקראת סוף היום. התסמינים עשויים להשתפר בשכיבה ולהחמיר בזמן שיעול או מאמץ.\n\nתסמינים אפשריים נוספים כוללים:\n\n- בליטה נראית או מורגשת בפתח הנרתיק.\n- אי־נוחות, משיכה או לחץ באגן ובגב התחתון.\n- קושי בהתרוקנות של שלפוחית השתן או תחושה שהשלפוחית לא התרוקנה לחלוטין.\n- תכיפות או דחיפות במתן שתן, ולעיתים דליפת שתן.\n- קושי ביציאות, מאמץ מוגבר או תחושת התרוקנות לא מלאה.\n- צורך ללחוץ באזור הנרתיק או חיץ הנקבים כדי לסייע בהתרוקנות.\n- אי־נוחות, כאב או שינוי בתחושה במהלך יחסי מין.\n- שפשוף, גירוי או דימום קל מרקמה הבולטת מחוץ לנרתיק.\n\nהמידע של [המכון הלאומי האמריקאי לסוכרת ולמחלות עיכול וכליה על צניחת שלפוחית השתן](https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele) מפרט כי צניחה קדמית עשויה להיות קשורה לבליטה נרתיקית, לתחושת לחץ באגן, לקושי בהתרוקנות ולדליפת שתן. עם זאת, תסמיני שתן אינם מוכיחים לבדם שקיימת צניחה, משום שהם עלולים להופיע גם בזיהום בדרכי השתן, בפעילות־יתר של השלפוחית או במצבים אחרים.\n\nיש צורך בהערכה רפואית דחופה יותר כאשר קיימים חוסר יכולת פתאומי לתת שתן, כאב חריג או חזק, דימום משמעותי, חום, פצע ברקמה הבולטת או חשד לזיהום. דימום נרתיקי לאחר גיל המעבר מחייב בירור רפואי גם אם קיימת צניחה ידועה, ואין לייחס אותו אוטומטית לצניחה.\n\n## גורמי סיכון ומנגנונים אפשריים\n\nצניחת איברי האגן נגרמת בדרך כלל משילוב בין עומס מכני, שינויים ברקמות ותהליכי הזדקנות. גורם סיכון אינו מבטיח שהמצב יתפתח, והיעדר גורמי סיכון מוכרים אינו שולל אותו. [הנחיית NICE בנושא דליפת שתן וצניחת איברי האגן](https://www.nice.org.uk/guidance/ng123) מתייחסת בין היתר ללידות, לגיל, למצב ההורמונלי ולגורמים המגבירים לחץ בתוך הבטן כחלק מהערכת המטופלת.\n\nגורמים שעשויים להיות קשורים לסיכון מוגבר כוללים:\n\n- **היריון ולידה נרתיקית:** מתיחה של שרירי רצפת האגן, העצבים ורקמות החיבור עלולה לפגוע בתמיכה באיברי האגן. הסיכון עשוי להיות מושפע ממספר הלידות וממאפייניהן, אך אין להסיק מכך שכל לידה נרתיקית תוביל לצניחה.\n- **עלייה בגיל וגיל המעבר:** עם השנים חלים שינויים בחוזק השרירים, באלסטיות הרקמות ובסביבה ההורמונלית.\n- **עודף משקל או השמנה:** לחץ תוך־בטני מתמשך עלול להגדיל את העומס המופעל על רצפת האגן.\n- **עצירות כרונית ומאמץ חוזר ביציאות:** מאמץ ממושך עשוי להחליש בהדרגה את מערכת התמיכה.\n- **שיעול כרוני:** מחלות נשימה ועישון עלולים להיות קשורים לשיעול חוזר ולעלייה תכופה בלחץ התוך־בטני.\n- **הרמת משאות בתדירות גבוהה:** עבודה או פעילות הכרוכות במאמץ חוזר עשויות לתרום לעומס על רצפת האגן.\n- **ניתוחים קודמים באגן:** כריתת רחם או ניתוחים אחרים עשויים לשנות את מבנה התמיכה, אף שההשפעה משתנה מאישה לאישה.\n- **נטייה אישית או משפחתית:** הבדלים מולדים בחוזק רקמת החיבור עשויים להשפיע על הסיכון.\n\nלא תמיד אפשר למנוע צניחה, אך שמירה על משקל מתאים, טיפול בעצירות ובשיעול כרוני, הימנעות מעישון ולימוד הפעלה נכונה של רצפת האגן עשויים לצמצם עומס מיותר. אלה אמצעים כלליים, ולא הבטחה למניעת המחלה או לעצירת התקדמותה.\n\n## כיצד מתבצע האבחון?\n\nהאבחון מתחיל בשיחה רפואית מפורטת. הבירור כולל את אופי התסמינים, מועד הופעתם, הקשר שלהם לעמידה או למאמץ, הריונות ולידות, ניתוחים קודמים, מחלות רקע, תרופות, תפקוד שלפוחית השתן והמעי והשפעה על פעילות גופנית ועל יחסי מין.\n\nלאחר מכן מבוצעת בדרך כלל בדיקה גינקולוגית. הבדיקה עשויה להתקיים בשכיבה או בעמידה, ולעיתים מתבקשת הנבדקת להשתעל או ללחוץ כדי להדגים את הצניחה. הרופא או הרופאה מעריכים אילו מדפנות הנרתיק או מאיברי האגן מעורבים ומהי מידת הירידה. [המלצות NICE לבדיקת נשים עם חשד לצניחת איברי האגן](https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse) כוללות תיעוד של הצניחה באמצעות שיטה תקנית וכן הערכת ניוון נרתיקי, מסת שרירי רצפת האגן ותסמינים רלוונטיים.\n\nבהתאם לתלונות, ייתכנו בדיקות נוספות:\n\n- בדיקת שתן כאשר קיימים צריבה, תכיפות, דחיפות או חשד לזיהום.\n- הערכה של שארית שתן לאחר התרוקנות, אם יש חשד שהשלפוחית אינה מתרוקנת היטב.\n- יומן שתייה והשתנה לתיעוד דפוסי מתן השתן.\n- בדיקות אורודינמיות במצבים נבחרים, בעיקר כאשר נשקל ניתוח וקיימת הפרעה מורכבת בשליטה או בהתרוקנות.\n- בירור של מערכת העיכול כאשר תסמיני היציאות אינם מוסברים במלואם על ידי ממצאי הבדיקה.\n\nבדיקות הדמיה אינן נדרשות בכל מקרה. הן נשקלות כאשר האבחנה אינה ברורה, כשקיים פער בין התסמינים לבדיקה או כאשר עולה חשד לבעיה אחרת. מטרת הבירור אינה רק לתת שם לממצא, אלא לזהות אילו תסמינים אכן קשורים אליו ואילו עשויים לדרוש הערכה נפרדת.\n\n## אפשרויות טיפול: ממעקב ועד ניתוח\n\nהטיפול מותאם לעוצמת התסמינים, לסוג הצניחה, למצבה הבריאותי של האישה, לרצונה לשמר את הרחם, לפעילות המינית ולהעדפותיה. כאשר הצניחה אינה מפריעה, אפשר לעיתים להסתפק בהסבר ובמעקב. לפי [המלצות NICE לטיפול לא־ניתוחי בצניחת איברי האגן](https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse), האפשרויות כוללות שינויים באורח החיים, אימון מודרך של שרירי רצפת האגן ופסרי נרתיקי.\n\n**שינויים באורח החיים:** טיפול בעצירות, הפחתת מאמץ ביציאות, איזון משקל וטיפול בשיעול כרוני עשויים להפחית את העומס ואת חומרת התסמינים. רצוי להתאים פעילות גופנית ליכולת האישית במקום להפסיק פעילות באופן גורף.\n\n**פיזיותרפיה של רצפת האגן:** אימון שרירים בהדרכת אשת או איש מקצוע מיומנים עשוי לשפר תסמינים במקרים מתאימים, במיוחד בצניחה קלה עד בינונית. התרגול דורש זיהוי נכון של השרירים, תוכנית עקבית ומעקב אחר הביצוע; כיווץ אקראי ללא הדרכה אינו תמיד יעיל.\n\n**פסרי נרתיקי:** זהו אביזר המוחדר לנרתיק כדי לספק תמיכה מכנית. קיימים סוגים וגדלים שונים, ולעיתים יש צורך בכמה ניסיונות התאמה. פסרי עשוי לשמש לטווח קצר או ממושך, אך מחייב הנחיות לניקוי, להוצאה או להחלפה ולמעקב אחר הפרשות, דימום, כאב או פצע מקומי.\n\n**טיפול מקומי באסטרוגן:** בנשים לאחר גיל המעבר עם יובש או ניוון של רקמת הנרתיק ניתן לשקול אסטרוגן נרתיקי, בכפוף להערכת התאמה רפואית. טיפול זה עשוי לשפר את מצב הרקמה, אך אינו מתקן כשלעצמו את הצניחה האנטומית.\n\n**ניתוח:** נשקל כאשר התסמינים משמעותיים, טיפול שמרני לא הועיל או אינו מתאים, והאישה מעוניינת בפתרון ניתוחי. קיימות פעולות לשיקום התמיכה תוך שימור הרחם, פעולות הכוללות כריתת רחם וניתוחים לצניחת כיפת הנרתיק. קיימים גם ניתוחים הסוגרים חלקית או במלואה את תעלת הנרתיק, המתאימים רק למי שאינה מעוניינת בקיום יחסי מין נרתיקיים בעתיד.\n\nלפני ניתוח יש לדון בתועלת הצפויה, בזמן ההחלמה, באפשרות להישנות ובסיכונים כגון דימום, זיהום, כאב, פגיעה באיברים סמוכים או שינוי בתפקוד השתן והמעי. [המידע של ACOG על ניתוחים לצניחת איברי האגן](https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse) מדגיש כי בחירת הפעולה תלויה בסוג הצניחה, בבריאות הכללית, בתוכניות לעתיד ובהעדפות המטופלת. אין ניתוח יחיד המתאים לכל מצב, ואין להציג טיפול כפתרון מובטח.\n\n## סיכום\n\nצניחת איברי האגן היא ירידה של איבר אחד או יותר אל תוך הנרתיק עקב היחלשות מערכת התמיכה. היא עשויה להתבטא בבליטה, בכובד באגן ובהפרעות במתן שתן, ביציאות או בתפקוד המיני, אך לעיתים אינה גורמת לתסמינים כלל. בהתאם ל[עקרונות ההערכה והטיפול של NICE](https://www.nice.org.uk/guidance/ng123), יש לבסס את ההחלטות הטיפוליות הן על הממצא האנטומי והן על מידת ההפרעה לאיכות החיים.\n\nהאפשרויות נעות ממעקב ושינויים באורח החיים, דרך פיזיותרפיה ופסרי, ועד ניתוח במקרים המתאימים. בירור רפואי מסודר חשוב במיוחד כאשר קיימים דימום, כאב חריג, קושי משמעותי בהתרוקנות או שינוי חדש בתסמינים. המידע במאמר הוא מידע כללי בלבד, אינו מהווה אבחנה או המלצה אישית, וכל טענה רפואית בו מחייבת בדיקת רופא וביקורת אנושית מקצועית לפני פרסום.\n\n## מקורות\n\n1. NICE. *Urinary incontinence and pelvic organ prolapse in women: management (NG123).*  \n   https://www.nice.org.uk/guidance/ng123\n\n2. NICE. *Recommendations: Assessing pelvic organ prolapse.*  \n   https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse\n\n3. NICE. *Recommendations: Non-surgical management of pelvic organ prolapse.*  \n   https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse\n\n4. National Institute of Diabetes and Digestive and Kidney Diseases, NIH. *Cystocele.*  \n   https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele\n\n5. American College of Obstetricians and Gynecologists. *Surgery for Pelvic Organ Prolapse.*  \n   https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/צניחת-איברי-האגן-תסמינים-גורמי/",
+        "meta_description": "ד״ר גיא רופא: צניחת איברי האגן היא מצב שבו אחד או יותר מאיברי האגן יורדים ממקומם הרגיל ויוצרים בליטה אל תוך הנרתיק, ולעיתים אף מעבר לפתח הנרתיק.",
+        "search_target": {
+          "primary_query": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול",
+          "secondary_queries": [
+            "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול ד״ר גיא רופא",
+            "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "informational"
+        },
+        "internal_links": [
+          {
+            "title": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+            "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/"
+          },
+          {
+            "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות",
+            "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://guyrofe.com/צניחת-איברי-האגן-תסמינים-גורמי/",
+            "host": "guyrofe.com",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+              "anchor": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            },
+            {
+              "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+              "anchor": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://guyrofe.com/",
+            "observed_position": 1,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-10-05T11:41:11.432238"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "354ad9e0a3b7eac2c6764cadf0554a9f87b43212b8921dc47330c493f42f4545",
+        "slug": "צניחת-איברי-האגן-תסמינים-גורמי",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-hero.png",
+          "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+        "text": "צניחת איברי האגן היא מצב שבו אחד או יותר מאיברי האגן יורדים ממקומם הרגיל ויוצרים בליטה אל תוך הנרתיק, ולעיתים אף מעבר לפתח הנרתיק.\n\nהתופעה עלולה לגרום לתחושת לחץ או כובד, לבליטה נרתיקית ולהפרעות במתן שתן, ביציאות או בתפקוד המיני.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/צניחת-איברי-האגן-תסמינים-גורמי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+        "text": "צניחת איברי האגן היא מצב שבו אחד או יותר מאיברי האגן יורדים ממקומם הרגיל ויוצרים בליטה אל תוך הנרתיק, ולעיתים אף מעבר לפתח הנרתיק.\n\n• התופעה עלולה לגרום לתחושת לחץ או כובד, לבליטה נרתיקית ולהפרעות במתן שתן, ביציאות או בתפקוד המיני.\n• לא כל צניחה מחייבת טיפול: הבחירה בין מעקב, טיפול שמרני וניתוח תלויה בחומרת התסמינים, בממצאי הבדיקה ובהעדפות האישה.\n• חשוב להדגיש כי צניחת איברי האגן אינה בהכרח מצב מסוכן, אך היא עשויה להשפיע במידה ניכרת על איכות החיים.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/צניחת-איברי-האגן-תסמינים-גורמי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא.\n\nצניחת איברי האגן היא מצב שבו אחד או יותר מאיברי האגן יורדים ממקומם הרגיל ויוצרים בליטה אל תוך הנרתיק, ולעיתים אף מעבר לפתח הנרתיק.\n\nהתופעה עלולה לגרום לתחושת לחץ או כובד, לבליטה נרתיקית ולהפרעות במתן שתן, ביציאות או בתפקוד המיני.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/צניחת-איברי-האגן-תסמינים-גורמי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-11-topic-85-run-38138231850-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 42,
+      "supported_claim_count": 42,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי צניחת איברי האגן?",
+          "claim": "כאשר מערכת התמיכה נחלשת או נמתחת, איבר אחד או יותר עלולים לבלוט אל הנרתיק.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "מהי צניחת איברי האגן?",
+          "claim": "לפי הנחיות NICE להערכת צניחת איברי האגן, ההערכה הרפואית צריכה להתייחס למיקום הצניחה, למידתה, לתסמינים הנלווים ולהשפעתה על חיי היום־יום.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "מהי צניחת איברי האגן?",
+          "claim": "- **צניחת הרחם:** הרחם יורד לתוך תעלת הנרתיק, ובדרגות מתקדמות עשוי להגיע לפתח הנרתיק או לבלוט דרכו.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "מהי צניחת איברי האגן?",
+          "claim": "- **צניחת כיפת הנרתיק:** עלולה להופיע לאחר כריתת רחם, כאשר חלקו העליון של הנרתיק מאבד מתמיכתו ויורד כלפי מטה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "מהי צניחת איברי האגן?",
+          "claim": "חומרת הממצא האנטומי אינה תמיד תואמת את חומרת ההפרעה: צניחה הנראית משמעותית בבדיקה עשויה לגרום למעט תסמינים, בעוד שממצא מתון יותר עלול להיות מטריד מאוד.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "מהי צניחת איברי האגן?",
+          "claim": "משום כך, ההחלטה על טיפול אינה מבוססת על דרגת הצניחה בלבד.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "תסמינים והשפעה על התפקוד היומיומי",
+          "claim": "התסמין האופייני ביותר הוא תחושה של בליטה, גוף זר, לחץ או כובד בנרתיק.",
+          "source_urls": [
+            "https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele"
+          ]
+        },
+        {
+          "section": "תסמינים והשפעה על התפקוד היומיומי",
+          "claim": "נשים מסוימות מתארות תחושה ש״משהו יורד״, בעיקר לאחר עמידה ממושכת, מאמץ גופני, הרמת משא או לקראת סוף היום.",
+          "source_urls": [
+            "https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele"
+          ]
+        },
+        {
+          "section": "תסמינים והשפעה על התפקוד היומיומי",
+          "claim": "התסמינים עשויים להשתפר בשכיבה ולהחמיר בזמן שיעול או מאמץ.",
+          "source_urls": [
+            "https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele"
+          ]
+        },
+        {
+          "section": "תסמינים והשפעה על התפקוד היומיומי",
+          "claim": "המידע של המכון הלאומי האמריקאי לסוכרת ולמחלות עיכול וכליה על צניחת שלפוחית השתן מפרט כי צניחה קדמית עשויה להיות קשורה לבליטה נרתיקית, לתחושת לחץ באגן, לקושי בהתרוקנות ולדליפת שתן.",
+          "source_urls": [
+            "https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele"
+          ]
+        },
+        {
+          "section": "תסמינים והשפעה על התפקוד היומיומי",
+          "claim": "עם זאת, תסמיני שתן אינם מוכיחים לבדם שקיימת צניחה, משום שהם עלולים להופיע גם בזיהום בדרכי השתן, בפעילות־יתר של השלפוחית או במצבים אחרים.",
+          "source_urls": [
+            "https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "גורם סיכון אינו מבטיח שהמצב יתפתח, והיעדר גורמי סיכון מוכרים אינו שולל אותו.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "הנחיית NICE בנושא דליפת שתן וצניחת איברי האגן מתייחסת בין היתר ללידות, לגיל, למצב ההורמונלי ולגורמים המגבירים לחץ בתוך הבטן כחלק מהערכת המטופלת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "גורמים שעשויים להיות קשורים לסיכון מוגבר כוללים:",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "- **היריון ולידה נרתיקית:** מתיחה של שרירי רצפת האגן, העצבים ורקמות החיבור עלולה לפגוע בתמיכה באיברי האגן.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "הסיכון עשוי להיות מושפע ממספר הלידות וממאפייניהן, אך אין להסיק מכך שכל לידה נרתיקית תוביל לצניחה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "- **עודף משקל או השמנה:** לחץ תוך־בטני מתמשך עלול להגדיל את העומס המופעל על רצפת האגן.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "- **עצירות כרונית ומאמץ חוזר ביציאות:** מאמץ ממושך עשוי להחליש בהדרגה את מערכת התמיכה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "- **שיעול כרוני:** מחלות נשימה ועישון עלולים להיות קשורים לשיעול חוזר ולעלייה תכופה בלחץ התוך־בטני.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "- **הרמת משאות בתדירות גבוהה:** עבודה או פעילות הכרוכות במאמץ חוזר עשויות לתרום לעומס על רצפת האגן.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "- **ניתוחים קודמים באגן:** כריתת רחם או ניתוחים אחרים עשויים לשנות את מבנה התמיכה, אף שההשפעה משתנה מאישה לאישה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "- **נטייה אישית או משפחתית:** הבדלים מולדים בחוזק רקמת החיבור עשויים להשפיע על הסיכון.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "גורמי סיכון ומנגנונים אפשריים",
+          "claim": "לא תמיד אפשר למנוע צניחה, אך שמירה על משקל מתאים, טיפול בעצירות ובשיעול כרוני, הימנעות מעישון ולימוד הפעלה נכונה של רצפת האגן עשויים לצמצם עומס מיותר.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "האבחון מתחיל בשיחה רפואית מפורטת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "לאחר מכן מבוצעת בדרך כלל בדיקה גינקולוגית.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "הבדיקה עשויה להתקיים בשכיבה או בעמידה, ולעיתים מתבקשת הנבדקת להשתעל או ללחוץ כדי להדגים את הצניחה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "המלצות NICE לבדיקת נשים עם חשד לצניחת איברי האגן כוללות תיעוד של הצניחה באמצעות שיטה תקנית וכן הערכת ניוון נרתיקי, מסת שרירי רצפת האגן ותסמינים רלוונטיים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "- בירור של מערכת העיכול כאשר תסמיני היציאות אינם מוסברים במלואם על ידי ממצאי הבדיקה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "הן נשקלות כאשר האבחנה אינה ברורה, כשקיים פער בין התסמינים לבדיקה או כאשר עולה חשד לבעיה אחרת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "מטרת הבירור אינה רק לתת שם לממצא, אלא לזהות אילו תסמינים אכן קשורים אליו ואילו עשויים לדרוש הערכה נפרדת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "הטיפול מותאם לעוצמת התסמינים, לסוג הצניחה, למצבה הבריאותי של האישה, לרצונה לשמר את הרחם, לפעילות המינית ולהעדפותיה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "לפי המלצות NICE לטיפול לא־ניתוחי בצניחת איברי האגן, האפשרויות כוללות שינויים באורח החיים, אימון מודרך של שרירי רצפת האגן ופסרי נרתיקי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "**שינויים באורח החיים:** טיפול בעצירות, הפחתת מאמץ ביציאות, איזון משקל וטיפול בשיעול כרוני עשויים להפחית את העומס ואת חומרת התסמינים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "**פיזיותרפיה של רצפת האגן:** אימון שרירים בהדרכת אשת או איש מקצוע מיומנים עשוי לשפר תסמינים במקרים מתאימים, במיוחד בצניחה קלה עד בינונית.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "פסרי עשוי לשמש לטווח קצר או ממושך, אך מחייב הנחיות לניקוי, להוצאה או להחלפה ולמעקב אחר הפרשות, דימום, כאב או פצע מקומי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "**טיפול מקומי באסטרוגן:** בנשים לאחר גיל המעבר עם יובש או ניוון של רקמת הנרתיק ניתן לשקול אסטרוגן נרתיקי, בכפוף להערכת התאמה רפואית.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "טיפול זה עשוי לשפר את מצב הרקמה, אך אינו מתקן כשלעצמו את הצניחה האנטומית.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "**ניתוח:** נשקל כאשר התסמינים משמעותיים, טיפול שמרני לא הועיל או אינו מתאים, והאישה מעוניינת בפתרון ניתוחי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "המידע של ACOG על ניתוחים לצניחת איברי האגן מדגיש כי בחירת הפעולה תלויה בסוג הצניחה, בבריאות הכללית, בתוכניות לעתיד ובהעדפות המטופלת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: ממעקב ועד ניתוח",
+          "claim": "אין ניתוח יחיד המתאים לכל מצב, ואין להציג טיפול כפתרון מובטח.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+            "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "היא עשויה להתבטא בבליטה, בכובד באגן ובהפרעות במתן שתן, ביציאות או בתפקוד המיני, אך לעיתים אינה גורמת לתסמינים כלל.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "בהתאם לעקרונות ההערכה והטיפול של NICE, יש לבסס את ההחלטות הטיפוליות הן על הממצא האנטומי והן על מידת ההפרעה לאיכות החיים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng123"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#assessing-pelvic-organ-prolapse",
+          "host": "nice.org.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.niddk.nih.gov/health-information/urologic-diseases/cystocele",
+          "host": "niddk.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nice.org.uk/guidance/ng123",
+          "host": "nice.org.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nice.org.uk/guidance/ng123/chapter/Recommendations#non-surgical-management-of-pelvic-organ-prolapse",
+          "host": "nice.org.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.acog.org/womens-health/faqs/surgery-for-pelvic-organ-prolapse",
+          "host": "acog.org",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "354ad9e0a3b7eac2c6764cadf0554a9f87b43212b8921dc47330c493f42f4545",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://guyrofe.com/צניחת-איברי-האגן-תסמינים-גורמי/",
+        "host": "guyrofe.com",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+          "anchor": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        },
+        {
+          "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+          "anchor": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://guyrofe.com/",
+        "observed_position": 1,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-10-05T11:41:11.432238"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_6921de6a116b38817198eaf318403d851b33a5ee17217e0fab28459ddf87b93b"
+}

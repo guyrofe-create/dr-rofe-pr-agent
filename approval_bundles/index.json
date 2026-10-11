@@ -2,6 +2,20 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_6921de6a116b38817198eaf318403d851b33a5ee17217e0fab28459ddf87b93b",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_6921de6a116b38817198eaf318403d851b33a5ee17217e0fab28459ddf87b93b.json",
+      "preview_path": "approval_bundles/apr_6921de6a116b38817198eaf318403d851b33a5ee17217e0fab28459ddf87b93b.html",
+      "created_at": "2026-10-11T12:12:50Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=5; unique_candidates=8; downloaded=8; undersized=0; reviewed=7; rejected=7; search=[female pelvis model: commons=7, openverse=0, pexels=0, pixabay=0 | pelvic floor model: commons=0, openverse=0, pexels=0, pixabay=0 | vaginal pessary: commons=2, openverse=0, pexels=0, pixabay=0 | uterine prolapse model: commons=0, openverse=0, pexels=0, pixabay=0 | pelvic anatomy skeleton: commons=4, openverse=0, pexels=0, pixabay=0]; review_notes=[התמונה מציגה אדם עירום ואינה ממחישה באופן ישיר צניחת איברי אגן. | כלי מתכת מחוררים שאינם קשורים לצניחת איברי האגן, לאבחונה או לטיפול בה. | האיור מציג עצמות אגן ומפרק ירך, ולא צניחת איברי אגן. | איור של מפרק הירך שאינו מציג צניחת איברי אגן. | האיור מציג את עצם האגן ומפרק הירך, ולא צניחת איברי האגן.]; errors=[https://commons.wikimedia.org/wiki/File:Wishbone_or_gold_spring_pessary,_Europe,_1880-1936_Wellcome_L0065283.jpg: review=RuntimeError]"
+    },
+    {
       "approval_id": "apr_511043f330e03570e7d06bd81364ae58980a705808829230cde54642bad4358e",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-10-08-topic-82-run-37780011057-attempt-1.md",

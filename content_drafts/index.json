@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md",
+      "title": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+      "topic": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול",
+      "excerpt": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) צניחת איברי האגן היא מצב שבו אחד או יותר מאיברי האגן יורדים ממקומם הרגיל ויוצרים בליטה אל תוך הנרתיק, ולעיתים אף מ",
+      "generated_at": "2026-10-11T12:10:28.668027+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-10-11",
+      "cadence_local_date": "2026-10-11",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-10-08-topic-82-run-37780011057-attempt-1.md",
       "title": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה | ד״ר גיא רופא",
       "topic": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה",
@@ -482,24 +499,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-84a5ee525314e8c6.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/s1ui8t11ugx"
-    },
-    {
-      "path": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md",
-      "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
-      "topic": "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
-      "excerpt": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) תסמונת השחלות הפוליציסטיות, או PCOS, היא הפרעה הורמונלית ומטבולית שכיחה, שעשויה להתבטא במחזורי וסת לא סדירים, בעודף הורמונים ",
-      "generated_at": "2026-08-30T11:20:03.203478+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "pinterest",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-30",
-      "cadence_local_date": "2026-08-30",
-      "public_execution_allowed": false
     }
   ]
 }
