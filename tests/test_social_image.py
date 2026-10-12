@@ -656,8 +656,40 @@ class SocialImageTests(unittest.TestCase):
                 title="כותרת",
             )
 
-        self.assertEqual(get.call_count, 5)
-        self.assertEqual(sleep.call_count, 4)
+        self.assertEqual(get.call_count, 7)
+        self.assertEqual(sleep.call_count, 6)
+        self.assertEqual(
+            [call.args[0] for call in sleep.call_args_list],
+            [1, 2, 4, 8, 20, 40],
+        )
+
+    @patch("scripts.social_image.time.sleep")
+    @patch("scripts.social_image.requests.get")
+    def test_wordpress_lookup_failure_reports_each_read_only_route(
+        self, get, sleep
+    ):
+        response = Mock(status_code=200, headers={"Content-Type": "text/html"})
+        response.raise_for_status.return_value = None
+        response.json.side_effect = ValueError("not JSON")
+        get.return_value = response
+
+        with self.assertRaisesRegex(
+            RuntimeError,
+            r"read-only retries \[1:pretty:HTTP-200:text/html:public.*"
+            r"5:index_rest_route:HTTP-200:text/html:public.*"
+            r"7:root_rest_route:HTTP-200:text/html:public",
+        ):
+            social_image.upload_to_wordpress(
+                social_image.SocialImage(b"image"),
+                base_url="https://guyrofe.com",
+                username="user",
+                app_password="password",
+                slug="approved-social",
+                title="כותרת",
+            )
+
+        self.assertEqual(get.call_count, 7)
+        self.assertEqual(sleep.call_count, 6)
 
     @patch("scripts.social_image.time.sleep")
     @patch("scripts.social_image.requests.post")
