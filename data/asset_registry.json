@@ -116,13 +116,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Canonical website",
@@ -144,12 +144,12 @@
       "priority": 100,
       "previous_observed_position": 1,
       "observed_device": "mobile",
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 2,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
+      "no_improvement_days": 0
     },
     {
       "platform": "Secondary official website",
@@ -165,13 +165,13 @@
       "automation": "cms_after_canonical_audit",
       "priority": 92,
       "notes": "Must have a distinct purpose and content; avoid duplicating the canonical site.",
-      "previous_observed_position": 12,
-      "observed_position": 7,
+      "previous_observed_position": 7,
+      "observed_position": 57,
       "observed_query": "Guy Rofe",
-      "observed_device": "mobile",
-      "observed_at": "2026-10-05T11:41:11.432238",
-      "page_one": true,
-      "result_page": 1,
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "page_one": false,
+      "result_page": 6,
       "measurement_status": "found",
       "consecutive_no_improvement_measurements": 0,
       "no_improvement_since": null,
@@ -194,16 +194,16 @@
       "priority": 96,
       "notes": "Independent custom-domain knowledge hub. Publish one original evergreen medical guide weekly; never echo another owned site.",
       "previous_observed_position": 1,
-      "observed_position": 1,
-      "observed_query": "דר גיא רופא",
-      "observed_device": "desktop",
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_position": 4,
+      "observed_query": "Guy Rofe",
+      "observed_device": "mobile",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": true,
       "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 2,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
+      "no_improvement_days": 0
     },
     {
       "platform": "GuyRofe Wix media archive",
@@ -224,13 +224,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Google Business Profile",
@@ -254,13 +254,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "LinkedIn",
@@ -281,13 +281,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "YouTube",
@@ -305,13 +305,13 @@
       "automation": "oauth_connection_check_and_transcript_source_only",
       "priority": 95,
       "notes": "OAuth and target channel are configured. The product does not currently upload videos or edit YouTube metadata.",
-      "previous_observed_position": 16,
-      "observed_position": 5,
-      "observed_query": "Guy Rofe",
-      "observed_device": "mobile",
-      "observed_at": "2026-10-05T11:41:11.432238",
-      "page_one": true,
-      "result_page": 1,
+      "previous_observed_position": 5,
+      "observed_position": 22,
+      "observed_query": "Dr. Guy Rofe",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "page_one": false,
+      "result_page": 3,
       "measurement_status": "found",
       "consecutive_no_improvement_measurements": 0,
       "no_improvement_since": null,
@@ -336,13 +336,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Instagram",
@@ -378,13 +378,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Spotify",
@@ -405,13 +405,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "BookPod — הריון ולידה",
@@ -420,12 +420,26 @@
       "tier": "A",
       "status": "external_verified_product_page",
       "controlled": false,
-      "uses": ["brand_serp", "book_discovery", "independent_corroboration", "author_identity"],
+      "uses": [
+        "brand_serp",
+        "book_discovery",
+        "independent_corroboration",
+        "author_identity"
+      ],
       "automation": "read_only_measurement_and_metadata_review",
       "priority": 93,
       "notes": "Independent retailer page for a genuine published book; preserve editorial independence and measure as a desired result.",
       "page_one": false,
-      "measurement_status": "newly_registered"
+      "measurement_status": "not_in_measured_results",
+      "previous_observed_position": null,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "result_page": null,
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "BookPod — איך להרות באופן טבעי",
@@ -434,12 +448,26 @@
       "tier": "A",
       "status": "external_verified_product_page",
       "controlled": false,
-      "uses": ["brand_serp", "book_discovery", "independent_corroboration", "author_identity"],
+      "uses": [
+        "brand_serp",
+        "book_discovery",
+        "independent_corroboration",
+        "author_identity"
+      ],
       "automation": "read_only_measurement_and_metadata_review",
       "priority": 92,
       "notes": "Independent retailer page for a genuine published book; preserve editorial independence and measure as a desired result.",
       "page_one": false,
-      "measurement_status": "newly_registered"
+      "measurement_status": "not_in_measured_results",
+      "previous_observed_position": null,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "result_page": null,
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "BookPod — המדריך הישראלי לטיפולי פריון",
@@ -448,12 +476,26 @@
       "tier": "A",
       "status": "external_verified_product_page",
       "controlled": false,
-      "uses": ["brand_serp", "book_discovery", "independent_corroboration", "author_identity"],
+      "uses": [
+        "brand_serp",
+        "book_discovery",
+        "independent_corroboration",
+        "author_identity"
+      ],
       "automation": "read_only_measurement_and_metadata_review",
       "priority": 91,
       "notes": "Independent retailer page for a genuine published book; preserve editorial independence and measure as a desired result.",
       "page_one": false,
-      "measurement_status": "newly_registered"
+      "measurement_status": "not_in_measured_results",
+      "previous_observed_position": null,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "result_page": null,
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "Muck Rack",
@@ -469,17 +511,17 @@
       ],
       "automation": "manual",
       "priority": 86,
-      "previous_observed_position": 15,
-      "observed_position": 16,
-      "observed_query": "Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "previous_observed_position": 16,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
-      "result_page": 2,
-      "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 2,
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Crunchbase",
@@ -498,17 +540,17 @@
       "automation": "manual",
       "priority": 72,
       "notes": "Useful only if the business/founder information is factual and relevant.",
-      "previous_observed_position": 14,
-      "observed_position": 13,
-      "observed_query": "Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "previous_observed_position": 13,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
-      "result_page": 2,
-      "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 0,
-      "no_improvement_since": null,
-      "no_improvement_days": 0
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "Medium",
@@ -532,13 +574,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Blogger",
@@ -561,13 +603,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "X",
@@ -586,13 +628,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "TikTok",
@@ -609,16 +651,16 @@
       "priority": 78,
       "notes": "Owner-managed channel. The product must never publish or prepare an outbound publishing job for TikTok.",
       "previous_observed_position": null,
-      "observed_position": null,
-      "observed_query": null,
-      "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_position": 71,
+      "observed_query": "Dr. Guy Rofe",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
-      "result_page": null,
-      "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "result_page": 8,
+      "measurement_status": "found",
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
+      "no_improvement_days": 0
     },
     {
       "platform": "Telegram",
@@ -655,13 +697,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Quora",
@@ -682,13 +724,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Pinterest",
@@ -704,16 +746,16 @@
       "automation": "paused_until_official_api_credentials_verified",
       "priority": 65,
       "previous_observed_position": null,
-      "observed_position": null,
-      "observed_query": null,
-      "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_position": 22,
+      "observed_query": "Guy Rofe",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
-      "result_page": null,
-      "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "result_page": 3,
+      "measurement_status": "found",
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
+      "no_improvement_days": 0
     },
     {
       "platform": "Tumblr",
@@ -732,13 +774,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Issuu",
@@ -753,13 +795,13 @@
       ],
       "automation": "manual_publish",
       "priority": 62,
-      "previous_observed_position": null,
-      "observed_position": 5,
-      "observed_query": "Dr. Guy Rofe",
-      "observed_device": "mobile",
-      "observed_at": "2026-10-05T11:41:11.432238",
-      "page_one": true,
-      "result_page": 1,
+      "previous_observed_position": 5,
+      "observed_position": 48,
+      "observed_query": "Guy Rofe",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "page_one": false,
+      "result_page": 5,
       "measurement_status": "found",
       "consecutive_no_improvement_measurements": 0,
       "no_improvement_since": null,
@@ -782,13 +824,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "About.me",
@@ -803,17 +845,17 @@
       ],
       "automation": "manual",
       "priority": 58,
-      "previous_observed_position": 15,
-      "observed_position": null,
-      "observed_query": null,
-      "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "previous_observed_position": null,
+      "observed_position": 31,
+      "observed_query": "ד״ר גיא רופא",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
-      "result_page": null,
-      "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "result_page": 4,
+      "measurement_status": "found",
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Flipboard",
@@ -833,13 +875,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Foursquare",
@@ -858,13 +900,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Flickr",
@@ -882,13 +924,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Giphy",
@@ -906,13 +948,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Slides.com",
@@ -926,17 +968,17 @@
       ],
       "automation": "manual",
       "priority": 38,
-      "previous_observed_position": 10,
-      "observed_position": 63,
-      "observed_query": "Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "previous_observed_position": 63,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
-      "result_page": 7,
-      "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 2,
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "HubPages",
@@ -954,13 +996,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Gravatar",
@@ -978,13 +1020,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Scoop.it",
@@ -1002,13 +1044,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Disqus",
@@ -1026,13 +1068,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "OpenStreetMap user",
@@ -1048,13 +1090,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "WordPress.com mirror",
@@ -1067,16 +1109,16 @@
       "automation": "disabled",
       "priority": 0,
       "previous_observed_position": null,
-      "observed_position": null,
-      "observed_query": null,
-      "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_position": 89,
+      "observed_query": "ד״ר גיא רופא",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
-      "result_page": null,
-      "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "result_page": 9,
+      "measurement_status": "found",
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Google Sites mirror",
@@ -1088,13 +1130,13 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "previous_observed_position": 14,
-      "observed_position": 2,
+      "previous_observed_position": 2,
+      "observed_position": 17,
       "observed_query": "Dr. Guy Rofe",
-      "observed_device": "mobile",
-      "observed_at": "2026-10-05T11:41:11.432238",
-      "page_one": true,
-      "result_page": 1,
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "page_one": false,
+      "result_page": 2,
       "measurement_status": "found",
       "consecutive_no_improvement_measurements": 0,
       "no_improvement_since": null,
@@ -1110,13 +1152,13 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "previous_observed_position": null,
-      "observed_position": 39,
+      "previous_observed_position": 39,
+      "observed_position": 15,
       "observed_query": "Guy Rofe",
       "observed_device": "desktop",
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
-      "result_page": 4,
+      "result_page": 2,
       "measurement_status": "found",
       "consecutive_no_improvement_measurements": 0,
       "no_improvement_since": null,
@@ -1136,13 +1178,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Bravesites mirror",
@@ -1158,13 +1200,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Wixsite mirror",
@@ -1180,13 +1222,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Jimdo mirror",
@@ -1199,16 +1241,16 @@
       "automation": "disabled",
       "priority": 0,
       "previous_observed_position": 6,
-      "observed_position": 6,
+      "observed_position": 8,
       "observed_query": "Guy Rofe",
-      "observed_device": "mobile",
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_device": "desktop",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": true,
       "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 2,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
+      "no_improvement_days": 0
     },
     {
       "platform": "SITE123 mirror",
@@ -1220,17 +1262,17 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "previous_observed_position": 5,
+      "previous_observed_position": null,
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Weebly mirror",
@@ -1246,13 +1288,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Jotform blog",
@@ -1268,13 +1310,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Webflow mirror",
@@ -1290,13 +1332,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "CakeResume",
@@ -1312,13 +1354,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Completed.com",
@@ -1334,13 +1376,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Xing",
@@ -1356,13 +1398,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Wattpad",
@@ -1378,13 +1420,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Minds",
@@ -1400,13 +1442,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Product Hunt",
@@ -1422,13 +1464,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Docker Hub",
@@ -1444,13 +1486,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "CodePen",
@@ -1466,13 +1508,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Last.fm",
@@ -1488,13 +1530,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Imgur",
@@ -1510,13 +1552,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "Dwell",
@@ -1532,13 +1574,13 @@
       "observed_position": null,
       "observed_query": null,
       "observed_device": null,
-      "observed_at": "2026-10-05T11:41:11.432238",
+      "observed_at": "2026-10-12T12:14:12.783482",
       "page_one": false,
       "result_page": null,
       "measurement_status": "not_in_measured_results",
-      "consecutive_no_improvement_measurements": 2,
+      "consecutive_no_improvement_measurements": 3,
       "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "no_improvement_days": 14
     },
     {
       "platform": "GuyRofe.net legacy WordPress",
@@ -1547,11 +1589,24 @@
       "tier": "B",
       "status": "technical_content_audit_required",
       "controlled": true,
-      "uses": ["legacy_brand_domain", "redirect_or_distinct_role_candidate"],
+      "uses": [
+        "legacy_brand_domain",
+        "redirect_or_distinct_role_candidate"
+      ],
       "automation": "disabled_until_canonical_and_content_role_audit",
       "priority": 65,
       "notes": "Found in the owner connection inventory. Decide between a clean redirect and a genuinely distinct purpose; never run it as a duplicate mirror.",
-      "page_one": false
+      "page_one": false,
+      "previous_observed_position": null,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "GuyRofe.co.il legacy WordPress",
@@ -1560,11 +1615,24 @@
       "tier": "B",
       "status": "technical_content_audit_required",
       "controlled": true,
-      "uses": ["legacy_brand_domain", "redirect_or_distinct_role_candidate"],
+      "uses": [
+        "legacy_brand_domain",
+        "redirect_or_distinct_role_candidate"
+      ],
       "automation": "disabled_until_canonical_and_content_role_audit",
       "priority": 68,
       "notes": "Distinct from drguyrofe.co.il. Audit indexability, canonicals and content overlap before deciding whether to retain or redirect.",
-      "page_one": false
+      "page_one": false,
+      "previous_observed_position": null,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "Infogram",
@@ -1573,10 +1641,22 @@
       "tier": "C",
       "status": "retain_if_original_visuals_exist",
       "controlled": true,
-      "uses": ["original_data_visualization"],
+      "uses": [
+        "original_data_visualization"
+      ],
       "automation": "none",
       "priority": 32,
-      "page_one": false
+      "page_one": false,
+      "previous_observed_position": null,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "SS Blog",
@@ -1588,7 +1668,17 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "page_one": false
+      "page_one": false,
+      "previous_observed_position": null,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "Rebrandly short link",
@@ -1597,11 +1687,23 @@
       "tier": "C",
       "status": "destination_audit_required",
       "controlled": true,
-      "uses": ["campaign_redirect_only"],
+      "uses": [
+        "campaign_redirect_only"
+      ],
       "automation": "none",
       "priority": 20,
       "notes": "A redirect is not a search asset. Retain only if its destination and analytics purpose are still valid.",
-      "page_one": false
+      "page_one": false,
+      "previous_observed_position": null,
+      "observed_position": null,
+      "observed_query": null,
+      "observed_device": null,
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "result_page": null,
+      "measurement_status": "not_in_measured_results",
+      "consecutive_no_improvement_measurements": 1,
+      "no_improvement_since": "2026-10-08T17:21:29.105471",
+      "no_improvement_days": 3
     },
     {
       "platform": "Creator Spring",
@@ -1613,17 +1715,17 @@
       "uses": [],
       "automation": "disabled",
       "priority": 0,
-      "previous_observed_position": 2,
-      "observed_position": 47,
-      "observed_query": "Guy Rofe",
-      "observed_device": "desktop",
-      "observed_at": "2026-10-05T11:41:11.432238",
-      "page_one": false,
-      "result_page": 5,
+      "previous_observed_position": 47,
+      "observed_position": 6,
+      "observed_query": "Dr. Guy Rofe",
+      "observed_device": "mobile",
+      "observed_at": "2026-10-12T12:14:12.783482",
+      "page_one": true,
+      "result_page": 1,
       "measurement_status": "found",
-      "consecutive_no_improvement_measurements": 2,
-      "no_improvement_since": "2026-09-28T06:46:08.811586",
-      "no_improvement_days": 7
+      "consecutive_no_improvement_measurements": 0,
+      "no_improvement_since": null,
+      "no_improvement_days": 0
     }
   ]
 }
