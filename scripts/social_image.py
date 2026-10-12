@@ -87,7 +87,17 @@ MAX_SEARCH_QUERIES = 8
 MAX_REVIEWED_CANDIDATES = 24
 MAX_REVIEWED_PER_QUERY = 3
 TRANSIENT_WORDPRESS_HTTP = {408, 429, 500, 502, 503, 504}
-WORDPRESS_LOOKUP_ATTEMPTS = 5
+WORDPRESS_LOOKUP_ROUTES = (
+    "pretty",
+    "pretty",
+    "root_rest_route",
+    "root_rest_route",
+    "index_rest_route",
+    "pretty",
+    "root_rest_route",
+)
+WORDPRESS_LOOKUP_BACKOFF_SECONDS = (1, 2, 4, 8, 20, 40)
+WORDPRESS_LOOKUP_ATTEMPTS = len(WORDPRESS_LOOKUP_ROUTES)
 WORDPRESS_RECONCILIATION_ATTEMPTS = 5
 QUERY_NOISE_WORDS = frozenset(
     {
@@ -129,9 +139,12 @@ def _wordpress_media_lookup_request(base_url, slug, headers, attempt, auth=None)
     """
     root = base_url.rstrip("/")
     params = {"slug": slug, "_fields": "id,source_url,slug"}
-    if attempt < 2:
+    route = WORDPRESS_LOOKUP_ROUTES[
+        min(attempt, len(WORDPRESS_LOOKUP_ROUTES) - 1)
+    ]
+    if route == "pretty":
         url = f"{root}/wp-json/wp/v2/media"
-    elif attempt < 4:
+    elif route == "root_rest_route":
         url = f"{root}/"
         params = {"rest_route": "/wp/v2/media", **params}
     else:
@@ -1068,10 +1081,17 @@ def upload_to_wordpress(
     existing = None
     last_decode_error = None
     lookup_auth = None
+    lookup_diagnostics = []
     for attempt in range(WORDPRESS_LOOKUP_ATTEMPTS):
         try:
             lookup = _wordpress_media_lookup_request(
                 base_url, slug, headers, attempt, lookup_auth
+            )
+            lookup_diagnostics.append(
+                f"{attempt + 1}:{WORDPRESS_LOOKUP_ROUTES[attempt]}:"
+                f"HTTP-{lookup.status_code}:"
+                f"{lookup.headers.get('Content-Type') or 'unknown'}:"
+                f"{'auth' if lookup_auth else 'public'}"
             )
             if (
                 lookup.status_code in {401, 403}
@@ -1079,13 +1099,13 @@ def upload_to_wordpress(
                 and attempt < WORDPRESS_LOOKUP_ATTEMPTS - 1
             ):
                 lookup_auth = auth
-                time.sleep(2 ** attempt)
+                time.sleep(WORDPRESS_LOOKUP_BACKOFF_SECONDS[attempt])
                 continue
             if (
                 lookup.status_code in TRANSIENT_WORDPRESS_HTTP
                 and attempt < WORDPRESS_LOOKUP_ATTEMPTS - 1
             ):
-                time.sleep(2 ** attempt)
+                time.sleep(WORDPRESS_LOOKUP_BACKOFF_SECONDS[attempt])
                 continue
             lookup.raise_for_status()
             try:
@@ -1099,19 +1119,27 @@ def upload_to_wordpress(
                     # public endpoint long enough for a transient WAF response
                     # to clear.  An inconclusive lookup still fails closed.
                     lookup_auth = None
-                    time.sleep(2 ** attempt)
+                    time.sleep(WORDPRESS_LOOKUP_BACKOFF_SECONDS[attempt])
                     continue
-        except (requests.ConnectionError, requests.Timeout):
+        except (requests.ConnectionError, requests.Timeout) as exc:
+            lookup_diagnostics.append(
+                f"{attempt + 1}:{WORDPRESS_LOOKUP_ROUTES[attempt]}:"
+                f"{type(exc).__name__}:"
+                f"{'auth' if lookup_auth else 'public'}"
+            )
             if attempt == WORDPRESS_LOOKUP_ATTEMPTS - 1:
                 raise
-            time.sleep(2 ** attempt)
+            time.sleep(WORDPRESS_LOOKUP_BACKOFF_SECONDS[attempt])
     if existing is None:
         content_type = ""
         if lookup is not None:
             content_type = str(lookup.headers.get("Content-Type") or "")
         detail = f" (Content-Type: {content_type})" if content_type else ""
+        diagnostics = ", ".join(lookup_diagnostics)
         raise RuntimeError(
-            "WordPress media lookup returned a non-JSON response" + detail
+            "WordPress media lookup returned a non-JSON response"
+            + detail
+            + f" after read-only retries [{diagnostics}]"
         ) from last_decode_error
     if not isinstance(existing, list):
         if isinstance(existing, dict):
