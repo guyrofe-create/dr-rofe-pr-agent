@@ -2934,6 +2934,20 @@
       "published_at": "2026-10-13T18:27:14Z",
       "url": "https://guyrofe.blogspot.com/2026/10/blog-post_13.html",
       "provider_receipt": null
+    },
+    "pub_85c7ace50ec31019a19a7959a8da2d514b538b4c7a3c8445fb08aa2f3cb81dc5": {
+      "version": 7,
+      "idempotency_key": "pub_85c7ace50ec31019a19a7959a8da2d514b538b4c7a3c8445fb08aa2f3cb81dc5",
+      "approval_id": "apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "c6987155fd849c7eaee7b9ccda75abc95e5d1e6fb9a949b0f2388cce07ab3475",
+      "status": "published",
+      "started_at": "2026-10-13T23:04:00Z",
+      "published_at": "2026-10-13T23:04:03Z",
+      "url": "https://www.drguyrofe.com/post/רגישות-וסגוליות-בבדיקות-רפואיות-כיצד-לפרש-תוצאה-חיובית-או-שלילית-ולהבין-את-הסיכוי-לטעות",
+      "provider_receipt": null
     }
   }
 }

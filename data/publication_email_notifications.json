@@ -1203,6 +1203,30 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7515840589041496064/",
         "https://guyrofe.blogspot.com/2026/10/blog-post_13.html"
       ]
+    },
+    "expired:apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60:2026-08-27T18:46:05Z": {
+      "recorded_at": "2026-10-13T23:03:45.624652+00:00",
+      "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md",
+      "published_approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+      "campaign_result": "content_drafts/campaigns/2026-08-27-topic-90-run-33097962490-attempt-1.json",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-27-topic-90-run-33097962490-attempt-1/",
+        "https://www.facebook.com/122201466152942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7498876276792008704/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJqRgMGB-Orq4gE"
+      ]
+    },
+    "apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb:803f499f1beb22b7d5cc3dbeb4684c97b5f995fe76a2ecb14c5d12b69bde031a": {
+      "sent_at": "2026-10-13T23:04:07.039116+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb",
+      "state": "success",
+      "subject": "אישור פרסום: רגישות וסגוליות בבדיקות רפואיות: כיצד לפרש תוצאה חיובית או שלילית ולהבין את הסיכוי לטעות | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.com/post/רגישות-וסגוליות-בבדיקות-רפואיות-כיצד-לפרש-תוצאה-חיובית-או-שלילית-ולהבין-את-הסיכוי-לטעות"
+      ]
     }
   }
 }
