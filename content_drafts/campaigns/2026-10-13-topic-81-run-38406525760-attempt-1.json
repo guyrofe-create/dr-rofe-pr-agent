@@ -1,0 +1,116 @@
+{
+  "draft": "content_drafts/2026-10-13-topic-81-run-38406525760-attempt-1.md",
+  "title": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-10-13T18:27:14.845214+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%99%d7%90%d7%a1%d7%98%d7%a0%d7%99%d7%94-%d7%92%d7%a8%d7%91%d7%99%d7%a1-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%a9%d7%a8%d7%99%d7%a8%d7%99%d7%9d/",
+      "detail": "idempotency_key=pub_acafc1369eed18a51f795b09374aefd0f358149ee17ff44254aa2d106268a89d"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%99%d7%90%d7%a1%d7%98%d7%a0%d7%99%d7%94-%d7%92%d7%a8%d7%91%d7%99%d7%a1-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%a9%d7%a8%d7%99%d7%a8%d7%99%d7%9d/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-13-topic-81-run-38406525760-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122209352174942441",
+      "detail": "idempotency_key=pub_aa6a6c32e30e19ec95b3291037036745ff9e68a20063aec951fa7e6d2c97938e"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7515840589041496064/",
+      "detail": "idempotency_key=pub_4df7392e693d863358743a539ef0f878e50b7a02e94a6cd399af199abd256f65"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/10/blog-post_13.html",
+      "detail": "idempotency_key=pub_b68a73535a80d53f5ab39e85b5b220c33060a79d4f7e85e5b2df376b1005cabc"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_c6427165b4d1ee0aaec4ba4260d62b0e9310c7d7ae373663e0791dddcb4a9375",
+  "search_target": {
+    "primary_query": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה",
+    "secondary_queries": [
+      "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה ד״ר גיא רופא",
+      "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%99%d7%90%d7%a1%d7%98%d7%a0%d7%99%d7%94-%d7%92%d7%a8%d7%91%d7%99%d7%a1-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%a9%d7%a8%d7%99%d7%a8%d7%99%d7%9d/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
