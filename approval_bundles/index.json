@@ -2,6 +2,34 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-10-13-topic-87-run-38406525760-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb.json",
+      "preview_path": "approval_bundles/apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb.html",
+      "created_at": "2026-10-13T13:47:14Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: Selected licensed photograph is too small"
+    },
+    {
+      "approval_id": "apr_c6427165b4d1ee0aaec4ba4260d62b0e9310c7d7ae373663e0791dddcb4a9375",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-10-13-topic-81-run-38406525760-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_c6427165b4d1ee0aaec4ba4260d62b0e9310c7d7ae373663e0791dddcb4a9375.json",
+      "preview_path": "approval_bundles/apr_c6427165b4d1ee0aaec4ba4260d62b0e9310c7d7ae373663e0791dddcb4a9375.html",
+      "created_at": "2026-10-13T13:46:49Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": null
+    },
+    {
       "approval_id": "apr_6921de6a116b38817198eaf318403d851b33a5ee17217e0fab28459ddf87b93b",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md",

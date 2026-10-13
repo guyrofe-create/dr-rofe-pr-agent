@@ -1,0 +1,811 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-10-13T13:46:49Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-10-13-topic-81-run-38406525760-attempt-1.md",
+  "source_draft_sha256": "982933422c8d252ce32898a2a958ea1ca0abea37291711e39465cf254a590583",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/myasthenia-gravis/",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.ncl.2018.01.010",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-landscape.png",
+    "sha256": "50a3150fdb9e45f504f012d734d0530e41b45446f60990c1e6232a756b905402",
+    "alt_text": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Pozanicline_molecule_ball.png",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Pozanicline_molecule_ball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Jynto ( more from this user )",
+    "license_name": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "attribution": "Pozanicline molecule ball.png — Jynto ( more from this user ); CC0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-hero.png",
+        "sha256": "8ae9d239b692cc974390ec2a1af5047ac110595c988cdc3688ce880517d96993",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-landscape.png",
+        "sha256": "50a3150fdb9e45f504f012d734d0530e41b45446f60990c1e6232a756b905402",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-square.jpg",
+        "sha256": "3b0269c300704cdc8e84d6357e9f2dcd672f89e578bf85b5d6ae7ec2412e16cd",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-portrait.png",
+        "sha256": "ad117c31c7aabe16f22d4cc31218459cb468ac062fb76a84359d22a9cccf24e3",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+        "cms_title": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה",
+        "markdown": "# מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nמיאסטניה גרביס היא מחלה אוטואימונית שבה נפגעת התקשורת בין העצבים לשרירים. האות העצבי אמנם מגיע לקצה העצב, אך אינו מפעיל את השריר בעקביות. לכן השרירים עשויים לתפקד היטב בתחילת פעולה, להיחלש בעקבות שימוש חוזר ולהשתפר זמנית לאחר מנוחה. האבחנה מבוססת על דפוס החולשה, בדיקה נוירולוגית, בדיקות נוגדנים ולעיתים בדיקות חשמליות והדמיה של בית החזה.\n\nלא כל עייפות, כבדות או ירידה בכושר מעידות על מיאסטניה גרביס. במונח “חולשה” הכוונה היא לירידה ממשית ביכולת השריר לבצע פעולה, ולא רק לתחושת תשישות כללית. כדי להגיע לאבחנה יש לחבר בין התסמינים, הממצאים בבדיקה ובדיקות העזר, ובמקביל לשלול גורמים אחרים לחולשת שרירים.\n\n## מהי מיאסטניה גרביס ומה משתבש בחיבור בין העצב לשריר?\n\nכדי ששריר רצוני יתכווץ, אות חשמלי מתקדם לאורך העצב ומגיע לקצהו. בנקודת המפגש שבין העצב לשריר — הצומת העצבי־שרירי — משתחרר חומר מתווך בשם אצטילכולין. החומר חוצה מרווח זעיר ונקשר לקולטנים על קרום השריר. הקישור מפעיל תהליך חשמלי וכימי שבסופו השריר מתכווץ.\n\nבמיאסטניה גרביס מערכת החיסון מייצרת נוגדנים נגד מרכיבים החיוניים לפעילות הצומת העצבי־שרירי. אצל מטופלים רבים הנוגדנים מכוונים נגד הקולטן לאצטילכולין, AChR. במקרים אחרים מתגלים נוגדנים נגד חלבונים כגון MuSK או LRP4, המשתתפים בארגון הקולטנים ובשמירת המבנה והתפקוד של אזור החיבור.\n\nהנוגדנים עלולים לחסום את הקולטנים, להאיץ את פירוקם או לעורר תגובה חיסונית הפוגעת בקרום השריר באזור הצומת. התוצאה היא ירידה במספר הקולטנים הפעילים וביעילות קליטת האות. העצב עשוי לשחרר אצטילכולין, אך ההודעה שהוא מעביר אינה מתורגמת תמיד להתכווצות מספקת. [הסקירה המדעית של NCBI על אבחון מיאסטניה גרביס](https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/) מפרטת את תפקיד הנוגדנים ואת חשיבות התאמת הממצא המעבדתי לתמונה הקלינית.\n\nהמחלה פוגעת בעיקר בשרירים רצוניים, ובהם שרירי העיניים, הפנים, הלעיסה, הבליעה, הדיבור, הצוואר, הגפיים והנשימה. התחושה בדרך כלל אינה נפגעת, משום שהבעיה אינה במסלולי התחושה. גם יכולת החשיבה אינה נפגעת ישירות. מוקד המחלה הוא כשל משתנה בהעברת האות מהעצב אל השריר, ולא חוסר רצון, מאמץ בלתי מספק או עייפות רגילה.\n\n## מדוע החולשה מחמירה במאמץ ומשתפרת לאחר מנוחה?\n\nבצומת עצבי־שרירי תקין קיים “מרווח ביטחון”: כמות האצטילכולין המשתחררת ומספר הקולטנים הזמינים גבוהים מן המינימום הדרוש להפעלת השריר. גם אם יש שינוי קטן בכמות החומר המשתחררת בין גירוי לגירוי, האות עדיין חזק דיו כדי להפעיל את סיבי השריר.\n\nבמיאסטניה גרביס מרווח הביטחון מצטמצם. כאשר העצב מפעיל את השריר פעמים רבות ברצף, כמות האצטילכולין הזמינה לשחרור בכל גירוי עשויה לרדת לזמן קצר. בצומת תקין הירידה אינה צפויה לפגוע בתפקוד, אך כאשר מספר הקולטנים הפעילים כבר קטן, חלק מן האותות אינם מגיעים לסף הדרוש להפעלת השריר. בהדרגה, פחות סיבי שריר משתתפים בהתכווצות והכוח יורד.\n\nמכאן נובע דפוס אופייני: העפעף עלול לצנוח יותר לאחר קריאה ממושכת; הראייה הכפולה עשויה להחמיר לאחר שימוש ממושך בעיניים; הקול יכול להיחלש במהלך שיחה ארוכה; ולעיסה של מזון מוצק עלולה להפוך קשה לקראת סוף הארוחה. גם החזקת הראש, הרמת הידיים או עלייה במדרגות עשויות להיות קשות יותר לאחר פעילות חוזרת.\n\nמנוחה אינה מתקנת את התהליך האוטואימוני, אך היא מאפשרת התאוששות חלקית וזמנית של מנגנון ההעברה. לכן הכוח עשוי להשתפר לאחר הפסקת הפעולה. לפי [העמוד הרשמי של NHS על תסמיני מיאסטניה גרביס](https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/), החולשה נוטה להחמיר בעייפות או לאחר שימוש בשרירים ולהשתפר בעקבות מנוחה.\n\nהתנודתיות אינה זהה אצל כולם. החולשה עשויה להשתנות במהלך היום ובין יום ליום. זיהום, חום, מחסור בשינה, עומס גופני או נפשי ותרופות מסוימות עלולים להחמיר תסמינים. עם זאת, שיפור לאחר מנוחה אינו מוכיח לבדו שמדובר במיאסטניה, משום שגם מצבים רפואיים אחרים יכולים לגרום לשינוי בכוח לאורך היום.\n\n## אילו שרירים נפגעים ואילו סימנים מעוררים חשד?\n\nאצל חלק מהאנשים המחלה מתחילה בשרירי העיניים והעפעפיים. הביטויים האפשריים כוללים צניחת עפעף אחד או שניים וראייה כפולה, הנגרמת כאשר השרירים המניעים את העיניים אינם פועלים בתיאום. הצניחה יכולה לעבור מצד לצד, להשתנות במהלך היום או להופיע רק לאחר מאמץ חזותי. כאשר הפגיעה נשארת מוגבלת לשרירי העיניים, המצב מכונה מיאסטניה עינית.\n\nמעורבות של שרירי הפנים, הלסת, הלשון, הלוע והגרון עלולה לגרום לקושי בהבעות פנים, לעיסה ממושכת, בליעה או דיבור. הקול עשוי להישמע חלש, מאונפף או פחות ברור ככל שהדיבור נמשך. מזון עלול להישאר בחלל הפה, ונוזלים עשויים לגרום לשיעול. חולשה של שרירי הצוואר יכולה להתבטא בקושי להחזיק את הראש זקוף.\n\nכאשר המחלה מערבת את הגפיים, החולשה בולטת לעיתים בשרירים הקרובים למרכז הגוף. פעולות כגון הרמת הידיים, סירוק שיער, צחצוח שיניים, קימה מכיסא ועלייה במדרגות נעשות קשות יותר. [סקירת NHS על המחלה, תסמיניה והבירור המקובל](https://www.nhs.uk/conditions/myasthenia-gravis/) מתארת את המעורבות האפשרית של העיניים, הפנים, הלעיסה, הבליעה, הדיבור, הצוואר והגפיים.\n\nהרמז האבחנתי החשוב אינו תסמין בודד אלא שילוב של חולשה אמיתית, תנודתיות, החמרה בשימוש ופיזור שרירים אופייני. בדרך כלל אין אובדן תחושה, נימול או כאב עצבי כחלק ישיר מהמחלה. עם זאת, היעדר תסמין מסוים אינו שולל אותה, במיוחד בשלבים מוקדמים או כאשר המעורבות מוגבלת לעיניים.\n\nחולשה ניכרת של שרירי הנשימה, הבליעה או השיעול עלולה להתפתח למשבר מיאסטני. זהו מצב חירום שבו האדם מתקשה לאוורר את הריאות או להגן על דרכי הנשימה. קוצר נשימה המחמיר במהירות, קושי לדבר במשפטים, שיעול חלש, חנק, קושי לבלוע רוק או חולשה מהירה של שרירי הצוואר מחייבים פנייה מיידית לשירותי החירום. [הנחיות NHS בנוגע לתסמיני נשימה ובליעה חמורים](https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/) מדגישות את הצורך בטיפול דחוף בבית חולים במצבים אלה.\n\n## כיצד מתבצע האבחון הקליני והמעבדתי?\n\nהאבחון מתחיל בתיאור מדויק של החולשה: מתי החלה, אילו שרירים מעורבים, האם היא משתנה במהלך היום, אילו פעולות מחמירות אותה ומה מידת השיפור לאחר מנוחה. חשוב להבחין בין חולשה ממוקדת לבין ישנוניות, חוסר אנרגיה, כאב המגביל תנועה או קוצר נשימה ממקור אחר.\n\nבבדיקה הנוירולוגית מעריכים את מנח העפעפיים, תנועות העיניים, כוח שרירי הפנים, הלסת, הצוואר והגפיים, וכן את איכות הקול, הדיבור והבליעה. לעיתים מבקשים לבצע פעולה חוזרת כדי לחשוף התעייפות: מבט ממושך כלפי מעלה עשוי להדגיש צניחת עפעף, ודיבור רציף או ספירה בקול עשויים לחשוף היחלשות הדרגתית.\n\nבמקרים של צניחת עפעף אפשר להשתמש במבחן קרח. קירור מבוקר וקצר של העפעף עשוי לשפר זמנית את הצניחה, משום שקור מפחית את פירוק האצטילכולין. זהו מבחן תומך בלבד; תוצאה חיובית אינה מחליפה בדיקת נוגדנים או הערכה נוירופיזיולוגית.\n\nבדיקות הדם מחפשות בדרך כלל נוגדנים נגד AChR. אם התוצאה שלילית אך החשד הקליני נותר משמעותי, אפשר לבדוק נוגדנים נגד MuSK ולעיתים LRP4. תוצאה חיובית של נוגדן מתאים, לצד תסמינים אופייניים, מחזקת מאוד את האבחנה. מנגד, תוצאה שלילית אינה שוללת את המחלה. במיאסטניה סרונגטיבית לא מזוהה נוגדן בבדיקות המקובלות, אף שהממצאים הקליניים והחשמליים עשויים לתמוך באבחנה.\n\nהאבחון הוא תהליך משולב ולא פרשנות של בדיקה יחידה. [הסקירה המקצועית על הגישה לאבחון מיאסטניה גרביס](https://doi.org/10.1016/j.ncl.2018.01.010) מדגישה את מרכזיות התמונה הקלינית ואת תפקיד בדיקות העזר באישוש האבחנה, בסיווג המחלה ובהבחנה בינה לבין מצבים אחרים.\n\nלאחר ביסוס האבחנה מבוצעת לעיתים הדמיית CT או MRI של בית החזה כדי להעריך את בלוטת התימוס ולבדוק אם קיים גידול המכונה תימומה. ההדמיה אינה מוכיחה שהחולשה נגרמת ממיאסטניה, אלא מחפשת ממצא נלווה בעל משמעות רפואית.\n\n## מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?\n\nבדיקות אלקטרופיזיולוגיות בוחנות את תפקוד העצבים, השרירים והצומת המחבר ביניהם. בבדיקת גירוי עצבי חוזר, RNS, מגרים עצב מספר פעמים ברצף ומתעדים את תגובת השריר. ירידה עקבית בעוצמת התגובה עשויה להעיד שהעברת האות אינה יציבה ושחלק מסיבי השריר אינם מופעלים בכל גירוי.\n\nהבדיקה מדגימה באופן מדיד את התופעה המתרחשת בעת מאמץ, אך הרגישות שלה משתנה. הסיכוי לזהות הפרעה תלוי בשריר שנבדק, בפיזור המחלה ובחומרתה. בדיקה של שריר שאינו מעורב משמעותית עלולה להיות תקינה, ומיאסטניה המוגבלת לעיניים קשה לעיתים יותר לאישוש באמצעות גירוי חוזר. עקרונות הבדיקה והשימוש בה להערכת ההעברה העצבית־שרירית מפורטים בפרק NCBI על [גירוי עצבי חוזר](https://www.ncbi.nlm.nih.gov/books/NBK594249/).\n\nבדיקה רגישה נוספת היא אלקטרומיוגרפיה של סיב יחיד, Single-Fiber EMG. היא מודדת שינויים זעירים בתזמון ההפעלה של סיבי שריר השייכים לאותה יחידה מוטורית. שונות מוגברת בתזמון, המכונה jitter, יכולה להצביע על העברה בלתי יציבה בצומת העצבי־שרירי. עם זאת, ממצא חריג אינו ייחודי רק למיאסטניה ולכן יש לפרשו לצד התסמינים, הבדיקה הגופנית ושאר הממצאים.\n\nלעיתים נדרש שילוב של בדיקות נוגדנים, RNS ואלקטרומיוגרפיה של סיב יחיד. בדיקה אחת תקינה אינה מסיימת בהכרח את הבירור כאשר התמונה אופיינית, וממצא חריג בודד אינו מספיק כאשר אין התאמה קלינית. [סקירת NCBI על אבחון מיאסטניה גרביס](https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/) מדגישה את הצורך לבחור את הבדיקות בהתאם להסתמנות ולפרש אותן כמכלול.\n\nהאבחנה המבדלת כוללת מחלות שריר, פגיעות עצביות, הפרעות אחרות בצומת העצבי־שרירי, מחלות של גזע המוח, הפרעות בתפקוד בלוטת התריס, גורמים מטבוליים והשפעות של תרופות. מטרת הבירור היא אפוא לא רק לזהות בדיקה חיובית, אלא לוודא שהממצאים מסבירים באופן עקבי את דפוס החולשה.\n\n## סיכום\n\nמיאסטניה גרביס גורמת לחולשת שרירים משום שמערכת החיסון פוגעת במרכיבים החיוניים להעברת האות מהעצב לשריר. בזמן שימוש חוזר מצטמצם עוד יותר מרווח הביטחון של הצומת העצבי־שרירי, פחות סיבי שריר מגיבים והכוח יורד. מנוחה מאפשרת התאוששות זמנית, אך אינה מבטלת את התהליך האוטואימוני.\n\nהאבחנה נשענת על דפוס אופייני של חולשה משתנה ותלוית מאמץ, בדיקה נוירולוגית, בדיקות נוגדנים ובדיקות חשמליות לפי הצורך. לעיתים נכללת בבירור גם הדמיה של בית החזה להערכת התימוס. בהתאם ל[סקירה המדעית על אבחון מיאסטניה גרביס](https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/), אין לפרש אף בדיקה בנפרד מן התמונה הקלינית.\n\nחולשה חדשה ומתמשכת, צניחת עפעף, ראייה כפולה או קושי בלעיסה, בדיבור או בבליעה מצדיקים בירור רפואי. קושי משמעותי או מהיר בנשימה או בבליעה הוא מצב חירום. המידע במאמר הוא מידע רפואי כללי בלבד, אינו מהווה אבחנה או הוראה טיפולית, ומחייב ביקורת אנושית ורפואית לפני פרסום.\n\n> ### על המחבר\n>\n> **המחבר** הוא יוצר תוכן רפואי ומחבר ספרים.  \n> הסטטוס הנוכחי המאושר: אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע שירותי תורים.\n\n## מקורות\n\n1. NCBI/PMC — *Diagnosis of Myasthenia Gravis*:  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/\n\n2. NHS — *Myasthenia gravis: Symptoms*:  \n   https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/\n\n3. NHS — *Myasthenia gravis: Overview*:  \n   https://www.nhs.uk/conditions/myasthenia-gravis/\n\n4. Pasnoor M, Dimachkie MM, Farmakidis C, Barohn RJ — *Diagnosis of Myasthenia Gravis*:  \n   https://doi.org/10.1016/j.ncl.2018.01.010\n\n5. NCBI Bookshelf — *Repetitive Nerve Stimulation*:  \n   https://www.ncbi.nlm.nih.gov/books/NBK594249/\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/מיאסטניה-גרביס-מדוע-השרירים/",
+        "meta_description": "ד״ר גיא רופא: מיאסטניה גרביס היא מחלה אוטואימונית שבה נפגעת התקשורת בין העצבים לשרירים. האות העצבי אמנם מגיע לקצה העצב, אך אינו מפעיל את השריר בעקביות.",
+        "search_target": {
+          "primary_query": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה",
+          "secondary_queries": [
+            "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה ד״ר גיא רופא",
+            "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+            "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/"
+          },
+          {
+            "title": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה",
+            "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-pots-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%93%d7%95%d7%a4%d7%a7-%d7%9e%d7%96%d7%a0%d7%a7-%d7%91%d7%a2%d7%9e%d7%99%d7%93%d7%94/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/מיאסטניה-גרביס-מדוע-השרירים/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/",
+              "anchor": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            },
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-pots-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%93%d7%95%d7%a4%d7%a7-%d7%9e%d7%96%d7%a0%d7%a7-%d7%91%d7%a2%d7%9e%d7%99%d7%93%d7%94/",
+              "anchor": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 57,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-10-12T12:14:12.783482"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "15c90355b735e7fe3a6c6252c67d5f2a9b53b2e02ccecb4d06712e8804084275",
+        "slug": "מיאסטניה-גרביס-מדוע-השרירים",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-hero.png",
+          "sha256": "8ae9d239b692cc974390ec2a1af5047ac110595c988cdc3688ce880517d96993",
+          "alt_text": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Pozanicline_molecule_ball.png",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Pozanicline_molecule_ball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jynto ( more from this user )",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Pozanicline molecule ball.png — Jynto ( more from this user ); CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-hero.png",
+              "sha256": "8ae9d239b692cc974390ec2a1af5047ac110595c988cdc3688ce880517d96993",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-landscape.png",
+              "sha256": "50a3150fdb9e45f504f012d734d0530e41b45446f60990c1e6232a756b905402",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-square.jpg",
+              "sha256": "3b0269c300704cdc8e84d6357e9f2dcd672f89e578bf85b5d6ae7ec2412e16cd",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-portrait.png",
+              "sha256": "ad117c31c7aabe16f22d4cc31218459cb468ac062fb76a84359d22a9cccf24e3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+        "text": "מיאסטניה גרביס היא מחלה אוטואימונית שבה נפגעת התקשורת בין העצבים לשרירים.\n\nהאות העצבי אמנם מגיע לקצה העצב, אך אינו מפעיל את השריר בעקביות.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Pozanicline molecule ball.png — Jynto ( more from this user ); CC0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/מיאסטניה-גרביס-מדוע-השרירים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-landscape.png",
+          "sha256": "50a3150fdb9e45f504f012d734d0530e41b45446f60990c1e6232a756b905402",
+          "alt_text": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Pozanicline_molecule_ball.png",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Pozanicline_molecule_ball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jynto ( more from this user )",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Pozanicline molecule ball.png — Jynto ( more from this user ); CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-hero.png",
+              "sha256": "8ae9d239b692cc974390ec2a1af5047ac110595c988cdc3688ce880517d96993",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-landscape.png",
+              "sha256": "50a3150fdb9e45f504f012d734d0530e41b45446f60990c1e6232a756b905402",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-square.jpg",
+              "sha256": "3b0269c300704cdc8e84d6357e9f2dcd672f89e578bf85b5d6ae7ec2412e16cd",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-portrait.png",
+              "sha256": "ad117c31c7aabe16f22d4cc31218459cb468ac062fb76a84359d22a9cccf24e3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+        "text": "מיאסטניה גרביס היא מחלה אוטואימונית שבה נפגעת התקשורת בין העצבים לשרירים.\n\n• האות העצבי אמנם מגיע לקצה העצב, אך אינו מפעיל את השריר בעקביות.\n• לכן השרירים עשויים לתפקד היטב בתחילת פעולה, להיחלש בעקבות שימוש חוזר ולהשתפר זמנית לאחר מנוחה.\n• האבחנה מבוססת על דפוס החולשה, בדיקה נוירולוגית, בדיקות נוגדנים ולעיתים בדיקות חשמליות והדמיה של בית החזה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Pozanicline molecule ball.png — Jynto ( more from this user ); CC0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/מיאסטניה-גרביס-מדוע-השרירים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-landscape.png",
+          "sha256": "50a3150fdb9e45f504f012d734d0530e41b45446f60990c1e6232a756b905402",
+          "alt_text": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Pozanicline_molecule_ball.png",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Pozanicline_molecule_ball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jynto ( more from this user )",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Pozanicline molecule ball.png — Jynto ( more from this user ); CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-hero.png",
+              "sha256": "8ae9d239b692cc974390ec2a1af5047ac110595c988cdc3688ce880517d96993",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-landscape.png",
+              "sha256": "50a3150fdb9e45f504f012d734d0530e41b45446f60990c1e6232a756b905402",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-square.jpg",
+              "sha256": "3b0269c300704cdc8e84d6357e9f2dcd672f89e578bf85b5d6ae7ec2412e16cd",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-portrait.png",
+              "sha256": "ad117c31c7aabe16f22d4cc31218459cb468ac062fb76a84359d22a9cccf24e3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+        "html": "<h2>מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>מיאסטניה גרביס היא מחלה אוטואימונית שבה נפגעת התקשורת בין העצבים לשרירים.</p><p>האות העצבי אמנם מגיע לקצה העצב, אך אינו מפעיל את השריר בעקביות.</p>\n<p><small>קרדיט תמונה: Pozanicline molecule ball.png — Jynto ( more from this user ); CC0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/מיאסטניה-גרביס-מדוע-השרירים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-hero.png",
+          "sha256": "8ae9d239b692cc974390ec2a1af5047ac110595c988cdc3688ce880517d96993",
+          "alt_text": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "מודל כדורים ומקלות של מולקולת אצטילכולין על רקע שחור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Pozanicline_molecule_ball.png",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Pozanicline_molecule_ball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Jynto ( more from this user )",
+          "license_name": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "attribution": "Pozanicline molecule ball.png — Jynto ( more from this user ); CC0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-hero.png",
+              "sha256": "8ae9d239b692cc974390ec2a1af5047ac110595c988cdc3688ce880517d96993",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-landscape.png",
+              "sha256": "50a3150fdb9e45f504f012d734d0530e41b45446f60990c1e6232a756b905402",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-square.jpg",
+              "sha256": "3b0269c300704cdc8e84d6357e9f2dcd672f89e578bf85b5d6ae7ec2412e16cd",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-13-topic-81-run-38406525760-attempt-1-portrait.png",
+              "sha256": "ad117c31c7aabe16f22d4cc31218459cb468ac062fb76a84359d22a9cccf24e3",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 39,
+      "supported_claim_count": 39,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי מיאסטניה גרביס ומה משתבש בחיבור בין העצב לשריר?",
+          "claim": "אצל מטופלים רבים הנוגדנים מכוונים נגד הקולטן לאצטילכולין, AChR.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהי מיאסטניה גרביס ומה משתבש בחיבור בין העצב לשריר?",
+          "claim": "הנוגדנים עלולים לחסום את הקולטנים, להאיץ את פירוקם או לעורר תגובה חיסונית הפוגעת בקרום השריר באזור הצומת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהי מיאסטניה גרביס ומה משתבש בחיבור בין העצב לשריר?",
+          "claim": "התוצאה היא ירידה במספר הקולטנים הפעילים וביעילות קליטת האות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהי מיאסטניה גרביס ומה משתבש בחיבור בין העצב לשריר?",
+          "claim": "העצב עשוי לשחרר אצטילכולין, אך ההודעה שהוא מעביר אינה מתורגמת תמיד להתכווצות מספקת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהי מיאסטניה גרביס ומה משתבש בחיבור בין העצב לשריר?",
+          "claim": "הסקירה המדעית של NCBI על אבחון מיאסטניה גרביס מפרטת את תפקיד הנוגדנים ואת חשיבות התאמת הממצא המעבדתי לתמונה הקלינית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מדוע החולשה מחמירה במאמץ ומשתפרת לאחר מנוחה?",
+          "claim": "כאשר העצב מפעיל את השריר פעמים רבות ברצף, כמות האצטילכולין הזמינה לשחרור בכל גירוי עשויה לרדת לזמן קצר.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "מדוע החולשה מחמירה במאמץ ומשתפרת לאחר מנוחה?",
+          "claim": "מכאן נובע דפוס אופייני: העפעף עלול לצנוח יותר לאחר קריאה ממושכת; הראייה הכפולה עשויה להחמיר לאחר שימוש ממושך בעיניים; הקול יכול להיחלש במהלך שיחה ארוכה; ולעיסה של מזון מוצק עלולה להפוך קשה לקראת סוף הארוחה.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "מדוע החולשה מחמירה במאמץ ומשתפרת לאחר מנוחה?",
+          "claim": "גם החזקת הראש, הרמת הידיים או עלייה במדרגות עשויות להיות קשות יותר לאחר פעילות חוזרת.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "מדוע החולשה מחמירה במאמץ ומשתפרת לאחר מנוחה?",
+          "claim": "לכן הכוח עשוי להשתפר לאחר הפסקת הפעולה.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "מדוע החולשה מחמירה במאמץ ומשתפרת לאחר מנוחה?",
+          "claim": "החולשה עשויה להשתנות במהלך היום ובין יום ליום.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "מדוע החולשה מחמירה במאמץ ומשתפרת לאחר מנוחה?",
+          "claim": "זיהום, חום, מחסור בשינה, עומס גופני או נפשי ותרופות מסוימות עלולים להחמיר תסמינים.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "אילו שרירים נפגעים ואילו סימנים מעוררים חשד?",
+          "claim": "אצל חלק מהאנשים המחלה מתחילה בשרירי העיניים והעפעפיים.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/",
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "אילו שרירים נפגעים ואילו סימנים מעוררים חשד?",
+          "claim": "מעורבות של שרירי הפנים, הלסת, הלשון, הלוע והגרון עלולה לגרום לקושי בהבעות פנים, לעיסה ממושכת, בליעה או דיבור.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/",
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "אילו שרירים נפגעים ואילו סימנים מעוררים חשד?",
+          "claim": "הקול עשוי להישמע חלש, מאונפף או פחות ברור ככל שהדיבור נמשך.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/",
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "אילו שרירים נפגעים ואילו סימנים מעוררים חשד?",
+          "claim": "מזון עלול להישאר בחלל הפה, ונוזלים עשויים לגרום לשיעול.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/",
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "אילו שרירים נפגעים ואילו סימנים מעוררים חשד?",
+          "claim": "הרמז האבחנתי החשוב אינו תסמין בודד אלא שילוב של חולשה אמיתית, תנודתיות, החמרה בשימוש ופיזור שרירים אופייני.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/",
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "אילו שרירים נפגעים ואילו סימנים מעוררים חשד?",
+          "claim": "עם זאת, היעדר תסמין מסוים אינו שולל אותה, במיוחד בשלבים מוקדמים או כאשר המעורבות מוגבלת לעיניים.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/",
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "אילו שרירים נפגעים ואילו סימנים מעוררים חשד?",
+          "claim": "חולשה ניכרת של שרירי הנשימה, הבליעה או השיעול עלולה להתפתח למשבר מיאסטני.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/",
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "אילו שרירים נפגעים ואילו סימנים מעוררים חשד?",
+          "claim": "הנחיות NHS בנוגע לתסמיני נשימה ובליעה חמורים מדגישות את הצורך בטיפול דחוף בבית חולים במצבים אלה.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/myasthenia-gravis/",
+            "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון הקליני והמעבדתי?",
+          "claim": "האבחון מתחיל בתיאור מדויק של החולשה: מתי החלה, אילו שרירים מעורבים, האם היא משתנה במהלך היום, אילו פעולות מחמירות אותה ומה מידת השיפור לאחר מנוחה.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ncl.2018.01.010"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון הקליני והמעבדתי?",
+          "claim": "בבדיקה הנוירולוגית מעריכים את מנח העפעפיים, תנועות העיניים, כוח שרירי הפנים, הלסת, הצוואר והגפיים, וכן את איכות הקול, הדיבור והבליעה.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ncl.2018.01.010"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון הקליני והמעבדתי?",
+          "claim": "לעיתים מבקשים לבצע פעולה חוזרת כדי לחשוף התעייפות: מבט ממושך כלפי מעלה עשוי להדגיש צניחת עפעף, ודיבור רציף או ספירה בקול עשויים לחשוף היחלשות הדרגתית.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ncl.2018.01.010"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון הקליני והמעבדתי?",
+          "claim": "קירור מבוקר וקצר של העפעף עשוי לשפר זמנית את הצניחה, משום שקור מפחית את פירוק האצטילכולין.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ncl.2018.01.010"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון הקליני והמעבדתי?",
+          "claim": "במיאסטניה סרונגטיבית לא מזוהה נוגדן בבדיקות המקובלות, אף שהממצאים הקליניים והחשמליים עשויים לתמוך באבחנה.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ncl.2018.01.010"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון הקליני והמעבדתי?",
+          "claim": "האבחון הוא תהליך משולב ולא פרשנות של בדיקה יחידה.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ncl.2018.01.010"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון הקליני והמעבדתי?",
+          "claim": "הסקירה המקצועית על הגישה לאבחון מיאסטניה גרביס מדגישה את מרכזיות התמונה הקלינית ואת תפקיד בדיקות העזר באישוש האבחנה, בסיווג המחלה ובהבחנה בינה לבין מצבים אחרים.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ncl.2018.01.010"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "ירידה עקבית בעוצמת התגובה עשויה להעיד שהעברת האות אינה יציבה ושחלק מסיבי השריר אינם מופעלים בכל גירוי.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "הבדיקה מדגימה באופן מדיד את התופעה המתרחשת בעת מאמץ, אך הרגישות שלה משתנה.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "בדיקה של שריר שאינו מעורב משמעותית עלולה להיות תקינה, ומיאסטניה המוגבלת לעיניים קשה לעיתים יותר לאישוש באמצעות גירוי חוזר.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "עקרונות הבדיקה והשימוש בה להערכת ההעברה העצבית־שרירית מפורטים בפרק NCBI על גירוי עצבי חוזר.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "בדיקה רגישה נוספת היא אלקטרומיוגרפיה של סיב יחיד, Single-Fiber EMG.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "עם זאת, ממצא חריג אינו ייחודי רק למיאסטניה ולכן יש לפרשו לצד התסמינים, הבדיקה הגופנית ושאר הממצאים.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "בדיקה אחת תקינה אינה מסיימת בהכרח את הבירור כאשר התמונה אופיינית, וממצא חריג בודד אינו מספיק כאשר אין התאמה קלינית.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "סקירת NCBI על אבחון מיאסטניה גרביס מדגישה את הצורך לבחור את הבדיקות בהתאם להסתמנות ולפרש אותן כמכלול.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "מהן הבדיקות החשמליות ומדוע לעיתים נדרשות כמה בדיקות?",
+          "claim": "מטרת הבירור היא אפוא לא רק לזהות בדיקה חיובית, אלא לוודא שהממצאים מסבירים באופן עקבי את דפוס החולשה.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "האבחנה נשענת על דפוס אופייני של חולשה משתנה ותלוית מאמץ, בדיקה נוירולוגית, בדיקות נוגדנים ובדיקות חשמליות לפי הצורך.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "בהתאם לסקירה המדעית על אבחון מיאסטניה גרביס, אין לפרש אף בדיקה בנפרד מן התמונה הקלינית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המידע במאמר הוא מידע רפואי כללי בלבד, אינו מהווה אבחנה או הוראה טיפולית, ומחייב ביקורת אנושית ורפואית לפני פרסום.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "> הסטטוס הנוכחי המאושר: אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע שירותי תורים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8073361/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/",
+          "host": "nhs.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nhs.uk/conditions/myasthenia-gravis/",
+          "host": "nhs.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://doi.org/10.1016/j.ncl.2018.01.010",
+          "host": "doi.org",
+          "year_markers": [
+            "2018"
+          ]
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK594249/",
+          "host": "ncbi.nlm.nih.gov",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "15c90355b735e7fe3a6c6252c67d5f2a9b53b2e02ccecb4d06712e8804084275",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/מיאסטניה-גרביס-מדוע-השרירים/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/",
+          "anchor": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        },
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-pots-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%93%d7%95%d7%a4%d7%a7-%d7%9e%d7%96%d7%a0%d7%a7-%d7%91%d7%a2%d7%9e%d7%99%d7%93%d7%94/",
+          "anchor": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 57,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-10-12T12:14:12.783482"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_c6427165b4d1ee0aaec4ba4260d62b0e9310c7d7ae373663e0791dddcb4a9375"
+}

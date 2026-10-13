@@ -1,6 +1,38 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-13-topic-81-run-38406525760-attempt-1.md",
+      "title": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+      "topic": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה",
+      "excerpt": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מיאסטניה גרביס היא מחלה אוטואימונית שבה נפגעת התקשורת בין העצבים לשרירים. האות העצבי אמנם מגיע לקצה העצב, אך אי",
+      "generated_at": "2026-10-13T13:38:29.018912+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-10-11",
+      "cadence_local_date": "2026-10-12",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
+      "path": "content_drafts/2026-10-13-topic-87-run-38406525760-attempt-1.md",
+      "title": "רגישות וסגוליות בבדיקות רפואיות: כיצד לפרש תוצאה חיובית או שלילית ולהבין את הסיכוי לטעות | ד״ר גיא רופא",
+      "topic": "רגישות וסגוליות בבדיקות רפואיות: כיצד לפרש תוצאה חיובית או שלילית ולהבין את הסיכוי לטעות",
+      "excerpt": "רגישות וסגוליות בבדיקות רפואיות: כיצד לפרש תוצאה חיובית או שלילית ולהבין את הסיכוי לטעות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: תוצאה חיובית אינה מוכיחה בהכרח שקיימת מחלה, ותוצאה שלילית אינה שוללת אותה",
+      "generated_at": "2026-10-13T13:38:29.018912+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-10-11",
+      "cadence_local_date": "2026-10-13",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md",
       "title": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
       "topic": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול",
@@ -467,38 +499,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-1e564808cda0c3f0.json",
       "analyzed_news_url": "https://healthy.walla.co.il/item/3863094"
-    },
-    {
-      "path": "content_drafts/2026-09-01-topic-07-run-33501045144-attempt-1.md",
-      "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
-      "topic": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
-      "excerpt": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מידע רפואי מקוון ראוי לאמון כאשר ברור מי פרסם אותו, על אילו ראיות הוא מבוסס, מתי עודכן, מה מטרתו ומהן מגבלותיו. אין לה",
-      "generated_at": "2026-09-01T11:10:03.031534+00:00",
-      "content_stream": "evergreen_knowledge",
-      "destination_site_key": "DRGUYROFE_COM",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-08-30",
-      "cadence_local_date": "2026-09-01",
-      "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-08-31-topic-90-run-33393591514-attempt-1.md",
-      "title": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן?",
-      "excerpt": "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בעקבות איתור Listeria monocytogenes בגבינת קממבר מסוימת ששווקה בידי מחלבות גד, פורסמה קריאה להחזרת המוצ",
-      "generated_at": "2026-08-31T12:48:44.815817+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger"
-      ],
-      "cadence_week": "week-of-2026-08-30",
-      "cadence_local_date": "2026-08-31",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-84a5ee525314e8c6.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/s1ui8t11ugx"
     }
   ]
 }
