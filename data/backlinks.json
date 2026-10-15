@@ -1,89 +1,88 @@
 {
   "version": 2,
   "provider_status": "active_public_brand_serp_discovery",
-  "checked_at": "2026-10-12T12:16:48.741471",
+  "checked_at": "2026-10-15T09:21:26.169633",
   "previous": [],
   "current": [],
   "mentions": [
     {
-      "title": "גיא רופא • בית המשפט המחוזי דחה את הערעור על התליית רישיונו - חי פה",
-      "source_url": "https://haipo.co.il/item/602581",
-      "source_host": "haipo.co.il",
+      "title": "ההסתבכות החדשה של גיא רופא, הגניקולוג שנאשם בעבירות מין",
+      "source_url": "https://www.kan.org.il/content/kan-news/local/975391/",
+      "source_host": "kan.org.il",
       "registered_asset": false,
       "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:40.883286",
-      "owned_link_check": "unavailable"
-    },
-    {
-      "title": "אביגיל התלוננה במשטרה נגד ד\"ר גיא רופא: רצחו לי את הנפש",
-      "source_url": "https://www.youtube.com/watch?v=nOWRSQmFWT8&xstg=CAMSBhUDze3xHw%3D%3D",
-      "source_host": "youtube.com",
-      "registered_asset": false,
-      "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:40.991272",
+      "discovered_at": "2026-10-15T09:21:16.285303",
       "owned_links_found": []
     },
     {
-      "title": "משרד הבריאות מאריך השעייתו של גיא רופא",
-      "source_url": "https://news.walla.co.il/item/3772205",
-      "source_host": "news.walla.co.il",
-      "registered_asset": false,
-      "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:41.747101",
-      "owned_links_found": []
-    },
-    {
-      "title": "ד״ר ד\"ר גיא רופא - יחידת תל\"מ",
-      "source_url": "https://www.meetthedoctor.co.il/doctors/83867-%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90/",
-      "source_host": "meetthedoctor.co.il",
-      "registered_asset": false,
-      "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:43.067768",
-      "owned_links_found": []
-    },
-    {
-      "title": "ynet - סכנה לציבור: גיא רופא, הגינקולוג שנאשם בעבירות מין, פתח ...",
-      "source_url": "https://www.facebook.com/ynetnews/photos/%D7%A1%D7%9B%D7%A0%D7%94-%D7%9C%D7%A6%D7%99%D7%91%D7%95%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%94%D7%92%D7%99%D7%A0%D7%A7%D7%95%D7%9C%D7%95%D7%92-%D7%A9%D7%A0%D7%90%D7%A9%D7%9D-%D7%91%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%A4%D7%AA%D7%97-%D7%9E%D7%A8%D7%A4%D7%90%D7%94-%D7%97%D7%93%D7%A9%D7%94-%D7%A0%D7%A9%D7%99%D7%9D-%D7%A7%D7%A8%D7%90%D7%95-%D7%9C%D7%A9%D7%9C%D7%95%D7%9C-/1040999480717906/",
+      "title": "ד\"ר גיא רופא, שהואשם בביצוע עבירות מין במטופלת ורישיונו הותלה ...",
+      "source_url": "https://www.facebook.com/the7eye/posts/%D7%93%D7%A8-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A9%D7%94%D7%95%D7%90%D7%A9%D7%9D-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%91%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%AA-%D7%95%D7%A8%D7%99%D7%A9%D7%99%D7%95%D7%A0%D7%95-%D7%94%D7%95%D7%AA%D7%9C%D7%94-%D7%AA%D7%95%D7%91%D7%A2-140-%D7%90%D7%9C%D7%A3-%D7%A9%D7%A7%D7%9C%D7%99%D7%9D-%D7%9E/1254265550046287/",
       "source_host": "facebook.com",
       "registered_asset": false,
       "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:45.561257",
+      "discovered_at": "2026-10-15T09:21:17.081405",
       "owned_links_found": []
     },
     {
-      "title": "ביוני האחרון, הוגש נגד גיא רופא כתב אישום בגין עבירות מין ...",
-      "source_url": "https://www.instagram.com/p/DHA9ZyfNKnS/",
+      "title": "ד״ר גיא רופא | תוכן רפואי, ספרים ופודקאסט",
+      "source_url": "https://guyrofe.com/",
+      "source_host": "guyrofe.com",
+      "registered_asset": true,
+      "independent_source": false,
+      "discovered_at": "2026-10-15T09:21:17.573353"
+    },
+    {
+      "title": "ד\"ר גיא רופא שהואשם בעבירות מין ביקש מנשים לעקוב אחריו ...",
+      "source_url": "https://www.ynet.co.il/news/article/bkcdgsorex",
+      "source_host": "ynet.co.il",
+      "registered_asset": false,
+      "independent_source": true,
+      "discovered_at": "2026-10-15T09:21:17.573362",
+      "owned_links_found": []
+    },
+    {
+      "title": "הגינקולוג גיא רופא שרשיונו הותלה בעקבות כתב אישום על עבירת מין ...",
+      "source_url": "https://www.instagram.com/p/DOBVjYrjdsH/?hl=he",
       "source_host": "instagram.com",
       "registered_asset": false,
       "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:45.860179",
+      "discovered_at": "2026-10-15T09:21:18.993548",
       "owned_links_found": []
     },
     {
-      "title": "\"רישיונו של הגניקולוג ואושיית הרשת ד״ר גיא רופא הותלה",
-      "source_url": "https://x.com/yoavetiel/status/1894434379247538262",
-      "source_host": "x.com",
+      "title": "️ גיא רופא, רופא נשים, נחקר בביצוע עבירות מין כלפי מטופלות שלו ...",
+      "source_url": "https://www.facebook.com/praklitut.gov.il/posts/%EF%B8%8F-%D7%92%D7%99%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A8%D7%95%D7%A4%D7%90-%D7%A0%D7%A9%D7%99%D7%9D-%D7%A0%D7%97%D7%A7%D7%A8-%D7%91%D7%91%D7%99%D7%A6%D7%95%D7%A2-%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA-%D7%9E%D7%99%D7%9F-%D7%9B%D7%9C%D7%A4%D7%99-%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%95%D7%AA-%D7%A9%D7%9C%D7%95-%D7%95%D7%91%D7%94%D7%9E%D7%A9%D7%9A-%D7%A0%D7%90%D7%A9%D7%9D-%D7%91%D7%A2%D7%91%D7%99%D7%A8%D7%95%D7%AA/1151999710437194/",
+      "source_host": "facebook.com",
       "registered_asset": false,
       "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:46.751365",
+      "discovered_at": "2026-10-15T09:21:19.521605",
       "owned_links_found": []
     },
     {
-      "title": "\"על אף שרישיונו הותלה עקב כתב אישום על עבירות מין: הגניקולוג גיא ...",
-      "source_url": "https://x.com/kann_news/status/1898703975198650626",
-      "source_host": "x.com",
+      "title": "ד\"ר גיא רופא - כל מה שמעניין וחשוב לדעת",
+      "source_url": "https://www.mako.co.il/Tagit/%D7%93%22%D7%A8+%D7%92%D7%99%D7%90+%D7%A8%D7%95%D7%A4%D7%90",
+      "source_host": "mako.co.il",
       "registered_asset": false,
       "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:47.060847",
+      "discovered_at": "2026-10-15T09:21:19.984607",
       "owned_links_found": []
     },
     {
-      "title": "כתב אישום נגד הגניקולוג גיא רופא בגין עבירות מין",
-      "source_url": "https://www.walla.co.il/news/breaking-news/3668721",
-      "source_host": "walla.co.il",
+      "title": "ארבע עדויות נגד הגינקולוג גיא רופא: ריאיון עם אחת מהן",
+      "source_url": "https://www.youtube.com/watch?v=iR8W4DNQDyU",
+      "source_host": "youtube.com",
       "registered_asset": false,
       "independent_source": true,
-      "discovered_at": "2026-10-12T12:16:47.866883",
+      "discovered_at": "2026-10-15T09:21:20.871703",
+      "owned_links_found": []
+    },
+    {
+      "title": "\"אל תיבהלי - זה אמור להרגיש נעים\" | פוליטיקלי ...",
+      "source_url": "https://politicallycorret.co.il/lior-dr/",
+      "source_host": "politicallycorret.co.il",
+      "registered_asset": false,
+      "independent_source": true,
+      "discovered_at": "2026-10-15T09:21:21.585667",
       "owned_links_found": []
     }
   ],
