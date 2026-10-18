@@ -1,0 +1,115 @@
+{
+  "draft": "content_drafts/2026-10-18-topic-87-run-39119330161-attempt-1.md",
+  "title": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-10-18T13:55:01.565251+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%97%d7%95%d7%a5%d6%be%d7%a8%d7%97%d7%9e%d7%99-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%9e%d7%95%d7%a7%d7%93%d7%9e%d7%99%d7%9d/",
+      "detail": "idempotency_key=pub_dc1db7da1447024e8145dc46831af002db7a598c3b755760428dc9426077d39a"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://guyrofe.com/%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%97%d7%95%d7%a5%d6%be%d7%a8%d7%97%d7%9e%d7%99-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%9e%d7%95%d7%a7%d7%93%d7%9e%d7%99%d7%9d/",
+      "detail": "failed checks: canonical_person_linked"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-18-topic-87-run-39119330161-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122210082350942441",
+      "detail": "idempotency_key=pub_0b3e495c4cbda129d33a7232058ba83f9f69d640026c51932d4f3863a31f8fdb"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7517583948240211968/",
+      "detail": "idempotency_key=pub_b5e186de9280178a41d0707a2541563d52b5dd8b3b76a4601f1c186c60b3ef86"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "failed",
+      "target_id": "google_business_profile",
+      "detail": "RuntimeError: Google Business post is PROCESSING, not LIVE; publication cannot be claimed and reconciliation is required"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_272bcd1b67dfe9f78bf946112c75ef6dfc1571fe4b6224d7edc3ad2455e3fc84",
+  "search_target": {
+    "primary_query": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+    "secondary_queries": [
+      "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול ד״ר גיא רופא",
+      "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": "https://guyrofe.com/%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%97%d7%95%d7%a5%d6%be%d7%a8%d7%97%d7%9e%d7%99-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%9e%d7%95%d7%a7%d7%93%d7%9e%d7%99%d7%9d/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
