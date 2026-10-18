@@ -1,0 +1,910 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-10-18T10:31:41Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-10-18-topic-87-run-39119330161-attempt-1.md",
+  "source_draft_sha256": "f91f8ddf83b710c64694cad94e94e1f9be6c375a4be3059d092811c647a7ab29",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+    "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+    "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-hero.png",
+        "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+        "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-square.jpg",
+        "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-portrait.png",
+        "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+        "cms_title": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+        "markdown": "# הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**תשובה קצרה:** הריון חוץ־רחמי מתרחש כאשר היריון משתרש מחוץ לחלל הרחם, בדרך כלל בחצוצרה. הוא אינו יכול להתפתח להריון תקין ועלול לגרום לדימום פנימי מסכן חיים. כאב חד או מתגבר בבטן, כאב בכתף, חולשה, סחרחורת או עילפון בתחילת הריון מחייבים הערכה רפואית דחופה.\n\nהריון חוץ־רחמי עשוי להתחיל ללא תסמינים ברורים, ולעיתים הסימנים הראשונים דומים לאלה של הריון תוך־רחמי תקין או של הפלה מוקדמת. משום כך אי אפשר לקבוע את מיקום ההריון לפי התחושות בלבד. האבחון מבוסס בדרך כלל על שילוב של תסמינים, בדיקה רפואית, אולטרסאונד ובדיקות דם עוקבות להורמון ההריון.\n\nהמידע שלהלן נועד להסביר כיצד מזהים את המצב, מי נמצאת בסיכון מוגבר, כיצד מתבצע הבירור ומהן אפשרויות הטיפול המקובלות. הוא אינו תחליף לבדיקה רפואית או להנחיה אישית.\n\n## מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?\n\nבהריון תקין, הביצית המופרית נעה לכיוון הרחם ומשתרשת ברירית הרחם. בהריון חוץ־רחמי ההשרשה מתרחשת במקום אחר. רוב ההריונות החוץ־רחמיים מתפתחים בחצוצרה, אך במקרים נדירים יותר ההשרשה עשויה להתרחש בצוואר הרחם, בשחלה, באזור צלקת של ניתוח קיסרי או בחלל הבטן.\n\nמחוץ לחלל הרחם אין לרקמה המתפתחת תנאים אנטומיים המאפשרים להריון להמשיך באופן תקין. כאשר ההריון גדל בתוך חצוצרה, הוא עלול למתוח אותה ולגרום לקרע. קרע בחצוצרה עלול להוביל לדימום פנימי משמעותי ולמצב חירום. לפי [ההסבר הרשמי של ACOG על הריון חוץ־רחמי](https://www.acog.org/womens-health/faqs/ectopic-pregnancy), הופעת כאב פתאומי וחזק, כאב בכתף, חולשה, סחרחורת או עילפון עשויה להעיד על קרע ודימום פנימי ומחייבת טיפול מיידי.\n\nאין אפשרות להעביר הריון חוץ־רחמי אל הרחם. לאחר שהאבחנה אושרה, הטיפול נועד למנוע סיבוכים ולשמור ככל האפשר על בריאות המטופלת ועל פוטנציאל הפוריות העתידי. בחירת הטיפול אינה אחידה: היא תלויה במיקום ההריון, בתסמינים, בממצאי האולטרסאונד, ברמות הורמון ההריון, במצב הכללי ובהעדפות המטופלת במסגרת האפשרויות הבטוחות.\n\n## תסמינים מוקדמים וסימני אזהרה\n\nהריון חוץ־רחמי אינו תמיד גורם לתסמינים בשלב מוקדם. כאשר תסמינים מופיעים, הם עשויים לכלול איחור בווסת או בדיקת הריון חיובית, דימום נרתיקי שאינו אופייני לווסת, כאב באגן או בבטן התחתונה, ולעיתים כאב הממוקד בצד אחד. ייתכנו גם לחץ או כאב באזור פי הטבעת, אי־נוחות בזמן יציאה או מתן שתן ותסמינים כלליים של הריון.\n\nחשוב לדעת שאין תסמין יחיד שמאבחן הריון חוץ־רחמי. דימום קל וכאבי בטן יכולים להופיע גם בהריון תוך־רחמי תקין, בהפלה מוקדמת ובמצבים שאינם קשורים להריון. מנגד, היעדר כאב אינו שולל הריון חוץ־רחמי. [הנחיות NICE להריון חוץ־רחמי ולהפלה מוקדמת](https://www.nice.org.uk/guidance/ng126/chapter/Recommendations) מדגישות כי יש להביא בחשבון הריון חוץ־רחמי גם כאשר התסמינים אינם טיפוסיים, משום שהביטוי הקליני עשוי להשתנות.\n\nסימנים המחייבים פנייה דחופה לשירותי רפואה כוללים:\n\n- כאב בטן או אגן חזק, פתאומי או מתגבר.\n- כאב בקצה הכתף, במיוחד אם הוא מופיע עם כאב בטן או חולשה.\n- סחרחורת קשה, תחושת עילפון, עילפון או בלבול.\n- חיוורון, הזעה, דופק מהיר או חולשה חריגה.\n- דימום נרתיקי משמעותי.\n- תחושת לחץ חריגה בפי הטבעת לצד כאב או חולשה.\n- כאב בתחילת הריון אצל מי שכבר אובחנה עם הריון שמיקומו אינו ידוע.\n\nבמצב של כאב חזק, עילפון או חשד לדימום פנימי אין להמתין לבדיקה שגרתית או לתוצאת בדיקת דם נוספת. יש לפנות באופן מיידי למוקד חירום או לחדר מיון.\n\n## גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה\n\nכל אישה בגיל הפוריות שיש לה אפשרות להריון עלולה לחוות הריון חוץ־רחמי, גם ללא גורם סיכון ידוע. לכן הערכת המצב אינה צריכה להתבסס רק על היסטוריה רפואית. עם זאת, מצבים מסוימים קשורים לסיכון מוגבר.\n\nגורמי הסיכון המוכרים כוללים הריון חוץ־רחמי קודם; נזק, חסימה או ניתוח קודם בחצוצרות; דלקת באגן, לרבות זיהומים מסוימים המועברים במגע מיני; טיפולי פוריות והפריה חוץ־גופית; הריון שהתרחש בעת שימוש בהתקן תוך־רחמי; עישון; וגיל אימהי מתקדם יותר. גם שינויים מבניים באגן או בחצוצרות עשויים להשפיע על מעבר הביצית המופרית.\n\nחשוב לדייק בנוגע לאמצעי מניעה: התקן תוך־רחמי מפחית מאוד את הסיכון להריון בכלל. עם זאת, אם מתרחש הריון בזמן שהתקן נמצא ברחם, יש צורך לברר במהירות את מיקום ההריון. אין פירוש הדבר שהתקן גורם בהכרח להריון חוץ־רחמי, אלא שהיחס בין הריונות חוץ־רחמיים להריונות תוך־רחמיים גבוה יותר בקבוצת ההריונות הנדירים שמתרחשים בנוכחות התקן.\n\n[עלון המטופלות של RCOG בנושא הריון חוץ־רחמי](https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/) מפרט גורמי סיכון כגון הריון חוץ־רחמי קודם, פגיעה בחצוצרות, טיפולי פוריות והריון בנוכחות התקן, אך מבהיר שבמקרים רבים לא ניתן לזהות גורם סיכון מסוים. לכן כאב או דימום בתחילת הריון מצדיקים הערכה גם אצל מי שאין לה היסטוריה רפואית חריגה.\n\n## כיצד מאבחנים הריון חוץ־רחמי?\n\nהאבחון מתחיל בהיסטוריה רפואית ובהערכת חומרת התסמינים. הצוות הרפואי עשוי לברר את מועד הווסת האחרונה, תוצאות בדיקות הריון, אופי הכאב והדימום, הריונות קודמים, אמצעי מניעה, טיפולי פוריות וגורמי סיכון נוספים. בהתאם למצב מבוצעות בדיקה גופנית ובדיקה גינקולוגית.\n\nאחד הכלים המרכזיים הוא אולטרסאונד נרתיקי, המאפשר לבדוק אם נראה שק הריון בתוך הרחם, אם קיים ממצא באזור החצוצרות ואם יש נוזל חופשי באגן או בבטן. בשלב מוקדם מאוד ייתכן שלא ניתן יהיה לראות עדיין הריון, גם כאשר הוא תקין. מצב שבו בדיקת ההריון חיובית אך מיקום ההריון טרם זוהה נקרא “הריון במיקום לא ידוע”. זהו תיאור זמני המחייב מעקב, ולא אבחנה סופית.\n\nבדיקות דם כמותיות של β-hCG מבוצעות לעיתים בהפרש של כ־48 שעות כדי להעריך את דפוס השינוי בהורמון. עם זאת, ערך יחיד או קצב שינוי מסוים אינם מוכיחים לבדם את מיקום ההריון. בהתאם ל[המלצות NICE לאבחון הריון שמיקומו אינו ידוע](https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location), אין להשתמש ברמת hCG בלבד כדי לקבוע היכן נמצא ההריון, ויש לתת משקל מרכזי לתסמינים ולשינויים במצב הקליני.\n\nלעיתים נדרשים אולטרסאונד חוזר ובדיקות דם נוספות עד שניתן לקבוע אם מדובר בהריון תוך־רחמי מוקדם, בהריון שאינו מתפתח או בהריון חוץ־רחמי. אם המצב אינו יציב, אם הכאב מחמיר או אם עולה חשד לקרע, הבירור והטיפול נעשים בדחיפות ואין להמתין למעקב סדרתי.\n\n## אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח\n\nהטיפול נקבע לפי המצב הקליני ולא לפי בדיקה אחת בלבד. [המלצות NICE לניהול הריון חוץ־רחמי בחצוצרה](https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy) מבחינות בין מעקב פעיל, טיפול במתוטרקסט וטיפול ניתוחי בהתאם לתסמינים, לממצאי האולטרסאונד, לרמת hCG, ליכולת להגיע למעקב ולשאלה אם קיים חשד לקרע.\n\n**מעקב פעיל:** במקרים נבחרים שבהם המטופלת יציבה, התסמינים קלים או אינם קיימים ורמת הורמון ההריון נמוכה ונמצאת בירידה, ניתן לעיתים לעקוב ללא טיפול מיידי. המעקב כולל בדיקות דם חוזרות והנחיות ברורות לגבי סימני אזהרה. ירידה בתסמינים אינה מבטלת את הצורך במעקב עד שהצוות המטפל קובע כי הוא הושלם.\n\n**טיפול תרופתי במתוטרקסט:** מתוטרקסט מעכב את התרבות רקמת ההריון. הוא עשוי להתאים להריון חוץ־רחמי שלא נקרע, כאשר המטופלת יציבה ועומדת בתנאים רפואיים מוגדרים. לאחר הטיפול נדרשות בדיקות hCG חוזרות, ולעיתים יש צורך במנה נוספת או בניתוח אם הטיפול אינו משיג את התוצאה הנדרשת. לתרופה יש התוויות־נגד ואינטראקציות אפשריות, ולכן ההחלטה עליה מחייבת הערכה רפואית פרטנית.\n\n**טיפול ניתוחי:** ניתוח נדרש בדחיפות כאשר יש חשד לקרע, דימום פנימי או אי־יציבות. הוא עשוי להיבחר גם בשל כאב משמעותי, ממצאים מסוימים באולטרסאונד, רמות הורמון גבוהות, חוסר התאמה למתוטרקסט או קושי להבטיח מעקב. ברוב המקרים הניתוח מבוצע בגישה לפרוסקופית. בהתאם למצב החצוצרה, למצב החצוצרה השנייה ולשיקולים נוספים, ניתן להסיר את החצוצרה הפגועה או לנסות להוציא את רקמת ההריון תוך שימור החצוצרה. לאחר ניתוח משמר חצוצרה נדרש לעיתים מעקב hCG כדי לוודא שלא נותרה רקמת הריון פעילה.\n\n## החלמה, פוריות עתידית וסיכום\n\nההחלמה היא גופנית ורגשית כאחד. משך המעקב וההגבלות לאחר טיפול משתנים לפי סוג הטיפול והמהלך הקליני. לאחר מתוטרקסט יש לפעול לפי הנחיות הצוות המטפל בנוגע לתרופות אחרות, תוספי חומצה פולית, צריכת אלכוהול, פעילות גופנית ומועד ניסיון עתידי להרות. לאחר ניתוח יש לעקוב אחר כאב מתגבר, חום, דימום חריג, אודם באזור החתכים או חולשה משמעותית.\n\nהריון חוץ־רחמי קודם מעלה את הסיכון להישנות, אך אינו שולל הריון תוך־רחמי תקין בעתיד. [RCOG מציין כי גם לאחר הריון חוץ־רחמי קיימת אפשרות טובה להריון תקין בעתיד](https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/), אם כי ההערכה האישית תלויה במצב החצוצרות ובגורמים רפואיים נוספים. בהריון עתידי ניתן להמליץ על פנייה מוקדמת לשירות רפואי לצורך תכנון המעקב ואימות מיקום ההריון באולטרסאונד במועד המתאים.\n\nלסיכום, הריון חוץ־רחמי הוא מצב שאבחונו המוקדם חשוב למניעת דימום וסיבוכים. דימום או כאב בתחילת הריון אינם מעידים בהכרח על הריון חוץ־רחמי, אך מחייבים בירור בהתאם לחומרתם. כאב חד, כאב בכתף, סחרחורת, עילפון או חולשה קיצונית הם סימני חירום. האבחון נעשה באמצעות הערכה קלינית, אולטרסאונד ובדיקות דם עוקבות, והטיפול עשוי לכלול מעקב, מתוטרקסט או ניתוח.\n\n## מקורות\n\n1. American College of Obstetricians and Gynecologists (ACOG), [Ectopic Pregnancy](https://www.acog.org/womens-health/faqs/ectopic-pregnancy).\n2. National Institute for Health and Care Excellence (NICE), [Ectopic pregnancy and miscarriage: diagnosis and initial management — Recommendations](https://www.nice.org.uk/guidance/ng126/chapter/Recommendations).\n3. NICE, [Recommendations for pregnancy of unknown location](https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location).\n4. NICE, [Management of tubal ectopic pregnancy](https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy).\n5. Royal College of Obstetricians and Gynaecologists (RCOG), [Ectopic pregnancy — patient information](https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/).\n\n*הטיוטה מספקת מידע רפואי כללי בלבד. כל טענה רפואית, ניסוח קליני והמלצה מחייבים בדיקה ואישור של רופא או גורם רפואי מוסמך לפני פרסום.*\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/הריון-חוץ־רחמי-תסמינים-מוקדמים/",
+        "meta_description": "ד״ר גיא רופא: תשובה קצרה: הריון חוץ־רחמי מתרחש כאשר היריון משתרש מחוץ לחלל הרחם, בדרך כלל בחצוצרה. הוא אינו יכול להתפתח להריון תקין ועלול לגרום לדימום פנימי מסכן חיים.",
+        "search_target": {
+          "primary_query": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+          "secondary_queries": [
+            "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול ד״ר גיא רופא",
+            "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "informational"
+        },
+        "internal_links": [
+          {
+            "title": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+            "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://guyrofe.com/הריון-חוץ־רחמי-תסמינים-מוקדמים/",
+            "host": "guyrofe.com",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+              "anchor": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://guyrofe.com/",
+            "observed_position": 1,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-10-15T09:15:09.956266"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "61b31da0cc8ad8eef80d21de2315d6bd9caa70f3f545f1cdc4942b189aa6b574",
+        "slug": "הריון-חוץ־רחמי-תסמינים-מוקדמים",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-hero.png",
+          "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+        "text": "תשובה קצרה: הריון חוץ־רחמי מתרחש כאשר היריון משתרש מחוץ לחלל הרחם, בדרך כלל בחצוצרה.\n\nהוא אינו יכול להתפתח להריון תקין ועלול לגרום לדימום פנימי מסכן חיים.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/הריון-חוץ־רחמי-תסמינים-מוקדמים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+        "text": "תשובה קצרה: הריון חוץ־רחמי מתרחש כאשר היריון משתרש מחוץ לחלל הרחם, בדרך כלל בחצוצרה.\n\n• הוא אינו יכול להתפתח להריון תקין ועלול לגרום לדימום פנימי מסכן חיים.\n• כאב חד או מתגבר בבטן, כאב בכתף, חולשה, סחרחורת או עילפון בתחילת הריון מחייבים הערכה רפואית דחופה.\n• הריון חוץ־רחמי עשוי להתחיל ללא תסמינים ברורים, ולעיתים הסימנים הראשונים דומים לאלה של הריון תוך־רחמי תקין או של הפלה מוקדמת.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/הריון-חוץ־רחמי-תסמינים-מוקדמים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא.\n\nתשובה קצרה: הריון חוץ־רחמי מתרחש כאשר היריון משתרש מחוץ לחלל הרחם, בדרך כלל בחצוצרה.\n\nהוא אינו יכול להתפתח להריון תקין ועלול לגרום לדימום פנימי מסכן חיים.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/הריון-חוץ־רחמי-תסמינים-מוקדמים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-10-18-topic-87-run-39119330161-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 57,
+      "supported_claim_count": 57,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "בהריון תקין, הביצית המופרית נעה לכיוון הרחם ומשתרשת ברירית הרחם.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "בהריון חוץ־רחמי ההשרשה מתרחשת במקום אחר.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "רוב ההריונות החוץ־רחמיים מתפתחים בחצוצרה, אך במקרים נדירים יותר ההשרשה עשויה להתרחש בצוואר הרחם, בשחלה, באזור צלקת של ניתוח קיסרי או בחלל הבטן.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "מחוץ לחלל הרחם אין לרקמה המתפתחת תנאים אנטומיים המאפשרים להריון להמשיך באופן תקין.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "כאשר ההריון גדל בתוך חצוצרה, הוא עלול למתוח אותה ולגרום לקרע.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "קרע בחצוצרה עלול להוביל לדימום פנימי משמעותי ולמצב חירום.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "לפי ההסבר הרשמי של ACOG על הריון חוץ־רחמי, הופעת כאב פתאומי וחזק, כאב בכתף, חולשה, סחרחורת או עילפון עשויה להעיד על קרע ודימום פנימי ומחייבת טיפול מיידי.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "אין אפשרות להעביר הריון חוץ־רחמי אל הרחם.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "לאחר שהאבחנה אושרה, הטיפול נועד למנוע סיבוכים ולשמור ככל האפשר על בריאות המטופלת ועל פוטנציאל הפוריות העתידי.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "מהו הריון חוץ־רחמי ומדוע הוא עלול להיות מסוכן?",
+          "claim": "בחירת הטיפול אינה אחידה: היא תלויה במיקום ההריון, בתסמינים, בממצאי האולטרסאונד, ברמות הורמון ההריון, במצב הכללי ובהעדפות המטופלת במסגרת האפשרויות הבטוחות.",
+          "source_urls": [
+            "https://www.acog.org/womens-health/faqs/ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "הריון חוץ־רחמי אינו תמיד גורם לתסמינים בשלב מוקדם.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "כאשר תסמינים מופיעים, הם עשויים לכלול איחור בווסת או בדיקת הריון חיובית, דימום נרתיקי שאינו אופייני לווסת, כאב באגן או בבטן התחתונה, ולעיתים כאב הממוקד בצד אחד.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "ייתכנו גם לחץ או כאב באזור פי הטבעת, אי־נוחות בזמן יציאה או מתן שתן ותסמינים כלליים של הריון.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "חשוב לדעת שאין תסמין יחיד שמאבחן הריון חוץ־רחמי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "דימום קל וכאבי בטן יכולים להופיע גם בהריון תוך־רחמי תקין, בהפלה מוקדמת ובמצבים שאינם קשורים להריון.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "מנגד, היעדר כאב אינו שולל הריון חוץ־רחמי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "הנחיות NICE להריון חוץ־רחמי ולהפלה מוקדמת מדגישות כי יש להביא בחשבון הריון חוץ־רחמי גם כאשר התסמינים אינם טיפוסיים, משום שהביטוי הקליני עשוי להשתנות.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "- כאב בתחילת הריון אצל מי שכבר אובחנה עם הריון שמיקומו אינו ידוע.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "תסמינים מוקדמים וסימני אזהרה",
+          "claim": "במצב של כאב חזק, עילפון או חשד לדימום פנימי אין להמתין לבדיקה שגרתית או לתוצאת בדיקת דם נוספת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "כל אישה בגיל הפוריות שיש לה אפשרות להריון עלולה לחוות הריון חוץ־רחמי, גם ללא גורם סיכון ידוע.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "עם זאת, מצבים מסוימים קשורים לסיכון מוגבר.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "גורמי הסיכון המוכרים כוללים הריון חוץ־רחמי קודם; נזק, חסימה או ניתוח קודם בחצוצרות; דלקת באגן, לרבות זיהומים מסוימים המועברים במגע מיני; טיפולי פוריות והפריה חוץ־גופית; הריון שהתרחש בעת שימוש בהתקן תוך־רחמי; עישון; וגיל אימהי מתקדם יותר.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "גם שינויים מבניים באגן או בחצוצרות עשויים להשפיע על מעבר הביצית המופרית.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "חשוב לדייק בנוגע לאמצעי מניעה: התקן תוך־רחמי מפחית מאוד את הסיכון להריון בכלל.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "עם זאת, אם מתרחש הריון בזמן שהתקן נמצא ברחם, יש צורך לברר במהירות את מיקום ההריון.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "אין פירוש הדבר שהתקן גורם בהכרח להריון חוץ־רחמי, אלא שהיחס בין הריונות חוץ־רחמיים להריונות תוך־רחמיים גבוה יותר בקבוצת ההריונות הנדירים שמתרחשים בנוכחות התקן.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "עלון המטופלות של RCOG בנושא הריון חוץ־רחמי מפרט גורמי סיכון כגון הריון חוץ־רחמי קודם, פגיעה בחצוצרות, טיפולי פוריות והריון בנוכחות התקן, אך מבהיר שבמקרים רבים לא ניתן לזהות גורם סיכון מסוים.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "גורמי סיכון — ומדוע היעדרם אינו שולל את האבחנה",
+          "claim": "לכן כאב או דימום בתחילת הריון מצדיקים הערכה גם אצל מי שאין לה היסטוריה רפואית חריגה.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "האבחון מתחיל בהיסטוריה רפואית ובהערכת חומרת התסמינים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "הצוות הרפואי עשוי לברר את מועד הווסת האחרונה, תוצאות בדיקות הריון, אופי הכאב והדימום, הריונות קודמים, אמצעי מניעה, טיפולי פוריות וגורמי סיכון נוספים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "בהתאם למצב מבוצעות בדיקה גופנית ובדיקה גינקולוגית.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "אחד הכלים המרכזיים הוא אולטרסאונד נרתיקי, המאפשר לבדוק אם נראה שק הריון בתוך הרחם, אם קיים ממצא באזור החצוצרות ואם יש נוזל חופשי באגן או בבטן.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "בשלב מוקדם מאוד ייתכן שלא ניתן יהיה לראות עדיין הריון, גם כאשר הוא תקין.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "מצב שבו בדיקת ההריון חיובית אך מיקום ההריון טרם זוהה נקרא “הריון במיקום לא ידוע”.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "עם זאת, ערך יחיד או קצב שינוי מסוים אינם מוכיחים לבדם את מיקום ההריון.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "בהתאם להמלצות NICE לאבחון הריון שמיקומו אינו ידוע, אין להשתמש ברמת hCG בלבד כדי לקבוע היכן נמצא ההריון, ויש לתת משקל מרכזי לתסמינים ולשינויים במצב הקליני.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "לעיתים נדרשים אולטרסאונד חוזר ובדיקות דם נוספות עד שניתן לקבוע אם מדובר בהריון תוך־רחמי מוקדם, בהריון שאינו מתפתח או בהריון חוץ־רחמי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים הריון חוץ־רחמי?",
+          "claim": "אם המצב אינו יציב, אם הכאב מחמיר או אם עולה חשד לקרע, הבירור והטיפול נעשים בדחיפות ואין להמתין למעקב סדרתי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "הטיפול נקבע לפי המצב הקליני ולא לפי בדיקה אחת בלבד.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "המלצות NICE לניהול הריון חוץ־רחמי בחצוצרה מבחינות בין מעקב פעיל, טיפול במתוטרקסט וטיפול ניתוחי בהתאם לתסמינים, לממצאי האולטרסאונד, לרמת hCG, ליכולת להגיע למעקב ולשאלה אם קיים חשד לקרע.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "**מעקב פעיל:** במקרים נבחרים שבהם המטופלת יציבה, התסמינים קלים או אינם קיימים ורמת הורמון ההריון נמוכה ונמצאת בירידה, ניתן לעיתים לעקוב ללא טיפול מיידי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "המעקב כולל בדיקות דם חוזרות והנחיות ברורות לגבי סימני אזהרה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "**טיפול תרופתי במתוטרקסט:** מתוטרקסט מעכב את התרבות רקמת ההריון.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "הוא עשוי להתאים להריון חוץ־רחמי שלא נקרע, כאשר המטופלת יציבה ועומדת בתנאים רפואיים מוגדרים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "לאחר הטיפול נדרשות בדיקות hCG חוזרות, ולעיתים יש צורך במנה נוספת או בניתוח אם הטיפול אינו משיג את התוצאה הנדרשת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "**טיפול ניתוחי:** ניתוח נדרש בדחיפות כאשר יש חשד לקרע, דימום פנימי או אי־יציבות.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "הוא עשוי להיבחר גם בשל כאב משמעותי, ממצאים מסוימים באולטרסאונד, רמות הורמון גבוהות, חוסר התאמה למתוטרקסט או קושי להבטיח מעקב.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "בהתאם למצב החצוצרה, למצב החצוצרה השנייה ולשיקולים נוספים, ניתן להסיר את החצוצרה הפגועה או לנסות להוציא את רקמת ההריון תוך שימור החצוצרה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "אפשרויות טיפול: מעקב, טיפול תרופתי או ניתוח",
+          "claim": "לאחר ניתוח משמר חצוצרה נדרש לעיתים מעקב hCG כדי לוודא שלא נותרה רקמת הריון פעילה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy"
+          ]
+        },
+        {
+          "section": "החלמה, פוריות עתידית וסיכום",
+          "claim": "משך המעקב וההגבלות לאחר טיפול משתנים לפי סוג הטיפול והמהלך הקליני.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "החלמה, פוריות עתידית וסיכום",
+          "claim": "לאחר מתוטרקסט יש לפעול לפי הנחיות הצוות המטפל בנוגע לתרופות אחרות, תוספי חומצה פולית, צריכת אלכוהול, פעילות גופנית ומועד ניסיון עתידי להרות.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "החלמה, פוריות עתידית וסיכום",
+          "claim": "הריון חוץ־רחמי קודם מעלה את הסיכון להישנות, אך אינו שולל הריון תוך־רחמי תקין בעתיד.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "החלמה, פוריות עתידית וסיכום",
+          "claim": "RCOG מציין כי גם לאחר הריון חוץ־רחמי קיימת אפשרות טובה להריון תקין בעתיד, אם כי ההערכה האישית תלויה במצב החצוצרות ובגורמים רפואיים נוספים.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "החלמה, פוריות עתידית וסיכום",
+          "claim": "בהריון עתידי ניתן להמליץ על פנייה מוקדמת לשירות רפואי לצורך תכנון המעקב ואימות מיקום ההריון באולטרסאונד במועד המתאים.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "החלמה, פוריות עתידית וסיכום",
+          "claim": "לסיכום, הריון חוץ־רחמי הוא מצב שאבחונו המוקדם חשוב למניעת דימום וסיבוכים.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "החלמה, פוריות עתידית וסיכום",
+          "claim": "דימום או כאב בתחילת הריון אינם מעידים בהכרח על הריון חוץ־רחמי, אך מחייבים בירור בהתאם לחומרתם.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        },
+        {
+          "section": "החלמה, פוריות עתידית וסיכום",
+          "claim": "האבחון נעשה באמצעות הערכה קלינית, אולטרסאונד ובדיקות דם עוקבות, והטיפול עשוי לכלול מעקב, מתוטרקסט או ניתוח.",
+          "source_urls": [
+            "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+          "host": "acog.org",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations",
+          "host": "nice.org.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ectopic-pregnancy/",
+          "host": "rcog.org.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#pregnancy-of-unknown-location",
+          "host": "nice.org.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.nice.org.uk/guidance/ng126/chapter/Recommendations#management-of-tubal-ectopic-pregnancy",
+          "host": "nice.org.uk",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "61b31da0cc8ad8eef80d21de2315d6bd9caa70f3f545f1cdc4942b189aa6b574",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://guyrofe.com/הריון-חוץ־רחמי-תסמינים-מוקדמים/",
+        "host": "guyrofe.com",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+          "anchor": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://guyrofe.com/",
+        "observed_position": 1,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-10-15T09:15:09.956266"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_272bcd1b67dfe9f78bf946112c75ef6dfc1571fe4b6224d7edc3ad2455e3fc84"
+}

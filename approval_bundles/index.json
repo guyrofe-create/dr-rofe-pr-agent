@@ -2,6 +2,20 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_272bcd1b67dfe9f78bf946112c75ef6dfc1571fe4b6224d7edc3ad2455e3fc84",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-10-18-topic-87-run-39119330161-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_272bcd1b67dfe9f78bf946112c75ef6dfc1571fe4b6224d7edc3ad2455e3fc84.json",
+      "preview_path": "approval_bundles/apr_272bcd1b67dfe9f78bf946112c75ef6dfc1571fe4b6224d7edc3ad2455e3fc84.html",
+      "created_at": "2026-10-18T10:31:41Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=12; downloaded=12; undersized=0; reviewed=12; rejected=12; search=[medical research equipment: commons=20, openverse=0, pexels=0, pixabay=0 | clinical research laboratory: commons=5, openverse=0, pexels=0, pixabay=0 | medical education equipment: commons=15, openverse=0, pexels=0, pixabay=0 | laboratory microscope: commons=26, openverse=0, pexels=0, pixabay=0]; review_notes=[התמונה מציגה שתי חיילות מזוהות ואינה קשורה להריון חוץ־רחמי. | התמונה מציגה קבוצה גדולה של אנשים מזוהים ואינה ממחישה הריון חוץ־רחמי. | מיקרוסקופ אלקטרונים במעבדה אינו ממחיש ישירות הריון חוץ־רחמי, אבחונו או הטיפול בו. | ציוד מעבדה ומיקרוסקופים כלליים אינם ממחישים ישירות הריון חוץ־רחמי, אבחונו או טיפולו. | מיקרוסקופים וכלי מעבדה כלליים אינם ממחישים ישירות הריון חוץ־רחמי, אבחונו או טיפולו.]; errors=[medical research equipment/openverse: ReadTimeout | clinical research laboratory/openverse: ReadTimeout | laboratory microscope/openverse: ReadTimeout]"
+    },
+    {
       "approval_id": "apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-10-13-topic-87-run-38406525760-attempt-1.md",
