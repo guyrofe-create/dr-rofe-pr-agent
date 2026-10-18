@@ -1250,6 +1250,20 @@
         "https://www.facebook.com/122210082350942441",
         "https://www.linkedin.com/feed/update/urn:li:share:7517583948240211968/"
       ]
+    },
+    "expired:apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123:2026-08-30T13:32:53Z": {
+      "recorded_at": "2026-10-18T17:09:19.673302+00:00",
+      "approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md",
+      "published_approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123",
+      "campaign_result": "content_drafts/campaigns/2026-08-30-topic-04-run-33308645627-attempt-1.json",
+      "urls": [
+        "https://guyrofe.com/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a9%d7%97%d7%9c%d7%95%d7%aa-%d7%94%d7%a4%d7%95%d7%9c%d7%99%d7%a6%d7%99%d7%a1%d7%98%d7%99%d7%95%d7%aa/",
+        "https://www.facebook.com/122201897090942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7499916416624812033/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOvWlaPj7MCPiwE"
+      ]
     }
   }
 }
