@@ -2,6 +2,25 @@
   "version": 1,
   "generated": [
     {
+      "stream": "health_news",
+      "site_key": "DRGUYROFE_CO_IL",
+      "channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "week": "week-of-2026-10-18",
+      "local_date": "2026-10-19",
+      "weekday": "monday",
+      "topic_source": "mayo_public_catalog",
+      "is_backfill": true,
+      "recovery_run_date": "2026-10-20",
+      "public_execution_allowed": false,
+      "source_brief": null,
+      "draft_path": "content_drafts/2026-10-20-topic-85-run-39411629210-attempt-1.md",
+      "created_at": "2026-10-20T10:58:23.455308+00:00"
+    },
+    {
       "stream": "canonical_depth",
       "site_key": "GUYROFE_COM",
       "channels": [
@@ -895,24 +914,6 @@
       "source_brief": "opportunity_drafts/health-news-5ca879eaeecc5aa0.json",
       "draft_path": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md",
       "created_at": "2026-08-06T08:34:28.670708+00:00"
-    },
-    {
-      "stream": "canonical_depth",
-      "site_key": "GUYROFE_COM",
-      "channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "instagram",
-        "google_business"
-      ],
-      "week": "week-of-2026-08-02",
-      "local_date": "2026-08-05",
-      "weekday": "wednesday",
-      "public_execution_allowed": false,
-      "source_brief": null,
-      "draft_path": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
-      "created_at": "2026-08-05T08:34:28.050169+00:00"
     }
   ]
 }

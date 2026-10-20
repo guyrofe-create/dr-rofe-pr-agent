@@ -1,6 +1,25 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-20-topic-85-run-39411629210-attempt-1.md",
+      "title": "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+      "topic": "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה",
+      "excerpt": "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) בקצרה: יתר לחץ דם תוך־גולגולתי אידיופתי הוא מצב שבו הלחץ בתוך הגולגולת מוגבר, אך בב",
+      "generated_at": "2026-10-20T10:58:23.455308+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-10-18",
+      "cadence_local_date": "2026-10-19",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-10-18-topic-87-run-39119330161-attempt-1.md",
       "title": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
       "topic": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
@@ -486,21 +505,6 @@
       "cadence_week": "week-of-2026-08-30",
       "cadence_local_date": "2026-09-02",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md",
-      "title": "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את המחיר",
-      "excerpt": "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בית חולים בישראל מקבל מהביטוח הלאומי מענק אשפוז קבוע עבור לידה, שגובהו 18,357 ש\"ח נכון ל־",
-      "generated_at": "2026-09-02T10:42:44.197936+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-08-30",
-      "cadence_local_date": "2026-09-02",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-5ab9d95572ba5295.json",
-      "analyzed_news_url": "https://healthy.walla.co.il/item/3864977"
     }
   ]
 }
