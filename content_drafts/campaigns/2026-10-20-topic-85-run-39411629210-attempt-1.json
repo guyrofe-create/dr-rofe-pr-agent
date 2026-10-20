@@ -1,0 +1,117 @@
+{
+  "draft": "content_drafts/2026-10-20-topic-85-run-39411629210-attempt-1.md",
+  "title": "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-10-20T13:03:29.794308+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%99%d7%aa%d7%a8-%d7%9c%d7%97%d7%a5-%d7%93%d7%9d-%d7%aa%d7%95%d7%9a%d6%be%d7%92%d7%95%d7%9c%d7%92%d7%95%d7%9c%d7%aa%d7%99-%d7%90%d7%99%d7%93%d7%99%d7%95%d7%a4%d7%aa%d7%99/",
+      "detail": "idempotency_key=pub_9be16dfe47eb17273255c87299ae6c4df3223116a558958740fb2902763003a9"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%99%d7%aa%d7%a8-%d7%9c%d7%97%d7%a5-%d7%93%d7%9d-%d7%aa%d7%95%d7%9a%d6%be%d7%92%d7%95%d7%9c%d7%92%d7%95%d7%9c%d7%aa%d7%99-%d7%90%d7%99%d7%93%d7%99%d7%95%d7%a4%d7%aa%d7%99/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-20-topic-85-run-39411629210-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122210387294942441",
+      "detail": "idempotency_key=pub_0235d38aa385f6cb51ab1e30901b6af996e4eb28ce228a389bbaea0495e25cc5"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7518295826142593025/",
+      "detail": "idempotency_key=pub_186b9849d42c88a98bcd433437e720df23c879fcac230a77edc40f6d22124a39"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/10/blog-post_20.html",
+      "detail": "idempotency_key=pub_b9087abf76fa767801202ae89dc02f66f826f4ae8f029e62d9a563b1bb6f2e05"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_874fc91ea203236f01a210ea18e850bae1f972432a791af9b87fd512e1d9bb9b",
+  "search_target": {
+    "primary_query": "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את",
+    "secondary_queries": [
+      "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה",
+      "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את ד״ר גיא רופא",
+      "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%99%d7%aa%d7%a8-%d7%9c%d7%97%d7%a5-%d7%93%d7%9d-%d7%aa%d7%95%d7%9a%d6%be%d7%92%d7%95%d7%9c%d7%92%d7%95%d7%9c%d7%aa%d7%99-%d7%90%d7%99%d7%93%d7%99%d7%95%d7%a4%d7%aa%d7%99/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

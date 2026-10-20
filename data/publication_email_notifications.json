@@ -1264,6 +1264,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7499916416624812033/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOvWlaPj7MCPiwE"
       ]
+    },
+    "apr_874fc91ea203236f01a210ea18e850bae1f972432a791af9b87fd512e1d9bb9b:568e433678c8872b20c3daba80515cffb05a931f50c692f0d9665f767faea270": {
+      "sent_at": "2026-10-20T13:03:32.317888+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_874fc91ea203236f01a210ea18e850bae1f972432a791af9b87fd512e1d9bb9b",
+      "state": "success",
+      "subject": "אישור פרסום: יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%99%d7%aa%d7%a8-%d7%9c%d7%97%d7%a5-%d7%93%d7%9d-%d7%aa%d7%95%d7%9a%d6%be%d7%92%d7%95%d7%9c%d7%92%d7%95%d7%9c%d7%aa%d7%99-%d7%90%d7%99%d7%93%d7%99%d7%95%d7%a4%d7%aa%d7%99/",
+        "https://www.facebook.com/122210387294942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7518295826142593025/",
+        "https://guyrofe.blogspot.com/2026/10/blog-post_20.html"
+      ]
     }
   }
 }
