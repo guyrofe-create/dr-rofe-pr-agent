@@ -3058,6 +3058,20 @@
       "published_at": "2026-10-20T13:03:29Z",
       "url": "https://guyrofe.blogspot.com/2026/10/blog-post_20.html",
       "provider_receipt": null
+    },
+    "pub_f1db662be9e28b7d4441343e723cbb20457d2882bb8db963148bc7761ac21dc3": {
+      "version": 7,
+      "idempotency_key": "pub_f1db662be9e28b7d4441343e723cbb20457d2882bb8db963148bc7761ac21dc3",
+      "approval_id": "apr_e190def3cfac52f8a26511895dd5ff9f3fff5e913f24b4f4c00389d5f4ff4bf1",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "2bf7110ef4f0b94323b6f7040445ba134a5d996c8bfbdb968ca3d9cee37c41dc",
+      "status": "published",
+      "started_at": "2026-10-21T14:41:54Z",
+      "published_at": "2026-10-21T14:41:56Z",
+      "url": "https://www.drguyrofe.com/post/סיכון-יחסי-לעומת-סיכון-מוחלט-כיצד-לפרש-תוצאות-מחקרים-ולקבל-החלטות-רפואיות-מושכלות",
+      "provider_receipt": null
     }
   }
 }

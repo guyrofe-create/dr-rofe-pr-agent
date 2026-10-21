@@ -1291,6 +1291,16 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7500253802017591296/",
         "https://guyrofe.blogspot.com/2026/08/blog-post_31.html"
       ]
+    },
+    "apr_e190def3cfac52f8a26511895dd5ff9f3fff5e913f24b4f4c00389d5f4ff4bf1:93b60338169df74c92898e8d820ac5e4b8cca416733fa88a82ccf223397755d5": {
+      "sent_at": "2026-10-21T14:42:00.323381+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_e190def3cfac52f8a26511895dd5ff9f3fff5e913f24b4f4c00389d5f4ff4bf1",
+      "state": "success",
+      "subject": "אישור פרסום: סיכון יחסי לעומת סיכון מוחלט: כיצד לפרש תוצאות מחקרים ולקבל החלטות רפואיות מושכלות | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.com/post/סיכון-יחסי-לעומת-סיכון-מוחלט-כיצד-לפרש-תוצאות-מחקרים-ולקבל-החלטות-רפואיות-מושכלות"
+      ]
     }
   }
 }
