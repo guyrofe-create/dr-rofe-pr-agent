@@ -1,6 +1,19 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-21-topic-88-run-39590401572-attempt-1.md",
+      "title": "סיכון יחסי לעומת סיכון מוחלט: כיצד לפרש תוצאות מחקרים ולקבל החלטות רפואיות מושכלות | ד״ר גיא רופא",
+      "topic": "סיכון יחסי לעומת סיכון מוחלט: כיצד לפרש תוצאות מחקרים ולקבל החלטות רפואיות מושכלות",
+      "excerpt": "סיכון יחסי לעומת סיכון מוחלט: כיצד לפרש תוצאות מחקרים ולקבל החלטות רפואיות מושכלות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: סיכון יחסי מתאר את השינוי בסיכון בהשוואה בין שתי קבוצות, ואילו סיכון מוחלט מתאר",
+      "generated_at": "2026-10-21T11:14:09.416845+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-10-18",
+      "cadence_local_date": "2026-10-20",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-10-20-topic-85-run-39411629210-attempt-1.md",
       "title": "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
       "topic": "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה",
@@ -487,24 +500,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-56fcbfcc27ad5b8e.json",
       "analyzed_news_url": "https://healthy.walla.co.il/item/3863584"
-    },
-    {
-      "path": "content_drafts/2026-09-02-topic-03-run-33620841392-attempt-1.md",
-      "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
-      "topic": "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי",
-      "excerpt": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מיומות ברחם הן גידולים שפירים המתפתחים מרקמת השריר של הרחם. ברוב המקרים הן אינן מסוכנות ואינן מחייבות טיפול. כאשר הן גורמות לדימום",
-      "generated_at": "2026-09-02T10:42:44.197936+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-08-30",
-      "cadence_local_date": "2026-09-02",
-      "public_execution_allowed": false
     }
   ]
 }
