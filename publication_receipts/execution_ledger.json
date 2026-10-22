@@ -3072,6 +3072,41 @@
       "published_at": "2026-10-21T14:41:56Z",
       "url": "https://www.drguyrofe.com/post/סיכון-יחסי-לעומת-סיכון-מוחלט-כיצד-לפרש-תוצאות-מחקרים-ולקבל-החלטות-רפואיות-מושכלות",
       "provider_receipt": null
+    },
+    "pub_60165b68c3899be860f7236a051954289b993fe21e5a5c7b3ef0300be4879532": {
+      "version": 7,
+      "idempotency_key": "pub_60165b68c3899be860f7236a051954289b993fe21e5a5c7b3ef0300be4879532",
+      "approval_id": "apr_2d099319433e7d47e8da6fc4ba52906dc22f164c346c05f573f39c7f8f8c693a",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "6fc0f2a89847a4d10fcb9090d8151eeac7434d7c35c2f03048c832fcff7043f4",
+      "status": "published",
+      "started_at": "2026-10-22T15:38:59Z",
+      "published_at": "2026-10-22T15:39:05Z",
+      "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+      "provider_receipt": null
+    },
+    "pub_537082112a36019de904344bea53da3ae11c9ac5d363812e5b1afce596c244b0": {
+      "version": 7,
+      "idempotency_key": "pub_537082112a36019de904344bea53da3ae11c9ac5d363812e5b1afce596c244b0",
+      "approval_id": "apr_2d099319433e7d47e8da6fc4ba52906dc22f164c346c05f573f39c7f8f8c693a",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "28b8c82710fc7ecef15a60a24cb8ca2598bb3000b6bf5e1d8d63e9d884870a86",
+      "status": "published",
+      "started_at": "2026-10-22T15:39:13Z",
+      "published_at": "2026-10-22T15:39:25Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK3N0bHmzpnkpQE",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/8023412229812128001",
+        "state": "LIVE",
+        "createTime": "2026-10-22T15:39:16.059223Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK3N0bHmzpnkpQE",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }

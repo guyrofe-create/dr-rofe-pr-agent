@@ -1308,6 +1308,17 @@
       "approval_id": "apr_39ea46787f3e6297def030144d391139ff1e2edc7a71240f22f922846a700f77",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_2d099319433e7d47e8da6fc4ba52906dc22f164c346c05f573f39c7f8f8c693a:d86f1e61bd543fec40d5b9d32c58f2927c08d498fd9c9683d595e73f182f0782": {
+      "sent_at": "2026-10-22T15:39:28.034185+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_2d099319433e7d47e8da6fc4ba52906dc22f164c346c05f573f39c7f8f8c693a",
+      "state": "success",
+      "subject": "אישור פרסום: דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK3N0bHmzpnkpQE"
+      ]
     }
   }
 }
