@@ -1319,6 +1319,17 @@
         "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK3N0bHmzpnkpQE"
       ]
+    },
+    "expired:apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318:2026-09-01T17:07:54Z": {
+      "recorded_at": "2026-10-22T19:31:40.952412+00:00",
+      "approval_id": "apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-09-01-topic-07-run-33501045144-attempt-1.md",
+      "published_approval_id": "apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318",
+      "campaign_result": "content_drafts/campaigns/2026-09-01-topic-07-run-33501045144-attempt-1.json",
+      "urls": [
+        "https://www.drguyrofe.com/post/איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין"
+      ]
     }
   }
 }
