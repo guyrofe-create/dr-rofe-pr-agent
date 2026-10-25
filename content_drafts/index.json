@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-25-topic-85-run-40186265795-attempt-1.md",
+      "title": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף | ד״ר גיא רופא",
+      "topic": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף",
+      "excerpt": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) תשובה קצרה: תסביב שחלה הוא מצב חירום גינקולוגי שבו השחלה, ולעיתים גם החצוצרה, מסתובבת סביב הרצועות וכלי הדם התומכי",
+      "generated_at": "2026-10-25T10:48:37.362706+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-10-25",
+      "cadence_local_date": "2026-10-25",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-10-22-topic-81-run-39768898592-attempt-1.md",
       "title": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה | ד״ר גיא רופא",
       "topic": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
@@ -481,23 +498,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-8d06d4e46ed014ab.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/rj86iyb00fe"
-    },
-    {
-      "path": "content_drafts/2026-09-06-topic-00-run-34027109221-attempt-1.md",
-      "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
-      "topic": "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
-      "excerpt": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) כאבי אגן מתמשכים או חוזרים מצדיקים בדיקה רפואית כאשר הם נמשכים חודשים, פוגעים בתפקוד, מחמירים, מלווים בדימום חריג ",
-      "generated_at": "2026-09-06T10:20:04.556274+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-06",
-      "cadence_local_date": "2026-09-06",
-      "public_execution_allowed": false
     }
   ]
 }
