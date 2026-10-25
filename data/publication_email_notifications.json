@@ -1343,6 +1343,21 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7520121384363220992/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJfKg6q5yp6-SA"
       ]
+    },
+    "expired:apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce:2026-09-02T13:59:29Z": {
+      "recorded_at": "2026-10-25T17:34:31.729600+00:00",
+      "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-09-02-topic-03-run-33620841392-attempt-1.md",
+      "published_approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+      "campaign_result": "content_drafts/campaigns/2026-09-02-topic-03-run-33620841392-attempt-1.json",
+      "urls": [
+        "https://guyrofe.com/%d7%9e%d7%99%d7%95%d7%9e%d7%95%d7%aa-%d7%91%d7%a8%d7%97%d7%9d-%d7%90%d7%a4%d7%a9%d7%a8%d7%95%d7%99%d7%95%d7%aa-%d7%91%d7%99%d7%a8%d7%95%d7%a8-%d7%95%d7%98%d7%99%d7%a4%d7%95%d7%9c/",
+        "https://www.facebook.com/122202337226942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7500966071269703680/",
+        "https://guyrofe.blogspot.com/2026/09/blog-post.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPD514KZqpmZSQ"
+      ]
     }
   }
 }
