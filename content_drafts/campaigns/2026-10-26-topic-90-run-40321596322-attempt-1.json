@@ -1,0 +1,117 @@
+{
+  "draft": "content_drafts/2026-10-26-topic-90-run-40321596322-attempt-1.md",
+  "title": "צמחה לכן שערה שחורה בסנטר? מה באמת עשוי לעמוד מאחוריה ומתי כדאי לבדוק | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-10-26T17:30:40.001481+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%a6%d7%9e%d7%97%d7%94-%d7%9c%d7%9b%d7%9f-%d7%a9%d7%a2%d7%a8%d7%94-%d7%a9%d7%97%d7%95%d7%a8%d7%94-%d7%91%d7%a1%d7%a0%d7%98%d7%a8-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+      "detail": "idempotency_key=pub_5c24080018462ae6152a18f3b2b1ca013f77fb5f380cc00b7ef8a8e088cc74f5"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%a6%d7%9e%d7%97%d7%94-%d7%9c%d7%9b%d7%9f-%d7%a9%d7%a2%d7%a8%d7%94-%d7%a9%d7%97%d7%95%d7%a8%d7%94-%d7%91%d7%a1%d7%a0%d7%98%d7%a8-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-26-topic-90-run-40321596322-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122211392066942441",
+      "detail": "idempotency_key=pub_3f5ff969f6323d2c42f37c403c619781a2049ebb84e3948772fe903876b4b4b5"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7520537390449549312/",
+      "detail": "idempotency_key=pub_4f346a9449a98ab06aac2e97661b50e10338c6c53d27cc5e28038ee7bd1610c8"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/10/blog-post_26.html",
+      "detail": "idempotency_key=pub_7d6004ccbc2bcdd38b5513f7b90955a876c648beb2a009239baeab93b6a3cad7"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_e5eebced446c273fa985fbfd27befefb5021001185295bf48252c47d7fd2f92b",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: צמחה לכן שערה שחורה בסנטר? זה עשוי להיות סימן רפואי שצריך לבדוק",
+    "secondary_queries": [
+      "צמחה לכן שערה שחורה בסנטר? מה באמת עשוי לעמוד מאחוריה ומתי כדאי לבדוק",
+      "מה עומד מאחורי הכותרת: צמחה לכן שערה שחורה בסנטר? זה עשוי להיות סימן רפואי שצריך לבדוק ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: צמחה לכן שערה שחורה בסנטר? זה עשוי להיות סימן רפואי שצריך לבדוק גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%a6%d7%9e%d7%97%d7%94-%d7%9c%d7%9b%d7%9f-%d7%a9%d7%a2%d7%a8%d7%94-%d7%a9%d7%97%d7%95%d7%a8%d7%94-%d7%91%d7%a1%d7%a0%d7%98%d7%a8-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
