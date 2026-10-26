@@ -1,6 +1,25 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-26-topic-90-run-40321596322-attempt-1.md",
+      "title": "צמחה לכן שערה שחורה בסנטר? מה באמת עשוי לעמוד מאחוריה ומתי כדאי לבדוק | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: צמחה לכן שערה שחורה בסנטר? זה עשוי להיות סימן רפואי שצריך לבדוק",
+      "excerpt": "צמחה לכן שערה שחורה בסנטר? מה באמת עשוי לעמוד מאחוריה ומתי כדאי לבדוק | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: שערה שחורה בודדת בסנטר היא בדרך כלל תופעה שפירה, ואינה מעידה כשלעצמה על מחלה. בירור רפואי נע",
+      "generated_at": "2026-10-26T12:19:23.690662+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-10-25",
+      "cadence_local_date": "2026-10-26",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-f14418aa29be202d.json",
+      "analyzed_news_url": "https://www.walla.co.il/healthy/beautyandcare/383958704"
+    },
+    {
       "path": "content_drafts/2026-10-25-topic-85-run-40186265795-attempt-1.md",
       "title": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף | ד״ר גיא רופא",
       "topic": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף",
@@ -479,25 +498,6 @@
       "cadence_week": "week-of-2026-09-06",
       "cadence_local_date": "2026-09-08",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-07-topic-90-run-34117806998-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול שלם",
-      "excerpt": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: הכותרת מבוססת על דיווח שלפיו 1,369 בעלי רישיון לעסוק ברפואה עזבו את ישר",
-      "generated_at": "2026-09-07T11:40:38.252089+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger"
-      ],
-      "cadence_week": "week-of-2026-09-06",
-      "cadence_local_date": "2026-09-07",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-8d06d4e46ed014ab.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/rj86iyb00fe"
     }
   ]
 }
