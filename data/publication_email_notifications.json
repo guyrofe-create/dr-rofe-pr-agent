@@ -1371,6 +1371,17 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7520537390449549312/",
         "https://guyrofe.blogspot.com/2026/10/blog-post_26.html"
       ]
+    },
+    "expired:apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206:2026-09-02T13:59:37Z": {
+      "recorded_at": "2026-10-26T21:49:45.391635+00:00",
+      "approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md",
+      "published_approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206",
+      "campaign_result": "content_drafts/campaigns/2026-09-02-topic-90-run-33620841392-attempt-1.json",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9b%d7%9c-%d7%9c%d7%99%d7%93%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%97%d7%95%d7%9c%d7%99%d7%9d-%d7%9b%d6%be20-%d7%90%d7%9c%d7%a3-%d7%a9%d7%a7%d7%9c/"
+      ]
     }
   }
 }
