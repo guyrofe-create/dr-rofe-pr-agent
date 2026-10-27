@@ -1,0 +1,28 @@
+{
+  "draft": "content_drafts/2026-10-27-topic-86-run-40497742072-attempt-1.md",
+  "title": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה | ד״ר גיא רופא",
+  "status": "failed",
+  "published_at": "2026-10-27T18:09:59.412211+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.com",
+      "status": "failed",
+      "detail": "CampaignTargetError: HTTPError: 503 Server Error: Service Unavailable for url: https://guyrofe.com/wp-json/wp/v2/media/1260"
+    }
+  ],
+  "approval_id": "apr_ef771dceda64472353c8922d78ffda8367eaf916736662dd870624d199ebe7d6",
+  "search_target": {
+    "primary_query": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה",
+    "secondary_queries": [
+      "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה ד״ר גיא רופא",
+      "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": null,
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
