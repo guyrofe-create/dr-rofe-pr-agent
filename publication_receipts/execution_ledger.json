@@ -3226,6 +3226,38 @@
       "published_at": "2026-10-26T17:30:39Z",
       "url": "https://guyrofe.blogspot.com/2026/10/blog-post_26.html",
       "provider_receipt": null
+    },
+    "pub_9b57d3e77dc65d40600986506f21a8bbb08dd1859545e457e7e7ffe6672d64e1": {
+      "version": 7,
+      "idempotency_key": "pub_9b57d3e77dc65d40600986506f21a8bbb08dd1859545e457e7e7ffe6672d64e1",
+      "approval_id": "apr_ef771dceda64472353c8922d78ffda8367eaf916736662dd870624d199ebe7d6",
+      "target_id": "canonical_wix__media__hero",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "6a62ddf0a80cd8bcfb3016510dafe92017d29cdb81079337b640ab0123cfb4f2",
+      "status": "published",
+      "started_at": "2026-10-27T18:39:01Z",
+      "published_at": "2026-10-27T18:39:04Z",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-27-topic-86-run-40497742072-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-10-27-topic-86-run-40497742072-attempt-1-hero",
+        "sha256": "b506634535113e10f14a5de79ccb703c080ba1701b92e2b6a9c043bc35f04e52",
+        "metadata_verified": true
+      }
+    },
+    "pub_de3a94be6901f569a7e4cbcce6f0b7e772e5a178a5b8d9c610a6b77f27cafe3f": {
+      "version": 7,
+      "idempotency_key": "pub_de3a94be6901f569a7e4cbcce6f0b7e772e5a178a5b8d9c610a6b77f27cafe3f",
+      "approval_id": "apr_ef771dceda64472353c8922d78ffda8367eaf916736662dd870624d199ebe7d6",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "284bb076b1812aee795bec3e6af48e14f453dff14d211cff0af9ce09855c3bdf",
+      "status": "published",
+      "started_at": "2026-10-27T18:39:04Z",
+      "published_at": "2026-10-27T18:39:06Z",
+      "url": "https://www.drguyrofe.com/post/ערך-מנבא-חיובי-ושלילי-כיצד-שכיחות-המחלה-משפיעה-על-משמעות-תוצאת-הבדיקה",
+      "provider_receipt": null
     }
   }
 }
