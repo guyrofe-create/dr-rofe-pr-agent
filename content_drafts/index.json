@@ -1,6 +1,19 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-27-topic-86-run-40497742072-attempt-1.md",
+      "title": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה | ד״ר גיא רופא",
+      "topic": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה",
+      "excerpt": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: תוצאה חיובית אינה מוכיחה בהכרח שאדם חולה, ותוצאה שלילית אינה שוללת תמיד מחלה. משמעותה המעשי",
+      "generated_at": "2026-10-27T11:39:30.108826+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-10-25",
+      "cadence_local_date": "2026-10-27",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-10-26-topic-90-run-40321596322-attempt-1.md",
       "title": "צמחה לכן שערה שחורה בסנטר? מה באמת עשוי לעמוד מאחוריה ומתי כדאי לבדוק | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: צמחה לכן שערה שחורה בסנטר? זה עשוי להיות סימן רפואי שצריך לבדוק",
@@ -484,19 +497,6 @@
       ],
       "cadence_week": "week-of-2026-09-06",
       "cadence_local_date": "2026-09-09",
-      "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-08-topic-05-run-34216586885-attempt-1.md",
-      "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
-      "topic": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
-      "excerpt": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: כאב מחזור קל עד בינוני, שנמשך בדרך כלל יום עד שלושה ימים ומשתפר בעזרת מנוחה או טיפול מקובל, עשוי להיות חלק מהמחזור התקין. לעו",
-      "generated_at": "2026-09-08T10:39:40.051434+00:00",
-      "content_stream": "evergreen_knowledge",
-      "destination_site_key": "DRGUYROFE_COM",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-09-06",
-      "cadence_local_date": "2026-09-08",
       "public_execution_allowed": false
     }
   ]
