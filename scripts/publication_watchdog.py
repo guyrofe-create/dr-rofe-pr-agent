@@ -92,7 +92,12 @@ def classify_failure(destination):
             "reason": "The old receipt hid an exception as '0'; the likely failure occurred while reading the WordPress media lookup response.",
             "action": "The publisher now validates the WordPress JSON shape and records the exception class and provider message.",
         }
-    if "reconcile" in probe or "may already be published" in probe:
+    if (
+        "reconcile" in probe
+        or "may already be published" in probe
+        or "metadata update is unresolved" in probe
+        or ("/wp-json/wp/v2/media/" in probe and "503" in probe)
+    ):
         return {
             "category": "reconciliation_required",
             "reason": "The execution ledger cannot prove whether the provider accepted an earlier attempt.",
@@ -230,6 +235,7 @@ def build_report(hours=30, *, now=None, request_get=requests.get):
         "unfulfilled_intended_targets": 0,
         "missing_approval_bundles": 0,
         "provider_accepted_not_yet_live": 0, "live_verified": 0,
+        "reconciliation_required": 0,
     }
     for path, campaign in load_recent_campaigns(hours, now=now):
         bundle = load_bundle(campaign.get("approval_id"))
@@ -297,6 +303,9 @@ def build_report(hours=30, *, now=None, request_get=requests.get):
             elif current.get("status") == "failed":
                 totals["failures"] += 1
                 current["diagnosis"] = classify_failure(current)
+            elif current.get("status") == "reconciliation_required":
+                totals["reconciliation_required"] += 1
+                current["diagnosis"] = classify_failure(current)
             elif target_id in expected:
                 current["verification"] = {"state": "approved_target_not_published"}
                 totals["unfulfilled_intended_targets"] += 1
@@ -308,6 +317,7 @@ def build_report(hours=30, *, now=None, request_get=requests.get):
     pipeline = audit_pipeline(hours, now)
     hard_failures = (
         totals["failures"] + totals["missing_urls"]
+        + totals["reconciliation_required"]
         + totals["missing_intended_targets"]
         + totals["unfulfilled_intended_targets"]
         + totals["missing_approval_bundles"]
@@ -332,6 +342,7 @@ def render_email(report):
         f"קמפיינים: {totals['campaigns']}; יעדים מאושרים: {totals['intended_targets']}; "
         f"קבלות: {totals['receipt_confirmed']}; תוכן שאומת: {totals['content_verified']}; "
         f"לא חד-משמעי: {totals['inconclusive']}; תקלות: {totals['failures']}; "
+        f"דורש התאמה: {totals['reconciliation_required']}; "
         f"קישורים חסרים: {totals['missing_urls']}; יעדים חסרים: {totals['missing_intended_targets']}",
         f"יעדים מאושרים שלא פורסמו: {totals['unfulfilled_intended_targets']}",
         f"קבלות ללא חבילת אישור ניתנת לאימות: {totals['missing_approval_bundles']}",
@@ -346,9 +357,10 @@ def render_email(report):
         lines.append(f"{campaign.get('title') or 'ללא כותרת'} — {campaign.get('status')}")
         for destination in campaign["destinations"]:
             status = destination.get("status")
-            if status == "failed":
+            if status in {"failed", "reconciliation_required"}:
                 diagnosis = destination["diagnosis"]
-                lines.append(f"  תקלה: {destination.get('name')} — {diagnosis['reason']}")
+                label = "דורש התאמה" if status == "reconciliation_required" else "תקלה"
+                lines.append(f"  {label}: {destination.get('name')} — {diagnosis['reason']}")
                 lines.append(f"  פעולה: {diagnosis['action']}")
             elif status in SUCCESS_STATUSES:
                 verification = destination.get("verification", {}).get("state", "not_checked")
@@ -370,6 +382,7 @@ def send_email(report):
     text_body = render_email(report)
     failures = (
         report["totals"]["failures"] + report["totals"]["missing_urls"]
+        + report["totals"]["reconciliation_required"]
         + report["totals"]["missing_intended_targets"]
         + report["totals"]["unfulfilled_intended_targets"]
         + report["totals"]["missing_approval_bundles"]

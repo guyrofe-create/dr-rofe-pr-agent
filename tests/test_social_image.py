@@ -453,13 +453,16 @@ class SocialImageTests(unittest.TestCase):
 
     @patch("scripts.social_image.requests.post")
     @patch("scripts.social_image.requests.get")
-    def test_wordpress_upload_is_idempotent(self, get, post):
+    def test_existing_wordpress_media_is_not_uploaded_again(self, get, post):
         response = Mock()
         response.raise_for_status.return_value = None
         response.json.return_value = [
             {"id": 7, "source_url": "https://guyrofe.com/image.png"}
         ]
         get.return_value = response
+        metadata = Mock(status_code=200)
+        metadata.raise_for_status.return_value = None
+        post.return_value = metadata
         url = social_image.upload_to_wordpress(
             social_image.SocialImage(b"image"),
             base_url="https://guyrofe.com",
@@ -479,7 +482,12 @@ class SocialImageTests(unittest.TestCase):
             },
             timeout=25,
         )
-        post.assert_not_called()
+        post.assert_called_once()
+        self.assertNotIn("files", post.call_args.kwargs)
+        self.assertEqual(
+            post.call_args.args[0],
+            "https://guyrofe.com/wp-json/wp/v2/media/7",
+        )
 
     @patch("scripts.social_image.requests.post")
     @patch("scripts.social_image.requests.get")
@@ -519,6 +527,121 @@ class SocialImageTests(unittest.TestCase):
             ("approved-social.png", b"approved-image", "image/png"),
         )
         self.assertNotIn("Content-Type", upload.kwargs["headers"])
+
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_metadata_503_after_upload_exposes_accepted_media_for_reconciliation(
+        self, get, post
+    ):
+        lookup = Mock(status_code=200)
+        lookup.raise_for_status.return_value = None
+        lookup.json.return_value = []
+        get.return_value = lookup
+        created = Mock(status_code=201)
+        created.raise_for_status.return_value = None
+        created.json.return_value = {
+            "id": 1260,
+            "source_url": "https://guyrofe.com/approved-social.png",
+        }
+        metadata = Mock(status_code=503, text="Service Unavailable")
+        metadata.raise_for_status.side_effect = requests.HTTPError("503")
+        post.side_effect = [created, metadata]
+
+        with self.assertRaisesRegex(
+            social_image.WordPressMediaMetadataError,
+            r"media_id=1260.*HTTP 503.*Service Unavailable",
+        ) as caught:
+            social_image.upload_to_wordpress(
+                social_image.SocialImage(b"approved-image", media_type="image/png"),
+                base_url="https://guyrofe.com",
+                username="user",
+                app_password="password",
+                slug="approved-social",
+                title="כותרת",
+            )
+
+        self.assertEqual(caught.exception.media_id, 1260)
+        self.assertEqual(post.call_count, 2)
+        self.assertEqual(
+            len([call for call in post.call_args_list if "files" in call.kwargs]),
+            1,
+        )
+
+    @patch("scripts.social_image.requests.post")
+    @patch("scripts.social_image.requests.get")
+    def test_metadata_timeout_after_existing_upload_is_reconciliation_required(
+        self, get, post
+    ):
+        lookup = Mock(status_code=200)
+        lookup.raise_for_status.return_value = None
+        lookup.json.return_value = [
+            {"id": 1260, "source_url": "https://guyrofe.com/approved-social.png"}
+        ]
+        get.return_value = lookup
+        post.side_effect = requests.Timeout("metadata response timed out")
+
+        with self.assertRaisesRegex(
+            social_image.WordPressMediaMetadataError,
+            r"media_id=1260.*HTTP unknown.*Timeout",
+        ):
+            social_image.upload_to_wordpress(
+                social_image.SocialImage(b"approved-image", media_type="image/png"),
+                base_url="https://guyrofe.com",
+                username="user",
+                app_password="password",
+                slug="approved-social",
+                title="כותרת",
+            )
+
+        post.assert_called_once()
+        self.assertNotIn("files", post.call_args.kwargs)
+
+    @patch("scripts.social_image.requests.get")
+    def test_media_reconciliation_requires_exact_bytes_and_metadata(self, get):
+        image = social_image.SocialImage(
+            b"approved-image",
+            media_type="image/png",
+            visual_description="מבחנות",
+            source_type="wikimedia_commons_licensed_photo",
+            source_page_url="https://commons.example/image",
+            license_name="CC BY 2.5",
+            license_url="https://license.example",
+            attribution="Creator; CC BY 2.5",
+        )
+        lookup = Mock(status_code=200)
+        lookup.raise_for_status.return_value = None
+        lookup.json.return_value = [{
+            "id": 1260,
+            "source_url": "https://guyrofe.com/approved-social.png",
+            "slug": "approved-social",
+        }]
+        image_response = Mock(status_code=200, content=b"approved-image")
+        image_response.raise_for_status.return_value = None
+        metadata = Mock(status_code=200)
+        metadata.raise_for_status.return_value = None
+        expected = social_image._wordpress_media_metadata(
+            image, "approved-social", "כותרת"
+        )
+        metadata.json.return_value = {
+            "slug": expected["slug"],
+            "title": {"raw": expected["title"]},
+            "alt_text": expected["alt_text"],
+            "caption": {"raw": expected["caption"]},
+            "description": {"raw": expected["description"]},
+        }
+        get.side_effect = [lookup, image_response, metadata]
+
+        receipt = social_image.reconcile_wordpress_media(
+            image,
+            base_url="https://guyrofe.com",
+            username="user",
+            app_password="password",
+            slug="approved-social",
+            title="כותרת",
+        )
+
+        self.assertEqual(receipt["provider_receipt"]["media_id"], 1260)
+        self.assertTrue(receipt["provider_receipt"]["metadata_verified"])
 
     @patch("scripts.social_image.time.sleep")
     @patch("scripts.social_image.requests.post")
@@ -632,7 +755,8 @@ class SocialImageTests(unittest.TestCase):
         self.assertEqual(url, "https://guyrofe.com/image.png")
         self.assertEqual(get.call_count, 2)
         sleep.assert_called_once_with(1)
-        post.assert_not_called()
+        post.assert_called_once()
+        self.assertNotIn("files", post.call_args.kwargs)
 
     @patch("scripts.social_image.time.sleep")
     @patch("scripts.social_image.requests.get")
@@ -724,7 +848,8 @@ class SocialImageTests(unittest.TestCase):
             "/wp/v2/media",
         )
         self.assertEqual([call.args[0] for call in sleep.call_args_list], [1, 2])
-        post.assert_not_called()
+        post.assert_called_once()
+        self.assertNotIn("files", post.call_args.kwargs)
 
     @patch("scripts.social_image.time.sleep")
     @patch("scripts.social_image.requests.post")
@@ -760,7 +885,8 @@ class SocialImageTests(unittest.TestCase):
             "/wp/v2/media",
         )
         self.assertEqual(get.call_count, 5)
-        post.assert_not_called()
+        post.assert_called_once()
+        self.assertNotIn("files", post.call_args.kwargs)
 
     @patch("scripts.social_image.time.sleep")
     @patch("scripts.social_image.requests.post")
@@ -791,7 +917,8 @@ class SocialImageTests(unittest.TestCase):
             get.call_args_list[1].kwargs["auth"], ("user", "password")
         )
         sleep.assert_called_once_with(1)
-        post.assert_not_called()
+        post.assert_called_once()
+        self.assertNotIn("files", post.call_args.kwargs)
 
     def test_generated_instagram_square_is_jpeg(self):
         source = BytesIO()
