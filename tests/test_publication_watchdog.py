@@ -32,6 +32,16 @@ class PublicationWatchdogTests(unittest.TestCase):
         })
         self.assertEqual(diagnosis["category"], "reconciliation_required")
 
+    def test_classifies_wordpress_media_503_as_reconciliation_required(self):
+        diagnosis = publication_watchdog.classify_failure({
+            "name": "guyrofe.com",
+            "detail": (
+                "WordPress media metadata update is unresolved after the file "
+                "was accepted (media_id=1260, HTTP 503)"
+            ),
+        })
+        self.assertEqual(diagnosis["category"], "reconciliation_required")
+
     def test_classifies_instagram_permission_without_image_advice(self):
         diagnosis = publication_watchdog.classify_failure({
             "name": "Instagram",

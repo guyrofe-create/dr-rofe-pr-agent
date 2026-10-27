@@ -6,6 +6,7 @@ photo is found. This module never generates images with AI.
 """
 
 import base64
+import hashlib
 import html
 import json
 import os
@@ -129,6 +130,23 @@ class PhotoSelectionError(RuntimeError):
     """No safe licensed photo was selected; callers may queue manual recovery."""
 
 
+class WordPressMediaMetadataError(RuntimeError):
+    """The media file exists, but its exact approved metadata is unresolved."""
+
+    def __init__(self, *, media_id, source_url, status_code, detail=""):
+        message = (
+            "WordPress media metadata update is unresolved after the file was "
+            f"accepted (media_id={media_id}, source_url={source_url}, "
+            f"HTTP {status_code})"
+        )
+        if detail:
+            message += f": {detail}"
+        super().__init__(message)
+        self.media_id = media_id
+        self.source_url = source_url
+        self.status_code = status_code
+
+
 def _wordpress_media_lookup_request(base_url, slug, headers, attempt, auth=None):
     """Read media through independent WordPress REST route shapes.
 
@@ -154,6 +172,110 @@ def _wordpress_media_lookup_request(base_url, slug, headers, attempt, auth=None)
     if auth is not None:
         kwargs["auth"] = auth
     return requests.get(url, **kwargs)
+
+
+def _wordpress_media_metadata(image, slug, title):
+    generated = image.source_type in {
+        "openai_generated_text_free_visual",
+        "deterministic_text_free_fallback",
+    }
+    if image.source_type == "owner_provided_default":
+        caption = ""
+        description = f"תמונת ברירת־מחדל ממותגת שסופקה על ידי {_CLIENT_NAME}."
+    elif generated:
+        caption = ""
+        description = (
+            f"תמונה ללא מלל שנוצרה עבור מאמר של {_CLIENT_NAME} באמצעות "
+            f"{image.generation_model or 'מנוע מקומי'}."
+        )
+    else:
+        caption = image.attribution
+        description = (
+            f"מקור: {image.source_page_url}\nרישיון: "
+            f"{image.license_name} {image.license_url}"
+        )
+    return {
+        "slug": slug,
+        "title": title,
+        "alt_text": alt_text(title, image.visual_description),
+        "caption": caption,
+        "description": description,
+    }
+
+
+def reconcile_wordpress_media(
+    image,
+    *,
+    base_url,
+    username,
+    app_password,
+    slug,
+    title,
+):
+    """Read-only proof that the exact approved media and metadata are live."""
+    root = base_url.rstrip("/")
+    endpoint = f"{root}/wp-json/wp/v2/media"
+    auth = (username, app_password)
+    headers = {
+        "Accept": "application/json",
+        "Cache-Control": "no-cache",
+        "User-Agent": f"ReputationAgentPublisher/1.0 (+{_CLIENT_SITE})",
+    }
+    lookup = requests.get(
+        endpoint,
+        params={"slug": slug, "_fields": "id,source_url,slug"},
+        headers=headers,
+        timeout=25,
+    )
+    lookup.raise_for_status()
+    candidates = lookup.json()
+    if not isinstance(candidates, list):
+        raise RuntimeError("WordPress media reconciliation returned unexpected JSON")
+    if not candidates:
+        return None
+    media = candidates[0]
+    media_id = media.get("id")
+    source_url = media.get("source_url")
+    if not media_id or not source_url or media.get("slug") != slug:
+        raise RuntimeError("WordPress media reconciliation returned mismatched media")
+
+    image_response = requests.get(source_url, headers=headers, timeout=30)
+    image_response.raise_for_status()
+    approved_sha256 = hashlib.sha256(image.content).hexdigest()
+    if hashlib.sha256(image_response.content).hexdigest() != approved_sha256:
+        raise RuntimeError("WordPress media bytes differ from the signed approval")
+
+    metadata_response = requests.get(
+        f"{endpoint}/{media_id}",
+        auth=auth,
+        params={
+            "context": "edit",
+            "_fields": "id,source_url,slug,title,alt_text,caption,description",
+        },
+        headers=headers,
+        timeout=25,
+    )
+    metadata_response.raise_for_status()
+    current = metadata_response.json()
+    expected = _wordpress_media_metadata(image, slug, title)
+    actual = {
+        "slug": current.get("slug"),
+        "title": (current.get("title") or {}).get("raw"),
+        "alt_text": current.get("alt_text"),
+        "caption": (current.get("caption") or {}).get("raw"),
+        "description": (current.get("description") or {}).get("raw"),
+    }
+    if actual != expected:
+        return None
+    return {
+        "url": source_url,
+        "provider_receipt": {
+            "media_id": media_id,
+            "slug": slug,
+            "sha256": approved_sha256,
+            "metadata_verified": True,
+        },
+    }
 
 
 @dataclass(frozen=True)
@@ -1153,59 +1275,56 @@ def upload_to_wordpress(
             "WordPress media lookup returned an unexpected JSON response"
         )
     if existing:
-        source_url = existing[0].get("source_url")
-        if not source_url:
-            raise RuntimeError("WordPress existing media item returned no media URL")
-        return source_url
-
-    filename = f"{slug}.{image.extension}"
-    response = requests.post(
-        endpoint,
-        auth=auth,
-        files={"file": (filename, image.content, image.media_type)},
-        headers=headers,
-        timeout=60,
-    )
-    response.raise_for_status()
-    try:
-        media = response.json()
-    except ValueError as exc:
-        # A hosting WAF can replace a successful REST response with HTML.  The
-        # upload is a remote write, so never repeat it blindly.  Reconcile the
-        # exact deterministic slug through the public read endpoint instead.
-        reconciled = None
-        for attempt in range(WORDPRESS_RECONCILIATION_ATTEMPTS):
-            try:
-                check = _wordpress_media_lookup_request(
-                    base_url,
-                    slug,
-                    headers,
-                    attempt,
-                )
-                if check.status_code in TRANSIENT_WORDPRESS_HTTP:
-                    raise requests.ConnectionError(
-                        f"transient WordPress status {check.status_code}"
+        media = existing[0]
+    else:
+        filename = f"{slug}.{image.extension}"
+        response = requests.post(
+            endpoint,
+            auth=auth,
+            files={"file": (filename, image.content, image.media_type)},
+            headers=headers,
+            timeout=60,
+        )
+        response.raise_for_status()
+        try:
+            media = response.json()
+        except ValueError as exc:
+            # A hosting WAF can replace a successful REST response with HTML.  The
+            # upload is a remote write, so never repeat it blindly.  Reconcile the
+            # exact deterministic slug through the public read endpoint instead.
+            reconciled = None
+            for attempt in range(WORDPRESS_RECONCILIATION_ATTEMPTS):
+                try:
+                    check = _wordpress_media_lookup_request(
+                        base_url,
+                        slug,
+                        headers,
+                        attempt,
                     )
-                check.raise_for_status()
-                candidates = check.json()
-                if isinstance(candidates, list) and candidates:
-                    reconciled = candidates[0]
-                    break
-            except (requests.ConnectionError, requests.Timeout, ValueError):
-                pass
-            if attempt < WORDPRESS_RECONCILIATION_ATTEMPTS - 1:
-                time.sleep(2 ** attempt)
-        if reconciled and reconciled.get("id") and reconciled.get("source_url"):
-            media = reconciled
-        else:
-            content_type = str(response.headers.get("Content-Type") or "")
-            detail = f" (HTTP {response.status_code}, Content-Type: {content_type})"
-            raise RuntimeError(
-                "WordPress media upload returned a non-JSON response"
-                + detail
-                + "; exact-slug reconciliation found no media; the upload was not "
-                "retried because the remote write result is ambiguous"
-            ) from exc
+                    if check.status_code in TRANSIENT_WORDPRESS_HTTP:
+                        raise requests.ConnectionError(
+                            f"transient WordPress status {check.status_code}"
+                        )
+                    check.raise_for_status()
+                    candidates = check.json()
+                    if isinstance(candidates, list) and candidates:
+                        reconciled = candidates[0]
+                        break
+                except (requests.ConnectionError, requests.Timeout, ValueError):
+                    pass
+                if attempt < WORDPRESS_RECONCILIATION_ATTEMPTS - 1:
+                    time.sleep(2 ** attempt)
+            if reconciled and reconciled.get("id") and reconciled.get("source_url"):
+                media = reconciled
+            else:
+                content_type = str(response.headers.get("Content-Type") or "")
+                detail = f" (HTTP {response.status_code}, Content-Type: {content_type})"
+                raise RuntimeError(
+                    "WordPress media upload returned a non-JSON response"
+                    + detail
+                    + "; exact-slug reconciliation found no media; the upload was not "
+                    "retried because the remote write result is ambiguous"
+                ) from exc
     if not isinstance(media, dict):
         raise RuntimeError("WordPress media upload returned unexpected JSON")
     media_id = media.get("id")
@@ -1213,37 +1332,30 @@ def upload_to_wordpress(
     if not media_id or not source_url:
         raise RuntimeError("WordPress media upload returned no media URL")
 
-    generated = image.source_type in {
-        "openai_generated_text_free_visual",
-        "deterministic_text_free_fallback",
-    }
-    if image.source_type == "owner_provided_default":
-        caption = ""
-        description = f"תמונת ברירת־מחדל ממותגת שסופקה על ידי {_CLIENT_NAME}."
-    elif generated:
-        caption = ""
-        description = (
-            f"תמונה ללא מלל שנוצרה עבור מאמר של {_CLIENT_NAME} באמצעות "
-            f"{image.generation_model or 'מנוע מקומי'}."
+    metadata_payload = _wordpress_media_metadata(image, slug, title)
+    try:
+        metadata = requests.post(
+            f"{endpoint}/{media_id}",
+            auth=auth,
+            json=metadata_payload,
+            headers=headers,
+            timeout=30,
         )
-    else:
-        caption = image.attribution
-        description = (
-            f"מקור: {image.source_page_url}\nרישיון: "
-            f"{image.license_name} {image.license_url}"
-        )
-    metadata = requests.post(
-        f"{endpoint}/{media_id}",
-        auth=auth,
-        json={
-            "slug": slug,
-            "title": title,
-            "alt_text": alt_text(title, image.visual_description),
-            "caption": caption,
-            "description": description,
-        },
-        headers=headers,
-        timeout=30,
-    )
-    metadata.raise_for_status()
+    except requests.RequestException as exc:
+        raise WordPressMediaMetadataError(
+            media_id=media_id,
+            source_url=source_url,
+            status_code="unknown",
+            detail=f"{type(exc).__name__}: {exc}",
+        ) from exc
+    try:
+        metadata.raise_for_status()
+    except requests.RequestException as exc:
+        detail = re.sub(r"\s+", " ", str(metadata.text or "")).strip()[:300]
+        raise WordPressMediaMetadataError(
+            media_id=media_id,
+            source_url=source_url,
+            status_code=metadata.status_code,
+            detail=detail,
+        ) from exc
     return source_url

@@ -29,6 +29,7 @@ import social_image
 import wix_blog
 from reputation_core import data_path, load_client_profile
 from reputation_core.approval_workflow import (
+    DefinitiveProviderRejection,
     ExecutionLedger,
     ReconciliationRequired,
     verify_approval,
@@ -59,9 +60,11 @@ CLIENT_PROFILE = load_client_profile()
 class CampaignTargetError(RuntimeError):
     """A named campaign destination failed before downstream distribution."""
 
-    def __init__(self, destination_name, detail):
+    def __init__(self, destination_name, detail, *, status="failed", target_id=None):
         super().__init__(detail)
         self.destination_name = destination_name
+        self.status = status
+        self.target_id = target_id
 
 
 def load_business_profile():
@@ -637,6 +640,8 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
         raise RuntimeError("Approved image hosting site is not configured")
     media_user_env = media_host["user_env"]
     media_password_env = media_host["app_password_env"]
+    media_base_url = media_host["base_url"].rstrip("/")
+    media_host_name = re.sub(r"^www\.", "", urlparse(media_base_url).netloc)
 
     def approved_target_image(target):
         media = (target.get("payload") or {}).get("image") or approved_bundle.get("media")
@@ -650,21 +655,80 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                     "WordPress media host is required for approved local Wix images"
                 )
             role = media.get("role", "approved")
-            hosted_images[digest] = social_image.upload_to_wordpress(
-                image,
-                base_url=media_host["base_url"].rstrip("/"),
-                username=os.environ[media_user_env],
-                app_password=os.environ[media_password_env],
-                slug=(
-                    f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}-"
-                    f"{role}"
-                ),
-                title=title,
+            media_slug = (
+                f"{CLIENT_PROFILE['client_id']}-{draft_path.stem}-{role}"
             )
+            media_target = {
+                "target_id": f"{target['target_id']}__media__{role}",
+                "platform": "WordPress Media",
+                "asset": media_host_name,
+                "payload": {
+                    "slug": media_slug,
+                    "title": title,
+                    "sha256": digest,
+                    "alt_text": media.get("alt_text", ""),
+                    "source_page_url": media.get("source_page_url", ""),
+                    "license_name": media.get("license_name", ""),
+                    "license_url": media.get("license_url", ""),
+                    "attribution": media.get("attribution", ""),
+                },
+            }
+
+            def publish_media(_payload, _key):
+                url = social_image.upload_to_wordpress(
+                    image,
+                    base_url=media_base_url,
+                    username=os.environ[media_user_env],
+                    app_password=os.environ[media_password_env],
+                    slug=media_slug,
+                    title=title,
+                )
+                return {
+                    "url": url,
+                    "provider_receipt": {
+                        "slug": media_slug,
+                        "sha256": digest,
+                        "metadata_verified": True,
+                    },
+                }
+
+            try:
+                media_receipt = ledger.execute(
+                    approved_bundle,
+                    media_target,
+                    publish_media,
+                    reconciler=lambda _payload, _key: (
+                        social_image.reconcile_wordpress_media(
+                            image,
+                            base_url=media_base_url,
+                            username=os.environ[media_user_env],
+                            app_password=os.environ[media_password_env],
+                            slug=media_slug,
+                            title=title,
+                        )
+                    ),
+                )
+            except DefinitiveProviderRejection as exc:
+                raise CampaignTargetError(
+                    media_host_name,
+                    exception_detail(exc),
+                    status="failed",
+                    target_id=media_target["target_id"],
+                ) from exc
+            except Exception as exc:
+                raise CampaignTargetError(
+                    media_host_name,
+                    exception_detail(exc),
+                    status="reconciliation_required",
+                    target_id=media_target["target_id"],
+                ) from exc
+            hosted_images[digest] = media_receipt["url"]
         return image, hosted_images[digest]
 
     try:
         canonical_image, canonical_image_url = approved_target_image(canonical_target)
+    except CampaignTargetError:
+        raise
     except Exception as exc:
         raise CampaignTargetError(canonical_name, exception_detail(exc)) from exc
     canonical_alt = (canonical_payload.get("image") or {}).get("alt_text", "")
@@ -729,8 +793,20 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                     expected_url=payload["canonical_url"],
                 ),
             )
+    except DefinitiveProviderRejection as exc:
+        raise CampaignTargetError(
+            canonical_name,
+            exception_detail(exc),
+            status="failed",
+            target_id=canonical_target["target_id"],
+        ) from exc
     except Exception as exc:
-        raise CampaignTargetError(canonical_name, str(exc)) from exc
+        raise CampaignTargetError(
+            canonical_name,
+            exception_detail(exc),
+            status="reconciliation_required",
+            target_id=canonical_target["target_id"],
+        ) from exc
     canonical_url = canonical_receipt["url"]
     validate_canonical_provider_url(
         canonical_url, canonical_payload["canonical_url"]
@@ -1045,11 +1121,22 @@ def main():
                 if isinstance(exc, CampaignTargetError)
                 else "Campaign"
             )
+            destination_status = (
+                exc.status if isinstance(exc, CampaignTargetError) else "failed"
+            )
+            destination_target_id = (
+                exc.target_id if isinstance(exc, CampaignTargetError) else None
+            )
             write_campaign_result(
                 draft_path,
                 title,
-                [destination(destination_name, "failed", detail=exception_detail(exc))],
-                status="failed",
+                [destination(
+                    destination_name,
+                    destination_status,
+                    detail=exception_detail(exc),
+                    target_id=destination_target_id,
+                )],
+                status=destination_status,
                 approval_id_value=bundle["approval_id"],
                 search_target=(
                     (_target_map(bundle).get("canonical_wordpress") or

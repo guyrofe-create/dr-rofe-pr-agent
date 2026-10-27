@@ -21,6 +21,36 @@ class CampaignRunTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "APPROVAL_BUNDLE_PATH"):
                 campaign_run.main()
 
+    def test_main_preserves_reconciliation_status_and_media_target(self):
+        bundle = {
+            "approval_id": "apr_test",
+            "source_draft": "content_drafts/test.md",
+            "targets": [],
+        }
+        error = campaign_run.CampaignTargetError(
+            "guyrofe.com",
+            "WordPress media metadata update is unresolved",
+            status="reconciliation_required",
+            target_id="canonical_wix__media__hero",
+        )
+        with patch.object(
+            campaign_run, "_load_verified_approval", return_value=(bundle, {})
+        ), patch.object(
+            campaign_run, "resolve_draft_path", return_value=Path("draft.md")
+        ), patch.object(
+            campaign_run, "publish_campaign", side_effect=error
+        ), patch.object(
+            campaign_run, "load_draft", return_value=("כותרת", "תוכן")
+        ), patch.object(campaign_run, "write_campaign_result") as write_result:
+            with self.assertRaises(campaign_run.CampaignTargetError):
+                campaign_run.main()
+
+        destination = write_result.call_args.args[2][0]
+        self.assertEqual(write_result.call_args.kwargs["status"], "reconciliation_required")
+        self.assertEqual(destination["status"], "reconciliation_required")
+        self.assertEqual(destination["name"], "guyrofe.com")
+        self.assertEqual(destination["target_id"], "canonical_wix__media__hero")
+
     def test_stable_slug_keeps_hebrew_and_is_deterministic(self):
         self.assertEqual(
             campaign_run.stable_slug("לפני ניתוח: החלטה משותפת"),
