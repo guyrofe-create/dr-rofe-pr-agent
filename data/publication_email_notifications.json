@@ -1424,6 +1424,13 @@
       "urls": [
         "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/"
       ]
+    },
+    "expired:apr_c7395f4e7fbcbf5dde711c3bbaeb2c748e410c61aceaef6ea8ef123c3d28c2a0:2026-09-06T11:44:23Z": {
+      "sent_at": "2026-10-29T21:12:36.575705+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_c7395f4e7fbcbf5dde711c3bbaeb2c748e410c61aceaef6ea8ef123c3d28c2a0",
+      "state": "expired",
+      "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
     }
   }
 }
