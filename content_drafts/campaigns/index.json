@@ -1,6 +1,115 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-10-29-topic-84-run-40872575157-attempt-1.md",
+      "title": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו | ד״ר גיא רופא",
+      "status": "completed_with_errors",
+      "published_at": "2026-10-29T16:13:38.500889+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/",
+          "detail": "idempotency_key=pub_b192fc4ec0f587c3d48943ed713d308d83196943c6bfd0286b45bc56130dfc7a"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-29-topic-84-run-40872575157-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "failed",
+          "target_id": "google_business_profile",
+          "detail": "RuntimeError: Google Business post is PROCESSING, not LIVE; publication cannot be claimed and reconciliation is required"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f",
+      "search_target": {
+        "primary_query": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו",
+        "secondary_queries": [
+          "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו ד״ר גיא רופא",
+          "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-10-27-topic-86-run-40497742072-attempt-1.md",
       "title": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה | ד״ר גיא רופא",
       "status": "completed",
@@ -5130,35 +5239,6 @@
         "intent": "news_analysis"
       },
       "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a0%d7%97%d7%a9%d7%a3-%d7%94%d7%99%d7%a7%d7%a3/",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-09-06-topic-00-run-34027109221-attempt-1.md",
-      "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
-      "status": "failed",
-      "published_at": "2026-09-06T12:36:37.877447+00:00",
-      "destinations": [
-        {
-          "name": "guyrofe.com",
-          "status": "failed",
-          "detail": "CampaignTargetError: RuntimeError: WordPress media lookup returned a non-JSON response (Content-Type: text/html)"
-        }
-      ],
-      "approval_id": "apr_c7395f4e7fbcbf5dde711c3bbaeb2c748e410c61aceaef6ea8ef123c3d28c2a0",
-      "search_target": {
-        "primary_query": "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
-        "secondary_queries": [
-          "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית",
-          "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית ד״ר גיא רופא",
-          "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית גיא רופא"
-        ],
-        "entity_queries": [
-          "ד״ר גיא רופא",
-          "גיא רופא"
-        ],
-        "intent": "informational_question"
-      },
-      "canonical_url": null,
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

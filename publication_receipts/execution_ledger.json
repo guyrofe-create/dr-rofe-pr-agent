@@ -3258,6 +3258,68 @@
       "published_at": "2026-10-27T18:39:06Z",
       "url": "https://www.drguyrofe.com/post/ערך-מנבא-חיובי-ושלילי-כיצד-שכיחות-המחלה-משפיעה-על-משמעות-תוצאת-הבדיקה",
       "provider_receipt": null
+    },
+    "pub_4f8133039438922ed36ec4df3449fd6be63619a31b75e9edbab87ab81ccc9867": {
+      "version": 7,
+      "idempotency_key": "pub_4f8133039438922ed36ec4df3449fd6be63619a31b75e9edbab87ab81ccc9867",
+      "approval_id": "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f",
+      "target_id": "canonical_wordpress__media__hero",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "2be6b9d5dd9929f26a647162735ea785592ba10c49fde97e1f6b99ba5fac5fc4",
+      "status": "published",
+      "started_at": "2026-10-29T16:12:51Z",
+      "published_at": "2026-10-29T16:13:05Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-29-topic-84-run-40872575157-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-10-29-topic-84-run-40872575157-attempt-1-hero",
+        "sha256": "9f15c8effb8be88006965a0e666e66101bd4a6c32ec66f55b1488076480a722f",
+        "metadata_verified": true
+      }
+    },
+    "pub_b192fc4ec0f587c3d48943ed713d308d83196943c6bfd0286b45bc56130dfc7a": {
+      "version": 7,
+      "idempotency_key": "pub_b192fc4ec0f587c3d48943ed713d308d83196943c6bfd0286b45bc56130dfc7a",
+      "approval_id": "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "18eee79e719bd8b70d786cb2c70e1b20d2fb00f3ec9d2be0e6b2ea9e171dccca",
+      "status": "published",
+      "started_at": "2026-10-29T16:13:05Z",
+      "published_at": "2026-10-29T16:13:10Z",
+      "url": "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/",
+      "provider_receipt": null
+    },
+    "pub_aa42c7b7b699475638b5d4d5e401aa9c398b26e21c51ff63b2a914bfbbc2a9f3": {
+      "version": 7,
+      "idempotency_key": "pub_aa42c7b7b699475638b5d4d5e401aa9c398b26e21c51ff63b2a914bfbbc2a9f3",
+      "approval_id": "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f",
+      "target_id": "google_business_profile__media__landscape",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "133cf425d4ffd85cde02772b755fad0435af4c959e9f0b0721563d90d6802c37",
+      "status": "published",
+      "started_at": "2026-10-29T16:13:11Z",
+      "published_at": "2026-10-29T16:13:19Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/10/guy-rofe-pilot-2026-10-29-topic-84-run-40872575157-attempt-1-landscape.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-10-29-topic-84-run-40872575157-attempt-1-landscape",
+        "sha256": "6f9917c80cf3530fd0368ec31614507da028d52d0134381a365f522b73197f4f",
+        "metadata_verified": true
+      }
+    },
+    "pub_f15e5645004f3266f1c909fbf89972ed62d7515cbff938b32b82829f14902094": {
+      "version": 7,
+      "idempotency_key": "pub_f15e5645004f3266f1c909fbf89972ed62d7515cbff938b32b82829f14902094",
+      "approval_id": "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "e94781a37e3ccae4a54d2d31c15d0dda9378c0e0776fbb17a40653097662b970",
+      "status": "reconciliation_required",
+      "started_at": "2026-10-29T16:13:19Z",
+      "updated_at": "2026-10-29T16:13:38Z"
     }
   }
 }

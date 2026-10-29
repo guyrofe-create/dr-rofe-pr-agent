@@ -1414,6 +1414,16 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7501277083265044482/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKHZyOi08tTZDw"
       ]
+    },
+    "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f:f5eed56dfb3b13e2b9ca2f61c3ec04c70fafdd1f114ea74439202458cee48860": {
+      "sent_at": "2026-10-29T16:13:42.367610+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f",
+      "state": "partial",
+      "subject": "הפרסום הושלם עם תקלות: קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/"
+      ]
     }
   }
 }
