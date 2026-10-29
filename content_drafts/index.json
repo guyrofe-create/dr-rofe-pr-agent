@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-10-29-topic-84-run-40872575157-attempt-1.md",
+      "title": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו | ד״ר גיא רופא",
+      "topic": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו",
+      "excerpt": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) קרע ספונטני בעורק כלילי, או SCAD, עלול לגרום להתקף לב גם כאשר אין בעורקי הלב רובד טרשתי משמעותי",
+      "generated_at": "2026-10-29T12:21:45.615316+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-10-25",
+      "cadence_local_date": "2026-10-29",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-10-27-topic-86-run-40497742072-attempt-1.md",
       "title": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה | ד״ר גיא רופא",
       "topic": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה",
@@ -480,24 +497,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-ec7e6f6abd7029d4.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/h19f3611wge"
-    },
-    {
-      "path": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md",
-      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
-      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
-      "excerpt": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) לפרוסקופיה גינקולוגית היא הליך זעיר־פולשני המאפשר לצוות הרפואי לבחון את איברי האגן ולעיתים גם לבצע טיפול ניתוחי, באמצעות מצלמה ומכשירי",
-      "generated_at": "2026-09-09T10:49:02.718421+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-06",
-      "cadence_local_date": "2026-09-09",
-      "public_execution_allowed": false
     }
   ]
 }
