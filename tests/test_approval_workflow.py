@@ -1,4 +1,5 @@
 import copy
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -6,6 +7,7 @@ from pathlib import Path
 from scripts.reputation_core.approval_workflow import (
     DefinitiveProviderRejection,
     ExecutionLedger,
+    ProviderPreflightDeferred,
     ReconciliationRequired,
     approve_bundle,
     build_bundle,
@@ -189,6 +191,34 @@ class ApprovalWorkflowTests(unittest.TestCase):
             )
             self.assertEqual(receipt["status"], "published")
             self.assertEqual(receipt["url"], "https://example.com/retried")
+
+    def test_read_only_preflight_deferral_is_retryable_without_reconciliation(self):
+        bundle = sample_bundle()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "ledger.json"
+            ledger = ExecutionLedger(path)
+
+            with self.assertRaises(ProviderPreflightDeferred):
+                ledger.execute(
+                    bundle,
+                    bundle["targets"][0],
+                    lambda _payload, _key: (_ for _ in ()).throw(
+                        ProviderPreflightDeferred("HTTP 202 text/html before write")
+                    ),
+                )
+
+            entry = next(iter(json.loads(
+                path.read_text(encoding="utf-8")
+            )["executions"].values()))
+            self.assertEqual(entry["status"], "deferred")
+            self.assertTrue(entry["safe_to_retry"])
+
+            receipt = ledger.execute(
+                bundle,
+                bundle["targets"][0],
+                lambda _payload, _key: {"url": "https://example.com/retried"},
+            )
+            self.assertEqual(receipt["status"], "published")
 
     def test_ambiguous_failure_can_retry_after_provider_confirms_absence(self):
         bundle = sample_bundle()

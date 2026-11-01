@@ -57,7 +57,11 @@ class DailyRunTests(unittest.TestCase):
     def test_save_and_load_review_draft(self):
         with tempfile.TemporaryDirectory() as directory:
             now = datetime(2026, 7, 25, 9, 30, tzinfo=timezone.utc)
-            with patch.dict(os.environ, {"CONTENT_DRAFT_DIR": directory}):
+            with patch.dict(os.environ, {
+                "CONTENT_DRAFT_DIR": directory,
+                "GITHUB_RUN_ID": "",
+                "GITHUB_RUN_ATTEMPT": "",
+            }):
                 path = daily_run.save_draft(
                     3,
                     "נושא",

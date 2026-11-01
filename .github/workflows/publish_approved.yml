@@ -49,6 +49,24 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Check WordPress publication gateway without consuming approval
+        id: wordpress_preflight
+        if: >-
+          !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        run: |
+          set +e
+          python scripts/wordpress_publication_preflight.py https://guyrofe.com
+          preflight_status=$?
+          set -e
+          if [[ "${preflight_status}" -eq 0 ]]; then
+            echo "ready=true" >> "${GITHUB_OUTPUT}"
+          elif [[ "${preflight_status}" -eq 75 ]]; then
+            echo "ready=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::WordPress gateway is temporarily returning a WAF/HTML response. The approval queue remains untouched and the next scheduled run will try from a fresh runner."
+          else
+            exit "${preflight_status}"
+          fi
+
       - name: Install dependencies for an exact approved campaign
         if: >-
           github.event_name == 'workflow_dispatch' &&
@@ -57,6 +75,7 @@ jobs:
 
       - name: Check dashboard approval queue
         id: approval
+        if: steps.wordpress_preflight.outputs.ready != 'false'
         env:
           APPROVAL_URL: https://dr-rofe-reputation-center.guyrofe.chatgpt.site
           APPROVAL_SIGNING_SECRET: ${{ secrets.APPROVAL_SIGNING_SECRET }}
@@ -216,6 +235,9 @@ jobs:
             elif [[ -n "${EXACT_APPROVAL_ID}" ]]; then
               echo "Publishing exact customer approval: \`${EXACT_APPROVAL_ID}\`" >> "${GITHUB_STEP_SUMMARY}"
             fi
+          elif [[ "${{ steps.wordpress_preflight.outputs.ready }}" == "false" ]]; then
+            echo "Publication deferred before approval retrieval: the WordPress gateway was not returning valid JSON." >> "${GITHUB_STEP_SUMMARY}"
+            echo "The approval queue was not consumed; a later scheduled run will use a fresh runner." >> "${GITHUB_STEP_SUMMARY}"
           else
             echo "No approved campaign was waiting in the dashboard queue." >> "${GITHUB_STEP_SUMMARY}"
           fi

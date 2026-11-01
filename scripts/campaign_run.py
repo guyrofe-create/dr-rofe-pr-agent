@@ -31,6 +31,7 @@ from reputation_core import data_path, load_client_profile
 from reputation_core.approval_workflow import (
     DefinitiveProviderRejection,
     ExecutionLedger,
+    ProviderPreflightDeferred,
     ReconciliationRequired,
     verify_approval,
 )
@@ -708,6 +709,13 @@ def publish_campaign(draft_path, approved_bundle=None, ledger=None):
                         )
                     ),
                 )
+            except ProviderPreflightDeferred as exc:
+                raise CampaignTargetError(
+                    media_host_name,
+                    exception_detail(exc),
+                    status="deferred",
+                    target_id=media_target["target_id"],
+                ) from exc
             except DefinitiveProviderRejection as exc:
                 raise CampaignTargetError(
                     media_host_name,
