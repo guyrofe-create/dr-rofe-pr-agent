@@ -1,0 +1,755 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-11-01T12:46:32Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md",
+  "source_draft_sha256": "3501507ea81b04c0c74f5ad9bc5111a40baf676dc8ffe9588555fd7c5d02f305",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1093/hropen/hoae065",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women",
+      "type": "citation"
+    },
+    {
+      "url": "https://guyrofe.com",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+    "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+    "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-hero.png",
+        "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+        "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-square.jpg",
+        "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-portrait.png",
+        "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
+        "cms_title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם",
+        "markdown": "# אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nאי־ספיקה שחלתית ראשונית היא מצב שבו פעילות השחלות נפגעת לפני גיל 40. היא עלולה להתבטא במחזורים לא סדירים או בהיעדר וסת, בירידה ברמות האסטרוגן, בתסמינים דמויי גיל המעבר ובקושי להרות. עם זאת, בניגוד למנופאוזה טבעית, תפקוד השחלות עשוי להיות לסירוגין, ולעיתים עדיין מתרחשים ביוץ והיריון עצמוני. אבחון מסודר חשוב לא רק לצורך בירור הפוריות, אלא גם לשם הגנה על העצמות, בריאות הלב ואיכות החיים.\n\n## מהי אי־ספיקה שחלתית ראשונית?\n\nאי־ספיקה שחלתית ראשונית, המכונה באנגלית Primary Ovarian Insufficiency או POI, מוגדרת כאובדן או ירידה משמעותית בפעילות השחלות לפני גיל 40. משמעות המונח היא שהשחלות אינן מייצרות הורמוני מין ואינן משחררות ביציות באופן תקין או עקבי. המצב עשוי להופיע לאחר תקופה של מחזורים סדירים, אך לעיתים הוא מתגלה כבר בגיל ההתבגרות בשל היעדר וסת ראשונית.\n\nחשוב להבחין בין אי־ספיקה שחלתית ראשונית לבין מנופאוזה מוקדמת. במנופאוזה פעילות השחלות נפסקת באופן קבוע, ואילו ב־POI ייתכנו תנודות בפעילות השחלתית. לכן הופעת דימום וסתי מזדמן או אפילו ביוץ אינה שוללת את האבחנה. לפי [ההנחיה הבין־לאומית מבוססת הראיות לאי־ספיקה שחלתית ראשונית](https://doi.org/10.1093/hropen/hoae065), מדובר במצב בעל השלכות רחבות החורגות מתחום הפריון וכוללות בריאות עצם, בריאות לב וכלי דם, תפקוד מיני ורווחה נפשית.\n\nרמות אסטרוגן נמוכות לאורך זמן הן מרכיב מרכזי בחלק מההשלכות הבריאותיות. אסטרוגן משתתף בשמירה על רקמת העצם, על מערכות כלי הדם ועל רקמות מערכת המין והשתן. משום כך, בירור מוקדם וטיפול מתאים אינם מיועדים רק להקלת גלי חום או להסדרת דימום, אלא גם להפחתת סיכונים ארוכי טווח.\n\n## תסמינים וסימנים שכדאי להכיר\n\nהביטוי השכיח ביותר הוא שינוי בדפוס הווסת: מחזורים שהופכים בלתי סדירים, מרווחים ארוכים בין דימומים או היעדר וסת במשך כמה חודשים. לעיתים השינוי מתרחש לאחר הפסקת גלולות או לאחר היריון, ולכן אפשר לייחס אותו בתחילה לגורמים זמניים. אצל אחרות, הסיבה הראשונה לבירור היא קושי להרות.\n\nירידה ברמות האסטרוגן עלולה לגרום לתסמינים הדומים לאלה המופיעים סביב גיל המעבר, ובהם:\n\n- גלי חום והזעות לילה;\n- הפרעות שינה ועייפות;\n- יובש בנרתיק, כאב ביחסי מין או ירידה בחשק המיני;\n- שינויים במצב הרוח, עצבנות או קושי בריכוז;\n- תסמינים במערכת השתן, כגון תכיפות או אי־נוחות;\n- קושי להרות עקב ביוץ נדיר או בלתי צפוי.\n\nלא כל מי שמתמודדת עם POI תחווה את כל התסמינים. יש נשים שאינן חוות גלי חום כלל, ובחלק מהמקרים המחזורים ממשיכים להופיע לסירוגין. על פי [הנחיות ASRM לאבחון ולטיפול באי־ספיקה שחלתית ראשונית](https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/), יש לשקול את האפשרות של POI אצל מי שטרם מלאו לה 40 וסובלת מהפרעות במחזור או מתסמינים המעידים על חסר באסטרוגן.\n\nהתסמינים אינם ייחודיים למצב זה. היריון, הפרעות בבלוטת התריס, רמות פרולקטין גבוהות, שינויים חדים במשקל, פעילות גופנית עצימה, מחלה כרונית ומצבי דחק עשויים גם הם לגרום להיעדר וסת או לאי־סדירות. לכן אין לקבוע אבחנה לפי תסמינים בלבד.\n\n## גורמים אפשריים ומצבים נלווים\n\nבמקרים רבים לא ניתן לזהות גורם חד־משמעי, והמצב מוגדר כאידיופתי. היעדר סיבה מזוהה אינו אומר שהאבחנה אינה תקפה, אלא שהבדיקות הקיימות לא תמיד יכולות להצביע על המנגנון שהוביל לפגיעה בתפקוד השחלות.\n\nהגורמים וההקשרים האפשריים כוללים:\n\n1. **גורמים גנטיים וכרומוזומליים:** שינויים בכרומוזום X, לרבות תסמונת טרנר, וכן נשאות של קדם־מוטציה בגן FMR1, עשויים להיות קשורים ל־POI. לזיהוי גורם גנטי עשויות להיות השלכות גם על בני משפחה ועל ייעוץ גנטי.\n2. **מנגנונים אוטואימוניים:** לעיתים מערכת החיסון קשורה לפגיעה בתפקוד השחלות. POI עשויה להופיע לצד מחלות אוטואימוניות אחרות, ובמיוחד הפרעות בבלוטת התריס או, במקרים מסוימים, בבלוטת יותרת הכליה.\n3. **טיפולים רפואיים:** כימותרפיה, הקרנות לאזור האגן וניתוחים מסוימים בשחלות עלולים להפחית את מאגר הזקיקים או לפגוע בתפקוד השחלתי. מידת הסיכון תלויה בין השאר בסוג הטיפול, במינון ובגיל בעת החשיפה.\n4. **גורמים זיהומיים או מטבוליים נדירים:** במקרים מסוימים קיימת מחלה מערכתית או תסמונת נדירה המשפיעה על תפקוד השחלות.\n\nהבירור אינו זהה אצל כולן, אלא מותאם לגיל, להיסטוריה הרפואית והמשפחתית ולממצאים. [ההמלצות הקליניות של ACOG בנושא אי־ספיקה שחלתית בצעירות](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women) מדגישות את חשיבות הבירור האטיולוגי, ובכלל זה הערכה גנטית ובחינת מצבים אוטואימוניים מתאימים. עם זאת, אין לבצע בדיקות רחבות ללא הבחנה; כל בדיקה צריכה להיבחר לפי ההקשר הקליני והנחיות עדכניות.\n\n## כיצד מתבצע האבחון?\n\nהאבחון מתחיל בשיחה רפואית הכוללת את דפוסי הווסת, תסמיני חסר באסטרוגן, הריונות קודמים, שימוש בתרופות, טיפולים אונקולוגיים, ניתוחים, מחלות אוטואימוניות והיסטוריה משפחתית של מנופאוזה מוקדמת או קשיי פוריות. לאחר מכן מתבצעת הערכה גופנית לפי הצורך ובדיקות דם.\n\nהבדיקה ההורמונלית המרכזית היא FSH — הורמון המופרש מבלוטת יותרת המוח ומגרה את השחלות. כאשר תגובת השחלות פוחתת, רמתו עשויה לעלות. האבחנה מבוססת בדרך כלל על שילוב בין הפרעה במחזורים לבין רמת FSH מוגברת, תוך שלילת סיבות אחרות. הקריטריונים המדויקים ותזמון הבדיקות עשויים להשתנות בין הנחיות ובהתאם לנסיבות, ולכן יש לפרש את התוצאה בהקשר מלא ולא כערך מעבדתי מבודד. [הנחיית ASRM העדכנית ל־POI](https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/) מפרטת את עקרונות האבחון ואת מקומן של הבדיקות ההורמונליות.\n\nבדרך כלל יש לשלול היריון ולבחון סיבות נוספות להפרעת מחזור, ובהן הפרעה בתפקוד בלוטת התריס או רמת פרולקטין חריגה. לעיתים נבדקים אסטרדיול, תפקודי בלוטת התריס ובדיקות נוספות בהתאם לסיפור הקליני.\n\nבדיקת AMH עשויה לספק מידע על מאגר הזקיקים, אך אינה צריכה לשמש לבדה לאבחון POI. גם אולטרסאונד של השחלות עשוי להוסיף מידע, אולם מראה השחלות או מספר הזקיקים אינם מחליפים את השילוב בין ההיסטוריה הקלינית לבדיקות ההורמונליות. לאחר אישור האבחנה אפשר לשקול בירור כרומוזומלי או גנטי, בדיקות אוטואימוניות והערכת בריאות העצם.\n\n## פוריות, בריאות העצם וטיפול ארוך טווח\n\nPOI מפחיתה את הסיכוי לביוץ סדיר ולהיריון עצמוני, אך אינה בהכרח מבטלת אותו לחלוטין. פעילות שחלתית בלתי צפויה עלולה להתרחש גם לאחר האבחנה. לכן יש להפריד בין שתי שאלות: האם קיים סיכוי להיריון, והאם נדרש אמצעי מניעה כאשר היריון אינו רצוי. טיפול הורמונלי חלופי כשלעצמו אינו תמיד אמצעי מניעה אמין.\n\nכאשר יש רצון להרות, הערכת הפוריות תלויה בגיל, בממצאים ההורמונליים, בנוכחות פעילות שחלתית ובגורמים נוספים אצל שני בני הזוג. אין טיפול שהוכח כמשחזר באופן עקבי את מאגר הביציות שאבד. במקרים מסוימים נשקלות אפשרויות של רפואת פריון, לרבות תרומת ביצית, אך התאמתן היא אישית. לפני טיפולים שעלולים לפגוע בשחלות ניתן לעיתים לשקול שימור פוריות מראש; אפשרות זו רלוונטית בעיקר לפני החשיפה לטיפול ולא לאחר שהתפתחה פגיעה משמעותית.\n\nחסר ממושך באסטרוגן קשור לירידה בצפיפות העצם ולעלייה בסיכון לאוסטאופורוזיס ולשברים בהמשך החיים. לכן [ההנחיה הבין־לאומית ל־POI](https://doi.org/10.1093/hropen/hoae065) ממליצה להתייחס לבריאות העצם כבר בעת האבחנה, לרבות הערכת גורמי סיכון ושקילת בדיקת צפיפות עצם בהתאם להנחיות ולמצב האישי.\n\nהטיפול ההורמונלי נועד בדרך כלל להשלים את החסר ההורמונלי עד לגיל הממוצע של מנופאוזה טבעית, אלא אם קיימת התוויית נגד. אצל מי שיש לה רחם, אסטרוגן מערכתי ניתן בדרך כלל יחד עם פרוגסטוגן כדי להגן על רירית הרחם. בחירת סוג הטיפול, המינון ודרך המתן מחייבת הערכת סיכונים אישית; אין להשליך באופן אוטומטי נתונים ממחקרים בנשים מבוגרות לאחר מנופאוזה על צעירות עם POI.\n\nלצד הטיפול הרפואי, חשוב להקפיד על פעילות גופנית נושאת משקל ואימוני התנגדות, תזונה מספקת, צריכת סידן וחלבון בהתאם לצרכים, רמה תקינה של ויטמין D, הימנעות מעישון וצמצום צריכת אלכוהול. אין להתחיל תוספים במינונים גבוהים ללא הערכה, משום שהצורך משתנה ותוספים אינם תחליף לטיפול בחסר ההורמונלי כשיש לו התוויה.\n\nגם ההשפעה הרגשית ראויה להתייחסות. אבחנה בגיל צעיר עשויה לעורר תחושות של אובדן, חרדה, פגיעה בדימוי הגוף או חשש לגבי זוגיות והורות. תמיכה נפשית ומידע ברור הם חלק לגיטימי מהטיפול הכולל, ולא תוספת שולית.\n\n## סיכום\n\nאי־ספיקה שחלתית ראשונית היא ירידה בתפקוד השחלות לפני גיל 40, המתבטאת לרוב באי־סדירות במחזור, בתסמיני חסר באסטרוגן ובפגיעה אפשרית בפוריות. האבחנה אינה מבוססת על תסמין יחיד או על בדיקה אחת, אלא על דפוס המחזורים, בדיקות הורמונליות ושלילת גורמים חלופיים.\n\nהמשמעות הרפואית רחבה: לצד סוגיות הפוריות יש לבחון את בריאות העצם, הסיכון הקרדיווסקולרי, התפקוד המיני והרווחה הנפשית. טיפול הורמונלי מתאים עשוי להקל תסמינים ולצמצם חלק מההשלכות של חסר אסטרוגן, אך הוא דורש התאמה פרטנית והתייחסות להתוויות נגד. [ההנחיות המקצועיות העדכניות של ASRM](https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/) מדגישות מעקב רב־תחומי וארוך טווח, ולא התמקדות בלעדית בשאלת ההיריון.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד. הוא אינו תחליף לאבחון או להמלצה רפואית אישית, וכל טענה רפואית והחלטת פרסום מחייבות ביקורת אנושית מקצועית.\n\n> ### על המחבר\n> **המחבר** הוא יוצר תוכן רפואי ומחבר ספרים. בהתאם לסטטוס הנוכחי המאושר, הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.  \n> למידע נוסף: https://guyrofe.com\n\n## מקורות\n\n1. American Society for Reproductive Medicine — [Evidence-based guideline: Premature Ovarian Insufficiency, 2025](https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/).\n2. European Society of Human Reproduction and Embryology — [Evidence-based guideline: Premature Ovarian Insufficiency](https://doi.org/10.1093/hropen/hoae065), *Human Reproduction Open*.\n3. American College of Obstetricians and Gynecologists — [Primary Ovarian Insufficiency in Adolescents and Young Women](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women).\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/אי־ספיקה-שחלתית-ראשונית-תסמינים/",
+        "meta_description": "ד״ר גיא רופא: אי־ספיקה שחלתית ראשונית היא מצב שבו פעילות השחלות נפגעת לפני גיל 40.",
+        "search_target": {
+          "primary_query": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם",
+          "secondary_queries": [
+            "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם ד״ר גיא רופא",
+            "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "informational"
+        },
+        "internal_links": [],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://guyrofe.com/אי־ספיקה-שחלתית-ראשונית-תסמינים/",
+            "host": "guyrofe.com",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://guyrofe.com/",
+            "observed_position": 1,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-10-15T09:15:09.956266"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "0390c5ac2e439b95f8dcb84e6762dbdf414287c54b1a7d78afa93827d11df7cb",
+        "slug": "אי־ספיקה-שחלתית-ראשונית-תסמינים",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-hero.png",
+          "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
+        "text": "אי־ספיקה שחלתית ראשונית היא מצב שבו פעילות השחלות נפגעת לפני גיל 40.\n\nהיא עלולה להתבטא במחזורים לא סדירים או בהיעדר וסת, בירידה ברמות האסטרוגן, בתסמינים דמויי גיל המעבר ובקושי להרות.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/אי־ספיקה-שחלתית-ראשונית-תסמינים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
+        "text": "אי־ספיקה שחלתית ראשונית היא מצב שבו פעילות השחלות נפגעת לפני גיל 40.\n\n• היא עלולה להתבטא במחזורים לא סדירים או בהיעדר וסת, בירידה ברמות האסטרוגן, בתסמינים דמויי גיל המעבר ובקושי להרות.\n• עם זאת, בניגוד למנופאוזה טבעית, תפקוד השחלות עשוי להיות לסירוגין, ולעיתים עדיין מתרחשים ביוץ והיריון עצמוני.\n• אבחון מסודר חשוב לא רק לצורך בירור הפוריות, אלא גם לשם הגנה על העצמות, בריאות הלב ואיכות החיים.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/אי־ספיקה-שחלתית-ראשונית-תסמינים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא.\n\nאי־ספיקה שחלתית ראשונית היא מצב שבו פעילות השחלות נפגעת לפני גיל 40.\n\nהיא עלולה להתבטא במחזורים לא סדירים או בהיעדר וסת, בירידה ברמות האסטרוגן, בתסמינים דמויי גיל המעבר ובקושי להרות.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/אי־ספיקה-שחלתית-ראשונית-תסמינים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-01-topic-81-run-41307863310-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 39,
+      "supported_claim_count": 39,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי אי־ספיקה שחלתית ראשונית?",
+          "claim": "המצב עשוי להופיע לאחר תקופה של מחזורים סדירים, אך לעיתים הוא מתגלה כבר בגיל ההתבגרות בשל היעדר וסת ראשונית.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "מהי אי־ספיקה שחלתית ראשונית?",
+          "claim": "משום כך, בירור מוקדם וטיפול מתאים אינם מיועדים רק להקלת גלי חום או להסדרת דימום, אלא גם להפחתת סיכונים ארוכי טווח.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "תסמינים וסימנים שכדאי להכיר",
+          "claim": "הביטוי השכיח ביותר הוא שינוי בדפוס הווסת: מחזורים שהופכים בלתי סדירים, מרווחים ארוכים בין דימומים או היעדר וסת במשך כמה חודשים.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "תסמינים וסימנים שכדאי להכיר",
+          "claim": "ירידה ברמות האסטרוגן עלולה לגרום לתסמינים הדומים לאלה המופיעים סביב גיל המעבר, ובהם:",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "תסמינים וסימנים שכדאי להכיר",
+          "claim": "יש נשים שאינן חוות גלי חום כלל, ובחלק מהמקרים המחזורים ממשיכים להופיע לסירוגין.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "תסמינים וסימנים שכדאי להכיר",
+          "claim": "על פי הנחיות ASRM לאבחון ולטיפול באי־ספיקה שחלתית ראשונית, יש לשקול את האפשרות של POI אצל מי שטרם מלאו לה 40 וסובלת מהפרעות במחזור או מתסמינים המעידים על חסר באסטרוגן.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "תסמינים וסימנים שכדאי להכיר",
+          "claim": "היריון, הפרעות בבלוטת התריס, רמות פרולקטין גבוהות, שינויים חדים במשקל, פעילות גופנית עצימה, מחלה כרונית ומצבי דחק עשויים גם הם לגרום להיעדר וסת או לאי־סדירות.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "גורמים אפשריים ומצבים נלווים",
+          "claim": "במקרים רבים לא ניתן לזהות גורם חד־משמעי, והמצב מוגדר כאידיופתי.",
+          "source_urls": [
+            "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women"
+          ]
+        },
+        {
+          "section": "גורמים אפשריים ומצבים נלווים",
+          "claim": "**גורמים גנטיים וכרומוזומליים:** שינויים בכרומוזום X, לרבות תסמונת טרנר, וכן נשאות של קדם־מוטציה בגן FMR1, עשויים להיות קשורים ל־POI.",
+          "source_urls": [
+            "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women"
+          ]
+        },
+        {
+          "section": "גורמים אפשריים ומצבים נלווים",
+          "claim": "לזיהוי גורם גנטי עשויות להיות השלכות גם על בני משפחה ועל ייעוץ גנטי.",
+          "source_urls": [
+            "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women"
+          ]
+        },
+        {
+          "section": "גורמים אפשריים ומצבים נלווים",
+          "claim": "POI עשויה להופיע לצד מחלות אוטואימוניות אחרות, ובמיוחד הפרעות בבלוטת התריס או, במקרים מסוימים, בבלוטת יותרת הכליה.",
+          "source_urls": [
+            "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women"
+          ]
+        },
+        {
+          "section": "גורמים אפשריים ומצבים נלווים",
+          "claim": "**טיפולים רפואיים:** כימותרפיה, הקרנות לאזור האגן וניתוחים מסוימים בשחלות עלולים להפחית את מאגר הזקיקים או לפגוע בתפקוד השחלתי.",
+          "source_urls": [
+            "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women"
+          ]
+        },
+        {
+          "section": "גורמים אפשריים ומצבים נלווים",
+          "claim": "מידת הסיכון תלויה בין השאר בסוג הטיפול, במינון ובגיל בעת החשיפה.",
+          "source_urls": [
+            "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women"
+          ]
+        },
+        {
+          "section": "גורמים אפשריים ומצבים נלווים",
+          "claim": "עם זאת, אין לבצע בדיקות רחבות ללא הבחנה; כל בדיקה צריכה להיבחר לפי ההקשר הקליני והנחיות עדכניות.",
+          "source_urls": [
+            "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "האבחון מתחיל בשיחה רפואית הכוללת את דפוסי הווסת, תסמיני חסר באסטרוגן, הריונות קודמים, שימוש בתרופות, טיפולים אונקולוגיים, ניתוחים, מחלות אוטואימוניות והיסטוריה משפחתית של מנופאוזה מוקדמת או קשיי פוריות.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "הבדיקה ההורמונלית המרכזית היא FSH — הורמון המופרש מבלוטת יותרת המוח ומגרה את השחלות.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "כאשר תגובת השחלות פוחתת, רמתו עשויה לעלות.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "הקריטריונים המדויקים ותזמון הבדיקות עשויים להשתנות בין הנחיות ובהתאם לנסיבות, ולכן יש לפרש את התוצאה בהקשר מלא ולא כערך מעבדתי מבודד.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "הנחיית ASRM העדכנית ל־POI מפרטת את עקרונות האבחון ואת מקומן של הבדיקות ההורמונליות.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "בדיקת AMH עשויה לספק מידע על מאגר הזקיקים, אך אינה צריכה לשמש לבדה לאבחון POI.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע האבחון?",
+          "claim": "גם אולטרסאונד של השחלות עשוי להוסיף מידע, אולם מראה השחלות או מספר הזקיקים אינם מחליפים את השילוב בין ההיסטוריה הקלינית לבדיקות ההורמונליות.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "פעילות שחלתית בלתי צפויה עלולה להתרחש גם לאחר האבחנה.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "טיפול הורמונלי חלופי כשלעצמו אינו תמיד אמצעי מניעה אמין.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "אין טיפול שהוכח כמשחזר באופן עקבי את מאגר הביציות שאבד.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "לפני טיפולים שעלולים לפגוע בשחלות ניתן לעיתים לשקול שימור פוריות מראש; אפשרות זו רלוונטית בעיקר לפני החשיפה לטיפול ולא לאחר שהתפתחה פגיעה משמעותית.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "חסר ממושך באסטרוגן קשור לירידה בצפיפות העצם ולעלייה בסיכון לאוסטאופורוזיס ולשברים בהמשך החיים.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "לכן ההנחיה הבין־לאומית ל־POI ממליצה להתייחס לבריאות העצם כבר בעת האבחנה, לרבות הערכת גורמי סיכון ושקילת בדיקת צפיפות עצם בהתאם להנחיות ולמצב האישי.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "הטיפול ההורמונלי נועד בדרך כלל להשלים את החסר ההורמונלי עד לגיל הממוצע של מנופאוזה טבעית, אלא אם קיימת התוויית נגד.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "בחירת סוג הטיפול, המינון ודרך המתן מחייבת הערכת סיכונים אישית; אין להשליך באופן אוטומטי נתונים ממחקרים בנשים מבוגרות לאחר מנופאוזה על צעירות עם POI.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "לצד הטיפול הרפואי, חשוב להקפיד על פעילות גופנית נושאת משקל ואימוני התנגדות, תזונה מספקת, צריכת סידן וחלבון בהתאם לצרכים, רמה תקינה של ויטמין D, הימנעות מעישון וצמצום צריכת אלכוהול.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "אין להתחיל תוספים במינונים גבוהים ללא הערכה, משום שהצורך משתנה ותוספים אינם תחליף לטיפול בחסר ההורמונלי כשיש לו התוויה.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "אבחנה בגיל צעיר עשויה לעורר תחושות של אובדן, חרדה, פגיעה בדימוי הגוף או חשש לגבי זוגיות והורות.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "פוריות, בריאות העצם וטיפול ארוך טווח",
+          "claim": "תמיכה נפשית ומידע ברור הם חלק לגיטימי מהטיפול הכולל, ולא תוספת שולית.",
+          "source_urls": [
+            "https://doi.org/10.1093/hropen/hoae065"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "האבחנה אינה מבוססת על תסמין יחיד או על בדיקה אחת, אלא על דפוס המחזורים, בדיקות הורמונליות ושלילת גורמים חלופיים.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המשמעות הרפואית רחבה: לצד סוגיות הפוריות יש לבחון את בריאות העצם, הסיכון הקרדיווסקולרי, התפקוד המיני והרווחה הנפשית.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "טיפול הורמונלי מתאים עשוי להקל תסמינים ולצמצם חלק מההשלכות של חסר אסטרוגן, אך הוא דורש התאמה פרטנית והתייחסות להתוויות נגד.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "ההנחיות המקצועיות העדכניות של ASRM מדגישות מעקב רב־תחומי וארוך טווח, ולא התמקדות בלעדית בשאלת ההיריון.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "הוא אינו תחליף לאבחון או להמלצה רפואית אישית, וכל טענה רפואית והחלטת פרסום מחייבות ביקורת אנושית מקצועית.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "בהתאם לסטטוס הנוכחי המאושר, הוא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+          "source_urls": [
+            "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://doi.org/10.1093/hropen/hoae065",
+          "host": "doi.org",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-guideline-premature-ovarian-insufficiency-2025/",
+          "host": "asrm.org",
+          "year_markers": [
+            "2025"
+          ]
+        },
+        {
+          "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/07/primary-ovarian-insufficiency-in-adolescents-and-young-women",
+          "host": "acog.org",
+          "year_markers": [
+            "2014"
+          ]
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "0390c5ac2e439b95f8dcb84e6762dbdf414287c54b1a7d78afa93827d11df7cb",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://guyrofe.com/אי־ספיקה-שחלתית-ראשונית-תסמינים/",
+        "host": "guyrofe.com",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://guyrofe.com/",
+        "observed_position": 1,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-10-15T09:15:09.956266"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703"
+}

@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md",
+      "title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
+      "topic": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם",
+      "excerpt": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) אי־ספיקה שחלתית ראשונית היא מצב שבו פעילות השחלות נפגעת לפני גיל 40. היא עלולה להתבטא במחזורים ל",
+      "generated_at": "2026-11-01T12:44:15.849579+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-11-01",
+      "cadence_local_date": "2026-11-01",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-10-29-topic-84-run-40872575157-attempt-1.md",
       "title": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו | ד״ר גיא רופא",
       "topic": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו",
@@ -478,25 +495,6 @@
       "cadence_week": "week-of-2026-09-13",
       "cadence_local_date": "2026-09-13",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-10-topic-90-run-34467413377-attempt-1.md",
-      "title": "כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו?",
-      "excerpt": "כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: תרכובות אמוניום רבעוניות, המצויות בחלק מחומרי הניקוי והחיטוי, אכן נמדדו בדגימות דם אנושיות. הממצא מוכיח שהתר",
-      "generated_at": "2026-09-10T10:42:28.002678+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-06",
-      "cadence_local_date": "2026-09-10",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-ec7e6f6abd7029d4.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/h19f3611wge"
     }
   ]
 }
