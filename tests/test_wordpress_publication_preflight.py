@@ -76,6 +76,17 @@ class WordPressPublicationPreflightTests(unittest.TestCase):
         self.assertIn("steps.wordpress_preflight.outputs.ready != 'false'", workflow)
         self.assertIn("approval queue remains untouched", workflow)
 
+    def test_explicit_retry_accepts_reconciliation_and_deferred_results(self):
+        workflow = (
+            Path(__file__).resolve().parents[1]
+            / ".github"
+            / "workflows"
+            / "publish_approved.yml"
+        ).read_text(encoding="utf-8")
+        self.assertIn('.status == "reconciliation_required"', workflow)
+        self.assertIn('.status == "deferred"', workflow)
+        self.assertIn("retry_approved_by is required", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()

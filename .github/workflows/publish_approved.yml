@@ -139,9 +139,9 @@ jobs:
             result_path="content_drafts/campaigns/$(basename "${draft_path}" .md).json"
             if [[ ! -f "${result_path}" ]] || ! jq -e \
               --arg approval_id "${approval_id}" \
-              '(.approval_id == $approval_id) and (.status == "failed" or .status == "completed_with_errors")' \
+              '(.approval_id == $approval_id) and (.status == "failed" or .status == "completed_with_errors" or .status == "reconciliation_required" or .status == "deferred")' \
               "${result_path}" >/dev/null; then
-              echo "::error::Retry is allowed only for a matching failed or partial campaign"
+              echo "::error::Retry is allowed only for a matching failed, partial, reconciled, or safely deferred campaign"
               exit 1
             fi
             scope_args=()
