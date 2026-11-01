@@ -1,0 +1,29 @@
+{
+  "draft": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md",
+  "title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
+  "status": "reconciliation_required",
+  "published_at": "2026-11-01T19:10:46.619875+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "reconciliation_required",
+      "target_id": "canonical_wordpress__media__hero",
+      "detail": "CampaignTargetError: RuntimeError: WordPress media lookup returned a non-JSON response (Content-Type: text/html) after read-only retries [1:pretty:HTTP-202:text/html:public, 2:pretty:HTTP-202:text/html:public, 3:root_rest_route:HTTP-202:text/html:public, 4:root_rest_route:HTTP-202:text/html:public, "
+    }
+  ],
+  "approval_id": "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703",
+  "search_target": {
+    "primary_query": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם",
+    "secondary_queries": [
+      "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם ד״ר גיא רופא",
+      "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": null,
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

@@ -3320,6 +3320,18 @@
       "status": "reconciliation_required",
       "started_at": "2026-10-29T16:13:19Z",
       "updated_at": "2026-10-29T16:13:38Z"
+    },
+    "pub_abf48ee0ca95e4ed14da99a1f00252fd33a6f534d474f01f57160ce79e40413b": {
+      "version": 7,
+      "idempotency_key": "pub_abf48ee0ca95e4ed14da99a1f00252fd33a6f534d474f01f57160ce79e40413b",
+      "approval_id": "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703",
+      "target_id": "canonical_wordpress__media__hero",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "d52527ee295013f6606d5ee40059efa5da56cb5c99e8624249226d3de72a104f",
+      "status": "reconciliation_required",
+      "started_at": "2026-11-01T19:09:26Z",
+      "updated_at": "2026-11-01T19:10:46Z"
     }
   }
 }

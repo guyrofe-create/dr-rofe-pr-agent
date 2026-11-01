@@ -1431,6 +1431,14 @@
       "approval_id": "apr_c7395f4e7fbcbf5dde711c3bbaeb2c748e410c61aceaef6ea8ef123c3d28c2a0",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703:db2a835a2f0c3143ca27cfb783c557cb27f65232091694f8188e75a3d33cd030": {
+      "sent_at": "2026-11-01T19:10:48.015055+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703",
+      "state": "failed",
+      "subject": "הפרסום נכשל: אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
+      "urls": []
     }
   }
 }
