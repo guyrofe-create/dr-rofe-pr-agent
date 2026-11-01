@@ -1439,6 +1439,19 @@
       "state": "failed",
       "subject": "הפרסום נכשל: אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
       "urls": []
+    },
+    "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703:71f3b545782ae3d96747f2d375a4045580ab35ccff4e7c12f5bc00bcb56cd291": {
+      "sent_at": "2026-11-01T19:44:42.929293+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703",
+      "state": "success",
+      "subject": "אישור פרסום: אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%94-%d7%a9%d7%97%d7%9c%d7%aa%d7%99%d7%aa-%d7%a8%d7%90%d7%a9%d7%95%d7%a0%d7%99%d7%aa-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+        "https://www.facebook.com/122212548968942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7522745415163871234/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDowNjFhLXR1UzdFdFYwYkhPV21yalR3"
+      ]
     }
   }
 }

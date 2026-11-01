@@ -3,14 +3,101 @@
     {
       "draft": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md",
       "title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
-      "status": "reconciliation_required",
-      "published_at": "2026-11-01T19:10:46.619875+00:00",
+      "status": "completed",
+      "published_at": "2026-11-01T19:44:41.532211+00:00",
       "destinations": [
         {
           "name": "guyrofe.com",
-          "status": "reconciliation_required",
-          "target_id": "canonical_wordpress__media__hero",
-          "detail": "CampaignTargetError: RuntimeError: WordPress media lookup returned a non-JSON response (Content-Type: text/html) after read-only retries [1:pretty:HTTP-202:text/html:public, 2:pretty:HTTP-202:text/html:public, 3:root_rest_route:HTTP-202:text/html:public, 4:root_rest_route:HTTP-202:text/html:public, "
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%94-%d7%a9%d7%97%d7%9c%d7%aa%d7%99%d7%aa-%d7%a8%d7%90%d7%a9%d7%95%d7%a0%d7%99%d7%aa-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+          "detail": "idempotency_key=pub_5ca89a46119ab5ffc1fa18f62581fa844a3febb3f06bd521f2ca6c72d32a5cb6"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%94-%d7%a9%d7%97%d7%9c%d7%aa%d7%99%d7%aa-%d7%a8%d7%90%d7%a9%d7%95%d7%a0%d7%99%d7%aa-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-01-topic-81-run-41307863310-attempt-1-hero.png",
+          "detail": "owner_provided_default"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122212548968942441",
+          "detail": "idempotency_key=pub_f55c6863a3822e47cc04e47a4113619a7ab1f33ce1480a09efa4a772cec0a73f"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7522745415163871234/",
+          "detail": "idempotency_key=pub_6ec0e252ed9d29af6280caefd5f05f1d7fb13e887e40e6aa3ec322c51a306787"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDowNjFhLXR1UzdFdFYwYkhPV21yalR3",
+          "detail": "idempotency_key=pub_e277aea4ce74ab5f228654b9b6582728d7467efb74f3850f341f71e4ca7c5bb1"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
         }
       ],
       "approval_id": "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703",
@@ -26,7 +113,7 @@
         ],
         "intent": "informational"
       },
-      "canonical_url": null,
+      "canonical_url": "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%94-%d7%a9%d7%97%d7%9c%d7%aa%d7%99%d7%aa-%d7%a8%d7%90%d7%a9%d7%95%d7%a0%d7%99%d7%aa-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     },
     {
