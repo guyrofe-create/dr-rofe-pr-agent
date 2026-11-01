@@ -331,6 +331,10 @@ class DefinitiveProviderRejection(RuntimeError):
     """The provider explicitly rejected a request before accepting the action."""
 
 
+class ProviderPreflightDeferred(RuntimeError):
+    """A read-only provider preflight failed before any write was attempted."""
+
+
 class ExecutionLedger:
     """Atomic, fail-closed idempotency ledger for externally visible actions."""
 
@@ -424,6 +428,16 @@ class ExecutionLedger:
         self._save(state)
         try:
             result = publisher(target["payload"], key)
+        except ProviderPreflightDeferred as exc:
+            # This exception is raised only before the publisher sends a write.
+            # Preserve a retryable, non-ambiguous state instead of claiming that
+            # the provider may already have accepted the action.
+            entry["status"] = "deferred"
+            entry["safe_to_retry"] = True
+            entry["detail"] = str(exc)[:500]
+            entry["updated_at"] = utc_now()
+            self._save(state)
+            raise
         except DefinitiveProviderRejection as exc:
             # A structured 4xx validation/auth rejection is a conclusive provider
             # response. The remote action was not accepted, so a corrected request

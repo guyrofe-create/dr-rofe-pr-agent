@@ -769,7 +769,8 @@ class SocialImageTests(unittest.TestCase):
         get.return_value = response
 
         with self.assertRaisesRegex(
-            RuntimeError, "non-JSON response.*text/html"
+            social_image.ProviderPreflightDeferred,
+            "deferred before any write.*non-JSON response.*text/html",
         ):
             social_image.upload_to_wordpress(
                 social_image.SocialImage(b"image"),
@@ -782,6 +783,7 @@ class SocialImageTests(unittest.TestCase):
 
         self.assertEqual(get.call_count, 7)
         self.assertEqual(sleep.call_count, 6)
+        self.assertFalse(get.call_args.kwargs.get("auth"))
         self.assertEqual(
             [call.args[0] for call in sleep.call_args_list],
             [1, 2, 4, 8, 20, 40],

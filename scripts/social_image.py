@@ -22,6 +22,7 @@ from PIL import Image
 
 from reputation_core.strategy import load_client_profile
 from reputation_core.ai_usage import record_ai_usage
+from reputation_core.approval_workflow import ProviderPreflightDeferred
 
 _CLIENT_FACTS = load_client_profile()["canonical_facts"]
 _CLIENT_NAME = _CLIENT_FACTS["primary_name"]
@@ -1258,8 +1259,9 @@ def upload_to_wordpress(
             content_type = str(lookup.headers.get("Content-Type") or "")
         detail = f" (Content-Type: {content_type})" if content_type else ""
         diagnostics = ", ".join(lookup_diagnostics)
-        raise RuntimeError(
-            "WordPress media lookup returned a non-JSON response"
+        raise ProviderPreflightDeferred(
+            "WordPress media preflight was deferred before any write because "
+            "the lookup returned a non-JSON response"
             + detail
             + f" after read-only retries [{diagnostics}]"
         ) from last_decode_error
