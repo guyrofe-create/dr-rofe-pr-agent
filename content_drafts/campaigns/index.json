@@ -1,6 +1,123 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-11-02-topic-90-run-41465876753-attempt-1.md",
+      "title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-11-02T19:41:12.918661+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%90%d7%9b%d7%9c%d7%95-%d7%91%d7%95%d7%98%d7%a0%d7%99%d7%9d-%d7%91%d7%9e%d7%a9%d7%9a-%d7%97%d7%a6%d7%99-%d7%a9%d7%a0%d7%94-%d7%95%d7%91%d7%93%d7%9d-%d7%a9%d7%9c%d7%94%d7%9d/",
+          "detail": "idempotency_key=pub_61dffc9019f9c9a80b6c0b6f4861a00388a99b2bd4a80ba12ab8691b61c65bd7"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%90%d7%9b%d7%9c%d7%95-%d7%91%d7%95%d7%98%d7%a0%d7%99%d7%9d-%d7%91%d7%9e%d7%a9%d7%9a-%d7%97%d7%a6%d7%99-%d7%a9%d7%a0%d7%94-%d7%95%d7%91%d7%93%d7%9d-%d7%a9%d7%9c%d7%94%d7%9d/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-02-topic-90-run-41465876753-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122212719092942441",
+          "detail": "idempotency_key=pub_3b998d43ea2540f411678d368cffe1265c63fcc07f108cd4337a6ed30c7693c3"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7523106959798177793/",
+          "detail": "idempotency_key=pub_4115c0c0a661aad90d91ba03a96595853b0056f7398a13db2d88b7582a88e447"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "target_id": "blogger_blog",
+          "url": "https://guyrofe.blogspot.com/2026/11/blog-post.html",
+          "detail": "idempotency_key=pub_e30fb78019f41bea5562a20eb511b7dc47d9124315410b1f7989a979556fe012"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_69634fbf4fce67684b534139a39667c6faaf1e9b98b5f2f4223f7b99c199a75b",
+      "search_target": {
+        "primary_query": "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע",
+        "secondary_queries": [
+          "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא?",
+          "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע ד״ר גיא רופא",
+          "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%90%d7%9b%d7%9c%d7%95-%d7%91%d7%95%d7%98%d7%a0%d7%99%d7%9d-%d7%91%d7%9e%d7%a9%d7%9a-%d7%97%d7%a6%d7%99-%d7%a9%d7%a0%d7%94-%d7%95%d7%91%d7%93%d7%9d-%d7%a9%d7%9c%d7%94%d7%9d/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md",
       "title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
       "status": "completed",
@@ -5209,35 +5326,6 @@
         "intent": "informational"
       },
       "canonical_url": "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-09-08-topic-05-run-34216586885-attempt-1.md",
-      "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
-      "status": "failed",
-      "published_at": "2026-09-08T15:17:06.957790+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.com",
-          "status": "failed",
-          "detail": "CampaignTargetError: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
-        }
-      ],
-      "approval_id": "apr_a73be17c50af3df42b14a2d744f1dcabc590305e9dbedf2e737c81046d358bf9",
-      "search_target": {
-        "primary_query": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
-        "secondary_queries": [
-          "כאבי מחזור קשים – כמה כאב זה נורמלי?",
-          "כאבי מחזור קשים - כמה כאב זה נורמלי? ד״ר גיא רופא",
-          "כאבי מחזור קשים - כמה כאב זה נורמלי? גיא רופא"
-        ],
-        "entity_queries": [
-          "ד״ר גיא רופא",
-          "גיא רופא"
-        ],
-        "intent": "informational_question"
-      },
-      "canonical_url": null,
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

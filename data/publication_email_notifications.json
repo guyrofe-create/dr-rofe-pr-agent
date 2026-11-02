@@ -1466,6 +1466,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7502786205965594624/",
         "https://guyrofe.blogspot.com/2026/09/blog-post_07.html"
       ]
+    },
+    "apr_69634fbf4fce67684b534139a39667c6faaf1e9b98b5f2f4223f7b99c199a75b:80fe471009fb6135ac3938543ab847c4ae3e570a091b1cdd2cfa331ce14d59ce": {
+      "sent_at": "2026-11-02T19:41:13.691846+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_69634fbf4fce67684b534139a39667c6faaf1e9b98b5f2f4223f7b99c199a75b",
+      "state": "success",
+      "subject": "אישור פרסום: אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%90%d7%9b%d7%9c%d7%95-%d7%91%d7%95%d7%98%d7%a0%d7%99%d7%9d-%d7%91%d7%9e%d7%a9%d7%9a-%d7%97%d7%a6%d7%99-%d7%a9%d7%a0%d7%94-%d7%95%d7%91%d7%93%d7%9d-%d7%a9%d7%9c%d7%94%d7%9d/",
+        "https://www.facebook.com/122212719092942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7523106959798177793/",
+        "https://guyrofe.blogspot.com/2026/11/blog-post.html"
+      ]
     }
   }
 }
