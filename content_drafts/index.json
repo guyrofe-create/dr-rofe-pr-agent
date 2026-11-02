@@ -1,6 +1,25 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-02-topic-90-run-41465876753-attempt-1.md",
+      "title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע",
+      "excerpt": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: לאחר שצעירים בריאים צרכו מדי יום בוטנים או מוצרים המבוססים על בוטנים במשך שישה חודשים, ",
+      "generated_at": "2026-11-02T14:51:31.000323+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-11-01",
+      "cadence_local_date": "2026-11-02",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-ed9e5d7684501e72.json",
+      "analyzed_news_url": "https://www.walla.co.il/healthy/myhealth/383959533"
+    },
+    {
       "path": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md",
       "title": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא",
       "topic": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם",
@@ -478,23 +497,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-c2b45c7c3effb3f5.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/bkvbvqhfgl"
-    },
-    {
-      "path": "content_drafts/2026-09-13-topic-02-run-34753686764-attempt-1.md",
-      "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול | ד״ר גיא רופא",
-      "topic": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
-      "excerpt": "אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: אנדומטריוזיס עלול להקשות על כניסה להיריון, אך הוא אינו מוביל בהכרח לאי־פוריות. נשים רבות עם אנדו",
-      "generated_at": "2026-09-13T11:09:30.503315+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-13",
-      "cadence_local_date": "2026-09-13",
-      "public_execution_allowed": false
     }
   ]
 }

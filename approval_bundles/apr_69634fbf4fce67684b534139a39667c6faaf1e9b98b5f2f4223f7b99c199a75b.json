@@ -1,0 +1,809 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-11-02T14:54:42Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-11-02-topic-90-run-41465876753-attempt-1.md",
+  "source_draft_sha256": "c58819e26bfb964516eafac7c6d66cf979119c0884700e53470718a6b8476a3c",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.walla.co.il/healthy/myhealth/383959533",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.ajcnut.2026.101527",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.who.int/publications/i/item/9789240073630",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1093/advances/nmaa113",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.fda.gov/media/180903/download?attachment=",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-landscape.png",
+    "sha256": "09ca12f4e825e5d25b13af25cf670096cf0024c330bf967a59292be58f22cbef",
+    "alt_text": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Aliquoting_after_spinning_down.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Aliquoting_after_spinning_down.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Darren Tse",
+    "license_name": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "attribution": "Aliquoting after spinning down.jpg — Darren Tse; CC BY-SA 2.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-hero.png",
+        "sha256": "f536d884410e3edc0f98e14aa2808df9258db9fc90727ec8eda21ad5299203be",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-landscape.png",
+        "sha256": "09ca12f4e825e5d25b13af25cf670096cf0024c330bf967a59292be58f22cbef",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-square.jpg",
+        "sha256": "8ae6db9645c5d8e48a0fb34d7d7f70b0b3ed61b37b15b06a2c3c7dea9a33b65a",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-portrait.png",
+        "sha256": "64ae21e0a21f171ac94ca392089a8ada96b00c51793a45e59a45765a46364538",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
+        "cms_title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא?",
+        "markdown": "# אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** לאחר שצעירים בריאים צרכו מדי יום בוטנים או מוצרים המבוססים על בוטנים במשך שישה חודשים, החוקרים זיהו שינוי בהרכב של מולקולות שומן מסוימות בפלזמה. דפוס זה, שכונה “חתימה ליפידומית של בוטנים”, נמצא בהמשך קשור סטטיסטית לסיכון נמוך במידה מתונה לסוכרת מסוג 2 בקבוצת אוכלוסייה אחרת. עם זאת, המחקר **לא הוכיח שאכילת חופן בוטנים ביום מונעת סוכרת**, ולא מצא קשר לסיכון נמוך יותר למחלות לב וכלי דם.\n\nהכותרת המסקרנת הופיעה במסגרת [כתבת הבריאות על אכילת בוטנים במשך חצי שנה והשינוי שנמדד בדם](https://www.walla.co.il/healthy/myhealth/383959533). קישור זה מובא לצורך זיהוי הכתבה הנבדקת בלבד ואינו משמש מקור רפואי. כדי להבין את משמעות הכותרת יש לבחון את המחקר המקורי: מי השתתף בו, מה בדיוק נמדד, כיצד נותחו התוצאות ומה אי אפשר להסיק מהן.\n\nהממצא המרכזי אינו ירידה רגילה בכולסטרול וגם אינו הוכחה לכך שבוטנים הם אמצעי טיפולי או “מזון פלא”. מדובר במחקר ליפידומי — ניתוח מפורט של מגוון מולקולות השומן הנעות במחזור הדם — שאליו צורף ניתוח סטטיסטי של הסיכון העתידי לסוכרת מסוג 2.\n\n## מה בדיוק בדקו החוקרים?\n\nהמחקר המקורי שילב שני חלקים שונים: ניסוי תזונתי מבוקר וניתוח של מחקר עוקבה אוכלוסייתי. לפי [המאמר המדעי המקורי על ליפידים הקשורים לצריכת בוטנים והסיכון לסוכרת מסוג 2](https://doi.org/10.1016/j.ajcnut.2026.101527), בשלב הראשון נותחו נתוניהם של 63 מבוגרים צעירים ובריאים, בני 18 עד 33, שהשתתפו בניסוי ARISTOTLE.\n\nהמשתתפים חולקו באקראי לשלוש קבוצות, ובמשך שישה חודשים צרכו מדי יום אחד מהמוצרים הבאים:\n\n- 25 גרם בוטנים קלויים עם הקליפה הדקה;\n- 32 גרם חמאת בוטנים;\n- 32 גרם ממרח ביקורת שהכיל שמן בוטנים.\n\nהפרט האחרון חשוב להבנת התוצאות: גם מוצר הביקורת הכיל שמן בוטנים. לכן לא מדובר בהשוואה פשוטה בין אכילת בוטנים לבין הימנעות מוחלטת מבוטנים או משומן שמקורו בהם. מטרת הניתוח הייתה לזהות דפוסים ביולוגיים הקשורים לחשיפה לרכיבי השומן של הבוטנים, ולא להוכיח יתרון קליני של בוטנים שלמים על פני מזון אחר.\n\nבדיקות דם בוצעו לפני תקופת ההתערבות ואחריה. באמצעות ליפידומיקה זוהו שינויים ב־51 צירופים של חומצות שומן בתוך קבוצות שונות של ליפידים. בין השאר נצפו שינויים במולקולות המכילות חומצות שומן רוויות בעלות שרשרת ארוכה מאוד ובסוגים מסוימים של ספינגוליפידים.\n\nהמחקר מלמד אפוא שצריכת המוצרים שנבדקו לוותה בשינוי ביוכימי מדיד. הוא אינו מראה, בחלק הניסויי שלו, שהמשתתפים חלו פחות בסוכרת או במחלות לב, משום שתוצאות קליניות כאלה כלל לא נבדקו במשך ששת החודשים.\n\n## מהי “חתימה ליפידומית”, והאם מדובר בירידה בכולסטרול?\n\nהמונח “שינוי בשומני הדם” עלול ליצור רושם שמדובר בבדיקת כולסטרול שגרתית. בפועל, פרופיל שומנים רגיל מתמקד בדרך כלל בכולסטרול כללי, LDL, HDL וטריגליצרידים. ליפידומיקה בוחנת מספר גדול בהרבה של מולקולות, ובהן פוספוליפידים, צרמידים, ספינגוליפידים ותרכובות שומן נוספות.\n\nעל בסיס השינויים שנמדדו בניסוי יצרו החוקרים ציון משולב בשם Peanut Lipidomic Signature, או PeLS. הציון נועד לייצג דפוס של מולקולות שומן שהשתנו לאחר ההתערבות. לכן “החתימה” אינה בדיקת דם קלינית מקובלת, אינה ערך אבחנתי לסוכרת ואינה מדד שאפשר כיום להזמין במסגרת בדיקות שגרה.\n\nגם המונח “שומן רווי” מחייב דיוק. חומצות שומן שונות זו מזו באורך השרשרת, במקור התזונתי ובמסלולים המטבוליים שבהם הן משתתפות. עם זאת, אין לפרש את התוצאות כהוכחה לכך ששומן רווי כשלעצמו מגן מפני מחלות מטבוליות. [הנחיית ארגון הבריאות העולמי בנושא צריכת שומן רווי ושומן טראנס](https://www.who.int/publications/i/item/9789240073630) ממליצה להגביל את צריכתם ולהעדיף החלפה בשומנים בלתי רוויים או בפחמימות שמקורן במזונות המכילים סיבים תזונתיים.\n\nבוטנים מכילים בעיקר שומנים בלתי רוויים, לצד חלבון, סיבים ורכיבים ביולוגיים נוספים. המחקר אינו מאפשר לבודד איזה רכיב גרם לכל שינוי שנמדד. הוא גם אינו מוכיח שהחתימה הליפידומית היא מנגנון פעיל המגן מפני מחלה; ייתכן שהיא רק סמן לחשיפה תזונתית או למצב מטבולי מסוים.\n\n## כיצד נקשרה החתימה לסוכרת מסוג 2?\n\nבחלק השני בחנו החוקרים את ציון ה־PeLS באמצעות נתונים ממחקר EPIC-Potsdam, מחקר עוקבה גרמני גדול. הניתוח הנוכחי כלל מדגם מקרה־עוקבה ובו 774 מקרים חדשים של סוכרת מסוג 2 ו־547 מקרים של מחלות לב וכלי דם.\n\nלפי [תוצאות הניתוח במאמר המדעי המקורי](https://doi.org/10.1016/j.ajcnut.2026.101527), עלייה של סטיית תקן אחת בציון החתימה הליפידומית נקשרה ליחס סיכון של 0.89 לסוכרת מסוג 2. משמעות הדבר היא קשר סטטיסטי לסיכון יחסי נמוך בכ־11%, כאשר רווח הסמך של 95% נע בין 0.80 ל־0.99.\n\nזהו קשר מתון, ורווח הסמך קרוב בגבולו העליון לערך 1, המייצג היעדר קשר. נוסף על כך, לא נמצא קשר בין החתימה לבין סיכון נמוך יותר למחלות לב וכלי דם: יחס הסיכון היה 1.01, כלומר קרוב מאוד להיעדר הבדל.\n\nחשוב להבחין בין שני חלקי המחקר. בניסוי התזונתי חולקו המשתתפים באקראי למוצרים שונים ונבדק השינוי בליפידים. לעומת זאת, במחקר העוקבה לא חולקו אנשים באופן אקראי לאכילת בוטנים; החוקרים בדקו אם הציון שנבנה בחלק הראשון קשור להופעת מחלה באוכלוסייה אחרת.\n\nתכנון כזה יכול לחזק השערה ולזהות קשר ראוי להמשך מחקר, אך אינו מוכיח שהבוטנים הם שגרמו לירידה בסיכון. ייתכן שהחתימה קשורה גם למשקל הגוף, לתזונה הכוללת, לפעילות גופנית או למאפיינים מטבוליים אחרים.\n\n## מדוע משקל הגוף היה גורם מרכזי בפרשנות?\n\nהחוקרים ערכו ניתוח תיווך סטטיסטי ובדקו אם מדד מסת הגוף, BMI, עשוי להסביר חלק מהקשר בין החתימה הליפידומית לבין הסיכון לסוכרת. לפי [ניתוח התיווך שפורסם במסגרת המחקר](https://doi.org/10.1016/j.ajcnut.2026.101527), BMI עשוי להסביר שיעור ניכר מהקשר, אך רווח הסמך היה רחב והחוקרים הציגו את התוצאה כממצא ליצירת השערות, לא כהוכחה למנגנון סיבתי.\n\nאין להסיק מכך שבוטנים גרמו לירידה במשקל, שהירידה במשקל שינתה את הליפידום או ששני התהליכים מנעו סוכרת. ייתכן שאנשים בעלי BMI נמוך יותר נבדלים מלכתחילה בפרופיל המטבולי שלהם. לחלופין, החתימה עשויה לשקף דפוס תזונה רחב יותר ולא את השפעת הבוטנים לבדם.\n\n[סקירה שיטתית ומטא־אנליזה של ניסויים אקראיים על צריכת אגוזים ומשקל הגוף](https://doi.org/10.1093/advances/nmaa113) מצאה כי שילוב אגוזים ומוצרי אגוזים בתפריט לא הוביל בממוצע לעלייה במשקל, ב־BMI או בהיקף המותניים. תוצאה זו מרגיעה ביחס לחשש הכללי שמזונות צפופי אנרגיה גורמים בהכרח להשמנה, אך אינה מוכיחה שבוטנים מביאים לירידה במשקל או מונעים סוכרת.\n\nההקשר התזונתי חשוב: חופן מדוד של בוטנים במקום ממתק, מאפה או חטיף אולטרה־מעובד אינו שקול להוספת אותה כמות לתפריט בלי להפחית מזון אחר. למניעת סוכרת קיימות ראיות מבוססות יותר להתערבות כוללת באורח החיים. [הנחיות המכון הלאומי האמריקאי לסוכרת, מחלות עיכול וכליה למניעת סוכרת מסוג 2](https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan) מדגישות תזונה מאוזנת ומופחתת קלוריות לפי הצורך, פעילות גופנית וירידה מתונה במשקל בקרב אנשים עם עודף משקל וסיכון מוגבר.\n\n## מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?\n\nלמחקר כמה מגבלות מהותיות. הן מפורטות ב[מאמר המקורי המתאר את הניסוי ואת ניתוח העוקבה](https://doi.org/10.1016/j.ajcnut.2026.101527), והבנתן חיונית כדי שלא להפוך קשר סטטיסטי להבטחה רפואית:\n\n1. **מדגם הניסוי היה קטן:** החלק ההתערבותי כלל 63 משתתפים צעירים ובריאים. לא ברור אם התוצאות ישוחזרו בקרב מבוגרים, אנשים עם טרום־סוכרת או מטופלים עם מחלות מטבוליות.\n\n2. **משך המעקב ההתערבותי היה מוגבל:** שישה חודשים יכולים להספיק לזיהוי שינוי ביוכימי, אך אינם מאפשרים להוכיח מניעה של מחלה כרונית המתפתחת לאורך שנים.\n\n3. **הניסוי לא בדק הופעת סוכרת:** התוצאה הנמדדת הייתה שינוי במולקולות שומן. מניעת סוכרת לא הייתה תוצא קליני של החלק האקראי.\n\n4. **גם קבוצת הביקורת נחשפה לשמן בוטנים:** לכן אי אפשר לתאר את המחקר כהשוואה בין “בוטנים” לבין “ללא בוטנים”.\n\n5. **הקשר למחלה נבדק באוכלוסייה נפרדת:** החתימה נבנתה בניסוי אחד ונקשרה לסוכרת במחקר אחר. זוהי אסטרטגיה מחקרית מעניינת, אך לא ניסוי שמראה כי מתן בוטנים הפחית מקרי סוכרת.\n\n6. **קיימת אפשרות לערפול:** BMI, הרגלי אכילה, פעילות גופנית ומאפיינים מטבוליים נוספים עשויים להשפיע הן על הליפידום והן על הסיכון לסוכרת.\n\n7. **נמדדו מולקולות רבות:** במחקרים עתירי משתנים קיימת אפשרות לממצאים מקריים, גם כאשר משתמשים בתיקונים סטטיסטיים. נדרש שחזור בקבוצות נוספות ובניסויים גדולים יותר.\n\nלכן הניסוח המדויק הוא שהחתימה הליפידומית **נקשרה** לסיכון נמוך יותר לסוכרת מסוג 2. אין בסיס לקביעה שהבוטנים **גרמו** להפחתת הסיכון.\n\n## המשמעות המעשית וסיכום\n\nבוטנים יכולים להשתלב בתזונה מגוונת, במיוחד כאשר הם מחליפים מזון בעל איכות תזונתית נמוכה יותר. עם זאת, הכמות שניתנה בניסוי — 25 גרם בוטנים או 32 גרם מהממרחים — היא חלק מפרוטוקול מחקרי, לא “מינון טיפולי” ולא המלצה מוכחת למניעת סוכרת.\n\nבבחירת חמאת בוטנים ראוי לבדוק את רשימת הרכיבים ולהביא בחשבון תוספות של סוכר, מלח או שומן. יש להתייחס גם לגודל המנה ולצריכת האנרגיה הכוללת. למי שאלרגי לבוטנים אסור לראות במחקר סיבה לנסות לצרוך אותם: בוטנים הם אלרגן מרכזי, ותגובה אלרגית עלולה להיות חמורה ואף מסכנת חיים. [מסמך ה־FDA על אלרגיות למזון והימנעות מאלרגנים](https://www.fda.gov/media/180903/download?attachment=) מדגיש את חשיבות האבחון, קריאת התוויות וההימנעות מהמזון הגורם לתגובה.\n\nלסיכום, [המחקר המקורי](https://doi.org/10.1016/j.ajcnut.2026.101527) מראה כי צריכה יומית של מוצרים המבוססים על בוטנים במשך שישה חודשים לוותה בשינויים בהרכב המפורט של מולקולות שומן בפלזמה. חתימה שנבנתה משינויים אלה נקשרה בהמשך לסיכון נמוך במידה מתונה לסוכרת מסוג 2, אך לא להפחתת הסיכון למחלות לב וכלי דם.\n\nהממצא מעניין ומצדיק המשך מחקר, אך אינו מוכיח שבוטנים מונעים סוכרת. המסר המעשי נותר רחב יותר: הסיכון המטבולי מושפע מדפוס התזונה הכולל, ממשקל הגוף, מפעילות גופנית ומגורמי סיכון נוספים — ולא ממזון יחיד.\n\n> **המידע במאמר הוא מידע רפואי כללי בלבד, אינו מהווה אבחון או המלצה טיפולית אישית, ומחייב ביקורת אנושית ובדיקה של רופא מוסמך לפני פרסום.**\n\n## מקורות\n\n1. Domínguez-López I, et al. *Peanuts-derived plasma lipids and lower risk of type 2 diabetes: association mediated by body mass index—an intervention and case-cohort study*. The American Journal of Clinical Nutrition.  \n   https://doi.org/10.1016/j.ajcnut.2026.101527\n\n2. World Health Organization. *Saturated fatty acid and trans-fatty acid intake for adults and children: WHO guideline*.  \n   https://www.who.int/publications/i/item/9789240073630\n\n3. Guarneiri LL, Cooper JA. *Intake of Nuts or Nut Products Does Not Lead to Weight Gain, Independent of Dietary Substitution Instructions: A Systematic Review and Meta-Analysis of Randomized Trials*. Advances in Nutrition.  \n   https://doi.org/10.1093/advances/nmaa113\n\n4. National Institute of Diabetes and Digestive and Kidney Diseases. *Your Game Plan to Prevent Type 2 Diabetes*.  \n   https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan\n\n5. U.S. Food and Drug Administration. *Food Allergies: What You Need to Know*.  \n   https://www.fda.gov/media/180903/download?attachment=\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)\n- [כתבת הבריאות על אכילת בוטנים במשך חצי שנה והשינוי שנמדד בדם](https://www.walla.co.il/healthy/myhealth/383959533)",
+        "canonical_url": "https://www.drguyrofe.co.il/אכלו-בוטנים-במשך-חצי-שנה-ובדם-שלהם/",
+        "meta_description": "ד״ר גיא רופא: לאחר שצעירים בריאים צרכו מדי יום בוטנים או מוצרים המבוססים על בוטנים במשך שישה חודשים, החוקרים זיהו שינוי בהרכב של מולקולות שומן מסוימות בפלזמה.",
+        "search_target": {
+          "primary_query": "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע",
+          "secondary_queries": [
+            "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא?",
+            "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע ד״ר גיא רופא",
+            "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "לא רק מה שאמא אוכלת: מה באמת מצא המחקר על תזונת האב ומבנה הגוף של התינוק?",
+            "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-12-topic-90-run-31573715687-attempt-1/"
+          },
+          {
+            "title": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון",
+            "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-11-topic-90-run-31467572739-attempt-1/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/אכלו-בוטנים-במשך-חצי-שנה-ובדם-שלהם/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-12-topic-90-run-31573715687-attempt-1/",
+              "anchor": "לא רק מה שאמא אוכלת: מה באמת מצא המחקר על תזונת האב ומבנה הגוף של התינוק?",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            },
+            {
+              "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-11-topic-90-run-31467572739-attempt-1/",
+              "anchor": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 73,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-11-02T12:41:54.648946"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "17ec7f9edb9645893613928e7995169c7c92d80a5b5d4214e0bda12989244df2",
+        "slug": "אכלו-בוטנים-במשך-חצי-שנה-ובדם-שלהם",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-hero.png",
+          "sha256": "f536d884410e3edc0f98e14aa2808df9258db9fc90727ec8eda21ad5299203be",
+          "alt_text": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Aliquoting_after_spinning_down.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Aliquoting_after_spinning_down.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Darren Tse",
+          "license_name": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "attribution": "Aliquoting after spinning down.jpg — Darren Tse; CC BY-SA 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-hero.png",
+              "sha256": "f536d884410e3edc0f98e14aa2808df9258db9fc90727ec8eda21ad5299203be",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-landscape.png",
+              "sha256": "09ca12f4e825e5d25b13af25cf670096cf0024c330bf967a59292be58f22cbef",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-square.jpg",
+              "sha256": "8ae6db9645c5d8e48a0fb34d7d7f70b0b3ed61b37b15b06a2c3c7dea9a33b65a",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-portrait.png",
+              "sha256": "64ae21e0a21f171ac94ca392089a8ada96b00c51793a45e59a45765a46364538",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: לאחר שצעירים בריאים צרכו מדי יום בוטנים או מוצרים המבוססים על בוטנים במשך שישה חודשים, החוקרים זיהו שינוי בהרכב של מולקולות שומן מסוימות בפלזמה.\n\nדפוס זה, שכונה “חתימה ליפידומית של בוטנים”, נמצא בהמשך קשור סטטיסטית לסיכון נמוך במידה מתונה לסוכרת מסוג 2 בקבוצת אוכלוסייה אחרת.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Aliquoting after spinning down.jpg — Darren Tse; CC BY-SA 2.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/אכלו-בוטנים-במשך-חצי-שנה-ובדם-שלהם/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-landscape.png",
+          "sha256": "09ca12f4e825e5d25b13af25cf670096cf0024c330bf967a59292be58f22cbef",
+          "alt_text": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Aliquoting_after_spinning_down.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Aliquoting_after_spinning_down.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Darren Tse",
+          "license_name": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "attribution": "Aliquoting after spinning down.jpg — Darren Tse; CC BY-SA 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-hero.png",
+              "sha256": "f536d884410e3edc0f98e14aa2808df9258db9fc90727ec8eda21ad5299203be",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-landscape.png",
+              "sha256": "09ca12f4e825e5d25b13af25cf670096cf0024c330bf967a59292be58f22cbef",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-square.jpg",
+              "sha256": "8ae6db9645c5d8e48a0fb34d7d7f70b0b3ed61b37b15b06a2c3c7dea9a33b65a",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-portrait.png",
+              "sha256": "64ae21e0a21f171ac94ca392089a8ada96b00c51793a45e59a45765a46364538",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: לאחר שצעירים בריאים צרכו מדי יום בוטנים או מוצרים המבוססים על בוטנים במשך שישה חודשים, החוקרים זיהו שינוי בהרכב של מולקולות שומן מסוימות בפלזמה.\n\n• דפוס זה, שכונה “חתימה ליפידומית של בוטנים”, נמצא בהמשך קשור סטטיסטית לסיכון נמוך במידה מתונה לסוכרת מסוג 2 בקבוצת אוכלוסייה אחרת.\n• עם זאת, המחקר לא הוכיח שאכילת חופן בוטנים ביום מונעת סוכרת, ולא מצא קשר לסיכון נמוך יותר למחלות לב וכלי דם.\n• הכותרת המסקרנת הופיעה במסגרת [כתבת הבריאות על אכילת בוטנים במשך חצי שנה והשינוי שנמדד בדם]( קישור זה מובא לצורך זיהוי הכתבה הנבדקת בלבד ואינו משמש מקור רפואי.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Aliquoting after spinning down.jpg — Darren Tse; CC BY-SA 2.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/אכלו-בוטנים-במשך-חצי-שנה-ובדם-שלהם/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-landscape.png",
+          "sha256": "09ca12f4e825e5d25b13af25cf670096cf0024c330bf967a59292be58f22cbef",
+          "alt_text": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Aliquoting_after_spinning_down.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Aliquoting_after_spinning_down.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Darren Tse",
+          "license_name": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "attribution": "Aliquoting after spinning down.jpg — Darren Tse; CC BY-SA 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-hero.png",
+              "sha256": "f536d884410e3edc0f98e14aa2808df9258db9fc90727ec8eda21ad5299203be",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-landscape.png",
+              "sha256": "09ca12f4e825e5d25b13af25cf670096cf0024c330bf967a59292be58f22cbef",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-square.jpg",
+              "sha256": "8ae6db9645c5d8e48a0fb34d7d7f70b0b3ed61b37b15b06a2c3c7dea9a33b65a",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-portrait.png",
+              "sha256": "64ae21e0a21f171ac94ca392089a8ada96b00c51793a45e59a45765a46364538",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
+        "html": "<h2>אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה: לאחר שצעירים בריאים צרכו מדי יום בוטנים או מוצרים המבוססים על בוטנים במשך שישה חודשים, החוקרים זיהו שינוי בהרכב של מולקולות שומן מסוימות בפלזמה.</p><p>דפוס זה, שכונה “חתימה ליפידומית של בוטנים”, נמצא בהמשך קשור סטטיסטית לסיכון נמוך במידה מתונה לסוכרת מסוג 2 בקבוצת אוכלוסייה אחרת.</p>\n<p><small>קרדיט תמונה: Aliquoting after spinning down.jpg — Darren Tse; CC BY-SA 2.0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/אכלו-בוטנים-במשך-חצי-שנה-ובדם-שלהם/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-hero.png",
+          "sha256": "f536d884410e3edc0f98e14aa2808df9258db9fc90727ec8eda21ad5299203be",
+          "alt_text": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "פיפטה עם נוזל צהוב מעל מבחנות מעבדה קטנות, שאחת מהן מסומנת „Serum”.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Aliquoting_after_spinning_down.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Aliquoting_after_spinning_down.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Darren Tse",
+          "license_name": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "attribution": "Aliquoting after spinning down.jpg — Darren Tse; CC BY-SA 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-hero.png",
+              "sha256": "f536d884410e3edc0f98e14aa2808df9258db9fc90727ec8eda21ad5299203be",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-landscape.png",
+              "sha256": "09ca12f4e825e5d25b13af25cf670096cf0024c330bf967a59292be58f22cbef",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-square.jpg",
+              "sha256": "8ae6db9645c5d8e48a0fb34d7d7f70b0b3ed61b37b15b06a2c3c7dea9a33b65a",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-02-topic-90-run-41465876753-attempt-1-portrait.png",
+              "sha256": "64ae21e0a21f171ac94ca392089a8ada96b00c51793a45e59a45765a46364538",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 37,
+      "supported_claim_count": 37,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מה בדיוק בדקו החוקרים?",
+          "claim": "המחקר המקורי שילב שני חלקים שונים: ניסוי תזונתי מבוקר וניתוח של מחקר עוקבה אוכלוסייתי.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מה בדיוק בדקו החוקרים?",
+          "claim": "לפי המאמר המדעי המקורי על ליפידים הקשורים לצריכת בוטנים והסיכון לסוכרת מסוג 2, בשלב הראשון נותחו נתוניהם של 63 מבוגרים צעירים ובריאים, בני 18 עד 33, שהשתתפו בניסוי ARISTOTLE.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מה בדיוק בדקו החוקרים?",
+          "claim": "המשתתפים חולקו באקראי לשלוש קבוצות, ובמשך שישה חודשים צרכו מדי יום אחד מהמוצרים הבאים:",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מה בדיוק בדקו החוקרים?",
+          "claim": "המחקר מלמד אפוא שצריכת המוצרים שנבדקו לוותה בשינוי ביוכימי מדיד.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מה בדיוק בדקו החוקרים?",
+          "claim": "הוא אינו מראה, בחלק הניסויי שלו, שהמשתתפים חלו פחות בסוכרת או במחלות לב, משום שתוצאות קליניות כאלה כלל לא נבדקו במשך ששת החודשים.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהי “חתימה ליפידומית”, והאם מדובר בירידה בכולסטרול?",
+          "claim": "המונח “שינוי בשומני הדם” עלול ליצור רושם שמדובר בבדיקת כולסטרול שגרתית.",
+          "source_urls": [
+            "https://www.who.int/publications/i/item/9789240073630"
+          ]
+        },
+        {
+          "section": "מהי “חתימה ליפידומית”, והאם מדובר בירידה בכולסטרול?",
+          "claim": "המחקר אינו מאפשר לבודד איזה רכיב גרם לכל שינוי שנמדד.",
+          "source_urls": [
+            "https://www.who.int/publications/i/item/9789240073630"
+          ]
+        },
+        {
+          "section": "כיצד נקשרה החתימה לסוכרת מסוג 2?",
+          "claim": "בחלק השני בחנו החוקרים את ציון ה־PeLS באמצעות נתונים ממחקר EPIC-Potsdam, מחקר עוקבה גרמני גדול.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "כיצד נקשרה החתימה לסוכרת מסוג 2?",
+          "claim": "לפי תוצאות הניתוח במאמר המדעי המקורי, עלייה של סטיית תקן אחת בציון החתימה הליפידומית נקשרה ליחס סיכון של 0.89 לסוכרת מסוג 2.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "כיצד נקשרה החתימה לסוכרת מסוג 2?",
+          "claim": "משמעות הדבר היא קשר סטטיסטי לסיכון יחסי נמוך בכ־11%, כאשר רווח הסמך של 95% נע בין 0.80 ל־0.99.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "כיצד נקשרה החתימה לסוכרת מסוג 2?",
+          "claim": "נוסף על כך, לא נמצא קשר בין החתימה לבין סיכון נמוך יותר למחלות לב וכלי דם: יחס הסיכון היה 1.01, כלומר קרוב מאוד להיעדר הבדל.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "כיצד נקשרה החתימה לסוכרת מסוג 2?",
+          "claim": "חשוב להבחין בין שני חלקי המחקר.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "כיצד נקשרה החתימה לסוכרת מסוג 2?",
+          "claim": "לעומת זאת, במחקר העוקבה לא חולקו אנשים באופן אקראי לאכילת בוטנים; החוקרים בדקו אם הציון שנבנה בחלק הראשון קשור להופעת מחלה באוכלוסייה אחרת.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "כיצד נקשרה החתימה לסוכרת מסוג 2?",
+          "claim": "תכנון כזה יכול לחזק השערה ולזהות קשר ראוי להמשך מחקר, אך אינו מוכיח שהבוטנים הם שגרמו לירידה בסיכון.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מדוע משקל הגוף היה גורם מרכזי בפרשנות?",
+          "claim": "החוקרים ערכו ניתוח תיווך סטטיסטי ובדקו אם מדד מסת הגוף, BMI, עשוי להסביר חלק מהקשר בין החתימה הליפידומית לבין הסיכון לסוכרת.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527",
+            "https://doi.org/10.1093/advances/nmaa113",
+            "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan"
+          ]
+        },
+        {
+          "section": "מדוע משקל הגוף היה גורם מרכזי בפרשנות?",
+          "claim": "לפי ניתוח התיווך שפורסם במסגרת המחקר, BMI עשוי להסביר שיעור ניכר מהקשר, אך רווח הסמך היה רחב והחוקרים הציגו את התוצאה כממצא ליצירת השערות, לא כהוכחה למנגנון סיבתי.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527",
+            "https://doi.org/10.1093/advances/nmaa113",
+            "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan"
+          ]
+        },
+        {
+          "section": "מדוע משקל הגוף היה גורם מרכזי בפרשנות?",
+          "claim": "ייתכן שאנשים בעלי BMI נמוך יותר נבדלים מלכתחילה בפרופיל המטבולי שלהם.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527",
+            "https://doi.org/10.1093/advances/nmaa113",
+            "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan"
+          ]
+        },
+        {
+          "section": "מדוע משקל הגוף היה גורם מרכזי בפרשנות?",
+          "claim": "לחלופין, החתימה עשויה לשקף דפוס תזונה רחב יותר ולא את השפעת הבוטנים לבדם.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527",
+            "https://doi.org/10.1093/advances/nmaa113",
+            "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan"
+          ]
+        },
+        {
+          "section": "מדוע משקל הגוף היה גורם מרכזי בפרשנות?",
+          "claim": "הנחיות המכון הלאומי האמריקאי לסוכרת, מחלות עיכול וכליה למניעת סוכרת מסוג 2 מדגישות תזונה מאוזנת ומופחתת קלוריות לפי הצורך, פעילות גופנית וירידה מתונה במשקל בקרב אנשים עם עודף משקל וסיכון מוגבר.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527",
+            "https://doi.org/10.1093/advances/nmaa113",
+            "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "למחקר כמה מגבלות מהותיות.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "לא ברור אם התוצאות ישוחזרו בקרב מבוגרים, אנשים עם טרום־סוכרת או מטופלים עם מחלות מטבוליות.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "**משך המעקב ההתערבותי היה מוגבל:** שישה חודשים יכולים להספיק לזיהוי שינוי ביוכימי, אך אינם מאפשרים להוכיח מניעה של מחלה כרונית המתפתחת לאורך שנים.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "**גם קבוצת הביקורת נחשפה לשמן בוטנים:** לכן אי אפשר לתאר את המחקר כהשוואה בין “בוטנים” לבין “ללא בוטנים”.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "**הקשר למחלה נבדק באוכלוסייה נפרדת:** החתימה נבנתה בניסוי אחד ונקשרה לסוכרת במחקר אחר.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "זוהי אסטרטגיה מחקרית מעניינת, אך לא ניסוי שמראה כי מתן בוטנים הפחית מקרי סוכרת.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "**קיימת אפשרות לערפול:** BMI, הרגלי אכילה, פעילות גופנית ומאפיינים מטבוליים נוספים עשויים להשפיע הן על הליפידום והן על הסיכון לסוכרת.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "**נמדדו מולקולות רבות:** במחקרים עתירי משתנים קיימת אפשרות לממצאים מקריים, גם כאשר משתמשים בתיקונים סטטיסטיים.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "לכן הניסוח המדויק הוא שהחתימה הליפידומית **נקשרה** לסיכון נמוך יותר לסוכרת מסוג 2.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "מהן המגבלות שמונעות מסקנה של סיבה ותוצאה?",
+          "claim": "אין בסיס לקביעה שהבוטנים **גרמו** להפחתת הסיכון.",
+          "source_urls": [
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "המשמעות המעשית וסיכום",
+          "claim": "עם זאת, הכמות שניתנה בניסוי — 25 גרם בוטנים או 32 גרם מהממרחים — היא חלק מפרוטוקול מחקרי, לא “מינון טיפולי” ולא המלצה מוכחת למניעת סוכרת.",
+          "source_urls": [
+            "https://www.fda.gov/media/180903/download?attachment=",
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "המשמעות המעשית וסיכום",
+          "claim": "למי שאלרגי לבוטנים אסור לראות במחקר סיבה לנסות לצרוך אותם: בוטנים הם אלרגן מרכזי, ותגובה אלרגית עלולה להיות חמורה ואף מסכנת חיים.",
+          "source_urls": [
+            "https://www.fda.gov/media/180903/download?attachment=",
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "המשמעות המעשית וסיכום",
+          "claim": "מסמך ה־FDA על אלרגיות למזון והימנעות מאלרגנים מדגיש את חשיבות האבחון, קריאת התוויות וההימנעות מהמזון הגורם לתגובה.",
+          "source_urls": [
+            "https://www.fda.gov/media/180903/download?attachment=",
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "המשמעות המעשית וסיכום",
+          "claim": "לסיכום, המחקר המקורי מראה כי צריכה יומית של מוצרים המבוססים על בוטנים במשך שישה חודשים לוותה בשינויים בהרכב המפורט של מולקולות שומן בפלזמה.",
+          "source_urls": [
+            "https://www.fda.gov/media/180903/download?attachment=",
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "המשמעות המעשית וסיכום",
+          "claim": "חתימה שנבנתה משינויים אלה נקשרה בהמשך לסיכון נמוך במידה מתונה לסוכרת מסוג 2, אך לא להפחתת הסיכון למחלות לב וכלי דם.",
+          "source_urls": [
+            "https://www.fda.gov/media/180903/download?attachment=",
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "המשמעות המעשית וסיכום",
+          "claim": "הממצא מעניין ומצדיק המשך מחקר, אך אינו מוכיח שבוטנים מונעים סוכרת.",
+          "source_urls": [
+            "https://www.fda.gov/media/180903/download?attachment=",
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "המשמעות המעשית וסיכום",
+          "claim": "המסר המעשי נותר רחב יותר: הסיכון המטבולי מושפע מדפוס התזונה הכולל, ממשקל הגוף, מפעילות גופנית ומגורמי סיכון נוספים — ולא ממזון יחיד.",
+          "source_urls": [
+            "https://www.fda.gov/media/180903/download?attachment=",
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        },
+        {
+          "section": "המשמעות המעשית וסיכום",
+          "claim": "> **המידע במאמר הוא מידע רפואי כללי בלבד, אינו מהווה אבחון או המלצה טיפולית אישית, ומחייב ביקורת אנושית ובדיקה של רופא מוסמך לפני פרסום.**",
+          "source_urls": [
+            "https://www.fda.gov/media/180903/download?attachment=",
+            "https://doi.org/10.1016/j.ajcnut.2026.101527"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://doi.org/10.1016/j.ajcnut.2026.101527",
+          "host": "doi.org",
+          "year_markers": [
+            "2026"
+          ]
+        },
+        {
+          "url": "https://www.who.int/publications/i/item/9789240073630",
+          "host": "who.int",
+          "year_markers": []
+        },
+        {
+          "url": "https://doi.org/10.1093/advances/nmaa113",
+          "host": "doi.org",
+          "year_markers": [
+            "2026"
+          ]
+        },
+        {
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes/game-plan",
+          "host": "niddk.nih.gov",
+          "year_markers": [
+            "2026"
+          ]
+        },
+        {
+          "url": "https://www.fda.gov/media/180903/download?attachment=",
+          "host": "fda.gov",
+          "year_markers": [
+            "2026"
+          ]
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "17ec7f9edb9645893613928e7995169c7c92d80a5b5d4214e0bda12989244df2",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/אכלו-בוטנים-במשך-חצי-שנה-ובדם-שלהם/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-12-topic-90-run-31573715687-attempt-1/",
+          "anchor": "לא רק מה שאמא אוכלת: מה באמת מצא המחקר על תזונת האב ומבנה הגוף של התינוק?",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        },
+        {
+          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-11-topic-90-run-31467572739-attempt-1/",
+          "anchor": "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 73,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-11-02T12:41:54.648946"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_69634fbf4fce67684b534139a39667c6faaf1e9b98b5f2f4223f7b99c199a75b"
+}
