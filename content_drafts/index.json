@@ -1,6 +1,19 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-03-topic-83-run-41646485391-attempt-1.md",
+      "title": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות | ד״ר גיא רופא",
+      "topic": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות",
+      "excerpt": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מבוא: קשר סטטיסטי אינו מוכיח שגורם אחד יצר את האחר התשובה הקצרה היא שלא כל קשר שנמצא במחקר ר",
+      "generated_at": "2026-11-03T13:41:08.363900+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-11-01",
+      "cadence_local_date": "2026-11-03",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-11-02-topic-90-run-41465876753-attempt-1.md",
       "title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
       "topic": "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע",
@@ -478,25 +491,6 @@
       "cadence_week": "week-of-2026-09-13",
       "cadence_local_date": "2026-09-15",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-14-topic-90-run-34840576898-attempt-1.md",
-      "title": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\"",
-      "excerpt": "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: חצבת אמנם מזוהה בעיקר עם ילדים, אך היא עלולה להדביק בני אדם בכל גיל. אצל מבוגרי",
-      "generated_at": "2026-09-14T11:54:58.909655+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger"
-      ],
-      "cadence_week": "week-of-2026-09-13",
-      "cadence_local_date": "2026-09-14",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-c2b45c7c3effb3f5.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/bkvbvqhfgl"
     }
   ]
 }
