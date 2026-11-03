@@ -1,0 +1,107 @@
+{
+  "draft": "content_drafts/2026-11-03-topic-83-run-41646485391-attempt-1.md",
+  "title": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-11-03T16:49:30.805514+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wix",
+      "url": "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות",
+      "detail": "idempotency_key=pub_3270243072bca8485eb9512ca551520d4953f6b17d9ee93f4082bbe838cd2e47"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות",
+      "detail": "failed checks: canonical_person_linked"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-03-topic-83-run-41646485391-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_6c8740c1cd159c9d47f50fa639b70c8cf1c38670f93cc69a349e7a51fea38ee7",
+  "search_target": {
+    "primary_query": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות",
+    "secondary_queries": [
+      "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות ד״ר גיא רופא",
+      "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

@@ -3511,6 +3511,38 @@
       "published_at": "2026-11-02T19:41:12Z",
       "url": "https://guyrofe.blogspot.com/2026/11/blog-post.html",
       "provider_receipt": null
+    },
+    "pub_5855435a913bc5a954850bc157f1c9d28e880f74f531aaf22e09b4f092825604": {
+      "version": 7,
+      "idempotency_key": "pub_5855435a913bc5a954850bc157f1c9d28e880f74f531aaf22e09b4f092825604",
+      "approval_id": "apr_6c8740c1cd159c9d47f50fa639b70c8cf1c38670f93cc69a349e7a51fea38ee7",
+      "target_id": "canonical_wix__media__hero",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "b9a762118eadc35fbcf8a397a9e1900580037e45b80e87d0cc57496d71d11126",
+      "status": "published",
+      "started_at": "2026-11-03T16:49:17Z",
+      "published_at": "2026-11-03T16:49:25Z",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-03-topic-83-run-41646485391-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-03-topic-83-run-41646485391-attempt-1-hero",
+        "sha256": "fd3c37af2cc38d551a43fc66448a7004f72b6d68312ae5935f3ab2d7a6410912",
+        "metadata_verified": true
+      }
+    },
+    "pub_3270243072bca8485eb9512ca551520d4953f6b17d9ee93f4082bbe838cd2e47": {
+      "version": 7,
+      "idempotency_key": "pub_3270243072bca8485eb9512ca551520d4953f6b17d9ee93f4082bbe838cd2e47",
+      "approval_id": "apr_6c8740c1cd159c9d47f50fa639b70c8cf1c38670f93cc69a349e7a51fea38ee7",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "6b5e96f269d1a491d95c3307b59a1c89f3998051b8b9124209bf08bdc3897f7c",
+      "status": "published",
+      "started_at": "2026-11-03T16:49:25Z",
+      "published_at": "2026-11-03T16:49:26Z",
+      "url": "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות",
+      "provider_receipt": null
     }
   }
 }

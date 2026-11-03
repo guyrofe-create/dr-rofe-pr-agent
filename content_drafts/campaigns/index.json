@@ -1,6 +1,113 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-11-03-topic-83-run-41646485391-attempt-1.md",
+      "title": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-11-03T16:49:30.805514+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.com",
+          "status": "published",
+          "target_id": "canonical_wix",
+          "url": "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות",
+          "detail": "idempotency_key=pub_3270243072bca8485eb9512ca551520d4953f6b17d9ee93f4082bbe838cd2e47"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "seo_warning",
+          "url": "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות",
+          "detail": "failed checks: canonical_person_linked"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-03-topic-83-run-41646485391-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_6c8740c1cd159c9d47f50fa639b70c8cf1c38670f93cc69a349e7a51fea38ee7",
+      "search_target": {
+        "primary_query": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות",
+        "secondary_queries": [
+          "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות ד״ר גיא רופא",
+          "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational"
+      },
+      "canonical_url": "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-11-02-topic-90-run-41465876753-attempt-1.md",
       "title": "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא",
       "status": "completed",
@@ -5206,126 +5313,6 @@
         "intent": "news_analysis"
       },
       "canonical_url": "https://www.drguyrofe.co.il/%d7%9b%d7%99%d7%9e%d7%99%d7%a7%d7%9c%d7%99%d7%9d-%d7%91%d7%97%d7%95%d7%9e%d7%a8%d7%99-%d7%a0%d7%99%d7%a7%d7%95%d7%99-%d7%a0%d7%9e%d7%a6%d7%90%d7%95-%d7%91%d7%93%d7%9d/",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md",
-      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
-      "status": "completed",
-      "published_at": "2026-09-10T07:02:29.114119+00:00",
-      "destinations": [
-        {
-          "name": "guyrofe.com",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
-          "detail": "idempotency_key=pub_ce3d0ee5a49a96ca6fead444a6b50190632fc2ca01f7817a693b82101af712f9"
-        },
-        {
-          "name": "Canonical SEO verification",
-          "status": "seo_warning",
-          "url": "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
-          "detail": "failed checks: canonical_person_linked"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-09-topic-01-run-34342210317-attempt-1-hero.png",
-          "detail": "wikimedia_commons_licensed_photo"
-        },
-        {
-          "name": "drguyrofe.co.il",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "published",
-          "target_id": "facebook_page",
-          "url": "https://www.facebook.com/122203461494942441",
-          "detail": "idempotency_key=pub_b2c71f4d284198635c5bd745585462272744f8f299cb5ff766f98de89f543467"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "published",
-          "target_id": "linkedin_member",
-          "url": "https://www.linkedin.com/feed/update/urn:li:share:7503709447291289601/",
-          "detail": "idempotency_key=pub_04798fcab6b980cba3d1bad58e989a5c56c818b54c9d96cbee32ceb1d5d2c199"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "published",
-          "target_id": "blogger_blog",
-          "url": "https://guyrofe.blogspot.com/2026/09/blog-post_10.html",
-          "detail": "idempotency_key=pub_dac13d6ecd2fdc025f1d2565cfd7b5f1324b1ac65fea7717e944419842d9c123"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "published",
-          "target_id": "google_business_profile",
-          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOHKo97r-Zak7wE",
-          "detail": "idempotency_key=pub_734906451702c044fbb7246a3d56fd1a2d79746b91c5a05b0bb11786ff68ef89"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
-      "search_target": {
-        "primary_query": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
-        "secondary_queries": [
-          "לפרוסקופיה גינקולוגית: מידע כללי על ההליך",
-          "לפרוסקופיה גינקולוגית - מידע כללי על ההליך ד״ר גיא רופא",
-          "לפרוסקופיה גינקולוגית - מידע כללי על ההליך גיא רופא"
-        ],
-        "entity_queries": [
-          "ד״ר גיא רופא",
-          "גיא רופא"
-        ],
-        "intent": "informational"
-      },
-      "canonical_url": "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

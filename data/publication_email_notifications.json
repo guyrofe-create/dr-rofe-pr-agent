@@ -1486,6 +1486,16 @@
       "approval_id": "apr_a73be17c50af3df42b14a2d744f1dcabc590305e9dbedf2e737c81046d358bf9",
       "state": "expired",
       "subject": "אישורי פרסום שפגו, מצב הפרסום טעון בדיקה: 1"
+    },
+    "apr_6c8740c1cd159c9d47f50fa639b70c8cf1c38670f93cc69a349e7a51fea38ee7:ddf2e2531225b38ab2352dcf7acf08b82de09b65b9564d18c7b042539bc06ca9": {
+      "sent_at": "2026-11-03T16:49:32.498935+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_6c8740c1cd159c9d47f50fa639b70c8cf1c38670f93cc69a349e7a51fea38ee7",
+      "state": "success",
+      "subject": "אישור פרסום: מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות"
+      ]
     }
   }
 }
