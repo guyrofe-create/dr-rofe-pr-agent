@@ -1511,6 +1511,17 @@
         "https://guyrofe.blogspot.com/2026/09/blog-post_10.html",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOHKo97r-Zak7wE"
       ]
+    },
+    "apr_6e05594ac0ed28004a589906e9190c69b06fb7b92d42aaa165b7b13a053ddb80:5af98b11f6983483ad86bdbefc59b65babc9d24f22ec80e1cfbe0733da1b5933": {
+      "sent_at": "2026-11-05T18:21:14.185305+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_6e05594ac0ed28004a589906e9190c69b06fb7b92d42aaa165b7b13a053ddb80",
+      "state": "success",
+      "subject": "אישור פרסום: כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9b%d7%95%d7%9c%d7%a0%d7%92%d7%99%d7%98%d7%99%d7%a1-%d7%9e%d7%a8%d7%aa%d7%99%d7%aa-%d7%a8%d7%90%d7%a9%d7%95%d7%a0%d7%99%d7%aa-%d7%9b%d7%99%d7%a6%d7%93-%d7%9e%d7%97%d7%9c%d7%94/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpoNnJnRC1OaVFkTVVudU84dGZsc3dB"
+      ]
     }
   }
 }
