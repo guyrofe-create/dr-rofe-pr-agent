@@ -1,0 +1,680 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-11-05T14:04:06Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-11-05-topic-89-run-42041122517-attempt-1.md",
+  "source_draft_sha256": "689f4d2a20a9a65a4207adfa027ecc37618286364d08f2606351b0bca614423b",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459209/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.14218/JCTH.2022.00347",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1002/hep.32117",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-landscape.png",
+    "sha256": "da9722ba462ffcadb623f75e335e9f01761c26c4de273f832439c973588ad375",
+    "alt_text": "חתך מיקרוסקופי צבוע של רקמת כבד, עם מחיצות סיביות כחולות בין אזורים ורודים של תאי כבד, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "חתך מיקרוסקופי צבוע של רקמת כבד, עם מחיצות סיביות כחולות בין אזורים ורודים של תאי כבד.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Cirrhosis_of_the_liver_(trichrome_stain)_(5690946257).jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Cirrhosis_of_the_liver_%28trichrome_stain%29_%285690946257%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Ed Uthman from Houston, TX, USA",
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "attribution": "Cirrhosis of the liver (trichrome stain) (5690946257).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-hero.png",
+        "sha256": "8667f4ed4efcdf992791d70ad08544f08bff959480f2f812d819d8014898b56d",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-landscape.png",
+        "sha256": "da9722ba462ffcadb623f75e335e9f01761c26c4de273f832439c973588ad375",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-square.jpg",
+        "sha256": "503bb68a38bbb8f7a440f54285cecd53fedfa07c0fb816c398400b68e3fcc9cf",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-portrait.png",
+        "sha256": "009f741c93feccd8a19b01cebb139740ff3102ba9b1cfb14f4733e358b9dfc8b",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא",
+        "cms_title": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים",
+        "markdown": "# כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nכולנגיטיס מרתית ראשונית (Primary Biliary Cholangitis, או PBC) היא מחלת כבד אוטואימונית כרונית שבה מערכת החיסון פוגעת בהדרגה בדרכי המרה הקטנות שבתוך הכבד. הפגיעה עלולה לעכב את זרימת המרה, לעורר דלקת ולהוביל עם הזמן להצטלקות של רקמת הכבד. סימני האזהרה המוקדמים כוללים בעיקר עייפות לא מוסברת, גרד מתמשך ועלייה באנזים הכבד פוספטזה בסיסית — אך אצל חלק מהאנשים המחלה מתגלה בבדיקות דם עוד לפני הופעת תסמינים.\n\nזיהוי מוקדם חשוב משום שטיפול ומעקב מתאימים עשויים להאט את התקדמות המחלה, להפחית את הסיכון לסיבוכים ולסייע בשמירה על איכות החיים. עם זאת, עייפות, גרד או שינוי באנזימי הכבד אינם ייחודיים ל-PBC, ולכן האבחנה מחייבת בירור רפואי מסודר ולא יכולה להתבסס על תסמין יחיד.\n\n## מהי כולנגיטיס מרתית ראשונית?\n\nדרכי המרה הן מערכת של צינורות המובילים מרה מתאי הכבד אל כיס המרה והמעי. למרה תפקיד מרכזי בעיכול שומנים ובפינוי חומרים מסוימים מן הגוף. ב-PBC מתפתחת תגובה חיסונית המכוונת בעיקר נגד דרכי המרה הקטנות הנמצאות בתוך הכבד. התהליך גורם לדלקת ולהרס הדרגתי של הצינורות הזעירים.\n\nכאשר מספר גדל והולך של דרכי מרה נפגע, המרה אינה מתנקזת ביעילות ועלולה להצטבר בכבד — מצב המכונה כולסטזיס. הצטברות ממושכת חושפת את תאי הכבד לחומרים שעלולים להזיק להם, ובהמשך עלולה להתפתח פיברוזיס, כלומר הצטלקות. בשלבים מתקדמים עלולה להיווצר שחמת הכבד, אך אין פירוש הדבר שכל אדם שאובחן יגיע לשלב זה.\n\nלמעשה, השם הישן של המחלה היה “שחמת מרתית ראשונית”. הוא הוחלף משום שאצל רבים המחלה מאובחנת כיום לפני שהתפתחה שחמת. לפי [הנחיות האבחון והטיפול ב-PBC הזמינות במאגר NCBI](https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/), מדובר במחלה כולסטטית אוטואימונית כרונית, שאבחון מוקדם והערכת התגובה לטיפול הם מרכיבים מרכזיים בניהול הסיכון להתקדמותה.\n\nPBC שכיחה יותר בנשים, אך היא יכולה להופיע גם בגברים. הגורם המדויק להתפתחותה אינו ידוע. ההסבר המקובל הוא שילוב בין נטייה גנטית, ויסות בלתי תקין של מערכת החיסון וגורמים סביבתיים אפשריים. המחלה אינה מדבקת, ואין ראיות לכך שהיא נגרמת כתוצאה מהתנהגות מסוימת של האדם.\n\n## כיצד הפגיעה בדרכי המרה משפיעה על הכבד ועל הגוף?\n\nהפגיעה בדרכי המרה אינה מתבטאת רק בשינוי מקומי בכבד. ירידה בזרימת המרה עלולה להשפיע על מערכות נוספות ולגרום לתסמינים שאינם נראים במבט ראשון כקשורים למחלת כבד.\n\nבשלבים מוקדמים ייתכן שכמות מספקת של מרה עדיין מגיעה למעי, ולכן האדם אינו מרגיש שינוי משמעותי. במקביל, בדיקות דם עשויות להראות עלייה בפוספטזה בסיסית, המכונה ALP, ולעיתים גם באנזים GGT. אלה אינם “מדדי PBC” בלעדיים: הם עלולים לעלות במצבים אחרים של הכבד ודרכי המרה, ולעיתים גם עקב מחלות עצם או תרופות. משום כך יש לפרש אותם בהתאם להיסטוריה הרפואית, לבדיקות נוספות ולממצאי הדמיה.\n\nככל שהכולסטזיס ממושך יותר, עלולות להופיע הפרעות בספיגת ויטמינים מסיסי שומן — A, D, E ו-K — וכן פגיעה בבריאות העצם. במחלה מתקדמת יותר עלולים להופיע צהבת, הצטברות נוזלים בבטן, דימום ממערכת העיכול או שינויים קוגניטיביים הקשורים לפגיעה בתפקוד הכבד. אלה אינם בדרך כלל סימנים מוקדמים, אלא ביטויים המחייבים הערכה רפואית מהירה.\n\n[הסקירה הקלינית של NCBI על כולנגיטיס מרתית ראשונית](https://www.ncbi.nlm.nih.gov/books/NBK459209/) מתארת את הקשר בין דלקת בדרכי המרה, כולסטזיס, הצטלקות הכבד והסיבוכים האפשריים. חשוב להדגיש כי קצב ההתקדמות משתנה מאוד: חלק מהמאובחנים נשארים יציבים לאורך זמן, בפרט כאשר המחלה מתגלה מוקדם ומגיבה לטיפול.\n\n## מהם סימני האזהרה המוקדמים?\n\nאחד האתגרים באבחון PBC הוא שחלק ניכר מהאנשים אינם חווים תסמינים ברורים בזמן הגילוי. לעיתים המחלה נחשפת במקרה, בעקבות בדיקות דם שגרתיות. כאשר מופיעים תסמינים מוקדמים, הם עלולים להיות כלליים ולהתפרש בטעות כתוצאה מעומס, מתח, חוסר שינה או בעיה עורית.\n\nהסימנים המרכזיים שכדאי להכיר הם:\n\n- **עייפות מתמשכת:** עייפות שאינה מוסברת היטב על ידי פעילות, מחסור בשינה או מצב רפואי אחר. חומרת העייפות אינה משקפת בהכרח את חומרת הפגיעה בכבד.\n- **גרד ללא פריחה ראשונית ברורה:** הגרד עשוי להופיע בכל הגוף, להיות בולט בכפות הידיים והרגליים ולהחמיר בלילה. גירוד חוזר עלול ליצור סימנים משניים בעור, גם אם בתחילה לא הייתה פריחה.\n- **יובש בעיניים או בפה:** תסמינים אלה יכולים להופיע לצד PBC, בין היתר עקב קשר למצבים אוטואימוניים נוספים.\n- **אי-נוחות בצד הימני העליון של הבטן:** זהו סימן אפשרי, אך אינו ספציפי למחלה.\n- **חריגה בבדיקות כבד:** עלייה בלתי מוסברת ומתמשכת ב-ALP היא אחד הרמזים המעבדתיים המרכזיים.\n- **שינויים בשומני הדם:** כולסטזיס עשוי להיות מלווה בעלייה בכולסטרול, אם כי גם ממצא זה אינו מספיק לאבחנה.\n\nתסמינים כמו צהבת, שתן כהה, צואה בהירה, נפיחות ברגליים או בבטן, בלבול, הקאת דם או צואה שחורה אינם נחשבים בדרך כלל לסימני התחלה. הופעתם עלולה להעיד על חסימה משמעותית בדרכי המרה או על מחלת כבד מתקדמת ודורשת בירור דחוף.\n\nעל פי [הסיכום המותאם למטופלים של הנחיות AASLD, המתפרסם ב-NCBI](https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/), החשד ב-PBC עולה במיוחד כאשר נמצאים יחד דפוס כולסטטי בבדיקות הדם ונוגדנים אופייניים. עם זאת, גם גרד ועייפות שכיחים במצבים רבים אחרים, ולכן אין להשתמש בהם לצורך אבחון עצמי.\n\n## כיצד מאבחנים את המחלה?\n\nהבירור מתחיל בדרך כלל בחזרה על בדיקות הכבד ובבחינת דפוס החריגה. כאשר ALP מוגבר, יש לבדוק אם מקורו בכבד ולשלול גורמים אחרים, ובהם אבנים בדרכי המרה, חסימה, השפעת תרופות, מחלות כבד אחרות ומחלות עצם.\n\nבדיקת נוגדנים אנטי-מיטוכונדריאליים, המכונים AMA, היא בדיקה מרכזית. נוגדנים אלה נמצאים אצל רוב החולים ב-PBC, אך תוצאה חיובית לבדה אינה תמיד מוכיחה שקיימת מחלה פעילה. קיימים גם נוגדנים נוספים שעשויים לסייע כאשר AMA אינו מזוהה, ובהם נוגדנים מסוג anti-gp210 ו-anti-sp100.\n\nלרוב מקובל לבסס אבחנה כאשר קיימים לפחות שניים משלושה מרכיבים: עדות ביוכימית לכולסטזיס, נוגדנים אופייניים וממצאים מתאימים ברקמת הכבד. ביופסיית כבד אינה נדרשת בכל מקרה. היא עשויה להישקל כאשר התמונה אינה טיפוסית, כאשר יש חשד למחלת כבד נוספת או כאשר נדרשת הערכה מדויקת יותר של סוג הנזק וחומרתו. הקריטריונים מפורטים ב[הנחיות המקצועיות לאבחון ולניהול PBC](https://doi.org/10.14218/JCTH.2022.00347).\n\nבדיקת אולטרסאונד או הדמיה אחרת משמשת בעיקר כדי לשלול חסימה מכנית של דרכי המרה וסיבות אחרות לכולסטזיס. לאחר האבחנה מעריכים גם את דרגת הפיברוזיס, לעיתים באמצעות אלסטוגרפיה — בדיקה בלתי פולשנית המעריכה את נוקשות הכבד. בדיקות דם חוזרות מאפשרות לעקוב אחר ALP, בילירובין, אנזימי כבד נוספים, אלבומין ומדדים הקשורים לקרישת הדם.\n\n## מדוע אבחון מוקדם ומעקב עקבי חשובים?\n\nמטרת הטיפול היא לצמצם את הנזק המתמשך לדרכי המרה ולכבד, להאט את ההצטלקות, לטפל בתסמינים ולזהות סיבוכים מוקדם. חומצה אורסודאוקסיכולית, UDCA, משמשת טיפול בסיסי מקובל ב-PBC. התגובה לטיפול נבחנת באמצעות בדיקות דם לאורך זמן, משום שתגובה ביוכימית טובה קשורה בדרך כלל לתחזית טובה יותר.\n\nלא כל המטופלים מגיבים במידה מספקת לטיפול הראשוני. במקרים כאלה נדרשת הערכת סיכון מחודשת ובחינת אפשרויות טיפול נוספות בהתאם לחומרת המחלה, מחלות הרקע, מצב הכבד והנחיות עדכניות. אין להפסיק, להחליף או להוסיף תרופה ללא הערכה רפואית, משום שלחלק מהטיפולים יש מגבלות או סיכונים במצבים של שחמת מתקדמת.\n\nהמעקב אינו מסתכם באנזימי הכבד. הוא עשוי לכלול הערכה של צפיפות העצם, רמות ויטמינים במקרים מתאימים, תפקוד בלוטת התריס, שומני הדם ותסמינים כגון גרד, יובש ועייפות. כאשר כבר קיימת שחמת, נדרש מעקב ייעודי אחר סיבוכיה.\n\n[עדכון ההנחיות המקצועיות בנושא PBC](https://doi.org/10.1002/hep.32117) מדגיש את חשיבות הטיפול המתמשך והערכת התגובה אליו. לצד הטיפול במחלה עצמה, חשוב לברר גם גורמים נוספים לעייפות — כגון אנמיה, הפרעה בתפקוד בלוטת התריס, דיכאון או הפרעת שינה — ולא להניח שכל תלונה נובעת בהכרח מהכבד.\n\n## סיכום\n\nכולנגיטיס מרתית ראשונית היא מחלה אוטואימונית כרונית הפוגעת בדרכי המרה הקטנות בכבד. הפגיעה גורמת להפרעה בזרימת המרה ועלולה להוביל בהדרגה לדלקת, פיברוזיס ושחמת. עם זאת, המחלה עשויה להתגלות בשלב מוקדם, עוד לפני שנגרם נזק מתקדם.\n\nעייפות בלתי מוסברת, גרד מתמשך ועלייה חוזרת ב-ALP הם סימנים מרכזיים שכדאי לברר, אך הם אינם מוכיחים לבדם שקיימת PBC. האבחנה נשענת על שילוב של בדיקות דם, נוגדנים אופייניים, שלילת חסימה בדרכי המרה ולעיתים בדיקת רקמת הכבד. בהתאם ל[הנחיות הקליניות המלאות ב-NCBI](https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/), אבחון מדויק, טיפול מתאים ומעקב אחר התגובה יכולים לשפר את הערכת הסיכון ולאפשר התערבות לפני התפתחות סיבוכים מתקדמים.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד, אינו מהווה אבחנה או הוראה טיפולית, ומחייב ביקורת של רופא מוסמך לפני פרסום או יישום.\n\n## מקורות\n\n1. You H, Duan W, Li S, et al. [Guidelines on the Diagnosis and Management of Primary Biliary Cholangitis](https://doi.org/10.14218/JCTH.2022.00347). *Journal of Clinical and Translational Hepatology*. 2023.\n\n2. National Center for Biotechnology Information. [Guidelines on the Diagnosis and Management of Primary Biliary Cholangitis — גרסה מלאה ב-PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/).\n\n3. National Center for Biotechnology Information. [Primary Biliary Cholangitis — סקירה קלינית ב-NCBI Bookshelf](https://www.ncbi.nlm.nih.gov/books/NBK459209/).\n\n4. Lindor KD, Bowlus CL, Boyer J, Levy C, Mayo MJ. [Primary Biliary Cholangitis: 2021 Practice Guidance Update](https://doi.org/10.1002/hep.32117). *Hepatology*. 2022.\n\n5. Levy C, et al. [Diagnosis and Treatment of Primary Biliary Cholangitis: A Patient-Friendly Summary of the AASLD Practice Guidance](https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/). *Clinical Liver Disease*. 2021.\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/כולנגיטיס-מרתית-ראשונית-כיצד-מחלה/",
+        "meta_description": "ד״ר גיא רופא: כולנגיטיס מרתית ראשונית (Primary Biliary Cholangitis, או PBC) היא מחלת כבד אוטואימונית כרונית שבה מערכת החיסון פוגעת בהדרגה בדרכי המרה הקטנות שבתוך הכבד.",
+        "search_target": {
+          "primary_query": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים",
+          "secondary_queries": [
+            "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים ד״ר גיא רופא",
+            "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
+            "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/"
+          },
+          {
+            "title": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו",
+            "url": "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/כולנגיטיס-מרתית-ראשונית-כיצד-מחלה/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+              "anchor": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            },
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/",
+              "anchor": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 73,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-11-02T12:41:54.648946"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "0a498f7818e018e3428030ee704d573f4f2644cc965c5cef4e9bd5081506d417",
+        "slug": "כולנגיטיס-מרתית-ראשונית-כיצד-מחלה",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-hero.png",
+          "sha256": "8667f4ed4efcdf992791d70ad08544f08bff959480f2f812d819d8014898b56d",
+          "alt_text": "חתך מיקרוסקופי צבוע של רקמת כבד, עם מחיצות סיביות כחולות בין אזורים ורודים של תאי כבד, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חתך מיקרוסקופי צבוע של רקמת כבד, עם מחיצות סיביות כחולות בין אזורים ורודים של תאי כבד.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Cirrhosis_of_the_liver_(trichrome_stain)_(5690946257).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Cirrhosis_of_the_liver_%28trichrome_stain%29_%285690946257%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ed Uthman from Houston, TX, USA",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "attribution": "Cirrhosis of the liver (trichrome stain) (5690946257).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-hero.png",
+              "sha256": "8667f4ed4efcdf992791d70ad08544f08bff959480f2f812d819d8014898b56d",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-landscape.png",
+              "sha256": "da9722ba462ffcadb623f75e335e9f01761c26c4de273f832439c973588ad375",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-square.jpg",
+              "sha256": "503bb68a38bbb8f7a440f54285cecd53fedfa07c0fb816c398400b68e3fcc9cf",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-portrait.png",
+              "sha256": "009f741c93feccd8a19b01cebb139740ff3102ba9b1cfb14f4733e358b9dfc8b",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא.\n\nכולנגיטיס מרתית ראשונית (Primary Biliary Cholangitis, או PBC) היא מחלת כבד אוטואימונית כרונית שבה מערכת החיסון פוגעת בהדרגה בדרכי המרה הקטנות שבתוך הכבד.\n\nהפגיעה עלולה לעכב את זרימת המרה, לעורר דלקת ולהוביל עם הזמן להצטלקות של רקמת הכבד.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://www.drguyrofe.co.il/כולנגיטיס-מרתית-ראשונית-כיצד-מחלה/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-landscape.png",
+          "sha256": "da9722ba462ffcadb623f75e335e9f01761c26c4de273f832439c973588ad375",
+          "alt_text": "חתך מיקרוסקופי צבוע של רקמת כבד, עם מחיצות סיביות כחולות בין אזורים ורודים של תאי כבד, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חתך מיקרוסקופי צבוע של רקמת כבד, עם מחיצות סיביות כחולות בין אזורים ורודים של תאי כבד.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Cirrhosis_of_the_liver_(trichrome_stain)_(5690946257).jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Cirrhosis_of_the_liver_%28trichrome_stain%29_%285690946257%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Ed Uthman from Houston, TX, USA",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0",
+          "attribution": "Cirrhosis of the liver (trichrome stain) (5690946257).jpg — Ed Uthman from Houston, TX, USA; CC BY 2.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-hero.png",
+              "sha256": "8667f4ed4efcdf992791d70ad08544f08bff959480f2f812d819d8014898b56d",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-landscape.png",
+              "sha256": "da9722ba462ffcadb623f75e335e9f01761c26c4de273f832439c973588ad375",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-square.jpg",
+              "sha256": "503bb68a38bbb8f7a440f54285cecd53fedfa07c0fb816c398400b68e3fcc9cf",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-05-topic-89-run-42041122517-attempt-1-portrait.png",
+              "sha256": "009f741c93feccd8a19b01cebb139740ff3102ba9b1cfb14f4733e358b9dfc8b",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 39,
+      "supported_claim_count": 39,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי כולנגיטיס מרתית ראשונית?",
+          "claim": "התהליך גורם לדלקת ולהרס הדרגתי של הצינורות הזעירים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "מהי כולנגיטיס מרתית ראשונית?",
+          "claim": "כאשר מספר גדל והולך של דרכי מרה נפגע, המרה אינה מתנקזת ביעילות ועלולה להצטבר בכבד — מצב המכונה כולסטזיס.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "מהי כולנגיטיס מרתית ראשונית?",
+          "claim": "הצטברות ממושכת חושפת את תאי הכבד לחומרים שעלולים להזיק להם, ובהמשך עלולה להתפתח פיברוזיס, כלומר הצטלקות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "מהי כולנגיטיס מרתית ראשונית?",
+          "claim": "בשלבים מתקדמים עלולה להיווצר שחמת הכבד, אך אין פירוש הדבר שכל אדם שאובחן יגיע לשלב זה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "מהי כולנגיטיס מרתית ראשונית?",
+          "claim": "לפי הנחיות האבחון והטיפול ב-PBC הזמינות במאגר NCBI, מדובר במחלה כולסטטית אוטואימונית כרונית, שאבחון מוקדם והערכת התגובה לטיפול הם מרכיבים מרכזיים בניהול הסיכון להתקדמותה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "מהי כולנגיטיס מרתית ראשונית?",
+          "claim": "PBC שכיחה יותר בנשים, אך היא יכולה להופיע גם בגברים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "מהי כולנגיטיס מרתית ראשונית?",
+          "claim": "הגורם המדויק להתפתחותה אינו ידוע.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "כיצד הפגיעה בדרכי המרה משפיעה על הכבד ועל הגוף?",
+          "claim": "ירידה בזרימת המרה עלולה להשפיע על מערכות נוספות ולגרום לתסמינים שאינם נראים במבט ראשון כקשורים למחלת כבד.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK459209/"
+          ]
+        },
+        {
+          "section": "כיצד הפגיעה בדרכי המרה משפיעה על הכבד ועל הגוף?",
+          "claim": "במקביל, בדיקות דם עשויות להראות עלייה בפוספטזה בסיסית, המכונה ALP, ולעיתים גם באנזים GGT.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK459209/"
+          ]
+        },
+        {
+          "section": "כיצד הפגיעה בדרכי המרה משפיעה על הכבד ועל הגוף?",
+          "claim": "אלה אינם “מדדי PBC” בלעדיים: הם עלולים לעלות במצבים אחרים של הכבד ודרכי המרה, ולעיתים גם עקב מחלות עצם או תרופות.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK459209/"
+          ]
+        },
+        {
+          "section": "כיצד הפגיעה בדרכי המרה משפיעה על הכבד ועל הגוף?",
+          "claim": "ככל שהכולסטזיס ממושך יותר, עלולות להופיע הפרעות בספיגת ויטמינים מסיסי שומן — A, D, E ו-K — וכן פגיעה בבריאות העצם.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK459209/"
+          ]
+        },
+        {
+          "section": "כיצד הפגיעה בדרכי המרה משפיעה על הכבד ועל הגוף?",
+          "claim": "במחלה מתקדמת יותר עלולים להופיע צהבת, הצטברות נוזלים בבטן, דימום ממערכת העיכול או שינויים קוגניטיביים הקשורים לפגיעה בתפקוד הכבד.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK459209/"
+          ]
+        },
+        {
+          "section": "כיצד הפגיעה בדרכי המרה משפיעה על הכבד ועל הגוף?",
+          "claim": "חשוב להדגיש כי קצב ההתקדמות משתנה מאוד: חלק מהמאובחנים נשארים יציבים לאורך זמן, בפרט כאשר המחלה מתגלה מוקדם ומגיבה לטיפול.",
+          "source_urls": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK459209/"
+          ]
+        },
+        {
+          "section": "מהם סימני האזהרה המוקדמים?",
+          "claim": "אחד האתגרים באבחון PBC הוא שחלק ניכר מהאנשים אינם חווים תסמינים ברורים בזמן הגילוי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/"
+          ]
+        },
+        {
+          "section": "מהם סימני האזהרה המוקדמים?",
+          "claim": "כאשר מופיעים תסמינים מוקדמים, הם עלולים להיות כלליים ולהתפרש בטעות כתוצאה מעומס, מתח, חוסר שינה או בעיה עורית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/"
+          ]
+        },
+        {
+          "section": "מהם סימני האזהרה המוקדמים?",
+          "claim": "- **גרד ללא פריחה ראשונית ברורה:** הגרד עשוי להופיע בכל הגוף, להיות בולט בכפות הידיים והרגליים ולהחמיר בלילה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/"
+          ]
+        },
+        {
+          "section": "מהם סימני האזהרה המוקדמים?",
+          "claim": "גירוד חוזר עלול ליצור סימנים משניים בעור, גם אם בתחילה לא הייתה פריחה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/"
+          ]
+        },
+        {
+          "section": "מהם סימני האזהרה המוקדמים?",
+          "claim": "- **שינויים בשומני הדם:** כולסטזיס עשוי להיות מלווה בעלייה בכולסטרול, אם כי גם ממצא זה אינו מספיק לאבחנה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/"
+          ]
+        },
+        {
+          "section": "מהם סימני האזהרה המוקדמים?",
+          "claim": "הופעתם עלולה להעיד על חסימה משמעותית בדרכי המרה או על מחלת כבד מתקדמת ודורשת בירור דחוף.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/"
+          ]
+        },
+        {
+          "section": "מהם סימני האזהרה המוקדמים?",
+          "claim": "על פי הסיכום המותאם למטופלים של הנחיות AASLD, המתפרסם ב-NCBI, החשד ב-PBC עולה במיוחד כאשר נמצאים יחד דפוס כולסטטי בבדיקות הדם ונוגדנים אופייניים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/"
+          ]
+        },
+        {
+          "section": "מהם סימני האזהרה המוקדמים?",
+          "claim": "עם זאת, גם גרד ועייפות שכיחים במצבים רבים אחרים, ולכן אין להשתמש בהם לצורך אבחון עצמי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים את המחלה?",
+          "claim": "בדיקת נוגדנים אנטי-מיטוכונדריאליים, המכונים AMA, היא בדיקה מרכזית.",
+          "source_urls": [
+            "https://doi.org/10.14218/JCTH.2022.00347"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים את המחלה?",
+          "claim": "קיימים גם נוגדנים נוספים שעשויים לסייע כאשר AMA אינו מזוהה, ובהם נוגדנים מסוג anti-gp210 ו-anti-sp100.",
+          "source_urls": [
+            "https://doi.org/10.14218/JCTH.2022.00347"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים את המחלה?",
+          "claim": "היא עשויה להישקל כאשר התמונה אינה טיפוסית, כאשר יש חשד למחלת כבד נוספת או כאשר נדרשת הערכה מדויקת יותר של סוג הנזק וחומרתו.",
+          "source_urls": [
+            "https://doi.org/10.14218/JCTH.2022.00347"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים את המחלה?",
+          "claim": "הקריטריונים מפורטים בהנחיות המקצועיות לאבחון ולניהול PBC.",
+          "source_urls": [
+            "https://doi.org/10.14218/JCTH.2022.00347"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים את המחלה?",
+          "claim": "לאחר האבחנה מעריכים גם את דרגת הפיברוזיס, לעיתים באמצעות אלסטוגרפיה — בדיקה בלתי פולשנית המעריכה את נוקשות הכבד.",
+          "source_urls": [
+            "https://doi.org/10.14218/JCTH.2022.00347"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "מטרת הטיפול היא לצמצם את הנזק המתמשך לדרכי המרה ולכבד, להאט את ההצטלקות, לטפל בתסמינים ולזהות סיבוכים מוקדם.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "חומצה אורסודאוקסיכולית, UDCA, משמשת טיפול בסיסי מקובל ב-PBC.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "התגובה לטיפול נבחנת באמצעות בדיקות דם לאורך זמן, משום שתגובה ביוכימית טובה קשורה בדרך כלל לתחזית טובה יותר.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "לא כל המטופלים מגיבים במידה מספקת לטיפול הראשוני.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "במקרים כאלה נדרשת הערכת סיכון מחודשת ובחינת אפשרויות טיפול נוספות בהתאם לחומרת המחלה, מחלות הרקע, מצב הכבד והנחיות עדכניות.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "אין להפסיק, להחליף או להוסיף תרופה ללא הערכה רפואית, משום שלחלק מהטיפולים יש מגבלות או סיכונים במצבים של שחמת מתקדמת.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "הוא עשוי לכלול הערכה של צפיפות העצם, רמות ויטמינים במקרים מתאימים, תפקוד בלוטת התריס, שומני הדם ותסמינים כגון גרד, יובש ועייפות.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "עדכון ההנחיות המקצועיות בנושא PBC מדגיש את חשיבות הטיפול המתמשך והערכת התגובה אליו.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "מדוע אבחון מוקדם ומעקב עקבי חשובים?",
+          "claim": "לצד הטיפול במחלה עצמה, חשוב לברר גם גורמים נוספים לעייפות — כגון אנמיה, הפרעה בתפקוד בלוטת התריס, דיכאון או הפרעת שינה — ולא להניח שכל תלונה נובעת בהכרח מהכבד.",
+          "source_urls": [
+            "https://doi.org/10.1002/hep.32117"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "הפגיעה גורמת להפרעה בזרימת המרה ועלולה להוביל בהדרגה לדלקת, פיברוזיס ושחמת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "עם זאת, המחלה עשויה להתגלות בשלב מוקדם, עוד לפני שנגרם נזק מתקדם.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "בהתאם להנחיות הקליניות המלאות ב-NCBI, אבחון מדויק, טיפול מתאים ומעקב אחר התגובה יכולים לשפר את הערכת הסיכון ולאפשר התערבות לפני התפתחות סיבוכים מתקדמים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המידע במאמר הוא מידע רפואי כללי בלבד, אינו מהווה אבחנה או הוראה טיפולית, ומחייב ביקורת של רופא מוסמך לפני פרסום או יישום.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037524/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK459209/",
+          "host": "ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605692/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://doi.org/10.14218/JCTH.2022.00347",
+          "host": "doi.org",
+          "year_markers": [
+            "2022"
+          ]
+        },
+        {
+          "url": "https://doi.org/10.1002/hep.32117",
+          "host": "doi.org",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "0a498f7818e018e3428030ee704d573f4f2644cc965c5cef4e9bd5081506d417",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/כולנגיטיס-מרתית-ראשונית-כיצד-מחלה/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+          "anchor": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        },
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/",
+          "anchor": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 73,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-11-02T12:41:54.648946"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_6e05594ac0ed28004a589906e9190c69b06fb7b92d42aaa165b7b13a053ddb80"
+}

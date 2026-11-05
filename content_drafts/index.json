@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-05-topic-89-run-42041122517-attempt-1.md",
+      "title": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא",
+      "topic": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים",
+      "excerpt": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) כולנגיטיס מרתית ראשונית (Primary Biliary Cholangitis, או PBC) היא מחלת כבד אוטואימוני",
+      "generated_at": "2026-11-05T14:02:36.551910+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-11-01",
+      "cadence_local_date": "2026-11-05",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-11-03-topic-83-run-41646485391-attempt-1.md",
       "title": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות | ד״ר גיא רופא",
       "topic": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות",
@@ -477,19 +494,6 @@
       ],
       "cadence_week": "week-of-2026-09-13",
       "cadence_local_date": "2026-09-16",
-      "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-15-topic-06-run-34961774953-attempt-1.md",
-      "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
-      "topic": "גיל המעבר - מידע כללי מבוסס מקורות",
-      "excerpt": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) גיל המעבר הוא שלב ביולוגי טבעי שבו פעילות השחלות פוחתת והווסת נפסקת. הוא אינו מחלה, אך השינויים ההורמונליים הנלווים אליו עלולים לגרום ",
-      "generated_at": "2026-09-15T11:10:18.401186+00:00",
-      "content_stream": "evergreen_knowledge",
-      "destination_site_key": "DRGUYROFE_COM",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-09-13",
-      "cadence_local_date": "2026-09-15",
       "public_execution_allowed": false
     }
   ]
