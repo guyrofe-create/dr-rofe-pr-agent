@@ -2,6 +2,34 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-11-09-topic-90-run-42643288010-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e.json",
+      "preview_path": "approval_bundles/apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e.html",
+      "created_at": "2026-11-09T15:24:50Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=12; downloaded=12; undersized=0; reviewed=12; rejected=12; search=[medical research equipment: commons=20, openverse=1, pexels=0, pixabay=0 | clinical research laboratory: commons=5, openverse=0, pexels=0, pixabay=0 | medical education equipment: commons=15, openverse=0, pexels=0, pixabay=0 | laboratory microscope: commons=26, openverse=0, pexels=0, pixabay=0]; review_notes=[בתמונה מופיעים אנשים מזוהים והיא אינה קשורה לזריקות הרזיה או לבריאות הלב. | בתמונה מופיעים אנשים מזוהים והיא אינה ממחישה זריקות הרזיה או בריאות לב. | מיקרוסקופ אלקטרונים במעבדה אינו ממחיש זריקות הרזיה או את השפעתן על בריאות הלב. | ציוד מיקרוסקופיה כללי שאינו ממחיש זריקות הרזיה או בריאות לב. | ציוד מיקרוסקופיה כללי שאינו ממחיש זריקות הרזיה או בריאות לב.]; errors=[clinical research laboratory/openverse: HTTPError | laboratory microscope/openverse: HTTPError]"
+    },
+    {
+      "approval_id": "apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-11-09-topic-86-run-42643288010-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897.json",
+      "preview_path": "approval_bundles/apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897.html",
+      "created_at": "2026-11-09T15:23:05Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=5; unique_candidates=7; downloaded=7; undersized=0; reviewed=7; rejected=7; search=[uterus anatomy model: commons=24, openverse=0, pexels=0, pixabay=0 | transvaginal ultrasound probe: commons=0, openverse=0, pexels=0, pixabay=0 | cervical cerclage suture: commons=0, openverse=0, pexels=0, pixabay=0 | cervical pessary: commons=1, openverse=0, pexels=0, pixabay=0 | pregnancy ultrasound machine: commons=4, openverse=1, pexels=0, pixabay=0]; review_notes=[פסלון עתיק של אישה הרה אינו ממחיש ישירות אי־ספיקת צוואר הרחם, אבחונה או מניעתה. | אביזר מתכתי מיושן שאינו ממחיש אי־ספיקת צוואר הרחם, אבחונה או מניעתה. | נראה עובר באולטרסאונד ולא צוואר הרחם או אי־ספיקתו. | תצלום אולטרסאונד כללי של עובר אינו מציג את צוואר הרחם או אי־ספיקת צוואר הרחם. | קולאז׳ של הדמיות מוח, מכשיר הקרנות וסריקות שאינן ממחישות אי־ספיקת צוואר הרחם בהריון.]"
+    },
+    {
       "approval_id": "apr_6e05594ac0ed28004a589906e9190c69b06fb7b92d42aaa165b7b13a053ddb80",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-11-05-topic-89-run-42041122517-attempt-1.md",

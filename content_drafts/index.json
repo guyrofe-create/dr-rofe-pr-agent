@@ -1,6 +1,42 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-09-topic-86-run-42643288010-attempt-1.md",
+      "title": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא",
+      "topic": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת",
+      "excerpt": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: אי־ספיקת צוואר הרחם היא מצב שבו צוואר הרחם מתקצר או נפתח במהלך ההריון, לרוב ללא צירי",
+      "generated_at": "2026-11-09T15:18:38.291278+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-11-08",
+      "cadence_local_date": "2026-11-08",
+      "public_execution_allowed": false
+    },
+    {
+      "path": "content_drafts/2026-11-09-topic-90-run-42643288010-attempt-1.md",
+      "title": "מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב? | ד״ר גיא רופא",
+      "topic": "מה עומד מאחורי הכותרת: מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב?",
+      "excerpt": "מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב? | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה היא כן — אך לא לגבי כל זריקה, לא אצל כל אדם ולא באותה רמת ודאות. מחקר אקראי רחב היקף הראה שסמגלוטייד הפח",
+      "generated_at": "2026-11-09T15:18:38.291278+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-11-08",
+      "cadence_local_date": "2026-11-09",
+      "public_execution_allowed": false,
+      "source_brief": "opportunity_drafts/health-news-d2a5b9669fefdc00.json",
+      "analyzed_news_url": "https://www.ynet.co.il/health/medicalplus/article/rkuw1htpzl"
+    },
+    {
       "path": "content_drafts/2026-11-05-topic-89-run-42041122517-attempt-1.md",
       "title": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא",
       "topic": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים",
@@ -457,43 +493,6 @@
       ],
       "cadence_week": "week-of-2026-09-20",
       "cadence_local_date": "2026-09-20",
-      "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-17-topic-90-run-35213563884-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה",
-      "excerpt": "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: מחקר תצפיתי חדש מצא קשר בין חשיפה לפרצטמול במהלך ההיריון לבין הבדלים מסוימים במדדי התפתחות ה",
-      "generated_at": "2026-09-17T11:02:32.732785+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-13",
-      "cadence_local_date": "2026-09-17",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-251dc9fd567d543d.json",
-      "analyzed_news_url": "https://healthy.walla.co.il/item/3867903"
-    },
-    {
-      "path": "content_drafts/2026-09-16-topic-04-run-35087466040-attempt-1.md",
-      "title": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא",
-      "topic": "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
-      "excerpt": "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) תסמונת השחלות הפוליציסטיות היא הפרעה הורמונלית ומטבולית שכיחה, המתבטאת בדרך כלל במחזורי וסת לא סדירים, בהפרעות ביוץ ובסימנים ",
-      "generated_at": "2026-09-16T10:54:37.428515+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-13",
-      "cadence_local_date": "2026-09-16",
       "public_execution_allowed": false
     }
   ]

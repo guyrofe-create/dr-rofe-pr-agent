@@ -1,0 +1,820 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-11-09T15:23:05Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-11-09-topic-86-run-42643288010-attempt-1.md",
+  "source_draft_sha256": "e7efcc91e20615238b7cc07146795c9b454db7f303a24021941969a432e0e506",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1002/ijgo.13832",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/cervical-cerclage",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+    "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+    "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-hero.png",
+        "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+        "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-square.jpg",
+        "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-portrait.png",
+        "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא",
+        "cms_title": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת",
+        "markdown": "# אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** אי־ספיקת צוואר הרחם היא מצב שבו צוואר הרחם מתקצר או נפתח במהלך ההריון, לרוב ללא צירים משמעותיים, באופן העלול להוביל לאובדן הריון מאוחר או ללידה מוקדמת. האבחון מבוסס על ההיסטוריה המיילדותית, בדיקה רפואית ומדידת אורך צוואר הרחם באולטרסאונד וגינלי. בהתאם לממצאים ולגורמי הסיכון, אפשר לשקול מעקב, טיפול בפרוגסטרון או תפר צווארי.\n\nהמונח “אי־ספיקת צוואר הרחם” אינו מתאר בדיקה יחידה או ערך מספרי אחד, אלא תסמונת קלינית שיש להעריך בתוך ההקשר המלא של ההריון. חלק מהנשים יגיעו לבדיקה בשל היסטוריה של אובדן הריון בשליש השני, ואחרות יאובחנו בעקבות קיצור צוואר הרחם בבדיקת אולטרסאונד, אף שאין להן תסמינים.\n\nזיהוי מוקדם עשוי לאפשר התערבות המפחיתה את הסיכון ללידה מוקדמת במצבים מסוימים. עם זאת, לא כל צוואר רחם קצר מעיד על אי־ספיקה, לא כל אישה עם גורמי סיכון תפתח את המצב, ולא כל התערבות מתאימה לכל הריון. משום כך, ההחלטות מתקבלות לפי שבוע ההריון, ההיסטוריה המיילדותית, אורך צוואר הרחם, נוכחות פתיחה או צירים, מספר העוברים וממצאים נוספים.\n\n## מהי אי־ספיקת צוואר הרחם וכיצד היא קשורה ללידה מוקדמת?\n\nצוואר הרחם הוא החלק התחתון של הרחם, המחבר בין חלל הרחם לנרתיק. בהריון תקין הוא אמור להישאר ארוך וסגור במשך מרבית ההריון, ולעבור הבשלה, התקצרות ופתיחה לקראת הלידה. באי־ספיקת צוואר הרחם תהליכים אלה עלולים להתרחש מוקדם מדי, לעיתים ללא כאב, ללא צירים סדירים וללא סימני אזהרה ברורים.\n\nהתמונה הקלינית הקלאסית היא פתיחה לא כואבת של צוואר הרחם בשליש השני, שעלולה להתקדם לבליטת קרומי מי השפיר, ירידת מים, אובדן הריון או לידה מוקדמת. בפועל, ההגדרה אינה תמיד חד־משמעית, וקיים רצף בין קיצור צוואר הרחם שנצפה באולטרסאונד לבין פתיחה ממשית בבדיקה.\n\nלפי [הנחיות NICE בנושא לידה מוקדמת](https://www.nice.org.uk/guidance/ng25/chapter/Recommendations), אורך צוואר הרחם שנמדד באולטרסאונד וגינלי הוא מרכיב מרכזי בהערכת הסיכון ובהחלטה אם להציע טיפול מניעתי. עם זאת, יש לפרש את המדידה לצד ההיסטוריה המיילדותית ולא כנתון מבודד.\n\nהקשר ללידה מוקדמת חשוב במיוחד משום שלידה לפני המועד עלולה להיות כרוכה בסיבוכים נשימתיים, נוירולוגיים, זיהומיים ותזונתיים אצל היילוד, כאשר הסיכון תלוי במידה רבה בשבוע הלידה. מטרת האבחון והטיפול אינה “לחזק” את צוואר הרחם באופן כללי, אלא לזהות הריונות שבהם התערבות מסוימת עשויה להאריך את משך ההריון ולשפר תוצאות.\n\n## גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?\n\nגורם הסיכון המשמעותי ביותר הוא היסטוריה מיילדותית המתאימה לאי־ספיקת צוואר הרחם. בין היתר, מדובר באובדן הריון בשליש השני שהתרחש לאחר פתיחה לא כואבת, או בלידה מוקדמת ספונטנית קודמת שבה היה חשד לקיצור או לפתיחה מוקדמת של הצוואר. גם צורך בתפר צווארי בהריון קודם עשוי להשפיע על תכנון המעקב בהריון הבא.\n\nגורמים אפשריים נוספים כוללים פעולות קודמות בצוואר הרחם, כגון כריתה של רקמה מצוואר הרחם במסגרת טיפול בנגעים טרום־סרטניים, נזק צווארי בעקבות פרוצדורה או לידה, וכן מומים מבניים מסוימים ברחם או בצוואר הרחם. עם זאת, עצם קיומו של גורם סיכון אינו מוכיח שהצוואר אינו כשיר לשאת הריון.\n\nהריונות מרובי עוברים קשורים ממילא לסיכון מוגבר ללידה מוקדמת, אך הראיות בנוגע להתערבויות המיועדות לצוואר רחם קצר אינן זהות לאלה שבהריון עם עובר יחיד. משום כך אין להשליך אוטומטית המלצות מהריון יחיד להריון תאומים. [המלצות FIGO לתפר צווארי למניעת לידה מוקדמת](https://doi.org/10.1002/ijgo.13832) מדגישות את הצורך לבחור מועמדות לתפר לפי ההיסטוריה, ממצאי האולטרסאונד והנסיבות הקליניות, ולא על בסיס גורם סיכון יחיד.\n\nחשוב גם להבחין בין אי־ספיקת צוואר הרחם לבין גורמים אחרים ללידה מוקדמת, ובהם צירים מוקדמים, זיהום תוך־רחמי, דימום, היפרדות שליה או ירידת מים מוקדמת. מצבים אלה עשויים להופיע לצד שינוי בצוואר הרחם, אך משמעותם והטיפול בהם שונים.\n\n## כיצד מאבחנים אי־ספיקת צוואר הרחם?\n\nהאבחון מתחיל בתשאול מפורט. יש לברר את שבועות ההריון שבהם התרחשו לידות מוקדמות או אובדני הריון, האם קדמו להם צירים, דימום או ירידת מים, האם תועדה פתיחה של הצוואר, ואילו טיפולים או ניתוחים בוצעו בעבר. אבחנה קודמת הרשומה בתיק אינה מספיקה תמיד, ולכן יש חשיבות להבנת מהלך האירועים בפועל.\n\nאולטרסאונד וגינלי הוא הכלי המקובל למדידת אורך צוואר הרחם. הבדיקה מאפשרת להעריך את אורך התעלה הסגורה, את צורת הפתח הפנימי ולעיתים שינויים המתרחשים תחת לחץ. המדידה צריכה להתבצע בטכניקה תקינה, מפני שלחץ של מתמר הבדיקה או שלפוחית שתן מלאה עלולים לשנות את המראה.\n\nבהריון עם עובר יחיד, צוואר רחם באורך של 25 מ״מ או פחות באמצע ההריון נחשב בדרך כלל לצוואר קצר בהקשרים קליניים רבים, אך המשמעות הטיפולית תלויה בשבוע ההריון ובהיסטוריה. [ההנחיה הקלינית של NICE](https://www.nice.org.uk/guidance/ng25/chapter/Recommendations) משתמשת במדידת אורך צוואר הרחם ובהיסטוריה של לידה מוקדמת או אובדן הריון לצורך בחירה בין אפשרויות מניעה.\n\nכאשר בבדיקה מתגלה פתיחה של צוואר הרחם, ובייחוד אם קרומי מי השפיר נראים או בולטים דרך הפתח, נדרשת הערכה דחופה. לפני ששוקלים תפר צווארי במצב כזה יש לבדוק, בין השאר, אם קיימים צירים פעילים, זיהום, דימום משמעותי, ירידת מים או מצב אחר שבו ההתערבות אינה מתאימה. בדיקת פיברונקטין עוברי עשויה לשמש בהערכת סיכון ללידה מוקדמת אצל נשים עם תסמינים מסוימים, אך היא אינה מאבחנת כשלעצמה אי־ספיקת צוואר הרחם.\n\n## אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי\n\nהטיפול נבחר באופן פרטני. אצל נשים בסיכון ניתן לבצע מעקב סדרתי אחר אורך צוואר הרחם בתקופה שבה למדידה יש משמעות קלינית. מטרת המעקב היא לזהות קיצור מתקדם בזמן שבו עדיין אפשר לשקול טיפול, ולא רק לתעד את השינוי.\n\n**פרוגסטרון נרתיקי** עשוי להישקל בהריון עם עובר יחיד כאשר מתגלה צוואר רחם קצר לפני שבוע 24, בהתאם לאורך שנמדד, להיסטוריה ולהנחיה המקצועית החלה. NICE ממליץ לשקול או להציע פרוגסטרון נרתיקי או תפר צווארי בקבוצות מוגדרות של נשים עם היסטוריה מתאימה וצוואר קצר, כמפורט ב[המלצות למניעת לידה מוקדמת](https://www.nice.org.uk/guidance/ng25/chapter/Recommendations). בחירת התרופה, המינון ומשך הטיפול מחייבת החלטה רפואית ואינה מתאימה לטיפול עצמי.\n\n**תפר צווארי**, או cerclage, הוא הליך שבו מניחים תפר סביב צוואר הרחם כדי לסייע בשמירתו סגור. ניתן לשקול אותו בשלושה מצבים עיקריים:\n\n1. **תפר על בסיס היסטוריה:** לנשים עם עבר מיילדותי המתאים בסבירות גבוהה לאי־ספיקת צוואר הרחם.\n2. **תפר על בסיס אולטרסאונד:** כאשר במעקב מתגלה צוואר קצר אצל אישה שלה היסטוריה של לידה מוקדמת או אובדן הריון המתאימים לכך.\n3. **תפר חירום או הצלה:** כאשר כבר קיימת פתיחה של הצוואר ללא צירים פעילים, לאחר שנשללו ככל האפשר זיהום, ירידת מים והתוויות נגד אחרות.\n\nב[מידע הרשמי של ACOG על תפר צווארי](https://www.acog.org/womens-health/faqs/cervical-cerclage) מפורטים המצבים שבהם ניתן לשקול את ההליך, לצד סיכונים כגון זיהום, דימום, ירידת מים מוקדמת ופגיעה בצוואר הרחם. תפר אינו מבטיח מניעת לידה מוקדמת, והיחס בין התועלת לסיכון משתנה בין נשים ובין נסיבות קליניות.\n\nמנוחה מוחלטת, הגבלת פעילות גורפת או שמירת מיטה אינן תחליף להתערבויות מבוססות־ראיות, ועלולות להיות כרוכות בנזקים כגון ירידה בכושר וסיכון לקרישי דם. החלטה על התאמת פעילות צריכה להתבסס על מצב רפואי מסוים ולא על עצם קיומו של צוואר קצר.\n\n## מעקב, סימני אזהרה ומגבלות הטיפול\n\nגם לאחר התחלת טיפול נדרש מעקב לפי התוכנית שנקבעה. בתפר מתוכנן המונח דרך הנרתיק, מועד ההסרה נקבע בדרך כלל לקראת סוף ההריון, או מוקדם יותר אם מתחילים צירים, מתרחשת ירידת מים או מתעורר צורך רפואי אחר. בתפר בטני אופן המעקב והלידה שונה, והוא מיועד למצבים נבחרים בלבד.\n\nיש לפנות להערכה רפואית ללא דיחוי כאשר מופיעים לחץ אגני חדש, כאבי מחזור או גב מחזוריים, התכווצויות סדירות, שינוי משמעותי בהפרשות, דימום, חשד לדליפת מי שפיר, חום או תחושה כללית רעה. תסמינים אלה אינם מוכיחים אי־ספיקת צוואר הרחם, אך הם עלולים להעיד על לידה מוקדמת, ירידת מים או זיהום. [הנחיות NICE להערכת חשד ללידה מוקדמת](https://www.nice.org.uk/guidance/ng25/chapter/Recommendations) מפרטות את השימוש בבדיקה קלינית, במדידת אורך צוואר הרחם ובבדיקות נוספות בהתאם לשבוע ההריון ולתסמינים.\n\nחשוב להכיר גם במגבלות: לא ניתן למנוע כל לידה מוקדמת, ולעיתים הלידה נגרמת ממנגנונים שאינם קשורים לחולשה מבנית של צוואר הרחם. בנוסף, מחקרים והנחיות עשויים להשתמש בהגדרות מעט שונות של היסטוריה בסיכון ושל צוואר קצר. לכן תוצאה מספרית אחת אינה מספיקה לקבלת החלטה ללא התמונה הקלינית המלאה.\n\n## סיכום\n\nאי־ספיקת צוואר הרחם היא תסמונת שבה צוואר הרחם מתקצר או נפתח מוקדם מדי, לעיתים ללא צירים ברורים. האבחון נשען על שילוב בין היסטוריה מיילדותית, אולטרסאונד וגינלי ובדיקה רפואית, תוך שלילת סיבות אחרות לשינוי בצוואר הרחם.\n\nנשים עם אובדן הריון מאוחר, לידה מוקדמת ספונטנית קודמת או פרוצדורות מסוימות בצוואר הרחם עשויות להזדקק להערכת סיכון ולמעקב ממוקד. האפשרויות למניעה כוללות מעקב אחר אורך הצוואר, פרוגסטרון נרתיקי ותפר צווארי, אך התאמתן תלויה במאפייני ההריון ובהיסטוריה. [המלצות FIGO המבוססות על הראיות הקיימות](https://doi.org/10.1002/ijgo.13832) תומכות בבחירה סלקטיבית של תפר צווארי ולא בשימוש אחיד בכל מקרה של צוואר קצר.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון או לטיפול פרטני, ומחייב בדיקה וביקורת של רופא או רופאה מוסמכים לפני פרסום או יישום.\n\n## מקורות\n\n1. NICE. [Preterm labour and birth — Recommendations (NG25)](https://www.nice.org.uk/guidance/ng25/chapter/Recommendations).\n2. American College of Obstetricians and Gynecologists (ACOG). [Cervical Cerclage](https://www.acog.org/womens-health/faqs/cervical-cerclage).\n3. FIGO Working Group for Preterm Birth. [FIGO good practice recommendations on cervical cerclage for prevention of preterm birth](https://doi.org/10.1002/ijgo.13832). *International Journal of Gynecology & Obstetrics*.\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/אי־ספיקת-צוואר-הרחם-בהריון-גורמי/",
+        "meta_description": "ד״ר גיא רופא: אי־ספיקת צוואר הרחם היא מצב שבו צוואר הרחם מתקצר או נפתח במהלך ההריון, לרוב ללא צירים משמעותיים, באופן העלול להוביל לאובדן הריון מאוחר או ללידה מוקדמת.",
+        "search_target": {
+          "primary_query": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת",
+          "secondary_queries": [
+            "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת ד״ר גיא רופא",
+            "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "informational"
+        },
+        "internal_links": [
+          {
+            "title": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+            "url": "https://guyrofe.com/%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%97%d7%95%d7%a5%d6%be%d7%a8%d7%97%d7%9e%d7%99-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%9e%d7%95%d7%a7%d7%93%d7%9e%d7%99%d7%9d/"
+          },
+          {
+            "title": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף",
+            "url": "https://guyrofe.com/%d7%aa%d7%a1%d7%91%d7%99%d7%91-%d7%a9%d7%97%d7%9c%d7%94-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%92%d7%95%d7%a8%d7%9e%d7%99-%d7%a1%d7%99%d7%9b%d7%95%d7%9f/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://guyrofe.com/אי־ספיקת-צוואר-הרחם-בהריון-גורמי/",
+            "host": "guyrofe.com",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://guyrofe.com/%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%97%d7%95%d7%a5%d6%be%d7%a8%d7%97%d7%9e%d7%99-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%9e%d7%95%d7%a7%d7%93%d7%9e%d7%99%d7%9d/",
+              "anchor": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            },
+            {
+              "url": "https://guyrofe.com/%d7%aa%d7%a1%d7%91%d7%99%d7%91-%d7%a9%d7%97%d7%9c%d7%94-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%92%d7%95%d7%a8%d7%9e%d7%99-%d7%a1%d7%99%d7%9b%d7%95%d7%9f/",
+              "anchor": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://guyrofe.com/",
+            "observed_position": 1,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-11-02T12:41:54.648946"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "0b520b28541fa097f1079d720f55fb4bf458514ef94889b9a5103a2ac84fe538",
+        "slug": "אי־ספיקת-צוואר-הרחם-בהריון-גורמי",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-hero.png",
+          "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: אי־ספיקת צוואר הרחם היא מצב שבו צוואר הרחם מתקצר או נפתח במהלך ההריון, לרוב ללא צירים משמעותיים, באופן העלול להוביל לאובדן הריון מאוחר או ללידה מוקדמת.\n\nהאבחון מבוסס על ההיסטוריה המיילדותית, בדיקה רפואית ומדידת אורך צוואר הרחם באולטרסאונד וגינלי.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/אי־ספיקת-צוואר-הרחם-בהריון-גורמי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: אי־ספיקת צוואר הרחם היא מצב שבו צוואר הרחם מתקצר או נפתח במהלך ההריון, לרוב ללא צירים משמעותיים, באופן העלול להוביל לאובדן הריון מאוחר או ללידה מוקדמת.\n\n• האבחון מבוסס על ההיסטוריה המיילדותית, בדיקה רפואית ומדידת אורך צוואר הרחם באולטרסאונד וגינלי.\n• בהתאם לממצאים ולגורמי הסיכון, אפשר לשקול מעקב, טיפול בפרוגסטרון או תפר צווארי.\n• המונח “אי־ספיקת צוואר הרחם” אינו מתאר בדיקה יחידה או ערך מספרי אחד, אלא תסמונת קלינית שיש להעריך בתוך ההקשר המלא של ההריון.\n\nמאת ד״ר גיא רופא",
+        "link": "https://guyrofe.com/אי־ספיקת-צוואר-הרחם-בהריון-גורמי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא.\n\nהתשובה הקצרה: אי־ספיקת צוואר הרחם היא מצב שבו צוואר הרחם מתקצר או נפתח במהלך ההריון, לרוב ללא צירים משמעותיים, באופן העלול להוביל לאובדן הריון מאוחר או ללידה מוקדמת.\n\nהאבחון מבוסס על ההיסטוריה המיילדותית, בדיקה רפואית ומדידת אורך צוואר הרחם באולטרסאונד וגינלי.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/אי־ספיקת-צוואר-הרחם-בהריון-גורמי/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-09-topic-86-run-42643288010-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 43,
+      "supported_claim_count": 43,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי אי־ספיקת צוואר הרחם וכיצד היא קשורה ללידה מוקדמת?",
+          "claim": "בהריון תקין הוא אמור להישאר ארוך וסגור במשך מרבית ההריון, ולעבור הבשלה, התקצרות ופתיחה לקראת הלידה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מהי אי־ספיקת צוואר הרחם וכיצד היא קשורה ללידה מוקדמת?",
+          "claim": "באי־ספיקת צוואר הרחם תהליכים אלה עלולים להתרחש מוקדם מדי, לעיתים ללא כאב, ללא צירים סדירים וללא סימני אזהרה ברורים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מהי אי־ספיקת צוואר הרחם וכיצד היא קשורה ללידה מוקדמת?",
+          "claim": "התמונה הקלינית הקלאסית היא פתיחה לא כואבת של צוואר הרחם בשליש השני, שעלולה להתקדם לבליטת קרומי מי השפיר, ירידת מים, אובדן הריון או לידה מוקדמת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מהי אי־ספיקת צוואר הרחם וכיצד היא קשורה ללידה מוקדמת?",
+          "claim": "בפועל, ההגדרה אינה תמיד חד־משמעית, וקיים רצף בין קיצור צוואר הרחם שנצפה באולטרסאונד לבין פתיחה ממשית בבדיקה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מהי אי־ספיקת צוואר הרחם וכיצד היא קשורה ללידה מוקדמת?",
+          "claim": "לפי הנחיות NICE בנושא לידה מוקדמת, אורך צוואר הרחם שנמדד באולטרסאונד וגינלי הוא מרכיב מרכזי בהערכת הסיכון ובהחלטה אם להציע טיפול מניעתי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מהי אי־ספיקת צוואר הרחם וכיצד היא קשורה ללידה מוקדמת?",
+          "claim": "הקשר ללידה מוקדמת חשוב במיוחד משום שלידה לפני המועד עלולה להיות כרוכה בסיבוכים נשימתיים, נוירולוגיים, זיהומיים ותזונתיים אצל היילוד, כאשר הסיכון תלוי במידה רבה בשבוע הלידה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מהי אי־ספיקת צוואר הרחם וכיצד היא קשורה ללידה מוקדמת?",
+          "claim": "מטרת האבחון והטיפול אינה “לחזק” את צוואר הרחם באופן כללי, אלא לזהות הריונות שבהם התערבות מסוימת עשויה להאריך את משך ההריון ולשפר תוצאות.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "גורם הסיכון המשמעותי ביותר הוא היסטוריה מיילדותית המתאימה לאי־ספיקת צוואר הרחם.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "בין היתר, מדובר באובדן הריון בשליש השני שהתרחש לאחר פתיחה לא כואבת, או בלידה מוקדמת ספונטנית קודמת שבה היה חשד לקיצור או לפתיחה מוקדמת של הצוואר.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "גם צורך בתפר צווארי בהריון קודם עשוי להשפיע על תכנון המעקב בהריון הבא.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "גורמים אפשריים נוספים כוללים פעולות קודמות בצוואר הרחם, כגון כריתה של רקמה מצוואר הרחם במסגרת טיפול בנגעים טרום־סרטניים, נזק צווארי בעקבות פרוצדורה או לידה, וכן מומים מבניים מסוימים ברחם או בצוואר הרחם.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "עם זאת, עצם קיומו של גורם סיכון אינו מוכיח שהצוואר אינו כשיר לשאת הריון.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "הריונות מרובי עוברים קשורים ממילא לסיכון מוגבר ללידה מוקדמת, אך הראיות בנוגע להתערבויות המיועדות לצוואר רחם קצר אינן זהות לאלה שבהריון עם עובר יחיד.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "משום כך אין להשליך אוטומטית המלצות מהריון יחיד להריון תאומים.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "המלצות FIGO לתפר צווארי למניעת לידה מוקדמת מדגישות את הצורך לבחור מועמדות לתפר לפי ההיסטוריה, ממצאי האולטרסאונד והנסיבות הקליניות, ולא על בסיס גורם סיכון יחיד.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "גורמי סיכון: מי עשויה להזדקק למעקב ממוקד?",
+          "claim": "מצבים אלה עשויים להופיע לצד שינוי בצוואר הרחם, אך משמעותם והטיפול בהם שונים.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אי־ספיקת צוואר הרחם?",
+          "claim": "האבחון מתחיל בתשאול מפורט.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אי־ספיקת צוואר הרחם?",
+          "claim": "יש לברר את שבועות ההריון שבהם התרחשו לידות מוקדמות או אובדני הריון, האם קדמו להם צירים, דימום או ירידת מים, האם תועדה פתיחה של הצוואר, ואילו טיפולים או ניתוחים בוצעו בעבר.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אי־ספיקת צוואר הרחם?",
+          "claim": "הבדיקה מאפשרת להעריך את אורך התעלה הסגורה, את צורת הפתח הפנימי ולעיתים שינויים המתרחשים תחת לחץ.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אי־ספיקת צוואר הרחם?",
+          "claim": "המדידה צריכה להתבצע בטכניקה תקינה, מפני שלחץ של מתמר הבדיקה או שלפוחית שתן מלאה עלולים לשנות את המראה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אי־ספיקת צוואר הרחם?",
+          "claim": "בהריון עם עובר יחיד, צוואר רחם באורך של 25 מ״מ או פחות באמצע ההריון נחשב בדרך כלל לצוואר קצר בהקשרים קליניים רבים, אך המשמעות הטיפולית תלויה בשבוע ההריון ובהיסטוריה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אי־ספיקת צוואר הרחם?",
+          "claim": "ההנחיה הקלינית של NICE משתמשת במדידת אורך צוואר הרחם ובהיסטוריה של לידה מוקדמת או אובדן הריון לצורך בחירה בין אפשרויות מניעה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אי־ספיקת צוואר הרחם?",
+          "claim": "כאשר בבדיקה מתגלה פתיחה של צוואר הרחם, ובייחוד אם קרומי מי השפיר נראים או בולטים דרך הפתח, נדרשת הערכה דחופה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אי־ספיקת צוואר הרחם?",
+          "claim": "בדיקת פיברונקטין עוברי עשויה לשמש בהערכת סיכון ללידה מוקדמת אצל נשים עם תסמינים מסוימים, אך היא אינה מאבחנת כשלעצמה אי־ספיקת צוואר הרחם.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "הטיפול נבחר באופן פרטני.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "אצל נשים בסיכון ניתן לבצע מעקב סדרתי אחר אורך צוואר הרחם בתקופה שבה למדידה יש משמעות קלינית.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "מטרת המעקב היא לזהות קיצור מתקדם בזמן שבו עדיין אפשר לשקול טיפול, ולא רק לתעד את השינוי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "**פרוגסטרון נרתיקי** עשוי להישקל בהריון עם עובר יחיד כאשר מתגלה צוואר רחם קצר לפני שבוע 24, בהתאם לאורך שנמדד, להיסטוריה ולהנחיה המקצועית החלה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "NICE ממליץ לשקול או להציע פרוגסטרון נרתיקי או תפר צווארי בקבוצות מוגדרות של נשים עם היסטוריה מתאימה וצוואר קצר, כמפורט בהמלצות למניעת לידה מוקדמת.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "בחירת התרופה, המינון ומשך הטיפול מחייבת החלטה רפואית ואינה מתאימה לטיפול עצמי.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "**תפר על בסיס היסטוריה:** לנשים עם עבר מיילדותי המתאים בסבירות גבוהה לאי־ספיקת צוואר הרחם.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "**תפר על בסיס אולטרסאונד:** כאשר במעקב מתגלה צוואר קצר אצל אישה שלה היסטוריה של לידה מוקדמת או אובדן הריון המתאימים לכך.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "תפר אינו מבטיח מניעת לידה מוקדמת, והיחס בין התועלת לסיכון משתנה בין נשים ובין נסיבות קליניות.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "אפשרויות מניעה: מעקב, פרוגסטרון ותפר צווארי",
+          "claim": "מנוחה מוחלטת, הגבלת פעילות גורפת או שמירת מיטה אינן תחליף להתערבויות מבוססות־ראיות, ועלולות להיות כרוכות בנזקים כגון ירידה בכושר וסיכון לקרישי דם.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+            "https://www.acog.org/womens-health/faqs/cervical-cerclage"
+          ]
+        },
+        {
+          "section": "מעקב, סימני אזהרה ומגבלות הטיפול",
+          "claim": "גם לאחר התחלת טיפול נדרש מעקב לפי התוכנית שנקבעה.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מעקב, סימני אזהרה ומגבלות הטיפול",
+          "claim": "בתפר מתוכנן המונח דרך הנרתיק, מועד ההסרה נקבע בדרך כלל לקראת סוף ההריון, או מוקדם יותר אם מתחילים צירים, מתרחשת ירידת מים או מתעורר צורך רפואי אחר.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מעקב, סימני אזהרה ומגבלות הטיפול",
+          "claim": "תסמינים אלה אינם מוכיחים אי־ספיקת צוואר הרחם, אך הם עלולים להעיד על לידה מוקדמת, ירידת מים או זיהום.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מעקב, סימני אזהרה ומגבלות הטיפול",
+          "claim": "הנחיות NICE להערכת חשד ללידה מוקדמת מפרטות את השימוש בבדיקה קלינית, במדידת אורך צוואר הרחם ובבדיקות נוספות בהתאם לשבוע ההריון ולתסמינים.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "מעקב, סימני אזהרה ומגבלות הטיפול",
+          "claim": "בנוסף, מחקרים והנחיות עשויים להשתמש בהגדרות מעט שונות של היסטוריה בסיכון ושל צוואר קצר.",
+          "source_urls": [
+            "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "האבחון נשען על שילוב בין היסטוריה מיילדותית, אולטרסאונד וגינלי ובדיקה רפואית, תוך שלילת סיבות אחרות לשינוי בצוואר הרחם.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "נשים עם אובדן הריון מאוחר, לידה מוקדמת ספונטנית קודמת או פרוצדורות מסוימות בצוואר הרחם עשויות להזדקק להערכת סיכון ולמעקב ממוקד.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "האפשרויות למניעה כוללות מעקב אחר אורך הצוואר, פרוגסטרון נרתיקי ותפר צווארי, אך התאמתן תלויה במאפייני ההריון ובהיסטוריה.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון או לטיפול פרטני, ומחייב בדיקה וביקורת של רופא או רופאה מוסמכים לפני פרסום או יישום.",
+          "source_urls": [
+            "https://doi.org/10.1002/ijgo.13832"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nice.org.uk/guidance/ng25/chapter/Recommendations",
+          "host": "nice.org.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://doi.org/10.1002/ijgo.13832",
+          "host": "doi.org",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.acog.org/womens-health/faqs/cervical-cerclage",
+          "host": "acog.org",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "0b520b28541fa097f1079d720f55fb4bf458514ef94889b9a5103a2ac84fe538",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://guyrofe.com/אי־ספיקת-צוואר-הרחם-בהריון-גורמי/",
+        "host": "guyrofe.com",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://guyrofe.com/%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%97%d7%95%d7%a5%d6%be%d7%a8%d7%97%d7%9e%d7%99-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%9e%d7%95%d7%a7%d7%93%d7%9e%d7%99%d7%9d/",
+          "anchor": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        },
+        {
+          "url": "https://guyrofe.com/%d7%aa%d7%a1%d7%91%d7%99%d7%91-%d7%a9%d7%97%d7%9c%d7%94-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%92%d7%95%d7%a8%d7%9e%d7%99-%d7%a1%d7%99%d7%9b%d7%95%d7%9f/",
+          "anchor": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://guyrofe.com/",
+        "observed_position": 1,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-11-02T12:41:54.648946"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897"
+}
