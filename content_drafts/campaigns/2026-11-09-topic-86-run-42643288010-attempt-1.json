@@ -1,0 +1,116 @@
+{
+  "draft": "content_drafts/2026-11-09-topic-86-run-42643288010-attempt-1.md",
+  "title": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-11-10T01:42:39.951473+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%aa-%d7%a6%d7%95%d7%95%d7%90%d7%a8-%d7%94%d7%a8%d7%97%d7%9d-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%92%d7%95%d7%a8%d7%9e%d7%99/",
+      "detail": "idempotency_key=pub_3d7b3d842843116948ca111b3f5e5af4d92b443a70eeacfd183123fb041c5f45"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%aa-%d7%a6%d7%95%d7%95%d7%90%d7%a8-%d7%94%d7%a8%d7%97%d7%9d-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%92%d7%95%d7%a8%d7%9e%d7%99/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-09-topic-86-run-42643288010-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122214240530942441",
+      "detail": "idempotency_key=pub_122bd9ebb2d583dd99165ac3c1d7fc7d0bddb9a31529c1ba0c09b212dde8c2f2"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7525734584878133248/",
+      "detail": "idempotency_key=pub_2b548538d8e7ec861a74c4a0783a1b0eadf273cbd58841ef23fd507c51f64a92"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDotNUdFUHJZbXc5UHBXRzBFcndKUTNB",
+      "detail": "idempotency_key=pub_b6db9d9c08fb1a50bb84a70327bae438909206a40bb57ba8655d2e6f15b971b0"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897",
+  "search_target": {
+    "primary_query": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת",
+    "secondary_queries": [
+      "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת ד״ר גיא רופא",
+      "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%aa-%d7%a6%d7%95%d7%95%d7%90%d7%a8-%d7%94%d7%a8%d7%97%d7%9d-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%92%d7%95%d7%a8%d7%9e%d7%99/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

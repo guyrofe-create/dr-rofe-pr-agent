@@ -1536,6 +1536,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7503837384581623808/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIPomtfZ98iuwgE"
       ]
+    },
+    "apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897:e24f06d0b04147a1662a312dd3d7756f775a5ec76de1864319963ba592c00fd3": {
+      "sent_at": "2026-11-10T01:42:41.412524+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897",
+      "state": "success",
+      "subject": "אישור פרסום: אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%aa-%d7%a6%d7%95%d7%95%d7%90%d7%a8-%d7%94%d7%a8%d7%97%d7%9d-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%92%d7%95%d7%a8%d7%9e%d7%99/",
+        "https://www.facebook.com/122214240530942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7525734584878133248/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDotNUdFUHJZbXc5UHBXRzBFcndKUTNB"
+      ]
     }
   }
 }
