@@ -638,6 +638,22 @@ def fetch_serp_account_status(api_key: str) -> dict:
     }
 
 
+def refresh_serp_account_status() -> dict:
+    """Refresh free provider accounting even while search retry backoff is active."""
+    api_key = env("SERPAPI_KEY")
+    if not api_key:
+        REPORT["serp_account"] = {"status": "skipped", "reason": "SERPAPI_KEY not set"}
+        return REPORT["serp_account"]
+    try:
+        REPORT["serp_account"] = fetch_serp_account_status(api_key)
+    except Exception as exc:
+        REPORT["serp_account"] = {
+            "status": "unavailable",
+            "detail": safe_error(exc),
+        }
+    return REPORT["serp_account"]
+
+
 def record_serp_request(today=None):
     month = serp_month_key(today)
     usage = HISTORY.setdefault("serp_usage_by_month", {})
@@ -907,11 +923,7 @@ def check_google_rank(today=None):
     estimated_requests = len(queries) * len(devices) * len(engines) * max(
         1, (maximum_rank_position + request_depth - 1) // request_depth
     )
-    try:
-        account = fetch_serp_account_status(api_key)
-    except Exception as exc:
-        account = {"status": "unavailable", "detail": safe_error(exc)}
-    REPORT["serp_account"] = account
+    account = REPORT.get("serp_account") or refresh_serp_account_status()
     REPORT["serp_plan"] = {
         **plan,
         "monthly_budget": serp_monthly_budget(),
@@ -2018,6 +2030,7 @@ def open_github_issue(title, body, labels):
 def main():
     print(f"=== Reputation Monitor: {CLIENT_PROFILE['display_name']} - Starting ===")
     today_str = date.today().isoformat()
+    refresh_serp_account_status()
     if serp_checks_due(today_str):
         run_plan = serp_run_plan(today_str)
         check_google_rank(today_str)
