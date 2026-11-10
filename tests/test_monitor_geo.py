@@ -468,6 +468,24 @@ class MonitorGeoTests(unittest.TestCase):
         finally:
             monitor_run.REPORT["rank"] = old_rank
 
+    def test_serp_account_status_is_sanitized(self):
+        response = Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {
+            "api_key": "secret",
+            "account_email": "private@example.com",
+            "plan_name": "Free Plan",
+            "plan_renewal_date": "2026-12-01",
+            "searches_per_month": 250,
+            "this_month_usage": 249,
+            "total_searches_left": 1,
+        }
+        with patch.object(monitor_run.requests, "get", return_value=response):
+            status = monitor_run.fetch_serp_account_status("secret")
+        self.assertEqual(status["total_searches_left"], 1)
+        self.assertNotIn("api_key", status)
+        self.assertNotIn("account_email", status)
+
     def test_serp_query_error_still_fails_the_monitor(self):
         old_rank = monitor_run.REPORT["rank"]
         monitor_run.REPORT["rank"] = [{
