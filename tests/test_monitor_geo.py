@@ -14,6 +14,18 @@ with patch.dict(
 
 
 class MonitorGeoTests(unittest.TestCase):
+    def test_page_experience_fails_fast_without_api_key(self):
+        report = {"page_experience": None}
+        with patch.object(monitor_run, "REPORT", report), patch.object(
+            monitor_run, "env", return_value=None
+        ), patch.object(monitor_run, "fetch_page_experience") as fetch:
+            result = monitor_run.collect_page_experience()
+        self.assertEqual(result, [])
+        self.assertEqual(
+            report["page_experience"]["status"], "configuration_required"
+        )
+        fetch.assert_not_called()
+
     def test_ai_monitor_collects_all_samples_through_bounded_worker_pool(self):
         fake_client = Mock()
         sample = Mock(side_effect=lambda _client, **kwargs: {

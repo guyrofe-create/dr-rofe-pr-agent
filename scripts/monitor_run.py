@@ -267,6 +267,14 @@ def collect_search_console_evidence():
 
 def collect_page_experience():
     """Read-only field/lab evidence for every configured website."""
+    api_key = env("PAGESPEED_API_KEY")
+    if not api_key:
+        REPORT["page_experience"] = {
+            "status": "configuration_required",
+            "reason": "PAGESPEED_API_KEY is not configured",
+            "results": [],
+        }
+        return []
     profile = load_json_file(PROFILE_PATH, {})
     reports = []
     for site in profile.get("sites", []):
@@ -280,7 +288,7 @@ def collect_page_experience():
                 reports.append(fetch_page_experience(
                     url,
                     strategy=strategy,
-                    api_key=env("PAGESPEED_API_KEY"),
+                    api_key=api_key,
                 ))
             except Exception as exc:
                 reports.append({
