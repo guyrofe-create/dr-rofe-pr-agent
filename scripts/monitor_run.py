@@ -80,6 +80,7 @@ REPORT = {
     "search_console": None, "search_appearances": None, "url_inspection": None,
     "publication_lifecycle": [], "page_experience": None,
     "runtime_connection_health": None,
+    "serp_account": None,
     "bing_ai_performance": None, "backlinks": None,
     "google_business_performance": None,
     "orchestration": None,
@@ -615,6 +616,28 @@ def serp_budget_available(today=None):
     return budget is None or serp_requests_used(today) < budget
 
 
+def fetch_serp_account_status(api_key: str) -> dict:
+    """Read provider quota without consuming a search or exposing account data."""
+    response = requests.get(
+        "https://serpapi.com/account.json",
+        params={"api_key": api_key},
+        timeout=20,
+    )
+    response.raise_for_status()
+    data = response.json()
+    return {
+        "status": "ok",
+        "plan_name": data.get("plan_name"),
+        "plan_renewal_date": data.get("plan_renewal_date"),
+        "searches_per_month": data.get("searches_per_month"),
+        "this_month_usage": data.get("this_month_usage"),
+        "plan_searches_left": data.get("plan_searches_left"),
+        "extra_credits": data.get("extra_credits"),
+        "total_searches_left": data.get("total_searches_left"),
+        "account_rate_limit_per_hour": data.get("account_rate_limit_per_hour"),
+    }
+
+
 def record_serp_request(today=None):
     month = serp_month_key(today)
     usage = HISTORY.setdefault("serp_usage_by_month", {})
@@ -881,11 +904,34 @@ def check_google_rank(today=None):
     queries = plan["queries"]
     devices = plan["devices"]
     engines = plan["engines"]
+    estimated_requests = len(queries) * len(devices) * len(engines) * max(
+        1, (maximum_rank_position + request_depth - 1) // request_depth
+    )
+    try:
+        account = fetch_serp_account_status(api_key)
+    except Exception as exc:
+        account = {"status": "unavailable", "detail": safe_error(exc)}
+    REPORT["serp_account"] = account
     REPORT["serp_plan"] = {
         **plan,
         "monthly_budget": serp_monthly_budget(),
         "requests_used_before_run": serp_requests_used(today),
+        "estimated_requests": estimated_requests,
     }
+    provider_remaining = account.get("total_searches_left")
+    if (
+        account.get("status") == "ok"
+        and provider_remaining is not None
+        and int(provider_remaining) < estimated_requests
+    ):
+        REPORT["rank"].append({
+            "status": "quota_limited",
+            "detail": "SerpApi account does not have enough searches for a complete measurement",
+            "required_searches": estimated_requests,
+            "searches_left": int(provider_remaining),
+            "plan_renewal_date": account.get("plan_renewal_date"),
+        })
+        return
     for kw in queries:
       for engine in engines:
        for device in devices:
