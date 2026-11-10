@@ -25,18 +25,18 @@ def _asset_actions(asset: dict, reachability: dict | None, effort: str) -> list[
     actions: list[str] = []
     public_state = reachability.get("reachability", "not_checked")
     if public_state in {"not_found", "network_or_provider_error", "http_error"}:
-        actions.append("repair_or_confirm_public_url")
+        actions.append("read_only_confirm_public_url_before_future_publication")
     if public_state in {"access_restricted_or_anti_bot", "not_checked"}:
         actions.append("manual_browser_audit")
     if reachability.get("content_audit") == "complete":
-        issue_prefix = "fix" if asset.get("controlled") else "request_or_document"
         actions.extend(
-            f"{issue_prefix}_{issue}" for issue in reachability.get("seo_issues", [])
+            f"record_{issue}_for_future_publication_routing"
+            for issue in reachability.get("seo_issues", [])
         )
         if not reachability.get("entity_in_title") and effort in {"core", "defend", "selective"}:
-            actions.append("review_entity_name_in_title")
+            actions.append("require_entity_name_in_new_future_publications")
         if not reachability.get("official_link_present") and effort in {"core", "defend", "selective"}:
-            actions.append("add_reader_useful_official_link_if_platform_allows")
+            actions.append("require_reader_useful_official_link_in_new_future_publications_if_allowed")
     elif public_state == "reachable":
         actions.append("manual_content_and_profile_field_audit")
     status = str(asset.get("status") or "")
@@ -61,7 +61,12 @@ def asset_effort_decision(asset: dict, reachability: dict | None = None) -> dict
     elif public_state == "not_found":
         effort = "resolve_or_hold"
         reason = "The registered public URL returned 404/410 and must be repaired or removed before further effort."
-    elif public_state == "network_or_provider_error" and tier in {"A", "B"}:
+    elif (
+        public_state == "network_or_provider_error"
+        and tier in {"A", "B"}
+        and not page_one
+        and asset.get("observed_position") is None
+    ):
         effort = "resolve_or_hold"
         reason = "The public URL could not be resolved or reached; verify DNS and the exact destination before allocating effort."
     elif status in BLOCKED_STATUSES:
@@ -92,6 +97,20 @@ def asset_effort_decision(asset: dict, reachability: dict | None = None) -> dict
         next_action = "retain_without_recurring_effort"
 
     actions = _asset_actions(asset, reachability, effort)
+    automation = str(asset.get("automation") or "")
+    future_publication_eligible = bool(
+        controlled
+        and effort in {"core", "defend", "selective"}
+        and status not in BLOCKED_STATUSES
+        and (
+            "audit" not in status
+            or (reachability or {}).get("content_audit") == "complete"
+        )
+        and "read_only" not in status
+        and "owner_managed" not in automation
+        and "disabled" not in automation
+        and "episode_link" not in automation
+    )
     return {
         "platform": asset.get("platform"),
         "url": asset.get("url"),
@@ -99,6 +118,9 @@ def asset_effort_decision(asset: dict, reachability: dict | None = None) -> dict
         "priority": priority,
         "status": status,
         "controlled": controlled,
+        "automation": asset.get("automation"),
+        "future_publication_eligible": future_publication_eligible,
+        "existing_content_mutation_allowed": False,
         "page_one": page_one,
         "effort": effort,
         "reason": reason,
@@ -145,8 +167,11 @@ def build_asset_portfolio_plan(
     counts = {}
     for row in rows:
         counts[row["effort"]] = counts.get(row["effort"], 0) + 1
+    focus_cohort = [
+        row for row in rows if row.get("future_publication_eligible")
+    ][:12]
     return {
-        "version": 2,
+        "version": 3,
         "generated_at": generated_at or datetime.now(timezone.utc).isoformat(),
         "objective": "Maximize accurate first-page and discovery visibility with the existing asset portfolio.",
         "policy": "Effort follows authority, measured visibility, audience fit and control; account count alone is not a success metric.",
@@ -154,6 +179,21 @@ def build_asset_portfolio_plan(
         "effort_counts": counts,
         "audit_complete_count": sum(1 for row in rows if row["audit_complete"]),
         "action_required_count": sum(1 for row in rows if not row["audit_complete"]),
+        "focus_cohort_policy": (
+            "Rotate new future publications across up to 12 highest-authority "
+            "eligible assets; never edit existing content merely to fill inventory."
+        ),
+        "focus_cohort_count": len(focus_cohort),
+        "focus_cohort": [
+            {
+                "platform": row.get("platform"),
+                "url": row.get("url"),
+                "tier": row.get("tier"),
+                "priority": row.get("priority"),
+                "effort": row.get("effort"),
+            }
+            for row in focus_cohort
+        ],
         "assets": rows,
         "credentials_included": False,
         "public_execution_allowed": False,

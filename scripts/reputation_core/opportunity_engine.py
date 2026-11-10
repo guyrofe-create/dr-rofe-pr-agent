@@ -72,6 +72,14 @@ DEFAULT_POLICY = {
     "maximum_risk": 6,
     "maximum_high_risk_per_cycle": 1,
     "high_risk_starts_at": 5,
+    "future_publications_only": False,
+}
+
+FUTURE_ONLY_ACTION_TYPES = {
+    "create_new_content",
+    "create_media_or_page",
+    "propose_new_asset",
+    "earn_external_mention",
 }
 
 
@@ -322,6 +330,10 @@ def build_opportunity(
         "preparation_autonomous": True,
         "final_execution_requires_approval": action_type in PUBLIC_ACTION_TYPES,
         "authorization_scope": authorization_scope,
+        "future_publication_only": bool(
+            action.get("future_publication_only")
+            or evidence.get("future_publication_only")
+        ),
         "new_asset_build_authorized": False,
         "approval_required": approval,
         "approval_bundle_requirements": _approval_bundle(action_type),
@@ -348,7 +360,9 @@ def _synthetic_actions(
     strongest = max(
         controlled, key=lambda item: item.get("priority", 0), default=None
     )
-    for measurement in visibility_measurement.get("serp_surfaces", []):
+    for measurement_index, measurement in enumerate(
+        visibility_measurement.get("serp_surfaces", [])
+    ):
         query = measurement.get("query")
         represented_ids = set(measurement.get("controlled_asset_ids_top10") or [])
         reusable = [
@@ -362,8 +376,13 @@ def _synthetic_actions(
             and "episode_link" not in str(asset.get("automation") or "")
             and "paused" not in str(asset.get("status") or "")
         ]
-        next_existing = max(
-            reusable, key=lambda item: item.get("priority", 0), default=None
+        reusable.sort(
+            key=lambda item: (-int(item.get("priority", 0)), str(_asset_key(item)))
+        )
+        rotation_seed = sum(ord(char) for char in str(measurement.get("observed_at") or ""))
+        next_existing = (
+            reusable[(rotation_seed + measurement_index) % len(reusable)]
+            if reusable else None
         )
         gap = max(
             0,
@@ -383,6 +402,7 @@ def _synthetic_actions(
             "desired_gap": gap,
             "represented_unique_assets": sorted(represented_ids),
             "existing_asset_first": bool(next_existing),
+            "rotation_seed": rotation_seed,
         }
         if gap and next_existing:
             actions.extend([
@@ -397,11 +417,12 @@ def _synthetic_actions(
                         f"{_asset_key(next_existing)} asset before creating another asset."
                     ),
                     "actions": [
-                        "Prepare one platform-native publication or profile improvement on this existing asset",
+                        "Prepare one new platform-native publication on this asset; do not edit existing content or profile fields",
                         "Use original value suited to the platform and link only where natural",
                         "Submit the exact change for approval and remeasure the same brand query",
                     ],
-                    "evidence": source,
+                    "evidence": {**source, "future_publication_only": True},
+                    "future_publication_only": True,
                 },
                 {
                     "kind": "connect_assets",
@@ -523,6 +544,18 @@ def select_opportunities(
     high_risk = 0
     for item in ranked:
         if item["status"] == "blocked":
+            continue
+        if rules.get("future_publications_only") and not (
+            item["action_type"] in FUTURE_ONLY_ACTION_TYPES
+            or (
+                item["action_type"] == "strengthen_existing_asset"
+                and item.get("future_publication_only")
+            )
+        ):
+            item["status"] = "blocked"
+            item.setdefault("blocked_reasons", []).append(
+                "scope permits future publications only; existing content and profiles are immutable"
+            )
             continue
         risk = item["factors"]["risk"]
         if item["score"] < rules["minimum_score"]:

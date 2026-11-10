@@ -1556,8 +1556,27 @@ def critical_monitor_failures():
             r.get("status") in {"budget_limited", "quota_limited", "skipped"}
             for r in REPORT["rank"]
         )
+        require_core_serp = str(
+            env("REQUIRE_CORE_SERP_MEASUREMENT") or ""
+        ).strip().lower() in {
+            "1", "true", "yes"
+        }
         if rank_errors:
             failures.append(f"SERP rank: {len(rank_errors)} query errors")
+        elif (
+            require_core_serp
+            and REPORT.get("rank")
+            and not rank_measurement_succeeded()
+        ):
+            statuses = sorted({
+                str(item.get("status") or "unknown")
+                for item in REPORT["rank"]
+            })
+            failures.append(
+                "SERP rank: required measurement unavailable ("
+                + ", ".join(statuses)
+                + ")"
+            )
         elif (
             REPORT.get("rank")
             and not rank_measurement_succeeded()

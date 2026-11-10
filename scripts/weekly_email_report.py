@@ -246,6 +246,27 @@ def latest_asset_rank_measurement(root):
     }, root)
 
 
+def latest_asset_rank_trajectory(root):
+    """Return baseline-to-now evidence without blending query or device."""
+    history = load_json(
+        Path(root) / "data" / "reputation_history.json", {"snapshots": []}
+    )
+    for snapshot in reversed(history.get("snapshots", [])):
+        trajectory = (
+            (snapshot.get("orchestration") or {})
+            .get("visibility_measurement", {})
+            .get("asset_rank_trajectories", {})
+        )
+        if trajectory.get("dimensions"):
+            return trajectory
+    return {
+        "status": "not_measured",
+        "reason": "awaiting a complete same-dimension Google baseline",
+        "dimensions": [],
+        "assets": [],
+    }
+
+
 def _aggregate_search_console_pages(rows):
     pages = {}
     for row in rows or []:
@@ -473,6 +494,7 @@ def collect_report(start, end, *, root=ROOT, usage_dir=None):
         "publications": publications,
         "failures": failures,
         "asset_rank": latest_asset_rank_measurement(root),
+        "asset_trajectory": latest_asset_rank_trajectory(root),
         "search_console": latest_search_console_performance(root),
         "ai": {
             "events": len(usage),
@@ -612,6 +634,19 @@ def render_html(report):
         "</tr>"
         for item in rank.get("assets", [])
     ) or '<tr><td colspan="9">אין מדידת Google מלאה ועדכנית.</td></tr>'
+    trajectory = report.get("asset_trajectory", {})
+    trajectory_rows = "".join(
+        "<tr>"
+        f"<td>{html.escape(item.get('query') or '')}</td>"
+        f"<td>{html.escape(item.get('device') or '')}</td>"
+        f"<td>{html.escape(item.get('baseline_observed_at') or 'מדידת בסיס')}</td>"
+        f"<td>{int(item.get('baseline_controlled_unique_top10') or 0)}</td>"
+        f"<td>{html.escape(item.get('current_observed_at') or 'לא נמדד')}</td>"
+        f"<td>{int(item.get('current_controlled_unique_top10') or 0)}</td>"
+        f"<td>{_signed_number(item.get('controlled_unique_top10_delta')) if item.get('controlled_unique_top10_delta') is not None else 'אין בסיס זהה'}</td>"
+        "</tr>"
+        for item in trajectory.get("dimensions", [])
+    ) or '<tr><td colspan="7">אין עדיין השוואת בסיס מלאה באותן שאילתות ובאותם מכשירים.</td></tr>'
     search_console = report.get("search_console", {})
     search_console_rows = "".join(
         "<tr>"
@@ -688,6 +723,12 @@ def render_html(report):
 <thead><tr><th>נכס</th><th>כתובת</th><th>שאילתת Google</th><th>עמוד</th><th>מיקום קודם</th><th>מיקום נוכחי</th><th>שינוי</th><th>פרסומים בין המדידות</th><th>הערכת תוצאה</th></tr></thead>
 <tbody>{rank_rows}</tbody>
 </table>
+<h2>התקדמות מהבסיס עד עכשיו — נכסים נשלטים ב-Top 10</h2>
+<p>ההשוואה מחייבת אותה שאילתה, אותה מדינה, אותה שפה ואותו סוג מכשיר. אין ערבוב בין מדידות.</p>
+<table style="border-collapse:collapse;width:100%" border="1" cellpadding="7">
+<thead><tr><th>שאילתה</th><th>מכשיר</th><th>מועד בסיס</th><th>נכסים בבסיס</th><th>מועד נוכחי</th><th>נכסים עכשיו</th><th>שינוי</th></tr></thead>
+<tbody>{trajectory_rows}</tbody>
+</table>
 <h2>ביצועי כל עמוד ב-Google Search Console</h2>
 <p>תקופה נוכחית: {html.escape(str(search_console.get('period') or 'לא נמדד'))};
 עמודים בדוח: {int(search_console.get('page_count') or 0)}. שינוי חיובי במיקום פירושו עלייה.</p>
@@ -758,6 +799,18 @@ def render_text(report):
         )
     if not rank.get("assets"):
         lines.append("- אין מדידת Google מלאה ועדכנית.")
+    trajectory = report.get("asset_trajectory", {})
+    lines.extend(["", "התקדמות מהבסיס עד עכשיו באותן שאילתות ובאותם מכשירים:"])
+    for item in trajectory.get("dimensions", []):
+        delta = item.get("controlled_unique_top10_delta")
+        lines.append(
+            f"- {item.get('query')} / {item.get('device')}: "
+            f"בסיס {int(item.get('baseline_controlled_unique_top10') or 0)}, "
+            f"עכשיו {int(item.get('current_controlled_unique_top10') or 0)}, "
+            f"שינוי {_signed_number(delta) if delta is not None else 'אין בסיס זהה'}"
+        )
+    if not trajectory.get("dimensions"):
+        lines.append("- אין עדיין השוואת בסיס מלאה באותם ממדי מדידה.")
     search_console = report.get("search_console", {})
     lines.extend([
         "",

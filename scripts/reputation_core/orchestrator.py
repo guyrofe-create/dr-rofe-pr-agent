@@ -360,6 +360,171 @@ def measure_asset_rank_changes(
     }
 
 
+def _dimension_key(control_map: dict) -> tuple:
+    return (
+        str(control_map.get("engine") or "google").lower(),
+        control_map.get("query"),
+        control_map.get("country", "IL"),
+        control_map.get("language", "he"),
+        control_map.get("device", "unknown"),
+    )
+
+
+def _asset_position_in_map(asset: dict, control_map: dict | None) -> int | None:
+    if not control_map:
+        return None
+    positions = [
+        int(result["position"])
+        for result in control_map.get("rank_results", control_map.get("results", []))
+        if result.get("asset_id") == _asset_id(asset)
+        and result.get("asset_url") == asset.get("url")
+        and result.get("position") is not None
+    ]
+    return min(positions) if positions else None
+
+
+def measure_asset_rank_trajectories(
+    assets: list[dict],
+    current_control_maps: list[dict],
+    historical_control_maps: list[dict] | None = None,
+    *,
+    complete: bool = True,
+) -> dict:
+    """Compare baseline, previous and current rank on identical dimensions."""
+    current_google = [
+        item for item in current_control_maps
+        if str(item.get("engine", "google")).lower() == "google"
+    ]
+    if not complete or not current_google:
+        return {
+            "status": "not_measured",
+            "reason": (
+                "current Google measurement is incomplete"
+                if current_google else "no current Google measurement"
+            ),
+            "dimensions": [],
+            "assets": [],
+        }
+
+    current_by_dimension = {_dimension_key(item): item for item in current_google}
+    history_by_dimension: dict[tuple, list[dict]] = {}
+    for item in historical_control_maps or []:
+        if str(item.get("engine", "google")).lower() == "google":
+            history_by_dimension.setdefault(_dimension_key(item), []).append(item)
+    for rows in history_by_dimension.values():
+        rows.sort(key=lambda item: str(item.get("observed_at") or ""))
+
+    eligible_assets = []
+    seen = set()
+    for asset in assets:
+        if not asset.get("url") or asset.get("status") == "owner_managed_product_disabled":
+            continue
+        key = (_asset_id(asset), asset.get("url"))
+        if key not in seen:
+            seen.add(key)
+            eligible_assets.append(asset)
+
+    per_asset = {
+        (_asset_id(asset), asset.get("url")): [] for asset in eligible_assets
+    }
+    dimension_rows = []
+    comparable_dimensions = 0
+    for dimension, current in sorted(current_by_dimension.items(), key=str):
+        history = history_by_dimension.get(dimension, [])
+        baseline = history[0] if history else None
+        previous = history[-1] if history else None
+        if baseline:
+            comparable_dimensions += 1
+        current_top10 = set(current.get("controlled_asset_ids") or [])
+        baseline_top10 = set((baseline or {}).get("controlled_asset_ids") or [])
+        dimension_rows.append({
+            "engine": dimension[0],
+            "query": dimension[1],
+            "country": dimension[2],
+            "language": dimension[3],
+            "device": dimension[4],
+            "baseline_observed_at": (baseline or {}).get("observed_at"),
+            "previous_observed_at": (previous or {}).get("observed_at"),
+            "current_observed_at": current.get("observed_at"),
+            "baseline_controlled_unique_top10": len(baseline_top10),
+            "current_controlled_unique_top10": len(current_top10),
+            "controlled_unique_top10_delta": (
+                len(current_top10) - len(baseline_top10) if baseline else None
+            ),
+            "baseline_result_depth": (baseline or {}).get("result_depth"),
+            "current_result_depth": current.get("result_depth"),
+        })
+        for asset in eligible_assets:
+            current_position = _asset_position_in_map(asset, current)
+            baseline_position = _asset_position_in_map(asset, baseline)
+            previous_position = _asset_position_in_map(asset, previous)
+            per_asset[(_asset_id(asset), asset.get("url"))].append({
+                "query": dimension[1],
+                "country": dimension[2],
+                "language": dimension[3],
+                "device": dimension[4],
+                "baseline_position": baseline_position,
+                "previous_position": previous_position,
+                "current_position": current_position,
+                "baseline_to_current_delta": (
+                    baseline_position - current_position
+                    if baseline_position is not None and current_position is not None
+                    else None
+                ),
+                "previous_to_current_delta": (
+                    previous_position - current_position
+                    if previous_position is not None and current_position is not None
+                    else None
+                ),
+                "entered_since_baseline": bool(
+                    baseline and baseline_position is None and current_position is not None
+                ),
+                "left_since_baseline": bool(
+                    baseline and baseline_position is not None and current_position is None
+                ),
+            })
+
+    asset_rows = []
+    for asset in eligible_assets:
+        rows = per_asset[(_asset_id(asset), asset.get("url"))]
+        asset_rows.append({
+            "asset_id": _asset_id(asset),
+            "platform": asset.get("platform") or _asset_id(asset),
+            "url": asset.get("url"),
+            "tier": asset.get("tier"),
+            "controlled": bool(asset.get("controlled")),
+            "current_top10_dimensions": sum(
+                row["current_position"] is not None and row["current_position"] <= 10
+                for row in rows
+            ),
+            "baseline_top10_dimensions": sum(
+                row["baseline_position"] is not None and row["baseline_position"] <= 10
+                for row in rows
+            ),
+            "improved_dimensions": sum(
+                (row["baseline_to_current_delta"] or 0) > 0
+                or row["entered_since_baseline"] for row in rows
+            ),
+            "declined_dimensions": sum(
+                (row["baseline_to_current_delta"] or 0) < 0
+                or row["left_since_baseline"] for row in rows
+            ),
+            "comparable_dimensions": sum(
+                row["baseline_position"] is not None for row in rows
+            ),
+            "dimensions": rows,
+        })
+    return {
+        "status": "compared" if comparable_dimensions else "baseline",
+        "dimension_count": len(dimension_rows),
+        "comparable_dimension_count": comparable_dimensions,
+        "dimensions": dimension_rows,
+        "asset_count": len(asset_rows),
+        "assets": asset_rows,
+        "comparison_rule": "same engine, query, country, language and device only",
+    }
+
+
 def _action(priority: str, kind: str, asset: dict | None, query: str, reason: str,
             actions: list[str], evidence: dict | None = None) -> dict:
     return {
@@ -776,10 +941,16 @@ def orchestrate_reputation_cycle(
         bing_ai_performance or {"rows": []}
     )
     visibility_measurement = {
-        "version": 4,
+        "version": 5,
         "serp_surfaces": serp_measurements,
         "controlled_asset_portfolio": build_portfolio_serp_report(control_maps),
         "asset_rank_changes": measure_asset_rank_changes(
+            assets,
+            control_maps,
+            historical_control_maps,
+            complete=asset_rank_measurement_complete,
+        ),
+        "asset_rank_trajectories": measure_asset_rank_trajectories(
             assets,
             control_maps,
             historical_control_maps,
@@ -909,7 +1080,14 @@ def orchestrate_reputation_cycle(
             "controlled_results_target": 0,
         },
         query_priorities,
-        policy=profile.get("opportunity_policy"),
+        policy={
+            **(profile.get("opportunity_policy") or {}),
+            "future_publications_only": bool(
+                targets.get("publication_scope", {}).get(
+                    "future_publications_only", False
+                )
+            ),
+        },
         content_freeze=content_freeze,
     )
     return {

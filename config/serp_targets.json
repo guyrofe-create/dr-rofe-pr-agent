@@ -25,6 +25,12 @@
     "ai_harmful_or_incorrect_target": 0.0,
     "ai_cross_sample_stability_target": 0.8
   },
+  "publication_scope": {
+    "future_publications_only": true,
+    "existing_content_mutation_allowed": false,
+    "existing_profile_mutation_allowed": false,
+    "rule": "Measure existing assets read-only. Prepare only new future publications and never rewrite existing clinic, profile, homepage, page or article content."
+  },
   "measurement_plan": {
     "search_engines": ["google", "bing"],
     "serp_surfaces": ["web_search"],

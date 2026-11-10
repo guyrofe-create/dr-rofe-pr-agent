@@ -49,6 +49,22 @@ repository contains the Dr. Guy Rofe pilot profile.
 - declares every supported integration in `config/secrets_manifest.json` without storing credential values;
 - continues the existing schema sync, social distribution and content workflows.
 
+### Enforced future-publication scope
+
+This installation treats every existing homepage, clinic page, article and
+profile field as immutable. Monitoring and factual/content audits remain
+read-only. The opportunity engine may prepare only a new, exact-approved future
+publication or platform-native variant; refreshes, profile corrections, removal
+requests and edits to existing content are blocked by policy before selection.
+
+Google progress is reported from the first comparable baseline to the current
+measurement only when engine, query, country, language and device are identical.
+The report separately counts controlled unique assets in the top ten. A provider
+quota, rate limit or other missing core SERP measurement makes the scheduled
+monitor fail visibly instead of presenting a green run. Future publications are
+rotated across the highest-authority eligible focus cohort rather than repeatedly
+selecting the same asset or attempting to fill all registered accounts.
+
 ## Safety model
 
 The system may automatically collect, classify, route and pause content. Public

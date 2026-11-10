@@ -446,6 +446,28 @@ class MonitorGeoTests(unittest.TestCase):
         finally:
             monitor_run.REPORT["rank"] = old_rank
 
+    def test_required_core_serp_quota_gap_fails_the_workflow(self):
+        old_rank = monitor_run.REPORT["rank"]
+        monitor_run.REPORT["rank"] = [{
+            "status": "quota_limited",
+            "detail": "429",
+        }]
+        try:
+            with patch.dict(
+                os.environ,
+                {
+                    "SERPAPI_KEY": "configured",
+                    "REQUIRE_CORE_SERP_MEASUREMENT": "true",
+                },
+                clear=True,
+            ):
+                self.assertIn(
+                    "SERP rank: required measurement unavailable (quota_limited)",
+                    monitor_run.critical_monitor_failures(),
+                )
+        finally:
+            monitor_run.REPORT["rank"] = old_rank
+
     def test_serp_query_error_still_fails_the_monitor(self):
         old_rank = monitor_run.REPORT["rank"]
         monitor_run.REPORT["rank"] = [{

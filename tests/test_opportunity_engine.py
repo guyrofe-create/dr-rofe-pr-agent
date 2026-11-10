@@ -118,6 +118,27 @@ class OpportunityScoringTests(unittest.TestCase):
         )
         self.assertTrue(selected["final_execution_requires_approval"])
 
+    def test_future_only_scope_blocks_existing_mutations(self):
+        refresh = build_opportunity({
+            "action_type": "refresh_existing_content",
+            "asset_id": "official",
+            "query": "Example",
+            "reason": "stale",
+        }, [ASSET], {"Example": 100})
+        future = build_opportunity({
+            "action_type": "strengthen_existing_asset",
+            "asset_id": "official",
+            "query": "Example",
+            "reason": "new platform-native publication",
+            "future_publication_only": True,
+        }, [ASSET], {"Example": 100})
+        result = select_opportunities(
+            [refresh, future],
+            {"minimum_score": 0, "future_publications_only": True},
+        )
+        self.assertEqual(refresh["status"], "blocked")
+        self.assertIn(future, result["selected_for_preparation"])
+
     def test_owner_managed_asset_is_blocked(self):
         managed = {
             **ASSET,
