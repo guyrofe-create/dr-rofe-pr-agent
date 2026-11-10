@@ -48,6 +48,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SERPAPI_KEY: ${{ secrets.SERPI_API }}
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
           GOOGLE_PLACE_ID: ${{ secrets.GOOGLE_PLACE_ID }}
           MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
           MEDIUM_SID: ${{ secrets.MEDIUM_SID }}
