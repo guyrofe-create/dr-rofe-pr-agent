@@ -12,6 +12,7 @@ from scripts.reputation_core.orchestrator import (
     evaluate_new_asset_hypothesis,
     match_asset,
     measure_asset_rank_changes,
+    measure_asset_rank_trajectories,
     orchestrate_reputation_cycle,
     propose_new_assets,
 )
@@ -505,6 +506,38 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertEqual(report["status"], "not_measured")
         self.assertEqual(report["assets"], [])
 
+    def test_rank_trajectory_never_blends_query_or_device(self):
+        assets = [{
+            "platform": "Main", "url": "https://example.com/",
+            "tier": "A", "controlled": True,
+        }]
+        baseline_mobile = build_query_control_map({
+            "engine": "google", "query": "brand", "device": "mobile",
+            "country": "IL", "language": "he",
+            "observed_at": "2026-01-01T00:00:00Z",
+            "results": [{"position": 9, "link": "https://example.com/"}],
+        }, assets)
+        unrelated_desktop = build_query_control_map({
+            "engine": "google", "query": "other", "device": "desktop",
+            "country": "IL", "language": "he",
+            "observed_at": "2026-01-01T00:00:00Z",
+            "results": [{"position": 1, "link": "https://example.com/"}],
+        }, assets)
+        current_mobile = build_query_control_map({
+            "engine": "google", "query": "brand", "device": "mobile",
+            "country": "IL", "language": "he",
+            "observed_at": "2026-02-01T00:00:00Z",
+            "results": [{"position": 3, "link": "https://example.com/"}],
+        }, assets)
+        report = measure_asset_rank_trajectories(
+            assets, [current_mobile], [unrelated_desktop, baseline_mobile]
+        )
+        row = report["assets"][0]["dimensions"][0]
+        self.assertEqual(row["baseline_position"], 9)
+        self.assertEqual(row["current_position"], 3)
+        self.assertEqual(row["baseline_to_current_delta"], 6)
+        self.assertEqual(report["comparable_dimension_count"], 1)
+
     def test_incomplete_measurement_holds_brand_execution(self):
         cycle = orchestrate_reputation_cycle(
             [{
@@ -606,7 +639,7 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertIn("ai_visibility_correction", kinds)
         self.assertEqual(cycle["ai_visibility"]["factual_accuracy_rate"], 0.0)
         measurement = cycle["visibility_measurement"]
-        self.assertEqual(measurement["version"], 4)
+        self.assertEqual(measurement["version"], 5)
         self.assertEqual(
             measurement["asset_rank_changes"]["status"], "baseline"
         )

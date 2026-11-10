@@ -52,6 +52,13 @@
     "content_and_publishing_only": true,
     "google_business_profile_policy": "preserve_existing_profile_unless_owner_explicitly_requests_a_change"
   },
+  "publication_scope": {
+    "future_publications_only": true,
+    "existing_content_mutation_allowed": false,
+    "existing_profile_mutation_allowed": false,
+    "applies_to": ["clinic content", "homepages", "existing pages", "existing articles", "existing profile fields"],
+    "allowed": ["read-only measurement", "new exact-approved future publications", "new exact-approved platform-native variants"]
+  },
   "content_policy": {
     "information_only": true,
     "medical_review_required_before_publication": true,

@@ -112,49 +112,59 @@ def audit_html(document: str, final_url: str) -> dict:
     }
 
 
-def check(asset: dict, *, timeout: int = 12) -> dict:
+def check(asset: dict, *, timeout: int = 12, attempts: int = 2) -> dict:
     url = asset.get("url")
     if not url:
         return {"platform": asset.get("platform"), "url": None,
                 "http_status": None, "reachability": "missing_url"}
-    try:
-        response = requests.get(
-            url,
-            timeout=timeout,
-            allow_redirects=True,
-            headers={"User-Agent": "Mozilla/5.0 (compatible; reputation-asset-audit/1.0)"},
-            stream=True,
-        )
-        status = response.status_code
-        final_url = response.url
-        content_type = response.headers.get("content-type", "")
-        encoding = response.encoding or "utf-8"
-        body = b""
-        if 200 <= status < 400 and "html" in content_type.casefold():
-            for chunk in response.iter_content(chunk_size=65536):
-                body += chunk
-                if len(body) >= MAX_HTML_BYTES:
-                    body = body[:MAX_HTML_BYTES]
-                    break
-        response.close()
-        result = {
-            "platform": asset.get("platform"), "url": url,
-            "http_status": status, "final_url": final_url,
-            "reachability": classify(status, None),
-            "content_type": content_type,
-            "checked_at": datetime.now(timezone.utc).isoformat(),
-        }
-        if body:
-            result.update(audit_html(body.decode(encoding, errors="replace"), final_url))
-        else:
-            result.update({"content_audit": "manual_required", "seo_issues": []})
-        return result
-    except requests.RequestException as exc:
-        return {
-            "platform": asset.get("platform"), "url": url,
-            "http_status": None, "reachability": classify(None, str(exc)),
-            "error_type": type(exc).__name__,
-        }
+    last_error = None
+    for attempt in range(max(1, attempts)):
+        try:
+            response = requests.get(
+                url,
+                timeout=timeout,
+                allow_redirects=True,
+                headers={
+                    "User-Agent": (
+                        "Mozilla/5.0 (compatible; reputation-asset-audit/1.0; "
+                        f"attempt/{attempt + 1})"
+                    )
+                },
+                stream=True,
+            )
+            status = response.status_code
+            final_url = response.url
+            content_type = response.headers.get("content-type", "")
+            encoding = response.encoding or "utf-8"
+            body = b""
+            if 200 <= status < 400 and "html" in content_type.casefold():
+                for chunk in response.iter_content(chunk_size=65536):
+                    body += chunk
+                    if len(body) >= MAX_HTML_BYTES:
+                        body = body[:MAX_HTML_BYTES]
+                        break
+            response.close()
+            result = {
+                "platform": asset.get("platform"), "url": url,
+                "http_status": status, "final_url": final_url,
+                "reachability": classify(status, None),
+                "content_type": content_type,
+                "checked_at": datetime.now(timezone.utc).isoformat(),
+                "attempts": attempt + 1,
+            }
+            if body:
+                result.update(audit_html(body.decode(encoding, errors="replace"), final_url))
+            else:
+                result.update({"content_audit": "manual_required", "seo_issues": []})
+            return result
+        except requests.RequestException as exc:
+            last_error = exc
+    return {
+        "platform": asset.get("platform"), "url": url,
+        "http_status": None, "reachability": classify(None, str(last_error)),
+        "error_type": type(last_error).__name__ if last_error else "RequestException",
+        "attempts": max(1, attempts),
+    }
 
 
 def main() -> None:

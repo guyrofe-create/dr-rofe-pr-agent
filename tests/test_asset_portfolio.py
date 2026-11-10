@@ -83,7 +83,24 @@ class AssetPortfolioTests(unittest.TestCase):
         }, {"reachability": "not_found", "http_status": 404})
         self.assertEqual(decision["effort"], "resolve_or_hold")
         self.assertEqual(decision["http_status"], 404)
-        self.assertIn("repair_or_confirm_public_url", decision["action_checklist"])
+        self.assertIn(
+            "read_only_confirm_public_url_before_future_publication",
+            decision["action_checklist"],
+        )
+
+    def test_one_network_error_does_not_demote_a_measured_page_one_asset(self):
+        decision = asset_effort_decision({
+            "platform": "Canonical website",
+            "url": "https://example.com/",
+            "tier": "A",
+            "priority": 100,
+            "status": "active",
+            "controlled": True,
+            "page_one": True,
+            "observed_position": 3,
+        }, {"reachability": "network_or_provider_error"})
+        self.assertEqual(decision["effort"], "core")
+        self.assertTrue(decision["future_publication_eligible"])
 
     def test_deep_audit_turns_missing_signals_into_exact_actions(self):
         decision = asset_effort_decision({
@@ -94,8 +111,14 @@ class AssetPortfolioTests(unittest.TestCase):
             "seo_issues": ["missing_meta_description"],
             "entity_in_title": False, "official_link_present": False,
         })
-        self.assertIn("request_or_document_missing_meta_description", decision["action_checklist"])
-        self.assertIn("review_entity_name_in_title", decision["action_checklist"])
+        self.assertIn(
+            "record_missing_meta_description_for_future_publication_routing",
+            decision["action_checklist"],
+        )
+        self.assertIn(
+            "require_entity_name_in_new_future_publications",
+            decision["action_checklist"],
+        )
         self.assertIn("measure_exact_brand_serp_and_search_console_visibility", decision["action_checklist"])
         self.assertFalse(decision["audit_complete"])
 
