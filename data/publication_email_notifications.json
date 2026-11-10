@@ -1549,6 +1549,33 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7525734584878133248/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDotNUdFUHJZbXc5UHBXRzBFcndKUTNB"
       ]
+    },
+    "expired:apr_716fd45f33ef9bb1c5b194ad07c07b9ef3e7062f9f234746dd5a5a69de0b8ba7:2026-09-13T15:05:19Z": {
+      "recorded_at": "2026-11-10T08:51:16.251279+00:00",
+      "approval_id": "apr_716fd45f33ef9bb1c5b194ad07c07b9ef3e7062f9f234746dd5a5a69de0b8ba7",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-09-13-topic-02-run-34753686764-attempt-1.md",
+      "published_approval_id": "apr_716fd45f33ef9bb1c5b194ad07c07b9ef3e7062f9f234746dd5a5a69de0b8ba7",
+      "campaign_result": "content_drafts/campaigns/2026-09-13-topic-02-run-34753686764-attempt-1.json",
+      "urls": [
+        "https://guyrofe.com/%d7%90%d7%a0%d7%93%d7%95%d7%9e%d7%98%d7%a8%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%95%d7%a4%d7%95%d7%a8%d7%99%d7%95%d7%aa-%d7%9e%d7%94-%d7%99%d7%93%d7%95%d7%a2-%d7%a2%d7%9c/",
+        "https://www.facebook.com/122203963766942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7504958123787325440/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEI2s3OeHrf35DQ"
+      ]
+    },
+    "apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e:d4d5cdc4329e82d62170fca992305b851810bdad4844b12e7ec17fa248188397": {
+      "sent_at": "2026-11-10T08:51:59.628002+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e",
+      "state": "success",
+      "subject": "אישור פרסום: מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב? | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%9e%d7%a2%d7%91%d7%a8-%d7%9c%d7%a7%d7%99%d7%9c%d7%95%d7%92%d7%a8%d7%9e%d7%99%d7%9d-%d7%94%d7%90%d7%9d-%d7%99%d7%a9-%d7%a7%d7%a9%d7%a8-%d7%91%d7%99%d7%9f/",
+        "https://www.facebook.com/122214292136942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7525842672591417344/",
+        "https://guyrofe.blogspot.com/2026/11/blog-post_10.html"
+      ]
     }
   }
 }

@@ -1,0 +1,117 @@
+{
+  "draft": "content_drafts/2026-11-09-topic-90-run-42643288010-attempt-1.md",
+  "title": "מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב? | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-11-10T08:51:58.048490+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%a2%d7%91%d7%a8-%d7%9c%d7%a7%d7%99%d7%9c%d7%95%d7%92%d7%a8%d7%9e%d7%99%d7%9d-%d7%94%d7%90%d7%9d-%d7%99%d7%a9-%d7%a7%d7%a9%d7%a8-%d7%91%d7%99%d7%9f/",
+      "detail": "idempotency_key=pub_c38e990ca1e715d07ee2dc6ce60cacd3888228491460b6eebfed04eab79b0e83"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%a2%d7%91%d7%a8-%d7%9c%d7%a7%d7%99%d7%9c%d7%95%d7%92%d7%a8%d7%9e%d7%99%d7%9d-%d7%94%d7%90%d7%9d-%d7%99%d7%a9-%d7%a7%d7%a9%d7%a8-%d7%91%d7%99%d7%9f/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-09-topic-90-run-42643288010-attempt-1-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122214292136942441",
+      "detail": "idempotency_key=pub_1bb7a3677225dd947129dd9587da8f84df675fe1cc50deed4531a4fc34ca511e"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7525842672591417344/",
+      "detail": "idempotency_key=pub_5a5dd8fcdf0f33ed2e5ce2cccffecd489448d2d9fcd910a929e1d3c07f803c55"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/11/blog-post_10.html",
+      "detail": "idempotency_key=pub_e8267f0e1dd842cfe494211e8013ffd988892899cefbeff982712bd70351480e"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e",
+  "search_target": {
+    "primary_query": "מה עומד מאחורי הכותרת: מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב?",
+    "secondary_queries": [
+      "מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב?",
+      "מה עומד מאחורי הכותרת: מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב? ד״ר גיא רופא",
+      "מה עומד מאחורי הכותרת: מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב? גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%a2%d7%91%d7%a8-%d7%9c%d7%a7%d7%99%d7%9c%d7%95%d7%92%d7%a8%d7%9e%d7%99%d7%9d-%d7%94%d7%90%d7%9d-%d7%99%d7%a9-%d7%a7%d7%a9%d7%a8-%d7%91%d7%99%d7%9f/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
