@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated_at": "2026-11-10T08:01:30.466080+00:00",
+  "generated_at": "2026-11-10T12:49:17.382536+00:00",
   "objective": "Maximize accurate first-page and discovery visibility with the existing asset portfolio.",
   "policy": "Effort follows authority, measured visibility, audience fit and control; account count alone is not a success metric.",
   "asset_count": 67,
@@ -523,7 +523,7 @@
       "final_url": "https://www.facebook.com/drguyrofe",
       "content_audit": "complete",
       "title": "ד״ר גיא רופא - יוצר תוכן רפואי | Haifa",
-      "meta_description": "‎ד״ר גיא רופא - יוצר תוכן רפואי‎, Haifa. 70 followers · 2 talking about this. ‎יוצר תוכן ברפואה - מנגיש מהידע שלו עם שליחות ליצירת תוכן רפואי קל להבנה‎",
+      "meta_description": "‎ד״ר גיא רופא - יוצר תוכן רפואי‎, Haifa. 70 followers · 3 talking about this. ‎יוצר תוכן ברפואה - מנגיש מהידע שלו עם שליחות ליצירת תוכן רפואי קל להבנה‎",
       "canonical": "https://www.facebook.com/drguyrofe/",
       "noindex": false,
       "entity_in_title": true,
@@ -1075,20 +1075,22 @@
       "next_action": "resolve_exact_blocker_before_any_content",
       "reachability": "reachable",
       "http_status": 200,
-      "final_url": "https://www.instagram.com/guy_rofe_md/",
+      "final_url": "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fguy_rofe_md%2F&is_from_rle",
       "content_audit": "complete",
-      "title": "‎ד״ר גיא רופא‎ (@guy_rofe_md) • Instagram photos and videos",
-      "meta_description": "389 Followers, 287 Following, 358 Posts - See Instagram photos and videos from ‎ד״ר גיא רופא‎ (@guy_rofe_md)",
-      "canonical": "https://www.instagram.com/guy_rofe_md/",
+      "title": "Instagram",
+      "meta_description": "Create an account or log in to Instagram - Share what you're into with the people who get you.",
+      "canonical": "https://www.instagram.com/",
       "noindex": false,
-      "entity_in_title": true,
-      "entity_in_page": true,
+      "entity_in_title": false,
+      "entity_in_page": false,
       "official_link_present": false,
       "schema_types": [],
       "seo_issues": [
+        "missing_entity_name",
         "h1_count_not_one"
       ],
       "action_checklist": [
+        "record_missing_entity_name_for_future_publication_routing",
         "record_h1_count_not_one_for_future_publication_routing"
       ],
       "audit_complete": false,
@@ -1842,8 +1844,8 @@
       "effort": "quarantine",
       "reason": "Low-quality mirror/network risk outweighs routine publishing value.",
       "next_action": "no_automation_no_cross_link_network",
-      "reachability": "not_found",
-      "http_status": 410,
+      "reachability": "access_restricted_or_anti_bot",
+      "http_status": 429,
       "final_url": "https://dr-guy-rofe.creator-spring.com/",
       "content_audit": "manual_required",
       "title": null,
@@ -1856,7 +1858,7 @@
       "schema_types": [],
       "seo_issues": [],
       "action_checklist": [
-        "read_only_confirm_public_url_before_future_publication"
+        "manual_browser_audit"
       ],
       "audit_complete": false,
       "public_execution_allowed": false
@@ -2155,21 +2157,29 @@
       "effort": "quarantine",
       "reason": "Low-quality mirror/network risk outweighs routine publishing value.",
       "next_action": "no_automation_no_cross_link_network",
-      "reachability": "access_restricted_or_anti_bot",
-      "http_status": 401,
+      "reachability": "reachable",
+      "http_status": 200,
       "final_url": "https://www.minds.com/drguyrofe",
-      "content_audit": "manual_required",
-      "title": null,
+      "content_audit": "complete",
+      "title": "Minds",
       "meta_description": null,
       "canonical": null,
-      "noindex": null,
-      "entity_in_title": null,
-      "entity_in_page": null,
-      "official_link_present": null,
+      "noindex": false,
+      "entity_in_title": false,
+      "entity_in_page": false,
+      "official_link_present": false,
       "schema_types": [],
-      "seo_issues": [],
+      "seo_issues": [
+        "missing_meta_description",
+        "missing_entity_name",
+        "missing_canonical",
+        "h1_count_not_one"
+      ],
       "action_checklist": [
-        "manual_browser_audit"
+        "record_missing_meta_description_for_future_publication_routing",
+        "record_missing_entity_name_for_future_publication_routing",
+        "record_missing_canonical_for_future_publication_routing",
+        "record_h1_count_not_one_for_future_publication_routing"
       ],
       "audit_complete": false,
       "public_execution_allowed": false
