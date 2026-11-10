@@ -217,13 +217,19 @@ def _best_asset_position(asset: dict, control_maps: list[dict]) -> dict:
             ):
                 matches.append({
                     "position": int(result["position"]),
+                    "engine": str(control_map.get("engine") or "google").lower(),
                     "query": control_map.get("query"),
+                    "country": control_map.get("country", "IL"),
+                    "language": control_map.get("language", "he"),
                     "device": control_map.get("device"),
                     "observed_at": control_map.get("observed_at"),
                 })
     return min(matches, key=lambda item: item["position"]) if matches else {
         "position": None,
+        "engine": None,
         "query": None,
+        "country": None,
+        "language": None,
         "device": None,
         "observed_at": None,
     }
@@ -286,11 +292,48 @@ def measure_asset_rank_changes(
         if key in seen:
             continue
         seen.add(key)
-        current = _best_asset_position(asset, current_google)
-        previous = _best_asset_position(asset, previous_batch)
-        current_position = current["position"]
-        previous_position = previous["position"]
-        if not previous_batch:
+        current_best = _best_asset_position(asset, current_google)
+        previous_best = _best_asset_position(asset, previous_batch)
+        reference = (
+            current_best if current_best["position"] is not None else previous_best
+        )
+        if reference["position"] is None:
+            shared_map = next((
+                item for item in current_google
+                if any(
+                    _dimension_key(previous_item) == _dimension_key(item)
+                    for previous_item in previous_batch
+                )
+            ), None)
+            if shared_map:
+                reference = {
+                    "position": None,
+                    "engine": str(shared_map.get("engine") or "google").lower(),
+                    "query": shared_map.get("query"),
+                    "country": shared_map.get("country", "IL"),
+                    "language": shared_map.get("language", "he"),
+                    "device": shared_map.get("device", "unknown"),
+                    "observed_at": shared_map.get("observed_at"),
+                }
+        reference_dimension = (
+            reference.get("engine"),
+            reference.get("query"),
+            reference.get("country"),
+            reference.get("language"),
+            reference.get("device"),
+        )
+        current_map = next((
+            item for item in current_google
+            if _dimension_key(item) == reference_dimension
+        ), None)
+        previous_map = next((
+            item for item in previous_batch
+            if _dimension_key(item) == reference_dimension
+        ), None)
+        current_position = _asset_position_in_map(asset, current_map)
+        previous_position = _asset_position_in_map(asset, previous_map)
+        comparable = previous_map is not None
+        if not comparable:
             change = "baseline"
             changed = None
             delta = None
@@ -332,10 +375,13 @@ def measure_asset_rank_changes(
             "current_page_position": ((current_position - 1) % 10 + 1) if current_position else None,
             "current_result_depth": current_result_depth,
             "previous_result_depth": previous_result_depth,
-            "previous_query": previous.get("query"),
-            "current_query": current.get("query"),
-            "previous_device": previous.get("device"),
-            "current_device": current.get("device"),
+            "previous_query": reference.get("query") if comparable else None,
+            "current_query": reference.get("query"),
+            "previous_device": reference.get("device") if comparable else None,
+            "current_device": reference.get("device"),
+            "country": reference.get("country"),
+            "language": reference.get("language"),
+            "comparison_dimension_matched": comparable,
             "change": change,
             "changed": changed,
             "delta": delta,
