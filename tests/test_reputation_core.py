@@ -506,6 +506,28 @@ class GrowthEngineTests(unittest.TestCase):
         self.assertEqual(report["status"], "not_measured")
         self.assertEqual(report["assets"], [])
 
+    def test_asset_rank_changes_never_blend_query_or_device(self):
+        assets = [{"platform": "Main", "url": "https://example.com/"}]
+        previous = build_query_control_map({
+            "engine": "google", "query": "other", "device": "desktop",
+            "country": "IL", "language": "he",
+            "observed_at": "2026-01-01T00:00:00Z",
+            "results": [{"position": 1, "link": "https://example.com/"}],
+        }, assets)
+        current = build_query_control_map({
+            "engine": "google", "query": "brand", "device": "mobile",
+            "country": "IL", "language": "he",
+            "observed_at": "2026-02-01T00:00:00Z",
+            "results": [{"position": 9, "link": "https://example.com/"}],
+        }, assets)
+        row = measure_asset_rank_changes(
+            assets, [current], [previous]
+        )["assets"][0]
+        self.assertEqual(row["change"], "baseline")
+        self.assertIsNone(row["previous_position"])
+        self.assertEqual(row["current_position"], 9)
+        self.assertFalse(row["comparison_dimension_matched"])
+
     def test_rank_trajectory_never_blends_query_or_device(self):
         assets = [{
             "platform": "Main", "url": "https://example.com/",
