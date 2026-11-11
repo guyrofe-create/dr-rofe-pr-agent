@@ -1,6 +1,113 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-11-11-topic-85-run-43030850882-attempt-1.md",
+      "title": "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-11-11T16:49:18.932782+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.com",
+          "status": "published",
+          "target_id": "canonical_wix",
+          "url": "https://www.drguyrofe.com/post/מספר-הנבדקים-ועוצמה-סטטיסטית-כיצד-לדעת-אם-מחקר-רפואי-גדול-מספיק-כדי-לזהות-הבדל-אמיתי",
+          "detail": "idempotency_key=pub_7ff97b515e373c6a2429e85a36a0b8a4380bbc52e774b23683e07a3a9197414b"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "seo_warning",
+          "url": "https://www.drguyrofe.com/post/מספר-הנבדקים-ועוצמה-סטטיסטית-כיצד-לדעת-אם-מחקר-רפואי-גדול-מספיק-כדי-לזהות-הבדל-אמיתי",
+          "detail": "failed checks: canonical_person_linked"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-11-topic-85-run-43030850882-attempt-1-hero.png",
+          "detail": "owner_provided_default"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf",
+      "search_target": {
+        "primary_query": "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי",
+        "secondary_queries": [
+          "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי ד״ר גיא רופא",
+          "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational_question"
+      },
+      "canonical_url": "https://www.drguyrofe.com/post/מספר-הנבדקים-ועוצמה-סטטיסטית-כיצד-לדעת-אם-מחקר-רפואי-גדול-מספיק-כדי-לזהות-הבדל-אמיתי",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-11-09-topic-90-run-42643288010-attempt-1.md",
       "title": "מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב? | ד״ר גיא רופא",
       "status": "completed",
@@ -5197,114 +5304,6 @@
         "intent": "informational"
       },
       "canonical_url": "https://guyrofe.com/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a9%d7%97%d7%9c%d7%95%d7%aa-%d7%94%d7%a4%d7%95%d7%9c%d7%99%d7%a6%d7%99%d7%a1%d7%98%d7%99%d7%95%d7%aa/",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-09-15-topic-06-run-34961774953-attempt-1.md",
-      "title": "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול | ד״ר גיא רופא",
-      "status": "completed",
-      "published_at": "2026-09-15T17:17:38.332904+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.com",
-          "status": "published",
-          "target_id": "canonical_wix",
-          "url": "https://www.drguyrofe.com/post/גיל-המעבר-תסמינים-אבחון-ואפשרויות-טיפול",
-          "detail": "idempotency_key=pub_9fc2bdada74715d0674defed2b764a0804a2da447e9a407f14a4e23fe9aee567"
-        },
-        {
-          "name": "Canonical SEO verification",
-          "status": "seo_warning",
-          "url": "https://www.drguyrofe.com/post/גיל-המעבר-תסמינים-אבחון-ואפשרויות-טיפול",
-          "detail": "failed checks: canonical_person_linked"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-09-15-topic-06-run-34961774953-attempt-1-hero.png",
-          "detail": "owner_provided_default"
-        },
-        {
-          "name": "guyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.co.il",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327",
-      "search_target": {
-        "primary_query": "גיל המעבר - מידע כללי מבוסס מקורות",
-        "secondary_queries": [
-          "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול",
-          "גיל המעבר - מידע כללי מבוסס מקורות ד״ר גיא רופא",
-          "גיל המעבר - מידע כללי מבוסס מקורות גיא רופא"
-        ],
-        "entity_queries": [
-          "ד״ר גיא רופא",
-          "גיא רופא"
-        ],
-        "intent": "informational"
-      },
-      "canonical_url": "https://www.drguyrofe.com/post/גיל-המעבר-תסמינים-אבחון-ואפשרויות-טיפול",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

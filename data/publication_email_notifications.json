@@ -1590,6 +1590,16 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7505303228105015296/",
         "https://guyrofe.blogspot.com/2026/09/40.html"
       ]
+    },
+    "apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf:10b0050d3e09ff713ecd312b7801e635a69a4377fb435dd4138e76f8225530fc": {
+      "sent_at": "2026-11-11T16:49:21.324297+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf",
+      "state": "success",
+      "subject": "אישור פרסום: מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.com/post/מספר-הנבדקים-ועוצמה-סטטיסטית-כיצד-לדעת-אם-מחקר-רפואי-גדול-מספיק-כדי-לזהות-הבדל-אמיתי"
+      ]
     }
   }
 }

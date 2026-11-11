@@ -3805,6 +3805,38 @@
       "published_at": "2026-11-10T08:51:58Z",
       "url": "https://guyrofe.blogspot.com/2026/11/blog-post_10.html",
       "provider_receipt": null
+    },
+    "pub_c0fd5854171461fb88797e38595b23269f8099fdaa35ce2272989cbe7176deaf": {
+      "version": 7,
+      "idempotency_key": "pub_c0fd5854171461fb88797e38595b23269f8099fdaa35ce2272989cbe7176deaf",
+      "approval_id": "apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf",
+      "target_id": "canonical_wix__media__hero",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "845d9bc333476bd1cc13bb202a51ff6de6c2a00e6f779b971712aa004937c598",
+      "status": "published",
+      "started_at": "2026-11-11T16:49:09Z",
+      "published_at": "2026-11-11T16:49:15Z",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-11-topic-85-run-43030850882-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-11-topic-85-run-43030850882-attempt-1-hero",
+        "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+        "metadata_verified": true
+      }
+    },
+    "pub_7ff97b515e373c6a2429e85a36a0b8a4380bbc52e774b23683e07a3a9197414b": {
+      "version": 7,
+      "idempotency_key": "pub_7ff97b515e373c6a2429e85a36a0b8a4380bbc52e774b23683e07a3a9197414b",
+      "approval_id": "apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "09b91f1a7e08c9230b43bff94ea5f8f6b5d90b482b1aa72375de30d94cbd4219",
+      "status": "published",
+      "started_at": "2026-11-11T16:49:15Z",
+      "published_at": "2026-11-11T16:49:17Z",
+      "url": "https://www.drguyrofe.com/post/מספר-הנבדקים-ועוצמה-סטטיסטית-כיצד-לדעת-אם-מחקר-רפואי-גדול-מספיק-כדי-לזהות-הבדל-אמיתי",
+      "provider_receipt": null
     }
   }
 }
