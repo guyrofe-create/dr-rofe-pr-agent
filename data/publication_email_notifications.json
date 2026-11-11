@@ -1600,6 +1600,17 @@
       "urls": [
         "https://www.drguyrofe.com/post/מספר-הנבדקים-ועוצמה-סטטיסטית-כיצד-לדעת-אם-מחקר-רפואי-גדול-מספיק-כדי-לזהות-הבדל-אמיתי"
       ]
+    },
+    "expired:apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327:2026-09-15T12:51:14Z": {
+      "recorded_at": "2026-11-11T23:12:27.538259+00:00",
+      "approval_id": "apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-09-15-topic-06-run-34961774953-attempt-1.md",
+      "published_approval_id": "apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327",
+      "campaign_result": "content_drafts/campaigns/2026-09-15-topic-06-run-34961774953-attempt-1.json",
+      "urls": [
+        "https://www.drguyrofe.com/post/גיל-המעבר-תסמינים-אבחון-ואפשרויות-טיפול"
+      ]
     }
   }
 }
