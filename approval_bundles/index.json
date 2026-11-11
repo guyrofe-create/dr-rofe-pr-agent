@@ -2,6 +2,20 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-11-11-topic-85-run-43030850882-attempt-1.md",
+      "bundle_path": "approval_bundles/apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf.json",
+      "preview_path": "approval_bundles/apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf.html",
+      "created_at": "2026-11-11T13:40:17Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=12; downloaded=12; undersized=0; reviewed=12; rejected=12; search=[medical research equipment: commons=20, openverse=0, pexels=0, pixabay=0 | clinical research laboratory: commons=5, openverse=0, pexels=0, pixabay=0 | medical education equipment: commons=15, openverse=0, pexels=0, pixabay=0 | laboratory microscope: commons=26, openverse=0, pexels=0, pixabay=0]; review_notes=[התמונה מציגה חיילות מזוהות ואינה קשורה לגודל מדגם או לעוצמה סטטיסטית במחקר רפואי. | בתמונה מופיעים אנשים מזוהים, והיא אינה ממחישה ישירות גודל מדגם או עוצמה סטטיסטית. | מיקרוסקופ מעבדתי אינו ממחיש ישירות חישוב גודל מדגם או עוצמה סטטיסטית. | ציוד מעבדה ומיקרוסקופים אינם ממחישים ישירות גודל מדגם או עוצמה סטטיסטית. | ציוד מעבדה ומיקרוסקופים אינם ממחישים ישירות חישוב גודל מדגם או עוצמה סטטיסטית.]; errors=[medical research equipment/openverse: HTTPError | clinical research laboratory/openverse: HTTPError | laboratory microscope/openverse: HTTPError]"
+    },
+    {
       "approval_id": "apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-11-09-topic-90-run-42643288010-attempt-1.md",

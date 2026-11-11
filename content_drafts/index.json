@@ -1,6 +1,19 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-11-topic-85-run-43030850882-attempt-1.md",
+      "title": "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי | ד״ר גיא רופא",
+      "topic": "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי",
+      "excerpt": "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה היא שמחקר רפואי גדול מספיק כאשר מספר המשתתפים בו מאפשר לזהות, בהסתברות שנקבעה",
+      "generated_at": "2026-11-11T13:38:07.159297+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-11-08",
+      "cadence_local_date": "2026-11-10",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-11-09-topic-86-run-42643288010-attempt-1.md",
       "title": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא",
       "topic": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת",
@@ -476,23 +489,6 @@
       "scheduled_channels": [],
       "cadence_week": "week-of-2026-09-20",
       "cadence_local_date": "2026-09-22",
-      "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-20-topic-07-run-35505806969-attempt-1.md",
-      "title": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא",
-      "topic": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
-      "excerpt": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: כדי להעריך מידע רפואי ברשת, יש לבדוק מי עומד מאחוריו, על אילו ראיות הוא מבוסס, מתי עודכן, האם מוצגים בו סיכונים ומגבלו",
-      "generated_at": "2026-09-20T10:42:38.179906+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-20",
-      "cadence_local_date": "2026-09-20",
       "public_execution_allowed": false
     }
   ]
