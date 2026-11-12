@@ -1,0 +1,76 @@
+{
+  "version": 4,
+  "opportunity_id": "opp_f1d1c3cab0f7d3fd",
+  "prepared_at": "2026-11-12T13:01:40Z",
+  "status": "awaiting_item_approval",
+  "public_execution_allowed": false,
+  "approval_invalidated_by_any_edit": true,
+  "opportunity": {
+    "id": "opp_f1d1c3cab0f7d3fd",
+    "version": 4,
+    "action_type": "strengthen_existing_asset",
+    "kind": "activate_asset",
+    "source_kind": "activate_asset",
+    "asset_id": "LinkedIn",
+    "asset_url": "https://www.linkedin.com/in/guyrofe",
+    "query": "Dr. Guy Rofe",
+    "reason": "Measured unique-asset gap is 4; use the existing LinkedIn asset before creating another asset.",
+    "recommended_actions": [
+      "Prepare one new platform-native publication on this asset; do not edit existing content or profile fields",
+      "Use original value suited to the platform and link only where natural",
+      "Submit the exact change for approval and remeasure the same brand query"
+    ],
+    "evidence": {
+      "engine": "google",
+      "surface": "web_search",
+      "device": "mobile",
+      "desired_gap": 4,
+      "represented_unique_assets": [
+        "Canonical website",
+        "Creator Spring",
+        "DrGuyRofe.com knowledge hub",
+        "Muck Rack",
+        "Strikingly mirror"
+      ],
+      "existing_asset_first": true,
+      "rotation_seed": 1346,
+      "future_publication_only": true
+    },
+    "factors": {
+      "expected_impact": 8.0,
+      "asset_authority": 9.5,
+      "query_relevance": 8.0,
+      "control": 10.0,
+      "time_cost": 4.0,
+      "financial_cost": 2.0,
+      "risk": 2.0,
+      "benefit_product": 6080.0,
+      "burden_sum": 8.0,
+      "raw_priority_index": 760.0,
+      "opportunity_score": 100.0,
+      "formula": "impact × authority × relevance × control ÷ (time + financial cost + risk)"
+    },
+    "score": 100.0,
+    "confidence": 0.85,
+    "status": "selected_for_preparation",
+    "blocked_reasons": [],
+    "preparation_autonomous": true,
+    "final_execution_requires_approval": true,
+    "authorization_scope": "prepare_action_only",
+    "future_publication_only": true,
+    "new_asset_build_authorized": false,
+    "approval_required": "owner",
+    "approval_bundle_requirements": [
+      "Evidence and exact target",
+      "Expected benefit, cost, risk and measurement plan",
+      "Exact proposed change or outreach text",
+      "Rollback or stop condition"
+    ],
+    "measurement_after_action": [
+      "Re-measure the same engine, surface, query and locale",
+      "Compare against 7-day and 28-day baselines",
+      "Stop or reverse if risk, duplication or cannibalization rises"
+    ],
+    "execution_mode": "autonomous_prepare_then_approval"
+  }
+}
