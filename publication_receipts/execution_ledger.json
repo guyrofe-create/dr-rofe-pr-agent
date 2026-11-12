@@ -3837,6 +3837,77 @@
       "published_at": "2026-11-11T16:49:17Z",
       "url": "https://www.drguyrofe.com/post/מספר-הנבדקים-ועוצמה-סטטיסטית-כיצד-לדעת-אם-מחקר-רפואי-גדול-מספיק-כדי-לזהות-הבדל-אמיתי",
       "provider_receipt": null
+    },
+    "pub_d14d114de7e151e1114c41f8ef8d80f1def902e398bfe2dfa97e645cfcd0c9ea": {
+      "version": 7,
+      "idempotency_key": "pub_d14d114de7e151e1114c41f8ef8d80f1def902e398bfe2dfa97e645cfcd0c9ea",
+      "approval_id": "apr_9592a24e9a035445dcdc48e476923d1343ff3db1e2515e24118d8b2a5a6fa0bb",
+      "target_id": "canonical_wordpress__media__hero",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "535cb6692f1f484a479351f4a0bec487c51db2f9a77b93ebc2af8e2edfe7eba9",
+      "status": "published",
+      "started_at": "2026-11-12T20:06:05Z",
+      "published_at": "2026-11-12T20:06:20Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-12-topic-83-run-43239783886-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-12-topic-83-run-43239783886-attempt-1-hero",
+        "sha256": "f97338598c5dcc8bd05ec253c38ebd822cad4e6d8847c18805cb2c1ee474fb67",
+        "metadata_verified": true
+      }
+    },
+    "pub_00c5fb10d1fa94008bc68ff67a98f7b81302a661dcabbf5d5e4a3302be55ab72": {
+      "version": 7,
+      "idempotency_key": "pub_00c5fb10d1fa94008bc68ff67a98f7b81302a661dcabbf5d5e4a3302be55ab72",
+      "approval_id": "apr_9592a24e9a035445dcdc48e476923d1343ff3db1e2515e24118d8b2a5a6fa0bb",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "91f04c9270c448697f59056d40b060daeb514020dc6dd73239a5d81f70fbfcb9",
+      "status": "published",
+      "started_at": "2026-11-12T20:06:20Z",
+      "published_at": "2026-11-12T20:06:26Z",
+      "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a8%d7%a6%d7%95%d7%a2%d7%94-%d7%94%d7%a7%d7%a9%d7%aa%d7%99%d7%aa-%d7%94%d7%90%d7%9e%d7%a6%d7%a2%d7%99%d7%aa-mals/",
+      "provider_receipt": null
+    },
+    "pub_82bf1c02ca99fa9aaa73167088b7401284f4999f93fb7b74da078924a2f4f4b3": {
+      "version": 7,
+      "idempotency_key": "pub_82bf1c02ca99fa9aaa73167088b7401284f4999f93fb7b74da078924a2f4f4b3",
+      "approval_id": "apr_9592a24e9a035445dcdc48e476923d1343ff3db1e2515e24118d8b2a5a6fa0bb",
+      "target_id": "google_business_profile__media__landscape",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "e11bae0d74273aed3c92bc508bd459e61fe408b7d5a79df9c64382e84361070c",
+      "status": "published",
+      "started_at": "2026-11-12T20:06:28Z",
+      "published_at": "2026-11-12T20:06:39Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-12-topic-83-run-43239783886-attempt-1-landscape.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-12-topic-83-run-43239783886-attempt-1-landscape",
+        "sha256": "599f1d88c355c0593a2bcd477745632b70c5ea74c42fce2d33abd4e0715c6268",
+        "metadata_verified": true
+      }
+    },
+    "pub_252a1e447e578c63f0d29f34c29cfdf5a4249897391f05d494577844b0ce6750": {
+      "version": 7,
+      "idempotency_key": "pub_252a1e447e578c63f0d29f34c29cfdf5a4249897391f05d494577844b0ce6750",
+      "approval_id": "apr_9592a24e9a035445dcdc48e476923d1343ff3db1e2515e24118d8b2a5a6fa0bb",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "c945e2a3cb0ad2e1057cb62bbde962ebb4c75218d33703bf3263e70cab823bd0",
+      "status": "published",
+      "started_at": "2026-11-12T20:06:39Z",
+      "published_at": "2026-11-12T20:06:53Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpwUHhIOEpzVEl4YkdLZDhmVlVfRUx3",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/8974874839008406927",
+        "state": "LIVE",
+        "createTime": "2026-11-12T20:06:42.449596642Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpwUHhIOEpzVEl4YkdLZDhmVlVfRUx3",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }
