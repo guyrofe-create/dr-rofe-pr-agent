@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-12-topic-83-run-43239783886-attempt-1.md",
+      "title": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית | ד״ר גיא רופא",
+      "topic": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית",
+      "excerpt": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בתסמונת הרצועה הקשתית האמצעית, המכונה MALS, רצועה",
+      "generated_at": "2026-11-12T14:41:42.348255+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-11-08",
+      "cadence_local_date": "2026-11-12",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-11-11-topic-85-run-43030850882-attempt-1.md",
       "title": "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי | ד״ר גיא רופא",
       "topic": "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי",
@@ -477,19 +494,6 @@
       "public_execution_allowed": false,
       "source_brief": "opportunity_drafts/health-news-2e096595e81d25f1.json",
       "analyzed_news_url": "https://www.ynet.co.il/health/article/hjuqorlcfx"
-    },
-    {
-      "path": "content_drafts/2026-09-22-topic-03-run-35719116311-attempt-1.md",
-      "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא",
-      "topic": "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי",
-      "excerpt": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מיומות הן גידולים שפירים המתפתחים משריר הרחם. ברוב המקרים הן אינן מסוכנות, ולעיתים אינן גורמות לתסמינים כלל. כאשר מופיעים דימום וס",
-      "generated_at": "2026-09-22T11:01:34.897215+00:00",
-      "content_stream": "evergreen_knowledge",
-      "destination_site_key": "DRGUYROFE_COM",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-09-20",
-      "cadence_local_date": "2026-09-22",
-      "public_execution_allowed": false
     }
   ]
 }
