@@ -1622,6 +1622,20 @@
         "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a8%d7%a6%d7%95%d7%a2%d7%94-%d7%94%d7%a7%d7%a9%d7%aa%d7%99%d7%aa-%d7%94%d7%90%d7%9e%d7%a6%d7%a2%d7%99%d7%aa-mals/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpwUHhIOEpzVEl4YkdLZDhmVlVfRUx3"
       ]
+    },
+    "expired:apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4:2026-09-16T13:21:41Z": {
+      "recorded_at": "2026-11-13T01:03:17.295618+00:00",
+      "approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-09-16-topic-04-run-35087466040-attempt-1.md",
+      "published_approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4",
+      "campaign_result": "content_drafts/campaigns/2026-09-16-topic-04-run-35087466040-attempt-1.json",
+      "urls": [
+        "https://guyrofe.com/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a9%d7%97%d7%9c%d7%95%d7%aa-%d7%94%d7%a4%d7%95%d7%9c%d7%99%d7%a6%d7%99%d7%a1%d7%98%d7%99%d7%95%d7%aa/",
+        "https://www.linkedin.com/feed/update/urn:li:share:7506021698710990849/",
+        "https://guyrofe.blogspot.com/2026/09/blog-post_16.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKmtwrT4lOHW9AE"
+      ]
     }
   }
 }
