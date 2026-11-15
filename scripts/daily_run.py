@@ -203,17 +203,17 @@ def propose_novel_topic(*, stream="canonical_depth"):
 
     history = historical_topics()
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    forbidden = "\n".join(f"- {item}" for item in history)
+    forbidden = "\\n".join(f"- {item}" for item in history)
     policy = stream_topic_policy(stream)
     role = policy["public_role"]
-    catalog_lines = "\n".join(
+    catalog_lines = "\\n".join(
         f"- {item['name']}: {item['url']} ({item['usage']})"
         for item in policy.get("catalog_sources", [])
     )
     catalog_instruction = (
-        "\nלצורך גילוי רעיון בלבד, בדוק את האינדקס הציבורי הבא. "
-        "אין להעתיק ממנו ואין להשתמש בו כמקור רפואי למאמר:\n"
-        f"{catalog_lines}\n"
+        "\\nלצורך גילוי רעיון בלבד, בדוק את האינדקס הציבורי הבא. "
+        "אין להעתיק ממנו ואין להשתמש בו כמקור רפואי למאמר:\\n"
+        f"{catalog_lines}\\n"
         if catalog_lines else ""
     )
     prompt = f"""הצע נושא אחד חדש למאמר רפואי בעברית.
@@ -228,8 +228,9 @@ def propose_novel_topic(*, stream="canonical_depth"):
 
 נושאים וכותרות שכבר שימשו ואסורים מעתה:
 {forbidden}"""
-    last_candidate = ""
-    for _attempt in range(3):
+    rejected_candidates = []
+    max_attempts = 5
+    for _attempt in range(max_attempts):
         request = {
             "model": os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
             "input": prompt,
@@ -246,20 +247,33 @@ def propose_novel_topic(*, stream="canonical_depth"):
             model=os.environ.get("OPENAI_CONTENT_MODEL", "gpt-5.6"),
         )
         candidate = " ".join((response.output_text or "").strip().split())
-        candidate = re.sub(r"^(?:[-*]|\d+[.)])\s*", "", candidate)
-        last_candidate = candidate
+        candidate = re.sub(r"^(?:[-*]|\\d+[.)])\\s*", "", candidate)
         if (
             4 <= len(candidate.split()) <= 18
             and topic_matches_stream(candidate, stream)
             and not any(topic_is_duplicate(candidate, prior) for prior in history)
+            and not any(
+                topic_is_duplicate(candidate, prior)
+                for prior in rejected_candidates
+            )
         ):
             digest = hashlib.sha256(candidate.encode("utf-8")).hexdigest()
             return 80 + int(digest[:2], 16) % 10, candidate
-        prompt += f"\nההצעה האחרונה נדחתה כחופפת או לא תקינה: {candidate}\nהצע נושא אחר לחלוטין."
+        if candidate:
+            rejected_candidates.append(candidate)
+        rejected_list = "\\n".join(
+            f"- {item}" for item in rejected_candidates
+        )
+        prompt += (
+            "\\nההצעה האחרונה נדחתה כחופפת או לא תקינה. "
+            "אל תחזור עליה ואל תציע וריאציה סמנטית שלה. "
+            "בחר נושא מתחום אחר בתוך זרם התוכן.\\n"
+            f"מועמדים שנדחו ואסור להציע שוב:\\n{rejected_list}"
+        )
     raise RuntimeError(
-        f"OpenAI could not propose a genuinely new topic; last candidate: {last_candidate}"
+        f"OpenAI could not propose a genuinely new topic after {max_attempts} "
+        f"attempts; last candidate: {rejected_candidates[-1] if rejected_candidates else ''}"
     )
-
 
 def topic_for_generation(now=None, *, stream="canonical_depth"):
     if stream == "canonical_depth":
