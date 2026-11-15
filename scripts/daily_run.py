@@ -275,6 +275,7 @@ def propose_novel_topic(*, stream="canonical_depth"):
         f"attempts; last candidate: {rejected_candidates[-1] if rejected_candidates else ''}"
     )
 
+
 def topic_for_generation(now=None, *, stream="canonical_depth"):
     if stream == "canonical_depth":
         try:
