@@ -101,7 +101,14 @@
           "אנדומטריוזיס", "מיומה", "מיומות", "אגן", "מנופאוזה",
           "גיל המעבר", "צוואר הרחם", "HPV"
         ],
-        "topic_discovery": "approved_seed_list_then_new_distinct_womens_health_intent"
+        "topic_discovery": "approved_seed_list_then_mayo_inspired_new_distinct_womens_health_intent",
+        "catalog_sources": [
+          {
+            "name": "Mayo Clinic Diseases & Conditions",
+            "url": "https://www.mayoclinic.org/diseases-conditions",
+            "usage": "topic_discovery_only_never_copy_or_medical_source"
+          }
+        ]
       },
       "health_news": {
         "public_role": "חדשות והסברים מבוססי ראיות מכל תחומי הרפואה",
