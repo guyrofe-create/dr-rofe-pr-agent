@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-15-topic-80-run-43719198788-attempt-2.md",
+      "title": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה | ד״ר גיא רופא",
+      "topic": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה",
+      "excerpt": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) שליית פתח היא מצב שבו השליה מכסה את הפתח הפנימי של צוואר הרחם באופן חלקי או מלא. המשמעות המרכזית היא סיכון מוגבר ",
+      "generated_at": "2026-11-15T15:20:26.585060+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-11-15",
+      "cadence_local_date": "2026-11-15",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-11-12-topic-83-run-43239783886-attempt-1.md",
       "title": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית | ד״ר גיא רופא",
       "topic": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית",
@@ -479,21 +496,6 @@
       "cadence_week": "week-of-2026-09-20",
       "cadence_local_date": "2026-09-23",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-23-topic-90-run-35851040678-attempt-1.md",
-      "title": "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור — וזו הסיבה | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור - וזו הסיבה",
-      "excerpt": "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור — וזו הסיבה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: אנשים המתמודדים עם הפרעות נפשיות קשות אכן מתים, בממוצע, שנים רבות מוקדם יותר מהאוכלוסיי",
-      "generated_at": "2026-09-23T10:50:26.777735+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-09-20",
-      "cadence_local_date": "2026-09-23",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-2e096595e81d25f1.json",
-      "analyzed_news_url": "https://www.ynet.co.il/health/article/hjuqorlcfx"
     }
   ]
 }

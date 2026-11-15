@@ -2,6 +2,20 @@
   "version": 7,
   "bundles": [
     {
+      "approval_id": "apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913",
+      "status": "awaiting_explicit_approval",
+      "draft_path": "content_drafts/2026-11-15-topic-80-run-43719198788-attempt-2.md",
+      "bundle_path": "approval_bundles/apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913.json",
+      "preview_path": "approval_bundles/apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913.html",
+      "created_at": "2026-11-15T15:22:10Z",
+      "required_approval_scopes": [
+        "medical_content",
+        "public_publication"
+      ],
+      "image_status": "ready",
+      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=5; unique_candidates=5; downloaded=5; undersized=0; reviewed=5; rejected=5; search=[placenta previa ultrasound: commons=0, openverse=0, pexels=0, pixabay=0 | placenta anatomy model: commons=2, openverse=0, pexels=0, pixabay=0 | uterus placenta model: commons=1, openverse=0, pexels=0, pixabay=0 | obstetric ultrasound machine: commons=1, openverse=0, pexels=0, pixabay=0 | placenta histology slide: commons=1, openverse=0, pexels=0, pixabay=0]; review_notes=[תבליט אמנותי של עובר ברחם שאינו מדגים שליית פתח או את מיקום השליה. | המודל מציג שליה בחלק העליון של הרחם ולא שליית פתח המכסה את צוואר הרחם. | איור של שלבי התפתחות והשרשת העובר והשליה, שאינו מציג שליית פתח או את מיקום השליה ביחס לצוואר הרחם. | צילום האולטרסאונד המטושטש אינו מדגים בבירור שליית פתח או את מיקום השליה ביחס לצוואר הרחם. | איור כללי של מבנה השליה שאינו מציג שליית פתח או את מיקומה ביחס לצוואר הרחם.]"
+    },
+    {
       "approval_id": "apr_9592a24e9a035445dcdc48e476923d1343ff3db1e2515e24118d8b2a5a6fa0bb",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-11-12-topic-83-run-43239783886-attempt-1.md",
