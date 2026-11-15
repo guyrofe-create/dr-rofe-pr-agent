@@ -276,7 +276,22 @@ def propose_novel_topic(*, stream="canonical_depth"):
     )
 
 
-def topic_for_generation(now=None, *, stream="canonical_depth"):
+def topic_for_generation(
+    now=None, *, stream="canonical_depth", topic_override=None
+):
+    if topic_override is not None:
+        topic = " ".join(str(topic_override).split())
+        if not topic_matches_stream(topic, stream):
+            raise ValueError(
+                f"Manual topic does not fit the approved {stream} content scope"
+            )
+        if any(topic_is_duplicate(topic, prior) for prior in historical_topics()):
+            raise ValueError(
+                "Manual topic overlaps an existing editorial topic; "
+                "no draft was generated"
+            )
+        digest = hashlib.sha256(topic.encode("utf-8")).hexdigest()
+        return 80 + int(digest[:2], 16) % 10, topic
     if stream == "canonical_depth":
         try:
             return selected_topic(now, stream=stream)
