@@ -241,6 +241,7 @@ def generate_job(
     state: dict | None = None,
     max_news_brief_age_hours: int = 36,
     media_brief_dir: Path = DEFAULT_MEDIA_BRIEFS,
+    topic_override: str | None = None,
 ) -> dict | None:
     metadata = {
         "content_stream": job["stream"],
@@ -252,7 +253,7 @@ def generate_job(
     }
     if job["stream"] == "canonical_depth":
         topic_index, topic = topic_for_generation(
-            now, stream=job["stream"]
+            now, stream=job["stream"], topic_override=topic_override
         )
         title, content = generate_article(topic)
     elif job["stream"] == "health_news":
@@ -387,6 +388,7 @@ def run(
     manifest_path: Path,
     now: datetime | None = None,
     force_stream: str | None = None,
+    topic_override: str | None = None,
 ) -> dict:
     now = now or datetime.now(timezone.utc)
     cadence = load_cadence(cadence_path)
@@ -414,6 +416,10 @@ def run(
     manifest["jobs"].extend(
         unbundled_generated_jobs(state, DEFAULT_APPROVAL_INDEX)
     )
+    if topic_override:
+        if force_stream not in (None, "canonical_depth"):
+            raise ValueError("A manual topic override is limited to women's health")
+        force_stream = "canonical_depth"
     if force_stream:
         if force_stream not in {
             "canonical_depth", "health_news", "evergreen_knowledge"
@@ -461,6 +467,11 @@ def run(
                 state,
                 cadence["quality_policy"]["max_news_brief_age_hours"],
                 media_brief_dir,
+                topic_override=(
+                    topic_override
+                    if job["stream"] == "canonical_depth"
+                    else None
+                ),
             )
             if result is None:
                 manifest["skipped"].append({
@@ -506,6 +517,10 @@ def main() -> None:
         choices=("canonical_depth", "health_news", "evergreen_knowledge"),
         help="Create one approval-gated draft even when today's cadence is complete.",
     )
+    parser.add_argument(
+        "--force-topic",
+        help="Use one exact, scope-checked, non-duplicate women's health topic.",
+    )
     args = parser.parse_args()
     manifest = run(
         cadence_path=args.cadence,
@@ -514,6 +529,7 @@ def main() -> None:
         media_brief_dir=args.media_brief_dir,
         manifest_path=args.manifest,
         force_stream=args.force_stream,
+        topic_override=args.force_topic,
     )
     print(json.dumps({
         "drafts_ready": len(manifest["jobs"]),
