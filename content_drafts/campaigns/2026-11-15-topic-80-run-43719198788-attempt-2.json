@@ -1,0 +1,115 @@
+{
+  "draft": "content_drafts/2026-11-15-topic-80-run-43719198788-attempt-2.md",
+  "title": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה | ד״ר גיא רופא",
+  "status": "completed_with_errors",
+  "published_at": "2026-11-15T19:11:41.431812+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/%d7%a9%d7%9c%d7%99%d7%99%d7%aa-%d7%a4%d7%aa%d7%97-%d7%92%d7%95%d7%a8%d7%9e%d7%99-%d7%a1%d7%99%d7%9b%d7%95%d7%9f-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+      "detail": "idempotency_key=pub_b29d08192d936381444b700734f5f4e533a7b42d20e9cc29eafcd15dd7ed5ada"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://guyrofe.com/%d7%a9%d7%9c%d7%99%d7%99%d7%aa-%d7%a4%d7%aa%d7%97-%d7%92%d7%95%d7%a8%d7%9e%d7%99-%d7%a1%d7%99%d7%9b%d7%95%d7%9f-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-15-topic-80-run-43719198788-attempt-2-hero.png",
+      "detail": "owner_provided_default"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122215179512942441",
+      "detail": "idempotency_key=pub_a7ce6b2b8d24b463719f967674404ff0e6c43e6ed60c399eb404f148bf8ca347"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7527810502362820608/",
+      "detail": "idempotency_key=pub_761cfcf2ec7d330e835a86f586f1d0773952a759717099f78b0c65aa20ded849"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "failed",
+      "target_id": "google_business_profile",
+      "detail": "RuntimeError: Google Business post is PROCESSING, not LIVE; publication cannot be claimed and reconciliation is required"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913",
+  "search_target": {
+    "primary_query": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה",
+    "secondary_queries": [
+      "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה ד״ר גיא רופא",
+      "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": "https://guyrofe.com/%d7%a9%d7%9c%d7%99%d7%99%d7%aa-%d7%a4%d7%aa%d7%97-%d7%92%d7%95%d7%a8%d7%9e%d7%99-%d7%a1%d7%99%d7%9b%d7%95%d7%9f-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
