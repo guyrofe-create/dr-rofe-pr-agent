@@ -608,10 +608,10 @@ def main() -> None:
             image = social_image.generate(title, article_visual_context(content))
         except social_image.PhotoSelectionError as exc:
             image_selection_error = f"{type(exc).__name__}: {exc}"
-            # Prefer a licensed topic photograph, then fall back automatically
-            # to the corrected owner-provided brand mark. The recorded search
-            # error keeps the substitution transparent in the review bundle.
-            image = social_image.default_branded_image()
+            # Prefer a licensed topic photograph, then use one of the
+            # curated text-free defaults. The recorded search error keeps the
+            # substitution transparent in the review bundle.
+            image = social_image.default_reputation_image(title)
         except Exception as exc:
             raise RuntimeError(
                 "The licensed-photo search failed without creating an AI image: "
@@ -619,7 +619,7 @@ def main() -> None:
             ) from exc
     elif not image_uri:
         title, _content = load_draft(resolve_draft_path(args.draft_path))
-        image = social_image.default_branded_image()
+        image = social_image.default_reputation_image(title)
     if image is not None:
         image_uri, image_alt_text, image_sha256, image_metadata = save_image_package(
             image,

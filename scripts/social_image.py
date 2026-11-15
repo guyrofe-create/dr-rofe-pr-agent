@@ -1,8 +1,8 @@
-"""Create a topic-relevant visual package from licensed real photography.
+"""Create topic-relevant image packages from licensed photography or curated defaults.
 
-The product searches Wikimedia Commons for a verified photograph with a
-compatible license, records its provenance, and fails closed when no suitable
-photo is found. This module never generates images with AI.
+Topic-specific photo selection prioritizes verified, compatible licenses and
+records provenance. When none is available, a curated text-free AI image pool
+provides a stable, varied fallback for the reputation workflow.
 """
 
 import base64
@@ -35,6 +35,9 @@ DEFAULT_IMAGE_PATH = (
     Path(__file__).resolve().parents[1]
     / "assets"
     / "default-reputation-image.png"
+)
+DEFAULT_REPUTATION_IMAGE_DIR = (
+    Path(__file__).resolve().parents[1] / "assets" / "reputation-defaults"
 )
 COMMONS_USER_AGENT = (
     f"ReputationAgentPublisher/1.0 ({_CLIENT_SITE}; licensed-photo-selector)"
@@ -1139,6 +1142,65 @@ def default_branded_image(path=DEFAULT_IMAGE_PATH):
         license_name="Owner-provided brand asset",
         attribution="",
         source_type="owner_provided_default",
+        variants=variants,
+    )
+
+
+def default_reputation_image(title, image_dir=DEFAULT_REPUTATION_IMAGE_DIR):
+    """Select a text-free image from the curated pool, stable for each title."""
+    image_dir = Path(image_dir)
+    images = sorted(image_dir.glob("default-*.jpg"))
+    if not images:
+        raise PhotoSelectionError(
+            f"No default reputation images were found in: {image_dir}"
+        )
+    title_key = " ".join((title or "medical information").strip().split()).casefold()
+    image_index = int(
+        hashlib.sha256(title_key.encode("utf-8")).hexdigest(), 16
+    ) % len(images)
+    image_path = images[image_index]
+    descriptions = {
+        "default-01.jpg": "חדר ייעוץ רפואי מואר ונעים",
+        "default-02.jpg": "רופא בוחן מידע בטאבלט ליד סטטוסקופ",
+        "default-03.jpg": "צורות תאיות מופשטות בגווני ורוד וטורקיז",
+        "default-04.jpg": "יד של מבוגר מחזיקה בעדינות את ידו של תינוק",
+        "default-05.jpg": "אישה בהיריון נשענת ליד חלון באור טבעי",
+        "default-06.jpg": "מסדרון מרפאה מואר עם אזור המתנה רגוע",
+        "default-07.jpg": "ספר עיון רפואי סגור לצד סטטוסקופ וכלי כתיבה",
+        "default-08.jpg": "צורות מדעיות מופשטות באור רך",
+        "default-09.jpg": "אישה צועדת בפארק ירוק באור בוקר",
+        "default-10.jpg": "ידיים תומכות זו בזו בחדר ייעוץ",
+    }
+    try:
+        base = Image.open(image_path)
+        base.load()
+    except Exception as exc:
+        raise PhotoSelectionError(
+            f"The selected default reputation image could not be loaded: {image_path}"
+        ) from exc
+    base = base.convert("RGB")
+    variants = {
+        "hero": _png_bytes(_fit_cover(base, (1600, 900))),
+        "landscape": _png_bytes(_fit_cover(base, (1200, 630))),
+        "square": _jpeg_bytes(_fit_cover(base, (1200, 1200))),
+        "portrait": _png_bytes(_fit_cover(base, (1080, 1350))),
+    }
+    return SocialImage(
+        content=variants["landscape"],
+        media_type="image/png",
+        extension="png",
+        visual_description=descriptions.get(
+            image_path.name, "תמונה מערכתית כללית לתוכן רפואי"
+        ),
+        creator="OpenAI",
+        license_name="AI-generated editorial image",
+        license_url="https://openai.com/policies/terms-of-use/",
+        source_type="openai_generated_text_free_visual",
+        generation_model="OpenAI image generation",
+        generation_prompt=(
+            "Text-free editorial default image from the curated ten-image pool; "
+            "selected by a stable SHA-256 hash of the article title."
+        ),
         variants=variants,
     )
 
