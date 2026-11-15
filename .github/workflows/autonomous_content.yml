@@ -15,6 +15,10 @@ on:
           - canonical_depth
           - health_news
           - evergreen_knowledge
+      force_topic:
+        description: Exact women's health topic for one approval-gated draft
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -46,9 +50,13 @@ jobs:
           if [[ "${FORCE_STREAM}" != "none" ]]; then
             args+=(--force-stream "${FORCE_STREAM}")
           fi
+          if [[ -n "${FORCE_TOPIC}" ]]; then
+            args+=(--force-topic "${FORCE_TOPIC}")
+          fi
           python scripts/autonomous_content_run.py "${args[@]}"
         env:
           FORCE_STREAM: ${{ inputs.force_stream || 'none' }}
+          FORCE_TOPIC: ${{ inputs.force_topic || '' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
