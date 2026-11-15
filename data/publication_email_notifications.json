@@ -1648,6 +1648,20 @@
         "https://www.facebook.com/122215179512942441",
         "https://www.linkedin.com/feed/update/urn:li:share:7527810502362820608/"
       ]
+    },
+    "expired:apr_2d676d9186b362769afc704091aee53ecc2edd2e105933bb103908d77b7c7ce5:2026-07-28T14:50:49Z": {
+      "recorded_at": "2026-11-15T23:23:56.068159+00:00",
+      "approval_id": "apr_2d676d9186b362769afc704091aee53ecc2edd2e105933bb103908d77b7c7ce5",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-07-28-topic-03-run-30347171093-attempt-1.md",
+      "published_approval_id": "apr_2d676d9186b362769afc704091aee53ecc2edd2e105933bb103908d77b7c7ce5",
+      "campaign_result": "content_drafts/campaigns/2026-07-28-topic-03-run-30347171093-attempt-1.json",
+      "urls": [
+        "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-03-run-30347171093-attempt-1/",
+        "https://www.facebook.com/122196610388942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7487906037862289409/",
+        "https://guyrofe.blogspot.com/2026/07/blog-post_28.html"
+      ]
     }
   }
 }
