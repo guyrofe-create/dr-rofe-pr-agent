@@ -1649,6 +1649,7 @@ def critical_monitor_failures():
             require_core_serp
             and REPORT.get("rank")
             and not rank_measurement_succeeded()
+            and not expected_unavailable
         ):
             statuses = sorted({
                 str(item.get("status") or "unknown")
