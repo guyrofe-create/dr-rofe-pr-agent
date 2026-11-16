@@ -125,10 +125,19 @@ def topic_is_duplicate(left: str, right: str) -> bool:
     if smaller < 2:
         return False
     lexical_overlap = len(left_tokens & right_tokens) / smaller
-    if lexical_overlap >= 0.75:
-        return True
     semantic = semantic_topic_analysis(left, right)
-    return semantic["duplicate"]
+    # Shared generic words must not erase a distinct medical subject or intent.
+    # Exact normalized titles remain blocked above. Lexical overlap alone is
+    # insufficient when both titles explicitly name different concepts.
+    left_subjects = _matched_aliases(left, MEDICAL_CONCEPT_ALIASES)
+    right_subjects = _matched_aliases(right, MEDICAL_CONCEPT_ALIASES)
+    if left_subjects and right_subjects and not (left_subjects & right_subjects):
+        return False
+    left_intents = _matched_aliases(left, INTENT_ALIASES)
+    right_intents = _matched_aliases(right, INTENT_ALIASES)
+    if left_intents and right_intents and not (left_intents & right_intents):
+        return False
+    return semantic["duplicate"] or lexical_overlap >= 0.75
 
 
 def _matched_aliases(value: str, aliases: dict[str, set[str]]) -> set[str]:
