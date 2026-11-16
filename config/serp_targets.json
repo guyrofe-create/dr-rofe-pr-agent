@@ -3,7 +3,10 @@
   "market": {
     "country": "IL",
     "language": "he",
-    "devices": ["mobile", "desktop"]
+    "devices": [
+      "mobile",
+      "desktop"
+    ]
   },
   "search_console_properties": [
     "sc-domain:guyrofe.com",
@@ -17,12 +20,12 @@
     "desired_unique_assets_target": 7,
     "controlled_unique_assets_target": 5,
     "negative_results_target": 0,
-    "ai_factual_accuracy_target": 1.0,
+    "ai_factual_accuracy_target": 1,
     "ai_official_citation_target": 0.75,
-    "ai_identity_accuracy_target": 1.0,
+    "ai_identity_accuracy_target": 1,
     "ai_narrative_coverage_target": 0.8,
     "ai_source_diversity_target": 2,
-    "ai_harmful_or_incorrect_target": 0.0,
+    "ai_harmful_or_incorrect_target": 0,
     "ai_cross_sample_stability_target": 0.8
   },
   "publication_scope": {
@@ -32,27 +35,56 @@
     "rule": "Measure existing assets read-only. Prepare only new future publications and never rewrite existing clinic, profile, homepage, page or article content."
   },
   "measurement_plan": {
-    "search_engines": ["google", "bing"],
-    "serp_surfaces": ["web_search"],
+    "search_engines": [
+      "google",
+      "bing"
+    ],
+    "serp_surfaces": [
+      "web_search"
+    ],
     "rank_weight": "reciprocal_rank",
-    "volatility_windows_days": [7, 28],
+    "volatility_windows_days": [
+      7,
+      28
+    ],
     "free_serpapi_policy": {
       "enabled": true,
       "monthly_request_budget": 220,
-      "results_per_query": 100,
+      "results_per_query": 30,
       "maximum_rank_position": 30,
-      "rank_check_weekdays": [0, 3],
-      "full_brand_matrix_every_run": true,
-      "ai_check_days_of_month": [1, 15],
+      "rank_check_weekdays": [
+        0,
+        3
+      ],
+      "full_brand_matrix_every_run": false,
+      "ai_check_days_of_month": [
+        1,
+        15
+      ],
       "ai_check_interval_days": 7,
-      "search_console_check_days_of_month": [1, 15],
+      "search_console_check_days_of_month": [
+        1,
+        15
+      ],
       "search_console_check_interval_days": 7,
-      "connection_health_check_days_of_month": [1],
-      "daily_engines": ["google"],
-      "daily_devices": ["mobile"],
+      "connection_health_check_days_of_month": [
+        1
+      ],
+      "daily_engines": [
+        "google"
+      ],
+      "daily_devices": [
+        "mobile"
+      ],
       "extended_weekday": 6,
-      "extended_engines": ["google", "bing"],
-      "extended_devices": ["mobile", "desktop"],
+      "extended_engines": [
+        "google",
+        "bing"
+      ],
+      "extended_devices": [
+        "mobile",
+        "desktop"
+      ],
       "web_mentions_enabled": true,
       "google_reviews_enabled": false,
       "facebook_recommendations_enabled": false,
@@ -123,7 +155,11 @@
       "enabled_when_verified_key_present": true,
       "google_indexing_api_for_articles_forbidden": true
     },
-    "publication_measurement_windows_days": [7, 28, 42],
+    "publication_measurement_windows_days": [
+      7,
+      28,
+      42
+    ],
     "change_tactic_after_days_without_improvement": 42,
     "homepage_public_write_prohibited": true
   },
@@ -135,35 +171,83 @@
     "read_only": true
   },
   "queries": [
-    {"query": "ד״ר גיא רופא", "kind": "exact_brand", "priority": 100, "cadence": "daily_core"},
-    {"query": "ד\"ר גיא רופא", "kind": "exact_brand", "priority": 100, "cadence": "extended_weekly"},
-    {"query": "דר גיא רופא", "kind": "exact_brand", "priority": 95, "cadence": "extended_weekly"},
-    {"query": "גיא רופא", "kind": "brand", "priority": 90, "cadence": "daily_core"},
-    {"query": "Guy Rofe", "kind": "english_brand", "priority": 80, "cadence": "extended_weekly"},
-    {"query": "Dr. Guy Rofe", "kind": "english_brand", "priority": 80, "cadence": "extended_weekly"}
+    {
+      "query": "ד״ר גיא רופא",
+      "kind": "exact_brand",
+      "priority": 100,
+      "cadence": "daily_core"
+    },
+    {
+      "query": "ד\"ר גיא רופא",
+      "kind": "exact_brand",
+      "priority": 100,
+      "cadence": "extended_weekly"
+    },
+    {
+      "query": "דר גיא רופא",
+      "kind": "exact_brand",
+      "priority": 95,
+      "cadence": "extended_weekly"
+    },
+    {
+      "query": "גיא רופא",
+      "kind": "brand",
+      "priority": 90,
+      "cadence": "daily_core"
+    },
+    {
+      "query": "Guy Rofe",
+      "kind": "english_brand",
+      "priority": 80,
+      "cadence": "extended_weekly"
+    },
+    {
+      "query": "Dr. Guy Rofe",
+      "kind": "english_brand",
+      "priority": 80,
+      "cadence": "extended_weekly"
+    }
   ],
   "property_roles": {
     "guyrofe.com": {
       "role": "canonical identity and official source of truth",
-      "allowed_intents": ["identity", "biography", "books", "podcast", "official facts"],
+      "allowed_intents": [
+        "identity",
+        "biography",
+        "books",
+        "podcast",
+        "official facts"
+      ],
       "homepage_change_prohibited": true
     },
     "drguyrofe.co.il": {
       "role": "Hebrew evidence-based medical news and explainers",
-      "allowed_intents": ["medical news", "research review", "public health explanation"],
+      "allowed_intents": [
+        "medical news",
+        "research review",
+        "public health explanation"
+      ],
       "must_be_original": true,
       "must_not_solicit_care": true
     },
     "drguyrofe.com": {
       "role": "evergreen medical knowledge hub and long-form expert answers",
-      "allowed_intents": ["evergreen medical guide", "knowledge hub", "long-form answer"],
+      "allowed_intents": [
+        "evergreen medical guide",
+        "knowledge hub",
+        "long-form answer"
+      ],
       "must_be_original": true,
       "must_not_duplicate_other_owned_domains": true,
       "status": "connected_exact_approval_required"
     },
     "guyrofe.wixsite.com/homepage": {
       "role": "supporting archive for original podcast and video transcripts",
-      "allowed_intents": ["podcast transcript", "video transcript", "media companion"],
+      "allowed_intents": [
+        "podcast transcript",
+        "video transcript",
+        "media companion"
+      ],
       "requires_original_media": true,
       "minimum_days_between_publications": 14,
       "must_be_original": true,
