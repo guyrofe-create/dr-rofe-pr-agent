@@ -364,6 +364,12 @@ def synchronize_inline_sources(content):
     for anchor, url in citations:
         if url not in source_urls and url not in {item[1] for item in missing}:
             missing.append((anchor, url))
+    # Editorial news links belong in the article body, not the medical
+    # bibliography. Only approved evidence domains are synchronized here.
+    missing = [
+        (anchor, url) for anchor, url in missing
+        if _domain_is_allowed(_source_domain(url), TRUSTED_MEDICAL_SOURCE_DOMAINS)
+    ]
     if not missing:
         return content
     addition = "\n".join(f"- [{anchor}]({url})" for anchor, url in missing)
@@ -526,6 +532,11 @@ def generation_messages(base_prompt, previous_content=None, last_error=None):
                         "מדומיין שאינו מאושר, הסר אותו ואת הייחוס אליו והחלף "
                         "אותו רק במקור מוסדי מאושר או DOI ישיר. אל תשאיר "
                         "קישורים לאתרי כנסים, חדשות או שיווק כמקור רפואי. "
+                        "ודא שלפחות שני קישורים שונים למקורות רפואיים מוסדיים "
+                        "רשמיים מופיעים גם בגוף וגם בסעיף המקורות. הוסף קישור "
+                        "ישיר תומך לכל סעיף רפואי, כולל סעיף הסיכום. "
+                        "אם חסר קישור חובה לכתבה הנבדקת, הכנס אותו בגוף "
+                        "המאמר כקישור עריכתי ולא כמקור רפואי. "
                         "ודא שכל קישור ראיות שמופיע בגוף מופיע באותו URL גם "
                         "בסעיף המקורות. לאחר התיקון, הרחב ושפר את אותה טיוטה עד "
                         f"{TARGET_ARTICLE_WORDS} "
