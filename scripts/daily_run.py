@@ -611,9 +611,18 @@ def generate_article(
 - אין לעטוף את התשובה בבלוק קוד ואין לכתוב את המילה markdown
 
 החזר רק את הטיוטה."""
+    if required_urls:
+        required_links = "\n".join(f"- {url}" for url in sorted(required_urls))
+        base_prompt += (
+            "\n\nקישורי עריכה שחובה לכלול בגוף המאמר כקישורי Markdown "
+            "עם טקסט עוגן תיאורי, ולא רק ברשימת המקורות:\n"
+            f"{required_links}\n"
+            "אלה קישורים לכתבות הנבדקות, לא מקורות רפואיים. "
+            "יש להבחין בינם לבין המקורות המוסדיים הרפואיים."
+        )
     last_error = None
     previous_content = None
-    max_attempts = 3
+    max_attempts = 4
     for attempt in range(1, max_attempts + 1):
         content = request_generated_article(
             client,
