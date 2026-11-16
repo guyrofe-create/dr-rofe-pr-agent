@@ -938,6 +938,22 @@ def check_google_rank(today=None):
         "requests_used_before_run": serp_requests_used(today),
         "estimated_requests": estimated_requests,
     }
+    # Do not start a measurement that the configured internal safety budget
+    # cannot finish. Partial runs waste requests and cannot form a valid baseline.
+    internal_budget = serp_monthly_budget()
+    internal_remaining = (
+        None if internal_budget is None
+        else max(0, internal_budget - serp_requests_used(today))
+    )
+    if internal_remaining is not None and internal_remaining < estimated_requests:
+        REPORT["rank"].append({
+            "status": "budget_limited",
+            "detail": "Insufficient internal SerpApi budget for a complete measurement",
+            "required_searches": estimated_requests,
+            "searches_left": internal_remaining,
+            "monthly_budget": internal_budget,
+        })
+        return
     provider_remaining = account.get("total_searches_left")
     if (
         account.get("status") == "ok"
