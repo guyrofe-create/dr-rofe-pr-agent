@@ -1,6 +1,38 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md",
+      "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
+      "topic": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+      "excerpt": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מבוא — התשובה בקצרה: דלקת לבלב אוטואימונית עלולה להיראות כסרטן הלבלב משום ששני המצבים עשויים לגרו",
+      "generated_at": "2026-11-17T06:50:43.845226+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "cadence_week": "week-of-2026-11-15",
+      "cadence_local_date": "2026-11-16",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
+      "path": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md",
+      "title": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות | ד״ר גיא רופא",
+      "topic": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות",
+      "excerpt": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) בקצרה: רווח סמך הוא טווח ערכים המחושב מנתוני המחקר ומציג את מידת אי־הוודאות סביב אומדן, כגון הבדל ",
+      "generated_at": "2026-11-17T06:50:43.845226+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-11-15",
+      "cadence_local_date": "2026-11-17",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-11-15-topic-80-run-43719198788-attempt-2.md",
       "title": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה | ד״ר גיא רופא",
       "topic": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה",
@@ -458,43 +490,6 @@
       ],
       "cadence_week": "week-of-2026-09-27",
       "cadence_local_date": "2026-09-27",
-      "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-09-24-topic-90-run-35991461182-attempt-1.md",
-      "title": "לא רק כאבי גב: הבעיות הרפואיות של נשים עם חזה גדול | ד״ר גיא רופא",
-      "topic": "מה עומד מאחורי הכותרת: לא רק כאבי גב. הבעיות הרפואיות של נשים עם חזה גדול",
-      "excerpt": "לא רק כאבי גב: הבעיות הרפואיות של נשים עם חזה גדול | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: חזה גדול מאוד, ובייחוד מקרומסטיה תסמינית — מצב שבו רקמת השד גדולה באופן שאינו פרופורציונלי למבנה הגוף וגורמת לה",
-      "generated_at": "2026-09-24T11:10:53.607679+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-20",
-      "cadence_local_date": "2026-09-24",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-a6e76f9b67552f5f.json",
-      "analyzed_news_url": "https://healthy.walla.co.il/item/3869509"
-    },
-    {
-      "path": "content_drafts/2026-09-23-topic-00-run-35851040678-attempt-1.md",
-      "title": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא",
-      "topic": "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
-      "excerpt": "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) כאבי אגן כרוניים הם כאבים באזור הבטן התחתונה או האגן שנמשכים בדרך כלל שישה חודשים לפחות, ברציפות או לסירוגין. הם א",
-      "generated_at": "2026-09-23T10:50:26.777735+00:00",
-      "content_stream": "canonical_depth",
-      "destination_site_key": "GUYROFE_COM",
-      "scheduled_channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-20",
-      "cadence_local_date": "2026-09-23",
       "public_execution_allowed": false
     }
   ]

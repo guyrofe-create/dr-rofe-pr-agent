@@ -3372,6 +3372,62 @@
           ]
         }
       ]
+    },
+    {
+      "topic_id": "topic_a2f63fdab71cb9be2262e6b0",
+      "topic": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+      "normalized_topic": "דלקת לבלב אוטואימונית מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+      "first_seen_at": "2026-11-17T06:50:43.845226+00:00",
+      "last_seen_at": "2026-11-17T06:50:43.845226+00:00",
+      "titles": [
+        "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "generation_started",
+          "occurred_at": "2026-11-17T06:50:43.845226+00:00",
+          "source": "autonomous_content",
+          "stream": "health_news"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-17T06:50:43.845226+00:00",
+          "source": "autonomous_content",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md"
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_e06f4545274c8905da434aae",
+      "topic": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות",
+      "normalized_topic": "רווח סמך במחקרים רפואיים כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות",
+      "first_seen_at": "2026-11-17T06:50:43.845226+00:00",
+      "last_seen_at": "2026-11-17T06:50:43.845226+00:00",
+      "titles": [
+        "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "generation_started",
+          "occurred_at": "2026-11-17T06:50:43.845226+00:00",
+          "source": "autonomous_content",
+          "stream": "evergreen_knowledge"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-17T06:50:43.845226+00:00",
+          "source": "autonomous_content",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md"
+        }
+      ]
     }
   ]
 }

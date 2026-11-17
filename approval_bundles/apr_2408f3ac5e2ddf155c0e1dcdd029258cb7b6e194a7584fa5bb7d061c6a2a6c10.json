@@ -1,0 +1,694 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-11-17T06:53:39Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md",
+  "source_draft_sha256": "e4ea2c29662148d1877f4b8d573809ab7e38bb664097e88710c8152d4181c2f2",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21975436/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862498/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21412117/",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1177/2050640620934911",
+      "type": "citation"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28027896/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+    "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+    "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+    "source_type": "owner_provided_default",
+    "source_page_url": "",
+    "source_image_url": "",
+    "creator": "ד״ר גיא רופא",
+    "license_name": "Owner-provided brand asset",
+    "license_url": "",
+    "attribution": "",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+        "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+        "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-square.jpg",
+        "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-portrait.png",
+        "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
+        "cms_title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+        "markdown": "# דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**מבוא — התשובה בקצרה:** דלקת לבלב אוטואימונית עלולה להיראות כסרטן הלבלב משום ששני המצבים עשויים לגרום לגוש או להגדלה של הלבלב, להיצרות של צינור הלבלב או דרכי המרה, לצהבת ולירידה במשקל. ההבדלה ביניהם אינה מתבססת על בדיקה יחידה, אלא על שילוב של הדמיה, בדיקות דם, מעורבות של איברים נוספים, דגימת רקמה ולעיתים הערכת התגובה לטיפול — ורק לאחר שננקטו צעדים מספקים לשלילת ממאירות.\n\nדלקת לבלב אוטואימונית היא מחלה דלקתית נדירה יחסית, אך לחשד בה יש משמעות רבה. מצד אחד, אבחון שגוי כסרטן עלול להוביל לניתוח גדול שאינו נחוץ. מצד אחר, הנחה מוקדמת שמדובר בדלקת עלולה לעכב אבחון של גידול ממאיר. לכן, כאשר ממצאי הבירור אינם חד-משמעיים, נדרשת הערכה מסודרת ורב-תחומית.\n\n## מהי דלקת לבלב אוטואימונית?\n\nדלקת לבלב אוטואימונית, או AIP — ראשי תיבות של Autoimmune Pancreatitis — היא דלקת כרונית של הלבלב הקשורה לפעילות חיסונית בלתי תקינה. מקובל לחלק אותה לשני סוגים עיקריים, השונים זה מזה במאפיינים הקליניים, בבדיקות המעבדה ובממצאים ברקמה.\n\n**סוג 1** הוא הביטוי הלבלבי השכיח של מחלה מערכתית המכונה מחלה הקשורה ל־IgG4. במצב זה עלולים להיות מעורבים גם דרכי המרה, בלוטות הרוק והדמעות, הכליות, הריאות, קשריות לימפה ואזורים נוספים. לעיתים נמצאת בדם עלייה ברמת IgG4, אך תוצאה זו לבדה אינה מוכיחה את האבחנה.\n\n**סוג 2** מוגבל בדרך כלל יותר ללבלב ואינו קשור בהכרח לעלייה ב־IgG4. בחלק מהחולים קיימת גם מחלת מעי דלקתית, ובמיוחד קוליטיס כיבית. אבחון סוג זה נשען במידה רבה יותר על ממצאים היסטולוגיים בדגימת רקמה.\n\nהחלוקה לשני הסוגים, וכן המאפיינים הרקמתיים המבדילים ביניהם, מפורטים ב[מחקר הקונצנזוס הבין־לאומי על האבחנה ההיסטולוגית של דלקת לבלב אוטואימונית](https://pubmed.ncbi.nlm.nih.gov/21975436/). חשוב להדגיש כי IgG4 תקין אינו שולל את המחלה, ו־IgG4 מוגבר אינו מאשר אותה ללא התאמה לממצאים נוספים.\n\n## מדוע המחלה עלולה להיראות כמו סרטן הלבלב?\n\nהדמיון נובע מכך ששתי המחלות עשויות ליצור אותה תמונה קלינית ואנטומית. דלקת לבלב אוטואימונית יכולה לגרום להגדלה מפושטת של הלבלב, אך לעיתים היא מתבטאת כהגדלה מוקדית או כממצא דמוי גוש. כאשר הממצא ממוקם בראש הלבלב, הוא עלול ללחוץ על צינור המרה ולגרום לצהבת חסימתית — תסמין אופייני גם לגידול בראש הלבלב.\n\nבשני המצבים עלולים להופיע:\n\n- צהבת בעור ובלחמיות העיניים;\n- שתן כהה וצואה בהירה;\n- ירידה בלתי מוסברת במשקל;\n- כאב או אי-נוחות בבטן העליונה;\n- הפרעה חדשה באיזון הסוכר או הופעת סוכרת;\n- הרחבה או היצרות של דרכי המרה;\n- מסה בלבלב בבדיקת CT,‏ MRI או אולטרסאונד אנדוסקופי.\n\nגם בדיקות דם אינן תמיד מספקות תשובה ברורה. הסמן CA 19-9 עשוי לעלות בסרטן הלבלב, אך גם בחסימת דרכי מרה ובמצבים דלקתיים. בדומה לכך, IgG4 מוגבר תומך באפשרות של מחלה הקשורה ל־IgG4, אך עלייה מתונה יכולה להימצא גם במצבים אחרים ולעיתים אף אצל חולי סרטן. לפי [ההנחיה האירופית המבוססת־ראיות למחלות עיכול הקשורות ל־IgG4](https://pmc.ncbi.nlm.nih.gov/articles/PMC8862498/), אין להסתמך על CA 19-9 או על IgG4 כבדיקות יחידות לצורך ההבחנה.\n\nהמשמעות המעשית היא שממצא “חשוד” בהדמיה אינו בהכרח סרטן, אך גם מאפיין המתאים לדלקת אינו מאפשר לשלול ממאירות באופן אוטומטי.\n\n## אילו ממצאים מסייעים להבדיל בין המצבים?\n\nההבדלה מבוססת על שקלול של מספר קבוצות ממצאים. אין סימן יחיד שהוא מוחלט בכל החולים, ולכן יש לפרש כל נתון בתוך ההקשר הכולל.\n\n| מאפיין | דלקת לבלב אוטואימונית | סרטן הלבלב |\n|---|---|---|\n| צורת המעורבות | לעיתים הגדלה מפושטת, ולעיתים מוקד דמוי גוש | לרוב מסה מוקדית |\n| צינור הלבלב | היצרויות ארוכות או מרובות, ללא הרחבה ניכרת בחלק מהמקרים | היצרות קצרה יותר עם הרחבת הצינור במעלה הזרם |\n| מעטפת סביב הלבלב | עשויה להופיע הילה היקפית דמוית קופסית | אינה מאפיין טיפוסי |\n| IgG4 בדם | עשוי להיות מוגבר, בעיקר בסוג 1 | בדרך כלל אינו מוגבר משמעותית, אך קיימים חריגים |\n| איברים נוספים | ייתכנו ממצאים בבלוטות רוק, בכליות, בדרכי המרה ובאיברים אחרים | ייתכנו גרורות, חדירה מקומית או קשריות חשודות |\n| דגימת רקמה | חדירה דלקתית, פיברוזיס ומאפיינים ייחודיים לפי הסוג | תאים ממאירים ומבנה התואם אדנוקרצינומה |\n| תגובה לסטרואידים | בדרך כלל שיפור מהיר יחסית בדלקת ובממצאי ההדמיה | גידול אינו צפוי להיעלם בעקבות סטרואידים |\n\nבהדמיה, הגדלה מפושטת של הלבלב, גבולות חלקים יחסית והילה היקפית עשויים לתמוך בדלקת אוטואימונית. לעומת זאת, מסה לא סדירה, חסימה חדה של צינור הלבלב, חדירה לכלי דם או ממצאים החשודים לגרורות מחזקים את החשד לממאירות. עם זאת, קיימת חפיפה משמעותית, במיוחד כאשר הדלקת האוטואימונית היא מוקדית.\n\nמעורבות של איברים נוספים יכולה לספק רמז חשוב. לדוגמה, שילוב של ממצא בלבלב עם הגדלה סימטרית של בלוטות רוק, פגיעה כלייתית אופיינית או דלקת בדרכי המרה עשוי לתמוך במחלה הקשורה ל־IgG4. מנגד, ממצאים בכבד או בריאות אינם מתפרשים אוטומטית כמחלה דלקתית, שכן יש לשלול גם פיזור ממאיר. עקרונות השקלול הרב־מערכתי מופיעים ב[קריטריונים הבין־לאומיים לאבחון דלקת לבלב אוטואימונית](https://pubmed.ncbi.nlm.nih.gov/21412117/).\n\n## כיצד מתבצע הבירור האבחנתי בפועל?\n\nהבירור מתחיל בהיסטוריה רפואית, בדיקה גופנית ובדיקות דם. נבדקים, בין היתר, תפקודי כבד, רמות בילירובין, אנזימי לבלב, רמת גלוקוז ולעיתים IgG4 ו־CA 19-9. תוצאות אלה מסייעות לבנות את התמונה, אך אינן מחליפות הדמיה ובדיקת רקמה כאשר היא נדרשת.\n\nבדיקות CT בפרוטוקול לבלב או MRI עם הדגמת דרכי המרה והלבלב מאפשרות להעריך את צורת הבלוטה, מבנה הצינורות, כלי הדם והאיברים הסמוכים. אולטרסאונד אנדוסקופי, EUS, מאפשר הסתכלות מקרוב על הלבלב וביצוע דגימת רקמה באמצעות מחט.\n\nכאשר יש צורך להבחין בין דלקת לבין גידול, רצוי להשיג דגימה שמאפשרת להעריך לא רק תאים בודדים אלא גם את מבנה הרקמה. אבחון היסטולוגי של דלקת לבלב אוטואימונית עשוי לדרוש זיהוי של דלקת לימפופלזמציטרית, דפוסי פיברוזיס, דלקת בכלי דם או נגעים אופייניים לסוג 2. מנגד, גם דגימה שלילית לממאירות אינה תמיד שוללת סרטן, במיוחד אם הדגימה קטנה או אינה מייצגת את האזור החשוד.\n\nה[הנחיה האירופית למחלה הקשורה ל־IgG4](https://doi.org/10.1177/2050640620934911) מדגישה את תפקידו של EUS הן בזיהוי מאפיינים התומכים בדלקת והן בנטילת רקמה. במקרים מורכבים נהוג לשלב הערכה של גסטרואנטרולוגיה, רדיולוגיה, פתולוגיה, כירורגיה ולעיתים אונקולוגיה או ראומטולוגיה. הדיון הרב־תחומי חשוב במיוחד כאשר הבדיקות מצביעות לכיוונים שונים.\n\n## האם תגובה לסטרואידים מוכיחה שמדובר בדלקת?\n\nדלקת לבלב אוטואימונית מגיבה בדרך כלל היטב לקורטיקוסטרואידים, ולעיתים ניתן לראות ירידה בצהבת, שיפור בבדיקות הדם ונסיגה של ההגדלה הלבלבית בתוך שבועות. למרות זאת, “ניסיון טיפולי” בסטרואידים אינו בדיקת סקר ואסור להשתמש בו כתחליף לבירור מספק של ממאירות.\n\nמתן סטרואידים מוקדם מדי עלול לשנות את התמונה הקלינית, להשפיע על ממצאים דלקתיים ולהביא לדחיית המשך הבירור. כמו כן, שיפור חלקי בתסמינים אינו מוכיח שהממצא אינו סרטני. לכן, תגובה לסטרואידים נחשבת רכיב תומך באבחנה רק במטופל שנבדק באופן מסודר, לאחר הערכה של החשד לממאירות ובהשגחה רפואית מתאימה.\n\nלפי [הקונצנזוס הבין־לאומי לטיפול בדלקת לבלב אוטואימונית](https://pubmed.ncbi.nlm.nih.gov/28027896/), סטרואידים הם טיפול מרכזי להשראת הפוגה, אך יש לבסס ככל האפשר את האבחנה לפני תחילת הטיפול. לאחר התחלתו יש להעריך את התגובה באמצעים אובייקטיביים — בדיקות מעבדה והדמיה — ולא על סמך תחושה כללית בלבד.\n\nגם לאחר תגובה טובה נדרש מעקב, משום שהמחלה עלולה לחזור, בעיקר בסוג 1 ובמצבים שבהם מעורבים איברים נוספים. במהלך המעקב יש להתייחס גם לסוכרת, לאי-ספיקה של הלבלב ולסיכונים הנלווים לטיפול ממושך בסטרואידים או בתרופות מדכאות חיסון.\n\n## סיכום\n\nדלקת לבלב אוטואימונית וסרטן הלבלב עלולים להציג תסמינים וממצאי הדמיה דומים מאוד. הדמיון בולט במיוחד כאשר הדלקת יוצרת מסה מוקדית בראש הלבלב וגורמת לצהבת חסימתית. משום כך, אין בדיקת דם, סמן גידולי או מאפיין הדמייתי יחיד שיכולים לקבוע את האבחנה בבטחה בכל מקרה.\n\nהדרך להבדלה מבוססת על צירוף ראיות: צורת המעורבות בהדמיה, מראה צינור הלבלב, IgG4, מעורבות של איברים נוספים, דגימת רקמה ותגובה מתועדת לטיפול במקרים המתאימים. [הקריטריונים הבין־לאומיים לאבחון דלקת לבלב אוטואימונית](https://pubmed.ncbi.nlm.nih.gov/21412117/) נבנו בדיוק על עיקרון זה — אבחנה משולבת ולא הסתמכות על נתון בודד.\n\nהמסר החשוב הוא כפול: יש להכיר במחלה דלקתית הניתנת לטיפול ועלולה לחקות סרטן, אך אין לאבחן אותה בדרך של קיצור תהליכים. בממצא חשוד בלבלב, שלילת ממאירות נשארת שלב מרכזי, וההחלטות צריכות להתקבל על סמך בירור מלא וביקורת רפואית מקצועית.\n\n## מקורות\n\n1. [International Consensus Diagnostic Criteria for Autoimmune Pancreatitis — PubMed/NCBI](https://pubmed.ncbi.nlm.nih.gov/21412117/)\n2. [European Guideline on IgG4-Related Digestive Disease — NIH/NCBI PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC8862498/)\n3. [European Guideline on IgG4-Related Digestive Disease — DOI](https://doi.org/10.1177/2050640620934911)\n4. [International Consensus for the Treatment of Autoimmune Pancreatitis — PubMed/NCBI](https://pubmed.ncbi.nlm.nih.gov/28027896/)\n5. [International Consensus Study on Histopathologic Diagnostic Criteria for Autoimmune Pancreatitis — PubMed/NCBI](https://pubmed.ncbi.nlm.nih.gov/21975436/)\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/דלקת-לבלב-אוטואימונית-מדוע-היא/",
+        "meta_description": "ד״ר גיא רופא: מבוא — התשובה בקצרה: דלקת לבלב אוטואימונית עלולה להיראות כסרטן הלבלב משום ששני המצבים עשויים לגרום לגוש או להגדלה של הלבלב.",
+        "search_target": {
+          "primary_query": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+          "secondary_queries": [
+            "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן ד״ר גיא רופא",
+            "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
+            "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/"
+          },
+          {
+            "title": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+            "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/דלקת-לבלב-אוטואימונית-מדוע-היא/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+              "anchor": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            },
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/",
+              "anchor": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 15,
+            "observed_query": "Dr. Guy Rofe",
+            "observed_at": "2026-11-12T13:00:04.206388"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "dc318b69c1be9f9eda4d26bc2081217531e4df99865d191992e5ea12f01ab80d",
+        "slug": "דלקת-לבלב-אוטואימונית-מדוע-היא",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+          "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
+        "text": "מבוא — התשובה בקצרה: דלקת לבלב אוטואימונית עלולה להיראות כסרטן הלבלב משום ששני המצבים עשויים לגרום לגוש או להגדלה של הלבלב, להיצרות של צינור הלבלב או דרכי המרה, לצהבת ולירידה במשקל.\n\nההבדלה ביניהם אינה מתבססת על בדיקה יחידה, אלא על שילוב של הדמיה, בדיקות דם, מעורבות של איברים נוספים, דגימת רקמה ולעיתים הערכת התגובה לטיפול — ורק לאחר שננקטו צעדים מספקים לשלילת ממאירות.\n\nמאת ד״ר גיא רופא",
+        "link": "https://www.drguyrofe.co.il/דלקת-לבלב-אוטואימונית-מדוע-היא/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
+        "text": "מבוא — התשובה בקצרה: דלקת לבלב אוטואימונית עלולה להיראות כסרטן הלבלב משום ששני המצבים עשויים לגרום לגוש או להגדלה של הלבלב, להיצרות של צינור הלבלב או דרכי המרה, לצהבת ולירידה במשקל.\n\n• ההבדלה ביניהם אינה מתבססת על בדיקה יחידה, אלא על שילוב של הדמיה, בדיקות דם, מעורבות של איברים נוספים, דגימת רקמה ולעיתים הערכת התגובה לטיפול — ורק לאחר שננקטו צעדים מספקים לשלילת ממאירות.\n• דלקת לבלב אוטואימונית היא מחלה דלקתית נדירה יחסית, אך לחשד בה יש משמעות רבה.\n• מצד אחד, אבחון שגוי כסרטן עלול להוביל לניתוח גדול שאינו נחוץ.\n\nמאת ד״ר גיא רופא",
+        "link": "https://www.drguyrofe.co.il/דלקת-לבלב-אוטואימונית-מדוע-היא/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+          "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
+        "html": "<h2>דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>מבוא — התשובה בקצרה: דלקת לבלב אוטואימונית עלולה להיראות כסרטן הלבלב משום ששני המצבים עשויים לגרום לגוש או להגדלה של הלבלב, להיצרות של צינור הלבלב או דרכי המרה, לצהבת ולירידה במשקל.</p><p>ההבדלה ביניהם אינה מתבססת על בדיקה יחידה, אלא על שילוב של הדמיה, בדיקות דם, מעורבות של איברים נוספים, דגימת רקמה ולעיתים הערכת התגובה לטיפול — ורק לאחר שננקטו צעדים מספקים לשלילת ממאירות.</p>",
+        "link": "https://www.drguyrofe.co.il/דלקת-לבלב-אוטואימונית-מדוע-היא/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+          "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+          "alt_text": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "visual_description": "סמל המותג של ד״ר גיא רופא על רקע לבן",
+          "source_type": "owner_provided_default",
+          "source_page_url": "",
+          "source_image_url": "",
+          "creator": "ד״ר גיא רופא",
+          "license_name": "Owner-provided brand asset",
+          "license_url": "",
+          "attribution": "",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+              "sha256": "62335d19149ab4f508f8a3e3ed80ace7de59ddaa635de0ba1c4ba09887dcc2bf",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+              "sha256": "8dccb9e0f553b94225af7fa7b344d113f54835dd8d03a7d318ed9e99a7459b20",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-square.jpg",
+              "sha256": "92a40b82f727359095ea9c0d7ff46e9d19034512c97161131b7663d3cf64a8c4",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-17-topic-81-run-44034157116-attempt-1-portrait.png",
+              "sha256": "c7ba7ded43759154cd461ce0d000b8babeac116ad416104ec9fc111ca2577b58",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 25,
+      "supported_claim_count": 25,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי דלקת לבלב אוטואימונית?",
+          "claim": "במצב זה עלולים להיות מעורבים גם דרכי המרה, בלוטות הרוק והדמעות, הכליות, הריאות, קשריות לימפה ואזורים נוספים.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21975436/"
+          ]
+        },
+        {
+          "section": "מהי דלקת לבלב אוטואימונית?",
+          "claim": "אבחון סוג זה נשען במידה רבה יותר על ממצאים היסטולוגיים בדגימת רקמה.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21975436/"
+          ]
+        },
+        {
+          "section": "מהי דלקת לבלב אוטואימונית?",
+          "claim": "החלוקה לשני הסוגים, וכן המאפיינים הרקמתיים המבדילים ביניהם, מפורטים במחקר הקונצנזוס הבין־לאומי על האבחנה ההיסטולוגית של דלקת לבלב אוטואימונית.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21975436/"
+          ]
+        },
+        {
+          "section": "מדוע המחלה עלולה להיראות כמו סרטן הלבלב?",
+          "claim": "הדמיון נובע מכך ששתי המחלות עשויות ליצור אותה תמונה קלינית ואנטומית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862498/"
+          ]
+        },
+        {
+          "section": "מדוע המחלה עלולה להיראות כמו סרטן הלבלב?",
+          "claim": "כאשר הממצא ממוקם בראש הלבלב, הוא עלול ללחוץ על צינור המרה ולגרום לצהבת חסימתית — תסמין אופייני גם לגידול בראש הלבלב.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862498/"
+          ]
+        },
+        {
+          "section": "מדוע המחלה עלולה להיראות כמו סרטן הלבלב?",
+          "claim": "בשני המצבים עלולים להופיע:",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862498/"
+          ]
+        },
+        {
+          "section": "מדוע המחלה עלולה להיראות כמו סרטן הלבלב?",
+          "claim": "הסמן CA 19-9 עשוי לעלות בסרטן הלבלב, אך גם בחסימת דרכי מרה ובמצבים דלקתיים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862498/"
+          ]
+        },
+        {
+          "section": "אילו ממצאים מסייעים להבדיל בין המצבים?",
+          "claim": "| מעטפת סביב הלבלב | עשויה להופיע הילה היקפית דמוית קופסית | אינה מאפיין טיפוסי |",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        },
+        {
+          "section": "אילו ממצאים מסייעים להבדיל בין המצבים?",
+          "claim": "| IgG4 בדם | עשוי להיות מוגבר, בעיקר בסוג 1 | בדרך כלל אינו מוגבר משמעותית, אך קיימים חריגים |",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        },
+        {
+          "section": "אילו ממצאים מסייעים להבדיל בין המצבים?",
+          "claim": "בהדמיה, הגדלה מפושטת של הלבלב, גבולות חלקים יחסית והילה היקפית עשויים לתמוך בדלקת אוטואימונית.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        },
+        {
+          "section": "אילו ממצאים מסייעים להבדיל בין המצבים?",
+          "claim": "לדוגמה, שילוב של ממצא בלבלב עם הגדלה סימטרית של בלוטות רוק, פגיעה כלייתית אופיינית או דלקת בדרכי המרה עשוי לתמוך במחלה הקשורה ל־IgG4.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        },
+        {
+          "section": "אילו ממצאים מסייעים להבדיל בין המצבים?",
+          "claim": "עקרונות השקלול הרב־מערכתי מופיעים בקריטריונים הבין־לאומיים לאבחון דלקת לבלב אוטואימונית.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע הבירור האבחנתי בפועל?",
+          "claim": "הבירור מתחיל בהיסטוריה רפואית, בדיקה גופנית ובדיקות דם.",
+          "source_urls": [
+            "https://doi.org/10.1177/2050640620934911"
+          ]
+        },
+        {
+          "section": "כיצד מתבצע הבירור האבחנתי בפועל?",
+          "claim": "אבחון היסטולוגי של דלקת לבלב אוטואימונית עשוי לדרוש זיהוי של דלקת לימפופלזמציטרית, דפוסי פיברוזיס, דלקת בכלי דם או נגעים אופייניים לסוג 2.",
+          "source_urls": [
+            "https://doi.org/10.1177/2050640620934911"
+          ]
+        },
+        {
+          "section": "האם תגובה לסטרואידים מוכיחה שמדובר בדלקת?",
+          "claim": "דלקת לבלב אוטואימונית מגיבה בדרך כלל היטב לקורטיקוסטרואידים, ולעיתים ניתן לראות ירידה בצהבת, שיפור בבדיקות הדם ונסיגה של ההגדלה הלבלבית בתוך שבועות.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/28027896/"
+          ]
+        },
+        {
+          "section": "האם תגובה לסטרואידים מוכיחה שמדובר בדלקת?",
+          "claim": "למרות זאת, “ניסיון טיפולי” בסטרואידים אינו בדיקת סקר ואסור להשתמש בו כתחליף לבירור מספק של ממאירות.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/28027896/"
+          ]
+        },
+        {
+          "section": "האם תגובה לסטרואידים מוכיחה שמדובר בדלקת?",
+          "claim": "מתן סטרואידים מוקדם מדי עלול לשנות את התמונה הקלינית, להשפיע על ממצאים דלקתיים ולהביא לדחיית המשך הבירור.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/28027896/"
+          ]
+        },
+        {
+          "section": "האם תגובה לסטרואידים מוכיחה שמדובר בדלקת?",
+          "claim": "לכן, תגובה לסטרואידים נחשבת רכיב תומך באבחנה רק במטופל שנבדק באופן מסודר, לאחר הערכה של החשד לממאירות ובהשגחה רפואית מתאימה.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/28027896/"
+          ]
+        },
+        {
+          "section": "האם תגובה לסטרואידים מוכיחה שמדובר בדלקת?",
+          "claim": "לפי הקונצנזוס הבין־לאומי לטיפול בדלקת לבלב אוטואימונית, סטרואידים הם טיפול מרכזי להשראת הפוגה, אך יש לבסס ככל האפשר את האבחנה לפני תחילת הטיפול.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/28027896/"
+          ]
+        },
+        {
+          "section": "האם תגובה לסטרואידים מוכיחה שמדובר בדלקת?",
+          "claim": "גם לאחר תגובה טובה נדרש מעקב, משום שהמחלה עלולה לחזור, בעיקר בסוג 1 ובמצבים שבהם מעורבים איברים נוספים.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/28027896/"
+          ]
+        },
+        {
+          "section": "האם תגובה לסטרואידים מוכיחה שמדובר בדלקת?",
+          "claim": "במהלך המעקב יש להתייחס גם לסוכרת, לאי-ספיקה של הלבלב ולסיכונים הנלווים לטיפול ממושך בסטרואידים או בתרופות מדכאות חיסון.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/28027896/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "דלקת לבלב אוטואימונית וסרטן הלבלב עלולים להציג תסמינים וממצאי הדמיה דומים מאוד.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "הדרך להבדלה מבוססת על צירוף ראיות: צורת המעורבות בהדמיה, מראה צינור הלבלב, IgG4, מעורבות של איברים נוספים, דגימת רקמה ותגובה מתועדת לטיפול במקרים המתאימים.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "הקריטריונים הבין־לאומיים לאבחון דלקת לבלב אוטואימונית נבנו בדיוק על עיקרון זה — אבחנה משולבת ולא הסתמכות על נתון בודד.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המסר החשוב הוא כפול: יש להכיר במחלה דלקתית הניתנת לטיפול ועלולה לחקות סרטן, אך אין לאבחן אותה בדרך של קיצור תהליכים.",
+          "source_urls": [
+            "https://pubmed.ncbi.nlm.nih.gov/21412117/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21975436/",
+          "host": "pubmed.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8862498/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21412117/",
+          "host": "pubmed.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://doi.org/10.1177/2050640620934911",
+          "host": "doi.org",
+          "year_markers": []
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28027896/",
+          "host": "pubmed.ncbi.nlm.nih.gov",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "dc318b69c1be9f9eda4d26bc2081217531e4df99865d191992e5ea12f01ab80d",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/דלקת-לבלב-אוטואימונית-מדוע-היא/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+          "anchor": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        },
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/",
+          "anchor": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 15,
+        "observed_query": "Dr. Guy Rofe",
+        "observed_at": "2026-11-12T13:00:04.206388"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_2408f3ac5e2ddf155c0e1dcdd029258cb7b6e194a7584fa5bb7d061c6a2a6c10"
+}

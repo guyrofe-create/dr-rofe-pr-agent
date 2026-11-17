@@ -2,6 +2,44 @@
   "version": 1,
   "generated": [
     {
+      "stream": "health_news",
+      "site_key": "DRGUYROFE_CO_IL",
+      "channels": [
+        "facebook",
+        "linkedin",
+        "blogger"
+      ],
+      "week": "week-of-2026-11-15",
+      "local_date": "2026-11-16",
+      "weekday": "monday",
+      "topic_source": "mayo_public_catalog",
+      "is_backfill": true,
+      "recovery_run_date": "2026-11-17",
+      "public_execution_allowed": false,
+      "source_brief": null,
+      "topic": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+      "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
+      "draft_path": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md",
+      "created_at": "2026-11-17T06:50:43.845226+00:00"
+    },
+    {
+      "stream": "evergreen_knowledge",
+      "site_key": "DRGUYROFE_COM",
+      "channels": [],
+      "week": "week-of-2026-11-15",
+      "local_date": "2026-11-17",
+      "weekday": "tuesday",
+      "topic_source": "approved_stream_policy",
+      "is_backfill": false,
+      "recovery_run_date": null,
+      "public_execution_allowed": false,
+      "source_brief": null,
+      "topic": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות",
+      "title": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות | ד״ר גיא רופא",
+      "draft_path": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md",
+      "created_at": "2026-11-17T06:50:43.845226+00:00"
+    },
+    {
       "stream": "canonical_depth",
       "site_key": "GUYROFE_COM",
       "channels": [
@@ -920,41 +958,6 @@
       "source_brief": "opportunity_drafts/health-news-4d9149e585242da7.json",
       "draft_path": "content_drafts/2026-08-23-topic-90-run-32623454483-attempt-1.md",
       "created_at": "2026-08-23T06:38:46.024764+00:00"
-    },
-    {
-      "stream": "health_news",
-      "site_key": "DRGUYROFE_CO_IL",
-      "channels": [
-        "facebook",
-        "linkedin",
-        "pinterest",
-        "google_business"
-      ],
-      "week": "week-of-2026-08-16",
-      "local_date": "2026-08-20",
-      "weekday": "thursday",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-a3dd05c0fbe39b21.json",
-      "draft_path": "content_drafts/2026-08-20-topic-90-run-32340734702-attempt-1.md",
-      "created_at": "2026-08-20T06:43:03.437057+00:00"
-    },
-    {
-      "stream": "canonical_depth",
-      "site_key": "GUYROFE_COM",
-      "channels": [
-        "facebook",
-        "linkedin",
-        "blogger",
-        "instagram",
-        "google_business"
-      ],
-      "week": "week-of-2026-08-16",
-      "local_date": "2026-08-19",
-      "weekday": "wednesday",
-      "public_execution_allowed": false,
-      "source_brief": null,
-      "draft_path": "content_drafts/2026-08-19-topic-05-run-32224474606-attempt-1.md",
-      "created_at": "2026-08-19T06:41:48.321975+00:00"
     }
   ]
 }
