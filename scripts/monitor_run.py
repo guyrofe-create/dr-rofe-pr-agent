@@ -662,6 +662,28 @@ def refresh_serp_account_status() -> dict:
     return REPORT["serp_account"]
 
 
+def reconcile_serp_usage_with_provider(account: dict, today=None) -> bool:
+    """Use billable provider usage as truth; local counts are only a fallback.
+
+    Retries and provider cache hits can make a locally incremented counter
+    diverge materially from the quota that is actually billed. Persisting the
+    provider value prevents both needless blocking and accidental overspend.
+    """
+    if account.get("status") != "ok":
+        return False
+    try:
+        provider_usage = int(account.get("this_month_usage"))
+    except (TypeError, ValueError):
+        return False
+    if provider_usage < 0:
+        return False
+    month = serp_month_key(today)
+    usage = HISTORY.setdefault("serp_usage_by_month", {})
+    changed = int(usage.get(month, 0)) != provider_usage
+    usage[month] = provider_usage
+    return changed
+
+
 def record_serp_request(today=None):
     month = serp_month_key(today)
     usage = HISTORY.setdefault("serp_usage_by_month", {})
@@ -928,10 +950,15 @@ def check_google_rank(today=None):
     queries = plan["queries"]
     devices = plan["devices"]
     engines = plan["engines"]
-    estimated_requests = len(queries) * len(devices) * len(engines) * max(
-        1, (maximum_rank_position + request_depth - 1) // request_depth
-    )
     account = REPORT.get("serp_account") or refresh_serp_account_status()
+    reconcile_serp_usage_with_provider(account, today)
+    # Google may return only ten organic results even when a larger `num` was
+    # requested. Preflight the conservative page count; this changes no query
+    # volume by itself and prevents starting a measurement that cannot finish.
+    requests_per_dimension = max(1, (maximum_rank_position + 9) // 10)
+    estimated_requests = (
+        len(queries) * len(devices) * len(engines) * requests_per_dimension
+    )
     REPORT["serp_plan"] = {
         **plan,
         "monthly_budget": serp_monthly_budget(),
@@ -1649,7 +1676,6 @@ def critical_monitor_failures():
             require_core_serp
             and REPORT.get("rank")
             and not rank_measurement_succeeded()
-            and not expected_unavailable
         ):
             statuses = sorted({
                 str(item.get("status") or "unknown")

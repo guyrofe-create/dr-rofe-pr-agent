@@ -300,21 +300,34 @@ class MonitorGeoTests(unittest.TestCase):
         ):
             self.assertTrue(monitor_run.serp_checks_due("2026-07-02"))
 
-    def test_free_serp_plan_uses_full_brand_matrix_on_every_run(self):
+    def test_free_serp_plan_uses_budget_safe_core_on_routine_run(self):
         plan = monitor_run.serp_run_plan("2026-07-27")
-        self.assertEqual(plan["mode"], "full_brand_matrix")
-        self.assertEqual(len(plan["queries"]), 6)
+        self.assertEqual(plan["mode"], "daily_core")
+        self.assertEqual(len(plan["queries"]), 2)
         self.assertEqual(plan["engines"], ["google"])
+        self.assertEqual(plan["devices"], ["mobile"])
+        self.assertTrue(plan["web_mentions"])
+
+    def test_free_serp_plan_keeps_extended_measurement_bounded(self):
+        plan = monitor_run.serp_run_plan("2026-08-02")
+        self.assertEqual(plan["mode"], "extended_weekly")
+        self.assertEqual(len(plan["queries"]), 6)
+        self.assertEqual(plan["engines"], ["google", "bing"])
         self.assertEqual(plan["devices"], ["mobile", "desktop"])
         self.assertTrue(plan["web_mentions"])
 
-    def test_free_serp_plan_does_not_switch_dimensions_by_weekday(self):
-        plan = monitor_run.serp_run_plan("2026-08-02")
-        self.assertEqual(plan["mode"], "full_brand_matrix")
-        self.assertEqual(len(plan["queries"]), 6)
-        self.assertEqual(plan["engines"], ["google"])
-        self.assertEqual(plan["devices"], ["mobile", "desktop"])
-        self.assertTrue(plan["web_mentions"])
+    def test_provider_usage_reconciles_a_stale_local_counter(self):
+        with patch.object(
+            monitor_run,
+            "HISTORY",
+            {"serp_usage_by_month": {"2026-07": 220}},
+        ):
+            changed = monitor_run.reconcile_serp_usage_with_provider(
+                {"status": "ok", "this_month_usage": 115},
+                "2026-07-27",
+            )
+            self.assertTrue(changed)
+            self.assertEqual(monitor_run.serp_requests_used("2026-07-27"), 115)
 
     def test_serp_budget_stops_before_provider_free_limit(self):
         with patch.object(
