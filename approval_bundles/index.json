@@ -2,32 +2,32 @@
   "version": 7,
   "bundles": [
     {
-      "approval_id": "apr_d7d08bdfd2ce879eb6255575cbe1e72440f60cb5db63c52ce333fdde440e1298",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_d7d08bdfd2ce879eb6255575cbe1e72440f60cb5db63c52ce333fdde440e1298.json",
-      "preview_path": "approval_bundles/apr_d7d08bdfd2ce879eb6255575cbe1e72440f60cb5db63c52ce333fdde440e1298.html",
-      "created_at": "2026-11-17T06:54:36Z",
+      "bundle_path": "approval_bundles/apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e.json",
+      "preview_path": "approval_bundles/apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e.html",
+      "created_at": "2026-11-17T06:58:21Z",
       "required_approval_scopes": [
         "medical_content",
         "public_publication"
       ],
       "image_status": "ready",
-      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=4; unique_candidates=12; downloaded=12; undersized=0; reviewed=12; rejected=12; search=[medical research equipment: commons=20, openverse=1, pexels=0, pixabay=0 | clinical research laboratory: commons=5, openverse=1, pexels=0, pixabay=0 | medical education equipment: commons=15, openverse=0, pexels=0, pixabay=0 | laboratory microscope: commons=26, openverse=18, pexels=0, pixabay=0]; review_notes=[מופיעות בתמונה שתי נשים מזוהות, והיא אינה קשורה לרווחי סמך במחקרים רפואיים. | בתמונה מופיעים אנשים מזוהים והיא אינה ממחישה רווח סמך או ניתוח סטטיסטי. | מיקרוסקופ מעבדתי אינו ממחיש ישירות רווחי סמך או אי־ודאות סטטיסטית. | מיקרוסקופ מעבדתי אינו ממחיש ישירות רווחי סמך או אי־ודאות סטטיסטית. | התמונה מציגה ציוד מעבדה ומיקרוסקופים, ואינה ממחישה ישירות רווח סמך או אי־ודאות סטטיסטית.]"
+      "image_selection_error": null
     },
     {
-      "approval_id": "apr_2408f3ac5e2ddf155c0e1dcdd029258cb7b6e194a7584fa5bb7d061c6a2a6c10",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
       "status": "awaiting_explicit_approval",
       "draft_path": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md",
-      "bundle_path": "approval_bundles/apr_2408f3ac5e2ddf155c0e1dcdd029258cb7b6e194a7584fa5bb7d061c6a2a6c10.json",
-      "preview_path": "approval_bundles/apr_2408f3ac5e2ddf155c0e1dcdd029258cb7b6e194a7584fa5bb7d061c6a2a6c10.html",
-      "created_at": "2026-11-17T06:53:39Z",
+      "bundle_path": "approval_bundles/apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498.json",
+      "preview_path": "approval_bundles/apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498.html",
+      "created_at": "2026-11-17T06:58:20Z",
       "required_approval_scopes": [
         "medical_content",
         "public_publication"
       ],
       "image_status": "ready",
-      "image_selection_error": "PhotoSelectionError: No suitably licensed, topic-relevant real photograph was found. The draft was preserved and queued for a replacement image instead of using a generic or AI image. Diagnostics: queries=7; unique_candidates=5; downloaded=5; undersized=0; reviewed=5; rejected=5; search=[pancreas anatomical model: commons=0, openverse=0, pexels=0, pixabay=0 | pancreas histology slide: commons=1, openverse=0, pexels=0, pixabay=0 | pancreas ct scan: commons=3, openverse=0, pexels=0, pixabay=0 | pancreas mri scan: commons=1, openverse=0, pexels=0, pixabay=0 | autoimmune pancreatitis microscopy: commons=0, openverse=0, pexels=0, pixabay=0 | pancreas CT scan: commons=3, openverse=0, pexels=0, pixabay=0 | pancreas MRI scan: commons=1, openverse=0, pexels=0, pixabay=0]; review_notes=[מיקרוגרף של רקמת לבלב שאינו מציג בבירור דלקת לבלב אוטואימונית או סרטן. | הדמיית CT ממוקדת בכליות ואינה ממחישה בבירור את הלבלב או דלקת לבלב אוטואימונית. | הדמיות CT של הבטן עם איברים מודגשים, ללא ממצא נראה או סימון של הלבלב. | בדיקת ה־CT מציגה ממצאים מרובים בכבד ואינה ממחישה בבירור דלקת לבלב אוטואימונית או סרטן הלבלב. | ההדמיה מציגה אגנזיה של הלבלב ולא דלקת לבלב אוטואימונית או אבחנה מבדלת מסרטן.]"
+      "image_selection_error": null
     },
     {
       "approval_id": "apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913",
