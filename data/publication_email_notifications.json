@@ -1703,6 +1703,17 @@
         "https://guyrofe.blogspot.com/2026/11/blog-post_17.html",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpISHJuYkhmSjFranpSa2stWWVEZ1d3"
       ]
+    },
+    "expired:apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3:2026-08-02T16:13:56Z": {
+      "recorded_at": "2026-11-17T21:16:49.553595+00:00",
+      "approval_id": "apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
+      "published_approval_id": "apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3",
+      "campaign_result": "content_drafts/campaigns/2026-08-02-topic-90-run-30739661340-attempt-1.json",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/"
+      ]
     }
   }
 }
