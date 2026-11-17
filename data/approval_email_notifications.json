@@ -513,6 +513,18 @@
       "recipient": "guyrofe@gmail.com",
       "approval_url": "https://dr-rofe-reputation-center.guyrofe.chatgpt.site?approval_id=apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913",
       "bundle_path": "approval_bundles/apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913.json"
+    },
+    "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498": {
+      "sent_at": "2026-11-17T16:52:51.578864+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_url": "https://dr-rofe-reputation-center.guyrofe.chatgpt.site?approval_id=apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "bundle_path": "approval_bundles/apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498.json"
+    },
+    "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e": {
+      "sent_at": "2026-11-17T16:52:51.578864+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_url": "https://dr-rofe-reputation-center.guyrofe.chatgpt.site?approval_id=apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "bundle_path": "approval_bundles/apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e.json"
     }
   }
 }
