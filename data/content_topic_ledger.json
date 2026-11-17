@@ -3378,7 +3378,7 @@
       "topic": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
       "normalized_topic": "דלקת לבלב אוטואימונית מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
       "first_seen_at": "2026-11-17T06:50:43.845226+00:00",
-      "last_seen_at": "2026-11-17T06:50:43.845226+00:00",
+      "last_seen_at": "2026-11-17T07:16:50.046858+00:00",
       "titles": [
         "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא"
       ],
@@ -3398,6 +3398,37 @@
           "source": "autonomous_content",
           "stream": "health_news",
           "draft_path": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-17T06:50:43.845226+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-17T06:58:20Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md",
+          "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-17T07:16:50.046858+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md",
+          "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/11/blog-post_16.html",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpRVVl1UURWV2RfejlSWkpBU2tRLUdn",
+            "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+            "https://www.facebook.com/122215426436942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7528355406209941505/"
+          ]
         }
       ]
     },
@@ -3406,7 +3437,7 @@
       "topic": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות",
       "normalized_topic": "רווח סמך במחקרים רפואיים כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות",
       "first_seen_at": "2026-11-17T06:50:43.845226+00:00",
-      "last_seen_at": "2026-11-17T06:50:43.845226+00:00",
+      "last_seen_at": "2026-11-17T06:58:21Z",
       "titles": [
         "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות | ד״ר גיא רופא"
       ],
@@ -3426,6 +3457,21 @@
           "source": "autonomous_content",
           "stream": "evergreen_knowledge",
           "draft_path": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-17T06:50:43.845226+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-17T06:58:21Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md",
+          "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e"
         }
       ]
     }

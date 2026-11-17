@@ -3998,6 +3998,119 @@
       "status": "reconciliation_required",
       "started_at": "2026-11-15T19:11:24Z",
       "updated_at": "2026-11-15T19:11:41Z"
+    },
+    "pub_bf468aa7486c628cada7a16f336636599e212d9de791ba4281c73d9aef2daa98": {
+      "version": 7,
+      "idempotency_key": "pub_bf468aa7486c628cada7a16f336636599e212d9de791ba4281c73d9aef2daa98",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "target_id": "canonical_wordpress__media__hero",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "ef7560f03ef633f2e8edb4cfb049b89cd9b67d02b37d4699d2caad2f904cdb1b",
+      "status": "published",
+      "started_at": "2026-11-17T07:16:02Z",
+      "published_at": "2026-11-17T07:16:14Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-17-topic-81-run-44034157116-attempt-1-hero",
+        "sha256": "9b25855eb8ce4caca6226bc8357596595b91f617688042322b3e95bd64518691",
+        "metadata_verified": true
+      }
+    },
+    "pub_e0f66d64468b42ebd529d562c3f17ca5327bc12181a19507fe73f732a67ce6c1": {
+      "version": 7,
+      "idempotency_key": "pub_e0f66d64468b42ebd529d562c3f17ca5327bc12181a19507fe73f732a67ce6c1",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "29df5e62369187c57534ddf6862629e4f36a87b22f70ee01e7df10e28d440830",
+      "status": "published",
+      "started_at": "2026-11-17T07:16:14Z",
+      "published_at": "2026-11-17T07:16:20Z",
+      "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+      "provider_receipt": null
+    },
+    "pub_7630747de51c9e95123df9918bb7065565532b52b9e8d69889cbfd48fd377060": {
+      "version": 7,
+      "idempotency_key": "pub_7630747de51c9e95123df9918bb7065565532b52b9e8d69889cbfd48fd377060",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "target_id": "facebook_page__media__landscape",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "ab568d36460e177c12544570da93ddfdd28152d30ff012b039ad78bb759f702a",
+      "status": "published",
+      "started_at": "2026-11-17T07:16:22Z",
+      "published_at": "2026-11-17T07:16:29Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-17-topic-81-run-44034157116-attempt-1-landscape.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-17-topic-81-run-44034157116-attempt-1-landscape",
+        "sha256": "ace645a9f0a5555ca32cf15dc439b4f68051a4d06c15fadab268de7c6500aeb1",
+        "metadata_verified": true
+      }
+    },
+    "pub_5bca46972e5bcef231f25b165f41e2e2c1fe6ec71057a4f2b72872a3edb7057c": {
+      "version": 7,
+      "idempotency_key": "pub_5bca46972e5bcef231f25b165f41e2e2c1fe6ec71057a4f2b72872a3edb7057c",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "aae14e9b30567aaba0d71a4814620852ebec76861d5d0c7c95f9c05e6e01caaa",
+      "status": "published",
+      "started_at": "2026-11-17T07:16:29Z",
+      "published_at": "2026-11-17T07:16:36Z",
+      "url": "https://www.facebook.com/122215426436942441",
+      "provider_receipt": null
+    },
+    "pub_5415cbe2841e7b3bf64b3157c3aac2febdae193311079a549ef1c268c9d410f3": {
+      "version": 7,
+      "idempotency_key": "pub_5415cbe2841e7b3bf64b3157c3aac2febdae193311079a549ef1c268c9d410f3",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "236a5c9d26ac8fe55cc57893f67abec093f5da7643b7876ef7acbdb52196b8ba",
+      "status": "published",
+      "started_at": "2026-11-17T07:16:36Z",
+      "published_at": "2026-11-17T07:16:39Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7528355406209941505/",
+      "provider_receipt": null
+    },
+    "pub_afa1eb20e0ecbb3d6effc551db1e88678475dadec23c261effb1bc0487c258be": {
+      "version": 7,
+      "idempotency_key": "pub_afa1eb20e0ecbb3d6effc551db1e88678475dadec23c261effb1bc0487c258be",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "request_sha256": "ff2cc9d4427809928c526626ed588ebeab97bbe12d09d7bd8718af3c77cd6ebb",
+      "status": "published",
+      "started_at": "2026-11-17T07:16:39Z",
+      "published_at": "2026-11-17T07:16:40Z",
+      "url": "https://guyrofe.blogspot.com/2026/11/blog-post_16.html",
+      "provider_receipt": null
+    },
+    "pub_14c70c1985bdd9c2735f6a7c918e69ca41859aff0089390c6e7f21b733fbaaf2": {
+      "version": 7,
+      "idempotency_key": "pub_14c70c1985bdd9c2735f6a7c918e69ca41859aff0089390c6e7f21b733fbaaf2",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "a51cbd617fa1a958dbd926abcaef293af8d8ab0b0f50241aa539478b92438ee6",
+      "status": "published",
+      "started_at": "2026-11-17T07:16:40Z",
+      "published_at": "2026-11-17T07:16:50Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpRVVl1UURWV2RfejlSWkpBU2tRLUdn",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/8215031343113370791",
+        "state": "LIVE",
+        "createTime": "2026-11-17T07:16:43.823062140Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpRVVl1UURWV2RfejlSWkpBU2tRLUdn",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }

@@ -1,6 +1,125 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md",
+      "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-11-17T07:16:50.046858+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+          "detail": "idempotency_key=pub_e0f66d64468b42ebd529d562c3f17ca5327bc12181a19507fe73f732a67ce6c1"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-17-topic-81-run-44034157116-attempt-1-hero.png",
+          "detail": "openai_generated_text_free_visual"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122215426436942441",
+          "detail": "idempotency_key=pub_5bca46972e5bcef231f25b165f41e2e2c1fe6ec71057a4f2b72872a3edb7057c"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7528355406209941505/",
+          "detail": "idempotency_key=pub_5415cbe2841e7b3bf64b3157c3aac2febdae193311079a549ef1c268c9d410f3"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "target_id": "blogger_blog",
+          "url": "https://guyrofe.blogspot.com/2026/11/blog-post_16.html",
+          "detail": "idempotency_key=pub_afa1eb20e0ecbb3d6effc551db1e88678475dadec23c261effb1bc0487c258be"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpRVVl1UURWV2RfejlSWkpBU2tRLUdn",
+          "detail": "idempotency_key=pub_14c70c1985bdd9c2735f6a7c918e69ca41859aff0089390c6e7f21b733fbaaf2"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "search_target": {
+        "primary_query": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+        "secondary_queries": [
+          "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן ד״ר גיא רופא",
+          "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-11-15-topic-80-run-43719198788-attempt-2.md",
       "title": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה | ד״ר גיא רופא",
       "status": "completed_with_errors",
@@ -5202,110 +5321,6 @@
       "approval_id": "apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3",
       "search_target": {},
       "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
-      "title": "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
-      "status": "completed_with_errors",
-      "published_at": "2026-09-17T00:41:57.677556+00:00",
-      "destinations": [
-        {
-          "name": "guyrofe.com",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
-          "detail": "idempotency_key=pub_30c7972b1f42507e280e12a371277010c106451c061955c8cab45a613e0947fb"
-        },
-        {
-          "name": "Canonical SEO verification",
-          "status": "seo_warning",
-          "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
-          "detail": "failed checks: brand_once_in_title, no_internal_run_slug"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://guyrofe.com/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1-approved.webp",
-          "detail": "owner_manual_upload"
-        },
-        {
-          "name": "drguyrofe.co.il",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "published",
-          "target_id": "facebook_page",
-          "url": "https://www.facebook.com/122197372376942441",
-          "detail": "idempotency_key=pub_81383e098042fd5a92683b856839bf1a019c290d1eff25dedb8ee91b63d7332b"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "published",
-          "target_id": "linkedin_member",
-          "url": "https://www.linkedin.com/feed/update/urn:li:share:7489718427276972032/",
-          "detail": "idempotency_key=pub_274a2028a82b0c341a2b579b549f8b5b294cfaaf6228b272395bf167169ce4d0"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_configured"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "failed",
-          "target_id": "google_business_profile",
-          "detail": "HTTPError: 500 Server Error: Internal Server Error for url: https://mybusiness.googleapis.com/v4/accounts/110345401117888665629/locations/14140768355740435987/localPosts"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_5922f6d36128aa0e883963fc6755e20dffdbea6525cfb963389c898c7f8b6ff3",
-      "search_target": {},
-      "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

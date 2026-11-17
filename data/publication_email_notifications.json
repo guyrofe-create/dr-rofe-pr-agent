@@ -1662,6 +1662,20 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7487906037862289409/",
         "https://guyrofe.blogspot.com/2026/07/blog-post_28.html"
       ]
+    },
+    "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498:e02208445e3d353e69b4a749b8061fef96233af5e86b1ae913d9db903329ab1d": {
+      "sent_at": "2026-11-17T07:16:51.207118+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_0765a1bfa30606b73966af9544241a8aa838232c3e782e921388616a56142498",
+      "state": "success",
+      "subject": "אישור פרסום: דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+        "https://www.facebook.com/122215426436942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7528355406209941505/",
+        "https://guyrofe.blogspot.com/2026/11/blog-post_16.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpRVVl1UURWV2RfejlSWkpBU2tRLUdn"
+      ]
     }
   }
 }
