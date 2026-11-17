@@ -611,7 +611,7 @@ def main() -> None:
             # Prefer a licensed topic photograph, then use one of the
             # curated text-free defaults. The recorded search error keeps the
             # substitution transparent in the review bundle.
-            image = social_image.default_branded_image()
+            image = social_image.default_reputation_image(title)
         except Exception as exc:
             raise RuntimeError(
                 "The licensed-photo search failed without creating an AI image: "
@@ -619,7 +619,7 @@ def main() -> None:
             ) from exc
     elif not image_uri:
         title, _content = load_draft(resolve_draft_path(args.draft_path))
-        image = social_image.default_branded_image()
+        image = social_image.default_reputation_image(title)
     if image is not None:
         image_uri, image_alt_text, image_sha256, image_metadata = save_image_package(
             image,
