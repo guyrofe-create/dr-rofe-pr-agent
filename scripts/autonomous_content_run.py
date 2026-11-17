@@ -21,6 +21,7 @@ try:
         record_generation,
         week_key,
     )
+    from scripts.reputation_core.topic_ledger import record_topic_event
 except ModuleNotFoundError:
     from daily_run import (
         content_is_frozen,
@@ -35,6 +36,7 @@ except ModuleNotFoundError:
         record_generation,
         week_key,
     )
+    from reputation_core.topic_ledger import record_topic_event
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,6 +46,7 @@ DEFAULT_NEWS_BRIEFS = ROOT / "opportunity_drafts"
 DEFAULT_MEDIA_BRIEFS = ROOT / "opportunity_drafts" / "media"
 DEFAULT_APPROVAL_INDEX = ROOT / "approval_bundles" / "index.json"
 DEFAULT_ASSET_REGISTRY = ROOT / "data" / "asset_registry.json"
+DEFAULT_TOPIC_LEDGER = ROOT / "data" / "content_topic_ledger.json"
 
 SITE_HOSTS = {
     "GUYROFE_COM": "guyrofe.com",
@@ -242,6 +245,7 @@ def generate_job(
     max_news_brief_age_hours: int = 36,
     media_brief_dir: Path = DEFAULT_MEDIA_BRIEFS,
     topic_override: str | None = None,
+    topic_ledger_path: Path | None = None,
 ) -> dict | None:
     metadata = {
         "content_stream": job["stream"],
@@ -255,6 +259,12 @@ def generate_job(
         topic_index, topic = topic_for_generation(
             now, stream=job["stream"], topic_override=topic_override
         )
+        if topic_ledger_path:
+            record_topic_event(
+                topic_ledger_path, topic=topic, status="generation_started",
+                occurred_at=now.isoformat(), stream=job["stream"],
+                source="autonomous_content",
+            )
         title, content = generate_article(topic)
     elif job["stream"] == "health_news":
         topic_source = job.get("topic_source", "fresh_news_radar")
@@ -262,6 +272,12 @@ def generate_job(
             topic_index, topic = topic_for_generation(
                 now, stream=job["stream"]
             )
+            if topic_ledger_path:
+                record_topic_event(
+                    topic_ledger_path, topic=topic, status="generation_started",
+                    occurred_at=now.isoformat(), stream=job["stream"],
+                    source="autonomous_content",
+                )
             context = (
                 "\nכללים מיוחדים להסבר רפואי לציבור:\n"
                 "- Mayo Clinic Diseases & Conditions משמש רק לאיתור רעיון.\n"
@@ -292,6 +308,12 @@ def generate_job(
             news_url = brief["analyzed_news_url"]
             topic_index = 90
             topic = brief["working_title"]
+            if topic_ledger_path:
+                record_topic_event(
+                    topic_ledger_path, topic=topic, status="generation_started",
+                    occurred_at=now.isoformat(), stream=job["stream"],
+                    source="autonomous_content",
+                )
             context = (
             "\nכללים מיוחדים לניתוח חדשות רפואיות:\n"
             f"- יעד הפרסום הראשי של הטיוטה: {brief['destination_url']}\n"
@@ -317,6 +339,12 @@ def generate_job(
         topic_index, topic = topic_for_generation(
             now, stream=job["stream"]
         )
+        if topic_ledger_path:
+            record_topic_event(
+                topic_ledger_path, topic=topic, status="generation_started",
+                occurred_at=now.isoformat(), stream=job["stream"],
+                source="autonomous_content",
+            )
         context = (
             "\nכללים מיוחדים למרכז הידע drguyrofe.com:\n"
             "- כתוב מדריך רפואי ירוק-עד ומעמיק, לא תגובה לחדשות.\n"
@@ -332,6 +360,12 @@ def generate_job(
         _brief_path, brief = selected
         topic_index = 95
         topic = brief["working_title"]
+        if topic_ledger_path:
+            record_topic_event(
+                topic_ledger_path, topic=topic, status="generation_started",
+                occurred_at=now.isoformat(), stream=job["stream"],
+                source="autonomous_content",
+            )
         title = brief["working_title"]
         content = str(brief["transcript_markdown"]).strip()
         if not content.startswith("# "):
@@ -370,10 +404,22 @@ def generate_job(
         now=now,
         metadata=metadata,
     )
+    if topic_ledger_path:
+        record_topic_event(
+            topic_ledger_path,
+            topic=topic,
+            title=title,
+            stream=job["stream"],
+            draft_path=path.as_posix(),
+            status="draft_ready",
+            occurred_at=now.isoformat(),
+            source="autonomous_content",
+        )
     return {
         **job,
         **metadata,
         "draft_path": path.as_posix(),
+        "topic": topic,
         "title": title,
         "status": "draft_ready_for_bundle",
     }
@@ -389,6 +435,7 @@ def run(
     now: datetime | None = None,
     force_stream: str | None = None,
     topic_override: str | None = None,
+    topic_ledger_path: Path = DEFAULT_TOPIC_LEDGER,
 ) -> dict:
     now = now or datetime.now(timezone.utc)
     cadence = load_cadence(cadence_path)
@@ -400,6 +447,7 @@ def run(
         "jobs": [],
         "skipped": [],
         "errors": [],
+        "recoveries": [],
     }
     if content_is_frozen():
         manifest["skipped"].append({
@@ -472,7 +520,54 @@ def run(
                     if job["stream"] == "canonical_depth"
                     else None
                 ),
+                topic_ledger_path=topic_ledger_path,
             )
+        except Exception as first_exc:
+            # Keep the medical quality gate strict, but do not let one model
+            # miss erase the whole publication slot. One bounded retry uses a
+            # different durable topic; news falls back to the approved public
+            # catalog rather than repeating the failed brief.
+            if force_stream or job["stream"] == "media_archive":
+                manifest["errors"].append({
+                    **job,
+                    "error_type": type(first_exc).__name__,
+                    "error": str(first_exc)[:500],
+                })
+                continue
+            fallback_job = {**job, "generation_attempt": 2}
+            if (
+                job["stream"] == "health_news"
+                and job.get("topic_source") != "mayo_public_catalog"
+            ):
+                fallback_job["topic_source"] = "mayo_public_catalog"
+            try:
+                result = generate_job(
+                    fallback_job,
+                    now,
+                    news_brief_dir,
+                    state,
+                    cadence["quality_policy"]["max_news_brief_age_hours"],
+                    media_brief_dir,
+                    topic_ledger_path=topic_ledger_path,
+                )
+                manifest["recoveries"].append({
+                    **job,
+                    "failed_error_type": type(first_exc).__name__,
+                    "failed_error": str(first_exc)[:500],
+                    "fallback_topic_source": fallback_job.get("topic_source"),
+                    "fallback_topic": (result or {}).get("topic"),
+                    "status": "recovered_with_distinct_topic",
+                })
+            except Exception as fallback_exc:
+                manifest["errors"].append({
+                    **job,
+                    "error_type": type(fallback_exc).__name__,
+                    "error": str(fallback_exc)[:500],
+                    "first_error_type": type(first_exc).__name__,
+                    "first_error": str(first_exc)[:500],
+                })
+                continue
+        try:
             if result is None:
                 manifest["skipped"].append({
                     **job,
@@ -482,7 +577,12 @@ def run(
             manifest["jobs"].append(result)
             state = record_generation(
                 state,
-                {**job, "source_brief": result.get("source_brief")},
+                {
+                    **job,
+                    "source_brief": result.get("source_brief"),
+                    "topic": result.get("topic"),
+                    "title": result.get("title"),
+                },
                 result["draft_path"],
                 now.isoformat(),
             )
@@ -518,6 +618,10 @@ def main() -> None:
         help="Create one approval-gated draft even when today's cadence is complete.",
     )
     parser.add_argument(
+        "--topic-ledger", type=Path, default=DEFAULT_TOPIC_LEDGER,
+        help="Durable unbounded topic lifecycle ledger.",
+    )
+    parser.add_argument(
         "--force-topic",
         help="Use one exact, scope-checked, non-duplicate women's health topic.",
     )
@@ -530,6 +634,7 @@ def main() -> None:
         manifest_path=args.manifest,
         force_stream=args.force_stream,
         topic_override=args.force_topic,
+        topic_ledger_path=args.topic_ledger,
     )
     print(json.dumps({
         "drafts_ready": len(manifest["jobs"]),

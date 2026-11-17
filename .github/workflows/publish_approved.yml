@@ -35,7 +35,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: approved-campaign-publishing
+  group: reputation-publication-state
   cancel-in-progress: false
 
 jobs:
@@ -44,6 +44,9 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
 
       - uses: actions/setup-python@v7
         with:
@@ -320,10 +323,12 @@ jobs:
           (steps.approval.outputs.draft_path != '' || github.event_name == 'schedule') &&
           !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
         run: |
+          python scripts/reputation_core/topic_ledger.py
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
           git add content_drafts/campaigns/ publication_receipts/
           git add data/publication_email_notifications.json 2>/dev/null || true
+          git add data/content_topic_ledger.json
           git diff --cached --quiet || git commit -m "Record approved campaign ${{ github.run_id }}"
           git pull --rebase
           git push

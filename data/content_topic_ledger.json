@@ -1,0 +1,3377 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "topic_id": "topic_f8dadbcaa5f9b529a39fb8e9",
+      "topic": "איך נראה תהליך קבלת החלטות משותף עם מטופלת לפני ניתוח גינקולוגי",
+      "normalized_topic": "איך נראה תהליך קבלת החלטות משותף עם מטופלת לפני ניתוח גינקולוגי",
+      "first_seen_at": "2026-07-25T13:44:32.178447+00:00",
+      "last_seen_at": "2026-07-25T22:39:30.894264+00:00",
+      "titles": [
+        "לפני ניתוח גינקולוגי: כך נראה תהליך קבלת החלטות משותף עם המטופלת"
+      ],
+      "streams": [],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-07-25T13:44:32.178447+00:00",
+          "source": "draft",
+          "draft_path": "content_drafts/2026-07-25-topic-11.md"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-07-25T22:39:30.894264+00:00",
+          "source": "campaign",
+          "draft_path": "content_drafts/2026-07-25-topic-11.md",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/dr-rofe-2026-07-25-topic-11-2/",
+            "https://www.drguyrofe.co.il/dr-rofe-2026-07-25-topic-11-summary/",
+            "https://www.facebook.com/641068765766349_122196195572942441"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_288b94fbec8cfc3e6538095e",
+      "topic": "כאבי מחזור קשים - כמה כאב זה נורמלי?",
+      "normalized_topic": "כאבי מחזור קשים כמה כאב זה נורמלי",
+      "first_seen_at": "2026-07-27T08:43:04.442155+00:00",
+      "last_seen_at": "2026-09-27T17:51:31.133619+00:00",
+      "titles": [
+        "כאבי מחזור קשים: כמה כאב נחשב נורמלי?",
+        "כאבי מחזור קשים – כמה כאב זה נורמלי? | ד״ר גיא רופא",
+        "כאבי מחזור קשים — כמה כאב נחשב נורמלי? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth",
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-07-27T08:43:04.442155+00:00",
+          "source": "draft",
+          "draft_path": "content_drafts/2026-07-27-topic-05.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-02T08:23:03.025313+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-04T12:48:43Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
+          "approval_id": "apr_3a2334eaa8c9c1574e40e88bf9b76eadcb360857ab5dc9b328d2b7e7e74ab0c8"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-19T06:41:48.321975+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-19-topic-05-run-32224474606-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-19T06:45:46Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-19-topic-05-run-32224474606-attempt-1.md",
+          "approval_id": "apr_17f3c6ff7d25df56c1834dd26ba54a700d3290a1968cd421ca51aad42c62321a"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-19T10:38:17.812606+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-19-topic-05-run-32224474606-attempt-1.md",
+          "approval_id": "apr_17f3c6ff7d25df56c1834dd26ba54a700d3290a1968cd421ca51aad42c62321a",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_19.html",
+            "https://guyrofe.com/guy-rofe-pilot-2026-08-19-topic-05-run-32224474606-attempt-1/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENrW8qTD5_mVugE",
+            "https://www.facebook.com/122200141526942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7495791208737284096/"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-08T10:39:40.051434+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-08-topic-05-run-34216586885-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-08T10:41:51Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-08-topic-05-run-34216586885-attempt-1.md",
+          "approval_id": "apr_a73be17c50af3df42b14a2d744f1dcabc590305e9dbedf2e737c81046d358bf9"
+        },
+        {
+          "status": "publication_attempted",
+          "occurred_at": "2026-09-08T15:17:06.957790+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-08-topic-05-run-34216586885-attempt-1.md",
+          "approval_id": "apr_a73be17c50af3df42b14a2d744f1dcabc590305e9dbedf2e737c81046d358bf9",
+          "campaign_status": "failed"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-17T00:41:57.677556+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
+          "approval_id": "apr_5922f6d36128aa0e883963fc6755e20dffdbea6525cfb963389c898c7f8b6ff3",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+            "https://www.facebook.com/122197372376942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7489718427276972032/"
+          ]
+        },
+        {
+          "status": "publication_attempted",
+          "occurred_at": "2026-09-22T05:33:46.863506+00:00",
+          "source": "campaign",
+          "draft_path": "content_drafts/2026-07-27-topic-05.md",
+          "approval_id": "apr_638c1776dc48e99f9b8f6fbcf2561186fedcbfdee94226cc8dc01184d7e40e02",
+          "campaign_status": "failed"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-27T11:28:36.027031+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-27-topic-05-run-36315829970-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-27T11:30:12Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-27-topic-05-run-36315829970-attempt-1.md",
+          "approval_id": "apr_1d149dad928b5446a6872c0ce830d9623ad2d2c98722fa98532743450efe2b18"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-27T17:51:31.133619+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-27-topic-05-run-36315829970-attempt-1.md",
+          "approval_id": "apr_1d149dad928b5446a6872c0ce830d9623ad2d2c98722fa98532743450efe2b18",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%9b%d7%90%d7%91%d7%99-%d7%9e%d7%97%d7%96%d7%95%d7%a8-%d7%a7%d7%a9%d7%99%d7%9d-%d7%9b%d7%9e%d7%94-%d7%9b%d7%90%d7%91-%d7%a0%d7%97%d7%a9%d7%91-%d7%a0%d7%95%d7%a8%d7%9e%d7%9c%d7%99/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJDntMGli6OzmgE",
+            "https://www.facebook.com/122206348448942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7510033381611712512/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_469aded4da06a13d8c4e57f7",
+      "topic": "גיל המעבר - מידע כללי מבוסס מקורות",
+      "normalized_topic": "גיל המעבר מידע כללי מבוסס מקורות",
+      "first_seen_at": "2026-07-27T09:46:38.904090+00:00",
+      "last_seen_at": "2026-09-17T06:56:55.748278+00:00",
+      "titles": [
+        "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
+        "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות ראיות | ד״ר גיא רופא",
+        "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול מבוססות מקורות | ד״ר גיא רופא",
+        "גיל המעבר: תסמינים, אבחון ואפשרויות טיפול | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth",
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-07-27T09:46:38.904090+00:00",
+          "source": "draft",
+          "draft_path": "content_drafts/2026-07-27-topic-06-run-30255219272-attempt-1.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-09T06:55:02.048008+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-09-topic-06-run-31299936904-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-09T06:59:03Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-09-topic-06-run-31299936904-attempt-1.md",
+          "approval_id": "apr_26e2a8b98b3a64f5dfacc4ed18e51db85ce65b807d40f164f988967d3cead8f1"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-09T07:58:55.859794+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-09-topic-06-run-31299936904-attempt-1.md",
+          "approval_id": "apr_26e2a8b98b3a64f5dfacc4ed18e51db85ce65b807d40f164f988967d3cead8f1",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://guyrofe.com/guy-rofe-pilot-2026-08-09-topic-06-run-31299936904-attempt-1/",
+            "https://www.facebook.com/122198476160942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7492127258321510400/"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-26T06:46:54.595853+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-26-topic-06-run-32939634105-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-26T06:51:09Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-26-topic-06-run-32939634105-attempt-1.md",
+          "approval_id": "apr_c0a412ba1d9fa5e46d12790aa705dff64ed351355dbd7161527c10d9dfe7ac36"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-26T09:50:16.261606+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-26-topic-06-run-32939634105-attempt-1.md",
+          "approval_id": "apr_5631de005f6d1a50472454f5dfb9c468198c8a80f0a64e62db9625f0703fcb57",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_26.html",
+            "https://guyrofe.com/guy-rofe-pilot-2026-08-26-topic-06-run-32939634105-attempt-1/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENLVmMyejIT1ZA",
+            "https://www.facebook.com/122201224730942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7498315857849384962/"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-15T11:10:18.401186+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-15-topic-06-run-34961774953-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-15T11:20:35Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-15-topic-06-run-34961774953-attempt-1.md",
+          "approval_id": "apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-15T17:17:38.332904+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-15-topic-06-run-34961774953-attempt-1.md",
+          "approval_id": "apr_1071e9f7bdf749b2927e23a6acfce61e2f5e13055d70008285d8312757127327",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/גיל-המעבר-תסמינים-אבחון-ואפשרויות-טיפול"
+          ]
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-17T06:56:55.748278+00:00",
+          "source": "campaign",
+          "draft_path": "content_drafts/2026-07-27-topic-06-run-30255219272-attempt-1.md",
+          "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/09/blog-post_954.html",
+            "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+            "https://www.facebook.com/122204463668942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7506244778762805248/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_6e57f14060b8b4c447914597",
+      "topic": "מיומות ברחם - אפשרויות בירור וטיפול באופן כללי",
+      "normalized_topic": "מיומות ברחם אפשרויות בירור וטיפול באופן כללי",
+      "first_seen_at": "2026-07-28T09:37:26.662006+00:00",
+      "last_seen_at": "2026-09-22T15:03:49.823149+00:00",
+      "titles": [
+        "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth",
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-07-28T09:37:26.662006+00:00",
+          "source": "draft",
+          "draft_path": "content_drafts/2026-07-28-topic-03-run-30347171093-attempt-1.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-16T06:37:57.161838+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-16-topic-03-run-31931866214-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-16T06:45:40Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-16-topic-03-run-31931866214-attempt-1.md",
+          "approval_id": "apr_f73dc7f63a1cf52239765245464d64e8d04b3ed19aaf95506321eb9c1213dd49"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-02T10:42:44.197936+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-02-topic-03-run-33620841392-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-02T10:49:48Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-02-topic-03-run-33620841392-attempt-1.md",
+          "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-02T17:21:16.248967+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-02-topic-03-run-33620841392-attempt-1.md",
+          "approval_id": "apr_39f96ce4cbb2a992983a138e070be54585885ea8f5329d587afaeb9b489c43ce",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/09/blog-post.html",
+            "https://guyrofe.com/%d7%9e%d7%99%d7%95%d7%9e%d7%95%d7%aa-%d7%91%d7%a8%d7%97%d7%9d-%d7%90%d7%a4%d7%a9%d7%a8%d7%95%d7%99%d7%95%d7%aa-%d7%91%d7%99%d7%a8%d7%95%d7%a8-%d7%95%d7%98%d7%99%d7%a4%d7%95%d7%9c/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPD514KZqpmZSQ",
+            "https://www.facebook.com/122202337226942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7500966071269703680/"
+          ]
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-16T22:18:56.230125+00:00",
+          "source": "campaign",
+          "draft_path": "content_drafts/2026-07-28-topic-03-run-30347171093-attempt-1.md",
+          "approval_id": "apr_2d676d9186b362769afc704091aee53ecc2edd2e105933bb103908d77b7c7ce5",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/07/blog-post_28.html",
+            "https://guyrofe.com/guy-rofe-pilot-2026-07-28-topic-03-run-30347171093-attempt-1/",
+            "https://www.facebook.com/122196610388942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7487906037862289409/"
+          ]
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-21T18:20:53.852850+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-16-topic-03-run-31931866214-attempt-1.md",
+          "approval_id": "apr_f73dc7f63a1cf52239765245464d64e8d04b3ed19aaf95506321eb9c1213dd49",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEMSGlabjnei3Gw",
+            "https://www.facebook.com/122205226292942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7507866448996970498/"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-22T11:01:34.897215+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-22-topic-03-run-35719116311-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-22T11:03:19Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-22-topic-03-run-35719116311-attempt-1.md",
+          "approval_id": "apr_699c1e224d19c5df8d22f0973e9a25388b22f35b39f97cec5bf833d7f24e7cb6"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-22T15:03:49.823149+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-22-topic-03-run-35719116311-attempt-1.md",
+          "approval_id": "apr_699c1e224d19c5df8d22f0973e9a25388b22f35b39f97cec5bf833d7f24e7cb6",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/מיומות-ברחם-אפשרויות-בירור-וטיפול-באופן-כללי"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_f5f929e601d2c878f6ce19a7",
+      "topic": "מה עומד מאחורי הכותרת: מחקר מצא קשר מדאיג ומפתיע בין צריכת סוכר לפני גיל שנתיים לדמנציה",
+      "normalized_topic": "מה עומד מאחורי הכותרת מחקר מצא קשר מדאיג ומפתיע בין צריכת סוכר לפני גיל שנתיים לדמנציה",
+      "first_seen_at": "2026-08-02T08:23:03.025313+00:00",
+      "last_seen_at": "2026-09-17T05:30:29.785115+00:00",
+      "titles": [
+        "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-02T08:23:03.025313+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-04T12:40:42Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
+          "approval_id": "apr_68abcf22b0d724964bd267f0c39e2e786cfc402e4c749d822a2563b111c67f35"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-17T05:30:29.785115+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
+          "approval_id": "apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_122b9c2fe20523c21e2f3db1",
+      "topic": "מה עומד מאחורי הכותרת: משמרות לילה משבשות לנו את הגוף - ומעלות סיכון למחלות הבאות",
+      "normalized_topic": "מה עומד מאחורי הכותרת משמרות לילה משבשות לנו את הגוף ומעלות סיכון למחלות הבאות",
+      "first_seen_at": "2026-08-03T09:42:52.563796+00:00",
+      "last_seen_at": "2026-09-17T15:11:35.527195+00:00",
+      "titles": [
+        "משמרות לילה משבשות את הגוף — האם הן באמת מעלות את הסיכון למחלות? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-03T09:42:52.563796+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-04T12:46:21Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+          "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-17T15:11:35.527195+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+          "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_05.html",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPWmps3a__uFWA",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+            "https://www.facebook.com/122197727090942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7490478316504793088/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_dcf5e21f95454bbbf56f1914",
+      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
+      "normalized_topic": "לפרוסקופיה גינקולוגית מידע כללי על ההליך",
+      "first_seen_at": "2026-08-04T08:35:41.937086+00:00",
+      "last_seen_at": "2026-09-29T12:14:13Z",
+      "titles": [
+        "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge",
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-04T08:35:41.937086+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-04T12:39:05Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
+          "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-23T06:38:46.024764+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-23-topic-01-run-32623454483-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-23T06:46:01Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-23-topic-01-run-32623454483-attempt-1.md",
+          "approval_id": "apr_5e330c81763fd81714c44e21353e343e01940a8fe33aa04468315de39383e96f"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-23T08:03:54.871620+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-23-topic-01-run-32623454483-attempt-1.md",
+          "approval_id": "apr_5e330c81763fd81714c44e21353e343e01940a8fe33aa04468315de39383e96f",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/guy-rofe-pilot-2026-08-23-topic-01-run-32623454483-attempt-1/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKbp5_fm7tnEDQ",
+            "https://www.facebook.com/122200760420942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7497201932323901440/"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-09T10:49:02.718421+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-09T10:50:35Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md",
+          "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-10T07:02:29.114119+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-09-topic-01-run-34342210317-attempt-1.md",
+          "approval_id": "apr_65d2542eefc4d8eb6ec6341c71bda2f0ae108a58d532b52ce1fbe62914f5145d",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/09/blog-post_10.html",
+            "https://guyrofe.com/%d7%9c%d7%a4%d7%a8%d7%95%d7%a1%d7%a7%d7%95%d7%a4%d7%99%d7%94-%d7%92%d7%99%d7%a0%d7%a7%d7%95%d7%9c%d7%95%d7%92%d7%99%d7%aa-%d7%9e%d7%99%d7%93%d7%a2-%d7%9b%d7%9c%d7%9c%d7%99/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOHKo97r-Zak7wE",
+            "https://www.facebook.com/122203461494942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7503709447291289601/"
+          ]
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-17T10:23:28.093775+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
+          "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post.html",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENW5q6yOg_eRtgE",
+            "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
+            "https://www.facebook.com/122197805228942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7490664465114271744/"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-29T12:12:24.270394+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-29-topic-01-run-36566535339-attempt-1.md"
+        },
+        {
+          "status": "invalidated_duplicate_topic",
+          "occurred_at": "2026-09-29T12:14:13Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-29-topic-01-run-36566535339-attempt-1.md",
+          "approval_id": "apr_cc566fddc8e3d9b5ce861bb030b1723e6eac2d843bd68c87f5ee4942cbd1935d"
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_774a541c2e539b0a4f436b09",
+      "topic": "מה עומד מאחורי הכותרת: פיתוח ישראלי מעורר תקווה: בדיקת דם פשוטה וזולה שמזהה סרטן",
+      "normalized_topic": "מה עומד מאחורי הכותרת פיתוח ישראלי מעורר תקווה בדיקת דם פשוטה וזולה שמזהה סרטן",
+      "first_seen_at": "2026-08-04T08:35:41.937086+00:00",
+      "last_seen_at": "2026-09-17T19:05:02.257490+00:00",
+      "titles": [
+        "בדיקת דם פשוטה וזולה שמזהה סרטן: מה באמת עומד מאחורי הפיתוח הישראלי? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-04T08:35:41.937086+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-04T12:39:24Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
+          "approval_id": "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-17T19:05:02.257490+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
+          "approval_id": "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_309.html",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENyQlqHmvrrKhgE",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-04-topic-90-run-30892576802-attempt-1/",
+            "https://www.facebook.com/122197700126942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7490420767814488064/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_bb00d6b210e6035fb348b728",
+      "topic": "אנדומטריוזיס ופוריות - מידע כללי על הקשר",
+      "normalized_topic": "אנדומטריוזיס ופוריות מידע כללי על הקשר",
+      "first_seen_at": "2026-08-05T08:34:28.050169+00:00",
+      "last_seen_at": "2026-09-17T22:07:35.382775+00:00",
+      "titles": [
+        "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
+        "אנדומטריוזיס ופוריות: מה ידוע על הקשר ומהן אפשרויות הבירור והטיפול? | ד״ר גיא רופא",
+        "אנדומטריוזיס ופוריות: מה ידוע על הקשר ועל אפשרויות הבירור והטיפול | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth",
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-05T08:34:28.050169+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-05T08:42:24Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
+          "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-25T06:43:41.537422+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-25-topic-02-run-32818216514-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-25T06:52:08Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-25-topic-02-run-32818216514-attempt-1.md",
+          "approval_id": "apr_4f0d86fb7b1fd68c2026f689d01932a11a4145996132bb025387e2cc1ce66f40"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-25T08:08:03.229103+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-25-topic-02-run-32818216514-attempt-1.md",
+          "approval_id": "apr_4f0d86fb7b1fd68c2026f689d01932a11a4145996132bb025387e2cc1ce66f40",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-25-topic-02-run-32818216514-attempt-1"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-13T11:09:30.503315+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-13-topic-02-run-34753686764-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-13T11:11:22Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-13-topic-02-run-34753686764-attempt-1.md",
+          "approval_id": "apr_716fd45f33ef9bb1c5b194ad07c07b9ef3e7062f9f234746dd5a5a69de0b8ba7"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-13T17:44:15.290895+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-13-topic-02-run-34753686764-attempt-1.md",
+          "approval_id": "apr_716fd45f33ef9bb1c5b194ad07c07b9ef3e7062f9f234746dd5a5a69de0b8ba7",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%90%d7%a0%d7%93%d7%95%d7%9e%d7%98%d7%a8%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%95%d7%a4%d7%95%d7%a8%d7%99%d7%95%d7%aa-%d7%9e%d7%94-%d7%99%d7%93%d7%95%d7%a2-%d7%a2%d7%9c/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEI2s3OeHrf35DQ",
+            "https://www.facebook.com/122203963766942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7504958123787325440/"
+          ]
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-17T22:07:35.382775+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
+          "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_618.html",
+            "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEP3OgIu87MGTpQE",
+            "https://www.facebook.com/122197862894942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7490779624206041089/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_f5f12d794c2a8c05bbbe780c",
+      "topic": "מה עומד מאחורי הכותרת: כך מסייעים כלבי טיפול לחולי שבץ להתאמץ יותר בשיקום",
+      "normalized_topic": "מה עומד מאחורי הכותרת כך מסייעים כלבי טיפול לחולי שבץ להתאמץ יותר בשיקום",
+      "first_seen_at": "2026-08-05T08:34:28.050169+00:00",
+      "last_seen_at": "2026-09-18T00:19:19.131871+00:00",
+      "titles": [
+        "כך מסייעים כלבי טיפול לחולי שבץ להתאמץ יותר בשיקום: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-05T08:34:28.050169+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-05-topic-90-run-30989560897-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-05T08:42:45Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-05-topic-90-run-30989560897-attempt-1.md",
+          "approval_id": "apr_2e966747adddf5ec161f2574b4369207c01610995c977dd20901df9eaacd0d73"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-18T00:19:19.131871+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-05-topic-90-run-30989560897-attempt-1.md",
+          "approval_id": "apr_2e966747adddf5ec161f2574b4369207c01610995c977dd20901df9eaacd0d73",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-05-topic-90-run-30989560897-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_74ee7f687b2e2584f979b903",
+      "topic": "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה",
+      "normalized_topic": "מה עומד מאחורי הכותרת אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה",
+      "first_seen_at": "2026-08-06T08:34:28.670708+00:00",
+      "last_seen_at": "2026-09-18T04:55:59.041416+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: אבחון סוכרת לפני גיל 10 עלול להעלות את הסיכון לדמנציה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-06T08:34:28.670708+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-06T08:43:14Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md",
+          "approval_id": "apr_6570c00b535d80c1faca92d45d006185d4a96eb87d663f8d4d6189d5e6ea0738"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-18T04:55:59.041416+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-06-topic-90-run-31085434851-attempt-1.md",
+          "approval_id": "apr_6570c00b535d80c1faca92d45d006185d4a96eb87d663f8d4d6189d5e6ea0738",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOGF7-Sh3YXOxgE",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-06-topic-90-run-31085434851-attempt-1/",
+            "https://www.facebook.com/122198006234942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7491071391874875392/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_b34f76204b1fa387604d9638",
+      "topic": "מה עומד מאחורי הכותרת: יש לכם קופסאות פלסטיק במטבח? זה מה שקרה למשתתפי מחקר שהחליפו אותן",
+      "normalized_topic": "מה עומד מאחורי הכותרת יש לכם קופסאות פלסטיק במטבח זה מה שקרה למשתתפי מחקר שהחליפו אותן",
+      "first_seen_at": "2026-08-09T06:55:02.048008+00:00",
+      "last_seen_at": "2026-08-09T08:03:23.605632+00:00",
+      "titles": [
+        "יש לכם קופסאות פלסטיק במטבח? זה מה שבאמת קרה למשתתפי המחקר שהחליפו אותן | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-09T06:55:02.048008+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-09-topic-90-run-31299936904-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-09T06:59:21Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-09-topic-90-run-31299936904-attempt-1.md",
+          "approval_id": "apr_36c0ab57ac5d556c980a23840215136f8b997d7051b87a2047520870eb5d3c73"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-09T08:03:23.605632+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-09-topic-90-run-31299936904-attempt-1.md",
+          "approval_id": "apr_36c0ab57ac5d556c980a23840215136f8b997d7051b87a2047520870eb5d3c73",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-09-topic-90-run-31299936904-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_34198d4e6038033d3a7c6703",
+      "topic": "מה עומד מאחורי הכותרת: בלי לשים לב: תנוחת הגוף שינתה החלטות של משתתפי מחקר",
+      "normalized_topic": "מה עומד מאחורי הכותרת בלי לשים לב תנוחת הגוף שינתה החלטות של משתתפי מחקר",
+      "first_seen_at": "2026-08-10T07:39:29.557044+00:00",
+      "last_seen_at": "2026-09-20T18:10:00.567720+00:00",
+      "titles": [
+        "בלי לשים לב: האם תנוחת הגוף באמת שינתה החלטות של משתתפי מחקר? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-10T07:39:29.557044+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-10T07:42:32Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md",
+          "approval_id": "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-20T18:10:00.567720+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-10-topic-90-run-31366723350-attempt-1.md",
+          "approval_id": "apr_d2b222c1fa23c31c21d4b79f82c3c5d8f160582a8b2f1e3912ae5b53c6694123",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_10.html",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-10-topic-90-run-31366723350-attempt-1/",
+            "https://www.facebook.com/122198678054942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7492494507427446784/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_e80874a7213f0381c7375f11",
+      "topic": "תסמונת השחלות הפוליציסטיות - תסמינים, אבחון וטיפול",
+      "normalized_topic": "תסמונת השחלות הפוליציסטיות תסמינים אבחון וטיפול",
+      "first_seen_at": "2026-08-11T07:05:59.974072+00:00",
+      "last_seen_at": "2026-09-20T22:54:52.364247+00:00",
+      "titles": [
+        "תסמונת השחלות הפוליציסטיות – תסמינים, אבחון וטיפול | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge",
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-11T07:05:59.974072+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-11-topic-04-run-31467572739-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-11T07:16:33Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-11-topic-04-run-31467572739-attempt-1.md",
+          "approval_id": "apr_af65d37aca60ea5f510fcf51a85748ff737a8433cac947ca990737bb77634044"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-30T11:20:03.203478+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-30T11:26:19Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md",
+          "approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-30T19:55:18.473974+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-30-topic-04-run-33308645627-attempt-1.md",
+          "approval_id": "apr_f3be54f08e3d9ee0ca931d02a6131caed5b1246902195181311b92a71a719123",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a9%d7%97%d7%9c%d7%95%d7%aa-%d7%94%d7%a4%d7%95%d7%9c%d7%99%d7%a6%d7%99%d7%a1%d7%98%d7%99%d7%95%d7%aa/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOvWlaPj7MCPiwE",
+            "https://www.facebook.com/122201897090942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7499916416624812033/"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-16T10:54:37.428515+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-16-topic-04-run-35087466040-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-16T11:04:11Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-16-topic-04-run-35087466040-attempt-1.md",
+          "approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-16T16:10:33.557292+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-16-topic-04-run-35087466040-attempt-1.md",
+          "approval_id": "apr_92faa6a552442ac0935703d0f0066736a5a44fd10e5086016fd32503b544e9b4",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/09/blog-post_16.html",
+            "https://guyrofe.com/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a9%d7%97%d7%9c%d7%95%d7%aa-%d7%94%d7%a4%d7%95%d7%9c%d7%99%d7%a6%d7%99%d7%a1%d7%98%d7%99%d7%95%d7%aa/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKmtwrT4lOHW9AE",
+            "https://www.linkedin.com/feed/update/urn:li:share:7506021698710990849/"
+          ]
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-20T22:54:52.364247+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-11-topic-04-run-31467572739-attempt-1.md",
+          "approval_id": "apr_af65d37aca60ea5f510fcf51a85748ff737a8433cac947ca990737bb77634044",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-11-topic-04-run-31467572739-attempt-1"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_5b34f6b48d95f9a38669e325",
+      "topic": "מה עומד מאחורי הכותרת: מה קורה למי שמתעורר עם שבץ מוחי? מחקר חדש משנה את התמונה",
+      "normalized_topic": "מה עומד מאחורי הכותרת מה קורה למי שמתעורר עם שבץ מוחי מחקר חדש משנה את התמונה",
+      "first_seen_at": "2026-08-11T07:05:59.974072+00:00",
+      "last_seen_at": "2026-09-20T20:51:26.028357+00:00",
+      "titles": [
+        "מה קורה למי שמתעורר עם שבץ מוחי? המחקר החדש משנה את התמונה — אבל לא מבטל את השעון | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-11T07:05:59.974072+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-11-topic-90-run-31467572739-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-11T07:15:56Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-11-topic-90-run-31467572739-attempt-1.md",
+          "approval_id": "apr_4e84dc445127abe31bd23fbef97df42ed0e3708430227bc333ac84955779167d"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-20T20:51:26.028357+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-11-topic-90-run-31467572739-attempt-1.md",
+          "approval_id": "apr_4e84dc445127abe31bd23fbef97df42ed0e3708430227bc333ac84955779167d",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-11-topic-90-run-31467572739-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_eca20347f1eba52a077f3db3",
+      "topic": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+      "normalized_topic": "איך להעריך מידע רפואי ברשת ולזהות מקור אמין",
+      "first_seen_at": "2026-08-12T07:23:03.466376+00:00",
+      "last_seen_at": "2026-09-21T00:56:04.508709+00:00",
+      "titles": [
+        "איך להעריך מידע רפואי ברשת ולזהות מקור אמין | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth",
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-12T07:23:03.466376+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-12-topic-07-run-31573715687-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-12T07:30:25Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-12-topic-07-run-31573715687-attempt-1.md",
+          "approval_id": "apr_e997cde484c028b7c652c52b61b8bacdc1819cb6ca4f92f7b603ff715540f5b6"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-01T11:10:03.031534+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-01-topic-07-run-33501045144-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-01T11:18:24Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-01-topic-07-run-33501045144-attempt-1.md",
+          "approval_id": "apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-01T22:04:41.514587+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-09-01-topic-07-run-33501045144-attempt-1.md",
+          "approval_id": "apr_91f167a253411d139a5499e27749bbcdc3a70719faaf4a8ce20aef6f350b3318",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/איך-להעריך-מידע-רפואי-ברשת-ולזהות-מקור-אמין"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-20T10:42:38.179906+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-20-topic-07-run-35505806969-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-20T10:45:08Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-20-topic-07-run-35505806969-attempt-1.md",
+          "approval_id": "apr_3e639a4e4200bf7c26bf2844c12ea478e4927121825f5ba35982abb6ba177eba"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-20T14:56:05.229214+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-20-topic-07-run-35505806969-attempt-1.md",
+          "approval_id": "apr_3e639a4e4200bf7c26bf2844c12ea478e4927121825f5ba35982abb6ba177eba",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%90%d7%99%d7%9a-%d7%9c%d7%94%d7%a2%d7%a8%d7%99%d7%9a-%d7%9e%d7%99%d7%93%d7%a2-%d7%a8%d7%a4%d7%95%d7%90%d7%99-%d7%91%d7%a8%d7%a9%d7%aa-%d7%95%d7%9c%d7%96%d7%94%d7%95%d7%aa/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKCp54es2_yL-QE",
+            "https://www.facebook.com/122205014246942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7507452519506137088/"
+          ]
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-21T00:56:04.508709+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-08-12-topic-07-run-31573715687-attempt-1.md",
+          "approval_id": "apr_e997cde484c028b7c652c52b61b8bacdc1819cb6ca4f92f7b603ff715540f5b6",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_12.html",
+            "https://guyrofe.com/guy-rofe-pilot-2026-08-12-topic-07-run-31573715687-attempt-1/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPGooPKYy5m8dQ",
+            "https://www.facebook.com/122198994536942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7493228918792056832/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_b465b3bd29244c7a8e30a09d",
+      "topic": "מה עומד מאחורי הכותרת: לא רק מה שאמא אוכלת: מחקר מצא קשר בין תזונת האב למבנה הגוף של התינוק",
+      "normalized_topic": "מה עומד מאחורי הכותרת לא רק מה שאמא אוכלת מחקר מצא קשר בין תזונת האב למבנה הגוף של התינוק",
+      "first_seen_at": "2026-08-12T07:23:03.466376+00:00",
+      "last_seen_at": "2026-09-21T06:06:51.840107+00:00",
+      "titles": [
+        "לא רק מה שאמא אוכלת: מה באמת מצא המחקר על תזונת האב ומבנה הגוף של התינוק? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-12T07:23:03.466376+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-12-topic-90-run-31573715687-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-12T07:30:40Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-12-topic-90-run-31573715687-attempt-1.md",
+          "approval_id": "apr_3ba423a6794821edac5b003ddafd3d6e1de3c958ddbeca3d9a65342c01f51e3f"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-21T06:06:51.840107+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-12-topic-90-run-31573715687-attempt-1.md",
+          "approval_id": "apr_3ba423a6794821edac5b003ddafd3d6e1de3c958ddbeca3d9a65342c01f51e3f",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-12-topic-90-run-31573715687-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_8aeab48a7d67e45fd062a1c2",
+      "topic": "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI",
+      "normalized_topic": "מה עומד מאחורי הכותרת מחקר ענק מטיל ספק במה שחשבנו על bmi",
+      "first_seen_at": "2026-08-13T07:25:24.693477+00:00",
+      "last_seen_at": "2026-09-21T12:46:15.561277+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: מחקר ענק מטיל ספק במה שחשבנו על BMI | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-13T07:25:24.693477+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-13-topic-90-run-31677663608-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-13T07:28:19Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-13-topic-90-run-31677663608-attempt-1.md",
+          "approval_id": "apr_780890818ef2b2fa33805b11a51c8f2f9729a1c17ad8e0a73ea167a3918d6104"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-21T12:46:15.561277+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-13-topic-90-run-31677663608-attempt-1.md",
+          "approval_id": "apr_780890818ef2b2fa33805b11a51c8f2f9729a1c17ad8e0a73ea167a3918d6104",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIqukoDt4tX9Sg",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-13-topic-90-run-31677663608-attempt-1/",
+            "https://www.facebook.com/122199143306942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7493574708882395138/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_8ebac65480c5be7a3c91b95c",
+      "topic": "מה עומד מאחורי הכותרת: לוקחים תרופה לכולסטרול? זו תופעת הלוואי שמצא מחקר חדש",
+      "normalized_topic": "מה עומד מאחורי הכותרת לוקחים תרופה לכולסטרול זו תופעת הלוואי שמצא מחקר חדש",
+      "first_seen_at": "2026-08-16T06:37:57.161838+00:00",
+      "last_seen_at": "2026-09-21T22:05:41.362967+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: לוקחים תרופה לכולסטרול? זו תופעת הלוואי שמצא מחקר חדש | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-16T06:37:57.161838+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-16-topic-90-run-31931866214-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-16T06:46:29Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-16-topic-90-run-31931866214-attempt-1.md",
+          "approval_id": "apr_09c5edfacf78989bd2c03505dc6c55c1f8e76322b411ddb471cba6d7a7f7d06b"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-21T22:05:41.362967+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-16-topic-90-run-31931866214-attempt-1.md",
+          "approval_id": "apr_09c5edfacf78989bd2c03505dc6c55c1f8e76322b411ddb471cba6d7a7f7d06b",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-16-topic-90-run-31931866214-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_5d560cda3185ada5d11c0f80",
+      "topic": "מה עומד מאחורי הכותרת: מחקר חדש גילה: זה המאפיין הגופני שקובע סיכון להתקף לב",
+      "normalized_topic": "מה עומד מאחורי הכותרת מחקר חדש גילה זה המאפיין הגופני שקובע סיכון להתקף לב",
+      "first_seen_at": "2026-08-17T06:53:23.106930+00:00",
+      "last_seen_at": "2026-09-22T00:48:58.944634+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: מחקר חדש גילה — זה המאפיין הגופני שקובע סיכון להתקף לב | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-17T06:53:23.106930+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-17-topic-90-run-32003423255-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-17T06:57:05Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-17-topic-90-run-32003423255-attempt-1.md",
+          "approval_id": "apr_03153077864bbff1cf0e7ee06ad3ecf79d6cc3ab05a3ada7ec78bf0c338a4ae3"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-22T00:48:58.944634+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-17-topic-90-run-32003423255-attempt-1.md",
+          "approval_id": "apr_03153077864bbff1cf0e7ee06ad3ecf79d6cc3ab05a3ada7ec78bf0c338a4ae3",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_17.html",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-17-topic-90-run-32003423255-attempt-1/",
+            "https://www.facebook.com/122199791750942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7495055016840503296/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_8ba7a32a10c7cca8a2089494",
+      "topic": "כאבי אגן כרוניים אצל נשים - מידע כללי ומתי לפנות לבדיקה רפואית",
+      "normalized_topic": "כאבי אגן כרוניים אצל נשים מידע כללי ומתי לפנות לבדיקה רפואית",
+      "first_seen_at": "2026-08-18T06:41:17.129367+00:00",
+      "last_seen_at": "2026-09-23T10:54:45Z",
+      "titles": [
+        "כאבי אגן כרוניים אצל נשים: מידע כללי ומתי לפנות לבדיקה רפואית | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge",
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-18T06:41:17.129367+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-18-topic-00-run-32107966329-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-18T06:48:20Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-18-topic-00-run-32107966329-attempt-1.md",
+          "approval_id": "apr_6c425d5016de87a9b508d8a293ec781910d81f540177980b5fbcd5af6a328067"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-18T10:14:04.163303+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-08-18-topic-00-run-32107966329-attempt-1.md",
+          "approval_id": "apr_5fc942eede32bc3c12569bcc6236d10303f7789506d36285451f419ba4ef2075",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-18-topic-00-run-32107966329-attempt-1"
+          ]
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-06T10:20:04.556274+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-06-topic-00-run-34027109221-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-06T10:22:26Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-06-topic-00-run-34027109221-attempt-1.md",
+          "approval_id": "apr_f6d3cb1f548dd3a0b99934a2542e6a2d0abc49dbc6db0d1d6d13cb0957b6be10"
+        },
+        {
+          "status": "publication_attempted",
+          "occurred_at": "2026-09-06T12:36:37.877447+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-06-topic-00-run-34027109221-attempt-1.md",
+          "approval_id": "apr_c7395f4e7fbcbf5dde711c3bbaeb2c748e410c61aceaef6ea8ef123c3d28c2a0",
+          "campaign_status": "failed"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-23T10:50:26.777735+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-23-topic-00-run-35851040678-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-23T10:54:45Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-09-23-topic-00-run-35851040678-attempt-1.md",
+          "approval_id": "apr_921886ee6c998a194827d4eddc14eb6691e26c0f0d24c72f38af4e0a4fc4532c"
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_e1e1468528605dc885050ec2",
+      "topic": "מה עומד מאחורי הכותרת: הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות",
+      "normalized_topic": "מה עומד מאחורי הכותרת הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות",
+      "first_seen_at": "2026-08-18T06:41:17.129367+00:00",
+      "last_seen_at": "2026-08-18T09:46:27.149584+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: הממצא המפתיע במחקר שעקב אחר ילדים שנולדו מטיפולי פוריות | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-18T06:41:17.129367+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-18-topic-90-run-32107966329-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-18T06:48:00Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-18-topic-90-run-32107966329-attempt-1.md",
+          "approval_id": "apr_c058d542e9dcfc6b57bc9b319121360cd5961eaa301472c1c6005bc491199b45"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-18T09:46:27.149584+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-18-topic-90-run-32107966329-attempt-1.md",
+          "approval_id": "apr_c058d542e9dcfc6b57bc9b319121360cd5961eaa301472c1c6005bc491199b45",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-18-topic-90-run-32107966329-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_1dd0defe9cb4c992eaa22f0e",
+      "topic": "מה עומד מאחורי הכותרת: כוויית שמש קשה אחת מותירה נזק לשנים: הממצא המדאיג שהתגלה במחקר",
+      "normalized_topic": "מה עומד מאחורי הכותרת כוויית שמש קשה אחת מותירה נזק לשנים הממצא המדאיג שהתגלה במחקר",
+      "first_seen_at": "2026-08-19T06:41:48.321975+00:00",
+      "last_seen_at": "2026-08-19T11:02:38.721497+00:00",
+      "titles": [
+        "כוויית שמש קשה אחת מותירה נזק לשנים? מה באמת התגלה במחקר | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-19T06:41:48.321975+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-19-topic-90-run-32224474606-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-19T06:46:32Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-19-topic-90-run-32224474606-attempt-1.md",
+          "approval_id": "apr_dcc610a70bef34fff806d5fc236d587041c621516a5e972fac972f1c2be3d7cf"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-19T11:02:38.721497+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-19-topic-90-run-32224474606-attempt-1.md",
+          "approval_id": "apr_dcc610a70bef34fff806d5fc236d587041c621516a5e972fac972f1c2be3d7cf",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-19-topic-90-run-32224474606-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_0f728ef439b7f2662d55eb0a",
+      "topic": "מה עומד מאחורי הכותרת: פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר",
+      "normalized_topic": "מה עומד מאחורי הכותרת פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר",
+      "first_seen_at": "2026-08-20T06:43:03.437057+00:00",
+      "last_seen_at": "2026-08-20T08:52:34.447725+00:00",
+      "titles": [
+        "פונדקאית סירבה להפסיק את ההיריון אחרי שהתגלה מום בלב העובר: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-20T06:43:03.437057+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-20-topic-90-run-32340734702-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-20T06:49:30Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-20-topic-90-run-32340734702-attempt-1.md",
+          "approval_id": "apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-20T08:52:34.447725+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-20-topic-90-run-32340734702-attempt-1.md",
+          "approval_id": "apr_bfc67c0469092f966e47040200a566cb4d1876a2eb85eb2929e8ccc8635ab1ab",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPK46NuK0Pe2cQ",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-20-topic-90-run-32340734702-attempt-1/",
+            "https://www.facebook.com/122200301990942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7496127010797150209/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_b6470ac963540681692b09f9",
+      "topic": "מה עומד מאחורי הכותרת: אפשר למנוע עד 45% מהסיכון לדמנציה: הדברים שחשוב לשנות עוד היום",
+      "normalized_topic": "מה עומד מאחורי הכותרת אפשר למנוע עד 45 מהסיכון לדמנציה הדברים שחשוב לשנות עוד היום",
+      "first_seen_at": "2026-08-23T06:38:46.024764+00:00",
+      "last_seen_at": "2026-08-23T08:45:34.888004+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: אפשר למנוע עד 45% מהסיכון לדמנציה — הדברים שחשוב לשנות עוד היום | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-23T06:38:46.024764+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-23-topic-90-run-32623454483-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-23T06:46:16Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-23-topic-90-run-32623454483-attempt-1.md",
+          "approval_id": "apr_394b84396f692bcac39b687f70d845dd093808b9b2bfcd9d919af543b1bac3f0"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-23T08:45:34.888004+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-23-topic-90-run-32623454483-attempt-1.md",
+          "approval_id": "apr_394b84396f692bcac39b687f70d845dd093808b9b2bfcd9d919af543b1bac3f0",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-23-topic-90-run-32623454483-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_69a212c0aa36996672e0375a",
+      "topic": "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון: האם הם בכלל תורמים לבריאות?",
+      "normalized_topic": "מה עומד מאחורי הכותרת מיץ גזר סלק ג ינג ר ורימון האם הם בכלל תורמים לבריאות",
+      "first_seen_at": "2026-08-24T06:56:06.049563+00:00",
+      "last_seen_at": "2026-08-24T10:02:24.485157+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: מיץ גזר, סלק, ג'ינג'ר ורימון — האם הם בכלל תורמים לבריאות? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-24T06:56:06.049563+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-24-topic-90-run-32699319798-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-24T06:58:23Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-24-topic-90-run-32699319798-attempt-1.md",
+          "approval_id": "apr_68897c633cd7a8af8fa6b2bf6aa1605ab71b70611c97d83f57aa144590f9f60c"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-24T10:02:24.485157+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-24-topic-90-run-32699319798-attempt-1.md",
+          "approval_id": "apr_68897c633cd7a8af8fa6b2bf6aa1605ab71b70611c97d83f57aa144590f9f60c",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_24.html",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-24-topic-90-run-32699319798-attempt-1/",
+            "https://www.facebook.com/122200926482942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7497594123907072000/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_05b2c3e3c4175b2158ca0899",
+      "topic": "מה עומד מאחורי הכותרת: שלא תצטרכו ניתוח מוח: אף אחד לא רוצה להיות נוירוכירורג בישראל",
+      "normalized_topic": "מה עומד מאחורי הכותרת שלא תצטרכו ניתוח מוח אף אחד לא רוצה להיות נוירוכירורג בישראל",
+      "first_seen_at": "2026-08-26T06:46:54.595853+00:00",
+      "last_seen_at": "2026-08-26T08:55:40.203309+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: \"שלא תצטרכו ניתוח מוח — אף אחד לא רוצה להיות נוירוכירורג בישראל\" | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-26T06:46:54.595853+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-26T06:51:22Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
+          "approval_id": "apr_59f3732a9a3fd382ccfba6e30b29cdf0737c6a39dea15f6fdb4eadf55e1c8be2"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-26T08:55:40.203309+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-26-topic-90-run-32939634105-attempt-1.md",
+          "approval_id": "apr_59f3732a9a3fd382ccfba6e30b29cdf0737c6a39dea15f6fdb4eadf55e1c8be2",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-26-topic-90-run-32939634105-attempt-1/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_dd3112bc6591e9bf6dadd09c",
+      "topic": "מה עומד מאחורי הכותרת: \"לא האמנתי\": בדיקת דם חדשנית העלתה חשד לסרטן - ובצילום התגלה גוש בריאה",
+      "normalized_topic": "מה עומד מאחורי הכותרת לא האמנתי בדיקת דם חדשנית העלתה חשד לסרטן ובצילום התגלה גוש בריאה",
+      "first_seen_at": "2026-08-27T17:21:32.810696+00:00",
+      "last_seen_at": "2026-08-27T22:57:13.117077+00:00",
+      "titles": [
+        "בדיקת דם העלתה חשד לסרטן ובצילום התגלה גוש בריאה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-27T17:21:32.810696+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-27T17:26:45Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md",
+          "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-27T22:57:13.117077+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-27-topic-90-run-33097962490-attempt-1.md",
+          "approval_id": "apr_be5206690cc1530fa3aa153004b56d697b97fdcecaab7b2dcc90c078f44a0d60",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJqRgMGB-Orq4gE",
+            "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-27-topic-90-run-33097962490-attempt-1/",
+            "https://www.facebook.com/122201466152942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7498876276792008704/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_49d908b8ade3436fd744260a",
+      "topic": "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד",
+      "normalized_topic": "מה עומד מאחורי הכותרת המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד",
+      "first_seen_at": "2026-08-30T11:20:03.203478+00:00",
+      "last_seen_at": "2026-08-30T19:48:39.329919+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: המחקר שגילה מה משותף לבני 80 שהמוח שלהם נשאר חד | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-30T11:20:03.203478+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-30-topic-90-run-33308645627-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-30T11:26:48Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-30-topic-90-run-33308645627-attempt-1.md",
+          "approval_id": "apr_fae8dfb3e1fe19d2b581ebb5add33abd1ed4c147d6585fe8cfccd2957841ea8e"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-30T19:48:39.329919+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-30-topic-90-run-33308645627-attempt-1.md",
+          "approval_id": "apr_fae8dfb3e1fe19d2b581ebb5add33abd1ed4c147d6585fe8cfccd2957841ea8e",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%94%d7%9e%d7%97%d7%a7%d7%a8-%d7%a9%d7%92%d7%99%d7%9c%d7%94/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_fb719a2f4b54091574c653e8",
+      "topic": "מה עומד מאחורי הכותרת: חיידק ליסטריה בקממבר של גד: מה חשוב לדעת - ולמי הוא מסוכן?",
+      "normalized_topic": "מה עומד מאחורי הכותרת חיידק ליסטריה בקממבר של גד מה חשוב לדעת ולמי הוא מסוכן",
+      "first_seen_at": "2026-08-31T12:48:44.815817+00:00",
+      "last_seen_at": "2026-08-31T18:10:56.095373+00:00",
+      "titles": [
+        "חיידק ליסטריה בקממבר של גד: מה חשוב לדעת — ולמי הוא מסוכן? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-08-31T12:48:44.815817+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-31-topic-90-run-33393591514-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-08-31T12:50:43Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-31-topic-90-run-33393591514-attempt-1.md",
+          "approval_id": "apr_afccf5f1aad29e2b1a4f8095528f96ba8df16892f0fb6a79c62beb614b5e4485"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-08-31T18:10:56.095373+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-08-31-topic-90-run-33393591514-attempt-1.md",
+          "approval_id": "apr_afccf5f1aad29e2b1a4f8095528f96ba8df16892f0fb6a79c62beb614b5e4485",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/08/blog-post_31.html",
+            "https://www.drguyrofe.co.il/%d7%97%d7%99%d7%99%d7%93%d7%a7-%d7%9c%d7%99%d7%a1%d7%98%d7%a8%d7%99%d7%94-%d7%91%d7%a7%d7%9e%d7%9e%d7%91%d7%a8-%d7%a9%d7%9c-%d7%92%d7%93-%d7%9e%d7%94-%d7%97%d7%a9%d7%95%d7%91/",
+            "https://www.facebook.com/122202039320942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7500253802017591296/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_b20eee3390853c52b9052445",
+      "topic": "מה עומד מאחורי הכותרת: חיים יותר אבל גם חולים וסובלים יותר? העידן הקשה שנכנסנו אליו",
+      "normalized_topic": "מה עומד מאחורי הכותרת חיים יותר אבל גם חולים וסובלים יותר העידן הקשה שנכנסנו אליו",
+      "first_seen_at": "2026-09-01T11:10:03.031534+00:00",
+      "last_seen_at": "2026-09-01T19:38:16.535910+00:00",
+      "titles": [
+        "חיים יותר אבל גם חולים וסובלים יותר? מה באמת עומד מאחורי הכותרת על העידן שנכנסנו אליו | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-01T11:10:03.031534+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-01-topic-90-run-33501045144-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-01T11:17:18Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-01-topic-90-run-33501045144-attempt-1.md",
+          "approval_id": "apr_39ea46787f3e6297def030144d391139ff1e2edc7a71240f22f922846a700f77"
+        },
+        {
+          "status": "publication_attempted",
+          "occurred_at": "2026-09-01T19:38:16.535910+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-01-topic-90-run-33501045144-attempt-1.md",
+          "approval_id": "apr_39ea46787f3e6297def030144d391139ff1e2edc7a71240f22f922846a700f77",
+          "campaign_status": "failed"
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_fcb3f705606e4ece6f50cc2f",
+      "topic": "מה עומד מאחורי הכותרת: כל לידה שווה לבית החולים כ-20 אלף שקל, אבל הנשים האלה משלמות את המחיר",
+      "normalized_topic": "מה עומד מאחורי הכותרת כל לידה שווה לבית החולים כ 20 אלף שקל אבל הנשים האלה משלמות את המחיר",
+      "first_seen_at": "2026-09-02T10:42:44.197936+00:00",
+      "last_seen_at": "2026-09-02T19:58:31.842093+00:00",
+      "titles": [
+        "כל לידה שווה לבית החולים כ־20 אלף שקל — אבל האם היולדות משלמות את המחיר? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-02T10:42:44.197936+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-02T10:50:42Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md",
+          "approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-02T19:58:31.842093+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-02-topic-90-run-33620841392-attempt-1.md",
+          "approval_id": "apr_d7cdc6368ac9feae568504e311787acf1ef5761d0169a0a1055ed70490a46206",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/%d7%9b%d7%9c-%d7%9c%d7%99%d7%93%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%9c%d7%91%d7%99%d7%aa-%d7%94%d7%97%d7%95%d7%9c%d7%99%d7%9d-%d7%9b%d6%be20-%d7%90%d7%9c%d7%a3-%d7%a9%d7%a7%d7%9c/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_d222cc70680f643038de30d0",
+      "topic": "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר",
+      "normalized_topic": "מה עומד מאחורי הכותרת שנים אמרו לנו לישון 8 שעות מסתבר שגם פחות זה לגמרי בסדר",
+      "first_seen_at": "2026-09-03T10:43:59.970226+00:00",
+      "last_seen_at": "2026-09-03T13:57:07.647226+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: שנים אמרו לנו לישון 8 שעות. מסתבר שגם פחות זה לגמרי בסדר | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-03T10:43:59.970226+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-03-topic-90-run-33745856763-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-03T10:45:43Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-03-topic-90-run-33745856763-attempt-1.md",
+          "approval_id": "apr_42ac57bd78f6fbcccc93b0f0e70b65249430e5349a5dbecbc3a0e15005be3c0e"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-03T13:57:07.647226+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-03-topic-90-run-33745856763-attempt-1.md",
+          "approval_id": "apr_42ac57bd78f6fbcccc93b0f0e70b65249430e5349a5dbecbc3a0e15005be3c0e",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKHZyOi08tTZDw",
+            "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a9%d7%a0%d7%99%d7%9d-%d7%90%d7%9e%d7%a8%d7%95-%d7%9c%d7%a0%d7%95/",
+            "https://www.facebook.com/122202465380942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7501277083265044482/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_e4507f01f497f76cce55d592",
+      "topic": "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים: בשלוש שנים - ישראל איבדה בית חולים גדול שלם",
+      "normalized_topic": "מה עומד מאחורי הכותרת נחשף היקף עזיבת הרופאים בשלוש שנים ישראל איבדה בית חולים גדול שלם",
+      "first_seen_at": "2026-09-07T11:40:38.252089+00:00",
+      "last_seen_at": "2026-09-07T17:53:47.733891+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: נחשף היקף עזיבת הרופאים — בשלוש שנים ישראל איבדה בית חולים גדול שלם | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-07T11:40:38.252089+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-07-topic-90-run-34117806998-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-07T11:44:17Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-07-topic-90-run-34117806998-attempt-1.md",
+          "approval_id": "apr_47072281cebe4941dc54820ea3af4dce69bb7f4c86b33e1da9c269f85d8d8ca4"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-07T17:53:47.733891+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-07-topic-90-run-34117806998-attempt-1.md",
+          "approval_id": "apr_47072281cebe4941dc54820ea3af4dce69bb7f4c86b33e1da9c269f85d8d8ca4",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/09/blog-post_07.html",
+            "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%a0%d7%97%d7%a9%d7%a3-%d7%94%d7%99%d7%a7%d7%a3/",
+            "https://www.facebook.com/122203088330942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7502786205965594624/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_35493a2da5da7cff887ee4ef",
+      "topic": "מה עומד מאחורי הכותרת: כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו?",
+      "normalized_topic": "מה עומד מאחורי הכותרת כימיקלים בחומרי ניקוי נמצאו בדם האם הם מסכנים אותנו",
+      "first_seen_at": "2026-09-10T10:42:28.002678+00:00",
+      "last_seen_at": "2026-09-10T15:30:51.653869+00:00",
+      "titles": [
+        "כימיקלים בחומרי ניקוי נמצאו בדם: האם הם מסכנים אותנו? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-10T10:42:28.002678+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-10-topic-90-run-34467413377-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-10T10:47:30Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-10-topic-90-run-34467413377-attempt-1.md",
+          "approval_id": "apr_60982c34130658a967659c1a5f3db794273fe0f290ba3cd6bf288ac639dcfcf0"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-10T15:30:51.653869+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-10-topic-90-run-34467413377-attempt-1.md",
+          "approval_id": "apr_60982c34130658a967659c1a5f3db794273fe0f290ba3cd6bf288ac639dcfcf0",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIPomtfZ98iuwgE",
+            "https://www.drguyrofe.co.il/%d7%9b%d7%99%d7%9e%d7%99%d7%a7%d7%9c%d7%99%d7%9d-%d7%91%d7%97%d7%95%d7%9e%d7%a8%d7%99-%d7%a0%d7%99%d7%a7%d7%95%d7%99-%d7%a0%d7%9e%d7%a6%d7%90%d7%95-%d7%91%d7%93%d7%9d/",
+            "https://www.facebook.com/122203513382942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7503837384581623808/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_b9ab29b0a318fd9a6d71cb4a",
+      "topic": "מה עומד מאחורי הכותרת: בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה\"ב: \"לא רק מחלת ילדוּת\"",
+      "normalized_topic": "מה עומד מאחורי הכותרת בת 40 שלא התחסנה מתה מסיבוכי חצבת בארה ב לא רק מחלת ילדוּת",
+      "first_seen_at": "2026-09-14T11:54:58.909655+00:00",
+      "last_seen_at": "2026-09-14T16:35:33.032119+00:00",
+      "titles": [
+        "מוות מחצבת בגיל 40 בארה״ב: מה באמת עומד מאחורי הכותרת — ולמה זו אינה רק מחלת ילדות | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-14T11:54:58.909655+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-14-topic-90-run-34840576898-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-14T12:00:28Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-14-topic-90-run-34840576898-attempt-1.md",
+          "approval_id": "apr_c0d53b1837c96e47af0944db88d047732725f69c3cdda8420dc13536735ee859"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-14T16:35:33.032119+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-14-topic-90-run-34840576898-attempt-1.md",
+          "approval_id": "apr_c0d53b1837c96e47af0944db88d047732725f69c3cdda8420dc13536735ee859",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/09/40.html",
+            "https://www.drguyrofe.co.il/%d7%9e%d7%95%d7%95%d7%aa-%d7%9e%d7%97%d7%a6%d7%91%d7%aa-%d7%91%d7%92%d7%99%d7%9c-40-%d7%91%d7%90%d7%a8%d7%94%d7%b4%d7%91-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+            "https://www.facebook.com/122204097272942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7505303228105015296/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_f185d9552b6d60d090a16daf",
+      "topic": "מה עומד מאחורי הכותרת: אקמול בהריון: מחקר חדש מעלה חשש לשימוש בתרופה",
+      "normalized_topic": "מה עומד מאחורי הכותרת אקמול בהריון מחקר חדש מעלה חשש לשימוש בתרופה",
+      "first_seen_at": "2026-09-17T11:02:32.732785+00:00",
+      "last_seen_at": "2026-09-18T09:35:07.434407+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: אקמול בהריון — מחקר חדש מעלה חשש לשימוש בתרופה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-17T11:02:32.732785+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-17-topic-90-run-35213563884-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-17T11:05:04Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-17-topic-90-run-35213563884-attempt-1.md",
+          "approval_id": "apr_766721ab47f89f0bcdacbc7d3ad57dd0fe742d2f959b46dc3205df48b6233b0e"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-18T09:35:07.434407+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-17-topic-90-run-35213563884-attempt-1.md",
+          "approval_id": "apr_766721ab47f89f0bcdacbc7d3ad57dd0fe742d2f959b46dc3205df48b6233b0e",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIyzlKmM56mW_AE",
+            "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%90%d7%a7%d7%9e%d7%95%d7%9c-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f/",
+            "https://www.facebook.com/122204631002942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7506646967507308544/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_b619c7e6cb0b6322c3824d60",
+      "topic": "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור - וזו הסיבה",
+      "normalized_topic": "מה עומד מאחורי הכותרת מחלת נפש קשה מקצרת את החיים ביותר מעשור וזו הסיבה",
+      "first_seen_at": "2026-09-23T10:50:26.777735+00:00",
+      "last_seen_at": "2026-09-23T13:53:57.860423+00:00",
+      "titles": [
+        "מה עומד מאחורי הכותרת: מחלת נפש קשה מקצרת את החיים ביותר מעשור — וזו הסיבה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-23T10:50:26.777735+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-23-topic-90-run-35851040678-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-23T10:56:03Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-23-topic-90-run-35851040678-attempt-1.md",
+          "approval_id": "apr_f695c221f62b7e4ca422a968e06dca9dc1fa159c08d97152bb4ad577e7d900e3"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-23T13:53:57.860423+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-23-topic-90-run-35851040678-attempt-1.md",
+          "approval_id": "apr_f695c221f62b7e4ca422a968e06dca9dc1fa159c08d97152bb4ad577e7d900e3",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.co.il/%d7%9e%d7%94-%d7%a2%d7%95%d7%9e%d7%93-%d7%9e%d7%90%d7%97%d7%95%d7%a8%d7%99-%d7%94%d7%9b%d7%95%d7%aa%d7%a8%d7%aa-%d7%9e%d7%97%d7%9c%d7%aa-%d7%a0%d7%a4%d7%a9-%d7%a7%d7%a9%d7%94/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_569f4a65ac493c8c448ff8d2",
+      "topic": "מה עומד מאחורי הכותרת: לא רק כאבי גב. הבעיות הרפואיות של נשים עם חזה גדול",
+      "normalized_topic": "מה עומד מאחורי הכותרת לא רק כאבי גב הבעיות הרפואיות של נשים עם חזה גדול",
+      "first_seen_at": "2026-09-24T11:10:53.607679+00:00",
+      "last_seen_at": "2026-09-27T06:48:09.434264+00:00",
+      "titles": [
+        "לא רק כאבי גב: הבעיות הרפואיות של נשים עם חזה גדול | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-24T11:10:53.607679+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-24-topic-90-run-35991461182-attempt-1.md"
+        },
+        {
+          "status": "approval_bundle_created",
+          "occurred_at": "2026-09-24T11:14:02Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-24-topic-90-run-35991461182-attempt-1.md",
+          "approval_id": "apr_4305ffb673d23d4c394dab016e6669da96d22c73c7ada9ebc4fea39d57077bf5"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-27T06:48:09.434264+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-24-topic-90-run-35991461182-attempt-1.md",
+          "approval_id": "apr_4305ffb673d23d4c394dab016e6669da96d22c73c7ada9ebc4fea39d57077bf5",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK7Zv5qCkLCZzwE",
+            "https://www.drguyrofe.co.il/%d7%9c%d7%90-%d7%a8%d7%a7-%d7%9b%d7%90%d7%91%d7%99-%d7%92%d7%91-%d7%94%d7%91%d7%a2%d7%99%d7%95%d7%aa-%d7%94%d7%a8%d7%a4%d7%95%d7%90%d7%99%d7%95%d7%aa-%d7%a9%d7%9c/",
+            "https://www.facebook.com/122205804758942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7509866452422721536/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_d594f0a24c08bd839f8cd6c4",
+      "topic": "דלקת עורקים של תאי ענק: סימני האזהרה, האבחון והסיכון לפגיעה בראייה",
+      "normalized_topic": "דלקת עורקים של תאי ענק סימני האזהרה האבחון והסיכון לפגיעה בראייה",
+      "first_seen_at": "2026-09-29T19:25:58.107063+00:00",
+      "last_seen_at": "2026-09-29T19:29:30Z",
+      "titles": [
+        "דלקת עורקים של תאי ענק: סימני האזהרה, האבחון והסיכון לפגיעה בראייה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-29T19:25:58.107063+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-29-topic-82-run-36619147012-attempt-1.md"
+        },
+        {
+          "status": "cancelled",
+          "occurred_at": "2026-09-29T19:29:30Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-29-topic-82-run-36619147012-attempt-1.md",
+          "approval_id": "apr_d1bb25627c72c15b1d6da4cf2cc0a8eeee9b9caaf45ce11985518d04aedd985f"
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_f43a670380c8c197a35f83d7",
+      "topic": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים",
+      "normalized_topic": "תסמונת גייאן־בארה התסמינים המוקדמים תהליך האבחון והקשר לזיהומים",
+      "first_seen_at": "2026-09-29T19:33:53.605641+00:00",
+      "last_seen_at": "2026-09-29T20:00:28.497331+00:00",
+      "titles": [
+        "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-09-29T19:33:53.605641+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-29T19:41:44Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
+          "approval_id": "apr_694ff50cdb327bbe76f1da1949abe760f2484685a5f5fa41914a0c7d6fc2437d"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-09-29T20:00:28.497331+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
+          "approval_id": "apr_694ff50cdb327bbe76f1da1949abe760f2484685a5f5fa41914a0c7d6fc2437d",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/09/blog-post_29.html",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEM7Yj8LvtfDaJA",
+            "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%92%d7%99%d7%99%d7%90%d7%9f%d6%be%d7%91%d7%90%d7%a8%d7%94-%d7%94%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+            "https://www.facebook.com/122206733888942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7510790563651289089/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_7865a341a6bcce4be974e7a5",
+      "topic": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+      "normalized_topic": "דלקת ושט אאוזינופילית מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
+      "first_seen_at": "2026-10-01T12:31:02.486449+00:00",
+      "last_seen_at": "2026-10-01T20:23:50.547358+00:00",
+      "titles": [
+        "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-01T12:31:02.486449+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-01-topic-81-run-36862232137-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-01T12:34:12Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-01-topic-81-run-36862232137-attempt-1.md",
+          "approval_id": "apr_c89c9f17ed71766253325e27fe8c4cb1d69b7e2354c818c031bb6b439652a1c9"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-01T20:23:50.547358+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-01-topic-81-run-36862232137-attempt-1.md",
+          "approval_id": "apr_c89c9f17ed71766253325e27fe8c4cb1d69b7e2354c818c031bb6b439652a1c9",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEIvUi9WX29XMeg",
+            "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%95%d7%a9%d7%98-%d7%90%d7%90%d7%95%d7%96%d7%99%d7%a0%d7%95%d7%a4%d7%99%d7%9c%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%9e%d7%96%d7%95%d7%9f/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_763fd333a80f8041780437fe",
+      "topic": "דימום רחמי חריג - סיבות אפשריות ומתי לפנות לבדיקה",
+      "normalized_topic": "דימום רחמי חריג סיבות אפשריות ומתי לפנות לבדיקה",
+      "first_seen_at": "2026-10-04T11:50:22.485303+00:00",
+      "last_seen_at": "2026-10-04T14:23:23.860265+00:00",
+      "titles": [
+        "דימום רחמי חריג – סיבות אפשריות ומתי לפנות לבדיקה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-04T11:50:22.485303+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-04-topic-07-run-37200043175-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-04T11:52:08Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-04-topic-07-run-37200043175-attempt-1.md",
+          "approval_id": "apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-04T14:23:23.860265+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-04-topic-07-run-37200043175-attempt-1.md",
+          "approval_id": "apr_c71360f9cd974da5ffdfb576eff88499131a12c22f31bbaee8dd8fb43522f532",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%93%d7%99%d7%9e%d7%95%d7%9d-%d7%a8%d7%97%d7%9e%d7%99-%d7%97%d7%a8%d7%99%d7%92-%d7%a1%d7%99%d7%91%d7%95%d7%aa-%d7%90%d7%a4%d7%a9%d7%a8%d7%99%d7%95%d7%aa-%d7%95%d7%9e%d7%aa%d7%99/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEOm80JC83NT6Yw",
+            "https://www.facebook.com/122207629568942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7512517699499962368/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_9bc78a075e83ac4f806d2b38",
+      "topic": "מה עומד מאחורי הכותרת: כבר לא גישה אחת לכולן: מאחורי הטיפול המותאם אישית לחולות בסרטן השחלות",
+      "normalized_topic": "מה עומד מאחורי הכותרת כבר לא גישה אחת לכולן מאחורי הטיפול המותאם אישית לחולות בסרטן השחלות",
+      "first_seen_at": "2026-10-05T13:43:08.700612+00:00",
+      "last_seen_at": "2026-10-05T21:14:25.701840+00:00",
+      "titles": [
+        "כבר לא גישה אחת לכולן: מה באמת עומד מאחורי הטיפול המותאם אישית בסרטן השחלות | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-05T13:43:08.700612+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-05-topic-90-run-37318909033-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-05T13:47:09Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-05-topic-90-run-37318909033-attempt-1.md",
+          "approval_id": "apr_3d76c0b22b74f488cfcac007da37a16ae47b204f42692da8fa10ccb14bda22d3"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-05T21:14:25.701840+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-05-topic-90-run-37318909033-attempt-1.md",
+          "approval_id": "apr_3d76c0b22b74f488cfcac007da37a16ae47b204f42692da8fa10ccb14bda22d3",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/10/blog-post.html",
+            "https://www.drguyrofe.co.il/%d7%9b%d7%91%d7%a8-%d7%9c%d7%90-%d7%92%d7%99%d7%a9%d7%94-%d7%90%d7%97%d7%aa-%d7%9c%d7%9b%d7%95%d7%9c%d7%9f-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa-%d7%a2%d7%95%d7%9e%d7%93/",
+            "https://www.facebook.com/122207876612942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7512983557007601665/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_0c1ddf1305ffaaec5de46166",
+      "topic": "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה",
+      "normalized_topic": "תסמונת pots מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה",
+      "first_seen_at": "2026-10-08T12:52:56.897719+00:00",
+      "last_seen_at": "2026-10-08T17:25:15.415290+00:00",
+      "titles": [
+        "תסמונת POTS: מדוע הדופק מזנק בעמידה וכיצד מאבחנים את ההפרעה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-08T12:52:56.897719+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-08-topic-82-run-37780011057-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-08T12:58:49Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-08-topic-82-run-37780011057-attempt-1.md",
+          "approval_id": "apr_511043f330e03570e7d06bd81364ae58980a705808829230cde54642bad4358e"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-08T17:25:15.415290+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-08-topic-82-run-37780011057-attempt-1.md",
+          "approval_id": "apr_511043f330e03570e7d06bd81364ae58980a705808829230cde54642bad4358e",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEKOfiMHiwMLsQA",
+            "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-pots-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%93%d7%95%d7%a4%d7%a7-%d7%9e%d7%96%d7%a0%d7%a7-%d7%91%d7%a2%d7%9e%d7%99%d7%93%d7%94/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_5d91406424f8da6b95a3846d",
+      "topic": "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול",
+      "normalized_topic": "צניחת איברי האגן תסמינים גורמי סיכון אבחון ואפשרויות טיפול",
+      "first_seen_at": "2026-10-11T12:10:28.668027+00:00",
+      "last_seen_at": "2026-10-11T18:07:48.999240+00:00",
+      "titles": [
+        "צניחת איברי האגן: תסמינים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-11T12:10:28.668027+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-11T12:12:50Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md",
+          "approval_id": "apr_6921de6a116b38817198eaf318403d851b33a5ee17217e0fab28459ddf87b93b"
+        },
+        {
+          "status": "publication_attempted",
+          "occurred_at": "2026-10-11T18:07:48.999240+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-11-topic-85-run-38138231850-attempt-1.md",
+          "approval_id": "apr_6921de6a116b38817198eaf318403d851b33a5ee17217e0fab28459ddf87b93b",
+          "campaign_status": "failed"
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_e554fcab00a5e58b87c3f4fc",
+      "topic": "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה",
+      "normalized_topic": "מיאסטניה גרביס מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה",
+      "first_seen_at": "2026-10-13T13:38:29.018912+00:00",
+      "last_seen_at": "2026-10-13T18:27:14.845214+00:00",
+      "titles": [
+        "מיאסטניה גרביס: מדוע השרירים נחלשים במאמץ וכיצד מאבחנים את המחלה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-13T13:38:29.018912+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-13-topic-81-run-38406525760-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-13T13:46:49Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-13-topic-81-run-38406525760-attempt-1.md",
+          "approval_id": "apr_c6427165b4d1ee0aaec4ba4260d62b0e9310c7d7ae373663e0791dddcb4a9375"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-13T18:27:14.845214+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-13-topic-81-run-38406525760-attempt-1.md",
+          "approval_id": "apr_c6427165b4d1ee0aaec4ba4260d62b0e9310c7d7ae373663e0791dddcb4a9375",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/10/blog-post_13.html",
+            "https://www.drguyrofe.co.il/%d7%9e%d7%99%d7%90%d7%a1%d7%98%d7%a0%d7%99%d7%94-%d7%92%d7%a8%d7%91%d7%99%d7%a1-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%a9%d7%a8%d7%99%d7%a8%d7%99%d7%9d/",
+            "https://www.facebook.com/122209352174942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7515840589041496064/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_51527d0ecad7a76bf6007f53",
+      "topic": "רגישות וסגוליות בבדיקות רפואיות: כיצד לפרש תוצאה חיובית או שלילית ולהבין את הסיכוי לטעות",
+      "normalized_topic": "רגישות וסגוליות בבדיקות רפואיות כיצד לפרש תוצאה חיובית או שלילית ולהבין את הסיכוי לטעות",
+      "first_seen_at": "2026-10-13T13:38:29.018912+00:00",
+      "last_seen_at": "2026-10-13T23:04:05.224217+00:00",
+      "titles": [
+        "רגישות וסגוליות בבדיקות רפואיות: כיצד לפרש תוצאה חיובית או שלילית ולהבין את הסיכוי לטעות | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-13T13:38:29.018912+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-13-topic-87-run-38406525760-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-13T13:47:14Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-13-topic-87-run-38406525760-attempt-1.md",
+          "approval_id": "apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-13T23:04:05.224217+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-13-topic-87-run-38406525760-attempt-1.md",
+          "approval_id": "apr_433e1111b996acb8d489cda86e5055a5d2bfe23d4894a50ba28e34fd82170cbb",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/רגישות-וסגוליות-בבדיקות-רפואיות-כיצד-לפרש-תוצאה-חיובית-או-שלילית-ולהבין-את-הסיכוי-לטעות"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_6c1359679d2e1479dacb6285",
+      "topic": "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול",
+      "normalized_topic": "הריון חוץ־רחמי תסמינים מוקדמים גורמי סיכון אבחון ואפשרויות טיפול",
+      "first_seen_at": "2026-10-18T10:27:53.719109+00:00",
+      "last_seen_at": "2026-10-18T13:55:01.565251+00:00",
+      "titles": [
+        "הריון חוץ־רחמי: תסמינים מוקדמים, גורמי סיכון, אבחון ואפשרויות טיפול | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-18T10:27:53.719109+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-18-topic-87-run-39119330161-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-18T10:31:41Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-18-topic-87-run-39119330161-attempt-1.md",
+          "approval_id": "apr_272bcd1b67dfe9f78bf946112c75ef6dfc1571fe4b6224d7edc3ad2455e3fc84"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-18T13:55:01.565251+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-18-topic-87-run-39119330161-attempt-1.md",
+          "approval_id": "apr_272bcd1b67dfe9f78bf946112c75ef6dfc1571fe4b6224d7edc3ad2455e3fc84",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://guyrofe.com/%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%97%d7%95%d7%a5%d6%be%d7%a8%d7%97%d7%9e%d7%99-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%9e%d7%95%d7%a7%d7%93%d7%9e%d7%99%d7%9d/",
+            "https://www.facebook.com/122210082350942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7517583948240211968/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_55fdedcad0ba7c41be7725e4",
+      "topic": "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה",
+      "normalized_topic": "יתר לחץ דם תוך־גולגולתי אידיופתי מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה",
+      "first_seen_at": "2026-10-20T10:58:23.455308+00:00",
+      "last_seen_at": "2026-10-20T13:03:29.794308+00:00",
+      "titles": [
+        "יתר לחץ דם תוך־גולגולתי אידיופתי: מדוע מופיעים כאבי ראש והפרעות ראייה וכיצד מאבחנים את המחלה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-20T10:58:23.455308+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-20-topic-85-run-39411629210-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-20T11:06:04Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-20-topic-85-run-39411629210-attempt-1.md",
+          "approval_id": "apr_874fc91ea203236f01a210ea18e850bae1f972432a791af9b87fd512e1d9bb9b"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-20T13:03:29.794308+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-20-topic-85-run-39411629210-attempt-1.md",
+          "approval_id": "apr_874fc91ea203236f01a210ea18e850bae1f972432a791af9b87fd512e1d9bb9b",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/10/blog-post_20.html",
+            "https://www.drguyrofe.co.il/%d7%99%d7%aa%d7%a8-%d7%9c%d7%97%d7%a5-%d7%93%d7%9d-%d7%aa%d7%95%d7%9a%d6%be%d7%92%d7%95%d7%9c%d7%92%d7%95%d7%9c%d7%aa%d7%99-%d7%90%d7%99%d7%93%d7%99%d7%95%d7%a4%d7%aa%d7%99/",
+            "https://www.facebook.com/122210387294942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7518295826142593025/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_0e7439ca22753598cbfa4b1a",
+      "topic": "סיכון יחסי לעומת סיכון מוחלט: כיצד לפרש תוצאות מחקרים ולקבל החלטות רפואיות מושכלות",
+      "normalized_topic": "סיכון יחסי לעומת סיכון מוחלט כיצד לפרש תוצאות מחקרים ולקבל החלטות רפואיות מושכלות",
+      "first_seen_at": "2026-10-21T11:14:09.416845+00:00",
+      "last_seen_at": "2026-10-21T14:41:58.594165+00:00",
+      "titles": [
+        "סיכון יחסי לעומת סיכון מוחלט: כיצד לפרש תוצאות מחקרים ולקבל החלטות רפואיות מושכלות | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-21T11:14:09.416845+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-21-topic-88-run-39590401572-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-21T11:19:11Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-21-topic-88-run-39590401572-attempt-1.md",
+          "approval_id": "apr_e190def3cfac52f8a26511895dd5ff9f3fff5e913f24b4f4c00389d5f4ff4bf1"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-21T14:41:58.594165+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-21-topic-88-run-39590401572-attempt-1.md",
+          "approval_id": "apr_e190def3cfac52f8a26511895dd5ff9f3fff5e913f24b4f4c00389d5f4ff4bf1",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/סיכון-יחסי-לעומת-סיכון-מוחלט-כיצד-לפרש-תוצאות-מחקרים-ולקבל-החלטות-רפואיות-מושכלות"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_272faedd18dd34ee7b9b2829",
+      "topic": "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
+      "normalized_topic": "דלקת מוח אוטואימונית מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה",
+      "first_seen_at": "2026-10-22T11:13:18.467452+00:00",
+      "last_seen_at": "2026-10-22T15:39:25.981909+00:00",
+      "titles": [
+        "דלקת מוח אוטואימונית: מדוע היא עלולה להיראות כהפרעה פסיכיאטרית וכיצד מאבחנים אותה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-22T11:13:18.467452+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-22-topic-81-run-39768898592-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-22T11:19:04Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-22-topic-81-run-39768898592-attempt-1.md",
+          "approval_id": "apr_2d099319433e7d47e8da6fc4ba52906dc22f164c346c05f573f39c7f8f8c693a"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-22T15:39:25.981909+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-22-topic-81-run-39768898592-attempt-1.md",
+          "approval_id": "apr_2d099319433e7d47e8da6fc4ba52906dc22f164c346c05f573f39c7f8f8c693a",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEK3N0bHmzpnkpQE",
+            "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9e%d7%95%d7%97-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_d62658b9c18855f38ad38483",
+      "topic": "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף",
+      "normalized_topic": "תסביב שחלה תסמינים גורמי סיכון אבחון ומדוע נדרש טיפול דחוף",
+      "first_seen_at": "2026-10-25T10:48:37.362706+00:00",
+      "last_seen_at": "2026-10-25T13:57:45.627731+00:00",
+      "titles": [
+        "תסביב שחלה: תסמינים, גורמי סיכון, אבחון ומדוע נדרש טיפול דחוף | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-25T10:48:37.362706+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-25-topic-85-run-40186265795-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-25T10:53:58Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-25-topic-85-run-40186265795-attempt-1.md",
+          "approval_id": "apr_44127f72b8882e4a397a5abfcecc7e043d12160dac9cb4df9a3a18198c5bd271"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-25T13:57:45.627731+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-10-25-topic-85-run-40186265795-attempt-1.md",
+          "approval_id": "apr_44127f72b8882e4a397a5abfcecc7e043d12160dac9cb4df9a3a18198c5bd271",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%aa%d7%a1%d7%91%d7%99%d7%91-%d7%a9%d7%97%d7%9c%d7%94-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%92%d7%95%d7%a8%d7%9e%d7%99-%d7%a1%d7%99%d7%9b%d7%95%d7%9f/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEJfKg6q5yp6-SA",
+            "https://www.facebook.com/122211195026942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7520121384363220992/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_7b1e676ffa8b78e14e5df789",
+      "topic": "מה עומד מאחורי הכותרת: צמחה לכן שערה שחורה בסנטר? זה עשוי להיות סימן רפואי שצריך לבדוק",
+      "normalized_topic": "מה עומד מאחורי הכותרת צמחה לכן שערה שחורה בסנטר זה עשוי להיות סימן רפואי שצריך לבדוק",
+      "first_seen_at": "2026-10-26T12:19:23.690662+00:00",
+      "last_seen_at": "2026-10-26T17:30:40.001481+00:00",
+      "titles": [
+        "צמחה לכן שערה שחורה בסנטר? מה באמת עשוי לעמוד מאחוריה ומתי כדאי לבדוק | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-26T12:19:23.690662+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-26-topic-90-run-40321596322-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-26T12:24:19Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-26-topic-90-run-40321596322-attempt-1.md",
+          "approval_id": "apr_e5eebced446c273fa985fbfd27befefb5021001185295bf48252c47d7fd2f92b"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-26T17:30:40.001481+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-26-topic-90-run-40321596322-attempt-1.md",
+          "approval_id": "apr_e5eebced446c273fa985fbfd27befefb5021001185295bf48252c47d7fd2f92b",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/10/blog-post_26.html",
+            "https://www.drguyrofe.co.il/%d7%a6%d7%9e%d7%97%d7%94-%d7%9c%d7%9b%d7%9f-%d7%a9%d7%a2%d7%a8%d7%94-%d7%a9%d7%97%d7%95%d7%a8%d7%94-%d7%91%d7%a1%d7%a0%d7%98%d7%a8-%d7%9e%d7%94-%d7%91%d7%90%d7%9e%d7%aa/",
+            "https://www.facebook.com/122211392066942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7520537390449549312/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_87c2349f8ab536d50916406d",
+      "topic": "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה",
+      "normalized_topic": "ערך מנבא חיובי ושלילי כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה",
+      "first_seen_at": "2026-10-27T11:39:30.108826+00:00",
+      "last_seen_at": "2026-10-27T18:39:08.741134+00:00",
+      "titles": [
+        "ערך מנבא חיובי ושלילי: כיצד שכיחות המחלה משפיעה על משמעות תוצאת הבדיקה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-27T11:39:30.108826+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-27-topic-86-run-40497742072-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-27T11:43:46Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-27-topic-86-run-40497742072-attempt-1.md",
+          "approval_id": "apr_ef771dceda64472353c8922d78ffda8367eaf916736662dd870624d199ebe7d6"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-27T18:39:08.741134+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-10-27-topic-86-run-40497742072-attempt-1.md",
+          "approval_id": "apr_ef771dceda64472353c8922d78ffda8367eaf916736662dd870624d199ebe7d6",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/ערך-מנבא-חיובי-ושלילי-כיצד-שכיחות-המחלה-משפיעה-על-משמעות-תוצאת-הבדיקה"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_81f4ab6952e7f7f80d5bb1bf",
+      "topic": "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו",
+      "normalized_topic": "קרע ספונטני בעורק כלילי scad כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו",
+      "first_seen_at": "2026-10-29T12:21:45.615316+00:00",
+      "last_seen_at": "2026-10-29T16:13:38.500889+00:00",
+      "titles": [
+        "קרע ספונטני בעורק כלילי (SCAD): כיצד הוא גורם להתקף לב ללא טרשת ומדוע קשה לזהותו | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-10-29T12:21:45.615316+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-29-topic-84-run-40872575157-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-10-29T12:24:16Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-29-topic-84-run-40872575157-attempt-1.md",
+          "approval_id": "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-10-29T16:13:38.500889+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-10-29-topic-84-run-40872575157-attempt-1.md",
+          "approval_id": "apr_c2c20842b1d840e3d0eece87b510487b4f118d0d3c431b7af3e02c9d6fa9455f",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://www.drguyrofe.co.il/%d7%a7%d7%a8%d7%a2-%d7%a1%d7%a4%d7%95%d7%a0%d7%98%d7%a0%d7%99-%d7%91%d7%a2%d7%95%d7%a8%d7%a7-%d7%9b%d7%9c%d7%99%d7%9c%d7%99-scad-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%95%d7%90/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_05f4fc1d207d94ba5e527378",
+      "topic": "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם",
+      "normalized_topic": "אי־ספיקה שחלתית ראשונית תסמינים גורמים אבחון והשלכות על הפוריות ובריאות העצם",
+      "first_seen_at": "2026-11-01T12:44:15.849579+00:00",
+      "last_seen_at": "2026-11-01T19:44:41.532211+00:00",
+      "titles": [
+        "אי־ספיקה שחלתית ראשונית: תסמינים, גורמים, אבחון והשלכות על הפוריות ובריאות העצם | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-01T12:44:15.849579+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-01T12:46:32Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md",
+          "approval_id": "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-01T19:44:41.532211+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-01-topic-81-run-41307863310-attempt-1.md",
+          "approval_id": "apr_9ab0789f4c59bf8cb5d98957e09719aa7e41f9144bfc799c643d8f8c003e2703",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%94-%d7%a9%d7%97%d7%9c%d7%aa%d7%99%d7%aa-%d7%a8%d7%90%d7%a9%d7%95%d7%a0%d7%99%d7%aa-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDowNjFhLXR1UzdFdFYwYkhPV21yalR3",
+            "https://www.facebook.com/122212548968942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7522745415163871234/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_fe1e6dcc402477b0969aee9a",
+      "topic": "מה עומד מאחורי הכותרת: אכלו בוטנים במשך חצי שנה - ובדם שלהם התגלה שינוי מפתיע",
+      "normalized_topic": "מה עומד מאחורי הכותרת אכלו בוטנים במשך חצי שנה ובדם שלהם התגלה שינוי מפתיע",
+      "first_seen_at": "2026-11-02T14:51:31.000323+00:00",
+      "last_seen_at": "2026-11-02T19:41:12.918661+00:00",
+      "titles": [
+        "אכלו בוטנים במשך חצי שנה — ובדם שלהם התגלה שינוי מפתיע: מה המחקר באמת מצא? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-02T14:51:31.000323+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-02-topic-90-run-41465876753-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-02T14:54:42Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-02-topic-90-run-41465876753-attempt-1.md",
+          "approval_id": "apr_69634fbf4fce67684b534139a39667c6faaf1e9b98b5f2f4223f7b99c199a75b"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-02T19:41:12.918661+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-02-topic-90-run-41465876753-attempt-1.md",
+          "approval_id": "apr_69634fbf4fce67684b534139a39667c6faaf1e9b98b5f2f4223f7b99c199a75b",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/11/blog-post.html",
+            "https://www.drguyrofe.co.il/%d7%90%d7%9b%d7%9c%d7%95-%d7%91%d7%95%d7%98%d7%a0%d7%99%d7%9d-%d7%91%d7%9e%d7%a9%d7%9a-%d7%97%d7%a6%d7%99-%d7%a9%d7%a0%d7%94-%d7%95%d7%91%d7%93%d7%9d-%d7%a9%d7%9c%d7%94%d7%9d/",
+            "https://www.facebook.com/122212719092942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7523106959798177793/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_47891a07aef79bdc4a98e5c9",
+      "topic": "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות",
+      "normalized_topic": "מתאם אינו סיבתיות כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות",
+      "first_seen_at": "2026-11-03T13:41:08.363900+00:00",
+      "last_seen_at": "2026-11-03T16:49:30.805514+00:00",
+      "titles": [
+        "מתאם אינו סיבתיות: כיצד לפרש קשרים סטטיסטיים במחקרים רפואיים ולהימנע ממסקנות שגויות | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-03T13:41:08.363900+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-03-topic-83-run-41646485391-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-03T13:45:23Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-03-topic-83-run-41646485391-attempt-1.md",
+          "approval_id": "apr_6c8740c1cd159c9d47f50fa639b70c8cf1c38670f93cc69a349e7a51fea38ee7"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-03T16:49:30.805514+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-03-topic-83-run-41646485391-attempt-1.md",
+          "approval_id": "apr_6c8740c1cd159c9d47f50fa639b70c8cf1c38670f93cc69a349e7a51fea38ee7",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/מתאם-אינו-סיבתיות-כיצד-לפרש-קשרים-סטטיסטיים-במחקרים-רפואיים-ולהימנע-ממסקנות-שגויות"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_daa5ec690e922c665df1f33e",
+      "topic": "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים",
+      "normalized_topic": "כולנגיטיס מרתית ראשונית כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים",
+      "first_seen_at": "2026-11-05T14:02:36.551910+00:00",
+      "last_seen_at": "2026-11-05T18:21:10.262552+00:00",
+      "titles": [
+        "כולנגיטיס מרתית ראשונית: כיצד מחלה אוטואימונית פוגעת בדרכי המרה ומהם סימני האזהרה המוקדמים | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-05T14:02:36.551910+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-05-topic-89-run-42041122517-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-05T14:04:06Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-05-topic-89-run-42041122517-attempt-1.md",
+          "approval_id": "apr_6e05594ac0ed28004a589906e9190c69b06fb7b92d42aaa165b7b13a053ddb80"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-05T18:21:10.262552+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-05-topic-89-run-42041122517-attempt-1.md",
+          "approval_id": "apr_6e05594ac0ed28004a589906e9190c69b06fb7b92d42aaa165b7b13a053ddb80",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpoNnJnRC1OaVFkTVVudU84dGZsc3dB",
+            "https://www.drguyrofe.co.il/%d7%9b%d7%95%d7%9c%d7%a0%d7%92%d7%99%d7%98%d7%99%d7%a1-%d7%9e%d7%a8%d7%aa%d7%99%d7%aa-%d7%a8%d7%90%d7%a9%d7%95%d7%a0%d7%99%d7%aa-%d7%9b%d7%99%d7%a6%d7%93-%d7%9e%d7%97%d7%9c%d7%94/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_a309420e504b13d73f4d07c0",
+      "topic": "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת",
+      "normalized_topic": "אי־ספיקת צוואר הרחם בהריון גורמי סיכון אבחון ואפשרויות מניעה של לידה מוקדמת",
+      "first_seen_at": "2026-11-09T15:18:38.291278+00:00",
+      "last_seen_at": "2026-11-10T01:42:39.951473+00:00",
+      "titles": [
+        "אי־ספיקת צוואר הרחם בהריון: גורמי סיכון, אבחון ואפשרויות מניעה של לידה מוקדמת | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-09T15:18:38.291278+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-09-topic-86-run-42643288010-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-09T15:23:05Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-09-topic-86-run-42643288010-attempt-1.md",
+          "approval_id": "apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-10T01:42:39.951473+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-09-topic-86-run-42643288010-attempt-1.md",
+          "approval_id": "apr_aac6ce891be93a6c24002d763f3c4c7b75cb44e335514bb38c46b64778302897",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%90%d7%99%d6%be%d7%a1%d7%a4%d7%99%d7%a7%d7%aa-%d7%a6%d7%95%d7%95%d7%90%d7%a8-%d7%94%d7%a8%d7%97%d7%9d-%d7%91%d7%94%d7%a8%d7%99%d7%95%d7%9f-%d7%92%d7%95%d7%a8%d7%9e%d7%99/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDotNUdFUHJZbXc5UHBXRzBFcndKUTNB",
+            "https://www.facebook.com/122214240530942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7525734584878133248/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_9cc2abb83dbc505c4754e417",
+      "topic": "מה עומד מאחורי הכותרת: מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב?",
+      "normalized_topic": "מה עומד מאחורי הכותרת מעבר לקילוגרמים האם יש קשר בין זריקות ההרזיה ובריאות הלב",
+      "first_seen_at": "2026-11-09T15:18:38.291278+00:00",
+      "last_seen_at": "2026-11-10T08:51:58.048490+00:00",
+      "titles": [
+        "מעבר לקילוגרמים: האם יש קשר בין זריקות ההרזיה ובריאות הלב? | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-09T15:18:38.291278+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-09-topic-90-run-42643288010-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-09T15:24:50Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-09-topic-90-run-42643288010-attempt-1.md",
+          "approval_id": "apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-10T08:51:58.048490+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-09-topic-90-run-42643288010-attempt-1.md",
+          "approval_id": "apr_b71f7573b1dbb1b6784e1cb451d3e61284ff4e9db8230d8a4c4447dfe8cc800e",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/11/blog-post_10.html",
+            "https://www.drguyrofe.co.il/%d7%9e%d7%a2%d7%91%d7%a8-%d7%9c%d7%a7%d7%99%d7%9c%d7%95%d7%92%d7%a8%d7%9e%d7%99%d7%9d-%d7%94%d7%90%d7%9d-%d7%99%d7%a9-%d7%a7%d7%a9%d7%a8-%d7%91%d7%99%d7%9f/",
+            "https://www.facebook.com/122214292136942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7525842672591417344/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_8aeae35ee1865bb070ed3a88",
+      "topic": "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי",
+      "normalized_topic": "מספר הנבדקים ועוצמה סטטיסטית כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי",
+      "first_seen_at": "2026-11-11T13:38:07.159297+00:00",
+      "last_seen_at": "2026-11-11T16:49:18.932782+00:00",
+      "titles": [
+        "מספר הנבדקים ועוצמה סטטיסטית: כיצד לדעת אם מחקר רפואי גדול מספיק כדי לזהות הבדל אמיתי | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-11T13:38:07.159297+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-11-topic-85-run-43030850882-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-11T13:40:17Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-11-topic-85-run-43030850882-attempt-1.md",
+          "approval_id": "apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-11T16:49:18.932782+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-11-topic-85-run-43030850882-attempt-1.md",
+          "approval_id": "apr_26d11bb809ed3ccf1c478935522b28d2416678864203017b7547840dc1bc2eaf",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/מספר-הנבדקים-ועוצמה-סטטיסטית-כיצד-לדעת-אם-מחקר-רפואי-גדול-מספיק-כדי-לזהות-הבדל-אמיתי"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_aa758bf95d897be7ff71663c",
+      "topic": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית",
+      "normalized_topic": "תסמונת הרצועה הקשתית האמצעית mals מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית",
+      "first_seen_at": "2026-11-12T14:41:42.348255+00:00",
+      "last_seen_at": "2026-11-12T20:06:53.741042+00:00",
+      "titles": [
+        "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-12T14:41:42.348255+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-12-topic-83-run-43239783886-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-12T14:45:00Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-12-topic-83-run-43239783886-attempt-1.md",
+          "approval_id": "apr_9592a24e9a035445dcdc48e476923d1343ff3db1e2515e24118d8b2a5a6fa0bb"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-12T20:06:53.741042+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-12-topic-83-run-43239783886-attempt-1.md",
+          "approval_id": "apr_9592a24e9a035445dcdc48e476923d1343ff3db1e2515e24118d8b2a5a6fa0bb",
+          "campaign_status": "completed",
+          "urls": [
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpwUHhIOEpzVEl4YkdLZDhmVlVfRUx3",
+            "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a8%d7%a6%d7%95%d7%a2%d7%94-%d7%94%d7%a7%d7%a9%d7%aa%d7%99%d7%aa-%d7%94%d7%90%d7%9e%d7%a6%d7%a2%d7%99%d7%aa-mals/"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_bff6111b26bd9341e0db2935",
+      "topic": "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה",
+      "normalized_topic": "שליית פתח גורמי סיכון תסמינים אבחון והשלכות על המעקב והלידה",
+      "first_seen_at": "2026-11-15T15:20:26.585060+00:00",
+      "last_seen_at": "2026-11-15T19:11:41.431812+00:00",
+      "titles": [
+        "שליית פתח: גורמי סיכון, תסמינים, אבחון והשלכות על המעקב והלידה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "canonical_depth"
+      ],
+      "events": [
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-15T15:20:26.585060+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-15-topic-80-run-43719198788-attempt-2.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-15T15:22:10Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-15-topic-80-run-43719198788-attempt-2.md",
+          "approval_id": "apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-15T19:11:41.431812+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-15-topic-80-run-43719198788-attempt-2.md",
+          "approval_id": "apr_73d61edbd0eb78e8575acc738aafc839ba0bf5d56741a82c0c877c6cf3a95913",
+          "campaign_status": "completed_with_errors",
+          "urls": [
+            "https://guyrofe.com/%d7%a9%d7%9c%d7%99%d7%99%d7%aa-%d7%a4%d7%aa%d7%97-%d7%92%d7%95%d7%a8%d7%9e%d7%99-%d7%a1%d7%99%d7%9b%d7%95%d7%9f-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d/",
+            "https://www.facebook.com/122215179512942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7527810502362820608/"
+          ]
+        }
+      ]
+    }
+  ]
+}

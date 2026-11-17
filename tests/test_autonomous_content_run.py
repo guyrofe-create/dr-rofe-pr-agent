@@ -10,6 +10,54 @@ from scripts import autonomous_content_run
 
 
 class AutonomousContentRunTests(unittest.TestCase):
+    def test_failed_generation_uses_one_distinct_fallback_topic(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(
+            autonomous_content_run, "content_is_frozen", return_value=False
+        ), patch.object(
+            autonomous_content_run, "unbundled_generated_jobs", return_value=[]
+        ), patch.object(
+            autonomous_content_run, "due_jobs", return_value=[{
+                "stream": "health_news",
+                "site_key": "DRGUYROFE_CO_IL",
+                "channels": ["facebook"],
+                "week": "week-of-2026-11-15",
+                "local_date": "2026-11-16",
+                "weekday": "monday",
+                "topic_source": "fresh_news_radar",
+                "public_execution_allowed": False,
+            }]
+        ), patch.object(
+            autonomous_content_run, "stalled_asset_for_site", return_value=None
+        ), patch.object(
+            autonomous_content_run,
+            "generate_job",
+            side_effect=[
+                RuntimeError("first topic failed strict quality checks"),
+                {
+                    "stream": "health_news",
+                    "site_key": "DRGUYROFE_CO_IL",
+                    "channels": ["facebook"],
+                    "draft_path": "content_drafts/fallback.md",
+                    "topic": "נושא חלופי ייחודי",
+                    "title": "כותרת",
+                    "public_execution_allowed": False,
+                },
+            ],
+        ) as generate:
+            root = Path(directory)
+            manifest = autonomous_content_run.run(
+                state_path=root / "state.json",
+                news_brief_dir=root,
+                manifest_path=root / "manifest.json",
+                topic_ledger_path=root / "topics.json",
+                now=datetime(2026, 11, 16, 8, 0, tzinfo=timezone.utc),
+            )
+        self.assertEqual(manifest["errors"], [])
+        self.assertEqual(len(manifest["recoveries"]), 1)
+        self.assertEqual(len(manifest["jobs"]), 1)
+        fallback_job = generate.call_args_list[1].args[0]
+        self.assertEqual(fallback_job["topic_source"], "mayo_public_catalog")
+
     def test_cli_accepts_forced_health_news_stream(self):
         with patch.object(
             sys,

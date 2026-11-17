@@ -24,7 +24,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: autonomous-content-cadence
+  group: reputation-publication-state
   cancel-in-progress: false
 
 jobs:
@@ -34,6 +34,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
 
       - uses: actions/setup-python@v7
         with:
@@ -41,6 +44,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Reconcile the permanent topic ledger
+        run: python scripts/reputation_core/topic_ledger.py
 
       - name: Generate cadence-due medical drafts
         id: generate
@@ -126,7 +132,7 @@ jobs:
         run: |
           git config user.name "dr-rofe-pr-agent"
           git config user.email "actions@github.com"
-          git add data/content_cadence_state.json content_drafts/ approval_bundles/ || true
+          git add data/content_cadence_state.json data/content_topic_ledger.json content_drafts/ approval_bundles/ || true
           git add data/ai_usage_events/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Prepare autonomous content cadence $(date +%Y-%m-%d)"
           git pull --rebase

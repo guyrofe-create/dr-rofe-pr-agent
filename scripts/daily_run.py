@@ -24,6 +24,7 @@ try:
     from scripts.reputation_core.strategy import client_content_plan, load_client_profile
     from scripts.reputation_core.ai_usage import record_ai_usage
     from scripts.reputation_core.content_routing import topic_is_duplicate
+    from scripts.reputation_core.topic_ledger import ledger_topic_values
     from scripts.reputation_core.medical_evidence import audit_medical_claim_sources
     from scripts.reputation_core.entity_contract import (
         apply_article_contract,
@@ -38,6 +39,7 @@ except ModuleNotFoundError:
     from reputation_core.strategy import client_content_plan, load_client_profile
     from reputation_core.ai_usage import record_ai_usage
     from reputation_core.content_routing import topic_is_duplicate
+    from reputation_core.topic_ledger import ledger_topic_values
     from reputation_core.medical_evidence import audit_medical_claim_sources
     from reputation_core.entity_contract import (
         apply_article_contract,
@@ -125,10 +127,15 @@ class TopicPoolExhausted(RuntimeError):
     """All configured subjects already exist in the durable draft history."""
 
 
-def historical_topics():
-    """Return durable subjects and titles from every retained draft, not a short index."""
+def historical_topics(topic_ledger_path=None):
+    """Return every durable topic, led by the unbounded editorial ledger."""
     root = draft_root()
-    values = []
+    ledger_path = Path(
+        topic_ledger_path
+        or os.environ.get("CONTENT_TOPIC_LEDGER_PATH", "")
+        or PROJECT_ROOT / "data" / "content_topic_ledger.json"
+    )
+    values = ledger_topic_values(ledger_path)
     try:
         index = json.loads((root / "index.json").read_text(encoding="utf-8"))
     except (OSError, ValueError, TypeError):
