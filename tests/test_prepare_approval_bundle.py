@@ -269,7 +269,7 @@ class PrepareApprovalBundleTests(unittest.TestCase):
             self.assertFalse(result_path.exists())
             self.assertFalse((output / "index.json").exists())
 
-    def test_photo_selection_indecision_uses_owner_default_image(self):
+    def test_photo_selection_indecision_uses_curated_default_pool(self):
         with tempfile.TemporaryDirectory(
             dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
         ) as directory:
@@ -319,13 +319,16 @@ class PrepareApprovalBundleTests(unittest.TestCase):
             index = json.loads((output / "index.json").read_text(encoding="utf-8"))
             self.assertEqual(result["image_status"], "ready")
             self.assertIn("no suitable licensed photograph", result["image_selection_error"])
-            self.assertEqual(bundle["media"]["source_type"], "owner_provided_default")
+            self.assertEqual(
+                bundle["media"]["source_type"],
+                "openai_generated_text_free_visual",
+            )
             self.assertTrue(bundle["compliance"]["approved_image_ready"])
             self.assertEqual(
                 index["bundles"][0]["image_status"], "ready"
             )
 
-    def test_missing_image_argument_uses_owner_default_image(self):
+    def test_missing_image_argument_uses_curated_default_pool(self):
         with tempfile.TemporaryDirectory(
             dir=prepare_approval_bundle.PROJECT_ROOT / "content_drafts"
         ) as directory:
@@ -366,7 +369,10 @@ class PrepareApprovalBundleTests(unittest.TestCase):
                 Path(result["bundle_path"]).read_text(encoding="utf-8")
             )
             self.assertEqual(result["image_status"], "ready")
-            self.assertEqual(bundle["media"]["source_type"], "owner_provided_default")
+            self.assertEqual(
+                bundle["media"]["source_type"],
+                "openai_generated_text_free_visual",
+            )
             self.assertEqual(
                 set(bundle["media"]["variants"]),
                 {"hero", "landscape", "square", "portrait"},
