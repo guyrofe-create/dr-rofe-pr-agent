@@ -4111,6 +4111,119 @@
         "account": "accounts/110345401117888665629",
         "location": "accounts/110345401117888665629/locations/14140768355740435987"
       }
+    },
+    "pub_c5b569d8718e406a7ea665884154084e7ee1f5c607f8bcebff8310870f447434": {
+      "version": 7,
+      "idempotency_key": "pub_c5b569d8718e406a7ea665884154084e7ee1f5c607f8bcebff8310870f447434",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "target_id": "canonical_wix__media__hero",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "8c69ff497a8821729269d78734f9a4f6504e0e2d7d5321ceddd284dd916a778e",
+      "status": "published",
+      "started_at": "2026-11-17T12:29:23Z",
+      "published_at": "2026-11-17T12:29:32Z",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-17-topic-87-run-44034157116-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-17-topic-87-run-44034157116-attempt-1-hero",
+        "sha256": "34051cf1ab53e05051e512bf8c10b9f21a9312ddb5931d361d0ece2e5eb0f491",
+        "metadata_verified": true
+      }
+    },
+    "pub_3600231b7bbc3592deaadb11a060c8cc74485e744c3f5c613a21cff71fdaace5": {
+      "version": 7,
+      "idempotency_key": "pub_3600231b7bbc3592deaadb11a060c8cc74485e744c3f5c613a21cff71fdaace5",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "f65a3b821e87a10791e833a58a6e5758549a897467e9cef37901048a86ba4c3a",
+      "status": "published",
+      "started_at": "2026-11-17T12:29:32Z",
+      "published_at": "2026-11-17T12:29:33Z",
+      "url": "https://www.drguyrofe.com/post/רווח-סמך-במחקרים-רפואיים-כיצד-לפרש-את-טווח-התוצאות-ולהבין-את-מידת-אי־הוודאות",
+      "provider_receipt": null
+    },
+    "pub_8c0fa2c1fa1930f85cc79d85441007cbb04c1a2f431d0956b645e50680e90a16": {
+      "version": 7,
+      "idempotency_key": "pub_8c0fa2c1fa1930f85cc79d85441007cbb04c1a2f431d0956b645e50680e90a16",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "target_id": "facebook_page__media__landscape",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "d4348879c20a9e98b5fff463c02bd93b5d5fa1d668d7177062f0553e5965ebe8",
+      "status": "published",
+      "started_at": "2026-11-17T12:29:35Z",
+      "published_at": "2026-11-17T12:29:39Z",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-17-topic-87-run-44034157116-attempt-1-landscape.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-17-topic-87-run-44034157116-attempt-1-landscape",
+        "sha256": "8148d21a50debfb03277904469e7657467f6211395c08eaa4ffbc415bccfe29e",
+        "metadata_verified": true
+      }
+    },
+    "pub_af46545984aebec281ec27073b875fdf25d56f1a9238d1573c4f75c306d0def0": {
+      "version": 7,
+      "idempotency_key": "pub_af46545984aebec281ec27073b875fdf25d56f1a9238d1573c4f75c306d0def0",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "894e8b414346e701e4bae1bbd10e0c44f54fd1046e24201dc57919a6d802dbc8",
+      "status": "published",
+      "started_at": "2026-11-17T12:29:39Z",
+      "published_at": "2026-11-17T12:29:49Z",
+      "url": "https://www.facebook.com/122215459430942441",
+      "provider_receipt": null
+    },
+    "pub_a7796e3d67e1e5edc0ac4eb72b0274972a51a88ec897b8e9cd8b760b09ada656": {
+      "version": 7,
+      "idempotency_key": "pub_a7796e3d67e1e5edc0ac4eb72b0274972a51a88ec897b8e9cd8b760b09ada656",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "a8a828ca7d6388ef712a054d4f7b0024267d263d943881fb2dc034304826b763",
+      "status": "published",
+      "started_at": "2026-11-17T12:29:49Z",
+      "published_at": "2026-11-17T12:29:52Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7528434232495599617/",
+      "provider_receipt": null
+    },
+    "pub_a0b6a5d97e9ae13f57aee64c9bd7e823eab4052bd8a398092c26cc4fcf7a3b5a": {
+      "version": 7,
+      "idempotency_key": "pub_a0b6a5d97e9ae13f57aee64c9bd7e823eab4052bd8a398092c26cc4fcf7a3b5a",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "request_sha256": "8e3225cf49ca762c7a6df2d5950fed50071b0e2bb7f7b6d0629165808bc30d7c",
+      "status": "published",
+      "started_at": "2026-11-17T12:29:52Z",
+      "published_at": "2026-11-17T12:29:53Z",
+      "url": "https://guyrofe.blogspot.com/2026/11/blog-post_17.html",
+      "provider_receipt": null
+    },
+    "pub_b3897b2865fb932d445c7189b70c82bd8fd550d604c9cbe5966da18a0f331757": {
+      "version": 7,
+      "idempotency_key": "pub_b3897b2865fb932d445c7189b70c82bd8fd550d604c9cbe5966da18a0f331757",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "db4f3a73b3e44ae8112281247bc27f10b7cd8762ed6cdc1163b12aa35ce6d7b0",
+      "status": "published",
+      "started_at": "2026-11-17T12:29:53Z",
+      "published_at": "2026-11-17T12:30:02Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpISHJuYkhmSjFranpSa2stWWVEZ1d3",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/8664693806694640255",
+        "state": "LIVE",
+        "createTime": "2026-11-17T12:29:56.174805246Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpISHJuYkhmSjFranpSa2stWWVEZ1d3",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }

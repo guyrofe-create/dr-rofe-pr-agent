@@ -1,6 +1,125 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md",
+      "title": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-11-17T12:30:02.262968+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.com",
+          "status": "published",
+          "target_id": "canonical_wix",
+          "url": "https://www.drguyrofe.com/post/רווח-סמך-במחקרים-רפואיים-כיצד-לפרש-את-טווח-התוצאות-ולהבין-את-מידת-אי־הוודאות",
+          "detail": "idempotency_key=pub_3600231b7bbc3592deaadb11a060c8cc74485e744c3f5c613a21cff71fdaace5"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verification_unavailable",
+          "url": "https://www.drguyrofe.com/post/רווח-סמך-במחקרים-רפואיים-כיצד-לפרש-את-טווח-התוצאות-ולהבין-את-מידת-אי־הוודאות",
+          "detail": "HTTPError: 404 Client Error: Not Found for url: https://www.drguyrofe.com/post/%D7%A8%D7%95%D7%95%D7%97-%D7%A1%D7%9E%D7%9A-%D7%91%D7%9E%D7%97%D7%A7%D7%A8%D7%99%D7%9D-%D7%A8%D7%A4%D7%95%D7%90%D7%99%D7%99%D7%9D-%D7%9B%D7%99%D7%A6%D7%93-%D7%9C%D7%A4%D7%A8%D7%A9-%D7%90%D7%AA-%D7%98%D7%95%D7%95%D7%97-%D7"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-17-topic-87-run-44034157116-attempt-1-hero.png",
+          "detail": "openai_generated_text_free_visual"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.co.il",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "published",
+          "target_id": "facebook_page",
+          "url": "https://www.facebook.com/122215459430942441",
+          "detail": "idempotency_key=pub_af46545984aebec281ec27073b875fdf25d56f1a9238d1573c4f75c306d0def0"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "published",
+          "target_id": "linkedin_member",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7528434232495599617/",
+          "detail": "idempotency_key=pub_a7796e3d67e1e5edc0ac4eb72b0274972a51a88ec897b8e9cd8b760b09ada656"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "published",
+          "target_id": "blogger_blog",
+          "url": "https://guyrofe.blogspot.com/2026/11/blog-post_17.html",
+          "detail": "idempotency_key=pub_a0b6a5d97e9ae13f57aee64c9bd7e823eab4052bd8a398092c26cc4fcf7a3b5a"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpISHJuYkhmSjFranpSa2stWWVEZ1d3",
+          "detail": "idempotency_key=pub_b3897b2865fb932d445c7189b70c82bd8fd550d604c9cbe5966da18a0f331757"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "search_target": {
+        "primary_query": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות",
+        "secondary_queries": [
+          "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות ד״ר גיא רופא",
+          "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "informational"
+      },
+      "canonical_url": "https://www.drguyrofe.com/post/רווח-סמך-במחקרים-רפואיים-כיצד-לפרש-את-טווח-התוצאות-ולהבין-את-מידת-אי־הוודאות",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-11-17-topic-81-run-44034157116-attempt-1.md",
       "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן | ד״ר גיא רופא",
       "status": "completed",
@@ -5225,102 +5344,6 @@
       "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
       "search_target": {},
       "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-02-topic-90-run-30739661340-attempt-1.md",
-      "title": "צריכת סוכר לפני גיל שנתיים ודמנציה: מה באמת עומד מאחורי הכותרת? | ד״ר גיא רופא",
-      "status": "completed",
-      "published_at": "2026-09-17T05:30:29.785115+00:00",
-      "destinations": [
-        {
-          "name": "drguyrofe.co.il",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
-          "detail": "idempotency_key=pub_2bcf8379db0d333dc6eeba207b2ae4d7466c140638cf98d39b01e3f1e544d1f6"
-        },
-        {
-          "name": "Canonical SEO verification",
-          "status": "seo_warning",
-          "url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
-          "detail": "failed checks: canonical_matches, no_internal_run_slug"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1-approved.webp",
-          "detail": "owner_manual_upload"
-        },
-        {
-          "name": "guyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_618a208063eb0a5dbaa626486f8af504317fb40e1f96b977ca269f7bfff7a0c3",
-      "search_target": {},
-      "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-02-topic-90-run-30739661340-attempt-1/",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

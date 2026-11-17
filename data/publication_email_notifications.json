@@ -1676,6 +1676,33 @@
         "https://guyrofe.blogspot.com/2026/11/blog-post_16.html",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpRVVl1UURWV2RfejlSWkpBU2tRLUdn"
       ]
+    },
+    "expired:apr_5922f6d36128aa0e883963fc6755e20dffdbea6525cfb963389c898c7f8b6ff3:2026-08-02T16:12:08Z": {
+      "recorded_at": "2026-11-17T12:29:17.491481+00:00",
+      "approval_id": "apr_5922f6d36128aa0e883963fc6755e20dffdbea6525cfb963389c898c7f8b6ff3",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-08-02-topic-05-run-30739661340-attempt-1.md",
+      "published_approval_id": "apr_5922f6d36128aa0e883963fc6755e20dffdbea6525cfb963389c898c7f8b6ff3",
+      "campaign_result": "content_drafts/campaigns/2026-08-02-topic-05-run-30739661340-attempt-1.json",
+      "urls": [
+        "https://guyrofe.com/guy-rofe-pilot-2026-08-02-topic-05-run-30739661340-attempt-1/",
+        "https://www.facebook.com/122197372376942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7489718427276972032/"
+      ]
+    },
+    "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e:dd367a6a815e3f6e7d27055aff5098ea1b36fe36f59d323435217e17e3c68a0f": {
+      "sent_at": "2026-11-17T12:30:03.568293+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
+      "state": "success",
+      "subject": "אישור פרסום: רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.com/post/רווח-סמך-במחקרים-רפואיים-כיצד-לפרש-את-טווח-התוצאות-ולהבין-את-מידת-אי־הוודאות",
+        "https://www.facebook.com/122215459430942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7528434232495599617/",
+        "https://guyrofe.blogspot.com/2026/11/blog-post_17.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpISHJuYkhmSjFranpSa2stWWVEZ1d3"
+      ]
     }
   }
 }
