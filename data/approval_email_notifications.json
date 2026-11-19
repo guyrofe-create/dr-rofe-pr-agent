@@ -525,6 +525,12 @@
       "recipient": "guyrofe@gmail.com",
       "approval_url": "https://dr-rofe-reputation-center.guyrofe.chatgpt.site?approval_id=apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e",
       "bundle_path": "approval_bundles/apr_a7620738c226682722c5c74d47bfe97e63fbac89e361ac606e4c9700b58d067e.json"
+    },
+    "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34": {
+      "sent_at": "2026-11-19T16:33:24.585849+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_url": "https://dr-rofe-reputation-center.guyrofe.chatgpt.site?approval_id=apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34",
+      "bundle_path": "approval_bundles/apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34.json"
     }
   }
 }
