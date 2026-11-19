@@ -3496,7 +3496,7 @@
       "topic": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
       "normalized_topic": "מחלת קסטלמן מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
       "first_seen_at": "2026-11-19T15:18:37.033533+00:00",
-      "last_seen_at": "2026-11-19T15:18:37.033533+00:00",
+      "last_seen_at": "2026-11-19T15:20:23Z",
       "titles": [
         "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא"
       ],
@@ -3516,6 +3516,21 @@
           "source": "autonomous_content",
           "stream": "health_news",
           "draft_path": "content_drafts/2026-11-19-topic-88-run-44553231514-attempt-1.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-19T15:18:37.033533+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-19-topic-88-run-44553231514-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-19T15:20:23Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-19-topic-88-run-44553231514-attempt-1.md",
+          "approval_id": "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34"
         }
       ]
     }
