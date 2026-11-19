@@ -1,0 +1,663 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-11-19T15:20:23Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-11-19-topic-88-run-44553231514-attempt-1.md",
+  "source_draft_sha256": "1eba5d679ead9d94e378f325a768bd865ad54056da38aa2e8fb754ef8398abbe",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-landscape.png",
+    "sha256": "2e234e2f39149c8dcecae87acb125c54106c2709bd50c7c02db2ab3be9a7b601",
+    "alt_text": "צילום מיקרוסקופי של רקמת לימפה צבועה בגווני ורוד וסגול, ובה תאים צפופים וכלי דם קטנים, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "צילום מיקרוסקופי של רקמת לימפה צבועה בגווני ורוד וסגול, ובה תאים צפופים וכלי דם קטנים.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Castleman_disease_-_high_mag.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Castleman_disease_-_high_mag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Nephron",
+    "license_name": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attribution": "Castleman disease - high mag.jpg — Nephron; CC BY-SA 3.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-hero.png",
+        "sha256": "aef4a67a311e8211f7052382681cab31e2d66a7c85d1b8aa586e76155db32e09",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-landscape.png",
+        "sha256": "2e234e2f39149c8dcecae87acb125c54106c2709bd50c7c02db2ab3be9a7b601",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-square.jpg",
+        "sha256": "20079d9080099192b9f7d7142737fd8049255f48eea74b411ab9986e790bdc06",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-portrait.png",
+        "sha256": "753ee574fc1c5f0f865b4f4808f9f83631619330a064b1e947c7527ae0a0a124",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא",
+        "cms_title": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+        "markdown": "# מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**בקצרה:** במחלת קסטלמן בלוטות הלימפה גדלות עקב שינויים בתאים, בכלי הדם ובמבנה הפנימי של רקמת הלימפה. בחלק מסוגי המחלה מתרחשת גם הפעלה מוגברת של מערכת החיסון, המלווה בייצור עודף של מתווכי דלקת, ובהם אינטרלוקין 6. מחלה חד־מוקדית מוגבלת לבלוטה אחת או לאזור לימפתי יחיד, ואילו מחלה רב־מוקדית מערבת כמה אזורי בלוטות ועלולה לגרום לדלקת מערכתית ולפגיעה באיברים.\n\nמחלת קסטלמן היא קבוצה נדירה והטרוגנית של הפרעות לימפופרוליפרטיביות. היא אינה זיהום רגיל, מחלה אוטואימונית טיפוסית או לימפומה, אף שהיא עשויה להיראות דומה למצבים אלה בבדיקות הראשוניות. האבחנה אינה נקבעת על סמך בלוטה מוגדלת, בדיקת דם או הדמיה בלבד. נדרש שילוב בין התסמינים, פיזור הבלוטות בגוף, בדיקות מעבדה ובדיקה פתולוגית של רקמת בלוטת לימפה.\n\nהמידע שלהלן הוא מידע רפואי כללי ואינו מיועד לאבחון עצמי. לפני פרסום יש להעביר כל טענה רפואית לביקורת אנושית מקצועית.\n\n## מהי מחלת קסטלמן ומה מתרחש בבלוטות הלימפה?\n\nבלוטות הלימפה הן חלק ממערכת החיסון. הן מסננות את נוזל הלימפה ומשמשות סביבה מאורגנת שבה תאי חיסון מזהים גורמים זרים, מתקשרים זה עם זה ומפתחים תגובה חיסונית. בלוטות עשויות לגדול באופן זמני בעקבות זיהום, חיסון או דלקת. במחלת קסטלמן, לעומת זאת, מתפתחים שינויים מורכבים יותר במבנה הבלוטה ובהרכב התאים שבתוכה.\n\nבבדיקה פתולוגית עשויים להיראות שינויים בזקיקים הלימפתיים ובמרכזי הנבט שלהם, ריבוי כלי דם קטנים, התעבות של אזורים מסוימים והצטברות של תאי פלזמה. תאי פלזמה הם תאי חיסון שהתמיינו מתאים מסוג B ותפקידם לייצר נוגדנים. התבניות אינן זהות בכל החולים, וחלקן עשויות להופיע גם במחלות אחרות. לפיכך, מראה פתולוגי מתאים אינו מספיק תמיד כדי לקבוע שמדובר במחלת קסטלמן.\n\nעל פי [הנחיות הקונצנזוס הבין־לאומיות לאבחון ולטיפול במחלת קסטלמן חד־מוקדית](https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/), יש לפרש את הממצאים ברקמה לצד היקף פיזור הבלוטות, התסמינים ובדיקות המעבדה. ההנחיות מדגישות שמחלת קסטלמן מייצגת ספקטרום של מצבים החולקים מאפיינים היסטולוגיים, ולא אבחנה שניתן לקבוע על סמך שינוי מיקרוסקופי יחיד.\n\nבמחלה רב־מוקדית עשויה להתפתח הפעלה חיסונית נרחבת. אינטרלוקין 6, המכונה IL-6, הוא חלבון איתות המעודד תגובה דלקתית ומשפיע בין היתר על הכבד, על מח העצם ועל התמיינות תאי B. פעילות עודפת במסלול זה יכולה לתרום לחום, לעייפות, לאנמיה, לייצור מוגבר של חלבוני דלקת, לירידה באלבומין ולהצטברות נוזלים. עם זאת, בדיקת IL-6 לבדה אינה מאבחנת את המחלה, ורמה שאינה מוגברת אינה שוללת אותה.\n\n## מחלה חד־מוקדית לעומת רב־מוקדית: מה ההבדל?\n\nהחלוקה העיקרית מבוססת על הפיזור האנטומי ועל נוכחותה של מחלה מערכתית. מחלת קסטלמן חד־מוקדית, Unicentric Castleman Disease או UCD, מוגבלת לבלוטה אחת או לקבוצת בלוטות סמוכות באזור לימפתי יחיד. מחלה רב־מוקדית, Multicentric Castleman Disease או MCD, מערבת כמה אזורי בלוטות נפרדים ונוטה יותר להתלוות לדלקת כלל־גופנית.\n\n| מאפיין | מחלה חד־מוקדית | מחלה רב־מוקדית |\n|---|---|---|\n| פיזור הבלוטות | בלוטה אחת או אזור לימפתי יחיד | כמה אזורי בלוטות נפרדים |\n| אופי המחלה | בעיקר מקומי | בדרך כלל מערכתי |\n| תסמינים | לעיתים אין תסמינים; ייתכנו כאב או לחץ מקומי | חום, הזעות לילה, חולשה, ירידה במשקל או בצקות |\n| בדיקות דם | עשויות להיות תקינות | שכיחים יותר אנמיה, מדדי דלקת גבוהים ואלבומין נמוך |\n| איברים נוספים | תסמינים עשויים לנבוע מלחץ של המסה | תיתכן הגדלת כבד או טחול ופגיעה בתפקוד איברים |\n| עיקרון טיפולי | כריתה מלאה, כאשר היא אפשרית ובטוחה | טיפול מערכתי בהתאם לתת־הסוג ולחומרה |\n\nההבחנה אינה מבוססת רק על ספירת הבלוטות. כמה בלוטות סמוכות באותו אזור אנטומי עשויות עדיין להיחשב מחלה חד־מוקדית, בעוד שבלוטות באזורים נפרדים עשויות לתמוך בסיווג רב־מוקדי. לעיתים מתגלה פיזור שאינו מתאים באופן מושלם לחלוקה הפשוטה, ולכן יש לסקור את מלוא ההדמיה ולבחון את התמונה הקלינית.\n\nלפי [הנחיות הקונצנזוס למחלה חד־מוקדית](https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/), כריתה כירורגית מלאה היא הטיפול המועדף כאשר הנגע המקומי ניתן להסרה בבטחה. במחלה רב־מוקדית, הסרת בלוטה אחת אינה מטפלת בדרך כלל בתהליך כולו, משום שהפעילות החיסונית אינה מוגבלת למוקד אנטומי יחיד. הבדל זה הופך את הסיווג לחלק מהותי מתכנון הטיפול ולא להגדרה טכנית בלבד.\n\n## אילו תסמינים וממצאים עשויים לעורר חשד?\n\nמחלה חד־מוקדית יכולה להתגלות במקרה בבדיקת הדמיה שבוצעה מסיבה אחרת. אם הבלוטה המוגדלת לוחצת על מבנים סמוכים, התסמינים תלויים במיקומה: מסה בבית החזה עשויה לגרום לשיעול, לקוצר נשימה או לתחושת לחץ; מסה בבטן עלולה להתבטא בכאב, בשובע מוקדם או באי־נוחות; ובלוטה שטחית עשויה להופיע כגוש בצוואר, בבית השחי או במפשעה.\n\nבמחלה רב־מוקדית התסמינים עשויים לשקף דלקת מערכתית ולא רק לחץ מקומי. הם כוללים בין היתר חום, הזעות לילה, עייפות ניכרת, ירידה בלתי מוסברת במשקל, הגדלת כבד או טחול, בצקות והצטברות נוזלים בחלל הבטן או סביב הריאות. בדיקות דם עשויות להראות אנמיה, עלייה ב־CRP או בשקיעת הדם, ירידה ברמת האלבומין, שינויים במספר הטסיות, הפרעה בתפקוד הכליות או ריבוי פוליקלונלי של אימונוגלובולינים.\n\n[קריטריוני הקונצנזוס לאבחון מחלת קסטלמן רב־מוקדית אידיופתית](https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/) מבהירים שממצאים אלה אינם ייחודיים למחלה. חום, אנמיה, בלוטות מוגדלות ומדדי דלקת גבוהים עלולים להופיע גם בזיהומים, בלימפומה, במחלות אוטואימוניות ובמצבים דלקתיים אחרים. לכן אין די בתסמין אחד או בשילוב לא־ספציפי של חריגות כדי לקבוע את האבחנה.\n\nבלוטה שנשארת מוגדלת, ממשיכה לגדול או מלווה בחום ממושך, בהזעות לילה, בירידה במשקל או בחריגות לא מוסברות בבדיקות הדם מחייבת בירור רפואי. סימנים אלה אינם מעידים בהכרח על מחלת קסטלמן, אך הם מצדיקים הערכה מסודרת ולא אבחון עצמי.\n\n## כיצד מאבחנים ומבדילים בין שני הסוגים?\n\nתהליך האבחון מתחיל בהיסטוריה רפואית, בבדיקה גופנית ובמיפוי הפיזור האנטומי. בדיקת CT של הצוואר, בית החזה, הבטן והאגן עשויה להראות אם המעורבות מוגבלת לאזור אחד או מפוזרת בכמה אזורים. לעיתים נעזרים ב־PET-CT כדי להעריך את הפעילות המטבולית ולבחור בלוטה מתאימה לביופסיה. עם זאת, קליטה מוגברת ב־PET-CT אינה ייחודית למחלת קסטלמן ואינה מבדילה בוודאות בינה לבין לימפומה, זיהום או דלקת אחרת.\n\nבדיקות המעבדה עשויות לכלול ספירת דם, CRP, שקיעת דם, תפקודי כבד וכליה, אלבומין, אלקטרוליטים, אימונוגלובולינים ואלקטרופורזה של חלבונים. בהתאם לתמונה נבדקים גם גורמים זיהומיים, אוטואימוניים והמטולוגיים. במקרה של מחלה רב־מוקדית יש חשיבות לבירור HIV ו־HHV-8 ולהערכת האפשרות של תסמונת POEMS או הפרעה בתאי פלזמה.\n\nאבן יסוד באבחנה היא בדיקה פתולוגית של רקמת בלוטה. בדרך כלל קיימת עדיפות לביופסיה שבה מוסרת בלוטה שלמה או מתקבלת כמות רקמה המספיקה להערכת המבנה האדריכלי שלה. דגימת מחט יכולה לספק מידע חשוב, אך היא עלולה שלא להציג את היחסים בין הזקיקים, כלי הדם והאזורים השונים בבלוטה. [הנחיות הקונצנזוס למחלה חד־מוקדית](https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/) תומכות בשילוב של ביופסיה מתאימה, הדמיה מקיפה ובדיקות לשלילת לימפומה, זיהומים והפרעות דלקתיות או המטולוגיות אחרות.\n\nבחשד למחלה רב־מוקדית אידיופתית, iMCD, נדרשים בלוטות מוגדלות בכמה אזורים וממצאים היסטולוגיים מתאימים. נוסף על כך, [קריטריוני האבחון ל־iMCD](https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/) דורשים מאפיינים קליניים או מעבדתיים מוגדרים ושלילה של אבחנות חלופיות. משמעות הדבר היא שדו\"ח פתולוגי המציין \"שינויים דמויי קסטלמן\" אינו בהכרח אבחנה סופית ללא התאמה להדמיה, לבדיקות הדם ולמצבו הכולל של האדם.\n\n## מדוע הסיווג משנה את בחירת הטיפול והמעקב?\n\nבמחלה חד־מוקדית הניתנת לכריתה, הסרת הבלוטה החולה בשלמותה עשויה להביא להיעלמות התסמינים ולנרמול מדדי הדלקת. אם המסה צמודה לכלי דם גדולים, לדרכי הנשימה או לאיברים חיוניים, כריתה מלאה עלולה להיות מורכבת. במצבים כאלה נשקלים הסיכון הניתוחי, חומרת התסמינים ואפשרויות טיפול נוספות. ההחלטה אינה נשענת רק על גודל הבלוטה, אלא גם על מיקומה ועל השפעתה התפקודית.\n\nמחלה רב־מוקדית מחייבת זיהוי של תת־הסוג. מחלה הקשורה ל־HHV-8 שונה מבחינה ביולוגית וטיפולית מ־iMCD, ומחלה המתלווה לתסמונת POEMS דורשת התייחסות להפרעת תאי הפלזמה. ב־iMCD, חסימת מסלול IL-6 היא עיקרון טיפולי מרכזי. [הנחיות הקונצנזוס הבין־לאומיות לטיפול ב־iMCD](https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/) מתארות טיפול בנוגדן המכוון ל־IL-6, עם או בלי קורטיקוסטרואידים בהתאם לחומרת המצב, כאסטרטגיית קו ראשון מקובלת. במחלה חמורה או עמידה עשויים להידרש טיפולים נוספים.\n\nהערכת התגובה לטיפול אינה מסתכמת בשינוי בגודל הבלוטות. בוחנים גם שיפור בחום, בעייפות, בבצקות ובתפקוד היומיומי; ירידה במדדי הדלקת; התאוששות של ספירת הדם, האלבומין ותפקוד האיברים; ושינויים בהדמיה. המעקב מותאם לתת־הסוג, לטיפול שניתן ולחומרת המחלה בעת האבחון.\n\n## סיכום\n\nמחלת קסטלמן גורמת להגדלת בלוטות לימפה עקב שינויים במבנה רקמת הלימפה, בתאי החיסון ובכלי הדם, ולעיתים עקב הפעלה דלקתית מערכתית שבה למסלול IL-6 תפקיד מרכזי. מחלה חד־מוקדית מוגבלת לבלוטה אחת או לאזור לימפתי יחיד, בעוד שמחלה רב־מוקדית מערבת כמה אזורים ועלולה לגרום לחום, לאנמיה, לבצקות, לירידה באלבומין ולפגיעה באיברים.\n\nהאבחנה נשענת על שילוב בין הדמיה, ביופסיה מספקת, בדיקות מעבדה ושלילת זיהומים, מחלות אוטואימוניות, לימפומה והפרעות בתאי פלזמה. כפי שמפורט הן ב[הנחיות למחלת קסטלמן חד־מוקדית](https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/) והן ב[קריטריונים למחלה רב־מוקדית אידיופתית](https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/), אין בדיקה יחידה המאשרת את כל צורות המחלה. ההבחנה בין הצורות מבוססת על התמונה השלמה, והיא חיונית לבחירת טיפול מקומי או מערכתי ולתכנון המעקב.\n\n## מקורות\n\n1. van Rhee F, et al. *International evidence-based consensus diagnostic and treatment guidelines for unicentric Castleman disease*. Blood Advances, 2020.  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/\n\n2. Fajgenbaum DC, et al. *International, evidence-based consensus diagnostic criteria for HHV-8-negative/idiopathic multicentric Castleman disease*. Blood, 2017.  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/\n\n3. van Rhee F, et al. *International, evidence-based consensus treatment guidelines for idiopathic multicentric Castleman disease*. Blood, 2018.  \n   https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://www.drguyrofe.co.il/מחלת-קסטלמן-מדוע-בלוטות-הלימפה/",
+        "meta_description": "ד״ר גיא רופא: בקצרה: במחלת קסטלמן בלוטות הלימפה גדלות עקב שינויים בתאים, בכלי הדם ובמבנה הפנימי של רקמת הלימפה.",
+        "search_target": {
+          "primary_query": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+          "secondary_queries": [
+            "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית ד״ר גיא רופא",
+            "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית",
+            "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a8%d7%a6%d7%95%d7%a2%d7%94-%d7%94%d7%a7%d7%a9%d7%aa%d7%99%d7%aa-%d7%94%d7%90%d7%9e%d7%a6%d7%a2%d7%99%d7%aa-mals/"
+          },
+          {
+            "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+            "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/מחלת-קסטלמן-מדוע-בלוטות-הלימפה/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a8%d7%a6%d7%95%d7%a2%d7%94-%d7%94%d7%a7%d7%a9%d7%aa%d7%99%d7%aa-%d7%94%d7%90%d7%9e%d7%a6%d7%a2%d7%99%d7%aa-mals/",
+              "anchor": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            },
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+              "anchor": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 15,
+            "observed_query": "Dr. Guy Rofe",
+            "observed_at": "2026-11-12T13:00:04.206388"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "bd0d90f79cab032bb62d52da545ca3e268caddf11be0164cb1947487af772a67",
+        "slug": "מחלת-קסטלמן-מדוע-בלוטות-הלימפה",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-hero.png",
+          "sha256": "aef4a67a311e8211f7052382681cab31e2d66a7c85d1b8aa586e76155db32e09",
+          "alt_text": "צילום מיקרוסקופי של רקמת לימפה צבועה בגווני ורוד וסגול, ובה תאים צפופים וכלי דם קטנים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "צילום מיקרוסקופי של רקמת לימפה צבועה בגווני ורוד וסגול, ובה תאים צפופים וכלי דם קטנים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Castleman_disease_-_high_mag.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Castleman_disease_-_high_mag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Nephron",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Castleman disease - high mag.jpg — Nephron; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-hero.png",
+              "sha256": "aef4a67a311e8211f7052382681cab31e2d66a7c85d1b8aa586e76155db32e09",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-landscape.png",
+              "sha256": "2e234e2f39149c8dcecae87acb125c54106c2709bd50c7c02db2ab3be9a7b601",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-square.jpg",
+              "sha256": "20079d9080099192b9f7d7142737fd8049255f48eea74b411ab9986e790bdc06",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-portrait.png",
+              "sha256": "753ee574fc1c5f0f865b4f4808f9f83631619330a064b1e947c7527ae0a0a124",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא.\n\nבקצרה: במחלת קסטלמן בלוטות הלימפה גדלות עקב שינויים בתאים, בכלי הדם ובמבנה הפנימי של רקמת הלימפה.\n\nבחלק מסוגי המחלה מתרחשת גם הפעלה מוגברת של מערכת החיסון, המלווה בייצור עודף של מתווכי דלקת, ובהם אינטרלוקין 6.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://www.drguyrofe.co.il/מחלת-קסטלמן-מדוע-בלוטות-הלימפה/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-landscape.png",
+          "sha256": "2e234e2f39149c8dcecae87acb125c54106c2709bd50c7c02db2ab3be9a7b601",
+          "alt_text": "צילום מיקרוסקופי של רקמת לימפה צבועה בגווני ורוד וסגול, ובה תאים צפופים וכלי דם קטנים, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "צילום מיקרוסקופי של רקמת לימפה צבועה בגווני ורוד וסגול, ובה תאים צפופים וכלי דם קטנים.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Castleman_disease_-_high_mag.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Castleman_disease_-_high_mag.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Nephron",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Castleman disease - high mag.jpg — Nephron; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-hero.png",
+              "sha256": "aef4a67a311e8211f7052382681cab31e2d66a7c85d1b8aa586e76155db32e09",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-landscape.png",
+              "sha256": "2e234e2f39149c8dcecae87acb125c54106c2709bd50c7c02db2ab3be9a7b601",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-square.jpg",
+              "sha256": "20079d9080099192b9f7d7142737fd8049255f48eea74b411ab9986e790bdc06",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-19-topic-88-run-44553231514-attempt-1-portrait.png",
+              "sha256": "753ee574fc1c5f0f865b4f4808f9f83631619330a064b1e947c7527ae0a0a124",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 38,
+      "supported_claim_count": 38,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי מחלת קסטלמן ומה מתרחש בבלוטות הלימפה?",
+          "claim": "בלוטות עשויות לגדול באופן זמני בעקבות זיהום, חיסון או דלקת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מהי מחלת קסטלמן ומה מתרחש בבלוטות הלימפה?",
+          "claim": "בבדיקה פתולוגית עשויים להיראות שינויים בזקיקים הלימפתיים ובמרכזי הנבט שלהם, ריבוי כלי דם קטנים, התעבות של אזורים מסוימים והצטברות של תאי פלזמה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מהי מחלת קסטלמן ומה מתרחש בבלוטות הלימפה?",
+          "claim": "התבניות אינן זהות בכל החולים, וחלקן עשויות להופיע גם במחלות אחרות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מהי מחלת קסטלמן ומה מתרחש בבלוטות הלימפה?",
+          "claim": "על פי הנחיות הקונצנזוס הבין־לאומיות לאבחון ולטיפול במחלת קסטלמן חד־מוקדית, יש לפרש את הממצאים ברקמה לצד היקף פיזור הבלוטות, התסמינים ובדיקות המעבדה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מהי מחלת קסטלמן ומה מתרחש בבלוטות הלימפה?",
+          "claim": "ההנחיות מדגישות שמחלת קסטלמן מייצגת ספקטרום של מצבים החולקים מאפיינים היסטולוגיים, ולא אבחנה שניתן לקבוע על סמך שינוי מיקרוסקופי יחיד.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מהי מחלת קסטלמן ומה מתרחש בבלוטות הלימפה?",
+          "claim": "במחלה רב־מוקדית עשויה להתפתח הפעלה חיסונית נרחבת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מחלה חד־מוקדית לעומת רב־מוקדית: מה ההבדל?",
+          "claim": "| בדיקות דם | עשויות להיות תקינות | שכיחים יותר אנמיה, מדדי דלקת גבוהים ואלבומין נמוך |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מחלה חד־מוקדית לעומת רב־מוקדית: מה ההבדל?",
+          "claim": "| איברים נוספים | תסמינים עשויים לנבוע מלחץ של המסה | תיתכן הגדלת כבד או טחול ופגיעה בתפקוד איברים |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מחלה חד־מוקדית לעומת רב־מוקדית: מה ההבדל?",
+          "claim": "| עיקרון טיפולי | כריתה מלאה, כאשר היא אפשרית ובטוחה | טיפול מערכתי בהתאם לתת־הסוג ולחומרה |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מחלה חד־מוקדית לעומת רב־מוקדית: מה ההבדל?",
+          "claim": "כמה בלוטות סמוכות באותו אזור אנטומי עשויות עדיין להיחשב מחלה חד־מוקדית, בעוד שבלוטות באזורים נפרדים עשויות לתמוך בסיווג רב־מוקדי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מחלה חד־מוקדית לעומת רב־מוקדית: מה ההבדל?",
+          "claim": "לפי הנחיות הקונצנזוס למחלה חד־מוקדית, כריתה כירורגית מלאה היא הטיפול המועדף כאשר הנגע המקומי ניתן להסרה בבטחה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "מחלה חד־מוקדית לעומת רב־מוקדית: מה ההבדל?",
+          "claim": "הבדל זה הופך את הסיווג לחלק מהותי מתכנון הטיפול ולא להגדרה טכנית בלבד.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/"
+          ]
+        },
+        {
+          "section": "אילו תסמינים וממצאים עשויים לעורר חשד?",
+          "claim": "אם הבלוטה המוגדלת לוחצת על מבנים סמוכים, התסמינים תלויים במיקומה: מסה בבית החזה עשויה לגרום לשיעול, לקוצר נשימה או לתחושת לחץ; מסה בבטן עלולה להתבטא בכאב, בשובע מוקדם או באי־נוחות; ובלוטה שטחית עשויה להופיע כגוש בצוואר, בבית השחי או במפשעה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "אילו תסמינים וממצאים עשויים לעורר חשד?",
+          "claim": "במחלה רב־מוקדית התסמינים עשויים לשקף דלקת מערכתית ולא רק לחץ מקומי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "אילו תסמינים וממצאים עשויים לעורר חשד?",
+          "claim": "בדיקות דם עשויות להראות אנמיה, עלייה ב־CRP או בשקיעת הדם, ירידה ברמת האלבומין, שינויים במספר הטסיות, הפרעה בתפקוד הכליות או ריבוי פוליקלונלי של אימונוגלובולינים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "אילו תסמינים וממצאים עשויים לעורר חשד?",
+          "claim": "קריטריוני הקונצנזוס לאבחון מחלת קסטלמן רב־מוקדית אידיופתית מבהירים שממצאים אלה אינם ייחודיים למחלה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "אילו תסמינים וממצאים עשויים לעורר חשד?",
+          "claim": "חום, אנמיה, בלוטות מוגדלות ומדדי דלקת גבוהים עלולים להופיע גם בזיהומים, בלימפומה, במחלות אוטואימוניות ובמצבים דלקתיים אחרים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "אילו תסמינים וממצאים עשויים לעורר חשד?",
+          "claim": "לכן אין די בתסמין אחד או בשילוב לא־ספציפי של חריגות כדי לקבוע את האבחנה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "אילו תסמינים וממצאים עשויים לעורר חשד?",
+          "claim": "סימנים אלה אינם מעידים בהכרח על מחלת קסטלמן, אך הם מצדיקים הערכה מסודרת ולא אבחון עצמי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים ומבדילים בין שני הסוגים?",
+          "claim": "תהליך האבחון מתחיל בהיסטוריה רפואית, בבדיקה גופנית ובמיפוי הפיזור האנטומי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים ומבדילים בין שני הסוגים?",
+          "claim": "בדיקת CT של הצוואר, בית החזה, הבטן והאגן עשויה להראות אם המעורבות מוגבלת לאזור אחד או מפוזרת בכמה אזורים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים ומבדילים בין שני הסוגים?",
+          "claim": "בדיקות המעבדה עשויות לכלול ספירת דם, CRP, שקיעת דם, תפקודי כבד וכליה, אלבומין, אלקטרוליטים, אימונוגלובולינים ואלקטרופורזה של חלבונים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים ומבדילים בין שני הסוגים?",
+          "claim": "אבן יסוד באבחנה היא בדיקה פתולוגית של רקמת בלוטה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים ומבדילים בין שני הסוגים?",
+          "claim": "דגימת מחט יכולה לספק מידע חשוב, אך היא עלולה שלא להציג את היחסים בין הזקיקים, כלי הדם והאזורים השונים בבלוטה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים ומבדילים בין שני הסוגים?",
+          "claim": "הנחיות הקונצנזוס למחלה חד־מוקדית תומכות בשילוב של ביופסיה מתאימה, הדמיה מקיפה ובדיקות לשלילת לימפומה, זיהומים והפרעות דלקתיות או המטולוגיות אחרות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים ומבדילים בין שני הסוגים?",
+          "claim": "נוסף על כך, קריטריוני האבחון ל־iMCD דורשים מאפיינים קליניים או מעבדתיים מוגדרים ושלילה של אבחנות חלופיות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "במחלה חד־מוקדית הניתנת לכריתה, הסרת הבלוטה החולה בשלמותה עשויה להביא להיעלמות התסמינים ולנרמול מדדי הדלקת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "אם המסה צמודה לכלי דם גדולים, לדרכי הנשימה או לאיברים חיוניים, כריתה מלאה עלולה להיות מורכבת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "במצבים כאלה נשקלים הסיכון הניתוחי, חומרת התסמינים ואפשרויות טיפול נוספות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "מחלה הקשורה ל־HHV-8 שונה מבחינה ביולוגית וטיפולית מ־iMCD, ומחלה המתלווה לתסמונת POEMS דורשת התייחסות להפרעת תאי הפלזמה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "ב־iMCD, חסימת מסלול IL-6 היא עיקרון טיפולי מרכזי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "הנחיות הקונצנזוס הבין־לאומיות לטיפול ב־iMCD מתארות טיפול בנוגדן המכוון ל־IL-6, עם או בלי קורטיקוסטרואידים בהתאם לחומרת המצב, כאסטרטגיית קו ראשון מקובלת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "במחלה חמורה או עמידה עשויים להידרש טיפולים נוספים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "הערכת התגובה לטיפול אינה מסתכמת בשינוי בגודל הבלוטות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "מדוע הסיווג משנה את בחירת הטיפול והמעקב?",
+          "claim": "המעקב מותאם לתת־הסוג, לטיפול שניתן ולחומרת המחלה בעת האבחון.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "מחלה חד־מוקדית מוגבלת לבלוטה אחת או לאזור לימפתי יחיד, בעוד שמחלה רב־מוקדית מערבת כמה אזורים ועלולה לגרום לחום, לאנמיה, לבצקות, לירידה באלבומין ולפגיעה באיברים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "כפי שמפורט הן בהנחיות למחלת קסטלמן חד־מוקדית והן בקריטריונים למחלה רב־מוקדית אידיופתית, אין בדיקה יחידה המאשרת את כל צורות המחלה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "ההבחנה בין הצורות מבוססת על התמונה השלמה, והיא חיונית לבחירת טיפול מקומי או מערכתי ולתכנון המעקב.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7724917/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364342/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "bd0d90f79cab032bb62d52da545ca3e268caddf11be0164cb1947487af772a67",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/מחלת-קסטלמן-מדוע-בלוטות-הלימפה/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%aa%d7%a1%d7%9e%d7%95%d7%a0%d7%aa-%d7%94%d7%a8%d7%a6%d7%95%d7%a2%d7%94-%d7%94%d7%a7%d7%a9%d7%aa%d7%99%d7%aa-%d7%94%d7%90%d7%9e%d7%a6%d7%a2%d7%99%d7%aa-mals/",
+          "anchor": "תסמונת הרצועה הקשתית האמצעית (MALS): מדוע מופיעים כאבי בטן אחרי האוכל וכיצד מבדילים בין לחץ אנטומי למחלה תסמינית",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        },
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+          "anchor": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 15,
+        "observed_query": "Dr. Guy Rofe",
+        "observed_at": "2026-11-12T13:00:04.206388"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34"
+}

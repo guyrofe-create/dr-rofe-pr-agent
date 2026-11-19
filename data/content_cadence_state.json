@@ -5,6 +5,25 @@
       "stream": "health_news",
       "site_key": "DRGUYROFE_CO_IL",
       "channels": [
+        "google_business"
+      ],
+      "week": "week-of-2026-11-15",
+      "local_date": "2026-11-19",
+      "weekday": "thursday",
+      "topic_source": "mayo_public_catalog",
+      "is_backfill": false,
+      "recovery_run_date": null,
+      "public_execution_allowed": false,
+      "source_brief": null,
+      "topic": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+      "title": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא",
+      "draft_path": "content_drafts/2026-11-19-topic-88-run-44553231514-attempt-1.md",
+      "created_at": "2026-11-19T15:18:37.033533+00:00"
+    },
+    {
+      "stream": "health_news",
+      "site_key": "DRGUYROFE_CO_IL",
+      "channels": [
         "facebook",
         "linkedin",
         "blogger"
@@ -945,18 +964,6 @@
       "public_execution_allowed": false,
       "source_brief": null,
       "draft_path": "content_drafts/2026-08-23-topic-01-run-32623454483-attempt-1.md",
-      "created_at": "2026-08-23T06:38:46.024764+00:00"
-    },
-    {
-      "stream": "health_news",
-      "site_key": "DRGUYROFE_CO_IL",
-      "channels": [],
-      "week": "week-of-2026-08-23",
-      "local_date": "2026-08-23",
-      "weekday": "sunday",
-      "public_execution_allowed": false,
-      "source_brief": "opportunity_drafts/health-news-4d9149e585242da7.json",
-      "draft_path": "content_drafts/2026-08-23-topic-90-run-32623454483-attempt-1.md",
       "created_at": "2026-08-23T06:38:46.024764+00:00"
     }
   ]
