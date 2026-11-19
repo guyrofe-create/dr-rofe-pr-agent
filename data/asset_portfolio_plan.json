@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated_at": "2026-11-16T12:59:11.249227+00:00",
+  "generated_at": "2026-11-19T13:36:43.950729+00:00",
   "objective": "Maximize accurate first-page and discovery visibility with the existing asset portfolio.",
   "policy": "Effort follows authority, measured visibility, audience fit and control; account count alone is not a success metric.",
   "asset_count": 67,
@@ -11,8 +11,8 @@
     "retain_only": 8,
     "quarantine": 24
   },
-  "audit_complete_count": 5,
-  "action_required_count": 62,
+  "audit_complete_count": 4,
+  "action_required_count": 63,
   "focus_cohort_policy": "Rotate new future publications across up to 12 highest-authority eligible assets; never edit existing content merely to fill inventory.",
   "focus_cohort_count": 12,
   "focus_cohort": [
@@ -514,8 +514,8 @@
       "final_url": "https://www.facebook.com/drguyrofe",
       "content_audit": "complete",
       "title": "ד״ר גיא רופא - יוצר תוכן רפואי | Haifa",
-      "meta_description": "‎ד״ר גיא רופא - יוצר תוכן רפואי‎, Haifa. 72 followers · 5 talking about this. ‎יוצר תוכן ברפואה - מנגיש מהידע שלו עם שליחות ליצירת תוכן רפואי קל להבנה‎",
-      "canonical": "https://www.facebook.com/drguyrofe/",
+      "meta_description": "‎ד״ר גיא רופא - יוצר תוכן רפואי‎, Haifa. 72 followers · 4 talking about this. ‎יוצר תוכן ברפואה - מנגיש מהידע שלו עם שליחות ליצירת תוכן רפואי קל להבנה‎",
+      "canonical": "https://www.facebook.com/drguyrofe",
       "noindex": false,
       "entity_in_title": true,
       "entity_in_page": true,
@@ -841,7 +841,7 @@
       "next_action": "one_time_audit_then_use_only_for_unique_fit",
       "reachability": "access_restricted_or_anti_bot",
       "http_status": 429,
-      "final_url": "https://www.google.com/sorry/index?continue=https://guyrofe.blogspot.com/&q=EgQUUyYxGO3769cGIi17AnslMEOcuvzdim6yLSBSSg9trT6AtF4icfZ1raiP3JZoVN2Wu0cpTpiyCJYyAnJSWgFDYO6aifS-s5nbtgE",
+      "final_url": "https://www.google.com/sorry/index?continue=https://guyrofe.blogspot.com/&q=EgQw2fuMGLr2-9cGIi0N3LHUQ4yEYURP0xqCZtZP-gdpPM_RgDPh3vFg6ob5mts6eusn8Q-LGHlnbJIyAnJSWgFDYIfA5Ois1d2OHw",
       "content_audit": "manual_required",
       "title": null,
       "meta_description": null,
@@ -919,7 +919,7 @@
       "title": "ד\"ר גיא רופא Official: Instagram, X | Linktree",
       "meta_description": "ד\"ר גיא רופא הוא גינקולוג ומיילד מוערך מאוד.",
       "canonical": "https://linktr.ee/drguyrofe",
-      "noindex": true,
+      "noindex": false,
       "entity_in_title": true,
       "entity_in_page": true,
       "official_link_present": true,
@@ -929,11 +929,8 @@
         "Person",
         "ProfilePage"
       ],
-      "seo_issues": [
-        "noindex"
-      ],
+      "seo_issues": [],
       "action_checklist": [
-        "record_noindex_for_future_publication_routing",
         "complete_registered_factual_audit"
       ],
       "audit_complete": false,
@@ -1207,15 +1204,15 @@
       "noindex": false,
       "entity_in_title": true,
       "entity_in_page": true,
-      "official_link_present": true,
-      "schema_types": [
-        "ImageObject",
-        "Person",
-        "ProfilePage"
+      "official_link_present": false,
+      "schema_types": [],
+      "seo_issues": [
+        "h1_count_not_one"
       ],
-      "seo_issues": [],
-      "action_checklist": [],
-      "audit_complete": true,
+      "action_checklist": [
+        "record_h1_count_not_one_for_future_publication_routing"
+      ],
+      "audit_complete": false,
       "public_execution_allowed": false
     },
     {
@@ -1832,8 +1829,8 @@
       "effort": "quarantine",
       "reason": "Low-quality mirror/network risk outweighs routine publishing value.",
       "next_action": "no_automation_no_cross_link_network",
-      "reachability": "not_found",
-      "http_status": 410,
+      "reachability": "access_restricted_or_anti_bot",
+      "http_status": 429,
       "final_url": "https://dr-guy-rofe.creator-spring.com/",
       "content_audit": "manual_required",
       "title": null,
@@ -1846,7 +1843,7 @@
       "schema_types": [],
       "seo_issues": [],
       "action_checklist": [
-        "read_only_confirm_public_url_before_future_publication"
+        "manual_browser_audit"
       ],
       "audit_complete": false,
       "public_execution_allowed": false
@@ -2487,7 +2484,12 @@
       "entity_in_title": true,
       "entity_in_page": true,
       "official_link_present": false,
-      "schema_types": [],
+      "schema_types": [
+        "EntryPoint",
+        "Organization",
+        "SearchAction",
+        "WebSite"
+      ],
       "seo_issues": [
         "h1_count_not_one"
       ],
