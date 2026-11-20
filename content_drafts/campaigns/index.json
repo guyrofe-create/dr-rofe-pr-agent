@@ -1,6 +1,116 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-11-19-topic-88-run-44553231514-attempt-1.md",
+      "title": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-11-20T00:55:04.134559+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+          "detail": "idempotency_key=pub_69611d3539a59a40a3d39018a66dca2714c96cc0d6765b470eed951b3e6687a3"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-19-topic-88-run-44553231514-attempt-1-hero.png",
+          "detail": "wikimedia_commons_licensed_photo"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpzZ1hnZzlrUEhKd2dhaW5LS1NXNEt3",
+          "detail": "idempotency_key=pub_fe542dfe9bc2ebd2ae008eed73908899c014e9aaddc8e7cbff71d4a19ae60343"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34",
+      "search_target": {
+        "primary_query": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+        "secondary_queries": [
+          "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית ד״ר גיא רופא",
+          "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-11-17-topic-87-run-44034157116-attempt-1.md",
       "title": "רווח סמך במחקרים רפואיים: כיצד לפרש את טווח התוצאות ולהבין את מידת אי־הוודאות | ד״ר גיא רופא",
       "status": "completed",
@@ -5239,111 +5349,6 @@
       "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
       "search_target": {},
       "canonical_url": "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-07-27-topic-06-run-30255219272-attempt-1.md",
-      "title": "גיל המעבר: מידע כללי מבוסס מקורות על תסמינים, אבחון ואפשרויות טיפול",
-      "status": "completed",
-      "published_at": "2026-09-17T06:56:55.748278+00:00",
-      "destinations": [
-        {
-          "name": "guyrofe.com",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
-          "detail": "idempotency_key=pub_ddf32b027aa1ab95c97ffae8874d4865f60b86397efbdf2bf735ee0d8f942b19"
-        },
-        {
-          "name": "Canonical SEO verification",
-          "status": "seo_warning",
-          "url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
-          "detail": "failed checks: no_internal_run_slug, canonical_person_linked"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://guyrofe.com/wp-content/uploads/2026/09/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1-approved-1.png",
-          "detail": "approved_visual"
-        },
-        {
-          "name": "drguyrofe.co.il",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "published",
-          "target_id": "facebook_page",
-          "url": "https://www.facebook.com/122204463668942441",
-          "detail": "idempotency_key=pub_8edf27d4ee456aaaf7b0a9c93b8eada519645bd8d096d31269d391e4ae97eb7d"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "published",
-          "target_id": "linkedin_member",
-          "url": "https://www.linkedin.com/feed/update/urn:li:share:7506244778762805248/",
-          "detail": "idempotency_key=pub_d69a9f37f340cc96bf75f502963e83bab9d8985e524873df8ba3a2abb1ca2d2c"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "published",
-          "target_id": "blogger_blog",
-          "url": "https://guyrofe.blogspot.com/2026/09/blog-post_954.html",
-          "detail": "idempotency_key=pub_32914596335c15d2dc835c9da6f34d9d0a11a87932c97d9e15682bc2296aaa86"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_configured"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
-      "search_target": {},
-      "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]

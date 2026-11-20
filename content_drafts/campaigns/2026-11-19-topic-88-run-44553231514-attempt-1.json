@@ -1,0 +1,110 @@
+{
+  "draft": "content_drafts/2026-11-19-topic-88-run-44553231514-attempt-1.md",
+  "title": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-11-20T00:55:04.134559+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+      "detail": "idempotency_key=pub_69611d3539a59a40a3d39018a66dca2714c96cc0d6765b470eed951b3e6687a3"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-19-topic-88-run-44553231514-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpzZ1hnZzlrUEhKd2dhaW5LS1NXNEt3",
+      "detail": "idempotency_key=pub_fe542dfe9bc2ebd2ae008eed73908899c014e9aaddc8e7cbff71d4a19ae60343"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34",
+  "search_target": {
+    "primary_query": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+    "secondary_queries": [
+      "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית ד״ר גיא רופא",
+      "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

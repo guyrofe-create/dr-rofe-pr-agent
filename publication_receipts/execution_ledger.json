@@ -4224,6 +4224,77 @@
         "account": "accounts/110345401117888665629",
         "location": "accounts/110345401117888665629/locations/14140768355740435987"
       }
+    },
+    "pub_84bbff4e0e49e8711d6e1544f41d0da5c63a40d33eb5bce39d2fd21e4820a503": {
+      "version": 7,
+      "idempotency_key": "pub_84bbff4e0e49e8711d6e1544f41d0da5c63a40d33eb5bce39d2fd21e4820a503",
+      "approval_id": "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34",
+      "target_id": "canonical_wordpress__media__hero",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "3d36c91503a2d74ae9bb2099ba67e6d6c59edfb4fcba882abbcac152cb6cbe42",
+      "status": "published",
+      "started_at": "2026-11-20T00:54:31Z",
+      "published_at": "2026-11-20T00:54:38Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-19-topic-88-run-44553231514-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-19-topic-88-run-44553231514-attempt-1-hero",
+        "sha256": "aef4a67a311e8211f7052382681cab31e2d66a7c85d1b8aa586e76155db32e09",
+        "metadata_verified": true
+      }
+    },
+    "pub_69611d3539a59a40a3d39018a66dca2714c96cc0d6765b470eed951b3e6687a3": {
+      "version": 7,
+      "idempotency_key": "pub_69611d3539a59a40a3d39018a66dca2714c96cc0d6765b470eed951b3e6687a3",
+      "approval_id": "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "84d715b8d4b56fa1962389321d9167ec9096b2c2efb04aa93ce32f86ad662d31",
+      "status": "published",
+      "started_at": "2026-11-20T00:54:38Z",
+      "published_at": "2026-11-20T00:54:45Z",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+      "provider_receipt": null
+    },
+    "pub_af993084114aaab20046c1e2e30952b7fa1570d31c91a0962e90777568491011": {
+      "version": 7,
+      "idempotency_key": "pub_af993084114aaab20046c1e2e30952b7fa1570d31c91a0962e90777568491011",
+      "approval_id": "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34",
+      "target_id": "google_business_profile__media__landscape",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "8efac9c8070cb69c8bbe484c95a7cf88b29044342bfd54afbec4c150e6a7b37a",
+      "status": "published",
+      "started_at": "2026-11-20T00:54:47Z",
+      "published_at": "2026-11-20T00:54:54Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-19-topic-88-run-44553231514-attempt-1-landscape.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-19-topic-88-run-44553231514-attempt-1-landscape",
+        "sha256": "2e234e2f39149c8dcecae87acb125c54106c2709bd50c7c02db2ab3be9a7b601",
+        "metadata_verified": true
+      }
+    },
+    "pub_fe542dfe9bc2ebd2ae008eed73908899c014e9aaddc8e7cbff71d4a19ae60343": {
+      "version": 7,
+      "idempotency_key": "pub_fe542dfe9bc2ebd2ae008eed73908899c014e9aaddc8e7cbff71d4a19ae60343",
+      "approval_id": "apr_984b4ee28ab70855f6275713d341152c93c38665a499671ac8c81ea79c355f34",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "d08e607501a2fe1aabadb21fbe3220510a9dc2068570474670f4d91029cf3814",
+      "status": "published",
+      "started_at": "2026-11-20T00:54:54Z",
+      "published_at": "2026-11-20T00:55:04Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpzZ1hnZzlrUEhKd2dhaW5LS1NXNEt3",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/6223202790840793401",
+        "state": "LIVE",
+        "createTime": "2026-11-20T00:54:58.187270370Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpzZ1hnZzlrUEhKd2dhaW5LS1NXNEt3",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }
