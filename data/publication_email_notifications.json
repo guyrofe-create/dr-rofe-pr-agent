@@ -1725,6 +1725,20 @@
         "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDpzZ1hnZzlrUEhKd2dhaW5LS1NXNEt3"
       ]
+    },
+    "expired:apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f:2026-07-27T10:14:01Z": {
+      "recorded_at": "2026-11-20T08:13:06.246931+00:00",
+      "approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-07-27-topic-06-run-30255219272-attempt-1.md",
+      "published_approval_id": "apr_68d69a5591f594428d4e6a6133fc1f7033ffe9766e82ac0e1c25e1ed3dbf794f",
+      "campaign_result": "content_drafts/campaigns/2026-07-27-topic-06-run-30255219272-attempt-1.json",
+      "urls": [
+        "https://guyrofe.com/guy-rofe-pilot-2026-07-27-topic-06-run-30255219272-attempt-1/",
+        "https://www.facebook.com/122204463668942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7506244778762805248/",
+        "https://guyrofe.blogspot.com/2026/09/blog-post_954.html"
+      ]
     }
   }
 }
