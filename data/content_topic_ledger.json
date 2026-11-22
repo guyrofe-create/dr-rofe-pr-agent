@@ -3552,7 +3552,7 @@
       "topic": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
       "normalized_topic": "אדנומיוזיס תסמינים אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
       "first_seen_at": "2026-11-22T14:07:26.457514+00:00",
-      "last_seen_at": "2026-11-22T14:07:26.457514+00:00",
+      "last_seen_at": "2026-11-22T14:08:42Z",
       "titles": [
         "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא"
       ],
@@ -3572,6 +3572,21 @@
           "source": "autonomous_content",
           "stream": "canonical_depth",
           "draft_path": "content_drafts/2026-11-22-topic-84-run-45031024803-attempt-1.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-22T14:07:26.457514+00:00",
+          "source": "draft",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-22-topic-84-run-45031024803-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-22T14:08:42Z",
+          "source": "approval_bundle",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-22-topic-84-run-45031024803-attempt-1.md",
+          "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36"
         }
       ]
     }
