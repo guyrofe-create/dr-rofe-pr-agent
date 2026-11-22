@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-22-topic-84-run-45031024803-attempt-1.md",
+      "title": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא",
+      "topic": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
+      "excerpt": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) אדנומיוזיס הוא מצב שבו רקמה הדומה לרירית הרחם נמצאת בתוך השריר של דופן הרחם. הוא עלול לגרום לווסת כבדה או כואבת, ",
+      "generated_at": "2026-11-22T14:07:26.457514+00:00",
+      "content_stream": "canonical_depth",
+      "destination_site_key": "GUYROFE_COM",
+      "scheduled_channels": [
+        "facebook",
+        "linkedin",
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-11-22",
+      "cadence_local_date": "2026-11-22",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-11-19-topic-88-run-44553231514-attempt-1.md",
       "title": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית | ד״ר גיא רופא",
       "topic": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
@@ -478,19 +495,6 @@
       "public_execution_allowed": false,
       "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
       "topic_seed_usage": "discovery_only"
-    },
-    {
-      "path": "content_drafts/2026-09-29-topic-01-run-36566535339-attempt-1.md",
-      "title": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא",
-      "topic": "לפרוסקופיה גינקולוגית - מידע כללי על ההליך",
-      "excerpt": "לפרוסקופיה גינקולוגית: מידע כללי על ההליך | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) לפרוסקופיה גינקולוגית היא הליך זעיר־פולשני המאפשר לבחון את איברי האגן ולעיתים גם לבצע טיפול ניתוחי, באמצעות מצלמה דקה ומכשירים המוחדרי",
-      "generated_at": "2026-09-29T12:12:24.270394+00:00",
-      "content_stream": "evergreen_knowledge",
-      "destination_site_key": "DRGUYROFE_COM",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-09-27",
-      "cadence_local_date": "2026-09-29",
-      "public_execution_allowed": false
     }
   ]
 }

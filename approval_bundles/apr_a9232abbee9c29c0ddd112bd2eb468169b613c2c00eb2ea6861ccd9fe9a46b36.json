@@ -1,0 +1,773 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-11-22T14:08:42Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-11-22-topic-84-run-45031024803-attempt-1.md",
+  "source_draft_sha256": "892aae728816035f080db57881ce69fce8f59c622e64aa9b1498a8421acd36ae",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/adenomyosis/",
+      "type": "citation"
+    },
+    {
+      "url": "https://doi.org/10.1002/uog.14806",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.eshre.eu/Guideline/Endometriosis",
+      "type": "citation"
+    },
+    {
+      "url": "https://www.acog.org/womens-health/faqs/uterine-fibroids",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+    "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+    "alt_text": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Salle_d%27Echographie_Hopital_Cameroun.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Salle_d%27Echographie_Hopital_Cameroun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Happi Raphael",
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Salle d'Echographie Hopital Cameroun.jpg — Happi Raphael; CC BY-SA 4.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-hero.png",
+        "sha256": "8634fa4a5008b0b3607efd451053cc4e91f454eb8ef9ddf03d0c2295c6ad3d93",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+        "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-square.jpg",
+        "sha256": "1228144c631f35ce3e18a5a2dd273d4fc66fe0f5f4efbb7631583d0aefd1149c",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-portrait.png",
+        "sha256": "b6d8df0a3cb8a043c1ea5f0a3660f0c8134cac55fdb6fd978103f937d305aaf9",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "payload": {
+        "title": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא",
+        "cms_title": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
+        "markdown": "# אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\nאדנומיוזיס הוא מצב שבו רקמה הדומה לרירית הרחם נמצאת בתוך השריר של דופן הרחם. הוא עלול לגרום לווסת כבדה או כואבת, לכאב באגן ולתחושת לחץ, אך לעיתים אינו גורם לתסמינים כלל. האבחון מבוסס בעיקר על התסמינים, בדיקה גינקולוגית ובדיקות הדמיה. אף שקיים דמיון מסוים לאנדומטריוזיס ולמיומות, מדובר במצבים שונים מבחינת מיקום הרקמה, מנגנון המחלה והממצאים בהדמיה.\n\nאדנומיוזיס אינו תמיד קל לזיהוי. התסמינים עשויים לחפוף למצבים גינקולוגיים אחרים, ושתי מחלות או יותר יכולות להופיע במקביל. משום כך, הערכה רפואית מסודרת אינה מסתפקת בשאלה אם קיימים כאב או דימום, אלא בוחנת את מאפייניהם, את השפעתם על חיי היומיום ואת התמונה הכוללת בבדיקה ובהדמיה.\n\n## מהו אדנומיוזיס ומה מתרחש בדופן הרחם?\n\nהרחם בנוי מכמה שכבות. השכבה הפנימית היא רירית הרחם, הקרויה אנדומטריום, ואילו עיקר דופן הרחם מורכב משכבת שריר הנקראת מיומטריום. באדנומיוזיס נמצאות בלוטות וסטרומה דמויות רירית הרחם בתוך המיומטריום. רקמה זו מגיבה לשינויים הורמונליים, והימצאותה בתוך השריר עשויה להיות קשורה להתעבות דופן הרחם, לתגובה דלקתית מקומית ולהגדלת הרחם.\n\nלפי [המידע הקליני של שירות הבריאות הלאומי בבריטניה על אדנומיוזיס](https://www.nhs.uk/conditions/adenomyosis/), המצב עשוי לערב חלק מוגדר מדופן הרחם או אזורים נרחבים יותר. חשוב להדגיש כי אדנומיוזיס אינו סרטן, וגם אינו זהה לאנדומטריוזיס, אף שבשני המצבים קיימת רקמה דמוית אנדומטריום במיקום שאינו רגיל.\n\nהסיבה המדויקת להתפתחות אדנומיוזיס אינה ידועה במלואה. הוצעו מנגנונים שונים, ובהם חדירה של רקמת רירית הרחם אל השריר או התפתחות רקמה דמוית אנדומטריום בתוך המיומטריום. אלה הסברים ביולוגיים נחקרים ולא סיבה יחידה ומוכחת. הגישה המקובלת היא שמדובר במצב מורכב המושפע ככל הנראה מגורמים הורמונליים ומקומיים.\n\nבעבר ניתן היה לקבוע את האבחנה בוודאות בעיקר לאחר כריתת רחם ובדיקה פתולוגית. כיום, אולטרסאונד וגינלי ובמקרים מסוימים MRI מאפשרים לזהות מאפיינים התומכים באבחנה עוד לפני טיפול ניתוחי. עם זאת, הדמיה אינה עומדת לבדה: יש לפרש אותה לצד התסמינים, הבדיקה והאפשרות למצבים נוספים.\n\n## מהם התסמינים האפשריים ומתי נדרשת בדיקה?\n\nהתסמינים השכיחים המיוחסים לאדנומיוזיס הם דימום וסתי כבד, כאבי וסת משמעותיים, כאב כרוני או חוזר באגן, תחושת כובד או מלאות בבטן התחתונה וכאב במהלך יחסי מין. הרחם עשוי להיות מוגדל או רגיש בבדיקה. לצד זאת, יש מי שאינן חוות תסמינים והמצב מתגלה במקרה בבדיקת הדמיה או בבדיקה פתולוגית.\n\nעל פי [דף המידע הרשמי של NHS בנושא אדנומיוזיס](https://www.nhs.uk/conditions/adenomyosis/), עוצמת הכאב והדימום משתנה מאישה לאישה. חומרת התסמינים גם אינה משקפת בהכרח באופן ישיר את היקף הממצאים בהדמיה. לכן, ההחלטה אם נדרש טיפול נשענת במידה רבה על מידת הפגיעה באיכות החיים, ולא רק על עצם קיומו של ממצא.\n\nדימום וסתי כבד עלול להיות מלווה בעייפות, חולשה, קוצר נשימה במאמץ או סחרחורת, בין היתר עקב אנמיה מחוסר ברזל. במצב כזה עשויה להידרש ספירת דם ולעיתים גם הערכת מאגרי הברזל. עם זאת, דימום חריג אינו ייחודי לאדנומיוזיס: הוא עשוי להופיע גם במיומות, בפוליפים, בהפרעות ביוץ, בהפרעות קרישה ובמצבים אחרים.\n\nהערכה רפואית חשובה כאשר חל שינוי חדש בדפוס הווסת, כשהדימום פוגע בתפקוד, כשהכאב מחמיר או כאשר מופיע דימום בין הווסתות, לאחר יחסי מין או לאחר גיל המעבר. דימום כבד מאוד, כאב חד ופתאומי, עילפון, חולשה קיצונית או חשד להיריון מצריכים בירור רפואי דחוף. אין לייחס תסמינים כאלה באופן אוטומטי לאדנומיוזיס מוכר.\n\n## כיצד מאבחנים אדנומיוזיס?\n\nתהליך האבחון מתחיל בתשאול רפואי. בין השאר נבדקים מועד הופעת התסמינים, הקשר שלהם למחזור, משך הדימום וכמותו המשוערת, נוכחות קרישי דם, כאב ביחסי מין, טיפולים קודמים ותוכניות הנוגעות לפוריות. יומן תסמינים ומחזור עשוי לסייע בהצגת דפוס עקבי, אך אינו מחליף אבחון רפואי.\n\nבבדיקה גינקולוגית הרחם עשוי להיות מוגדל, רגיש או בעל מרקם שונה, אולם ממצאים אלה אינם ספציפיים. אולטרסאונד וגינלי הוא בדרך כלל בדיקת ההדמיה הראשונה. בין הסימנים האפשריים ניתן למצוא חוסר סימטריה של דופן הרחם, אזורים קטנים דמויי ציסטות בתוך השריר, הצללות, אי־אחידות של המיומטריום ושינויים באזור המפגש שבין הרירית לשריר.\n\nהטרמינולוגיה לתיאור ממצאים אלה עברה תהליך של האחדה. [מסמך הקונצנזוס של קבוצת MUSA לתיאור אולטרסאונד של המיומטריום](https://doi.org/10.1002/uog.14806) קבע מונחים סטנדרטיים לתיאור אדנומיוזיס וממצאים אחרים בשריר הרחם. סטנדרטיזציה זו מסייעת לדיווח עקבי, אך שום סימן יחיד אינו מוכיח את האבחנה בכל מקרה.\n\nMRI עשוי לשמש כאשר תוצאת האולטרסאונד אינה חד־משמעית, כאשר נדרש מיפוי מפורט יותר או כאשר יש צורך להבחין בין אדנומיוזיס למיומות ולממצאים אחרים. הבדיקה יכולה להדגים שינויים באזור החיבור שבין האנדומטריום למיומטריום ומוקדים בתוך השריר. גם כאן, משמעות הממצאים תלויה באיכות הבדיקה, בניסיון המפענח ובהקשר הקליני.\n\nאבחנה פתולוגית לאחר בדיקת רקמת רחם נחשבת לאישור המובהק ביותר, אך כריתת רחם אינה מבוצעת לצורך אבחון בלבד. ברוב המקרים השאיפה היא להגיע לאבחנה קלינית־הדמייתית סבירה ולהתאים את המשך הבירור או הטיפול לתסמינים ולהעדפות המטופלת.\n\n## מה ההבדל בין אדנומיוזיס, אנדומטריוזיס ומיומות?\n\nשלושת המצבים יכולים לגרום לכאב באגן, לווסת כואבת או לדימום חריג, ולעיתים הם מופיעים יחד. עם זאת, ההבדל המרכזי הוא בסוג הרקמה ובמיקומה. באדנומיוזיס הרקמה הדומה לרירית הרחם מצויה בתוך שריר הרחם. באנדומטריוזיס רקמה דמוית אנדומטריום נמצאת מחוץ לחלל הרחם, למשל באגן, בשחלות או על הצפק. מיומות, לעומת זאת, הן גידולים שפירים שמקורם בתאי השריר והרקמה הסיבית של הרחם.\n\nההגדרה והגישה לאנדומטריוזיס מפורטות ב[הנחיה הקלינית של ESHRE לאבחון ולטיפול באנדומטריוזיס](https://www.eshre.eu/Guideline/Endometriosis). מידע רשמי על מאפייני מיומות, תסמיניהן ואפשרויות הבירור מופיע ב[מסמך המטופלות של ACOG בנושא מיומות ברחם](https://www.acog.org/womens-health/faqs/uterine-fibroids).\n\n| מאפיין | אדנומיוזיס | אנדומטריוזיס | מיומות ברחם |\n|---|---|---|---|\n| מהות המצב | רקמה דמוית רירית הרחם בתוך שריר הרחם | רקמה דמוית רירית הרחם מחוץ לחלל הרחם | גידולים שפירים של שריר ורקמה סיבית |\n| מיקום אופייני | דופן הרחם | אגן, שחלות, צפק ואתרים נוספים | בתוך דופן הרחם, כלפי החלל או כלפי חוץ |\n| תסמינים בולטים | דימום כבד, כאבי וסת, לחץ או כאב באגן | כאב מחזורי, כאב ביחסי מין, לעיתים קושי להרות | דימום כבד, לחץ, הגדלת הבטן, תכיפות במתן שתן |\n| מראה אפשרי בהדמיה | שינוי מפושט או מוקדי במיומטריום | מוקדים, הידבקויות או ציסטות שחלתיות; לא כל הנגעים נראים | מסות מוגדרות יחסית |\n| האם עשויים להופיע יחד? | כן | כן | כן |\n\nהטבלה מתארת דפוסים אופייניים ולא כללים מוחלטים. לדוגמה, אנדומטריוזיס עלול להתקיים גם כאשר אולטרסאונד שגרתי נראה תקין, ואילו אדנומיוזיס ומיומות עשויים להימצא באותו רחם. לכן אין לקבוע אבחנה על פי תסמין יחיד, כגון וסת כואבת או דימום כבד.\n\n## כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?\n\nהטיפול אינו אחיד ונקבע לפי חומרת הכאב והדימום, גיל, מחלות רקע, ממצאי ההדמיה, העדפות אישיות ורצון להרות בעתיד. כאשר אין תסמינים או כשהם קלים, ייתכן שלא יידרש טיפול פעיל אלא מעקב. במקרים אחרים ניתן לשקול טיפול להקלה על כאב, הפחתת דימום או דיכוי הורמונלי.\n\nבין האפשרויות הנזכרות ב[מידע הטיפולי הרשמי של NHS על אדנומיוזיס](https://www.nhs.uk/conditions/adenomyosis/) נמצאים משככי כאב נוגדי דלקת, אמצעים להפחתת דימום וטיפולים הורמונליים, לרבות התקן תוך־רחמי המשחרר לבונורגסטרל ואמצעי מניעה הורמונליים מסוימים. לכל טיפול קיימות התוויות, מגבלות ותופעות לוואי אפשריות, ולכן הבחירה מחייבת התאמה רפואית פרטנית.\n\nכאשר התסמינים קשים ואינם מגיבים לטיפול שמרני, ניתן לשקול הליכים פולשניים או ניתוחיים. כריתת רחם היא טיפול מוחלט באדנומיוזיס משום שהיא מסירה את האיבר שבו נמצאת המחלה, אך היא מבטלת את האפשרות לשאת היריון ואינה מתאימה לכל אחת. קיימים גם הליכים משמרי רחם, אולם ההתאמה אליהם והראיות לגבי תוצאות ארוכות טווח משתנות לפי סוג המחלה וההליך.\n\nהקשר בין אדנומיוזיס לפוריות ולתוצאות היריון נחקר, אך קשה להפריד בין השפעתו לבין גיל, אנדומטריוזיס, מיומות וגורמים נוספים. אין להסיק מממצא של אדנומיוזיס שקיימת בהכרח בעיית פוריות. כאשר היריון עתידי הוא שיקול מרכזי, יש להביא זאת בחשבון לפני התחלת טיפול הורמונלי ממושך או פעולה פולשנית.\n\n## סיכום\n\nאדנומיוזיס הוא מצב שפיר שבו רקמה דמוית רירית הרחם נמצאת בתוך שריר הרחם. הוא עשוי להתבטא בווסת כבדה, בכאבי מחזור, בכאב באגן ובהגדלת הרחם, אך לעיתים אינו גורם לתסמינים. לפי [המידע הרשמי של NHS על אדנומיוזיס](https://www.nhs.uk/conditions/adenomyosis/), האבחון מתבסס על שילוב בין התמונה הקלינית לבדיקות הדמיה, ולא על תסמין בודד.\n\nההבחנה מאנדומטריוזיס וממיומות חשובה: באנדומטריוזיס הרקמה נמצאת מחוץ לחלל הרחם, ואילו מיומות הן גידולים שפירים של שריר הרחם. מאחר שהמצבים עשויים לחפוף, לעיתים נדרש בירור מדורג. מטרת הטיפול היא להפחית תסמינים ולשמור ככל האפשר על איכות החיים, תוך התחשבות בהעדפות ובתוכניות הפוריות.\n\nהמידע במאמר הוא מידע רפואי כללי בלבד. הוא אינו מיועד לאבחון עצמי, אינו תחליף לבדיקה או לייעוץ רפואי פרטני, וכל טענה רפואית מחייבת בדיקת רופא וביקורת מקצועית אנושית לפני פרסום.\n\n## מקורות\n\n1. NHS, **Adenomyosis**:  \n   https://www.nhs.uk/conditions/adenomyosis/\n\n2. Van den Bosch T, et al. **Terms, definitions and measurements to describe sonographic features of myometrium and uterine masses: a consensus opinion from the MUSA group**. Ultrasound in Obstetrics & Gynecology.  \n   https://doi.org/10.1002/uog.14806\n\n3. European Society of Human Reproduction and Embryology, **ESHRE Guideline: Endometriosis**:  \n   https://www.eshre.eu/Guideline/Endometriosis\n\n4. American College of Obstetricians and Gynecologists, **Uterine Fibroids**:  \n   https://www.acog.org/womens-health/faqs/uterine-fibroids\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)",
+        "canonical_url": "https://guyrofe.com/אדנומיוזיס-תסמינים-אבחון-והבדלים/",
+        "meta_description": "ד״ר גיא רופא: אדנומיוזיס הוא מצב שבו רקמה הדומה לרירית הרחם נמצאת בתוך השריר של דופן הרחם.",
+        "search_target": {
+          "primary_query": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
+          "secondary_queries": [
+            "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם ד״ר גיא רופא",
+            "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "informational"
+        },
+        "internal_links": [
+          {
+            "title": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי",
+            "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://guyrofe.com/אדנומיוזיס-תסמינים-אבחון-והבדלים/",
+            "host": "guyrofe.com",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/",
+              "anchor": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://guyrofe.com/",
+            "observed_position": 1,
+            "observed_query": "Guy Rofe",
+            "observed_at": "2026-11-12T13:00:04.206388"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "GUYROFE_COM",
+        "content_stream": "canonical_depth",
+        "content_fingerprint": "aac8b88339627b42b570d2a0524409499eddb2359cb006c0c963d2176015ed8c",
+        "slug": "אדנומיוזיס-תסמינים-אבחון-והבדלים",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-hero.png",
+          "sha256": "8634fa4a5008b0b3607efd451053cc4e91f454eb8ef9ddf03d0c2295c6ad3d93",
+          "alt_text": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Salle_d%27Echographie_Hopital_Cameroun.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Salle_d%27Echographie_Hopital_Cameroun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Happi Raphael",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Salle d'Echographie Hopital Cameroun.jpg — Happi Raphael; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-hero.png",
+              "sha256": "8634fa4a5008b0b3607efd451053cc4e91f454eb8ef9ddf03d0c2295c6ad3d93",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+              "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-square.jpg",
+              "sha256": "1228144c631f35ce3e18a5a2dd273d4fc66fe0f5f4efbb7631583d0aefd1149c",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-portrait.png",
+              "sha256": "b6d8df0a3cb8a043c1ea5f0a3660f0c8134cac55fdb6fd978103f937d305aaf9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא",
+        "text": "אדנומיוזיס הוא מצב שבו רקמה הדומה לרירית הרחם נמצאת בתוך השריר של דופן הרחם.\n\nהוא עלול לגרום לווסת כבדה או כואבת, לכאב באגן ולתחושת לחץ, אך לעיתים אינו גורם לתסמינים כלל.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Salle d'Echographie Hopital Cameroun.jpg — Happi Raphael; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/אדנומיוזיס-תסמינים-אבחון-והבדלים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+          "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+          "alt_text": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Salle_d%27Echographie_Hopital_Cameroun.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Salle_d%27Echographie_Hopital_Cameroun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Happi Raphael",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Salle d'Echographie Hopital Cameroun.jpg — Happi Raphael; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-hero.png",
+              "sha256": "8634fa4a5008b0b3607efd451053cc4e91f454eb8ef9ddf03d0c2295c6ad3d93",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+              "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-square.jpg",
+              "sha256": "1228144c631f35ce3e18a5a2dd273d4fc66fe0f5f4efbb7631583d0aefd1149c",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-portrait.png",
+              "sha256": "b6d8df0a3cb8a043c1ea5f0a3660f0c8134cac55fdb6fd978103f937d305aaf9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא",
+        "text": "אדנומיוזיס הוא מצב שבו רקמה הדומה לרירית הרחם נמצאת בתוך השריר של דופן הרחם.\n\n• הוא עלול לגרום לווסת כבדה או כואבת, לכאב באגן ולתחושת לחץ, אך לעיתים אינו גורם לתסמינים כלל.\n• האבחון מבוסס בעיקר על התסמינים, בדיקה גינקולוגית ובדיקות הדמיה.\n• אף שקיים דמיון מסוים לאנדומטריוזיס ולמיומות, מדובר במצבים שונים מבחינת מיקום הרקמה, מנגנון המחלה והממצאים בהדמיה.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Salle d'Echographie Hopital Cameroun.jpg — Happi Raphael; CC BY-SA 4.0; Wikimedia Commons",
+        "link": "https://guyrofe.com/אדנומיוזיס-תסמינים-אבחון-והבדלים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+          "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+          "alt_text": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Salle_d%27Echographie_Hopital_Cameroun.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Salle_d%27Echographie_Hopital_Cameroun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Happi Raphael",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Salle d'Echographie Hopital Cameroun.jpg — Happi Raphael; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-hero.png",
+              "sha256": "8634fa4a5008b0b3607efd451053cc4e91f454eb8ef9ddf03d0c2295c6ad3d93",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+              "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-square.jpg",
+              "sha256": "1228144c631f35ce3e18a5a2dd273d4fc66fe0f5f4efbb7631583d0aefd1149c",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-portrait.png",
+              "sha256": "b6d8df0a3cb8a043c1ea5f0a3660f0c8134cac55fdb6fd978103f937d305aaf9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "payload": {
+        "summary": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא.\n\nאדנומיוזיס הוא מצב שבו רקמה הדומה לרירית הרחם נמצאת בתוך השריר של דופן הרחם.\n\nהוא עלול לגרום לווסת כבדה או כואבת, לכאב באגן ולתחושת לחץ, אך לעיתים אינו גורם לתסמינים כלל.\n\nמאת ד״ר גיא רופא — מידע רפואי כללי המבוסס על מקורות.\n\nד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.",
+        "keywords": [
+          "ד״ר גיא רופא",
+          "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא",
+          "מידע רפואי"
+        ],
+        "language_code": "he",
+        "topic_type": "STANDARD",
+        "call_to_action": "LEARN_MORE",
+        "link": "https://guyrofe.com/אדנומיוזיס-תסמינים-אבחון-והבדלים/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+          "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+          "alt_text": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "חדר בדיקות ריק ובו מיטת בדיקה, מכשיר אולטרסאונד וכיור.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Salle_d%27Echographie_Hopital_Cameroun.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Salle_d%27Echographie_Hopital_Cameroun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Happi Raphael",
+          "license_name": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Salle d'Echographie Hopital Cameroun.jpg — Happi Raphael; CC BY-SA 4.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-hero.png",
+              "sha256": "8634fa4a5008b0b3607efd451053cc4e91f454eb8ef9ddf03d0c2295c6ad3d93",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+              "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-square.jpg",
+              "sha256": "1228144c631f35ce3e18a5a2dd273d4fc66fe0f5f4efbb7631583d0aefd1149c",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-22-topic-84-run-45031024803-attempt-1-portrait.png",
+              "sha256": "b6d8df0a3cb8a043c1ea5f0a3660f0c8134cac55fdb6fd978103f937d305aaf9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "information_only": true,
+        "booking_or_contact_cta": false
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 38,
+      "supported_claim_count": 38,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהו אדנומיוזיס ומה מתרחש בדופן הרחם?",
+          "claim": "רקמה זו מגיבה לשינויים הורמונליים, והימצאותה בתוך השריר עשויה להיות קשורה להתעבות דופן הרחם, לתגובה דלקתית מקומית ולהגדלת הרחם.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהו אדנומיוזיס ומה מתרחש בדופן הרחם?",
+          "claim": "לפי המידע הקליני של שירות הבריאות הלאומי בבריטניה על אדנומיוזיס, המצב עשוי לערב חלק מוגדר מדופן הרחם או אזורים נרחבים יותר.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהו אדנומיוזיס ומה מתרחש בדופן הרחם?",
+          "claim": "בעבר ניתן היה לקבוע את האבחנה בוודאות בעיקר לאחר כריתת רחם ובדיקה פתולוגית.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהו אדנומיוזיס ומה מתרחש בדופן הרחם?",
+          "claim": "כיום, אולטרסאונד וגינלי ובמקרים מסוימים MRI מאפשרים לזהות מאפיינים התומכים באבחנה עוד לפני טיפול ניתוחי.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהו אדנומיוזיס ומה מתרחש בדופן הרחם?",
+          "claim": "עם זאת, הדמיה אינה עומדת לבדה: יש לפרש אותה לצד התסמינים, הבדיקה והאפשרות למצבים נוספים.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהם התסמינים האפשריים ומתי נדרשת בדיקה?",
+          "claim": "הרחם עשוי להיות מוגדל או רגיש בבדיקה.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהם התסמינים האפשריים ומתי נדרשת בדיקה?",
+          "claim": "לצד זאת, יש מי שאינן חוות תסמינים והמצב מתגלה במקרה בבדיקת הדמיה או בבדיקה פתולוגית.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהם התסמינים האפשריים ומתי נדרשת בדיקה?",
+          "claim": "לכן, ההחלטה אם נדרש טיפול נשענת במידה רבה על מידת הפגיעה באיכות החיים, ולא רק על עצם קיומו של ממצא.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהם התסמינים האפשריים ומתי נדרשת בדיקה?",
+          "claim": "דימום וסתי כבד עלול להיות מלווה בעייפות, חולשה, קוצר נשימה במאמץ או סחרחורת, בין היתר עקב אנמיה מחוסר ברזל.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהם התסמינים האפשריים ומתי נדרשת בדיקה?",
+          "claim": "במצב כזה עשויה להידרש ספירת דם ולעיתים גם הערכת מאגרי הברזל.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "מהם התסמינים האפשריים ומתי נדרשת בדיקה?",
+          "claim": "עם זאת, דימום חריג אינו ייחודי לאדנומיוזיס: הוא עשוי להופיע גם במיומות, בפוליפים, בהפרעות ביוץ, בהפרעות קרישה ובמצבים אחרים.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "תהליך האבחון מתחיל בתשאול רפואי.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "בין השאר נבדקים מועד הופעת התסמינים, הקשר שלהם למחזור, משך הדימום וכמותו המשוערת, נוכחות קרישי דם, כאב ביחסי מין, טיפולים קודמים ותוכניות הנוגעות לפוריות.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "יומן תסמינים ומחזור עשוי לסייע בהצגת דפוס עקבי, אך אינו מחליף אבחון רפואי.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "בבדיקה גינקולוגית הרחם עשוי להיות מוגדל, רגיש או בעל מרקם שונה, אולם ממצאים אלה אינם ספציפיים.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "MRI עשוי לשמש כאשר תוצאת האולטרסאונד אינה חד־משמעית, כאשר נדרש מיפוי מפורט יותר או כאשר יש צורך להבחין בין אדנומיוזיס למיומות ולממצאים אחרים.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "הבדיקה יכולה להדגים שינויים באזור החיבור שבין האנדומטריום למיומטריום ומוקדים בתוך השריר.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "גם כאן, משמעות הממצאים תלויה באיכות הבדיקה, בניסיון המפענח ובהקשר הקליני.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "אבחנה פתולוגית לאחר בדיקת רקמת רחם נחשבת לאישור המובהק ביותר, אך כריתת רחם אינה מבוצעת לצורך אבחון בלבד.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "כיצד מאבחנים אדנומיוזיס?",
+          "claim": "ברוב המקרים השאיפה היא להגיע לאבחנה קלינית־הדמייתית סבירה ולהתאים את המשך הבירור או הטיפול לתסמינים ולהעדפות המטופלת.",
+          "source_urls": [
+            "https://doi.org/10.1002/uog.14806"
+          ]
+        },
+        {
+          "section": "מה ההבדל בין אדנומיוזיס, אנדומטריוזיס ומיומות?",
+          "claim": "ההגדרה והגישה לאנדומטריוזיס מפורטות בהנחיה הקלינית של ESHRE לאבחון ולטיפול באנדומטריוזיס.",
+          "source_urls": [
+            "https://www.eshre.eu/Guideline/Endometriosis",
+            "https://www.acog.org/womens-health/faqs/uterine-fibroids"
+          ]
+        },
+        {
+          "section": "מה ההבדל בין אדנומיוזיס, אנדומטריוזיס ומיומות?",
+          "claim": "מידע רשמי על מאפייני מיומות, תסמיניהן ואפשרויות הבירור מופיע במסמך המטופלות של ACOG בנושא מיומות ברחם.",
+          "source_urls": [
+            "https://www.eshre.eu/Guideline/Endometriosis",
+            "https://www.acog.org/womens-health/faqs/uterine-fibroids"
+          ]
+        },
+        {
+          "section": "מה ההבדל בין אדנומיוזיס, אנדומטריוזיס ומיומות?",
+          "claim": "| האם עשויים להופיע יחד?",
+          "source_urls": [
+            "https://www.eshre.eu/Guideline/Endometriosis",
+            "https://www.acog.org/womens-health/faqs/uterine-fibroids"
+          ]
+        },
+        {
+          "section": "מה ההבדל בין אדנומיוזיס, אנדומטריוזיס ומיומות?",
+          "claim": "לדוגמה, אנדומטריוזיס עלול להתקיים גם כאשר אולטרסאונד שגרתי נראה תקין, ואילו אדנומיוזיס ומיומות עשויים להימצא באותו רחם.",
+          "source_urls": [
+            "https://www.eshre.eu/Guideline/Endometriosis",
+            "https://www.acog.org/womens-health/faqs/uterine-fibroids"
+          ]
+        },
+        {
+          "section": "מה ההבדל בין אדנומיוזיס, אנדומטריוזיס ומיומות?",
+          "claim": "לכן אין לקבוע אבחנה על פי תסמין יחיד, כגון וסת כואבת או דימום כבד.",
+          "source_urls": [
+            "https://www.eshre.eu/Guideline/Endometriosis",
+            "https://www.acog.org/womens-health/faqs/uterine-fibroids"
+          ]
+        },
+        {
+          "section": "כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?",
+          "claim": "הטיפול אינו אחיד ונקבע לפי חומרת הכאב והדימום, גיל, מחלות רקע, ממצאי ההדמיה, העדפות אישיות ורצון להרות בעתיד.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?",
+          "claim": "כאשר אין תסמינים או כשהם קלים, ייתכן שלא יידרש טיפול פעיל אלא מעקב.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?",
+          "claim": "במקרים אחרים ניתן לשקול טיפול להקלה על כאב, הפחתת דימום או דיכוי הורמונלי.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?",
+          "claim": "בין האפשרויות הנזכרות במידע הטיפולי הרשמי של NHS על אדנומיוזיס נמצאים משככי כאב נוגדי דלקת, אמצעים להפחתת דימום וטיפולים הורמונליים, לרבות התקן תוך־רחמי המשחרר לבונורגסטרל ואמצעי מניעה הורמונליים מסוימים.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?",
+          "claim": "לכל טיפול קיימות התוויות, מגבלות ותופעות לוואי אפשריות, ולכן הבחירה מחייבת התאמה רפואית פרטנית.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?",
+          "claim": "כאשר התסמינים קשים ואינם מגיבים לטיפול שמרני, ניתן לשקול הליכים פולשניים או ניתוחיים.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?",
+          "claim": "כריתת רחם היא טיפול מוחלט באדנומיוזיס משום שהיא מסירה את האיבר שבו נמצאת המחלה, אך היא מבטלת את האפשרות לשאת היריון ואינה מתאימה לכל אחת.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "כיצד נקבע הטיפול ומה חשוב לדעת על פוריות?",
+          "claim": "כאשר היריון עתידי הוא שיקול מרכזי, יש להביא זאת בחשבון לפני התחלת טיפול הורמונלי ממושך או פעולה פולשנית.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "הוא עשוי להתבטא בווסת כבדה, בכאבי מחזור, בכאב באגן ובהגדלת הרחם, אך לעיתים אינו גורם לתסמינים.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "לפי המידע הרשמי של NHS על אדנומיוזיס, האבחון מתבסס על שילוב בין התמונה הקלינית לבדיקות הדמיה, ולא על תסמין בודד.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "מאחר שהמצבים עשויים לחפוף, לעיתים נדרש בירור מדורג.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "מטרת הטיפול היא להפחית תסמינים ולשמור ככל האפשר על איכות החיים, תוך התחשבות בהעדפות ובתוכניות הפוריות.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "הוא אינו מיועד לאבחון עצמי, אינו תחליף לבדיקה או לייעוץ רפואי פרטני, וכל טענה רפואית מחייבת בדיקת רופא וביקורת מקצועית אנושית לפני פרסום.",
+          "source_urls": [
+            "https://www.nhs.uk/conditions/adenomyosis/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nhs.uk/conditions/adenomyosis/",
+          "host": "nhs.uk",
+          "year_markers": []
+        },
+        {
+          "url": "https://doi.org/10.1002/uog.14806",
+          "host": "doi.org",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.eshre.eu/Guideline/Endometriosis",
+          "host": "eshre.eu",
+          "year_markers": []
+        },
+        {
+          "url": "https://www.acog.org/womens-health/faqs/uterine-fibroids",
+          "host": "acog.org",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": true,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "aac8b88339627b42b570d2a0524409499eddb2359cb006c0c963d2176015ed8c",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://guyrofe.com/אדנומיוזיס-תסמינים-אבחון-והבדלים/",
+        "host": "guyrofe.com",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-16-topic-03-run-31931866214-attempt-1/",
+          "anchor": "מיומות ברחם: אפשרויות בירור וטיפול באופן כללי",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://guyrofe.com/",
+        "observed_position": 1,
+        "observed_query": "Guy Rofe",
+        "observed_at": "2026-11-12T13:00:04.206388"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36"
+}
