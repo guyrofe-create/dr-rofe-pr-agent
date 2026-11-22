@@ -4295,6 +4295,105 @@
         "account": "accounts/110345401117888665629",
         "location": "accounts/110345401117888665629/locations/14140768355740435987"
       }
+    },
+    "pub_2d661adb374cc59c62a5904a9dcab9e87e8faf5bde000ded8e9a04c209f9770e": {
+      "version": 7,
+      "idempotency_key": "pub_2d661adb374cc59c62a5904a9dcab9e87e8faf5bde000ded8e9a04c209f9770e",
+      "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+      "target_id": "canonical_wordpress__media__hero",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "1d88d054f2eef7aa55b191aad9b5373aeba1a98ede894fc1b45a20149b08ec8e",
+      "status": "published",
+      "started_at": "2026-11-22T20:51:37Z",
+      "published_at": "2026-11-22T20:51:43Z",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-22-topic-84-run-45031024803-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-22-topic-84-run-45031024803-attempt-1-hero",
+        "sha256": "8634fa4a5008b0b3607efd451053cc4e91f454eb8ef9ddf03d0c2295c6ad3d93",
+        "metadata_verified": true
+      }
+    },
+    "pub_116e8c3ec505db730b7ebcc44ae57580a1eacf521882beda24227d719063d157": {
+      "version": 7,
+      "idempotency_key": "pub_116e8c3ec505db730b7ebcc44ae57580a1eacf521882beda24227d719063d157",
+      "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "guyrofe.com",
+      "request_sha256": "4a934383749a0bd43be21a9c343371bc401a7bd40c74d316ec3120ed3cac8299",
+      "status": "published",
+      "started_at": "2026-11-22T20:51:43Z",
+      "published_at": "2026-11-22T20:51:50Z",
+      "url": "https://guyrofe.com/%d7%90%d7%93%d7%a0%d7%95%d7%9e%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%90%d7%91%d7%97%d7%95%d7%9f-%d7%95%d7%94%d7%91%d7%93%d7%9c%d7%99%d7%9d/",
+      "provider_receipt": null
+    },
+    "pub_27cbe6335f51d37a8bece6fd72d487f0aeaddf4321586b5995643befd395ccdb": {
+      "version": 7,
+      "idempotency_key": "pub_27cbe6335f51d37a8bece6fd72d487f0aeaddf4321586b5995643befd395ccdb",
+      "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+      "target_id": "facebook_page__media__landscape",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "4144e3300e7ffab7aef9372fa992d7d2f3e10c13db078bbe44eb43d20d86443b",
+      "status": "published",
+      "started_at": "2026-11-22T20:51:51Z",
+      "published_at": "2026-11-22T20:51:55Z",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-22-topic-84-run-45031024803-attempt-1-landscape.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-22-topic-84-run-45031024803-attempt-1-landscape",
+        "sha256": "e079285966aca278100c9ce030299d1412870402b57bafecac25da55ce518573",
+        "metadata_verified": true
+      }
+    },
+    "pub_64baca2682a07e8504d065204f51c54bbad82cb83bf469a2c129f399902ac659": {
+      "version": 7,
+      "idempotency_key": "pub_64baca2682a07e8504d065204f51c54bbad82cb83bf469a2c129f399902ac659",
+      "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "request_sha256": "406088a4b0a14d27358625c50dbf737053e6d7a7a83d869292e1899870731e26",
+      "status": "published",
+      "started_at": "2026-11-22T20:51:55Z",
+      "published_at": "2026-11-22T20:52:04Z",
+      "url": "https://www.facebook.com/122216448116942441",
+      "provider_receipt": null
+    },
+    "pub_0dee377751a0d6208a9194d5a28586bb728cda3beb59c1bd6112053df43f0e27": {
+      "version": 7,
+      "idempotency_key": "pub_0dee377751a0d6208a9194d5a28586bb728cda3beb59c1bd6112053df43f0e27",
+      "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "request_sha256": "a3233215e34412dd16adf96e188ca33330d87ec574fc6ca5607f9dad491bd59f",
+      "status": "published",
+      "started_at": "2026-11-22T20:52:04Z",
+      "published_at": "2026-11-22T20:52:07Z",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7530372564980887552/",
+      "provider_receipt": null
+    },
+    "pub_94c37fc8ac6c163168a16dfa43f475eae26c86b83b7c86d0e5bb1c1d91be1451": {
+      "version": 7,
+      "idempotency_key": "pub_94c37fc8ac6c163168a16dfa43f475eae26c86b83b7c86d0e5bb1c1d91be1451",
+      "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "6b7ce11b414a41c1ea89231594626fdb1cf60906e642efdde6c26ad0c26b5d57",
+      "status": "published",
+      "started_at": "2026-11-22T20:52:07Z",
+      "published_at": "2026-11-22T20:52:16Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDoyQWstRlJnRmxwMlZKbG5meWpoclln",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/5564275801277229931",
+        "state": "LIVE",
+        "createTime": "2026-11-22T20:52:10.338464070Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDoyQWstRlJnRmxwMlZKbG5meWpoclln",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }

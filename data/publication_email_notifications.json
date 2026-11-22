@@ -1739,6 +1739,19 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7506244778762805248/",
         "https://guyrofe.blogspot.com/2026/09/blog-post_954.html"
       ]
+    },
+    "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36:141bbe40aa3f80f90f682aee8f69f3a9da6f4411be3377d23e8200eb95627430": {
+      "sent_at": "2026-11-22T20:52:17.668997+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+      "state": "success",
+      "subject": "אישור פרסום: אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא",
+      "urls": [
+        "https://guyrofe.com/%d7%90%d7%93%d7%a0%d7%95%d7%9e%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%90%d7%91%d7%97%d7%95%d7%9f-%d7%95%d7%94%d7%91%d7%93%d7%9c%d7%99%d7%9d/",
+        "https://www.facebook.com/122216448116942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7530372564980887552/",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDoyQWstRlJnRmxwMlZKbG5meWpoclln"
+      ]
     }
   }
 }

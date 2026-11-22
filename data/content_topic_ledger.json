@@ -3552,7 +3552,7 @@
       "topic": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
       "normalized_topic": "אדנומיוזיס תסמינים אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
       "first_seen_at": "2026-11-22T14:07:26.457514+00:00",
-      "last_seen_at": "2026-11-22T14:08:42Z",
+      "last_seen_at": "2026-11-22T20:52:16.438490+00:00",
       "titles": [
         "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא"
       ],
@@ -3587,6 +3587,21 @@
           "stream": "canonical_depth",
           "draft_path": "content_drafts/2026-11-22-topic-84-run-45031024803-attempt-1.md",
           "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-22T20:52:16.438490+00:00",
+          "source": "campaign",
+          "stream": "canonical_depth",
+          "draft_path": "content_drafts/2026-11-22-topic-84-run-45031024803-attempt-1.md",
+          "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.com/%d7%90%d7%93%d7%a0%d7%95%d7%9e%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%90%d7%91%d7%97%d7%95%d7%9f-%d7%95%d7%94%d7%91%d7%93%d7%9c%d7%99%d7%9d/",
+            "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDoyQWstRlJnRmxwMlZKbG5meWpoclln",
+            "https://www.facebook.com/122216448116942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7530372564980887552/"
+          ]
         }
       ]
     }

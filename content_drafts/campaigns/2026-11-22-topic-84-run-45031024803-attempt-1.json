@@ -1,0 +1,116 @@
+{
+  "draft": "content_drafts/2026-11-22-topic-84-run-45031024803-attempt-1.md",
+  "title": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-11-22T20:52:16.438490+00:00",
+  "destinations": [
+    {
+      "name": "guyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://guyrofe.com/%d7%90%d7%93%d7%a0%d7%95%d7%9e%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%90%d7%91%d7%97%d7%95%d7%9f-%d7%95%d7%94%d7%91%d7%93%d7%9c%d7%99%d7%9d/",
+      "detail": "idempotency_key=pub_116e8c3ec505db730b7ebcc44ae57580a1eacf521882beda24227d719063d157"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://guyrofe.com/%d7%90%d7%93%d7%a0%d7%95%d7%9e%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%90%d7%91%d7%97%d7%95%d7%9f-%d7%95%d7%94%d7%91%d7%93%d7%9c%d7%99%d7%9d/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-22-topic-84-run-45031024803-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122216448116942441",
+      "detail": "idempotency_key=pub_64baca2682a07e8504d065204f51c54bbad82cb83bf469a2c129f399902ac659"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7530372564980887552/",
+      "detail": "idempotency_key=pub_0dee377751a0d6208a9194d5a28586bb728cda3beb59c1bd6112053df43f0e27"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "published",
+      "target_id": "google_business_profile",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDoyQWstRlJnRmxwMlZKbG5meWpoclln",
+      "detail": "idempotency_key=pub_94c37fc8ac6c163168a16dfa43f475eae26c86b83b7c86d0e5bb1c1d91be1451"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_a9232abbee9c29c0ddd112bd2eb468169b613c2c00eb2ea6861ccd9fe9a46b36",
+  "search_target": {
+    "primary_query": "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם",
+    "secondary_queries": [
+      "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם ד״ר גיא רופא",
+      "אדנומיוזיס: תסמינים, אבחון והבדלים מאנדומטריוזיס וממיומות ברחם גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational"
+  },
+  "canonical_url": "https://guyrofe.com/%d7%90%d7%93%d7%a0%d7%95%d7%9e%d7%99%d7%95%d7%96%d7%99%d7%a1-%d7%aa%d7%a1%d7%9e%d7%99%d7%a0%d7%99%d7%9d-%d7%90%d7%91%d7%97%d7%95%d7%9f-%d7%95%d7%94%d7%91%d7%93%d7%9c%d7%99%d7%9d/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
