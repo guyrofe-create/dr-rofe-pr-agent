@@ -1752,6 +1752,21 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7530372564980887552/",
         "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDoyQWstRlJnRmxwMlZKbG5meWpoclln"
       ]
+    },
+    "expired:apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa:2026-08-04T13:44:27Z": {
+      "recorded_at": "2026-11-23T01:21:55.115948+00:00",
+      "approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-08-04-topic-01-run-30892576802-attempt-1.md",
+      "published_approval_id": "apr_581655fddd9592f9ae9caa9287fe68a6694f90ab48904b47a63ec16f5a51eeaa",
+      "campaign_result": "content_drafts/campaigns/2026-08-04-topic-01-run-30892576802-attempt-1.json",
+      "urls": [
+        "https://www.drguyrofe.com/post/guy-rofe-pilot-2026-08-04-topic-01-run-30892576802-attempt-1",
+        "https://www.facebook.com/122197805228942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7490664465114271744/",
+        "https://guyrofe.blogspot.com/2026/08/blog-post.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENW5q6yOg_eRtgE"
+      ]
     }
   }
 }
