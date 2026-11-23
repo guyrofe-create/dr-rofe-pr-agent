@@ -1,0 +1,798 @@
+{
+  "version": 7,
+  "status": "awaiting_explicit_approval",
+  "created_at": "2026-11-23T17:34:36Z",
+  "action_type": "coordinated_owned_media_publication",
+  "source_draft": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md",
+  "source_draft_sha256": "9cf47d4afd28e655b9a8e8c7539ba3d85e84f2e53f8cdb0cb99b0f34a697dac0",
+  "objective": "בחיפוש ד״ר גיא רופא וגיא רופא יש להציג מקסימום נכסים חיוביים, מדויקים ורצויים, וכן להביא לזיהוי עובדתי נכון ולציטוט מקורות מאושרים במנועי תשובות AI.",
+  "query": "ד״ר גיא רופא",
+  "sources": [
+    {
+      "url": "https://guyrofe.com/profile/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/",
+      "type": "citation"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/",
+      "type": "citation"
+    }
+  ],
+  "media": {
+    "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-landscape.png",
+    "sha256": "b32ec2c9d324484a961b6d8179185e1a8c10a769f63ca5e7c16e63fa1de9e0c8",
+    "alt_text": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה, מלווה מאמר של ד״ר גיא רופא",
+    "visual_description": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה.",
+    "source_type": "wikimedia_commons_licensed_photo",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Meningeom_im_Spinalkanal_MRT.jpg",
+    "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Meningeom_im_Spinalkanal_MRT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "creator": "Hellerhoff",
+    "license_name": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attribution": "Meningeom im Spinalkanal MRT.jpg — Hellerhoff; CC BY-SA 3.0; Wikimedia Commons",
+    "generation_model": "",
+    "generation_prompt": "",
+    "variants": {
+      "hero": {
+        "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-hero.png",
+        "sha256": "7aed2ef06375cecb08a85992a9a3fedf492cac5b379e83dd671af34096b8a7b9",
+        "width": 1600,
+        "height": 900,
+        "media_type": "image/png"
+      },
+      "landscape": {
+        "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-landscape.png",
+        "sha256": "b32ec2c9d324484a961b6d8179185e1a8c10a769f63ca5e7c16e63fa1de9e0c8",
+        "width": 1200,
+        "height": 630,
+        "media_type": "image/png"
+      },
+      "square": {
+        "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-square.jpg",
+        "sha256": "84d56dc70e058a8f02aeb16c8a388108414075296274ca95278a87cb8abc0e85",
+        "width": 1200,
+        "height": 1200,
+        "media_type": "image/jpeg"
+      },
+      "portrait": {
+        "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-portrait.png",
+        "sha256": "e07afaa4afc5454e81fe950e6be6e1584393abdee10acbe6f9dfe8fe5ae325d9",
+        "width": 1080,
+        "height": 1350,
+        "media_type": "image/png"
+      }
+    },
+    "must_match_approved_bytes_when_local": true
+  },
+  "targets": [
+    {
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "payload": {
+        "title": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא",
+        "cms_title": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
+        "markdown": "# נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא\n\nמאת [ד״ר גיא רופא](https://guyrofe.com/profile/)\n\n\n**התשובה הקצרה:** נוירומיאליטיס אופטיקה היא מחלה דלקתית־אוטואימונית של מערכת העצבים המרכזית. בצורתה השכיחה, נוגדנים נגד החלבון אקוופורין־4 תוקפים בעיקר אסטרוציטים — תאים המסייעים לתאי העצב ושומרים על סביבתם. עצבי הראייה וחוט השדרה רגישים במיוחד לתהליך זה, ולכן המחלה עלולה לגרום לירידה ניכרת בראייה, לחולשה, להפרעות תחושה ולפגיעה בתפקוד שלפוחית השתן והמעי.\n\nאף שנוירומיאליטיס אופטיקה וטרשת נפוצה עשויות להופיע עם תסמינים דומים, אלה מחלות שונות מבחינת המנגנון החיסוני, דפוסי הנזק, בדיקות המעבדה והטיפול המונע. ההבחנה אינה נעשית לפי תסמין אחד, אלא באמצעות שילוב של הסיפור הקליני, בדיקה נוירולוגית, MRI, בדיקות נוגדנים ולעיתים בדיקת נוזל השדרה.\n\n## מהי NMOSD ומה תפקידו של הנוגדן AQP4-IgG?\n\nהמונח המקובל כיום הוא **הפרעות בספקטרום נוירומיאליטיס אופטיקה**, ובאנגלית Neuromyelitis Optica Spectrum Disorders או NMOSD. המילה “ספקטרום” חשובה: המחלה אינה מתבטאת תמיד רק בדלקת של עצב הראייה ובדלקת של חוט השדרה. היא עשויה לערב גם את גזע המוח, את אזור הפוסטרמה, את מוח הביניים ולעיתים אזורים נוספים במוח.\n\nאצל רוב החולים בצורה הטיפוסית של NMOSD מתגלה בדם נוגדן מסוג IgG המכוון נגד אקוופורין־4, ולכן הוא נקרא AQP4-IgG. אקוופורין־4 הוא חלבון המשמש כתעלת מים ונמצא בכמות רבה בשלוחות האסטרוציטים, בעיקר בסמוך לכלי דם ובאזורי המגע עם מחסום הדם־מוח.\n\nהאסטרוציטים אינם רק “תאי תמך”. הם משתתפים בוויסות מאזן המים והמלחים, בפינוי מוליכים עצביים, בתמיכה מטבולית בתאי העצב ובשמירה על סביבה יציבה לפעילותם. כאשר AQP4-IgG נקשר לחלבון המטרה, הוא עלול להפעיל את מערכת המשלים ולגייס תאי דלקת. הנזק מתחיל באסטרוציטים, ובהמשך עלולים להיפגע גם המיאלין — המעטפת המבודדת של סיבי העצב — והאקסונים עצמם.\n\nמשום כך, NMOSD הקשורה ל-AQP4 נחשבת בעיקר לאסטרוציטופתיה מתווכת־נוגדנים. לעומתה, בטרשת נפוצה דה־מיאלינציה ופגיעה באוליגודנדרוציטים, התאים המייצרים מיאלין, הן מרכיבים מרכזיים יותר. ההבדל אינו סמנטי בלבד: הוא מסביר מדוע ביטויי המחלות, מהלך ההתקפים והתגובה לטיפולים עשויים להיות שונים. המנגנון מתואר בהרחבה ב[סקירה המדעית של NCBI על הבסיס הביולוגי והקליני של NMOSD](https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/).\n\nלא כל אדם עם תסמינים מתאימים חיובי ל-AQP4-IgG. כאשר הבדיקה שלילית, נדרשת התאמה קפדנית במיוחד בין התמונה הקלינית לממצאי ההדמיה, לצד שלילת מחלות אחרות. אחת האבחנות החשובות היא MOGAD — מחלה הקשורה לנוגדנים נגד MOG. גם היא יכולה לגרום לדלקת בעצב הראייה, בחוט השדרה או במוח, אך נחשבת לישות נפרדת ולא לגרסה של טרשת נפוצה או של NMOSD חיובית ל-AQP4.\n\n## מדוע עצבי הראייה וחוט השדרה פגיעים במיוחד?\n\nעצבי הראייה וחוט השדרה כוללים אזורים שבהם קיים ביטוי משמעותי של אקוופורין־4 ומבנים אסטרוציטריים הרגישים לפעילות הנוגדן. עם זאת, פיזור החלבון אינו ההסבר היחיד. נראה כי יש חשיבות גם לארגון המולקולרי של אקוופורין־4, למאפייני כלי הדם המקומיים, לחדירות מחסום הדם־מוח ולאופן שבו מערכת המשלים ותאי הדלקת פועלים בכל רקמה.\n\nעצב הראייה מעביר את המידע החזותי מן הרשתית אל המוח. דלקת ובצקת בתוך מסלול אנטומי צר עלולות לפגוע במהירות בהולכה העצבית. דלקת עצב הראייה ב-NMOSD עשויה לערב מקטע ארוך של העצב, להופיע בשתי העיניים או להגיע לחלקו האחורי ולתצלובת הראייה. התסמינים האפשריים כוללים טשטוש ראייה, ירידה בראיית צבעים, חסר בשדה הראייה, כאב בהנעת העין ולעיתים אובדן ראייה משמעותי.\n\nבחוט השדרה עוברים בצפיפות מסלולים מוטוריים, תחושתיים ואוטונומיים. נגע דלקתי נרחב עלול לגרום במקביל לחולשה, לנוקשות שרירים, לנימול, לאובדן תחושה, לכאב עצבי ולהפרעה בשליטה על שלפוחית השתן או המעי. כאשר הדלקת מערבת אזור גבוה בחוט השדרה הצווארי, היא עלולה במקרים חמורים להשפיע גם על הנשימה.\n\nאחד הדפוסים המזוהים עם NMOSD הוא דלקת רוחבית אורכית נרחבת, המכונה LETM. ב-MRI ניתן לראות נגע המשתרע על פני שלושה מקטעים חולייתיים רצופים או יותר ולעיתים תופס את מרכז חוט השדרה. לפי [הקריטריונים הבין־לאומיים לאבחון NMOSD](https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/), זהו ממצא תומך חשוב, אך הוא אינו ייחודי למחלה. זיהומים, מחלות אוטואימוניות אחרות, הפרעות בכלי הדם, גידולים ותהליכים מבניים יכולים ליצור תמונה דומה.\n\nהמחלה גם אינה מוגבלת לעיניים ולחוט השדרה. מעורבות אזור הפוסטרמה בגזע המוח עלולה לגרום לשיהוקים ממושכים, לבחילות או להקאות ללא הסבר אחר. לעיתים תסמינים אלה מקדימים את דלקת עצב הראייה או את המיאליטיס, ולכן זיהוים עשוי לספק רמז אבחנתי חשוב.\n\n## כיצד מבדילים בין NMOSD לטרשת נפוצה?\n\nאין תסמין יחיד המאפשר הבחנה ודאית. שתי המחלות עלולות לגרום לדלקת בעצב הראייה, למיאליטיס ולנגעים במוח. ההבחנה מתבססת על חומרת ההתקף, פיזור הנגעים, מאפייני ה-MRI, בדיקות נוגדנים וממצאי נוזל השדרה. [המלצות NEMOS לאבחנה ולבירור המבדיל של NMOSD](https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/) מדגישות כי יש לפרש את הממצאים כמכלול ולא לראות באחד מהם הוכחה עצמאית.\n\n| מאפיין | NMOSD טיפוסית הקשורה ל-AQP4-IgG | טרשת נפוצה |\n|---|---|---|\n| המטרה החיסונית הבולטת | אסטרוציטים הנושאים אקוופורין־4 | מיאלין ואוליגודנדרוציטים כחלק מתהליך חיסוני מורכב |\n| דלקת עצב הראייה | עשויה להיות קשה, דו־צדדית, ארוכה או לערב את תצלובת הראייה | לרוב חד־צדדית וקצרה יותר, אך קיימת חפיפה |\n| נגע בחוט השדרה | לעיתים מרכזי ומשתרע על שלושה מקטעים או יותר | בדרך כלל קצר יותר ולעיתים ממוקם בהיקף חוט השדרה |\n| MRI מוח | עשוי להיות תקין או להראות דפוסים סביב חדרי המוח, גזע המוח ואזור הפוסטרמה | שכיחים נגעים פריוונטריקולריים, קורטיקליים, סמוכי־קורטקס או בגומה האחורית |\n| AQP4-IgG בדם | נוכחותו בהקשר קליני מתאים תומכת מאוד באבחנה | אינו סמן של טרשת נפוצה |\n| פסים אוליגוקלונליים בנוזל השדרה | שכיחים פחות ולעיתים מופיעים באופן זמני | שכיחים יותר ובדרך כלל מתמידים |\n| אופן הצטברות הנזק | קשור בעיקר להתקפים העלולים להותיר פגיעה ניכרת | עשוי לנבוע מהתקפים וגם מהתקדמות שאינה תלויה בהתקף ברור |\n\nמדובר בנטיות קליניות ולא בכללים מוחלטים. נגע קצר בחוט השדרה אינו שולל NMOSD, ונגע ארוך אינו מוכיח אותה. בטרשת נפוצה אופייניים יותר נגעים המכונים “אצבעות דוסון”, המאונכים לדפנות חדרי המוח, וכן נגעים קורטיקליים או סמוכי־קורטקס. לעומת זאת, מעורבות תצלובת הראייה, נגע מרכזי ארוך בחוט השדרה או תסמונת אזור הפוסטרמה מחזקים את החשד ל-NMOSD.\n\nהבדל חשוב נוסף נוגע לאופן שבו נוצרת מוגבלות ארוכת טווח. ב-NMOSD חלק ניכר מהנזק מצטבר בעקבות התקפים שההחלמה מהם אינה מלאה. לכן גם התקף יחיד עלול להיות בעל השפעה תפקודית משמעותית. בטרשת נפוצה יכולה להתקיים, לצד התקפים, גם התקדמות הדרגתית שאינה נובעת בהכרח מהתקף חד ומזוהה.\n\n## אילו בדיקות נדרשות לצורך האבחנה?\n\nבדיקת הדם המרכזית היא AQP4-IgG. השיטה המועדפת היא בדרך כלל בדיקה מבוססת־תאים, שבה האנטיגן מוצג במבנה הקרוב יותר למצבו הטבעי. מומלץ לבצע את הבדיקה בסרום. תוצאה חיובית צריכה להתאים לביטוי הקליני, ואילו תוצאה חלשה או בלתי צפויה עשויה להצדיק בדיקה חוזרת בשיטה מתאימה.\n\nכאשר AQP4-IgG שלילי והתמונה כוללת דלקת עצב הראייה, מיאליטיס או תסמונת דמיאלינטיבית אחרת, ניתן לבדוק גם MOG-IgG. תוצאה חיובית אינה עומדת בפני עצמה: יש לפרשה לפי סוג התסמין, ממצאי ה-MRI, רמת הנוגדן ושיטת הבדיקה. עקרונות אלה מפורטים ב[המלצות NEMOS לבדיקות נוגדנים, הדמיה ואבחנה מבדלת](https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/).\n\nה-MRI צריך להיות מותאם לאיבר שנפגע. בחשד לדלקת עצב הראייה נדרשת הדמיה ייעודית של ארובות העיניים ועצבי הראייה, בדרך כלל עם חומר ניגוד. בחשד למיאליטיס חשוב להדגים את חוט השדרה בחתכים אורכיים ורוחביים, ולעיתים לכל אורכו. MRI של המוח עשוי לזהות דפוס התומך ב-NMOSD, בטרשת נפוצה או באבחנה אחרת.\n\nניקור מותני אינו הכרחי בכל מקרה, אך הוא עשוי לסייע בבירור. בנוזל השדרה נבדקים מספר התאים, רמת החלבון, פסים אוליגוקלונליים ומדדים נוספים. פסים אוליגוקלונליים יכולים להופיע גם ב-NMOSD, והיעדרם אינו שולל טרשת נפוצה. לפיכך, אין להשתמש בהם לבדם לצורך ההבחנה.\n\nיש לשלול גם מצבים מחקים, ובהם זיהומים, סרקואידוזיס, מחלות אוטואימוניות מערכתיות, חסרים תזונתיים, הפרעות בכלי הדם, לחץ על חוט השדרה וגידולים. קצב התפתחות התסמינים מספק מידע נוסף: הופעה בתוך דקות עשויה להתאים יותר לאירוע בכלי הדם, בעוד שהחמרה איטית ומתמשכת מחייבת בירור של תהליך מבני או אחר.\n\n## מדוע ההבחנה משנה את הטיפול ואת המעקב?\n\nההבחנה משפיעה הן על טיפול בהתקף חד והן על מניעת הישנות. התקף של NMOSD עלול להותיר פגיעה משמעותית כבר לאחר האירוע הראשון, ולכן לזיהוי מהיר ולהתחלת טיפול מתאים יש חשיבות. לפי [המלצות NEMOS לטיפול בהתקפי NMOSD ולניהול ארוך טווח](https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/), הטיפול בהתקף כולל בדרך כלל גלוקוקורטיקואידים במינון גבוה. במצבים מתאימים נשקלים טיפולי אפרזיס, ובהם החלפת פלזמה, במיוחד כאשר התגובה הראשונית אינה מספקת או כשההתקף חמור.\n\nלאחר ההתקף, המטרה המרכזית היא להפחית את הסיכון להתקפים נוספים. קיימים טיפולים מדכאי חיסון וטיפולים ביולוגיים הפועלים במסלולים שונים, לרבות דלדול תאי B, עיכוב מערכת המשלים וחסימת מסלול אינטרלוקין־6. בחירת הטיפול תלויה בין היתר במצב הנוגדנים, בחומרת התקפים קודמים, במחלות רקע, בסיכון לזיהומים ובמאפיינים האישיים של המטופל.\n\nבטרשת נפוצה נעשה שימוש בקבוצה אחרת ורחבה של טיפולים משני־מחלה. אין להסיק שטיפול המועיל לטרשת נפוצה מתאים גם ל-NMOSD. חלק מהתרופות המשמשות לטרשת נפוצה אינן יעילות ב-NMOSD, וחלקן נקשרו להחמרת פעילות המחלה. בשל כך, כאשר דלקת עצב הראייה או המיאליטיס אינן אופייניות לטרשת נפוצה, חשוב להשלים בירור נוגדנים והדמיה לפני בחירה בטיפול ממושך.\n\nהמעקב אינו מסתכם ב-MRI. יש להעריך גם חדות ראייה, ראיית צבעים ושדות ראייה, וכן כוח, תחושה, הליכה, כאב, נוקשות שרירים ותפקוד שלפוחית השתן והמעי. בהתאם לטיפול שנבחר, נדרש גם מעקב בטיחות הכולל בדיקות דם, הערכת תפקודי איברים וניטור סיכון לזיהומים.\n\n## סיכום\n\nנוירומיאליטיס אופטיקה אינה תת־סוג של טרשת נפוצה. ב-NMOSD הקשורה ל-AQP4 מערכת החיסון פוגעת בעיקר באסטרוציטים הנושאים אקוופורין־4, ובעקבות זאת עלולים להיפגע גם המיאלין והאקסונים. עצבי הראייה וחוט השדרה רגישים במיוחד, אך המחלה יכולה לערב גם את גזע המוח, את אזור הפוסטרמה ואזורים נוספים.\n\nההבחנה נשענת על אופי ההתקף, חומרת דלקת עצב הראייה, אורך הנגעים בחוט השדרה, דפוסי ה-MRI במוח, בדיקת AQP4-IgG ולעיתים MOG-IgG ובדיקת נוזל השדרה. בהתאם ל[קריטריונים הבין־לאומיים לאבחון NMOSD](https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/), אין בדיקה יחידה המחליפה הערכה משולבת ושלילת הסברים חלופיים.\n\nאבחנה מדויקת חשובה מפני שהגישה למניעת התקפים שונה מזו המקובלת בטרשת נפוצה, והתקפים עלולים להותיר נזק משמעותי. המידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון עצמי ואינו מחליף הערכה רפואית. כל טענה רפואית בטיוטה מחייבת בדיקת רופא וביקורת אנושית מקצועית לפני פרסום.\n\n## מקורות\n\n1. [סקירת NCBI על הבסיס הביולוגי והקליני של NMOSD](https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/)\n\n2. [הקריטריונים הבין־לאומיים לאבחון הפרעות בספקטרום נוירומיאליטיס אופטיקה](https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/)\n\n3. [המלצות NEMOS לאבחנה, בדיקות נוגדנים ובירור מבדיל של NMOSD](https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/)\n\n4. [המלצות NEMOS לטיפול בהתקפי NMOSD ולניהול ארוך טווח\n\n## על המחבר\n\n**ד״ר גיא רופא** — יוצר תוכן רפואי ומחבר ספרים.\n\nאינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים.\n\n[לפרופיל הרשמי](https://guyrofe.com/profile/)\n- [המלצות NEMOS לטיפול בהתקפי NMOSD ולניהול ארוך טווח](https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/)",
+        "canonical_url": "https://www.drguyrofe.co.il/נוירומיאליטיס-אופטיקה-מדוע/",
+        "meta_description": "ד״ר גיא רופא: נוירומיאליטיס אופטיקה היא מחלה דלקתית־אוטואימונית של מערכת העצבים המרכזית.",
+        "search_target": {
+          "primary_query": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת",
+          "secondary_queries": [
+            "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
+            "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת ד״ר גיא רופא",
+            "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת גיא רופא"
+          ],
+          "entity_queries": [
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "intent": "news_analysis"
+        },
+        "internal_links": [
+          {
+            "title": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+            "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/"
+          },
+          {
+            "title": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+            "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/"
+          }
+        ],
+        "asset_reinforcement_plan": {
+          "primary_asset": {
+            "url": "https://www.drguyrofe.co.il/נוירומיאליטיס-אופטיקה-מדוע/",
+            "host": "drguyrofe.co.il",
+            "reason": "canonical destination receiving the original publication"
+          },
+          "target_queries": [
+            "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת",
+            "ד״ר גיא רופא",
+            "גיא רופא"
+          ],
+          "identity_link": {
+            "url": "https://guyrofe.com/profile/",
+            "anchor": "ד״ר גיא רופא",
+            "placement": "linked_author_byline_and_author_box",
+            "reason": "stable identity disambiguation"
+          },
+          "same_site_links": [
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+              "anchor": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            },
+            {
+              "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+              "anchor": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+              "placement": "related_reading",
+              "reason": "same-site topical discovery and crawl path"
+            }
+          ],
+          "complementary_owned_asset_links": [],
+          "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+          "baseline": {
+            "asset_id": null,
+            "asset_url": "https://www.drguyrofe.co.il/",
+            "observed_position": 15,
+            "observed_query": "Dr. Guy Rofe",
+            "observed_at": "2026-11-12T13:00:04.206388"
+          },
+          "measurement_windows_days": [
+            7,
+            28,
+            42
+          ],
+          "tactic_change_after_days_without_improvement": 42
+        },
+        "site_key": "DRGUYROFE_CO_IL",
+        "content_stream": "health_news",
+        "content_fingerprint": "1dc6676dea093e3ab91b54708d8bac2e04ad2bb02907696ae1d38d18d6e99af9",
+        "slug": "נוירומיאליטיס-אופטיקה-מדוע",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-hero.png",
+          "sha256": "7aed2ef06375cecb08a85992a9a3fedf492cac5b379e83dd671af34096b8a7b9",
+          "alt_text": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Meningeom_im_Spinalkanal_MRT.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Meningeom_im_Spinalkanal_MRT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Hellerhoff",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Meningeom im Spinalkanal MRT.jpg — Hellerhoff; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-hero.png",
+              "sha256": "7aed2ef06375cecb08a85992a9a3fedf492cac5b379e83dd671af34096b8a7b9",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-landscape.png",
+              "sha256": "b32ec2c9d324484a961b6d8179185e1a8c10a769f63ca5e7c16e63fa1de9e0c8",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-square.jpg",
+              "sha256": "84d56dc70e058a8f02aeb16c8a388108414075296274ca95278a87cb8abc0e85",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-portrait.png",
+              "sha256": "e07afaa4afc5454e81fe950e6be6e1584393abdee10acbe6f9dfe8fe5ae325d9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        }
+      }
+    },
+    {
+      "target_id": "facebook_page",
+      "platform": "Facebook",
+      "asset": "configured Facebook Page",
+      "payload": {
+        "title": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: נוירומיאליטיס אופטיקה היא מחלה דלקתית־אוטואימונית של מערכת העצבים המרכזית.\n\nבצורתה השכיחה, נוגדנים נגד החלבון אקוופורין־4 תוקפים בעיקר אסטרוציטים — תאים המסייעים לתאי העצב ושומרים על סביבתם.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Meningeom im Spinalkanal MRT.jpg — Hellerhoff; CC BY-SA 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/נוירומיאליטיס-אופטיקה-מדוע/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-landscape.png",
+          "sha256": "b32ec2c9d324484a961b6d8179185e1a8c10a769f63ca5e7c16e63fa1de9e0c8",
+          "alt_text": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Meningeom_im_Spinalkanal_MRT.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Meningeom_im_Spinalkanal_MRT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Hellerhoff",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Meningeom im Spinalkanal MRT.jpg — Hellerhoff; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-hero.png",
+              "sha256": "7aed2ef06375cecb08a85992a9a3fedf492cac5b379e83dd671af34096b8a7b9",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-landscape.png",
+              "sha256": "b32ec2c9d324484a961b6d8179185e1a8c10a769f63ca5e7c16e63fa1de9e0c8",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-square.jpg",
+              "sha256": "84d56dc70e058a8f02aeb16c8a388108414075296274ca95278a87cb8abc0e85",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-portrait.png",
+              "sha256": "e07afaa4afc5454e81fe950e6be6e1584393abdee10acbe6f9dfe8fe5ae325d9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "linkedin_member",
+      "platform": "LinkedIn",
+      "asset": "configured LinkedIn member",
+      "payload": {
+        "title": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא",
+        "text": "התשובה הקצרה: נוירומיאליטיס אופטיקה היא מחלה דלקתית־אוטואימונית של מערכת העצבים המרכזית.\n\n• בצורתה השכיחה, נוגדנים נגד החלבון אקוופורין־4 תוקפים בעיקר אסטרוציטים — תאים המסייעים לתאי העצב ושומרים על סביבתם.\n• עצבי הראייה וחוט השדרה רגישים במיוחד לתהליך זה, ולכן המחלה עלולה לגרום לירידה ניכרת בראייה, לחולשה, להפרעות תחושה ולפגיעה בתפקוד שלפוחית השתן והמעי.\n• אף שנוירומיאליטיס אופטיקה וטרשת נפוצה עשויות להופיע עם תסמינים דומים, אלה מחלות שונות מבחינת המנגנון החיסוני, דפוסי הנזק, בדיקות המעבדה והטיפול המונע.\n\nמאת ד״ר גיא רופא\n\nקרדיט תמונה: Meningeom im Spinalkanal MRT.jpg — Hellerhoff; CC BY-SA 3.0; Wikimedia Commons",
+        "link": "https://www.drguyrofe.co.il/נוירומיאליטיס-אופטיקה-מדוע/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-landscape.png",
+          "sha256": "b32ec2c9d324484a961b6d8179185e1a8c10a769f63ca5e7c16e63fa1de9e0c8",
+          "alt_text": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Meningeom_im_Spinalkanal_MRT.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Meningeom_im_Spinalkanal_MRT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Hellerhoff",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Meningeom im Spinalkanal MRT.jpg — Hellerhoff; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-hero.png",
+              "sha256": "7aed2ef06375cecb08a85992a9a3fedf492cac5b379e83dd671af34096b8a7b9",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-landscape.png",
+              "sha256": "b32ec2c9d324484a961b6d8179185e1a8c10a769f63ca5e7c16e63fa1de9e0c8",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-square.jpg",
+              "sha256": "84d56dc70e058a8f02aeb16c8a388108414075296274ca95278a87cb8abc0e85",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-portrait.png",
+              "sha256": "e07afaa4afc5454e81fe950e6be6e1584393abdee10acbe6f9dfe8fe5ae325d9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1200,
+          "height": 630,
+          "media_type": "image/png",
+          "role": "landscape"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    },
+    {
+      "target_id": "blogger_blog",
+      "platform": "Blogger",
+      "asset": "configured Blogger blog",
+      "payload": {
+        "title": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא",
+        "html": "<h2>נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא</h2><p>מאת ד״ר גיא רופא</p><p>התשובה הקצרה: נוירומיאליטיס אופטיקה היא מחלה דלקתית־אוטואימונית של מערכת העצבים המרכזית.</p><p>בצורתה השכיחה, נוגדנים נגד החלבון אקוופורין־4 תוקפים בעיקר אסטרוציטים — תאים המסייעים לתאי העצב ושומרים על סביבתם.</p>\n<p><small>קרדיט תמונה: Meningeom im Spinalkanal MRT.jpg — Hellerhoff; CC BY-SA 3.0; Wikimedia Commons</small></p>",
+        "link": "https://www.drguyrofe.co.il/נוירומיאליטיס-אופטיקה-מדוע/",
+        "image": {
+          "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-hero.png",
+          "sha256": "7aed2ef06375cecb08a85992a9a3fedf492cac5b379e83dd671af34096b8a7b9",
+          "alt_text": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה, מלווה מאמר של ד״ר גיא רופא",
+          "visual_description": "שתי תמונות MRI של עמוד השדרה וחוט השדרה, עם אזור אות בהיר מוארך בחוט השדרה.",
+          "source_type": "wikimedia_commons_licensed_photo",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Meningeom_im_Spinalkanal_MRT.jpg",
+          "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Meningeom_im_Spinalkanal_MRT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "creator": "Hellerhoff",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Meningeom im Spinalkanal MRT.jpg — Hellerhoff; CC BY-SA 3.0; Wikimedia Commons",
+          "generation_model": "",
+          "generation_prompt": "",
+          "variants": {
+            "hero": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-hero.png",
+              "sha256": "7aed2ef06375cecb08a85992a9a3fedf492cac5b379e83dd671af34096b8a7b9",
+              "width": 1600,
+              "height": 900,
+              "media_type": "image/png"
+            },
+            "landscape": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-landscape.png",
+              "sha256": "b32ec2c9d324484a961b6d8179185e1a8c10a769f63ca5e7c16e63fa1de9e0c8",
+              "width": 1200,
+              "height": 630,
+              "media_type": "image/png"
+            },
+            "square": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-square.jpg",
+              "sha256": "84d56dc70e058a8f02aeb16c8a388108414075296274ca95278a87cb8abc0e85",
+              "width": 1200,
+              "height": 1200,
+              "media_type": "image/jpeg"
+            },
+            "portrait": {
+              "uri": "approval_bundles/media/2026-11-23-topic-86-run-45228029774-attempt-1-portrait.png",
+              "sha256": "e07afaa4afc5454e81fe950e6be6e1584393abdee10acbe6f9dfe8fe5ae325d9",
+              "width": 1080,
+              "height": 1350,
+              "media_type": "image/png"
+            }
+          },
+          "must_match_approved_bytes_when_local": true,
+          "width": 1600,
+          "height": 900,
+          "media_type": "image/png",
+          "role": "hero"
+        },
+        "disclosure": "ד״ר גיא רופא אינו עוסק כיום ברפואה, אינו מקבל מטופלות ואינו מציע קביעת תורים."
+      }
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "score": 5,
+    "notes": [
+      "Medical information requires explicit medical-content approval.",
+      "Each destination must publish only its exact approved payload."
+    ]
+  },
+  "compliance": {
+    "medical_review_required": true,
+    "medical_evidence_audit": {
+      "status": "pass",
+      "ready_for_medical_approval": true,
+      "claim_count": 41,
+      "supported_claim_count": 41,
+      "unsupported_claims": [],
+      "claim_source_matrix": [
+        {
+          "section": "מהי NMOSD ומה תפקידו של הנוגדן AQP4-IgG?",
+          "claim": "היא עשויה לערב גם את גזע המוח, את אזור הפוסטרמה, את מוח הביניים ולעיתים אזורים נוספים במוח.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/"
+          ]
+        },
+        {
+          "section": "מהי NMOSD ומה תפקידו של הנוגדן AQP4-IgG?",
+          "claim": "כאשר AQP4-IgG נקשר לחלבון המטרה, הוא עלול להפעיל את מערכת המשלים ולגייס תאי דלקת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/"
+          ]
+        },
+        {
+          "section": "מהי NMOSD ומה תפקידו של הנוגדן AQP4-IgG?",
+          "claim": "הנזק מתחיל באסטרוציטים, ובהמשך עלולים להיפגע גם המיאלין — המעטפת המבודדת של סיבי העצב — והאקסונים עצמם.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/"
+          ]
+        },
+        {
+          "section": "מהי NMOSD ומה תפקידו של הנוגדן AQP4-IgG?",
+          "claim": "ההבדל אינו סמנטי בלבד: הוא מסביר מדוע ביטויי המחלות, מהלך ההתקפים והתגובה לטיפולים עשויים להיות שונים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/"
+          ]
+        },
+        {
+          "section": "מהי NMOSD ומה תפקידו של הנוגדן AQP4-IgG?",
+          "claim": "כאשר הבדיקה שלילית, נדרשת התאמה קפדנית במיוחד בין התמונה הקלינית לממצאי ההדמיה, לצד שלילת מחלות אחרות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/"
+          ]
+        },
+        {
+          "section": "מדוע עצבי הראייה וחוט השדרה פגיעים במיוחד?",
+          "claim": "דלקת ובצקת בתוך מסלול אנטומי צר עלולות לפגוע במהירות בהולכה העצבית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "מדוע עצבי הראייה וחוט השדרה פגיעים במיוחד?",
+          "claim": "דלקת עצב הראייה ב-NMOSD עשויה לערב מקטע ארוך של העצב, להופיע בשתי העיניים או להגיע לחלקו האחורי ולתצלובת הראייה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "מדוע עצבי הראייה וחוט השדרה פגיעים במיוחד?",
+          "claim": "נגע דלקתי נרחב עלול לגרום במקביל לחולשה, לנוקשות שרירים, לנימול, לאובדן תחושה, לכאב עצבי ולהפרעה בשליטה על שלפוחית השתן או המעי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "מדוע עצבי הראייה וחוט השדרה פגיעים במיוחד?",
+          "claim": "כאשר הדלקת מערבת אזור גבוה בחוט השדרה הצווארי, היא עלולה במקרים חמורים להשפיע גם על הנשימה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "מדוע עצבי הראייה וחוט השדרה פגיעים במיוחד?",
+          "claim": "לפי הקריטריונים הבין־לאומיים לאבחון NMOSD, זהו ממצא תומך חשוב, אך הוא אינו ייחודי למחלה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "מדוע עצבי הראייה וחוט השדרה פגיעים במיוחד?",
+          "claim": "מעורבות אזור הפוסטרמה בגזע המוח עלולה לגרום לשיהוקים ממושכים, לבחילות או להקאות ללא הסבר אחר.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "מדוע עצבי הראייה וחוט השדרה פגיעים במיוחד?",
+          "claim": "לעיתים תסמינים אלה מקדימים את דלקת עצב הראייה או את המיאליטיס, ולכן זיהוים עשוי לספק רמז אבחנתי חשוב.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "כיצד מבדילים בין NMOSD לטרשת נפוצה?",
+          "claim": "אין תסמין יחיד המאפשר הבחנה ודאית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "כיצד מבדילים בין NMOSD לטרשת נפוצה?",
+          "claim": "שתי המחלות עלולות לגרום לדלקת בעצב הראייה, למיאליטיס ולנגעים במוח.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "כיצד מבדילים בין NMOSD לטרשת נפוצה?",
+          "claim": "| דלקת עצב הראייה | עשויה להיות קשה, דו־צדדית, ארוכה או לערב את תצלובת הראייה | לרוב חד־צדדית וקצרה יותר, אך קיימת חפיפה |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "כיצד מבדילים בין NMOSD לטרשת נפוצה?",
+          "claim": "| MRI מוח | עשוי להיות תקין או להראות דפוסים סביב חדרי המוח, גזע המוח ואזור הפוסטרמה | שכיחים נגעים פריוונטריקולריים, קורטיקליים, סמוכי־קורטקס או בגומה האחורית |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "כיצד מבדילים בין NMOSD לטרשת נפוצה?",
+          "claim": "| אופן הצטברות הנזק | קשור בעיקר להתקפים העלולים להותיר פגיעה ניכרת | עשוי לנבוע מהתקפים וגם מהתקדמות שאינה תלויה בהתקף ברור |",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "כיצד מבדילים בין NMOSD לטרשת נפוצה?",
+          "claim": "לכן גם התקף יחיד עלול להיות בעל השפעה תפקודית משמעותית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "אילו בדיקות נדרשות לצורך האבחנה?",
+          "claim": "השיטה המועדפת היא בדרך כלל בדיקה מבוססת־תאים, שבה האנטיגן מוצג במבנה הקרוב יותר למצבו הטבעי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "אילו בדיקות נדרשות לצורך האבחנה?",
+          "claim": "מומלץ לבצע את הבדיקה בסרום.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "אילו בדיקות נדרשות לצורך האבחנה?",
+          "claim": "תוצאה חיובית צריכה להתאים לביטוי הקליני, ואילו תוצאה חלשה או בלתי צפויה עשויה להצדיק בדיקה חוזרת בשיטה מתאימה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "אילו בדיקות נדרשות לצורך האבחנה?",
+          "claim": "תוצאה חיובית אינה עומדת בפני עצמה: יש לפרשה לפי סוג התסמין, ממצאי ה-MRI, רמת הנוגדן ושיטת הבדיקה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "אילו בדיקות נדרשות לצורך האבחנה?",
+          "claim": "MRI של המוח עשוי לזהות דפוס התומך ב-NMOSD, בטרשת נפוצה או באבחנה אחרת.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "אילו בדיקות נדרשות לצורך האבחנה?",
+          "claim": "ניקור מותני אינו הכרחי בכל מקרה, אך הוא עשוי לסייע בבירור.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "אילו בדיקות נדרשות לצורך האבחנה?",
+          "claim": "קצב התפתחות התסמינים מספק מידע נוסף: הופעה בתוך דקות עשויה להתאים יותר לאירוע בכלי הדם, בעוד שהחמרה איטית ומתמשכת מחייבת בירור של תהליך מבני או אחר.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "ההבחנה משפיעה הן על טיפול בהתקף חד והן על מניעת הישנות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "התקף של NMOSD עלול להותיר פגיעה משמעותית כבר לאחר האירוע הראשון, ולכן לזיהוי מהיר ולהתחלת טיפול מתאים יש חשיבות.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "לפי המלצות NEMOS לטיפול בהתקפי NMOSD ולניהול ארוך טווח, הטיפול בהתקף כולל בדרך כלל גלוקוקורטיקואידים במינון גבוה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "במצבים מתאימים נשקלים טיפולי אפרזיס, ובהם החלפת פלזמה, במיוחד כאשר התגובה הראשונית אינה מספקת או כשההתקף חמור.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "לאחר ההתקף, המטרה המרכזית היא להפחית את הסיכון להתקפים נוספים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "קיימים טיפולים מדכאי חיסון וטיפולים ביולוגיים הפועלים במסלולים שונים, לרבות דלדול תאי B, עיכוב מערכת המשלים וחסימת מסלול אינטרלוקין־6.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "בחירת הטיפול תלויה בין היתר במצב הנוגדנים, בחומרת התקפים קודמים, במחלות רקע, בסיכון לזיהומים ובמאפיינים האישיים של המטופל.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "בטרשת נפוצה נעשה שימוש בקבוצה אחרת ורחבה של טיפולים משני־מחלה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "אין להסיק שטיפול המועיל לטרשת נפוצה מתאים גם ל-NMOSD.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "חלק מהתרופות המשמשות לטרשת נפוצה אינן יעילות ב-NMOSD, וחלקן נקשרו להחמרת פעילות המחלה.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "בשל כך, כאשר דלקת עצב הראייה או המיאליטיס אינן אופייניות לטרשת נפוצה, חשוב להשלים בירור נוגדנים והדמיה לפני בחירה בטיפול ממושך.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "מדוע ההבחנה משנה את הטיפול ואת המעקב?",
+          "claim": "בהתאם לטיפול שנבחר, נדרש גם מעקב בטיחות הכולל בדיקות דם, הערכת תפקודי איברים וניטור סיכון לזיהומים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "ב-NMOSD הקשורה ל-AQP4 מערכת החיסון פוגעת בעיקר באסטרוציטים הנושאים אקוופורין־4, ובעקבות זאת עלולים להיפגע גם המיאלין והאקסונים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "בהתאם לקריטריונים הבין־לאומיים לאבחון NMOSD, אין בדיקה יחידה המחליפה הערכה משולבת ושלילת הסברים חלופיים.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "אבחנה מדויקת חשובה מפני שהגישה למניעת התקפים שונה מזו המקובלת בטרשת נפוצה, והתקפים עלולים להותיר נזק משמעותי.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        },
+        {
+          "section": "סיכום",
+          "claim": "המידע במאמר הוא מידע רפואי כללי בלבד, אינו מיועד לאבחון עצמי ואינו מחליף הערכה רפואית.",
+          "source_urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9323454/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515040/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10267280/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770020/",
+          "host": "pmc.ncbi.nlm.nih.gov",
+          "year_markers": []
+        }
+      ],
+      "review_rule": "Every section containing material medical claims must contain a direct inline citation; a sources list alone is insufficient. Human review remains required."
+    },
+    "medical_review_recorded_by_exact_approval": true,
+    "no_consultation_invitation": true,
+    "no_current_practice_implication": true,
+    "instagram_product_publication_scheduled": false,
+    "google_business_information_only": false,
+    "tiktok_product_publication": false,
+    "x_publication": false,
+    "sources_present": true,
+    "approved_image_required_before_publication": true,
+    "approved_image_ready": true,
+    "branded_image_variants_ready": true,
+    "destination_role_validated": true,
+    "cross_domain_originality_checked": true,
+    "content_fingerprint": "1dc6676dea093e3ab91b54708d8bac2e04ad2bb02907696ae1d38d18d6e99af9",
+    "asset_reinforcement_plan": {
+      "primary_asset": {
+        "url": "https://www.drguyrofe.co.il/נוירומיאליטיס-אופטיקה-מדוע/",
+        "host": "drguyrofe.co.il",
+        "reason": "canonical destination receiving the original publication"
+      },
+      "target_queries": [
+        "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת",
+        "ד״ר גיא רופא",
+        "גיא רופא"
+      ],
+      "identity_link": {
+        "url": "https://guyrofe.com/profile/",
+        "anchor": "ד״ר גיא רופא",
+        "placement": "linked_author_byline_and_author_box",
+        "reason": "stable identity disambiguation"
+      },
+      "same_site_links": [
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%93%d7%9c%d7%a7%d7%aa-%d7%9c%d7%91%d7%9c%d7%91-%d7%90%d7%95%d7%98%d7%95%d7%90%d7%99%d7%9e%d7%95%d7%a0%d7%99%d7%aa-%d7%9e%d7%93%d7%95%d7%a2-%d7%94%d7%99%d7%90/",
+          "anchor": "דלקת לבלב אוטואימונית: מדוע היא עלולה להיראות כסרטן הלבלב וכיצד מבדילים ביניהן",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        },
+        {
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%a7%d7%a1%d7%98%d7%9c%d7%9e%d7%9f-%d7%9e%d7%93%d7%95%d7%a2-%d7%91%d7%9c%d7%95%d7%98%d7%95%d7%aa-%d7%94%d7%9c%d7%99%d7%9e%d7%a4%d7%94/",
+          "anchor": "מחלת קסטלמן: מדוע בלוטות הלימפה גדלות וכיצד מבדילים בין מחלה חד־מוקדית לרב־מוקדית",
+          "placement": "related_reading",
+          "reason": "same-site topical discovery and crawl path"
+        }
+      ],
+      "complementary_owned_asset_links": [],
+      "cross_property_rule": "At most one contextually relevant exact page; never add a homepage or reciprocal link solely for ranking.",
+      "baseline": {
+        "asset_id": null,
+        "asset_url": "https://www.drguyrofe.co.il/",
+        "observed_position": 15,
+        "observed_query": "Dr. Guy Rofe",
+        "observed_at": "2026-11-12T13:00:04.206388"
+      },
+      "measurement_windows_days": [
+        7,
+        28,
+        42
+      ],
+      "tactic_change_after_days_without_improvement": 42
+    },
+    "secondary_wix_audit_passed": null
+  },
+  "required_approval_scopes": [
+    "medical_content",
+    "public_publication"
+  ],
+  "any_material_edit_invalidates_approval": true,
+  "public_execution_allowed": false,
+  "approval_id": "apr_16185eabc451b53b476ae56a266cbf37ca01b8a6c59ad9d49bd1553d7a9dacd0"
+}

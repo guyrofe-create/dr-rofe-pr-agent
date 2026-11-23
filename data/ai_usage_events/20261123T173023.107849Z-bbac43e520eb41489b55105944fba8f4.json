@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "occurred_at": "2026-11-23T17:30:23.107849Z",
+  "operation": "article_generation",
+  "model": "gpt-5.6",
+  "input_tokens": 26941,
+  "cached_input_tokens": 5996,
+  "cache_write_tokens": 4243,
+  "output_tokens": 4500,
+  "reasoning_tokens": 629,
+  "web_search_calls": 2,
+  "estimated_cost_usd": 0.26802675
+}

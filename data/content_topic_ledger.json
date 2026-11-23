@@ -3604,6 +3604,53 @@
           ]
         }
       ]
+    },
+    {
+      "topic_id": "topic_5ca01ee557696fc7577342e7",
+      "topic": "מה עומד מאחורי הכותרת: כבר לא רפואת העתיד: כך הבינה המלאכותית משנה את תפקיד הרופא",
+      "normalized_topic": "מה עומד מאחורי הכותרת כבר לא רפואת העתיד כך הבינה המלאכותית משנה את תפקיד הרופא",
+      "first_seen_at": "2026-11-23T17:28:53.978487+00:00",
+      "last_seen_at": "2026-11-23T17:28:53.978487+00:00",
+      "titles": [],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "generation_started",
+          "occurred_at": "2026-11-23T17:28:53.978487+00:00",
+          "source": "autonomous_content",
+          "stream": "health_news"
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_01ca6cb026262ae7d2e8d9f5",
+      "topic": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
+      "normalized_topic": "נוירומיאליטיס אופטיקה מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
+      "first_seen_at": "2026-11-23T17:28:53.978487+00:00",
+      "last_seen_at": "2026-11-23T17:28:53.978487+00:00",
+      "titles": [
+        "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "generation_started",
+          "occurred_at": "2026-11-23T17:28:53.978487+00:00",
+          "source": "autonomous_content",
+          "stream": "health_news"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-23T17:28:53.978487+00:00",
+          "source": "autonomous_content",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md"
+        }
+      ]
     }
   ]
 }
