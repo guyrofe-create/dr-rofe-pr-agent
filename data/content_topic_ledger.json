@@ -3629,7 +3629,7 @@
       "topic": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
       "normalized_topic": "נוירומיאליטיס אופטיקה מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
       "first_seen_at": "2026-11-23T17:28:53.978487+00:00",
-      "last_seen_at": "2026-11-23T17:28:53.978487+00:00",
+      "last_seen_at": "2026-11-23T17:34:36Z",
       "titles": [
         "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא"
       ],
@@ -3649,6 +3649,21 @@
           "source": "autonomous_content",
           "stream": "health_news",
           "draft_path": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-23T17:28:53.978487+00:00",
+          "source": "draft",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-23T17:34:36Z",
+          "source": "approval_bundle",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md",
+          "approval_id": "apr_16185eabc451b53b476ae56a266cbf37ca01b8a6c59ad9d49bd1553d7a9dacd0"
         }
       ]
     }
