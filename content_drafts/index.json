@@ -1,6 +1,19 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md",
+      "title": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא",
+      "topic": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
+      "excerpt": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) בקצרה: ערך p מתאר עד כמה תוצאות המחקר אינן מתיישבות עם השערת האפס ועם יתר הנחות המודל הסטטיסטי. הוא",
+      "generated_at": "2026-11-24T17:00:33.288049+00:00",
+      "content_stream": "evergreen_knowledge",
+      "destination_site_key": "DRGUYROFE_COM",
+      "scheduled_channels": [],
+      "cadence_week": "week-of-2026-11-22",
+      "cadence_local_date": "2026-11-24",
+      "public_execution_allowed": false
+    },
+    {
       "path": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md",
       "title": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא",
       "topic": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
@@ -481,21 +494,6 @@
       ],
       "cadence_week": "week-of-2026-09-27",
       "cadence_local_date": "2026-10-01",
-      "public_execution_allowed": false,
-      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
-      "topic_seed_usage": "discovery_only"
-    },
-    {
-      "path": "content_drafts/2026-09-29-topic-85-run-36620085387-attempt-1.md",
-      "title": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא",
-      "topic": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים",
-      "excerpt": "תסמונת גייאן־בארה: התסמינים המוקדמים, תהליך האבחון והקשר לזיהומים | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) בקצרה: תסמונת גייאן־בארה היא מחלה נוירולוגית נדירה שבה מערכת החיסון פוגעת בטעות בעצבים ההיקפיים. הסימנים המוקד",
-      "generated_at": "2026-09-29T19:33:53.605641+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [],
-      "cadence_week": "week-of-2026-09-27",
-      "cadence_local_date": "2026-09-29",
       "public_execution_allowed": false,
       "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
       "topic_seed_usage": "discovery_only"

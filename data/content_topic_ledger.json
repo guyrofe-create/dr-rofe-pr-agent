@@ -3666,6 +3666,34 @@
           "approval_id": "apr_16185eabc451b53b476ae56a266cbf37ca01b8a6c59ad9d49bd1553d7a9dacd0"
         }
       ]
+    },
+    {
+      "topic_id": "topic_e51061bc69bc0c9b124d5ee8",
+      "topic": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
+      "normalized_topic": "ערך p במחקרים רפואיים מה הוא מלמד מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
+      "first_seen_at": "2026-11-24T17:00:33.288049+00:00",
+      "last_seen_at": "2026-11-24T17:00:33.288049+00:00",
+      "titles": [
+        "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "evergreen_knowledge"
+      ],
+      "events": [
+        {
+          "status": "generation_started",
+          "occurred_at": "2026-11-24T17:00:33.288049+00:00",
+          "source": "autonomous_content",
+          "stream": "evergreen_knowledge"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-24T17:00:33.288049+00:00",
+          "source": "autonomous_content",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md"
+        }
+      ]
     }
   ]
 }
