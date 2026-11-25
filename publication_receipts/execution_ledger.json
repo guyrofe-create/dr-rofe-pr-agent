@@ -4486,6 +4486,38 @@
       "published_at": "2026-11-25T00:58:27Z",
       "url": "https://guyrofe.blogspot.com/2026/11/blog-post_24.html",
       "provider_receipt": null
+    },
+    "pub_20bb2d08582a7d1c09414d81c556343337880e7ac1da981080479b5c25884273": {
+      "version": 7,
+      "idempotency_key": "pub_20bb2d08582a7d1c09414d81c556343337880e7ac1da981080479b5c25884273",
+      "approval_id": "apr_b9810c5c2454786ee634842da09c0f8d9b1dc34bfb1138b11fc7ec347711ef82",
+      "target_id": "canonical_wix__media__hero",
+      "platform": "WordPress Media",
+      "asset": "guyrofe.com",
+      "request_sha256": "ff76acdc68c7b3368aaff875e7ebd269b636c16104c35cb23ad0564eb04cd213",
+      "status": "published",
+      "started_at": "2026-11-25T09:45:03Z",
+      "published_at": "2026-11-25T09:45:09Z",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-24-topic-82-run-45443554348-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-24-topic-82-run-45443554348-attempt-1-hero",
+        "sha256": "b38c0304d7efd793430778ae1df6d14eb110b05e551201874629de568b393e23",
+        "metadata_verified": true
+      }
+    },
+    "pub_df07894134eb8be28923d6bfc660577e36ae5115b4a50be1794334438e338702": {
+      "version": 7,
+      "idempotency_key": "pub_df07894134eb8be28923d6bfc660577e36ae5115b4a50be1794334438e338702",
+      "approval_id": "apr_b9810c5c2454786ee634842da09c0f8d9b1dc34bfb1138b11fc7ec347711ef82",
+      "target_id": "canonical_wix",
+      "platform": "Wix",
+      "asset": "www.drguyrofe.com",
+      "request_sha256": "6f552bab4e40bbbe8b64db6fe7a7241426311c0920151b3c80eb8788437f95dd",
+      "status": "published",
+      "started_at": "2026-11-25T09:45:09Z",
+      "published_at": "2026-11-25T09:45:11Z",
+      "url": "https://www.drguyrofe.com/post/ערך-p-במחקרים-רפואיים-מה-הוא-מלמד-מה-אינו-מוכיח-וכיצד-להימנע-מפרשנות-שגויה",
+      "provider_receipt": null
     }
   }
 }

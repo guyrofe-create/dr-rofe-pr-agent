@@ -3687,7 +3687,7 @@
       "topic": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
       "normalized_topic": "ערך p במחקרים רפואיים מה הוא מלמד מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
       "first_seen_at": "2026-11-24T17:00:33.288049+00:00",
-      "last_seen_at": "2026-11-24T17:03:20Z",
+      "last_seen_at": "2026-11-25T09:45:12.765731+00:00",
       "titles": [
         "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא"
       ],
@@ -3722,6 +3722,18 @@
           "stream": "evergreen_knowledge",
           "draft_path": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md",
           "approval_id": "apr_b9810c5c2454786ee634842da09c0f8d9b1dc34bfb1138b11fc7ec347711ef82"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-25T09:45:12.765731+00:00",
+          "source": "campaign",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md",
+          "approval_id": "apr_b9810c5c2454786ee634842da09c0f8d9b1dc34bfb1138b11fc7ec347711ef82",
+          "campaign_status": "completed",
+          "urls": [
+            "https://www.drguyrofe.com/post/ערך-p-במחקרים-רפואיים-מה-הוא-מלמד-מה-אינו-מוכיח-וכיצד-להימנע-מפרשנות-שגויה"
+          ]
         }
       ]
     }

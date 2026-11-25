@@ -1,0 +1,107 @@
+{
+  "draft": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md",
+  "title": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-11-25T09:45:12.765731+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.com",
+      "status": "published",
+      "target_id": "canonical_wix",
+      "url": "https://www.drguyrofe.com/post/ערך-p-במחקרים-רפואיים-מה-הוא-מלמד-מה-אינו-מוכיח-וכיצד-להימנע-מפרשנות-שגויה",
+      "detail": "idempotency_key=pub_df07894134eb8be28923d6bfc660577e36ae5115b4a50be1794334438e338702"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "seo_warning",
+      "url": "https://www.drguyrofe.com/post/ערך-p-במחקרים-רפואיים-מה-הוא-מלמד-מה-אינו-מוכיח-וכיצד-להימנע-מפרשנות-שגויה",
+      "detail": "failed checks: canonical_person_linked, internal_links_present"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://guyrofe.com/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-24-topic-82-run-45443554348-attempt-1-hero.png",
+      "detail": "openai_generated_text_free_visual"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.co.il",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_b9810c5c2454786ee634842da09c0f8d9b1dc34bfb1138b11fc7ec347711ef82",
+  "search_target": {
+    "primary_query": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
+    "secondary_queries": [
+      "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה ד״ר גיא רופא",
+      "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "informational_question"
+  },
+  "canonical_url": "https://www.drguyrofe.com/post/ערך-p-במחקרים-רפואיים-מה-הוא-מלמד-מה-אינו-מוכיח-וכיצד-להימנע-מפרשנות-שגויה",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}

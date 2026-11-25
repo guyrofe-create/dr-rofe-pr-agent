@@ -1780,6 +1780,31 @@
         "https://www.linkedin.com/feed/update/urn:li:share:7531159330394415104/",
         "https://guyrofe.blogspot.com/2026/11/blog-post_24.html"
       ]
+    },
+    "expired:apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56:2026-08-04T13:45:27Z": {
+      "recorded_at": "2026-11-25T09:44:54.755660+00:00",
+      "approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-08-03-topic-90-run-30802565966-attempt-1.md",
+      "published_approval_id": "apr_752f5956cce39e04a4f9f6dd5d5cf9029fa16ce546e5c4b1342ef789a662ef56",
+      "campaign_result": "content_drafts/campaigns/2026-08-03-topic-90-run-30802565966-attempt-1.json",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-03-topic-90-run-30802565966-attempt-1/",
+        "https://www.facebook.com/122197727090942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7490478316504793088/",
+        "https://guyrofe.blogspot.com/2026/08/blog-post_05.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEPWmps3a__uFWA"
+      ]
+    },
+    "apr_b9810c5c2454786ee634842da09c0f8d9b1dc34bfb1138b11fc7ec347711ef82:0f56ed8fc61a6049f7542f6c76d719efbc0cd8350fc5bfb0ccbe927c4262facb": {
+      "sent_at": "2026-11-25T09:45:13.917259+00:00",
+      "recipient": "guyrofe@gmail.com",
+      "approval_id": "apr_b9810c5c2454786ee634842da09c0f8d9b1dc34bfb1138b11fc7ec347711ef82",
+      "state": "success",
+      "subject": "אישור פרסום: ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא",
+      "urls": [
+        "https://www.drguyrofe.com/post/ערך-p-במחקרים-רפואיים-מה-הוא-מלמד-מה-אינו-מוכיח-וכיצד-להימנע-מפרשנות-שגויה"
+      ]
     }
   }
 }
