@@ -1805,6 +1805,21 @@
       "urls": [
         "https://www.drguyrofe.com/post/ערך-p-במחקרים-רפואיים-מה-הוא-מלמד-מה-אינו-מוכיח-וכיצד-להימנע-מפרשנות-שגויה"
       ]
+    },
+    "expired:apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4:2026-08-04T13:44:08Z": {
+      "recorded_at": "2026-11-25T19:37:48.628332+00:00",
+      "approval_id": "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4",
+      "state": "superseded_published",
+      "draft_path": "content_drafts/2026-08-04-topic-90-run-30892576802-attempt-1.md",
+      "published_approval_id": "apr_e801e1994de07aa35bb9320a437caa49e2b0a99648b7908a0b5c4f00299e23f4",
+      "campaign_result": "content_drafts/campaigns/2026-08-04-topic-90-run-30892576802-attempt-1.json",
+      "urls": [
+        "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-04-topic-90-run-30892576802-attempt-1/",
+        "https://www.facebook.com/122197700126942441",
+        "https://www.linkedin.com/feed/update/urn:li:share:7490420767814488064/",
+        "https://guyrofe.blogspot.com/2026/08/blog-post_309.html",
+        "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKENyQlqHmvrrKhgE"
+      ]
     }
   }
 }
