@@ -3629,7 +3629,7 @@
       "topic": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
       "normalized_topic": "נוירומיאליטיס אופטיקה מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
       "first_seen_at": "2026-11-23T17:28:53.978487+00:00",
-      "last_seen_at": "2026-11-23T17:34:36Z",
+      "last_seen_at": "2026-11-25T00:58:27.723922+00:00",
       "titles": [
         "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא"
       ],
@@ -3664,6 +3664,21 @@
           "stream": "health_news",
           "draft_path": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md",
           "approval_id": "apr_16185eabc451b53b476ae56a266cbf37ca01b8a6c59ad9d49bd1553d7a9dacd0"
+        },
+        {
+          "status": "published",
+          "occurred_at": "2026-11-25T00:58:27.723922+00:00",
+          "source": "campaign",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md",
+          "approval_id": "apr_16185eabc451b53b476ae56a266cbf37ca01b8a6c59ad9d49bd1553d7a9dacd0",
+          "campaign_status": "completed",
+          "urls": [
+            "https://guyrofe.blogspot.com/2026/11/blog-post_24.html",
+            "https://www.drguyrofe.co.il/%d7%a0%d7%95%d7%99%d7%a8%d7%95%d7%9e%d7%99%d7%90%d7%9c%d7%99%d7%98%d7%99%d7%a1-%d7%90%d7%95%d7%a4%d7%98%d7%99%d7%a7%d7%94-%d7%9e%d7%93%d7%95%d7%a2/",
+            "https://www.facebook.com/122216852960942441",
+            "https://www.linkedin.com/feed/update/urn:li:share:7531159330394415104/"
+          ]
         }
       ]
     },
@@ -3672,7 +3687,7 @@
       "topic": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
       "normalized_topic": "ערך p במחקרים רפואיים מה הוא מלמד מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
       "first_seen_at": "2026-11-24T17:00:33.288049+00:00",
-      "last_seen_at": "2026-11-24T17:00:33.288049+00:00",
+      "last_seen_at": "2026-11-24T17:03:20Z",
       "titles": [
         "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא"
       ],
@@ -3692,6 +3707,21 @@
           "source": "autonomous_content",
           "stream": "evergreen_knowledge",
           "draft_path": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-24T17:00:33.288049+00:00",
+          "source": "draft",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md"
+        },
+        {
+          "status": "awaiting_explicit_approval",
+          "occurred_at": "2026-11-24T17:03:20Z",
+          "source": "approval_bundle",
+          "stream": "evergreen_knowledge",
+          "draft_path": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md",
+          "approval_id": "apr_b9810c5c2454786ee634842da09c0f8d9b1dc34bfb1138b11fc7ec347711ef82"
         }
       ]
     }

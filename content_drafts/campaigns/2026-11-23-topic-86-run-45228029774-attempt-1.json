@@ -1,0 +1,117 @@
+{
+  "draft": "content_drafts/2026-11-23-topic-86-run-45228029774-attempt-1.md",
+  "title": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה | ד״ר גיא רופא",
+  "status": "completed",
+  "published_at": "2026-11-25T00:58:27.723922+00:00",
+  "destinations": [
+    {
+      "name": "drguyrofe.co.il",
+      "status": "published",
+      "target_id": "canonical_wordpress",
+      "url": "https://www.drguyrofe.co.il/%d7%a0%d7%95%d7%99%d7%a8%d7%95%d7%9e%d7%99%d7%90%d7%9c%d7%99%d7%98%d7%99%d7%a1-%d7%90%d7%95%d7%a4%d7%98%d7%99%d7%a7%d7%94-%d7%9e%d7%93%d7%95%d7%a2/",
+      "detail": "idempotency_key=pub_41eb855be4b9b3eb39d44b5aeff60d3fccbd1f418a248fc81a04ef881d01cb0a"
+    },
+    {
+      "name": "Canonical SEO verification",
+      "status": "verified",
+      "url": "https://www.drguyrofe.co.il/%d7%a0%d7%95%d7%99%d7%a8%d7%95%d7%9e%d7%99%d7%90%d7%9c%d7%99%d7%98%d7%99%d7%a1-%d7%90%d7%95%d7%a4%d7%98%d7%99%d7%a7%d7%94-%d7%9e%d7%93%d7%95%d7%a2/",
+      "detail": "title, canonical, description, entity schema and internal links verified"
+    },
+    {
+      "name": "Canonical editorial hero",
+      "status": "hosted",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-23-topic-86-run-45228029774-attempt-1-hero.png",
+      "detail": "wikimedia_commons_licensed_photo"
+    },
+    {
+      "name": "guyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "drguyrofe.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "guyrofe.wixsite.com",
+      "status": "not_in_approval_bundle",
+      "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+    },
+    {
+      "name": "Facebook",
+      "status": "published",
+      "target_id": "facebook_page",
+      "url": "https://www.facebook.com/122216852960942441",
+      "detail": "idempotency_key=pub_804f9cc70325b4fcb784c61535e50c2ebdb1c3fbf85ff304c82256a5c4412fd1"
+    },
+    {
+      "name": "LinkedIn",
+      "status": "published",
+      "target_id": "linkedin_member",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7531159330394415104/",
+      "detail": "idempotency_key=pub_6c8c705f5f39c34a50175b1065a56e0dbb25e215caaa72513d23df951ff8e5ca"
+    },
+    {
+      "name": "X",
+      "status": "disabled",
+      "detail": "מושבת במדיניות המוצר"
+    },
+    {
+      "name": "Tumblr",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Telegram",
+      "status": "deferred",
+      "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+    },
+    {
+      "name": "Blogger",
+      "status": "published",
+      "target_id": "blogger_blog",
+      "url": "https://guyrofe.blogspot.com/2026/11/blog-post_24.html",
+      "detail": "idempotency_key=pub_fc553a161351a269e999fdce32a79db546eb937705dd2e93c01f073e7930b003"
+    },
+    {
+      "name": "Pinterest",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Google Business Profile",
+      "status": "not_scheduled"
+    },
+    {
+      "name": "Medium",
+      "status": "paused",
+      "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+    },
+    {
+      "name": "Quora",
+      "status": "manual_only",
+      "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+    },
+    {
+      "name": "TikTok",
+      "status": "owner_managed",
+      "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+    }
+  ],
+  "approval_id": "apr_16185eabc451b53b476ae56a266cbf37ca01b8a6c59ad9d49bd1553d7a9dacd0",
+  "search_target": {
+    "primary_query": "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת",
+    "secondary_queries": [
+      "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת נפוצה",
+      "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת ד״ר גיא רופא",
+      "נוירומיאליטיס אופטיקה: מדוע נפגעים עצבי הראייה וחוט השדרה וכיצד מבדילים בינה לבין טרשת גיא רופא"
+    ],
+    "entity_queries": [
+      "ד״ר גיא רופא",
+      "גיא רופא"
+    ],
+    "intent": "news_analysis"
+  },
+  "canonical_url": "https://www.drguyrofe.co.il/%d7%a0%d7%95%d7%99%d7%a8%d7%95%d7%9e%d7%99%d7%90%d7%9c%d7%99%d7%98%d7%99%d7%a1-%d7%90%d7%95%d7%a4%d7%98%d7%99%d7%a7%d7%94-%d7%9e%d7%93%d7%95%d7%a2/",
+  "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+}
