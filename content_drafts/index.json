@@ -1,6 +1,23 @@
 {
   "drafts": [
     {
+      "path": "content_drafts/2026-11-26-topic-87-run-45858945129-attempt-1.md",
+      "title": "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה | ד״ר גיא רופא",
+      "topic": "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה",
+      "excerpt": "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) מחלת מויאמויה היא מחלת כלי דם מוחית נדירה שבה עורקים מרכזיים בבסיס המוח נעשים צרים בהדרגה ולעיתים נח",
+      "generated_at": "2026-11-26T16:27:56.235481+00:00",
+      "content_stream": "health_news",
+      "destination_site_key": "DRGUYROFE_CO_IL",
+      "scheduled_channels": [
+        "google_business"
+      ],
+      "cadence_week": "week-of-2026-11-22",
+      "cadence_local_date": "2026-11-26",
+      "public_execution_allowed": false,
+      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
+      "topic_seed_usage": "discovery_only"
+    },
+    {
       "path": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md",
       "title": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא",
       "topic": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה",
@@ -480,23 +497,6 @@
       "cadence_week": "week-of-2026-10-04",
       "cadence_local_date": "2026-10-04",
       "public_execution_allowed": false
-    },
-    {
-      "path": "content_drafts/2026-10-01-topic-81-run-36862232137-attempt-1.md",
-      "title": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה | ד״ר גיא רופא",
-      "topic": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה",
-      "excerpt": "דלקת ושט אאוזינופילית: מדוע מזון נתקע בוושט וכיצד מאבחנים את המחלה | ד״ר גיא רופא מאת [ד״ר גיא רופא](https://guyrofe.com/profile/) התשובה הקצרה: בדלקת ושט אאוזינופילית מתפתחת בדופן הוושט דלקת כרונית העלולה לגרום לנפיחות, לירידה בגמישות הרקמ",
-      "generated_at": "2026-10-01T12:31:02.486449+00:00",
-      "content_stream": "health_news",
-      "destination_site_key": "DRGUYROFE_CO_IL",
-      "scheduled_channels": [
-        "google_business"
-      ],
-      "cadence_week": "week-of-2026-09-27",
-      "cadence_local_date": "2026-10-01",
-      "public_execution_allowed": false,
-      "topic_seed_source": "https://www.mayoclinic.org/diseases-conditions",
-      "topic_seed_usage": "discovery_only"
     }
   ]
 }

@@ -3736,6 +3736,53 @@
           ]
         }
       ]
+    },
+    {
+      "topic_id": "topic_adf7d78aa99b11af360ec28b",
+      "topic": "עמילואידוזיס לבבי: מדוע דפנות הלב מתעבות וכיצד מבדילים בין ATTR ל־AL",
+      "normalized_topic": "עמילואידוזיס לבבי מדוע דפנות הלב מתעבות וכיצד מבדילים בין attr ל־al",
+      "first_seen_at": "2026-11-26T16:27:56.235481+00:00",
+      "last_seen_at": "2026-11-26T16:27:56.235481+00:00",
+      "titles": [],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "generation_started",
+          "occurred_at": "2026-11-26T16:27:56.235481+00:00",
+          "source": "autonomous_content",
+          "stream": "health_news"
+        }
+      ]
+    },
+    {
+      "topic_id": "topic_c449d0923c03ef5c228eddfb",
+      "topic": "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה",
+      "normalized_topic": "מחלת מויאמויה כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה",
+      "first_seen_at": "2026-11-26T16:27:56.235481+00:00",
+      "last_seen_at": "2026-11-26T16:27:56.235481+00:00",
+      "titles": [
+        "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה | ד״ר גיא רופא"
+      ],
+      "streams": [
+        "health_news"
+      ],
+      "events": [
+        {
+          "status": "generation_started",
+          "occurred_at": "2026-11-26T16:27:56.235481+00:00",
+          "source": "autonomous_content",
+          "stream": "health_news"
+        },
+        {
+          "status": "draft_ready",
+          "occurred_at": "2026-11-26T16:27:56.235481+00:00",
+          "source": "autonomous_content",
+          "stream": "health_news",
+          "draft_path": "content_drafts/2026-11-26-topic-87-run-45858945129-attempt-1.md"
+        }
+      ]
     }
   ]
 }
