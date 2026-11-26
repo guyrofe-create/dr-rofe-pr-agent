@@ -4518,6 +4518,77 @@
       "published_at": "2026-11-25T09:45:11Z",
       "url": "https://www.drguyrofe.com/post/ערך-p-במחקרים-רפואיים-מה-הוא-מלמד-מה-אינו-מוכיח-וכיצד-להימנע-מפרשנות-שגויה",
       "provider_receipt": null
+    },
+    "pub_346e47c388a4aa28cdc6929ba7ccf6636c011660892d1ba44efe7dd07d5a1b83": {
+      "version": 7,
+      "idempotency_key": "pub_346e47c388a4aa28cdc6929ba7ccf6636c011660892d1ba44efe7dd07d5a1b83",
+      "approval_id": "apr_abb129ff06302eee6ac3aa601a12c951d2a9d3095e6a53cd4fa7fb4187c9253c",
+      "target_id": "canonical_wordpress__media__hero",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "234941cc0123c99778842b0e07004e9e657f8d15e817fc781c8e6e7436968b2d",
+      "status": "published",
+      "started_at": "2026-11-26T20:28:01Z",
+      "published_at": "2026-11-26T20:28:14Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-26-topic-87-run-45858945129-attempt-1-hero.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-26-topic-87-run-45858945129-attempt-1-hero",
+        "sha256": "2216e0352591563bb6c7d5a4ea4d5634ff7e4ccfdbbba803f52eeb43b4059ead",
+        "metadata_verified": true
+      }
+    },
+    "pub_5eeda5dca13ab5dec88fe473e06e7e7dae1852af34605192e0cecccb0b27e097": {
+      "version": 7,
+      "idempotency_key": "pub_5eeda5dca13ab5dec88fe473e06e7e7dae1852af34605192e0cecccb0b27e097",
+      "approval_id": "apr_abb129ff06302eee6ac3aa601a12c951d2a9d3095e6a53cd4fa7fb4187c9253c",
+      "target_id": "canonical_wordpress",
+      "platform": "WordPress",
+      "asset": "www.drguyrofe.co.il",
+      "request_sha256": "978f473f4832e60be832525eb38735f99b49158fead955242836e04ac4549364",
+      "status": "published",
+      "started_at": "2026-11-26T20:28:14Z",
+      "published_at": "2026-11-26T20:28:20Z",
+      "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%9e%d7%95%d7%99%d7%90%d7%9e%d7%95%d7%99%d7%94-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%99%d7%a6%d7%a8%d7%95%d7%aa-%d7%a2%d7%95%d7%a8%d7%a7%d7%99/",
+      "provider_receipt": null
+    },
+    "pub_9af58d3ebb8a1da7c684abc62940476fad24fe5dd5fdc5c81ce1cdfa6bcd362a": {
+      "version": 7,
+      "idempotency_key": "pub_9af58d3ebb8a1da7c684abc62940476fad24fe5dd5fdc5c81ce1cdfa6bcd362a",
+      "approval_id": "apr_abb129ff06302eee6ac3aa601a12c951d2a9d3095e6a53cd4fa7fb4187c9253c",
+      "target_id": "google_business_profile__media__landscape",
+      "platform": "WordPress Media",
+      "asset": "drguyrofe.co.il",
+      "request_sha256": "605eb89d96e383768e9f54f90e7219c326384b39976ada7dbee8b2936481aab5",
+      "status": "published",
+      "started_at": "2026-11-26T20:28:22Z",
+      "published_at": "2026-11-26T20:28:31Z",
+      "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-26-topic-87-run-45858945129-attempt-1-landscape.png",
+      "provider_receipt": {
+        "slug": "guy-rofe-pilot-2026-11-26-topic-87-run-45858945129-attempt-1-landscape",
+        "sha256": "d65b33eae390c6d7247b2814cae3d4d714672876ca6922e0f4089cf24d454b4b",
+        "metadata_verified": true
+      }
+    },
+    "pub_5e22ffe7168e620e7a4e049b4c101620648a046cddd5a53526b764579c4f7e1f": {
+      "version": 7,
+      "idempotency_key": "pub_5e22ffe7168e620e7a4e049b4c101620648a046cddd5a53526b764579c4f7e1f",
+      "approval_id": "apr_abb129ff06302eee6ac3aa601a12c951d2a9d3095e6a53cd4fa7fb4187c9253c",
+      "target_id": "google_business_profile",
+      "platform": "Google Business Profile",
+      "asset": "configured verified Google Business location",
+      "request_sha256": "4999b68f3c80527e13e1b0fe50269e1bf71510105651701d3c9d648cd53e91e3",
+      "status": "published",
+      "started_at": "2026-11-26T20:28:31Z",
+      "published_at": "2026-11-26T20:28:41Z",
+      "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDp3VVRmNnFqc20zVnNpYjNQZjFTRlpB",
+      "provider_receipt": {
+        "name": "accounts/110345401117888665629/locations/14140768355740435987/localPosts/1969530696438937133",
+        "state": "LIVE",
+        "createTime": "2026-11-26T20:28:35.665482284Z",
+        "searchUrl": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDp3VVRmNnFqc20zVnNpYjNQZjFTRlpB",
+        "account": "accounts/110345401117888665629",
+        "location": "accounts/110345401117888665629/locations/14140768355740435987"
+      }
     }
   }
 }

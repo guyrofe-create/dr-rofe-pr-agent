@@ -1,6 +1,116 @@
 {
   "campaigns": [
     {
+      "draft": "content_drafts/2026-11-26-topic-87-run-45858945129-attempt-1.md",
+      "title": "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה | ד״ר גיא רופא",
+      "status": "completed",
+      "published_at": "2026-11-26T20:28:41.642540+00:00",
+      "destinations": [
+        {
+          "name": "drguyrofe.co.il",
+          "status": "published",
+          "target_id": "canonical_wordpress",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%9e%d7%95%d7%99%d7%90%d7%9e%d7%95%d7%99%d7%94-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%99%d7%a6%d7%a8%d7%95%d7%aa-%d7%a2%d7%95%d7%a8%d7%a7%d7%99/",
+          "detail": "idempotency_key=pub_5eeda5dca13ab5dec88fe473e06e7e7dae1852af34605192e0cecccb0b27e097"
+        },
+        {
+          "name": "Canonical SEO verification",
+          "status": "verified",
+          "url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%9e%d7%95%d7%99%d7%90%d7%9e%d7%95%d7%99%d7%94-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%99%d7%a6%d7%a8%d7%95%d7%aa-%d7%a2%d7%95%d7%a8%d7%a7%d7%99/",
+          "detail": "title, canonical, description, entity schema and internal links verified"
+        },
+        {
+          "name": "Canonical editorial hero",
+          "status": "hosted",
+          "url": "https://www.drguyrofe.co.il/wp-content/uploads/2026/11/guy-rofe-pilot-2026-11-26-topic-87-run-45858945129-attempt-1-hero.png",
+          "detail": "openai_generated_text_free_visual"
+        },
+        {
+          "name": "guyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "drguyrofe.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "guyrofe.wixsite.com",
+          "status": "not_in_approval_bundle",
+          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
+        },
+        {
+          "name": "Facebook",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "LinkedIn",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "X",
+          "status": "disabled",
+          "detail": "מושבת במדיניות המוצר"
+        },
+        {
+          "name": "Tumblr",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Telegram",
+          "status": "deferred",
+          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
+        },
+        {
+          "name": "Blogger",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Pinterest",
+          "status": "not_scheduled"
+        },
+        {
+          "name": "Google Business Profile",
+          "status": "published",
+          "target_id": "google_business_profile",
+          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CAIQACoeChxtc3BfaDp3VVRmNnFqc20zVnNpYjNQZjFTRlpB",
+          "detail": "idempotency_key=pub_5e22ffe7168e620e7a4e049b4c101620648a046cddd5a53526b764579c4f7e1f"
+        },
+        {
+          "name": "Medium",
+          "status": "paused",
+          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
+        },
+        {
+          "name": "Quora",
+          "status": "manual_only",
+          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
+        },
+        {
+          "name": "TikTok",
+          "status": "owner_managed",
+          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
+        }
+      ],
+      "approval_id": "apr_abb129ff06302eee6ac3aa601a12c951d2a9d3095e6a53cd4fa7fb4187c9253c",
+      "search_target": {
+        "primary_query": "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה",
+        "secondary_queries": [
+          "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה ד״ר גיא רופא",
+          "מחלת מויאמויה: כיצד היצרות עורקי המוח גורמת לשבץ בצעירים וכיצד מאבחנים אותה גיא רופא"
+        ],
+        "entity_queries": [
+          "ד״ר גיא רופא",
+          "גיא רופא"
+        ],
+        "intent": "news_analysis"
+      },
+      "canonical_url": "https://www.drguyrofe.co.il/%d7%9e%d7%97%d7%9c%d7%aa-%d7%9e%d7%95%d7%99%d7%90%d7%9e%d7%95%d7%99%d7%94-%d7%9b%d7%99%d7%a6%d7%93-%d7%94%d7%99%d7%a6%d7%a8%d7%95%d7%aa-%d7%a2%d7%95%d7%a8%d7%a7%d7%99/",
+      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
+    },
+    {
       "draft": "content_drafts/2026-11-24-topic-82-run-45443554348-attempt-1.md",
       "title": "ערך p במחקרים רפואיים: מה הוא מלמד, מה אינו מוכיח וכיצד להימנע מפרשנות שגויה | ד״ר גיא רופא",
       "status": "completed",
@@ -5252,119 +5362,6 @@
       "approval_id": "apr_2e966747adddf5ec161f2574b4369207c01610995c977dd20901df9eaacd0d73",
       "search_target": {},
       "canonical_url": "https://www.drguyrofe.co.il/guy-rofe-pilot-2026-08-05-topic-90-run-30989560897-attempt-1/",
-      "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
-    },
-    {
-      "draft": "content_drafts/2026-08-05-topic-02-run-30989560897-attempt-1.md",
-      "title": "אנדומטריוזיס ופוריות: מה ידוע על הקשר? | ד״ר גיא רופא",
-      "status": "completed",
-      "published_at": "2026-09-17T22:07:35.382775+00:00",
-      "destinations": [
-        {
-          "name": "guyrofe.com",
-          "status": "published",
-          "target_id": "canonical_wordpress",
-          "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
-          "detail": "idempotency_key=pub_6c7df0c0f8366bf9f56ff75d66ff2691e66f786606134d022efe5207311d5c9e"
-        },
-        {
-          "name": "Canonical SEO verification",
-          "status": "seo_warning",
-          "url": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
-          "detail": "failed checks: brand_once_in_title, no_internal_run_slug"
-        },
-        {
-          "name": "Canonical editorial hero",
-          "status": "hosted",
-          "url": "https://guyrofe.com/wp-content/uploads/2026/08/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1-hero.png",
-          "detail": "owner_provided_default"
-        },
-        {
-          "name": "drguyrofe.co.il",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "drguyrofe.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "guyrofe.wixsite.com",
-          "status": "not_in_approval_bundle",
-          "detail": "לא אושר בחבילה זו; אין שכפול אוטומטי בין נכסים"
-        },
-        {
-          "name": "Facebook",
-          "status": "published",
-          "target_id": "facebook_page",
-          "url": "https://www.facebook.com/122197862894942441",
-          "detail": "idempotency_key=pub_2e9a3311a625ce4b954d680d9367c306b4c7741217bd3cc7513521cbf3babc0b"
-        },
-        {
-          "name": "LinkedIn",
-          "status": "published",
-          "target_id": "linkedin_member",
-          "url": "https://www.linkedin.com/feed/update/urn:li:share:7490779624206041089/",
-          "detail": "idempotency_key=pub_fa21136db2e36efec6849ba7214de6e102de9b301bc8699dc5944b3f2a4ad877"
-        },
-        {
-          "name": "X",
-          "status": "disabled",
-          "detail": "מושבת במדיניות המוצר"
-        },
-        {
-          "name": "Tumblr",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Telegram",
-          "status": "deferred",
-          "detail": "לא יופעל ללא קהל או שימוש ייחודי"
-        },
-        {
-          "name": "Blogger",
-          "status": "published",
-          "target_id": "blogger_blog",
-          "url": "https://guyrofe.blogspot.com/2026/08/blog-post_618.html",
-          "detail": "idempotency_key=pub_9d20bbf0022a658567b8703f7ed165628146276f45f0cd216a4763f68911cc81"
-        },
-        {
-          "name": "Instagram",
-          "status": "owner_managed",
-          "detail": "Instagram is managed independently by the owner"
-        },
-        {
-          "name": "Pinterest",
-          "status": "not_scheduled"
-        },
-        {
-          "name": "Google Business Profile",
-          "status": "published",
-          "target_id": "google_business_profile",
-          "url": "https://local.google.com/place?id=4129870220117849507&use=posts&lpsid=CIHM0ogKEP3OgIu87MGTpQE",
-          "detail": "idempotency_key=pub_cc68a7b8780af5b000121587cd23c5eecd0a86b67414d6d85362ccc2a798e0d2"
-        },
-        {
-          "name": "Medium",
-          "status": "paused",
-          "detail": "הפצה משנית הושהתה עד להגדרת קישור קנוני תקין"
-        },
-        {
-          "name": "Quora",
-          "status": "manual_only",
-          "detail": "אין כרגע חיבור פרסום רשמי בטוח"
-        },
-        {
-          "name": "TikTok",
-          "status": "owner_managed",
-          "detail": "ערוץ הפיילוט מנוהל עצמאית; המוצר אינו מפרסם או מכין עבורו עבודת פרסום"
-        }
-      ],
-      "approval_id": "apr_1280f7b5cadfababb964c37676a96b272236c1dc818f9085557c37c4934830e5",
-      "search_target": {},
-      "canonical_url": "https://guyrofe.com/guy-rofe-pilot-2026-08-05-topic-02-run-30989560897-attempt-1/",
       "execution_receipt_ledger": "publication_receipts/execution_ledger.json"
     }
   ]
